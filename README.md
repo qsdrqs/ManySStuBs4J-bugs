@@ -6,5 +6,5 @@ https://zenodo.org/api/records/3653444/files-archive
 
 Each bug is stored in a separate folder, with the buggy and fixed files, and the patch.
 
-This bugs collection is just a part of the ManySStuBs4J dataset. We just collect
-a small part of it.
+You can run the `parse.py` script to parse the dataset and generate all the bugs
+in `bugs_collection` directory.
