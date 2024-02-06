@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/bukkit/command/PluginCommand.java b/fixed/src/main/java/org/bukkit/command/PluginCommand.java
+index d34140c..ec66c28 100644
+--- a/buggy/src/main/java/org/bukkit/command/PluginCommand.java
++++ b/fixed/src/main/java/org/bukkit/command/PluginCommand.java
+@@ -61,7 +61,7 @@ public final class PluginCommand extends Command implements PluginIdentifiableCo
+      * @param executor New executor to run
+      */
+     public void setExecutor(CommandExecutor executor) {
+-        this.executor = executor;
++        this.executor = executor == null ? owningPlugin : executor;
+     }
+ 
+     /**

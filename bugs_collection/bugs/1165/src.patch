@@ -1,0 +1,13 @@
+diff --git a/buggy/core/client-internal/src/test/java/alluxio/client/block/BlockStoreContextTest.java b/fixed/core/client-internal/src/test/java/alluxio/client/block/BlockStoreContextTest.java
+index 2827dc7..b630783 100644
+--- a/buggy/core/client-internal/src/test/java/alluxio/client/block/BlockStoreContextTest.java
++++ b/fixed/core/client-internal/src/test/java/alluxio/client/block/BlockStoreContextTest.java
+@@ -141,7 +141,7 @@ public final class BlockStoreContextTest {
+     final List<BlockWorkerClient> clients = Lists.newArrayList();
+ 
+     // Reduce the size of the worker thread pool to lower the chance of a timeout.
+-    Configuration conf = Whitebox.getInternalState(ClientContext.class, "sTachyonConf");
++    Configuration conf = Whitebox.getInternalState(ClientContext.class, "sConf");
+     conf.set(Constants.USER_BLOCK_WORKER_CLIENT_THREADS, "10");
+ 
+     // Acquire all the clients

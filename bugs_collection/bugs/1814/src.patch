@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java b/fixed/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java
+index b88286c..22aac4b 100644
+--- a/buggy/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java
++++ b/fixed/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java
+@@ -1268,7 +1268,7 @@ public class NettyAsyncHttpProvider extends IdleStateHandler implements AsyncHtt
+             openChannels.remove(future.channel());
+         }
+ 
+-        log.debug("abording Future {}", future);
++        log.debug("aborting Future {}", future);
+         log.debug(t.getMessage(), t);
+ 
+         future.abort(t);

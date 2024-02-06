@@ -1,0 +1,12 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/container/WebLogicServlet30WithWebSocket.java b/fixed/modules/cpr/src/main/java/org/atmosphere/container/WebLogicServlet30WithWebSocket.java
+index d598c92..2ff7ba4 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/container/WebLogicServlet30WithWebSocket.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/container/WebLogicServlet30WithWebSocket.java
+@@ -29,6 +29,6 @@ public class WebLogicServlet30WithWebSocket extends Servlet30CometSupport {
+ 
+     @Override
+     public String getContainerName() {
+-        return super.getContainerName() + " using javax.servlet/3.0 and jsr356/WebSocket API";
++        return super.getContainerName() + " using javax.servlet/3.0 and Native WebSocket API";
+     }
+ }

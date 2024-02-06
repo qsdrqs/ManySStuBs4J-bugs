@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/src/test/java/alluxio/master/JournalIntegrationTest.java b/fixed/tests/src/test/java/alluxio/master/JournalIntegrationTest.java
+index c2fe04e..e791c25 100644
+--- a/buggy/tests/src/test/java/alluxio/master/JournalIntegrationTest.java
++++ b/fixed/tests/src/test/java/alluxio/master/JournalIntegrationTest.java
+@@ -581,7 +581,7 @@ public class JournalIntegrationTest {
+     public static final String FULL_CLASS_NAME =
+         "alluxio.master.JournalIntegrationTest$FakeUserGroupsMapping";
+ 
+-    private HashMap<String, String> mUserGroups = new HashMap<String, String>();
++    private HashMap<String, String> mUserGroups = new HashMap<>();
+ 
+     public FakeUserGroupsMapping() {
+       mUserGroups.put("alluxio", "supergroup");

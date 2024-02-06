@@ -1,0 +1,22 @@
+diff --git a/buggy/minicluster/src/main/java/tachyon/master/LocalTachyonClusterMultiMaster.java b/fixed/minicluster/src/main/java/tachyon/master/LocalTachyonClusterMultiMaster.java
+index adac425..aeb5523 100644
+--- a/buggy/minicluster/src/main/java/tachyon/master/LocalTachyonClusterMultiMaster.java
++++ b/fixed/minicluster/src/main/java/tachyon/master/LocalTachyonClusterMultiMaster.java
+@@ -57,7 +57,7 @@ public class LocalTachyonClusterMultiMaster extends AbstractLocalTachyonCluster
+ 
+     try {
+       mCuratorServer = new TestingServer();
+-      LOG.info("Started testing zookeeper: " + mCuratorServer.getConnectString());
++      LOG.info("Started testing zookeeper: {}", mCuratorServer.getConnectString());
+     } catch (Exception e) {
+       throw Throwables.propagate(e);
+     }
+@@ -221,7 +221,7 @@ public class LocalTachyonClusterMultiMaster extends AbstractLocalTachyonCluster
+     for (int k = 0; k < mNumOfMasters; k ++) {
+       mMasters.get(k).stop();
+     }
+-    LOG.info("Stopping testing zookeeper: " + mCuratorServer.getConnectString());
++    LOG.info("Stopping testing zookeeper: {}", mCuratorServer.getConnectString());
+     mCuratorServer.stop();
+   }
+ }

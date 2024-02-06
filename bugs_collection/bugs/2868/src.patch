@@ -1,0 +1,13 @@
+diff --git a/buggy/test/selenium/pages/LoginPage.java b/fixed/test/selenium/pages/LoginPage.java
+index 3d512a4..46ab37a 100644
+--- a/buggy/test/selenium/pages/LoginPage.java
++++ b/fixed/test/selenium/pages/LoginPage.java
+@@ -35,7 +35,7 @@ public class LoginPage extends FluentPage {
+ 
+     @Override
+     public String getUrl() {
+-        return routes.SessionsController.index().url();
++        return routes.SessionsController.index("").url();
+     }
+ 
+     @Override

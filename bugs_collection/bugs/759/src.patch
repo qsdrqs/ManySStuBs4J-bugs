@@ -1,0 +1,14 @@
+diff --git a/buggy/core/common/src/main/java/alluxio/LeaderInquireClient.java b/fixed/core/common/src/main/java/alluxio/LeaderInquireClient.java
+index b0cc1b0..ad451dd 100644
+--- a/buggy/core/common/src/main/java/alluxio/LeaderInquireClient.java
++++ b/fixed/core/common/src/main/java/alluxio/LeaderInquireClient.java
+@@ -106,7 +106,8 @@ public final class LeaderInquireClient {
+         CommonUtils.sleepMs(LOG, Constants.SECOND_MS);
+       }
+     } catch (Exception e) {
+-      LOG.error("Error with zookeeper: {} message: {}", mZookeeperAddress, e.getMessage());
++      LOG.error("Error getting the master address from zookeeper. Zookeeper address: {}",
++          mZookeeperAddress, e);
+     }
+ 
+     return null;

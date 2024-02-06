@@ -1,0 +1,16 @@
+diff --git a/buggy/core/common/src/main/java/alluxio/cli/AbstractCommand.java b/fixed/core/common/src/main/java/alluxio/cli/AbstractCommand.java
+index 1c95391..e2dd85b 100644
+--- a/buggy/core/common/src/main/java/alluxio/cli/AbstractCommand.java
++++ b/fixed/core/common/src/main/java/alluxio/cli/AbstractCommand.java
+@@ -64,9 +64,9 @@ public abstract class AbstractCommand implements Command {
+           String.format("Failed to parse args for %s", getCommandName()), e);
+     }
+ 
+-    if (args.length != getNumOfArgs()) {
++    if (cmd.getArgs().length != getNumOfArgs()) {
+       throw new InvalidArgumentException(String.format("%s takes %d arguments, not %d",
+-          getCommandName(), getNumOfArgs(), args.length));
++          getCommandName(), getNumOfArgs(), cmd.getArgs().length));
+     }
+ 
+     if (!validateArgs(cmd.getArgs())) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ServiceNowEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ServiceNowEndpointBuilderFactory.java
+index 2e38be8..a49e903 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ServiceNowEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ServiceNowEndpointBuilderFactory.java
+@@ -834,7 +834,7 @@ public interface ServiceNowEndpointBuilderFactory {
+      * <code>org.apache.camel.component.servicenow.ServiceNowRelease</code>
+      * enum.
+      */
+-    static enum ServiceNowRelease {
++    enum ServiceNowRelease {
+         FUJI, GENEVA, HELSINKI;
+     }
+     /**

@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XsltEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XsltEndpointBuilderFactory.java
+index eb04420..c3c09d5 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XsltEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XsltEndpointBuilderFactory.java
+@@ -450,7 +450,7 @@ public interface XsltEndpointBuilderFactory {
+      * Proxy enum for <code>org.apache.camel.component.xslt.XsltOutput</code>
+      * enum.
+      */
+-    static enum XsltOutput {
++    enum XsltOutput {
+         string, bytes, DOM, file;
+     }
+     /**

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer.java b/fixed/src/main/java/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer.java
+index 768646c..e6ba2a9 100644
+--- a/buggy/src/main/java/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer.java
++++ b/fixed/src/main/java/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer.java
+@@ -569,7 +569,7 @@ public class JavaBeanDeserializer implements ObjectDeserializer {
+                         }
+ 
+                         continue;
+-                    } else if (lexer.token == JSONToken.COLON) {
++                    } else if (lexer.token() == JSONToken.COLON) {
+                         throw new JSONException("syntax error, unexpect token ':'");
+                     }
+                 }

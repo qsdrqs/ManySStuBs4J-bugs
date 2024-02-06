@@ -1,0 +1,13 @@
+diff --git a/buggy/dubbo-compatible/src/main/java/com/alibaba/dubbo/config/annotation/Reference.java b/fixed/dubbo-compatible/src/main/java/com/alibaba/dubbo/config/annotation/Reference.java
+index 4c1ca97..c8f25b3 100644
+--- a/buggy/dubbo-compatible/src/main/java/com/alibaba/dubbo/config/annotation/Reference.java
++++ b/fixed/dubbo-compatible/src/main/java/com/alibaba/dubbo/config/annotation/Reference.java
+@@ -43,7 +43,7 @@ public @interface Reference {
+ 
+     boolean generic() default false;
+ 
+-    boolean injvm() default false;
++    boolean injvm() default true;
+ 
+     boolean check() default true;
+ 

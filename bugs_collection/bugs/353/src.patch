@@ -1,0 +1,13 @@
+diff --git a/buggy/core/common/src/main/java/alluxio/util/io/BufferUtils.java b/fixed/core/common/src/main/java/alluxio/util/io/BufferUtils.java
+index e42a557..1d52b80 100644
+--- a/buggy/core/common/src/main/java/alluxio/util/io/BufferUtils.java
++++ b/fixed/core/common/src/main/java/alluxio/util/io/BufferUtils.java
+@@ -220,7 +220,7 @@ public final class BufferUtils {
+    *         sequence of bytes starting at {@code start}
+    */
+   public static boolean equalIncreasingByteArray(int start, int len, byte[] arr) {
+-    if (arr == null || arr.length != len) {
++    if (arr == null) {
+       return false;
+     }
+     for (int k = 0; k < len; k++) {

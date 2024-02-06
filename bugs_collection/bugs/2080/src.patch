@@ -1,0 +1,17 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereFramework.java b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereFramework.java
+index 666395c..9695e3c 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereFramework.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereFramework.java
+@@ -581,10 +581,10 @@ public class AtmosphereFramework implements ServletContextProvider {
+             initEndpointMapper();
+ 
+             autoDetectContainer();
+-            configureWebDotXmlAtmosphereHandler(sc);
++            configureWebDotXmlAtmosphereHandler(scFacade);
+             asyncSupport.init(scFacade);
+             initAtmosphereHandler(scFacade);
+-            configureAtmosphereInterceptor(sc);
++            configureAtmosphereInterceptor(scFacade);
+             analytics();
+ 
+             if (broadcasterCacheClassName == null) {

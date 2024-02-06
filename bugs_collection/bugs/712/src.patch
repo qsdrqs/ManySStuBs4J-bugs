@@ -1,0 +1,14 @@
+diff --git a/buggy/core/server/src/test/java/alluxio/worker/netty/NettyDataServerTest.java b/fixed/core/server/src/test/java/alluxio/worker/netty/NettyDataServerTest.java
+index 3c6fff4..eadd632 100644
+--- a/buggy/core/server/src/test/java/alluxio/worker/netty/NettyDataServerTest.java
++++ b/fixed/core/server/src/test/java/alluxio/worker/netty/NettyDataServerTest.java
+@@ -251,7 +251,8 @@ public final class NettyDataServerTest {
+     Channel channel = f.channel();
+     try {
+       SingleResponseListener listener = new SingleResponseListener();
+-      channel.pipeline().get(ClientHandler.class).addListener(listener);
++      ((ClientHandler) channel.pipeline().addLast(new ClientHandler()).last())
++          .addListener(listener);
+       channel.writeAndFlush(rpcBlockWriteRequest);
+       return listener.get(NettyClient.TIMEOUT_MS, TimeUnit.MILLISECONDS);
+     } finally {

@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AsynchronousProcessor.java b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AsynchronousProcessor.java
+index 4479a3f..996f40d 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AsynchronousProcessor.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AsynchronousProcessor.java
+@@ -106,7 +106,7 @@ public abstract class AsynchronousProcessor implements AsyncSupport<AtmosphereRe
+      */
+     Action action(AtmosphereRequest req, AtmosphereResponse res) throws IOException, ServletException {
+ 
+-        if (Utils.isWebSocketProxied(req) || (Utils.webSocketEnabled(req) && !supportWebSocket())) {
++        if (!Utils.webSocketProtocol(req) || (Utils.webSocketEnabled(req) && !supportWebSocket())) {
+             res.setStatus(501);
+             res.addHeader(X_ATMOSPHERE_ERROR, "Websocket protocol not supported");
+             res.flushBuffer();

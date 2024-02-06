@@ -1,0 +1,13 @@
+diff --git a/buggy/core/client/src/main/java/alluxio/client/netty/ClientHandler.java b/fixed/core/client/src/main/java/alluxio/client/netty/ClientHandler.java
+index 47f2c0e..a033b80 100644
+--- a/buggy/core/client/src/main/java/alluxio/client/netty/ClientHandler.java
++++ b/fixed/core/client/src/main/java/alluxio/client/netty/ClientHandler.java
+@@ -55,7 +55,7 @@ public final class ClientHandler extends SimpleChannelInboundHandler<RPCMessage>
+    * Creates a new {@link ClientHandler}.
+    */
+   public ClientHandler() {
+-    mListeners = new HashSet<ResponseListener>(4);
++    mListeners = new HashSet<>(4);
+   }
+ 
+   /**

@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/test/java/org/asynchttpclient/async/AsyncProvidersBasicTest.java b/fixed/api/src/test/java/org/asynchttpclient/async/AsyncProvidersBasicTest.java
+index 4f3a212..41d6eb0 100644
+--- a/buggy/api/src/test/java/org/asynchttpclient/async/AsyncProvidersBasicTest.java
++++ b/fixed/api/src/test/java/org/asynchttpclient/async/AsyncProvidersBasicTest.java
+@@ -478,7 +478,7 @@ public abstract class AsyncProvidersBasicTest extends AbstractBasicTest {
+                         assertEquals(response.getStatusCode(), 200);
+                         List<Cookie> cookies = response.getCookies();
+                         assertEquals(cookies.size(), 1);
+-                        assertEquals(cookies.get(0).toString(), coo.toString());
++                        assertEquals(cookies.get(0).toString(), "foo=value");
+                     } finally {
+                         l.countDown();
+                     }

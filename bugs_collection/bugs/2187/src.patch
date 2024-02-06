@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereResourceEventImpl.java b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereResourceEventImpl.java
+index 388817e..001e337 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereResourceEventImpl.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereResourceEventImpl.java
+@@ -98,7 +98,7 @@ public class AtmosphereResourceEventImpl implements AtmosphereResourceEvent {
+      * {@inheritDoc}
+      */
+     public boolean isResuming() {
+-        return resource.action().type() == Action.TYPE.RESUME;
++        return resource == null ? false : resource.action().type() == Action.TYPE.RESUME;
+     }
+ 
+     /**

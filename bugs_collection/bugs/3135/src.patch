@@ -1,0 +1,13 @@
+diff --git a/buggy/client-adapter/elasticsearch/src/main/java/com/alibaba/otter/canal/client/adapter/es/service/ESSyncService.java b/fixed/client-adapter/elasticsearch/src/main/java/com/alibaba/otter/canal/client/adapter/es/service/ESSyncService.java
+index d0db860..284e143 100644
+--- a/buggy/client-adapter/elasticsearch/src/main/java/com/alibaba/otter/canal/client/adapter/es/service/ESSyncService.java
++++ b/fixed/client-adapter/elasticsearch/src/main/java/com/alibaba/otter/canal/client/adapter/es/service/ESSyncService.java
+@@ -436,7 +436,7 @@ public class ESSyncService {
+         Object idVal = esTemplate.getESDataFromDmlData(mapping, data, esFieldData);
+ 
+         if (logger.isTraceEnabled()) {
+-            logger.trace("Single table insert ot es index, destination:{}, table: {}, index: {}, id: {}",
++            logger.trace("Single table insert to es index, destination:{}, table: {}, index: {}, id: {}",
+                 config.getDestination(),
+                 dml.getTable(),
+                 mapping.get_index(),

@@ -1,0 +1,12 @@
+diff --git a/buggy/src/main/java/org/bukkit/command/defaults/GiveCommand.java b/fixed/src/main/java/org/bukkit/command/defaults/GiveCommand.java
+index 25dbd84..17cae71 100644
+--- a/buggy/src/main/java/org/bukkit/command/defaults/GiveCommand.java
++++ b/fixed/src/main/java/org/bukkit/command/defaults/GiveCommand.java
+@@ -56,6 +56,6 @@ public class GiveCommand extends VanillaCommand {
+ 
+     @Override
+     public boolean matches(String input) {
+-        return input.startsWith("give ");
++        return input.startsWith("give ") || input.equalsIgnoreCase("give");
+     }
+ }

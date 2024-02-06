@@ -1,0 +1,13 @@
+diff --git a/buggy/graylog2-server/src/main/java/org/graylog2/periodical/ContentPackLoaderPeriodical.java b/fixed/graylog2-server/src/main/java/org/graylog2/periodical/ContentPackLoaderPeriodical.java
+index 5500abb..0fcae30 100644
+--- a/buggy/graylog2-server/src/main/java/org/graylog2/periodical/ContentPackLoaderPeriodical.java
++++ b/fixed/graylog2-server/src/main/java/org/graylog2/periodical/ContentPackLoaderPeriodical.java
+@@ -224,7 +224,7 @@ public class ContentPackLoaderPeriodical extends Periodical {
+                 files.add(path);
+             }
+         } catch (IOException e) {
+-            LOG.error("Couldn't list content packs", e);
++            LOG.warn("Couldn't list content packs: {}", e.getMessage());
+         }
+ 
+         return files.build();

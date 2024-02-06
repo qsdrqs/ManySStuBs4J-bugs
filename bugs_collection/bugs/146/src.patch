@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/activiti-rest/src/main/java/org/activiti/rest/service/api/runtime/process/ExecutionVariableCollectionResource.java b/fixed/modules/activiti-rest/src/main/java/org/activiti/rest/service/api/runtime/process/ExecutionVariableCollectionResource.java
+index bbc9896..0407266 100644
+--- a/buggy/modules/activiti-rest/src/main/java/org/activiti/rest/service/api/runtime/process/ExecutionVariableCollectionResource.java
++++ b/fixed/modules/activiti-rest/src/main/java/org/activiti/rest/service/api/runtime/process/ExecutionVariableCollectionResource.java
+@@ -115,7 +115,7 @@ public class ExecutionVariableCollectionResource extends BaseExecutionVariableRe
+         
+         RestVariable[] restVariables = getConverterService().toObject(representation, RestVariable[].class, this);
+         if(restVariables == null || restVariables.length == 0) {
+-          throw new ActivitiIllegalArgumentException("Request didn't cantain a list of variables to create.");
++          throw new ActivitiIllegalArgumentException("Request didn't contain a list of variables to create.");
+         }
+         
+         RestVariableScope sharedScope = null;

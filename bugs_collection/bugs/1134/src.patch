@@ -1,0 +1,13 @@
+diff --git a/buggy/core/server/src/test/java/alluxio/master/file/PermissionCheckTest.java b/fixed/core/server/src/test/java/alluxio/master/file/PermissionCheckTest.java
+index d8b4162..43eb4ad 100644
+--- a/buggy/core/server/src/test/java/alluxio/master/file/PermissionCheckTest.java
++++ b/fixed/core/server/src/test/java/alluxio/master/file/PermissionCheckTest.java
+@@ -465,7 +465,7 @@ public class PermissionCheckTest {
+   public void setStateSuccessTest() throws Exception {
+     // set unmask
+     Configuration conf = MasterContext.getConf();
+-    conf.set(Constants.SECURITY_AUTHORIZATION_PERMISSIONS_UMASK, "044");
++    conf.set(Constants.SECURITY_AUTHORIZATION_PERMISSIONS_UMASK, "000");
+     MasterContext.reset(conf);
+ 
+     String file = PathUtils.concatPath(TEST_DIR_URI, "testState1");

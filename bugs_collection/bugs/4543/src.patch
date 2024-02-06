@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IgniteComputeEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IgniteComputeEndpointBuilderFactory.java
+index eebcfad..84e3cc0 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IgniteComputeEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IgniteComputeEndpointBuilderFactory.java
+@@ -156,7 +156,7 @@ public interface IgniteComputeEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.ignite.compute.IgniteComputeExecutionType</code> enum.
+      */
+-    static enum IgniteComputeExecutionType {
++    enum IgniteComputeExecutionType {
+         CALL, BROADCAST, APPLY, EXECUTE, RUN, AFFINITY_CALL, AFFINITY_RUN;
+     }
+     /**

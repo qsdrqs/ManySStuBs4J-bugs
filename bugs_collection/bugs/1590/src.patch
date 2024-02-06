@@ -1,0 +1,15 @@
+diff --git a/buggy/src/main/java/tachyon/web/WebInterfaceGeneralServlet.java b/fixed/src/main/java/tachyon/web/WebInterfaceGeneralServlet.java
+index ee7718d..4f358ff 100644
+--- a/buggy/src/main/java/tachyon/web/WebInterfaceGeneralServlet.java
++++ b/fixed/src/main/java/tachyon/web/WebInterfaceGeneralServlet.java
+@@ -113,8 +113,8 @@ public class WebInterfaceGeneralServlet extends HttpServlet {
+ 
+     request.setAttribute("usedCapacity", CommonUtils.getSizeFromBytes(mMasterInfo.getUsedBytes()));
+       
+-    request.setAttribute("freeCapacity", CommonUtils.getSizeFromBytes((mMasterInfo.getCapacityBytes()
+-      - mMasterInfo.getUsedBytes()));
++    request.setAttribute("freeCapacity", CommonUtils.getSizeFromBytes(
++        (mMasterInfo.getCapacityBytes() - mMasterInfo.getUsedBytes())));
+ 
+     long sizeBytes = mMasterInfo.getUnderFsCapacityBytes();
+     if (sizeBytes >= 0) {

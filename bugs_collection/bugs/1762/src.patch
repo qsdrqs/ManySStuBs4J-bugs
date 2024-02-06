@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/ning/http/util/AsyncHttpProviderUtils.java b/fixed/src/main/java/com/ning/http/util/AsyncHttpProviderUtils.java
+index 1e3ee79..f5b593c 100644
+--- a/buggy/src/main/java/com/ning/http/util/AsyncHttpProviderUtils.java
++++ b/fixed/src/main/java/com/ning/http/util/AsyncHttpProviderUtils.java
+@@ -432,7 +432,7 @@ public class AsyncHttpProviderUtils {
+         for (String part : contentType.split(";")) {
+             if (part.trim().startsWith("charset=")) {
+                 String[] val = part.split("=");
+-                if (val[1] != null) {
++                if (val[1].length > 1) {
+                     return val[1].trim();
+                 }
+             }

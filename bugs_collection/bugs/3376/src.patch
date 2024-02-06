@@ -1,0 +1,22 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/sql/visitor/SQLEvalVisitorUtils.java b/fixed/src/main/java/com/alibaba/druid/sql/visitor/SQLEvalVisitorUtils.java
+index fdfd160..e5162fc 100644
+--- a/buggy/src/main/java/com/alibaba/druid/sql/visitor/SQLEvalVisitorUtils.java
++++ b/fixed/src/main/java/com/alibaba/druid/sql/visitor/SQLEvalVisitorUtils.java
+@@ -796,7 +796,7 @@ public class SQLEvalVisitorUtils {
+         if (wallConditionContext != null) {
+             wallConditionContext.setConstArithmetic(true);
+         }
+-        
++
+         if (leftValue == null || rightValue == null) {
+             return false;
+         }
+@@ -1290,7 +1290,7 @@ public class SQLEvalVisitorUtils {
+         }
+ 
+         if (a instanceof String || b instanceof String) {
+-            return ((String) a).compareTo((String) b) < 0;
++            return (castToString(a)).compareTo(castToString(b)) < 0;
+         }
+ 
+         if (a instanceof BigDecimal || b instanceof BigDecimal) {

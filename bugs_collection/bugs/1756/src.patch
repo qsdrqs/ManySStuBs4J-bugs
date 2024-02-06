@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java b/fixed/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java
+index 68baa38..704e257 100644
+--- a/buggy/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java
++++ b/fixed/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java
+@@ -2116,7 +2116,7 @@ public class NettyAsyncHttpProvider extends SimpleChannelUpstreamHandler impleme
+ 
+                         try {
+                             log.debug("Connecting to proxy {} for scheme {}", proxyServer, request.getUrl());
+-                            upgradeProtocol(ctx.getChannel().getPipeline(), request.getUrl());
++                            upgradeProtocol(ctx.getChannel().getPipeline(), URI.create(request.getUrl()).getScheme());
+                         } catch (Throwable ex) {
+                             abort(future, ex);
+                         }

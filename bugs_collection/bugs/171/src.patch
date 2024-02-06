@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/activiti-rest/src/main/java/org/activiti/rest/api/runtime/process/ProcessInstanceCollectionResource.java b/fixed/modules/activiti-rest/src/main/java/org/activiti/rest/api/runtime/process/ProcessInstanceCollectionResource.java
+index d4f9e8e..552f241 100644
+--- a/buggy/modules/activiti-rest/src/main/java/org/activiti/rest/api/runtime/process/ProcessInstanceCollectionResource.java
++++ b/fixed/modules/activiti-rest/src/main/java/org/activiti/rest/api/runtime/process/ProcessInstanceCollectionResource.java
+@@ -83,7 +83,7 @@ public class ProcessInstanceCollectionResource extends BaseProcessInstanceResour
+     }
+     
+     if(getQueryParameter("includeProcessVariables", urlQuery) != null) {
+-      queryRequest.setIncludeProcessVariables(getQueryParameterAsBoolean("excludeSubprocesses", urlQuery));
++      queryRequest.setIncludeProcessVariables(getQueryParameterAsBoolean("includeProcessVariables", urlQuery));
+     }
+     
+     return getQueryResponse(queryRequest, urlQuery);

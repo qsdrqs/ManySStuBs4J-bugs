@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/stat/DruidStatManagerFacade.java b/fixed/src/main/java/com/alibaba/druid/stat/DruidStatManagerFacade.java
+index 7c9cfb9..848c8c4 100644
+--- a/buggy/src/main/java/com/alibaba/druid/stat/DruidStatManagerFacade.java
++++ b/fixed/src/main/java/com/alibaba/druid/stat/DruidStatManagerFacade.java
+@@ -229,7 +229,7 @@ public final class DruidStatManagerFacade {
+     public List<String> getActiveConnectionStackTraceByDataSourceId(Integer id) {
+         Object datasource = getDruidDataSourceById(id);
+ 
+-        if (datasource == null || DruidDataSourceUtils.isRemoveAbandoned(datasource)) {
++        if (datasource == null || !DruidDataSourceUtils.isRemoveAbandoned(datasource)) {
+             return null;
+         }
+ 

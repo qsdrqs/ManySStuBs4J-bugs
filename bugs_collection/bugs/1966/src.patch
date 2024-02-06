@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/jersey/src/main/java/org/atmosphere/jersey/AtmosphereFilter.java b/fixed/modules/jersey/src/main/java/org/atmosphere/jersey/AtmosphereFilter.java
+index 464fe29..c4b52cb 100644
+--- a/buggy/modules/jersey/src/main/java/org/atmosphere/jersey/AtmosphereFilter.java
++++ b/fixed/modules/jersey/src/main/java/org/atmosphere/jersey/AtmosphereFilter.java
+@@ -675,7 +675,7 @@ public class AtmosphereFilter implements ResourceFilterFactory {
+                 bc = r.getBroadcaster();
+             }
+ 
+-            if (response.getEntity() instanceof Broadcastable) {
++            if (response.getEntity() == null && response.getEntity() instanceof Broadcastable) {
+                 Broadcastable b = (Broadcastable) response.getEntity();
+                 bc = b.getBroadcaster();
+                 response.setEntity(b.getResponseMessage());

@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/activiti-engine/src/main/java/org/activiti/engine/impl/db/DbSqlSessionFactory.java b/fixed/modules/activiti-engine/src/main/java/org/activiti/engine/impl/db/DbSqlSessionFactory.java
+index 24508e1..fd3a34a 100644
+--- a/buggy/modules/activiti-engine/src/main/java/org/activiti/engine/impl/db/DbSqlSessionFactory.java
++++ b/fixed/modules/activiti-engine/src/main/java/org/activiti/engine/impl/db/DbSqlSessionFactory.java
+@@ -340,7 +340,7 @@ public class DbSqlSessionFactory implements SessionFactory {
+   }
+   
+   public Boolean isBulkInsertable(Class<? extends Entity> entityClass) {
+-  	return bulkInsertableMap != null && bulkInsertableMap.containsKey(entityClass);
++  	return bulkInsertableMap != null && bulkInsertableMap.containsKey(entityClass) && bulkInsertableMap.get(entityClass) == true;
+   }
+ 
+   // getters and setters //////////////////////////////////////////////////////

@@ -1,0 +1,13 @@
+diff --git a/buggy/druid-spring-boot-starter/src/test/java/com/alibaba/druid/spring/boot/demo/service/UserServiceImpl.java b/fixed/druid-spring-boot-starter/src/test/java/com/alibaba/druid/spring/boot/demo/service/UserServiceImpl.java
+index 07d24d4..3d0b584 100644
+--- a/buggy/druid-spring-boot-starter/src/test/java/com/alibaba/druid/spring/boot/demo/service/UserServiceImpl.java
++++ b/fixed/druid-spring-boot-starter/src/test/java/com/alibaba/druid/spring/boot/demo/service/UserServiceImpl.java
+@@ -13,7 +13,7 @@ public class UserServiceImpl implements UserService {
+ 
+     @Override
+     public User findById(Long id) {
+-        return userDao.findById(id).get();
++        return userDao.findOne(id);
+     }
+ 
+ }

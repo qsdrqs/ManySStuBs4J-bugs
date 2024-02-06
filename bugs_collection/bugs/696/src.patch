@@ -1,0 +1,13 @@
+diff --git a/buggy/core/client/src/test/java/alluxio/client/util/ClientMockUtils.java b/fixed/core/client/src/test/java/alluxio/client/util/ClientMockUtils.java
+index bf5f083..ce2fd50 100644
+--- a/buggy/core/client/src/test/java/alluxio/client/util/ClientMockUtils.java
++++ b/fixed/core/client/src/test/java/alluxio/client/util/ClientMockUtils.java
+@@ -42,7 +42,7 @@ public final class ClientMockUtils {
+    */
+   public static UnderFileSystem mockUnderFileSystem(String ufsPathMatcher) {
+     UnderFileSystem ufs = PowerMockito.mock(UnderFileSystem.class);
+-    PowerMockito.mockStatic(UnderFileSystem.class);
++    PowerMockito.mockStatic(UnderFileSystem.Factory.class);
+     PowerMockito.when(UnderFileSystem.Factory.get(ufsPathMatcher)).thenReturn(ufs);
+     return ufs;
+   }

@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/jersey/src/main/java/org/atmosphere/jersey/AtmosphereFilter.java b/fixed/modules/jersey/src/main/java/org/atmosphere/jersey/AtmosphereFilter.java
+index db7e656..5230ef4 100644
+--- a/buggy/modules/jersey/src/main/java/org/atmosphere/jersey/AtmosphereFilter.java
++++ b/fixed/modules/jersey/src/main/java/org/atmosphere/jersey/AtmosphereFilter.java
+@@ -626,7 +626,7 @@ public class AtmosphereFilter implements ResourceFilterFactory {
+             }
+ 
+             if (enableAccessControl) {
+-                b = b.header(ACCESS_CONTROL_ALLOW_ORIGIN, "*");
++                b = b.header(ACCESS_CONTROL_ALLOW_ORIGIN,  servletReq.getHeader("Origin") == null ? "*" : servletReq.getHeader("Origin"));
+                 b = b.header(ACCESS_CONTROL_ALLOW_CREDENTIALS, "true");
+             }
+             return b;

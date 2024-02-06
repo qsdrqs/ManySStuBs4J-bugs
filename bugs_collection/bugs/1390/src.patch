@@ -1,0 +1,13 @@
+diff --git a/buggy/servers/src/main/java/tachyon/master/next/filesystem/meta/InodeTree.java b/fixed/servers/src/main/java/tachyon/master/next/filesystem/meta/InodeTree.java
+index 0e269ba..da0fffb 100644
+--- a/buggy/servers/src/main/java/tachyon/master/next/filesystem/meta/InodeTree.java
++++ b/fixed/servers/src/main/java/tachyon/master/next/filesystem/meta/InodeTree.java
+@@ -324,7 +324,7 @@ public final class InodeTree {
+ 
+     int getNonexistentPathIndex() {
+       if (mFound) {
+-        throw new UnsupportedOperationException("The trasversal is successful");
++        throw new UnsupportedOperationException("The traversal is successful");
+       }
+       return mNonexistentIndex;
+     }

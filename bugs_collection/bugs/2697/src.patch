@@ -1,0 +1,13 @@
+diff --git a/buggy/graylog2-server/src/main/java/org/graylog2/Configuration.java b/fixed/graylog2-server/src/main/java/org/graylog2/Configuration.java
+index 748b771..0666959 100644
+--- a/buggy/graylog2-server/src/main/java/org/graylog2/Configuration.java
++++ b/fixed/graylog2-server/src/main/java/org/graylog2/Configuration.java
+@@ -281,7 +281,7 @@ public class Configuration extends BaseConfiguration {
+         return userPasswordDefaultAlgorithm;
+     }
+ 
+-    public Integer getUserPasswordBCryptSaltSize() {
++    public int getUserPasswordBCryptSaltSize() {
+         return userPasswordBCryptSaltSize;
+     }
+ }

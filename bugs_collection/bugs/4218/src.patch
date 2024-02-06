@@ -1,0 +1,13 @@
+diff --git a/buggy/runtime/Java/src/org/antlr/v4/runtime/BufferedTokenStream.java b/fixed/runtime/Java/src/org/antlr/v4/runtime/BufferedTokenStream.java
+index fa997f4..ac13d43 100644
+--- a/buggy/runtime/Java/src/org/antlr/v4/runtime/BufferedTokenStream.java
++++ b/fixed/runtime/Java/src/org/antlr/v4/runtime/BufferedTokenStream.java
+@@ -100,7 +100,7 @@ public class BufferedTokenStream<T extends Token> implements TokenStream {
+ 	}
+ 
+     public void reset() {
+-        p = 0;
++        seek(0);
+     }
+ 
+     @Override

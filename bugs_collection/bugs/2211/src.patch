@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereFramework.java b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereFramework.java
+index 23ad2c1..a073726 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereFramework.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereFramework.java
+@@ -523,7 +523,7 @@ public class AtmosphereFramework implements ServletContextProvider {
+             }
+ 
+             for (String i: broadcasterFilters) {
+-                if (i.getClass().equals(TrackMessageSizeFilter.class.getName())) {
++                if (i.equals(TrackMessageSizeFilter.class.getName())) {
+                     found = true;
+                 }
+             }

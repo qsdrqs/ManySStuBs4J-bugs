@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/io/mycat/net/Connection.java b/fixed/src/main/java/io/mycat/net/Connection.java
+index 7c66ce4..4dcfce4 100644
+--- a/buggy/src/main/java/io/mycat/net/Connection.java
++++ b/fixed/src/main/java/io/mycat/net/Connection.java
+@@ -667,7 +667,7 @@ public abstract class Connection implements ClosableConnection{
+ 			} catch (Throwable e) {
+ 			}
+ 			boolean closed = isSocketClosed && (!channel.isOpen());
+-			if (closed == false) {
++			if (!closed) {
+ 				LOGGER.warn("close socket of connnection failed " + this);
+ 			}
+ 

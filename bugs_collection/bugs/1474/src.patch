@@ -1,0 +1,14 @@
+diff --git a/buggy/core/src/main/java/tachyon/client/TachyonFS.java b/fixed/core/src/main/java/tachyon/client/TachyonFS.java
+index 30123da..d58ef5c 100644
+--- a/buggy/core/src/main/java/tachyon/client/TachyonFS.java
++++ b/fixed/core/src/main/java/tachyon/client/TachyonFS.java
+@@ -168,7 +168,8 @@ public class TachyonFS extends AbstractTachyonFS {
+   private TachyonFS(TachyonConf tachyonConf) throws IOException {
+     super(tachyonConf);
+ 
+-    String masterHost = NetworkUtils.getLocalHostName(tachyonConf);
++    String masterHost = tachyonConf.get(Constants.MASTER_HOSTNAME,
++        NetworkUtils.getLocalHostName(tachyonConf));
+     int masterPort = tachyonConf.getInt(Constants.MASTER_PORT, Constants.DEFAULT_MASTER_PORT);
+ 
+     mMasterAddress = new InetSocketAddress(masterHost, masterPort);

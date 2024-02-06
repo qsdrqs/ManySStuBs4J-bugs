@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/ning/http/client/async/RemoteSiteTest.java b/fixed/src/test/java/com/ning/http/client/async/RemoteSiteTest.java
+index 148f839..ebf49b6 100644
+--- a/buggy/src/test/java/com/ning/http/client/async/RemoteSiteTest.java
++++ b/fixed/src/test/java/com/ning/http/client/async/RemoteSiteTest.java
+@@ -254,7 +254,7 @@ public abstract class RemoteSiteTest extends AbstractBasicTest{
+             }
+         }).get(10, TimeUnit.SECONDS);
+         assertNotNull(response);
+-        assertEquals(response.getResponseBody().length(), 3876);
++        assertEquals(response.getResponseBody().length(), 3873);
+     }
+ 
+ }

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java b/fixed/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java
+index fa3ddee..a8b7f6d 100644
+--- a/buggy/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java
++++ b/fixed/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java
+@@ -168,7 +168,7 @@ public final class SerializeWriter extends Writer {
+ 
+         writeDirect = quoteFieldNames //
+                       && (this.features & nonDirectFeautres) == 0 //
+-                      && (beanToArray || (this.features & SerializerFeature.WriteMapNullValue.mask) == 0)
++                      && (beanToArray || writeEnumUsingName)
+                       ;
+ 
+         keySeperator = useSingleQuotes ? '\'' : '"';

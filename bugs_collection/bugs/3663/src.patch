@@ -1,0 +1,17 @@
+diff --git a/buggy/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser.java b/fixed/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser.java
+index bcbb7d1..a79c5a8 100644
+--- a/buggy/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser.java
++++ b/fixed/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser.java
+@@ -526,7 +526,11 @@ public class DefaultJSONParser implements Closeable {
+                     Map input;
+                     if (lexer.isEnabled(Feature.CustomMapDeserializer)) {
+                         MapDeserializer mapDeserializer = (MapDeserializer) config.getDeserializer(Map.class);
+-                        input = mapDeserializer.createMap(Map.class);
++
++
++                        input = (lexer.getFeatures() & Feature.OrderedField.mask) != 0
++                                ? mapDeserializer.createMap(Map.class, lexer.getFeatures())
++                                : mapDeserializer.createMap(Map.class);
+                     } else {
+                         input = new JSONObject(lexer.isEnabled(Feature.OrderedField));
+                     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/core/server/src/main/java/alluxio/worker/AlluxioWorker.java b/fixed/core/server/src/main/java/alluxio/worker/AlluxioWorker.java
+index b87660f..894bcdf 100644
+--- a/buggy/core/server/src/main/java/alluxio/worker/AlluxioWorker.java
++++ b/fixed/core/server/src/main/java/alluxio/worker/AlluxioWorker.java
+@@ -35,7 +35,7 @@ public final class AlluxioWorker {
+   public static void main(String[] args) {
+     if (args.length != 0) {
+       LOG.info("java -cp {} {}", RuntimeConstants.ALLUXIO_JAR,
+-          AlluxioWorkerService.class.getCanonicalName());
++          AlluxioWorker.class.getCanonicalName());
+       System.exit(-1);
+     }
+ 

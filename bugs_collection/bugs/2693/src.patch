@@ -1,0 +1,12 @@
+diff --git a/buggy/graylog2-server/src/main/java/org/graylog2/web/ModuleFiles.java b/fixed/graylog2-server/src/main/java/org/graylog2/web/ModuleFiles.java
+index b34ac87..2ba9f62 100644
+--- a/buggy/graylog2-server/src/main/java/org/graylog2/web/ModuleFiles.java
++++ b/fixed/graylog2-server/src/main/java/org/graylog2/web/ModuleFiles.java
+@@ -40,6 +40,6 @@ public abstract class ModuleFiles {
+     public static ModuleFiles create(@JsonProperty("chunks") Map<String, ChunkDescription> chunks,
+                                      @JsonProperty("js") List<String> jsFiles,
+                                      @JsonProperty("css") List<String> cssFiles) {
+-        return new AutoValue_PackageFiles(chunks, jsFiles, cssFiles);
++        return new AutoValue_ModuleFiles(chunks, jsFiles, cssFiles);
+     }
+ }

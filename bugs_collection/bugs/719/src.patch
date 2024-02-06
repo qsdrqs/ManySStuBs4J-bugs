@@ -1,0 +1,14 @@
+diff --git a/buggy/core/common/src/main/java/alluxio/underfs/UnderFileSystemRegistry.java b/fixed/core/common/src/main/java/alluxio/underfs/UnderFileSystemRegistry.java
+index f0f9e7a..c5331d8 100644
+--- a/buggy/core/common/src/main/java/alluxio/underfs/UnderFileSystemRegistry.java
++++ b/fixed/core/common/src/main/java/alluxio/underfs/UnderFileSystemRegistry.java
+@@ -147,7 +147,8 @@ public final class UnderFileSystemRegistry {
+       }
+     }
+ 
+-    LOG.warn("No Under File System Factory implementation supports the path {}", path);
++    LOG.warn("No Under File System Factory implementation supports the path {}. Please check if "
++        + "the under storage path is valid.", path);
+     return null;
+   }
+ 

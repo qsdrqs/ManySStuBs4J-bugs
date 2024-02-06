@@ -1,0 +1,13 @@
+diff --git a/buggy/dubbo-cluster/src/main/java/com/alibaba/dubbo/rpc/cluster/directory/AbstractDirectory.java b/fixed/dubbo-cluster/src/main/java/com/alibaba/dubbo/rpc/cluster/directory/AbstractDirectory.java
+index 0c171fa..9f23853 100644
+--- a/buggy/dubbo-cluster/src/main/java/com/alibaba/dubbo/rpc/cluster/directory/AbstractDirectory.java
++++ b/fixed/dubbo-cluster/src/main/java/com/alibaba/dubbo/rpc/cluster/directory/AbstractDirectory.java
+@@ -75,7 +75,7 @@ public abstract class AbstractDirectory<T> implements Directory<T> {
+         if (localRouters != null && localRouters.size() > 0) {
+             for (Router router : localRouters) {
+                 try {
+-                    if (router.getUrl() == null || router.getUrl().getParameter(Constants.RUNTIME_KEY, true)) {
++                    if (router.getUrl() != null && router.getUrl().getParameter(Constants.RUNTIME_KEY, false)) {
+                         invokers = router.route(invokers, getConsumerUrl(), invocation);
+                     }
+                 } catch (Throwable t) {

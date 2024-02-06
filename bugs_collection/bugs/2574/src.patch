@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/org/bukkit/entity/CreatureType.java b/fixed/src/main/java/org/bukkit/entity/CreatureType.java
+index 086e646..a442c87 100644
+--- a/buggy/src/main/java/org/bukkit/entity/CreatureType.java
++++ b/fixed/src/main/java/org/bukkit/entity/CreatureType.java
+@@ -15,7 +15,8 @@ public enum CreatureType {
+     SKELETON("Skeleton"),
+     SPIDER("Spider"),
+     ZOMBIE("Zombie"),
+-    SQUID("Squid");
++    SQUID("Squid"),
++    SLIME("Slime");
+ 
+     private String name;
+ 

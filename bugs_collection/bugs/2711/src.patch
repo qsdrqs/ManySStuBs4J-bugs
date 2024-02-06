@@ -1,0 +1,13 @@
+diff --git a/buggy/graylog2-server/src/main/java/org/graylog2/rest/resources/roles/RolesResource.java b/fixed/graylog2-server/src/main/java/org/graylog2/rest/resources/roles/RolesResource.java
+index 0a7c246..be303d8 100644
+--- a/buggy/graylog2-server/src/main/java/org/graylog2/rest/resources/roles/RolesResource.java
++++ b/fixed/graylog2-server/src/main/java/org/graylog2/rest/resources/roles/RolesResource.java
+@@ -141,7 +141,7 @@ public class RolesResource extends RestResource {
+         final Role roleToUpdate = roleService.load(name);
+ 
+         roleToUpdate.setName(role.name());
+-        roleToUpdate.setDescription(role.description().get());
++        roleToUpdate.setDescription(role.description().orNull());
+         roleToUpdate.setPermissions(role.permissions());
+         try {
+             roleService.save(roleToUpdate);

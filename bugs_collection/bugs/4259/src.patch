@@ -1,0 +1,13 @@
+diff --git a/buggy/runtime/Java/src/org/antlr/v4/runtime/NoViableAltException.java b/fixed/runtime/Java/src/org/antlr/v4/runtime/NoViableAltException.java
+index 43b0508..6b9cc10 100644
+--- a/buggy/runtime/Java/src/org/antlr/v4/runtime/NoViableAltException.java
++++ b/fixed/runtime/Java/src/org/antlr/v4/runtime/NoViableAltException.java
+@@ -57,7 +57,7 @@ public class NoViableAltException extends RecognitionException {
+ 										 Token startToken,
+ 										 Token offendingToken,
+ 										 ATNConfigSet deadEndConfigs,
+-										 ParserRuleContext ctx)
++										 ParserRuleContext<?> ctx)
+ 	{
+ 		super(recognizer, input, ctx);
+ 		this.deadEndConfigs = deadEndConfigs;

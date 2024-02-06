@@ -1,0 +1,13 @@
+diff --git a/buggy/core/common/src/main/java/alluxio/util/URIUtils.java b/fixed/core/common/src/main/java/alluxio/util/URIUtils.java
+index aca61de..c91c872 100644
+--- a/buggy/core/common/src/main/java/alluxio/util/URIUtils.java
++++ b/fixed/core/common/src/main/java/alluxio/util/URIUtils.java
+@@ -46,7 +46,7 @@ public final class URIUtils {
+    */
+   public static URI appendPath(URI base, String path) throws URISyntaxException {
+     return new URI(base.getScheme(), base.getHost(), PathUtils.concatPath(base.getPath(), path),
+-        null);
++        base.getFragment());
+   }
+ 
+   /**

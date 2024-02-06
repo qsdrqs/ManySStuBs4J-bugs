@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HttpEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HttpEndpointBuilderFactory.java
+index 0047d66..e5d861b 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HttpEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HttpEndpointBuilderFactory.java
+@@ -587,7 +587,7 @@ public interface HttpEndpointBuilderFactory {
+      * Proxy enum for <code>org.apache.camel.http.common.HttpMethods</code>
+      * enum.
+      */
+-    static enum HttpMethods {
++    enum HttpMethods {
+         GET, POST, PUT, DELETE, HEAD, OPTIONS, TRACE, PATCH;
+     }
+     /**

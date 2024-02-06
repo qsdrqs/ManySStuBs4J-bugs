@@ -1,0 +1,12 @@
+diff --git a/buggy/components/camel-mock/src/main/java/org/apache/camel/component/mock/AssertionTask.java b/fixed/components/camel-mock/src/main/java/org/apache/camel/component/mock/AssertionTask.java
+index 347ba0d..e5022b6 100644
+--- a/buggy/components/camel-mock/src/main/java/org/apache/camel/component/mock/AssertionTask.java
++++ b/fixed/components/camel-mock/src/main/java/org/apache/camel/component/mock/AssertionTask.java
+@@ -26,6 +26,6 @@ public interface AssertionTask extends Runnable {
+      *
+      * @param index the n'th received message
+      */
+-    public void assertOnIndex(int index);
++    void assertOnIndex(int index);
+ 
+ }

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/util/jdbc/StatementBase.java b/fixed/src/main/java/com/alibaba/druid/util/jdbc/StatementBase.java
+index a7ae44d..9f4d7d3 100644
+--- a/buggy/src/main/java/com/alibaba/druid/util/jdbc/StatementBase.java
++++ b/fixed/src/main/java/com/alibaba/druid/util/jdbc/StatementBase.java
+@@ -58,7 +58,7 @@ public abstract class StatementBase implements Statement {
+         this.connection = connection;
+     }
+ 
+-    protected void checkOpen() throws SQLException, MockConnectionClosedException {
++    protected void checkOpen() throws SQLException {
+         if (closed) {
+             throw new SQLException();
+         }

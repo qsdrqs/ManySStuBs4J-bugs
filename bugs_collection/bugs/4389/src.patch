@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-ironmq/src/test/java/org/apache/camel/component/ironmq/FromQueueToQueueTest.java b/fixed/components/camel-ironmq/src/test/java/org/apache/camel/component/ironmq/FromQueueToQueueTest.java
+index bb13ab4..308010f 100644
+--- a/buggy/components/camel-ironmq/src/test/java/org/apache/camel/component/ironmq/FromQueueToQueueTest.java
++++ b/fixed/components/camel-ironmq/src/test/java/org/apache/camel/component/ironmq/FromQueueToQueueTest.java
+@@ -43,7 +43,7 @@ public class FromQueueToQueueTest extends CamelTestSupport {
+     private IronMQEndpoint queue2;
+     
+     @BindToRegistry("ironMock")
+-    IronMQClientMock mock = new IronMQClientMock("dummy", "dummy");
++    private IronMQClientMock mock = new IronMQClientMock("dummy", "dummy");
+     
+     @Test
+     public void shouldDeleteMessageFromQueue1() throws Exception {

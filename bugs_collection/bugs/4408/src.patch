@@ -1,0 +1,22 @@
+diff --git a/buggy/components/camel-activemq/src/main/java/org/apache/camel/component/activemq/ActiveMQComponent.java b/fixed/components/camel-activemq/src/main/java/org/apache/camel/component/activemq/ActiveMQComponent.java
+index 64ed701..25f8980 100644
+--- a/buggy/components/camel-activemq/src/main/java/org/apache/camel/component/activemq/ActiveMQComponent.java
++++ b/fixed/components/camel-activemq/src/main/java/org/apache/camel/component/activemq/ActiveMQComponent.java
+@@ -198,7 +198,7 @@ public class ActiveMQComponent extends JmsComponent {
+         }
+ 
+         // use OriginalDestinationPropagateStrategy by default if no custom
+-        // stategy has been set
++        // strategy has been set
+         if (getMessageCreatedStrategy() == null) {
+             setMessageCreatedStrategy(new OriginalDestinationPropagateStrategy());
+         }
+@@ -208,7 +208,7 @@ public class ActiveMQComponent extends JmsComponent {
+         try {
+             if (source == null) {
+                 if (connection == null) {
+-                    Connection value = getConfiguration().getConnectionFactory().createConnection();
++                    Connection value = getConfiguration().getOrCreateConnectionFactory().createConnection();
+                     if (value instanceof EnhancedConnection) {
+                         connection = (EnhancedConnection)value;
+                     } else {

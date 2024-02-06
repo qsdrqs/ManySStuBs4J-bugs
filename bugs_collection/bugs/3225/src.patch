@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/sql/dialect/oracle/visitor/OracleOutputVisitor.java b/fixed/src/main/java/com/alibaba/druid/sql/dialect/oracle/visitor/OracleOutputVisitor.java
+index 570aa07..9749b8e 100644
+--- a/buggy/src/main/java/com/alibaba/druid/sql/dialect/oracle/visitor/OracleOutputVisitor.java
++++ b/fixed/src/main/java/com/alibaba/druid/sql/dialect/oracle/visitor/OracleOutputVisitor.java
+@@ -1585,7 +1585,7 @@ public class OracleOutputVisitor extends SQLASTOutputVisitor implements OracleAS
+             println();
+         }
+ 
+-        print0(ucase ? "FRO" : "fro");
++        print0(ucase ? "FOR" : "for");
+         println();
+         x.getStatement().accept(this);
+ 

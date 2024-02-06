@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/util/ExcludeSessionBroadcaster.java b/fixed/modules/cpr/src/main/java/org/atmosphere/util/ExcludeSessionBroadcaster.java
+index c3e6162..800da71 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/util/ExcludeSessionBroadcaster.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/util/ExcludeSessionBroadcaster.java
+@@ -82,7 +82,7 @@ public class ExcludeSessionBroadcaster
+         }
+ 
+         BroadcasterFuture<Object> f = new BroadcasterFuture<Object>(newMsg, sub.size(),  this);
+-        messages.offer(new Entry(newMsg, sub, f, msg));
++        dispatchMessages(new Entry(newMsg, sub, f, msg));
+         return f;
+     }
+ 

@@ -1,0 +1,22 @@
+diff --git a/buggy/src/main/java/com/alibaba/fastjson/parser/ParserConfig.java b/fixed/src/main/java/com/alibaba/fastjson/parser/ParserConfig.java
+index 1a15216..a49d01f 100644
+--- a/buggy/src/main/java/com/alibaba/fastjson/parser/ParserConfig.java
++++ b/fixed/src/main/java/com/alibaba/fastjson/parser/ParserConfig.java
+@@ -386,7 +386,7 @@ public class ParserConfig {
+                }
+                
+                superClass = superClass.getSuperclass();
+-               if (superClass == Object.class) {
++               if (superClass == Object.class || superClass == null) {
+                    break;
+                }
+             }
+@@ -467,7 +467,7 @@ public class ParserConfig {
+                }
+                
+                superClass = superClass.getSuperclass();
+-               if (superClass == Object.class) {
++               if (superClass == Object.class || superClass == null) {
+                    break;
+                }
+             }

@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereFramework.java b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereFramework.java
+index bba54c6..69ba068 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereFramework.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereFramework.java
+@@ -3190,7 +3190,7 @@ public class AtmosphereFramework {
+     }
+ 
+     public Class<? extends AtmosphereInterceptor>[] defaultInterceptors() {
+-        return (Class<? extends AtmosphereInterceptor>[]) DEFAULT_ATMOSPHERE_INTERCEPTORS.toArray();
++        return DEFAULT_ATMOSPHERE_INTERCEPTORS.toArray(new Class[DEFAULT_ATMOSPHERE_INTERCEPTORS.size()]);
+     }
+ 
+     public AtmosphereResourceFactory atmosphereFactory() {

@@ -1,0 +1,13 @@
+diff --git a/buggy/tool/src/org/antlr/v4/codegen/target/CSharpTarget.java b/fixed/tool/src/org/antlr/v4/codegen/target/CSharpTarget.java
+index 3ee0b89..bc96243 100644
+--- a/buggy/tool/src/org/antlr/v4/codegen/target/CSharpTarget.java
++++ b/fixed/tool/src/org/antlr/v4/codegen/target/CSharpTarget.java
+@@ -46,7 +46,7 @@ public class CSharpTarget extends Target {
+ 			formatted = String.format("\\x%X", v & 0xFFFF);
+ 		}
+ 
+-		return "'" + formatted + "'";
++		return formatted;
+ 	}
+ 
+ 	@Override

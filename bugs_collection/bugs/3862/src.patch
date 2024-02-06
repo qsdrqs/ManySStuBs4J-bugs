@@ -1,0 +1,22 @@
+diff --git a/buggy/runtime-testsuite/test/org/antlr/v4/test/runtime/cpp/BaseCppTest.java b/fixed/runtime-testsuite/test/org/antlr/v4/test/runtime/cpp/BaseCppTest.java
+index e449be0..1c18c5a 100644
+--- a/buggy/runtime-testsuite/test/org/antlr/v4/test/runtime/cpp/BaseCppTest.java
++++ b/fixed/runtime-testsuite/test/org/antlr/v4/test/runtime/cpp/BaseCppTest.java
+@@ -888,7 +888,7 @@ public abstract class BaseCppTest {
+ 						+ "\n"
+ 						+ "#include \"support/StringUtils.h\"\n"
+ 						+ "\n"
+-						+ "using namespace org::antlr::v4::runtime;\n"
++						+ "using namespace antlr4;\n"
+ 						+ "\n"
+ 						+ "class TreeShapeListener : public tree::ParseTreeListener {\n"
+ 						+ "public:\n"
+@@ -953,7 +953,7 @@ public abstract class BaseCppTest {
+ 					+ "\n"
+ 					+ "#include \"support/StringUtils.h\"\n"
+ 					+ "\n"
+-					+ "using namespace org::antlr::v4::runtime;\n"
++					+ "using namespace antlr4;\n"
+ 					+ "\n"
+ 					+ "int main(int argc, const char* argv[]) {\n"
+ 					+ "  std::wifstream stream;\n"

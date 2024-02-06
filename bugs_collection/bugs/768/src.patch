@@ -1,0 +1,13 @@
+diff --git a/buggy/integration/yarn/src/main/java/alluxio/yarn/ContainerAllocator.java b/fixed/integration/yarn/src/main/java/alluxio/yarn/ContainerAllocator.java
+index 7b45f96..e4aa39f 100644
+--- a/buggy/integration/yarn/src/main/java/alluxio/yarn/ContainerAllocator.java
++++ b/fixed/integration/yarn/src/main/java/alluxio/yarn/ContainerAllocator.java
+@@ -145,7 +145,7 @@ public final class ContainerAllocator {
+     Priority priority;
+     if (mPreferredHost != null) {
+       hosts = new String[]{mPreferredHost};
+-      relaxLocality = !mPreferredHost.equals("localhost");
++      relaxLocality = mPreferredHost.equals("localhost");
+       priority = Priority.newInstance(100);
+     } else {
+       hosts = getPotentialWorkerHosts();

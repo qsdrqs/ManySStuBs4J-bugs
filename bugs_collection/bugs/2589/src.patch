@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/seriouscompany/business/java/fizzbuzz/packagenamingpackage/impl/loop/LoopInitializer.java b/fixed/src/main/java/com/seriouscompany/business/java/fizzbuzz/packagenamingpackage/impl/loop/LoopInitializer.java
+index 8e9e094..a566b46 100644
+--- a/buggy/src/main/java/com/seriouscompany/business/java/fizzbuzz/packagenamingpackage/impl/loop/LoopInitializer.java
++++ b/fixed/src/main/java/com/seriouscompany/business/java/fizzbuzz/packagenamingpackage/impl/loop/LoopInitializer.java
+@@ -2,7 +2,7 @@ package com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.impl.loop
+ 
+ public class LoopInitializer {
+ 	
+-	public static final int LOOP_INIT_VALUE = 1;
++	private static final int LOOP_INIT_VALUE = 1;
+ 	
+ 	public int getLoopInitializationPoint() {
+ 		return LoopInitializer.LOOP_INIT_VALUE;

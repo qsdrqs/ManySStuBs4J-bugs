@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PulsarEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PulsarEndpointBuilderFactory.java
+index 7328370..10fcc99 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PulsarEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PulsarEndpointBuilderFactory.java
+@@ -461,7 +461,7 @@ public interface PulsarEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.pulsar.utils.consumers.SubscriptionType</code> enum.
+      */
+-    static enum SubscriptionType {
++    enum SubscriptionType {
+         EXCLUSIVE, SHARED, FAILOVER;
+     }
+     /**

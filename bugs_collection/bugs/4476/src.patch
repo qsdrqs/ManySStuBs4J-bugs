@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EKSEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EKSEndpointBuilderFactory.java
+index 19094b1..3b3ec93 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EKSEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EKSEndpointBuilderFactory.java
+@@ -114,7 +114,7 @@ public interface EKSEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.aws.eks.EKSOperations</code> enum.
+      */
+-    static enum EKSOperations {
++    enum EKSOperations {
+         listClusters, describeCluster, createCluster, deleteCluster;
+     }
+     /**

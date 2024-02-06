@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-mllp/src/test/java/org/apache/camel/component/mllp/MllpTcpServerConsumerRequiredEndOfDataWithValidationTest.java b/fixed/components/camel-mllp/src/test/java/org/apache/camel/component/mllp/MllpTcpServerConsumerRequiredEndOfDataWithValidationTest.java
+index ae61e1d..641faf5 100644
+--- a/buggy/components/camel-mllp/src/test/java/org/apache/camel/component/mllp/MllpTcpServerConsumerRequiredEndOfDataWithValidationTest.java
++++ b/fixed/components/camel-mllp/src/test/java/org/apache/camel/component/mllp/MllpTcpServerConsumerRequiredEndOfDataWithValidationTest.java
+@@ -75,7 +75,7 @@ public class MllpTcpServerConsumerRequiredEndOfDataWithValidationTest extends Tc
+ 
+         NotifyBuilder done = new NotifyBuilder(context()).whenDone(1).create();
+ 
+-        mllpClient.sendFramedData(Hl7TestMessageGenerator.generateMessage().replaceFirst("EVN", "EVN" + MllpProtocolConstants.END_OF_BLOCK));
++        mllpClient.sendFramedData(Hl7TestMessageGenerator.generateMessage().replaceFirst("PID", "PID" + MllpProtocolConstants.END_OF_BLOCK));
+ 
+         assertFalse("Exchange should not have completed", done.matches(5, TimeUnit.SECONDS));
+     }

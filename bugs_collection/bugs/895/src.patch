@@ -1,0 +1,13 @@
+diff --git a/buggy/core/client/src/main/java/alluxio/client/file/FileInStream.java b/fixed/core/client/src/main/java/alluxio/client/file/FileInStream.java
+index bf3035d..777b147 100644
+--- a/buggy/core/client/src/main/java/alluxio/client/file/FileInStream.java
++++ b/fixed/core/client/src/main/java/alluxio/client/file/FileInStream.java
+@@ -134,7 +134,7 @@ public class FileInStream extends InputStream implements BoundedStream, Seekable
+       Preconditions.checkNotNull(options.getLocationPolicy(),
+           PreconditionMessage.FILE_WRITE_LOCATION_POLICY_UNSPECIFIED);
+     }
+-    int seekBufferSizeBytes = Math.max((int) options.getSeekBufferSizeBytes(), Constants.KB);
++    int seekBufferSizeBytes = Math.max((int) options.getSeekBufferSizeBytes(), 1);
+     mSeekBuffer = new byte[seekBufferSizeBytes];
+     LOG.debug(options.toString());
+   }

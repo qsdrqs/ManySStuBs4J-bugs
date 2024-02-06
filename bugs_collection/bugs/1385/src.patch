@@ -1,0 +1,14 @@
+diff --git a/buggy/servers/src/main/java/tachyon/master/TachyonMaster.java b/fixed/servers/src/main/java/tachyon/master/TachyonMaster.java
+index 7e895f8..454e9f8 100644
+--- a/buggy/servers/src/main/java/tachyon/master/TachyonMaster.java
++++ b/fixed/servers/src/main/java/tachyon/master/TachyonMaster.java
+@@ -359,7 +359,8 @@ public class TachyonMaster {
+     mIsServing = true;
+ 
+     // start web ui
+-    mWebServer = new MasterUIWebServer(ServiceType.MASTER_WEB, mMasterAddress, this, mTachyonConf);
++    mWebServer = new MasterUIWebServer(ServiceType.MASTER_WEB, NetworkAddressUtils.getBindAddress(
++        ServiceType.MASTER_WEB, mTachyonConf), this, mTachyonConf);
+     mWebServer.startWebServer();
+ 
+     String leaderStart = (mUseZookeeper) ? "(gained leadership)" : "";

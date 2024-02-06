@@ -1,0 +1,13 @@
+diff --git a/buggy/client/src/main/java/org/asynchttpclient/handler/BodyDeferringAsyncHandler.java b/fixed/client/src/main/java/org/asynchttpclient/handler/BodyDeferringAsyncHandler.java
+index 3f53e9e..872d297 100644
+--- a/buggy/client/src/main/java/org/asynchttpclient/handler/BodyDeferringAsyncHandler.java
++++ b/fixed/client/src/main/java/org/asynchttpclient/handler/BodyDeferringAsyncHandler.java
+@@ -140,7 +140,7 @@ public class BodyDeferringAsyncHandler implements AsyncHandler<Response> {
+             headersArrived.countDown();
+         }
+ 
+-        bodyPart.writeTo(output);
++        output.write(bodyPart.getBodyPartBytes());
+         return State.CONTINUE;
+     }
+ 

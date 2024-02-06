@@ -1,0 +1,12 @@
+diff --git a/buggy/modules/activiti-camel/src/test/java/org/activiti/camel/EmptyProcessTest.java b/fixed/modules/activiti-camel/src/test/java/org/activiti/camel/EmptyProcessTest.java
+index 93d8dee..cc64a40 100644
+--- a/buggy/modules/activiti-camel/src/test/java/org/activiti/camel/EmptyProcessTest.java
++++ b/fixed/modules/activiti-camel/src/test/java/org/activiti/camel/EmptyProcessTest.java
+@@ -60,6 +60,6 @@ public class EmptyProcessTest extends SpringActivitiTestCase {
+     assertProcessEnded(instanceId);
+     HistoricVariableInstance var = processEngine.getHistoryService().createHistoricVariableInstanceQuery().variableName("camelBody").singleResult();
+     assertNotNull(var);
+-    assertEquals(expectedObj.toString(), var.getValue());
++    assertEquals(expectedObj.toString(), var.getValue().toString());
+   }
+ }

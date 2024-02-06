@@ -1,0 +1,13 @@
+diff --git a/buggy/core/common/src/main/java/alluxio/security/LoginUser.java b/fixed/core/common/src/main/java/alluxio/security/LoginUser.java
+index c53a21b..81e0d54 100644
+--- a/buggy/core/common/src/main/java/alluxio/security/LoginUser.java
++++ b/fixed/core/common/src/main/java/alluxio/security/LoginUser.java
+@@ -97,7 +97,7 @@ public final class LoginUser {
+       }
+       return userSet.iterator().next();
+     } catch (LoginException e) {
+-      throw new IOException("Failed to login", e);
++      throw new IOException("Failed to login: " + e.getMessage(), e);
+     }
+   }
+ 

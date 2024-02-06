@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JiraEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JiraEndpointBuilderFactory.java
+index cc1d2a3..63daa17 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JiraEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JiraEndpointBuilderFactory.java
+@@ -719,7 +719,7 @@ public interface JiraEndpointBuilderFactory {
+      * Proxy enum for <code>org.apache.camel.component.jira.JiraType</code>
+      * enum.
+      */
+-    static enum JiraType {
++    enum JiraType {
+         ADDCOMMENT, ADDISSUE, ATTACH, DELETEISSUE, NEWISSUES, NEWCOMMENTS, UPDATEISSUE, TRANSITIONISSUE, WATCHERS;
+     }
+     /**

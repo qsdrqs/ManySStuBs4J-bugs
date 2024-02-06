@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SplunkEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SplunkEndpointBuilderFactory.java
+index 5b0a8e6..c1a00d2 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SplunkEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SplunkEndpointBuilderFactory.java
+@@ -1293,7 +1293,7 @@ public interface SplunkEndpointBuilderFactory {
+     /**
+      * Proxy enum for <code>com.splunk.SSLSecurityProtocol</code> enum.
+      */
+-    static enum SSLSecurityProtocol {
++    enum SSLSecurityProtocol {
+         TLSv1_2, TLSv1_1, TLSv1, SSLv3;
+     }
+     /**

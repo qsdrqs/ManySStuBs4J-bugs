@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/inject/AtmosphereProducers.java b/fixed/modules/cpr/src/main/java/org/atmosphere/inject/AtmosphereProducers.java
+index 64d43aa..a31fc91 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/inject/AtmosphereProducers.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/inject/AtmosphereProducers.java
+@@ -30,7 +30,7 @@ import javax.enterprise.inject.Produces;
+  * Atmosphere Internal Object Injection for DI supporting JSR 330
+  */
+ @ApplicationScoped
+-public class AtmosphereProducers implements AtmosphereConfigAware, CDIProducer {
++public class AtmosphereProducers implements CDIProducer {
+ 
+     private AtmosphereConfig config;
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/activiti-engine/src/main/java/org/activiti/engine/impl/persistence/entity/JobEntity.java b/fixed/modules/activiti-engine/src/main/java/org/activiti/engine/impl/persistence/entity/JobEntity.java
+index a2fdeee..aec5e8d 100644
+--- a/buggy/modules/activiti-engine/src/main/java/org/activiti/engine/impl/persistence/entity/JobEntity.java
++++ b/fixed/modules/activiti-engine/src/main/java/org/activiti/engine/impl/persistence/entity/JobEntity.java
+@@ -96,7 +96,7 @@ public abstract class JobEntity implements Job, PersistentObject, HasRevision, B
+       execution.addJob(this);
+       
+       // Inherit tenant if (if applicable)
+-      if (execution != null && execution.getTenantId() != null) {
++      if (execution.getTenantId() != null) {
+       	setTenantId(execution.getTenantId());
+       }
+     }

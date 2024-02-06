@@ -1,0 +1,22 @@
+diff --git a/buggy/client-adapter/elasticsearch/src/main/java/com/alibaba/otter/canal/client/adapter/es/service/ESEtlService.java b/fixed/client-adapter/elasticsearch/src/main/java/com/alibaba/otter/canal/client/adapter/es/service/ESEtlService.java
+index bf32cd1..646bcc4 100644
+--- a/buggy/client-adapter/elasticsearch/src/main/java/com/alibaba/otter/canal/client/adapter/es/service/ESEtlService.java
++++ b/fixed/client-adapter/elasticsearch/src/main/java/com/alibaba/otter/canal/client/adapter/es/service/ESEtlService.java
+@@ -247,7 +247,7 @@ public class ESEtlService {
+ 
+                         Object idVal = null;
+                         if (mapping.get_id() != null) {
+-                            idVal = rs.getObject(mapping.get_id());
++                            idVal = esFieldData.get(mapping.get_id());
+                         }
+ 
+                         if (idVal != null) {
+@@ -271,7 +271,7 @@ public class ESEtlService {
+                                 bulkRequestBuilder.add(indexRequestBuilder);
+                             }
+                         } else {
+-                            idVal = rs.getObject(mapping.getPk());
++                            idVal = esFieldData.get(mapping.getPk());
+                             SearchResponse response = transportClient.prepareSearch(mapping.get_index())
+                                 .setTypes(mapping.get_type())
+                                 .setQuery(QueryBuilders.termQuery(mapping.getPk(), idVal))

@@ -1,0 +1,26 @@
+diff --git a/buggy/tool/src/org/antlr/v4/semantics/AttributeChecks.java b/fixed/tool/src/org/antlr/v4/semantics/AttributeChecks.java
+index 0e96520..805e04b 100644
+--- a/buggy/tool/src/org/antlr/v4/semantics/AttributeChecks.java
++++ b/fixed/tool/src/org/antlr/v4/semantics/AttributeChecks.java
+@@ -201,8 +201,8 @@ public class AttributeChecks implements ActionSplitterListener {
+ 	public void nonLocalAttr(String expr, Token x, Token y) {
+ 		Rule r = g.getRule(x.getText());
+ 		if ( r==null ) {
+-			errMgr.toolError(ErrorType.UNDEFINED_RULE_IN_NONLOCAL_REF,
+-							 x.getText(), y.getText());
++			errMgr.grammarError(ErrorType.UNDEFINED_RULE_IN_NONLOCAL_REF,
++								g.fileName, x, x.getText(), y.getText(), expr);
+ 		}
+ 		else if ( r.resolveToAttribute(y.getText(), null)==null ) {
+ 			errMgr.grammarError(ErrorType.UNKNOWN_RULE_ATTRIBUTE,
+@@ -215,8 +215,8 @@ public class AttributeChecks implements ActionSplitterListener {
+ 	public void setNonLocalAttr(String expr, Token x, Token y, Token rhs) {
+ 		Rule r = g.getRule(x.getText());
+ 		if ( r==null ) {
+-			errMgr.toolError(ErrorType.UNDEFINED_RULE_IN_NONLOCAL_REF,
+-							 x.getText(), y.getText());
++			errMgr.grammarError(ErrorType.UNDEFINED_RULE_IN_NONLOCAL_REF,
++								g.fileName, x, x.getText(), y.getText(), expr);
+ 		}
+ 		else if ( r.resolveToAttribute(y.getText(), null)==null ) {
+ 			errMgr.grammarError(ErrorType.UNKNOWN_RULE_ATTRIBUTE,

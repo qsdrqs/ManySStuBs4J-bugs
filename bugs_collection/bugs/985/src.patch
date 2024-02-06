@@ -1,0 +1,13 @@
+diff --git a/buggy/core/server/src/main/java/alluxio/worker/block/meta/StorageTierView.java b/fixed/core/server/src/main/java/alluxio/worker/block/meta/StorageTierView.java
+index 999e65e..218658e 100644
+--- a/buggy/core/server/src/main/java/alluxio/worker/block/meta/StorageTierView.java
++++ b/fixed/core/server/src/main/java/alluxio/worker/block/meta/StorageTierView.java
+@@ -30,7 +30,7 @@ public final class StorageTierView {
+   /** The {@link StorageTier} this view is derived from. */
+   private final StorageTier mTier;
+   /** A list of {@link StorageDirView} under this StorageTierView. */
+-  private final List<StorageDirView> mDirViews = new ArrayList<StorageDirView>();
++  private final List<StorageDirView> mDirViews = new ArrayList<>();
+   /** The {@link BlockMetadataManagerView} this {@link StorageTierView} is under. */
+   private final BlockMetadataManagerView mManagerView;
+ 

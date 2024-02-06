@@ -1,0 +1,12 @@
+diff --git a/buggy/src/main/java/org/bukkit/command/defaults/SayCommand.java b/fixed/src/main/java/org/bukkit/command/defaults/SayCommand.java
+index 080d335..f26dbe9 100644
+--- a/buggy/src/main/java/org/bukkit/command/defaults/SayCommand.java
++++ b/fixed/src/main/java/org/bukkit/command/defaults/SayCommand.java
+@@ -39,6 +39,6 @@ public class SayCommand extends VanillaCommand {
+ 
+     @Override
+     public boolean matches(String input) {
+-        return input.startsWith("say ");
++        return input.startsWith("say ") || input.equalsIgnoreCase("say");
+     }
+ }

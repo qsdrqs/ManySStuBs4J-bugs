@@ -1,0 +1,13 @@
+diff --git a/buggy/graylog2-server/src/main/java/org/graylog2/rest/resources/system/ldap/LdapResource.java b/fixed/graylog2-server/src/main/java/org/graylog2/rest/resources/system/ldap/LdapResource.java
+index bd0ece4..bf986ce 100644
+--- a/buggy/graylog2-server/src/main/java/org/graylog2/rest/resources/system/ldap/LdapResource.java
++++ b/fixed/graylog2-server/src/main/java/org/graylog2/rest/resources/system/ldap/LdapResource.java
+@@ -300,7 +300,7 @@ public class LdapResource extends RestResource {
+             LdapNetworkConnection connection = ldapConnector.connect(config);
+             final Set<String> groups = ldapConnector.listGroups(connection,
+                                                                ldapSettings.getGroupSearchBase(),
+-                                                               "group",
++                                                               ldapSettings.getGroupObjectClass(),
+                                                                ldapSettings.getGroupIdAttribute());
+             return groups;
+         } catch (LdapException e) {

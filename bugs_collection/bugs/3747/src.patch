@@ -1,0 +1,16 @@
+diff --git a/buggy/src/main/java/com/alibaba/fastjson/JSONPath.java b/fixed/src/main/java/com/alibaba/fastjson/JSONPath.java
+index e405162..878119d 100644
+--- a/buggy/src/main/java/com/alibaba/fastjson/JSONPath.java
++++ b/fixed/src/main/java/com/alibaba/fastjson/JSONPath.java
+@@ -276,9 +276,9 @@ public class JSONPath implements ObjectSerializer {
+         jsonpath.arrayAdd(rootObject, values);
+     }
+ 
+-    public static void set(Object rootObject, String path, Object value) {
++    public static boolean set(Object rootObject, String path, Object value) {
+         JSONPath jsonpath = compile(path);
+-        jsonpath.set(rootObject, value);
++        return jsonpath.set(rootObject, value);
+     }
+ 
+     public static JSONPath compile(String path) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/activiti-cycle/src/test/java/org/activiti/cycle/impl/connector/demo/DemoConnectorTest.java b/fixed/modules/activiti-cycle/src/test/java/org/activiti/cycle/impl/connector/demo/DemoConnectorTest.java
+index db78a98..fe5aa8d 100644
+--- a/buggy/modules/activiti-cycle/src/test/java/org/activiti/cycle/impl/connector/demo/DemoConnectorTest.java
++++ b/fixed/modules/activiti-cycle/src/test/java/org/activiti/cycle/impl/connector/demo/DemoConnectorTest.java
+@@ -104,7 +104,7 @@ public class DemoConnectorTest {
+     parameters.put("targetConnectorId", "demo");
+     parameters.put("targetFolderId", "/minutes");
+ 
+-    cycleService.executeParameterizedAction("demo", file1.getNodeId(), CopyArtifactAction.class.getName(), parameters);
++    cycleService.executeParameterizedAction("demo", file1.getNodeId(), new CopyArtifactAction().getId(), parameters);
+ 
+     List<RepositoryNode> nodes = DemoConnector.nodes;
+     assertEquals(8, DemoConnector.nodes.size());

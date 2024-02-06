@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JCacheEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JCacheEndpointBuilderFactory.java
+index d92f503..11b1b3a 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JCacheEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JCacheEndpointBuilderFactory.java
+@@ -1217,7 +1217,7 @@ public interface JCacheEndpointBuilderFactory {
+     /**
+      * Proxy enum for <code>javax.cache.event.EventType</code> enum.
+      */
+-    static enum EventType {
++    enum EventType {
+         CREATED, UPDATED, REMOVED, EXPIRED;
+     }
+     /**

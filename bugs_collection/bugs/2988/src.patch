@@ -1,0 +1,13 @@
+diff --git a/buggy/library/src/android/support/v4/app/DialogFragment.java b/fixed/library/src/android/support/v4/app/DialogFragment.java
+index a5b89a9..952659d 100644
+--- a/buggy/library/src/android/support/v4/app/DialogFragment.java
++++ b/fixed/library/src/android/support/v4/app/DialogFragment.java
+@@ -361,7 +361,7 @@ public class DialogFragment extends Fragment
+         if (!mCancelable) {
+             outState.putBoolean(SAVED_CANCELABLE, mCancelable);
+         }
+-        if (!mShowsDialog) {
++        if (mShowsDialog) {
+             outState.putBoolean(SAVED_SHOWS_DIALOG, mShowsDialog);
+         }
+         if (mBackStackId != -1) {

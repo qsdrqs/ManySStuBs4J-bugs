@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/pool/DruidAbstractDataSource.java b/fixed/src/main/java/com/alibaba/druid/pool/DruidAbstractDataSource.java
+index a56d195..8b539de 100644
+--- a/buggy/src/main/java/com/alibaba/druid/pool/DruidAbstractDataSource.java
++++ b/fixed/src/main/java/com/alibaba/druid/pool/DruidAbstractDataSource.java
+@@ -1018,7 +1018,7 @@ public abstract class DruidAbstractDataSource extends WrapperAdapter implements
+     }
+ 
+     public void setUsername(String username) {
+-        if (StringUtils.equals(this.jdbcUrl, jdbcUrl)) {
++        if (StringUtils.equals(this.username, username)) {
+             return;
+         }
+ 

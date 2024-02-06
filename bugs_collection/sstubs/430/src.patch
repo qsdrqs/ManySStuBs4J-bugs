@@ -1,0 +1,13 @@
+diff --git a/buggy/servers/src/main/java/tachyon/master/lineage/recompute/RecomputeExecutor.java b/fixed/servers/src/main/java/tachyon/master/lineage/recompute/RecomputeExecutor.java
+index 538e0fe..23ef45f 100644
+--- a/buggy/servers/src/main/java/tachyon/master/lineage/recompute/RecomputeExecutor.java
++++ b/fixed/servers/src/main/java/tachyon/master/lineage/recompute/RecomputeExecutor.java
+@@ -65,7 +65,7 @@ public final class RecomputeExecutor implements HeartbeatExecutor {
+ 
+   @Override
+   public void close() {
+-    mFixedExecutionService.shutdown();
++    mRecomputeLauncherService.shutdown();
+   }
+ 
+   /**

@@ -1,0 +1,13 @@
+diff --git a/buggy/providers/netty4/src/main/java/org/asynchttpclient/providers/netty4/channel/pool/DefaultChannelPool.java b/fixed/providers/netty4/src/main/java/org/asynchttpclient/providers/netty4/channel/pool/DefaultChannelPool.java
+index b9e5b7a..9f0b9c7 100644
+--- a/buggy/providers/netty4/src/main/java/org/asynchttpclient/providers/netty4/channel/pool/DefaultChannelPool.java
++++ b/fixed/providers/netty4/src/main/java/org/asynchttpclient/providers/netty4/channel/pool/DefaultChannelPool.java
+@@ -199,7 +199,7 @@ public final class DefaultChannelPool implements ChannelPool {
+ 
+             try {
+                 if (LOGGER.isDebugEnabled())
+-                    for (String key : partitions.keySet()) {
++                    for (String key : ((Map<String, ConcurrentLinkedQueue<IdleChannel>>) partitions).keySet()) {
+                         LOGGER.debug("Entry count for : {} : {}", key, partitions.get(key).size());
+                     }
+ 

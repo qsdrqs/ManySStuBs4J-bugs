@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/main/java/tachyon/conf/WorkerConf.java b/fixed/core/src/main/java/tachyon/conf/WorkerConf.java
+index ea56876..80bc7d3 100644
+--- a/buggy/core/src/main/java/tachyon/conf/WorkerConf.java
++++ b/fixed/core/src/main/java/tachyon/conf/WorkerConf.java
+@@ -97,7 +97,7 @@ public class WorkerConf extends Utils {
+     NETTY_SEND_BUFFER =
+         Optional.fromNullable(getIntegerProperty("tachyon.worker.network.netty.buffer.send", null));
+     NETTY_RECIEVE_BUFFER =
+-        Optional.fromNullable(getIntegerProperty("tachyon.worker.network.netty.buffer.recieve",
++        Optional.fromNullable(getIntegerProperty("tachyon.worker.network.netty.buffer.receive",
+             null));
+   }
+ }

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/mock/MockStatement.java b/fixed/src/main/java/com/alibaba/druid/mock/MockStatement.java
+index 6bbf539..18001a5 100644
+--- a/buggy/src/main/java/com/alibaba/druid/mock/MockStatement.java
++++ b/fixed/src/main/java/com/alibaba/druid/mock/MockStatement.java
+@@ -36,7 +36,7 @@ public class MockStatement extends StatementBase implements MockStatementBase, S
+         }
+     }
+ 
+-    protected void checkOpen() throws SQLException, MockConnectionClosedException {
++    protected void checkOpen() throws SQLException {
+         if (closed) {
+             throw new SQLException();
+         }

@@ -1,0 +1,15 @@
+diff --git a/buggy/core/server/worker/src/main/java/alluxio/worker/block/meta/StorageTier.java b/fixed/core/server/worker/src/main/java/alluxio/worker/block/meta/StorageTier.java
+index 99b84e5..982e737 100644
+--- a/buggy/core/server/worker/src/main/java/alluxio/worker/block/meta/StorageTier.java
++++ b/fixed/core/server/worker/src/main/java/alluxio/worker/block/meta/StorageTier.java
+@@ -142,8 +142,8 @@ public final class StorageTier {
+       if ((fsType.equalsIgnoreCase("tmpfs") || fsType.equalsIgnoreCase("ramfs"))
+           && size < storageDir.getCapacityBytes()) {
+         throw new IllegalStateException(String.format(
+-            "tmpfs is smaller than the configured size: tmpfs size: %s, configured size: %s",
+-            FormatUtils.getSizeFromBytes(size),
++            "%s is smaller than the configured size: %s size: %s, configured size: %s", fsType,
++            fsType, FormatUtils.getSizeFromBytes(size),
+             FormatUtils.getSizeFromBytes(storageDir.getCapacityBytes())));
+       }
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GridFsEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GridFsEndpointBuilderFactory.java
+index 00e7f03..fef5417 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GridFsEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GridFsEndpointBuilderFactory.java
+@@ -790,7 +790,7 @@ public interface GridFsEndpointBuilderFactory {
+      * <code>org.apache.camel.component.mongodb.gridfs.QueryStrategy</code>
+      * enum.
+      */
+-    public static enum QueryStrategy {
++    static enum QueryStrategy {
+         TimeStamp, PersistentTimestamp, FileAttribute, TimeStampAndFileAttribute, PersistentTimestampAndFileAttribute;
+     }
+     /**

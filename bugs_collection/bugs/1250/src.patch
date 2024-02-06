@@ -1,0 +1,13 @@
+diff --git a/buggy/servers/src/main/java/tachyon/master/file/FileSystemMaster.java b/fixed/servers/src/main/java/tachyon/master/file/FileSystemMaster.java
+index 632f736..f7ca2fe 100644
+--- a/buggy/servers/src/main/java/tachyon/master/file/FileSystemMaster.java
++++ b/fixed/servers/src/main/java/tachyon/master/file/FileSystemMaster.java
+@@ -1340,7 +1340,7 @@ public final class FileSystemMaster extends MasterBase {
+       throws FileAlreadyExistsException, InvalidPathException, IOException {
+     synchronized (mInodeTree) {
+       if (mountInternal(tachyonPath, ufsPath)) {
+-        boolean loadMetadataSuceeded = true;
++        boolean loadMetadataSuceeded = false;
+         try {
+           // This will create the directory at tachyonPath
+           loadMetadataDirectory(tachyonPath, false);

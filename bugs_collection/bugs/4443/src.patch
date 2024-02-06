@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AvroEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AvroEndpointBuilderFactory.java
+index c4c1f46..2b7a7ab 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AvroEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AvroEndpointBuilderFactory.java
+@@ -794,7 +794,7 @@ public interface AvroEndpointBuilderFactory {
+      * Proxy enum for <code>org.apache.camel.component.avro.AvroTransport</code>
+      * enum.
+      */
+-    static enum AvroTransport {
++    enum AvroTransport {
+         http, netty;
+     }
+     /**

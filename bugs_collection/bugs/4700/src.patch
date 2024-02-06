@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DnsEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DnsEndpointBuilderFactory.java
+index 30ff9fd..87a0cad 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DnsEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DnsEndpointBuilderFactory.java
+@@ -115,7 +115,7 @@ public interface DnsEndpointBuilderFactory {
+     /**
+      * Proxy enum for <code>org.apache.camel.component.dns.DnsType</code> enum.
+      */
+-    public static enum DnsType {
++    static enum DnsType {
+         dig, ip, lookup, wikipedia;
+     }
+     /**

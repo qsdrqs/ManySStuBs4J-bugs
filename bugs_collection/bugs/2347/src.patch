@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereServlet.java b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereServlet.java
+index c27b495..c91a682 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereServlet.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereServlet.java
+@@ -847,7 +847,7 @@ public class AtmosphereServlet extends AbstractAsyncServlet implements CometProc
+ 
+                 config.setSupportSession(!isJersey);
+ 
+-                if (!atmoHandler.getSupportSession().equals("")) {
++                if (!atmoHandler.getSupportSession()) {
+                     sessionSupport(Boolean.valueOf(atmoHandler.getSupportSession()));
+                 }
+ 

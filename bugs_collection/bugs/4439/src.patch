@@ -1,0 +1,21 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AtomixSetEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AtomixSetEndpointBuilderFactory.java
+index d89d413..988a1ad 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AtomixSetEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AtomixSetEndpointBuilderFactory.java
+@@ -1134,14 +1134,14 @@ public interface AtomixSetEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.atomix.client.set.AtomixSet$Action</code> enum.
+      */
+-    static enum Action {
++    enum Action {
+         ADD, CLEAR, CONTAINS, IS_EMPTY, REMOVE, SIZE;
+     }
+ 
+     /**
+      * Proxy enum for <code>io.atomix.resource.ReadConsistency</code> enum.
+      */
+-    static enum ReadConsistency {
++    enum ReadConsistency {
+         ATOMIC, ATOMIC_LEASE, SEQUENTIAL, LOCAL;
+     }
+     /**

@@ -1,0 +1,13 @@
+diff --git a/buggy/clients/unshaded/src/main/java/tachyon/client/file/TachyonFileSystem.java b/fixed/clients/unshaded/src/main/java/tachyon/client/file/TachyonFileSystem.java
+index 1497f26..eb1b4c2 100644
+--- a/buggy/clients/unshaded/src/main/java/tachyon/client/file/TachyonFileSystem.java
++++ b/fixed/clients/unshaded/src/main/java/tachyon/client/file/TachyonFileSystem.java
+@@ -61,7 +61,7 @@ public class TachyonFileSystem extends AbstractTachyonFileSystem {
+ 
+     public static synchronized TachyonFileSystem get() {
+       boolean enableLineage = ClientContext.getConf().getBoolean(Constants.USER_LINEAGE_ENABLED);
+-      return enableLineage ? TachyonLineageFileSystem.get() : get();
++      return enableLineage ? TachyonLineageFileSystem.get() : TachyonFileSystem.get();
+     }
+   }
+ 

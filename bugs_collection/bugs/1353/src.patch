@@ -1,0 +1,14 @@
+diff --git a/buggy/clients/unshaded/src/main/java/tachyon/client/file/AbstractTachyonFileSystem.java b/fixed/clients/unshaded/src/main/java/tachyon/client/file/AbstractTachyonFileSystem.java
+index dd0eebc..6de4753 100644
+--- a/buggy/clients/unshaded/src/main/java/tachyon/client/file/AbstractTachyonFileSystem.java
++++ b/fixed/clients/unshaded/src/main/java/tachyon/client/file/AbstractTachyonFileSystem.java
+@@ -163,8 +163,7 @@ public abstract class AbstractTachyonFileSystem implements TachyonFileSystemCore
+       IOException, FileAlreadyExistException {
+     FileSystemMasterClient masterClient = mContext.acquireMasterClient();
+     try {
+-      // TODO: Change this RPC's arguments
+-      boolean result = masterClient.createDirectory(path.getPath(), true);
++      boolean result = masterClient.createDirectory(path.getPath(), recursive);
+       if (result) {
+         LOG.info("Created directory " + path.getPath());
+       }

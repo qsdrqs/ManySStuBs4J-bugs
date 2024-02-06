@@ -1,0 +1,19 @@
+diff --git a/buggy/src/test/java/com/alibaba/json/bvt/parser/DefaultExtJSONParserTest_4.java b/fixed/src/test/java/com/alibaba/json/bvt/parser/DefaultExtJSONParserTest_4.java
+index a88c042..23e4296 100644
+--- a/buggy/src/test/java/com/alibaba/json/bvt/parser/DefaultExtJSONParserTest_4.java
++++ b/fixed/src/test/java/com/alibaba/json/bvt/parser/DefaultExtJSONParserTest_4.java
+@@ -46,12 +46,12 @@ public class DefaultExtJSONParserTest_4 extends TestCase {
+             ext.config(Feature.AllowArbitraryCommas, true);
+ 
+             JSONObject extRes = ext.parseObject();
+-            Assert.assertEquals(res.toString(), extRes.toString());
++            Assert.assertEquals(res, extRes);
+ 
+             DefaultJSONParser basic = new DefaultJSONParser(t);
+             basic.config(Feature.AllowArbitraryCommas, true);
+             JSONObject basicRes = basic.parseObject();
+-            Assert.assertEquals(res.toString(), basicRes.toString());
++            Assert.assertEquals(res, basicRes);
+         }
+     }
+ 

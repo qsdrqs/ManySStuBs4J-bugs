@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java b/fixed/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java
+index 646fca2..41c6f66 100644
+--- a/buggy/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java
++++ b/fixed/src/main/java/com/alibaba/fastjson/serializer/ASMSerializerFactory.java
+@@ -1155,7 +1155,7 @@ public class ASMSerializerFactory implements Opcodes {
+             mw.visitVarInsn(ALOAD, context.var("entity"));
+             Class<?> declaringClass = method.getDeclaringClass();
+             mw.visitMethodInsn(INVOKEVIRTUAL, type(declaringClass), method.getName(), desc(method));
+-            if (!declaringClass.equals(fieldInfo.fieldClass)) {
++            if (!method.getReturnType().equals(fieldInfo.fieldClass)) {
+                 mw.visitTypeInsn(CHECKCAST, type(fieldInfo.fieldClass)); // cast
+             }
+         } else {

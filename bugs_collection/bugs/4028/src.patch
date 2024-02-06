@@ -1,0 +1,13 @@
+diff --git a/buggy/runtime/Java/src/org/antlr/v4/runtime/UnbufferedCharStream.java b/fixed/runtime/Java/src/org/antlr/v4/runtime/UnbufferedCharStream.java
+index e7759b6..3d233b1 100644
+--- a/buggy/runtime/Java/src/org/antlr/v4/runtime/UnbufferedCharStream.java
++++ b/fixed/runtime/Java/src/org/antlr/v4/runtime/UnbufferedCharStream.java
+@@ -207,7 +207,7 @@ public class UnbufferedCharStream implements CharStream {
+         int index = p + i - 1;
+         if ( index < 0 ) throw new IndexOutOfBoundsException();
+ 		if ( index > n ) return IntStream.EOF;
+-        int c = data[index];
++        char c = data[index];
+         if ( c==(char)IntStream.EOF ) return IntStream.EOF;
+         return c;
+     }

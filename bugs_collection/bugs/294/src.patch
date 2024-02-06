@@ -1,0 +1,13 @@
+diff --git a/buggy/core/server/common/src/main/java/alluxio/master/journal/ufs/UfsJournal.java b/fixed/core/server/common/src/main/java/alluxio/master/journal/ufs/UfsJournal.java
+index 055bc36..9bda49d 100644
+--- a/buggy/core/server/common/src/main/java/alluxio/master/journal/ufs/UfsJournal.java
++++ b/fixed/core/server/common/src/main/java/alluxio/master/journal/ufs/UfsJournal.java
+@@ -384,7 +384,7 @@ public class UfsJournal implements Journal {
+       if (entry == null) {
+         return journalReader.getNextSequenceNumber();
+       }
+-      if (journalReader.getNextSequenceNumber() == 0) {
++      if (entry.getSequenceNumber() == 0) {
+         mMaster.resetState();
+       }
+       try {

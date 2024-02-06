@@ -1,0 +1,13 @@
+diff --git a/buggy/core/common/src/main/java/alluxio/resource/DynamicResourcePool.java b/fixed/core/common/src/main/java/alluxio/resource/DynamicResourcePool.java
+index c40e133..27550da 100644
+--- a/buggy/core/common/src/main/java/alluxio/resource/DynamicResourcePool.java
++++ b/fixed/core/common/src/main/java/alluxio/resource/DynamicResourcePool.java
+@@ -274,7 +274,7 @@ public abstract class DynamicResourcePool<T> implements Pool<T> {
+     // Try to take a resource without blocking
+     ResourceInternal<T> resource = poll();
+     if (resource != null) {
+-      checkHealthyAndRetry(resource.mResource, endTimeMs);
++      return checkHealthyAndRetry(resource.mResource, endTimeMs);
+     }
+ 
+     if (!isFull()) {

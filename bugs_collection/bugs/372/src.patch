@@ -1,0 +1,13 @@
+diff --git a/buggy/core/server/master/src/main/java/alluxio/master/file/DefaultFileSystemMaster.java b/fixed/core/server/master/src/main/java/alluxio/master/file/DefaultFileSystemMaster.java
+index 9ad4265..c1872be 100644
+--- a/buggy/core/server/master/src/main/java/alluxio/master/file/DefaultFileSystemMaster.java
++++ b/fixed/core/server/master/src/main/java/alluxio/master/file/DefaultFileSystemMaster.java
+@@ -1378,7 +1378,7 @@ public final class DefaultFileSystemMaster extends AbstractMaster implements Fil
+     List<Pair<AlluxioURI, Inode>> delInodes = new ArrayList<>();
+     List<Inode<?>> deletedInodes = new ArrayList<>();
+ 
+-    Pair<AlluxioURI, Inode> inodePair = new Pair<AlluxioURI, Inode>(inodePath.getUri(), inode);
++    Pair<AlluxioURI, Inode> inodePair = new Pair<>(inodePath.getUri(), inode);
+     delInodes.add(inodePair);
+ 
+     try (InodeLockList lockList = mInodeTree.lockDescendants(inodePath, InodeTree.LockMode.WRITE)) {

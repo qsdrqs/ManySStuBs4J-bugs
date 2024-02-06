@@ -1,0 +1,16 @@
+diff --git a/buggy/parse/src/main/java/com/alibaba/otter/canal/parse/inbound/mysql/MysqlConnection.java b/fixed/parse/src/main/java/com/alibaba/otter/canal/parse/inbound/mysql/MysqlConnection.java
+index c3c633d..e3576d7 100644
+--- a/buggy/parse/src/main/java/com/alibaba/otter/canal/parse/inbound/mysql/MysqlConnection.java
++++ b/fixed/parse/src/main/java/com/alibaba/otter/canal/parse/inbound/mysql/MysqlConnection.java
+@@ -279,8 +279,9 @@ public class MysqlConnection implements ErosaConnection {
+         }
+ 
+         List<String> columnValues = rs.getFieldValues();
+-        if(columnValues.get(0).toUpperCase().equals("CRC32")){
+-        	binlogChecksum = LogEvent.BINLOG_CHECKSUM_ALG_CRC32;
++        if (columnValues.size() > 0 && columnValues.get(0) != null
++                && columnValues.get(0).toUpperCase().equals("CRC32")) {
++                binlogChecksum = LogEvent.BINLOG_CHECKSUM_ALG_CRC32;
+         }else{
+         	binlogChecksum = LogEvent.BINLOG_CHECKSUM_ALG_OFF;
+         }

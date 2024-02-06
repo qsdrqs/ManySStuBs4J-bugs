@@ -1,0 +1,13 @@
+diff --git a/buggy/core/common/src/main/java/alluxio/AbstractClient.java b/fixed/core/common/src/main/java/alluxio/AbstractClient.java
+index 847d97c..74606ae 100644
+--- a/buggy/core/common/src/main/java/alluxio/AbstractClient.java
++++ b/fixed/core/common/src/main/java/alluxio/AbstractClient.java
+@@ -54,7 +54,7 @@ public abstract class AbstractClient implements Client {
+       Pattern.compile("Frame size \\((\\d+)\\) larger than max length");
+ 
+   private static final int BASE_SLEEP_MS =
+-      Configuration.getInt(PropertyKey.USER_RPC_RETRY_BASE_SLEEP_MS);
++      (int) Configuration.getMs(PropertyKey.USER_RPC_RETRY_BASE_SLEEP_MS);
+   private static final int MAX_SLEEP_MS =
+       (int) Configuration.getMs(PropertyKey.USER_RPC_RETRY_MAX_SLEEP_MS);
+ 

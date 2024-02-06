@@ -1,0 +1,13 @@
+diff --git a/buggy/core/server/src/main/java/alluxio/master/file/FileSystemMaster.java b/fixed/core/server/src/main/java/alluxio/master/file/FileSystemMaster.java
+index 5ba235e..37c65e7 100644
+--- a/buggy/core/server/src/main/java/alluxio/master/file/FileSystemMaster.java
++++ b/fixed/core/server/src/main/java/alluxio/master/file/FileSystemMaster.java
+@@ -3101,7 +3101,7 @@ public final class FileSystemMaster extends AbstractMaster {
+               LOG.debug("File {} is expired. Performing action {}", inode.getName(), ttlAction);
+               switch (ttlAction) {
+                 case FREE:
+-                  free(path, FreeOptions.defaults().setForced(true));
++                  free(path, FreeOptions.defaults().setForced(true).setRecursive(true));
+                   // Reset state
+                   inode.setTtl(Constants.NO_TTL);
+                   inode.setTtlAction(TtlAction.DELETE);

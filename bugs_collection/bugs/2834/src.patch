@@ -1,0 +1,13 @@
+diff --git a/buggy/graylog2-inputs/src/main/java/org/graylog2/inputs/radio/RadioKafkaInput.java b/fixed/graylog2-inputs/src/main/java/org/graylog2/inputs/radio/RadioKafkaInput.java
+index a583539..b217631 100644
+--- a/buggy/graylog2-inputs/src/main/java/org/graylog2/inputs/radio/RadioKafkaInput.java
++++ b/fixed/graylog2-inputs/src/main/java/org/graylog2/inputs/radio/RadioKafkaInput.java
+@@ -39,7 +39,7 @@ import java.util.Map;
+  */
+ public class RadioKafkaInput extends KafkaInput {
+ 
+-    private static final Logger LOG = LoggerFactory.getLogger(KafkaInput.class);
++    private static final Logger LOG = LoggerFactory.getLogger(RadioKafkaInput.class);
+ 
+     public static final String NAME = "Graylog2 Radio Input (Kafka)";
+ 

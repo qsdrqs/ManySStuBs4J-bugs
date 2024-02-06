@@ -1,0 +1,19 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereResourceEventImpl.java b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereResourceEventImpl.java
+index 95411d7..3787a2f 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereResourceEventImpl.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereResourceEventImpl.java
+@@ -77,12 +77,12 @@ public class AtmosphereResourceEventImpl implements AtmosphereResourceEvent {
+ 
+     @Override
+     public boolean isResuming() {
+-        return resource.isResumed();
++        return resource == null ? true : resource.isResumed();
+     }
+ 
+     @Override
+     public boolean isSuspended() {
+-        return resource.isSuspended();
++        return resource == null ? false : resource.isSuspended();
+     }
+ 
+     @Override

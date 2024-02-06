@@ -1,0 +1,13 @@
+diff --git a/buggy/dubbo-registry/dubbo-registry-api/src/test/java/org/apache/dubbo/registry/ZKTools.java b/fixed/dubbo-registry/dubbo-registry-api/src/test/java/org/apache/dubbo/registry/ZKTools.java
+index 1072e31..e310349 100644
+--- a/buggy/dubbo-registry/dubbo-registry-api/src/test/java/org/apache/dubbo/registry/ZKTools.java
++++ b/fixed/dubbo-registry/dubbo-registry-api/src/test/java/org/apache/dubbo/registry/ZKTools.java
+@@ -43,7 +43,7 @@ public class ZKTools {
+                 new ExponentialBackoffRetry(1000, 3));
+         client.start();
+ 
+-        testConsumerConfig();
++        testProviderConfig();
+ //        testPathCache();
+ //        testTreeCache();
+ //        testCuratorListener();

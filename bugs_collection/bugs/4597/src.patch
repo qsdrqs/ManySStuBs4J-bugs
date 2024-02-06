@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/RestEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/RestEndpointBuilderFactory.java
+index 098c816..948eb3e 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/RestEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/RestEndpointBuilderFactory.java
+@@ -670,7 +670,7 @@ public interface RestEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.spi.RestConfiguration$RestBindingMode</code> enum.
+      */
+-    static enum RestBindingMode {
++    enum RestBindingMode {
+         auto, off, json, xml, json_xml;
+     }
+     /**

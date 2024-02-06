@@ -1,0 +1,13 @@
+diff --git a/buggy/core/common/src/main/java/alluxio/security/group/provider/ShellBasedUnixGroupsMapping.java b/fixed/core/common/src/main/java/alluxio/security/group/provider/ShellBasedUnixGroupsMapping.java
+index 955ee30..1af6ebf 100644
+--- a/buggy/core/common/src/main/java/alluxio/security/group/provider/ShellBasedUnixGroupsMapping.java
++++ b/fixed/core/common/src/main/java/alluxio/security/group/provider/ShellBasedUnixGroupsMapping.java
+@@ -37,7 +37,7 @@ public final class ShellBasedUnixGroupsMapping implements GroupMappingService {
+   public List<String> getGroups(String user) throws IOException {
+     List<String> groups = CommonUtils.getUnixGroups(user);
+     // remove duplicated primary group
+-    return new ArrayList<String>(new LinkedHashSet<String>(groups));
++    return new ArrayList<>(new LinkedHashSet<>(groups));
+   }
+ 
+   @Override

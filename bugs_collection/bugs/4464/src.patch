@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DigitalSignatureEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DigitalSignatureEndpointBuilderFactory.java
+index 524c934..ddb6f1f 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DigitalSignatureEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DigitalSignatureEndpointBuilderFactory.java
+@@ -452,7 +452,7 @@ public interface DigitalSignatureEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.crypto.CryptoOperation</code> enum.
+      */
+-    static enum CryptoOperation {
++    enum CryptoOperation {
+         sign, verify;
+     }
+     /**

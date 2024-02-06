@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/alibaba/json/bvt/bug/Issue689.java b/fixed/src/test/java/com/alibaba/json/bvt/bug/Issue689.java
+index 2579689..fe33fc1 100644
+--- a/buggy/src/test/java/com/alibaba/json/bvt/bug/Issue689.java
++++ b/fixed/src/test/java/com/alibaba/json/bvt/bug/Issue689.java
+@@ -12,7 +12,7 @@ import junit.framework.TestCase;
+ 
+ public class Issue689 extends TestCase {
+     public void test_0() throws Exception {
+-        Map<String, Object> map = Collections.singletonMap("value", "A B");
++        Map<String, ?> map = Collections.singletonMap("value", "A B");
+         String json = JSON.toJSONString(map);
+         Assert.assertEquals("{\"value\":\"A\\u00A0B\"}", json);
+         

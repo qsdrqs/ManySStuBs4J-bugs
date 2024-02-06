@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/alibaba/json/bvt/parser/deser/date/DateParseTest9.java b/fixed/src/test/java/com/alibaba/json/bvt/parser/deser/date/DateParseTest9.java
+index 2aa5533..474fa27 100644
+--- a/buggy/src/test/java/com/alibaba/json/bvt/parser/deser/date/DateParseTest9.java
++++ b/fixed/src/test/java/com/alibaba/json/bvt/parser/deser/date/DateParseTest9.java
+@@ -80,7 +80,7 @@ public class DateParseTest9 extends TestCase {
+         // with iso-format
+         json = JSON.toJSONString(vo, SerializerFeature.UseISO8601DateFormat);
+         result = JSON.parseObject(json, VO.class);
+-        assertEquals(vo.date, result.date);
++        assertEquals(JSON.toJSONString(vo.date), JSON.toJSONString(result.date));
+     }
+ 
+     public static class VO {

@@ -1,0 +1,13 @@
+diff --git a/buggy/core/common/src/test/java/alluxio/metrics/MetricsConfigTest.java b/fixed/core/common/src/test/java/alluxio/metrics/MetricsConfigTest.java
+index eb9b663..293cabf 100644
+--- a/buggy/core/common/src/test/java/alluxio/metrics/MetricsConfigTest.java
++++ b/fixed/core/common/src/test/java/alluxio/metrics/MetricsConfigTest.java
+@@ -79,7 +79,7 @@ public class MetricsConfigTest {
+     MetricsConfig config = new MetricsConfig(mMetricsProps);
+ 
+     Map<String, Properties> propertyCategories = config.getPropertyCategories();
+-    Assert.assertEquals(2, propertyCategories.size());
++    Assert.assertEquals(3, propertyCategories.size());
+ 
+     Properties masterProp = config.getInstanceProperties("master");
+     Map<String, Properties> sourceProps =

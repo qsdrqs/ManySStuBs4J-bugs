@@ -1,0 +1,13 @@
+diff --git a/buggy/client-adapter/elasticsearch/src/main/java/com/alibaba/otter/canal/client/adapter/es/support/ESSyncUtil.java b/fixed/client-adapter/elasticsearch/src/main/java/com/alibaba/otter/canal/client/adapter/es/support/ESSyncUtil.java
+index 52baf3c..36d0c67 100644
+--- a/buggy/client-adapter/elasticsearch/src/main/java/com/alibaba/otter/canal/client/adapter/es/support/ESSyncUtil.java
++++ b/fixed/client-adapter/elasticsearch/src/main/java/com/alibaba/otter/canal/client/adapter/es/support/ESSyncUtil.java
+@@ -209,7 +209,7 @@ public class ESSyncUtil {
+                     if (value.contains(";")) {
+                         separator = ";";
+                     } else if (value.contains("|")) {
+-                        separator = "|";
++                        separator = "\\|";
+                     } else if (value.contains("-")) {
+                         separator = "-";
+                     }

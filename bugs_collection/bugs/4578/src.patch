@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MicrometerEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MicrometerEndpointBuilderFactory.java
+index 42f8a1d..0541706 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MicrometerEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MicrometerEndpointBuilderFactory.java
+@@ -185,7 +185,7 @@ public interface MicrometerEndpointBuilderFactory {
+      * Proxy enum for <code>io.micrometer.core.instrument.Meter$Type</code>
+      * enum.
+      */
+-    static enum Type {
++    enum Type {
+         COUNTER, GAUGE, LONG_TASK_TIMER, TIMER, DISTRIBUTION_SUMMARY, OTHER;
+     }
+     /**

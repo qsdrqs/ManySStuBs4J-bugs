@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleMailEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleMailEndpointBuilderFactory.java
+index 57527c7..9faf3bb 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleMailEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleMailEndpointBuilderFactory.java
+@@ -616,7 +616,7 @@ public interface GoogleMailEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.google.mail.internal.GoogleMailApiName</code> enum.
+      */
+-    public static enum GoogleMailApiName {
++    static enum GoogleMailApiName {
+         THREADS, MESSAGES, ATTACHMENTS, LABELS, HISTORY, DRAFTS, USERS;
+     }
+     /**

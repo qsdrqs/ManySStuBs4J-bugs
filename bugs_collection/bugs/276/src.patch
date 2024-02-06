@@ -1,0 +1,13 @@
+diff --git a/buggy/core/common/src/main/java/alluxio/grpc/GrpcServerAddress.java b/fixed/core/common/src/main/java/alluxio/grpc/GrpcServerAddress.java
+index 3d8a456..8d92b24 100644
+--- a/buggy/core/common/src/main/java/alluxio/grpc/GrpcServerAddress.java
++++ b/fixed/core/common/src/main/java/alluxio/grpc/GrpcServerAddress.java
+@@ -27,7 +27,7 @@ public class GrpcServerAddress {
+    * @param socketAddress physical address
+    */
+   public GrpcServerAddress(InetSocketAddress socketAddress) {
+-    mHostName = socketAddress.getAddress().getHostName();
++    mHostName = socketAddress.getHostName();
+     mSocketAddress = socketAddress;
+   }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/camel-example-main/src/main/java/org/apache/camel/example/MyRouteBuilder.java b/fixed/examples/camel-example-main/src/main/java/org/apache/camel/example/MyRouteBuilder.java
+index d98ae5f..c2a1983 100644
+--- a/buggy/examples/camel-example-main/src/main/java/org/apache/camel/example/MyRouteBuilder.java
++++ b/fixed/examples/camel-example-main/src/main/java/org/apache/camel/example/MyRouteBuilder.java
+@@ -22,7 +22,7 @@ public class MyRouteBuilder extends RouteBuilder {
+ 
+     @Override
+     public void configure() throws Exception {
+-        from("quartz2:foo?cron={{myCron}}")
++        from("quartz:foo?cron={{myCron}}")
+             .bean("myBean", "hello")
+             .log("${body}")
+             .bean("myBean", "bye")

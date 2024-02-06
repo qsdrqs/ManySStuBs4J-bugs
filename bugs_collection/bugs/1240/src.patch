@@ -1,0 +1,13 @@
+diff --git a/buggy/common/src/main/java/tachyon/security/group/UserToGroupsMappingService.java b/fixed/common/src/main/java/tachyon/security/group/UserToGroupsMappingService.java
+index a6b7a97..922823d 100644
+--- a/buggy/common/src/main/java/tachyon/security/group/UserToGroupsMappingService.java
++++ b/fixed/common/src/main/java/tachyon/security/group/UserToGroupsMappingService.java
+@@ -34,7 +34,7 @@ import tachyon.util.CommonUtils;
+  * cluster.
+  */
+ public final class UserToGroupsMappingService {
+-  private static final Logger LOG = LoggerFactory.getLogger(UserToGroupsMappingService.class);
++  private static final Logger LOG = LoggerFactory.getLogger(Constants.LOGGER_TYPE);
+ 
+   private final GroupMappingService mGroupMappingService;
+ 

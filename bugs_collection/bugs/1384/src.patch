@@ -1,0 +1,13 @@
+diff --git a/buggy/servers/src/main/java/tachyon/master/journal/Journal.java b/fixed/servers/src/main/java/tachyon/master/journal/Journal.java
+index e28a008..c13a65d 100644
+--- a/buggy/servers/src/main/java/tachyon/master/journal/Journal.java
++++ b/fixed/servers/src/main/java/tachyon/master/journal/Journal.java
+@@ -76,7 +76,7 @@ public class Journal {
+    * @return The absolute path of the completed log for a given log number.
+    */
+   public String getCompletedLogFilePath(int logNumber) {
+-    return getCompletedDirectory() + String.format("%s.%7d", mEntryLogFilenameBase, logNumber);
++    return getCompletedDirectory() + String.format("%s.%07d", mEntryLogFilenameBase, logNumber);
+   }
+ 
+   public JournalFormatter getJournalFormatter() {

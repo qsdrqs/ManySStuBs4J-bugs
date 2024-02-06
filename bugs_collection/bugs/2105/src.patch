@@ -1,0 +1,34 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/util/ExcludeSessionBroadcaster.java b/fixed/modules/cpr/src/main/java/org/atmosphere/util/ExcludeSessionBroadcaster.java
+index 2cd0e71..870230e 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/util/ExcludeSessionBroadcaster.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/util/ExcludeSessionBroadcaster.java
+@@ -108,8 +108,8 @@ public class ExcludeSessionBroadcaster
+             return futureDone(msg);
+         }
+ 
+-        BroadcasterFuture<Object> f = new BroadcasterFuture<Object>(newMsg, subset.size(),  this);
+-        messages.offer(new Entry(newMsg, subset, f, msg));
++        BroadcasterFuture<Object> f = new BroadcasterFuture<Object>(newMsg, subset.size(), this);
++        dispatchMessages(new Entry(newMsg, subset, f, msg));
+         return f;
+     }
+ 
+@@ -141,7 +141,7 @@ public class ExcludeSessionBroadcaster
+         }
+ 
+         BroadcasterFuture<Object> f = new BroadcasterFuture<Object>(newMsg, subset.size(), this);
+-        messages.offer(new Entry(newMsg, subset, f, msg));
++        dispatchMessages(new Entry(newMsg, subset, f, msg));
+         return f;
+     }
+ 
+@@ -175,7 +175,7 @@ public class ExcludeSessionBroadcaster
+         }
+ 
+         BroadcasterFuture<Object> f = new BroadcasterFuture<Object>(newMsg, subset.size(), this);
+-        messages.offer(new Entry(newMsg, subset, f, msg));
++        dispatchMessages(new Entry(newMsg, subset, f, msg));
+         return f;
+     }
+ }
+\ No newline at end of file

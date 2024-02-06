@@ -1,0 +1,13 @@
+diff --git a/buggy/clients/unshaded/src/main/java/tachyon/hadoop/HdfsFileInputStream.java b/fixed/clients/unshaded/src/main/java/tachyon/hadoop/HdfsFileInputStream.java
+index b0e43d4..b175038 100644
+--- a/buggy/clients/unshaded/src/main/java/tachyon/hadoop/HdfsFileInputStream.java
++++ b/fixed/clients/unshaded/src/main/java/tachyon/hadoop/HdfsFileInputStream.java
+@@ -262,7 +262,7 @@ public class HdfsFileInputStream extends InputStream implements Seekable, Positi
+       if (mStatistics != null) {
+         mStatistics.incrementBytesRead(1);
+       }
+-      return mBuffer[mBufferPosition ++];
++      return BufferUtils.byteToInt(mBuffer[mBufferPosition ++]);
+     }
+     LOG.error("Reading from HDFS directly");
+     while ((mBufferLimit = mHdfsInputStream.read(mBuffer)) == 0) {

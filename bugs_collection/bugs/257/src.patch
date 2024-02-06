@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/src/test/java/alluxio/server/ft/journal/ufs/UfsConfigurationJournalTest.java b/fixed/tests/src/test/java/alluxio/server/ft/journal/ufs/UfsConfigurationJournalTest.java
+index 536402e..bc986e6 100644
+--- a/buggy/tests/src/test/java/alluxio/server/ft/journal/ufs/UfsConfigurationJournalTest.java
++++ b/fixed/tests/src/test/java/alluxio/server/ft/journal/ufs/UfsConfigurationJournalTest.java
+@@ -81,7 +81,7 @@ public class UfsConfigurationJournalTest {
+       UnderFileSystemConfiguration ufsConf = Whitebox.getInternalState(resource.get(), "mConf");
+       assertEquals(ufsConf.getMountSpecificConf().size(), options.size());
+       for (Map.Entry<String, String> entry : options.entrySet()) {
+-        assertEquals(entry.getValue(), options.get(entry.getKey()));
++        assertEquals(entry.getValue(), ufsConf.getMountSpecificConf().get(entry.getKey()));
+       }
+       assertTrue(ufsConf.isReadOnly());
+       assertTrue(ufsConf.isShared());

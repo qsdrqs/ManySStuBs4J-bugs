@@ -1,0 +1,22 @@
+diff --git a/buggy/core/common/src/main/java/alluxio/collections/PrefixList.java b/fixed/core/common/src/main/java/alluxio/collections/PrefixList.java
+index 4ffb489..ca50672 100644
+--- a/buggy/core/common/src/main/java/alluxio/collections/PrefixList.java
++++ b/fixed/core/common/src/main/java/alluxio/collections/PrefixList.java
+@@ -33,7 +33,7 @@ public final class PrefixList {
+    */
+   public PrefixList(List<String> prefixList) {
+     if (prefixList == null) {
+-      mInnerList = new ArrayList<String>(0);
++      mInnerList = new ArrayList<>(0);
+     } else {
+       mInnerList = prefixList;
+     }
+@@ -47,7 +47,7 @@ public final class PrefixList {
+    */
+   public PrefixList(String prefixes, String separator) {
+     Validate.notNull(separator);
+-    mInnerList = new ArrayList<String>(0);
++    mInnerList = new ArrayList<>(0);
+     if (prefixes != null && !prefixes.trim().isEmpty()) {
+       String[] candidates = prefixes.trim().split(separator);
+       for (String prefix : candidates) {

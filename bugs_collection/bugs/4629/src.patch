@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TwitterDirectMessageEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TwitterDirectMessageEndpointBuilderFactory.java
+index 5248d0c..7e3e530 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TwitterDirectMessageEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TwitterDirectMessageEndpointBuilderFactory.java
+@@ -1326,7 +1326,7 @@ public interface TwitterDirectMessageEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.twitter.data.EndpointType</code> enum.
+      */
+-    static enum EndpointType {
++    enum EndpointType {
+         POLLING, DIRECT, EVENT;
+     }
+     /**

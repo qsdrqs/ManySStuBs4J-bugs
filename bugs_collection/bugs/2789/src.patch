@@ -1,0 +1,16 @@
+diff --git a/buggy/graylog2-server/src/main/java/org/graylog2/periodical/ContentPackLoaderPeriodical.java b/fixed/graylog2-server/src/main/java/org/graylog2/periodical/ContentPackLoaderPeriodical.java
+index 9e7c2e4..21de720 100644
+--- a/buggy/graylog2-server/src/main/java/org/graylog2/periodical/ContentPackLoaderPeriodical.java
++++ b/fixed/graylog2-server/src/main/java/org/graylog2/periodical/ContentPackLoaderPeriodical.java
+@@ -114,9 +114,9 @@ public class ContentPackLoaderPeriodical extends Periodical {
+             } else {
+                 try {
+                     final ConfigurationBundle insertedContentPack = bundleService.insert(contentPack);
+-                    LOG.debug("Successfully inserted content pack {} into database with ID " + insertedContentPack.getId());
++                    LOG.debug("Successfully inserted content pack {} into database with ID {}", resource, insertedContentPack.getId());
+                 } catch (MongoException e) {
+-                    LOG.error("Error while inserting content pack " + resource + "into database. Skipping.", e);
++                    LOG.error("Error while inserting content pack " + resource + " into database. Skipping.", e);
+                     continue;
+                 }
+             }

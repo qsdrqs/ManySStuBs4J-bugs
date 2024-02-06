@@ -1,0 +1,13 @@
+diff --git a/buggy/core/server/proxy/src/main/java/alluxio/proxy/s3/ListBucketOptions.java b/fixed/core/server/proxy/src/main/java/alluxio/proxy/s3/ListBucketOptions.java
+index 1877854..0a993d0 100644
+--- a/buggy/core/server/proxy/src/main/java/alluxio/proxy/s3/ListBucketOptions.java
++++ b/fixed/core/server/proxy/src/main/java/alluxio/proxy/s3/ListBucketOptions.java
+@@ -33,7 +33,7 @@ public final class ListBucketOptions {
+   /**
+    * Constructs a new {@link ListBucketOptions}.
+    */
+-  public ListBucketOptions() {}
++  private ListBucketOptions() {}
+ 
+   /**
+    * @return the continuation token

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/alibaba/json/bvt/support/spring/messaging/MappingFastJsonMessageConverterTest.java b/fixed/src/test/java/com/alibaba/json/bvt/support/spring/messaging/MappingFastJsonMessageConverterTest.java
+index 9d0a3c8..590e486 100644
+--- a/buggy/src/test/java/com/alibaba/json/bvt/support/spring/messaging/MappingFastJsonMessageConverterTest.java
++++ b/fixed/src/test/java/com/alibaba/json/bvt/support/spring/messaging/MappingFastJsonMessageConverterTest.java
+@@ -34,7 +34,7 @@ public class MappingFastJsonMessageConverterTest extends TestCase {
+ 		// test toMessage/convertToInternal
+ 		Message message1 = converter.toMessage(vo,null);
+ 		System.out.println(message1.getPayload());
+-		Assert.assertEquals("{\"id\":1}",message1.getPayload());
++		Assert.assertEquals("{\"id\":1}", new String((byte[])message1.getPayload()));
+ 
+ 	}
+ 

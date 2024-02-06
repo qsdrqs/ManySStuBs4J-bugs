@@ -1,0 +1,13 @@
+diff --git a/buggy/plugin/src/main/java/org/graylog/plugins/pipelineprocessor/PipelineProcessorMetaData.java b/fixed/plugin/src/main/java/org/graylog/plugins/pipelineprocessor/PipelineProcessorMetaData.java
+index 1ac285d..de7f77c 100644
+--- a/buggy/plugin/src/main/java/org/graylog/plugins/pipelineprocessor/PipelineProcessorMetaData.java
++++ b/fixed/plugin/src/main/java/org/graylog/plugins/pipelineprocessor/PipelineProcessorMetaData.java
+@@ -42,7 +42,7 @@ public class PipelineProcessorMetaData implements PluginMetaData {
+ 
+     @Override
+     public String getAuthor() {
+-        return "Graylog, Inc";
++        return "Graylog, Inc.";
+     }
+ 
+     @Override

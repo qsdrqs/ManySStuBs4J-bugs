@@ -1,0 +1,13 @@
+diff --git a/buggy/graylog2-inputs/src/main/java/org/graylog2/inputs/gelf/kafka/GELFKafkaInput.java b/fixed/graylog2-inputs/src/main/java/org/graylog2/inputs/gelf/kafka/GELFKafkaInput.java
+index fff213d..08bdb85 100644
+--- a/buggy/graylog2-inputs/src/main/java/org/graylog2/inputs/gelf/kafka/GELFKafkaInput.java
++++ b/fixed/graylog2-inputs/src/main/java/org/graylog2/inputs/gelf/kafka/GELFKafkaInput.java
+@@ -75,7 +75,7 @@ public class GELFKafkaInput extends MessageInput {
+     public static class Descriptor extends MessageInput.Descriptor {
+         @Inject
+         public Descriptor() {
+-            super(NAME, false, "https://www.graylog.org/documentation/sending/kafka/");
++            super(NAME, false, "");
+         }
+     }
+ 

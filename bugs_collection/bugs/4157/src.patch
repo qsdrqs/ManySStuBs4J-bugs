@@ -1,0 +1,13 @@
+diff --git a/buggy/tool/src/org/antlr/v4/tool/ErrorManager.java b/fixed/tool/src/org/antlr/v4/tool/ErrorManager.java
+index e52bd52..2229ff1 100644
+--- a/buggy/tool/src/org/antlr/v4/tool/ErrorManager.java
++++ b/fixed/tool/src/org/antlr/v4/tool/ErrorManager.java
+@@ -131,7 +131,7 @@ public class ErrorManager {
+ 			locationValid = true;
+ 		}
+ 
+-		messageFormatST.add("id", msg.errorType.ordinal());
++		messageFormatST.add("id", msg.errorType.code);
+ 		messageFormatST.add("text", messageST);
+ 
+ 		if (locationValid) reportST.add("location", locationST);

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/ning/http/util/AsyncHttpProviderUtils.java b/fixed/src/main/java/com/ning/http/util/AsyncHttpProviderUtils.java
+index 3857b42..a7c5281 100644
+--- a/buggy/src/main/java/com/ning/http/util/AsyncHttpProviderUtils.java
++++ b/fixed/src/main/java/com/ning/http/util/AsyncHttpProviderUtils.java
+@@ -436,7 +436,7 @@ public class AsyncHttpProviderUtils {
+                     // it (all browsers do, Apache HTTP Client and Grizzly 
+                     // strip it by default)
+                     // This is a poor man's trim("\"").trim("'")
+-                    return charset.replaceAll("\"", "").replaceAll("'", "")
++                    return charset.replaceAll("\"", "").replaceAll("'", "");
+                 }
+             }
+         }

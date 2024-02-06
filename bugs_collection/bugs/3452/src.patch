@@ -1,0 +1,14 @@
+diff --git a/buggy/dubbo-metadata-report/dubbo-metadata-report-nacos/src/test/java/org/apache/dubbo/metadata/store/nacos/NacosMetadataReportTest.java b/fixed/dubbo-metadata-report/dubbo-metadata-report-nacos/src/test/java/org/apache/dubbo/metadata/store/nacos/NacosMetadataReportTest.java
+index 6e46bd7..6f48dbd 100644
+--- a/buggy/dubbo-metadata-report/dubbo-metadata-report-nacos/src/test/java/org/apache/dubbo/metadata/store/nacos/NacosMetadataReportTest.java
++++ b/fixed/dubbo-metadata-report/dubbo-metadata-report-nacos/src/test/java/org/apache/dubbo/metadata/store/nacos/NacosMetadataReportTest.java
+@@ -37,7 +37,8 @@ import static org.apache.dubbo.common.constants.CommonConstants.CONSUMER_SIDE;
+ import static org.apache.dubbo.common.constants.CommonConstants.PROVIDER_SIDE;
+ import static org.apache.dubbo.common.constants.RegistryConstants.SESSION_TIMEOUT_KEY;
+ 
+-@Disabled
++//FIXME: waiting for embedded Nacos suport, then we can open the switch.
++@Disabled("https://github.com/alibaba/nacos/issues/1188")
+ public class NacosMetadataReportTest {
+     private static final String TEST_SERVICE = "org.apache.dubbo.metadata.store.nacos.NacosMetadata4TstService";
+     private NacosMetadataReport nacosMetadataReport;

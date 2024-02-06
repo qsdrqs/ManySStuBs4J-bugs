@@ -1,0 +1,21 @@
+diff --git a/buggy/core/server/common/src/main/java/alluxio/RestUtils.java b/fixed/core/server/common/src/main/java/alluxio/RestUtils.java
+index 1b86d36..0ddb996 100644
+--- a/buggy/core/server/common/src/main/java/alluxio/RestUtils.java
++++ b/fixed/core/server/common/src/main/java/alluxio/RestUtils.java
+@@ -43,14 +43,14 @@ public final class RestUtils {
+         AuthenticatedClientUser.set(LoginUser.get().getName());
+       }
+     } catch (IOException e) {
+-      LOG.error("Failed to set AuthenticatedClientUser in REST service handler.", e);
++      LOG.warn("Failed to set AuthenticatedClientUser in REST service handler: {}", e.getMessage());
+       return createErrorResponse(e.getMessage());
+     }
+ 
+     try {
+       return createResponse(callable.call());
+     } catch (Exception e) {
+-      LOG.error("Unexpected error invoking rest endpoint", e);
++      LOG.warn("Unexpected error invoking rest endpoint: {}", e.getMessage());
+       return createErrorResponse(e.getMessage());
+     }
+   }

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-telegram/src/test/java/org/apache/camel/component/telegram/TelegramWebhookCallTest.java b/fixed/components/camel-telegram/src/test/java/org/apache/camel/component/telegram/TelegramWebhookCallTest.java
+index ab028e2..738ff31 100644
+--- a/buggy/components/camel-telegram/src/test/java/org/apache/camel/component/telegram/TelegramWebhookCallTest.java
++++ b/fixed/components/camel-telegram/src/test/java/org/apache/camel/component/telegram/TelegramWebhookCallTest.java
+@@ -45,7 +45,7 @@ public class TelegramWebhookCallTest extends TelegramTestSupport {
+             mock.expectedBodiesReceived("aho");
+             mock.expectedMinimumMessageCount(1);
+ 
+-            template().sendBodyAndHeader("netty4-http:" + url, content, Exchange.CONTENT_TYPE, "application/json");
++            template().sendBodyAndHeader("netty-http:" + url, content, Exchange.CONTENT_TYPE, "application/json");
+             mock.assertIsSatisfied();
+         }
+     }

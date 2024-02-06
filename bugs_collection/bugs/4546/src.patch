@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IgniteQueueEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IgniteQueueEndpointBuilderFactory.java
+index d851358..8d0af3f 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IgniteQueueEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IgniteQueueEndpointBuilderFactory.java
+@@ -155,7 +155,7 @@ public interface IgniteQueueEndpointBuilderFactory {
+      * <code>org.apache.camel.component.ignite.queue.IgniteQueueOperation</code>
+      * enum.
+      */
+-    static enum IgniteQueueOperation {
++    enum IgniteQueueOperation {
+         CONTAINS, ADD, SIZE, REMOVE, ITERATOR, CLEAR, RETAIN_ALL, ARRAY, DRAIN, ELEMENT, PEEK, OFFER, POLL, TAKE, PUT;
+     }
+     /**

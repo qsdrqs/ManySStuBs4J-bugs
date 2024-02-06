@@ -1,0 +1,13 @@
+diff --git a/buggy/core/common/src/main/java/alluxio/exception/ExceptionMessage.java b/fixed/core/common/src/main/java/alluxio/exception/ExceptionMessage.java
+index 0f2d8ed..d7ec80c 100644
+--- a/buggy/core/common/src/main/java/alluxio/exception/ExceptionMessage.java
++++ b/fixed/core/common/src/main/java/alluxio/exception/ExceptionMessage.java
+@@ -194,7 +194,7 @@ public enum ExceptionMessage {
+   KEY_ALREADY_EXISTS("The input key already exists in the key-value store"),
+ 
+   // block worker
+-  FAILED_COMMIT_BLOCK_TO_MASTER("Failed to commit block with blockId {0,number,#} to master."),
++  FAILED_COMMIT_BLOCK_TO_MASTER("Failed to commit block with blockId {0,number,#} to master"),
+ 
+   // SEMICOLON! minimize merge conflicts by putting it on its own line
+   ;

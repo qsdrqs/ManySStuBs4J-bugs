@@ -1,0 +1,13 @@
+diff --git a/buggy/catalog/camel-report-maven-plugin/src/main/java/org/apache/camel/maven/ValidateMojo.java b/fixed/catalog/camel-report-maven-plugin/src/main/java/org/apache/camel/maven/ValidateMojo.java
+index 39e644d..f12ad75 100644
+--- a/buggy/catalog/camel-report-maven-plugin/src/main/java/org/apache/camel/maven/ValidateMojo.java
++++ b/fixed/catalog/camel-report-maven-plugin/src/main/java/org/apache/camel/maven/ValidateMojo.java
+@@ -385,7 +385,7 @@ public class ValidateMojo extends AbstractExecMojo {
+                 getLog().warn(sb.toString());
+             } else if (showAll) {
+                 StringBuilder sb = new StringBuilder();
+-                sb.append("Endpoint validation passsed at: ");
++                sb.append("Endpoint validation passed at: ");
+                 if (detail.getClassName() != null && detail.getLineNumber() != null) {
+                     // this is from java code
+                     sb.append(detail.getClassName());

@@ -1,0 +1,13 @@
+diff --git a/buggy/library/src/android/support/v4/app/Fragment.java b/fixed/library/src/android/support/v4/app/Fragment.java
+index eb03451..542443a 100644
+--- a/buggy/library/src/android/support/v4/app/Fragment.java
++++ b/fixed/library/src/android/support/v4/app/Fragment.java
+@@ -540,7 +540,7 @@ public class Fragment implements ComponentCallbacks, OnCreateContextMenuListener
+      * @see #getSupportActivity()
+      */
+     final public Activity getActivity() {
+-        return mActivity.asActivity();
++        return (mActivity != null) ? mActivity.asActivity() : null;
+     }
+ 
+     /**

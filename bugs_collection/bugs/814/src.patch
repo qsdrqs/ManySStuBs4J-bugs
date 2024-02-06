@@ -1,0 +1,13 @@
+diff --git a/buggy/underfs/swift/src/test/java/alluxio/underfs/swift/SwiftUnderFileSystemTest.java b/fixed/underfs/swift/src/test/java/alluxio/underfs/swift/SwiftUnderFileSystemTest.java
+index e969c8d..6602526 100644
+--- a/buggy/underfs/swift/src/test/java/alluxio/underfs/swift/SwiftUnderFileSystemTest.java
++++ b/fixed/underfs/swift/src/test/java/alluxio/underfs/swift/SwiftUnderFileSystemTest.java
+@@ -101,7 +101,7 @@ public class SwiftUnderFileSystemTest {
+         "dir/file",
+         "swift://test-container-wrong/dir/file",
+         "dir/file",
+-        "dir/file",
++        "/dir/file",
+     };
+     for (int i = 0; i < inputs.length; i++) {
+       Assert.assertEquals(results[i], Whitebox.invokeMethod(mMockSwiftUnderFileSystem,

@@ -1,0 +1,14 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/util/SimpleBroadcaster.java b/fixed/modules/cpr/src/main/java/org/atmosphere/util/SimpleBroadcaster.java
+index d83f644..5ba8531 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/util/SimpleBroadcaster.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/util/SimpleBroadcaster.java
+@@ -87,7 +87,8 @@ public class SimpleBroadcaster extends DefaultBroadcaster {
+     protected BroadcasterConfig createBroadcasterConfig(AtmosphereConfig config){
+         BroadcasterConfig bc = (BroadcasterConfig) config.properties().get(BroadcasterConfig.class.getName());
+         if (bc == null) {
+-            bc = new BroadcasterConfig(config.framework().broadcasterFilters(), config, false, getID());
++            bc = new BroadcasterConfig(config.framework().broadcasterFilters(), config, false, getID())
++                    .setScheduledExecutorService(ExecutorsFactory.getScheduler(config));
+             config.properties().put(BroadcasterConfig.class.getName(), bc);
+         }
+         return bc;

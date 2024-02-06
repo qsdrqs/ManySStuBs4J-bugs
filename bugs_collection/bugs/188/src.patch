@@ -1,0 +1,15 @@
+diff --git a/buggy/modules/activiti-engine/src/main/java/org/activiti/engine/impl/history/HistoryLevel.java b/fixed/modules/activiti-engine/src/main/java/org/activiti/engine/impl/history/HistoryLevel.java
+index 855383a..a6af691 100644
+--- a/buggy/modules/activiti-engine/src/main/java/org/activiti/engine/impl/history/HistoryLevel.java
++++ b/fixed/modules/activiti-engine/src/main/java/org/activiti/engine/impl/history/HistoryLevel.java
+@@ -23,8 +23,8 @@ import org.activiti.engine.ActivitiException;
+ public enum HistoryLevel {
+   
+   NONE("none"),
+-  ACTIVITY("audit"),
+-  AUDIT("activity"),
++  ACTIVITY("activity"),
++  AUDIT("audit"),
+   FULL("full");
+   
+   private String key;

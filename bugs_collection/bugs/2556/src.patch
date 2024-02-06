@@ -1,0 +1,12 @@
+diff --git a/buggy/src/main/java/org/bukkit/command/defaults/WhitelistCommand.java b/fixed/src/main/java/org/bukkit/command/defaults/WhitelistCommand.java
+index 749ccdf..272a062 100644
+--- a/buggy/src/main/java/org/bukkit/command/defaults/WhitelistCommand.java
++++ b/fixed/src/main/java/org/bukkit/command/defaults/WhitelistCommand.java
+@@ -85,6 +85,6 @@ public class WhitelistCommand extends VanillaCommand {
+ 
+     @Override
+     public boolean matches(String input) {
+-        return input.startsWith("whitelist ");
++        return input.startsWith("whitelist ") || input.equalsIgnoreCase("whitelist");
+     }
+ }

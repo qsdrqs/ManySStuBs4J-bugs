@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/ning/http/client/providers/NettyAsyncHttpProvider.java b/fixed/src/main/java/com/ning/http/client/providers/NettyAsyncHttpProvider.java
+index a896cc8..e2e2cea 100644
+--- a/buggy/src/main/java/com/ning/http/client/providers/NettyAsyncHttpProvider.java
++++ b/fixed/src/main/java/com/ning/http/client/providers/NettyAsyncHttpProvider.java
+@@ -246,7 +246,7 @@ public class NettyAsyncHttpProvider extends IdleStateHandler implements AsyncHtt
+ 
+             public ConnectListener<T> build() throws IOException {
+ 
+-                URI uri = createUri(request.getRawUrl());
++                URI uri = createUri(request.getRawUrl().replace(" ","%20"));
+                 HttpRequest nettyRequest = buildRequest(config, request, uri, true);
+ 
+                 log.debug("Executing the doConnect operation: %s", asyncHandler);

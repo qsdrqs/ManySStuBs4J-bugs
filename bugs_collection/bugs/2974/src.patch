@@ -1,0 +1,13 @@
+diff --git a/buggy/library/src/com/actionbarsherlock/internal/nineoldandroids/animation/AnimatorSet.java b/fixed/library/src/com/actionbarsherlock/internal/nineoldandroids/animation/AnimatorSet.java
+index 7de2352..3231080 100644
+--- a/buggy/library/src/com/actionbarsherlock/internal/nineoldandroids/animation/AnimatorSet.java
++++ b/fixed/library/src/com/actionbarsherlock/internal/nineoldandroids/animation/AnimatorSet.java
+@@ -947,7 +947,7 @@ public final class AnimatorSet extends Animator {
+         public Node clone() {
+             try {
+                 Node node = (Node) super.clone();
+-                node.animation = (Animator) animation.clone();
++                node.animation = animation.clone();
+                 return node;
+             } catch (CloneNotSupportedException e) {
+                throw new AssertionError();

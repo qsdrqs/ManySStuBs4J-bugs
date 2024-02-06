@@ -1,0 +1,13 @@
+diff --git a/buggy/tool/src/org/antlr/v4/semantics/SymbolChecks.java b/fixed/tool/src/org/antlr/v4/semantics/SymbolChecks.java
+index db0039d..bbc7a3e 100644
+--- a/buggy/tool/src/org/antlr/v4/semantics/SymbolChecks.java
++++ b/fixed/tool/src/org/antlr/v4/semantics/SymbolChecks.java
+@@ -201,7 +201,7 @@ public class SymbolChecks {
+ 					errMgr.grammarError(
+ 						ErrorType.ARG_RETVAL_CONFLICT,
+ 						g.fileName,
+-						((GrammarAST) r.ast.getChild(0)).token,
++						r.args.get(key).token != null ? r.args.get(key).token : ((GrammarAST) r.ast.getChild(0)).token,
+ 						key,
+ 						r.name);
+ 				}

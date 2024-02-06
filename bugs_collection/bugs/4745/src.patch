@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastAtomicnumberEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastAtomicnumberEndpointBuilderFactory.java
+index 5b0aee9..33eede3 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastAtomicnumberEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastAtomicnumberEndpointBuilderFactory.java
+@@ -304,7 +304,7 @@ public interface HazelcastAtomicnumberEndpointBuilderFactory {
+      * <code>org.apache.camel.component.hazelcast.HazelcastOperation</code>
+      * enum.
+      */
+-    public static enum HazelcastOperation {
++    static enum HazelcastOperation {
+         put, delete, get, update, query, getAll, clear, putIfAbsent, allAll, removeAll, retainAll, evict, evictAll, valueCount, containsKey, containsValue, keySet, removevalue, increment, decrement, setvalue, destroy, compareAndSet, getAndAdd, add, offer, peek, poll, remainingCapacity, drainTo, removeIf, take, publish, readOnceHeal, readOnceTail, capacity;
+     }
+     /**

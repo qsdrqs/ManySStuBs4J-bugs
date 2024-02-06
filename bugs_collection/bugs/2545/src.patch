@@ -1,0 +1,12 @@
+diff --git a/buggy/src/main/java/org/bukkit/command/defaults/GameModeCommand.java b/fixed/src/main/java/org/bukkit/command/defaults/GameModeCommand.java
+index 9962dc6..071ce32 100644
+--- a/buggy/src/main/java/org/bukkit/command/defaults/GameModeCommand.java
++++ b/fixed/src/main/java/org/bukkit/command/defaults/GameModeCommand.java
+@@ -54,6 +54,6 @@ public class GameModeCommand extends VanillaCommand {
+ 
+     @Override
+     public boolean matches(String input) {
+-        return input.startsWith("gamemode ");
++        return input.startsWith("gamemode ") || input.equalsIgnoreCase("gamemode");
+     }
+ }

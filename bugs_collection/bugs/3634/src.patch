@@ -1,0 +1,13 @@
+diff --git a/buggy/dubbo-admin/src/main/java/com/alibaba/dubbo/governance/service/impl/OverrideServiceImpl.java b/fixed/dubbo-admin/src/main/java/com/alibaba/dubbo/governance/service/impl/OverrideServiceImpl.java
+index 386aa8d..e7bb310 100644
+--- a/buggy/dubbo-admin/src/main/java/com/alibaba/dubbo/governance/service/impl/OverrideServiceImpl.java
++++ b/fixed/dubbo-admin/src/main/java/com/alibaba/dubbo/governance/service/impl/OverrideServiceImpl.java
+@@ -75,7 +75,7 @@ public class OverrideServiceImpl extends AbstractService implements OverrideServ
+             return;
+         }
+ 
+-        URL newOverride = oldOverride.removeParameter("enabled");
++        URL newOverride = oldOverride.addParameter("enabled", "enabled");
+         registryService.unregister(oldOverride);
+         registryService.register(newOverride);
+ 

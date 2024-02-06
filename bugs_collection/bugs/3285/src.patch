@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/sql/parser/Lexer.java b/fixed/src/main/java/com/alibaba/druid/sql/parser/Lexer.java
+index 924dd90..bb3a31e 100644
+--- a/buggy/src/main/java/com/alibaba/druid/sql/parser/Lexer.java
++++ b/fixed/src/main/java/com/alibaba/druid/sql/parser/Lexer.java
+@@ -1090,7 +1090,7 @@ public class Lexer {
+         
+         scanChar();
+         scanChar();
+-        mark = pos - 1;
++        mark = pos;
+         bufPos = 0;
+ 
+         for (;;) {

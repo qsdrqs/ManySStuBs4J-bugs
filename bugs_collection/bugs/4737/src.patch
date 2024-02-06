@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GooglePubsubEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GooglePubsubEndpointBuilderFactory.java
+index 822b0af..a76c890 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GooglePubsubEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GooglePubsubEndpointBuilderFactory.java
+@@ -705,7 +705,7 @@ public interface GooglePubsubEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.google.pubsub.GooglePubsubConstants$AckMode</code> enum.
+      */
+-    public static enum AckMode {
++    static enum AckMode {
+         AUTO, NONE;
+     }
+     /**

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/bukkit/permissions/PermissibleBase.java b/fixed/src/main/java/org/bukkit/permissions/PermissibleBase.java
+index 88fa82e..6da5663 100644
+--- a/buggy/src/main/java/org/bukkit/permissions/PermissibleBase.java
++++ b/fixed/src/main/java/org/bukkit/permissions/PermissibleBase.java
+@@ -76,7 +76,7 @@ public class PermissibleBase implements Permissible {
+             if (perm != null) {
+                 return perm.getDefault().getValue(isOp());
+             } else {
+-                return false;
++                return Permission.DEFAULT_PERMISSION.getValue(isOp());
+             }
+         }
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/bukkit/Material.java b/fixed/src/main/java/org/bukkit/Material.java
+index d37b623..4873142 100644
+--- a/buggy/src/main/java/org/bukkit/Material.java
++++ b/fixed/src/main/java/org/bukkit/Material.java
+@@ -132,7 +132,7 @@ public enum Material {
+     BREWING_STAND(117),
+     CAULDRON(118),
+     ENDER_PORTAL(119),
+-    ENTER_PORTAL_FRAME(120),
++    ENDER_PORTAL_FRAME(120),
+     ENDER_STONE(121),
+     DRAGON_EGG(122),
+     // ----- Item Separator -----

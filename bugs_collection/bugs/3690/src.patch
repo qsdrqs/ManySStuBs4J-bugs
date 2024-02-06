@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/alibaba/json/bvt/CurrencyTest4.java b/fixed/src/test/java/com/alibaba/json/bvt/CurrencyTest4.java
+index a8b503a..f174d43 100644
+--- a/buggy/src/test/java/com/alibaba/json/bvt/CurrencyTest4.java
++++ b/fixed/src/test/java/com/alibaba/json/bvt/CurrencyTest4.java
+@@ -24,7 +24,7 @@ public class CurrencyTest4 extends TestCase {
+ 
+     public void test_1() throws Exception {
+         JSONObject jsonObject = new JSONObject();
+-        jsonObject.put("symbol", "CNY");
++        jsonObject.put("currencyCode", "CNY");
+ 
+         String text = JSON.toJSONString(jsonObject);
+ 

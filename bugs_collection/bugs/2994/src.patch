@@ -1,0 +1,13 @@
+diff --git a/buggy/library/src/android/support/v4/app/FragmentActivity.java b/fixed/library/src/android/support/v4/app/FragmentActivity.java
+index 75b1f41..d65b174 100644
+--- a/buggy/library/src/android/support/v4/app/FragmentActivity.java
++++ b/fixed/library/src/android/support/v4/app/FragmentActivity.java
+@@ -98,7 +98,7 @@ public class FragmentActivity extends Activity implements SupportActivity {
+ 
+         @Override
+         LoaderManagerImpl getLoaderManager(int index, boolean started, boolean create) {
+-            return mLoaderManager;
++            return FragmentActivity.this.getLoaderManager(index, started, create);
+         }
+ 
+         @Override

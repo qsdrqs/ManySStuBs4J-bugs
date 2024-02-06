@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/fastjson/JSONObject.java b/fixed/src/main/java/com/alibaba/fastjson/JSONObject.java
+index 9d920b4..cb130be 100644
+--- a/buggy/src/main/java/com/alibaba/fastjson/JSONObject.java
++++ b/fixed/src/main/java/com/alibaba/fastjson/JSONObject.java
+@@ -248,7 +248,7 @@ public class JSONObject extends JSON implements Map<String, Object>, JSONAware,
+             return 0D;
+         }
+ 
+-        return castToDouble(value).floatValue();
++        return castToDouble(value);
+     }
+ 
+     public BigDecimal getBigDecimal(String key) {

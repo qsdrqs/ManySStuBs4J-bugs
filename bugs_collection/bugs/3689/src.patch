@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser.java b/fixed/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser.java
+index d6d9280..a2bc57b 100644
+--- a/buggy/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser.java
++++ b/fixed/src/main/java/com/alibaba/fastjson/parser/DefaultJSONParser.java
+@@ -1083,7 +1083,7 @@ public class DefaultJSONParser implements Closeable {
+ 
+         if (lexer.token() != JSONToken.LBRACKET) {
+             throw new JSONException("syntax error, expect [, actual " + JSONToken.name(lexer.token()) + ", pos "
+-                                    + lexer.pos());
++                                    + lexer.pos() + ", fieldName " + fieldName);
+         }
+ 
+         lexer.nextToken(JSONToken.LITERAL_STRING);

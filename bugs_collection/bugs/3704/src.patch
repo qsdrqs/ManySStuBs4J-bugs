@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/alibaba/json/bvt/parser/deser/FieldDeserializerTest1.java b/fixed/src/test/java/com/alibaba/json/bvt/parser/deser/FieldDeserializerTest1.java
+index 03174a5..e0c7331 100644
+--- a/buggy/src/test/java/com/alibaba/json/bvt/parser/deser/FieldDeserializerTest1.java
++++ b/fixed/src/test/java/com/alibaba/json/bvt/parser/deser/FieldDeserializerTest1.java
+@@ -12,7 +12,7 @@ public class FieldDeserializerTest1 extends TestCase {
+     public void test_error() throws Exception {
+         Exception error = null;
+         try {
+-            JSON.parseObject("{\"value\":[]}", Entity.class, 0);
++            JSON.parseObject("{\"value\":[-}", Entity.class, 0);
+         } catch (JSONException ex) {
+             error = ex;
+         }

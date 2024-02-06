@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/pool/DruidDataSource.java b/fixed/src/main/java/com/alibaba/druid/pool/DruidDataSource.java
+index b8a7ad5..67d839b 100644
+--- a/buggy/src/main/java/com/alibaba/druid/pool/DruidDataSource.java
++++ b/fixed/src/main/java/com/alibaba/druid/pool/DruidDataSource.java
+@@ -2981,7 +2981,7 @@ public class DruidDataSource extends DruidAbstractDataSource implements DruidDat
+                     try {
+                         discardCount++;
+ 
+-                        if (activeCount <= minIdle) {
++                        if (activeCount + poolingCount <= minIdle) {
+                             emptySignal();
+                         }
+                     } finally {

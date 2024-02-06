@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/LogEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/LogEndpointBuilderFactory.java
+index 076987b..b433907 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/LogEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/LogEndpointBuilderFactory.java
+@@ -582,7 +582,7 @@ public interface LogEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.support.processor.DefaultExchangeFormatter$OutputStyle</code> enum.
+      */
+-    static enum OutputStyle {
++    enum OutputStyle {
+         Default, Tab, Fixed;
+     }
+     /**

@@ -1,0 +1,13 @@
+diff --git a/buggy/runtime/Java/src/org/antlr/v4/runtime/atn/ParserATNSimulator.java b/fixed/runtime/Java/src/org/antlr/v4/runtime/atn/ParserATNSimulator.java
+index 4d3f21c..006d6bf 100644
+--- a/buggy/runtime/Java/src/org/antlr/v4/runtime/atn/ParserATNSimulator.java
++++ b/fixed/runtime/Java/src/org/antlr/v4/runtime/atn/ParserATNSimulator.java
+@@ -978,7 +978,7 @@ public class ParserATNSimulator extends ATNSimulator {
+ 		}
+ 
+ 		if ( !containsPredicate ) {
+-			pairs = null;
++			return null;
+ 		}
+ 
+ //		System.out.println(Arrays.toString(altToPred)+"->"+pairs);

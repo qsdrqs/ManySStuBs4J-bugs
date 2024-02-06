@@ -1,0 +1,15 @@
+diff --git a/buggy/api/src/test/java/com/ning/http/client/async/AsyncProvidersBasicTest.java b/fixed/api/src/test/java/com/ning/http/client/async/AsyncProvidersBasicTest.java
+index 2641dc2..7724e9c 100644
+--- a/buggy/api/src/test/java/com/ning/http/client/async/AsyncProvidersBasicTest.java
++++ b/fixed/api/src/test/java/com/ning/http/client/async/AsyncProvidersBasicTest.java
+@@ -1559,8 +1559,8 @@ public abstract class AsyncProvidersBasicTest extends AbstractBasicTest {
+         c.close();
+     }
+ 
+-    @Test(groups = {"standalone", "default_provider"}, expectedExceptions = IllegalArgumentException.class)
+-    public void getShouldNotAllowBody() throws IllegalArgumentException, IOException {
++    @Test(groups = {"standalone", "default_provider"})
++    public void getShouldAllowBody() throws IllegalArgumentException, IOException {
+         AsyncHttpClient c = getAsyncHttpClient(null);
+         AsyncHttpClient.BoundRequestBuilder builder = c.prepareGet(getTargetUrl());
+         builder.setBody("Boo!");

@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/activiti-engine/src/main/java/org/activiti/engine/impl/bpmn/parser/BpmnParse.java b/fixed/modules/activiti-engine/src/main/java/org/activiti/engine/impl/bpmn/parser/BpmnParse.java
+index 62125af..340cf83 100644
+--- a/buggy/modules/activiti-engine/src/main/java/org/activiti/engine/impl/bpmn/parser/BpmnParse.java
++++ b/fixed/modules/activiti-engine/src/main/java/org/activiti/engine/impl/bpmn/parser/BpmnParse.java
+@@ -2166,7 +2166,7 @@ public class BpmnParse extends Parse {
+     } else if (delegateExpression != null) {
+       taskListener = new DelegateExpressionTaskListener(expressionManager.createExpression(delegateExpression));
+     } else {
+-      addError("Element 'class' or 'expression' is mandatory on taskListener", taskListenerElement);
++      addError("Element 'class', 'expression' or 'delegateExpression' is mandatory on taskListener", taskListenerElement);
+     }
+     return taskListener;
+   }

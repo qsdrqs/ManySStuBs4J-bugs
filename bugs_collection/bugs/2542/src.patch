@@ -1,0 +1,12 @@
+diff --git a/buggy/src/main/java/org/bukkit/command/defaults/BanCommand.java b/fixed/src/main/java/org/bukkit/command/defaults/BanCommand.java
+index 7d6b0ff..d415835 100644
+--- a/buggy/src/main/java/org/bukkit/command/defaults/BanCommand.java
++++ b/fixed/src/main/java/org/bukkit/command/defaults/BanCommand.java
+@@ -29,6 +29,6 @@ public class BanCommand extends VanillaCommand {
+ 
+     @Override
+     public boolean matches(String input) {
+-        return input.startsWith("ban ");
++        return input.startsWith("ban ") || input.equalsIgnoreCase("ban");
+     }
+ }

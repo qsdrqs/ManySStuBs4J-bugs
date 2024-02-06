@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/FtpsEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/FtpsEndpointBuilderFactory.java
+index 5d2a1dc..286ac96 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/FtpsEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/FtpsEndpointBuilderFactory.java
+@@ -4842,7 +4842,7 @@ public interface FtpsEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.file.remote.RemoteFileConfiguration$PathSeparator</code> enum.
+      */
+-    public static enum PathSeparator {
++    static enum PathSeparator {
+         UNIX, Windows, Auto;
+     }
+ 
+@@ -4850,7 +4850,7 @@ public interface FtpsEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.file.GenericFileExist</code> enum.
+      */
+-    public static enum GenericFileExist {
++    static enum GenericFileExist {
+         Override, Append, Fail, Ignore, Move, TryRename;
+     }
+     /**

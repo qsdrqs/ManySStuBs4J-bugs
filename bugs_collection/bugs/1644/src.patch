@@ -1,0 +1,13 @@
+diff --git a/buggy/client/src/test/java/org/asynchttpclient/AsyncStreamHandlerTest.java b/fixed/client/src/test/java/org/asynchttpclient/AsyncStreamHandlerTest.java
+index c3de6d2..de255cd 100644
+--- a/buggy/client/src/test/java/org/asynchttpclient/AsyncStreamHandlerTest.java
++++ b/fixed/client/src/test/java/org/asynchttpclient/AsyncStreamHandlerTest.java
+@@ -421,7 +421,7 @@ public class AsyncStreamHandlerTest extends HttpTest {
+ 
+                 final AtomicReference<HttpHeaders> responseHeaders = new AtomicReference<>();
+ 
+-                final String[] expected = { "GET", "HEAD", "OPTIONS", "POST", "TRACE" };
++                final String[] expected = { "GET", "HEAD", "OPTIONS", "POST" };
+                 Future<String> f = client.prepareOptions("http://www.apache.org/").execute(new AsyncHandlerAdapter() {
+ 
+                     @Override

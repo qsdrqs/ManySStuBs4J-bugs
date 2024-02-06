@@ -1,0 +1,15 @@
+diff --git a/buggy/graylog2-server/src/main/java/org/graylog/events/processor/aggregation/AggregationEventProcessorConfig.java b/fixed/graylog2-server/src/main/java/org/graylog/events/processor/aggregation/AggregationEventProcessorConfig.java
+index 592c45b..df80082 100644
+--- a/buggy/graylog2-server/src/main/java/org/graylog/events/processor/aggregation/AggregationEventProcessorConfig.java
++++ b/fixed/graylog2-server/src/main/java/org/graylog/events/processor/aggregation/AggregationEventProcessorConfig.java
+@@ -201,8 +201,8 @@ public abstract class AggregationEventProcessorConfig implements EventProcessorC
+             .groupBy(groupBy())
+             .series(series())
+             .conditions(conditions().orElse(null))
+-            .executeEveryMs(ValueReference.of(executeEveryMs()))
+-            .searchWithinMs(ValueReference.of(searchWithinMs()))
++            .executeEveryMs(executeEveryMs())
++            .searchWithinMs(searchWithinMs())
+             .build();
+     }
+ 

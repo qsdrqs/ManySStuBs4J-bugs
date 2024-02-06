@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/ning/http/client/async/FilePartLargeFileTest.java b/fixed/src/test/java/com/ning/http/client/async/FilePartLargeFileTest.java
+index 1a30299..b4dce76 100644
+--- a/buggy/src/test/java/com/ning/http/client/async/FilePartLargeFileTest.java
++++ b/fixed/src/test/java/com/ning/http/client/async/FilePartLargeFileTest.java
+@@ -67,7 +67,7 @@ public abstract class FilePartLargeFileTest
+         AsyncHttpClient client = getAsyncHttpClient(config);
+         BoundRequestBuilder rb = client.preparePut(getTargetUrl());
+ 
+-        rb.setBody(largeFile);
++        rb.addBodyPart(new FilePart("test", largeFile, "application/octet-stream" , "UTF-8"));
+ 
+         Response response = rb.execute().get();
+         Assert.assertEquals(200, response.getStatusCode());

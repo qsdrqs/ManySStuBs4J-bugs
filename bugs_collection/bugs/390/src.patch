@@ -1,0 +1,13 @@
+diff --git a/buggy/core/server/worker/src/main/java/alluxio/worker/AlluxioWorkerProcess.java b/fixed/core/server/worker/src/main/java/alluxio/worker/AlluxioWorkerProcess.java
+index ab366ef..f5e9498 100644
+--- a/buggy/core/server/worker/src/main/java/alluxio/worker/AlluxioWorkerProcess.java
++++ b/fixed/core/server/worker/src/main/java/alluxio/worker/AlluxioWorkerProcess.java
+@@ -253,7 +253,7 @@ public final class AlluxioWorkerProcess implements WorkerProcess {
+   public void stop() throws Exception {
+     if (mIsServingRPC) {
+       stopServing();
+-      if (mJvmPauseMonitor.isStarted()) {
++      if (mJvmPauseMonitor != null) {
+         mJvmPauseMonitor.stop();
+       }
+       stopWorkers();

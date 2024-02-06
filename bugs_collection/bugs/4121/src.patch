@@ -1,0 +1,13 @@
+diff --git a/buggy/tool/test/org/antlr/v4/test/TestSemPredEvalLexer.java b/fixed/tool/test/org/antlr/v4/test/TestSemPredEvalLexer.java
+index c6a9448..2f6265c 100644
+--- a/buggy/tool/test/org/antlr/v4/test/TestSemPredEvalLexer.java
++++ b/fixed/tool/test/org/antlr/v4/test/TestSemPredEvalLexer.java
+@@ -62,7 +62,7 @@ public class TestSemPredEvalLexer extends BaseTest {
+ 			":s2=>2-'u'->:s3=>2\n" +
+ 			":s3=>2-'m'->:s4=>2\n" +
+ 			":s4=>2-'b'->:s4=>2\n" +
+-			":s4=>2-'c'->:s4=>2\n\n";
++			":s4=>2-'c'->:s4=>2\n";
+ 		assertEquals(expecting, found);
+ 	}
+ 

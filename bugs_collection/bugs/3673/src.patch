@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java b/fixed/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java
+index 6f3f229..7cbcb6e 100644
+--- a/buggy/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java
++++ b/fixed/src/main/java/com/alibaba/fastjson/serializer/SerializeWriter.java
+@@ -661,7 +661,7 @@ public final class SerializeWriter extends Writer {
+                     write(str, 0, str.length());
+ 
+                     if (checkWriteClassName && isEnabled(SerializerFeature.WriteClassName)) {
+-                        write('D');
++                        write('F');
+                     }
+                     return;
+                 }

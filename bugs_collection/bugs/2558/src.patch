@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/bukkit/command/Command.java b/fixed/src/main/java/org/bukkit/command/Command.java
+index 227c3c1..002e112 100644
+--- a/buggy/src/main/java/org/bukkit/command/Command.java
++++ b/fixed/src/main/java/org/bukkit/command/Command.java
+@@ -79,7 +79,7 @@ public abstract class Command {
+      * @return true if they can use it, otherwise false
+      */
+     public boolean testPermission(CommandSender target) {
+-        if ((permission == null) || (permission.isEmpty()) || (target.hasPermission(permission))) {
++        if ((permission == null) || (permission.length() == 0) || (target.hasPermission(permission))) {
+             return true;
+         }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/clients/unshaded/src/main/java/tachyon/client/file/TachyonFileSystem.java b/fixed/clients/unshaded/src/main/java/tachyon/client/file/TachyonFileSystem.java
+index 370f876..f6d1786 100644
+--- a/buggy/clients/unshaded/src/main/java/tachyon/client/file/TachyonFileSystem.java
++++ b/fixed/clients/unshaded/src/main/java/tachyon/client/file/TachyonFileSystem.java
+@@ -206,7 +206,7 @@ public class TachyonFileSystem implements Closeable, TachyonFSCore {
+       throws IOException {
+     FileSystemMasterClient masterClient = mContext.acquireMasterClient();
+     try {
+-      return masterClient.loadFileInfoFromUfs(path.getPath(), ufsPath.getPath(), -1L, recursive);
++      return masterClient.loadFileInfoFromUfs(path.getPath(), ufsPath.toString(), -1L, recursive);
+     } finally {
+       mContext.releaseMasterClient(masterClient);
+     }

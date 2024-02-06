@@ -1,0 +1,14 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/util/SimpleBroadcaster.java b/fixed/modules/cpr/src/main/java/org/atmosphere/util/SimpleBroadcaster.java
+index af35bc2..d83f644 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/util/SimpleBroadcaster.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/util/SimpleBroadcaster.java
+@@ -106,7 +106,8 @@ public class SimpleBroadcaster extends DefaultBroadcaster {
+     @Override
+     public void setBroadcasterConfig(BroadcasterConfig bc) {
+         this.bc = bc;
+-        bc.setExecutorService(null, false).setAsyncWriteService(null, false);
++        bc.setExecutorService(null, false).setAsyncWriteService(null, false)
++                .setScheduledExecutorService(ExecutorsFactory.getScheduler(config));
+     }
+ 
+     /**

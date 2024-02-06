@@ -1,0 +1,13 @@
+diff --git a/buggy/graylog2-server/src/main/java/org/graylog2/rest/resources/streams/alerts/StreamAlertConditionResource.java b/fixed/graylog2-server/src/main/java/org/graylog2/rest/resources/streams/alerts/StreamAlertConditionResource.java
+index a895cc1..299915a 100644
+--- a/buggy/graylog2-server/src/main/java/org/graylog2/rest/resources/streams/alerts/StreamAlertConditionResource.java
++++ b/fixed/graylog2-server/src/main/java/org/graylog2/rest/resources/streams/alerts/StreamAlertConditionResource.java
+@@ -101,7 +101,7 @@ public class StreamAlertConditionResource extends RestResource {
+         final Map<String, String> result = ImmutableMap.of("alert_condition_id", alertCondition.getId());
+         final URI alertConditionUri = UriBuilder.fromResource(StreamAlertConditionResource.class)
+                 .path("{conditionId}")
+-                .build(alertCondition.getId());
++                .build(stream.getId(), alertCondition.getId());
+ 
+         return Response.created(alertConditionUri).entity(result).build();
+     }

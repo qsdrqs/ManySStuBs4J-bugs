@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereRequest.java b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereRequest.java
+index 5c29b26..9a39c6d 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereRequest.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereRequest.java
+@@ -796,7 +796,7 @@ public class AtmosphereRequest extends HttpServletRequestWrapper {
+             return b.request.getSession(create);
+         } catch (java.lang.IllegalStateException ex) {
+             // Jetty
+-            if (ex.getMessage() != null && ex.getMessage().equalsIgnoreCase("No Session Manager")) {
++            if (ex.getMessage() != null && ex.getMessage().equals("No SessionManager")) {
+                 return null;
+             }
+             throw ex;

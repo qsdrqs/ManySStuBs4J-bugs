@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/com/alibaba/fastjson/parser/deserializer/MapDeserializer.java b/fixed/src/main/java/com/alibaba/fastjson/parser/deserializer/MapDeserializer.java
+index ab2ce4a..478da42 100644
+--- a/buggy/src/main/java/com/alibaba/fastjson/parser/deserializer/MapDeserializer.java
++++ b/fixed/src/main/java/com/alibaba/fastjson/parser/deserializer/MapDeserializer.java
+@@ -29,7 +29,8 @@ public class MapDeserializer implements ObjectDeserializer {
+             return null;
+         }
+ 
+-        boolean unmodifiableMap = "java.util.Collections$UnmodifiableMap".equals(type.getTypeName());
++        boolean unmodifiableMap = type instanceof Class
++                && "java.util.Collections$UnmodifiableMap".equals(((Class) type).getName());
+ 
+         Map<Object, Object> map = (lexer.getFeatures() & Feature.OrderedField.mask) != 0
+                 ? createMap(type, lexer.getFeatures())

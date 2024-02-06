@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/LuceneEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/LuceneEndpointBuilderFactory.java
+index 57e3dcd..547c801 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/LuceneEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/LuceneEndpointBuilderFactory.java
+@@ -212,7 +212,7 @@ public interface LuceneEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.lucene.LuceneOperation</code> enum.
+      */
+-    static enum LuceneOperation {
++    enum LuceneOperation {
+         insert, query;
+     }
+     /**

@@ -1,0 +1,13 @@
+diff --git a/buggy/app/models/api/responses/SearchResultResponse.java b/fixed/app/models/api/responses/SearchResultResponse.java
+index 2adaec9..a306c5c 100644
+--- a/buggy/app/models/api/responses/SearchResultResponse.java
++++ b/fixed/app/models/api/responses/SearchResultResponse.java
+@@ -26,7 +26,7 @@ public class SearchResultResponse {
+ 	
+ 	public int time;
+ 	public String query;
+-	public int total_results;
++	public long total_results;
+ 	public List<MessageSummaryResponse> messages;
+ 	public List<String> fields;
+ 

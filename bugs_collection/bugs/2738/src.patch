@@ -1,0 +1,13 @@
+diff --git a/buggy/app/views/helpers/InputStateHelper.java b/fixed/app/views/helpers/InputStateHelper.java
+index 5eaa5e6..857157e 100644
+--- a/buggy/app/views/helpers/InputStateHelper.java
++++ b/fixed/app/views/helpers/InputStateHelper.java
+@@ -28,7 +28,7 @@ public class InputStateHelper {
+     public static String labelClassForState(InputStateType state) {
+         switch(state) {
+             case RUNNING: return "success";
+-            case FAILED: return "important";
++            case FAILED: return "danger";
+             case STARTING: return "info";
+             default: return "warning";
+         }

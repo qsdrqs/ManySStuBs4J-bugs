@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/client/TrackMessageSizeFilter.java b/fixed/modules/cpr/src/main/java/org/atmosphere/client/TrackMessageSizeFilter.java
+index b156614..1430f31 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/client/TrackMessageSizeFilter.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/client/TrackMessageSizeFilter.java
+@@ -45,7 +45,7 @@ public class TrackMessageSizeFilter implements PerRequestBroadcastFilter {
+         if ("true".equalsIgnoreCase(request.getHeader(X_ATMOSPHERE_TRACKMESSAGESIZE))
+                 && message != null && String.class.isAssignableFrom(message.getClass())) {
+ 
+-            String msg = message.toString();
++            String msg = message.toString().trim();
+             msg = msg.length() + "|" + msg;
+             return new BroadcastAction(BroadcastAction.ACTION.CONTINUE, msg);
+ 

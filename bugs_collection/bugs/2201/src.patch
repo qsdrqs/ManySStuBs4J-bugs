@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/MeteorServlet.java b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/MeteorServlet.java
+index d9b826b..0c6a439 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/MeteorServlet.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/MeteorServlet.java
+@@ -101,7 +101,7 @@ public class MeteorServlet extends AtmosphereServlet {
+         }
+ 
+         // The annotation was used.
+-        if (servletClass != null && filterClass != null) {
++        if (servletClass != null || filterClass != null) {
+             ReflectorServletProcessor r = new ReflectorServletProcessor();
+             r.setServletClassName(servletClass);
+             r.setFilterClassName(filterClass);

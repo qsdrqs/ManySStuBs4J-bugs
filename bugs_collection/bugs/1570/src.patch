@@ -1,0 +1,13 @@
+diff --git a/buggy/main/src/test/java/tachyon/util/UnderfsUtilTest.java b/fixed/main/src/test/java/tachyon/util/UnderfsUtilTest.java
+index 7a71f3a..e026a4b 100644
+--- a/buggy/main/src/test/java/tachyon/util/UnderfsUtilTest.java
++++ b/fixed/main/src/test/java/tachyon/util/UnderfsUtilTest.java
+@@ -83,7 +83,7 @@ public class UnderfsUtilTest {
+     }
+ 
+     UnderfsUtil.loadUnderFs(mTfs, Constants.PATH_SEPARATOR, mUnderfsAddress
+-        + Constants.PATH_SEPARATOR, new PrefixList(Arrays.asList(exclusions)));
++        + Constants.PATH_SEPARATOR, new PrefixList("tachyon;exclusions", ";"));
+ 
+     List<String> paths = null;
+     for (String exclusion : exclusions) {

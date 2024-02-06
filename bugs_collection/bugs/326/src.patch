@@ -1,0 +1,13 @@
+diff --git a/buggy/core/server/master/src/main/java/alluxio/master/file/meta/InodeTree.java b/fixed/core/server/master/src/main/java/alluxio/master/file/meta/InodeTree.java
+index e705478..5695ce3 100644
+--- a/buggy/core/server/master/src/main/java/alluxio/master/file/meta/InodeTree.java
++++ b/fixed/core/server/master/src/main/java/alluxio/master/file/meta/InodeTree.java
+@@ -1068,7 +1068,7 @@ public class InodeTree implements JournalEntryIterable {
+                 status = ufs.getStatus(ufsUri);
+               } catch (Exception e) {
+                 throw new IOException(String.format("Cannot sync UFS directory %s: %s.", ufsUri,
+-                    e.getMessage()), e);
++                    e.toString()), e);
+               }
+               if (status.isFile()) {
+                 throw new InvalidPathException(String.format(

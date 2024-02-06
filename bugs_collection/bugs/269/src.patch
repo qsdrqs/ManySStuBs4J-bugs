@@ -1,0 +1,13 @@
+diff --git a/buggy/core/common/src/test/java/alluxio/ConfigurationTestUtils.java b/fixed/core/common/src/test/java/alluxio/ConfigurationTestUtils.java
+index f3b19d1..785dac6 100644
+--- a/buggy/core/common/src/test/java/alluxio/ConfigurationTestUtils.java
++++ b/fixed/core/common/src/test/java/alluxio/ConfigurationTestUtils.java
+@@ -87,7 +87,7 @@ public final class ConfigurationTestUtils {
+     conf.put(PropertyKey.MASTER_JOURNAL_FLUSH_TIMEOUT_MS, "1sec");
+     conf.put(PropertyKey.MASTER_GRPC_CHANNEL_AUTH_TIMEOUT, "2sec");
+     conf.put(PropertyKey.MASTER_GRPC_CHANNEL_SHUTDOWN_TIMEOUT, "3sec");
+-    conf.put(PropertyKey.MASTER_GRPC_SERVER_SHUTDOWN_TIMEOUT, "3sec");
++    conf.put(PropertyKey.MASTER_GRPC_SERVER_SHUTDOWN_TIMEOUT, "10sec");
+ 
+     // Shutdown journal tailer quickly. Graceful shutdown is unnecessarily slow.
+     conf.put(PropertyKey.MASTER_JOURNAL_TAILER_SHUTDOWN_QUIET_WAIT_TIME_MS, "50ms");

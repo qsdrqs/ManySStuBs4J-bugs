@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AsynchronousProcessor.java b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AsynchronousProcessor.java
+index 56b203f..04e4857 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AsynchronousProcessor.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AsynchronousProcessor.java
+@@ -160,7 +160,7 @@ public abstract class AsynchronousProcessor implements CometSupport<AtmosphereRe
+ 
+         boolean webSocketEnabled = false;
+         if (req.getHeaders("Connection") != null && req.getHeaders("Connection").hasMoreElements()) {
+-            String[] e = req.getHeaders("Connection").nextElement().split(",");
++            String[] e = req.getHeaders("Connection").nextElement().toString().split(",");
+             for (String upgrade : e) {
+                 if (upgrade.equalsIgnoreCase("Upgrade")) {
+                     webSocketEnabled = true;

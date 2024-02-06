@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MSKEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MSKEndpointBuilderFactory.java
+index 8e402f1..5dafed9 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MSKEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MSKEndpointBuilderFactory.java
+@@ -114,7 +114,7 @@ public interface MSKEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.aws.msk.MSKOperations</code> enum.
+      */
+-    public static enum MSKOperations {
++    static enum MSKOperations {
+         listClusters, createCluster, deleteCluster, describeCluster;
+     }
+     /**

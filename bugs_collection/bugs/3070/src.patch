@@ -1,0 +1,13 @@
+diff --git a/buggy/nanolets/src/test/java/fi/iki/elonen/router/AppNanolets.java b/fixed/nanolets/src/test/java/fi/iki/elonen/router/AppNanolets.java
+index 2d96eb8..a05d24a 100644
+--- a/buggy/nanolets/src/test/java/fi/iki/elonen/router/AppNanolets.java
++++ b/fixed/nanolets/src/test/java/fi/iki/elonen/router/AppNanolets.java
+@@ -124,7 +124,7 @@ public class AppNanolets extends RouterNanoHTTPD {
+ 
+         @Override
+         protected BufferedInputStream fileToInputStream(File fileOrdirectory) throws IOException {
+-            if (fileOrdirectory.getName().equals("exception.html")) {
++        	if ("exception.html".equals(fileOrdirectory.getName())) {
+                 throw new IOException("trigger something wrong");
+             }
+             return super.fileToInputStream(fileOrdirectory);

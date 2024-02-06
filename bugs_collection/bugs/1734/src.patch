@@ -1,0 +1,13 @@
+diff --git a/buggy/providers/netty/src/main/java/org/asynchttpclient/providers/netty/NettyAsyncHttpProvider.java b/fixed/providers/netty/src/main/java/org/asynchttpclient/providers/netty/NettyAsyncHttpProvider.java
+index 9730f45..4bab73c 100644
+--- a/buggy/providers/netty/src/main/java/org/asynchttpclient/providers/netty/NettyAsyncHttpProvider.java
++++ b/fixed/providers/netty/src/main/java/org/asynchttpclient/providers/netty/NettyAsyncHttpProvider.java
+@@ -587,7 +587,7 @@ public class NettyAsyncHttpProvider extends SimpleChannelUpstreamHandler impleme
+         if (request.getVirtualHost() != null) {
+             host = request.getVirtualHost();
+         } else {
+-            AsyncHttpProviderUtils.getHost(uri);
++            host = AsyncHttpProviderUtils.getHost(uri);
+     	}
+ 
+         HttpRequest nettyRequest;

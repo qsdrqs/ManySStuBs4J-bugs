@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereServlet.java b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereServlet.java
+index 692b47b..1a88720 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereServlet.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereServlet.java
+@@ -1152,7 +1152,7 @@ public class AtmosphereServlet extends AbstractAsyncServlet implements CometProc
+      * @throws IOException
+      * @throws ServletException
+      */
+-    protected Action doCometSupport(HttpServletRequest req, HttpServletResponse res)
++    public Action doCometSupport(HttpServletRequest req, HttpServletResponse res)
+             throws IOException, ServletException {
+         req.setAttribute(BROADCASTER_FACTORY, broadcasterFactory);
+         req.setAttribute(PROPERTY_USE_STREAM, useStreamForFlushingComments);

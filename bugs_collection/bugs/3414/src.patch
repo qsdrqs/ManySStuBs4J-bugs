@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/support/DruidStatJSONService.java b/fixed/src/main/java/com/alibaba/druid/support/DruidStatJSONService.java
+index 6caac11..f6e4a74 100644
+--- a/buggy/src/main/java/com/alibaba/druid/support/DruidStatJSONService.java
++++ b/fixed/src/main/java/com/alibaba/druid/support/DruidStatJSONService.java
+@@ -152,7 +152,7 @@ public class DruidStatJSONService {
+ 
+     private List<Map<String, Object>> getWebSessionStatDataList(Map<String, String> parameters) {
+         List<Map<String, Object>> array = WebAppStatManager.getInstance().getSessionStatData();
+-        return array;
++        return comparatorOrderBy(array, parameters);
+     }
+ 
+     private List<Map<String, Object>> comparatorOrderBy(List<Map<String, Object>> array, Map<String, String> parameters) {

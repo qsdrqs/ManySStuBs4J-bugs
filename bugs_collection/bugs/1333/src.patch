@@ -1,0 +1,13 @@
+diff --git a/buggy/servers/src/main/java/tachyon/worker/block/TieredBlockStore.java b/fixed/servers/src/main/java/tachyon/worker/block/TieredBlockStore.java
+index d971cd9..93c0ce1 100644
+--- a/buggy/servers/src/main/java/tachyon/worker/block/TieredBlockStore.java
++++ b/fixed/servers/src/main/java/tachyon/worker/block/TieredBlockStore.java
+@@ -292,7 +292,7 @@ public final class TieredBlockStore implements BlockStore {
+   @Override
+   public void removeBlock(long sessionId, long blockId) throws InvalidStateException,
+       NotFoundException, IOException {
+-    removeBlockInternal(sessionId, blockId, BlockStoreLocation.anyTier());
++    removeBlock(sessionId, blockId, BlockStoreLocation.anyTier());
+   }
+ 
+   @Override

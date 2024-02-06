@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EtcdEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EtcdEndpointBuilderFactory.java
+index bfe0808..a9174b1 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EtcdEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EtcdEndpointBuilderFactory.java
+@@ -1127,7 +1127,7 @@ public interface EtcdEndpointBuilderFactory {
+      * Proxy enum for <code>org.apache.camel.component.etcd.EtcdNamespace</code>
+      * enum.
+      */
+-    public static enum EtcdNamespace {
++    static enum EtcdNamespace {
+         stats, watch, keys;
+     }
+     /**

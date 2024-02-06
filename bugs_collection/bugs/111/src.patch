@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/activiti-jmx/src/main/java/org/activiti/management/jmx/mbeans/JobExecutorMBean.java b/fixed/modules/activiti-jmx/src/main/java/org/activiti/management/jmx/mbeans/JobExecutorMBean.java
+index 09d97fd..a96b537 100644
+--- a/buggy/modules/activiti-jmx/src/main/java/org/activiti/management/jmx/mbeans/JobExecutorMBean.java
++++ b/fixed/modules/activiti-jmx/src/main/java/org/activiti/management/jmx/mbeans/JobExecutorMBean.java
+@@ -34,7 +34,7 @@ public class JobExecutorMBean {
+ 
+   @ManagedAttribute(description = "check if the job executor is activated")
+   public boolean isJobExecutorActivated() {
+-    return jobExecutor == null || jobExecutor.isActive();
++    return jobExecutor != null && jobExecutor.isActive();
+   }
+ 
+   @ManagedOperation(description = "set job executor activate")

@@ -1,0 +1,13 @@
+diff --git a/buggy/core/common/src/test/java/alluxio/AlluxioTestDirectory.java b/fixed/core/common/src/test/java/alluxio/AlluxioTestDirectory.java
+index eee0c01..a1f3484 100644
+--- a/buggy/core/common/src/test/java/alluxio/AlluxioTestDirectory.java
++++ b/fixed/core/common/src/test/java/alluxio/AlluxioTestDirectory.java
+@@ -45,7 +45,7 @@ public final class AlluxioTestDirectory {
+   public static File createTemporaryDirectory(String prefix) {
+     final File file = new File(ALLUXIO_TEST_DIRECTORY, prefix + "-" + UUID.randomUUID());
+     if (!file.mkdir()) {
+-      throw new RuntimeException("Failed to created directory " + file.getAbsolutePath());
++      throw new RuntimeException("Failed to create directory " + file.getAbsolutePath());
+     }
+ 
+     Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {

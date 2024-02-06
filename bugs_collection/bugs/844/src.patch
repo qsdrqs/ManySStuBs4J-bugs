@@ -1,0 +1,13 @@
+diff --git a/buggy/core/common/src/main/java/alluxio/underfs/options/MkdirsOptions.java b/fixed/core/common/src/main/java/alluxio/underfs/options/MkdirsOptions.java
+index d65c42e..d3b90db 100644
+--- a/buggy/core/common/src/main/java/alluxio/underfs/options/MkdirsOptions.java
++++ b/fixed/core/common/src/main/java/alluxio/underfs/options/MkdirsOptions.java
+@@ -97,7 +97,7 @@ public final class MkdirsOptions {
+     if (this == o) {
+       return true;
+     }
+-    if (!(o instanceof CreateOptions)) {
++    if (!(o instanceof MkdirsOptions)) {
+       return false;
+     }
+     MkdirsOptions that = (MkdirsOptions) o;

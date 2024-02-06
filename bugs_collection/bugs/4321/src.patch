@@ -1,0 +1,18 @@
+diff --git a/buggy/components/camel-webhook/src/test/java/org/apache/camel/component/webhook/WebhookMultiRouteTest.java b/fixed/components/camel-webhook/src/test/java/org/apache/camel/component/webhook/WebhookMultiRouteTest.java
+index c401171..5a0b0c3 100644
+--- a/buggy/components/camel-webhook/src/test/java/org/apache/camel/component/webhook/WebhookMultiRouteTest.java
++++ b/fixed/components/camel-webhook/src/test/java/org/apache/camel/component/webhook/WebhookMultiRouteTest.java
+@@ -26,11 +26,11 @@ public class WebhookMultiRouteTest extends WebhookTestBase {
+ 
+     @Test
+     public void testMultiRoute() {
+-        String result = template.requestBody("netty4-http:http://localhost:" + port
++        String result = template.requestBody("netty-http:http://localhost:" + port
+                 + WebhookConfiguration.computeDefaultPath("wb-delegate://yy"), "", String.class);
+         assertEquals("uri: webhook", result);
+ 
+-        result = template.requestBody("netty4-http:http://localhost:" + port
++        result = template.requestBody("netty-http:http://localhost:" + port
+                 + WebhookConfiguration.computeDefaultPath("wb-delegate://xx"), "", String.class);
+         assertEquals("msg: webhook", result);
+     }

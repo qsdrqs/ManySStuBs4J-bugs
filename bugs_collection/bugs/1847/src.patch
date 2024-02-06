@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java b/fixed/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java
+index f9ce29f..1a72143 100644
+--- a/buggy/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java
++++ b/fixed/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java
+@@ -1126,7 +1126,7 @@ public class NettyAsyncHttpProvider extends IdleStateHandler implements AsyncHtt
+         future.setState(NettyResponseFuture.STATE.NEW);
+ 
+         if (log.isDebugEnabled()) {
+-            log.debug("\n\nReaplyed Request {}\n", newRequest);
++            log.debug("\n\nReplayed Request {}\n", newRequest);
+         }
+                 
+         // We must consume the body first in order to re-use the connection.

@@ -1,0 +1,16 @@
+diff --git a/buggy/runtime/Java/src/org/antlr/v4/runtime/tree/Trees.java b/fixed/runtime/Java/src/org/antlr/v4/runtime/tree/Trees.java
+index c2a3ddb..9cd675f 100644
+--- a/buggy/runtime/Java/src/org/antlr/v4/runtime/tree/Trees.java
++++ b/fixed/runtime/Java/src/org/antlr/v4/runtime/tree/Trees.java
+@@ -188,9 +188,9 @@ public class Trees {
+ 	}
+ 
+ 	public static List<ParseTree> findAllNodes(ParseTree t, int index, boolean findTokens) {
+-		List<? super ParseTree> nodes = new ArrayList<ParseTree>();
++		List<ParseTree> nodes = new ArrayList<ParseTree>();
+ 		_findAllNodes(t, index, findTokens, nodes);
+-		return (List<ParseTree>)nodes;
++		return nodes;
+ 	}
+ 
+ 	public static void _findAllNodes(ParseTree t, int index, boolean findTokens,

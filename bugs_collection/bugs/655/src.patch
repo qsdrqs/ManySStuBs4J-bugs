@@ -1,0 +1,13 @@
+diff --git a/buggy/integration/yarn/src/main/java/alluxio/yarn/ContainerAllocator.java b/fixed/integration/yarn/src/main/java/alluxio/yarn/ContainerAllocator.java
+index 55e817b..65fcc52 100644
+--- a/buggy/integration/yarn/src/main/java/alluxio/yarn/ContainerAllocator.java
++++ b/fixed/integration/yarn/src/main/java/alluxio/yarn/ContainerAllocator.java
+@@ -153,7 +153,7 @@ public final class ContainerAllocator {
+       priority = Priority.newInstance(101);
+     }
+ 
+-    if (hosts.length * mMaxContainersPerHost < numContainersToRequest) {
++    if (hosts.length * mMaxContainersPerHost < mTargetNumContainers - mAllocatedContainers.size()) {
+       throw new RuntimeException(ExceptionMessage.YARN_NOT_ENOUGH_HOSTS
+           .getMessage(numContainersToRequest, mContainerName, hosts.length));
+     }

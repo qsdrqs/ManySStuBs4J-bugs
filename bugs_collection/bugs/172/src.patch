@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/activiti-engine/src/main/java/org/activiti/engine/ProcessEngines.java b/fixed/modules/activiti-engine/src/main/java/org/activiti/engine/ProcessEngines.java
+index f146642..1680813 100644
+--- a/buggy/modules/activiti-engine/src/main/java/org/activiti/engine/ProcessEngines.java
++++ b/fixed/modules/activiti-engine/src/main/java/org/activiti/engine/ProcessEngines.java
+@@ -148,7 +148,7 @@ public abstract class ProcessEngines {
+   }
+ 
+   private static ProcessEngineInfo initProcessEnginFromResource(URL resourceUrl) {
+-    ProcessEngineInfo processEngineInfo = processEngineInfosByResourceUrl.get(resourceUrl);
++    ProcessEngineInfo processEngineInfo = processEngineInfosByResourceUrl.get(resourceUrl.toString());
+     // if there is an existing process engine info
+     if (processEngineInfo!=null) {
+       // remove that process engine from the member fields

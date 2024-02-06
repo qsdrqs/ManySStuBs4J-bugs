@@ -1,0 +1,13 @@
+diff --git a/buggy/shell/src/main/java/alluxio/master/MasterHealthCheckClient.java b/fixed/shell/src/main/java/alluxio/master/MasterHealthCheckClient.java
+index dd3a922..aaaafc9 100644
+--- a/buggy/shell/src/main/java/alluxio/master/MasterHealthCheckClient.java
++++ b/fixed/shell/src/main/java/alluxio/master/MasterHealthCheckClient.java
+@@ -50,7 +50,7 @@ public class MasterHealthCheckClient implements HealthCheckClient {
+    */
+   public enum MasterType {
+     MASTER("alluxio.master.AlluxioMaster"),
+-    JOB_MASTER("alluxio.master.job.JobMaster")
++    JOB_MASTER("alluxio.master.AlluxioJobMaster")
+     ;
+ 
+     private String mClassName;

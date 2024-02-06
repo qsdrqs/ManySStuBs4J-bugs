@@ -1,0 +1,13 @@
+diff --git a/buggy/samples/pubsub/src/main/java/org/atmosphere/samples/pubsub/PubSub.java b/fixed/samples/pubsub/src/main/java/org/atmosphere/samples/pubsub/PubSub.java
+index a511506..a11d476 100644
+--- a/buggy/samples/pubsub/src/main/java/org/atmosphere/samples/pubsub/PubSub.java
++++ b/fixed/samples/pubsub/src/main/java/org/atmosphere/samples/pubsub/PubSub.java
+@@ -186,7 +186,7 @@ public class PubSub {
+      * @return A {@link Broadcastable} used to broadcast events.
+      */
+     @POST
+-    @Broadcast(value = {StringFilterAggregator.class})
++    @Broadcast(filters = {StringFilterAggregator.class})
+     @Path("aggregate")
+     public Broadcastable aggregate(@FormParam("message") String message) {
+         return broadcast(message);

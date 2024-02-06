@@ -1,0 +1,15 @@
+diff --git a/buggy/samples/jquery-meteor-pubsub/src/main/java/org/atmosphere/samples/pubsub/MeteorPubSub.java b/fixed/samples/jquery-meteor-pubsub/src/main/java/org/atmosphere/samples/pubsub/MeteorPubSub.java
+index 2cbc5c7..4f788b6 100644
+--- a/buggy/samples/jquery-meteor-pubsub/src/main/java/org/atmosphere/samples/pubsub/MeteorPubSub.java
++++ b/fixed/samples/jquery-meteor-pubsub/src/main/java/org/atmosphere/samples/pubsub/MeteorPubSub.java
+@@ -100,8 +100,8 @@ public class MeteorPubSub extends HttpServlet {
+     }
+ 
+     String trackingId(HttpServletRequest req) {
+-        String trackingId = req.getAttribute(HeaderConfig.X_ATMOSPHERE_TRACKING_ID) != null ?
+-                (String) req.getAttribute(HeaderConfig.X_ATMOSPHERE_TRACKING_ID) : req.getParameter(HeaderConfig.X_ATMOSPHERE_TRACKING_ID);
++        String trackingId = req.getHeader(HeaderConfig.X_ATMOSPHERE_TRACKING_ID) != null ?
++                req.getHeader(HeaderConfig.X_ATMOSPHERE_TRACKING_ID) : req.getParameter(HeaderConfig.X_ATMOSPHERE_TRACKING_ID);
+         return trackingId;
+     }
+ }

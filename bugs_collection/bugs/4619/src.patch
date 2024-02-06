@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SpringLdapEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SpringLdapEndpointBuilderFactory.java
+index 485d327..1129bd1 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SpringLdapEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SpringLdapEndpointBuilderFactory.java
+@@ -140,7 +140,7 @@ public interface SpringLdapEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.springldap.LdapOperation</code> enum.
+      */
+-    static enum LdapOperation {
++    enum LdapOperation {
+         SEARCH, BIND, UNBIND, AUTHENTICATE, MODIFY_ATTRIBUTES, FUNCTION_DRIVEN;
+     }
+     /**

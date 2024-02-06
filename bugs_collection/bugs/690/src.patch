@@ -1,0 +1,13 @@
+diff --git a/buggy/underfs/oss/src/main/java/alluxio/underfs/oss/OSSUnderFileSystem.java b/fixed/underfs/oss/src/main/java/alluxio/underfs/oss/OSSUnderFileSystem.java
+index 19470bb..2aa3f61 100644
+--- a/buggy/underfs/oss/src/main/java/alluxio/underfs/oss/OSSUnderFileSystem.java
++++ b/fixed/underfs/oss/src/main/java/alluxio/underfs/oss/OSSUnderFileSystem.java
+@@ -233,7 +233,7 @@ public final class OSSUnderFileSystem extends ObjectUnderFileSystem {
+       String[] ret = new String[objects.size()];
+       int i = 0;
+       for (OSSObjectSummary obj : objects) {
+-        ret[i] = obj.getKey();
++        ret[i++] = obj.getKey();
+       }
+       return ret;
+     }

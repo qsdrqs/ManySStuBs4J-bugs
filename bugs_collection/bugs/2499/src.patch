@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/bukkit/inventory/ItemStack.java b/fixed/src/main/java/org/bukkit/inventory/ItemStack.java
+index 95dc1f1..c730db6 100644
+--- a/buggy/src/main/java/org/bukkit/inventory/ItemStack.java
++++ b/fixed/src/main/java/org/bukkit/inventory/ItemStack.java
+@@ -211,7 +211,7 @@ public class ItemStack implements ConfigurationSerializable {
+     @Override
+     public ItemStack clone() {
+         ItemStack result = new ItemStack(type, amount, durability);
+-        result.addEnchantments(getEnchantments());
++        result.addUnsafeEnchantments(getEnchantments());
+ 
+         return result;
+     }

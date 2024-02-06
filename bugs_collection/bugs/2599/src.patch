@@ -1,0 +1,15 @@
+diff --git a/buggy/enterprise/src/main/java/org/graylog/plugins/enterprise/database/PaginatedDbService.java b/fixed/enterprise/src/main/java/org/graylog/plugins/enterprise/database/PaginatedDbService.java
+index a2d795d..a2ff361 100644
+--- a/buggy/enterprise/src/main/java/org/graylog/plugins/enterprise/database/PaginatedDbService.java
++++ b/fixed/enterprise/src/main/java/org/graylog/plugins/enterprise/database/PaginatedDbService.java
+@@ -129,8 +129,8 @@ public abstract class PaginatedDbService<DTO> {
+ 
+         // First created a filtered stream
+         final Stream<DTO> dtoStream = streamQueryWithSort(query, sort)
+-                .peek(dto -> total.incrementAndGet())
+-                .filter(filter);
++                .filter(filter)
++                .peek(dto -> total.incrementAndGet());
+ 
+         // Then use that filtered stream and only collect the entries according to page and perPage
+         final List<DTO> list = Stream.of(dtoStream)

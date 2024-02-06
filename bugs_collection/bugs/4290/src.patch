@@ -1,0 +1,13 @@
+diff --git a/buggy/tool/src/org/antlr/v4/tool/ast/GrammarAST.java b/fixed/tool/src/org/antlr/v4/tool/ast/GrammarAST.java
+index 38920bb..1bdae79 100644
+--- a/buggy/tool/src/org/antlr/v4/tool/ast/GrammarAST.java
++++ b/fixed/tool/src/org/antlr/v4/tool/ast/GrammarAST.java
+@@ -95,7 +95,7 @@ public class GrammarAST extends CommonTree {
+ 		while ( work.size()>0 ) {
+ 			t = work.remove(0);
+ 			if ( types.contains(t.getType()) ) nodes.add(t);
+-			if ( t.children!=null ) work.addAll(t.children);
++			if ( t.children!=null ) work.addAll((Collection)t.children);
+ 		}
+ 		return nodes;
+ 	}

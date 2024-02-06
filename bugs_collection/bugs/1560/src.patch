@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/test/java/tachyon/master/MasterInfoTest.java b/fixed/core/src/test/java/tachyon/master/MasterInfoTest.java
+index 41fccb7..0fac0e5 100644
+--- a/buggy/core/src/test/java/tachyon/master/MasterInfoTest.java
++++ b/fixed/core/src/test/java/tachyon/master/MasterInfoTest.java
+@@ -359,7 +359,7 @@ public class MasterInfoTest {
+     mMasterInfo.createFile("testFile", Constants.DEFAULT_BLOCK_SIZE_BYTE);
+   }
+ 
+-  @Test(expected = InvalidPathException.class)
++  @Test(expected = FileAlreadyExistException.class)
+   public void createFileInvalidPathTest2() throws InvalidPathException, FileAlreadyExistException,
+       BlockInfoException, TachyonException {
+     mMasterInfo.createFile("/", Constants.DEFAULT_BLOCK_SIZE_BYTE);

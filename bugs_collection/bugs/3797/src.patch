@@ -1,0 +1,23 @@
+diff --git a/buggy/jstorm-core/src/main/java/com/alibaba/jstorm/daemon/nimbus/TopologyMetricsRunnable.java b/fixed/jstorm-core/src/main/java/com/alibaba/jstorm/daemon/nimbus/TopologyMetricsRunnable.java
+index bbc9dd2..c70e42b 100644
+--- a/buggy/jstorm-core/src/main/java/com/alibaba/jstorm/daemon/nimbus/TopologyMetricsRunnable.java
++++ b/fixed/jstorm-core/src/main/java/com/alibaba/jstorm/daemon/nimbus/TopologyMetricsRunnable.java
+@@ -478,9 +478,9 @@ public class TopologyMetricsRunnable extends Thread {
+     private void syncMetaFromRemote(String topologyId, TopologyMetricContext context) {
+         try {
+             int memSize = context.getMemMeta().size();
+-            int zkSize = (Integer) stormClusterState.get_topology_metric(topologyId);
++            Integer zkSize = (Integer)stormClusterState.get_topology_metric(topologyId);
+ 
+-            if (memSize != zkSize) {
++            if (zkSize != null  && memSize != zkSize.intValue()) {
+                 ConcurrentMap<String, Long> memMeta = context.getMemMeta();
+                 for (MetaType metaType : MetaType.values()) {
+                     List<MetricMeta> metaList = metricQueryClient.getMetricMeta(clusterName, topologyId, metaType);
+@@ -908,4 +908,4 @@ public class TopologyMetricsRunnable extends Thread {
+         public Assignment newAssignment;
+         public Map<Integer, String> task2Component;
+     }
+-}
++}
+\ No newline at end of file

@@ -1,0 +1,13 @@
+diff --git a/buggy/dubbo-common/src/main/java/com/alibaba/dubbo/common/extension/ExtensionLoader.java b/fixed/dubbo-common/src/main/java/com/alibaba/dubbo/common/extension/ExtensionLoader.java
+index 50d7023..3435bcc 100644
+--- a/buggy/dubbo-common/src/main/java/com/alibaba/dubbo/common/extension/ExtensionLoader.java
++++ b/fixed/dubbo-common/src/main/java/com/alibaba/dubbo/common/extension/ExtensionLoader.java
+@@ -706,7 +706,7 @@ public class ExtensionLoader<T> {
+         try {
+             return injectExtension((T) getAdaptiveExtensionClass().newInstance());
+         } catch (Exception e) {
+-            throw new IllegalStateException("Can not create adaptive extenstion " + type + ", cause: " + e.getMessage(), e);
++            throw new IllegalStateException("Can not create adaptive extension " + type + ", cause: " + e.getMessage(), e);
+         }
+     }
+ 

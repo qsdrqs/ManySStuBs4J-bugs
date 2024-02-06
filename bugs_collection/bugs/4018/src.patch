@@ -1,0 +1,13 @@
+diff --git a/buggy/tool/src/org/antlr/v4/semantics/RuleCollector.java b/fixed/tool/src/org/antlr/v4/semantics/RuleCollector.java
+index 48a06ff..7791dcf 100644
+--- a/buggy/tool/src/org/antlr/v4/semantics/RuleCollector.java
++++ b/fixed/tool/src/org/antlr/v4/semantics/RuleCollector.java
+@@ -96,7 +96,7 @@ public class RuleCollector extends GrammarTreeVisitor {
+ 		if ( locals!=null ) {
+ 			r.locals = ScopeParser.parseTypedArgList(locals, locals.getText(), g.tool.errMgr);
+ 			r.locals.type = AttributeDict.DictType.LOCAL;
+-			r.locals.ast = returns;
++			r.locals.ast = locals;
+ 		}
+ 
+ 		for (GrammarAST a : actions) {

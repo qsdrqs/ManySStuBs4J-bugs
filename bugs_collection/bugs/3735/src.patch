@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/fastjson/JSON.java b/fixed/src/main/java/com/alibaba/fastjson/JSON.java
+index b4ffff3..8b375a0 100644
+--- a/buggy/src/main/java/com/alibaba/fastjson/JSON.java
++++ b/fixed/src/main/java/com/alibaba/fastjson/JSON.java
+@@ -771,7 +771,7 @@ public abstract class JSON implements JSONStreamAware, JSONAware {
+             
+             JSONObject json = new JSONObject();
+             try {
+-                javaBeanSerializer.getFieldValues(json);
++                javaBeanSerializer.getFieldValues(javaObject, json);
+             } catch (Exception e) {
+                 throw new JSONException("toJSON error", e);
+             }

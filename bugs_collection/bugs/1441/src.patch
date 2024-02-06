@@ -1,0 +1,13 @@
+diff --git a/buggy/servers/src/main/java/tachyon/worker/block/meta/BlockMetaBase.java b/fixed/servers/src/main/java/tachyon/worker/block/meta/BlockMetaBase.java
+index 241dc50..01205cf 100644
+--- a/buggy/servers/src/main/java/tachyon/worker/block/meta/BlockMetaBase.java
++++ b/fixed/servers/src/main/java/tachyon/worker/block/meta/BlockMetaBase.java
+@@ -40,7 +40,7 @@ public abstract class BlockMetaBase {
+    */
+   public BlockStoreLocation getBlockLocation() {
+     StorageTier tier = mDir.getParentTier();
+-    return new BlockStoreLocation(tier.getTierAlias(), mDir.getDirId());
++    return new BlockStoreLocation(tier.getTierAlias(), mDir.getDirIndex());
+   }
+ 
+   public StorageDir getParentDir() {

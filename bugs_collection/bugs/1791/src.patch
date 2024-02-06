@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java b/fixed/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java
+index 6ce4065..5f8ab4f 100644
+--- a/buggy/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java
++++ b/fixed/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java
+@@ -1824,8 +1824,7 @@ public class NettyAsyncHttpProvider extends SimpleChannelUpstreamHandler impleme
+                 this.channel = null;
+             }
+ 
+-            if (this.nettyResponseFuture != null
+-                    && (this.nettyResponseFuture.isDone() || this.nettyResponseFuture.isCancelled())) {
++            if (this.nettyResponseFuture == null || this.nettyResponseFuture.isDone() || this.nettyResponseFuture.isCancelled()) {
+                 cancel(true);
+             }
+         }

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/pool/DruidAbstractDataSource.java b/fixed/src/main/java/com/alibaba/druid/pool/DruidAbstractDataSource.java
+index 83fa7cf..1752ca9 100644
+--- a/buggy/src/main/java/com/alibaba/druid/pool/DruidAbstractDataSource.java
++++ b/fixed/src/main/java/com/alibaba/druid/pool/DruidAbstractDataSource.java
+@@ -1325,7 +1325,7 @@ public abstract class DruidAbstractDataSource extends WrapperAdapter implements
+             conn = createPhysicalConnection(url, physicalConnectProperties);
+ 
+             if (conn == null) {
+-                throw new SQLException("connect error, url " + url);
++                throw new SQLException("connect error, url " + url + ", driverClass " + this.driverClass);
+             }
+ 
+             initPhysicalConnection(conn);

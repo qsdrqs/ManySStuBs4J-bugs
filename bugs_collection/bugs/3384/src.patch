@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/support/http/WebStatFilter.java b/fixed/src/main/java/com/alibaba/druid/support/http/WebStatFilter.java
+index f95525b..cca0018 100644
+--- a/buggy/src/main/java/com/alibaba/druid/support/http/WebStatFilter.java
++++ b/fixed/src/main/java/com/alibaba/druid/support/http/WebStatFilter.java
+@@ -265,7 +265,7 @@ public class WebStatFilter implements Filter {
+             return sessionValue.toString();
+         }
+ 
+-        if (principalCookieName != null) {
++        if (principalCookieName != null && httpRequest.getCookies() != null) {
+             for (Cookie cookie : httpRequest.getCookies()) {
+                 if (principalCookieName.equals(cookie.getName())) {
+                     return cookie.getValue();

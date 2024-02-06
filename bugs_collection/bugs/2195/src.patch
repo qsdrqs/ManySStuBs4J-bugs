@@ -1,0 +1,13 @@
+diff --git a/buggy/integration-tests/jersey/src/test/java/org/atmosphere/jersey/tests/RecyclableBroadcaster.java b/fixed/integration-tests/jersey/src/test/java/org/atmosphere/jersey/tests/RecyclableBroadcaster.java
+index b73d394..ded04ab 100644
+--- a/buggy/integration-tests/jersey/src/test/java/org/atmosphere/jersey/tests/RecyclableBroadcaster.java
++++ b/fixed/integration-tests/jersey/src/test/java/org/atmosphere/jersey/tests/RecyclableBroadcaster.java
+@@ -32,7 +32,7 @@ public class RecyclableBroadcaster extends JerseyBroadcaster {
+      * {@inheritDoc}
+      */
+     public void destroy() {
+-        broadcasterCache = new BroadcasterConfig.DefaultBroadcasterCache();
++        bc.setBroadcasterCache(new BroadcasterConfig.DefaultBroadcasterCache());
+         setScope(SCOPE.APPLICATION);
+     }
+ }

@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereFramework.java b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereFramework.java
+index f4d2dbb..00cf6ea 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereFramework.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereFramework.java
+@@ -175,7 +175,7 @@ public class AtmosphereFramework implements ServletContextProvider {
+             this.atmosphereHandler = atmosphereHandler;
+             try {
+                 if (BroadcasterFactory.getDefault() != null) {
+-                    this.broadcaster = BroadcasterFactory.getDefault().get(mapping);
++                    this.broadcaster = BroadcasterFactory.getDefault().lookup(mapping, true);
+                 } else {
+                     this.mapping = mapping;
+                 }

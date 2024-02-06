@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java b/fixed/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java
+index a61d83f..66c7a40 100644
+--- a/buggy/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java
++++ b/fixed/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java
+@@ -330,7 +330,7 @@ public class NettyAsyncHttpProvider extends IdleStateHandler implements AsyncHtt
+                         throw new IllegalStateException(ex);
+                     }
+                     long length = body.getContentLength();
+-                    if (length > 0) {
++                    if (length != -1) {
+                         nettyRequest.setHeader(HttpHeaders.Names.CONTENT_LENGTH, length);
+                     } else {
+                         nettyRequest.setHeader(HttpHeaders.Names.TRANSFER_ENCODING, HttpHeaders.Values.CHUNKED);

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-syslog/src/test/java/org/apache/camel/component/syslog/AutomatedConversionTest.java b/fixed/components/camel-syslog/src/test/java/org/apache/camel/component/syslog/AutomatedConversionTest.java
+index e76a179..0e68fa2 100644
+--- a/buggy/components/camel-syslog/src/test/java/org/apache/camel/component/syslog/AutomatedConversionTest.java
++++ b/fixed/components/camel-syslog/src/test/java/org/apache/camel/component/syslog/AutomatedConversionTest.java
+@@ -79,7 +79,7 @@ public class AutomatedConversionTest extends CamelTestSupport {
+             @Override
+             public void configure() throws Exception {
+                 // we setup a Syslog listener on a random port.
+-                from("mina2:udp://127.0.0.1:" + serverPort).unmarshal().syslog().process(new Processor() {
++                from("mina:udp://127.0.0.1:" + serverPort).unmarshal().syslog().process(new Processor() {
+                     @Override
+                     public void process(Exchange ex) {
+                         assertTrue(ex.getIn().getBody() instanceof SyslogMessage);

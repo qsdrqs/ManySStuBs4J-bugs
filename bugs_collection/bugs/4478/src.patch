@@ -1,0 +1,29 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EhcacheEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EhcacheEndpointBuilderFactory.java
+index ac8bd76..589ea47 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EhcacheEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EhcacheEndpointBuilderFactory.java
+@@ -961,21 +961,21 @@ public interface EhcacheEndpointBuilderFactory {
+     /**
+      * Proxy enum for <code>org.ehcache.event.EventFiring</code> enum.
+      */
+-    static enum EventFiring {
++    enum EventFiring {
+         ASYNCHRONOUS, SYNCHRONOUS;
+     }
+ 
+     /**
+      * Proxy enum for <code>org.ehcache.event.EventOrdering</code> enum.
+      */
+-    static enum EventOrdering {
++    enum EventOrdering {
+         UNORDERED, ORDERED;
+     }
+ 
+     /**
+      * Proxy enum for <code>org.ehcache.event.EventType</code> enum.
+      */
+-    static enum EventType {
++    enum EventType {
+         EVICTED, EXPIRED, REMOVED, CREATED, UPDATED;
+     }
+     /**

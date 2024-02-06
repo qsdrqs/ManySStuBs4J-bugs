@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PdfEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PdfEndpointBuilderFactory.java
+index 87aaa71..800235f 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PdfEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PdfEndpointBuilderFactory.java
+@@ -283,7 +283,7 @@ public interface PdfEndpointBuilderFactory {
+      * Proxy enum for <code>org.apache.camel.component.pdf.PdfOperation</code>
+      * enum.
+      */
+-    static enum PdfOperation {
++    enum PdfOperation {
+         create, append, extractText;
+     }
+ 
+@@ -291,7 +291,7 @@ public interface PdfEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.pdf.TextProcessingFactory</code> enum.
+      */
+-    static enum TextProcessingFactory {
++    enum TextProcessingFactory {
+         autoFormatting, lineTermination;
+     }
+     /**

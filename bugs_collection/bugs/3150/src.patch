@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/com/alibaba/otter/canal/common/MQMessageUtils.java b/fixed/server/src/main/java/com/alibaba/otter/canal/common/MQMessageUtils.java
+index bc98164..163dcad 100644
+--- a/buggy/server/src/main/java/com/alibaba/otter/canal/common/MQMessageUtils.java
++++ b/fixed/server/src/main/java/com/alibaba/otter/canal/common/MQMessageUtils.java
+@@ -499,7 +499,7 @@ public class MQMessageUtils {
+                     topics.add(topic);
+                 }
+             } else if (matchDynamicTopic(name, item)) {
+-                topics.add(name);
++                topics.add(name.toLowerCase());
+             }
+         }
+         return topics.isEmpty() ? null : topics;

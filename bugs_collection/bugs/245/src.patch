@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/activiti-cycle/src/main/java/org/activiti/cycle/impl/connector/view/RootConnector.java b/fixed/modules/activiti-cycle/src/main/java/org/activiti/cycle/impl/connector/view/RootConnector.java
+index b1b72fe..d345f17 100644
+--- a/buggy/modules/activiti-cycle/src/main/java/org/activiti/cycle/impl/connector/view/RootConnector.java
++++ b/fixed/modules/activiti-cycle/src/main/java/org/activiti/cycle/impl/connector/view/RootConnector.java
+@@ -94,7 +94,7 @@ public class RootConnector implements RepositoryConnector {
+   private String getIdWithRepoName(RepositoryConnector connector, RepositoryNode repositoryNode) {
+     String repositoryName = connector.getConfiguration().getName();
+     if (!repositoryNode.getId().startsWith("/")) {
+-      throw new RepositoryException("RepositoryNode id doesn't start with a slash, which is copnsidered invalid: '" + repositoryNode.getId()
++      throw new RepositoryException("RepositoryNode id doesn't start with a slash, which is considered invalid: '" + repositoryNode.getId()
+               + "' in repository '" + repositoryName + "'");
+     } else {
+       return getRepositoryPrefix(repositoryName) + repositoryNode.getId();

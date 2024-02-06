@@ -1,0 +1,13 @@
+diff --git a/buggy/tool/src/org/antlr/v4/Tool.java b/fixed/tool/src/org/antlr/v4/Tool.java
+index 42ace2e..1a39dd3 100644
+--- a/buggy/tool/src/org/antlr/v4/Tool.java
++++ b/fixed/tool/src/org/antlr/v4/Tool.java
+@@ -246,7 +246,7 @@ public class Tool {
+ 			haveOutputDir = true;
+ 			if (outDir.exists() && !outDir.isDirectory()) {
+ 				errMgr.toolError(ErrorType.OUTPUT_DIR_IS_FILE, outputDirectory);
+-				libDirectory = ".";
++				outputDirectory = ".";
+ 			}
+ 		}
+ 		else {

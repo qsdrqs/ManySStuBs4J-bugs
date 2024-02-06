@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/FacebookEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/FacebookEndpointBuilderFactory.java
+index b5769b9..b2e1a14 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/FacebookEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/FacebookEndpointBuilderFactory.java
+@@ -4432,7 +4432,7 @@ public interface FacebookEndpointBuilderFactory {
+     /**
+      * Proxy enum for <code>facebook4j.PictureSize</code> enum.
+      */
+-    static enum PictureSize {
++    enum PictureSize {
+         square, small, normal, large, thumbnail, album;
+     }
+     /**

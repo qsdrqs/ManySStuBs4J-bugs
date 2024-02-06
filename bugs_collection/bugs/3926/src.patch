@@ -1,0 +1,13 @@
+diff --git a/buggy/tool/src/org/antlr/v4/analysis/LeftRecursiveRuleAnalyzer.java b/fixed/tool/src/org/antlr/v4/analysis/LeftRecursiveRuleAnalyzer.java
+index 3304f77..98a1a82 100644
+--- a/buggy/tool/src/org/antlr/v4/analysis/LeftRecursiveRuleAnalyzer.java
++++ b/fixed/tool/src/org/antlr/v4/analysis/LeftRecursiveRuleAnalyzer.java
+@@ -137,7 +137,7 @@ public class LeftRecursiveRuleAnalyzer extends LeftRecursiveRuleWalker {
+ 		}
+ 
+ 		if ( altAssociativity.get(alt)!=null && altAssociativity.get(alt)!=assoc ) {
+-			tool.errMgr.toolError(ErrorType.ALL_OPS_NEED_SAME_ASSOC, alt);
++			tool.errMgr.toolError(ErrorType.INTERNAL_ERROR, "all operators of alt " + alt + " of left-recursive rule must have same associativity");
+ 		}
+ 		altAssociativity.put(alt, assoc);
+ 

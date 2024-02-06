@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XQueryEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XQueryEndpointBuilderFactory.java
+index e026425..77161ce 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XQueryEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XQueryEndpointBuilderFactory.java
+@@ -1460,7 +1460,7 @@ public interface XQueryEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.xquery.ResultFormat</code> enum.
+      */
+-    static enum ResultFormat {
++    enum ResultFormat {
+         Bytes, BytesSource, DOM, DOMSource, List, String, StringSource;
+     }
+     /**

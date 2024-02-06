@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer.java b/fixed/src/main/java/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer.java
+index b1d8204..a12790a 100644
+--- a/buggy/src/main/java/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer.java
++++ b/fixed/src/main/java/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer.java
+@@ -664,7 +664,7 @@ public class JavaBeanDeserializer implements ObjectDeserializer {
+                                                                                InvocationTargetException {
+         Object object = null;
+         
+-        if (beanInfo.creatorConstructor == null && beanInfo.buildMethod == null) {
++        if (beanInfo.creatorConstructor == null && beanInfo.buildMethod == null && beanInfo.factoryMethod == null) {
+             object = createInstance(null, clazz);
+             
+             for (Map.Entry<String, Object> entry : map.entrySet()) {

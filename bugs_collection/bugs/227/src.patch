@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/activiti-cycle/src/main/java/org/activiti/cycle/impl/connector/signavio/SignavioConnector.java b/fixed/modules/activiti-cycle/src/main/java/org/activiti/cycle/impl/connector/signavio/SignavioConnector.java
+index fb8197a..f02f729 100644
+--- a/buggy/modules/activiti-cycle/src/main/java/org/activiti/cycle/impl/connector/signavio/SignavioConnector.java
++++ b/fixed/modules/activiti-cycle/src/main/java/org/activiti/cycle/impl/connector/signavio/SignavioConnector.java
+@@ -706,7 +706,7 @@ public class SignavioConnector extends AbstractRepositoryConnector implements Si
+       sendRequest(jsonRequest);
+ 
+       // TODO: return the object
+-      return getRepositoryArtifact(id);
++      return getRepositoryArtifact("/"+id);
+     } catch (Exception je) {
+       throw new RepositoryException("Unable to create model '" + artifactName + "' in parent folder '" + parentFolderId + "'", je);
+     }

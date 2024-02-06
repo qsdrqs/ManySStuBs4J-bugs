@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DdbStreamEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DdbStreamEndpointBuilderFactory.java
+index 8e8670b..f4d9e0f 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DdbStreamEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DdbStreamEndpointBuilderFactory.java
+@@ -152,7 +152,7 @@ public interface DdbStreamEndpointBuilderFactory {
+      * <code>com.amazonaws.services.dynamodbv2.model.ShardIteratorType</code>
+      * enum.
+      */
+-    public static enum ShardIteratorType {
++    static enum ShardIteratorType {
+         TRIM_HORIZON, LATEST, AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER;
+     }
+     /**

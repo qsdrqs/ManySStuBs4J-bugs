@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereRequest.java b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereRequest.java
+index 3f5b4fd..2c7ed0d 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereRequest.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereRequest.java
+@@ -583,7 +583,7 @@ public class AtmosphereRequest implements HttpServletRequest {
+         if (create) {
+             return getSession();
+         }
+-        return session != null && isNotNoOps() ? b.request.getSession(false) : session;
++        return session == null && isNotNoOps() ? b.request.getSession(false) : session;
+     }
+ 
+     /**

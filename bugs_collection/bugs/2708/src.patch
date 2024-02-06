@@ -1,0 +1,13 @@
+diff --git a/buggy/graylog2-server/src/main/java/org/graylog2/streams/StreamRouterEngine.java b/fixed/graylog2-server/src/main/java/org/graylog2/streams/StreamRouterEngine.java
+index b2aaa7b..9c7db3b 100644
+--- a/buggy/graylog2-server/src/main/java/org/graylog2/streams/StreamRouterEngine.java
++++ b/fixed/graylog2-server/src/main/java/org/graylog2/streams/StreamRouterEngine.java
+@@ -316,7 +316,7 @@ public class StreamRouterEngine {
+                     return matches.values().contains(false);
+                 case AND:
+                 default:
+-                    return !matches.values().contains(false);
++                    return matches.size() > 0 && !matches.values().contains(false);
+             }
+         }
+ 

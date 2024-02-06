@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/DefaultBroadcasterFactory.java b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/DefaultBroadcasterFactory.java
+index ba642cc..345aa22 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/DefaultBroadcasterFactory.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/DefaultBroadcasterFactory.java
+@@ -87,7 +87,7 @@ public class DefaultBroadcasterFactory extends BroadcasterFactory {
+ 
+     private void configure(String broadcasterLifeCyclePolicy) {
+ 
+-        int maxIdleTime = 5 * 60 * 100;
++        int maxIdleTime = 5 * 60 * 1000;
+         String idleTime = config.getInitParameter(ApplicationConfig.BROADCASTER_LIFECYCLE_POLICY_IDLETIME);
+         if (idleTime != null) {
+             maxIdleTime = Integer.parseInt(idleTime);

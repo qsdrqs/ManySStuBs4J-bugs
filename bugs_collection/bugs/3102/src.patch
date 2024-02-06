@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/main/java/fi/iki/elonen/NanoHTTPD.java b/fixed/core/src/main/java/fi/iki/elonen/NanoHTTPD.java
+index fbfea74..ec7dea4 100644
+--- a/buggy/core/src/main/java/fi/iki/elonen/NanoHTTPD.java
++++ b/fixed/core/src/main/java/fi/iki/elonen/NanoHTTPD.java
+@@ -120,7 +120,7 @@ public abstract class NanoHTTPD {
+                         });
+                     } catch (IOException e) {
+                     }
+-                } while (true);
++                } while (!myServerSocket.isClosed());
+             }
+         });
+         myThread.setDaemon(true);

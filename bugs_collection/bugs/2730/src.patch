@@ -1,0 +1,13 @@
+diff --git a/buggy/graylog2-inputs/src/main/java/org/graylog2/inputs/transports/AmqpTransport.java b/fixed/graylog2-inputs/src/main/java/org/graylog2/inputs/transports/AmqpTransport.java
+index d839807..7d8b654 100644
+--- a/buggy/graylog2-inputs/src/main/java/org/graylog2/inputs/transports/AmqpTransport.java
++++ b/fixed/graylog2-inputs/src/main/java/org/graylog2/inputs/transports/AmqpTransport.java
+@@ -155,7 +155,7 @@ public class AmqpTransport extends ThrottleableTransport {
+                 configuration.getInt(CK_PARALLEL_QUEUES),
+                 configuration.getBoolean(CK_TLS),
+                 configuration.getBoolean(CK_REQUEUE_INVALID_MESSAGES),
+-                configuration.getInt(CK_HEARTBEAT_TIMEOUT),
++                configuration.intIsSet(CK_HEARTBEAT_TIMEOUT) ? configuration.getInt(CK_HEARTBEAT_TIMEOUT) : ConnectionFactory.DEFAULT_HEARTBEAT,
+                 input,
+                 scheduler,
+                 this

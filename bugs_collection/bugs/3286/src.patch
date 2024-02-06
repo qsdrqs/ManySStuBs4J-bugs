@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/support/http/WebStatFilter.java b/fixed/src/main/java/com/alibaba/druid/support/http/WebStatFilter.java
+index b50dca3..0746a42 100644
+--- a/buggy/src/main/java/com/alibaba/druid/support/http/WebStatFilter.java
++++ b/fixed/src/main/java/com/alibaba/druid/support/http/WebStatFilter.java
+@@ -185,7 +185,7 @@ public class WebStatFilter extends AbstractWebStatImpl implements Filter {
+     }
+ 
+     public boolean isExclusion(String requestURI) {
+-        if (excludesPattern == null) {
++        if (excludesPattern == null || requestURI == null) {
+             return false;
+         }
+ 

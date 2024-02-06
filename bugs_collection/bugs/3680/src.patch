@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/alibaba/json/bvt/jdk8/LocalDateTimeTest.java b/fixed/src/test/java/com/alibaba/json/bvt/jdk8/LocalDateTimeTest.java
+index 3b0c309..7eb7223 100644
+--- a/buggy/src/test/java/com/alibaba/json/bvt/jdk8/LocalDateTimeTest.java
++++ b/fixed/src/test/java/com/alibaba/json/bvt/jdk8/LocalDateTimeTest.java
+@@ -18,7 +18,7 @@ public class LocalDateTimeTest extends TestCase {
+         
+         VO vo1 = JSON.parseObject(text, VO.class);
+         
+-        Assert.assertEquals(vo.getDate(), vo1.getDate());
++        Assert.assertEquals(JSON.toJSONString(vo.getDate()), JSON.toJSONString(vo1.getDate()));
+     }
+ 
+     public static class VO {

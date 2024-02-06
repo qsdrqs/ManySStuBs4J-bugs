@@ -1,0 +1,15 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AsynchronousProcessor.java b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AsynchronousProcessor.java
+index a09a7e9..9d1f925 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AsynchronousProcessor.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AsynchronousProcessor.java
+@@ -534,9 +534,7 @@ public abstract class AsynchronousProcessor implements AsyncSupport<AtmosphereRe
+         r.getAtmosphereResourceEvent().setMessage(r.writeOnTimeout());
+         try {
+             if (disableOnEvent == null || !disableOnEvent.equals(String.valueOf(true))) {
+-                AtmosphereHandler atmosphereHandler =
+-                        (AtmosphereHandler)
+-                                req.getAttribute(FrameworkConfig.ATMOSPHERE_HANDLER_WRAPPER);
++                AtmosphereHandler atmosphereHandler = r.getAtmosphereHandler();
+ 
+                 if (atmosphereHandler != null) {
+                     try {

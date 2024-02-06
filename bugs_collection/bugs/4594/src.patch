@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/QueueServiceEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/QueueServiceEndpointBuilderFactory.java
+index 1e0ce80..fc1a403 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/QueueServiceEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/QueueServiceEndpointBuilderFactory.java
+@@ -588,7 +588,7 @@ public interface QueueServiceEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.azure.queue.QueueServiceOperations</code> enum.
+      */
+-    static enum QueueServiceOperations {
++    enum QueueServiceOperations {
+         listQueues, createQueue, deleteQueue, addMessage, retrieveMessage, peekMessage, updateMessage, deleteMessage;
+     }
+     /**

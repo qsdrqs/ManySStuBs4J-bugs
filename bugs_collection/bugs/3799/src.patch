@@ -1,0 +1,13 @@
+diff --git a/buggy/jstorm-utility/jstorm-rocket-mq/src/main/java/com/alibaba/aloha/meta/MetaSpout.java b/fixed/jstorm-utility/jstorm-rocket-mq/src/main/java/com/alibaba/aloha/meta/MetaSpout.java
+index 345d344..e6c3a26 100644
+--- a/buggy/jstorm-utility/jstorm-rocket-mq/src/main/java/com/alibaba/aloha/meta/MetaSpout.java
++++ b/fixed/jstorm-utility/jstorm-rocket-mq/src/main/java/com/alibaba/aloha/meta/MetaSpout.java
+@@ -201,7 +201,7 @@ public class MetaSpout implements IRichSpout, IAckValueSpout, IFailValueSpout,
+ 
+ 	public void finishTuple(MetaTuple metaTuple) {
+ 		waithHistogram.update(metaTuple.getEmitMs() - metaTuple.getCreateMs());
+-		processHistogram.update(System.currentTimeMillis() - metaTuple.emitMs);
++		processHistogram.update(System.currentTimeMillis() - metaTuple.getEmitMs());
+ 		metaTuple.done();
+ 	}
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/samples/rest-chat/src/main/java/org/atmosphere/commons/jersey/ResourceChat.java b/fixed/samples/rest-chat/src/main/java/org/atmosphere/commons/jersey/ResourceChat.java
+index e588dcf..b0dea05 100644
+--- a/buggy/samples/rest-chat/src/main/java/org/atmosphere/commons/jersey/ResourceChat.java
++++ b/fixed/samples/rest-chat/src/main/java/org/atmosphere/commons/jersey/ResourceChat.java
+@@ -64,7 +64,7 @@ import javax.ws.rs.Produces;
+ import javax.ws.rs.WebApplicationException;
+ import javax.ws.rs.core.MultivaluedMap;
+ 
+-@Path("/chat")
++@Path("/")
+ @Produces("text/html;charset=ISO-8859-1")
+ public class ResourceChat {
+ 

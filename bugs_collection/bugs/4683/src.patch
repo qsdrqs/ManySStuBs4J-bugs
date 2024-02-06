@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CaffeineLoadCacheEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CaffeineLoadCacheEndpointBuilderFactory.java
+index 7ae35c4..132dad8 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CaffeineLoadCacheEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CaffeineLoadCacheEndpointBuilderFactory.java
+@@ -824,7 +824,7 @@ public interface CaffeineLoadCacheEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.caffeine.EvictionType</code> enum.
+      */
+-    public static enum EvictionType {
++    static enum EvictionType {
+         size_based, time_based;
+     }
+     /**

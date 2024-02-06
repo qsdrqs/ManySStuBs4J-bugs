@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/filter/logging/LogFilter.java b/fixed/src/main/java/com/alibaba/druid/filter/logging/LogFilter.java
+index 037eb98..710da12 100644
+--- a/buggy/src/main/java/com/alibaba/druid/filter/logging/LogFilter.java
++++ b/fixed/src/main/java/com/alibaba/druid/filter/logging/LogFilter.java
+@@ -546,7 +546,7 @@ public abstract class LogFilter extends FilterEventAdapter implements LogFilterM
+     }
+ 
+     private void logExecutableSql(StatementProxy statement, String sql) {
+-        if (!isStatementExecutableSqlLogEnable()) {
++        if ((!isStatementExecutableSqlLogEnable()) || !isStatementLogEnabled()) {
+             return;
+         }
+ 

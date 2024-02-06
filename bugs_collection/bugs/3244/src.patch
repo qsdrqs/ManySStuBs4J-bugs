@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/stat/TableStat.java b/fixed/src/main/java/com/alibaba/druid/stat/TableStat.java
+index 190a8ad..97229f1 100644
+--- a/buggy/src/main/java/com/alibaba/druid/stat/TableStat.java
++++ b/fixed/src/main/java/com/alibaba/druid/stat/TableStat.java
+@@ -453,7 +453,7 @@ public class TableStat {
+ 
+         public String getFullName() {
+             if (fullName == null) {
+-                if (table != null) {
++                if (table == null) {
+                     fullName = name;
+                 } else {
+                     fullName = table + '.' + name;

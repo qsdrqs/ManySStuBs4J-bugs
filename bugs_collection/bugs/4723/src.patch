@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/FlinkEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/FlinkEndpointBuilderFactory.java
+index 7a6b34a..186eff1 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/FlinkEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/FlinkEndpointBuilderFactory.java
+@@ -219,7 +219,7 @@ public interface FlinkEndpointBuilderFactory {
+      * Proxy enum for <code>org.apache.camel.component.flink.EndpointType</code>
+      * enum.
+      */
+-    public static enum EndpointType {
++    static enum EndpointType {
+         dataset, datastream;
+     }
+     /**

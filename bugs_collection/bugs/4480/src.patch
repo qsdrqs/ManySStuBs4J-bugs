@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ElasticsearchEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ElasticsearchEndpointBuilderFactory.java
+index 8070a2b..8ebc93e 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ElasticsearchEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ElasticsearchEndpointBuilderFactory.java
+@@ -312,7 +312,7 @@ public interface ElasticsearchEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.elasticsearch.ElasticsearchOperation</code> enum.
+      */
+-    static enum ElasticsearchOperation {
++    enum ElasticsearchOperation {
+         Index, Update, Bulk, BulkIndex, GetById, MultiGet, MultiSearch, Delete, DeleteIndex, Search, Exists, Ping, Info;
+     }
+     /**

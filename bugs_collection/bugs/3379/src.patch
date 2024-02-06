@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/pool/DruidPooledConnection.java b/fixed/src/main/java/com/alibaba/druid/pool/DruidPooledConnection.java
+index a211164..4557d28 100644
+--- a/buggy/src/main/java/com/alibaba/druid/pool/DruidPooledConnection.java
++++ b/fixed/src/main/java/com/alibaba/druid/pool/DruidPooledConnection.java
+@@ -149,7 +149,7 @@ public class DruidPooledConnection extends PoolableWrapper implements javax.sql.
+                     return;
+                 }
+                 
+-                LOG.warn("clear parameter error", ex);
++                LOG.error("clear parameter error", ex);
+             }
+         }
+ 

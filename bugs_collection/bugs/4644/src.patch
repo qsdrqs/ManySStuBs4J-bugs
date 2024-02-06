@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/YammerEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/YammerEndpointBuilderFactory.java
+index bcc56fa..a1c7ab3 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/YammerEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/YammerEndpointBuilderFactory.java
+@@ -1007,7 +1007,7 @@ public interface YammerEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.yammer.YammerFunctionType</code> enum.
+      */
+-    static enum YammerFunctionType {
++    enum YammerFunctionType {
+         MESSAGES, MY_FEED, ALGO, FOLLOWING, SENT, PRIVATE, RECEIVED, USERS, CURRENT;
+     }
+     /**

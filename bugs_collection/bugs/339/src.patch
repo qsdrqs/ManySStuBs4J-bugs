@@ -1,0 +1,13 @@
+diff --git a/buggy/keyvalue/client/src/main/java/alluxio/client/keyvalue/KeyValuePartitionReader.java b/fixed/keyvalue/client/src/main/java/alluxio/client/keyvalue/KeyValuePartitionReader.java
+index b7d7a50..006f492 100644
+--- a/buggy/keyvalue/client/src/main/java/alluxio/client/keyvalue/KeyValuePartitionReader.java
++++ b/fixed/keyvalue/client/src/main/java/alluxio/client/keyvalue/KeyValuePartitionReader.java
+@@ -43,7 +43,7 @@ public interface KeyValuePartitionReader extends Closeable, KeyValueIterable {
+      */
+     public static KeyValuePartitionReader create(AlluxioURI uri)
+         throws AlluxioException, IOException {
+-      Preconditions.checkNotNull(uri);
++      Preconditions.checkNotNull(uri, "uri");
+       FileSystem fs = FileSystem.Factory.get();
+       List<Long> blockIds = fs.getStatus(uri).getBlockIds();
+       // Each partition file should only contain one block.

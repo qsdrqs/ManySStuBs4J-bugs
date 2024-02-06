@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SqsEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SqsEndpointBuilderFactory.java
+index 5ba28bd..c8ed22e 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SqsEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SqsEndpointBuilderFactory.java
+@@ -1880,7 +1880,7 @@ public interface SqsEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.aws.sqs.SqsOperations</code> enum.
+      */
+-    static enum SqsOperations {
++    enum SqsOperations {
+         sendBatchMessage, deleteMessage, listQueues;
+     }
+     /**

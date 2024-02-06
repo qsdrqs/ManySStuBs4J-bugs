@@ -1,0 +1,13 @@
+diff --git a/buggy/catalog/camel-route-parser/src/test/java/org/apache/camel/parser/java/MyCdiConcatRouteBuilder.java b/fixed/catalog/camel-route-parser/src/test/java/org/apache/camel/parser/java/MyCdiConcatRouteBuilder.java
+index 671b23a..7e50225 100644
+--- a/buggy/catalog/camel-route-parser/src/test/java/org/apache/camel/parser/java/MyCdiConcatRouteBuilder.java
++++ b/fixed/catalog/camel-route-parser/src/test/java/org/apache/camel/parser/java/MyCdiConcatRouteBuilder.java
+@@ -36,7 +36,7 @@ public class MyCdiConcatRouteBuilder extends RouteBuilder {
+     @Uri("log:a")
+     private Endpoint loga;
+ 
+-    @EndpointInject("netty4-http:http:someserver:" + PORT + "/hello")
++    @EndpointInject("netty-http:http:someserver:" + PORT + "/hello")
+     private Endpoint mynetty;
+ 
+     @Override

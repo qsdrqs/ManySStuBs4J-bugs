@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AsynchronousProcessor.java b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AsynchronousProcessor.java
+index 7f83ace..abc3116 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AsynchronousProcessor.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AsynchronousProcessor.java
+@@ -558,7 +558,7 @@ public abstract class AsynchronousProcessor implements AsyncSupport<AtmosphereRe
+                 }
+             } catch (Throwable ex) {
+                 // Something wrong happenned, ignore the exception
+-                logger.debug("failed to cancel resource: {}", r.uuid(), ex);
++                logger.debug("failed to cancel resource: {}", r == null ? "" : r.uuid() , ex);
+             } finally {
+                 config.framework().notify(Action.TYPE.CANCELLED, req, res);
+                 try {

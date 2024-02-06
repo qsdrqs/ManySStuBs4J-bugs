@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/main/java/org/asynchttpclient/DefaultAsyncHttpClient.java b/fixed/api/src/main/java/org/asynchttpclient/DefaultAsyncHttpClient.java
+index 4cb934a..e6ba817 100644
+--- a/buggy/api/src/main/java/org/asynchttpclient/DefaultAsyncHttpClient.java
++++ b/fixed/api/src/main/java/org/asynchttpclient/DefaultAsyncHttpClient.java
+@@ -105,7 +105,7 @@ public class DefaultAsyncHttpClient implements AsyncHttpClient {
+      * @param providerClass a {@link AsyncHttpProvider}
+      */
+     public DefaultAsyncHttpClient(String providerClass, AsyncHttpClientConfig config) {
+-        this(loadProvider(providerClass, config), new AsyncHttpClientConfig.Builder().build());
++        this(loadProvider(providerClass, config), config);
+     }
+ 
+     /**

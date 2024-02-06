@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/src/test/java/alluxio/client/AbstractFileOutStreamIntegrationTest.java b/fixed/tests/src/test/java/alluxio/client/AbstractFileOutStreamIntegrationTest.java
+index 492ff3f..9d4f7ea 100644
+--- a/buggy/tests/src/test/java/alluxio/client/AbstractFileOutStreamIntegrationTest.java
++++ b/fixed/tests/src/test/java/alluxio/client/AbstractFileOutStreamIntegrationTest.java
+@@ -115,7 +115,7 @@ public abstract class AbstractFileOutStreamIntegrationTest {
+   }
+ 
+   protected List<CreateFileOptions> getOptionSet() {
+-    List<CreateFileOptions> ret = new ArrayList<CreateFileOptions>(3);
++    List<CreateFileOptions> ret = new ArrayList<>(3);
+     ret.add(mWriteBoth);
+     ret.add(mWriteAlluxio);
+     ret.add(mWriteUnderStore);

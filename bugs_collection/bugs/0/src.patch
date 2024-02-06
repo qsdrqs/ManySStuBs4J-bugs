@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/activiti-secure-service-tasks/src/test/java/org/activiti/test/serviceTask/secure/SecureShellTaskTest.java b/fixed/modules/activiti-secure-service-tasks/src/test/java/org/activiti/test/serviceTask/secure/SecureShellTaskTest.java
+index e288bae..a5fa9b4 100644
+--- a/buggy/modules/activiti-secure-service-tasks/src/test/java/org/activiti/test/serviceTask/secure/SecureShellTaskTest.java
++++ b/fixed/modules/activiti-secure-service-tasks/src/test/java/org/activiti/test/serviceTask/secure/SecureShellTaskTest.java
+@@ -38,7 +38,7 @@ public class SecureShellTaskTest extends SecureServiceTaskBaseTest {
+         }
+ 
+         try {
+-            runtimeService.startProcessInstanceByKey("shellCommandStart");
++            runtimeService.startProcessInstanceByKey("shellCommandEcho");
+             Assert.fail(); // Expecting exception
+         } catch (Exception e) {
+             e.printStackTrace();

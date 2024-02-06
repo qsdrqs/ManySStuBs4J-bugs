@@ -1,0 +1,13 @@
+diff --git a/buggy/minicluster/src/main/java/alluxio/master/MultiMasterLocalAlluxioCluster.java b/fixed/minicluster/src/main/java/alluxio/master/MultiMasterLocalAlluxioCluster.java
+index 970e1d4..93a87a7 100644
+--- a/buggy/minicluster/src/main/java/alluxio/master/MultiMasterLocalAlluxioCluster.java
++++ b/fixed/minicluster/src/main/java/alluxio/master/MultiMasterLocalAlluxioCluster.java
+@@ -109,7 +109,7 @@ public final class MultiMasterLocalAlluxioCluster extends AbstractLocalAlluxioCl
+    * @return the URI of the master
+    */
+   public String getUri() {
+-    return Constants.HEADER_FT + mHostname + ":" + getLocalAlluxioMaster().getRpcLocalPort();
++    return Constants.HEADER + "zk@" + mCuratorServer.getConnectString();
+   }
+ 
+   @Override

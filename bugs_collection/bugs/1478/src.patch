@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/test/java/tachyon/conf/TachyonConfTest.java b/fixed/core/src/test/java/tachyon/conf/TachyonConfTest.java
+index 2cc8e76..6a32f80 100644
+--- a/buggy/core/src/test/java/tachyon/conf/TachyonConfTest.java
++++ b/fixed/core/src/test/java/tachyon/conf/TachyonConfTest.java
+@@ -221,7 +221,7 @@ public class TachyonConfTest {
+     Assert.assertTrue(longValue == Constants.MB);
+ 
+     longValue = sDefaultTachyonConf.getBytes(Constants.USER_REMOTE_READ_BUFFER_SIZE_BYTE, 0);
+-    Assert.assertTrue(longValue == Constants.MB);
++    Assert.assertTrue(longValue == 8 * Constants.MB);
+ 
+     Class<? extends RemoteBlockReader> reader =
+         sDefaultTachyonConf.getClass(Constants.USER_REMOTE_BLOCK_READER, null);

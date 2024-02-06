@@ -1,0 +1,13 @@
+diff --git a/buggy/core/client/src/main/java/alluxio/client/file/FileInStream.java b/fixed/core/client/src/main/java/alluxio/client/file/FileInStream.java
+index 8e06815..8e2aec8 100644
+--- a/buggy/core/client/src/main/java/alluxio/client/file/FileInStream.java
++++ b/fixed/core/client/src/main/java/alluxio/client/file/FileInStream.java
+@@ -551,7 +551,7 @@ public class FileInStream extends InputStream implements BoundedStream, Seekable
+         return;
+       }
+       // The early return above guarantees that we won't close an incomplete cache stream.
+-      Preconditions.checkState(mCurrentCacheStream.remaining() == 0);
++      Preconditions.checkState(mCurrentCacheStream == null || mCurrentCacheStream.remaining() == 0);
+       closeOrCancelCacheStream();
+     }
+ 

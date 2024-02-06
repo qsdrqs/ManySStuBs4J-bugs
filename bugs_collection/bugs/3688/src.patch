@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/alibaba/json/bvt/bug/Bug_for_issue_320.java b/fixed/src/test/java/com/alibaba/json/bvt/bug/Bug_for_issue_320.java
+index 762aae1..3d19482 100644
+--- a/buggy/src/test/java/com/alibaba/json/bvt/bug/Bug_for_issue_320.java
++++ b/fixed/src/test/java/com/alibaba/json/bvt/bug/Bug_for_issue_320.java
+@@ -21,7 +21,7 @@ public class Bug_for_issue_320 extends TestCase {
+         Assert.assertEquals("{1001:\"aaa\"}", text);
+         
+         JSONObject obj = JSON.parseObject(text);
+-        Assert.assertEquals("aaa", obj.get("1001"));
++        Assert.assertEquals("aaa", obj.get(1001));
+     }
+ 
+ }

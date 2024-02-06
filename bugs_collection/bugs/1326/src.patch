@@ -1,0 +1,13 @@
+diff --git a/buggy/clients/unshaded/src/main/java/tachyon/client/block/RemoteBlockOutStream.java b/fixed/clients/unshaded/src/main/java/tachyon/client/block/RemoteBlockOutStream.java
+index 8bbe589..b2a017d 100644
+--- a/buggy/clients/unshaded/src/main/java/tachyon/client/block/RemoteBlockOutStream.java
++++ b/fixed/clients/unshaded/src/main/java/tachyon/client/block/RemoteBlockOutStream.java
+@@ -91,7 +91,7 @@ public final class RemoteBlockOutStream extends BufferedBlockOutStream {
+     }
+     flush();
+     mRemoteWriter.close();
+-    if (mFlushedBytes > 0) {
++    if (mFlushedBytes == mBlockSize) {
+       mWorkerClient.cacheBlock(mBlockId);
+       ClientContext.getClientMetrics().incBlocksWrittenRemote(1);
+     } else {

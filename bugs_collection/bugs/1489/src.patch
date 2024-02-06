@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/test/java/tachyon/conf/TachyonConfTest.java b/fixed/core/src/test/java/tachyon/conf/TachyonConfTest.java
+index 8b3f923..0ce9248 100644
+--- a/buggy/core/src/test/java/tachyon/conf/TachyonConfTest.java
++++ b/fixed/core/src/test/java/tachyon/conf/TachyonConfTest.java
+@@ -106,7 +106,7 @@ public class TachyonConfTest {
+ 
+     String value = sDefaultTachyonConf.get(Constants.MASTER_JOURNAL_FOLDER, null);
+     Assert.assertTrue(value != null);
+-    Assert.assertTrue((tachyonHome + "/journal").equals(value));
++    Assert.assertTrue((tachyonHome + "/journal/").equals(value));
+ 
+     value = sDefaultTachyonConf.get(Constants.MASTER_HOSTNAME, null);
+     Assert.assertTrue(value != null);

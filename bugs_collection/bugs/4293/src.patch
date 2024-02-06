@@ -1,0 +1,13 @@
+diff --git a/buggy/runtime/Java/src/org/antlr/v4/runtime/tree/gui/Arial.java b/fixed/runtime/Java/src/org/antlr/v4/runtime/tree/gui/Arial.java
+index 0ab876f..c34cca4 100644
+--- a/buggy/runtime/Java/src/org/antlr/v4/runtime/tree/gui/Arial.java
++++ b/fixed/runtime/Java/src/org/antlr/v4/runtime/tree/gui/Arial.java
+@@ -29,7 +29,7 @@
+ 
+ package org.antlr.v4.runtime.tree.gui;
+ 
+-public class Arial extends FontMetrics {
++public class Arial extends BasicFontMetrics {
+ 	{
+ 		maxCharHeight = 781;
+         widths[32] = 277; // space

@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GitHubEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GitHubEndpointBuilderFactory.java
+index fa96d3d..be92c14 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GitHubEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GitHubEndpointBuilderFactory.java
+@@ -580,7 +580,7 @@ public interface GitHubEndpointBuilderFactory {
+      * Proxy enum for <code>org.apache.camel.component.github.GitHubType</code>
+      * enum.
+      */
+-    static enum GitHubType {
++    enum GitHubType {
+         CLOSEPULLREQUEST, PULLREQUESTCOMMENT, COMMIT, PULLREQUEST, TAG, PULLREQUESTSTATE, PULLREQUESTFILES, GETCOMMITFILE, CREATEISSUE;
+     }
+     /**

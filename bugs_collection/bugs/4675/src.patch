@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/BeanstalkEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/BeanstalkEndpointBuilderFactory.java
+index b089c8d..816e11c 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/BeanstalkEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/BeanstalkEndpointBuilderFactory.java
+@@ -1070,7 +1070,7 @@ public interface BeanstalkEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.beanstalk.BeanstalkCommand</code> enum.
+      */
+-    public static enum BeanstalkCommand {
++    static enum BeanstalkCommand {
+         bury, release, put, touch, delete, kick;
+     }
+     /**

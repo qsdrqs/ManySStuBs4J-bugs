@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/sql/dialect/mysql/parser/MySqlExprParser.java b/fixed/src/main/java/com/alibaba/druid/sql/dialect/mysql/parser/MySqlExprParser.java
+index 6902f82..2e7825a 100644
+--- a/buggy/src/main/java/com/alibaba/druid/sql/dialect/mysql/parser/MySqlExprParser.java
++++ b/fixed/src/main/java/com/alibaba/druid/sql/dialect/mysql/parser/MySqlExprParser.java
+@@ -415,7 +415,7 @@ public class MySqlExprParser extends SQLExprParser {
+ 
+             MySqlIntervalExpr intervalExpr = new MySqlIntervalExpr();
+             intervalExpr.setValue(value);
+-            intervalExpr.setUnit(MySqlIntervalUnit.valueOf(unit));
++            intervalExpr.setUnit(MySqlIntervalUnit.valueOf(unit.toUpperCase()));
+ 
+             return intervalExpr;
+         }

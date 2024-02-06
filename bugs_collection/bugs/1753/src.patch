@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java b/fixed/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java
+index 39d45ae..402c47b 100644
+--- a/buggy/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java
++++ b/fixed/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java
+@@ -2004,7 +2004,7 @@ public class NettyAsyncHttpProvider extends SimpleChannelUpstreamHandler impleme
+                     final boolean initialConnectionKeepAlive = future.getKeepAlive();
+                     future.setURI(uri);
+                     String newUrl = uri.toString();
+-                    if (future.getNettyRequest().getUri().startsWith(WEBSOCKET)) {
++                    if (request.getUrl().startsWith(WEBSOCKET)) {
+                         newUrl = newUrl.replace(HTTP, WEBSOCKET);
+                     }
+ 

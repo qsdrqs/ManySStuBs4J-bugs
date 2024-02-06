@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleSheetsEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleSheetsEndpointBuilderFactory.java
+index 7e9de80..61fe4ab 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleSheetsEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleSheetsEndpointBuilderFactory.java
+@@ -623,7 +623,7 @@ public interface GoogleSheetsEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.google.sheets.internal.GoogleSheetsApiName</code> enum.
+      */
+-    static enum GoogleSheetsApiName {
++    enum GoogleSheetsApiName {
+         SPREADSHEETS, DATA;
+     }
+     /**

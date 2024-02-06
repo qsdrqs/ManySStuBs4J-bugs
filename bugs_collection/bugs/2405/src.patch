@@ -1,0 +1,15 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereServlet.java b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereServlet.java
+index fe83ca8..5530e1c 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereServlet.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereServlet.java
+@@ -568,9 +568,7 @@ public class AtmosphereServlet extends AbstractAsyncServlet implements CometProc
+                     Thread.currentThread().getContextClassLoader().loadClass(broadcasterCacheClassName).newInstance());
+         }
+ 
+-        logger.info("Using " + broadcasterClassName
+-                + " with a Thread Pool size of : "
+-                + BroadcasterConfig.numOfProcessor);
++        logger.info("Using " + broadcasterClassName);
+     }
+ 
+     /**

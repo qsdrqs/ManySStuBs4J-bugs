@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/BonitaEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/BonitaEndpointBuilderFactory.java
+index 7d39486..e935c87 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/BonitaEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/BonitaEndpointBuilderFactory.java
+@@ -163,7 +163,7 @@ public interface BonitaEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.bonita.util.BonitaOperation</code> enum.
+      */
+-    public static enum BonitaOperation {
++    static enum BonitaOperation {
+         startCase;
+     }
+     /**

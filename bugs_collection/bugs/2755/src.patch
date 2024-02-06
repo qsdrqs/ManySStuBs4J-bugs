@@ -1,0 +1,13 @@
+diff --git a/buggy/graylog2-server/src/main/java/org/graylog2/rest/resources/tools/responses/GrokTesterResponse.java b/fixed/graylog2-server/src/main/java/org/graylog2/rest/resources/tools/responses/GrokTesterResponse.java
+index 8e4a75a..43299da 100644
+--- a/buggy/graylog2-server/src/main/java/org/graylog2/rest/resources/tools/responses/GrokTesterResponse.java
++++ b/fixed/graylog2-server/src/main/java/org/graylog2/rest/resources/tools/responses/GrokTesterResponse.java
+@@ -45,7 +45,7 @@ public abstract class GrokTesterResponse {
+     @JsonCreator
+     public static GrokTesterResponse create(@JsonProperty("matched") boolean matched,
+                                             @JsonProperty("matches") @Nullable List<Match> matches,
+-                                            @JsonProperty("oattern") String pattern,
++                                            @JsonProperty("pattern") String pattern,
+                                             @JsonProperty("string") String string) {
+         return new AutoValue_GrokTesterResponse(matched, matches, pattern, string);
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/core/server/worker/src/main/java/alluxio/worker/netty/AbstractWriteHandler.java b/fixed/core/server/worker/src/main/java/alluxio/worker/netty/AbstractWriteHandler.java
+index eed169d..490154f 100644
+--- a/buggy/core/server/worker/src/main/java/alluxio/worker/netty/AbstractWriteHandler.java
++++ b/fixed/core/server/worker/src/main/java/alluxio/worker/netty/AbstractWriteHandler.java
+@@ -189,7 +189,7 @@ abstract class AbstractWriteHandler<T extends WriteRequest>
+     // Only initialize (open the readers) if this is the first packet in the block/file.
+     if (writeRequest.getOffset() == 0) {
+       Preconditions.checkState(mRequest == null);
+-      reset();
++      mPosToQueue = 0;
+       mRequest = createRequest(msg);
+     }
+ 

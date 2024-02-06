@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/camel-example-artemis-amqp-blueprint/src/test/java/org/apache/camel/example/artemis/amqp/ArtemisAmqpIntTest.java b/fixed/examples/camel-example-artemis-amqp-blueprint/src/test/java/org/apache/camel/example/artemis/amqp/ArtemisAmqpIntTest.java
+index 21b82de..1cbbf38 100644
+--- a/buggy/examples/camel-example-artemis-amqp-blueprint/src/test/java/org/apache/camel/example/artemis/amqp/ArtemisAmqpIntTest.java
++++ b/fixed/examples/camel-example-artemis-amqp-blueprint/src/test/java/org/apache/camel/example/artemis/amqp/ArtemisAmqpIntTest.java
+@@ -53,7 +53,7 @@ public class ArtemisAmqpIntTest extends CamelBlueprintTestSupport {
+     @Test
+     public void testEmbeddedBroker() throws Exception {
+         //trigger
+-        String response = template.requestBody("netty4-http:http://localhost:{{netty.port}}/message", null, String.class);
++        String response = template.requestBody("netty-http:http://localhost:{{netty.port}}/message", null, String.class);
+ 
+         //response validation
+         assertEquals("not expected", "Hello from Camel's AMQP example", response);

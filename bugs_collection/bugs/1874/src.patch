@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/ning/http/client/async/DigestAuthTest.java b/fixed/src/test/java/com/ning/http/client/async/DigestAuthTest.java
+index f185cef..eaa9fc2 100644
+--- a/buggy/src/test/java/com/ning/http/client/async/DigestAuthTest.java
++++ b/fixed/src/test/java/com/ning/http/client/async/DigestAuthTest.java
+@@ -64,7 +64,7 @@ public class DigestAuthTest extends AbstractBasicTest {
+         root.addAppender(new ConsoleAppender(
+                 new PatternLayout(PatternLayout.TTCC_CONVERSION_PATTERN)));
+ 
+-        port1 = 8080;
++        port1 = findFreePort();
+         Connector listener = new SelectChannelConnector();
+ 
+         listener.setHost("127.0.0.1");

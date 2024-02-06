@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CxfEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CxfEndpointBuilderFactory.java
+index 38e5403..8949163 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CxfEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CxfEndpointBuilderFactory.java
+@@ -1893,7 +1893,7 @@ public interface CxfEndpointBuilderFactory {
+      * Proxy enum for <code>org.apache.camel.component.cxf.DataFormat</code>
+      * enum.
+      */
+-    public static enum DataFormat {
++    static enum DataFormat {
+         PAYLOAD, RAW, MESSAGE, CXF_MESSAGE, POJO;
+     }
+     /**

@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/activiti-engine/src/main/java/org/activiti/engine/impl/calendar/DueDateBusinessCalendar.java b/fixed/modules/activiti-engine/src/main/java/org/activiti/engine/impl/calendar/DueDateBusinessCalendar.java
+index 3c4a48a..39bb04d 100644
+--- a/buggy/modules/activiti-engine/src/main/java/org/activiti/engine/impl/calendar/DueDateBusinessCalendar.java
++++ b/fixed/modules/activiti-engine/src/main/java/org/activiti/engine/impl/calendar/DueDateBusinessCalendar.java
+@@ -33,7 +33,7 @@ public class DueDateBusinessCalendar extends BusinessCalendarImpl {
+     try {
+       // check if due period was specified
+       if(duedate.startsWith("P")){
+-        return DateTime.now().plus(Period.parse(duedate)).toDate();
++        return new DateTime(clockReader.getCurrentTime()).plus(Period.parse(duedate)).toDate();
+       }
+ 
+       return DateTime.parse(duedate).toDate();

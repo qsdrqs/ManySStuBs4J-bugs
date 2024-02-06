@@ -1,0 +1,13 @@
+diff --git a/buggy/dubbo-simple/dubbo-monitor-simple/src/main/java/com/alibaba/dubbo/monitor/simple/SimpleMonitorService.java b/fixed/dubbo-simple/dubbo-monitor-simple/src/main/java/com/alibaba/dubbo/monitor/simple/SimpleMonitorService.java
+index e1f72e2..8de02e9 100644
+--- a/buggy/dubbo-simple/dubbo-monitor-simple/src/main/java/com/alibaba/dubbo/monitor/simple/SimpleMonitorService.java
++++ b/fixed/dubbo-simple/dubbo-monitor-simple/src/main/java/com/alibaba/dubbo/monitor/simple/SimpleMonitorService.java
+@@ -247,7 +247,7 @@ public class SimpleMonitorService implements MonitorService {
+                 } else {
+                     type = PROVIDER;
+                     consumer = statistics.getParameter(CONSUMER);
+-                    int i = consumer.indexOf(':');
++                    int i = consumer == null ? -1 : consumer.indexOf(':');
+                     if (i > 0) {
+                         consumer = consumer.substring(0, i);
+                     }

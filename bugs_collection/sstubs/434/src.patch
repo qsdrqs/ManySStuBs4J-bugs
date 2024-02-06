@@ -1,0 +1,13 @@
+diff --git a/buggy/servers/src/main/java/tachyon/worker/file/FileWorkerMasterSyncExecutor.java b/fixed/servers/src/main/java/tachyon/worker/file/FileWorkerMasterSyncExecutor.java
+index 440d3e6..568e65d 100644
+--- a/buggy/servers/src/main/java/tachyon/worker/file/FileWorkerMasterSyncExecutor.java
++++ b/fixed/servers/src/main/java/tachyon/worker/file/FileWorkerMasterSyncExecutor.java
+@@ -112,7 +112,7 @@ final class FileWorkerMasterSyncExecutor implements HeartbeatExecutor {
+ 
+   @Override
+   public void close() {
+-    mFixedExecutionService.shutdown();
++    mPersistFileService.shutdown();
+   }
+ 
+   /**

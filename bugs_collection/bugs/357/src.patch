@@ -1,0 +1,12 @@
+diff --git a/buggy/core/server/master/src/main/java/alluxio/master/DefaultSafeModeManager.java b/fixed/core/server/master/src/main/java/alluxio/master/DefaultSafeModeManager.java
+index ed3774c..0e18bfd 100644
+--- a/buggy/core/server/master/src/main/java/alluxio/master/DefaultSafeModeManager.java
++++ b/fixed/core/server/master/src/main/java/alluxio/master/DefaultSafeModeManager.java
+@@ -43,6 +43,6 @@ public class DefaultSafeModeManager implements SafeModeManager {
+   public boolean isInSafeMode() {
+     // lazily updates safe mode state upon inquiry
+     return mSafeModeEndTime.get() != null
+-        && mSafeModeEndTime.updateAndGet(x -> System.nanoTime() > x ? null : x) != null;
++        && mSafeModeEndTime.updateAndGet(x -> x != null && System.nanoTime() > x? null : x) != null;
+   }
+ }

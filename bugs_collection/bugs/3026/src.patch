@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/opencloudb/backend/PhysicalDatasource.java b/fixed/src/main/java/org/opencloudb/backend/PhysicalDatasource.java
+index da9dc76..6a068ba 100644
+--- a/buggy/src/main/java/org/opencloudb/backend/PhysicalDatasource.java
++++ b/fixed/src/main/java/org/opencloudb/backend/PhysicalDatasource.java
+@@ -405,7 +405,7 @@ public abstract class PhysicalDatasource {
+ 	}
+ 
+ 	public void setHeartbeatRecoveryTime(long heartbeatRecoveryTime) {
+-		this.heartbeatRecoveryTime = heartbeatRecoveryTime;
++		this.heartbeatRecoveryTime = System.currentTimeMillis() + heartbeatRecoveryTime;
+ 	}
+ 
+ 	public DBHostConfig getConfig() {

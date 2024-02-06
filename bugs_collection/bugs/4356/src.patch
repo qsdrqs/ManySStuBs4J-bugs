@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-syslog/src/test/java/org/apache/camel/component/syslog/NettyRfc5425LongMessageTest.java b/fixed/components/camel-syslog/src/test/java/org/apache/camel/component/syslog/NettyRfc5425LongMessageTest.java
+index f9340d0..35715c9 100644
+--- a/buggy/components/camel-syslog/src/test/java/org/apache/camel/component/syslog/NettyRfc5425LongMessageTest.java
++++ b/fixed/components/camel-syslog/src/test/java/org/apache/camel/component/syslog/NettyRfc5425LongMessageTest.java
+@@ -56,7 +56,7 @@ public class NettyRfc5425LongMessageTest extends CamelTestSupport {
+     @BeforeClass
+     public static void initPort() {
+         serverPort = AvailablePortFinder.getNextAvailable();
+-        uri = "netty4:tcp://localhost:" + serverPort + "?sync=false&allowDefaultCodec=false&decoders=#decoder&encoder=#encoder";
++        uri = "netty:tcp://localhost:" + serverPort + "?sync=false&allowDefaultCodec=false&decoders=#decoder&encoder=#encoder";
+     }
+ 
+     @Test

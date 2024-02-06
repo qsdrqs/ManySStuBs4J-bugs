@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-syslog/src/test/java/org/apache/camel/component/syslog/MinaManyUDPMessagesTest.java b/fixed/components/camel-syslog/src/test/java/org/apache/camel/component/syslog/MinaManyUDPMessagesTest.java
+index b19191d..2bedbfc 100644
+--- a/buggy/components/camel-syslog/src/test/java/org/apache/camel/component/syslog/MinaManyUDPMessagesTest.java
++++ b/fixed/components/camel-syslog/src/test/java/org/apache/camel/component/syslog/MinaManyUDPMessagesTest.java
+@@ -75,7 +75,7 @@ public class MinaManyUDPMessagesTest extends CamelTestSupport {
+                 DataFormat syslogDataFormat = new SyslogDataFormat();
+ 
+                 // we setup a Syslog  listener on a random port.
+-                from("mina2:udp://127.0.0.1:" + serverPort).unmarshal(syslogDataFormat).process(new Processor() {
++                from("mina:udp://127.0.0.1:" + serverPort).unmarshal(syslogDataFormat).process(new Processor() {
+                     public void process(Exchange ex) {
+                         assertTrue(ex.getIn().getBody() instanceof SyslogMessage);
+                     }

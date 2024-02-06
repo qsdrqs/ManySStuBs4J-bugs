@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/FopEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/FopEndpointBuilderFactory.java
+index db2dab7..3786e7d 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/FopEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/FopEndpointBuilderFactory.java
+@@ -150,7 +150,7 @@ public interface FopEndpointBuilderFactory {
+      * Proxy enum for <code>org.apache.camel.component.fop.FopOutputType</code>
+      * enum.
+      */
+-    public static enum FopOutputType {
++    static enum FopOutputType {
+         pdf, ps, pcl, png, jpeg, svg, xml, mif, rtf, txt;
+     }
+     /**

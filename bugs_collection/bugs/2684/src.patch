@@ -1,0 +1,12 @@
+diff --git a/buggy/graylog2-server/src/main/java/org/graylog2/indexer/retention/strategies/DeletionRetentionStrategy.java b/fixed/graylog2-server/src/main/java/org/graylog2/indexer/retention/strategies/DeletionRetentionStrategy.java
+index 1c1b5b5..7d06246 100644
+--- a/buggy/graylog2-server/src/main/java/org/graylog2/indexer/retention/strategies/DeletionRetentionStrategy.java
++++ b/fixed/graylog2-server/src/main/java/org/graylog2/indexer/retention/strategies/DeletionRetentionStrategy.java
+@@ -67,6 +67,6 @@ public class DeletionRetentionStrategy extends AbstractIndexCountBasedRetentionS
+ 
+     @Override
+     public Class<?> configurationClass() {
+-        return DeletionRetentionStrategy.class;
++        return DeletionRetentionStrategyConfig.class;
+     }
+ }

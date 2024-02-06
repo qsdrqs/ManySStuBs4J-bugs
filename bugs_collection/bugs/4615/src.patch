@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SmppEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SmppEndpointBuilderFactory.java
+index 37419cc..dd57a47 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SmppEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SmppEndpointBuilderFactory.java
+@@ -1833,7 +1833,7 @@ public interface SmppEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.smpp.SmppSplittingPolicy</code> enum.
+      */
+-    static enum SmppSplittingPolicy {
++    enum SmppSplittingPolicy {
+         ALLOW, REJECT, TRUNCATE;
+     }
+     /**

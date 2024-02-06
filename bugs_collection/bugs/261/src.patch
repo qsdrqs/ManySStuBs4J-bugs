@@ -1,0 +1,14 @@
+diff --git a/buggy/core/server/worker/src/main/java/alluxio/worker/AlluxioWorker.java b/fixed/core/server/worker/src/main/java/alluxio/worker/AlluxioWorker.java
+index 6c1e5fd..2d07459 100644
+--- a/buggy/core/server/worker/src/main/java/alluxio/worker/AlluxioWorker.java
++++ b/fixed/core/server/worker/src/main/java/alluxio/worker/AlluxioWorker.java
+@@ -63,7 +63,8 @@ public final class AlluxioWorker {
+           ServerConfiguration.getDuration(PropertyKey.WORKER_MASTER_CONNECT_RETRY_TIMEOUT)));
+     } catch (IOException e) {
+       ProcessUtils.fatalError(LOG,
+-          "Failed to load cluster default configuration for worker: %s", e.getMessage());
++          "Failed to load cluster default configuration for worker. Please make sure that Alluxio "
++              + "master is running: %s", e.toString());
+     }
+     WorkerProcess process = WorkerProcess.Factory.create();
+     ProcessUtils.run(process);

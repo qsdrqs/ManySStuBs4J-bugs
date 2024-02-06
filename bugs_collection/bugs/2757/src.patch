@@ -1,0 +1,13 @@
+diff --git a/buggy/graylog2-bootstrap/src/main/java/org/graylog2/bootstrap/commands/Server.java b/fixed/graylog2-bootstrap/src/main/java/org/graylog2/bootstrap/commands/Server.java
+index bec7dbc..048244b 100644
+--- a/buggy/graylog2-bootstrap/src/main/java/org/graylog2/bootstrap/commands/Server.java
++++ b/fixed/graylog2-bootstrap/src/main/java/org/graylog2/bootstrap/commands/Server.java
+@@ -167,7 +167,7 @@ public class Server extends ServerBootstrap implements Runnable {
+     @Override
+     protected boolean validateConfiguration() {
+         if (configuration.getPasswordSecret().isEmpty()) {
+-            LOG.error("No password secret set. Please define password_secret in your graylog2.conf.");
++            LOG.error("No password secret set. Please define \"password_secret\" in your Graylog configuration.");
+             return false;
+         }
+ 

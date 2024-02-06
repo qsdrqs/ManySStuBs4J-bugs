@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/activiti-engine/src/main/java/org/activiti/engine/delegate/event/impl/ActivitiEventDispatcherImpl.java b/fixed/modules/activiti-engine/src/main/java/org/activiti/engine/delegate/event/impl/ActivitiEventDispatcherImpl.java
+index a215ea2..a3b31d8 100644
+--- a/buggy/modules/activiti-engine/src/main/java/org/activiti/engine/delegate/event/impl/ActivitiEventDispatcherImpl.java
++++ b/fixed/modules/activiti-engine/src/main/java/org/activiti/engine/delegate/event/impl/ActivitiEventDispatcherImpl.java
+@@ -102,7 +102,7 @@ public class ActivitiEventDispatcherImpl implements ActivitiEventDispatcher {
+ 
+     if (event instanceof ActivitiEntityEvent) {
+       Object entity = ((ActivitiEntityEvent) event).getEntity();
+-      if (entity instanceof ProcessDefinition) {
++      if (entity instanceof ProcessDefinitionEntity) {
+         result = (ProcessDefinitionEntity) entity;
+       }
+     }

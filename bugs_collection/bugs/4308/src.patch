@@ -1,0 +1,15 @@
+diff --git a/buggy/examples/camel-example-micrometer/src/main/java/org/apache/camel/example/micrometer/ScrapeRouteBuilder.java b/fixed/examples/camel-example-micrometer/src/main/java/org/apache/camel/example/micrometer/ScrapeRouteBuilder.java
+index 492763a..d459678 100644
+--- a/buggy/examples/camel-example-micrometer/src/main/java/org/apache/camel/example/micrometer/ScrapeRouteBuilder.java
++++ b/fixed/examples/camel-example-micrometer/src/main/java/org/apache/camel/example/micrometer/ScrapeRouteBuilder.java
+@@ -40,8 +40,8 @@ public class ScrapeRouteBuilder extends RouteBuilder {
+ 
+     @Override
+     public void configure() throws Exception {
+-        from("netty4-http:http://0.0.0.0:8088/metrics")
+-                .routeId("netty4-http:scrape")
++        from("netty-http:http://0.0.0.0:8088/metrics")
++                .routeId("netty-http:scrape")
+                 .log(LoggingLevel.INFO, "Scraping metrics")
+                 .transform().method(prometheusMeterRegistry, "scrape");
+ 

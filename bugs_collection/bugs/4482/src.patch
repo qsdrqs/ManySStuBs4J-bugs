@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ElsqlEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ElsqlEndpointBuilderFactory.java
+index f8c9419..8601c63 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ElsqlEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ElsqlEndpointBuilderFactory.java
+@@ -1992,7 +1992,7 @@ public interface ElsqlEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.elsql.ElSqlDatabaseVendor</code> enum.
+      */
+-    static enum ElSqlDatabaseVendor {
++    enum ElSqlDatabaseVendor {
+         Default, Postgres, HSql, MySql, Oracle, SqlServer2008, Veritca;
+     }
+ 
+@@ -2000,7 +2000,7 @@ public interface ElsqlEndpointBuilderFactory {
+      * Proxy enum for <code>org.apache.camel.component.sql.SqlOutputType</code>
+      * enum.
+      */
+-    static enum SqlOutputType {
++    enum SqlOutputType {
+         SelectOne, SelectList, StreamList;
+     }
+     /**

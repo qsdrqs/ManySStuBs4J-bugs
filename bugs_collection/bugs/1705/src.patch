@@ -1,0 +1,13 @@
+diff --git a/buggy/providers/netty/src/main/java/org/asynchttpclient/providers/netty/request/body/BodyFileRegion.java b/fixed/providers/netty/src/main/java/org/asynchttpclient/providers/netty/request/body/BodyFileRegion.java
+index 49fabee..010625f 100644
+--- a/buggy/providers/netty/src/main/java/org/asynchttpclient/providers/netty/request/body/BodyFileRegion.java
++++ b/fixed/providers/netty/src/main/java/org/asynchttpclient/providers/netty/request/body/BodyFileRegion.java
+@@ -52,7 +52,7 @@ public class BodyFileRegion extends AbstractReferenceCounted implements FileRegi
+ 
+     @Override
+     public long transferTo(WritableByteChannel target, long position) throws IOException {
+-        long written = body.transferTo(position, Long.MAX_VALUE, target);
++        long written = body.transferTo(position, target);
+         if (written > 0) {
+             transfered += written;
+         }

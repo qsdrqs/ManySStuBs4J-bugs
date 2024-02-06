@@ -1,0 +1,27 @@
+diff --git a/buggy/components/camel-webhook/src/test/java/org/apache/camel/component/webhook/WebhookPathTest.java b/fixed/components/camel-webhook/src/test/java/org/apache/camel/component/webhook/WebhookPathTest.java
+index 0bb3ea9..a8a07f8 100644
+--- a/buggy/components/camel-webhook/src/test/java/org/apache/camel/component/webhook/WebhookPathTest.java
++++ b/fixed/components/camel-webhook/src/test/java/org/apache/camel/component/webhook/WebhookPathTest.java
+@@ -28,19 +28,19 @@ public class WebhookPathTest extends WebhookTestBase {
+ 
+     @Test
+     public void testComponentPath() {
+-        String result = template.requestBody("netty4-http:http://localhost:" + port + "/comp", "", String.class);
++        String result = template.requestBody("netty-http:http://localhost:" + port + "/comp", "", String.class);
+         assertEquals("msg: webhook", result);
+     }
+ 
+     @Test
+     public void testUriPath() {
+-        String result = template.requestBody("netty4-http:http://localhost:" + port + "/uri", "", String.class);
++        String result = template.requestBody("netty-http:http://localhost:" + port + "/uri", "", String.class);
+         assertEquals("uri: webhook", result);
+     }
+ 
+     @Test(expected = CamelExecutionException.class)
+     public void testRootPathError() {
+-        template.requestBody("netty4-http:http://localhost:" + port, "", String.class);
++        template.requestBody("netty-http:http://localhost:" + port, "", String.class);
+     }
+ 
+     @Override

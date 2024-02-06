@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/graylog/plugins/pipelineprocessor/ast/functions/FunctionArgs.java b/fixed/src/main/java/org/graylog/plugins/pipelineprocessor/ast/functions/FunctionArgs.java
+index b157d7c..88a569f 100644
+--- a/buggy/src/main/java/org/graylog/plugins/pipelineprocessor/ast/functions/FunctionArgs.java
++++ b/fixed/src/main/java/org/graylog/plugins/pipelineprocessor/ast/functions/FunctionArgs.java
+@@ -40,7 +40,7 @@ public class FunctionArgs {
+     public FunctionArgs(Function func, Map<String, Expression> args) {
+         function = func;
+         descriptor = function.descriptor();
+-        this.args = firstNonNull(args, Collections.emptyMap());
++        this.args = firstNonNull(args, Collections.<String, Expression>emptyMap());
+     }
+ 
+     @Nonnull

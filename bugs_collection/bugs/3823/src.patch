@@ -1,0 +1,13 @@
+diff --git a/buggy/runtime-testsuite/test/org/antlr/v4/test/runtime/descriptors/ParseTreesDescriptors.java b/fixed/runtime-testsuite/test/org/antlr/v4/test/runtime/descriptors/ParseTreesDescriptors.java
+index 6925fc8..a8e9646 100644
+--- a/buggy/runtime-testsuite/test/org/antlr/v4/test/runtime/descriptors/ParseTreesDescriptors.java
++++ b/fixed/runtime-testsuite/test/org/antlr/v4/test/runtime/descriptors/ParseTreesDescriptors.java
+@@ -112,7 +112,7 @@ public class ParseTreesDescriptors {
+ 
+ 		@Override
+ 		public boolean ignore(String targetName) {
+-			return !targetName.matches("Java|Python2|Python3|Node|Swift");
++			return !targetName.matches("Java|Python2|Python3|Node|Swift|CSharp");
+ 		}
+ 	}
+ 

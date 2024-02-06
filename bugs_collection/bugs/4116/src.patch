@@ -1,0 +1,13 @@
+diff --git a/buggy/runtime/Java/src/org/antlr/v4/runtime/atn/ParserATNSimulator.java b/fixed/runtime/Java/src/org/antlr/v4/runtime/atn/ParserATNSimulator.java
+index bc2568f..2bf2e03 100644
+--- a/buggy/runtime/Java/src/org/antlr/v4/runtime/atn/ParserATNSimulator.java
++++ b/fixed/runtime/Java/src/org/antlr/v4/runtime/atn/ParserATNSimulator.java
+@@ -965,7 +965,7 @@ public class ParserATNSimulator<Symbol extends Token> extends ATNSimulator {
+ 						if ( debug ) System.out.println("FALLING off rule "+
+ 														getRuleName(config.state.ruleIndex));
+ 						closure_(config, configs, closureBusy, collectPredicates, greedy,
+-								 loopsSimulateTailRecursion, depth - 1);
++								 loopsSimulateTailRecursion, depth);
+ 						continue;
+ 					}
+ 					ATNState invokingState = atn.states.get(ctx.invokingState);

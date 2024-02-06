@@ -1,0 +1,22 @@
+diff --git a/buggy/src/main/java/org/bukkit/plugin/SimplePluginManager.java b/fixed/src/main/java/org/bukkit/plugin/SimplePluginManager.java
+index 3e89adf..fb19a2e 100644
+--- a/buggy/src/main/java/org/bukkit/plugin/SimplePluginManager.java
++++ b/fixed/src/main/java/org/bukkit/plugin/SimplePluginManager.java
+@@ -383,7 +383,7 @@ public final class SimplePluginManager implements PluginManager {
+             throw new IllegalArgumentException("Priority cannot be null");
+         }
+         if (plugin == null) {
+-            throw new IllegalArgumentException("Priority cannot be null");
++            throw new IllegalArgumentException("Plugin cannot be null");
+         }
+         if (!plugin.isEnabled()) {
+             throw new IllegalPluginAccessException("Plugin attempted to register " + type + " while not enabled");
+@@ -412,7 +412,7 @@ public final class SimplePluginManager implements PluginManager {
+             throw new IllegalArgumentException("Priority cannot be null");
+         }
+         if (plugin == null) {
+-            throw new IllegalArgumentException("Priority cannot be null");
++            throw new IllegalArgumentException("Plugin cannot be null");
+         }
+         if (!plugin.isEnabled()) {
+             throw new IllegalPluginAccessException("Plugin attempted to register " + type + " while not enabled");

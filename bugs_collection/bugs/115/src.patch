@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/activiti-osgi/src/test/java/org/activiti/osgi/blueprint/BlueprintBasicTest.java b/fixed/modules/activiti-osgi/src/test/java/org/activiti/osgi/blueprint/BlueprintBasicTest.java
+index 950ecb6..e0376c1 100644
+--- a/buggy/modules/activiti-osgi/src/test/java/org/activiti/osgi/blueprint/BlueprintBasicTest.java
++++ b/fixed/modules/activiti-osgi/src/test/java/org/activiti/osgi/blueprint/BlueprintBasicTest.java
+@@ -83,7 +83,7 @@ public class BlueprintBasicTest {
+         mavenBundle().groupId("org.activiti").artifactId("activiti-bpmn-converter").version("5.17.0"),
+         mavenBundle().groupId("org.activiti").artifactId("activiti-process-validation").version("5.17.0"),
+         mavenBundle().groupId("org.activiti").artifactId("activiti-image-generator").version("5.17.0"),
+-        mavenBundle().groupId("org.activiti").artifactId("activiti-engine").version("5.17.0T"),
++        mavenBundle().groupId("org.activiti").artifactId("activiti-engine").version("5.17.0"),
+         mavenBundle().groupId("org.apache.commons").artifactId("commons-lang3").version("3.3.2"),
+         mavenBundle().groupId("com.fasterxml.jackson.core").artifactId("jackson-core").version("2.2.3"),
+         mavenBundle().groupId("com.fasterxml.jackson.core").artifactId("jackson-databind").version("2.2.3"),

@@ -1,0 +1,13 @@
+diff --git a/buggy/library/src/com/actionbarsherlock/internal/ActionBarSherlockNative.java b/fixed/library/src/com/actionbarsherlock/internal/ActionBarSherlockNative.java
+index 0824d38..b695d8e 100644
+--- a/buggy/library/src/com/actionbarsherlock/internal/ActionBarSherlockNative.java
++++ b/fixed/library/src/com/actionbarsherlock/internal/ActionBarSherlockNative.java
+@@ -75,7 +75,7 @@ public class ActionBarSherlockNative extends ActionBarSherlock {
+     public boolean dispatchOptionsItemSelected(android.view.MenuItem item) {
+         if (DEBUG) Log.d(TAG, "[dispatchOptionsItemSelected] item: " + item.getTitleCondensed());
+ 
+-        final boolean result = callbackOptionsItemSelected(mMenu.findItem(item));
++        final boolean result = mMenu!=null && callbackOptionsItemSelected(mMenu.findItem(item));
+         if (DEBUG) Log.d(TAG, "[dispatchOptionsItemSelected] returning " + result);
+         return result;
+     }

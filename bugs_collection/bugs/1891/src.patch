@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/runtime/src/main/java/org/atmosphere/runtime/AtmosphereResourceImpl.java b/fixed/modules/runtime/src/main/java/org/atmosphere/runtime/AtmosphereResourceImpl.java
+index a71850b..d3cfc9e 100644
+--- a/buggy/modules/runtime/src/main/java/org/atmosphere/runtime/AtmosphereResourceImpl.java
++++ b/fixed/modules/runtime/src/main/java/org/atmosphere/runtime/AtmosphereResourceImpl.java
+@@ -647,7 +647,7 @@ public class AtmosphereResourceImpl implements AtmosphereResource {
+                 if (!disconnected.getAndSet(true)) {
+                     onDisconnect(event);
+                 } else {
+-                    logger.trace("Skipping notification, already disconnected {}", event.getResource().uuid());
++                    logger.trace("Skipping notification, already disconnected {}", event.getResource() != null ? event.getResource().uuid() : uuid());
+                 }
+             } else if (event.isResuming() || event.isResumedOnTimeout()) {
+                 onResume(event);

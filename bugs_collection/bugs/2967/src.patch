@@ -1,0 +1,14 @@
+diff --git a/buggy/src/test/java/org/graylog2/database/MongoConnectionIntegrationTest.java b/fixed/src/test/java/org/graylog2/database/MongoConnectionIntegrationTest.java
+index a9aab0c..5346f5a 100644
+--- a/buggy/src/test/java/org/graylog2/database/MongoConnectionIntegrationTest.java
++++ b/fixed/src/test/java/org/graylog2/database/MongoConnectionIntegrationTest.java
+@@ -59,7 +59,8 @@ public class MongoConnectionIntegrationTest {
+             "localhost",
+             "graylog2test",
+             Integer.valueOf(27017),
+-            "false"
++            "false",
++            null
+         );
+ 
+         Mongo connection = instance.getConnection();

@@ -1,0 +1,14 @@
+diff --git a/buggy/driver/src/main/java/com/alibaba/otter/canal/parse/driver/mysql/MysqlConnector.java b/fixed/driver/src/main/java/com/alibaba/otter/canal/parse/driver/mysql/MysqlConnector.java
+index 0e48816..bb8ec57 100644
+--- a/buggy/driver/src/main/java/com/alibaba/otter/canal/parse/driver/mysql/MysqlConnector.java
++++ b/fixed/driver/src/main/java/com/alibaba/otter/canal/parse/driver/mysql/MysqlConnector.java
+@@ -101,7 +101,8 @@ public class MysqlConnector {
+                     MysqlUpdateExecutor executor = new MysqlUpdateExecutor(connector);
+                     executor.update("KILL CONNECTION " + connectionId);
+                 } catch (Exception e) {
+-                    throw new IOException("KILL DUMP " + connectionId + " failure", e);
++                    // 忽略具体异常
++                    logger.info("KILL DUMP " + connectionId + " failure", e);
+                 } finally {
+                     if (connector != null) {
+                         connector.disconnect();

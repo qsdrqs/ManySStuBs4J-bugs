@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JdbcEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JdbcEndpointBuilderFactory.java
+index 5227c17..ddfa08c 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JdbcEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JdbcEndpointBuilderFactory.java
+@@ -384,7 +384,7 @@ public interface JdbcEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.jdbc.JdbcOutputType</code> enum.
+      */
+-    static enum JdbcOutputType {
++    enum JdbcOutputType {
+         SelectOne, SelectList, StreamList;
+     }
+     /**

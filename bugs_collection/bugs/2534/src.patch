@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/bukkit/Location.java b/fixed/src/main/java/org/bukkit/Location.java
+index 9b9f475..a110f77 100644
+--- a/buggy/src/main/java/org/bukkit/Location.java
++++ b/fixed/src/main/java/org/bukkit/Location.java
+@@ -420,7 +420,7 @@ public class Location implements Cloneable {
+ 
+     @Override
+     public String toString() {
+-        return "Location{" + "world=" + world + "x=" + x + "y=" + y + "z=" + z + "pitch=" + pitch + "yaw=" + yaw + '}';
++        return "Location{" + "world=" + world + ",x=" + x + ",y=" + y + ",z=" + z + ",pitch=" + pitch + ",yaw=" + yaw + '}';
+     }
+ 
+     /**

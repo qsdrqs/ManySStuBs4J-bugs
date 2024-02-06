@@ -1,0 +1,13 @@
+diff --git a/buggy/clients/unshaded/src/main/java/tachyon/client/TachyonFSCore.java b/fixed/clients/unshaded/src/main/java/tachyon/client/TachyonFSCore.java
+index 2c39ff6..ee99106 100644
+--- a/buggy/clients/unshaded/src/main/java/tachyon/client/TachyonFSCore.java
++++ b/fixed/clients/unshaded/src/main/java/tachyon/client/TachyonFSCore.java
+@@ -40,7 +40,7 @@ interface TachyonFSCore extends Closeable {
+    * @return The file id, which is globally unique.
+    * @throws IOException if the operation fails
+    */
+-  int createFile(TachyonURI path, TachyonURI ufsPath, long blockSizeByte, boolean recursive)
++  long createFile(TachyonURI path, TachyonURI ufsPath, long blockSizeByte, boolean recursive)
+       throws IOException;
+ 
+   /**

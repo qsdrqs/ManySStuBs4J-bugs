@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IAMEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IAMEndpointBuilderFactory.java
+index 41a117f..7aa715e 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IAMEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IAMEndpointBuilderFactory.java
+@@ -114,7 +114,7 @@ public interface IAMEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.aws.iam.IAMOperations</code> enum.
+      */
+-    public static enum IAMOperations {
++    static enum IAMOperations {
+         listAccessKeys, createUser, deleteUser, getUser, listUsers, createAccessKey, deleteAccessKey, updateAccessKey, createGroup, deleteGroup, listGroups, addUserToGroup, removeUserFromGroup;
+     }
+     /**

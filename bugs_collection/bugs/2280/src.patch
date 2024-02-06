@@ -1,0 +1,14 @@
+diff --git a/buggy/samples/chat/src/main/java/org/atmosphere/samples/chat/ChatAtmosphereHandler.java b/fixed/samples/chat/src/main/java/org/atmosphere/samples/chat/ChatAtmosphereHandler.java
+index 2785ffc..48cda0d 100644
+--- a/buggy/samples/chat/src/main/java/org/atmosphere/samples/chat/ChatAtmosphereHandler.java
++++ b/fixed/samples/chat/src/main/java/org/atmosphere/samples/chat/ChatAtmosphereHandler.java
+@@ -72,8 +72,7 @@ public class ChatAtmosphereHandler implements AtmosphereHandler {
+                 case LONG_POLLING:
+                     event.getResource().resume();
+                     break;
+-                case WEBSOCKET :
+-                case STREAMING:
++                default:
+                     res.getWriter().flush();
+                     break;
+             }

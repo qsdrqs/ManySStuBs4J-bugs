@@ -1,0 +1,13 @@
+diff --git a/buggy/shell/src/main/java/tachyon/shell/command/ChgrpRecursiveCommand.java b/fixed/shell/src/main/java/tachyon/shell/command/ChgrpRecursiveCommand.java
+index ff02b6c..172357f 100644
+--- a/buggy/shell/src/main/java/tachyon/shell/command/ChgrpRecursiveCommand.java
++++ b/fixed/shell/src/main/java/tachyon/shell/command/ChgrpRecursiveCommand.java
+@@ -24,7 +24,7 @@ import tachyon.conf.TachyonConf;
+ /**
+  * Changes the group of a file or directory specified by args recursively.
+  */
+-public final class ChgrpRecursiveCommand extends AbstractACLCommand {
++public final class ChgrpRecursiveCommand extends AbstractAclCommand {
+ 
+   public ChgrpRecursiveCommand(TachyonConf conf, TachyonFileSystem tfs) {
+     super(conf, tfs);

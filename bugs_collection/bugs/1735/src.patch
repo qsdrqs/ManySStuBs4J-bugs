@@ -1,0 +1,13 @@
+diff --git a/buggy/providers/grizzly/src/main/java/org/asynchttpclient/providers/grizzly/ConnectionManager.java b/fixed/providers/grizzly/src/main/java/org/asynchttpclient/providers/grizzly/ConnectionManager.java
+index fc09d42..1cf51cf 100644
+--- a/buggy/providers/grizzly/src/main/java/org/asynchttpclient/providers/grizzly/ConnectionManager.java
++++ b/fixed/providers/grizzly/src/main/java/org/asynchttpclient/providers/grizzly/ConnectionManager.java
+@@ -429,7 +429,7 @@ public class ConnectionManager {
+          */
+         public boolean offer(String uri, Connection connection) {
+ 
+-            if (cacheSSLConnections && Utils.isSecure(uri)) {
++            if (Utils.isSecure(uri) && !cacheSSLConnections) {
+                 return false;
+             }
+ 

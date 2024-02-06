@@ -1,0 +1,12 @@
+diff --git a/buggy/samples/chat/src/main/java/org/atmosphere/samples/chat/custom/SampleConfig.java b/fixed/samples/chat/src/main/java/org/atmosphere/samples/chat/custom/SampleConfig.java
+index 4fd2ae5..046c3f4 100644
+--- a/buggy/samples/chat/src/main/java/org/atmosphere/samples/chat/custom/SampleConfig.java
++++ b/fixed/samples/chat/src/main/java/org/atmosphere/samples/chat/custom/SampleConfig.java
+@@ -33,6 +33,6 @@ public class SampleConfig implements Processor {
+ 
+     @Override
+     public void handle(AtmosphereFramework framework, Class<?> annotatedClass) {
+-        logger.info("Custom annotation {} discovered. Starting the Chat Sample", annotation.getName());
++        logger.info("Custom annotation {} discovered. Starting the Chat Sample", annotatedClass.getAnnotation(Config.class));
+     }
+ }

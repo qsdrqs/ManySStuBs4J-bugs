@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleCalendarEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleCalendarEndpointBuilderFactory.java
+index 7e4c0e1..9afabf5 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleCalendarEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleCalendarEndpointBuilderFactory.java
+@@ -755,7 +755,7 @@ public interface GoogleCalendarEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.google.calendar.internal.GoogleCalendarApiName</code> enum.
+      */
+-    public static enum GoogleCalendarApiName {
++    static enum GoogleCalendarApiName {
+         ACL, LIST, CALENDARS, CHANNELS, COLORS, FREEBUSY, EVENTS, SETTINGS;
+     }
+     /**

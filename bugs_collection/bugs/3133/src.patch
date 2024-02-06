@@ -1,0 +1,13 @@
+diff --git a/buggy/dbsync/src/main/java/com/taobao/tddl/dbsync/binlog/JsonConversion.java b/fixed/dbsync/src/main/java/com/taobao/tddl/dbsync/binlog/JsonConversion.java
+index e61b664..7cb7899 100644
+--- a/buggy/dbsync/src/main/java/com/taobao/tddl/dbsync/binlog/JsonConversion.java
++++ b/fixed/dbsync/src/main/java/com/taobao/tddl/dbsync/binlog/JsonConversion.java
+@@ -317,7 +317,7 @@ public class JsonConversion {
+                     buf.append("true");
+                     break;
+                 case LITERAL_NULL:
+-                    buf.append("NULL");
++                    buf.append("null");
+                     break;
+                 case OPAQUE:
+                     String text = null;

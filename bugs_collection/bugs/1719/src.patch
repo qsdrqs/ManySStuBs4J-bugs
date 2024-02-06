@@ -1,0 +1,13 @@
+diff --git a/buggy/providers/netty/src/test/java/org/asynchttpclient/providers/netty/NettyPerRequestTimeoutTest.java b/fixed/providers/netty/src/test/java/org/asynchttpclient/providers/netty/NettyPerRequestTimeoutTest.java
+index 5e1ea22..c9b4707 100644
+--- a/buggy/providers/netty/src/test/java/org/asynchttpclient/providers/netty/NettyPerRequestTimeoutTest.java
++++ b/fixed/providers/netty/src/test/java/org/asynchttpclient/providers/netty/NettyPerRequestTimeoutTest.java
+@@ -22,7 +22,7 @@ public class NettyPerRequestTimeoutTest extends PerRequestTimeoutTest {
+ 
+     @Override
+     protected void checkTimeoutMessage(String message) {
+-        assertTrue(message.startsWith("Request reached timeout of 100 ms after "));
++        assertTrue(message.equals("Request timeout of 100 ms"));
+     }
+ 
+     @Override

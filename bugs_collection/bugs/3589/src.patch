@@ -1,0 +1,13 @@
+diff --git a/buggy/dubbo-rpc/dubbo-rpc-default/src/main/java/com/alibaba/dubbo/rpc/protocol/dubbo/FutureAdapter.java b/fixed/dubbo-rpc/dubbo-rpc-default/src/main/java/com/alibaba/dubbo/rpc/protocol/dubbo/FutureAdapter.java
+index 2f6186d..66cdc2f 100644
+--- a/buggy/dubbo-rpc/dubbo-rpc-default/src/main/java/com/alibaba/dubbo/rpc/protocol/dubbo/FutureAdapter.java
++++ b/fixed/dubbo-rpc/dubbo-rpc-default/src/main/java/com/alibaba/dubbo/rpc/protocol/dubbo/FutureAdapter.java
+@@ -67,7 +67,7 @@ public class FutureAdapter<V> implements Future<V> {
+ 
+     @SuppressWarnings("unchecked")
+     public V get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
+-        int timeoutInMillis = (int) unit.convert(timeout, TimeUnit.MILLISECONDS);
++        int timeoutInMillis = (int) TimeUnit.MILLISECONDS.convert(timeout, unit);
+         try {
+             return (V) (((Result) future.get(timeoutInMillis)).recreate());
+         } catch (com.alibaba.dubbo.remoting.TimeoutException e) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/catalog/camel-route-parser/src/test/java/org/apache/camel/parser/java/MyCdiRouteBuilder.java b/fixed/catalog/camel-route-parser/src/test/java/org/apache/camel/parser/java/MyCdiRouteBuilder.java
+index cd8bacc..bb033e1 100644
+--- a/buggy/catalog/camel-route-parser/src/test/java/org/apache/camel/parser/java/MyCdiRouteBuilder.java
++++ b/fixed/catalog/camel-route-parser/src/test/java/org/apache/camel/parser/java/MyCdiRouteBuilder.java
+@@ -33,7 +33,7 @@ public class MyCdiRouteBuilder extends RouteBuilder {
+     private Endpoint loga;
+ 
+     @Inject
+-    @Uri("netty4-http:http:someserver:80/hello")
++    @Uri("netty-http:http:someserver:80/hello")
+     private Endpoint mynetty;
+ 
+     @Override

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/ning/http/client/providers/jdk/JDKResponse.java b/fixed/src/main/java/com/ning/http/client/providers/jdk/JDKResponse.java
+index f3447c1..cf46d00 100644
+--- a/buggy/src/main/java/com/ning/http/client/providers/jdk/JDKResponse.java
++++ b/fixed/src/main/java/com/ning/http/client/providers/jdk/JDKResponse.java
+@@ -155,7 +155,7 @@ public class JDKResponse implements Response {
+                 active = parts[currentPos].getBodyPartBytes();
+             }
+ 
+-            return active[bytePos];
++            return active[bytePos] & 0xFF;
+         }
+     }
+ 

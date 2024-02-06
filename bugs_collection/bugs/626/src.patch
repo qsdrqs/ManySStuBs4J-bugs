@@ -1,0 +1,13 @@
+diff --git a/buggy/integration/mesos/src/main/java/alluxio/mesos/AlluxioWorkerExecutor.java b/fixed/integration/mesos/src/main/java/alluxio/mesos/AlluxioWorkerExecutor.java
+index 0805bce..1dc2933 100644
+--- a/buggy/integration/mesos/src/main/java/alluxio/mesos/AlluxioWorkerExecutor.java
++++ b/fixed/integration/mesos/src/main/java/alluxio/mesos/AlluxioWorkerExecutor.java
+@@ -74,7 +74,7 @@ public class AlluxioWorkerExecutor implements Executor {
+           Thread.currentThread().setContextClassLoader(
+               UnderFileSystemRegistry.class.getClassLoader());
+ 
+-          Format.format("worker");
++          Format.format(Format.Mode.WORKER);
+           AlluxioWorker.main(new String[] {});
+ 
+           status =

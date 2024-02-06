@@ -1,0 +1,13 @@
+diff --git a/buggy/servers/src/main/java/tachyon/master/file/journal/AddCheckpointEntry.java b/fixed/servers/src/main/java/tachyon/master/file/journal/AddCheckpointEntry.java
+index 7061cb6..cecbef8 100644
+--- a/buggy/servers/src/main/java/tachyon/master/file/journal/AddCheckpointEntry.java
++++ b/fixed/servers/src/main/java/tachyon/master/file/journal/AddCheckpointEntry.java
+@@ -35,7 +35,7 @@ public class AddCheckpointEntry implements JournalEntry {
+     mWorkerId = workerId;
+     mFileId = fileId;
+     mLength = length;
+-    mCheckpointPath = checkpointPath.getPath();
++    mCheckpointPath = checkpointPath.toString();
+     mOpTimeMs = opTimeMs;
+   }
+ 

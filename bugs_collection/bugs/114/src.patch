@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/activiti-jmx/src/main/java/org/activiti/management/jmx/mbeans/JobExecutorMBean.java b/fixed/modules/activiti-jmx/src/main/java/org/activiti/management/jmx/mbeans/JobExecutorMBean.java
+index 8e89f88..09d97fd 100644
+--- a/buggy/modules/activiti-jmx/src/main/java/org/activiti/management/jmx/mbeans/JobExecutorMBean.java
++++ b/fixed/modules/activiti-jmx/src/main/java/org/activiti/management/jmx/mbeans/JobExecutorMBean.java
+@@ -21,7 +21,7 @@ import org.activiti.management.jmx.annotations.ManagedResource;
+ /**
+  * @author Saeid Mirzaei
+  */
+-@ManagedResource(description = "Process definition MBean")
++@ManagedResource(description = "Job executor MBean")
+ public class JobExecutorMBean {
+ 
+   JobExecutor jobExecutor;

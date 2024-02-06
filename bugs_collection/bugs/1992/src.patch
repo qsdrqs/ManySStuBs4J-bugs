@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/websocket/DefaultWebSocketProcessor.java b/fixed/modules/cpr/src/main/java/org/atmosphere/websocket/DefaultWebSocketProcessor.java
+index 6ba63fb..a29702a 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/websocket/DefaultWebSocketProcessor.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/websocket/DefaultWebSocketProcessor.java
+@@ -519,7 +519,7 @@ public class DefaultWebSocketProcessor implements WebSocketProcessor, Serializab
+                             asynchronousProcessor.endRequest(AtmosphereResourceImpl.class.cast(webSocket.resource()), false);
+                         }
+                     } else {
+-                        logger.debug("ASYNCHRONOUS_HOOK not available for {}", resource.uuid());
++                        logger.debug("Resource already cancelled {}", resource.uuid());
+                     }
+                 } else {
+                     logger.debug("Unable to properly complete {}", resource == null ? "null" : resource.uuid());

@@ -1,0 +1,12 @@
+diff --git a/buggy/src/main/java/org/bukkit/command/defaults/OpCommand.java b/fixed/src/main/java/org/bukkit/command/defaults/OpCommand.java
+index 36ee25a..76d6cc1 100644
+--- a/buggy/src/main/java/org/bukkit/command/defaults/OpCommand.java
++++ b/fixed/src/main/java/org/bukkit/command/defaults/OpCommand.java
+@@ -37,6 +37,6 @@ public class OpCommand extends VanillaCommand {
+ 
+     @Override
+     public boolean matches(String input) {
+-        return input.startsWith("op ");
++        return input.startsWith("op ") || input.equalsIgnoreCase("op");
+     }
+ }

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/tachyon/MasterInfo.java b/fixed/src/main/java/tachyon/MasterInfo.java
+index 5356245..af988b6 100644
+--- a/buggy/src/main/java/tachyon/MasterInfo.java
++++ b/fixed/src/main/java/tachyon/MasterInfo.java
+@@ -490,7 +490,7 @@ public class MasterInfo {
+       for (InetSocketAddress address: mWorkerAddressToId.keySet()) {
+         if (address.getHostName().equals(host)) {
+           LOG.info("getLocalWorker: " + address);
+-          return new NetAddress(address.getHostName(), Config.WORKER_DATA_SERVER_PORT);
++          return new NetAddress(address.getHostName(), address.getPort());
+         }
+       }
+     }

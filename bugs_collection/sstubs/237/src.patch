@@ -1,0 +1,13 @@
+diff --git a/buggy/core/server/worker/src/main/java/alluxio/web/WebInterfaceWorkerBlockInfoServlet.java b/fixed/core/server/worker/src/main/java/alluxio/web/WebInterfaceWorkerBlockInfoServlet.java
+index b7c3d0d..54aa8d0 100644
+--- a/buggy/core/server/worker/src/main/java/alluxio/web/WebInterfaceWorkerBlockInfoServlet.java
++++ b/fixed/core/server/worker/src/main/java/alluxio/web/WebInterfaceWorkerBlockInfoServlet.java
+@@ -59,7 +59,7 @@ public final class WebInterfaceWorkerBlockInfoServlet extends HttpServlet {
+    * @param blockWorker block worker handle
+    */
+   public WebInterfaceWorkerBlockInfoServlet(BlockWorker blockWorker) {
+-    mBlockWorker = Preconditions.checkNotNull(blockWorker);
++    mBlockWorker = Preconditions.checkNotNull(blockWorker, "blockWorker");
+   }
+ 
+   /**

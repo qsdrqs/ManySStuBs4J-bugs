@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/BroadcasterConfig.java b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/BroadcasterConfig.java
+index 3640688..8caad76 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/BroadcasterConfig.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/BroadcasterConfig.java
+@@ -331,7 +331,7 @@ public class BroadcasterConfig {
+     protected void destroy(boolean force) {
+ 
+         broadcasterCache.cleanup();
+-        if ((force) && broadcasterCache != null) {
++        if ((force || !shared) && broadcasterCache != null) {
+             broadcasterCache.stop();
+         }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/servers/src/main/java/tachyon/metrics/MetricsSystem.java b/fixed/servers/src/main/java/tachyon/metrics/MetricsSystem.java
+index 1fad2e6..ca76e7c 100644
+--- a/buggy/servers/src/main/java/tachyon/metrics/MetricsSystem.java
++++ b/fixed/servers/src/main/java/tachyon/metrics/MetricsSystem.java
+@@ -143,7 +143,7 @@ public class MetricsSystem {
+     try {
+       mMetricRegistry.register(source.getName(), source.getMetricRegistry());
+     } catch (IllegalArgumentException e) {
+-      LOG.warn("Metrics already registered", e);
++      LOG.warn("Metrics already registered. Exception:" + e.getMessage());
+     }
+   }
+ 

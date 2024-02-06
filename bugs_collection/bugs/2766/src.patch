@@ -1,0 +1,13 @@
+diff --git a/buggy/graylog2-inputs/src/main/java/org/graylog2/inputs/transports/AmqpTransport.java b/fixed/graylog2-inputs/src/main/java/org/graylog2/inputs/transports/AmqpTransport.java
+index ba6cef5..de947a1 100644
+--- a/buggy/graylog2-inputs/src/main/java/org/graylog2/inputs/transports/AmqpTransport.java
++++ b/fixed/graylog2-inputs/src/main/java/org/graylog2/inputs/transports/AmqpTransport.java
+@@ -292,7 +292,7 @@ public class AmqpTransport extends ThrottleableTransport {
+                             CK_PARALLEL_QUEUES,
+                             "Number of Queues",
+                             1,
+-                            "Number of parallel QUeues",
++                            "Number of parallel Queues",
+                             ConfigurationField.Optional.NOT_OPTIONAL
+                     )
+             );

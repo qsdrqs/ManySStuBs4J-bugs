@@ -1,0 +1,13 @@
+diff --git a/buggy/core/common/src/test/java/alluxio/CommonTestUtilsTest.java b/fixed/core/common/src/test/java/alluxio/CommonTestUtilsTest.java
+index 0c7ed65..4e4a5d1 100644
+--- a/buggy/core/common/src/test/java/alluxio/CommonTestUtilsTest.java
++++ b/fixed/core/common/src/test/java/alluxio/CommonTestUtilsTest.java
+@@ -28,7 +28,7 @@ import java.util.Objects;
+ @RunWith(PowerMockRunner.class)
+ @PrepareForTest(CommonTestUtilsTest.HardToInstantiateClass.class)
+ public final class CommonTestUtilsTest {
+-  private static final class HardToInstantiateClass {
++  public static final class HardToInstantiateClass {
+     private HardToInstantiateClass(Object o) {}
+   }
+ 

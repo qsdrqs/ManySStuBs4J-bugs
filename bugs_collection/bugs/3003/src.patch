@@ -1,0 +1,13 @@
+diff --git a/buggy/library/src/com/viewpagerindicator/TitlePageIndicator.java b/fixed/library/src/com/viewpagerindicator/TitlePageIndicator.java
+index b4eb8ad..b04b43e 100644
+--- a/buggy/library/src/com/viewpagerindicator/TitlePageIndicator.java
++++ b/fixed/library/src/com/viewpagerindicator/TitlePageIndicator.java
+@@ -549,7 +549,7 @@ public class TitlePageIndicator extends View implements PageIndicator {
+                 break;
+         }
+ 
+-        return true;
++        return super.onTouchEvent(ev);
+     };
+ 
+     /**

@@ -1,0 +1,16 @@
+diff --git a/buggy/dubbo-rpc/dubbo-rpc-api/src/main/java/com/alibaba/dubbo/rpc/proxy/AbstractProxyInvoker.java b/fixed/dubbo-rpc/dubbo-rpc-api/src/main/java/com/alibaba/dubbo/rpc/proxy/AbstractProxyInvoker.java
+index f41d7a4..9369fbe 100644
+--- a/buggy/dubbo-rpc/dubbo-rpc-api/src/main/java/com/alibaba/dubbo/rpc/proxy/AbstractProxyInvoker.java
++++ b/fixed/dubbo-rpc/dubbo-rpc-api/src/main/java/com/alibaba/dubbo/rpc/proxy/AbstractProxyInvoker.java
+@@ -81,8 +81,8 @@ public abstract class AbstractProxyInvoker<T> implements Invoker<T> {
+ 
+     @Override
+     public String toString() {
+-        return getInterface() + " -> " + getUrl() == null ? " " : getUrl().toString();
++        return getInterface() + " -> " + (getUrl() == null ? " " : getUrl().toString());
+     }
+ 
+ 
+-}
+\ No newline at end of file
++}

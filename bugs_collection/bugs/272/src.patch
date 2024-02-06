@@ -1,0 +1,13 @@
+diff --git a/buggy/core/common/src/test/java/alluxio/test/util/ConcurrencyUtils.java b/fixed/core/common/src/test/java/alluxio/test/util/ConcurrencyUtils.java
+index dab49e7..8570d53 100644
+--- a/buggy/core/common/src/test/java/alluxio/test/util/ConcurrencyUtils.java
++++ b/fixed/core/common/src/test/java/alluxio/test/util/ConcurrencyUtils.java
+@@ -39,7 +39,7 @@ public final class ConcurrencyUtils {
+   public static void assertConcurrent(final List<? extends Runnable> runnables,
+       final int maxTimeoutSeconds) throws InterruptedException {
+     final int numThreads = runnables.size();
+-    final List<Throwable> exceptions = Collections.synchronizedList(new ArrayList<Throwable>());
++    final List<Throwable> exceptions = Collections.synchronizedList(new ArrayList<>());
+     final ExecutorService threadPool = Executors.newFixedThreadPool(numThreads);
+     try {
+       final CountDownLatch allExecutorThreadsReady = new CountDownLatch(numThreads);

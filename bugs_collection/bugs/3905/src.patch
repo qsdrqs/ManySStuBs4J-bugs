@@ -1,0 +1,13 @@
+diff --git a/buggy/runtime-testsuite/test/org/antlr/v4/test/runtime/go/BaseTest.java b/fixed/runtime-testsuite/test/org/antlr/v4/test/runtime/go/BaseTest.java
+index e0b0aa9..a25ce39 100644
+--- a/buggy/runtime-testsuite/test/org/antlr/v4/test/runtime/go/BaseTest.java
++++ b/fixed/runtime-testsuite/test/org/antlr/v4/test/runtime/go/BaseTest.java
+@@ -444,7 +444,7 @@ public abstract class BaseTest {
+ 		paths.add("c:\\Go\\bin");
+ 
+ 		for (String path : paths) {
+-			File candidate = new File(path + File.separatorChar + tool);
++			File candidate = new File(new File(path), tool);
+ 			if (candidate.exists()) {
+ 				return candidate.getPath();
+ 			}

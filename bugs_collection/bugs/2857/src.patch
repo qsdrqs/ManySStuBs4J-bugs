@@ -1,0 +1,13 @@
+diff --git a/buggy/graylog2-server/src/main/java/org/graylog2/initializers/VersionCheckInitializer.java b/fixed/graylog2-server/src/main/java/org/graylog2/initializers/VersionCheckInitializer.java
+index c48cbbb..4daf934 100644
+--- a/buggy/graylog2-server/src/main/java/org/graylog2/initializers/VersionCheckInitializer.java
++++ b/fixed/graylog2-server/src/main/java/org/graylog2/initializers/VersionCheckInitializer.java
+@@ -43,7 +43,7 @@ public class VersionCheckInitializer extends SimpleFixedRateScheduleInitializer
+     public void initialize(GraylogServer server, Map<String, String> config) throws InitializerConfigurationException {
+         Core core = (Core) server;
+ 
+-        if (core.getConfiguration().isVersionchecks()) {
++        if (core.getConfiguration().isVersionchecks() && !core.isLocalMode()) {
+             configureScheduler(
+                     core,
+                     new VersionCheckThread(core),

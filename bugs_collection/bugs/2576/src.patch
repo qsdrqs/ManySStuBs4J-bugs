@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/org/bukkit/entity/MobType.java b/fixed/src/main/java/org/bukkit/entity/MobType.java
+index 9fc3f93..dabc797 100644
+--- a/buggy/src/main/java/org/bukkit/entity/MobType.java
++++ b/fixed/src/main/java/org/bukkit/entity/MobType.java
+@@ -14,7 +14,8 @@ public enum MobType {
+     SHEEP("Sheep"),
+     SKELETON("Skeleton"),
+     SPIDER("Spider"),
+-    ZOMBIE("Zombie");
++    ZOMBIE("Zombie"),
++    SQUID("Squid");
+ 
+     private String name;
+     

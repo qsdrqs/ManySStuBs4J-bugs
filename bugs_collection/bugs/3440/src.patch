@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/pool/DruidDataSource.java b/fixed/src/main/java/com/alibaba/druid/pool/DruidDataSource.java
+index ca316b7..a68ca21 100644
+--- a/buggy/src/main/java/com/alibaba/druid/pool/DruidDataSource.java
++++ b/fixed/src/main/java/com/alibaba/druid/pool/DruidDataSource.java
+@@ -548,7 +548,7 @@ public class DruidDataSource extends DruidAbstractDataSource implements DruidDat
+         long nanos = unit.toNanos(timeout);
+ 
+         for (;;) {
+-            if (activeCount == maxActive) {
++            if (activeCount >= maxActive) {
+                 long startNano = System.nanoTime();
+                 notMaxActive.awaitNanos(nanos);
+                 nanos -= (System.nanoTime() - startNano);

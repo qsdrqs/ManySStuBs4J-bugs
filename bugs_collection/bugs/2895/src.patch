@@ -1,0 +1,12 @@
+diff --git a/buggy/app/lib/notifications/CheckServerClocksNotification.java b/fixed/app/lib/notifications/CheckServerClocksNotification.java
+index 23674fe..92a5593 100644
+--- a/buggy/app/lib/notifications/CheckServerClocksNotification.java
++++ b/fixed/app/lib/notifications/CheckServerClocksNotification.java
+@@ -43,6 +43,6 @@ public class CheckServerClocksNotification implements NotificationType {
+ 
+     @Override
+     public boolean isCloseable() {
+-        return false;
++        return true;
+     }
+ }

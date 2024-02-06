@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/ning/http/client/providers/NettyAsyncHttpProvider.java b/fixed/src/main/java/com/ning/http/client/providers/NettyAsyncHttpProvider.java
+index 0b74337..9312874 100644
+--- a/buggy/src/main/java/com/ning/http/client/providers/NettyAsyncHttpProvider.java
++++ b/fixed/src/main/java/com/ning/http/client/providers/NettyAsyncHttpProvider.java
+@@ -606,7 +606,7 @@ public class NettyAsyncHttpProvider extends IdleStateHandler implements AsyncHtt
+                     return;
+                 }
+ 
+-                if (response.getStatus().getCode() != 200 || nettyRequest.getMethod().equals(HttpMethod.HEAD)) {
++                if (nettyRequest.getMethod().equals(HttpMethod.HEAD)) {
+                     markAsDoneAndCacheConnection(future, ctx.getChannel());
+                 }
+ 

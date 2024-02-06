@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-syslog/src/test/java/org/apache/camel/component/syslog/MinaDataFormatTest.java b/fixed/components/camel-syslog/src/test/java/org/apache/camel/component/syslog/MinaDataFormatTest.java
+index a6ac82f..fc886c4 100644
+--- a/buggy/components/camel-syslog/src/test/java/org/apache/camel/component/syslog/MinaDataFormatTest.java
++++ b/fixed/components/camel-syslog/src/test/java/org/apache/camel/component/syslog/MinaDataFormatTest.java
+@@ -78,7 +78,7 @@ public class MinaDataFormatTest extends CamelTestSupport {
+                 DataFormat syslogDataFormat = new SyslogDataFormat();
+ 
+                 // we setup a Syslog  listener on a random port.
+-                from("mina2:udp://127.0.0.1:" + serverPort).unmarshal(syslogDataFormat).process(new Processor() {
++                from("mina:udp://127.0.0.1:" + serverPort).unmarshal(syslogDataFormat).process(new Processor() {
+                     public void process(Exchange ex) {
+                         assertTrue(ex.getIn().getBody() instanceof SyslogMessage);
+                     }

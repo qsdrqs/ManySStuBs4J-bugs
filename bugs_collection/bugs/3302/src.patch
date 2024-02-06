@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/pool/DruidDataSource.java b/fixed/src/main/java/com/alibaba/druid/pool/DruidDataSource.java
+index 56712f6..ecfb47e 100644
+--- a/buggy/src/main/java/com/alibaba/druid/pool/DruidDataSource.java
++++ b/fixed/src/main/java/com/alibaba/druid/pool/DruidDataSource.java
+@@ -1834,7 +1834,7 @@ public class DruidDataSource extends DruidAbstractDataSource
+                         try {
+                             notEmpty.signalAll();
+                         } finally {
+-                            lock.lock();
++                            lock.unlock();
+                         }
+                     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/client-adapter/hbase/src/main/java/com/alibaba/otter/canal/client/adapter/hbase/service/HbaseEtlService.java b/fixed/client-adapter/hbase/src/main/java/com/alibaba/otter/canal/client/adapter/hbase/service/HbaseEtlService.java
+index 43a267c..a207be8 100644
+--- a/buggy/client-adapter/hbase/src/main/java/com/alibaba/otter/canal/client/adapter/hbase/service/HbaseEtlService.java
++++ b/fixed/client-adapter/hbase/src/main/java/com/alibaba/otter/canal/client/adapter/hbase/service/HbaseEtlService.java
+@@ -79,7 +79,7 @@ public class HbaseEtlService extends AbstractEtlService {
+             createTable();
+ 
+             // 拼接sql
+-            String sql = "SELECT * FROM " + config.getHbaseMapping().getDatabase() + "." + hbaseMapping.getTable();
++            String sql = "SELECT * FROM `" + config.getHbaseMapping().getDatabase() + "`.`" + hbaseMapping.getTable() + "`";
+ 
+             return super.importData(sql, params);
+         } catch (Exception e) {

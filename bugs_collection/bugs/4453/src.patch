@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CassandraEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CassandraEndpointBuilderFactory.java
+index 54a782e..3e37f0c 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CassandraEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CassandraEndpointBuilderFactory.java
+@@ -1299,7 +1299,7 @@ public interface CassandraEndpointBuilderFactory {
+      * Proxy enum for <code>com.datastax.driver.core.ConsistencyLevel</code>
+      * enum.
+      */
+-    static enum ConsistencyLevel {
++    enum ConsistencyLevel {
+         ANY, ONE, TWO, THREE, QUORUM, ALL, LOCAL_QUORUM, EACH_QUORUM, SERIAL, LOCAL_SERIAL, LOCAL_ONE;
+     }
+     /**

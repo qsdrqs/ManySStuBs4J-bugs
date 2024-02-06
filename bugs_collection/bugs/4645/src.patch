@@ -1,0 +1,13 @@
+diff --git a/buggy/tooling/maven/camel-package-maven-plugin/src/main/java/org/apache/camel/maven/packaging/EndpointDslMojo.java b/fixed/tooling/maven/camel-package-maven-plugin/src/main/java/org/apache/camel/maven/packaging/EndpointDslMojo.java
+index 6ded0f2..238ec4f 100644
+--- a/buggy/tooling/maven/camel-package-maven-plugin/src/main/java/org/apache/camel/maven/packaging/EndpointDslMojo.java
++++ b/fixed/tooling/maven/camel-package-maven-plugin/src/main/java/org/apache/camel/maven/packaging/EndpointDslMojo.java
+@@ -572,7 +572,7 @@ public class EndpointDslMojo extends AbstractMojo {
+             }
+             JavaClass enumClass = enumClasses.get(enumClassName);
+             if (enumClass == null) {
+-                enumClass = javaClass.addNestedType().setPackagePrivate().setStatic(true)
++                enumClass = javaClass.addNestedType().setPackagePrivate()
+                                 .setName(enumClassName).setEnum(true);
+                 enumClass.getJavaDoc().setText("Proxy enum for <code>" + type + "</code> enum.");
+                 enumClasses.put(enumClassName, enumClass);

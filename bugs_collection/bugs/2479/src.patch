@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/bukkit/event/Event.java b/fixed/src/main/java/org/bukkit/event/Event.java
+index 2d25bec..6f27a4a 100644
+--- a/buggy/src/main/java/org/bukkit/event/Event.java
++++ b/fixed/src/main/java/org/bukkit/event/Event.java
+@@ -16,7 +16,7 @@ public abstract class Event implements Serializable {
+     }
+ 
+     protected Event(final String name) {
+-        Validate.notNull(name, "name is cannot be null");
++        Validate.notNull(name, "name cannot be null");
+         this.name = name;
+     }
+ 

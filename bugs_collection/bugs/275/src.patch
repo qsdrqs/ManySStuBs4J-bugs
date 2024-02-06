@@ -1,0 +1,13 @@
+diff --git a/buggy/core/base/src/main/java/alluxio/master/file/StartupConsistencyCheck.java b/fixed/core/base/src/main/java/alluxio/master/file/StartupConsistencyCheck.java
+index 8b17a60..315af45 100644
+--- a/buggy/core/base/src/main/java/alluxio/master/file/StartupConsistencyCheck.java
++++ b/fixed/core/base/src/main/java/alluxio/master/file/StartupConsistencyCheck.java
+@@ -59,7 +59,7 @@ public final class StartupConsistencyCheck {
+    * @return a result set to the failed status
+    */
+   public static StartupConsistencyCheck failed() {
+-    return new StartupConsistencyCheck(Status.FAILED, new ArrayList<AlluxioURI>());
++    return new StartupConsistencyCheck(Status.FAILED, new ArrayList<>());
+   }
+ 
+   /**

@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JpaEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JpaEndpointBuilderFactory.java
+index 1386193..3a7728b 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JpaEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JpaEndpointBuilderFactory.java
+@@ -1627,7 +1627,7 @@ public interface JpaEndpointBuilderFactory {
+     /**
+      * Proxy enum for <code>javax.persistence.LockModeType</code> enum.
+      */
+-    public static enum LockModeType {
++    static enum LockModeType {
+         READ, WRITE, OPTIMISTIC, OPTIMISTIC_FORCE_INCREMENT, PESSIMISTIC_READ, PESSIMISTIC_WRITE, PESSIMISTIC_FORCE_INCREMENT, NONE;
+     }
+     /**

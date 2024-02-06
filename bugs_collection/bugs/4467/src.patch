@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DisruptorVmEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DisruptorVmEndpointBuilderFactory.java
+index 6663607..cfb1c66 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DisruptorVmEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DisruptorVmEndpointBuilderFactory.java
+@@ -647,7 +647,7 @@ public interface DisruptorVmEndpointBuilderFactory {
+      * <code>org.apache.camel.component.disruptor.DisruptorWaitStrategy</code>
+      * enum.
+      */
+-    static enum DisruptorWaitStrategy {
++    enum DisruptorWaitStrategy {
+         Blocking, Sleeping, BusySpin, Yielding;
+     }
+ 
+@@ -656,7 +656,7 @@ public interface DisruptorVmEndpointBuilderFactory {
+      * <code>org.apache.camel.component.disruptor.DisruptorProducerType</code>
+      * enum.
+      */
+-    static enum DisruptorProducerType {
++    enum DisruptorProducerType {
+         Single, Multi;
+     }
+     /**

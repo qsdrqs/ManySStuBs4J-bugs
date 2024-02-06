@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JcloudsEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JcloudsEndpointBuilderFactory.java
+index 0c62328..ce5d6da 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JcloudsEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JcloudsEndpointBuilderFactory.java
+@@ -561,7 +561,7 @@ public interface JcloudsEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.jclouds.JcloudsCommand</code> enum.
+      */
+-    static enum JcloudsCommand {
++    enum JcloudsCommand {
+         blobstore, compute;
+     }
+     /**

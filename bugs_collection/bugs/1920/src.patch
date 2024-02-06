@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/websocket/DefaultWebSocketProcessor.java b/fixed/modules/cpr/src/main/java/org/atmosphere/websocket/DefaultWebSocketProcessor.java
+index ef55d50..1b7f554 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/websocket/DefaultWebSocketProcessor.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/websocket/DefaultWebSocketProcessor.java
+@@ -674,7 +674,7 @@ public class DefaultWebSocketProcessor implements WebSocketProcessor, Serializab
+         boolean isClosedByClient =  r == null ? true : r.getAtmosphereResourceEvent().isClosedByClient();
+         try {
+             if (r != null) {
+-                asynchronousProcessor.endRequest(AtmosphereResourceImpl.class.cast(webSocket.resource()), true);
++                asynchronousProcessor.endRequest(AtmosphereResourceImpl.class.cast(r), true);
+             }
+         } finally {
+             if (!isClosedByClient) {

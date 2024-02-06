@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/pool/DruidDataSource.java b/fixed/src/main/java/com/alibaba/druid/pool/DruidDataSource.java
+index 2faace2..0555512 100644
+--- a/buggy/src/main/java/com/alibaba/druid/pool/DruidDataSource.java
++++ b/fixed/src/main/java/com/alibaba/druid/pool/DruidDataSource.java
+@@ -614,7 +614,7 @@ public class DruidDataSource extends DruidAbstractDataSource implements DruidDat
+             }
+ 
+             if (getInitialSize() > maxActive) {
+-                throw new IllegalArgumentException("illegal initialSize " + this.initialSize + ", maxActieve " + maxActive);
++                throw new IllegalArgumentException("illegal initialSize " + this.initialSize + ", maxActive " + maxActive);
+             }
+ 
+             if (timeBetweenLogStatsMillis > 0 && useGlobalDataSourceStat) {

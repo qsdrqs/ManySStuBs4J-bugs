@@ -1,0 +1,13 @@
+diff --git a/buggy/dubbo-test/dubbo-test-examples/src/main/java/com/alibaba/dubbo/examples/annotation/AnnotationConsumer.java b/fixed/dubbo-test/dubbo-test-examples/src/main/java/com/alibaba/dubbo/examples/annotation/AnnotationConsumer.java
+index 971ab42..84a1df7 100644
+--- a/buggy/dubbo-test/dubbo-test-examples/src/main/java/com/alibaba/dubbo/examples/annotation/AnnotationConsumer.java
++++ b/fixed/dubbo-test/dubbo-test-examples/src/main/java/com/alibaba/dubbo/examples/annotation/AnnotationConsumer.java
+@@ -39,7 +39,7 @@ public class AnnotationConsumer {
+     }
+ 
+     @Configuration
+-    @EnableDubbo(scanBasePackages = "com.alibaba.dubbo.examples.annotation.action", multipleConfig = true)
++    @EnableDubbo(scanBasePackages = "com.alibaba.dubbo.examples.annotation.action")
+     @PropertySource("classpath:/com/alibaba/dubbo/examples/annotation/dubbo-consumer.properties")
+     @ComponentScan(value = {"com.alibaba.dubbo.examples.annotation.action"})
+     static public class ConsumerConfiguration {

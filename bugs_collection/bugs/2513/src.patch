@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/bukkit/material/Leaves.java b/fixed/src/main/java/org/bukkit/material/Leaves.java
+index 8b8e0d7..d02dc90 100644
+--- a/buggy/src/main/java/org/bukkit/material/Leaves.java
++++ b/fixed/src/main/java/org/bukkit/material/Leaves.java
+@@ -38,7 +38,7 @@ public class Leaves extends MaterialData {
+      * @return TreeSpecies of this leave
+      */
+     public TreeSpecies getSpecies() {
+-        return TreeSpecies.getByData(getData());
++        return TreeSpecies.getByData((byte) (getData() & 3));
+     }
+ 
+     /**

@@ -1,0 +1,13 @@
+diff --git a/buggy/integration-tests/cpr/src/test/java/org/atmosphere/tests/http/UUIDBroadcasterCacheTest.java b/fixed/integration-tests/cpr/src/test/java/org/atmosphere/tests/http/UUIDBroadcasterCacheTest.java
+index 00264eb..06621d2 100644
+--- a/buggy/integration-tests/cpr/src/test/java/org/atmosphere/tests/http/UUIDBroadcasterCacheTest.java
++++ b/fixed/integration-tests/cpr/src/test/java/org/atmosphere/tests/http/UUIDBroadcasterCacheTest.java
+@@ -199,7 +199,7 @@ public class UUIDBroadcasterCacheTest {
+ 
+             assertNotNull(response.get());
+             assertEquals(response.get().getStatusCode(), 200);
+-            assertEquals(response.get().getResponseBody(), "message-1message-2");
++            assertEquals(response.get().getResponseBody().trim(), "message-1message-2");
+         } catch (Exception e) {
+             logger.error("test failed", e);
+             fail(e.getMessage());

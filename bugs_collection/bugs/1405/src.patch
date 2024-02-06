@@ -1,0 +1,13 @@
+diff --git a/buggy/servers/src/main/java/tachyon/worker/block/evictor/LRUEvictor.java b/fixed/servers/src/main/java/tachyon/worker/block/evictor/LRUEvictor.java
+index a227670..13efbc8 100644
+--- a/buggy/servers/src/main/java/tachyon/worker/block/evictor/LRUEvictor.java
++++ b/fixed/servers/src/main/java/tachyon/worker/block/evictor/LRUEvictor.java
+@@ -164,7 +164,7 @@ public class LRUEvictor extends BlockStoreEventListenerBase implements Evictor {
+     StorageDirView candidateNextDir = null;
+     for (StorageTierView tierView : tierViewsBelow) {
+       candidateNextDir =
+-          cascadingEvict(dirCandidates.candidateSize(),
++          cascadingEvict(dirCandidates.candidateSize() - candidateDirView.getAvailableBytes(),
+               BlockStoreLocation.anyDirInTier(tierView.getTierViewAlias()), plan);
+       if (candidateNextDir != null) {
+         break;

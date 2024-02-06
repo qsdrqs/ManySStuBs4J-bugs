@@ -1,0 +1,13 @@
+diff --git a/buggy/graylog2-rest-client/src/main/java/org/graylog2/restclient/models/UniversalSearch.java b/fixed/graylog2-rest-client/src/main/java/org/graylog2/restclient/models/UniversalSearch.java
+index 23d5979..7ec9d92 100644
+--- a/buggy/graylog2-rest-client/src/main/java/org/graylog2/restclient/models/UniversalSearch.java
++++ b/fixed/graylog2-rest-client/src/main/java/org/graylog2/restclient/models/UniversalSearch.java
+@@ -170,7 +170,7 @@ public class UniversalSearch {
+                                                                           Integer.MAX_VALUE,
+                                                                           selectedFields);
+         return builder.accept(MediaType.CSV_UTF_8)
+-                .timeout(KEITH, TimeUnit.SECONDS)
++                .timeout(Long.MAX_VALUE, TimeUnit.SECONDS) // never time out
+                 .expect(200, 400)
+                 .executeStreaming();
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/FileEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/FileEndpointBuilderFactory.java
+index 0a557d2..a8fcff5 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/FileEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/FileEndpointBuilderFactory.java
+@@ -2911,7 +2911,7 @@ public interface FileEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.file.GenericFileExist</code> enum.
+      */
+-    public static enum GenericFileExist {
++    static enum GenericFileExist {
+         Override, Append, Fail, Ignore, Move, TryRename;
+     }
+     /**

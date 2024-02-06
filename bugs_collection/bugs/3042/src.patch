@@ -1,0 +1,13 @@
+diff --git a/buggy/src/org/ansj/library/UserDefineLibrary.java b/fixed/src/org/ansj/library/UserDefineLibrary.java
+index 768ad07..395e539 100644
+--- a/buggy/src/org/ansj/library/UserDefineLibrary.java
++++ b/fixed/src/org/ansj/library/UserDefineLibrary.java
+@@ -165,7 +165,7 @@ public class UserDefineLibrary {
+ 			} else if (file.isDirectory()) {
+ 				File[] files = file.listFiles();
+ 				for (int i = 0; i < files.length; i++) {
+-					if (file.getName().trim().endsWith(".dic")) {
++					if (files[i].getName().trim().endsWith(".dic")) {
+ 						loadFile(forest, files[i]);
+ 					}
+ 				}

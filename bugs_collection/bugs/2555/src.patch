@@ -1,0 +1,12 @@
+diff --git a/buggy/src/main/java/org/bukkit/command/defaults/TimeCommand.java b/fixed/src/main/java/org/bukkit/command/defaults/TimeCommand.java
+index 63f67ba..a9e6a9f 100644
+--- a/buggy/src/main/java/org/bukkit/command/defaults/TimeCommand.java
++++ b/fixed/src/main/java/org/bukkit/command/defaults/TimeCommand.java
+@@ -59,6 +59,6 @@ public class TimeCommand extends VanillaCommand {
+ 
+     @Override
+     public boolean matches(String input) {
+-        return input.startsWith("time ");
++        return input.startsWith("time ") || input.equalsIgnoreCase("time");
+     }
+ }

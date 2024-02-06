@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/Meteor.java b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/Meteor.java
+index 7fcaf08..1833276 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/Meteor.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/Meteor.java
+@@ -386,7 +386,7 @@ public class Meteor {
+      */
+     public void destroy() {
+         isDestroyed.set(true);
+-        cache.remove(this);
++        cache.remove(r);
+     }
+ 
+     private boolean destroyed(){

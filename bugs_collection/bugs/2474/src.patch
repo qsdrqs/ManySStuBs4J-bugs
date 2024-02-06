@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/bukkit/inventory/ItemStack.java b/fixed/src/main/java/org/bukkit/inventory/ItemStack.java
+index b814fbe..41db221 100644
+--- a/buggy/src/main/java/org/bukkit/inventory/ItemStack.java
++++ b/fixed/src/main/java/org/bukkit/inventory/ItemStack.java
+@@ -64,7 +64,7 @@ public class ItemStack implements Cloneable, ConfigurationSerializable {
+         if (stack.data != null) {
+             this.data = stack.data.clone();
+         }
+-        enchantments.putAll(stack.enchantments);
++        this.addUnsafeEnchantments(stack.getEnchantments());
+     }
+ 
+     /**

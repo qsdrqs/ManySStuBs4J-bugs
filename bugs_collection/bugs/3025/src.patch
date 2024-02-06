@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/io/mycat/sqlexecute/BaseSQLExeTest.java b/fixed/src/test/java/io/mycat/sqlexecute/BaseSQLExeTest.java
+index d984592..65169fe 100644
+--- a/buggy/src/test/java/io/mycat/sqlexecute/BaseSQLExeTest.java
++++ b/fixed/src/test/java/io/mycat/sqlexecute/BaseSQLExeTest.java
+@@ -176,7 +176,7 @@ public class BaseSQLExeTest {
+ 	}
+ 
+ 	public static Connection getCon(String[] args) throws Exception {
+-		if (driverLoaded == false) {
++		if (!driverLoaded) {
+ 			Class.forName("com.mysql.jdbc.Driver");
+ 			driverLoaded = true;
+ 

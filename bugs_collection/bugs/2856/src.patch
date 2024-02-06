@@ -1,0 +1,13 @@
+diff --git a/buggy/app/models/alerts/AlertCondition.java b/fixed/app/models/alerts/AlertCondition.java
+index be4dc52..166fb8f 100644
+--- a/buggy/app/models/alerts/AlertCondition.java
++++ b/fixed/app/models/alerts/AlertCondition.java
+@@ -126,7 +126,7 @@ public class AlertCondition {
+         StringBuilder sb = new StringBuilder();
+ 
+         if (backlog > 0) {
+-            sb.append(" Include last ");
++            sb.append(" Including last ");
+             if (backlog == 1)
+                 sb.append(" message");
+             else

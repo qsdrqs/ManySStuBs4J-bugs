@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/test/java/tachyon/LocalMiniDFSCluster.java b/fixed/core/src/test/java/tachyon/LocalMiniDFSCluster.java
+index b88fe58..cfffa7c 100644
+--- a/buggy/core/src/test/java/tachyon/LocalMiniDFSCluster.java
++++ b/fixed/core/src/test/java/tachyon/LocalMiniDFSCluster.java
+@@ -195,7 +195,7 @@ public class LocalMiniDFSCluster extends UnderFileSystemCluster {
+     if (!mIsStarted) {
+ 
+       delete(mBaseDir, true);
+-      if (mkdirs(mBaseDir)) {
++      if (!mkdirs(mBaseDir)) {
+         throw new IOException("Failed to make folder: " + mBaseDir);
+       }
+ 

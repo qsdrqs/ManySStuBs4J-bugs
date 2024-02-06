@@ -1,0 +1,13 @@
+diff --git a/buggy/dubbo-registry/dubbo-registry-api/src/main/java/org/apache/dubbo/registry/retry/FailedNotifiedTask.java b/fixed/dubbo-registry/dubbo-registry-api/src/main/java/org/apache/dubbo/registry/retry/FailedNotifiedTask.java
+index 9ccb673..43084c6 100644
+--- a/buggy/dubbo-registry/dubbo-registry-api/src/main/java/org/apache/dubbo/registry/retry/FailedNotifiedTask.java
++++ b/fixed/dubbo-registry/dubbo-registry-api/src/main/java/org/apache/dubbo/registry/retry/FailedNotifiedTask.java
+@@ -31,7 +31,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
+  */
+ public final class FailedNotifiedTask extends AbstractRetryTask {
+ 
+-    private static final String NAME = "retry subscribe";
++    private static final String NAME = "retry notify";
+ 
+     private final NotifyListener listener;
+ 

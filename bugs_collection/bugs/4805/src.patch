@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MQTTEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MQTTEndpointBuilderFactory.java
+index ce3ae2c..e54d8c5 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MQTTEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MQTTEndpointBuilderFactory.java
+@@ -2260,7 +2260,7 @@ public interface MQTTEndpointBuilderFactory {
+     /**
+      * Proxy enum for <code>org.fusesource.mqtt.client.QoS</code> enum.
+      */
+-    public static enum QoS {
++    static enum QoS {
+         AT_MOST_ONCE, AT_LEAST_ONCE, EXACTLY_ONCE;
+     }
+     /**

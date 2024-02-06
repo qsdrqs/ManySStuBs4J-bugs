@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AtmosEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AtmosEndpointBuilderFactory.java
+index 9b8462e..b4e3466 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AtmosEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AtmosEndpointBuilderFactory.java
+@@ -691,7 +691,7 @@ public interface AtmosEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.atmos.util.AtmosOperation</code> enum.
+      */
+-    public static enum AtmosOperation {
++    static enum AtmosOperation {
+         put, del, search, get, move;
+     }
+     /**

@@ -1,0 +1,14 @@
+diff --git a/buggy/core/common/src/main/java/alluxio/util/IdUtils.java b/fixed/core/common/src/main/java/alluxio/util/IdUtils.java
+index 1dcf89f..0c167f9 100644
+--- a/buggy/core/common/src/main/java/alluxio/util/IdUtils.java
++++ b/fixed/core/common/src/main/java/alluxio/util/IdUtils.java
+@@ -90,7 +90,8 @@ public final class IdUtils {
+    * @return a session ID used internally in workers
+    */
+   public static long createInternalSessionId() {
+-    return INTERNAL_SESSION_ID_BASE - (getRandomNonNegativeLong() % (Long.MAX_VALUE + INTERNAL_SESSION_ID_BASE));
++    return INTERNAL_SESSION_ID_BASE -
++        getRandomNonNegativeLong() % (Long.MAX_VALUE + INTERNAL_SESSION_ID_BASE);
+   }
+ 
+   /**

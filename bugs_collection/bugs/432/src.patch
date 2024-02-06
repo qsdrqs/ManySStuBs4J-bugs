@@ -1,0 +1,13 @@
+diff --git a/buggy/shell/src/main/java/alluxio/cli/fs/command/RmCommand.java b/fixed/shell/src/main/java/alluxio/cli/fs/command/RmCommand.java
+index c3a36d3..fc35060 100644
+--- a/buggy/shell/src/main/java/alluxio/cli/fs/command/RmCommand.java
++++ b/fixed/shell/src/main/java/alluxio/cli/fs/command/RmCommand.java
+@@ -48,7 +48,7 @@ public final class RmCommand extends WithWildCardPathCommand {
+           .desc("remove directories without checking UFS contents are in sync")
+           .build();
+ 
+-  protected static final Option REMOVE_ALLUXIO_ONLY =
++  private static final Option REMOVE_ALLUXIO_ONLY =
+       Option.builder("alluxioOnly")
+           .required(false)
+           .hasArg(false)

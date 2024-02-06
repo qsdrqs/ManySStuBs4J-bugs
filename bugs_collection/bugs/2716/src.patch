@@ -1,0 +1,13 @@
+diff --git a/buggy/graylog2-server/src/main/java/org/graylog2/alerts/types/FieldContentValueAlertCondition.java b/fixed/graylog2-server/src/main/java/org/graylog2/alerts/types/FieldContentValueAlertCondition.java
+index 9ad1006..a058081 100644
+--- a/buggy/graylog2-server/src/main/java/org/graylog2/alerts/types/FieldContentValueAlertCondition.java
++++ b/fixed/graylog2-server/src/main/java/org/graylog2/alerts/types/FieldContentValueAlertCondition.java
+@@ -81,7 +81,7 @@ public class FieldContentValueAlertCondition extends AbstractAlertCondition {
+             SearchResult result = searches.search(
+                     query,
+                     filter,
+-                    new RelativeRange(configuration.getAlertCheckInterval() * 60),
++                    new RelativeRange(configuration.getAlertCheckInterval()),
+                     searchLimit,
+                     0,
+                     new Sorting("timestamp", Sorting.Direction.DESC)

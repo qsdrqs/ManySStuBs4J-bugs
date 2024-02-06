@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/jersey/src/main/java/org/atmosphere/jersey/AtmosphereFilter.java b/fixed/modules/jersey/src/main/java/org/atmosphere/jersey/AtmosphereFilter.java
+index 1b4dd73..9b95166 100644
+--- a/buggy/modules/jersey/src/main/java/org/atmosphere/jersey/AtmosphereFilter.java
++++ b/fixed/modules/jersey/src/main/java/org/atmosphere/jersey/AtmosphereFilter.java
+@@ -253,7 +253,7 @@ public class AtmosphereFilter implements ResourceFilterFactory {
+                         }
+                     }
+ 
+-                    if (r == null && sessionSupported) {
++                    if (sessionSupported) {
+                         r = (AtmosphereResource) servletReq.getSession().getAttribute(SUSPENDED_RESOURCE);
+                     } else {
+                         String path = response.getContainerRequest().getPath();

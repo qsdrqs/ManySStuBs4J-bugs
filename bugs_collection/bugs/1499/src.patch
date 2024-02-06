@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/test/java/tachyon/master/LocalTachyonCluster.java b/fixed/core/src/test/java/tachyon/master/LocalTachyonCluster.java
+index a135fee..cf2f979 100644
+--- a/buggy/core/src/test/java/tachyon/master/LocalTachyonCluster.java
++++ b/fixed/core/src/test/java/tachyon/master/LocalTachyonCluster.java
+@@ -156,7 +156,7 @@ public final class LocalTachyonCluster {
+     System.setProperty("tachyon.worker.selector.threads", Integer.toString(1));
+     System.setProperty("tachyon.worker.server.threads", Integer.toString(2));
+     System.setProperty("tachyon.worker.network.netty.worker.threads", Integer.toString(2));
+-    System.setProperty("tachyon.master.web.threads", Integer.toString(1));
++    System.setProperty("tachyon.master.web.threads", Integer.toString(9));
+ 
+     CommonConf.clear();
+     MasterConf.clear();

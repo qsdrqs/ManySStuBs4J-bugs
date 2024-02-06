@@ -1,0 +1,13 @@
+diff --git a/buggy/common/src/main/java/tachyon/worker/WorkerClient.java b/fixed/common/src/main/java/tachyon/worker/WorkerClient.java
+index bba660c..3e4c2d3 100644
+--- a/buggy/common/src/main/java/tachyon/worker/WorkerClient.java
++++ b/fixed/common/src/main/java/tachyon/worker/WorkerClient.java
+@@ -381,7 +381,7 @@ public final class WorkerClient implements Closeable {
+     try {
+       return mClient.requestBlockLocation(mSessionId, blockId, initialBytes);
+     } catch (OutOfSpaceException e) {
+-      throw new IOException("Fail to request " + initialBytes, e);
++      throw new IOException("Failed to request " + initialBytes, e);
+     } catch (FileAlreadyExistException e) {
+       throw new IOException(e);
+     } catch (TException e) {

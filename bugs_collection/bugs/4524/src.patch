@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastQueueEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastQueueEndpointBuilderFactory.java
+index 14a0cf7..fb9a43e 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastQueueEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastQueueEndpointBuilderFactory.java
+@@ -1017,7 +1017,7 @@ public interface HazelcastQueueEndpointBuilderFactory {
+      * <code>org.apache.camel.component.hazelcast.HazelcastOperation</code>
+      * enum.
+      */
+-    static enum HazelcastOperation {
++    enum HazelcastOperation {
+         put, delete, get, update, query, getAll, clear, putIfAbsent, allAll, removeAll, retainAll, evict, evictAll, valueCount, containsKey, containsValue, keySet, removevalue, increment, decrement, setvalue, destroy, compareAndSet, getAndAdd, add, offer, peek, poll, remainingCapacity, drainTo, removeIf, take, publish, readOnceHeal, readOnceTail, capacity;
+     }
+ 
+@@ -1025,7 +1025,7 @@ public interface HazelcastQueueEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.hazelcast.queue.HazelcastQueueConsumerMode</code> enum.
+      */
+-    static enum HazelcastQueueConsumerMode {
++    enum HazelcastQueueConsumerMode {
+         listen, poll;
+     }
+     /**

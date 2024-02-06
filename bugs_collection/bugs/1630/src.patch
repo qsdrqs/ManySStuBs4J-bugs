@@ -1,0 +1,13 @@
+diff --git a/buggy/client/src/main/java/org/asynchttpclient/netty/ws/NettyWebSocket.java b/fixed/client/src/main/java/org/asynchttpclient/netty/ws/NettyWebSocket.java
+index 1b189ac..531eaad 100644
+--- a/buggy/client/src/main/java/org/asynchttpclient/netty/ws/NettyWebSocket.java
++++ b/fixed/client/src/main/java/org/asynchttpclient/netty/ws/NettyWebSocket.java
+@@ -99,7 +99,7 @@ public final class NettyWebSocket implements WebSocket {
+ 
+   @Override
+   public Future<Void> sendBinaryFrame(ByteBuf payload, boolean finalFragment, int rsv) {
+-    return channel.writeAndFlush(new BinaryWebSocketFrame(payload));
++    return channel.writeAndFlush(new BinaryWebSocketFrame(finalFragment, rsv, payload));
+   }
+ 
+   @Override

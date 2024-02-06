@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereServlet.java b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereServlet.java
+index 1f8b53a..4829864 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereServlet.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereServlet.java
+@@ -1250,7 +1250,7 @@ public class AtmosphereServlet extends AbstractAsyncServlet implements CometProc
+      * @param bccn the broadcasterClassName to set
+      */
+     public static void setDefaultBroadcasterClassName(String bccn) {
+-        this.broadcasterClassName = bccn;
++        broadcasterClassName = bccn;
+     }
+ 
+     /**

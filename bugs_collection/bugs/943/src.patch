@@ -1,0 +1,17 @@
+diff --git a/buggy/keyvalue/server/src/main/java/alluxio/master/keyvalue/KeyValueMaster.java b/fixed/keyvalue/server/src/main/java/alluxio/master/keyvalue/KeyValueMaster.java
+index 8d7489f..001f4ab 100644
+--- a/buggy/keyvalue/server/src/main/java/alluxio/master/keyvalue/KeyValueMaster.java
++++ b/fixed/keyvalue/server/src/main/java/alluxio/master/keyvalue/KeyValueMaster.java
+@@ -92,10 +92,9 @@ public final class KeyValueMaster extends AbstractMaster {
+ 
+   @Override
+   public Map<String, TProcessor> getServices() {
+-    Map<String, TProcessor> services = new HashMap<String, TProcessor>();
++    Map<String, TProcessor> services = new HashMap<>();
+     services.put(Constants.KEY_VALUE_MASTER_CLIENT_SERVICE_NAME,
+-        new KeyValueMasterClientService.Processor<KeyValueMasterClientServiceHandler>(
+-            new KeyValueMasterClientServiceHandler(this)));
++        new KeyValueMasterClientService.Processor<>(new KeyValueMasterClientServiceHandler(this)));
+     return services;
+   }
+ 

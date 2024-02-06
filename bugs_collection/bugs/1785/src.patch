@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java b/fixed/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java
+index b32a135..7852fdf 100644
+--- a/buggy/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java
++++ b/fixed/src/main/java/com/ning/http/client/providers/netty/NettyAsyncHttpProvider.java
+@@ -164,7 +164,7 @@ public class NettyAsyncHttpProvider extends SimpleChannelUpstreamHandler impleme
+ 
+     private final NettyAsyncHttpProviderConfig asyncHttpProviderConfig;
+ 
+-    private boolean executeConnectAsync = false;
++    private boolean executeConnectAsync = true;
+ 
+     public static final ThreadLocal<Boolean> IN_IO_THREAD = new ThreadLocalBoolean();
+ 

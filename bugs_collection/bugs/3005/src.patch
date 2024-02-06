@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/io/mycat/backend/jdbc/mongodb/MongoSQLParser.java b/fixed/src/main/java/io/mycat/backend/jdbc/mongodb/MongoSQLParser.java
+index dd85444..6014e12 100644
+--- a/buggy/src/main/java/io/mycat/backend/jdbc/mongodb/MongoSQLParser.java
++++ b/fixed/src/main/java/io/mycat/backend/jdbc/mongodb/MongoSQLParser.java
+@@ -345,7 +345,7 @@ public class MongoSQLParser {
+             }  
+           }    
+         }    
+-		if (isok==false) {
++		if (!isok) {
+ 			BasicDBObject xo = new BasicDBObject();
+ 			xo.put(aop, aval);
+ 			ob.put(akey,xo);	

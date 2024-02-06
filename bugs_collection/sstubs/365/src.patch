@@ -1,0 +1,13 @@
+diff --git a/buggy/core/common/src/main/java/alluxio/util/io/FileUtils.java b/fixed/core/common/src/main/java/alluxio/util/io/FileUtils.java
+index 1f63b2e..9f77a30 100644
+--- a/buggy/core/common/src/main/java/alluxio/util/io/FileUtils.java
++++ b/fixed/core/common/src/main/java/alluxio/util/io/FileUtils.java
+@@ -98,7 +98,7 @@ public final class FileUtils {
+     PosixFileAttributeView view =
+         Files.getFileAttributeView(Paths.get(path), PosixFileAttributeView.class,
+             LinkOption.NOFOLLOW_LINKS);
+-    UserPrincipal userPrincipal = lookupService.lookupPrincipalByGroupName(user);
++    UserPrincipal userPrincipal = lookupService.lookupPrincipalByName(user);
+     view.setOwner(userPrincipal);
+   }
+ 

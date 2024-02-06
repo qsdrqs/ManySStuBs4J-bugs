@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/src/test/java/alluxio/client/cli/fs/command/CatCommandIntegrationTest.java b/fixed/tests/src/test/java/alluxio/client/cli/fs/command/CatCommandIntegrationTest.java
+index b3c52fb..8209496 100644
+--- a/buggy/tests/src/test/java/alluxio/client/cli/fs/command/CatCommandIntegrationTest.java
++++ b/fixed/tests/src/test/java/alluxio/client/cli/fs/command/CatCommandIntegrationTest.java
+@@ -31,7 +31,7 @@ public final class CatCommandIntegrationTest extends AbstractFileSystemShellTest
+     int ret = mFsShell.run("cat", "/testDir");
+     Assert.assertEquals(-1, ret);
+     String expected = getCommandOutput(command);
+-    expected += "Path /testDir must be a file\n";
++    expected += "Path \"/testDir\" must be a file.\n";
+     Assert.assertEquals(expected, mOutput.toString());
+   }
+ 

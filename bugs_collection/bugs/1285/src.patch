@@ -1,0 +1,13 @@
+diff --git a/buggy/integration-tests/src/test/java/tachyon/underfs/hdfs/LocalMiniDFSCluster.java b/fixed/integration-tests/src/test/java/tachyon/underfs/hdfs/LocalMiniDFSCluster.java
+index 29d2be7..6e0a92f 100644
+--- a/buggy/integration-tests/src/test/java/tachyon/underfs/hdfs/LocalMiniDFSCluster.java
++++ b/fixed/integration-tests/src/test/java/tachyon/underfs/hdfs/LocalMiniDFSCluster.java
+@@ -237,7 +237,7 @@ public class LocalMiniDFSCluster extends UnderFileSystemCluster {
+ 
+       // For HDFS of earlier versions, getFileSystem() returns an instance of type
+       // {@link org.apache.hadoop.fs.FileSystem} rather than {@link DistributedFileSystem}
+-      mDfsClient = mDfsCluster.getFileSystem();
++      mDfsClient = (DistributedFileSystem) mDfsCluster.getFileSystem();
+       mIsStarted = true;
+     }
+   }

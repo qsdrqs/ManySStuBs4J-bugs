@@ -1,0 +1,25 @@
+diff --git a/buggy/shell/src/main/java/alluxio/shell/command/TestCommand.java b/fixed/shell/src/main/java/alluxio/shell/command/TestCommand.java
+index e08f5d9..320a1a2 100644
+--- a/buggy/shell/src/main/java/alluxio/shell/command/TestCommand.java
++++ b/fixed/shell/src/main/java/alluxio/shell/command/TestCommand.java
+@@ -58,9 +58,9 @@ public final class TestCommand extends AbstractShellCommand {
+ 
+   private void printResult(boolean testResult) {
+     if (testResult) {
+-      System.out.printf("%d\n", 0);
++      System.out.println(0);
+     } else {
+-      System.out.printf("%d\n", 1);
++      System.out.println(1);
+     }
+   }
+ 
+@@ -95,7 +95,7 @@ public final class TestCommand extends AbstractShellCommand {
+       }
+       printResult(testResult);
+     } catch (AlluxioException | IOException e) {
+-      System.out.printf("%d\n", 1);
++      System.out.println(1);
+     }
+   }
+ 

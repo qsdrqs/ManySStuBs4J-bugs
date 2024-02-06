@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/src/test/java/alluxio/worker/DataServerIntegrationTest.java b/fixed/tests/src/test/java/alluxio/worker/DataServerIntegrationTest.java
+index 3770f44..928cfcd 100644
+--- a/buggy/tests/src/test/java/alluxio/worker/DataServerIntegrationTest.java
++++ b/fixed/tests/src/test/java/alluxio/worker/DataServerIntegrationTest.java
+@@ -61,7 +61,7 @@ public class DataServerIntegrationTest {
+   @Parameterized.Parameters
+   public static Collection<Object[]> data() {
+     // Creates a new instance of DataServerIntegrationTest for different combinations of parameters.
+-    List<Object[]> list = new ArrayList<Object[]>();
++    List<Object[]> list = new ArrayList<>();
+     list.add(new Object[] {IntegrationTestConstants.NETTY_DATA_SERVER,
+         IntegrationTestConstants.MAPPED_TRANSFER, IntegrationTestConstants.NETTY_BLOCK_READER});
+     list.add(new Object[] {IntegrationTestConstants.NETTY_DATA_SERVER,

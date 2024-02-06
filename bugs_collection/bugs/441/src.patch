@@ -1,0 +1,14 @@
+diff --git a/buggy/tests/src/test/java/alluxio/cli/fs/FileSystemShellUtilsTest.java b/fixed/tests/src/test/java/alluxio/cli/fs/FileSystemShellUtilsTest.java
+index fb3d1ed..5845466 100644
+--- a/buggy/tests/src/test/java/alluxio/cli/fs/FileSystemShellUtilsTest.java
++++ b/fixed/tests/src/test/java/alluxio/cli/fs/FileSystemShellUtilsTest.java
+@@ -278,7 +278,8 @@ public final class FileSystemShellUtilsTest {
+ 
+     int expectSize = 0;
+     for (Class<? extends Command> cls : cmdSet) {
+-      if (cls.getPackage().getName().startsWith(pkgName) && !Modifier.isAbstract(cls.getModifiers())) {
++      if (cls.getPackage().getName().startsWith(FileSystemShell.class.getPackage().getName())
++          && !Modifier.isAbstract(cls.getModifiers())) {
+         expectSize++;
+       }
+     }

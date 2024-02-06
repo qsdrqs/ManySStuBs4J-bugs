@@ -1,0 +1,15 @@
+diff --git a/buggy/integration-tests/src/test/java/tachyon/client/keyvalue/KeyValuePartitionIntegrationTest.java b/fixed/integration-tests/src/test/java/tachyon/client/keyvalue/KeyValuePartitionIntegrationTest.java
+index f810995..261f120 100644
+--- a/buggy/integration-tests/src/test/java/tachyon/client/keyvalue/KeyValuePartitionIntegrationTest.java
++++ b/fixed/integration-tests/src/test/java/tachyon/client/keyvalue/KeyValuePartitionIntegrationTest.java
+@@ -44,7 +44,9 @@ public final class KeyValuePartitionIntegrationTest {
+ 
+   @ClassRule
+   public static LocalTachyonClusterResource sLocalTachyonClusterResource =
+-      new LocalTachyonClusterResource(Constants.GB, Constants.KB, BLOCK_SIZE);
++      new LocalTachyonClusterResource(Constants.GB, Constants.KB, BLOCK_SIZE,
++          /* ensure key-value service is turned on */
++          Constants.KEYVALUE_ENABLED, "true");
+ 
+   @BeforeClass
+   public static void beforeClass() throws Exception {

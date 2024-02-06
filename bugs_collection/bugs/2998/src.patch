@@ -1,0 +1,13 @@
+diff --git a/buggy/library/src/android/support/v4/view/MenuInflater.java b/fixed/library/src/android/support/v4/view/MenuInflater.java
+index 8b8608c..31dd90a 100644
+--- a/buggy/library/src/android/support/v4/view/MenuInflater.java
++++ b/fixed/library/src/android/support/v4/view/MenuInflater.java
+@@ -401,7 +401,7 @@ public final class MenuInflater extends android.view.MenuInflater {
+ 				} catch (Exception e) {
+ 					throw new InflateException(e);
+ 				}
+-			} else if (itemActionLayout >= 0) {
++			} else if (itemActionLayout > 0) {
+ 				item.setActionView(itemActionLayout);
+ 			}
+ 		}

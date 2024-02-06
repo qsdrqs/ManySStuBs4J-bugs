@@ -1,0 +1,13 @@
+diff --git a/buggy/graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/InputsResource.java b/fixed/graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/InputsResource.java
+index d499d17..715aeff 100644
+--- a/buggy/graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/InputsResource.java
++++ b/fixed/graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/InputsResource.java
+@@ -176,7 +176,7 @@ public class InputsResource extends RestResource {
+ 
+         final Input input = inputService.find(inputId);
+ 
+-        final Map<String, Object> mergedInput = inputService.getMessageInput(input).asMap();
++        final Map<String, Object> mergedInput = input.getFields();
+         final MessageInput messageInput = messageInputFactory.create(lr, getCurrentUser().getName(), lr.node());
+ 
+         messageInput.checkConfiguration();

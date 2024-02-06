@@ -1,0 +1,13 @@
+diff --git a/buggy/shell/src/main/java/tachyon/shell/command/RmrCommand.java b/fixed/shell/src/main/java/tachyon/shell/command/RmrCommand.java
+index 148f701..329f5b1 100644
+--- a/buggy/shell/src/main/java/tachyon/shell/command/RmrCommand.java
++++ b/fixed/shell/src/main/java/tachyon/shell/command/RmrCommand.java
+@@ -48,7 +48,7 @@ public final class RmrCommand extends WithWildCardPathCommand {
+       mTfs.delete(fd, options);
+       System.out.println(path + " has been removed");
+     } catch (InvalidPathException e) {
+-      System.out.println(path + " does not exists");
++      System.out.println(path + " does not exist");
+     } catch (TachyonException e) {
+       throw new IOException(e.getMessage());
+     }

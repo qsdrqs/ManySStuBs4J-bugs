@@ -1,0 +1,13 @@
+diff --git a/buggy/tool/test/org/antlr/v4/test/runtime/python3/BasePython3Test.java b/fixed/tool/test/org/antlr/v4/test/runtime/python3/BasePython3Test.java
+index e25de5b..38058b3 100644
+--- a/buggy/tool/test/org/antlr/v4/test/runtime/python3/BasePython3Test.java
++++ b/fixed/tool/test/org/antlr/v4/test/runtime/python3/BasePython3Test.java
+@@ -41,7 +41,7 @@ public abstract class BasePython3Test extends BasePythonTest {
+ 
+ 	@Override
+ 	protected String getPythonExecutable() {
+-		return "Python3.4";
++		return "python3.4";
+ 	}
+ 
+ 	@Override

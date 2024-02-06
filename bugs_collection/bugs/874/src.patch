@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/src/test/java/alluxio/client/BufferedBlockInStreamIntegrationTest.java b/fixed/tests/src/test/java/alluxio/client/BufferedBlockInStreamIntegrationTest.java
+index 5f15950..17db969 100644
+--- a/buggy/tests/src/test/java/alluxio/client/BufferedBlockInStreamIntegrationTest.java
++++ b/fixed/tests/src/test/java/alluxio/client/BufferedBlockInStreamIntegrationTest.java
+@@ -64,7 +64,7 @@ public final class BufferedBlockInStreamIntegrationTest {
+   }
+ 
+   private static List<CreateFileOptions> getOptionSet() {
+-    List<CreateFileOptions> ret = new ArrayList<CreateFileOptions>(3);
++    List<CreateFileOptions> ret = new ArrayList<>(3);
+     ret.add(sWriteBoth);
+     ret.add(sWriteAlluxio);
+     ret.add(sWriteUnderStore);

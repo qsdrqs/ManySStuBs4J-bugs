@@ -1,0 +1,13 @@
+diff --git a/buggy/core/server/src/main/java/alluxio/worker/file/FileSystemWorker.java b/fixed/core/server/src/main/java/alluxio/worker/file/FileSystemWorker.java
+index a6b3141..bbbb627 100644
+--- a/buggy/core/server/src/main/java/alluxio/worker/file/FileSystemWorker.java
++++ b/fixed/core/server/src/main/java/alluxio/worker/file/FileSystemWorker.java
+@@ -73,7 +73,7 @@ public final class FileSystemWorker extends AbstractWorker {
+    */
+   @Override
+   public Map<String, TProcessor> getServices() {
+-    return new HashMap<String, TProcessor>();
++    return new HashMap<>();
+   }
+ 
+   /**

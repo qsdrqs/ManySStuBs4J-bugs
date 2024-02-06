@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/sql/dialect/mysql/parser/MySqlStatementParser.java b/fixed/src/main/java/com/alibaba/druid/sql/dialect/mysql/parser/MySqlStatementParser.java
+index e0f5b7e..d964b3c 100644
+--- a/buggy/src/main/java/com/alibaba/druid/sql/dialect/mysql/parser/MySqlStatementParser.java
++++ b/fixed/src/main/java/com/alibaba/druid/sql/dialect/mysql/parser/MySqlStatementParser.java
+@@ -1862,7 +1862,7 @@ public class MySqlStatementParser extends SQLStatementParser {
+ 
+         if (identifierEquals(IGNORE)) {
+             lexer.nextToken();
+-            stmt.setIgnoreLinesNumber((SQLLiteralExpr) this.exprParser.expr());
++            stmt.setIgnoreLinesNumber( this.exprParser.expr());
+             acceptIdentifier("LINES");
+         }
+ 

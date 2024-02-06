@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/stat/DruidStatService.java b/fixed/src/main/java/com/alibaba/druid/stat/DruidStatService.java
+index 894a9d0..e76072e 100644
+--- a/buggy/src/main/java/com/alibaba/druid/stat/DruidStatService.java
++++ b/fixed/src/main/java/com/alibaba/druid/stat/DruidStatService.java
+@@ -149,7 +149,7 @@ public final class DruidStatService implements DruidStatServiceMBean {
+         }
+ 
+         if (url.startsWith("/weburi-") && url.indexOf(".json") > 0) {
+-            String uri = StringUtils.subString(url, "weburi-", ".json");
++            String uri = StringUtils.subString(url, "weburi-", ".json", true);
+             return returnJSONResult(RESULT_CODE_SUCCESS, getWebURIStatData(uri));
+         }
+ 

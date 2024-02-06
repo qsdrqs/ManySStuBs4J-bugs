@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-syslog/src/test/java/org/apache/camel/component/syslog/NettyRfc5425Test.java b/fixed/components/camel-syslog/src/test/java/org/apache/camel/component/syslog/NettyRfc5425Test.java
+index 4a37351..f99fb9a 100644
+--- a/buggy/components/camel-syslog/src/test/java/org/apache/camel/component/syslog/NettyRfc5425Test.java
++++ b/fixed/components/camel-syslog/src/test/java/org/apache/camel/component/syslog/NettyRfc5425Test.java
+@@ -48,7 +48,7 @@ public class NettyRfc5425Test extends CamelTestSupport {
+     @BeforeClass
+     public static void initPort() {
+         serverPort = AvailablePortFinder.getNextAvailable();
+-        uri = "netty4:tcp://localhost:" + serverPort + "?sync=false&allowDefaultCodec=false&decoders=#decoder&encoder=#encoder";
++        uri = "netty:tcp://localhost:" + serverPort + "?sync=false&allowDefaultCodec=false&decoders=#decoder&encoder=#encoder";
+         uriClient = uri + "&useByteBuf=true";
+     }
+ 

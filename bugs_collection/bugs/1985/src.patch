@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereResourceImpl.java b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereResourceImpl.java
+index 9fd878c..a1fb95c 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereResourceImpl.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereResourceImpl.java
+@@ -327,7 +327,7 @@ public class AtmosphereResourceImpl implements AtmosphereResource {
+ 
+         if (config.isSupportSession()
+                 && req.getSession(false) != null
+-                && req.getSession().getMaxInactiveInterval() != -1
++                && req.getSession().getMaxInactiveInterval() >= 0
+                 && req.getSession().getMaxInactiveInterval() * 1000 < timeout) {
+             throw new IllegalStateException("Cannot suspend a " +
+                     "response longer than the session timeout. Increase the value of session-timeout in web.xml");

@@ -1,0 +1,17 @@
+diff --git a/buggy/src/main/java/org/bukkit/TreeSpecies.java b/fixed/src/main/java/org/bukkit/TreeSpecies.java
+index d01b79f..d40409f 100644
+--- a/buggy/src/main/java/org/bukkit/TreeSpecies.java
++++ b/fixed/src/main/java/org/bukkit/TreeSpecies.java
+@@ -20,7 +20,11 @@ public enum TreeSpecies {
+     /**
+      * Represents birches.
+      */
+-    BIRCH(0x2);
++    BIRCH(0x2),
++    /**
++     * Represents jungle trees.
++     */
++    JUNGLE(0x3);
+ 
+     private final byte data;
+     private final static Map<Byte, TreeSpecies> BY_DATA = Maps.newHashMap();

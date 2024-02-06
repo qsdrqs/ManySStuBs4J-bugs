@@ -1,0 +1,13 @@
+diff --git a/buggy/dubbo-compatible/src/main/java/com/alibaba/dubbo/config/annotation/Reference.java b/fixed/dubbo-compatible/src/main/java/com/alibaba/dubbo/config/annotation/Reference.java
+index 450170a..4c1ca97 100644
+--- a/buggy/dubbo-compatible/src/main/java/com/alibaba/dubbo/config/annotation/Reference.java
++++ b/fixed/dubbo-compatible/src/main/java/com/alibaba/dubbo/config/annotation/Reference.java
+@@ -75,7 +75,7 @@ public @interface Reference {
+ 
+     String layer() default "";
+ 
+-    int retries() default 0;
++    int retries() default 2;
+ 
+     String loadbalance() default "";
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/BraintreeEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/BraintreeEndpointBuilderFactory.java
+index d5533c0..4d9e25f 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/BraintreeEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/BraintreeEndpointBuilderFactory.java
+@@ -819,7 +819,7 @@ public interface BraintreeEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.braintree.internal.BraintreeApiName</code> enum.
+      */
+-    static enum BraintreeApiName {
++    enum BraintreeApiName {
+         ADDON, ADDRESS, CLIENTTOKEN, CREDITCARDVERIFICATION, CUSTOMER, DISCOUNT, DISPUTE, DOCUMENTUPLOAD, MERCHANTACCOUNT, PAYMENTMETHOD, PAYMENTMETHODNONCE, PLAN, REPORT, SETTLEMENTBATCHSUMMARY, SUBSCRIPTION, TRANSACTION, WEBHOOKNOTIFICATION;
+     }
+     /**

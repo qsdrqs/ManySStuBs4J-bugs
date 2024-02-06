@@ -1,0 +1,18 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/container/Jetty9WebSocketHandler.java b/fixed/modules/cpr/src/main/java/org/atmosphere/container/Jetty9WebSocketHandler.java
+index 6d842c9..6d12eb5 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/container/Jetty9WebSocketHandler.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/container/Jetty9WebSocketHandler.java
+@@ -45,11 +45,11 @@ public class Jetty9WebSocketHandler implements WebSocketListener {
+     static {
+         Exception ex = null;
+         try {
+-            Class.forName("org.eclipse.jetty.http2.server.HTTP2ServerConnection");
++            Class.forName("org.eclipse.jetty.websocket.api.WebSocketFrameListener");
+         } catch (ClassNotFoundException e) {
+             ex = e;
+         } finally {
+-            jetty93Up = ex == null ? false : true;
++            jetty93Up = ex == null ? true : false;
+         }
+     }
+ 

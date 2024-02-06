@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/pool/DruidDataSource.java b/fixed/src/main/java/com/alibaba/druid/pool/DruidDataSource.java
+index 8f5023b..9e2abf3 100644
+--- a/buggy/src/main/java/com/alibaba/druid/pool/DruidDataSource.java
++++ b/fixed/src/main/java/com/alibaba/druid/pool/DruidDataSource.java
+@@ -1933,7 +1933,7 @@ public class DruidDataSource extends DruidAbstractDataSource
+                 try {
+                     connection = createPhysicalConnection();
+                 } catch (SQLException e) {
+-                    LOG.error("create connection error, url: " + jdbcUrl, e);
++                    LOG.error("create connection error, url: " + jdbcUrl + ", errorCode " + e.getErrorCode() + ", state " + e.getSQLState(), e);
+ 
+                     errorCount++;
+                     

@@ -1,0 +1,13 @@
+diff --git a/buggy/library/src/com/viewpagerindicator/CirclePageIndicator.java b/fixed/library/src/com/viewpagerindicator/CirclePageIndicator.java
+index bc4f898..0cab698 100644
+--- a/buggy/library/src/com/viewpagerindicator/CirclePageIndicator.java
++++ b/fixed/library/src/com/viewpagerindicator/CirclePageIndicator.java
+@@ -326,7 +326,7 @@ public class CirclePageIndicator extends View implements PageIndicator {
+                 break;
+         }
+ 
+-        return true;
++        return super.onTouchEvent(ev);
+     };
+ 
+     @Override

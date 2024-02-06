@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/jersey/src/main/java/org/atmosphere/jersey/AtmosphereFilter.java b/fixed/modules/jersey/src/main/java/org/atmosphere/jersey/AtmosphereFilter.java
+index fc15d00..289bfd4 100644
+--- a/buggy/modules/jersey/src/main/java/org/atmosphere/jersey/AtmosphereFilter.java
++++ b/fixed/modules/jersey/src/main/java/org/atmosphere/jersey/AtmosphereFilter.java
+@@ -867,7 +867,7 @@ public class AtmosphereFilter implements ResourceFilterFactory {
+                 if (entity != null) {
+                     b = b.header("Content-Type", ct);
+                 }
+-                servletReq.setAttribute(FrameworkConfig.EXPECTED_CONTENT_TYPE, contentType.toString());
++                servletReq.setAttribute(FrameworkConfig.EXPECTED_CONTENT_TYPE, ct);
+ 
+                 boolean eclipse362468 = false;
+                 String serverInfo = r.getAtmosphereConfig().getServletContext().getServerInfo();

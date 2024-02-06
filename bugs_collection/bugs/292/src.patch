@@ -1,0 +1,13 @@
+diff --git a/buggy/core/server/master/src/test/java/alluxio/master/metastore/caching/CachingInodeStoreTest.java b/fixed/core/server/master/src/test/java/alluxio/master/metastore/caching/CachingInodeStoreTest.java
+index 7f2dde2..c44b58d 100644
+--- a/buggy/core/server/master/src/test/java/alluxio/master/metastore/caching/CachingInodeStoreTest.java
++++ b/fixed/core/server/master/src/test/java/alluxio/master/metastore/caching/CachingInodeStoreTest.java
+@@ -105,7 +105,7 @@ public class CachingInodeStoreTest {
+     }
+     // The workload is read-only, so we shouldn't need to write each inode to the backing store more
+     // than once.
+-    verify(mBackingStore, atMost((int) CACHE_SIZE * 2)).writeInode(any());
++    verify(mBackingStore, atMost((int) CACHE_SIZE * 2 + 1)).writeInode(any());
+   }
+ 
+   @Test

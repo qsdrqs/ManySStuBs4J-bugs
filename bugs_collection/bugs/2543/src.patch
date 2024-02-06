@@ -1,0 +1,12 @@
+diff --git a/buggy/src/main/java/org/bukkit/command/defaults/BanIpCommand.java b/fixed/src/main/java/org/bukkit/command/defaults/BanIpCommand.java
+index e03a3cb..e2c1c52 100644
+--- a/buggy/src/main/java/org/bukkit/command/defaults/BanIpCommand.java
++++ b/fixed/src/main/java/org/bukkit/command/defaults/BanIpCommand.java
+@@ -29,6 +29,6 @@ public class BanIpCommand extends VanillaCommand {
+ 
+     @Override
+     public boolean matches(String input) {
+-        return input.startsWith("ban-ip ");
++        return input.startsWith("ban-ip ") || input.equalsIgnoreCase("ban-ip");
+     }
+ }

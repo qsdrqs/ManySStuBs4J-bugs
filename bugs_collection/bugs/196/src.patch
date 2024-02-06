@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/activiti-engine/src/test/java/org/activiti/engine/test/bpmn/mail/EmailTestCase.java b/fixed/modules/activiti-engine/src/test/java/org/activiti/engine/test/bpmn/mail/EmailTestCase.java
+index c0d81cb..5dcdeb6 100644
+--- a/buggy/modules/activiti-engine/src/test/java/org/activiti/engine/test/bpmn/mail/EmailTestCase.java
++++ b/fixed/modules/activiti-engine/src/test/java/org/activiti/engine/test/bpmn/mail/EmailTestCase.java
+@@ -37,7 +37,7 @@ public class EmailTestCase extends PluggableActivitiTestCase {
+         wiser.start();
+         serverUpAndRunning = true;
+       } catch (RuntimeException e) { // Fix for slow port-closing Jenkins
+-        if (e.getMessage().toLowerCase().contains("BindException")) {
++        if (e.getMessage().toLowerCase().contains("bindexception")) {
+           Thread.sleep(250L);
+         }
+       }

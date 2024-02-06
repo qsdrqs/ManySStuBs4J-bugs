@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MetricsEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MetricsEndpointBuilderFactory.java
+index 8ba7a50..62c6795 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MetricsEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MetricsEndpointBuilderFactory.java
+@@ -238,7 +238,7 @@ public interface MetricsEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.metrics.MetricsType</code> enum.
+      */
+-    static enum MetricsType {
++    enum MetricsType {
+         gauge, counter, histogram, meter, timer;
+     }
+ 
+@@ -246,7 +246,7 @@ public interface MetricsEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.metrics.MetricsTimerAction</code> enum.
+      */
+-    static enum MetricsTimerAction {
++    enum MetricsTimerAction {
+         start, stop;
+     }
+     /**

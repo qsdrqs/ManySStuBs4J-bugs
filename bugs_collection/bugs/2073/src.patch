@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereResourceEventImpl.java b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereResourceEventImpl.java
+index 998291d..c7f9112 100644
+--- a/buggy/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereResourceEventImpl.java
++++ b/fixed/modules/cpr/src/main/java/org/atmosphere/cpr/AtmosphereResourceEventImpl.java
+@@ -250,7 +250,7 @@ public class AtmosphereResourceEventImpl implements AtmosphereResourceEvent {
+                 "\n\t isCancelled=" + isCancelled +
+                 "\n\t isResumedOnTimeout=" + isResumedOnTimeout +
+                 "\n\t throwable=" + throwable +
+-                "\n\t resource=" + resource.uuid() +
++                "\n\t resource=" + resource != null ? resource.uuid() : "null" +
+                 '}';
+     }
+ }

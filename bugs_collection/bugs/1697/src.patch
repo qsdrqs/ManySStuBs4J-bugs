@@ -1,0 +1,13 @@
+diff --git a/buggy/providers/netty3/src/test/java/org/asynchttpclient/providers/netty3/NettyConnectionPoolTest.java b/fixed/providers/netty3/src/test/java/org/asynchttpclient/providers/netty3/NettyConnectionPoolTest.java
+index 42b6365..91e74c9 100644
+--- a/buggy/providers/netty3/src/test/java/org/asynchttpclient/providers/netty3/NettyConnectionPoolTest.java
++++ b/fixed/providers/netty3/src/test/java/org/asynchttpclient/providers/netty3/NettyConnectionPoolTest.java
+@@ -68,7 +68,7 @@ public class NettyConnectionPoolTest extends ConnectionPoolTest {
+             }
+             assertNotNull(exception);
+             assertNotNull(exception.getCause());
+-            assertEquals(exception.getCause().getMessage(), "Too many connections -1");
++            assertEquals(exception.getCause().getMessage(), "Pool is already closed");
+         } finally {
+             client.close();
+         }

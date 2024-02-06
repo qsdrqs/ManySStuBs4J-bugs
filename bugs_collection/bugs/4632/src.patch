@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TwitterStreamingEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TwitterStreamingEndpointBuilderFactory.java
+index c7cdd07..42f37fc 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TwitterStreamingEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TwitterStreamingEndpointBuilderFactory.java
+@@ -223,7 +223,7 @@ public interface TwitterStreamingEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.twitter.data.StreamingType</code> enum.
+      */
+-    static enum StreamingType {
++    enum StreamingType {
+         SAMPLE, FILTER, USER, UNKNOWN;
+     }
+ 
+@@ -231,7 +231,7 @@ public interface TwitterStreamingEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.twitter.data.EndpointType</code> enum.
+      */
+-    static enum EndpointType {
++    enum EndpointType {
+         POLLING, DIRECT, EVENT;
+     }
+     /**

@@ -1,0 +1,13 @@
+diff --git a/buggy/minicluster/src/main/java/alluxio/underfs/UnderFileSystemCluster.java b/fixed/minicluster/src/main/java/alluxio/underfs/UnderFileSystemCluster.java
+index a7638fd..deef6e2 100644
+--- a/buggy/minicluster/src/main/java/alluxio/underfs/UnderFileSystemCluster.java
++++ b/fixed/minicluster/src/main/java/alluxio/underfs/UnderFileSystemCluster.java
+@@ -71,7 +71,7 @@ public abstract class UnderFileSystemCluster {
+    */
+   public static synchronized UnderFileSystemCluster get(String baseDir, Configuration configuration)
+       throws IOException {
+-    if (sUnderFSCluster == null || sUnderFSCluster.mBaseDir != baseDir) {
++    if (sUnderFSCluster == null || !sUnderFSCluster.mBaseDir.equals(baseDir)) {
+       sUnderFSCluster = getUnderFilesystemCluster(baseDir, configuration);
+     }
+ 

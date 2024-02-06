@@ -1,0 +1,28 @@
+diff --git a/buggy/app/lib/notifications/NotificationTypeFactory.java b/fixed/app/lib/notifications/NotificationTypeFactory.java
+index b0735a4..96d2450 100644
+--- a/buggy/app/lib/notifications/NotificationTypeFactory.java
++++ b/fixed/app/lib/notifications/NotificationTypeFactory.java
+@@ -8,9 +8,6 @@ import org.graylog2.restclient.models.StreamService;
+ import javax.inject.Inject;
+ import java.io.IOException;
+ 
+-/**
+- * @author Dennis Oelkers <dennis@torch.sh>
+- */
+ public class NotificationTypeFactory {
+     private final StreamService streamService;
+ 
+@@ -49,10 +46,10 @@ public class NotificationTypeFactory {
+                 } catch (APIException | IOException e) {
+                     streamTitle = "(Stream title unavailable)";
+                 }
+-                long faultCount = Math.round((double)notification.getDetail("fault_count"));
++                long faultCount = (long) notification.getDetail("fault_count");
+                 return new StreamProcessingDisabledNotification(notification, streamTitle, faultCount);
+         }
+ 
+         throw new RuntimeException("No notification registered for " + notification.getType());
+     }
+-}
++}
+\ No newline at end of file

@@ -1,0 +1,12 @@
+diff --git a/buggy/src/main/java/org/bukkit/command/defaults/PardonIpCommand.java b/fixed/src/main/java/org/bukkit/command/defaults/PardonIpCommand.java
+index 83bd2cc..732161f 100644
+--- a/buggy/src/main/java/org/bukkit/command/defaults/PardonIpCommand.java
++++ b/fixed/src/main/java/org/bukkit/command/defaults/PardonIpCommand.java
+@@ -29,6 +29,6 @@ public class PardonIpCommand extends VanillaCommand {
+ 
+     @Override
+     public boolean matches(String input) {
+-        return input.startsWith("pardon-ip ");
++        return input.startsWith("pardon-ip ") || input.equalsIgnoreCase("pardon-ip");
+     }
+ }

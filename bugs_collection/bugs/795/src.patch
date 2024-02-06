@@ -1,0 +1,13 @@
+diff --git a/buggy/core/common/src/main/java/alluxio/collections/ConcurrentHashSet.java b/fixed/core/common/src/main/java/alluxio/collections/ConcurrentHashSet.java
+index 763b067..7bdd590 100644
+--- a/buggy/core/common/src/main/java/alluxio/collections/ConcurrentHashSet.java
++++ b/fixed/core/common/src/main/java/alluxio/collections/ConcurrentHashSet.java
+@@ -137,7 +137,7 @@ public class ConcurrentHashSet<T> extends AbstractSet<T> {
+   }
+ 
+   @Override
+-  public <T> T[] toArray(T[] a) {
++  public <E> E[] toArray(E[] a) {
+     return mMap.keySet().toArray(a);
+   }
+ 

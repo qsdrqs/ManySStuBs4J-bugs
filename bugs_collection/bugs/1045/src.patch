@@ -1,0 +1,13 @@
+diff --git a/buggy/core/client/src/main/java/alluxio/client/FileSystemTestUtils.java b/fixed/core/client/src/main/java/alluxio/client/FileSystemTestUtils.java
+index ea2453d..2aa5038 100644
+--- a/buggy/core/client/src/main/java/alluxio/client/FileSystemTestUtils.java
++++ b/fixed/core/client/src/main/java/alluxio/client/FileSystemTestUtils.java
+@@ -126,7 +126,7 @@ public final class FileSystemTestUtils {
+   public static List<String> listFiles(FileSystem fs, String path) throws IOException {
+     try {
+       List<URIStatus> statuses = fs.listStatus(new AlluxioURI(path));
+-      List<String> res = new ArrayList<String>();
++      List<String> res = new ArrayList<>();
+       for (URIStatus status : statuses) {
+         res.add(status.getPath());
+         if (status.isFolder()) {

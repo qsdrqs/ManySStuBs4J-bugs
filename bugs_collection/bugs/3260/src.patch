@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/alibaba/druid/bvt/pool/basic/TestDataSourceBasic2.java b/fixed/src/test/java/com/alibaba/druid/bvt/pool/basic/TestDataSourceBasic2.java
+index feea42c..43bffb3 100644
+--- a/buggy/src/test/java/com/alibaba/druid/bvt/pool/basic/TestDataSourceBasic2.java
++++ b/fixed/src/test/java/com/alibaba/druid/bvt/pool/basic/TestDataSourceBasic2.java
+@@ -57,7 +57,7 @@ public class TestDataSourceBasic2 extends TestCase {
+         dataSource.setConnectionInitSqls(Arrays.<Object> asList("SELECT 1", null, ""));
+         assertEquals(1, dataSource.getConnectionInitSqls().size());
+ 
+-        assertEquals(30 * 1000, dataSource.getTimeBetweenConnectErrorMillis());
++        assertEquals(500, dataSource.getTimeBetweenConnectErrorMillis());
+         assertEquals(234, dataSource.getMaxOpenPreparedStatements());
+         assertEquals(300, dataSource.getRemoveAbandonedTimeout());
+         dataSource.setRemoveAbandonedTimeout(400);

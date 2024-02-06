@@ -1,0 +1,13 @@
+diff --git a/buggy/core/server/src/main/java/alluxio/web/WebInterfaceBrowseLogsServlet.java b/fixed/core/server/src/main/java/alluxio/web/WebInterfaceBrowseLogsServlet.java
+index fdbd0e8..d48824d 100644
+--- a/buggy/core/server/src/main/java/alluxio/web/WebInterfaceBrowseLogsServlet.java
++++ b/fixed/core/server/src/main/java/alluxio/web/WebInterfaceBrowseLogsServlet.java
+@@ -122,7 +122,7 @@ public final class WebInterfaceBrowseLogsServlet extends HttpServlet {
+     request.setAttribute("downloadLogFile", 1);
+     request.setAttribute("baseUrl", "./browseLogs");
+     request.setAttribute("currentPath", "");
+-    request.setAttribute("viewLog", true);
++    request.setAttribute("showPermissions", false);
+ 
+     String logsPath = mConfiguration.get(Constants.LOGS_DIR);
+     File logsDir = new File(logsPath);

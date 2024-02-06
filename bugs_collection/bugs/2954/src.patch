@@ -1,0 +1,17 @@
+diff --git a/buggy/src/main/java/org/graylog2/buffers/processors/OutputBufferProcessor.java b/fixed/src/main/java/org/graylog2/buffers/processors/OutputBufferProcessor.java
+index bd0369b..72731e6 100644
+--- a/buggy/src/main/java/org/graylog2/buffers/processors/OutputBufferProcessor.java
++++ b/fixed/src/main/java/org/graylog2/buffers/processors/OutputBufferProcessor.java
+@@ -49,10 +49,10 @@ public class OutputBufferProcessor implements EventHandler<LogMessageEvent> {
+         LOG.debug("Processing message <" + msg.getId() + "> from OutputBuffer.");
+ 
+         String originalMsgId = msg.getId();
+-        for (Class outputType : server.getOutputs()) {
++        for (Class<? extends MessageOutput> outputType : server.getOutputs()) {
+             try {
+                 // Always create a new instance of this filter.
+-                MessageOutput output = (MessageOutput) outputType.newInstance();
++                MessageOutput output = outputType.newInstance();
+ 
+                 LOG.debug("Writing message <" + msg.getId() + "> to [" + outputType.getSimpleName() + "]");
+ 

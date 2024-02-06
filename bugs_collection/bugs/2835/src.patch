@@ -1,0 +1,13 @@
+diff --git a/buggy/graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java b/fixed/graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java
+index a06a336..855e8f2 100644
+--- a/buggy/graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java
++++ b/fixed/graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java
+@@ -130,7 +130,7 @@ public class UsersResource extends RestResource {
+         CreateRequest cr = getCreateRequest(body);
+ 
+         if (userService.load(cr.username) != null) {
+-            LOG.error("Cannot create user with user {}: username is already taken.", cr.username);
++            LOG.error("Cannot create user {}: username is already taken.", cr.username);
+             return status(BAD_REQUEST).build();
+         }
+ 

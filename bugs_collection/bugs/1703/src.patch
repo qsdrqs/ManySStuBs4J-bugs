@@ -1,0 +1,13 @@
+diff --git a/buggy/providers/netty/src/main/java/org/asynchttpclient/providers/netty/channel/pool/DefaultChannelPool.java b/fixed/providers/netty/src/main/java/org/asynchttpclient/providers/netty/channel/pool/DefaultChannelPool.java
+index 3e465a0..028db35 100644
+--- a/buggy/providers/netty/src/main/java/org/asynchttpclient/providers/netty/channel/pool/DefaultChannelPool.java
++++ b/fixed/providers/netty/src/main/java/org/asynchttpclient/providers/netty/channel/pool/DefaultChannelPool.java
+@@ -121,7 +121,7 @@ public final class DefaultChannelPool implements ChannelPool {
+             return false;
+ 
+         ChannelCreation creation = channel2Creation.get(channel);
+-        return creation == null || now - creation.creationTime >= maxConnectionTTL;
++        return creation != null && now - creation.creationTime >= maxConnectionTTL;
+     }
+ 
+     private boolean isRemotelyClosed(Channel channel) {

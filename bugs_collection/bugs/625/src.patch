@@ -1,0 +1,13 @@
+diff --git a/buggy/integration/mesos/src/main/java/alluxio/mesos/AlluxioMasterExecutor.java b/fixed/integration/mesos/src/main/java/alluxio/mesos/AlluxioMasterExecutor.java
+index 8198f70..62cca77 100644
+--- a/buggy/integration/mesos/src/main/java/alluxio/mesos/AlluxioMasterExecutor.java
++++ b/fixed/integration/mesos/src/main/java/alluxio/mesos/AlluxioMasterExecutor.java
+@@ -74,7 +74,7 @@ public class AlluxioMasterExecutor implements Executor {
+           Thread.currentThread().setContextClassLoader(
+               UnderFileSystemRegistry.class.getClassLoader());
+ 
+-          Format.format("master");
++          Format.format(Format.Mode.MASTER);
+           AlluxioMaster.main(new String[] {});
+ 
+           status =

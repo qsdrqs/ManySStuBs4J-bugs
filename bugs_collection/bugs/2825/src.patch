@@ -1,0 +1,13 @@
+diff --git a/buggy/app/controllers/api/DashboardsApiController.java b/fixed/app/controllers/api/DashboardsApiController.java
+index afaeb45..057fbab 100644
+--- a/buggy/app/controllers/api/DashboardsApiController.java
++++ b/fixed/app/controllers/api/DashboardsApiController.java
+@@ -136,7 +136,7 @@ public class DashboardsApiController extends AuthenticatedController {
+             DashboardWidget widget = dashboard.getWidget(widgetId);
+             DashboardWidgetValueResponse widgetValue = widget.getValue(api());
+ 
+-            Object resultValue = filterValuesByResolution(resolution, widgetValue.result);
++            Object resultValue = (widget instanceof SearchResultChartWidget) ? filterValuesByResolution(resolution, widgetValue.result) : widgetValue.result;
+             Map<String, Object> result = Maps.newHashMap();
+             result.put("result", resultValue);
+             result.put("took_ms", widgetValue.tookMs);

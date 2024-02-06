@@ -1,0 +1,13 @@
+diff --git a/buggy/core/server/master/src/main/java/alluxio/master/file/meta/TempInodePathForDescendant.java b/fixed/core/server/master/src/main/java/alluxio/master/file/meta/TempInodePathForDescendant.java
+index df00246..e4f6357 100644
+--- a/buggy/core/server/master/src/main/java/alluxio/master/file/meta/TempInodePathForDescendant.java
++++ b/fixed/core/server/master/src/main/java/alluxio/master/file/meta/TempInodePathForDescendant.java
+@@ -66,7 +66,7 @@ public final class TempInodePathForDescendant extends LockedInodePath {
+   }
+ 
+   @Override
+-  public synchronized Inode getInode() throws FileDoesNotExistException {
++  public synchronized Inode<?> getInode() throws FileDoesNotExistException {
+     if (mDescendantInode == null) {
+       return super.getInode();
+     }

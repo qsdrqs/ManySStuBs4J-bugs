@@ -1,0 +1,13 @@
+diff --git a/buggy/graylog2-bootstrap/src/main/java/org/graylog2/bootstrap/Bootstrap.java b/fixed/graylog2-bootstrap/src/main/java/org/graylog2/bootstrap/Bootstrap.java
+index ce4545b..8535077 100644
+--- a/buggy/graylog2-bootstrap/src/main/java/org/graylog2/bootstrap/Bootstrap.java
++++ b/fixed/graylog2-bootstrap/src/main/java/org/graylog2/bootstrap/Bootstrap.java
+@@ -159,7 +159,7 @@ public abstract class Bootstrap implements Runnable {
+             logLevel = Level.DEBUG;
+         }
+         org.apache.log4j.Logger.getRootLogger().setLevel(logLevel);
+-        org.apache.log4j.Logger.getLogger(Main.class.getPackage().getName()).setLevel(logLevel);
++        org.apache.log4j.Logger.getLogger("org.graylog2").setLevel(logLevel);
+ 
+         String pluginPath = getPluginPath(getConfigFile());
+ 

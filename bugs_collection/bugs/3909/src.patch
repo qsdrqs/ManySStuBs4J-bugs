@@ -1,0 +1,13 @@
+diff --git a/buggy/tool/src/org/antlr/v4/codegen/target/Python2Target.java b/fixed/tool/src/org/antlr/v4/codegen/target/Python2Target.java
+index efa5d2c..51ee868 100644
+--- a/buggy/tool/src/org/antlr/v4/codegen/target/Python2Target.java
++++ b/fixed/tool/src/org/antlr/v4/codegen/target/Python2Target.java
+@@ -61,7 +61,7 @@ public class Python2Target extends Target {
+ 		"memoryview",
+ 		"object", "oct", "open", "ord",
+ 		"pow", "print", "property",
+-		"range", "raw_input", "reduce", "reload", "repr", "reversed", "round",
++		"range", "raw_input", "reduce", "reload", "repr", "return", "reversed", "round",
+ 		"set", "setattr", "slice", "sorted", "staticmethod", "str", "sum", "super",
+ 		"tuple", "type",
+ 		"unichr", "unicode",

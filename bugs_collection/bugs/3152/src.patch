@@ -1,0 +1,13 @@
+diff --git a/buggy/parse/src/main/java/com/alibaba/otter/canal/parse/inbound/mysql/dbsync/LogEventConvert.java b/fixed/parse/src/main/java/com/alibaba/otter/canal/parse/inbound/mysql/dbsync/LogEventConvert.java
+index ded1343..5a18b9e 100644
+--- a/buggy/parse/src/main/java/com/alibaba/otter/canal/parse/inbound/mysql/dbsync/LogEventConvert.java
++++ b/fixed/parse/src/main/java/com/alibaba/otter/canal/parse/inbound/mysql/dbsync/LogEventConvert.java
+@@ -708,7 +708,7 @@ public class LogEventConvert extends AbstractCanalLifeCycle implements BinlogPar
+                 }
+             }
+ 
+-            buffer.nextValue(fieldMeta.getColumnName(), i, info.type, info.meta, isBinary);
++            buffer.nextValue(columnBuilder.getName(), i, info.type, info.meta, isBinary);
+             int javaType = buffer.getJavaType();
+             if (buffer.isNull()) {
+                 columnBuilder.setIsNull(true);

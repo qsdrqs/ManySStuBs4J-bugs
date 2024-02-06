@@ -1,0 +1,13 @@
+diff --git a/buggy/graylog2-server/src/main/java/org/graylog2/Configuration.java b/fixed/graylog2-server/src/main/java/org/graylog2/Configuration.java
+index c945a42..390b921 100644
+--- a/buggy/graylog2-server/src/main/java/org/graylog2/Configuration.java
++++ b/fixed/graylog2-server/src/main/java/org/graylog2/Configuration.java
+@@ -212,7 +212,7 @@ public class Configuration extends BaseConfiguration {
+     @Parameter(value = "versionchecks_connection_request_timeout", validator = PositiveIntegerValidator.class)
+     private int versionchecksConnectionRequestTimeOut = 10000;
+ 
+-    @Parameter(value = "monitoring_service")
++    @Parameter(value = "telemetry_service")
+     private boolean telemetryServiceEnabled = false;
+ 
+     @Parameter(value = "telemetry_service_token")

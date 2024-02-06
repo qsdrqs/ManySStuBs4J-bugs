@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/activiti-engine/src/test/java/org/activiti/engine/test/bpmn/event/message/MessageStartEventTest.java b/fixed/modules/activiti-engine/src/test/java/org/activiti/engine/test/bpmn/event/message/MessageStartEventTest.java
+index 49c505a..daa6445 100644
+--- a/buggy/modules/activiti-engine/src/test/java/org/activiti/engine/test/bpmn/event/message/MessageStartEventTest.java
++++ b/fixed/modules/activiti-engine/src/test/java/org/activiti/engine/test/bpmn/event/message/MessageStartEventTest.java
+@@ -216,7 +216,7 @@ public class MessageStartEventTest extends PluggableActivitiTestCase {
+       runtimeService.startProcessInstanceByKey("testProcess");
+       fail("exception expected");
+     }catch (ActivitiException e) {
+-      assertTrue("different exception expected", e.getMessage().contains("Cannot start process instance, initial is null"));
++      assertTrue("different exception expected, not " + e.getMessage(), e.getMessage().contains("has no default start activity"));
+     }
+     
+   }

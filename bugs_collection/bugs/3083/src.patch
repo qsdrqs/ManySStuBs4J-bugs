@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/main/java/fi/iki/elonen/NanoHTTPD.java b/fixed/core/src/main/java/fi/iki/elonen/NanoHTTPD.java
+index 32e6e87..7992650 100644
+--- a/buggy/core/src/main/java/fi/iki/elonen/NanoHTTPD.java
++++ b/fixed/core/src/main/java/fi/iki/elonen/NanoHTTPD.java
+@@ -1634,7 +1634,7 @@ public abstract class NanoHTTPD {
+ 
+     private final int myPort;
+ 
+-    private ServerSocket myServerSocket;
++    private volatile ServerSocket myServerSocket;
+ 
+     private SSLServerSocketFactory sslServerSocketFactory;
+ 

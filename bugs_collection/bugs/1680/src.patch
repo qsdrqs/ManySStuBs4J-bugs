@@ -1,0 +1,13 @@
+diff --git a/buggy/providers/netty4/src/main/java/org/asynchttpclient/netty/ws/NettyWebSocket.java b/fixed/providers/netty4/src/main/java/org/asynchttpclient/netty/ws/NettyWebSocket.java
+index dee8b61..32029e1 100644
+--- a/buggy/providers/netty4/src/main/java/org/asynchttpclient/netty/ws/NettyWebSocket.java
++++ b/fixed/providers/netty4/src/main/java/org/asynchttpclient/netty/ws/NettyWebSocket.java
+@@ -144,7 +144,7 @@ public class NettyWebSocket implements WebSocket {
+             try {
+                 listener.onError(t);
+             } catch (Throwable t2) {
+-                LOGGER.error("", t2);
++                LOGGER.error("WebSocketListener.onError crash", t2);
+             }
+         }
+     }

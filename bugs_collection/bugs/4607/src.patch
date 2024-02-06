@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ServerEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ServerEndpointBuilderFactory.java
+index e0cf118..53dab2f 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ServerEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ServerEndpointBuilderFactory.java
+@@ -1351,7 +1351,7 @@ public interface ServerEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.eclipse.neoscada.protocol.iec60870.ASDUAddressType</code> enum.
+      */
+-    static enum ASDUAddressType {
++    enum ASDUAddressType {
+         SIZE_1, SIZE_2;
+     }
+ 
+@@ -1359,7 +1359,7 @@ public interface ServerEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.eclipse.neoscada.protocol.iec60870.CauseOfTransmissionType</code> enum.
+      */
+-    static enum CauseOfTransmissionType {
++    enum CauseOfTransmissionType {
+         SIZE_1, SIZE_2;
+     }
+ 
+@@ -1367,7 +1367,7 @@ public interface ServerEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.eclipse.neoscada.protocol.iec60870.InformationObjectAddressType</code> enum.
+      */
+-    static enum InformationObjectAddressType {
++    enum InformationObjectAddressType {
+         SIZE_1, SIZE_2, SIZE_3;
+     }
+     /**

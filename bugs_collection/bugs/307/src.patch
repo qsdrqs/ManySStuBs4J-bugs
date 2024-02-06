@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/src/test/java/alluxio/client/cli/fsadmin/command/ReportCommandIntegrationTest.java b/fixed/tests/src/test/java/alluxio/client/cli/fsadmin/command/ReportCommandIntegrationTest.java
+index ac35e18..7cc4d0c 100644
+--- a/buggy/tests/src/test/java/alluxio/client/cli/fsadmin/command/ReportCommandIntegrationTest.java
++++ b/fixed/tests/src/test/java/alluxio/client/cli/fsadmin/command/ReportCommandIntegrationTest.java
+@@ -75,7 +75,7 @@ public final class ReportCommandIntegrationTest extends AbstractFsAdminShellTest
+     Assert.assertEquals(0, ret);
+     String output = mOutput.toString();
+     Assert.assertThat(output,
+-        CoreMatchers.containsString("Alluxio under filesystem information: "));
++        CoreMatchers.containsString("Alluxio under storage system information:"));
+     Assert.assertThat(output,
+         CoreMatchers.containsString("not read-only, not shared, properties={})"));
+   }

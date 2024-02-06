@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/activiti-engine/src/main/java/org/activiti/engine/impl/db/DbSqlSessionFactory.java b/fixed/modules/activiti-engine/src/main/java/org/activiti/engine/impl/db/DbSqlSessionFactory.java
+index 270aa6b..0736041 100644
+--- a/buggy/modules/activiti-engine/src/main/java/org/activiti/engine/impl/db/DbSqlSessionFactory.java
++++ b/fixed/modules/activiti-engine/src/main/java/org/activiti/engine/impl/db/DbSqlSessionFactory.java
+@@ -148,7 +148,7 @@ public class DbSqlSessionFactory implements SessionFactory {
+     } catch (Exception e) {
+       if (isMissingTablesException(e)) {
+         throw new ActivitiException(
+-                "no activiti tables in db.  set schema-strategy='create-drop' in activiti.cfg.xml for automatic schema creation", e);
++                "no activiti tables in db.  set databaseSchemaUpdate to 'true' or 'create-drop' in activiti.cfg.xml for automatic schema creation", e);
+       } else {
+         if (e instanceof RuntimeException) {
+           throw (RuntimeException) e;

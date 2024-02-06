@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GitEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GitEndpointBuilderFactory.java
+index 2a3804f..ad7497c 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GitEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GitEndpointBuilderFactory.java
+@@ -585,7 +585,7 @@ public interface GitEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.git.consumer.GitType</code> enum.
+      */
+-    public static enum GitType {
++    static enum GitType {
+         COMMIT, TAG, BRANCH;
+     }
+     /**

@@ -1,0 +1,13 @@
+diff --git a/buggy/integration/yarn/src/test/java/tachyon/yarn/ApplicationMasterTest.java b/fixed/integration/yarn/src/test/java/tachyon/yarn/ApplicationMasterTest.java
+index a66272e..005f315 100644
+--- a/buggy/integration/yarn/src/test/java/tachyon/yarn/ApplicationMasterTest.java
++++ b/fixed/integration/yarn/src/test/java/tachyon/yarn/ApplicationMasterTest.java
+@@ -185,7 +185,7 @@ public class ApplicationMasterTest {
+   public void stopTest() throws Exception {
+     mMaster.stop();
+     Mockito.verify(mRMClient).unregisterApplicationMaster(FinalApplicationStatus.SUCCEEDED, "", "");
+-    Mockito.verify(mRMClient).start();
++    Mockito.verify(mRMClient).stop();
+   }
+ 
+   /**

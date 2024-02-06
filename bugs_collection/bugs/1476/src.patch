@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/test/java/tachyon/master/LocalTachyonMaster.java b/fixed/core/src/test/java/tachyon/master/LocalTachyonMaster.java
+index 6f7417f..4a7ca10 100644
+--- a/buggy/core/src/test/java/tachyon/master/LocalTachyonMaster.java
++++ b/fixed/core/src/test/java/tachyon/master/LocalTachyonMaster.java
+@@ -91,7 +91,7 @@ public final class LocalTachyonMaster {
+     tachyonConf.set(Constants.MASTER_WEB_PORT, "0");
+ 
+     tachyonConf.set(Constants.MASTER_MIN_WORKER_THREADS, "1");
+-    tachyonConf.set(Constants.MASTER_MAX_WORKER_THREADS, "250");
++    tachyonConf.set(Constants.MASTER_MAX_WORKER_THREADS, "100");
+     
+     // If tests fail to connect they should fail early rather than using the default ridiculously high retries
+     tachyonConf.set(Constants.MASTER_RETRY_COUNT, "3");

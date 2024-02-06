@@ -1,0 +1,13 @@
+diff --git a/buggy/core/client/fs/src/main/java/alluxio/client/block/stream/BlockInStream.java b/fixed/core/client/fs/src/main/java/alluxio/client/block/stream/BlockInStream.java
+index 52abfaf..2379774 100644
+--- a/buggy/core/client/fs/src/main/java/alluxio/client/block/stream/BlockInStream.java
++++ b/fixed/core/client/fs/src/main/java/alluxio/client/block/stream/BlockInStream.java
+@@ -112,7 +112,7 @@ public class BlockInStream extends InputStream implements BoundedStream, Seekabl
+     }
+ 
+     boolean shortCircuit = Configuration.getBoolean(PropertyKey.USER_SHORT_CIRCUIT_ENABLED);
+-    boolean sourceSupportsDomainSocket = !NettyUtils.isDomainSocketSupported(dataSource);
++    boolean sourceSupportsDomainSocket = NettyUtils.isDomainSocketSupported(dataSource);
+     boolean sourceIsLocal = dataSourceType == BlockInStreamSource.LOCAL;
+ 
+     // Short circuit

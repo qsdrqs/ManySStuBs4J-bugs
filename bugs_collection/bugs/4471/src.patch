@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DrillEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DrillEndpointBuilderFactory.java
+index 683fabe..e16c563 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DrillEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DrillEndpointBuilderFactory.java
+@@ -169,7 +169,7 @@ public interface DrillEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.drill.DrillConnectionMode</code> enum.
+      */
+-    static enum DrillConnectionMode {
++    enum DrillConnectionMode {
+         ZK, DRILLBIT;
+     }
+     /**

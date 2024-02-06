@@ -1,0 +1,13 @@
+diff --git a/buggy/graylog2-server/src/main/java/org/graylog2/CommandLineArguments.java b/fixed/graylog2-server/src/main/java/org/graylog2/CommandLineArguments.java
+index 961ad6b..7ee6f1f 100644
+--- a/buggy/graylog2-server/src/main/java/org/graylog2/CommandLineArguments.java
++++ b/fixed/graylog2-server/src/main/java/org/graylog2/CommandLineArguments.java
+@@ -42,7 +42,7 @@ public class CommandLineArguments {
+     private String pluginShortname;
+     
+     @Parameter(names = {"-v", "--plugin-version"}, description = "Install plugin with this version")
+-    private String pluginVersion = Core.GRAYLOG2_VERSION;
++    private String pluginVersion = Core.GRAYLOG2_VERSION.toString();
+ 
+     @Parameter(names = {"-m", "--force-plugin"}, description = "Force plugin installation even if this version of graylog2-server is not officially supported.")
+     private boolean forcePlugin = false;

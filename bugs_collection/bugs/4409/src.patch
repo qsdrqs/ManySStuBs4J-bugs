@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-activemq/src/main/java/org/apache/camel/component/activemq/ActiveMQConfiguration.java b/fixed/components/camel-activemq/src/main/java/org/apache/camel/component/activemq/ActiveMQConfiguration.java
+index 86af7a0..f716278 100644
+--- a/buggy/components/camel-activemq/src/main/java/org/apache/camel/component/activemq/ActiveMQConfiguration.java
++++ b/fixed/components/camel-activemq/src/main/java/org/apache/camel/component/activemq/ActiveMQConfiguration.java
+@@ -134,7 +134,7 @@ public class ActiveMQConfiguration extends JmsConfiguration {
+      */
+     @Override
+     protected PlatformTransactionManager createTransactionManager() {
+-        JmsTransactionManager answer = new JmsTransactionManager(getConnectionFactory());
++        JmsTransactionManager answer = new JmsTransactionManager(getOrCreateConnectionFactory());
+         answer.afterPropertiesSet();
+         return answer;
+     }

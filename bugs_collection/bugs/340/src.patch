@@ -1,0 +1,14 @@
+diff --git a/buggy/core/common/src/main/java/alluxio/time/TimeContext.java b/fixed/core/common/src/main/java/alluxio/time/TimeContext.java
+index 107c44e..5cca045 100644
+--- a/buggy/core/common/src/main/java/alluxio/time/TimeContext.java
++++ b/fixed/core/common/src/main/java/alluxio/time/TimeContext.java
+@@ -17,7 +17,8 @@ import java.time.Clock;
+  * Context for managing time.
+  */
+ public final class TimeContext {
+-  public static final TimeContext SYSTEM = new TimeContext(Clock.systemUTC(), new ThreadSleeper());
++  public static final TimeContext SYSTEM =
++      new TimeContext(Clock.systemUTC(), ThreadSleeper.INSTANCE);
+ 
+   private final Clock mClock;
+   private final Sleeper mSleeper;

@@ -1,0 +1,22 @@
+diff --git a/buggy/servers/src/main/java/tachyon/worker/nio/NIODataServer.java b/fixed/servers/src/main/java/tachyon/worker/nio/NIODataServer.java
+index 12340df..dce75f3 100644
+--- a/buggy/servers/src/main/java/tachyon/worker/nio/NIODataServer.java
++++ b/fixed/servers/src/main/java/tachyon/worker/nio/NIODataServer.java
+@@ -157,7 +157,7 @@ public final class NIODataServer implements Runnable, DataServer {
+         socketSelector.close();
+       } catch (IOException ex) {
+         // ignore, we want the other exception
+-        LOG.warn("Unable to close socket selector", ex);
++        LOG.warn("Unable to close socket selector. Exception: " + ex.getMessage());
+       }
+       throw e;
+     } catch (RuntimeException e) {
+@@ -167,7 +167,7 @@ public final class NIODataServer implements Runnable, DataServer {
+         socketSelector.close();
+       } catch (IOException ex) {
+         // ignore, we want the other exception
+-        LOG.warn("Unable to close socket selector", ex);
++        LOG.warn("Unable to close socket selector. Exception:" +  ex.getMessage());
+       }
+       throw e;
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/core/common/src/main/java/alluxio/network/protocol/RPCBlockReadRequest.java b/fixed/core/common/src/main/java/alluxio/network/protocol/RPCBlockReadRequest.java
+index 2a1f2de..bfd7c6d 100644
+--- a/buggy/core/common/src/main/java/alluxio/network/protocol/RPCBlockReadRequest.java
++++ b/fixed/core/common/src/main/java/alluxio/network/protocol/RPCBlockReadRequest.java
+@@ -91,7 +91,7 @@ public final class RPCBlockReadRequest extends RPCRequest {
+   @Override
+   public String toString() {
+     return Objects.toStringHelper(this).add("blockId", mBlockId).add("offset", mOffset)
+-        .add("lenght", mLength).add("lockId", mLockId).add("sessionId", mSessionId).toString();
++        .add("length", mLength).add("lockId", mLockId).add("sessionId", mSessionId).toString();
+   }
+ 
+   /**

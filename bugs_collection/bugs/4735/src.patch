@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleDriveEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleDriveEndpointBuilderFactory.java
+index a4ffd86..8c17098 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleDriveEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleDriveEndpointBuilderFactory.java
+@@ -767,7 +767,7 @@ public interface GoogleDriveEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.google.drive.internal.GoogleDriveApiName</code> enum.
+      */
+-    public static enum GoogleDriveApiName {
++    static enum GoogleDriveApiName {
+         DRIVE_ABOUT, DRIVE_APPS, DRIVE_CHANGES, DRIVE_CHANNELS, DRIVE_CHILDREN, DRIVE_COMMENTS, DRIVE_FILES, DRIVE_PARENTS, DRIVE_PERMISSIONS, DRIVE_PROPERTIES, DRIVE_REALTIME, DRIVE_REPLIES, DRIVE_REVISIONS;
+     }
+     /**

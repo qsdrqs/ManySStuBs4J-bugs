@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/bukkit/util/noise/NoiseGenerator.java b/fixed/src/main/java/org/bukkit/util/noise/NoiseGenerator.java
+index dd5b0b4..10a46b0 100644
+--- a/buggy/src/main/java/org/bukkit/util/noise/NoiseGenerator.java
++++ b/fixed/src/main/java/org/bukkit/util/noise/NoiseGenerator.java
+@@ -17,7 +17,7 @@ public abstract class NoiseGenerator {
+      * @return Floored value
+      */
+     public static int floor(double x) {
+-        return (int)Math.floor(x);
++        return x >= 0 ? (int) x : (int) x - 1;
+     }
+ 
+     protected static double fade(double x) {

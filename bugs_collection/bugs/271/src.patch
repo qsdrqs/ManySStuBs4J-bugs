@@ -1,0 +1,13 @@
+diff --git a/buggy/core/server/master/src/main/java/alluxio/master/file/DefaultFileSystemMaster.java b/fixed/core/server/master/src/main/java/alluxio/master/file/DefaultFileSystemMaster.java
+index b31d163..15b4500 100644
+--- a/buggy/core/server/master/src/main/java/alluxio/master/file/DefaultFileSystemMaster.java
++++ b/fixed/core/server/master/src/main/java/alluxio/master/file/DefaultFileSystemMaster.java
+@@ -560,7 +560,7 @@ public final class DefaultFileSystemMaster extends CoreMaster implements FileSys
+         UnderFileSystemConfiguration ufsConf =
+             UnderFileSystemConfiguration.defaults(ServerConfiguration.global())
+             .createMountSpecificConf(mountInfo.getOptions().getPropertiesMap());
+-        mUfsManager.addMount(mountInfo.getMountId(), new AlluxioURI(key), ufsConf);
++        mUfsManager.addMount(mountInfo.getMountId(), mountInfo.getUfsUri(), ufsConf);
+       }
+       // Startup Checks and Periodic Threads.
+ 

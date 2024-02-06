@@ -1,0 +1,22 @@
+diff --git a/buggy/app/controllers/api/DashboardsApiController.java b/fixed/app/controllers/api/DashboardsApiController.java
+index 8a39e13..e2920ab 100644
+--- a/buggy/app/controllers/api/DashboardsApiController.java
++++ b/fixed/app/controllers/api/DashboardsApiController.java
+@@ -64,7 +64,7 @@ public class DashboardsApiController extends AuthenticatedController {
+ 
+                 dashboard.put("title", d.getTitle());
+                 dashboard.put("description", d.getDescription());
+-                dashboard.put("created_by", d.getCreatorUser().getName());
++                dashboard.put("created_by", (d.getCreatorUser() == null) ? null : d.getCreatorUser().getName());
+ 
+                 result.put(d.getId(), dashboard);
+             }
+@@ -86,7 +86,7 @@ public class DashboardsApiController extends AuthenticatedController {
+ 
+                 dashboard.put("title", d.getTitle());
+                 dashboard.put("description", d.getDescription());
+-                dashboard.put("created_by", d.getCreatorUser().getName());
++                dashboard.put("created_by", (d.getCreatorUser() == null) ? null : d.getCreatorUser().getName());
+ 
+                 result.put(d.getId(), dashboard);
+             }

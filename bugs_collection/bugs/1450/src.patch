@@ -1,0 +1,13 @@
+diff --git a/buggy/servers/src/main/java/tachyon/worker/TachyonWorker.java b/fixed/servers/src/main/java/tachyon/worker/TachyonWorker.java
+index 506f806..9e531f2 100644
+--- a/buggy/servers/src/main/java/tachyon/worker/TachyonWorker.java
++++ b/fixed/servers/src/main/java/tachyon/worker/TachyonWorker.java
+@@ -213,7 +213,7 @@ public class TachyonWorker implements Runnable {
+     try {
+       connectToUFS();
+     } catch (IOException ioe) {
+-      LOG.error(ioe.getMessage(), ioe);
++      LOG.error("Worker @ " + workerAddress + " failed to connect to the under file system", ioe);
+       throw Throwables.propagate(ioe);
+     }
+ 

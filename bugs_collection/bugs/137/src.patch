@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/activiti-rest/src/test/java/org/activiti/rest/service/api/runtime/TaskQueryResourceTest.java b/fixed/modules/activiti-rest/src/test/java/org/activiti/rest/service/api/runtime/TaskQueryResourceTest.java
+index 79d387e..f80bda7 100644
+--- a/buggy/modules/activiti-rest/src/test/java/org/activiti/rest/service/api/runtime/TaskQueryResourceTest.java
++++ b/fixed/modules/activiti-rest/src/test/java/org/activiti/rest/service/api/runtime/TaskQueryResourceTest.java
+@@ -164,7 +164,7 @@ public class TaskQueryResourceTest extends BaseRestTestCase {
+       ArrayNode arrayNode =  requestNode.arrayNode();
+       
+       arrayNode.add("sales");
+-      arrayNode.add("somethingElse");
++      arrayNode.add("someOtherGroup");
+       
+       requestNode.put("candidateGroupIn", arrayNode);
+       assertResultsPresentInDataResponse(url, requestNode, processTask.getId());

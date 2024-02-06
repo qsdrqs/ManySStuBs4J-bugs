@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/alibaba/druid/VERSION.java b/fixed/src/main/java/com/alibaba/druid/VERSION.java
+index 0588114..d68f267 100644
+--- a/buggy/src/main/java/com/alibaba/druid/VERSION.java
++++ b/fixed/src/main/java/com/alibaba/druid/VERSION.java
+@@ -19,7 +19,7 @@ public final class VERSION {
+ 
+     public final static int MajorVersion    = 1;
+     public final static int MinorVersion    = 1;
+-    public final static int RevisionVersion = 2;
++    public final static int RevisionVersion = 3;
+ 
+     public static String getVersionNumber() {
+         return VERSION.MajorVersion + "." + VERSION.MinorVersion + "." + VERSION.RevisionVersion;

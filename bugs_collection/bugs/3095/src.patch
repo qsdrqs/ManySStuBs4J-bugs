@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/main/java/fi/iki/elonen/NanoHTTPD.java b/fixed/core/src/main/java/fi/iki/elonen/NanoHTTPD.java
+index 21c0d1c..5a0e896 100644
+--- a/buggy/core/src/main/java/fi/iki/elonen/NanoHTTPD.java
++++ b/fixed/core/src/main/java/fi/iki/elonen/NanoHTTPD.java
+@@ -172,7 +172,7 @@ public abstract class NanoHTTPD {
+             public void run() {
+                 do {
+                     try {
+-                        f final Socket finalAccept = myServerSocket.accept();
++                        final Socket finalAccept = myServerSocket.accept();
+                         registerConnection(finalAccept);
+                         finalAccept.setSoTimeout(SOCKET_READ_TIMEOUT);
+                         final InputStream inputStream = finalAccept.getInputStream();
