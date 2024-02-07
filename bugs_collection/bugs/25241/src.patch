@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/redis/clients/jedis/JedisCluster.java b/fixed/src/main/java/redis/clients/jedis/JedisCluster.java
+index 75652547b..ba73a35d3 100644
+--- a/buggy/src/main/java/redis/clients/jedis/JedisCluster.java
++++ b/fixed/src/main/java/redis/clients/jedis/JedisCluster.java
+@@ -1228,7 +1228,7 @@ public class JedisCluster extends BinaryJedisCluster implements JedisClusterComm
+       public List<String> execute(Jedis connection) {
+         return connection.mget(keys);
+       }
+-    }.run(keys.length - 1, keys);
++    }.run(keys.length, keys);
+   }
+ 
+   @Override

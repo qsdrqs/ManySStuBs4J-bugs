@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/redis/clients/jedis/JedisClusterCommand.java b/fixed/src/main/java/redis/clients/jedis/JedisClusterCommand.java
+index ca6eb76ba..231a5ab3a 100644
+--- a/buggy/src/main/java/redis/clients/jedis/JedisClusterCommand.java
++++ b/fixed/src/main/java/redis/clients/jedis/JedisClusterCommand.java
+@@ -72,7 +72,7 @@ public abstract class JedisClusterCommand<T> {
+ 	    connection = null;
+ 
+ 	    // retry with random connection
+-	    return runWithRetries(key, redirections--, true, asking);
++	    return runWithRetries(key, redirections - 1, true, asking);
+ 	} catch (JedisRedirectionException jre) {
+ 	    if (jre instanceof JedisAskDataException) {
+ 		asking = true;

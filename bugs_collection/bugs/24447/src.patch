@@ -1,0 +1,13 @@
+diff --git a/buggy/messaging-activemq/src/main/java/org/wildfly/extension/messaging/activemq/ServerAdd.java b/fixed/messaging-activemq/src/main/java/org/wildfly/extension/messaging/activemq/ServerAdd.java
+index 11070423f..bfdde3c68 100644
+--- a/buggy/messaging-activemq/src/main/java/org/wildfly/extension/messaging/activemq/ServerAdd.java
++++ b/fixed/messaging-activemq/src/main/java/org/wildfly/extension/messaging/activemq/ServerAdd.java
+@@ -616,7 +616,7 @@ class ServerAdd extends AbstractAddStepHandler {
+             String name = bridgeConfiguration.getName();
+             InjectedValue<ExceptionSupplier<CredentialSource, Exception>> injector = amqService.getBridgeCredentialSourceSupplierInjector(name);
+ 
+-            String[] modelFilter = {name};
++            String[] modelFilter = { CommonAttributes.BRIDGE, name };
+ 
+             ModelNode filteredModelNode = model;
+             if (modelFilter != null && modelFilter.length > 0) {

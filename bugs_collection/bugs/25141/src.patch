@@ -1,0 +1,13 @@
+diff --git a/buggy/ejb3/src/main/java/org/jboss/as/ejb3/deployment/processors/EjbResourceInjectionAnnotationProcessor.java b/fixed/ejb3/src/main/java/org/jboss/as/ejb3/deployment/processors/EjbResourceInjectionAnnotationProcessor.java
+index 5faaac822..b36df788d 100644
+--- a/buggy/ejb3/src/main/java/org/jboss/as/ejb3/deployment/processors/EjbResourceInjectionAnnotationProcessor.java
++++ b/fixed/ejb3/src/main/java/org/jboss/as/ejb3/deployment/processors/EjbResourceInjectionAnnotationProcessor.java
+@@ -101,7 +101,7 @@ public class EjbResourceInjectionAnnotationProcessor implements DeploymentUnitPr
+         final InjectionTarget targetDescription = new MethodInjectionTarget(methodInfo.declaringClass().name().toString(), methodName, injectionType);
+ 
+         final String localContextName = isEmpty(annotation.name()) ? methodInfo.declaringClass().name().toString() + "/" + methodName.substring(3, 4).toLowerCase() + methodName.substring(4) : annotation.name();
+-        process(eeModuleDescription, targetDescription.getClassName(), annotation.beanName(), annotation.lookup(), methodInfo.declaringClass(), targetDescription, localContextName);
++        process(eeModuleDescription, targetDescription.getDeclaredValueClassName(), annotation.beanName(), annotation.lookup(), methodInfo.declaringClass(), targetDescription, localContextName);
+     }
+ 
+     private void processClass(final EEModuleDescription eeModuleDescription, final EJBResourceWrapper annotation, final ClassInfo classInfo) throws DeploymentUnitProcessingException {

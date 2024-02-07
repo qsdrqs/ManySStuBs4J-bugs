@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/AbstractJavaCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/AbstractJavaCodegen.java
+index 507832855..4565eafd4 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/AbstractJavaCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/AbstractJavaCodegen.java
+@@ -351,7 +351,7 @@ public abstract class AbstractJavaCodegen extends DefaultCodegen implements Code
+         name = sanitizeName(name); // FIXME: a parameter should not be assigned. Also declare the methods parameters as 'final'.
+ 
+         if ("class".equals(name.toLowerCase())) {
+-            return "PropertyClass";
++            return "propertyClass";
+         }
+ 
+         if("_".equals(name)) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/spec/src/main/java/org/jboss/as/test/spec/ejb3/mdb/ReplyingMDB.java b/fixed/testsuite/spec/src/main/java/org/jboss/as/test/spec/ejb3/mdb/ReplyingMDB.java
+index c76136ade..9eca48b6b 100644
+--- a/buggy/testsuite/spec/src/main/java/org/jboss/as/test/spec/ejb3/mdb/ReplyingMDB.java
++++ b/fixed/testsuite/spec/src/main/java/org/jboss/as/test/spec/ejb3/mdb/ReplyingMDB.java
+@@ -40,7 +40,7 @@ import javax.jms.TextMessage;
+  * @author <a href="mailto:cdewolf@redhat.com">Carlo de Wolf</a>
+  */
+ @MessageDriven(activationConfig = {
+-        @ActivationConfigProperty(propertyName = "destination", propertyValue = "java:jboss/queue/test")
++        @ActivationConfigProperty(propertyName = "destination", propertyValue = "java:jboss/jms/queue/test")
+ })
+ public class ReplyingMDB implements MessageListener {
+     @Resource(lookup = "java:/JmsXA")

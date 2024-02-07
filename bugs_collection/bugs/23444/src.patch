@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/pipeline/AbstractInputStreamAnnotationCreator.java b/fixed/src/edu/stanford/nlp/pipeline/AbstractInputStreamAnnotationCreator.java
+index ca4bed37c..ed97ea3e5 100644
+--- a/buggy/src/edu/stanford/nlp/pipeline/AbstractInputStreamAnnotationCreator.java
++++ b/fixed/src/edu/stanford/nlp/pipeline/AbstractInputStreamAnnotationCreator.java
+@@ -27,7 +27,7 @@ public abstract class AbstractInputStreamAnnotationCreator implements Annotation
+ 
+   @Override
+   public Annotation createFromFile(File file) throws IOException {
+-    return createFromFile(file.getAbsoluteFile());
++    return createFromFile(file.getAbsolutePath());
+   }
+ 
+   @Override

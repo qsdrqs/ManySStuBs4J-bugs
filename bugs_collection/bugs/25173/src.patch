@@ -1,0 +1,13 @@
+diff --git a/buggy/host-controller/src/main/java/org/jboss/as/host/controller/HostControllerBootstrap.java b/fixed/host-controller/src/main/java/org/jboss/as/host/controller/HostControllerBootstrap.java
+index e360a39d5..db7589609 100644
+--- a/buggy/host-controller/src/main/java/org/jboss/as/host/controller/HostControllerBootstrap.java
++++ b/fixed/host-controller/src/main/java/org/jboss/as/host/controller/HostControllerBootstrap.java
+@@ -247,7 +247,7 @@ public class HostControllerBootstrap {
+             final boolean backupDomainFiles, final boolean useCachedDc) {
+ 
+         final FileRepository fileRepository = new LocalFileRepository(environment);
+-        boolean slave = !host.get(DOMAIN_CONTROLLER, LOCAL).isDefined();
++        boolean slave = !(host.get(DOMAIN_CONTROLLER).hasDefined(LOCAL));
+         if (slave) {
+             installRemoteDomainControllerConnection(environment, host, serviceTarget, fileRepository);
+         }

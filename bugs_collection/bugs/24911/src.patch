@@ -1,0 +1,13 @@
+diff --git a/buggy/modcluster/src/main/java/org/jboss/as/modcluster/ModClusterSubsystemDescriptions.java b/fixed/modcluster/src/main/java/org/jboss/as/modcluster/ModClusterSubsystemDescriptions.java
+index f0b9bd15c..312885eb1 100644
+--- a/buggy/modcluster/src/main/java/org/jboss/as/modcluster/ModClusterSubsystemDescriptions.java
++++ b/fixed/modcluster/src/main/java/org/jboss/as/modcluster/ModClusterSubsystemDescriptions.java
+@@ -415,7 +415,7 @@ class ModClusterSubsystemDescriptions {
+         node.get(type, CommonAttributes.STICKY_SESSION, TYPE).set(ModelType.BOOLEAN);
+         node.get(type, CommonAttributes.STICKY_SESSION, DESCRIPTION).set(bundle.getString("modcluster.configuration.sticky-session"));
+         node.get(type, CommonAttributes.STICKY_SESSION, REQUIRED).set(false);
+-        node.get(type, CommonAttributes.STICKY_SESSION, DEFAULT).set(1);
++        node.get(type, CommonAttributes.STICKY_SESSION, DEFAULT).set(true);
+ 
+         node.get(type, CommonAttributes.STICKY_SESSION_REMOVE, TYPE).set(ModelType.BOOLEAN);
+         node.get(type, CommonAttributes.STICKY_SESSION_REMOVE, DESCRIPTION).set(bundle.getString("modcluster.configuration.sticky-session-remove"));

@@ -1,0 +1,18 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/AbstractGenerator.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/AbstractGenerator.java
+index 54a2f7efa..ac3771536 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/AbstractGenerator.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/AbstractGenerator.java
+@@ -60,10 +60,10 @@ public abstract class AbstractGenerator {
+         throw new RuntimeException("can't load template " + name);
+     }
+ 
+-    private String getCPResourcePath(String name) {
++    public String getCPResourcePath(String name) {
+         if (!"/".equals(File.separator)) {
+             return name.replaceAll(Pattern.quote(File.separator), "/");
+         }
+         return name;
+     }
+-}
+\ No newline at end of file
++}

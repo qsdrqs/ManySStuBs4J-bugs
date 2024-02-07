@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/thinkaurelius/titan/graphdb/relations/persist/PersistSimpleProperty.java b/fixed/src/main/java/com/thinkaurelius/titan/graphdb/relations/persist/PersistSimpleProperty.java
+index 6b1472946..bfb262449 100644
+--- a/buggy/src/main/java/com/thinkaurelius/titan/graphdb/relations/persist/PersistSimpleProperty.java
++++ b/fixed/src/main/java/com/thinkaurelius/titan/graphdb/relations/persist/PersistSimpleProperty.java
+@@ -40,7 +40,7 @@ public class PersistSimpleProperty extends SimpleProperty {
+ 	}
+ 	
+ 	@Override
+-	public void forceDelete() {
++	public synchronized void forceDelete() {
+ 		super.forceDelete();
+ 		entity.remove();
+ 	}

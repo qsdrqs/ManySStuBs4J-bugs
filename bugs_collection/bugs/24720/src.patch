@@ -1,0 +1,13 @@
+diff --git a/buggy/controller/src/main/java/org/jboss/as/controller/AttributeDefinition.java b/fixed/controller/src/main/java/org/jboss/as/controller/AttributeDefinition.java
+index 079af05ef..ea91d2be3 100644
+--- a/buggy/controller/src/main/java/org/jboss/as/controller/AttributeDefinition.java
++++ b/fixed/controller/src/main/java/org/jboss/as/controller/AttributeDefinition.java
+@@ -102,7 +102,7 @@ public abstract class AttributeDefinition {
+         }
+         if (flags == null || flags.length == 0) {
+             this.flags = EnumSet.noneOf(AttributeAccess.Flag.class);
+-        } else if (flags.length == 0) {
++        } else if (flags.length == 1) {
+             this.flags = EnumSet.of(flags[0]);
+         } else {
+             this.flags = EnumSet.of(flags[0], flags);

@@ -1,0 +1,13 @@
+diff --git a/buggy/controller/src/main/java/org/jboss/as/controller/remote/ModelControllerOperationHandlerService.java b/fixed/controller/src/main/java/org/jboss/as/controller/remote/ModelControllerOperationHandlerService.java
+index f297e58fc..a998863c1 100644
+--- a/buggy/controller/src/main/java/org/jboss/as/controller/remote/ModelControllerOperationHandlerService.java
++++ b/fixed/controller/src/main/java/org/jboss/as/controller/remote/ModelControllerOperationHandlerService.java
+@@ -39,7 +39,7 @@ import org.jboss.msc.value.InjectedValue;
+  */
+ public class ModelControllerOperationHandlerService implements Service<ModelControllerOperationHandler>{
+ 
+-    private static final Logger log = Logger.getLogger("org.jboss.server.management");
++    protected static final Logger log = Logger.getLogger("org.jboss.server.management");
+ 
+     public static final ServiceName OPERATION_HANDLER_NAME_SUFFIX = ServiceName.of("operation", "handler");
+ 

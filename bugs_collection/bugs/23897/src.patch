@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/RubyClientCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/RubyClientCodegen.java
+index 5c154d8d3..a557872c8 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/RubyClientCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/RubyClientCodegen.java
+@@ -316,7 +316,7 @@ public class RubyClientCodegen extends DefaultCodegen implements CodegenConfig {
+         if (type == null) {
+             return null;
+         }
+-        return type;
++        return toModelName(type);
+     }
+ 
+     @Override

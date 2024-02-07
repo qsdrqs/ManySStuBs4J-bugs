@@ -1,0 +1,13 @@
+diff --git a/buggy/controller/src/main/java/org/jboss/as/controller/operations/global/ReadResourceHandler.java b/fixed/controller/src/main/java/org/jboss/as/controller/operations/global/ReadResourceHandler.java
+index a49414342..3d2c0a22f 100644
+--- a/buggy/controller/src/main/java/org/jboss/as/controller/operations/global/ReadResourceHandler.java
++++ b/fixed/controller/src/main/java/org/jboss/as/controller/operations/global/ReadResourceHandler.java
+@@ -265,7 +265,7 @@ public class ReadResourceHandler extends GlobalOperationHandlers.AbstractMultiTa
+                         // But filter inaccessible children
+                         AuthorizationResult ar = context.authorize(rrOp, EnumSet.of(Action.ActionEffect.ADDRESS));
+                         if (ar.getDecision() == AuthorizationResult.Decision.DENY) {
+-                            filteredData.addAccessRestrictedResource(absoluteChildAddr);
++                            localFilteredData.addAccessRestrictedResource(absoluteChildAddr);
+                         } else {
+                             ModelNode childMap = directChildren.get(childType);
+                             if (childMap == null) {

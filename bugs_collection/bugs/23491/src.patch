@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/CodegenOperation.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/CodegenOperation.java
+index 71597b6fc..d62aca3b5 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/CodegenOperation.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/CodegenOperation.java
+@@ -111,7 +111,7 @@ public class CodegenOperation {
+      * @return true if act as Restful index method, false otherwise
+      */
+     public boolean isRestfulIndex() {
+-        return "GET".equals(httpMethod) && "".equals(pathWithoutBaseName());
++        return "GET".equalsIgnoreCase(httpMethod) && "".equals(pathWithoutBaseName());
+     }
+ 
+     /**

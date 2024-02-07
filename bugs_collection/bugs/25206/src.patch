@@ -1,0 +1,13 @@
+diff --git a/buggy/domain/src/main/java/org/jboss/as/model/DeploymentUnitKey.java b/fixed/domain/src/main/java/org/jboss/as/model/DeploymentUnitKey.java
+index 0eae3f543..a8529a6d4 100644
+--- a/buggy/domain/src/main/java/org/jboss/as/model/DeploymentUnitKey.java
++++ b/fixed/domain/src/main/java/org/jboss/as/model/DeploymentUnitKey.java
+@@ -30,7 +30,7 @@ import java.util.Arrays;
+  * 
+  * @author Brian Stansberry
+  */
+-public class \DeploymentUnitKey  implements Serializable {
++public class DeploymentUnitKey  implements Serializable {
+     
+     private static final long serialVersionUID = 8171593872559737006L;
+     private final String name;

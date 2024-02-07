@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/org/jboss/as/server/ServerEnvironment.java b/fixed/server/src/main/java/org/jboss/as/server/ServerEnvironment.java
+index 0c462ea6c..109fc078d 100644
+--- a/buggy/server/src/main/java/org/jboss/as/server/ServerEnvironment.java
++++ b/fixed/server/src/main/java/org/jboss/as/server/ServerEnvironment.java
+@@ -46,7 +46,7 @@ public class ServerEnvironment implements Serializable {
+ 
+     public static enum LaunchType {
+         DOMAIN,
+-        STANADALONE,
++        STANDALONE,
+         EMBEDDED
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultGenerator.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultGenerator.java
+index 1e0ae01c1..9f601930c 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultGenerator.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultGenerator.java
+@@ -193,7 +193,7 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
+                 for (String templateName : config.apiTemplateFiles().keySet()) {
+ 
+                     String filename = config.apiFilename(templateName, tag);
+-                    if (!config.shouldOverwrite(filename)) {
++                    if (!config.shouldOverwrite(filename) && new File(filename).exists()) {
+                         continue;
+                     }
+ 

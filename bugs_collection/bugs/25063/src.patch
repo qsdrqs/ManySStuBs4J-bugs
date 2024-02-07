@@ -1,0 +1,13 @@
+diff --git a/buggy/controller/src/main/java/org/jboss/as/controller/AttributeDefinition.java b/fixed/controller/src/main/java/org/jboss/as/controller/AttributeDefinition.java
+index af6d2b18d..6073b2968 100644
+--- a/buggy/controller/src/main/java/org/jboss/as/controller/AttributeDefinition.java
++++ b/fixed/controller/src/main/java/org/jboss/as/controller/AttributeDefinition.java
+@@ -245,7 +245,7 @@ public abstract class AttributeDefinition {
+      */
+     public ModelNode addResourceAttributeDescription(final ResourceBundle bundle, final String prefix, final ModelNode resourceDescription) {
+         final ModelNode attr = new ModelNode();
+-        attr.get(ModelDescriptionConstants.TYPE).set(attr.getType());
++        attr.get(ModelDescriptionConstants.TYPE).set(type);
+         attr.get(ModelDescriptionConstants.DESCRIPTION).set(getAttributeTextDescription(bundle, prefix));
+         attr.get(ModelDescriptionConstants.EXPRESSIONS_ALLOWED).set(isAllowExpression());
+         attr.get(ModelDescriptionConstants.NILLABLE).set(isAllowNull());

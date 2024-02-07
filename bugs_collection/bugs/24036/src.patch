@@ -1,0 +1,31 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultGenerator.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultGenerator.java
+index 6fc8eecd0..5df85e1b8 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultGenerator.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultGenerator.java
+@@ -163,7 +163,7 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
+                                 .withLoader(new Mustache.TemplateLoader() {
+                                     @Override
+                                     public Reader getTemplate(String name) {
+-                                        return getTemplateReader(config.templateDir() + File.separator + name + ".mustache");
++                                        return getTemplateReader(getFullTemplateFile(config, name + ".mustache"));
+                                     }
+                                 })
+                                 .defaultValue("")
+@@ -220,7 +220,7 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
+                             .withLoader(new Mustache.TemplateLoader() {
+                                 @Override
+                                 public Reader getTemplate(String name) {
+-                                    return getTemplateReader(config.templateDir() + File.separator + name + ".mustache");
++                                    return getTemplateReader(getFullTemplateFile(config, name + ".mustache"));
+                                 }
+                             })
+                             .defaultValue("")
+@@ -299,7 +299,7 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
+                             .withLoader(new Mustache.TemplateLoader() {
+                                 @Override
+                                 public Reader getTemplate(String name) {
+-                                    return getTemplateReader(config.templateDir() + File.separator + name + ".mustache");
++                                    return getTemplateReader(getFullTemplateFile(config, name + ".mustache"));
+                                 }
+                             })
+                             .defaultValue("")

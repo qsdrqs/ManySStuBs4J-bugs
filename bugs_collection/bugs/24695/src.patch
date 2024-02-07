@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/integration/clust/src/test/java/org/jboss/as/test/clustering/cluster/jsf/JSFFailoverTestCase.java b/fixed/testsuite/integration/clust/src/test/java/org/jboss/as/test/clustering/cluster/jsf/JSFFailoverTestCase.java
+index abe491687..4ba2bcf8a 100644
+--- a/buggy/testsuite/integration/clust/src/test/java/org/jboss/as/test/clustering/cluster/jsf/JSFFailoverTestCase.java
++++ b/fixed/testsuite/integration/clust/src/test/java/org/jboss/as/test/clustering/cluster/jsf/JSFFailoverTestCase.java
+@@ -118,7 +118,7 @@ public class JSFFailoverTestCase extends ClusterAbstractTestCase {
+         Pattern smallestPattern = Pattern.compile("<span id=\"numberGuess:smallest\">([^<]+)</span>");
+         Pattern biggestPattern = Pattern.compile("<span id=\"numberGuess:biggest\">([^<]+)</span>");
+         Pattern remainingPattern = Pattern.compile("You have (\\d+) guesses remaining.");
+-        Pattern viewStatePattern = Pattern.compile("id=\"javax.faces.ViewState\" value=\"([^\"]*)\"");
++        Pattern viewStatePattern = Pattern.compile("id=\".*javax.faces.ViewState.*\" value=\"([^\"]*)\"");
+ 
+         Matcher matcher;
+ 

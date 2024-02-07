@@ -1,0 +1,50 @@
+diff --git a/buggy/samples/client/petstore/java/retrofit/src/main/java/io/swagger/client/model/Pet.java b/fixed/samples/client/petstore/java/retrofit/src/main/java/io/swagger/client/model/Pet.java
+index 9620e9086..8efc46bc4 100644
+--- a/buggy/samples/client/petstore/java/retrofit/src/main/java/io/swagger/client/model/Pet.java
++++ b/fixed/samples/client/petstore/java/retrofit/src/main/java/io/swagger/client/model/Pet.java
+@@ -32,27 +32,30 @@ public class Pet   {
+   private List<Tag> tags = new ArrayList<Tag>();
+ 
+ 
+-public enum StatusEnum {
+-  @SerializedName(""available"")
+-  AVAILABLE(""available""),
++  /**
++   * pet status in the store
++   */
++  public enum StatusEnum {
++    @SerializedName("available")
++    AVAILABLE("available"),
+ 
+-  @SerializedName(""pending"")
+-  PENDING(""pending""),
++    @SerializedName("pending")
++    PENDING("pending"),
+ 
+-  @SerializedName(""sold"")
+-  SOLD(""sold"");
++    @SerializedName("sold")
++    SOLD("sold");
+ 
+-  private String value;
++    private String value;
+ 
+-  StatusEnum(String value) {
+-    this.value = value;
+-  }
++    StatusEnum(String value) {
++      this.value = value;
++    }
+ 
+-  @Override
+-  public String toString() {
+-    return value;
++    @Override
++    public String toString() {
++      return String.valueOf(value);
++    }
+   }
+-}
+ 
+   @SerializedName("status")
+   private StatusEnum status = null;

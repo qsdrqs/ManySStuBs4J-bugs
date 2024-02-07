@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/redis/clients/jedis/BinaryClient.java b/fixed/src/main/java/redis/clients/jedis/BinaryClient.java
+index 631525935..bed6b8a57 100644
+--- a/buggy/src/main/java/redis/clients/jedis/BinaryClient.java
++++ b/fixed/src/main/java/redis/clients/jedis/BinaryClient.java
+@@ -73,7 +73,7 @@ public class BinaryClient extends Connection {
+     this.password = password;
+   }
+   
+-  public void setDb(long db) {
++  public void setDb(int db) {
+     this.db = db;
+   }
+ 

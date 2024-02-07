@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/parser/shiftreduce/State.java b/fixed/src/edu/stanford/nlp/parser/shiftreduce/State.java
+index e1aa83508..907c8f46d 100644
+--- a/buggy/src/edu/stanford/nlp/parser/shiftreduce/State.java
++++ b/fixed/src/edu/stanford/nlp/parser/shiftreduce/State.java
+@@ -44,7 +44,7 @@ public class State {
+     this.sentence = sentence;
+     this.tokenPosition = tokenPosition;
+     this.score = score;
+-    this.finished = true;
++    this.finished = finished;
+   }
+ 
+   /**

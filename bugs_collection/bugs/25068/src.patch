@@ -1,0 +1,13 @@
+diff --git a/buggy/ee/src/main/java/org/jboss/as/ee/metadata/MethodAnnotationAggregator.java b/fixed/ee/src/main/java/org/jboss/as/ee/metadata/MethodAnnotationAggregator.java
+index c113b7b68..b1b3531f7 100644
+--- a/buggy/ee/src/main/java/org/jboss/as/ee/metadata/MethodAnnotationAggregator.java
++++ b/fixed/ee/src/main/java/org/jboss/as/ee/metadata/MethodAnnotationAggregator.java
+@@ -78,7 +78,7 @@ public class MethodAnnotationAggregator {
+                         } else {
+                             //this should not happen
+                             //but if it does, we give some info
+-                            logger.error("Could not resolve method " + entry.getKey() + " on class " + c + " with annotations " + entry.getValue());
++                            throw new RuntimeException("Could not resolve method " + entry.getKey() + " on class " + c + " with annotations " + entry.getValue());
+                         }
+                     }
+                 }

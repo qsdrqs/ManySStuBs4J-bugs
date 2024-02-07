@@ -1,0 +1,17 @@
+diff --git a/buggy/connector/src/main/java/org/jboss/as/connector/subsystems/datasources/AbstractDataSourceAdd.java b/fixed/connector/src/main/java/org/jboss/as/connector/subsystems/datasources/AbstractDataSourceAdd.java
+index 9e75af0fd..2cc257a97 100644
+--- a/buggy/connector/src/main/java/org/jboss/as/connector/subsystems/datasources/AbstractDataSourceAdd.java
++++ b/fixed/connector/src/main/java/org/jboss/as/connector/subsystems/datasources/AbstractDataSourceAdd.java
+@@ -113,10 +113,10 @@ public abstract class AbstractDataSourceAdd implements ModelAddOperationHandler
+ 
+                     startConfigAndAddDependency(dataSourceServiceBuilder, dataSourceService, jndiName, serviceTarget, operation);
+ 
+-                     ModelNode node = operation.require(DATASOURCE_DRIVER);
++                    ModelNode node = operation.require(DATASOURCE_DRIVER);
+                     final String driverName = node.asString();
+                     final ServiceName driverServiceName = ServiceName.JBOSS.append("jdbc-driver",
+-                            driverName.replaceAll(".", "_"));
++                            driverName.replaceAll("\\.", "_"));
+                     if (driverServiceName != null) {
+                         dataSourceServiceBuilder.addDependency(driverServiceName, Driver.class,
+                                 dataSourceService.getDriverInjector());

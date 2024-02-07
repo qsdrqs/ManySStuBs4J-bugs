@@ -1,0 +1,13 @@
+diff --git a/buggy/samples/client/petstore/java/jersey2-java6/src/main/java/io/swagger/client/ApiClient.java b/fixed/samples/client/petstore/java/jersey2-java6/src/main/java/io/swagger/client/ApiClient.java
+index 31c5d60d6..938b7521e 100644
+--- a/buggy/samples/client/petstore/java/jersey2-java6/src/main/java/io/swagger/client/ApiClient.java
++++ b/fixed/samples/client/petstore/java/jersey2-java6/src/main/java/io/swagger/client/ApiClient.java
+@@ -437,7 +437,7 @@ public class ApiClient {
+    */
+   public boolean isJsonMime(String mime) {
+     String jsonMime = "(?i)^(application/json|[^;/ \t]+/[^;/ \t]+[+]json)[ \t]*(;.*)?$";
+-    return mime != null && mime.matches(jsonMime);
++    return mime != null && (mime.matches(jsonMime) || mime.equalsIgnoreCase("application/json-patch+json"));
+   }
+ 
+   /**

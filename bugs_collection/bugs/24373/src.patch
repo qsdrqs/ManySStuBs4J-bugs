@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/thinkaurelius/titan/graphdb/relations/persist/PersistSimpleTitanEdge.java b/fixed/src/main/java/com/thinkaurelius/titan/graphdb/relations/persist/PersistSimpleTitanEdge.java
+index 9e2001dd7..0085a5ef3 100644
+--- a/buggy/src/main/java/com/thinkaurelius/titan/graphdb/relations/persist/PersistSimpleTitanEdge.java
++++ b/fixed/src/main/java/com/thinkaurelius/titan/graphdb/relations/persist/PersistSimpleTitanEdge.java
+@@ -42,7 +42,7 @@ public class PersistSimpleTitanEdge extends SimpleTitanEdge {
+ 	}
+ 	
+ 	@Override
+-	public void forceDelete() {
++	public synchronized void forceDelete() {
+ 		super.forceDelete();
+ 		entity.remove();
+ 	}

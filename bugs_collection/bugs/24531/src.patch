@@ -1,0 +1,13 @@
+diff --git a/buggy/transactions/src/main/java/org/jboss/as/txn/service/CMResourceService.java b/fixed/transactions/src/main/java/org/jboss/as/txn/service/CMResourceService.java
+index 1d0b2eac7..cb9e5f244 100644
+--- a/buggy/transactions/src/main/java/org/jboss/as/txn/service/CMResourceService.java
++++ b/fixed/transactions/src/main/java/org/jboss/as/txn/service/CMResourceService.java
+@@ -82,7 +82,7 @@ public class CMResourceService implements Service<Void> {
+     public void stop(StopContext context) {
+         jtaEnvironmentBean.getValue().getCommitMarkableResourceJNDINames().remove(jndiName);
+         jtaEnvironmentBean.getValue().getCommitMarkableResourceTableNameMap().remove(tableName);
+-        jtaEnvironmentBean.getValue().getPerformImmediateCleanupOfCommitMarkableResourceBranchesMap().remove(immediateCleanup);
++        jtaEnvironmentBean.getValue().getPerformImmediateCleanupOfCommitMarkableResourceBranchesMap().remove(jndiName);
+         jtaEnvironmentBean.getValue().getCommitMarkableResourceRecordDeleteBatchSizeMap().remove(jndiName);
+ 
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/jpa/spi/src/main/java/org/jboss/as/jpa/JpaMessages.java b/fixed/jpa/spi/src/main/java/org/jboss/as/jpa/JpaMessages.java
+index 2d46404b0..a734b8409 100644
+--- a/buggy/jpa/spi/src/main/java/org/jboss/as/jpa/JpaMessages.java
++++ b/fixed/jpa/spi/src/main/java/org/jboss/as/jpa/JpaMessages.java
+@@ -143,7 +143,7 @@ public interface JpaMessages {
+      *
+      * @return the message.
+      */
+-    @Message(id = 11428, value = "Cannot inject RESOURCE_LOCAL container manged EntityManager's using @PersistenceContext")
++    @Message(id = 11428, value = "Cannot inject RESOURCE_LOCAL container managed EntityManagers using @PersistenceContext")
+     String cannotInjectResourceLocalEntityManager();
+ 
+     /**

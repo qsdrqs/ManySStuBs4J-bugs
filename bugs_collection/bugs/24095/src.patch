@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/examples/XmlExampleGenerator.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/examples/XmlExampleGenerator.java
+index 73294268f..a6bfc7d5d 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/examples/XmlExampleGenerator.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/examples/XmlExampleGenerator.java
+@@ -128,7 +128,7 @@ public class XmlExampleGenerator {
+             ArrayProperty p = (ArrayProperty) property;
+             Property inner = p.getItems();
+             boolean wrapped = false;
+-            if (property.getXml() != null && property.getXml().getWrapped()) {
++            if (property.getXml() != null && property.getXml().getWrapped() != null && property.getXml().getWrapped()) {
+                 wrapped = true;
+             }
+             if (wrapped) {

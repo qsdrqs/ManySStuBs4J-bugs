@@ -1,0 +1,22 @@
+diff --git a/buggy/ee/src/main/java/org/jboss/as/ee/component/ComponentInstallProcessor.java b/fixed/ee/src/main/java/org/jboss/as/ee/component/ComponentInstallProcessor.java
+index 72dc29266..3bfbd75b7 100644
+--- a/buggy/ee/src/main/java/org/jboss/as/ee/component/ComponentInstallProcessor.java
++++ b/fixed/ee/src/main/java/org/jboss/as/ee/component/ComponentInstallProcessor.java
+@@ -110,7 +110,7 @@ public final class ComponentInstallProcessor implements DeploymentUnitProcessor
+                 final String bindingName = bindingConfiguration.getName();
+                 final BinderService service = new BinderService(bindingName);
+                 ServiceBuilder<ManagedReferenceFactory> serviceBuilder = serviceTarget.addService(ContextNames.serviceNameOfContext(applicationName, moduleName, componentName, bindingName), service);
+-                bindingConfiguration.getSource().getResourceValue(serviceBuilder, phaseContext, service.getManagedObjectInjector());
++                bindingConfiguration.getSource().getResourceValue(resolutionContext, serviceBuilder, phaseContext, service.getManagedObjectInjector());
+             }
+         }
+ 
+@@ -119,7 +119,7 @@ public final class ComponentInstallProcessor implements DeploymentUnitProcessor
+             final String bindingName = bindingConfiguration.getName();
+             final BinderService service = new BinderService(bindingName);
+             ServiceBuilder<ManagedReferenceFactory> serviceBuilder = serviceTarget.addService(ContextNames.serviceNameOfContext(applicationName, moduleName, componentName, bindingName), service);
+-            bindingConfiguration.getSource().getResourceValue(serviceBuilder, phaseContext, service.getManagedObjectInjector());
++            bindingConfiguration.getSource().getResourceValue(resolutionContext, serviceBuilder, phaseContext, service.getManagedObjectInjector());
+         }
+ 
+         createBuilder.install();

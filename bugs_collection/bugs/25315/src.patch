@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/redis/clients/jedis/tests/commands/ControlCommandsTest.java b/fixed/src/test/java/redis/clients/jedis/tests/commands/ControlCommandsTest.java
+index eb5479c3c..0bc4020ee 100644
+--- a/buggy/src/test/java/redis/clients/jedis/tests/commands/ControlCommandsTest.java
++++ b/fixed/src/test/java/redis/clients/jedis/tests/commands/ControlCommandsTest.java
+@@ -21,7 +21,7 @@ public class ControlCommandsTest extends JedisCommandTestBase {
+ 	    String status = jedis.bgsave();
+ 	    assertEquals("Background saving started", status);
+ 	} catch (JedisException e) {
+-	    assertEquals("ERR background save already in progress", e
++	    assertEquals("ERR Background save already in progress", e
+ 		    .getMessage());
+ 	}
+     }

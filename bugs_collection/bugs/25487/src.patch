@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/twitter4j/SpringCompatibilityTest.java b/fixed/src/test/java/twitter4j/SpringCompatibilityTest.java
+index 9abdbd353..65a290681 100644
+--- a/buggy/src/test/java/twitter4j/SpringCompatibilityTest.java
++++ b/fixed/src/test/java/twitter4j/SpringCompatibilityTest.java
+@@ -85,7 +85,7 @@ public class SpringCompatibilityTest extends TestCase {
+         try {
+             TwitterStream twitterStream = (TwitterStream) beanFactory.getBean("twitterStream");
+             assertTrue(twitterStream instanceof TwitterStream);
+-        } catch (IllegalStateException ignore) {
++        } catch (org.springframework.beans.factory.BeanCreationException ignore) {
+         }
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-jaxrs/src/main/java/io/swagger/jaxrs/Reader.java b/fixed/modules/swagger-jaxrs/src/main/java/io/swagger/jaxrs/Reader.java
+index 7cda13144..663ff73c7 100644
+--- a/buggy/modules/swagger-jaxrs/src/main/java/io/swagger/jaxrs/Reader.java
++++ b/fixed/modules/swagger-jaxrs/src/main/java/io/swagger/jaxrs/Reader.java
+@@ -714,7 +714,7 @@ public class Reader {
+                 return null;
+             }
+             if (!"".equals(apiOperation.nickname())) {
+-                operationId = method.getName();
++                operationId = apiOperation.nickname();
+             }
+ 
+             defaultResponseHeaders = parseResponseHeaders(apiOperation.responseHeaders());

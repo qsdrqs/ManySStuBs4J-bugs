@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/DefaultCodegen.java b/fixed/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/DefaultCodegen.java
+index 0a6e955b9..bb9dcd944 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/DefaultCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/DefaultCodegen.java
+@@ -878,7 +878,7 @@ public class DefaultCodegen {
+   public CodegenParameter fromParameter(Parameter param, Set<String> imports) {
+     CodegenParameter p = CodegenModelFactory.newInstance(CodegenModelType.PARAMETER);
+     p.baseName = param.getName();
+-    p.description = param.getDescription();
++    p.description = escapeText(param.getDescription());
+     if(param.getRequired())
+       p.required = param.getRequired();
+     p.jsonSchema = Json.pretty(param);

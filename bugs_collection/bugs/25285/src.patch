@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/redis/clients/jedis/JedisCluster.java b/fixed/src/main/java/redis/clients/jedis/JedisCluster.java
+index 1f645ea3f..121bde8ea 100644
+--- a/buggy/src/main/java/redis/clients/jedis/JedisCluster.java
++++ b/fixed/src/main/java/redis/clients/jedis/JedisCluster.java
+@@ -1129,7 +1129,7 @@ public class JedisCluster implements JedisCommands, BasicCommands {
+ 	    public Long execute(Jedis connection) {
+ 		return connection.del(key);
+ 	    }
+-	}.run(null);
++	}.run(key);
+     }
+ 
+     @Override

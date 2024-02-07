@@ -1,0 +1,13 @@
+diff --git a/buggy/twitter4j-stream/src/main/java/twitter4j/TwitterStreamImpl.java b/fixed/twitter4j-stream/src/main/java/twitter4j/TwitterStreamImpl.java
+index 8acde64b6..a8c76e658 100644
+--- a/buggy/twitter4j-stream/src/main/java/twitter4j/TwitterStreamImpl.java
++++ b/fixed/twitter4j-stream/src/main/java/twitter4j/TwitterStreamImpl.java
+@@ -265,7 +265,7 @@ class TwitterStreamImpl extends TwitterBaseImpl implements TwitterStream {
+         return TwitterStreamImpl.dispatcher;
+     }
+ 
+-    private static transient Dispatcher dispatcher;
++    private static transient volatile Dispatcher dispatcher;
+ 
+     InputStream getSiteStream(boolean withFollowings, long[] follow) throws TwitterException {
+         ensureOAuthEnabled();

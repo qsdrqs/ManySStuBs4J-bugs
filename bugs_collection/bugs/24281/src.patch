@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-jaxrs/src/main/java/io/swagger/jaxrs/listing/ApiListingResource.java b/fixed/modules/swagger-jaxrs/src/main/java/io/swagger/jaxrs/listing/ApiListingResource.java
+index 86113aa80..9165322ee 100644
+--- a/buggy/modules/swagger-jaxrs/src/main/java/io/swagger/jaxrs/listing/ApiListingResource.java
++++ b/fixed/modules/swagger-jaxrs/src/main/java/io/swagger/jaxrs/listing/ApiListingResource.java
+@@ -40,7 +40,7 @@ import org.slf4j.LoggerFactory;
+ 
+ @Path("/")
+ public class ApiListingResource {
+-    static boolean initialized = false;
++    boolean initialized = false;
+     Logger LOGGER = LoggerFactory.getLogger(ApiListingResource.class);
+     @Context
+     ServletContext context;

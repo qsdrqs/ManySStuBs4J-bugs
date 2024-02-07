@@ -1,0 +1,14 @@
+diff --git a/buggy/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/ee/concurrent/DefaultContextServiceTestCase.java b/fixed/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/ee/concurrent/DefaultContextServiceTestCase.java
+index 7f327dca2..5061f9579 100644
+--- a/buggy/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/ee/concurrent/DefaultContextServiceTestCase.java
++++ b/fixed/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/ee/concurrent/DefaultContextServiceTestCase.java
+@@ -44,7 +44,8 @@ public class DefaultContextServiceTestCase {
+     @Deployment
+     public static WebArchive getDeployment() {
+         return ShrinkWrap.create(WebArchive.class, DefaultContextServiceTestCase.class.getSimpleName() + ".war")
+-                .addClasses(DefaultContextServiceTestCase.class, DefaultContextServiceTestEJB.class, TestEJBRunnable.class);
++                .addClasses(DefaultContextServiceTestCase.class, DefaultContextServiceTestEJB.class, TestEJBRunnable.class)
++                .addAsManifestResource(DefaultContextServiceTestCase.class.getPackage(), "permissions.xml", "permissions.xml");
+     }
+ 
+     @Test

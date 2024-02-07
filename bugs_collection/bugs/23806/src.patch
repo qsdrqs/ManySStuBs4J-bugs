@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/Qt5CPPGenerator.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/Qt5CPPGenerator.java
+index f3179688c..41c66c044 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/Qt5CPPGenerator.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/Qt5CPPGenerator.java
+@@ -212,7 +212,7 @@ public class Qt5CPPGenerator extends DefaultCodegen implements CodegenConfig {
+      */
+     @Override
+     public String apiFileFolder() {
+-        return outputFolder + "/" + sourceFolder + "/" + apiPackage().replace('.', File.separatorChar);
++        return outputFolder + "/" + sourceFolder + "/" + apiPackage().replace("::", File.separator);
+     }
+ 
+     @Override

@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/security/loginmodules/negotiation/SPNEGOLoginModuleTestCase.java b/fixed/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/security/loginmodules/negotiation/SPNEGOLoginModuleTestCase.java
+index 698998ff8..f71099b47 100644
+--- a/buggy/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/security/loginmodules/negotiation/SPNEGOLoginModuleTestCase.java
++++ b/fixed/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/security/loginmodules/negotiation/SPNEGOLoginModuleTestCase.java
+@@ -362,7 +362,7 @@ public class SPNEGOLoginModuleTestCase {
+         final URI uri = getServletURI(webAppURL, SimpleSecuredServlet.SERVLET_PATH);
+         final String[] mechTypes = new String[]{OID_KERBEROS_V5_LEGACY, OID_KERBEROS_V5};
+         final byte[] kerberosToken = createNewKerberosTicketForHttp(uri);
+-        assertSpnegoWorkflow(uri, mechTypes, kerberosToken, kerberosToken, true, true);
++        assertSpnegoWorkflow(uri, mechTypes, kerberosToken, kerberosToken, false, true);
+     }
+ 
+     /**

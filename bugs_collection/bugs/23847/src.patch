@@ -1,0 +1,17 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultCodegen.java
+index e0301a238..89c6554d8 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultCodegen.java
+@@ -329,7 +329,11 @@ public class DefaultCodegen {
+     @SuppressWarnings("static-method")
+     public String escapeText(String input) {
+         if (input != null) {
+-            return StringEscapeUtils.unescapeJava(StringEscapeUtils.escapeJava(input).replace("\\/", "/")).replaceAll("[\\t\\n\\r]"," ");
++            // remove \t, \n, \r
++            // repalce \ with \\
++            // repalce " with \"
++            // outter unescape to retain the original multi-byte characters
++            return StringEscapeUtils.unescapeJava(StringEscapeUtils.escapeJava(input).replace("\\/", "/")).replaceAll("[\\t\\n\\r]"," ").replace("\\", "\\\\").replace("\"", "\\\"");
+         }
+         return input;
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/twitter4j-examples/src/main/java/twitter4j/examples/listmembers/GetUserListMembers.java b/fixed/twitter4j-examples/src/main/java/twitter4j/examples/listmembers/GetUserListMembers.java
+index 5570dbafa..ffd092f16 100644
+--- a/buggy/twitter4j-examples/src/main/java/twitter4j/examples/listmembers/GetUserListMembers.java
++++ b/fixed/twitter4j-examples/src/main/java/twitter4j/examples/listmembers/GetUserListMembers.java
+@@ -44,7 +44,7 @@ public final class GetUserListMembers {
+      * @param args message
+      */
+     public static void main(String[] args) {
+-        if (args.length < 1) {
++        if (args.length < 2) {
+             System.out.println("Usage: java twitter4j.examples.listmembers.GetUserListMembers [list owner screen name] [list id]");
+             System.exit(-1);
+         }

@@ -1,0 +1,13 @@
+diff --git a/buggy/twitter4j-core/src/main/java/twitter4j/internal/async/DispatcherImpl.java b/fixed/twitter4j-core/src/main/java/twitter4j/internal/async/DispatcherImpl.java
+index c6fa950be..c1736eb96 100644
+--- a/buggy/twitter4j-core/src/main/java/twitter4j/internal/async/DispatcherImpl.java
++++ b/fixed/twitter4j-core/src/main/java/twitter4j/internal/async/DispatcherImpl.java
+@@ -87,7 +87,7 @@ final class DispatcherImpl implements Dispatcher {
+                 thread.shutdown();
+             }
+             synchronized (ticket) {
+-                ticket.notify();
++                ticket.notifyAll();
+             }
+         }
+     }

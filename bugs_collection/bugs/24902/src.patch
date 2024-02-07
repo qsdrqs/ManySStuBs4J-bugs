@@ -1,0 +1,13 @@
+diff --git a/buggy/domain-http/interface/src/main/java/org/jboss/as/domain/http/server/DomainApiHandler.java b/fixed/domain-http/interface/src/main/java/org/jboss/as/domain/http/server/DomainApiHandler.java
+index b7b728590..ddb361ecf 100644
+--- a/buggy/domain-http/interface/src/main/java/org/jboss/as/domain/http/server/DomainApiHandler.java
++++ b/fixed/domain-http/interface/src/main/java/org/jboss/as/domain/http/server/DomainApiHandler.java
+@@ -281,7 +281,7 @@ class DomainApiHandler implements ManagementHttpHandler {
+ 
+         try {
+             dmr = isGet ? convertGetRequest(request) : convertPostRequest(http.getRequestBody(), encode);
+-        } catch (IllegalArgumentException iae) {
++        } catch (Exception iae) {
+             ROOT_LOGGER.debugf("Unable to construct ModelNode '%s'", iae.getMessage());
+             sendError(http,isGet,iae);
+             return;

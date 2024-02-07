@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultCodegen.java
+index 2954a7084..1e3cc4381 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultCodegen.java
+@@ -2208,7 +2208,7 @@ public class DefaultCodegen {
+                 r.simpleType = false;
+                 r.containerType = cm.containerType;
+                 r.isMapContainer = "map".equals(cm.containerType);
+-                r.isListContainer = "list".equals(cm.containerType);
++                r.isListContainer = "list".equalsIgnoreCase(cm.containerType) || "array".equalsIgnoreCase(cm.containerType);
+             } else {
+                 r.simpleType = true;
+             }

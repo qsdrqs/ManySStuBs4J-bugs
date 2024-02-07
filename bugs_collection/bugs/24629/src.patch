@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/org/jboss/as/server/deployment/jbossallxml/JBossAllXMLParsingProcessor.java b/fixed/server/src/main/java/org/jboss/as/server/deployment/jbossallxml/JBossAllXMLParsingProcessor.java
+index 8e51e59f3..06864768d 100644
+--- a/buggy/server/src/main/java/org/jboss/as/server/deployment/jbossallxml/JBossAllXMLParsingProcessor.java
++++ b/fixed/server/src/main/java/org/jboss/as/server/deployment/jbossallxml/JBossAllXMLParsingProcessor.java
+@@ -100,7 +100,7 @@ public class JBossAllXMLParsingProcessor implements DeploymentUnitProcessor {
+         for(Map.Entry<QName, Object> entry : context.getParseResults().entrySet()) {
+             final AttachmentKey attachmentKey = namespaceAttachments.get(entry.getKey());
+             if(usedNamespaces.containsKey(attachmentKey)) {
+-                ServerMessages.MESSAGES.equivilentNamespacesInJBossXml(entry.getKey(), usedNamespaces.get(attachmentKey));
++                throw ServerMessages.MESSAGES.equivalentNamespacesInJBossXml(entry.getKey(), usedNamespaces.get(attachmentKey));
+             }
+             usedNamespaces.put(attachmentKey, entry.getKey());
+             deploymentUnit.putAttachment(attachmentKey, entry.getValue());

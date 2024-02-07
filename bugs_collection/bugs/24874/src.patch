@@ -1,0 +1,18 @@
+diff --git a/buggy/connector/src/main/java/org/jboss/as/connector/subsystems/jca/JcaExtension.java b/fixed/connector/src/main/java/org/jboss/as/connector/subsystems/jca/JcaExtension.java
+index 4eba944a5..c7ab0b904 100644
+--- a/buggy/connector/src/main/java/org/jboss/as/connector/subsystems/jca/JcaExtension.java
++++ b/fixed/connector/src/main/java/org/jboss/as/connector/subsystems/jca/JcaExtension.java
+@@ -233,11 +233,11 @@ public class JcaExtension implements Extension {
+                         writer.writeStartElement(Element.WORKMANAGER.getLocalName());
+                         WorkManagerAdd.WmParameters.NAME.getAttribute().marshallAsAttribute(property.getValue(), writer);
+                     }
+-                    for (Property prop : property.getValue().asPropertyList()) {
++                    for (Property prop : property.getValue().asPropertyList() ) {
+                         if (WORKMANAGER_LONG_RUNNING.equals(prop.getName()) && prop.getValue().isDefined() && prop.getValue().asPropertyList().size() != 0) {
+                             ThreadsParser.getInstance().writeBoundedQueueThreadPool(writer, prop.getValue().asProperty().getValue(), Element.LONG_RUNNING_THREADS.getLocalName(), false);
+                         }
+-                        if (WORKMANAGER_SHORT_RUNNING.equals(prop.getName())) {
++                        if (WORKMANAGER_SHORT_RUNNING.equals(prop.getName()) && prop.getValue().isDefined() && prop.getValue().asPropertyList().size() != 0) {
+                             ThreadsParser.getInstance().writeBoundedQueueThreadPool(writer, prop.getValue().asProperty().getValue(), Element.SHORT_RUNNING_THREADS.getLocalName(), false);
+                         }
+                     }

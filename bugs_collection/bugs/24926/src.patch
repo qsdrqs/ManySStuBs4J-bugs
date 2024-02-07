@@ -1,0 +1,13 @@
+diff --git a/buggy/clustering/infinispan/src/main/java/org/jboss/as/clustering/infinispan/subsystem/InfinispanSubsystemXMLReader_1_1.java b/fixed/clustering/infinispan/src/main/java/org/jboss/as/clustering/infinispan/subsystem/InfinispanSubsystemXMLReader_1_1.java
+index 0fce2d2ee..c94872d53 100644
+--- a/buggy/clustering/infinispan/src/main/java/org/jboss/as/clustering/infinispan/subsystem/InfinispanSubsystemXMLReader_1_1.java
++++ b/fixed/clustering/infinispan/src/main/java/org/jboss/as/clustering/infinispan/subsystem/InfinispanSubsystemXMLReader_1_1.java
+@@ -107,7 +107,7 @@ public class InfinispanSubsystemXMLReader_1_1 implements XMLElementReader<List<M
+                     break;
+                 }
+                 case START: {
+-                    container.get(ModelKeys.START).set(Boolean.parseBoolean(value));
++                    container.get(ModelKeys.START).set(value);
+                     break;
+                 }
+                 case LISTENER_EXECUTOR: {

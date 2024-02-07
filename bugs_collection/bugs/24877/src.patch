@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/deployment/xml/datasource/DeployedXmlDataSourceTestCase.java b/fixed/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/deployment/xml/datasource/DeployedXmlDataSourceTestCase.java
+index 5270be7b3..51088e7db 100644
+--- a/buggy/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/deployment/xml/datasource/DeployedXmlDataSourceTestCase.java
++++ b/fixed/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/deployment/xml/datasource/DeployedXmlDataSourceTestCase.java
+@@ -78,7 +78,7 @@ public class DeployedXmlDataSourceTestCase {
+         public void tearDown(final ManagementClient managementClient, final String containerId) throws Exception {
+             final ServerDeploymentManager manager = ServerDeploymentManager.Factory.create(managementClient.getControllerClient());
+             final DeploymentPlan undeployPlan = manager.newDeploymentPlan().undeploy(TEST_DS_XML).andRemoveUndeployed().build();
+-            manager.execute(undeployPlan);
++            manager.execute(undeployPlan).get();
+         }
+     }
+ 

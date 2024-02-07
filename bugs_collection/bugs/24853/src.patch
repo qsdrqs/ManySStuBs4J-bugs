@@ -1,0 +1,13 @@
+diff --git a/buggy/controller/src/main/java/org/jboss/as/controller/AbstractControllerService.java b/fixed/controller/src/main/java/org/jboss/as/controller/AbstractControllerService.java
+index deb06ff9a..b6837022a 100644
+--- a/buggy/controller/src/main/java/org/jboss/as/controller/AbstractControllerService.java
++++ b/fixed/controller/src/main/java/org/jboss/as/controller/AbstractControllerService.java
+@@ -187,7 +187,7 @@ public abstract class AbstractControllerService implements Service<ModelControll
+     }
+ 
+     protected boolean boot(List<ModelNode> bootOperations, boolean rollbackOnRuntimeFailure) throws ConfigurationPersistenceException {
+-        return controller.boot(bootOperations, OperationMessageHandler.logging, ModelController.OperationTransactionControl.COMMIT, false);
++        return controller.boot(bootOperations, OperationMessageHandler.logging, ModelController.OperationTransactionControl.COMMIT, rollbackOnRuntimeFailure);
+     }
+ 
+     protected void finishBoot() throws ConfigurationPersistenceException {

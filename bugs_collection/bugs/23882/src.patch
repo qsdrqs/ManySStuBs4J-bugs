@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/JavascriptClientCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/JavascriptClientCodegen.java
+index d9c93e4f6..d2d3808f8 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/JavascriptClientCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/JavascriptClientCodegen.java
+@@ -122,7 +122,7 @@ public class JavascriptClientCodegen extends DefaultCodegen implements CodegenCo
+         typeMapping.put("float", "Number");
+         typeMapping.put("number", "Number");
+         typeMapping.put("DateTime", "Date"); // Should this be dateTime?
+-        typeMapping.put("Date", "Date"); // Should this be date?
++        typeMapping.put("date", "Date"); // Should this be date?
+         typeMapping.put("long", "Integer");
+         typeMapping.put("short", "Integer");
+         typeMapping.put("char", "String");

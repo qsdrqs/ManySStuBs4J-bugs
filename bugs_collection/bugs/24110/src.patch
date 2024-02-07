@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/RubyClientCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/RubyClientCodegen.java
+index 2ee227fea..46c0f70a4 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/RubyClientCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/RubyClientCodegen.java
+@@ -62,7 +62,7 @@ public class RubyClientCodegen extends DefaultCodegen implements CodegenConfig {
+         typeMapping.put("array", "Array");
+         typeMapping.put("List", "Array");
+         typeMapping.put("map", "Hash");
+-        typeMapping.put("object", "Hash");
++        typeMapping.put("object", "Object");
+ 
+         String baseFolder = "lib" + File.separatorChar + gemName;
+         String swaggerFolder = baseFolder + File.separatorChar + "swagger";

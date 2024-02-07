@@ -1,0 +1,13 @@
+diff --git a/buggy/security/subsystem/src/main/java/org/jboss/as/security/service/JaccService.java b/fixed/security/subsystem/src/main/java/org/jboss/as/security/service/JaccService.java
+index b8a01b2a4..4cf780fe9 100644
+--- a/buggy/security/subsystem/src/main/java/org/jboss/as/security/service/JaccService.java
++++ b/fixed/security/subsystem/src/main/java/org/jboss/as/security/service/JaccService.java
+@@ -113,7 +113,7 @@ public abstract class JaccService<T> implements Service<PolicyConfiguration> {
+         final ClassLoader originalClassLoader;
+         final ClassLoader jaccClassLoader;
+         if (module != null) {
+-            jaccClassLoader = SecurityActions.getModuleClassLoader(JACC_MODULE);
++            jaccClassLoader = SecurityActions.getModuleClassLoader(module);
+             originalClassLoader = SecurityActions.setThreadContextClassLoader(jaccClassLoader);
+         } else {
+             jaccClassLoader = null;

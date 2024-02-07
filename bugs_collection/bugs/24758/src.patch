@@ -1,0 +1,13 @@
+diff --git a/buggy/subsystem-test/src/main/java/org/jboss/as/subsystem/test/ChildFirstClassLoader.java b/fixed/subsystem-test/src/main/java/org/jboss/as/subsystem/test/ChildFirstClassLoader.java
+index 4c315e985..f56bb5a3d 100644
+--- a/buggy/subsystem-test/src/main/java/org/jboss/as/subsystem/test/ChildFirstClassLoader.java
++++ b/fixed/subsystem-test/src/main/java/org/jboss/as/subsystem/test/ChildFirstClassLoader.java
+@@ -67,7 +67,7 @@ import org.sonatype.aether.version.VersionScheme;
+ class ChildFirstClassLoader extends URLClassLoader {
+ 
+     private static final RepositorySystem REPOSITORY_SYSTEM = newRepositorySystem();
+-    private static final String AETHER_API_NAME = "/org/sonatype/aether/aether-api/";
++    private static final String AETHER_API_NAME = File.separatorChar == '/' ? "/org/sonatype/aether/aether-api/" : "\\org\\sonatype\\aether\\aether-api\\";
+ 
+     private final ClassLoader parent;
+     private final List<Pattern> parentFirst;

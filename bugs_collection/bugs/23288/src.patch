@@ -1,0 +1,22 @@
+diff --git a/buggy/src/edu/stanford/nlp/patterns/surface/SurfacePattern.java b/fixed/src/edu/stanford/nlp/patterns/surface/SurfacePattern.java
+index 9d44a2fab..9313069c0 100644
+--- a/buggy/src/edu/stanford/nlp/patterns/surface/SurfacePattern.java
++++ b/fixed/src/edu/stanford/nlp/patterns/surface/SurfacePattern.java
+@@ -266,7 +266,7 @@ public class SurfacePattern implements Serializable, Comparable<SurfacePattern>
+     this.originalNext = originalNext;
+   }
+ 
+-  public static boolean notSameGenre(SurfacePattern p1, SurfacePattern p2) {
++  public static boolean sameGenre(SurfacePattern p1, SurfacePattern p2) {
+     return p1.getGenre().equals(p2.getGenre());
+   }
+ 
+@@ -318,7 +318,7 @@ public class SurfacePattern implements Serializable, Comparable<SurfacePattern>
+    */
+   public static boolean subsumes(SurfacePattern p1, SurfacePattern p2){
+     
+-    if (notSameGenre(p1, p2)) {
++    if (!sameGenre(p1, p2)) {
+       return false;
+     }
+     

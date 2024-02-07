@@ -1,0 +1,13 @@
+diff --git a/buggy/connector/src/main/java/org/jboss/as/connector/security/ElytronCallbackHandler.java b/fixed/connector/src/main/java/org/jboss/as/connector/security/ElytronCallbackHandler.java
+index 3d3bd29d0..b9e0b2723 100644
+--- a/buggy/connector/src/main/java/org/jboss/as/connector/security/ElytronCallbackHandler.java
++++ b/fixed/connector/src/main/java/org/jboss/as/connector/security/ElytronCallbackHandler.java
+@@ -141,7 +141,7 @@ public class ElytronCallbackHandler implements CallbackHandler, Serializable {
+ 
+         // establish the caller principal using the info from the callback.
+         Principal callerPrincipal = null;
+-        if (callerPrincipalCallback == null) {
++        if (callerPrincipalCallback != null) {
+             Principal callbackPrincipal = callerPrincipalCallback.getPrincipal();
+             callerPrincipal = callbackPrincipal != null ? new NamePrincipal(callbackPrincipal.getName()) :
+                     callerPrincipalCallback.getName() != null ? new NamePrincipal(callerPrincipalCallback.getName()) : null;

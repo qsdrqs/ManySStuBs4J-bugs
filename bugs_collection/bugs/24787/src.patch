@@ -1,0 +1,13 @@
+diff --git a/buggy/deployment-scanner/src/main/java/org/jboss/as/server/deployment/scanner/DeploymentScannerMessages.java b/fixed/deployment-scanner/src/main/java/org/jboss/as/server/deployment/scanner/DeploymentScannerMessages.java
+index fb134c3fb..6322cdb46 100644
+--- a/buggy/deployment-scanner/src/main/java/org/jboss/as/server/deployment/scanner/DeploymentScannerMessages.java
++++ b/fixed/deployment-scanner/src/main/java/org/jboss/as/server/deployment/scanner/DeploymentScannerMessages.java
+@@ -141,7 +141,7 @@ public interface DeploymentScannerMessages {
+      *
+      * @return the message.
+      */
+-    @Message(" A previous version of this content was deployed and remains deployed.")
++    @Message(id = Message.NONE, value = " A previous version of this content was deployed and remains deployed.")
+     String previousContentDeployed();
+ 
+     /**

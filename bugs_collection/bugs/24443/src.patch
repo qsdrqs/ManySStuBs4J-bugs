@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/shared/src/main/java/org/wildfly/test/security/common/elytron/UndertowDomainMapper.java b/fixed/testsuite/shared/src/main/java/org/wildfly/test/security/common/elytron/UndertowDomainMapper.java
+index a7cd8c25f..417942d0d 100644
+--- a/buggy/testsuite/shared/src/main/java/org/wildfly/test/security/common/elytron/UndertowDomainMapper.java
++++ b/fixed/testsuite/shared/src/main/java/org/wildfly/test/security/common/elytron/UndertowDomainMapper.java
+@@ -67,7 +67,7 @@ public class UndertowDomainMapper  extends AbstractConfigurableElement implement
+                         + "  mechanism-configurations=["
+                         + "    {mechanism-name=DIGEST,mechanism-realm-configurations=[{realm-name=%1$s}]},"
+                         + "    {mechanism-name=BASIC,mechanism-realm-configurations=[{realm-name=%1$s}]},"
+-                        + "    {mechanism-name=FORM]}])", name));
++                        + "    {mechanism-name=FORM}])", name));
+ 
+         if (applicationDomains.isEmpty()) {
+             // /subsystem=undertow/application-security-domain=test:add(http-authentication-factory=test)

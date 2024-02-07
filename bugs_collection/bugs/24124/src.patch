@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/DefaultCodegen.java b/fixed/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/DefaultCodegen.java
+index bb9dcd944..8a5d359e2 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/DefaultCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/DefaultCodegen.java
+@@ -65,7 +65,7 @@ public class DefaultCodegen {
+   // override with any special text escaping logic
+   public String escapeText(String input) {
+     if(input != null) {
+-      String output = input.replaceAll("\n", " ");
++      String output = input.replaceAll("\n", "\\\\n");
+       output = output.replace("\"", "\\\"");
+       return output;
+     }

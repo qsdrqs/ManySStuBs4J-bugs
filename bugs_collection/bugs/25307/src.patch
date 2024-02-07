@@ -1,0 +1,20 @@
+diff --git a/buggy/src/main/java/redis/clients/jedis/Connection.java b/fixed/src/main/java/redis/clients/jedis/Connection.java
+index 7aadc7f0b..5a168a789 100644
+--- a/buggy/src/main/java/redis/clients/jedis/Connection.java
++++ b/fixed/src/main/java/redis/clients/jedis/Connection.java
+@@ -209,7 +209,7 @@ public class Connection {
+     public List<Long> getIntegerMultiBulkReply() {
+         flush();
+         pipelinedCommands--;
+-        return (List<Long>) protocol.read(inputStream);
++        return (List<Long>) Protocol.read(inputStream);
+     }
+ 
+     public List<Object> getAll() {
+@@ -235,4 +235,4 @@ public class Connection {
+         pipelinedCommands--;
+         return Protocol.read(inputStream);
+     }
+-}
+\ No newline at end of file
++}

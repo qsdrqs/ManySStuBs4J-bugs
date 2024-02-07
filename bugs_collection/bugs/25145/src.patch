@@ -1,0 +1,13 @@
+diff --git a/buggy/ee/src/main/java/org/jboss/as/ee/component/ComponentDescription.java b/fixed/ee/src/main/java/org/jboss/as/ee/component/ComponentDescription.java
+index f9b99d225..76f83cc7a 100644
+--- a/buggy/ee/src/main/java/org/jboss/as/ee/component/ComponentDescription.java
++++ b/fixed/ee/src/main/java/org/jboss/as/ee/component/ComponentDescription.java
+@@ -543,7 +543,7 @@ public class ComponentDescription {
+                     configuration.getModuleName(),
+                     configuration.getApplicationName()
+             );
+-            injectionConfiguration.getSource().getResourceValue(serviceBuilder, context, managedReferenceFactoryValue);
++            injectionConfiguration.getSource().getResourceValue(resolutionContext, serviceBuilder, context, managedReferenceFactoryValue);
+         }
+     }
+ }

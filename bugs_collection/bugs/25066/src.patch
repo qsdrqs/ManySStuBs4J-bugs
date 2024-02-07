@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/integration/src/test/java/org/jboss/as/testsuite/integration/wsejb/EJBWebServicesTestCase.java b/fixed/testsuite/integration/src/test/java/org/jboss/as/testsuite/integration/wsejb/EJBWebServicesTestCase.java
+index f0e88fc68..c315d2ff1 100644
+--- a/buggy/testsuite/integration/src/test/java/org/jboss/as/testsuite/integration/wsejb/EJBWebServicesTestCase.java
++++ b/fixed/testsuite/integration/src/test/java/org/jboss/as/testsuite/integration/wsejb/EJBWebServicesTestCase.java
+@@ -55,7 +55,7 @@ public class EJBWebServicesTestCase {
+                 + "    </test:setState>"
+                 + "  </soapenv:Body>"
+                 + "</soapenv:Envelope>";
+-        String result = HttpRequest.put("http://localhost:8080/ejbws-example/SingletonEndpoint", message, 10, SECONDS);
++        String result = HttpRequest.post("http://localhost:8080/ejbws-example/SingletonEndpoint", message, 10, SECONDS);
+         // TODO: check something
+         System.out.println(result);
+     }

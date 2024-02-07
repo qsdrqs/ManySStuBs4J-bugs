@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultCodegen.java
+index aeca659e4..b1b6566d0 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultCodegen.java
+@@ -963,7 +963,7 @@ public class DefaultCodegen {
+         } else {
+             r.code = responseCode;
+         }
+-        r.message = response.getDescription();
++        r.message = escapeText(response.getDescription());
+         r.schema = response.getSchema();
+         r.examples = toExamples(response.getExamples());
+         r.jsonSchema = Json.pretty(response);

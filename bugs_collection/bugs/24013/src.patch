@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PerlClientCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PerlClientCodegen.java
+index 51f394d5d..8950ff21a 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PerlClientCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PerlClientCodegen.java
+@@ -64,7 +64,7 @@ public class PerlClientCodegen extends DefaultCodegen implements CodegenConfig {
+         typeMapping.put("boolean", "boolean");
+         typeMapping.put("string", "string");
+         typeMapping.put("date", "DateTime");
+-        typeMapping.put("dateTime", "DateTime");
++        typeMapping.put("DateTime", "DateTime");
+         typeMapping.put("password", "string");
+         typeMapping.put("array", "ARRAY");
+         typeMapping.put("map", "HASH");

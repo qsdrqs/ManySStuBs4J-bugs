@@ -1,0 +1,13 @@
+diff --git a/buggy/jdr/jboss-as-jdr/src/main/java/org/jboss/as/jdr/plugins/AS7Plugin.java b/fixed/jdr/jboss-as-jdr/src/main/java/org/jboss/as/jdr/plugins/AS7Plugin.java
+index d895dbb8e..440e065e8 100644
+--- a/buggy/jdr/jboss-as-jdr/src/main/java/org/jboss/as/jdr/plugins/AS7Plugin.java
++++ b/fixed/jdr/jboss-as-jdr/src/main/java/org/jboss/as/jdr/plugins/AS7Plugin.java
+@@ -47,7 +47,7 @@ public class AS7Plugin implements JdrPlugin {
+             new TreeCommand(),
+             new JarCheck(),
+             new CallAS7("configuration").param("recursive", "true"),
+-            new CallAS7("dump-services").resource("core-service", "service-container"),
++            new CallAS7("dump-services").operation("dump-services").resource("core-service", "service-container"),
+             new CallAS7("cluster-proxies-configuration").resource("subsystem", "modcluster"),
+             new CollectFiles("*/standalone/configuration/*").sanitizer(xmlSanitizer, passwordSanitizer),
+             new CollectFiles("*/domain/configuration/*").sanitizer(xmlSanitizer, passwordSanitizer),

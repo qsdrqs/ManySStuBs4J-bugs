@@ -1,0 +1,20 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/HaskellServantCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/HaskellServantCodegen.java
+index f70e416a2..bcc4dff81 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/HaskellServantCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/HaskellServantCodegen.java
+@@ -74,7 +74,7 @@ public class HaskellServantCodegen extends DefaultCodegen implements CodegenConf
+      * Template Location.  This is the location which templates will be read from.  The generator
+      * will use the resource stream to attempt to read the templates.
+      */
+-    embeddedTemplateDir = templateDir = "haskell";
++    embeddedTemplateDir = templateDir = "haskell-servant";
+ 
+     /**
+      * Api Package.  Optional, if needed, this can be used in templates
+@@ -342,4 +342,4 @@ public class HaskellServantCodegen extends DefaultCodegen implements CodegenConf
+     return op;
+   }
+ 
+-}
+\ No newline at end of file
++}

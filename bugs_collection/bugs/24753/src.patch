@@ -1,0 +1,13 @@
+diff --git a/buggy/host-controller/src/main/java/org/jboss/as/host/controller/ManagedServerOperationsFactory.java b/fixed/host-controller/src/main/java/org/jboss/as/host/controller/ManagedServerOperationsFactory.java
+index 53d469917..462b542cd 100644
+--- a/buggy/host-controller/src/main/java/org/jboss/as/host/controller/ManagedServerOperationsFactory.java
++++ b/fixed/host-controller/src/main/java/org/jboss/as/host/controller/ManagedServerOperationsFactory.java
+@@ -285,7 +285,7 @@ public final class ManagedServerOperationsFactory {
+         if (source.hasDefined(SYSTEM_PROPERTY)) {
+             for (Property prop : source.get(SYSTEM_PROPERTY).asPropertyList()) {
+                 ModelNode propResource = prop.getValue();
+-                if (boottimeOnly && !propResource.get(BOOT_TIME).asBoolean()) {
++                if (boottimeOnly && !propResource.get(BOOT_TIME).asBoolean(false)) {
+                     continue;
+                 }
+                 String val = propResource.hasDefined(VALUE) ? propResource.get(VALUE).asString() : null;

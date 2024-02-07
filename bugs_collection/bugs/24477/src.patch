@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/security/loginmodules/IdentityLoginModuleTestCase.java b/fixed/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/security/loginmodules/IdentityLoginModuleTestCase.java
+index 3ea72b405..fc5a6a03b 100644
+--- a/buggy/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/security/loginmodules/IdentityLoginModuleTestCase.java
++++ b/fixed/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/security/loginmodules/IdentityLoginModuleTestCase.java
+@@ -180,7 +180,7 @@ public class IdentityLoginModuleTestCase {
+         DefaultHttpClient httpclient = new DefaultHttpClient();
+         Credentials creds = new UsernamePasswordCredentials("anyUsername");
+         httpclient.getCredentialsProvider().setCredentials(new AuthScope(url.getHost(), url.getPort()), creds);
+-        HttpGet httpget = new HttpGet(url.toExternalForm() + PrincipalPrintingServlet.SERVLET_PATH);
++        HttpGet httpget = new HttpGet(url.toExternalForm());
+         String text;
+ 
+         try {

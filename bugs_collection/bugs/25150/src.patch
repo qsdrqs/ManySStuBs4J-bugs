@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/org/jboss/as/server/deployment/DeploymentUnitPhaseService.java b/fixed/server/src/main/java/org/jboss/as/server/deployment/DeploymentUnitPhaseService.java
+index d9cedb65c..565e003d7 100644
+--- a/buggy/server/src/main/java/org/jboss/as/server/deployment/DeploymentUnitPhaseService.java
++++ b/fixed/server/src/main/java/org/jboss/as/server/deployment/DeploymentUnitPhaseService.java
+@@ -134,7 +134,7 @@ final class DeploymentUnitPhaseService<T> implements Service<T> {
+                 }
+             }
+             if (deploymentUnit.getParent() != null) {
+-                phaseServiceBuilder.addDependencies(Services.deploymentUnitName(deploymentUnit.getParent().getName(), deploymentUnit.getName(), nextPhase));
++                phaseServiceBuilder.addDependencies(Services.deploymentUnitName(deploymentUnit.getParent().getName(), nextPhase));
+             }
+             List<DeploymentUnit> subDeployments = deploymentUnit.getAttachmentList(Attachments.SUB_DEPLOYMENTS);
+             // make sure all sub deployments have finished this phase before moving to the next one

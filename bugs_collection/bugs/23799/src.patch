@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/examples/ExampleGenerator.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/examples/ExampleGenerator.java
+index 228e5afb9..26a4422f0 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/examples/ExampleGenerator.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/examples/ExampleGenerator.java
+@@ -93,7 +93,7 @@ public class ExampleGenerator {
+                 };
+             }
+         } else if (property instanceof DateProperty) {
+-            return "2000-01-23T04:56:07.000+00:00";
++            return "2000-01-23";
+         } else if (property instanceof DateTimeProperty) {
+             return "2000-01-23T04:56:07.000+00:00";
+         } else if (property instanceof DecimalProperty) {

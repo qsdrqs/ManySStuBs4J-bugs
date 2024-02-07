@@ -1,0 +1,13 @@
+diff --git a/buggy/clustering/infinispan/src/main/java/org/jboss/as/clustering/infinispan/subsystem/TransportResourceDefinition.java b/fixed/clustering/infinispan/src/main/java/org/jboss/as/clustering/infinispan/subsystem/TransportResourceDefinition.java
+index 2ac5fdeaf..eef4f1ace 100644
+--- a/buggy/clustering/infinispan/src/main/java/org/jboss/as/clustering/infinispan/subsystem/TransportResourceDefinition.java
++++ b/fixed/clustering/infinispan/src/main/java/org/jboss/as/clustering/infinispan/subsystem/TransportResourceDefinition.java
+@@ -67,7 +67,7 @@ public class TransportResourceDefinition extends SimpleResourceDefinition {
+             .setMeasurementUnit(MeasurementUnit.MILLISECONDS)
+             .setAllowExpression(true)
+             .setFlags(AttributeAccess.Flag.RESTART_ALL_SERVICES)
+-            .setDefaultValue(new ModelNode().set(240000))
++            .setDefaultValue(new ModelNode().set(240000L))
+             .build();
+ 
+     // if stack is null, use default stack

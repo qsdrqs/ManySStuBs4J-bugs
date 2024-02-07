@@ -1,0 +1,13 @@
+diff --git a/buggy/domain-management/src/test/java/org/jboss/as/domain/management/security/AssertConsoleBuilder.java b/fixed/domain-management/src/test/java/org/jboss/as/domain/management/security/AssertConsoleBuilder.java
+index 411d2fde7..b4e4c660d 100644
+--- a/buggy/domain-management/src/test/java/org/jboss/as/domain/management/security/AssertConsoleBuilder.java
++++ b/fixed/domain-management/src/test/java/org/jboss/as/domain/management/security/AssertConsoleBuilder.java
+@@ -54,7 +54,7 @@ import static org.junit.Assert.*;
+ * @author <a href="mailto:flemming.harms@gmail.com">Flemming Harms</a>
+ */
+ public class AssertConsoleBuilder {
+-    private static String NEW_LINE = "\n";
++    private static String NEW_LINE = String.format("%n");
+ 
+     private enum Type {
+         DISPLAY, INPUT

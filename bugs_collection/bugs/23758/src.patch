@@ -1,0 +1,13 @@
+diff --git a/buggy/samples/server/petstore/undertow/src/main/java/io/swagger/model/User.java b/fixed/samples/server/petstore/undertow/src/main/java/io/swagger/model/User.java
+index f83a7ff02..64e602128 100644
+--- a/buggy/samples/server/petstore/undertow/src/main/java/io/swagger/model/User.java
++++ b/fixed/samples/server/petstore/undertow/src/main/java/io/swagger/model/User.java
+@@ -13,7 +13,7 @@ import io.swagger.annotations.ApiModelProperty;
+  **/
+ 
+ @ApiModel(description = "A User who is purchasing from the pet store")
+-@javax.annotation.Generated(value = "io.swagger.codegen.languages.UndertowCodegen", date = "2017-03-26T17:33:39.915+02:00")
++@javax.annotation.Generated(value = "io.swagger.codegen.languages.UndertowCodegen")
+ public class User   {
+   
+   private Long id = null;

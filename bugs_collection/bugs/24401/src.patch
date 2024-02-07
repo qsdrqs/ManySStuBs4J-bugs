@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/integration/ws/src/test/java/org/jboss/as/test/integration/ws/basic/BasicTests.java b/fixed/testsuite/integration/ws/src/test/java/org/jboss/as/test/integration/ws/basic/BasicTests.java
+index 097a2e21b..60fb52418 100644
+--- a/buggy/testsuite/integration/ws/src/test/java/org/jboss/as/test/integration/ws/basic/BasicTests.java
++++ b/fixed/testsuite/integration/ws/src/test/java/org/jboss/as/test/integration/ws/basic/BasicTests.java
+@@ -32,7 +32,7 @@ import org.junit.Test;
+ /**
+  * @author <a href="mailto:rsvoboda@redhat.com">Rostislav Svoboda</a>
+  */
+-public class BasicTests {
++public abstract class BasicTests {
+ 
+     protected EndpointIface proxy;
+ 

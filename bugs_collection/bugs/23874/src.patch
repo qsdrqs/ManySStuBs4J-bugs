@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PythonClientCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PythonClientCodegen.java
+index 08d63c426..1bc95cfdd 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PythonClientCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PythonClientCodegen.java
+@@ -41,7 +41,7 @@ public class PythonClientCodegen extends DefaultCodegen implements CodegenConfig
+         modelDocTemplateFiles.put("model_doc.mustache", ".md");
+         apiDocTemplateFiles.put("api_doc.mustache", ".md");
+         
+-        testFolder = "tests";
++        testFolder = "test";
+ 
+         languageSpecificPrimitives.clear();
+         languageSpecificPrimitives.add("int");

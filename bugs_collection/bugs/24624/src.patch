@@ -1,0 +1,13 @@
+diff --git a/buggy/jsf/subsystem/src/main/java/org/jboss/as/jsf/deployment/JSFMetadataProcessor.java b/fixed/jsf/subsystem/src/main/java/org/jboss/as/jsf/deployment/JSFMetadataProcessor.java
+index e0d963c91..740866d4a 100644
+--- a/buggy/jsf/subsystem/src/main/java/org/jboss/as/jsf/deployment/JSFMetadataProcessor.java
++++ b/fixed/jsf/subsystem/src/main/java/org/jboss/as/jsf/deployment/JSFMetadataProcessor.java
+@@ -24,7 +24,7 @@ public class JSFMetadataProcessor implements DeploymentUnitProcessor {
+         }
+         JBossServletMetaData jsf = null;
+         for(JBossServletMetaData servlet : metaData.getMergedJBossWebMetaData().getServlets()) {
+-            if(servlet.getServletClass().equals(JAVAX_FACES_WEBAPP_FACES_SERVLET)) {
++            if(JAVAX_FACES_WEBAPP_FACES_SERVLET.equals(servlet.getServletClass())) {
+                 jsf = servlet;
+             }
+         }

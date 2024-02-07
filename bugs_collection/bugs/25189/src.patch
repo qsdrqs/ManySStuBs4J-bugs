@@ -1,0 +1,13 @@
+diff --git a/buggy/controller/src/main/java/org/jboss/as/controller/AtomicMapFieldUpdater.java b/fixed/controller/src/main/java/org/jboss/as/controller/AtomicMapFieldUpdater.java
+index f5fbaf786..53be2066f 100644
+--- a/buggy/controller/src/main/java/org/jboss/as/controller/AtomicMapFieldUpdater.java
++++ b/fixed/controller/src/main/java/org/jboss/as/controller/AtomicMapFieldUpdater.java
+@@ -40,7 +40,7 @@ final class AtomicMapFieldUpdater<C, K, V> {
+ 
+     @SuppressWarnings( { "unchecked" })
+     AtomicMapFieldUpdater(AtomicReferenceFieldUpdater<C, Map> updater) {
+-        this.updater = (AtomicReferenceFieldUpdater<C, Map<K, V>>) updater;
++        this.updater = (AtomicReferenceFieldUpdater) updater;
+     }
+ 
+     public void clear(C instance) {

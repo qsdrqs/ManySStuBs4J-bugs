@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-models/src/test/java/io/swagger/TestUtils.java b/fixed/modules/swagger-models/src/test/java/io/swagger/TestUtils.java
+index 7bc08c998..666f9eac6 100644
+--- a/buggy/modules/swagger-models/src/test/java/io/swagger/TestUtils.java
++++ b/fixed/modules/swagger-models/src/test/java/io/swagger/TestUtils.java
+@@ -249,7 +249,7 @@ public class TestUtils {
+                     Object actual = Whitebox.invokeMethod(instance, getterMethodName);
+                     Whitebox.invokeMethod(instance, method.getName(), parametersArray);
+                     res = Whitebox.invokeMethod(instance, getterMethodName);
+-                    assertEquals(actual, res, "the value must not change when passing an unkown value to " + method);
++                    assertEquals(actual, res, "the value must not change when passing an unknown value to " + method);
+                 }
+             }
+         }

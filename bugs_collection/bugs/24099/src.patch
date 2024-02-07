@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultGenerator.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultGenerator.java
+index fb52d3873..a2f32706a 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultGenerator.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultGenerator.java
+@@ -64,7 +64,7 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
+         try {
+             config.processOpts();
+ 
+-            config.additionalProperties().put("generatedTime", DateTime.now().toString());
++            config.additionalProperties().put("generatedDate", DateTime.now().toString());
+             config.additionalProperties().put("generatorClass", config.getClass().toString());
+ 
+             if (swagger.getInfo() != null) {

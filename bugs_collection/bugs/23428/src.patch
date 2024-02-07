@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/rnn/SimpleTensor.java b/fixed/src/edu/stanford/nlp/rnn/SimpleTensor.java
+index 7ff68b65c..92ee5cb62 100644
+--- a/buggy/src/edu/stanford/nlp/rnn/SimpleTensor.java
++++ b/fixed/src/edu/stanford/nlp/rnn/SimpleTensor.java
+@@ -34,7 +34,7 @@ public class SimpleTensor implements Serializable {
+       if (slices[i].numRows() != numRows || slices[i].numCols() != numCols) {
+         throw new IllegalArgumentException("Slice " + i + " has matrix dimensions " + slices[i].numRows() + "," + slices[i].numCols() + ", expected " + numRows + "," + numCols);
+       }
+-      slices[i] = new SimpleMatrix(slices[i]);
++      this.slices[i] = new SimpleMatrix(slices[i]);
+     }
+     
+   }

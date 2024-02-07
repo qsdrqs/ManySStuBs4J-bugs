@@ -1,0 +1,13 @@
+diff --git a/buggy/domain-management/src/main/java/org/jboss/as/domain/management/security/PropertiesCallbackHandler.java b/fixed/domain-management/src/main/java/org/jboss/as/domain/management/security/PropertiesCallbackHandler.java
+index 9823e7fa9..03db4067c 100644
+--- a/buggy/domain-management/src/main/java/org/jboss/as/domain/management/security/PropertiesCallbackHandler.java
++++ b/fixed/domain-management/src/main/java/org/jboss/as/domain/management/security/PropertiesCallbackHandler.java
+@@ -126,7 +126,7 @@ public class PropertiesCallbackHandler implements Service<DomainCallbackHandler>
+                 long fileLastModified = propertiesFile.lastModified();
+                 boolean loadReallyRequired = userProperties == null || fileUpdated != fileLastModified;
+                 if (loadReallyRequired) {
+-                    ROOT_LOGGER.debugf("Reloading properties file '%s%", propertiesFile.getAbsolutePath());
++                    ROOT_LOGGER.debugf("Reloading properties file '%s'", propertiesFile.getAbsolutePath());
+                     Properties props = new Properties();
+                     InputStream is = new FileInputStream(propertiesFile);
+                     try {

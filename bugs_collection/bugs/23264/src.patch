@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/trees/GrammaticalStructure.java b/fixed/src/edu/stanford/nlp/trees/GrammaticalStructure.java
+index 2e35a8c53..507cc2752 100644
+--- a/buggy/src/edu/stanford/nlp/trees/GrammaticalStructure.java
++++ b/fixed/src/edu/stanford/nlp/trees/GrammaticalStructure.java
+@@ -689,7 +689,7 @@ public abstract class GrammaticalStructure implements Serializable {
+         deps.add(new TypedDependency(dep));
+       }
+     } else {
+-      deps = new ArrayList<TypedDependency>(typedDependencies);
++      deps = new ArrayList<TypedDependency>(typedDependencies.size());
+       for (TypedDependency dep : typedDependencies) {
+         deps.add(new TypedDependency(dep));
+       }

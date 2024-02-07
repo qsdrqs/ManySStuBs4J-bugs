@@ -1,0 +1,13 @@
+diff --git a/buggy/clustering/infinispan/src/main/java/org/jboss/as/clustering/infinispan/subsystem/RemoteStoreResourceDefinition.java b/fixed/clustering/infinispan/src/main/java/org/jboss/as/clustering/infinispan/subsystem/RemoteStoreResourceDefinition.java
+index 0229ed448..7723b0845 100644
+--- a/buggy/clustering/infinispan/src/main/java/org/jboss/as/clustering/infinispan/subsystem/RemoteStoreResourceDefinition.java
++++ b/fixed/clustering/infinispan/src/main/java/org/jboss/as/clustering/infinispan/subsystem/RemoteStoreResourceDefinition.java
+@@ -73,7 +73,7 @@ public class RemoteStoreResourceDefinition extends StoreResourceDefinition {
+             .setMeasurementUnit(MeasurementUnit.MILLISECONDS)
+             .setAllowExpression(true)
+             .setFlags(AttributeAccess.Flag.RESTART_ALL_SERVICES)
+-            .setDefaultValue(new ModelNode().set(60000))
++            .setDefaultValue(new ModelNode().set(60000L))
+             .build();
+ 
+     // the remote servers parameter is required (not null), and the list of remote-server objects must have size >= 1

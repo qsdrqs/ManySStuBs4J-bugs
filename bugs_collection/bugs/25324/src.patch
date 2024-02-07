@@ -1,0 +1,12 @@
+diff --git a/buggy/twitter4j-stream/src/main/java/twitter4j/StreamListener.java b/fixed/twitter4j-stream/src/main/java/twitter4j/StreamListener.java
+index a5a7d9271..e4f2f5762 100644
+--- a/buggy/twitter4j-stream/src/main/java/twitter4j/StreamListener.java
++++ b/fixed/twitter4j-stream/src/main/java/twitter4j/StreamListener.java
+@@ -20,6 +20,6 @@ package twitter4j;
+  * @author Yusuke Yamamoto - yusuke at mac.com
+  * @since Twitter4J 2.1.8
+  */
+-interface StreamListener {
++public interface StreamListener {
+     void onException(Exception ex);
+ }

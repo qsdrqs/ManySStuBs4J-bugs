@@ -1,0 +1,18 @@
+diff --git a/buggy/titan-cassandra/src/test/java/com/thinkaurelius/titan/CassandraStorageSetup.java b/fixed/titan-cassandra/src/test/java/com/thinkaurelius/titan/CassandraStorageSetup.java
+index 0bc1e64f5..38e03f965 100644
+--- a/buggy/titan-cassandra/src/test/java/com/thinkaurelius/titan/CassandraStorageSetup.java
++++ b/fixed/titan-cassandra/src/test/java/com/thinkaurelius/titan/CassandraStorageSetup.java
+@@ -16,11 +16,11 @@ import java.io.File;
+ public class CassandraStorageSetup {
+ 
+     public static final String cassandraYamlPath = StringUtils.join(
+-            new String[]{"file://", System.getProperty("user.dir"), "titan-cassandra", "target",
++            new String[]{"file://", System.getProperty("user.dir"), "target",
+                     "cassandra-tmp", "conf", "127.0.0.1", "cassandra.yaml"},
+             File.separator);
+     public static final String cassandraOrderedYamlPath = StringUtils.join(
+-            new String[]{"file://", System.getProperty("user.dir"), "titan-cassandra", "target",
++            new String[]{"file://", System.getProperty("user.dir"), "target",
+                     "cassandra-tmp", "conf", "127.0.0.1", "cassandra-ordered.yaml"},
+             File.separator);
+ 

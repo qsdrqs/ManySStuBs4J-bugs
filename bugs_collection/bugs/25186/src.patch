@@ -1,0 +1,13 @@
+diff --git a/buggy/controller/src/main/java/org/jboss/as/controller/parsing/CommonXml.java b/fixed/controller/src/main/java/org/jboss/as/controller/parsing/CommonXml.java
+index d01c26e1b..d175cdf4b 100644
+--- a/buggy/controller/src/main/java/org/jboss/as/controller/parsing/CommonXml.java
++++ b/fixed/controller/src/main/java/org/jboss/as/controller/parsing/CommonXml.java
+@@ -1260,7 +1260,7 @@ public abstract class CommonXml implements XMLElementReader<List<ModelNode>>, XM
+ 
+     protected static void writeAttribute(XMLExtendedStreamWriter writer, Attribute attribute, String value)
+             throws XMLStreamException {
+-        writeAttribute(writer, attribute, value);
++        writer.writeAttribute(attribute.getLocalName(), value);
+     }
+ 
+     protected static boolean hasDefinedChild(ModelNode node, String child) {

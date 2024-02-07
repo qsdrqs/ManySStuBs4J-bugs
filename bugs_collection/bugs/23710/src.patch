@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/JavascriptClientCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/JavascriptClientCodegen.java
+index 88d8ef0e5..f6545d57a 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/JavascriptClientCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/JavascriptClientCodegen.java
+@@ -431,7 +431,7 @@ public class JavascriptClientCodegen extends DefaultCodegen implements CodegenCo
+     public void setUseES6(boolean useES6) {
+         this.useES6 = useES6;
+         if (useES6) {
+-            embeddedTemplateDir = templateDir = "Javascript-es6";
++            embeddedTemplateDir = templateDir = "Javascript/es6";
+         } else {
+             embeddedTemplateDir = templateDir = "Javascript";
+         }

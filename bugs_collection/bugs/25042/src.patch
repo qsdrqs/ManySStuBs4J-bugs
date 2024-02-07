@@ -1,0 +1,13 @@
+diff --git a/buggy/subsystem-test/src/main/java/org/jboss/as/subsystem/test/ModelDescriptionValidator.java b/fixed/subsystem-test/src/main/java/org/jboss/as/subsystem/test/ModelDescriptionValidator.java
+index bcd33f884..bfe3527c0 100644
+--- a/buggy/subsystem-test/src/main/java/org/jboss/as/subsystem/test/ModelDescriptionValidator.java
++++ b/fixed/subsystem-test/src/main/java/org/jboss/as/subsystem/test/ModelDescriptionValidator.java
+@@ -261,7 +261,7 @@ public class ModelDescriptionValidator {
+             }
+ 
+             if (!typeNode.hasDefined(DESCRIPTION)) {
+-                errors.add(new ValidationFailure("Missing description for child type '" + type + "'", address));
++                errors.add(new ValidationFailure("Missing description for child type '" + type + "' on ModelNode '" + typeNode.toString()+"'", address));
+             }
+             ModelNode childType = typeNode.get(MODEL_DESCRIPTION);
+             if (!childType.isDefined()) {

@@ -1,0 +1,15 @@
+diff --git a/buggy/arquillian/common/src/main/java/org/jboss/as/arquillian/container/JBossASDeploymentPackager.java b/fixed/arquillian/common/src/main/java/org/jboss/as/arquillian/container/JBossASDeploymentPackager.java
+index d701872a2..1133c5ff0 100644
+--- a/buggy/arquillian/common/src/main/java/org/jboss/as/arquillian/container/JBossASDeploymentPackager.java
++++ b/fixed/arquillian/common/src/main/java/org/jboss/as/arquillian/container/JBossASDeploymentPackager.java
+@@ -56,7 +56,9 @@ public class JBossASDeploymentPackager implements DeploymentPackager {
+             // auxArchives.clear();
+             merge(appArchive, auxArchives);
+         } else {
+-            if (appArchive instanceof WebArchive) {
++            // JBAS-9059 Inconvertible types error due to OpenJDK compiler bug
++            //if (appArchive instanceof WebArchive) {
++            if (WebArchive.class.isAssignableFrom(appArchive.getClass())) {
+                 final ArchivePath webInfLib = ArchivePaths.create("WEB-INF", "lib");
+                 for (Archive<?> aux : auxArchives) {
+                     // we don't want to include the arquillian-core.jar and arquillian-junit.jar

@@ -1,0 +1,17 @@
+diff --git a/buggy/src/edu/stanford/nlp/trees/international/pennchinese/ChineseGrammaticalRelations.java b/fixed/src/edu/stanford/nlp/trees/international/pennchinese/ChineseGrammaticalRelations.java
+index ae52b941e..8679bee05 100644
+--- a/buggy/src/edu/stanford/nlp/trees/international/pennchinese/ChineseGrammaticalRelations.java
++++ b/fixed/src/edu/stanford/nlp/trees/international/pennchinese/ChineseGrammaticalRelations.java
+@@ -779,7 +779,11 @@ public class ChineseGrammaticalRelations {
+                               "NP  $++ (CP=target ) > NP ",
+                               "NP  $++ (CP=target <: IP) > NP  ",
+                               "NP  $++ (CP=target)",
+-                              " NP  << ( CP=target $++ NP  )"
++                              // don't match this rule for an NP if
++                              // there is another, more specific NP
++                              // which will also match the same
++                              // target.  Otherwise you get cycles
++                              " NP  << ( CP=target $++ NP  ) !<< (NP << =target)"
+                             });
+   public static class RelativeClauseModifierGRAnnotation
+     extends GrammaticalRelationAnnotation { }

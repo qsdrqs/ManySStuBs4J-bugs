@@ -1,0 +1,13 @@
+diff --git a/buggy/ejb3/src/main/java/org/jboss/as/ejb3/timerservice/TimerImpl.java b/fixed/ejb3/src/main/java/org/jboss/as/ejb3/timerservice/TimerImpl.java
+index 2ad4c6f75..0f9e03d01 100644
+--- a/buggy/ejb3/src/main/java/org/jboss/as/ejb3/timerservice/TimerImpl.java
++++ b/fixed/ejb3/src/main/java/org/jboss/as/ejb3/timerservice/TimerImpl.java
+@@ -388,7 +388,7 @@ public class TimerImpl implements Timer {
+      * @return
+      */
+     public boolean isActive() {
+-        return timerService.isStarted() && !isCanceled() && !isExpired() && timerService.isScheduled(getId());
++        return timerService.isStarted() && !isCanceled() && !isExpired() && (timerService.isScheduled(getId()) || timerState == TimerState.CREATED);
+     }
+ 
+     /**

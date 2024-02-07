@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/ignore/CodegenIgnoreProcessor.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/ignore/CodegenIgnoreProcessor.java
+index 0de8d2986..76179951d 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/ignore/CodegenIgnoreProcessor.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/ignore/CodegenIgnoreProcessor.java
+@@ -45,7 +45,7 @@ public class CodegenIgnoreProcessor {
+         if (directory.exists() && directory.isDirectory()) {
+             loadFromFile(targetIgnoreFile);
+         } else {
+-            LOGGER.warn("Output directory does not exist, or is inaccessible. No file (.swager-codegen-ignore) will be evaluated.");
++            LOGGER.warn("Output directory does not exist, or is inaccessible. No file (.swagger-codegen-ignore) will be evaluated.");
+         }
+     }
+ 

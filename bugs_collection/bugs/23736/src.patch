@@ -1,0 +1,13 @@
+diff --git a/buggy/samples/client/petstore/java/feign/src/test/java/io/swagger/client/api/PetApiTest.java b/fixed/samples/client/petstore/java/feign/src/test/java/io/swagger/client/api/PetApiTest.java
+index 19e44086a..b144cde9f 100644
+--- a/buggy/samples/client/petstore/java/feign/src/test/java/io/swagger/client/api/PetApiTest.java
++++ b/fixed/samples/client/petstore/java/feign/src/test/java/io/swagger/client/api/PetApiTest.java
+@@ -29,7 +29,7 @@ public class PetApiTest {
+     @Test
+     public void testApiClient() {
+         // the default api client is used
+-        assertEquals("http://petstore.swagger.io/v2", apiClient.getBasePath());
++        assertEquals("http://petstore.swagger.io:80/v2", apiClient.getBasePath());
+ 
+         ApiClient newClient = new ApiClient();
+         newClient.setBasePath("http://example.com");

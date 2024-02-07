@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultCodegen.java
+index efc0aa31d..89cf238fa 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultCodegen.java
+@@ -584,7 +584,7 @@ public class DefaultCodegen {
+                 }
+             }
+             // interfaces (intermediate models)
+-            if (allDefinitions != null) {
++            if (allDefinitions != null && composed.getInterfaces() != null) {
+                 for (RefModel _interface : composed.getInterfaces()) {
+                     final String interfaceRef = toModelName(_interface.getSimpleRef());
+                     final Model interfaceModel = allDefinitions.get(interfaceRef);

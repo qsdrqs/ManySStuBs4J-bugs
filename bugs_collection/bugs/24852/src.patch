@@ -1,0 +1,13 @@
+diff --git a/buggy/controller/src/test/java/org/jboss/as/controller/services/path/PathsTestCase.java b/fixed/controller/src/test/java/org/jboss/as/controller/services/path/PathsTestCase.java
+index 76582d58d..bb0406b2e 100644
+--- a/buggy/controller/src/test/java/org/jboss/as/controller/services/path/PathsTestCase.java
++++ b/fixed/controller/src/test/java/org/jboss/as/controller/services/path/PathsTestCase.java
+@@ -870,7 +870,7 @@ public class PathsTestCase extends AbstractControllerTestBase {
+ 
+ 
+         void reset(int count) {
+-            latch = new CountDownLatch(1);
++            latch = new CountDownLatch(count);
+             services.clear();
+         }
+ 

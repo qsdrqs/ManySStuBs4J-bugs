@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/patterns/surface/GetPatternsFromDataMultiClass.java b/fixed/src/edu/stanford/nlp/patterns/surface/GetPatternsFromDataMultiClass.java
+index e3d824db1..e5df99e22 100644
+--- a/buggy/src/edu/stanford/nlp/patterns/surface/GetPatternsFromDataMultiClass.java
++++ b/fixed/src/edu/stanford/nlp/patterns/surface/GetPatternsFromDataMultiClass.java
+@@ -862,7 +862,7 @@ public class GetPatternsFromDataMultiClass implements Serializable {
+ 
+       for (File f : Data.sentsFiles) {
+ 
+-        Redwood.log(Redwood.DBG, constVars.computeAllPatterns ? "Creating patterns and " : "" + "calculating sufficient statistics from " + f);
++        Redwood.log(Redwood.DBG, (constVars.computeAllPatterns ? "Creating patterns and " : "") + "calculating sufficient statistics from " + f);
+ 
+         Map<String, List<CoreLabel>> sents = IOUtils.readObjectFromFile(f);
+ 

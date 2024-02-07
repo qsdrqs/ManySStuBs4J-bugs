@@ -1,0 +1,15 @@
+diff --git a/buggy/twitter4j-core/src/test/java/twitter4j/MBeansIntegrationTest.java b/fixed/twitter4j-core/src/test/java/twitter4j/MBeansIntegrationTest.java
+index 7662936e2..82cdcc000 100644
+--- a/buggy/twitter4j-core/src/test/java/twitter4j/MBeansIntegrationTest.java
++++ b/fixed/twitter4j-core/src/test/java/twitter4j/MBeansIntegrationTest.java
+@@ -35,8 +35,8 @@ public class MBeansIntegrationTest extends TwitterTestBase {
+     public void testMonitoringIntegration() throws Exception {
+         // monitoring is turned on with mbeanEnabled=true
+         TwitterAPIMonitor monitor = TwitterAPIMonitor.getInstance();
+-        assertEquals(0, monitor.getStatistics().getCallCount());
++        long count = monitor.getStatistics().getCallCount();
+         twitter1.getHomeTimeline();
+-        assertEquals(1, monitor.getStatistics().getCallCount());
++        assertEquals(count + 1, monitor.getStatistics().getCallCount());
+     }
+ }

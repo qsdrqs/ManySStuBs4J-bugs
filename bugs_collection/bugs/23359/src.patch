@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/parser/shiftreduce/Weight.java b/fixed/src/edu/stanford/nlp/parser/shiftreduce/Weight.java
+index 84750953d..bf925c03a 100644
+--- a/buggy/src/edu/stanford/nlp/parser/shiftreduce/Weight.java
++++ b/fixed/src/edu/stanford/nlp/parser/shiftreduce/Weight.java
+@@ -109,7 +109,7 @@ public class Weight implements Serializable {
+       }
+       int index = unpackIndex(i);
+       float score = unpackScore(i);
+-      packed[j] = pack(index, score);
++      newPacked[j] = pack(index, score);
+       ++j;
+     }
+     packed = newPacked;

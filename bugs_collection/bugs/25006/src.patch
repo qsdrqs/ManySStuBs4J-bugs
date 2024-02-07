@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/integration/clust/src/test/java/org/jboss/as/test/clustering/single/web/SimpleWebTestCase.java b/fixed/testsuite/integration/clust/src/test/java/org/jboss/as/test/clustering/single/web/SimpleWebTestCase.java
+index 20b33ddbf..4e17206e8 100644
+--- a/buggy/testsuite/integration/clust/src/test/java/org/jboss/as/test/clustering/single/web/SimpleWebTestCase.java
++++ b/fixed/testsuite/integration/clust/src/test/java/org/jboss/as/test/clustering/single/web/SimpleWebTestCase.java
+@@ -55,7 +55,7 @@ public class SimpleWebTestCase {
+     public static Archive<?> deployment() {
+         WebArchive war = ShrinkWrap.create(WebArchive.class, "distributable.war");
+         war.addClass(SimpleServlet.class);
+-        war.addAsWebInfResource(SimpleWebTestCase.class.getPackage(), "web.xml");
++        war.setWebXML(SimpleWebTestCase.class.getPackage(), "web.xml");
+         System.out.println(war.toString(true));
+         return war;
+     }

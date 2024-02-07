@@ -1,0 +1,27 @@
+diff --git a/buggy/src/main/java/com/wordnik/swagger/codegen/DefaultGenerator.java b/fixed/src/main/java/com/wordnik/swagger/codegen/DefaultGenerator.java
+index 7e2cc186c..51bc4138e 100644
+--- a/buggy/src/main/java/com/wordnik/swagger/codegen/DefaultGenerator.java
++++ b/fixed/src/main/java/com/wordnik/swagger/codegen/DefaultGenerator.java
+@@ -52,14 +52,12 @@ public class DefaultGenerator implements Generator {
+             config.additionalProperties().put("licenseInfo", license.getName());
+           if(license.getUrl() != null)
+             config.additionalProperties().put("licenseUrl", license.getUrl());
+-          // 
+-          // licenseUrl
+         }
+       }
+ 
+       StringBuilder hostBuilder = new StringBuilder();
+       if(swagger.getSchemes() != null && swagger.getSchemes().size() > 0) {
+-        hostBuilder.append(swagger.getSchemes().get(0));
++        hostBuilder.append(swagger.getSchemes().get(0).toValue());
+         hostBuilder.append("://");
+       }
+       else
+@@ -338,4 +336,4 @@ public class DefaultGenerator implements Generator {
+ 
+     return objs;
+   }
+-}
+\ No newline at end of file
++}

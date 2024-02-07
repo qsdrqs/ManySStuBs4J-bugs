@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/TypeScriptAureliaClientCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/TypeScriptAureliaClientCodegen.java
+index 2661b4a00..f9249d6f9 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/TypeScriptAureliaClientCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/TypeScriptAureliaClientCodegen.java
+@@ -94,7 +94,7 @@ public class TypeScriptAureliaClientCodegen extends AbstractTypeScriptClientCode
+ 
+             // Collect models to be imported
+             for (CodegenParameter param : op.allParams) {
+-                if (!param.isPrimitiveType) {
++                if (!param.isPrimitiveType && !param.isListContainer && !param.dataType.equals("any")) {
+                     modelImports.add(param.dataType);
+                 }
+             }

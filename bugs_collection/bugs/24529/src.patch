@@ -1,0 +1,13 @@
+diff --git a/buggy/jdr/jboss-as-jdr/src/main/java/org/jboss/as/jdr/JdrRunner.java b/fixed/jdr/jboss-as-jdr/src/main/java/org/jboss/as/jdr/JdrRunner.java
+index 2e9bd8d9d..83dd62ba0 100644
+--- a/buggy/jdr/jboss-as-jdr/src/main/java/org/jboss/as/jdr/JdrRunner.java
++++ b/fixed/jdr/jboss-as-jdr/src/main/java/org/jboss/as/jdr/JdrRunner.java
+@@ -92,7 +92,7 @@ public class JdrRunner implements JdrReportCollector {
+             Properties plugins = new Properties();
+             plugins.load(is);
+             for (String pluginName : plugins.stringPropertyNames()) {
+-                Class pluginClass = Class.forName(pluginName);
++                Class<?> pluginClass = Class.forName(pluginName);
+                 JdrPlugin plugin = (JdrPlugin) pluginClass.newInstance();
+                 commands.addAll(plugin.getCommands());
+                 versionWriter.println(plugin.getPluginId());

@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/SpringCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/SpringCodegen.java
+index d801d980e..918b681d6 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/SpringCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/SpringCodegen.java
+@@ -310,7 +310,7 @@ public class SpringCodegen extends AbstractJavaCodegen
+                 additionalProperties.put(RESPONSE_WRAPPER, "org.springframework.util.concurrent.ListenableFuture");
+                 break;
+             case "DeferredResult":
+-                additionalProperties.put(RESPONSE_WRAPPER, "org.springframework.web.context.request.DeferredResult");
++                additionalProperties.put(RESPONSE_WRAPPER, "org.springframework.web.context.request.async.DeferredResult");
+                 break;
+             case "HystrixCommand":
+                 additionalProperties.put(RESPONSE_WRAPPER, "com.netflix.hystrix.HystrixCommand");

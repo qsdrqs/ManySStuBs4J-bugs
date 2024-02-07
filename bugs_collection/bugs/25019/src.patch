@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/integration/src/test/java/org/jboss/as/test/iiop/basic/ClientEjb.java b/fixed/testsuite/integration/src/test/java/org/jboss/as/test/iiop/basic/ClientEjb.java
+index 61bb7e53c..f093a8052 100644
+--- a/buggy/testsuite/integration/src/test/java/org/jboss/as/test/iiop/basic/ClientEjb.java
++++ b/fixed/testsuite/integration/src/test/java/org/jboss/as/test/iiop/basic/ClientEjb.java
+@@ -11,7 +11,7 @@ import javax.ejb.Stateless;
+ @Stateless
+ public class ClientEjb {
+ 
+-    @EJB(lookup = "corbaname:iiop:localhost:3628#server/server/IIOPBasicBean")
++    @EJB(lookup = "corbaname:iiop:localhost:3628#server/IIOPBasicBean")
+     private IIOPBasicHome home;
+ 
+     public String getRemoteMessage() throws RemoteException {

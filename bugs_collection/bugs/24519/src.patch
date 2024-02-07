@@ -1,0 +1,13 @@
+diff --git a/buggy/legacy/jacorb/src/main/java/org/jboss/as/jacorb/TransformUtils.java b/fixed/legacy/jacorb/src/main/java/org/jboss/as/jacorb/TransformUtils.java
+index cde17f1d9..41887158a 100644
+--- a/buggy/legacy/jacorb/src/main/java/org/jboss/as/jacorb/TransformUtils.java
++++ b/fixed/legacy/jacorb/src/main/java/org/jboss/as/jacorb/TransformUtils.java
+@@ -81,7 +81,7 @@ public class TransformUtils {
+                     default:
+                         value = legacyValue;
+                 }
+-                if(!value.equals("off")) {
++                if (!value.asString().equals(JacORBSubsystemConstants.OFF)) {
+                     model.get(name).set(value);
+                 }
+             }

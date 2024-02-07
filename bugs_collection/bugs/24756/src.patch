@@ -1,0 +1,18 @@
+diff --git a/buggy/arquillian/common/src/main/java/org/jboss/as/arquillian/container/ArchiveDeployer.java b/fixed/arquillian/common/src/main/java/org/jboss/as/arquillian/container/ArchiveDeployer.java
+index ab460e158..f5bacfe14 100644
+--- a/buggy/arquillian/common/src/main/java/org/jboss/as/arquillian/container/ArchiveDeployer.java
++++ b/fixed/arquillian/common/src/main/java/org/jboss/as/arquillian/container/ArchiveDeployer.java
+@@ -77,10 +77,10 @@ public class ArchiveDeployer {
+             return deployer.deploy(name, input);
+         } catch (Exception ex) {
+             Throwable rootCause = ex.getCause();
+-            while (null != rootCause) {
++            while (null != rootCause && rootCause.getCause() != null) {
+                 rootCause = rootCause.getCause();
+             }
+             throw new DeploymentException("Cannot deploy: " + name, rootCause);
+         }
+     }
+-}
+\ No newline at end of file
++}

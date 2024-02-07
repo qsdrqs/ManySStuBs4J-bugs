@@ -1,0 +1,12 @@
+diff --git a/buggy/appclient/src/main/java/org/jboss/as/appclient/deployment/ForwardingEjbClientConfiguration.java b/fixed/appclient/src/main/java/org/jboss/as/appclient/deployment/ForwardingEjbClientConfiguration.java
+index 01e636a62..30b77ad9e 100644
+--- a/buggy/appclient/src/main/java/org/jboss/as/appclient/deployment/ForwardingEjbClientConfiguration.java
++++ b/fixed/appclient/src/main/java/org/jboss/as/appclient/deployment/ForwardingEjbClientConfiguration.java
+@@ -54,6 +54,6 @@ public abstract class ForwardingEjbClientConfiguration implements EJBClientConfi
+ 
+     @Override
+     public long getInvocationTimeout() {
+-        return 0;
++        return delegate.getInvocationTimeout();
+     }
+ }

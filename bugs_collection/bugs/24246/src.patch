@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-models/src/test/java/io/swagger/models/OperationTest.java b/fixed/modules/swagger-models/src/test/java/io/swagger/models/OperationTest.java
+index e383e939b..ab21a2ca7 100644
+--- a/buggy/modules/swagger-models/src/test/java/io/swagger/models/OperationTest.java
++++ b/fixed/modules/swagger-models/src/test/java/io/swagger/models/OperationTest.java
+@@ -180,7 +180,7 @@ public class OperationTest {
+         operation.setSummary("summary");
+ 
+         // then
+-        assertEquals(operation.getSummary(), "summary", "The get sumary must equals the set one");
++        assertEquals(operation.getSummary(), "summary", "The get summary must equal the set one");
+     }
+ 
+     @Test

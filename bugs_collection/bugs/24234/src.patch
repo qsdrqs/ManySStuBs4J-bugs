@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-models/src/main/java/io/swagger/models/properties/FloatProperty.java b/fixed/modules/swagger-models/src/main/java/io/swagger/models/properties/FloatProperty.java
+index 1f2338712..c379b5e47 100644
+--- a/buggy/modules/swagger-models/src/main/java/io/swagger/models/properties/FloatProperty.java
++++ b/fixed/modules/swagger-models/src/main/java/io/swagger/models/properties/FloatProperty.java
+@@ -6,7 +6,7 @@ import java.util.ArrayList;
+ import java.util.List;
+ 
+ public class FloatProperty extends DecimalProperty {
+-    private static final String FORMAT = "float";
++    public static final String FORMAT = "float";
+     protected List<Float> _enum;
+ 
+     protected Float _default;

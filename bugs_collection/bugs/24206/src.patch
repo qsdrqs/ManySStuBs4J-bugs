@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-integration/src/main/java/io/swagger/oas/integration/GenericOpenApiContext.java b/fixed/modules/swagger-integration/src/main/java/io/swagger/oas/integration/GenericOpenApiContext.java
+index a68f03fdd..656d4513a 100644
+--- a/buggy/modules/swagger-integration/src/main/java/io/swagger/oas/integration/GenericOpenApiContext.java
++++ b/fixed/modules/swagger-integration/src/main/java/io/swagger/oas/integration/GenericOpenApiContext.java
+@@ -204,7 +204,7 @@ public class GenericOpenApiContext<T extends GenericOpenApiContext> implements O
+ 
+     protected List<ImmutablePair<String, String>> getKnownLocations() {
+         return Arrays.asList(
+-                new ImmutablePair<>("classpath", "openapi-configiguration.yaml"),
++                new ImmutablePair<>("classpath", "openapi-configuration.yaml"),
+                 new ImmutablePair<>("classpath", "openapi-configuration.json"),
+                 new ImmutablePair<>("file", "openapi-configuration.yaml"),
+                 new ImmutablePair<>("file", "openapi-configuration.json"),

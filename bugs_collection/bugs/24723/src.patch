@@ -1,0 +1,13 @@
+diff --git a/buggy/host-controller/src/main/java/org/jboss/as/host/controller/ServerInventoryImpl.java b/fixed/host-controller/src/main/java/org/jboss/as/host/controller/ServerInventoryImpl.java
+index 0c65bb354..b3881ff59 100644
+--- a/buggy/host-controller/src/main/java/org/jboss/as/host/controller/ServerInventoryImpl.java
++++ b/fixed/host-controller/src/main/java/org/jboss/as/host/controller/ServerInventoryImpl.java
+@@ -253,7 +253,7 @@ public class ServerInventoryImpl implements ServerInventory {
+         }
+         final ManagedServer server = createManagedServer(serverName, domainModel, authKey);
+         if(servers.putIfAbsent(serverName, server) != null) {
+-            ROOT_LOGGER.existingServerWithState(serverName, existing.getState());
++            ROOT_LOGGER.existingServerWithState(serverName, server.getState());
+             return;
+         }
+         if(running) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/integration/src/test/java/org/jboss/as/test/smoke/jsr88/EnterpriseDeploymentTestCase.java b/fixed/testsuite/integration/src/test/java/org/jboss/as/test/smoke/jsr88/EnterpriseDeploymentTestCase.java
+index 096e216f3..78e97b6c0 100644
+--- a/buggy/testsuite/integration/src/test/java/org/jboss/as/test/smoke/jsr88/EnterpriseDeploymentTestCase.java
++++ b/fixed/testsuite/integration/src/test/java/org/jboss/as/test/smoke/jsr88/EnterpriseDeploymentTestCase.java
+@@ -309,7 +309,7 @@ public class EnterpriseDeploymentTestCase {
+         if (file.exists())
+             return file;
+ 
+-        String testResourcesDir = "target/test-classes";
++        String testResourcesDir = System.getProperty("jbossas.ts.submodule.dir") + "/target/test-classes";
+         file = new File(testResourcesDir + "/" + resource);
+         if (file.exists())
+             return file;

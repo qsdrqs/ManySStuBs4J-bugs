@@ -1,0 +1,14 @@
+diff --git a/buggy/ejb3/src/main/java/org/jboss/as/ejb3/component/StatelessEJBComponent.java b/fixed/ejb3/src/main/java/org/jboss/as/ejb3/component/StatelessEJBComponent.java
+index 5c5fe46c7..9d9600c2d 100644
+--- a/buggy/ejb3/src/main/java/org/jboss/as/ejb3/component/StatelessEJBComponent.java
++++ b/fixed/ejb3/src/main/java/org/jboss/as/ejb3/component/StatelessEJBComponent.java
+@@ -61,7 +61,8 @@ public class StatelessEJBComponent extends AbstractComponent {
+ 
+     @Override
+     protected AbstractComponentInstance constructComponentInstance(Object instance) {
+-        throw new RuntimeException("NYI: org.jboss.as.ejb3.component.StatelessEJBComponent.constructComponentInstance");
++        // TODO: Implement this!
++        return null;
+     }
+ 
+     @Override

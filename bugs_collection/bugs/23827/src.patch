@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/test/java/io/swagger/codegen/java/jaxrs/AllowableValuesTest.java b/fixed/modules/swagger-codegen/src/test/java/io/swagger/codegen/java/jaxrs/AllowableValuesTest.java
+index 608086073..aa81a3cf8 100644
+--- a/buggy/modules/swagger-codegen/src/test/java/io/swagger/codegen/java/jaxrs/AllowableValuesTest.java
++++ b/fixed/modules/swagger-codegen/src/test/java/io/swagger/codegen/java/jaxrs/AllowableValuesTest.java
+@@ -17,7 +17,7 @@ import java.nio.charset.StandardCharsets;
+ 
+ public class AllowableValuesTest {
+ 
+-    private static final String TEMPLATE_FILE = "JavaJaxRS/libraries/jersey1/allowableValues.mustache";
++    private static final String TEMPLATE_FILE = "JavaJaxRS/allowableValues.mustache";
+     private static final String PROVIDER_NAME = "operations";
+ 
+     private static String loadClassResource(Class<?> cls, String name) throws IOException {

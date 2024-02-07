@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/org/jboss/as/server/services/path/RelativePathService.java b/fixed/server/src/main/java/org/jboss/as/server/services/path/RelativePathService.java
+index 1b55871d5..b3adce0c0 100644
+--- a/buggy/server/src/main/java/org/jboss/as/server/services/path/RelativePathService.java
++++ b/fixed/server/src/main/java/org/jboss/as/server/services/path/RelativePathService.java
+@@ -67,7 +67,7 @@ public class RelativePathService extends org.jboss.as.controller.services.path.R
+     public static ServiceController<String> addService(final ServiceName name, final String path,
+                                                        boolean possiblyAbsolute, final String relativeTo, final ServiceTarget serviceTarget, final List<ServiceController<?>> newControllers,
+                                                        final ServiceListener... listeners) {
+-        return RelativePathService.addService(name, path, possiblyAbsolute, relativeTo, serviceTarget, newControllers);
++        return org.jboss.as.controller.services.path.RelativePathService.addService(name, path, possiblyAbsolute, relativeTo, serviceTarget, newControllers, listeners);
+     }
+ 
+     @Deprecated

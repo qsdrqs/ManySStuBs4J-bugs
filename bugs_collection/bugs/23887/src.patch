@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PerlClientCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PerlClientCodegen.java
+index f53d7c1a1..b05512f44 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PerlClientCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PerlClientCodegen.java
+@@ -257,7 +257,7 @@ public class PerlClientCodegen extends DefaultCodegen implements CodegenConfig {
+             }
+         }
+ 
+-        return "null";
++        return null;
+     }
+ 
+ 

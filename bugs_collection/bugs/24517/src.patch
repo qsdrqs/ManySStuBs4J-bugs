@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/shared/src/main/java/org/jboss/as/test/integration/ldap/InMemoryDirectoryServiceFactory.java b/fixed/testsuite/shared/src/main/java/org/jboss/as/test/integration/ldap/InMemoryDirectoryServiceFactory.java
+index 5aaa6c147..9354e83f8 100644
+--- a/buggy/testsuite/shared/src/main/java/org/jboss/as/test/integration/ldap/InMemoryDirectoryServiceFactory.java
++++ b/fixed/testsuite/shared/src/main/java/org/jboss/as/test/integration/ldap/InMemoryDirectoryServiceFactory.java
+@@ -94,7 +94,7 @@ public class InMemoryDirectoryServiceFactory implements DirectoryServiceFactory
+      * {@inheritDoc}
+      */
+     public void init(String name) throws Exception {
+-        if ((directoryService != null) && directoryService.isStarted()) {
++        if ((directoryService == null) || directoryService.isStarted()) {
+             return;
+         }
+ 

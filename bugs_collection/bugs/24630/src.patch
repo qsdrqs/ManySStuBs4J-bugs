@@ -1,0 +1,13 @@
+diff --git a/buggy/subsystem-test/framework/src/main/java/org/jboss/as/subsystem/test/SubsystemTestDelegate.java b/fixed/subsystem-test/framework/src/main/java/org/jboss/as/subsystem/test/SubsystemTestDelegate.java
+index 852f551dc..b8f7385f4 100644
+--- a/buggy/subsystem-test/framework/src/main/java/org/jboss/as/subsystem/test/SubsystemTestDelegate.java
++++ b/fixed/subsystem-test/framework/src/main/java/org/jboss/as/subsystem/test/SubsystemTestDelegate.java
+@@ -422,7 +422,7 @@ final class SubsystemTestDelegate {
+         try {
+             desc.writeString(pw, false);
+             //Leave this println - it only gets executed when people generate the legacy dmr files, and is useful to know where it has been written.
+-            System.out.println("Legact resource defintion dmr written to: " + dmrFile.getAbsolutePath());
++            System.out.println("Legacy resource definition dmr written to: " + dmrFile.getAbsolutePath());
+         } finally {
+             IoUtils.safeClose(pw);
+         }

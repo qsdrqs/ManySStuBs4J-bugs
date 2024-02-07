@@ -1,0 +1,13 @@
+diff --git a/buggy/demos/src/main/java/org/jboss/as/demos/http/deploy/runner/ExampleRunner.java b/fixed/demos/src/main/java/org/jboss/as/demos/http/deploy/runner/ExampleRunner.java
+index dd2c1f47e..6d97204d2 100644
+--- a/buggy/demos/src/main/java/org/jboss/as/demos/http/deploy/runner/ExampleRunner.java
++++ b/fixed/demos/src/main/java/org/jboss/as/demos/http/deploy/runner/ExampleRunner.java
+@@ -60,7 +60,7 @@ public class ExampleRunner {
+             connection.setDoInput(true);
+             connection.setDoOutput(true);
+             connection.setRequestMethod("POST");
+-            connection.setRequestProperty("Content-Type","multipart/form-data;boundary=-----------------------------261773107125236");
++            connection.setRequestProperty("Content-Type","multipart/form-data;boundary=---------------------------261773107125236");
+             os = new BufferedOutputStream(connection.getOutputStream());
+ 
+             StringBuilder builder = new StringBuilder();

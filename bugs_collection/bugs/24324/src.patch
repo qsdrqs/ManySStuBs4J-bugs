@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/scala/com/wordnik/swagger/core/ApiOperation.java b/fixed/src/main/scala/com/wordnik/swagger/core/ApiOperation.java
+index bbe6eb8f7..dca30a792 100644
+--- a/buggy/src/main/scala/com/wordnik/swagger/core/ApiOperation.java
++++ b/fixed/src/main/scala/com/wordnik/swagger/core/ApiOperation.java
+@@ -26,7 +26,7 @@ import java.lang.annotation.Target;
+ public @interface ApiOperation {
+     String value();
+     String responseClass() default "ok";
+-    boolean mutiValueResponse() default false; //to indicate if return type will contain one or more of the response value
++    boolean multiValueResponse() default false; //to indicate if return type will contain one or more of the response value
+     String notes() default "";
+     String tags() default "";
+ }

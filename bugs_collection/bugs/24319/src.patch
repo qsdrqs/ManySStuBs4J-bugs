@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-core/src/main/java/com/wordnik/swagger/util/SwaggerLoader.java b/fixed/modules/swagger-core/src/main/java/com/wordnik/swagger/util/SwaggerLoader.java
+index 17c086d17..7a00fa206 100644
+--- a/buggy/modules/swagger-core/src/main/java/com/wordnik/swagger/util/SwaggerLoader.java
++++ b/fixed/modules/swagger-core/src/main/java/com/wordnik/swagger/util/SwaggerLoader.java
+@@ -22,7 +22,7 @@ public class SwaggerLoader {
+         mapper.readValue(new File(location), Swagger.class);
+     }
+     catch (Exception e) {
+-      e.printStackTrace();
++      System.out.println(e.getMessage());
+       return null;
+     }
+   }

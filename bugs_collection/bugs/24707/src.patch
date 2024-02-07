@@ -1,0 +1,13 @@
+diff --git a/buggy/controller/src/main/java/org/jboss/as/controller/services/path/PathManagerService.java b/fixed/controller/src/main/java/org/jboss/as/controller/services/path/PathManagerService.java
+index 61dfea3cc..e5d4bd6bf 100644
+--- a/buggy/controller/src/main/java/org/jboss/as/controller/services/path/PathManagerService.java
++++ b/fixed/controller/src/main/java/org/jboss/as/controller/services/path/PathManagerService.java
+@@ -88,7 +88,7 @@ public abstract class PathManagerService implements PathManager, Service<PathMan
+             synchronized (pathEntries) {
+                 pathEntry = pathEntries.get(relativeTo);
+                 if (pathEntry == null) {
+-                    throw MESSAGES.pathEntryNotFound(path);
++                    throw MESSAGES.pathEntryNotFound(relativeTo);
+                 }
+                 return RelativePathService.doResolve(pathEntry.resolvePath(), path);
+             }

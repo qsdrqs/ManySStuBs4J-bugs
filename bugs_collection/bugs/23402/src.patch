@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/util/concurrent/ConcurrentHashIndex.java b/fixed/src/edu/stanford/nlp/util/concurrent/ConcurrentHashIndex.java
+index 1bf77af5d..ef60e9143 100644
+--- a/buggy/src/edu/stanford/nlp/util/concurrent/ConcurrentHashIndex.java
++++ b/fixed/src/edu/stanford/nlp/util/concurrent/ConcurrentHashIndex.java
+@@ -166,7 +166,7 @@ public class ConcurrentHashIndex<E> extends AbstractCollection<E> implements Ind
+ 
+   @Override
+   public int size() {
+-    return index.get();
++    return index2Item.size();
+   }
+ 
+   @Override

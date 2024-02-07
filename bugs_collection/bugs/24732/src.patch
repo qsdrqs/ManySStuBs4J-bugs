@@ -1,0 +1,13 @@
+diff --git a/buggy/security/src/test/java/org/jboss/as/security/test/SecurityDomainModelv1UnitTestCase.java b/fixed/security/src/test/java/org/jboss/as/security/test/SecurityDomainModelv1UnitTestCase.java
+index 2c2ac81c5..43a868975 100644
+--- a/buggy/security/src/test/java/org/jboss/as/security/test/SecurityDomainModelv1UnitTestCase.java
++++ b/fixed/security/src/test/java/org/jboss/as/security/test/SecurityDomainModelv1UnitTestCase.java
+@@ -75,6 +75,6 @@ public class SecurityDomainModelv1UnitTestCase extends AbstractSubsystemTest {
+         //Make sure the models from the two controllers are identical
+         super.compare(modelA, modelB);
+ 
+-        assertRemoveSubsystemResources(servicesA);
++        assertRemoveSubsystemResources(servicesB);
+    }
+ }
+\ No newline at end of file

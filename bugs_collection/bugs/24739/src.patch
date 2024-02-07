@@ -1,0 +1,14 @@
+diff --git a/buggy/jmx/src/main/java/org/jboss/as/jmx/PluggableMBeanServerImpl.java b/fixed/jmx/src/main/java/org/jboss/as/jmx/PluggableMBeanServerImpl.java
+index cb3eca647..25feecba4 100644
+--- a/buggy/jmx/src/main/java/org/jboss/as/jmx/PluggableMBeanServerImpl.java
++++ b/fixed/jmx/src/main/java/org/jboss/as/jmx/PluggableMBeanServerImpl.java
+@@ -281,7 +281,8 @@ class PluggableMBeanServerImpl implements PluggableMBeanServer {
+                 }
+             }
+         }
+-        return false;
++        // check if it's registered with the root (a.k.a platform) MBean server
++        return rootMBeanServer.isRegistered(name);
+     }
+ 
+     @Override

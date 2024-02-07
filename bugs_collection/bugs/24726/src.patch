@@ -1,0 +1,16 @@
+diff --git a/buggy/logging/src/main/java/org/jboss/as/logging/HandlerOperations.java b/fixed/logging/src/main/java/org/jboss/as/logging/HandlerOperations.java
+index e2805219e..08afbff4c 100644
+--- a/buggy/logging/src/main/java/org/jboss/as/logging/HandlerOperations.java
++++ b/fixed/logging/src/main/java/org/jboss/as/logging/HandlerOperations.java
+@@ -143,9 +143,9 @@ final class HandlerOperations {
+                         reloadRequired = reloadRequired || Logging.requiresReload(attribute.getFlags());
+                     }
+                     if (restartRequired) {
+-                        context.restartRequired();
++                        context.revertRestartRequired();
+                     } else if (reloadRequired) {
+-                        context.reloadRequired();
++                        context.revertReloadRequired();
+                     }
+                 }
+                 performRollback(context, configuration, name, originalModel);

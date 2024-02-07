@@ -1,0 +1,13 @@
+diff --git a/buggy/host-controller/src/main/java/org/jboss/as/host/controller/HostController.java b/fixed/host-controller/src/main/java/org/jboss/as/host/controller/HostController.java
+index 04058ebdc..42e15b815 100644
+--- a/buggy/host-controller/src/main/java/org/jboss/as/host/controller/HostController.java
++++ b/fixed/host-controller/src/main/java/org/jboss/as/host/controller/HostController.java
+@@ -230,7 +230,7 @@ public class HostController {
+             }
+         });
+ 
+-        final ServiceActivatorContext serviceActivatorContext = new ServiceActivatorContextImpl(batchBuilder);
++        final ServiceActivatorContext serviceActivatorContext = new ServiceActivatorContextImpl(batchBuilder, serviceContainer);
+ 
+         // Always activate the management port
+         activateManagementCommunication(serviceActivatorContext);

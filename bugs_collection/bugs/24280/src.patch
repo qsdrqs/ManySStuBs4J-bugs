@@ -1,0 +1,17 @@
+diff --git a/buggy/modules/swagger-jaxrs/src/main/java/io/swagger/jaxrs/utils/ReflectionUtils.java b/fixed/modules/swagger-jaxrs/src/main/java/io/swagger/jaxrs/utils/ReflectionUtils.java
+index 470172746..ce0424a67 100644
+--- a/buggy/modules/swagger-jaxrs/src/main/java/io/swagger/jaxrs/utils/ReflectionUtils.java
++++ b/fixed/modules/swagger-jaxrs/src/main/java/io/swagger/jaxrs/utils/ReflectionUtils.java
+@@ -83,7 +83,11 @@ public class ReflectionUtils {
+         Type[] gpTypes = methodToFind.getGenericParameterTypes();
+         methodLoop:
+         for (Method method : cls.getMethods()) {
+-            if (!method.getName().equals(methodToSearch) || !method.getReturnType().isAssignableFrom(methodToFind.getReturnType())) {
++            if (
++            	!method.getName().equals(methodToSearch) || 
++            	!method.getReturnType().isAssignableFrom(methodToFind.getReturnType()) ||
++            	method.getParameterTypes().length != pTypes.length
++            	) {
+                 continue;
+             }
+             Class<?>[] pt = method.getParameterTypes();

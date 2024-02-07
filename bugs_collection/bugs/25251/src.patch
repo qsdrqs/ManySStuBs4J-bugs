@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/redis/clients/jedis/Connection.java b/fixed/src/main/java/redis/clients/jedis/Connection.java
+index e4db555b6..a2d5e2b65 100644
+--- a/buggy/src/main/java/redis/clients/jedis/Connection.java
++++ b/fixed/src/main/java/redis/clients/jedis/Connection.java
+@@ -230,7 +230,7 @@ public class Connection implements Closeable {
+   @SuppressWarnings("unchecked")
+   public List<Long> getIntegerMultiBulkReply() {
+     flush();
+-    return (List<Long>) Protocol.read(inputStream);
++    return (List<Long>) readProtocolWithCheckingBroken();
+   }
+ 
+   public Object getOne() {

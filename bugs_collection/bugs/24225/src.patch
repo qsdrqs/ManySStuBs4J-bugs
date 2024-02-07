@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-models/src/main/java/io/swagger/models/properties/BinaryProperty.java b/fixed/modules/swagger-models/src/main/java/io/swagger/models/properties/BinaryProperty.java
+index c1e20c5ac..e4f0d1b93 100644
+--- a/buggy/modules/swagger-models/src/main/java/io/swagger/models/properties/BinaryProperty.java
++++ b/fixed/modules/swagger-models/src/main/java/io/swagger/models/properties/BinaryProperty.java
+@@ -5,7 +5,7 @@ import io.swagger.models.Xml;
+ import java.util.List;
+ 
+ public class BinaryProperty extends AbstractProperty implements Property {
+-    private static final String TYPE = "string";
++    public static final String TYPE = "string";
+     protected List<String> _enum;
+     protected Integer minLength = null, maxLength = null;
+     protected String pattern = null;

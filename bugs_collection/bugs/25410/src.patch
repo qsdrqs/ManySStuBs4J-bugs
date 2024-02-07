@@ -1,0 +1,13 @@
+diff --git a/buggy/twitter4j-core/src/main/java/twitter4j/auth/OAuth2Authorization.java b/fixed/twitter4j-core/src/main/java/twitter4j/auth/OAuth2Authorization.java
+index 01448636b..ed103a563 100644
+--- a/buggy/twitter4j-core/src/main/java/twitter4j/auth/OAuth2Authorization.java
++++ b/fixed/twitter4j-core/src/main/java/twitter4j/auth/OAuth2Authorization.java
+@@ -161,7 +161,7 @@ public class OAuth2Authorization implements Authorization, java.io.Serializable,
+         return "OAuth2Authorization{" +
+                 "consumerKey='" + consumerKey + '\'' +
+                 ", consumerSecret='******************************************\'" +
+-                ", token=" + token.toString() +
++                ", token=" + ((token == null) ? "null" : token.toString()) +
+                 '}';
+     }
+ }

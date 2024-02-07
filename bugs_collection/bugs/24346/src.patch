@@ -1,0 +1,13 @@
+diff --git a/buggy/titan-cassandra/src/main/java/com/thinkaurelius/titan/diskstorage/cassandra/astyanax/AstyanaxOrderedKeyColumnValueStore.java b/fixed/titan-cassandra/src/main/java/com/thinkaurelius/titan/diskstorage/cassandra/astyanax/AstyanaxOrderedKeyColumnValueStore.java
+index 92ee2ebf7..ef9d1f9b5 100644
+--- a/buggy/titan-cassandra/src/main/java/com/thinkaurelius/titan/diskstorage/cassandra/astyanax/AstyanaxOrderedKeyColumnValueStore.java
++++ b/fixed/titan-cassandra/src/main/java/com/thinkaurelius/titan/diskstorage/cassandra/astyanax/AstyanaxOrderedKeyColumnValueStore.java
+@@ -189,7 +189,7 @@ public class AstyanaxOrderedKeyColumnValueStore implements KeyColumnValueStore {
+ 
+     @Override
+     public RecordIterator<StaticBuffer> getKeys(StoreTransaction txh) throws StorageException {
+-        return getKeys(null, txh);
++        return getKeys((SliceQuery) null, txh);
+     }
+ 
+     @Override

@@ -1,0 +1,13 @@
+diff --git a/buggy/titan-persistit/src/main/java/com/thinkaurelius/titan/diskstorage/persistit/PersistitStoreManager.java b/fixed/titan-persistit/src/main/java/com/thinkaurelius/titan/diskstorage/persistit/PersistitStoreManager.java
+index 0d5e7ac65..0f84e4646 100644
+--- a/buggy/titan-persistit/src/main/java/com/thinkaurelius/titan/diskstorage/persistit/PersistitStoreManager.java
++++ b/fixed/titan-persistit/src/main/java/com/thinkaurelius/titan/diskstorage/persistit/PersistitStoreManager.java
+@@ -92,7 +92,7 @@ public class PersistitStoreManager extends LocalStoreManager implements OrderedK
+ 
+     public void removeDatabase(PersistitKeyValueStore db) {
+         if (!stores.containsKey(db.getName())) {
+-            throw new IllegalArgumentException("Tried to remove an unkown database from the storage manager");
++            throw new IllegalArgumentException("Tried to remove an unknown database from the storage manager");
+         }
+         stores.remove(db.getName());
+     }

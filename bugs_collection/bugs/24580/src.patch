@@ -1,0 +1,31 @@
+diff --git a/buggy/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/ws/authentication/EJBEndpointAuthenticationTestCase.java b/fixed/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/ws/authentication/EJBEndpointAuthenticationTestCase.java
+index 57fb3d0af..38d563807 100644
+--- a/buggy/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/ws/authentication/EJBEndpointAuthenticationTestCase.java
++++ b/fixed/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/ws/authentication/EJBEndpointAuthenticationTestCase.java
+@@ -310,7 +310,7 @@ public class EJBEndpointAuthenticationTestCase {
+             Assert.fail("Test should fail, user shouldn't be allowed to invoke that method");
+         } catch (WebServiceException e) {
+             // failure is expected
+-            Assert.assertEquals(e.getCause().getMessage(), getNotAllowedExceptionMessage("helloForNone"));
++            Assert.assertEquals(getNotAllowedExceptionMessage("helloForNone"), e.getCause().getMessage());
+         }
+     }
+     
+@@ -330,7 +330,7 @@ public class EJBEndpointAuthenticationTestCase {
+             Assert.fail("Test should fail, user shouldn't be allowed to invoke that method");
+         } catch (WebServiceException e) {
+             // failure is expected
+-            Assert.assertEquals(e.getCause().getMessage(), getNotAllowedExceptionMessage("helloForNone"));
++            Assert.assertEquals(getNotAllowedExceptionMessage("helloForNone"), e.getCause().getMessage());
+         }
+     }
+     
+@@ -350,7 +350,7 @@ public class EJBEndpointAuthenticationTestCase {
+             Assert.fail("Test should fail, user shouldn't be allowed to invoke that method");
+         } catch (WebServiceException e) {
+             // failure is expected
+-            Assert.assertEquals(e.getCause().getMessage(), getNotAllowedExceptionMessage("helloForNone"));
++            Assert.assertEquals(getNotAllowedExceptionMessage("helloForNone"), e.getCause().getMessage());
+         }
+     }
+ 

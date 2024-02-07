@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/CSharpClientCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/CSharpClientCodegen.java
+index c49908877..41856daa9 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/CSharpClientCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/CSharpClientCodegen.java
+@@ -253,7 +253,7 @@ public class CSharpClientCodegen extends AbstractCSharpCodegen {
+         }
+ 
+         if(Boolean.TRUE.equals(generatePropertyChanged)) {
+-            supportingFiles.add(new SupportingFile("FodyWeavers.xml", "", "FodyWeavers.xml"));
++            supportingFiles.add(new SupportingFile("FodyWeavers.xml", packageFolder, "FodyWeavers.xml"));
+         }
+ 
+         supportingFiles.add(new SupportingFile("README.mustache", "", "README.md"));

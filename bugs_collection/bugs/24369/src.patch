@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/thinkaurelius/titan/graphdb/relations/SimpleProperty.java b/fixed/src/main/java/com/thinkaurelius/titan/graphdb/relations/SimpleProperty.java
+index a1189ffdd..93661b6a5 100644
+--- a/buggy/src/main/java/com/thinkaurelius/titan/graphdb/relations/SimpleProperty.java
++++ b/fixed/src/main/java/com/thinkaurelius/titan/graphdb/relations/SimpleProperty.java
+@@ -79,7 +79,7 @@ public class SimpleProperty extends AbstractTypedRelation implements TitanProper
+ 	}
+ 
+ 	@Override
+-	public void forceDelete() {
++	public synchronized void forceDelete() {
+ 		super.forceDelete();
+ 		node.removeRelation(this);
+ 	}

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/redis/clients/jedis/BinaryClient.java b/fixed/src/main/java/redis/clients/jedis/BinaryClient.java
+index 30a3ceccf..3cdc31724 100644
+--- a/buggy/src/main/java/redis/clients/jedis/BinaryClient.java
++++ b/fixed/src/main/java/redis/clients/jedis/BinaryClient.java
+@@ -1189,7 +1189,7 @@ public class BinaryClient extends Connection {
+   }
+   
+   private byte[][] removeNulls(List<byte[]> list) {
+-    ArrayList<byte[]> noNullsList = new ArrayList<>(list);
++    ArrayList<byte[]> noNullsList = new ArrayList<byte[]>(list);
+     noNullsList.removeAll(Collections.singleton(null));
+ 
+     return noNullsList.toArray(new byte[noNullsList.size()][]);

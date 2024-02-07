@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultGenerator.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultGenerator.java
+index a2e7f597c..c12d40626 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultGenerator.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultGenerator.java
+@@ -840,7 +840,7 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
+         operations.put("package", config.apiPackage());
+ 
+ 
+-        Set<String> allImports = new LinkedHashSet<String>();
++        Set<String> allImports = new TreeSet<String>();
+         for (CodegenOperation op : ops) {
+             allImports.addAll(op.imports);
+         }

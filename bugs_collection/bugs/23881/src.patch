@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/GoClientCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/GoClientCodegen.java
+index 81b129403..b9355bd04 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/GoClientCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/GoClientCodegen.java
+@@ -219,7 +219,7 @@ public class GoClientCodegen extends DefaultCodegen implements CodegenConfig {
+             name = "model_" + name; // e.g. return => ModelReturn (after camelize)
+         }
+ 
+-        return name;
++        return underscore(name);
+     }
+ 
+     @Override

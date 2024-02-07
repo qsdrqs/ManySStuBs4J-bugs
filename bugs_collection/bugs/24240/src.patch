@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-jaxrs/src/test/java/io/swagger/models/Pet.java b/fixed/modules/swagger-jaxrs/src/test/java/io/swagger/models/Pet.java
+index 622a62445..2893e18d3 100644
+--- a/buggy/modules/swagger-jaxrs/src/test/java/io/swagger/models/Pet.java
++++ b/fixed/modules/swagger-jaxrs/src/test/java/io/swagger/models/Pet.java
+@@ -43,7 +43,7 @@ public class Pet {
+     }
+ 
+     public void setCategoryWithApiModel(CategoryWithApiModel category) {
+-        this.categoryWithApiModel = categoryWithApiModel;
++        this.categoryWithApiModel = category;
+     }
+ 
+     @XmlElement(name = "name")

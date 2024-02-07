@@ -1,0 +1,13 @@
+diff --git a/buggy/web/src/main/java/org/jboss/as/web/session/ClusteredSession.java b/fixed/web/src/main/java/org/jboss/as/web/session/ClusteredSession.java
+index c9c46afdc..0b3cb6671 100644
+--- a/buggy/web/src/main/java/org/jboss/as/web/session/ClusteredSession.java
++++ b/fixed/web/src/main/java/org/jboss/as/web/session/ClusteredSession.java
+@@ -805,7 +805,7 @@ public abstract class ClusteredSession<O extends OutgoingDistributableSessionDat
+         }
+ 
+         if (canAttributeBeReplicated(value) == false) {
+-            throw MESSAGES.failToReplicateAttribute();
++            throw MESSAGES.failToReplicateAttribute(name, value.getClass().getCanonicalName());
+         }
+ 
+         // Construct an event with the new value

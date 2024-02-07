@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-jaxrs2/src/main/java/io/swagger/v3/jaxrs2/SecurityParser.java b/fixed/modules/swagger-jaxrs2/src/main/java/io/swagger/v3/jaxrs2/SecurityParser.java
+index 4d3520d33..0e944193d 100644
+--- a/buggy/modules/swagger-jaxrs2/src/main/java/io/swagger/v3/jaxrs2/SecurityParser.java
++++ b/fixed/modules/swagger-jaxrs2/src/main/java/io/swagger/v3/jaxrs2/SecurityParser.java
+@@ -17,7 +17,7 @@ import java.util.Optional;
+ 
+ public class SecurityParser {
+ 
+-    static class SecuritySchemePair {
++    public static class SecuritySchemePair {
+         public String key;
+         public SecurityScheme securityScheme;
+     }

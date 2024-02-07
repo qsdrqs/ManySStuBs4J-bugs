@@ -1,0 +1,13 @@
+diff --git a/buggy/ee/src/main/java/org/jboss/as/ee/component/ViewService.java b/fixed/ee/src/main/java/org/jboss/as/ee/component/ViewService.java
+index bf12a6230..eb9bfc6ee 100644
+--- a/buggy/ee/src/main/java/org/jboss/as/ee/component/ViewService.java
++++ b/fixed/ee/src/main/java/org/jboss/as/ee/component/ViewService.java
+@@ -180,7 +180,7 @@ public final class ViewService implements Service<ComponentView> {
+             // have the TCCL set to the component/application's classloader. @see https://issues.jboss.org/browse/WFLY-3989
+             final ClassLoader oldTCCL = WildFlySecurityManager.getCurrentContextClassLoaderPrivileged();
+             try {
+-                WildFlySecurityManager.setCurrentContextClassLoaderPrivileged(component.getComponentClass().getClassLoader());
++                WildFlySecurityManager.setCurrentContextClassLoaderPrivileged(component.getComponentClass());
+                 return viewInstanceFactory.createViewInstance(this, contextData);
+             } finally {
+                 // reset the TCCL

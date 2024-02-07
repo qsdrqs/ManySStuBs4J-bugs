@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PythonClientCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PythonClientCodegen.java
+index 61dc431b8..179299f9c 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PythonClientCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PythonClientCodegen.java
+@@ -61,7 +61,7 @@ public class PythonClientCodegen extends DefaultCodegen implements CodegenConfig
+                         "return", "def", "for", "lambda", "try"));
+ 
+         cliOptions.clear();
+-        cliOptions.add(new CliOption("packageName", "python package name (convension: under_score), default: swagger_client"));
++        cliOptions.add(new CliOption("packageName", "python package name (convention: under_score), default: swagger_client"));
+         cliOptions.add(new CliOption("packageVersion", "python package version, default: 1.0.0"));
+     }
+ 

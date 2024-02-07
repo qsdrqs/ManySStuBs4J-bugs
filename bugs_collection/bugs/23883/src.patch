@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/CSharpClientCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/CSharpClientCodegen.java
+index d02568e97..3e4daa01f 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/CSharpClientCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/CSharpClientCodegen.java
+@@ -91,7 +91,7 @@ public class CSharpClientCodegen extends AbstractCSharpCodegen {
+         frameworks = new ImmutableMap.Builder<String, String>()
+                 .put(NET35, ".NET Framework 3.5 compatible")
+                 .put(NET45, ".NET Framework 4.5+ compatible")
+-                .put(UWP, "Universal Windows Platform (beta support)")
++                .put(UWP, "Universal Windows Platform - beta support")
+                 .build();
+         framework.defaultValue(this.targetFramework);
+         framework.setEnum(frameworks);

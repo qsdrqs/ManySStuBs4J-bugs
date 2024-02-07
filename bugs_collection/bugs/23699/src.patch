@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/ScalaClientCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/ScalaClientCodegen.java
+index 81d55226f..c97f1f5a4 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/ScalaClientCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/ScalaClientCodegen.java
+@@ -81,7 +81,7 @@ public class ScalaClientCodegen extends AbstractScalaCodegen implements CodegenC
+         importMapping.remove("Map");
+ 
+         importMapping.put("Date", "java.util.Date");
+-        importMapping.put("ListBuffer", "scala.collections.mutable.ListBuffer");
++        importMapping.put("ListBuffer", "scala.collection.mutable.ListBuffer");
+ 
+         typeMapping = new HashMap<String, String>();
+         typeMapping.put("enum", "NSString");

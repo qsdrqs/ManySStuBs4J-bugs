@@ -1,0 +1,13 @@
+diff --git a/buggy/samples/client/petstore/android-java/src/main/java/io/swagger/client/ApiInvoker.java b/fixed/samples/client/petstore/android-java/src/main/java/io/swagger/client/ApiInvoker.java
+index 0ccc37139..eabb47e81 100644
+--- a/buggy/samples/client/petstore/android-java/src/main/java/io/swagger/client/ApiInvoker.java
++++ b/fixed/samples/client/petstore/android-java/src/main/java/io/swagger/client/ApiInvoker.java
+@@ -216,7 +216,7 @@ public class ApiInvoker {
+       }
+       else if(String.class.equals(cls)) {
+         if(json != null && json.startsWith("\"") && json.endsWith("\"") && json.length() > 1)
+-          return json.substring(1, json.length() - 2);
++          return json.substring(1, json.length() - 1);
+         else
+           return json;
+       }

@@ -1,0 +1,13 @@
+diff --git a/buggy/undertow/src/main/java/org/wildfly/extension/undertow/ApplicationSecurityDomainDefinition.java b/fixed/undertow/src/main/java/org/wildfly/extension/undertow/ApplicationSecurityDomainDefinition.java
+index 7ac9439c3..8b76a2269 100644
+--- a/buggy/undertow/src/main/java/org/wildfly/extension/undertow/ApplicationSecurityDomainDefinition.java
++++ b/fixed/undertow/src/main/java/org/wildfly/extension/undertow/ApplicationSecurityDomainDefinition.java
+@@ -238,7 +238,7 @@ public class ApplicationSecurityDomainDefinition extends PersistentResourceDefin
+         @Override
+         protected ServiceName serviceName(String name) {
+             RuntimeCapability<?> dynamicCapability = APPLICATION_SECURITY_DOMAIN_RUNTIME_CAPABILITY.fromBaseCapability(name);
+-            return dynamicCapability.getCapabilityServiceName(HttpAuthenticationFactory.class);
++            return dynamicCapability.getCapabilityServiceName(Function.class);
+         }
+ 
+     }

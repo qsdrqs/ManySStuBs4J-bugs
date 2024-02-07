@@ -1,0 +1,13 @@
+diff --git a/buggy/messaging/src/main/java/org/jboss/as/messaging/HornetQServerResource.java b/fixed/messaging/src/main/java/org/jboss/as/messaging/HornetQServerResource.java
+index 857f34730..ae00f7fba 100644
+--- a/buggy/messaging/src/main/java/org/jboss/as/messaging/HornetQServerResource.java
++++ b/fixed/messaging/src/main/java/org/jboss/as/messaging/HornetQServerResource.java
+@@ -109,7 +109,7 @@ public class HornetQServerResource implements Resource {
+             }
+             throw new NoSuchElementException(element.toString());
+         } else {
+-            return delegate.getChild(element);
++            return delegate.requireChild(element);
+         }
+     }
+ 

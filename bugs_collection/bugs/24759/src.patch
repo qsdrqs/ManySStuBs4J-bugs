@@ -1,0 +1,13 @@
+diff --git a/buggy/cli/src/main/java/org/jboss/as/cli/StringPropertyReplacer.java b/fixed/cli/src/main/java/org/jboss/as/cli/StringPropertyReplacer.java
+index 920b1dc4e..b10917992 100644
+--- a/buggy/cli/src/main/java/org/jboss/as/cli/StringPropertyReplacer.java
++++ b/fixed/cli/src/main/java/org/jboss/as/cli/StringPropertyReplacer.java
+@@ -36,7 +36,7 @@ import java.io.File;
+  */
+ final class StringPropertyReplacer {
+     /** New line string constant */
+-    public static final String NEWLINE = Util.getLineSeparator();
++    public static final String NEWLINE = Util.LINE_SEPARATOR;
+ 
+     /** File separator value */
+     private static final String FILE_SEPARATOR = File.separator;

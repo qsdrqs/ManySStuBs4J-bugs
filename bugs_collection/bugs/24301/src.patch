@@ -1,0 +1,13 @@
+diff --git a/buggy/samples/java-jaxrs-no-webxml/src/main/java/com/wordnik/swagger/sample/resource/PetResource.java b/fixed/samples/java-jaxrs-no-webxml/src/main/java/com/wordnik/swagger/sample/resource/PetResource.java
+index 15934875b..f25980aff 100644
+--- a/buggy/samples/java-jaxrs-no-webxml/src/main/java/com/wordnik/swagger/sample/resource/PetResource.java
++++ b/fixed/samples/java-jaxrs-no-webxml/src/main/java/com/wordnik/swagger/sample/resource/PetResource.java
+@@ -60,7 +60,7 @@ public class PetResource {
+     }
+   }
+ 
+-  @PATCH
++  @DELETE
+   @Path("/{petId}")
+   @ApiOperation(value = "Deletes a pet")
+   @ApiResponses(value = { @ApiResponse(code = 400, message = "Invalid pet value")})

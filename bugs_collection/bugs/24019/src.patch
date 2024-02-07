@@ -1,0 +1,13 @@
+diff --git a/buggy/samples/client/petstore/java/retrofit2/src/main/java/io/swagger/client/ApiClient.java b/fixed/samples/client/petstore/java/retrofit2/src/main/java/io/swagger/client/ApiClient.java
+index a58542bf3..2138c3a17 100644
+--- a/buggy/samples/client/petstore/java/retrofit2/src/main/java/io/swagger/client/ApiClient.java
++++ b/fixed/samples/client/petstore/java/retrofit2/src/main/java/io/swagger/client/ApiClient.java
+@@ -329,7 +329,7 @@ class GsonCustomConverterFactory extends Converter.Factory
+ 	  @Override
+ 	  public Converter<ResponseBody, ?> fromResponseBody(Type type, Annotation[] annotations) {
+ 		  if(type.equals(String.class))
+-			  return new GsonResponseBodyConverterToString<>(gson, type);
++			  return new GsonResponseBodyConverterToString<Object>(gson, type);
+ 		  else
+ 			  return gsonConverterFactory.fromResponseBody(type, annotations);
+ 	  }

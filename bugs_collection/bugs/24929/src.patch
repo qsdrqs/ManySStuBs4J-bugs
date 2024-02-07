@@ -1,0 +1,13 @@
+diff --git a/buggy/host-controller/src/main/java/org/jboss/as/domain/controller/operations/deployment/ServerGroupDeploymentReplaceHandler.java b/fixed/host-controller/src/main/java/org/jboss/as/domain/controller/operations/deployment/ServerGroupDeploymentReplaceHandler.java
+index 3e9eed652..9658ed3e7 100644
+--- a/buggy/host-controller/src/main/java/org/jboss/as/domain/controller/operations/deployment/ServerGroupDeploymentReplaceHandler.java
++++ b/fixed/host-controller/src/main/java/org/jboss/as/domain/controller/operations/deployment/ServerGroupDeploymentReplaceHandler.java
+@@ -70,7 +70,7 @@ public class ServerGroupDeploymentReplaceHandler implements OperationStepHandler
+ 
+     @Override
+     public ModelNode getModelDescription(Locale locale) {
+-        return DeploymentDescription.getDeployDeploymentOperation(locale);
++        return DeploymentDescription.getReplaceDeploymentOperation(locale);
+     }
+ 
+     public void execute(OperationContext context, ModelNode operation) throws OperationFailedException {

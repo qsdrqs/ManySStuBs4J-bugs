@@ -1,0 +1,13 @@
+diff --git a/buggy/network/src/main/java/org/jboss/as/network/ManagedSocketBinding.java b/fixed/network/src/main/java/org/jboss/as/network/ManagedSocketBinding.java
+index 0d5a65ec1..c36f18a52 100644
+--- a/buggy/network/src/main/java/org/jboss/as/network/ManagedSocketBinding.java
++++ b/fixed/network/src/main/java/org/jboss/as/network/ManagedSocketBinding.java
+@@ -52,7 +52,7 @@ class ManagedSocketBinding extends Socket implements ManagedBinding {
+     }
+ 
+     public InetSocketAddress getBindAddress() {
+-        return InetSocketAddress.class.cast(getLocalAddress());
++        return new InetSocketAddress(getLocalAddress(), getPort());
+     }
+ 
+     public void bind(SocketAddress bindpoint) throws IOException {

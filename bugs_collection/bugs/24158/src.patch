@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-core/src/main/java/io/swagger/v3/core/util/PrimitiveType.java b/fixed/modules/swagger-core/src/main/java/io/swagger/v3/core/util/PrimitiveType.java
+index 95c81e1ed..14aa647e8 100644
+--- a/buggy/modules/swagger-core/src/main/java/io/swagger/v3/core/util/PrimitiveType.java
++++ b/fixed/modules/swagger-core/src/main/java/io/swagger/v3/core/util/PrimitiveType.java
+@@ -212,7 +212,7 @@ public enum PrimitiveType {
+         dms.put("string_date-time", "date-time");
+         dms.put("string_partial-time", "partial-time");
+         dms.put("string_password", "password");
+-        dms.put("boolean", "boolean");
++        dms.put("boolean_", "boolean");
+         dms.put("object_", "object");
+         datatypeMappings = Collections.unmodifiableMap(dms);
+ 

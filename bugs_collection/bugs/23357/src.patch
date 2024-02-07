@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/sentiment/BuildBinarizedDataset.java b/fixed/src/edu/stanford/nlp/sentiment/BuildBinarizedDataset.java
+index 8d7928be5..31690d993 100644
+--- a/buggy/src/edu/stanford/nlp/sentiment/BuildBinarizedDataset.java
++++ b/fixed/src/edu/stanford/nlp/sentiment/BuildBinarizedDataset.java
+@@ -201,7 +201,7 @@ public class BuildBinarizedDataset {
+         scorer.forwardPropagateTree(collapsedUnary);
+         setPredictedLabels(collapsedUnary);
+       } else {
+-        setUnknownLabels(binarized, mainLabel);
++        setUnknownLabels(collapsedUnary, mainLabel);
+       }
+ 
+       Trees.convertToCoreLabels(collapsedUnary);

@@ -1,0 +1,13 @@
+diff --git a/buggy/samples/client/petstore/java/jersey2/src/test/java/io/swagger/client/ConfigurationTest.java b/fixed/samples/client/petstore/java/jersey2/src/test/java/io/swagger/client/ConfigurationTest.java
+index b95eb7460..ccdf25feb 100644
+--- a/buggy/samples/client/petstore/java/jersey2/src/test/java/io/swagger/client/ConfigurationTest.java
++++ b/fixed/samples/client/petstore/java/jersey2/src/test/java/io/swagger/client/ConfigurationTest.java
+@@ -9,7 +9,7 @@ public class ConfigurationTest {
+     public void testDefaultApiClient() {
+         ApiClient apiClient = Configuration.getDefaultApiClient();
+         assertNotNull(apiClient);
+-        assertEquals("http://petstore.swagger.io/v2", apiClient.getBasePath());
++        assertEquals("http://petstore.swagger.io:80/v2", apiClient.getBasePath());
+         assertFalse(apiClient.isDebugging());
+     }
+ }

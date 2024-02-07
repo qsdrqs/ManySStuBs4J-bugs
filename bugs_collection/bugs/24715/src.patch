@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/org/jboss/as/server/controller/resources/VaultResourceDefinition.java b/fixed/server/src/main/java/org/jboss/as/server/controller/resources/VaultResourceDefinition.java
+index 5ef1baa22..8b28f9d62 100644
+--- a/buggy/server/src/main/java/org/jboss/as/server/controller/resources/VaultResourceDefinition.java
++++ b/fixed/server/src/main/java/org/jboss/as/server/controller/resources/VaultResourceDefinition.java
+@@ -58,7 +58,7 @@ public class VaultResourceDefinition extends SimpleResourceDefinition {
+             .addFlag(Flag.RESTART_ALL_SERVICES)
+             .setAllowExpression(true)
+             .setCorrector(MapAttributeDefinition.LIST_TO_MAP_CORRECTOR)
+-            .setValidator(new StringLengthValidator(1))
++            .setValidator(new StringLengthValidator(1, true, true))
+             .build();
+ 
+     public static AttributeDefinition[] ALL_ATTRIBUTES = new AttributeDefinition[]{CODE, VAULT_OPTIONS};

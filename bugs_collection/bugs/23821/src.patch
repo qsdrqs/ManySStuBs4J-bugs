@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/ScalatraServerCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/ScalatraServerCodegen.java
+index b148a4da0..63f43dfd3 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/ScalatraServerCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/ScalatraServerCodegen.java
+@@ -42,7 +42,7 @@ public class ScalatraServerCodegen extends DefaultCodegen implements CodegenConf
+                         "import", "public", "throws", "case", "enum", "instanceof", "return", "transient",
+                         "catch", "extends", "int", "short", "try", "char", "final", "interface", "static",
+                         "void", "class", "finally", "long", "strictfp", "volatile", "const", "float",
+-                        "native", "super", "while")
++                        "native", "super", "while", "type")
+         );
+ 
+         defaultIncludes = new HashSet<String>(

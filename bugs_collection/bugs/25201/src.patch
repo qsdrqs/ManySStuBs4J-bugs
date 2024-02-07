@@ -1,0 +1,13 @@
+diff --git a/buggy/process-manager/src/main/java/org/jboss/as/process/ManagedProcess.java b/fixed/process-manager/src/main/java/org/jboss/as/process/ManagedProcess.java
+index a20109360..a71a8f72f 100644
+--- a/buggy/process-manager/src/main/java/org/jboss/as/process/ManagedProcess.java
++++ b/fixed/process-manager/src/main/java/org/jboss/as/process/ManagedProcess.java
+@@ -331,7 +331,7 @@ final class ManagedProcess {
+                         }
+                     } catch (IllegalArgumentException e) {
+                         // unknown command...
+-                        log.error("Received unknown command", e);
++                        log.error("Received unknown command: " + b.toString());
+                     }
+                     if (status == Status.MORE) StreamUtils.readToEol(inputStream);
+ 

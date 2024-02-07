@@ -1,0 +1,13 @@
+diff --git a/buggy/jacorb/src/main/java/org/jboss/as/jacorb/JacORBSubsystemParser.java b/fixed/jacorb/src/main/java/org/jboss/as/jacorb/JacORBSubsystemParser.java
+index b919d778f..08712ce4c 100644
+--- a/buggy/jacorb/src/main/java/org/jboss/as/jacorb/JacORBSubsystemParser.java
++++ b/fixed/jacorb/src/main/java/org/jboss/as/jacorb/JacORBSubsystemParser.java
+@@ -396,7 +396,7 @@ public class JacORBSubsystemParser implements XMLStreamConstants, XMLElementRead
+                     // parse the poa request-processors config attributes.
+                     EnumSet<Attribute> attributes =
+                             EnumSet.of(Attribute.POA_REQUEST_PROC_POOL_SIZE, Attribute.POA_REQUEST_PROC_MAX_THREADS);
+-                    this.parseAttributes(reader, node, attributes, EnumSet.copyOf(attributes));
++                    this.parseAttributes(reader, node, attributes, null);
+                     // the request-processors element doesn't have child elements.
+                     requireNoContent(reader);
+                     break;

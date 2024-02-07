@@ -1,0 +1,13 @@
+diff --git a/buggy/twitter4j-examples/src/main/java/twitter4j/examples/PrintFilterStream.java b/fixed/twitter4j-examples/src/main/java/twitter4j/examples/PrintFilterStream.java
+index 0ece3d2e9..d27e700b7 100644
+--- a/buggy/twitter4j-examples/src/main/java/twitter4j/examples/PrintFilterStream.java
++++ b/fixed/twitter4j-examples/src/main/java/twitter4j/examples/PrintFilterStream.java
+@@ -78,7 +78,7 @@ public final class PrintFilterStream implements StatusListener{
+             filterArray[i] = Integer.parseInt(filterSplit[i]);
+ 
+         }
+-        String[] trackArray = track.split(",");
++        trackArray = track.split(",");
+     }
+ 
+     private void printUsageAndExit() {

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/trees/international/pennchinese/ChineseTreebankLanguagePack.java b/fixed/src/edu/stanford/nlp/trees/international/pennchinese/ChineseTreebankLanguagePack.java
+index 54b2456e9..6e67e3531 100644
+--- a/buggy/src/edu/stanford/nlp/trees/international/pennchinese/ChineseTreebankLanguagePack.java
++++ b/fixed/src/edu/stanford/nlp/trees/international/pennchinese/ChineseTreebankLanguagePack.java
+@@ -198,7 +198,7 @@ public class ChineseTreebankLanguagePack extends AbstractTreebankLanguagePack {
+   private static final String[] colon = {"：", "；", "∶", ":"};
+   private static final String[] dash = {"…", "―", "——", "———", "————", "—", "——", "———", 
+           "－", "--", "---", "－－", "－－－", "－－－－", "－－－－－", "－－－－－－", 
+-          "──", "━", "━━", "—－", "-", "----", "~", "~~", "~~~", "~~~~", "~~~~~", "……", "～",
++          "──", "━", "━━", "—－", "-", "----", "~", "~~", "~~~", "~~~~", "……", "～",
+           "．．．" /* 3 full width dots as ellipsis */ };
+   private static final String[] other = {"·", "／", "／", "＊", "＆", "/", "//", "*", "※", "■", "●", "｜" };  // slashes are used in urls
+ 

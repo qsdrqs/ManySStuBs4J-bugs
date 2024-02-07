@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PhpClientCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PhpClientCodegen.java
+index 201f7eb05..beddbeac7 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PhpClientCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PhpClientCodegen.java
+@@ -126,7 +126,7 @@ public class PhpClientCodegen extends DefaultCodegen implements CodegenConfig {
+     }
+ 
+     protected String getSrcDir(String packageName) {
+-        return rootNamespace + "/src/" + packageName;
++        return "src/" + packageName;
+     }
+ 
+     protected void prefixPackages() {

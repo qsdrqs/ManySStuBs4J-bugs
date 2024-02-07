@@ -1,0 +1,22 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PythonClientCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PythonClientCodegen.java
+index 9553f4ad1..632b4289b 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PythonClientCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PythonClientCodegen.java
+@@ -46,7 +46,7 @@ public class PythonClientCodegen extends DefaultCodegen implements CodegenConfig
+         typeMapping.put("long", "int");
+         typeMapping.put("double", "float");
+         typeMapping.put("array", "list");
+-        typeMapping.put("map", "map");
++        typeMapping.put("map", "dict");
+         typeMapping.put("boolean", "bool");
+         typeMapping.put("string", "str");
+         typeMapping.put("date", "datetime");
+@@ -111,7 +111,7 @@ public class PythonClientCodegen extends DefaultCodegen implements CodegenConfig
+             MapProperty mp = (MapProperty) p;
+             Property inner = mp.getAdditionalProperties();
+ 
+-            return getSwaggerType(p) + "(String, " + getTypeDeclaration(inner) + ")";
++            return getSwaggerType(p) + "(str, " + getTypeDeclaration(inner) + ")";
+         }
+         return super.getTypeDeclaration(p);
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/titan-core/src/main/java/com/thinkaurelius/titan/diskstorage/locking/consistentkey/ExpectedValueCheckingStore.java b/fixed/titan-core/src/main/java/com/thinkaurelius/titan/diskstorage/locking/consistentkey/ExpectedValueCheckingStore.java
+index 1f2416c5b..7e7f2620c 100644
+--- a/buggy/titan-core/src/main/java/com/thinkaurelius/titan/diskstorage/locking/consistentkey/ExpectedValueCheckingStore.java
++++ b/fixed/titan-core/src/main/java/com/thinkaurelius/titan/diskstorage/locking/consistentkey/ExpectedValueCheckingStore.java
+@@ -145,7 +145,7 @@ public class ExpectedValueCheckingStore implements KeyColumnValueStore {
+ 
+     @Override
+     public KeyIterator getKeys(SliceQuery query, StoreTransaction txh) throws StorageException {
+-        return getKeys(query, txh);
++        return dataStore.getKeys(query, txh);
+     }
+ 
+     @Override

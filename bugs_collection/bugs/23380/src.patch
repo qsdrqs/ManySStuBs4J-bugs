@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/util/logging/Redwood.java b/fixed/src/edu/stanford/nlp/util/logging/Redwood.java
+index 2f0771d9d..81b14290e 100644
+--- a/buggy/src/edu/stanford/nlp/util/logging/Redwood.java
++++ b/fixed/src/edu/stanford/nlp/util/logging/Redwood.java
+@@ -895,7 +895,7 @@ public class Redwood {
+     /** {@inheritDoc} */
+     @Override
+     public void print(Object[] channels, String line) {
+-      printWriter.write(line == null ? "null" : line);
++      printWriter.write(line);
+       printWriter.flush();
+     }
+   }

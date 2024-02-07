@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/weld/multideployment/WeldModuleDeploymentTestCase.java b/fixed/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/weld/multideployment/WeldModuleDeploymentTestCase.java
+index 23a11f2cd..1d8fa5be9 100644
+--- a/buggy/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/weld/multideployment/WeldModuleDeploymentTestCase.java
++++ b/fixed/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/weld/multideployment/WeldModuleDeploymentTestCase.java
+@@ -135,7 +135,7 @@ public class WeldModuleDeploymentTestCase {
+             }
+             modulePath = jbossHome + File.separatorChar + "modules";
+         } else {
+-            modulePath = modulePath.split(File.pathSeparator)[1];
++            modulePath = modulePath.split(File.pathSeparator)[0];
+         }
+         File moduleDir = new File(modulePath);
+         if (!moduleDir.exists()) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/twitter4j-async/src/main/java/twitter4j/AsyncTwitterImpl.java b/fixed/twitter4j-async/src/main/java/twitter4j/AsyncTwitterImpl.java
+index 5fa9b6539..bd048e3a4 100644
+--- a/buggy/twitter4j-async/src/main/java/twitter4j/AsyncTwitterImpl.java
++++ b/fixed/twitter4j-async/src/main/java/twitter4j/AsyncTwitterImpl.java
+@@ -2681,7 +2681,7 @@ class AsyncTwitterImpl extends TwitterBaseImpl implements AsyncTwitter {
+         });
+     }
+ 
+-    private static transient Dispatcher dispatcher;
++    private static transient volatile Dispatcher dispatcher;
+ 
+     @Override
+     public void shutdown() {

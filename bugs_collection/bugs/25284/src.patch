@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/redis/clients/jedis/JedisCluster.java b/fixed/src/main/java/redis/clients/jedis/JedisCluster.java
+index f6cb6fdcb..d39d43d3d 100644
+--- a/buggy/src/main/java/redis/clients/jedis/JedisCluster.java
++++ b/fixed/src/main/java/redis/clients/jedis/JedisCluster.java
+@@ -394,7 +394,7 @@ public class JedisCluster implements JedisCommands, BasicCommands {
+ 		maxRedirections) {
+ 	    @Override
+ 	    public Long execute(Jedis connection) {
+-		return connection.hdel(key);
++		return connection.hlen(key);
+ 	    }
+ 	}.run(key);
+     }

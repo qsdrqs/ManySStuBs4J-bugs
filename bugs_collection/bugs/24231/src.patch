@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-models/src/main/java/io/swagger/models/properties/RefProperty.java b/fixed/modules/swagger-models/src/main/java/io/swagger/models/properties/RefProperty.java
+index 2488183a9..5080f79d0 100644
+--- a/buggy/modules/swagger-models/src/main/java/io/swagger/models/properties/RefProperty.java
++++ b/fixed/modules/swagger-models/src/main/java/io/swagger/models/properties/RefProperty.java
+@@ -6,7 +6,7 @@ import io.swagger.models.refs.RefFormat;
+ import io.swagger.models.refs.RefType;
+ 
+ public class RefProperty extends AbstractProperty implements Property {
+-    private static final String TYPE = "ref";
++    public static final String TYPE = "ref";
+     private GenericRef genericRef;
+ 
+     public RefProperty() {

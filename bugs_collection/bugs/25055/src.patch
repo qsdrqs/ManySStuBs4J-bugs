@@ -1,0 +1,13 @@
+diff --git a/buggy/connector/src/main/java/org/jboss/as/connector/subsystems/jca/JcaConfigService.java b/fixed/connector/src/main/java/org/jboss/as/connector/subsystems/jca/JcaConfigService.java
+index 26d94c01d..889e19cfb 100644
+--- a/buggy/connector/src/main/java/org/jboss/as/connector/subsystems/jca/JcaConfigService.java
++++ b/fixed/connector/src/main/java/org/jboss/as/connector/subsystems/jca/JcaConfigService.java
+@@ -59,7 +59,7 @@ final class JcaConfigService implements Service<JcaSubsystemConfiguration> {
+     @Override
+     public void start(StartContext context) throws StartException {
+         this.value.setDefaultBootstrapContext(defaultBootstrapContext.getValue());
+-        ROOT_LOGGER.startingSubsystem("JCS", Version.FULL_VERSION);
++        ROOT_LOGGER.startingSubsystem("JCA", Version.FULL_VERSION);
+         ROOT_LOGGER.tracef("config=%s", value);
+     }
+ 

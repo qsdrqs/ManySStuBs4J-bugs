@@ -1,0 +1,13 @@
+diff --git a/buggy/host-controller/src/main/java/org/jboss/as/host/controller/mgmt/MasterDomainControllerOperationHandlerImpl.java b/fixed/host-controller/src/main/java/org/jboss/as/host/controller/mgmt/MasterDomainControllerOperationHandlerImpl.java
+index 7a4d3b2c2..fcb2f1e77 100644
+--- a/buggy/host-controller/src/main/java/org/jboss/as/host/controller/mgmt/MasterDomainControllerOperationHandlerImpl.java
++++ b/fixed/host-controller/src/main/java/org/jboss/as/host/controller/mgmt/MasterDomainControllerOperationHandlerImpl.java
+@@ -262,7 +262,7 @@ public class MasterDomainControllerOperationHandlerImpl extends ManagementChanne
+         }
+ 
+         private String getRelativePath(final File parent, final File child) {
+-            return child.getAbsolutePath().substring(parent.getAbsolutePath().length());
++            return child.getAbsolutePath().substring(parent.getAbsolutePath().length()+1);
+         }
+ 
+         private void writeFile(final File localPath, final File file, final FlushableDataOutput output) throws IOException {

@@ -1,0 +1,13 @@
+diff --git a/buggy/domain-management/src/main/java/org/jboss/as/domain/management/security/AuthenticationValidatingHandler.java b/fixed/domain-management/src/main/java/org/jboss/as/domain/management/security/AuthenticationValidatingHandler.java
+index f29b5235f..f0b785ae9 100644
+--- a/buggy/domain-management/src/main/java/org/jboss/as/domain/management/security/AuthenticationValidatingHandler.java
++++ b/fixed/domain-management/src/main/java/org/jboss/as/domain/management/security/AuthenticationValidatingHandler.java
+@@ -55,7 +55,7 @@ class AuthenticationValidatingHandler implements OperationStepHandler {
+     static ModelNode createOperation(final ModelNode operationToValidate) {
+         PathAddress pa = PathAddress.pathAddress(operationToValidate.require(ModelDescriptionConstants.OP_ADDR));
+         PathAddress realmPA = null;
+-        for (int i = pa.size() - 1; i > 0; i++) {
++        for (int i = pa.size() - 1; i > 0; i--) {
+             PathElement pe = pa.getElement(i);
+             if (ModelDescriptionConstants.SECURITY_REALM.equals(pe.getKey())) {
+                 realmPA = pa.subAddress(0, i + 1);

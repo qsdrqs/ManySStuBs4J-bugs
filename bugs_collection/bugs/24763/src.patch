@@ -1,0 +1,22 @@
+diff --git a/buggy/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/web/sso/SingleSignOnUnitTestCase.java b/fixed/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/web/sso/SingleSignOnUnitTestCase.java
+index 08ba486b1..72e26f8e6 100644
+--- a/buggy/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/web/sso/SingleSignOnUnitTestCase.java
++++ b/fixed/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/web/sso/SingleSignOnUnitTestCase.java
+@@ -76,7 +76,7 @@ public class SingleSignOnUnitTestCase {
+     @Test
+     public void testFormAuthSingleSignOn(@ArquillianResource URL baseURLNoAuth) throws Exception {
+         log.info("+++ testFormAuthSingleSignOn");
+-        SSOBaseCase.executeFormAuthSingleSignOnTest(baseURLNoAuth, baseURLNoAuth, log);
++        SSOTestBase.executeFormAuthSingleSignOnTest(baseURLNoAuth, baseURLNoAuth, log);
+     }
+ 
+     /**
+@@ -85,7 +85,7 @@ public class SingleSignOnUnitTestCase {
+     @Test
+     public void testNoAuthSingleSignOn(@ArquillianResource URL baseURLNoAuth) throws Exception {
+         log.info("+++ testNoAuthSingleSignOn");
+-        SSOBaseCase.executeNoAuthSingleSignOnTest(baseURLNoAuth, baseURLNoAuth, log);
++        SSOTestBase.executeNoAuthSingleSignOnTest(baseURLNoAuth, baseURLNoAuth, log);
+     }
+ 
+ }

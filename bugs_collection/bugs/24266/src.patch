@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-models/src/main/java/io/swagger/models/Swagger.java b/fixed/modules/swagger-models/src/main/java/io/swagger/models/Swagger.java
+index 1188b7d17..926713a3e 100644
+--- a/buggy/modules/swagger-models/src/main/java/io/swagger/models/Swagger.java
++++ b/fixed/modules/swagger-models/src/main/java/io/swagger/models/Swagger.java
+@@ -391,7 +391,7 @@ public class Swagger {
+     @JsonAnySetter
+     public void setVendorExtension(String name, Object value) {
+         if (name.startsWith("x-")) {
+-            vendorExtensions.put(name, value);
++            vendorExtension(name, value);
+         }
+     }
+ 

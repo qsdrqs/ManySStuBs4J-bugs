@@ -1,0 +1,13 @@
+diff --git a/buggy/ejb3/src/main/java/org/jboss/as/ejb3/deployment/processors/SessionBeanHomeProcessor.java b/fixed/ejb3/src/main/java/org/jboss/as/ejb3/deployment/processors/SessionBeanHomeProcessor.java
+index 195631229..64c1f679f 100644
+--- a/buggy/ejb3/src/main/java/org/jboss/as/ejb3/deployment/processors/SessionBeanHomeProcessor.java
++++ b/fixed/ejb3/src/main/java/org/jboss/as/ejb3/deployment/processors/SessionBeanHomeProcessor.java
+@@ -109,7 +109,7 @@ public class SessionBeanHomeProcessor extends AbstractComponentConfigProcessor {
+                             }
+                         });
+                         //add the interceptor
+-                        configuration.addClientInterceptor(method, factory, InterceptorOrder.View.COMPONENT_DISPATCHER);
++                        configuration.addViewInterceptor(method, factory, InterceptorOrder.View.COMPONENT_DISPATCHER);
+ 
+                     }
+                 }

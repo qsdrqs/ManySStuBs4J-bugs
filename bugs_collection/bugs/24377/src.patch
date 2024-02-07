@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/thinkaurelius/titan/graphdb/query/AtomicTitanQuery.java b/fixed/src/main/java/com/thinkaurelius/titan/graphdb/query/AtomicTitanQuery.java
+index 2ce8f2222..bc08e5195 100644
+--- a/buggy/src/main/java/com/thinkaurelius/titan/graphdb/query/AtomicTitanQuery.java
++++ b/fixed/src/main/java/com/thinkaurelius/titan/graphdb/query/AtomicTitanQuery.java
+@@ -45,7 +45,7 @@ public class AtomicTitanQuery implements InternalTitanQuery {
+ 
+     public AtomicTitanQuery(InternalTitanTransaction tx) {
+         this.tx=tx;
+-        if (tx.isClosed()) throw GraphDatabaseException.transactionNotOpenException();
++        if (tx!=null && tx.isClosed()) throw GraphDatabaseException.transactionNotOpenException();
+ 
+         dir = null;
+         types = null;

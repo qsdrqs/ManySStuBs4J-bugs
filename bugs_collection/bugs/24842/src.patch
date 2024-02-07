@@ -1,0 +1,14 @@
+diff --git a/buggy/connector/src/main/java/org/jboss/as/connector/subsystems/datasources/Constants.java b/fixed/connector/src/main/java/org/jboss/as/connector/subsystems/datasources/Constants.java
+index 31cad9c88..a70133257 100644
+--- a/buggy/connector/src/main/java/org/jboss/as/connector/subsystems/datasources/Constants.java
++++ b/fixed/connector/src/main/java/org/jboss/as/connector/subsystems/datasources/Constants.java
+@@ -210,8 +210,7 @@ class Constants {
+ 
+         @Override
+         public void validateResolvedParameter(String parameterName, ModelNode value) throws OperationFailedException {
+-            //TODO implement validateResolvedParameter
+-            throw new UnsupportedOperationException();
++            validateParameter(parameterName,  value.resolve());
+         }
+     });
+ 

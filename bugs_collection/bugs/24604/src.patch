@@ -1,0 +1,13 @@
+diff --git a/buggy/domain-http/interface/src/main/java/org/jboss/as/domain/http/server/ManagementHttpServer.java b/fixed/domain-http/interface/src/main/java/org/jboss/as/domain/http/server/ManagementHttpServer.java
+index 807b2378a..856b85e82 100644
+--- a/buggy/domain-http/interface/src/main/java/org/jboss/as/domain/http/server/ManagementHttpServer.java
++++ b/fixed/domain-http/interface/src/main/java/org/jboss/as/domain/http/server/ManagementHttpServer.java
+@@ -209,7 +209,7 @@ public class ManagementHttpServer {
+         try {
+             pathHandler.addPrefixPath(ErrorContextHandler.ERROR_CONTEXT, ErrorContextHandler.createErrorContext(consoleSlot));
+         } catch (ModuleLoadException e) {
+-            ROOT_LOGGER.error(consoleSlot == null ? "main" : consoleSlot);
++            ROOT_LOGGER.errorContextModuleNotFound(consoleSlot == null ? "main" : consoleSlot);
+         }
+ 
+         ManagementRootConsoleRedirectHandler rootConsoleRedirectHandler = new ManagementRootConsoleRedirectHandler(consoleHandler);

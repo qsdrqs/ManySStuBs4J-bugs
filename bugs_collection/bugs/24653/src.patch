@@ -1,0 +1,17 @@
+diff --git a/buggy/testsuite/integration/smoke/src/test/java/org/jboss/as/test/smoke/jms/auxiliary/TransactedTopicMessageSender.java b/fixed/testsuite/integration/smoke/src/test/java/org/jboss/as/test/smoke/jms/auxiliary/TransactedTopicMessageSender.java
+index b8b8cd866..043af103f 100644
+--- a/buggy/testsuite/integration/smoke/src/test/java/org/jboss/as/test/smoke/jms/auxiliary/TransactedTopicMessageSender.java
++++ b/fixed/testsuite/integration/smoke/src/test/java/org/jboss/as/test/smoke/jms/auxiliary/TransactedTopicMessageSender.java
+@@ -43,10 +43,10 @@ public class TransactedTopicMessageSender {
+ 
+     private static final Logger logger = Logger.getLogger(TransactedTopicMessageSender.class);
+ 
+-    @Resource(name = "java:/topic/myAwesomeTopic")
++    @Resource(lookup = "java:/topic/myAwesomeTopic")
+     private Topic topic;
+ 
+-    @Resource(name = "java:/ConnectionFactory")
++    @Resource(lookup = "java:/ConnectionFactory")
+     private ConnectionFactory factory;
+ 
+     @Resource

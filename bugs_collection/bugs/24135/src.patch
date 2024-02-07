@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/DefaultCodegen.java b/fixed/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/DefaultCodegen.java
+index 2abcfad31..1b3ddc524 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/DefaultCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/DefaultCodegen.java
+@@ -314,7 +314,7 @@ public class DefaultCodegen {
+   }
+ 
+   public String snakeCase(String name) {
+-    return Character.toLowerCase(name.charAt(0)) + name.substring(1);
++      return (name.length() > 0) ? (Character.toLowerCase(name.charAt(0)) + name.substring(1)) : "";
+   }
+ 
+   public String initialCaps(String name) {

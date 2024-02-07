@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PythonClientCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PythonClientCodegen.java
+index aba018354..6877e7e24 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PythonClientCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PythonClientCodegen.java
+@@ -203,7 +203,7 @@ public class PythonClientCodegen extends DefaultCodegen implements CodegenConfig
+                         + "/pattern/modifiers convention. "+pattern+" is not valid.");
+             }
+ 
+-            String regex = pattern.substring(1, i).replace("'", "\'");
++            String regex = pattern.substring(1, i).replace("'", "\\'");
+             List<String> modifiers = new ArrayList<String>();
+ 
+             for(char c : pattern.substring(i).toCharArray()) {

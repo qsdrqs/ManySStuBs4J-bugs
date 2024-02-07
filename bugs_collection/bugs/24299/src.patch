@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-models/src/main/java/io/swagger/models/properties/PropertyBuilder.java b/fixed/modules/swagger-models/src/main/java/io/swagger/models/properties/PropertyBuilder.java
+index 41fbdf96a..660d11c86 100644
+--- a/buggy/modules/swagger-models/src/main/java/io/swagger/models/properties/PropertyBuilder.java
++++ b/fixed/modules/swagger-models/src/main/java/io/swagger/models/properties/PropertyBuilder.java
+@@ -566,7 +566,7 @@ public class PropertyBuilder {
+                     return item;
+                 }
+             }
+-            LOGGER.error("no property for " + type + ", " + format);
++            LOGGER.debug("no property for " + type + ", " + format);
+             return null;
+         }
+ 

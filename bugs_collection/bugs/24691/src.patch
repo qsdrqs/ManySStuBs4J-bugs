@@ -1,0 +1,13 @@
+diff --git a/buggy/controller/src/main/java/org/jboss/as/controller/extension/ExtensionRegistry.java b/fixed/controller/src/main/java/org/jboss/as/controller/extension/ExtensionRegistry.java
+index 4fc5cca3e..3330e6b22 100644
+--- a/buggy/controller/src/main/java/org/jboss/as/controller/extension/ExtensionRegistry.java
++++ b/fixed/controller/src/main/java/org/jboss/as/controller/extension/ExtensionRegistry.java
+@@ -350,7 +350,7 @@ public class ExtensionRegistry {
+         final Map<String, SubsystemInformation> subsystemsInfo = getAvailableSubsystems(moduleName);
+         if(subsystemsInfo != null && ! subsystemsInfo.isEmpty()) {
+             for(final Map.Entry<String, SubsystemInformation> entry : subsystemsInfo.entrySet()) {
+-                subsystems.add(entry.getKey(), entry.getValue().getManagementInterfaceMajorVersion() +"."+ entry.getValue().getManagementInterfaceMinorVersion());
++                subsystems.add(entry.getKey(), entry.getValue().getManagementInterfaceMajorVersion() +"."+ entry.getValue().getManagementInterfaceMicroVersion());
+             }
+         }
+     }

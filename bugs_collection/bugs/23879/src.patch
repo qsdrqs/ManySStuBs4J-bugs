@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/SwiftCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/SwiftCodegen.java
+index aa6d73f3a..f1be1368a 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/SwiftCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/SwiftCodegen.java
+@@ -337,7 +337,7 @@ public class SwiftCodegen extends DefaultCodegen implements CodegenConfig {
+             // Swift compiler will generate an error
+             if (isReservedWord(codegenProperty.datatypeWithEnum) ||
+                     name.equals(codegenProperty.datatypeWithEnum)) {
+-                codegenProperty.datatypeWithEnum = escapeReservedWord(codegenProperty.datatypeWithEnum);
++                codegenProperty.datatypeWithEnum = codegenProperty.datatypeWithEnum + "Enum";
+                     }
+         }
+         return codegenProperty;

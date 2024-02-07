@@ -1,0 +1,13 @@
+diff --git a/buggy/naming/src/main/java/org/jboss/as/naming/NamingContext.java b/fixed/naming/src/main/java/org/jboss/as/naming/NamingContext.java
+index ad87fd5f0..4bcaf925d 100644
+--- a/buggy/naming/src/main/java/org/jboss/as/naming/NamingContext.java
++++ b/fixed/naming/src/main/java/org/jboss/as/naming/NamingContext.java
+@@ -519,7 +519,7 @@ public class NamingContext implements EventContext {
+         try {
+             final ObjectFactoryBuilder factoryBuilder = ObjectFactoryBuilder.INSTANCE;
+             final ObjectFactory objectFactory = factoryBuilder.createObjectFactory(object, environment);
+-            return objectFactory.getObjectInstance(object, name, this, environment);
++            return objectFactory == null ? null : objectFactory.getObjectInstance(object, name, this, environment);
+         } catch(NamingException e) {
+             throw e;
+         } catch(Throwable t) {

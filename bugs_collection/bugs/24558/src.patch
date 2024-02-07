@@ -1,0 +1,13 @@
+diff --git a/buggy/clustering/infinispan/src/main/java/org/jboss/as/clustering/infinispan/subsystem/LockingResourceDefinition.java b/fixed/clustering/infinispan/src/main/java/org/jboss/as/clustering/infinispan/subsystem/LockingResourceDefinition.java
+index 2547457e0..1293fb32b 100644
+--- a/buggy/clustering/infinispan/src/main/java/org/jboss/as/clustering/infinispan/subsystem/LockingResourceDefinition.java
++++ b/fixed/clustering/infinispan/src/main/java/org/jboss/as/clustering/infinispan/subsystem/LockingResourceDefinition.java
+@@ -57,7 +57,7 @@ public class LockingResourceDefinition extends SimpleResourceDefinition {
+             .setMeasurementUnit(MeasurementUnit.MILLISECONDS)
+             .setAllowExpression(true)
+             .setFlags(AttributeAccess.Flag.RESTART_ALL_SERVICES)
+-            .setDefaultValue(new ModelNode().set(15000))
++            .setDefaultValue(new ModelNode().set(15000L))
+             .build();
+ 
+     static final SimpleAttributeDefinition CONCURRENCY_LEVEL = new SimpleAttributeDefinitionBuilder(ModelKeys.CONCURRENCY_LEVEL, ModelType.INT, true)

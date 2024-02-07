@@ -1,0 +1,13 @@
+diff --git a/buggy/process-manager/src/main/java/org/jboss/as/process/ProcessManagerSlave.java b/fixed/process-manager/src/main/java/org/jboss/as/process/ProcessManagerSlave.java
+index b05166b27..57517ff48 100644
+--- a/buggy/process-manager/src/main/java/org/jboss/as/process/ProcessManagerSlave.java
++++ b/fixed/process-manager/src/main/java/org/jboss/as/process/ProcessManagerSlave.java
+@@ -154,7 +154,7 @@ public final class ProcessManagerSlave {
+         }
+         final StringBuilder b = new StringBuilder();
+         b.append(Command.SEND_BYTES).append('\0');
+-        b.append(processName).append(0);
++        b.append(processName).append('\0');
+         StreamUtils.writeString(output, b);
+         output.write(message.length);
+         output.write(message);

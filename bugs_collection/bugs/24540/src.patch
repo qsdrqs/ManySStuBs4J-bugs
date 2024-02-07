@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/security/loginmodules/negotiation/AdvancedLdapLoginModuleTestCase.java b/fixed/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/security/loginmodules/negotiation/AdvancedLdapLoginModuleTestCase.java
+index b2596f5e6..2dcb230ed 100644
+--- a/buggy/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/security/loginmodules/negotiation/AdvancedLdapLoginModuleTestCase.java
++++ b/fixed/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/security/loginmodules/negotiation/AdvancedLdapLoginModuleTestCase.java
+@@ -402,7 +402,7 @@ public class AdvancedLdapLoginModuleTestCase {
+             final String hostname = Utils.getCannonicalHost(managementClient);
+             final Map<String, String> map = new HashMap<String, String>();
+             map.put("hostname", NetworkUtils.formatPossibleIpv6Address(hostname));
+-            final String secondaryTestAddress = Utils.getSecondaryTestAddress(managementClient, true);
++            final String secondaryTestAddress = NetworkUtils.canonize(Utils.getSecondaryTestAddress(managementClient, true));
+             map.put("ldaphost", secondaryTestAddress);
+             final String ldifContent = StrSubstitutor.replace(
+                     IOUtils.toString(

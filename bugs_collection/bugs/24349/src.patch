@@ -1,0 +1,16 @@
+diff --git a/buggy/titan-core/src/main/java/com/thinkaurelius/titan/graphdb/internal/AbstractElement.java b/fixed/titan-core/src/main/java/com/thinkaurelius/titan/graphdb/internal/AbstractElement.java
+index 339f4a087..ca0bb90de 100644
+--- a/buggy/titan-core/src/main/java/com/thinkaurelius/titan/graphdb/internal/AbstractElement.java
++++ b/fixed/titan-core/src/main/java/com/thinkaurelius/titan/graphdb/internal/AbstractElement.java
+@@ -38,9 +38,9 @@ public abstract class AbstractElement implements InternalElement {
+         } else if (other==null) {
+             return false;
+         } else if (this instanceof TitanVertex && other instanceof TitanVertex) {
+-            return getId().equals(((TitanVertex)other).getId());
++            return getID() == ((TitanVertex)other).getID();
+         } else if (this instanceof TitanEdge && other instanceof TitanEdge) {
+-            return getId().equals(((TitanEdge)other).getId());
++            return getID() == ((TitanEdge)other).getID();
+         } else {
+             return false;
+         }

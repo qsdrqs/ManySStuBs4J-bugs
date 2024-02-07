@@ -1,0 +1,11 @@
+diff --git a/buggy/testsuite/shared/src/main/java/org/jboss/as/test/integration/web/sso/interfaces/StatelessSessionHome.java b/fixed/testsuite/shared/src/main/java/org/jboss/as/test/integration/web/sso/interfaces/StatelessSessionHome.java
+index 39ed7ea90..7f9dfee13 100644
+--- a/buggy/testsuite/shared/src/main/java/org/jboss/as/test/integration/web/sso/interfaces/StatelessSessionHome.java
++++ b/fixed/testsuite/shared/src/main/java/org/jboss/as/test/integration/web/sso/interfaces/StatelessSessionHome.java
+@@ -25,5 +25,5 @@ import javax.ejb.*;
+ import java.rmi.*;
+ 
+ public interface StatelessSessionHome extends EJBHome {
+-    public StatelessSession create() throws RemoteException, CreateException;
++    StatelessSession create() throws RemoteException, CreateException;
+ }

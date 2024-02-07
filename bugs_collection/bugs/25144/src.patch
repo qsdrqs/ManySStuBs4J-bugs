@@ -1,0 +1,13 @@
+diff --git a/buggy/ee/src/main/java/org/jboss/as/ee/component/AroundInvokeAnnotationParsingProcessor.java b/fixed/ee/src/main/java/org/jboss/as/ee/component/AroundInvokeAnnotationParsingProcessor.java
+index 52e94084e..7cd8ac5c9 100644
+--- a/buggy/ee/src/main/java/org/jboss/as/ee/component/AroundInvokeAnnotationParsingProcessor.java
++++ b/fixed/ee/src/main/java/org/jboss/as/ee/component/AroundInvokeAnnotationParsingProcessor.java
+@@ -72,7 +72,7 @@ public class AroundInvokeAnnotationParsingProcessor implements DeploymentUnitPro
+         final EEModuleClassDescription classDescription = eeModuleDescription.getOrAddClassByName(classInfo.name().toString());
+ 
+         validateArgumentType(classInfo, methodInfo);
+-        classDescription.setAroundInvokeMethod(MethodIdentifier.getIdentifier(Void.TYPE, methodInfo.name(), InvocationContext.class));
++        classDescription.setAroundInvokeMethod(MethodIdentifier.getIdentifier(Object.class, methodInfo.name(), InvocationContext.class));
+     }
+ 
+     private void validateArgumentType(final ClassInfo classInfo, final MethodInfo methodInfo) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/twitter4j-core/src/main/java/twitter4j/FriendshipJSONImpl.java b/fixed/twitter4j-core/src/main/java/twitter4j/FriendshipJSONImpl.java
+index 6c49c039f..2339a2424 100644
+--- a/buggy/twitter4j-core/src/main/java/twitter4j/FriendshipJSONImpl.java
++++ b/fixed/twitter4j-core/src/main/java/twitter4j/FriendshipJSONImpl.java
+@@ -141,7 +141,7 @@ class FriendshipJSONImpl implements Friendship {
+ 
+     @Override
+     public String toString() {
+-        return "ConnectionsJSONImpl{" +
++        return "FriendshipJSONImpl{" +
+                 "id=" + id +
+                 ", name='" + name + '\'' +
+                 ", screenName='" + screenName + '\'' +

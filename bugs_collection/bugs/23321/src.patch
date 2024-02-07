@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/util/Execution.java b/fixed/src/edu/stanford/nlp/util/Execution.java
+index d2d2eb308..2a134c009 100644
+--- a/buggy/src/edu/stanford/nlp/util/Execution.java
++++ b/fixed/src/edu/stanford/nlp/util/Execution.java
+@@ -597,7 +597,7 @@ public class Execution {
+       log(FORCE, t);
+       exitCode = 1;
+     }
+-    endTrack("main"); //ends main
++    endTracksTo("main");  // end main
+     if (exit) {
+       System.exit(exitCode);
+     }

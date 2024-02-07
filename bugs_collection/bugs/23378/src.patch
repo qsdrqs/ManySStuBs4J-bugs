@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/pipeline/ProtobufAnnotationSerializer.java b/fixed/src/edu/stanford/nlp/pipeline/ProtobufAnnotationSerializer.java
+index b4462d030..cb62d821d 100644
+--- a/buggy/src/edu/stanford/nlp/pipeline/ProtobufAnnotationSerializer.java
++++ b/fixed/src/edu/stanford/nlp/pipeline/ProtobufAnnotationSerializer.java
+@@ -1025,7 +1025,7 @@ public class ProtobufAnnotationSerializer extends AnnotationSerializer {
+       if (token.originalText() != null) { text.append(token.originalText()); } else { text.append(token.word()); }
+       last = tokens.get(0);
+     }
+-    for (int i = 1; i < tokens.size() - 1; ++i) {
++    for (int i = 1; i < tokens.size(); ++i) {
+       CoreLabel token = tokens.get(i);
+       if (token.before() != null) {
+         text.append(token.before());

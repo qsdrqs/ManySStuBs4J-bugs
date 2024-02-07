@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-models/src/main/java/io/swagger/models/properties/LongProperty.java b/fixed/modules/swagger-models/src/main/java/io/swagger/models/properties/LongProperty.java
+index ae055cb7d..b24d5e757 100644
+--- a/buggy/modules/swagger-models/src/main/java/io/swagger/models/properties/LongProperty.java
++++ b/fixed/modules/swagger-models/src/main/java/io/swagger/models/properties/LongProperty.java
+@@ -6,7 +6,7 @@ import java.util.ArrayList;
+ import java.util.List;
+ 
+ public class LongProperty extends BaseIntegerProperty {
+-    private static final String FORMAT = "int64";
++    public static final String FORMAT = "int64";
+     protected Long _default;
+     protected List<Long> _enum;
+ 

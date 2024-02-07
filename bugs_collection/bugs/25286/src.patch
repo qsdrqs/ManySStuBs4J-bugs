@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/redis/clients/jedis/JedisSlotBasedConnectionHandler.java b/fixed/src/main/java/redis/clients/jedis/JedisSlotBasedConnectionHandler.java
+index 4aba893d1..36c04ed1b 100644
+--- a/buggy/src/main/java/redis/clients/jedis/JedisSlotBasedConnectionHandler.java
++++ b/fixed/src/main/java/redis/clients/jedis/JedisSlotBasedConnectionHandler.java
+@@ -40,7 +40,7 @@ public class JedisSlotBasedConnectionHandler extends
+ 	    connectionPool = getRandomConnection();
+ 	}
+ 	currentConnection = connectionPool.getResource();
+-	return connectionPool.getResource();
++	return currentConnection;
+     }
+ 
+ }

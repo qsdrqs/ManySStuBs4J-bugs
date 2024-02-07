@@ -1,0 +1,13 @@
+diff --git a/buggy/titan-hbase/src/main/java/com/thinkaurelius/titan/diskstorage/hbase/HBaseKeyColumnValueStore.java b/fixed/titan-hbase/src/main/java/com/thinkaurelius/titan/diskstorage/hbase/HBaseKeyColumnValueStore.java
+index e25821b6d..8192fbd86 100644
+--- a/buggy/titan-hbase/src/main/java/com/thinkaurelius/titan/diskstorage/hbase/HBaseKeyColumnValueStore.java
++++ b/fixed/titan-hbase/src/main/java/com/thinkaurelius/titan/diskstorage/hbase/HBaseKeyColumnValueStore.java
+@@ -167,7 +167,7 @@ public class HBaseKeyColumnValueStore implements KeyColumnValueStore {
+     }
+ 
+     public void mutateMany(Map<StaticBuffer, KCVMutation> mutations, StoreTransaction txh) throws StorageException {
+-        storeManager.mutateMany(ImmutableMap.of(columnFamily, mutations), txh);
++        storeManager.mutateMany(ImmutableMap.of(storeName, mutations), txh);
+     }
+ 
+     @Override

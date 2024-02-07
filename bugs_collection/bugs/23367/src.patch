@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/pipeline/StanfordCoreNLP.java b/fixed/src/edu/stanford/nlp/pipeline/StanfordCoreNLP.java
+index d756484ec..23fd8d91a 100644
+--- a/buggy/src/edu/stanford/nlp/pipeline/StanfordCoreNLP.java
++++ b/fixed/src/edu/stanford/nlp/pipeline/StanfordCoreNLP.java
+@@ -854,7 +854,7 @@ public class StanfordCoreNLP extends AnnotationPipeline {
+ 
+       @Override
+       public String signature() {
+-        return "model=" + inputProps.get("model");
++        return "sentiment.model=" + inputProps.get("sentiment.model");
+       }
+     });
+ 

@@ -1,0 +1,18 @@
+diff --git a/buggy/connector/src/main/java/org/jboss/as/connector/subsystems/jca/JcaExtension.java b/fixed/connector/src/main/java/org/jboss/as/connector/subsystems/jca/JcaExtension.java
+index ebb0877be..8ea7de111 100644
+--- a/buggy/connector/src/main/java/org/jboss/as/connector/subsystems/jca/JcaExtension.java
++++ b/fixed/connector/src/main/java/org/jboss/as/connector/subsystems/jca/JcaExtension.java
+@@ -448,11 +448,11 @@ public class JcaExtension implements Extension {
+ 
+                 switch (element) {
+                     case LONG_RUNNING_THREADS: {
+-                        ThreadsParser.getInstance().parseBoundedQueueThreadPool(reader, workManagerAddress, list, WORKMANAGER_LONG_RUNNING, WORKMANAGER_LONG_RUNNING);
++                        ThreadsParser.getInstance().parseBoundedQueueThreadPool(reader, workManagerAddress, list, WORKMANAGER_LONG_RUNNING, name + "-" + WORKMANAGER_LONG_RUNNING);
+                         break;
+                     }
+                     case SHORT_RUNNING_THREADS: {
+-                        ThreadsParser.getInstance().parseBoundedQueueThreadPool(reader, workManagerAddress, list, WORKMANAGER_SHORT_RUNNING, WORKMANAGER_SHORT_RUNNING);
++                        ThreadsParser.getInstance().parseBoundedQueueThreadPool(reader, workManagerAddress, list, WORKMANAGER_SHORT_RUNNING,  name + "-" + WORKMANAGER_SHORT_RUNNING);
+                         break;
+                     }
+                     default:

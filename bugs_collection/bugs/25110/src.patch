@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/integration/src/test/java/org/jboss/as/testsuite/integration/osgi/interceptor/bundle/PublisherInterceptor.java b/fixed/testsuite/integration/src/test/java/org/jboss/as/testsuite/integration/osgi/interceptor/bundle/PublisherInterceptor.java
+index 22c2f6844..00ffaf153 100644
+--- a/buggy/testsuite/integration/src/test/java/org/jboss/as/testsuite/integration/osgi/interceptor/bundle/PublisherInterceptor.java
++++ b/fixed/testsuite/integration/src/test/java/org/jboss/as/testsuite/integration/osgi/interceptor/bundle/PublisherInterceptor.java
+@@ -86,7 +86,7 @@ public class PublisherInterceptor extends AbstractLifecycleInterceptor {
+             try {
+                 HttpService httpService = getHttpService(context, false);
+                 if (httpService != null)
+-                    httpService.unregister("/servlet");
++                    httpService.unregister("/example-interceptor/servlet");
+             } finally {
+                 // [AS7-903] 3rd party code may leak TCCL
+                 Thread.currentThread().setContextClassLoader(ctxLoader);

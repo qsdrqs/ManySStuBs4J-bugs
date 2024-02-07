@@ -1,0 +1,42 @@
+diff --git a/buggy/src/main/java/redis/clients/jedis/JedisCluster.java b/fixed/src/main/java/redis/clients/jedis/JedisCluster.java
+index b557a6df2..42e9c21f9 100644
+--- a/buggy/src/main/java/redis/clients/jedis/JedisCluster.java
++++ b/fixed/src/main/java/redis/clients/jedis/JedisCluster.java
+@@ -1095,7 +1095,7 @@ public class JedisCluster implements JedisCommands, BasicCommands, Closeable {
+       public List<String> execute(Jedis connection) {
+         return connection.blpop(arg);
+       }
+-    }.run(null);
++    }.run(arg);
+   }
+ 
+   @Override
+@@ -1105,7 +1105,7 @@ public class JedisCluster implements JedisCommands, BasicCommands, Closeable {
+       public List<String> execute(Jedis connection) {
+         return connection.brpop(arg);
+       }
+-    }.run(null);
++    }.run(arg);
+   }
+ 
+   @Override
+@@ -1416,7 +1416,7 @@ public class JedisCluster implements JedisCommands, BasicCommands, Closeable {
+       public List<String> execute(Jedis connection) {
+         return connection.blpop(timeout, key);
+       }
+-    }.run(null);
++    }.run(key);
+   }
+ 
+   @Override
+@@ -1426,7 +1426,7 @@ public class JedisCluster implements JedisCommands, BasicCommands, Closeable {
+       public List<String> execute(Jedis connection) {
+         return connection.brpop(timeout, key);
+       }
+-    }.run(null);
++    }.run(key);
+   }
+ 
+-}
++}
+\ No newline at end of file

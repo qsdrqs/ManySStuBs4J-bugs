@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/wordnik/swagger/codegen/config/python/PythonLibCodeGen.java b/fixed/src/main/java/com/wordnik/swagger/codegen/config/python/PythonLibCodeGen.java
+index 3f35a71c2..6a11d8c72 100644
+--- a/buggy/src/main/java/com/wordnik/swagger/codegen/config/python/PythonLibCodeGen.java
++++ b/fixed/src/main/java/com/wordnik/swagger/codegen/config/python/PythonLibCodeGen.java
+@@ -53,7 +53,7 @@ public class PythonLibCodeGen extends LibraryCodeGenerator {
+             }
+             String modelPackageName = packageName+".model";
+             String apiPackageName = packageName+".api";
+-            String classOutputDir = libraryHome + packageName.replace(".","/");
++            String classOutputDir = libraryHome + '/' + packageName.replace(".","/");
+             PythonLibCodeGen codeGenerator = new PythonLibCodeGen(apiServerURL, apiKey, modelPackageName,
+                     apiPackageName, classOutputDir, libraryHome);
+             codeGenerator.generateCode();

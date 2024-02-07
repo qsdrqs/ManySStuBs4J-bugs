@@ -1,0 +1,13 @@
+diff --git a/buggy/messaging/src/main/java/org/jboss/as/messaging/jms/PooledConnectionFactoryService.java b/fixed/messaging/src/main/java/org/jboss/as/messaging/jms/PooledConnectionFactoryService.java
+index cbc66234e..680f0f13d 100644
+--- a/buggy/messaging/src/main/java/org/jboss/as/messaging/jms/PooledConnectionFactoryService.java
++++ b/fixed/messaging/src/main/java/org/jboss/as/messaging/jms/PooledConnectionFactoryService.java
+@@ -231,7 +231,7 @@ public class PooledConnectionFactoryService implements Service<Void> {
+                     PooledConnectionFactoryService.class.getClassLoader(), name);
+ 
+             serviceTarget
+-                    .addService(ConnectorServices.RESOURCE_ADAPTER_ACTIVATOR_SERVICE, activator)
++                    .addService(ConnectorServices.RESOURCE_ADAPTER_ACTIVATOR_SERVICE.append(name), activator)
+                     .addDependency(ConnectorServices.IRONJACAMAR_MDR, MetadataRepository.class,
+                             activator.getMdrInjector())
+                     .addDependency(ConnectorServices.RA_REPOSISTORY_SERVICE, ResourceAdapterRepository.class,

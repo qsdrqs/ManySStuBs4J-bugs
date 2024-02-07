@@ -1,0 +1,13 @@
+diff --git a/buggy/naming/src/main/java/org/jboss/as/naming/NamingContext.java b/fixed/naming/src/main/java/org/jboss/as/naming/NamingContext.java
+index d9c18c22a..d773b5912 100644
+--- a/buggy/naming/src/main/java/org/jboss/as/naming/NamingContext.java
++++ b/fixed/naming/src/main/java/org/jboss/as/naming/NamingContext.java
+@@ -389,7 +389,7 @@ public class NamingContext implements EventContext {
+ 
+     /** {@inheritDoc} */
+     public Object lookupLink(String name) throws NamingException {
+-        return lookup(parseName(name));
++        return lookupLink(parseName(name));
+     }
+ 
+     /** {@inheritDoc} */

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/redis/clients/jedis/Jedis.java b/fixed/src/main/java/redis/clients/jedis/Jedis.java
+index e68cd403a..d75e80454 100644
+--- a/buggy/src/main/java/redis/clients/jedis/Jedis.java
++++ b/fixed/src/main/java/redis/clients/jedis/Jedis.java
+@@ -19,7 +19,7 @@ import redis.clients.util.Slowlog;
+ 
+ public class Jedis extends BinaryJedis implements JedisCommands,
+ 	MultiKeyCommands, AdvancedJedisCommands, ScriptingCommands,
+-	BasicCommands, ClusterCommands {
++	BasicCommands, ClusterCommands, SentinelCommands {
+ 
+     protected Pool<Jedis> dataSource = null;
+ 

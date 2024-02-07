@@ -1,0 +1,13 @@
+diff --git a/buggy/web/src/main/java/org/jboss/as/web/deployment/WarAnnotationDeploymentProcessor.java b/fixed/web/src/main/java/org/jboss/as/web/deployment/WarAnnotationDeploymentProcessor.java
+index 088c8366a..d6632ea2d 100644
+--- a/buggy/web/src/main/java/org/jboss/as/web/deployment/WarAnnotationDeploymentProcessor.java
++++ b/fixed/web/src/main/java/org/jboss/as/web/deployment/WarAnnotationDeploymentProcessor.java
+@@ -238,7 +238,7 @@ public class WarAnnotationDeploymentProcessor implements DeploymentUnitProcessor
+                 }
+                 ClassInfo classInfo = ClassInfo.class.cast(target);
+                 filter.setFilterClass(classInfo.toString());
+-                AnnotationValue nameValue = annotation.value("name");
++                AnnotationValue nameValue = annotation.value("filterName");
+                 if (nameValue == null || nameValue.asString().isEmpty()) {
+                     filter.setName(classInfo.toString());
+                 } else {

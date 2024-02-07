@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/integration/src/test/java/org/jboss/as/testsuite/integration/ejb/interceptor/defaultinterceptor/MethodInterceptor.java b/fixed/testsuite/integration/src/test/java/org/jboss/as/testsuite/integration/ejb/interceptor/defaultinterceptor/MethodInterceptor.java
+index 678ae6ba6..2dc2897fc 100644
+--- a/buggy/testsuite/integration/src/test/java/org/jboss/as/testsuite/integration/ejb/interceptor/defaultinterceptor/MethodInterceptor.java
++++ b/fixed/testsuite/integration/src/test/java/org/jboss/as/testsuite/integration/ejb/interceptor/defaultinterceptor/MethodInterceptor.java
+@@ -29,7 +29,7 @@ import javax.interceptor.InvocationContext;
+  */
+ public class MethodInterceptor {
+ 
+-      public static final String MESSAGE = "ClassInterceptor ";
++      public static final String MESSAGE = "MethodInterceptor ";
+ 
+ 
+     @AroundInvoke

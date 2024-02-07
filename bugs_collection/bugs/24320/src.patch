@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-jaxrs/src/main/java/com/wordnik/swagger/jaxrs/config/WebXMLReader.java b/fixed/modules/swagger-jaxrs/src/main/java/com/wordnik/swagger/jaxrs/config/WebXMLReader.java
+index f2e698db8..5cdd972fc 100644
+--- a/buggy/modules/swagger-jaxrs/src/main/java/com/wordnik/swagger/jaxrs/config/WebXMLReader.java
++++ b/fixed/modules/swagger-jaxrs/src/main/java/com/wordnik/swagger/jaxrs/config/WebXMLReader.java
+@@ -21,7 +21,7 @@ public class WebXMLReader /*implements SwaggerConfig*/ {
+       title = "";
+ 
+     if(basePath != null) {
+-      String[] parts = basePath.split("//");
++      String[] parts = basePath.split("://");
+       if(parts.length > 1) {
+         int pos = parts[1].indexOf("/");
+         if(pos >= 0) {

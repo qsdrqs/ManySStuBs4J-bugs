@@ -1,0 +1,13 @@
+diff --git a/buggy/webservices/server-integration/src/main/java/org/jboss/as/webservices/injection/WSHandlerChainAnnotationProcessor.java b/fixed/webservices/server-integration/src/main/java/org/jboss/as/webservices/injection/WSHandlerChainAnnotationProcessor.java
+index 4f0f076b9..139890a71 100644
+--- a/buggy/webservices/server-integration/src/main/java/org/jboss/as/webservices/injection/WSHandlerChainAnnotationProcessor.java
++++ b/fixed/webservices/server-integration/src/main/java/org/jboss/as/webservices/injection/WSHandlerChainAnnotationProcessor.java
+@@ -74,7 +74,7 @@ public final class WSHandlerChainAnnotationProcessor implements DeploymentUnitPr
+         }
+         // wars define resource roots
+         AttachmentList<ResourceRoot> resourceRoots = unit.getAttachment(RESOURCE_ROOTS);
+-        if (EjbDeploymentMarker.isEjbDeployment(unit)) {
++        if (!unit.getName().endsWith(".war") && EjbDeploymentMarker.isEjbDeployment(unit)) {
+             // ejb archives don't define resource roots, using root resource
+             resourceRoots = new AttachmentList<ResourceRoot>(ResourceRoot.class);
+             final ResourceRoot root = unit.getAttachment(DEPLOYMENT_ROOT);

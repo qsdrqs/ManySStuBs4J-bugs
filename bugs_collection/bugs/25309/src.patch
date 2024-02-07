@@ -1,0 +1,23 @@
+diff --git a/buggy/src/main/java/redis/clients/jedis/Pipeline.java b/fixed/src/main/java/redis/clients/jedis/Pipeline.java
+index 95bc7736a..9b3413c1f 100644
+--- a/buggy/src/main/java/redis/clients/jedis/Pipeline.java
++++ b/fixed/src/main/java/redis/clients/jedis/Pipeline.java
+@@ -672,14 +672,14 @@ public class Pipeline extends Queable {
+         return getResponse(BuilderFactory.LONG);
+     }
+ 
+-    public Response<List<String>> sort(String key) {
++    public Response<Long> sort(String key) {
+         client.sort(key);
+-        return getResponse(BuilderFactory.STRING_LIST);
++        return getResponse(BuilderFactory.LONG);
+     }
+ 
+-    public Response<List<String>> sort(byte[] key) {
++    public Response<Long> sort(byte[] key) {
+         client.sort(key);
+-        return getResponse(BuilderFactory.STRING_LIST);
++        return getResponse(BuilderFactory.LONG);
+     }
+ 
+     public Response<List<String>> sort(String key,

@@ -1,0 +1,13 @@
+diff --git a/buggy/transactions/src/main/java/org/jboss/as/txn/subsystem/TransactionSubsystem14Parser.java b/fixed/transactions/src/main/java/org/jboss/as/txn/subsystem/TransactionSubsystem14Parser.java
+index be9cd18d5..37b59078b 100644
+--- a/buggy/transactions/src/main/java/org/jboss/as/txn/subsystem/TransactionSubsystem14Parser.java
++++ b/fixed/transactions/src/main/java/org/jboss/as/txn/subsystem/TransactionSubsystem14Parser.java
+@@ -218,7 +218,7 @@ class TransactionSubsystem14Parser implements XMLStreamConstants, XMLElementRead
+                     break;
+                 case PATH:
+                     TransactionSubsystemRootResourceDefinition.OBJECT_STORE_PATH.parseAndSetParameter(value, operation, reader);
+-                    if (!value.equals(TransactionSubsystemRootResourceDefinition.OBJECT_STORE_PATH.getDefaultValue())) {
++                    if (!value.equals(TransactionSubsystemRootResourceDefinition.OBJECT_STORE_PATH.getDefaultValue().asString())) {
+                         needsDefaultRelativeTo = false;
+                     }
+                     break;

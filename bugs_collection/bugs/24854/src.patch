@@ -1,0 +1,13 @@
+diff --git a/buggy/cli/src/main/java/org/jboss/as/cli/gui/metacommand/DeployCommandDialog.java b/fixed/cli/src/main/java/org/jboss/as/cli/gui/metacommand/DeployCommandDialog.java
+index 2c7259981..1158b6611 100644
+--- a/buggy/cli/src/main/java/org/jboss/as/cli/gui/metacommand/DeployCommandDialog.java
++++ b/fixed/cli/src/main/java/org/jboss/as/cli/gui/metacommand/DeployCommandDialog.java
+@@ -221,7 +221,7 @@ public class DeployCommandDialog extends JDialog implements ActionListener {
+         if (!name.trim().isEmpty()) builder.append("  --name=").append(name);
+ 
+         String runtimeName = runtimeNameField.getText();
+-        if (!runtimeName.trim().isEmpty()) builder.append("  --runtime_name=").append(runtimeName);
++        if (!runtimeName.trim().isEmpty()) builder.append("  --runtime-name=").append(runtimeName);
+ 
+         if (forceCheckBox.isSelected()) builder.append("  --force");
+         if (disabledCheckBox.isSelected() && disabledCheckBox.isEnabled()) builder.append("  --disabled");

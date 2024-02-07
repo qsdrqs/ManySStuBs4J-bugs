@@ -1,0 +1,14 @@
+diff --git a/buggy/src/edu/stanford/nlp/tagger/maxent/TestSentence.java b/fixed/src/edu/stanford/nlp/tagger/maxent/TestSentence.java
+index c6e728fee..ef5cedb67 100644
+--- a/buggy/src/edu/stanford/nlp/tagger/maxent/TestSentence.java
++++ b/fixed/src/edu/stanford/nlp/tagger/maxent/TestSentence.java
+@@ -296,7 +296,8 @@ public class TestSentence implements SequenceModel {
+    * @param finalTags Chosen tags for sentence
+    * @param confusionMatrix Confusion matrix to write to
+    */
+-  protected void updateConfusionMatrix(String[] finalTags, ConfusionMatrix confusionMatrix) {
++  protected void updateConfusionMatrix(String[] finalTags,
++                                       ConfusionMatrix<String> confusionMatrix) {
+     for (int i = 0; i < correctTags.length; i++)
+       confusionMatrix.add(finalTags[i], correctTags[i]);
+   }

@@ -1,0 +1,13 @@
+diff --git a/buggy/webservices/server-integration/src/main/java/org/jboss/as/webservices/util/ASHelper.java b/fixed/webservices/server-integration/src/main/java/org/jboss/as/webservices/util/ASHelper.java
+index 5ab456990..6d83c76fe 100644
+--- a/buggy/webservices/server-integration/src/main/java/org/jboss/as/webservices/util/ASHelper.java
++++ b/fixed/webservices/server-integration/src/main/java/org/jboss/as/webservices/util/ASHelper.java
+@@ -227,7 +227,7 @@ public final class ASHelper {
+      */
+     private static List<ServletMetaData> getWebServiceServlets(final DeploymentUnit unit, final boolean jaxws) {
+         final JBossWebMetaData jbossWebMD = getJBossWebMetaData(unit);
+-        return selectWebServiceServlets(unit, jbossWebMD.getServlets(), jaxws);
++        return selectWebServiceServlets(unit, jbossWebMD != null ? jbossWebMD.getServlets() : null, jaxws);
+     }
+ 
+     /**

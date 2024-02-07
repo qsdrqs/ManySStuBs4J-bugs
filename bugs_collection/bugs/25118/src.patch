@@ -1,0 +1,13 @@
+diff --git a/buggy/ejb3/src/main/java/org/jboss/as/ejb3/component/stateful/ExpiringCache.java b/fixed/ejb3/src/main/java/org/jboss/as/ejb3/component/stateful/ExpiringCache.java
+index 176f0d33e..898731b37 100644
+--- a/buggy/ejb3/src/main/java/org/jboss/as/ejb3/component/stateful/ExpiringCache.java
++++ b/fixed/ejb3/src/main/java/org/jboss/as/ejb3/component/stateful/ExpiringCache.java
+@@ -201,7 +201,7 @@ public class ExpiringCache<T extends Identifiable> implements Cache<T> {
+ 
+     @Override
+     public synchronized void start() {
+-        if (millisecondTimeout != -1) {
++        if (millisecondTimeout >= 0) {
+             expiryThread = new ExpirationTask();
+             expiryThread.setDaemon(true);
+             expiryThread.start();

@@ -1,0 +1,13 @@
+diff --git a/buggy/undertow/src/main/java/org/wildfly/extension/undertow/UndertowSubsystemParser_1_1.java b/fixed/undertow/src/main/java/org/wildfly/extension/undertow/UndertowSubsystemParser_1_1.java
+index 620bac93b..84020b8f3 100644
+--- a/buggy/undertow/src/main/java/org/wildfly/extension/undertow/UndertowSubsystemParser_1_1.java
++++ b/fixed/undertow/src/main/java/org/wildfly/extension/undertow/UndertowSubsystemParser_1_1.java
+@@ -113,7 +113,7 @@ public class UndertowSubsystemParser_1_1 implements XMLStreamConstants, XMLEleme
+                                                     .addAttributes(FilterRefDefinition.PREDICATE)
+                                         ).addChild(
+                                                 builder(SingleSignOnDefinition.INSTANCE)
+-                                                    .addAttributes(SingleSignOnDefinition.DOMAIN, SingleSignOnDefinition.PATH, SingleSignOnDefinition.HTTP_ONLY, SingleSignOnDefinition.SECURE)
++                                                    .addAttributes(SingleSignOnDefinition.DOMAIN, SingleSignOnDefinition.PATH, SingleSignOnDefinition.HTTP_ONLY, SingleSignOnDefinition.SECURE, SingleSignOnDefinition.COOKIE_NAME)
+                                         )
+                         )
+                 )

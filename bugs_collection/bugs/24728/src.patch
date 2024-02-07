@@ -1,0 +1,12 @@
+diff --git a/buggy/ejb3/src/test/java/org/jboss/as/ejb3/subsystem/SubsystemParsingUnitTestCase.java b/fixed/ejb3/src/test/java/org/jboss/as/ejb3/subsystem/SubsystemParsingUnitTestCase.java
+index e35625c4b..e1e11d50e 100644
+--- a/buggy/ejb3/src/test/java/org/jboss/as/ejb3/subsystem/SubsystemParsingUnitTestCase.java
++++ b/fixed/ejb3/src/test/java/org/jboss/as/ejb3/subsystem/SubsystemParsingUnitTestCase.java
+@@ -60,6 +60,6 @@ public class SubsystemParsingUnitTestCase extends AbstractSubsystemTest {
+         //Make sure the models from the two controllers are identical
+         super.compare(modelA, modelB);
+ 
+-        assertRemoveSubsystemResources(servicesA);
++        assertRemoveSubsystemResources(servicesB);
+     }
+ }

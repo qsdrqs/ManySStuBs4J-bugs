@@ -1,0 +1,13 @@
+diff --git a/buggy/samples/client/petstore/java/default/src/main/java/io/swagger/client/auth/OAuth.java b/fixed/samples/client/petstore/java/default/src/main/java/io/swagger/client/auth/OAuth.java
+index ef89432a3..996922d56 100644
+--- a/buggy/samples/client/petstore/java/default/src/main/java/io/swagger/client/auth/OAuth.java
++++ b/fixed/samples/client/petstore/java/default/src/main/java/io/swagger/client/auth/OAuth.java
+@@ -5,7 +5,7 @@ import io.swagger.client.Pair;
+ import java.util.Map;
+ import java.util.List;
+ 
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-09-30T16:27:52.437+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-10-01T23:05:28.119+08:00")
+ public class OAuth implements Authentication {
+   @Override
+   public void applyToParams(List<Pair> queryParams, Map<String, String> headerParams) {

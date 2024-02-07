@@ -1,0 +1,13 @@
+diff --git a/buggy/undertow/src/main/java/org/wildfly/extension/undertow/handlers/ReverseProxyHandler.java b/fixed/undertow/src/main/java/org/wildfly/extension/undertow/handlers/ReverseProxyHandler.java
+index 9d212933c..270a2be15 100644
+--- a/buggy/undertow/src/main/java/org/wildfly/extension/undertow/handlers/ReverseProxyHandler.java
++++ b/fixed/undertow/src/main/java/org/wildfly/extension/undertow/handlers/ReverseProxyHandler.java
+@@ -67,7 +67,7 @@ public class ReverseProxyHandler extends Handler {
+     public static final AttributeDefinition CONNECTIONS_PER_THREAD = new SimpleAttributeDefinitionBuilder(Constants.CONNECTIONS_PER_THREAD, ModelType.INT)
+             .setAllowNull(true)
+             .setAllowExpression(true)
+-            .setDefaultValue(new ModelNode(10))
++            .setDefaultValue(new ModelNode(40))
+             .setFlags(AttributeAccess.Flag.RESTART_ALL_SERVICES)
+             .build();
+ 

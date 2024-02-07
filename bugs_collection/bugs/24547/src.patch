@@ -1,0 +1,13 @@
+diff --git a/buggy/jdr/jboss-as-jdr/src/main/java/org/jboss/as/jdr/util/JdrZipFile.java b/fixed/jdr/jboss-as-jdr/src/main/java/org/jboss/as/jdr/util/JdrZipFile.java
+index 5048b0ded..4d9c84368 100644
+--- a/buggy/jdr/jboss-as-jdr/src/main/java/org/jboss/as/jdr/util/JdrZipFile.java
++++ b/fixed/jdr/jboss-as-jdr/src/main/java/org/jboss/as/jdr/util/JdrZipFile.java
+@@ -121,7 +121,7 @@ public class JdrZipFile {
+      * @throws Exception
+      */
+     public void add(VirtualFile file, InputStream is) throws Exception {
+-        String name = "JBOSS_HOME" + file.getPathName().substring(this.jbossHome.length());
++        String name = "JBOSS_HOME" + file.getPhysicalFile().getAbsolutePath().substring(this.jbossHome.length());
+         this.add(is, name);
+     }
+ 

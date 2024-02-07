@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/Swift3Codegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/Swift3Codegen.java
+index 37c55a267..dd6b28702 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/Swift3Codegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/Swift3Codegen.java
+@@ -68,7 +68,7 @@ public class Swift3Codegen extends DefaultCodegen implements CodegenConfig {
+         outputFolder = "generated-code" + File.separator + "swift";
+         modelTemplateFiles.put("model.mustache", ".swift");
+         apiTemplateFiles.put("api.mustache", ".swift");
+-        embeddedTemplateDir = templateDir = "swift";
++        embeddedTemplateDir = templateDir = "swift3";
+         apiPackage = File.separator + "APIs";
+         modelPackage = File.separator + "Models";
+ 

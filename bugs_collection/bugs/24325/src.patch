@@ -1,0 +1,13 @@
+diff --git a/buggy/titan-cassandra/src/main/java/com/thinkaurelius/titan/diskstorage/cassandra/astyanax/AstyanaxStoreManager.java b/fixed/titan-cassandra/src/main/java/com/thinkaurelius/titan/diskstorage/cassandra/astyanax/AstyanaxStoreManager.java
+index 5c0a0f791..5c9bc5a21 100644
+--- a/buggy/titan-cassandra/src/main/java/com/thinkaurelius/titan/diskstorage/cassandra/astyanax/AstyanaxStoreManager.java
++++ b/fixed/titan-cassandra/src/main/java/com/thinkaurelius/titan/diskstorage/cassandra/astyanax/AstyanaxStoreManager.java
+@@ -546,7 +546,7 @@ public class AstyanaxStoreManager extends AbstractCassandraStoreManager {
+ 
+             log.debug("Created keyspace {}", keySpaceName);
+         } catch (ConnectionException e) {
+-            log.debug("Failed to create keyspace {}, keySpaceName");
++            log.debug("Failed to create keyspace {}", keySpaceName);
+             throw new TemporaryStorageException(e);
+         }
+     }

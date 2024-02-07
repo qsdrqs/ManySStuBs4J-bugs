@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/redis/clients/jedis/BinaryJedisCluster.java b/fixed/src/main/java/redis/clients/jedis/BinaryJedisCluster.java
+index 4cf2fb53d..4244c762a 100644
+--- a/buggy/src/main/java/redis/clients/jedis/BinaryJedisCluster.java
++++ b/fixed/src/main/java/redis/clients/jedis/BinaryJedisCluster.java
+@@ -180,7 +180,7 @@ public class BinaryJedisCluster implements BinaryJedisClusterCommands,
+     return new JedisClusterCommand<Long>(connectionHandler, maxAttempts) {
+       @Override
+       public Long execute(Jedis connection) {
+-        return connection.pexpire(key, millisecondsTimestamp);
++        return connection.pexpireAt(key, millisecondsTimestamp);
+       }
+     }.runBinary(key);
+   }

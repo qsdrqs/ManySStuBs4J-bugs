@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/thinkaurelius/titan/graphdb/TitanGraphTest.java b/fixed/src/test/java/com/thinkaurelius/titan/graphdb/TitanGraphTest.java
+index 6d9def4b3..f035730ee 100644
+--- a/buggy/src/test/java/com/thinkaurelius/titan/graphdb/TitanGraphTest.java
++++ b/fixed/src/test/java/com/thinkaurelius/titan/graphdb/TitanGraphTest.java
+@@ -44,7 +44,7 @@ public abstract class TitanGraphTest extends TitanGraphTestCommon {
+         close();
+         long memoryAfter = MemoryAssess.getMemoryUse();
+         log.debug("Memory after: {}",memoryAfter/1024);
+-        assertTrue(memoryAfter<10*memoryBaseline);
++        assertTrue(memoryAfter<100*1024*1024);
+     }
+     
+     @Test

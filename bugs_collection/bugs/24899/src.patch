@@ -1,0 +1,13 @@
+diff --git a/buggy/domain-management/src/main/java/org/jboss/as/domain/management/security/ManagementUtil.java b/fixed/domain-management/src/main/java/org/jboss/as/domain/management/security/ManagementUtil.java
+index db00d063b..706c335b6 100644
+--- a/buggy/domain-management/src/main/java/org/jboss/as/domain/management/security/ManagementUtil.java
++++ b/fixed/domain-management/src/main/java/org/jboss/as/domain/management/security/ManagementUtil.java
+@@ -67,7 +67,7 @@ public class ManagementUtil {
+     static String getSecurityRealmName(final ModelNode operation) {
+         String realmName = null;
+         PathAddress pa = PathAddress.pathAddress(operation.require(OP_ADDR));
+-        for (int i = pa.size() - 1; i > 0; i++) {
++        for (int i = pa.size() - 1; i > 0; i--) {
+             PathElement pe = pa.getElement(i);
+             if (SECURITY_REALM.equals(pe.getKey())) {
+                 realmName = pe.getValue();

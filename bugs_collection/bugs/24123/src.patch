@@ -1,0 +1,14 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/languages/PhpClientCodegen.java b/fixed/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/languages/PhpClientCodegen.java
+index 734e16128..ae907423d 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/languages/PhpClientCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/languages/PhpClientCodegen.java
+@@ -28,8 +28,7 @@ public class PhpClientCodegen extends DefaultCodegen implements CodegenConfig {
+   public PhpClientCodegen() {
+     super();
+ 
+-    //TODO determine hte package name from host name
+-    invokerPackage = camelize("SwaggerPetstore"); 
++    invokerPackage = camelize("SwaggerClient"); 
+ 
+     String packagePath = invokerPackage + "-php";
+ 

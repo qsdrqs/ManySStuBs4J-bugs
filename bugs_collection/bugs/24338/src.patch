@@ -1,0 +1,22 @@
+diff --git a/buggy/titan-core/src/main/java/com/thinkaurelius/titan/diskstorage/util/MetricInstrumentedStore.java b/fixed/titan-core/src/main/java/com/thinkaurelius/titan/diskstorage/util/MetricInstrumentedStore.java
+index fa8f55515..63eee99e7 100644
+--- a/buggy/titan-core/src/main/java/com/thinkaurelius/titan/diskstorage/util/MetricInstrumentedStore.java
++++ b/fixed/titan-core/src/main/java/com/thinkaurelius/titan/diskstorage/util/MetricInstrumentedStore.java
+@@ -165,7 +165,7 @@ public class MetricInstrumentedStore implements KeyColumnValueStore {
+                 public KeyIterator call() throws StorageException {
+                     KeyIterator ki = backend.getKeys(query, txh);
+                     if (null != p) {
+-                        return MetricInstrumentedIterator.of(ki, p + "." + M_ITERATOR);
++                        return MetricInstrumentedIterator.of(ki, p + "." + M_GET_KEYS + "." + M_ITERATOR);
+                     } else {
+                         return ki;
+                     }
+@@ -182,7 +182,7 @@ public class MetricInstrumentedStore implements KeyColumnValueStore {
+                 public KeyIterator call() throws StorageException {
+                     KeyIterator ki = backend.getKeys(query, txh);
+                     if (null != p) {
+-                        return MetricInstrumentedIterator.of(ki, p + "." + M_ITERATOR);
++                        return MetricInstrumentedIterator.of(ki, p + "." + M_GET_KEYS + "." + M_ITERATOR);
+                     } else {
+                         return ki;
+                     }

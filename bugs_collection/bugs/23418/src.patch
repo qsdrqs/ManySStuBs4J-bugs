@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/ling/tokensregex/SequenceMatcher.java b/fixed/src/edu/stanford/nlp/ling/tokensregex/SequenceMatcher.java
+index 6f3e4564e..a82b5d3c3 100644
+--- a/buggy/src/edu/stanford/nlp/ling/tokensregex/SequenceMatcher.java
++++ b/fixed/src/edu/stanford/nlp/ling/tokensregex/SequenceMatcher.java
+@@ -616,7 +616,7 @@ public class SequenceMatcher<T> extends BasicSequenceMatchResult<T> {
+     }
+   }
+ 
+-  public List<? extends T> groupNodes(int group) {
++  public List<T> groupNodes(int group) {
+     if (matchingCompleted && matched) {
+       return super.groupNodes(group);
+     } else {

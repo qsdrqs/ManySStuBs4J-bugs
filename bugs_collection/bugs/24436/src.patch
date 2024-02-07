@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/shared/src/main/java/org/wildfly/test/security/common/elytron/FileSystemRealm.java b/fixed/testsuite/shared/src/main/java/org/wildfly/test/security/common/elytron/FileSystemRealm.java
+index 1013629ba..a574e6e33 100644
+--- a/buggy/testsuite/shared/src/main/java/org/wildfly/test/security/common/elytron/FileSystemRealm.java
++++ b/fixed/testsuite/shared/src/main/java/org/wildfly/test/security/common/elytron/FileSystemRealm.java
+@@ -62,7 +62,7 @@ public class FileSystemRealm extends AbstractUserRolesCapableElement implements
+                             name, user.getName(), user.getPassword()));
+             cli.sendLine(
+                     String.format("/subsystem=elytron/filesystem-realm=%s/identity=%s:add-attribute(name=groups, value=[%s])",
+-                            name, user.getName(), user.getPassword(), String.join(",", user.getRoles())));
++                            name, user.getName(), String.join(",", user.getRoles())));
+         }
+     }
+ 

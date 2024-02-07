@@ -1,0 +1,22 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/Qt5CPPGenerator.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/Qt5CPPGenerator.java
+index ff58dbd94..13efbc300 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/Qt5CPPGenerator.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/Qt5CPPGenerator.java
+@@ -97,7 +97,9 @@ public class Qt5CPPGenerator extends DefaultCodegen implements CodegenConfig {
+                 Arrays.asList(
+                         "bool",
+                         "qint32",
+-                        "qint64")
++                        "qint64",
++                        "float",
++                        "double")
+         );
+ 
+         supportingFiles.add(new SupportingFile("helpers-header.mustache", sourceFolder, PREFIX + "Helpers.h"));
+@@ -321,4 +323,4 @@ public class Qt5CPPGenerator extends DefaultCodegen implements CodegenConfig {
+     public String toApiName(String type) {
+         return PREFIX + Character.toUpperCase(type.charAt(0)) + type.substring(1) + "Api";
+     }
+-}
+\ No newline at end of file
++}

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/sentiment/SentimentModel.java b/fixed/src/edu/stanford/nlp/sentiment/SentimentModel.java
+index 5882c84be..ccc7d2c8a 100644
+--- a/buggy/src/edu/stanford/nlp/sentiment/SentimentModel.java
++++ b/fixed/src/edu/stanford/nlp/sentiment/SentimentModel.java
+@@ -202,7 +202,7 @@ public class SentimentModel implements Serializable {
+     this.wordVectors = Generics.newTreeMap();
+     for (String word : words) {
+       // TODO: how do we initialize this?
+-      SimpleMatrix vector = SimpleMatrix.random(numHid, 1, -1.0/Math.sqrt((double)numHid),1.0/Math.sqrt((double)numHid),rand);
++      SimpleMatrix vector = SimpleMatrix.random(op.numHid, 1, -1.0/Math.sqrt((double)op.numHid),1.0/Math.sqrt((double)op.numHid),rand);
+       wordVectors.put(word, vector);
+     }
+   }

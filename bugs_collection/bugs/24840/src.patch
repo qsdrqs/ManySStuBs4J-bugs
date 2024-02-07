@@ -1,0 +1,13 @@
+diff --git a/buggy/clustering/infinispan/src/main/java/org/jboss/as/clustering/infinispan/subsystem/CommonAttributes.java b/fixed/clustering/infinispan/src/main/java/org/jboss/as/clustering/infinispan/subsystem/CommonAttributes.java
+index 16fc238ae..31be3edd8 100644
+--- a/buggy/clustering/infinispan/src/main/java/org/jboss/as/clustering/infinispan/subsystem/CommonAttributes.java
++++ b/fixed/clustering/infinispan/src/main/java/org/jboss/as/clustering/infinispan/subsystem/CommonAttributes.java
+@@ -259,7 +259,7 @@ public interface CommonAttributes {
+                     .setXmlName(Attribute.MODE.getLocalName())
+                     .setAllowExpression(true)
+                     .setFlags(AttributeAccess.Flag.RESTART_ALL_SERVICES)
+-                    .setValidator(new EnumValidator<TransactionMode>(TransactionMode.class, true, false))
++                    .setValidator(new EnumValidator<TransactionMode>(TransactionMode.class, true, true))
+                     .setDefaultValue(new ModelNode().set(TransactionMode.NONE.name()))
+                     .build();
+     SimpleAttributeDefinition MODIFICATION_QUEUE_SIZE =

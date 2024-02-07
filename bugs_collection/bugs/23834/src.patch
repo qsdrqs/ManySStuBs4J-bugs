@@ -1,0 +1,12 @@
+diff --git a/buggy/modules/swagger-codegen/src/test/java/io/swagger/codegen/jaxrs/JaxrsJava8ModelTest.java b/fixed/modules/swagger-codegen/src/test/java/io/swagger/codegen/jaxrs/JaxrsJava8ModelTest.java
+index 34c91e283..ad26ecc9a 100644
+--- a/buggy/modules/swagger-codegen/src/test/java/io/swagger/codegen/jaxrs/JaxrsJava8ModelTest.java
++++ b/fixed/modules/swagger-codegen/src/test/java/io/swagger/codegen/jaxrs/JaxrsJava8ModelTest.java
+@@ -34,6 +34,6 @@ public class JaxrsJava8ModelTest {
+         Json.prettyPrint(cm);
+         assertEquals(cm.vars.get(0).datatype, "Long");
+         assertEquals(cm.vars.get(1).datatype, "LocalDate");
+-        assertEquals(cm.vars.get(2).datatype, "LocalDateTime");
++        assertEquals(cm.vars.get(2).datatype, "OffsetDateTime");
+     }
+ }

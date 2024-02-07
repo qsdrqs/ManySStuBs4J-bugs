@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultGenerator.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultGenerator.java
+index a04e517be..27e10db12 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultGenerator.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultGenerator.java
+@@ -268,7 +268,7 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
+                         // continue
+                     }
+                     if (in == null) {
+-                        in = this.getClass().getClassLoader().getResourceAsStream(config.templateDir() + File.separator + support.templateFile);
++                        in = this.getClass().getClassLoader().getResourceAsStream(getCPResourcePath(config.templateDir() + File.separator + support.templateFile));
+                     }
+                     File outputFile = new File(outputFilename);
+                     OutputStream out = new FileOutputStream(outputFile, false);

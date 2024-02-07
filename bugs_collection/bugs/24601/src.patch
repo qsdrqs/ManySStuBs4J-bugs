@@ -1,0 +1,13 @@
+diff --git a/buggy/jaxrs/src/main/java/org/jboss/as/jaxrs/deployment/JaxrsSpringProcessor.java b/fixed/jaxrs/src/main/java/org/jboss/as/jaxrs/deployment/JaxrsSpringProcessor.java
+index 401c5ea44..a440e07d0 100644
+--- a/buggy/jaxrs/src/main/java/org/jboss/as/jaxrs/deployment/JaxrsSpringProcessor.java
++++ b/fixed/jaxrs/src/main/java/org/jboss/as/jaxrs/deployment/JaxrsSpringProcessor.java
+@@ -141,7 +141,7 @@ public class JaxrsSpringProcessor implements DeploymentUnitProcessor {
+                 boolean skip = false;
+                 for (ParamValueMetaData prop : md.getContextParams()) {
+                     if (prop.getParamName().equals(ENABLE_PROPERTY)) {
+-                        boolean explicitEnable = Boolean.parseBoolean(prop.getParamName());
++                        boolean explicitEnable = Boolean.parseBoolean(prop.getParamValue());
+                         if(explicitEnable) {
+                             found = true;
+                         } else {

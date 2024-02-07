@@ -1,0 +1,13 @@
+diff --git a/buggy/arquillian/container-common/src/test/java/org/jboss/as/arquillian/container/common/ModuleApplicationProcessorTestCase.java b/fixed/arquillian/container-common/src/test/java/org/jboss/as/arquillian/container/common/ModuleApplicationProcessorTestCase.java
+index 83e7b484b..6486c4a5f 100644
+--- a/buggy/arquillian/container-common/src/test/java/org/jboss/as/arquillian/container/common/ModuleApplicationProcessorTestCase.java
++++ b/fixed/arquillian/container-common/src/test/java/org/jboss/as/arquillian/container/common/ModuleApplicationProcessorTestCase.java
+@@ -77,7 +77,7 @@ public class ModuleApplicationProcessorTestCase {
+         Node node = archive.get(MANIFEST);
+         Assert.assertNotNull(node);
+ 
+-        Manifest mf = processor.getOrCreateManifest(archive);
++        Manifest mf = ManifestUtils.getOrCreateManifest(archive);
+         Attributes attributes = mf.getMainAttributes();
+         String value = attributes.getValue("Dependencies");
+         Set<String> deps = new HashSet<String>();

@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/ejb/remote/security/EJBUtil.java b/fixed/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/ejb/remote/security/EJBUtil.java
+index c602c26a8..ba87984ce 100644
+--- a/buggy/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/ejb/remote/security/EJBUtil.java
++++ b/fixed/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/ejb/remote/security/EJBUtil.java
+@@ -85,7 +85,7 @@ class EJBUtil {
+     public static Properties createEjbClientConfiguration(String hostName) throws UnknownHostException {
+         final Properties pr = new Properties();
+         pr.put("remote.connectionprovider.create.options.org.xnio.Options.SSL_ENABLED", "false");
+-        pr.put("remote.connection.default.connect.options.org.xnio.Options.SASL_DISALLOWED_MECHANISMS", "JBOSS_LOCAL_USER");
++        pr.put("remote.connection.default.connect.options.org.xnio.Options.SASL_DISALLOWED_MECHANISMS", "JBOSS-LOCAL-USER");
+         pr.put("remote.connections", "default");
+         pr.put("remote.connection.default.host", hostName);
+         pr.put("remote.connection.default.port", "8080");

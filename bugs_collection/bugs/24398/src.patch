@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/integration/ws/src/test/java/org/jboss/as/test/integration/ws/authentication/policy/AuthenticationPolicyContextTestCase.java b/fixed/testsuite/integration/ws/src/test/java/org/jboss/as/test/integration/ws/authentication/policy/AuthenticationPolicyContextTestCase.java
+index c9f1c094a..092e4219b 100644
+--- a/buggy/testsuite/integration/ws/src/test/java/org/jboss/as/test/integration/ws/authentication/policy/AuthenticationPolicyContextTestCase.java
++++ b/fixed/testsuite/integration/ws/src/test/java/org/jboss/as/test/integration/ws/authentication/policy/AuthenticationPolicyContextTestCase.java
+@@ -324,7 +324,7 @@ public class AuthenticationPolicyContextTestCase {
+         }
+ 
+         try {
+-            URL wsdl = new URL("http://localhost:8080/picketlink-sts-ws/EchoService?wsdl");
++            URL wsdl = new URL("http://" + TestSuiteEnvironment.getServerAddress() + ":" + TestSuiteEnvironment.getHttpPort() +"/picketlink-sts-ws/EchoService?wsdl");
+             QName serviceName = new QName("http://ws.picketlink.sts.jboss.org/", "EchoServiceService");
+             Service service = Service.create(wsdl, serviceName);
+             EchoServiceRemote port = service.getPort(new QName("http://ws.picketlink.sts.jboss.org/", "EchoServicePort"),

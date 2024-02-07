@@ -1,0 +1,13 @@
+diff --git a/buggy/jpa/src/main/java/org/jboss/as/jpa/processor/JPAAnnotationParseProcessor.java b/fixed/jpa/src/main/java/org/jboss/as/jpa/processor/JPAAnnotationParseProcessor.java
+index 61a32efcb..6e6320160 100644
+--- a/buggy/jpa/src/main/java/org/jboss/as/jpa/processor/JPAAnnotationParseProcessor.java
++++ b/fixed/jpa/src/main/java/org/jboss/as/jpa/processor/JPAAnnotationParseProcessor.java
+@@ -155,7 +155,7 @@ public class JPAAnnotationParseProcessor implements DeploymentUnitProcessor {
+         final String declaredName = declaredNameValue != null ? declaredNameValue.asString() : null;
+         final String localContextName;
+         if (declaredName == null || declaredName.isEmpty()) {
+-            localContextName = fieldName;
++            localContextName = fieldInfo.declaringClass().name().toString() + "/" + fieldName;
+         } else {
+             localContextName = declaredName;
+         }

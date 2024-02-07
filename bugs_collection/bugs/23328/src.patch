@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/pipeline/WordsToSentencesAnnotator.java b/fixed/src/edu/stanford/nlp/pipeline/WordsToSentencesAnnotator.java
+index 37d3aec58..07e99a27a 100644
+--- a/buggy/src/edu/stanford/nlp/pipeline/WordsToSentencesAnnotator.java
++++ b/fixed/src/edu/stanford/nlp/pipeline/WordsToSentencesAnnotator.java
+@@ -56,7 +56,7 @@ public class WordsToSentencesAnnotator implements Annotator {
+             new WordToSentenceProcessor<CoreLabel>(boundaryTokenRegex,
+                     boundaryToDiscard, htmlElementsToDiscard,
+                     WordToSentenceProcessor.stringToNewlineIsSentenceBreak(newlineIsSentenceBreak),
+-                    TokenSequencePattern.compile(boundaryMultiTokenRegex), tokenRegexesToDiscard));
++                    (boundaryMultiTokenRegex != null)? TokenSequencePattern.compile(boundaryMultiTokenRegex):null, tokenRegexesToDiscard));
+   }
+ 
+   private WordsToSentencesAnnotator(boolean verbose, boolean countLineNumbers,

@@ -1,0 +1,13 @@
+diff --git a/buggy/jpa/eclipselink/src/main/java/org/jipijapa/eclipselink/EclipseLinkPersistenceProviderAdaptor.java b/fixed/jpa/eclipselink/src/main/java/org/jipijapa/eclipselink/EclipseLinkPersistenceProviderAdaptor.java
+index d834336fe..e9609d251 100644
+--- a/buggy/jpa/eclipselink/src/main/java/org/jipijapa/eclipselink/EclipseLinkPersistenceProviderAdaptor.java
++++ b/fixed/jpa/eclipselink/src/main/java/org/jipijapa/eclipselink/EclipseLinkPersistenceProviderAdaptor.java
+@@ -42,7 +42,7 @@ public class EclipseLinkPersistenceProviderAdaptor implements
+     @SuppressWarnings({ "rawtypes", "unchecked" })
+     @Override
+     public void addProviderProperties(Map properties, PersistenceUnitMetadata pu) {
+-        if (!properties.containsKey(ECLIPSELINK_TARGET_SERVER)) {
++        if (!pu.getProperties().containsKey(ECLIPSELINK_TARGET_SERVER)) {
+             properties.put(ECLIPSELINK_TARGET_SERVER, WildFlyServerPlatform.class.getName());
+             properties.put(ECLIPSELINK_ARCHIVE_FACTORY, JBossArchiveFactoryImpl.class.getName());
+             properties.put(ECLIPSELINK_LOGGING_LOGGER, JBossLogger.class.getName());

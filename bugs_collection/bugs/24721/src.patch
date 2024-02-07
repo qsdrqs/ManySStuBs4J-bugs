@@ -1,0 +1,13 @@
+diff --git a/buggy/messaging/src/main/java/org/jboss/as/messaging/jms/bridge/JMSBridgeHandler.java b/fixed/messaging/src/main/java/org/jboss/as/messaging/jms/bridge/JMSBridgeHandler.java
+index 2656adfe8..407665d88 100644
+--- a/buggy/messaging/src/main/java/org/jboss/as/messaging/jms/bridge/JMSBridgeHandler.java
++++ b/fixed/messaging/src/main/java/org/jboss/as/messaging/jms/bridge/JMSBridgeHandler.java
+@@ -88,7 +88,7 @@ public class JMSBridgeHandler extends AbstractRuntimeOnlyHandler {
+             final String name = operation.require(NAME).asString();
+             if (STARTED.equals(name)) {
+                 context.getResult().set(bridge.isStarted());
+-            } else if (PAUSED.equals(name)) {
++            } else if (PAUSED.getName().equals(name)) {
+                 context.getResult().set(bridge.isPaused());
+             } else {
+                 throw MESSAGES.unsupportedAttribute(name);

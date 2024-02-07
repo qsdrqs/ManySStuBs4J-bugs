@@ -1,0 +1,13 @@
+diff --git a/buggy/samples/client/petstore/java/default/src/main/java/io/swagger/client/model/Order.java b/fixed/samples/client/petstore/java/default/src/main/java/io/swagger/client/model/Order.java
+index b51be0c52..083a6e87c 100644
+--- a/buggy/samples/client/petstore/java/default/src/main/java/io/swagger/client/model/Order.java
++++ b/fixed/samples/client/petstore/java/default/src/main/java/io/swagger/client/model/Order.java
+@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
+ 
+ 
+ @ApiModel(description = "")
+-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-09-30T16:27:52.437+08:00")
++@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-10-01T23:05:28.119+08:00")
+ public class Order   {
+   
+   private Long id = null;

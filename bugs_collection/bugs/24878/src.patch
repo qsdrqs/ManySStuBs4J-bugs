@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/org/jboss/as/server/CommandLineArgument.java b/fixed/server/src/main/java/org/jboss/as/server/CommandLineArgument.java
+index 648e580d6..26cea6aff 100644
+--- a/buggy/server/src/main/java/org/jboss/as/server/CommandLineArgument.java
++++ b/fixed/server/src/main/java/org/jboss/as/server/CommandLineArgument.java
+@@ -253,7 +253,7 @@ enum CommandLineArgument {
+ 
+         @Override
+         public String argumentExample() {
+-            return String.format("--%s=<config>", argument());
++            return String.format("%s=<config>", argument());
+         }
+ 
+         @Override

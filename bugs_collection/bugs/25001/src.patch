@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/org/jboss/as/server/RuntimeExpressionResolver.java b/fixed/server/src/main/java/org/jboss/as/server/RuntimeExpressionResolver.java
+index a22e27859..446dcb6f0 100644
+--- a/buggy/server/src/main/java/org/jboss/as/server/RuntimeExpressionResolver.java
++++ b/fixed/server/src/main/java/org/jboss/as/server/RuntimeExpressionResolver.java
+@@ -41,7 +41,7 @@ public class RuntimeExpressionResolver extends ExpressionResolverImpl {
+         String expression = node.asString();
+         if (expression.length() > 3) {
+             expression = expression.substring(2, expression.length() -2);
+-            if ( vaultReader.isVaultFormat(expression)) {
++            if (vaultReader != null && vaultReader.isVaultFormat(expression)) {
+                 node.set(vaultReader.retrieveFromVault(expression));
+             }
+         }

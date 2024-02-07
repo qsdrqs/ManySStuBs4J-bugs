@@ -1,0 +1,13 @@
+diff --git a/buggy/ee/src/main/java/org/jboss/as/ee/managedbean/processors/ManagedBeanAnnotationProcessor.java b/fixed/ee/src/main/java/org/jboss/as/ee/managedbean/processors/ManagedBeanAnnotationProcessor.java
+index 1820090c0..2123f1221 100644
+--- a/buggy/ee/src/main/java/org/jboss/as/ee/managedbean/processors/ManagedBeanAnnotationProcessor.java
++++ b/fixed/ee/src/main/java/org/jboss/as/ee/managedbean/processors/ManagedBeanAnnotationProcessor.java
+@@ -88,7 +88,7 @@ public class ManagedBeanAnnotationProcessor implements DeploymentUnitProcessor {
+             // Get the managed bean name from the annotation
+             final AnnotationValue nameValue = instance.value();
+             final String beanName = nameValue == null || nameValue.asString().isEmpty() ? beanClassName : nameValue.asString();
+-            final ComponentDescription componentDescription = new ComponentDescription(beanName, beanClassName, moduleDescription, moduleDescription.getClassByName(beanClassName), deploymentUnitServiceName);
++            final ComponentDescription componentDescription = new ComponentDescription(beanName, beanClassName, moduleDescription, moduleDescription.getClassByName(beanClassName), deploymentUnit.getServiceName());
+ 
+             // Add the view
+             ViewDescription viewDescription = new ViewDescription(componentDescription, beanClassName);

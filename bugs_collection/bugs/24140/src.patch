@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/languages/NodeJSServerCodegen.java b/fixed/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/languages/NodeJSServerCodegen.java
+index c213c6869..4e8caeed6 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/languages/NodeJSServerCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/languages/NodeJSServerCodegen.java
+@@ -41,7 +41,7 @@ public class NodeJSServerCodegen extends DefaultCodegen implements CodegenConfig
+     supportingFiles.add(new SupportingFile("package.mustache", "", "package.json"));
+     supportingFiles.add(new SupportingFile("models.mustache", modelPackage, "models.js"));
+     supportingFiles.add(new SupportingFile("main.mustache", "", "main.js"));
+-    supportingFiles.add(new SupportingFile("README.mustache", "", "README.js"));
++    supportingFiles.add(new SupportingFile("README.mustache", "", "README.md"));
+ 
+     languageSpecificPrimitives = new HashSet<String>(
+       Arrays.asList(

@@ -1,0 +1,13 @@
+diff --git a/buggy/cli/src/main/java/org/jboss/as/cli/handlers/DeploymentOverlayHandler.java b/fixed/cli/src/main/java/org/jboss/as/cli/handlers/DeploymentOverlayHandler.java
+index 2a6db50b6..b0bb4cbd9 100644
+--- a/buggy/cli/src/main/java/org/jboss/as/cli/handlers/DeploymentOverlayHandler.java
++++ b/fixed/cli/src/main/java/org/jboss/as/cli/handlers/DeploymentOverlayHandler.java
+@@ -673,7 +673,7 @@ public class DeploymentOverlayHandler extends CommandHandlerWithHelp {
+             path = pathCompleter.translatePath(path);
+             final File f = new File(path);
+             if(!f.exists()) {
+-                throw new CommandFormatException("Content file doesn't exist " + f.getAbsolutePath());
++                throw new CommandFormatException("Content file doesn't exist " + f.getAbsolutePath() + ", " + pathCompleter + ", windows=" + Util.isWindows());
+             }
+             contentPaths[i] = f;
+         }

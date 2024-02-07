@@ -1,0 +1,13 @@
+diff --git a/buggy/ejb3/src/main/java/org/jboss/as/ejb3/deployment/DeploymentRepositoryService.java b/fixed/ejb3/src/main/java/org/jboss/as/ejb3/deployment/DeploymentRepositoryService.java
+index d6fd60a01..44f870f4b 100644
+--- a/buggy/ejb3/src/main/java/org/jboss/as/ejb3/deployment/DeploymentRepositoryService.java
++++ b/fixed/ejb3/src/main/java/org/jboss/as/ejb3/deployment/DeploymentRepositoryService.java
+@@ -67,7 +67,7 @@ public class DeploymentRepositoryService implements DeploymentRepository, Servic
+ 
+     @Override
+     public void stop(StopContext context) {
+-        modules = null;
++        modules = Collections.emptyMap();
+     }
+ 
+     @Override

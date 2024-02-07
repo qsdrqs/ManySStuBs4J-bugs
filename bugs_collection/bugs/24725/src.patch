@@ -1,0 +1,16 @@
+diff --git a/buggy/connector/src/main/java/org/jboss/as/connector/subsystems/resourceadapters/RaOperationUtil.java b/fixed/connector/src/main/java/org/jboss/as/connector/subsystems/resourceadapters/RaOperationUtil.java
+index cb20e7505..0450ae393 100644
+--- a/buggy/connector/src/main/java/org/jboss/as/connector/subsystems/resourceadapters/RaOperationUtil.java
++++ b/fixed/connector/src/main/java/org/jboss/as/connector/subsystems/resourceadapters/RaOperationUtil.java
+@@ -352,9 +352,9 @@ public class RaOperationUtil {
+             try {
+                 VirtualFile child;
+                 if (path.getPath().contains("!")) {
+-                    child = VFS.getChild(path.getPath().split("!")[0].split(":")[1]);
++                    child = VFS.getChild(path.getPath().split("!")[0].split("file:")[1]);
+ 
+-                    closable = VFS.mountZip(new File(path.getPath().split("!")[0].split(":")[1]), child, TempFileProviderService.provider());
++                    closable = VFS.mountZip(new File(path.getPath().split("!")[0].split("file:")[1]), child, TempFileProviderService.provider());
+                 } else {
+                     child = VFS.getChild(path.getPath().split("META-INF")[0]);
+ 

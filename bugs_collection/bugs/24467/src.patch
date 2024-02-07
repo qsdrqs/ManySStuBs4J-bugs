@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/integration/web/src/test/java/org/jboss/as/test/integration/web/websocket/WebSocketTestCase.java b/fixed/testsuite/integration/web/src/test/java/org/jboss/as/test/integration/web/websocket/WebSocketTestCase.java
+index a599b0974..d20707b0f 100644
+--- a/buggy/testsuite/integration/web/src/test/java/org/jboss/as/test/integration/web/websocket/WebSocketTestCase.java
++++ b/fixed/testsuite/integration/web/src/test/java/org/jboss/as/test/integration/web/websocket/WebSocketTestCase.java
+@@ -58,7 +58,7 @@ public class WebSocketTestCase {
+                                         TestSuiteEnvironment.getServerAddress() + ":" + TestSuiteEnvironment.getHttpPort(),
+                                         "connect,resolve"),
+                                 // Needed for xnio's WorkerThread which binds to Xnio.ANY_INET_ADDRESS, see WFLY-7538
+-                                new SocketPermission(TestSuiteEnvironment.getServerAddress() + ":0", "listen,resolve")),
++                                new SocketPermission("*:0", "listen,resolve")),
+                         "permissions.xml");
+     }
+ 

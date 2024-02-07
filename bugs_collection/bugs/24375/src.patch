@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/thinkaurelius/titan/graphdb/vertices/AbstractTitanVertex.java b/fixed/src/main/java/com/thinkaurelius/titan/graphdb/vertices/AbstractTitanVertex.java
+index 8d05f56a7..162133ecf 100644
+--- a/buggy/src/main/java/com/thinkaurelius/titan/graphdb/vertices/AbstractTitanVertex.java
++++ b/fixed/src/main/java/com/thinkaurelius/titan/graphdb/vertices/AbstractTitanVertex.java
+@@ -89,7 +89,7 @@ public abstract class AbstractTitanVertex implements InternalTitanVertex {
+ 	}
+ 
+ 	@Override
+-	public void remove() {
++	public synchronized void remove() {
+ 		VertexUtil.checkAvailability(this);
+         VertexUtil.prepareForRemoval(this);
+         tx.deleteVertex(this);

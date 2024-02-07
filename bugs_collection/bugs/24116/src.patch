@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/DefaultCodegen.java b/fixed/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/DefaultCodegen.java
+index f7ec12b2c..7a6891644 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/DefaultCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/com/wordnik/swagger/codegen/DefaultCodegen.java
+@@ -85,7 +85,7 @@ public class DefaultCodegen {
+ 
+   public void processOpts(){
+     if(additionalProperties.containsKey("templateDir")) {
+-      this.setTemplateDir((String)additionalProperties.get("t"));
++      this.setTemplateDir((String)additionalProperties.get("templateDir"));
+     }
+     
+     if(additionalProperties.containsKey("modelPackage")) {

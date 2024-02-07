@@ -1,0 +1,15 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/JavaInflectorServerCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/JavaInflectorServerCodegen.java
+index 0904629d4..4b53b766d 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/JavaInflectorServerCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/JavaInflectorServerCodegen.java
+@@ -181,6 +181,9 @@ public class JavaInflectorServerCodegen extends JavaClientCodegen implements Cod
+ 
+     @Override
+     public boolean shouldOverwrite(String filename) {
+-        return super.shouldOverwrite(filename);
++        return super.shouldOverwrite(filename)  &&
++        !filename.endsWith("pom.xml") &&
++        !filename.endsWith("README.md") &&
++        !filename.endsWith("inflector.yaml");
+     }
+ }

@@ -1,0 +1,13 @@
+diff --git a/buggy/transactions/src/main/java/org/jboss/as/txn/service/TransactionRemoteHTTPService.java b/fixed/transactions/src/main/java/org/jboss/as/txn/service/TransactionRemoteHTTPService.java
+index 23ccad580..dd8ba1e30 100644
+--- a/buggy/transactions/src/main/java/org/jboss/as/txn/service/TransactionRemoteHTTPService.java
++++ b/fixed/transactions/src/main/java/org/jboss/as/txn/service/TransactionRemoteHTTPService.java
+@@ -48,7 +48,7 @@ public class TransactionRemoteHTTPService implements Service<TransactionRemoteHT
+ 
+     @Override
+     public void stop(StopContext context) {
+-        pathHandlerInjectedValue.getValue().removePrefixPath("/ejb");
++        pathHandlerInjectedValue.getValue().removePrefixPath("/txn");
+     }
+ 
+     @Override

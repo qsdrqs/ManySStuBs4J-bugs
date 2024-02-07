@@ -1,0 +1,22 @@
+diff --git a/buggy/connector/src/main/java/org/jboss/as/connector/subsystems/resourceadapters/CommonIronJacamarParser.java b/fixed/connector/src/main/java/org/jboss/as/connector/subsystems/resourceadapters/CommonIronJacamarParser.java
+index f9fbbac01..76b6422be 100644
+--- a/buggy/connector/src/main/java/org/jboss/as/connector/subsystems/resourceadapters/CommonIronJacamarParser.java
++++ b/fixed/connector/src/main/java/org/jboss/as/connector/subsystems/resourceadapters/CommonIronJacamarParser.java
+@@ -183,7 +183,7 @@ public abstract class CommonIronJacamarParser extends AbstractParser {
+             }
+         }
+         if (poolName == null || poolName.trim().equals(""))
+-            throw new ParserException(bundle.missingJndiName(reader.getLocalName()));
++            throw new ParserException(bundle.missingValue(POOL_NAME_NAME));
+ 
+         while (reader.hasNext()) {
+             switch (reader.nextTag()) {
+@@ -403,7 +403,7 @@ public abstract class CommonIronJacamarParser extends AbstractParser {
+             }
+         }
+         if (poolName == null || poolName.trim().equals(""))
+-            throw new ParserException(bundle.missingJndiName(reader.getLocalName()));
++            throw new ParserException(bundle.missingValue(POOL_NAME_NAME));
+ 
+         while (reader.hasNext()) {
+             switch (reader.nextTag()) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/cli/src/main/java/org/jboss/as/cli/impl/CommandContextImpl.java b/fixed/cli/src/main/java/org/jboss/as/cli/impl/CommandContextImpl.java
+index ee576ede6..07e8c971d 100644
+--- a/buggy/cli/src/main/java/org/jboss/as/cli/impl/CommandContextImpl.java
++++ b/fixed/cli/src/main/java/org/jboss/as/cli/impl/CommandContextImpl.java
+@@ -640,7 +640,7 @@ class CommandContextImpl implements CommandContext, ModelControllerClientFactory
+                 if(t1.getLocalizedMessage() != null) {
+                     buf.append(": ").append(t1.getLocalizedMessage());
+                 } else {
+-                    t1.printStackTrace();
++                    buf.append(": ").append(t1.getClass().getName());
+                 }
+                 t1 = t1.getCause();
+             }

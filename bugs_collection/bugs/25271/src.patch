@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/redis/clients/jedis/BasicRedisPipeline.java b/fixed/src/main/java/redis/clients/jedis/BasicRedisPipeline.java
+index 90f9295d6..474b1978e 100644
+--- a/buggy/src/main/java/redis/clients/jedis/BasicRedisPipeline.java
++++ b/fixed/src/main/java/redis/clients/jedis/BasicRedisPipeline.java
+@@ -11,7 +11,7 @@ public interface BasicRedisPipeline {
+ 
+   Response<String> bgsave();
+ 
+-  Response<String> configGet(String pattern);
++  Response<List<String>> configGet(String pattern);
+ 
+   Response<String> configSet(String parameter, String value);
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-jaxrs2/src/main/java/io/swagger/jaxrs2/integration/ServletConfigContextUtils.java b/fixed/modules/swagger-jaxrs2/src/main/java/io/swagger/jaxrs2/integration/ServletConfigContextUtils.java
+index 5ff0bc5d8..59cc2b1b6 100644
+--- a/buggy/modules/swagger-jaxrs2/src/main/java/io/swagger/jaxrs2/integration/ServletConfigContextUtils.java
++++ b/fixed/modules/swagger-jaxrs2/src/main/java/io/swagger/jaxrs2/integration/ServletConfigContextUtils.java
+@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
+ 
+ public class ServletConfigContextUtils {
+ 
+-    public static final String OPENAPI_CONFIGURATION_RESOURCEPACKAGE_KEY = "openApi.configuration.resourcePackage";
++    public static final String OPENAPI_CONFIGURATION_RESOURCEPACKAGE_KEY = "openApi.configuration.resourcePackages";
+     public static final String OPENAPI_CONFIGURATION_LOCATION_KEY = "openApi.configuration.location";
+     public static final String JERSEY1_PACKAGE_KEY = "com.sun.jersey.config.property.packages";
+     public static final String JERSEY2_PACKAGE_KEY = "jersey.config.server.provider.packages";

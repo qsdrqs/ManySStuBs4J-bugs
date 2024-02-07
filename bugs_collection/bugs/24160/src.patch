@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-core/src/main/java/io/swagger/v3/core/filter/SpecFilter.java b/fixed/modules/swagger-core/src/main/java/io/swagger/v3/core/filter/SpecFilter.java
+index 4e887867f..57b18e360 100644
+--- a/buggy/modules/swagger-core/src/main/java/io/swagger/v3/core/filter/SpecFilter.java
++++ b/fixed/modules/swagger-core/src/main/java/io/swagger/v3/core/filter/SpecFilter.java
+@@ -254,7 +254,7 @@ public class SpecFilter {
+                         if (property != null) {
+                             Optional<Schema> filteredProperty = filter.filterSchemaProperty(property, definition, (String) propName, params, cookies, headers);
+                             if (filteredProperty.isPresent()) {
+-                                clonedProperties.put((String) propName, property);
++                                clonedProperties.put((String) propName, filteredProperty.get());
+                             }
+                         }
+                     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-models/src/main/java/io/swagger/models/properties/DoubleProperty.java b/fixed/modules/swagger-models/src/main/java/io/swagger/models/properties/DoubleProperty.java
+index fdd7c0422..397ec6244 100644
+--- a/buggy/modules/swagger-models/src/main/java/io/swagger/models/properties/DoubleProperty.java
++++ b/fixed/modules/swagger-models/src/main/java/io/swagger/models/properties/DoubleProperty.java
+@@ -6,7 +6,7 @@ import java.util.ArrayList;
+ import java.util.List;
+ 
+ public class DoubleProperty extends DecimalProperty {
+-    private static final String FORMAT = "double";
++    public static final String FORMAT = "double";
+     protected Double _default;
+     protected List<Double> _enum;
+ 

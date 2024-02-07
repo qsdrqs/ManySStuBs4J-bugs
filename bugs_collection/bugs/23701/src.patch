@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/Swift3Codegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/Swift3Codegen.java
+index 4461fc4ea..8bfd73cd2 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/Swift3Codegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/Swift3Codegen.java
+@@ -125,7 +125,7 @@ public class Swift3Codegen extends DefaultCodegen implements CodegenConfig {
+                     "true", "lazy", "operator", "in", "COLUMN", "left", "private", "return", "FILE", "mutating", "protocol",
+                     "switch", "FUNCTION", "none", "public", "where", "LINE", "nonmutating", "static", "while", "optional",
+                     "struct", "override", "subscript", "postfix", "typealias", "precedence", "var", "prefix", "Protocol",
+-                    "required", "right", "set", "Type", "unowned", "weak")
++                    "required", "right", "set", "Type", "unowned", "weak", "Data")
+         );
+ 
+         typeMapping = new HashMap<>();

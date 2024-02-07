@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/integration/smoke/src/test/java/org/jboss/as/test/smoke/subsystem/xml/AbstractValidationUnitTest.java b/fixed/testsuite/integration/smoke/src/test/java/org/jboss/as/test/smoke/subsystem/xml/AbstractValidationUnitTest.java
+index 776b5a45e..76d028a63 100644
+--- a/buggy/testsuite/integration/smoke/src/test/java/org/jboss/as/test/smoke/subsystem/xml/AbstractValidationUnitTest.java
++++ b/fixed/testsuite/integration/smoke/src/test/java/org/jboss/as/test/smoke/subsystem/xml/AbstractValidationUnitTest.java
+@@ -238,7 +238,7 @@ public class AbstractValidationUnitTest {
+      * Simple JBoss XSD filter
+      */
+     private static class SchemaFilter implements FilenameFilter {
+-        private static final Pattern PATTERN = Pattern.compile("jboss.*\\.xsd$");
++        private static final Pattern PATTERN = Pattern.compile("(jboss|wildfly)-.*\\.xsd$");
+         private final String[] exclusions;
+ 
+         SchemaFilter() {

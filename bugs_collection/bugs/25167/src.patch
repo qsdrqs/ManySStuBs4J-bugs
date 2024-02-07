@@ -1,0 +1,13 @@
+diff --git a/buggy/connector/src/main/java/org/jboss/as/connector/services/ResourceAdapterService.java b/fixed/connector/src/main/java/org/jboss/as/connector/services/ResourceAdapterService.java
+index 4a1dc5557..942ba84a6 100644
+--- a/buggy/connector/src/main/java/org/jboss/as/connector/services/ResourceAdapterService.java
++++ b/fixed/connector/src/main/java/org/jboss/as/connector/services/ResourceAdapterService.java
+@@ -30,7 +30,7 @@ public class ResourceAdapterService implements Service<ResourceAdapter> {
+ 
+     @Override
+     public void start(StartContext context) throws StartException {
+-        log.errorf("started ResourceAdapterService %s", context.getController().getName());
++        log.infof("started ResourceAdapterService %s", context.getController().getName());
+ 
+     }
+ 

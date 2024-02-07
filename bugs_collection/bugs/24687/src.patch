@@ -1,0 +1,13 @@
+diff --git a/buggy/undertow/src/main/java/org/wildfly/extension/undertow/deployment/UndertowDeploymentInfoService.java b/fixed/undertow/src/main/java/org/wildfly/extension/undertow/deployment/UndertowDeploymentInfoService.java
+index 915c3fc27..e0e5a5a9e 100644
+--- a/buggy/undertow/src/main/java/org/wildfly/extension/undertow/deployment/UndertowDeploymentInfoService.java
++++ b/fixed/undertow/src/main/java/org/wildfly/extension/undertow/deployment/UndertowDeploymentInfoService.java
+@@ -499,7 +499,7 @@ public class UndertowDeploymentInfoService implements Service<DeploymentInfo> {
+                     if(file.startsWith("/")) {
+                         d.addWelcomePages(file.substring(1));
+                     } else {
+-                        d.addWelcomePages(welcomeFiles);
++                        d.addWelcomePages(file);
+                     }
+                 }
+             } else {

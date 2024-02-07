@@ -1,0 +1,13 @@
+diff --git a/buggy/cli/src/main/java/org/jboss/as/cli/impl/CommandContextImpl.java b/fixed/cli/src/main/java/org/jboss/as/cli/impl/CommandContextImpl.java
+index a8e6c7315..80276c834 100644
+--- a/buggy/cli/src/main/java/org/jboss/as/cli/impl/CommandContextImpl.java
++++ b/fixed/cli/src/main/java/org/jboss/as/cli/impl/CommandContextImpl.java
+@@ -850,7 +850,7 @@ class CommandContextImpl implements CommandContext, ModelControllerClientFactory
+         if (trustManager == null || (lastChain = trustManager.getLastFailedCertificateChain()) == null) {
+             return false;
+         }
+-        error("Unable to connect due to unrecognised server certificate");
++        printLine("Unable to connect due to unrecognised server certificate");
+         for (Certificate current : lastChain) {
+             if (current instanceof X509Certificate) {
+                 X509Certificate x509Current = (X509Certificate) current;

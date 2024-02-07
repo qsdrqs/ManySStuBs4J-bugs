@@ -1,0 +1,13 @@
+diff --git a/buggy/cli/src/main/java/org/jboss/as/cli/CommandLineMain.java b/fixed/cli/src/main/java/org/jboss/as/cli/CommandLineMain.java
+index 05d6f1cef..6ab091036 100644
+--- a/buggy/cli/src/main/java/org/jboss/as/cli/CommandLineMain.java
++++ b/fixed/cli/src/main/java/org/jboss/as/cli/CommandLineMain.java
+@@ -191,7 +191,7 @@ public class CommandLineMain {
+         final String osName = SecurityActions.getSystemProperty("os.name").toLowerCase();
+         if(osName.indexOf("windows") >= 0) {
+             bindingsName = "keybindings/jline-windows-bindings.properties";
+-        } else if(osName.startsWith("macos")) {
++        } else if(osName.startsWith("mac")) {
+             bindingsName = "keybindings/jline-mac-bindings.properties";
+         } else {
+             bindingsName = "keybindings/jline-default-bindings.properties";

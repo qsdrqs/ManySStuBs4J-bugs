@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/redis/clients/jedis/BinaryJedisCluster.java b/fixed/src/main/java/redis/clients/jedis/BinaryJedisCluster.java
+index f0b5adecd..ae658534e 100644
+--- a/buggy/src/main/java/redis/clients/jedis/BinaryJedisCluster.java
++++ b/fixed/src/main/java/redis/clients/jedis/BinaryJedisCluster.java
+@@ -1015,7 +1015,7 @@ public class BinaryJedisCluster implements BinaryJedisCommands,
+       public Long execute(Jedis connection) {
+         return connection.move(key, dbIndex);
+       }
+-    }.runBinary(null);
++    }.runBinary(key);
+   }
+ 
+   @Override

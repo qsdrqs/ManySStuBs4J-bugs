@@ -1,0 +1,13 @@
+diff --git a/buggy/jacorb/src/main/java/org/jboss/as/jacorb/JacORBExtension.java b/fixed/jacorb/src/main/java/org/jboss/as/jacorb/JacORBExtension.java
+index 855617d33..d990b1e08 100644
+--- a/buggy/jacorb/src/main/java/org/jboss/as/jacorb/JacORBExtension.java
++++ b/fixed/jacorb/src/main/java/org/jboss/as/jacorb/JacORBExtension.java
+@@ -55,7 +55,7 @@ public class JacORBExtension implements Extension {
+ 
+     @Override
+     public void initialize(ExtensionContext context) {
+-        final SubsystemRegistration subsystem = context.registerSubsystem(SUBSYSTEM_NAME, 1, 0);
++        final SubsystemRegistration subsystem = context.registerSubsystem(SUBSYSTEM_NAME, 1, 1);
+         final ManagementResourceRegistration subsystemRegistration = subsystem.registerSubsystemModel(JacORBSubsystemResource.INSTANCE);
+         subsystemRegistration.registerOperationHandler(DESCRIBE, GenericSubsystemDescribeHandler.INSTANCE, GenericSubsystemDescribeHandler.INSTANCE, false, OperationEntry.EntryType.PRIVATE);
+         subsystem.registerXMLElementWriter(PARSER);

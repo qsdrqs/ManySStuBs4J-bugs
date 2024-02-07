@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/ObjcClientCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/ObjcClientCodegen.java
+index c80cc129b..cb4b76c32 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/ObjcClientCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/ObjcClientCodegen.java
+@@ -359,7 +359,7 @@ public class ObjcClientCodegen extends DefaultCodegen implements CodegenConfig {
+                         return getSwaggerType(p) + "<NSString*, " + innerTypeDeclaration + "*>*";
+                     }
+                 }
+-                return getSwaggerType(p) + "<NSString*, " + innerTypeDeclaration + ">*";
++                return getSwaggerType(p) + "<" + innerTypeDeclaration + ">*";
+             }
+         } else {
+             String swaggerType = getSwaggerType(p);

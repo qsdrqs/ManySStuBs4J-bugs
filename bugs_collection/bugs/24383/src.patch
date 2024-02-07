@@ -1,0 +1,14 @@
+diff --git a/buggy/jpa/subsystem/src/main/java/org/jboss/as/jpa/subsystem/JPADefinition.java b/fixed/jpa/subsystem/src/main/java/org/jboss/as/jpa/subsystem/JPADefinition.java
+index 093d351fc..28a7baa2e 100644
+--- a/buggy/jpa/subsystem/src/main/java/org/jboss/as/jpa/subsystem/JPADefinition.java
++++ b/fixed/jpa/subsystem/src/main/java/org/jboss/as/jpa/subsystem/JPADefinition.java
+@@ -102,6 +102,8 @@ public class JPADefinition extends SimpleResourceDefinition {
+         resourceRegistration.registerAdditionalRuntimePackages(
+                 // Only if annotation is in use.
+                 RuntimePackageDependency.optional("org.hibernate.search.orm"),
+-                RuntimePackageDependency.required("org.hibernate"));
++                RuntimePackageDependency.required("org.hibernate"),
++                // An alias to org.hibernate module.
++                RuntimePackageDependency.optional("org.hibernate.envers"));
+     }
+ }

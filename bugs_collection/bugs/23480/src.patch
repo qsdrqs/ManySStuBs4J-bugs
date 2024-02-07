@@ -1,0 +1,16 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PythonClientCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PythonClientCodegen.java
+index 7a8149a6e..f5f5e6346 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PythonClientCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PythonClientCodegen.java
+@@ -265,10 +265,8 @@ public class PythonClientCodegen extends DefaultCodegen implements CodegenConfig
+         if(pattern != null) {
+             int i = pattern.lastIndexOf('/');
+ 
+-            //Must follow Perl /pattern/modifiers convention
+             if(pattern.charAt(0) != '/' || i < 2) {
+-                throw new IllegalArgumentException("Pattern must follow the Perl "
+-                        + "/pattern/modifiers convention. "+pattern+" is not valid.");
++                pattern = String.format("/%s/", pattern);
+             }
+ 
+             String regex = pattern.substring(1, i).replace("'", "\\'");

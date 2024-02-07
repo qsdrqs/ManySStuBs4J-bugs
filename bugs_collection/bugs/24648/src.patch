@@ -1,0 +1,17 @@
+diff --git a/buggy/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/sar/injection/resource/X.java b/fixed/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/sar/injection/resource/X.java
+index 50f43e2bb..8259c1746 100644
+--- a/buggy/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/sar/injection/resource/X.java
++++ b/fixed/testsuite/integration/basic/src/test/java/org/jboss/as/test/integration/sar/injection/resource/X.java
+@@ -35,10 +35,10 @@ public class X implements XMBean {
+ 
+     private TransactionManager transactionManager;
+ 
+-    @Resource(name = "java:jboss/mail")
++    @Resource(lookup = "java:jboss/mail")
+     private Context context;
+ 
+-    @Resource(name = "java:/TransactionManager")
++    @Resource(lookup = "java:/TransactionManager")
+     public void setTransactionManager(TransactionManager transactionManager) {
+         this.transactionManager = transactionManager;
+     }

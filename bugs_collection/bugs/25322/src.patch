@@ -1,0 +1,20 @@
+diff --git a/buggy/src/test/java/edu/uci/ics/crawler4j/examples/basic/BasicCrawler.java b/fixed/src/test/java/edu/uci/ics/crawler4j/examples/basic/BasicCrawler.java
+index 7e0a288bc..6c573d26e 100644
+--- a/buggy/src/test/java/edu/uci/ics/crawler4j/examples/basic/BasicCrawler.java
++++ b/fixed/src/test/java/edu/uci/ics/crawler4j/examples/basic/BasicCrawler.java
+@@ -65,7 +65,7 @@ public class BasicCrawler extends WebCrawler {
+     String anchor = page.getWebURL().getAnchor();
+ 
+     logger.debug("Docid: {}", docid);
+-    logger.info("URL: ", url);
++    logger.info("URL: {}", url);
+     logger.debug("Domain: '{}'", domain);
+     logger.debug("Sub-domain: '{}'", subDomain);
+     logger.debug("Path: '{}'", path);
+@@ -93,4 +93,4 @@ public class BasicCrawler extends WebCrawler {
+ 
+     logger.debug("=============");
+   }
+-}
+\ No newline at end of file
++}

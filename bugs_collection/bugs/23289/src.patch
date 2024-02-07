@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/parser/shiftreduce/ShiftReduceParser.java b/fixed/src/edu/stanford/nlp/parser/shiftreduce/ShiftReduceParser.java
+index 986af5e41..03bec887a 100644
+--- a/buggy/src/edu/stanford/nlp/parser/shiftreduce/ShiftReduceParser.java
++++ b/fixed/src/edu/stanford/nlp/parser/shiftreduce/ShiftReduceParser.java
+@@ -890,7 +890,7 @@ public class ShiftReduceParser extends ParserGrammar implements Serializable {
+         serializedPath = args[argIndex + 1];
+         argIndex += 2;
+       } else if (args[argIndex].equalsIgnoreCase("-tlpp")) {
+-        tlppClass = args[argIndex] + 1;
++        tlppClass = args[argIndex + 1];
+         argIndex += 2;
+       } else if (args[argIndex].equalsIgnoreCase("-continueTraining")) {
+         continueTraining = args[argIndex + 1];

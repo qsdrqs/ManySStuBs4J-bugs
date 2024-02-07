@@ -1,0 +1,20 @@
+diff --git a/buggy/arquillian/container-embedded/src/main/java/org/jboss/as/arquillian/container/embedded/EmbeddedDeployableContainer.java b/fixed/arquillian/container-embedded/src/main/java/org/jboss/as/arquillian/container/embedded/EmbeddedDeployableContainer.java
+index 4ca5ac9f4..f9aa5509f 100644
+--- a/buggy/arquillian/container-embedded/src/main/java/org/jboss/as/arquillian/container/embedded/EmbeddedDeployableContainer.java
++++ b/fixed/arquillian/container-embedded/src/main/java/org/jboss/as/arquillian/container/embedded/EmbeddedDeployableContainer.java
+@@ -116,7 +116,7 @@ public final class EmbeddedDeployableContainer extends CommonDeployableContainer
+ 
+         final File bundlesDir = new File(bundlePath);
+         if (!bundlesDir.isDirectory()) {
+-            throw new IllegalStateException("Invalid modules directory: " + bundlesDir);
++            throw new IllegalStateException("Invalid bundles directory: " + bundlesDir);
+         }
+         SecurityActions.setSystemProperty(SYSPROP_KEY_BUNDLE_PATH, bundlePath);
+     }
+@@ -223,4 +223,4 @@ public final class EmbeddedDeployableContainer extends CommonDeployableContainer
+     protected void stopInternal() throws LifecycleException {
+         this.server.stop();
+     }
+-}
+\ No newline at end of file
++}

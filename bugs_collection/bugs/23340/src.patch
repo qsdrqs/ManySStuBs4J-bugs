@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/classify/GeneralDataset.java b/fixed/src/edu/stanford/nlp/classify/GeneralDataset.java
+index 094524bbe..40a893451 100644
+--- a/buggy/src/edu/stanford/nlp/classify/GeneralDataset.java
++++ b/fixed/src/edu/stanford/nlp/classify/GeneralDataset.java
+@@ -54,7 +54,7 @@ public abstract class GeneralDataset<L, F>  implements Serializable, Iterable<RV
+   }
+ 
+   public int[][] getDataArray() {
+-    if (data.length == 0) {
++    if (size == 0) {
+       return new int[0][]; // If we trim the data to size 0, we can never grow it again...
+     }
+     data = trimToSize(data);

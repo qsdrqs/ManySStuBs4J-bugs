@@ -1,0 +1,13 @@
+diff --git a/buggy/weld/src/main/java/org/jboss/as/weld/util/Reflections.java b/fixed/weld/src/main/java/org/jboss/as/weld/util/Reflections.java
+index 7beb6dd30..b10d7f4c7 100644
+--- a/buggy/weld/src/main/java/org/jboss/as/weld/util/Reflections.java
++++ b/fixed/weld/src/main/java/org/jboss/as/weld/util/Reflections.java
+@@ -57,7 +57,7 @@ public class Reflections {
+     public static <T> Class<T> loadClass(String className, ClassLoader classLoader) {
+         try {
+             return cast(classLoader.loadClass(className));
+-        } catch (Exception e) {
++        } catch (Throwable e) {
+             return null;
+         }
+     }

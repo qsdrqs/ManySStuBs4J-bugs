@@ -1,0 +1,13 @@
+diff --git a/buggy/messaging/src/main/java/org/jboss/as/messaging/jms/ConnectionFactoryAdd.java b/fixed/messaging/src/main/java/org/jboss/as/messaging/jms/ConnectionFactoryAdd.java
+index 574631df2..714695449 100644
+--- a/buggy/messaging/src/main/java/org/jboss/as/messaging/jms/ConnectionFactoryAdd.java
++++ b/fixed/messaging/src/main/java/org/jboss/as/messaging/jms/ConnectionFactoryAdd.java
+@@ -211,7 +211,7 @@ class ConnectionFactoryAdd implements ModelAddOperationHandler {
+ 
+         for(final NodeAttribute attribute : JMSServices.CONNECTION_FACTORY_ATTRS) {
+             final String attrName = attribute.getName();
+-            if(operation.hasDefined(attrName)) {
++            if(subModel.has(attrName)) {
+                 operation.get(attrName).set(subModel.get(attrName));
+             }
+         }

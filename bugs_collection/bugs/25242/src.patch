@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/redis/clients/jedis/BinaryJedisCluster.java b/fixed/src/main/java/redis/clients/jedis/BinaryJedisCluster.java
+index 05d4d4d4f..41671eb45 100644
+--- a/buggy/src/main/java/redis/clients/jedis/BinaryJedisCluster.java
++++ b/fixed/src/main/java/redis/clients/jedis/BinaryJedisCluster.java
+@@ -1314,7 +1314,7 @@ public class BinaryJedisCluster implements BinaryJedisClusterCommands,
+       public List<byte[]> execute(Jedis connection) {
+         return connection.mget(keys);
+       }
+-    }.runBinary(keys.length - 1, keys);
++    }.runBinary(keys.length, keys);
+   }
+ 
+   @Override

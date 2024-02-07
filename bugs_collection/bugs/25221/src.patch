@@ -1,0 +1,22 @@
+diff --git a/buggy/src/main/java/redis/clients/jedis/Jedis.java b/fixed/src/main/java/redis/clients/jedis/Jedis.java
+index d90adfc0f..926194727 100644
+--- a/buggy/src/main/java/redis/clients/jedis/Jedis.java
++++ b/fixed/src/main/java/redis/clients/jedis/Jedis.java
+@@ -1180,7 +1180,7 @@ public class Jedis extends BinaryJedis implements JedisCommands, MultiKeyCommand
+     client.smembers(key);
+     final List<String> members = client.getMultiBulkReply();
+     if (members == null) {
+-      return null;
++      return Collections.emptySet();
+     }
+     return SetFromList.of(members);
+   }
+@@ -1226,7 +1226,7 @@ public class Jedis extends BinaryJedis implements JedisCommands, MultiKeyCommand
+     client.spop(key, count);
+     final List<String> members = client.getMultiBulkReply();
+     if (members == null) {
+-      return null;
++      return Collections.emptySet();
+     }
+     return SetFromList.of(members);
+   }

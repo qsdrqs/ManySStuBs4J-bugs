@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/redis/clients/jedis/Jedis.java b/fixed/src/main/java/redis/clients/jedis/Jedis.java
+index d5fd399f0..4780e6ce4 100644
+--- a/buggy/src/main/java/redis/clients/jedis/Jedis.java
++++ b/fixed/src/main/java/redis/clients/jedis/Jedis.java
+@@ -1365,7 +1365,7 @@ public class Jedis extends BinaryJedis implements JedisCommands, MultiKeyCommand
+     
+     public List<String> srandmember(final String key, final int count) {
+ 	checkIsInMulti();
+-	client.srandmember(key);
++	client.srandmember(key, count);
+ 	return client.getMultiBulkReply();
+     }
+ 

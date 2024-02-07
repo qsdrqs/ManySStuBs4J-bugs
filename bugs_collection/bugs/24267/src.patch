@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-core/src/test/java/io/swagger/ModelSerializerTest.java b/fixed/modules/swagger-core/src/test/java/io/swagger/ModelSerializerTest.java
+index 8c01d5e07..f63bf7340 100644
+--- a/buggy/modules/swagger-core/src/test/java/io/swagger/ModelSerializerTest.java
++++ b/fixed/modules/swagger-core/src/test/java/io/swagger/ModelSerializerTest.java
+@@ -280,6 +280,6 @@ public class ModelSerializerTest {
+         final ModelImpl model = Json.mapper().readValue(json, ModelImpl.class);
+ 
+         assertNotNull(model.getEnum());
+-        assertTrue(model.getEnum().size() == 2);
++        assertTrue(model.getEnum().size() == 3);
+     }
+ }
+\ No newline at end of file

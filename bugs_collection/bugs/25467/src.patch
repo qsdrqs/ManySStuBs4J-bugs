@@ -1,0 +1,13 @@
+diff --git a/buggy/twitter4j-examples/src/main/java/twitter4j/examples/user/GetSuggestedUserCategories.java b/fixed/twitter4j-examples/src/main/java/twitter4j/examples/user/GetSuggestedUserCategories.java
+index 2f1a66e79..63913b148 100644
+--- a/buggy/twitter4j-examples/src/main/java/twitter4j/examples/user/GetSuggestedUserCategories.java
++++ b/fixed/twitter4j-examples/src/main/java/twitter4j/examples/user/GetSuggestedUserCategories.java
+@@ -46,7 +46,7 @@ public final class GetSuggestedUserCategories {
+     public static void main(String[] args) {
+         try {
+             Twitter twitter = new TwitterFactory().getInstance();
+-            System.out.println("Showing @" + args[0] + "'s suggested user categories.");
++            System.out.println("Showing suggested user categories.");
+             ResponseList<Category> categories = twitter.getSuggestedUserCategories();
+             for(Category category : categories){
+                 System.out.println(category.getName() + ":" + category.getSlug());

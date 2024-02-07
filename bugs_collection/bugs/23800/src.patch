@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/examples/XmlExampleGenerator.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/examples/XmlExampleGenerator.java
+index 3b7700115..ed9ab1233 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/examples/XmlExampleGenerator.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/examples/XmlExampleGenerator.java
+@@ -180,7 +180,7 @@ public class XmlExampleGenerator {
+             if (property.getExample() != null) {
+                 return property.getExample().toString();
+             } else {
+-                return "2000-01-23T04:56:07.000Z";
++                return "2000-01-23";
+             }
+         } else if (property instanceof IntegerProperty) {
+             if (property.getExample() != null) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/deployment-scanner/src/main/java/org/jboss/as/server/deployment/scanner/DeploymentScannerService.java b/fixed/deployment-scanner/src/main/java/org/jboss/as/server/deployment/scanner/DeploymentScannerService.java
+index 846a49821..ef4b146a8 100644
+--- a/buggy/deployment-scanner/src/main/java/org/jboss/as/server/deployment/scanner/DeploymentScannerService.java
++++ b/fixed/deployment-scanner/src/main/java/org/jboss/as/server/deployment/scanner/DeploymentScannerService.java
+@@ -95,7 +95,7 @@ public class DeploymentScannerService implements Service<DeploymentScanner> {
+         } else {
+             AbsolutePathService.addService(pathService, path, serviceTarget);
+         }
+-        final ThreadFactory threadFactory = new JBossThreadFactory(new ThreadGroup("DeplooymentScanner-threads"), Boolean.FALSE, null, "%G - %t", null, null, AccessController.getContext());
++        final ThreadFactory threadFactory = new JBossThreadFactory(new ThreadGroup("DeploymentScanner-threads"), Boolean.FALSE, null, "%G - %t", null, null, AccessController.getContext());
+         final ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(2, threadFactory);
+ 
+         serviceTarget.addService(serviceName, service)

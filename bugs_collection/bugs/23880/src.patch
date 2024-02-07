@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/AkkaScalaClientCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/AkkaScalaClientCodegen.java
+index 8c95183d1..523fa6ae8 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/AkkaScalaClientCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/AkkaScalaClientCodegen.java
+@@ -168,7 +168,7 @@ public class AkkaScalaClientCodegen extends DefaultCodegen implements CodegenCon
+ 
+     @Override
+     public String getHelp() {
+-        return "Generates a Scala client library base on Akka/Spray.";
++        return "Generates a Scala client library (beta) base on Akka/Spray.";
+     }
+ 
+     @Override

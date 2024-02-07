@@ -1,0 +1,13 @@
+diff --git a/buggy/legacy/jacorb/src/main/java/org/jboss/as/jacorb/TransformUtils.java b/fixed/legacy/jacorb/src/main/java/org/jboss/as/jacorb/TransformUtils.java
+index 41887158a..a1eedd9a2 100644
+--- a/buggy/legacy/jacorb/src/main/java/org/jboss/as/jacorb/TransformUtils.java
++++ b/fixed/legacy/jacorb/src/main/java/org/jboss/as/jacorb/TransformUtils.java
+@@ -46,7 +46,7 @@ public class TransformUtils {
+         for (Property property : legacyModel.asPropertyList()) {
+             String name = property.getName();
+             final ModelNode legacyValue = property.getValue();
+-            if (legacyModel.isDefined()) {
++            if (legacyValue.isDefined()) {
+                 final ModelNode value;
+                 switch (name) {
+                     case JacORBSubsystemConstants.ORB_GIOP_MINOR_VERSION:

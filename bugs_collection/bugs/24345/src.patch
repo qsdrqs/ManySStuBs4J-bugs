@@ -1,0 +1,13 @@
+diff --git a/buggy/titan-core/src/main/java/com/thinkaurelius/titan/graphdb/vertices/StandardVertex.java b/fixed/titan-core/src/main/java/com/thinkaurelius/titan/graphdb/vertices/StandardVertex.java
+index 0d4e0d462..931ba79df 100644
+--- a/buggy/titan-core/src/main/java/com/thinkaurelius/titan/graphdb/vertices/StandardVertex.java
++++ b/fixed/titan-core/src/main/java/com/thinkaurelius/titan/graphdb/vertices/StandardVertex.java
+@@ -22,7 +22,7 @@ import java.util.List;
+ public class StandardVertex extends AbstractVertex {
+ 
+     private byte lifecycle;
+-    private AddedRelationsContainer addedRelations=AddedRelationsContainer.EMPTY;
++    private volatile AddedRelationsContainer addedRelations=AddedRelationsContainer.EMPTY;
+ 
+     public StandardVertex(final StandardTitanTx tx, final long id, byte lifecycle) {
+         super(tx, id);

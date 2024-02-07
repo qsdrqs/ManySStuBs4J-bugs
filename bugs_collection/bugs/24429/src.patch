@@ -1,0 +1,13 @@
+diff --git a/buggy/clustering/infinispan/extension/src/main/java/org/jboss/as/clustering/infinispan/subsystem/CustomStoreConfigurationBuilder.java b/fixed/clustering/infinispan/extension/src/main/java/org/jboss/as/clustering/infinispan/subsystem/CustomStoreConfigurationBuilder.java
+index 219473d47..2d6c93e48 100644
+--- a/buggy/clustering/infinispan/extension/src/main/java/org/jboss/as/clustering/infinispan/subsystem/CustomStoreConfigurationBuilder.java
++++ b/fixed/clustering/infinispan/extension/src/main/java/org/jboss/as/clustering/infinispan/subsystem/CustomStoreConfigurationBuilder.java
+@@ -37,7 +37,7 @@ public class CustomStoreConfigurationBuilder extends AbstractStoreConfigurationB
+ 
+     @Override
+     public CustomStoreConfiguration create() {
+-        return new CustomStoreConfiguration(this.attributes, this.async.create(), this.singletonStore.create());
++        return new CustomStoreConfiguration(this.attributes.protect(), this.async.create(), this.singletonStore.create());
+     }
+ 
+     @Override

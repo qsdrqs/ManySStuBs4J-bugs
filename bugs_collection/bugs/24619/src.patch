@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/shared/src/main/java/org/jboss/as/test/integration/domain/management/util/JBossAsManagedConfiguration.java b/fixed/testsuite/shared/src/main/java/org/jboss/as/test/integration/domain/management/util/JBossAsManagedConfiguration.java
+index 830148970..9f376ae54 100644
+--- a/buggy/testsuite/shared/src/main/java/org/jboss/as/test/integration/domain/management/util/JBossAsManagedConfiguration.java
++++ b/fixed/testsuite/shared/src/main/java/org/jboss/as/test/integration/domain/management/util/JBossAsManagedConfiguration.java
+@@ -129,7 +129,7 @@ public class JBossAsManagedConfiguration extends CommonContainerConfiguration {
+             Validate.configurationDirectoryExists(javaHome, "javaHome must exist at " + javaHome);
+         }
+         if (controllerJavaHome != null) {
+-            Validate.configurationDirectoryExists(javaHome, "controllerJavaHome must exist at " + controllerJavaHome);
++            Validate.configurationDirectoryExists(controllerJavaHome, "controllerJavaHome must exist at " + controllerJavaHome);
+         }
+     }
+ 

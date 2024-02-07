@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/redis/clients/jedis/JedisSentinelPool.java b/fixed/src/main/java/redis/clients/jedis/JedisSentinelPool.java
+index 05672f78f..1140fdcf2 100644
+--- a/buggy/src/main/java/redis/clients/jedis/JedisSentinelPool.java
++++ b/fixed/src/main/java/redis/clients/jedis/JedisSentinelPool.java
+@@ -298,7 +298,7 @@ public class JedisSentinelPool extends JedisPoolAbstract {
+             }
+           }, "+switch-master");
+ 
+-        } catch (JedisConnectionException e) {
++        } catch (JedisException e) {
+ 
+           if (running.get()) {
+             log.log(Level.SEVERE, "Lost connection to Sentinel at " + host + ":" + port

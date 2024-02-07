@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PhpClientCodegen.java b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PhpClientCodegen.java
+index 65aeaf479..531e9a27b 100644
+--- a/buggy/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PhpClientCodegen.java
++++ b/fixed/modules/swagger-codegen/src/main/java/io/swagger/codegen/languages/PhpClientCodegen.java
+@@ -155,7 +155,7 @@ public class PhpClientCodegen extends DefaultCodegen implements CodegenConfig {
+         if (additionalProperties.containsKey("modelPackage")) {
+             this.setModelPackage((String) additionalProperties.get("modelPackage"));
+         } else {
+-            additionalProperties.put("modelPackage", this.invokerPackage + modelPackage);
++            additionalProperties.put("modelPackage", modelPackage);
+         }
+ 
+         if (additionalProperties.containsKey("apiPackage")) {
