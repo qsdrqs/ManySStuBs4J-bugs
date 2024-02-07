@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/config/ZWaveConfiguration.java b/fixed/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/config/ZWaveConfiguration.java
+index c679ee305..ace9a1ff9 100644
+--- a/buggy/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/config/ZWaveConfiguration.java
++++ b/fixed/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/config/ZWaveConfiguration.java
+@@ -270,7 +270,7 @@ public class ZWaveConfiguration implements OpenHABConfigurationService, ZWaveEve
+ 					Date lastDead = node.getDeadTime();
+ 					Long timeSinceLastDead = Long.MAX_VALUE;
+ 					if(lastDead != null) {
+-						timeSinceLastDead = lastDead.getTime() - System.currentTimeMillis();
++						timeSinceLastDead = System.currentTimeMillis() - lastDead.getTime();
+ 					}
+ 					if(node.getDeadCount() > 0 && timeSinceLastDead < 86400000)
+ 						record.state = OpenHABConfigurationRecord.STATE.WARNING;

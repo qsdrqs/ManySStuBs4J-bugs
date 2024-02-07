@@ -1,0 +1,13 @@
+diff --git a/buggy/hikaricp-common/src/main/java/com/zaxxer/hikari/proxy/ConnectionProxy.java b/fixed/hikaricp-common/src/main/java/com/zaxxer/hikari/proxy/ConnectionProxy.java
+index 99b2c168d..c9e598e3d 100644
+--- a/buggy/hikaricp-common/src/main/java/com/zaxxer/hikari/proxy/ConnectionProxy.java
++++ b/fixed/hikaricp-common/src/main/java/com/zaxxer/hikari/proxy/ConnectionProxy.java
+@@ -102,7 +102,7 @@ public abstract class ConnectionProxy implements IHikariConnectionProxy
+    public final SQLException checkException(final SQLException sqle)
+    {
+       String sqlState = sqle.getSQLState();
+-      if (sqlState != null && !bagEntry.evicted) {
++      if (sqlState != null) {
+          boolean isForceClose = sqlState.startsWith("08") | SQL_ERRORS.contains(sqlState);
+          if (isForceClose) {
+             bagEntry.evicted = true;

@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/socket/nio/NioDatagramChannel.java b/fixed/transport/src/main/java/io/netty/channel/socket/nio/NioDatagramChannel.java
+index 8ce572c64..ad647aa3e 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/socket/nio/NioDatagramChannel.java
++++ b/fixed/transport/src/main/java/io/netty/channel/socket/nio/NioDatagramChannel.java
+@@ -200,7 +200,7 @@ public final class NioDatagramChannel
+             if (remoteAddress == null) {
+                 return 0;
+             }
+-            buf.add(new DatagramPacket(buffer.writerIndex(buffer.writerIndex() + data.remaining()), remoteAddress));
++            buf.add(new DatagramPacket(buffer.writerIndex(buffer.writerIndex() + data.position()), remoteAddress));
+             free = false;
+             return 1;
+         } catch (Throwable cause) {

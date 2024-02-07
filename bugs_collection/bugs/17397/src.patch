@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/junit/runners/BlockJUnit4ClassRunner.java b/fixed/src/main/java/org/junit/runners/BlockJUnit4ClassRunner.java
+index cf7d339a0..455341aa0 100644
+--- a/buggy/src/main/java/org/junit/runners/BlockJUnit4ClassRunner.java
++++ b/fixed/src/main/java/org/junit/runners/BlockJUnit4ClassRunner.java
+@@ -459,7 +459,7 @@ public class BlockJUnit4ClassRunner extends ParentRunner<FrameworkMethod> {
+     private static class RuleCollector<T> implements MemberValueConsumer<T> {
+         final List<T> result = new ArrayList<T>();
+ 
+-        public void accept(FrameworkMember member, T value) {
++        public void accept(FrameworkMember<?> member, T value) {
+             Rule rule = member.getAnnotation(Rule.class);
+             if (rule != null) {
+                 RuleContainer container = CURRENT_RULE_CONTAINER.get();

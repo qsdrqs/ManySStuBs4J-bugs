@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/io/org.openhab.io.transport.cul/src/main/java/org/openhab/io/transport/cul/internal/AbstractCULHandler.java b/fixed/bundles/io/org.openhab.io.transport.cul/src/main/java/org/openhab/io/transport/cul/internal/AbstractCULHandler.java
+index f004a04c9..0f375b2b0 100644
+--- a/buggy/bundles/io/org.openhab.io.transport.cul/src/main/java/org/openhab/io/transport/cul/internal/AbstractCULHandler.java
++++ b/fixed/bundles/io/org.openhab.io.transport.cul/src/main/java/org/openhab/io/transport/cul/internal/AbstractCULHandler.java
+@@ -155,7 +155,7 @@ public abstract class AbstractCULHandler<T extends CULConfig> implements CULHand
+ 
+     @Override
+     public boolean hasListeners() {
+-        return listeners.size() > 0;
++        return (listeners.size() == 1 && listeners.get(0) != sendThread || listeners.size() > 1);
+     }
+ 
+     @Override

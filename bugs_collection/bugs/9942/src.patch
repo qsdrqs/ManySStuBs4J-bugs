@@ -1,0 +1,13 @@
+diff --git a/buggy/storm-server/src/main/java/org/apache/storm/daemon/supervisor/Supervisor.java b/fixed/storm-server/src/main/java/org/apache/storm/daemon/supervisor/Supervisor.java
+index 81ddb44ca..bc440203d 100644
+--- a/buggy/storm-server/src/main/java/org/apache/storm/daemon/supervisor/Supervisor.java
++++ b/fixed/storm-server/src/main/java/org/apache/storm/daemon/supervisor/Supervisor.java
+@@ -135,7 +135,7 @@ public class Supervisor implements DaemonCommon, AutoCloseable {
+             (String) conf.get(DaemonConfig.SUPERVISOR_AUTHORIZER), conf);
+         if (authorizationHandler == null && conf.get(DaemonConfig.NIMBUS_AUTHORIZER) != null) {
+             throw new IllegalStateException("It looks like authorization is turned on for nimbus but not for the "
+-                                            + "supervisor....");
++                + "supervisor.... ( " + DaemonConfig.SUPERVISOR_AUTHORIZER + " is not set)");
+         }
+ 
+         iSupervisor.prepare(conf, ServerConfigUtils.supervisorIsupervisorDir(conf));

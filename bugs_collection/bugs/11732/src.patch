@@ -1,0 +1,15 @@
+diff --git a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/javadoc/TagParser.java b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/javadoc/TagParser.java
+index 1172a8a07..b080acb05 100644
+--- a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/javadoc/TagParser.java
++++ b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/javadoc/TagParser.java
+@@ -166,7 +166,9 @@ class TagParser
+                && ((text.charAt(column) >= 'A'
+                     && text.charAt(column) <= 'Z')
+                    || (text.charAt(column) >= 'a'
+-                       && text.charAt(column) <= 'z')))
++                       && text.charAt(column) <= 'z')
++                   || (text.charAt(column) >= '0'
++                       && text.charAt(column) <= '9')))
+         {
+             column++;
+         }

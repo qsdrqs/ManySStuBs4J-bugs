@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-devtools/src/main/java/org/springframework/boot/devtools/tunnel/payload/HttpTunnelPayload.java b/fixed/spring-boot-project/spring-boot-devtools/src/main/java/org/springframework/boot/devtools/tunnel/payload/HttpTunnelPayload.java
+index 88a53aac5..7db077b64 100644
+--- a/buggy/spring-boot-project/spring-boot-devtools/src/main/java/org/springframework/boot/devtools/tunnel/payload/HttpTunnelPayload.java
++++ b/fixed/spring-boot-project/spring-boot-devtools/src/main/java/org/springframework/boot/devtools/tunnel/payload/HttpTunnelPayload.java
+@@ -45,7 +45,7 @@ public class HttpTunnelPayload {
+ 
+ 	private static final int BUFFER_SIZE = 1024 * 100;
+ 
+-	final protected static char[] HEX_CHARS = "0123456789ABCDEF".toCharArray();
++	protected final static char[] HEX_CHARS = "0123456789ABCDEF".toCharArray();
+ 
+ 	private static final Log logger = LogFactory.getLog(HttpTunnelPayload.class);
+ 

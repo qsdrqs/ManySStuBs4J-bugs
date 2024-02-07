@@ -1,0 +1,22 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/management/ManagementCenterService.java b/fixed/hazelcast/src/main/java/com/hazelcast/management/ManagementCenterService.java
+index 4944f30ea..9575516dc 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/management/ManagementCenterService.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/management/ManagementCenterService.java
+@@ -127,7 +127,7 @@ public class ManagementCenterService implements LifecycleListener, MembershipLis
+ 
+                 logger.info("======================================================");
+                 logger.info("You can access your Hazelcast instance at:");
+-                logger.info(url + "/start.do?clusterId=" + clusterId);
++                logger.info(url + "/start.do?clusterid=" + clusterId);
+                 logger.info("======================================================");
+             }
+         }
+@@ -687,7 +687,7 @@ public class ManagementCenterService implements LifecycleListener, MembershipLis
+             String urlString = webServerUrl + "getTask.do?member=" + address.getHost()
+                     + ":" + address.getPort() + "&cluster=" + groupConfig.getName();
+             if (clusterId != null) {
+-                urlString += "&clusterId="+ clusterId;
++                urlString += "&clusterid="+ clusterId;
+             }
+             if (securityToken != null) {
+                 urlString += "&securitytoken=" + securityToken;

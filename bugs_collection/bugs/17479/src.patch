@@ -1,0 +1,13 @@
+diff --git a/buggy/ptr-lib/src/in/srain/cube/views/ptr/indicator/PtrIndicator.java b/fixed/ptr-lib/src/in/srain/cube/views/ptr/indicator/PtrIndicator.java
+index 23bd2850f..769b6677d 100644
+--- a/buggy/ptr-lib/src/in/srain/cube/views/ptr/indicator/PtrIndicator.java
++++ b/fixed/ptr-lib/src/in/srain/cube/views/ptr/indicator/PtrIndicator.java
+@@ -63,7 +63,7 @@ public class PtrIndicator {
+     }
+ 
+     public void setOffsetToRefresh(int offset) {
+-        mRatioOfHeaderHeightToRefresh = mHeaderHeight / offset;
++        mRatioOfHeaderHeightToRefresh = mHeaderHeight * 1f / offset;
+         mOffsetToRefresh = offset;
+     }
+ 

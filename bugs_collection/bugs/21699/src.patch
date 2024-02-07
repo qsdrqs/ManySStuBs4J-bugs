@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/src/roboguice/test/SafeAsyncTest.java b/fixed/tests/src/roboguice/test/SafeAsyncTest.java
+index 3b9c9696b..73fc4b7ad 100644
+--- a/buggy/tests/src/roboguice/test/SafeAsyncTest.java
++++ b/fixed/tests/src/roboguice/test/SafeAsyncTest.java
+@@ -204,7 +204,7 @@ public class SafeAsyncTest extends RoboUnitTestCase<RoboGuiceTestApplication> {
+                     }
+ 
+                     @Override
+-                    protected void onInterrupted(InterruptedException e) {
++                    protected void onInterrupted(Exception e) {
+                         state[0] = null; // expected
+                     }
+ 

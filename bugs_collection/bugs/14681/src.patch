@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/NameBasedDefinitionProvider.java b/fixed/src/com/google/javascript/jscomp/NameBasedDefinitionProvider.java
+index 56bb5963b..5b5784d34 100644
+--- a/buggy/src/com/google/javascript/jscomp/NameBasedDefinitionProvider.java
++++ b/fixed/src/com/google/javascript/jscomp/NameBasedDefinitionProvider.java
+@@ -94,7 +94,7 @@ public class NameBasedDefinitionProvider implements DefinitionProvider, Compiler
+    * should not have to drop definitions itself.
+    */
+   private void dropUntypedExterns() {
+-    for (String externName : nameDefinitionMultimap.keys()) {
++    for (String externName : nameDefinitionMultimap.keySet()) {
+       for (Definition def : new ArrayList<Definition>(nameDefinitionMultimap.get(externName))) {
+         if (def instanceof ExternalNameOnlyDefinition) {
+           Node node = def.getLValue();

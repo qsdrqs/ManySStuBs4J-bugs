@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/spi/impl/operationservice/impl/batching/PartitionAwareCallableBatchingRunnable.java b/fixed/hazelcast/src/main/java/com/hazelcast/spi/impl/operationservice/impl/batching/PartitionAwareCallableBatchingRunnable.java
+index d9cd15b76..6e40d21db 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/spi/impl/operationservice/impl/batching/PartitionAwareCallableBatchingRunnable.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/spi/impl/operationservice/impl/batching/PartitionAwareCallableBatchingRunnable.java
+@@ -108,7 +108,7 @@ public class PartitionAwareCallableBatchingRunnable implements Runnable {
+                 break;
+             }
+             PartitionAwareCallable task = factory.create();
+-            if (partition.isLocal()) {
++            if (partition.isLocal() && !partition.isMigrating()) {
+                 try {
+                     results.add(task.call(currentPartitionId));
+                 } catch (Exception ex) {

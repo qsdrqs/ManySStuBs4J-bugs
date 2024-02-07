@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/org/apache/hadoop/hbase/PerformanceEvaluation.java b/fixed/src/test/org/apache/hadoop/hbase/PerformanceEvaluation.java
+index d79f9dde4..d05e9c2a1 100644
+--- a/buggy/src/test/org/apache/hadoop/hbase/PerformanceEvaluation.java
++++ b/fixed/src/test/org/apache/hadoop/hbase/PerformanceEvaluation.java
+@@ -200,7 +200,7 @@ public class PerformanceEvaluation implements HConstants {
+     if (extantTables.length > 0) {
+       // Check to see if our table already exists.  Print warning if it does.
+       for (int i = 0; i < extantTables.length; i++) {
+-        if (extantTables[1].equals(tableDescriptor)) {
++        if (extantTables[i].equals(tableDescriptor)) {
+           LOG.warn("Table " + tableDescriptor + " already exists");
+           tableExists = true;
+           break;

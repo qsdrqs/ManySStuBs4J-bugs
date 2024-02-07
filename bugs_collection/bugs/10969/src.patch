@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/BaseCheckTestSupport.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/BaseCheckTestSupport.java
+index 67f89b805..c3b3ebf3e 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/BaseCheckTestSupport.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/BaseCheckTestSupport.java
+@@ -100,7 +100,7 @@ public class BaseCheckTestSupport {
+                 + filename).getCanonicalPath();
+     }
+ 
+-    protected void verifyAst(String expectedTextPrintFileName, String actualJavaFileName)
++    protected static void verifyAst(String expectedTextPrintFileName, String actualJavaFileName)
+             throws Exception {
+         verifyAst(expectedTextPrintFileName, actualJavaFileName, false);
+     }

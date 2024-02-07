@@ -1,0 +1,22 @@
+diff --git a/buggy/DesktopProject/src/org/gephi/desktop/project/ProjectControllerUIImpl.java b/fixed/DesktopProject/src/org/gephi/desktop/project/ProjectControllerUIImpl.java
+index 1218bddbb..ffb53dad6 100644
+--- a/buggy/DesktopProject/src/org/gephi/desktop/project/ProjectControllerUIImpl.java
++++ b/fixed/DesktopProject/src/org/gephi/desktop/project/ProjectControllerUIImpl.java
+@@ -100,7 +100,7 @@ public class ProjectControllerUIImpl implements ProjectControllerUI {
+                 StatusDisplayer.getDefault().setStatusText(NbBundle.getMessage(ProjectControllerUIImpl.class, "ProjectControllerUI.status.saved", fileName));
+             }
+         };
+-        if (saveRunnable instanceof LongTask) {
++        if (saveTask instanceof LongTask) {
+             longTaskExecutor.execute((LongTask) saveTask, saveRunnable);
+         } else {
+             longTaskExecutor.execute(null, saveRunnable);
+@@ -291,7 +291,7 @@ public class ProjectControllerUIImpl implements ProjectControllerUI {
+                 StatusDisplayer.getDefault().setStatusText(NbBundle.getMessage(ProjectControllerUIImpl.class, "ProjectControllerUI.status.opened", fileName));
+             }
+         };
+-        if (loadRunnable instanceof LongTask) {
++        if (loadTask instanceof LongTask) {
+             longTaskExecutor.execute((LongTask) loadTask, loadRunnable);
+         } else {
+             longTaskExecutor.execute(null, loadRunnable);

@@ -1,0 +1,13 @@
+diff --git a/buggy/web/src/main/java/org/openmrs/web/controller/person/AddPersonController.java b/fixed/web/src/main/java/org/openmrs/web/controller/person/AddPersonController.java
+index 39c11bc49..49a2c0f49 100644
+--- a/buggy/web/src/main/java/org/openmrs/web/controller/person/AddPersonController.java
++++ b/fixed/web/src/main/java/org/openmrs/web/controller/person/AddPersonController.java
+@@ -253,7 +253,7 @@ public class AddPersonController extends SimpleFormController {
+ 		                + "\" and personType = \""
+ 		                + personType
+ 		                + "\" which is an invalid viewType/personType combination.\n"
+-		                + "Valid viewType/personType combinations are edit/patient, shortEdit/patient, view/patient, anyViewType/user and edit/anyPersonType\n");
++		                + "Valid viewType/personType combinations are edit/patient, shortEdit/patient, view/patient. The viewType edit is valid with any personType. Also, the personType user is valid with any viewType. \n");
+ 	}
+ 	
+ 	/**

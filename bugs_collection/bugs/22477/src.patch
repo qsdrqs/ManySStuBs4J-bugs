@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-samples/spring-boot-sample-parent-context/src/test/java/sample/parent/consumer/SampleIntegrationParentApplicationTests.java b/fixed/spring-boot-samples/spring-boot-sample-parent-context/src/test/java/sample/parent/consumer/SampleIntegrationParentApplicationTests.java
+index 23b9a8fdc..61a8a546e 100644
+--- a/buggy/spring-boot-samples/spring-boot-sample-parent-context/src/test/java/sample/parent/consumer/SampleIntegrationParentApplicationTests.java
++++ b/fixed/spring-boot-samples/spring-boot-sample-parent-context/src/test/java/sample/parent/consumer/SampleIntegrationParentApplicationTests.java
+@@ -87,7 +87,7 @@ public class SampleIntegrationParentApplicationTests {
+ 
+ 	private Resource[] findResources() throws IOException {
+ 		return ResourcePatternUtils.getResourcePatternResolver(
+-				new DefaultResourceLoader()).getResources("file:target/output/**");
++				new DefaultResourceLoader()).getResources("file:target/output/**/*.msg");
+ 	}
+ 
+ 	private String readResources(Resource[] resources) throws IOException {

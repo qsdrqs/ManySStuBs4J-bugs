@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-wm/src/main/java/com/hazelcast/web/ClusteredSessionService.java b/fixed/hazelcast-wm/src/main/java/com/hazelcast/web/ClusteredSessionService.java
+index c98b9b124..c4c05fb80 100644
+--- a/buggy/hazelcast-wm/src/main/java/com/hazelcast/web/ClusteredSessionService.java
++++ b/fixed/hazelcast-wm/src/main/java/com/hazelcast/web/ClusteredSessionService.java
+@@ -319,7 +319,7 @@ public class ClusteredSessionService {
+     /**
+      * Internal ThreadFactory to create threads which checks hazelcast instance
+      */
+-    private class EnsureInstanceThreadFactory implements ThreadFactory {
++    private static final class EnsureInstanceThreadFactory implements ThreadFactory {
+ 
+         public Thread newThread(final Runnable r) {
+             final Thread thread = new EnsureInstanceThread(r, ".hazelcast-wm.ensureInstance");

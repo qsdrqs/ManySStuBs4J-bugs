@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/main/java/org/openmrs/scheduler/timer/TimerSchedulerTask.java b/fixed/api/src/main/java/org/openmrs/scheduler/timer/TimerSchedulerTask.java
+index 843deb6d7..3bb1f194b 100644
+--- a/buggy/api/src/main/java/org/openmrs/scheduler/timer/TimerSchedulerTask.java
++++ b/fixed/api/src/main/java/org/openmrs/scheduler/timer/TimerSchedulerTask.java
+@@ -48,7 +48,7 @@ public class TimerSchedulerTask extends TimerTask {
+ 		try {
+ 			Daemon.executeScheduledTask(task);
+ 		}
+-		catch (Throwable t) {
++		catch (Exception t) {
+ 			// Fix #862: IllegalStateException: Timer already cancelled.
+ 			// Suppress error in order to keep the scheduler's Timer from completely failing.
+ 			log.error(

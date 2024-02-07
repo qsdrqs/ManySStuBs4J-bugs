@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-base-jdbc/src/main/java/com/facebook/presto/plugin/jdbc/BaseJdbcClient.java b/fixed/presto-base-jdbc/src/main/java/com/facebook/presto/plugin/jdbc/BaseJdbcClient.java
+index 1b78a36cd..47a3586fb 100644
+--- a/buggy/presto-base-jdbc/src/main/java/com/facebook/presto/plugin/jdbc/BaseJdbcClient.java
++++ b/fixed/presto-base-jdbc/src/main/java/com/facebook/presto/plugin/jdbc/BaseJdbcClient.java
+@@ -478,7 +478,7 @@ public class BaseJdbcClient
+         if (sqlType != null) {
+             return sqlType;
+         }
+-        throw new PrestoException(NOT_SUPPORTED, "Unsuported column type: " + type.getTypeSignature());
++        throw new PrestoException(NOT_SUPPORTED, "Unsupported column type: " + type.getTypeSignature());
+     }
+ 
+     protected String quoted(String name)

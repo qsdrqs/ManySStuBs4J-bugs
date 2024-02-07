@@ -1,0 +1,19 @@
+diff --git a/buggy/components/camel-bam/src/main/java/org/apache/camel/bam/model/ProcessInstance.java b/fixed/components/camel-bam/src/main/java/org/apache/camel/bam/model/ProcessInstance.java
+index 81fea445d..c362ae4fa 100644
+--- a/buggy/components/camel-bam/src/main/java/org/apache/camel/bam/model/ProcessInstance.java
++++ b/fixed/components/camel-bam/src/main/java/org/apache/camel/bam/model/ProcessInstance.java
+@@ -84,12 +84,12 @@ public class ProcessInstance {
+ 
+     @Transient
+     public boolean isStarted() {
+-        return timeStarted != null;
++        return getTimeStarted() != null;
+     }
+ 
+     @Transient
+     public boolean isCompleted() {
+-        return timeCompleted != null;
++        return getTimeCompleted() != null;
+     }
+ 
+     @Temporal(TemporalType.TIME)

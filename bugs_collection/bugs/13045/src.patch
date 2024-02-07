@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/test/java/io/druid/server/coordination/ServerManagerTest.java b/fixed/server/src/test/java/io/druid/server/coordination/ServerManagerTest.java
+index f3483487c..013544dab 100644
+--- a/buggy/server/src/test/java/io/druid/server/coordination/ServerManagerTest.java
++++ b/fixed/server/src/test/java/io/druid/server/coordination/ServerManagerTest.java
+@@ -309,7 +309,7 @@ public class ServerManagerTest
+         )
+     );
+ 
+-    queryNotifyLatch.await(25, TimeUnit.MILLISECONDS);
++    Assert.assertTrue("Operation must complete within 100ms", queryNotifyLatch.await(100, TimeUnit.MILLISECONDS));
+ 
+     Assert.assertEquals(1, factory.getSegmentReferences().size());
+ 

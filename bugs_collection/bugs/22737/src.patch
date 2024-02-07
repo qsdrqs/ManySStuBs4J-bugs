@@ -1,0 +1,12 @@
+diff --git a/buggy/examples/quickstart/src/test/functional/org/springside/examples/quickstart/functional/gui/TaskGuiFT.java b/fixed/examples/quickstart/src/test/functional/org/springside/examples/quickstart/functional/gui/TaskGuiFT.java
+index f92c8a86c..709d6860b 100644
+--- a/buggy/examples/quickstart/src/test/functional/org/springside/examples/quickstart/functional/gui/TaskGuiFT.java
++++ b/fixed/examples/quickstart/src/test/functional/org/springside/examples/quickstart/functional/gui/TaskGuiFT.java
+@@ -62,6 +62,6 @@ public class TaskGuiFT extends BaseSeleniumTestCase {
+ 		s.click(By.linkText("创建任务"));
+ 		s.click(By.id("submit_btn"));
+ 
+-		assertEquals("必选字段", s.getText(By.xpath("//fieldset/div/div/label")));
++		assertEquals("必选字段", s.getText(By.xpath("//fieldset/div/div/span")));
+ 	}
+ }

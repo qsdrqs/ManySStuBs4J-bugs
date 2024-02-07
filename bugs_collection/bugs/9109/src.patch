@@ -1,0 +1,15 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/master/HMaster.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/master/HMaster.java
+index c55024435..c3d51fa1e 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/master/HMaster.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/master/HMaster.java
+@@ -771,8 +771,8 @@ public class HMaster extends HRegionServer implements MasterServices {
+    * <li>Handle either fresh cluster start or master failover</li>
+    * </ol>
+    */
+-  private void finishActiveMasterInitialization(MonitoredTask status)
+-      throws IOException, InterruptedException, KeeperException, CoordinatedStateException {
++  private void finishActiveMasterInitialization(MonitoredTask status) throws IOException,
++          InterruptedException, KeeperException, CoordinatedStateException, ReplicationException {
+     Thread zombieDetector = new Thread(new InitializationMonitor(this),
+         "ActiveMasterInitializationMonitor-" + System.currentTimeMillis());
+     zombieDetector.setDaemon(true);

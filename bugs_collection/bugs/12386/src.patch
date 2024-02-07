@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-core/src/main/java/com/yammer/dropwizard/config/LoggingConfiguration.java b/fixed/dropwizard-core/src/main/java/com/yammer/dropwizard/config/LoggingConfiguration.java
+index b6da5debd..8bd83663f 100644
+--- a/buggy/dropwizard-core/src/main/java/com/yammer/dropwizard/config/LoggingConfiguration.java
++++ b/fixed/dropwizard-core/src/main/java/com/yammer/dropwizard/config/LoggingConfiguration.java
+@@ -91,7 +91,7 @@ public class LoggingConfiguration {
+         @JsonProperty
+         protected String logFormat;
+ 
+-        @ValidationMethod(message = "must have logging.file.archivedLogFilenamePatter if logging.file.archive is true")
++        @ValidationMethod(message = "must have logging.file.archivedLogFilenamePattern if logging.file.archive is true")
+         public boolean isValidArchiveConfiguration() {
+             return !archive || archivedLogFilenamePattern != null;
+         }

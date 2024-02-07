@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4822variabledistance/VariableDeclarationUsageDistanceTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4822variabledistance/VariableDeclarationUsageDistanceTest.java
+index 2db06e34a..d10be4708 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4822variabledistance/VariableDeclarationUsageDistanceTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4822variabledistance/VariableDeclarationUsageDistanceTest.java
+@@ -17,7 +17,7 @@ public class VariableDeclarationUsageDistanceTest extends BaseCheckTestSupport{
+     static ConfigurationBuilder builder;
+ 
+     @BeforeClass
+-    public static void setConfigurationBuilder() throws CheckstyleException, IOException {
++    public static void setConfigurationBuilder() throws CheckstyleException {
+         builder = new ConfigurationBuilder(new File("src/it/"));
+     }
+ 

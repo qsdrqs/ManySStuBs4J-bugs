@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-samples/spring-boot-sample-hypermedia-jpa/src/test/java/sample/hypermedia/jpa/SampleHypermediaJpaApplicationIntegrationTests.java b/fixed/spring-boot-samples/spring-boot-sample-hypermedia-jpa/src/test/java/sample/hypermedia/jpa/SampleHypermediaJpaApplicationIntegrationTests.java
+index 67896386b..c8d104ac5 100644
+--- a/buggy/spring-boot-samples/spring-boot-sample-hypermedia-jpa/src/test/java/sample/hypermedia/jpa/SampleHypermediaJpaApplicationIntegrationTests.java
++++ b/fixed/spring-boot-samples/spring-boot-sample-hypermedia-jpa/src/test/java/sample/hypermedia/jpa/SampleHypermediaJpaApplicationIntegrationTests.java
+@@ -83,7 +83,7 @@ public class SampleHypermediaJpaApplicationIntegrationTests {
+ 	public void browser() throws Exception {
+ 		MvcResult response = this.mockMvc.perform(get("/").accept(MediaType.TEXT_HTML))
+ 				.andExpect(status().isFound()).andReturn();
+-		assertEquals("/browser/index.html#",
++		assertEquals("http://localhost/browser/index.html#/",
+ 				response.getResponse().getHeaders("location").get(0));
+ 	}
+ 

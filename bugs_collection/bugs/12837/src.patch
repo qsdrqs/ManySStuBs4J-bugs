@@ -1,0 +1,14 @@
+diff --git a/buggy/server/src/main/java/io/druid/server/initialization/ServerConfig.java b/fixed/server/src/main/java/io/druid/server/initialization/ServerConfig.java
+index 4491f2e38..6f432c85e 100644
+--- a/buggy/server/src/main/java/io/druid/server/initialization/ServerConfig.java
++++ b/fixed/server/src/main/java/io/druid/server/initialization/ServerConfig.java
+@@ -31,8 +31,7 @@ public class ServerConfig
+ {
+   @JsonProperty
+   @Min(1)
+-  // Jetty defaults are whack
+-  private int numThreads = Math.max(10, (Runtime.getRuntime().availableProcessors() * 17) / 16 + 2);
++  private int numThreads = 30;
+ 
+   @JsonProperty
+   @NotNull

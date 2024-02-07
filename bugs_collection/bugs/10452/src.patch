@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionMultipleVariableDeclarationsTest.java b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionMultipleVariableDeclarationsTest.java
+index 43ed91b3c..a9eae8201 100644
+--- a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionMultipleVariableDeclarationsTest.java
++++ b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionMultipleVariableDeclarationsTest.java
+@@ -28,7 +28,7 @@ import org.junit.Test;
+ import com.puppycrawl.tools.checkstyle.DefaultConfiguration;
+ import com.puppycrawl.tools.checkstyle.checks.coding.MultipleVariableDeclarationsCheck;
+ 
+-public class XpathRegressionMultipleVariableDeclarationsTest extends AbstractXpathTestSupport {
++public class XpathRegressionMultipleVariableDeclarationsTest extends XpathTestSupport {
+ 
+     @Test
+     public void testOne() throws Exception {

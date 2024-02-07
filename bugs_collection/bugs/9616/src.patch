@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/tez/TezSessionPoolManager.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/tez/TezSessionPoolManager.java
+index ecac85c55..b70dbd8d0 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/tez/TezSessionPoolManager.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/tez/TezSessionPoolManager.java
+@@ -314,7 +314,7 @@ public class TezSessionPoolManager {
+         LOG.warn("User has specified " + queueName + " queue; ignoring the setting");
+         queueName = null;
+         hasQueue = false;
+-        conf.set("tez.queue.name", null);
++        conf.unset("tez.queue.name");
+       }
+       default: // All good.
+       }

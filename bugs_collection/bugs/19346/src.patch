@@ -1,0 +1,20 @@
+diff --git a/buggy/community/shell/src/test/java/org/neo4j/shell/Documenter.java b/fixed/community/shell/src/test/java/org/neo4j/shell/Documenter.java
+index 8e11a4021..9b8173409 100644
+--- a/buggy/community/shell/src/test/java/org/neo4j/shell/Documenter.java
++++ b/fixed/community/shell/src/test/java/org/neo4j/shell/Documenter.java
+@@ -153,13 +153,11 @@ public class Documenter
+             }
+             catch ( RemoteException e )
+             {
+-                // TODO Auto-generated catch block
+-                e.printStackTrace();
++                throw new RuntimeException( e );
+             }
+             catch ( ShellException e )
+             {
+-                // TODO Auto-generated catch block
+-                e.printStackTrace();
++                throw new RuntimeException( e );
+             }
+         }
+         out.println( "-----" );

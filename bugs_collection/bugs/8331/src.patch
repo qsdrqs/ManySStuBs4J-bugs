@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/tasks/SourceStreamTaskTest.java b/fixed/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/tasks/SourceStreamTaskTest.java
+index 10fc4002a..21c894e9e 100644
+--- a/buggy/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/tasks/SourceStreamTaskTest.java
++++ b/fixed/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/tasks/SourceStreamTaskTest.java
+@@ -53,7 +53,7 @@ import java.util.concurrent.atomic.AtomicLong;
+  */
+ @RunWith(PowerMockRunner.class)
+ @PrepareForTest({ResultPartitionWriter.class})
+-@PowerMockIgnore({"javax.management.*", "com.sun.jndi.*"})
++@PowerMockIgnore({"javax.management.*", "com.sun.jndi.*", "org.apache.log4j.*" })
+ public class SourceStreamTaskTest {
+ 
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/HashGenerationOptimizer.java b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/HashGenerationOptimizer.java
+index 965361031..04ab22ee9 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/HashGenerationOptimizer.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/HashGenerationOptimizer.java
+@@ -112,7 +112,7 @@ public class HashGenerationOptimizer
+     }
+ 
+     private static class Rewriter
+-            extends PlanVisitor<HashComputationSet, PlanWithProperties>
++            extends PlanVisitor<PlanWithProperties, HashComputationSet>
+     {
+         private final PlanNodeIdAllocator idAllocator;
+         private final SymbolAllocator symbolAllocator;

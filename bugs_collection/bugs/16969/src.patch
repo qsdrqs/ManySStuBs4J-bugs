@@ -1,0 +1,38 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/query/Predicates.java b/fixed/hazelcast/src/main/java/com/hazelcast/query/Predicates.java
+index 0dd3caf75..ef33ffdc9 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/query/Predicates.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/query/Predicates.java
+@@ -114,7 +114,7 @@ public final class Predicates {
+ 
+         public InPredicate(String attribute, Comparable... values) {
+             super(attribute);
+-            this.values = values;
++            this.values = Arrays.copyOf( values, values.length ) ;
+         }
+ 
+         public boolean apply(Map.Entry entry) {
+@@ -260,13 +260,13 @@ public final class Predicates {
+ 
+     public static class AndPredicate implements IndexAwarePredicate, DataSerializable {
+ 
+-        protected Predicate[] predicates;
++        private Predicate[] predicates;
+ 
+         public AndPredicate() {
+         }
+ 
+         public AndPredicate(Predicate... predicates) {
+-            this.predicates = predicates;
++            predicates = Arrays.copyOf( predicates,predicates.length );
+         }
+ 
+         public Set<QueryableEntry> filter(QueryContext queryContext) {
+@@ -373,7 +373,7 @@ public final class Predicates {
+         }
+ 
+         public OrPredicate(Predicate... predicates) {
+-            this.predicates = predicates;
++            this.predicates  = Arrays.copyOf( predicates, predicates.length );
+         }
+ 
+         public Set<QueryableEntry> filter(QueryContext queryContext) {

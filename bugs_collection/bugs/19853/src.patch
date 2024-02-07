@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/DefaultChannelHandlerContext.java b/fixed/transport/src/main/java/io/netty/channel/DefaultChannelHandlerContext.java
+index a371edf70..d9d3cc73e 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/DefaultChannelHandlerContext.java
++++ b/fixed/transport/src/main/java/io/netty/channel/DefaultChannelHandlerContext.java
+@@ -1315,7 +1315,7 @@ final class DefaultChannelHandlerContext extends DefaultAttributeMap implements
+         }
+ 
+         ChannelOperationHandler handler = (ChannelOperationHandler) handler();
+-        if (handler instanceof ChannelInboundHandler) {
++        if (handler instanceof ChannelOutboundHandler) {
+             flushOutboundBridge();
+         }
+ 

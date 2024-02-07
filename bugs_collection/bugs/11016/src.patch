@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/utils/TokenUtilsTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/utils/TokenUtilsTest.java
+index b87d2968e..36c7bb895 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/utils/TokenUtilsTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/utils/TokenUtilsTest.java
+@@ -94,7 +94,7 @@ public class TokenUtilsTest {
+             }
+ 
+             TokenUtils.getTokenName(id);
+-            fail();
++            fail("IllegalArgumentException is expected");
+         }
+         catch (IllegalArgumentException expected) {
+             // restoring original value, to let other tests pass

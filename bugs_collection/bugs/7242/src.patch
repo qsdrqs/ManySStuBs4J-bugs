@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-aws/src/main/java/org/apache/camel/component/aws/sns/SnsConfiguration.java b/fixed/components/camel-aws/src/main/java/org/apache/camel/component/aws/sns/SnsConfiguration.java
+index e0faa9377..5068c11f6 100644
+--- a/buggy/components/camel-aws/src/main/java/org/apache/camel/component/aws/sns/SnsConfiguration.java
++++ b/fixed/components/camel-aws/src/main/java/org/apache/camel/component/aws/sns/SnsConfiguration.java
+@@ -103,7 +103,7 @@ public class SnsConfiguration implements Cloneable {
+     @Override
+     public String toString() {
+         return "SnsConfiguration[topicName=" + topicName
+-            + ", amazonSQSClient=" + amazonSNSClient
++            + ", amazonSNSClient=" + amazonSNSClient
+             + ", accessKey=" + accessKey
+             + ", secretKey=xxxxxxxxxxxxxxx" 
+             + ", subject=" + subject

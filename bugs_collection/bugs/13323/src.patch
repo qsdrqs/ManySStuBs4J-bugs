@@ -1,0 +1,16 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/operator/JoinUtils.java b/fixed/presto-main/src/main/java/com/facebook/presto/operator/JoinUtils.java
+index e629fe473..906182d24 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/operator/JoinUtils.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/operator/JoinUtils.java
+@@ -19,7 +19,10 @@ import com.google.common.collect.ImmutableList;
+ 
+ import java.util.List;
+ 
+-final class JoinUtils
++/**
++ * This class must be public as it is accessed via join compiler reflection.
++ */
++public final class JoinUtils
+ {
+     private JoinUtils() {}
+ 

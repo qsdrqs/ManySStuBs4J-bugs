@@ -1,0 +1,14 @@
+diff --git a/buggy/src/edu/stanford/nlp/pipeline/WordsToSentencesAnnotator.java b/fixed/src/edu/stanford/nlp/pipeline/WordsToSentencesAnnotator.java
+index b5123e567..65b62a498 100644
+--- a/buggy/src/edu/stanford/nlp/pipeline/WordsToSentencesAnnotator.java
++++ b/fixed/src/edu/stanford/nlp/pipeline/WordsToSentencesAnnotator.java
+@@ -332,7 +332,8 @@ public class WordsToSentencesAnnotator implements Annotator  {
+         CoreAnnotations.TextAnnotation.class,
+         CoreAnnotations.TokensAnnotation.class,
+         CoreAnnotations.CharacterOffsetBeginAnnotation.class,
+-        CoreAnnotations.CharacterOffsetEndAnnotation.class
++        CoreAnnotations.CharacterOffsetEndAnnotation.class,
++        CoreAnnotations.IsNewlineAnnotation.class
+     )));
+   }
+ 

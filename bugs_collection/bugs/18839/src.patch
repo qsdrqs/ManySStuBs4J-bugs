@@ -1,0 +1,13 @@
+diff --git a/buggy/bootstrap-core/src/main/java/com/navercorp/pinpoint/bootstrap/config/DefaultProfilerConfig.java b/fixed/bootstrap-core/src/main/java/com/navercorp/pinpoint/bootstrap/config/DefaultProfilerConfig.java
+index 05d075ee1..b2e66e3e4 100644
+--- a/buggy/bootstrap-core/src/main/java/com/navercorp/pinpoint/bootstrap/config/DefaultProfilerConfig.java
++++ b/fixed/bootstrap-core/src/main/java/com/navercorp/pinpoint/bootstrap/config/DefaultProfilerConfig.java
+@@ -576,7 +576,7 @@ public class DefaultProfilerConfig implements ProfilerConfig {
+         this.profileJvmVendorName = readString("profiler.jvm.vendor.name", null);
+         this.profileJvmStatCollectIntervalMs = readInt("profiler.jvm.stat.collect.interval", DEFAULT_AGENT_STAT_COLLECTION_INTERVAL_MS);
+         this.profileJvmStatBatchSendCount = readInt("profiler.jvm.stat.batch.send.count", DEFAULT_NUM_AGENT_STAT_BATCH_SEND);
+-        this.profilerJvmStatCollectDetailedMetrics = readBoolean("profiler.stat.jvm.collect.detailed.metrics", false);
++        this.profilerJvmStatCollectDetailedMetrics = readBoolean("profiler.jvm.stat.collect.detailed.metrics", false);
+ 
+         this.agentInfoSendRetryInterval = readLong("profiler.agentInfo.send.retry.interval", DEFAULT_AGENT_INFO_SEND_RETRY_INTERVAL);
+ 

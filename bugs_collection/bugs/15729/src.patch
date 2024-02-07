@@ -1,0 +1,13 @@
+diff --git a/buggy/guava-tests/test/com/google/common/collect/ComparisonChainTest.java b/fixed/guava-tests/test/com/google/common/collect/ComparisonChainTest.java
+index 149430cb7..0a75056e3 100644
+--- a/buggy/guava-tests/test/com/google/common/collect/ComparisonChainTest.java
++++ b/fixed/guava-tests/test/com/google/common/collect/ComparisonChainTest.java
+@@ -101,7 +101,7 @@ public class ComparisonChainTest extends TestCase {
+     assertTrue(ComparisonChain.start().compareTrueFirst(false, false).result() == 0);
+   }
+ 
+-  @SuppressWarnings("deprecated") // test of a deprecated method
++  @SuppressWarnings("deprecation") // test of a deprecated method
+   public void testCompareBooleans() {
+     assertTrue(ComparisonChain.start().compare(true, true).result() == 0);
+     assertTrue(ComparisonChain.start().compare(true, false).result() > 0);

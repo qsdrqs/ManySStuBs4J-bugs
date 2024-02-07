@@ -1,0 +1,16 @@
+diff --git a/buggy/presto-hive-hadoop1/src/test/java/com/facebook/presto/hive/TestHiveClient.java b/fixed/presto-hive-hadoop1/src/test/java/com/facebook/presto/hive/TestHiveClient.java
+index 25f3fc87c..9d4156ad2 100644
+--- a/buggy/presto-hive-hadoop1/src/test/java/com/facebook/presto/hive/TestHiveClient.java
++++ b/fixed/presto-hive-hadoop1/src/test/java/com/facebook/presto/hive/TestHiveClient.java
+@@ -23,9 +23,8 @@ public class TestHiveClient
+ {
+     @Parameters({"hive.hadoop1.metastoreHost", "hive.hadoop1.metastorePort", "hive.hadoop1.databaseName", "hive.hadoop1.timeZone"})
+     @BeforeClass
+-    @Override
+-    public void setup(String host, int port, String databaseName, String timeZone)
++    public void initialize(String host, int port, String databaseName, String timeZone)
+     {
+-        super.setup(host, port, databaseName, timeZone);
++        setup(host, port, databaseName, timeZone);
+     }
+ }

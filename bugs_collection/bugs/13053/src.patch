@@ -1,0 +1,13 @@
+diff --git a/buggy/indexing-service/src/main/java/com/metamx/druid/indexing/coordinator/TaskMasterLifecycle.java b/fixed/indexing-service/src/main/java/com/metamx/druid/indexing/coordinator/TaskMasterLifecycle.java
+index f0332aa3c..dcdeff0dc 100644
+--- a/buggy/indexing-service/src/main/java/com/metamx/druid/indexing/coordinator/TaskMasterLifecycle.java
++++ b/fixed/indexing-service/src/main/java/com/metamx/druid/indexing/coordinator/TaskMasterLifecycle.java
+@@ -268,7 +268,7 @@ public class TaskMasterLifecycle
+   public Optional<ResourceManagementScheduler> getResourceManagementScheduler()
+   {
+     if (leading) {
+-      return Optional.of(resourceManagementScheduler);
++      return Optional.fromNullable(resourceManagementScheduler);
+     } else {
+       return Optional.absent();
+     }

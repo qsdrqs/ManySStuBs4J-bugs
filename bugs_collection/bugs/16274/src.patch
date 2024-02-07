@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/nio/serialization/SerializationTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/nio/serialization/SerializationTest.java
+index ef0d469d9..f409a34f4 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/nio/serialization/SerializationTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/nio/serialization/SerializationTest.java
+@@ -583,7 +583,7 @@ public class SerializationTest
+             if (!WELL_KNOWN_TEST_CLASSES.contains(name)) {
+                 return super.loadClass(name, resolve);
+             }
+-            synchronized (getClassLoadingLock(name)) {
++            synchronized (this) {
+                 // First, check if the class has already been loaded
+                 Class<?> c = findLoadedClass(name);
+                 if (c == null) {

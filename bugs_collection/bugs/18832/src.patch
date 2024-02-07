@@ -1,0 +1,13 @@
+diff --git a/buggy/profiler/src/main/java/com/navercorp/pinpoint/profiler/context/provider/plugin/JarPluginLoader.java b/fixed/profiler/src/main/java/com/navercorp/pinpoint/profiler/context/provider/plugin/JarPluginLoader.java
+index cb70af27b..8df2c6ef7 100644
+--- a/buggy/profiler/src/main/java/com/navercorp/pinpoint/profiler/context/provider/plugin/JarPluginLoader.java
++++ b/fixed/profiler/src/main/java/com/navercorp/pinpoint/profiler/context/provider/plugin/JarPluginLoader.java
+@@ -107,7 +107,7 @@ public class JarPluginLoader implements PluginLoader {
+         return file;
+     }
+ 
+-    public class Entry {
++    public static class Entry {
+         private final URL filePath;
+         private final File file;
+         private final ClassLoader classLoader;

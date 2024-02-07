@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/partition/SpillableSubpartitionView.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/partition/SpillableSubpartitionView.java
+index 3c73e43d8..0f51bc8b0 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/partition/SpillableSubpartitionView.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/partition/SpillableSubpartitionView.java
+@@ -177,7 +177,7 @@ class SpillableSubpartitionView implements ResultSubpartitionView {
+ 		SpilledSubpartitionView spilled = spilledView;
+ 		if (spilled != null) {
+ 			if (current != null) {
+-				return new BufferAndBacklog(current, isMoreAvailable, newBacklog, spilled.nextBufferIsEvent());
++				return new BufferAndBacklog(current, spilled.isAvailable(), newBacklog, spilled.nextBufferIsEvent());
+ 			} else {
+ 				return spilled.getNextBuffer();
+ 			}

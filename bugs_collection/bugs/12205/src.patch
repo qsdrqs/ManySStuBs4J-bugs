@@ -1,0 +1,13 @@
+diff --git a/buggy/cuke4duke/src/main/java/cuke4duke/internal/StringConverter.java b/fixed/cuke4duke/src/main/java/cuke4duke/internal/StringConverter.java
+index f7edf27aa..c97e7bc81 100644
+--- a/buggy/cuke4duke/src/main/java/cuke4duke/internal/StringConverter.java
++++ b/fixed/cuke4duke/src/main/java/cuke4duke/internal/StringConverter.java
+@@ -35,7 +35,7 @@ public class StringConverter {
+             } else if (type.equals(Table.class)) {
+                 return (Table) arg;
+             } else if (type.equals(String.class)) {
+-                return (String) arg;
++                return String.valueOf(arg);
+             } else {
+                 return arg;
+             }

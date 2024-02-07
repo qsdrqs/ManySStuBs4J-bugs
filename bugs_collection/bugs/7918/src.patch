@@ -1,0 +1,15 @@
+diff --git a/buggy/components/camel-restlet/src/test/java/org/apache/camel/component/restlet/RestletQueryTest.java b/fixed/components/camel-restlet/src/test/java/org/apache/camel/component/restlet/RestletQueryTest.java
+index 1976e929e..e5ba62ff0 100644
+--- a/buggy/components/camel-restlet/src/test/java/org/apache/camel/component/restlet/RestletQueryTest.java
++++ b/fixed/components/camel-restlet/src/test/java/org/apache/camel/component/restlet/RestletQueryTest.java
+@@ -49,8 +49,8 @@ public class RestletQueryTest extends ContextTestSupport {
+     class SetUserProcessor implements Processor {
+ 
+         public void process(Exchange exchange) throws Exception {   
+-            assertEquals(QUERY_STRING, 
+-                    exchange.getProperty(RestletConstants.QUERY_STRING, String.class));
++            assertEquals(QUERY_STRING, exchange.getIn().getHeader(RestletConstants.QUERY_STRING, 
++                    String.class));
+         }
+         
+     }

@@ -1,0 +1,21 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/parsing/parser/testing/FeatureSetSubject.java b/fixed/src/com/google/javascript/jscomp/parsing/parser/testing/FeatureSetSubject.java
+index 71251c7e4..d5e569481 100644
+--- a/buggy/src/com/google/javascript/jscomp/parsing/parser/testing/FeatureSetSubject.java
++++ b/fixed/src/com/google/javascript/jscomp/parsing/parser/testing/FeatureSetSubject.java
+@@ -27,6 +27,7 @@ import javax.annotation.CheckReturnValue;
+ 
+ /**
+  * A Truth Subject for FeatureSet. Usage:
++ *
+  * <pre>
+  *   import static com.google.javascript.jscomp.parsing.parser.testing.FeatureSetSubject.assertFS;
+  *   ...
+@@ -34,7 +35,7 @@ import javax.annotation.CheckReturnValue;
+  *   assertFS(features).containsNoneOf(otherFeatures);
+  * </pre>
+  */
+-public class FeatureSetSubject extends Subject<FeatureSetSubject, FeatureSet> {
++public class FeatureSetSubject extends Subject {
+   @CheckReturnValue
+   public static FeatureSetSubject assertFS(FeatureSet fs) {
+     return assertAbout(FeatureSetSubject::new).that(fs);

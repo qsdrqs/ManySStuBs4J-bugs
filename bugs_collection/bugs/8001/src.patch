@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-spring/src/main/java/org/apache/camel/spring/spi/TransactionInterceptor.java b/fixed/components/camel-spring/src/main/java/org/apache/camel/spring/spi/TransactionInterceptor.java
+index a9b4d31b9..dfd6f845e 100644
+--- a/buggy/components/camel-spring/src/main/java/org/apache/camel/spring/spi/TransactionInterceptor.java
++++ b/fixed/components/camel-spring/src/main/java/org/apache/camel/spring/spi/TransactionInterceptor.java
+@@ -138,7 +138,7 @@ public class TransactionInterceptor extends DelegateProcessor {
+             rc = "PROPAGATION_SUPPORTS";
+             break;
+         default:
+-            rc = "UNKOWN";
++            rc = "UNKNOWN";
+         }
+         return rc;
+     }

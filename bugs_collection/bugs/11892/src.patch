@@ -1,0 +1,13 @@
+diff --git a/buggy/library/src/com/handmark/pulltorefresh/library/LoadingLayoutProxy.java b/fixed/library/src/com/handmark/pulltorefresh/library/LoadingLayoutProxy.java
+index 48eca91a5..72d826461 100644
+--- a/buggy/library/src/com/handmark/pulltorefresh/library/LoadingLayoutProxy.java
++++ b/fixed/library/src/com/handmark/pulltorefresh/library/LoadingLayoutProxy.java
+@@ -52,7 +52,7 @@ public class LoadingLayoutProxy implements ILoadingLayout {
+ 	@Override
+ 	public void setReleaseLabel(CharSequence label) {
+ 		for (LoadingLayout layout : mLoadingLayouts) {
+-			layout.setRefreshingLabel(label);
++			layout.setReleaseLabel(label);
+ 		}
+ 	}
+ 

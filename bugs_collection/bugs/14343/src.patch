@@ -1,0 +1,13 @@
+diff --git a/buggy/DesktopExport/src/org/gephi/desktop/io/export/api/VectorialFileExporterUI.java b/fixed/DesktopExport/src/org/gephi/desktop/io/export/api/VectorialFileExporterUI.java
+index ed37f48c6..493697b8f 100644
+--- a/buggy/DesktopExport/src/org/gephi/desktop/io/export/api/VectorialFileExporterUI.java
++++ b/fixed/DesktopExport/src/org/gephi/desktop/io/export/api/VectorialFileExporterUI.java
+@@ -147,7 +147,7 @@ public final class VectorialFileExporterUI implements ExporterClassUI {
+                 }
+ 
+                 //Selected file extension change
+-                if (selectedFile != null) {
++                if (selectedFile != null && fileFilter != null) {
+                     String filePath = selectedFile.getAbsolutePath();
+                     filePath = filePath.substring(0, filePath.lastIndexOf("."));
+                     filePath = filePath.concat(fileFilter.getExtensions().get(0));

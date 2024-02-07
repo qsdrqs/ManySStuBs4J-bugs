@@ -1,0 +1,12 @@
+diff --git a/buggy/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGraphML.java b/fixed/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGraphML.java
+index 8e60e5145..1fb52b386 100644
+--- a/buggy/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGraphML.java
++++ b/fixed/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGraphML.java
+@@ -476,6 +476,6 @@ public class ImporterGraphML implements XMLImporter, LongTask {
+     }
+ 
+     public boolean isMatchingImporter(FileObject fileObject) {
+-        return fileObject.hasExt("graphml");
++        return fileObject.hasExt("graphml")  || fileObject.hasExt("GRAPHML");
+     }
+ }

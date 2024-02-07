@@ -1,0 +1,14 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/nioneo/store/RelationshipRecord.java b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/nioneo/store/RelationshipRecord.java
+index 95bcb000b..337abf8e0 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/nioneo/store/RelationshipRecord.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/nioneo/store/RelationshipRecord.java
+@@ -98,7 +98,7 @@ public class RelationshipRecord extends PrimitiveRecord
+         return new StringBuilder( "Relationship[" ).append( getId() ).append( ",used=" ).append( inUse() ).append(
+                 ",source=" ).append( firstNode ).append( ",target=" ).append( secondNode ).append( ",type=" ).append(
+                 type ).append( ",sPrev=" ).append( firstPrevRel ).append( ",sNext=" ).append( firstNextRel ).append(
+-                ",tPrev" ).append( secondPrevRel ).append( ",tNext=" ).append( secondNextRel ).append( ",prop=" ).append(
++                ",tPrev=" ).append( secondPrevRel ).append( ",tNext=" ).append( secondNextRel ).append( ",prop=" ).append(
+                 getNextProp() ).append( "]" ).toString();
+     }
+ }
+\ No newline at end of file

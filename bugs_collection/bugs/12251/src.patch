@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-hibernate/src/test/java/io/dropwizard/hibernate/UnitOfWorkApplicationListenerTest.java b/fixed/dropwizard-hibernate/src/test/java/io/dropwizard/hibernate/UnitOfWorkApplicationListenerTest.java
+index e5b7cfd1c..1bffdf786 100644
+--- a/buggy/dropwizard-hibernate/src/test/java/io/dropwizard/hibernate/UnitOfWorkApplicationListenerTest.java
++++ b/fixed/dropwizard-hibernate/src/test/java/io/dropwizard/hibernate/UnitOfWorkApplicationListenerTest.java
+@@ -271,7 +271,7 @@ public class UnitOfWorkApplicationListenerTest {
+         when(uriInfo.getMatchedResourceMethod()).thenReturn(resourceMethod);
+     }
+ 
+-    private boolean methodDefinedOnInterface(String methodName, Method[] methods) {
++    private static boolean methodDefinedOnInterface(String methodName, Method[] methods) {
+         for (Method method : methods) {
+             if (method.getName().equals(methodName)) {
+                 return true;

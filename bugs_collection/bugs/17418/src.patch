@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/junit/internal/runners/rules/RuleFieldValidator.java b/fixed/src/main/java/org/junit/internal/runners/rules/RuleFieldValidator.java
+index 5c6cfcb86..11e9d88c0 100644
+--- a/buggy/src/main/java/org/junit/internal/runners/rules/RuleFieldValidator.java
++++ b/fixed/src/main/java/org/junit/internal/runners/rules/RuleFieldValidator.java
+@@ -88,7 +88,7 @@ public enum RuleFieldValidator {
+             addError(errors, member, "must be static.");
+         }
+         if (!fStaticMembers && member.isStatic()) {
+-            addError(errors, member, "must not be static.");
++            addError(errors, member, "must not be static or it has to be annotated with @ClassRule.");
+         }
+     }
+ 

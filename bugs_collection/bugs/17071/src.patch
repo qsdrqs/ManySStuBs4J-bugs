@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/nio/SelectorBase.java b/fixed/hazelcast/src/main/java/com/hazelcast/nio/SelectorBase.java
+index c102ed96b..61f102a7e 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/nio/SelectorBase.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/nio/SelectorBase.java
+@@ -91,7 +91,7 @@ public abstract class SelectorBase implements Runnable {
+         selectorQueue.offer(runnable);
+     }
+ 
+-    public void processSelectionQueue() {
++    private void processSelectionQueue() {
+         while (live) {
+             final Runnable runnable = selectorQueue.poll();
+             if (runnable == null) {

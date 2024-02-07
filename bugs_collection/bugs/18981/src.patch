@@ -1,0 +1,13 @@
+diff --git a/buggy/profiler/src/main/java/com/navercorp/pinpoint/profiler/interceptor/bci/JavaAssistClass.java b/fixed/profiler/src/main/java/com/navercorp/pinpoint/profiler/interceptor/bci/JavaAssistClass.java
+index d88bf212a..f1c33e57f 100644
+--- a/buggy/profiler/src/main/java/com/navercorp/pinpoint/profiler/interceptor/bci/JavaAssistClass.java
++++ b/fixed/profiler/src/main/java/com/navercorp/pinpoint/profiler/interceptor/bci/JavaAssistClass.java
+@@ -372,7 +372,7 @@ public class JavaAssistClass implements InstrumentClass {
+     		return addInterceptor(methodName, args, interceptor);
+     	} else {
+ 			if (logger.isWarnEnabled()) {
+-				logger.warn("MethodInfo is not declared. class={}, methodName={}, args={}", ctClass.getName(), methodName, Arrays.toString(args));
++				logger.warn("Method is not declared. class={}, methodName={}, args={}", ctClass.getName(), methodName, Arrays.toString(args));
+ 			}
+     		return -1;
+     	}

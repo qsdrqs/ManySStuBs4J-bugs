@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/zaxxer/hikari/HikariPool.java b/fixed/src/main/java/com/zaxxer/hikari/HikariPool.java
+index bd338a4ca..ed9312573 100644
+--- a/buggy/src/main/java/com/zaxxer/hikari/HikariPool.java
++++ b/fixed/src/main/java/com/zaxxer/hikari/HikariPool.java
+@@ -340,7 +340,7 @@ public final class HikariPool implements HikariPoolMBean, IBagStateListener
+             try
+             {
+                 // Speculative increment of totalConnections with expectation of success
+-                if (totalConnections.incrementAndGet() > configuration.getMaximumPoolSize())
++                if (retries == 0 && totalConnections.incrementAndGet() > configuration.getMaximumPoolSize())
+                 {
+                     totalConnections.decrementAndGet();
+                     break;

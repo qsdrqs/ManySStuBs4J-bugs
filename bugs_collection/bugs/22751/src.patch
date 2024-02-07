@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/showcase/src/main/java/org/springside/examples/showcase/common/service/AccountManager.java b/fixed/examples/showcase/src/main/java/org/springside/examples/showcase/common/service/AccountManager.java
+index 3b4e4c46f..c75ea8546 100644
+--- a/buggy/examples/showcase/src/main/java/org/springside/examples/showcase/common/service/AccountManager.java
++++ b/fixed/examples/showcase/src/main/java/org/springside/examples/showcase/common/service/AccountManager.java
+@@ -87,7 +87,7 @@ public class AccountManager {
+ 	public List<User> getAllUser() {
+ 
+ 		if (applicationStatistics != null) {
+-			applicationStatistics.incrUpdateUserTimes();
++			applicationStatistics.incrListUserTimes();
+ 		}
+ 		return (List<User>) userJpaDao.findAll();
+ 	}

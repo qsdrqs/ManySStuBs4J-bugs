@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.tacmi/src/main/java/org/openhab/binding/tacmi/internal/TACmiBinding.java b/fixed/bundles/binding/org.openhab.binding.tacmi/src/main/java/org/openhab/binding/tacmi/internal/TACmiBinding.java
+index 4b1763a83..82fa783cc 100644
+--- a/buggy/bundles/binding/org.openhab.binding.tacmi/src/main/java/org/openhab/binding/tacmi/internal/TACmiBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.tacmi/src/main/java/org/openhab/binding/tacmi/internal/TACmiBinding.java
+@@ -108,7 +108,7 @@ public class TACmiBinding extends AbstractActiveBinding<TACmiBindingProvider> {
+         try {
+             clientSocket = new DatagramSocket(cmiPort);
+         } catch (SocketException e) {
+-            logger.error("Failed to create Socket for receiving UDP packts from CMI");
++            logger.error("Failed to create Socket for receiving UDP packets from CMI");
+             setProperlyConfigured(true);
+             return;
+         }

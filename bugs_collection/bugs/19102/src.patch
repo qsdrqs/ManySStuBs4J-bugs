@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/nioneo/store/ArrayQueueOutOfOrderSequence.java b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/nioneo/store/ArrayQueueOutOfOrderSequence.java
+index 94b6d41db..b51a192fd 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/nioneo/store/ArrayQueueOutOfOrderSequence.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/nioneo/store/ArrayQueueOutOfOrderSequence.java
+@@ -56,7 +56,7 @@ public class ArrayQueueOutOfOrderSequence implements OutOfOrderSequence
+     }
+ 
+     @Override
+-    public void set( long number )
++    public synchronized void set( long number )
+     {
+         highestGapFreeNumber = number;
+         outOfOrderQueue.clear();

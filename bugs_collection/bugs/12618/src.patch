@@ -1,0 +1,13 @@
+diff --git a/buggy/services/src/main/java/org/apache/druid/cli/CliMiddleManager.java b/fixed/services/src/main/java/org/apache/druid/cli/CliMiddleManager.java
+index ecdadfa5f..eeb8ae1f0 100644
+--- a/buggy/services/src/main/java/org/apache/druid/cli/CliMiddleManager.java
++++ b/fixed/services/src/main/java/org/apache/druid/cli/CliMiddleManager.java
+@@ -69,7 +69,7 @@ import java.util.List;
+  */
+ @Command(
+     name = "middleManager",
+-    description = "Runs a Middle Manager, this is a \"task\" node used as part of the remote indexing service, see http://druid.io/docs/latest/design/middlemanager.html for a description"
++    description = "Runs a Middle Manager, this is a \"task\" node used as part of the remote indexing service, see https://druid.apache.org/docs/latest/design/middlemanager.html for a description"
+ )
+ public class CliMiddleManager extends ServerRunnable
+ {

@@ -1,0 +1,17 @@
+diff --git a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/context/properties/bind/CollectionBinder.java b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/context/properties/bind/CollectionBinder.java
+index ad735cf31..cfd887dde 100644
+--- a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/context/properties/bind/CollectionBinder.java
++++ b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/context/properties/bind/CollectionBinder.java
+@@ -55,10 +55,9 @@ class CollectionBinder extends IndexedElementsBinder<Collection<Object>> {
+ 	}
+ 
+ 	@Override
+-	@SuppressWarnings("unchecked")
+-	protected Collection<Object> merge(Supplier<?> existing,
++	protected Collection<Object> merge(Supplier<Collection<Object>> existing,
+ 			Collection<Object> additional) {
+-		Collection<Object> existingCollection = (Collection<Object>) existing.get();
++		Collection<Object> existingCollection = existing.get();
+ 		if (existingCollection == null) {
+ 			return additional;
+ 		}

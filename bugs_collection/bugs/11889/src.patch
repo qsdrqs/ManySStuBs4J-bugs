@@ -1,0 +1,15 @@
+diff --git a/buggy/src/tests/com/puppycrawl/tools/checkstyle/InputLeftCurlyOther.java b/fixed/src/tests/com/puppycrawl/tools/checkstyle/InputLeftCurlyOther.java
+index 6ca362e00..b5b7ae879 100644
+--- a/buggy/src/tests/com/puppycrawl/tools/checkstyle/InputLeftCurlyOther.java
++++ b/fixed/src/tests/com/puppycrawl/tools/checkstyle/InputLeftCurlyOther.java
+@@ -10,8 +10,8 @@ package com.puppycrawl.tools.checkstyle;
+  **/
+ class InputLeftCurlyOther
+ {
+-    /** test method **/
+-    void foo()
++    /** @see test method **/
++    void foo() throws InterruptedException
+     {
+         int x = 1;
+         int a = 2;

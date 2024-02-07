@@ -1,0 +1,19 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/config/QueryCacheConfigReadOnly.java b/fixed/hazelcast/src/main/java/com/hazelcast/config/QueryCacheConfigReadOnly.java
+index 0002173b1..f3b9697b4 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/config/QueryCacheConfigReadOnly.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/config/QueryCacheConfigReadOnly.java
+@@ -53,12 +53,12 @@ class QueryCacheConfigReadOnly extends QueryCacheConfig {
+ 
+     @Override
+     public EvictionConfig getEvictionConfig() {
+-        return new EvictionConfigReadOnly(super.getEvictionConfig());
++        return super.getEvictionConfig().getAsReadOnly();
+     }
+ 
+     @Override
+     public PredicateConfig getPredicateConfig() {
+-        return new PredicateConfigReadOnly(super.getPredicateConfig());
++        return super.getPredicateConfig().getAsReadOnly();
+     }
+ 
+     @Override

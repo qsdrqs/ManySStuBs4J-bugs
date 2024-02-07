@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jsoup/nodes/Node.java b/fixed/src/main/java/org/jsoup/nodes/Node.java
+index 92d732f10..edb4700da 100644
+--- a/buggy/src/main/java/org/jsoup/nodes/Node.java
++++ b/fixed/src/main/java/org/jsoup/nodes/Node.java
+@@ -505,7 +505,7 @@ public abstract class Node implements Cloneable {
+      @return HTML
+      */
+     public String outerHtml() {
+-        StringBuilder accum = new StringBuilder(32*1024);
++        StringBuilder accum = new StringBuilder(128);
+         outerHtml(accum);
+         return accum.toString();
+     }

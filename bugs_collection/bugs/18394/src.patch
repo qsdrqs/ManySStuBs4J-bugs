@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/utils/Json.java b/fixed/gdx/src/com/badlogic/gdx/utils/Json.java
+index 5fe4e14b0..329aa3297 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/utils/Json.java
++++ b/fixed/gdx/src/com/badlogic/gdx/utils/Json.java
+@@ -41,7 +41,7 @@ public class Json {
+ 	private static final boolean debug = false;
+ 
+ 	private JsonWriter writer;
+-	private String typeName = "type";
++	private String typeName = "class";
+ 	private boolean usePrototypes = true;
+ 	private OutputType outputType;
+ 	private final ObjectMap<Class, ObjectMap<String, FieldMetadata>> typeToFields = new ObjectMap();

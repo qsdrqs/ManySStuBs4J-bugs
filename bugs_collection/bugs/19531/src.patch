@@ -1,0 +1,13 @@
+diff --git a/buggy/codec-http2/src/main/java/io/netty/handler/codec/http2/Http2MultiplexCodec.java b/fixed/codec-http2/src/main/java/io/netty/handler/codec/http2/Http2MultiplexCodec.java
+index 6de1dd2df..46aa97a53 100644
+--- a/buggy/codec-http2/src/main/java/io/netty/handler/codec/http2/Http2MultiplexCodec.java
++++ b/fixed/codec-http2/src/main/java/io/netty/handler/codec/http2/Http2MultiplexCodec.java
+@@ -805,7 +805,7 @@ public class Http2MultiplexCodec extends Http2FrameCodec {
+ 
+         void fireChildReadComplete() {
+             assert eventLoop().inEventLoop();
+-            assert readStatus == ReadStatus.IN_PROGRESS;
++            assert readStatus != ReadStatus.IDLE;
+             unsafe.notifyReadComplete(unsafe.recvBufAllocHandle());
+         }
+ 

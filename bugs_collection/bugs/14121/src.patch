@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/ImportAPI/src/main/java/org/gephi/io/importer/impl/ImportContainerImpl.java b/fixed/modules/ImportAPI/src/main/java/org/gephi/io/importer/impl/ImportContainerImpl.java
+index 7ad29b623..9831c0a42 100644
+--- a/buggy/modules/ImportAPI/src/main/java/org/gephi/io/importer/impl/ImportContainerImpl.java
++++ b/fixed/modules/ImportAPI/src/main/java/org/gephi/io/importer/impl/ImportContainerImpl.java
+@@ -997,7 +997,7 @@ public class ImportContainerImpl implements Container, ContainerLoader, Containe
+     private long getLongId(EdgeDraftImpl edge) {
+         EdgeDirection direction = edge.getDirection();
+         boolean directed = edgeDefault.equals(EdgeDirectionDefault.DIRECTED)
+-                || (!edgeDefault.equals(EdgeDirectionDefault.UNDIRECTED) && direction != null && direction == EdgeDirection.DIRECTED);
++                || (edgeDefault.equals(EdgeDirectionDefault.MIXED) && ((direction != null && direction == EdgeDirection.DIRECTED) || direction == null));
+         return getLongId(edge.getSource(), edge.getTarget(), directed);
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/samples/guide/src/main/java/okhttp3/recipes/PrintEvents.java b/fixed/samples/guide/src/main/java/okhttp3/recipes/PrintEvents.java
+index a1fdbd000..1366a82f1 100644
+--- a/buggy/samples/guide/src/main/java/okhttp3/recipes/PrintEvents.java
++++ b/fixed/samples/guide/src/main/java/okhttp3/recipes/PrintEvents.java
+@@ -87,7 +87,7 @@ public final class PrintEvents {
+     final long callId;
+     final long callStartNanos;
+ 
+-    public PrintingEventListener(long callId, long callStartNanos) {
++    PrintingEventListener(long callId, long callStartNanos) {
+       this.callId = callId;
+       this.callStartNanos = callStartNanos;
+     }

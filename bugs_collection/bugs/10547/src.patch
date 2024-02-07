@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/TranslationCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/TranslationCheck.java
+index 26ed24d52..6f79e069d 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/TranslationCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/TranslationCheck.java
+@@ -458,7 +458,7 @@ public class TranslationCheck extends AbstractFileSetCheck {
+             dispatcher.fireFileStarted(path);
+             final Set<String> currentFileKeys = fileKeys.get(currentFile);
+             final Set<String> missingKeys = keysThatMustExist.stream()
+-                .filter(e -> !currentFileKeys.contains(e)).collect(Collectors.toSet());
++                .filter(key -> !currentFileKeys.contains(key)).collect(Collectors.toSet());
+             if (!missingKeys.isEmpty()) {
+                 for (Object key : missingKeys) {
+                     log(0, MSG_KEY, key);

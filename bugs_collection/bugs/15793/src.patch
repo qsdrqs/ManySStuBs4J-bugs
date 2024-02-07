@@ -1,0 +1,22 @@
+diff --git a/buggy/servlet/src/com/google/inject/servlet/ServletScopes.java b/fixed/servlet/src/com/google/inject/servlet/ServletScopes.java
+index 0c17510ad..c9079462d 100644
+--- a/buggy/servlet/src/com/google/inject/servlet/ServletScopes.java
++++ b/fixed/servlet/src/com/google/inject/servlet/ServletScopes.java
+@@ -52,7 +52,7 @@ public class ServletScopes {
+         }
+ 
+         public String toString() {
+-          return creator.toString();
++          return String.format("%s[%s]", creator, REQUEST);
+         }
+       };
+     }
+@@ -82,7 +82,7 @@ public class ServletScopes {
+           }
+         }
+         public String toString() {
+-          return creator.toString();
++          return String.format("%s[%s]", creator, SESSION);
+         }
+       };
+     }

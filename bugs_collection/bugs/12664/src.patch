@@ -1,0 +1,14 @@
+diff --git a/buggy/server/src/main/java/io/druid/segment/realtime/RealtimeManager.java b/fixed/server/src/main/java/io/druid/segment/realtime/RealtimeManager.java
+index d9428f483..73bf34fb0 100644
+--- a/buggy/server/src/main/java/io/druid/segment/realtime/RealtimeManager.java
++++ b/fixed/server/src/main/java/io/druid/segment/realtime/RealtimeManager.java
+@@ -362,7 +362,8 @@ public class RealtimeManager implements QuerySegmentWalker
+         }
+         catch (Exception e) {
+           log.makeAlert(e, "Unknown exception, Ignoring and continuing.")
+-             .addData("inputRow", inputRow);
++             .addData("inputRow", inputRow)
++             .emit();
+         }
+ 
+         try {

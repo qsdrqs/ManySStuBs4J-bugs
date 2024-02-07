@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-web/src/test/java/org/apache/camel/web/spring/CamelRouteTest.java b/fixed/components/camel-web/src/test/java/org/apache/camel/web/spring/CamelRouteTest.java
+index 6037e5275..8acc10e87 100644
+--- a/buggy/components/camel-web/src/test/java/org/apache/camel/web/spring/CamelRouteTest.java
++++ b/fixed/components/camel-web/src/test/java/org/apache/camel/web/spring/CamelRouteTest.java
+@@ -58,7 +58,7 @@ public class CamelRouteTest extends Assert {
+     public void setUp() throws Exception {
+         applicationContext = new FileSystemXmlApplicationContext("src/main/webapp/WEB-INF/applicationContext.xml");
+         applicationContext.start();
+-        camelContext = (CamelContext)applicationContext.getBean("camelContext", CamelContext.class);
++        camelContext = applicationContext.getBean(CamelContext.class);
+         assertNotNull("camelContext", camelContext);
+     }
+ 

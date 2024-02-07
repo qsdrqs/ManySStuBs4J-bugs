@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/impl/ascii/rest/HttpGetCommandProcessor.java b/fixed/hazelcast/src/main/java/com/hazelcast/impl/ascii/rest/HttpGetCommandProcessor.java
+index a3b3fc0e8..e5699e3fa 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/impl/ascii/rest/HttpGetCommandProcessor.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/impl/ascii/rest/HttpGetCommandProcessor.java
+@@ -70,7 +70,7 @@ public class HttpGetCommandProcessor extends HttpCommandProcessor<HttpGetCommand
+             command.send204();
+         } else {
+             if (value instanceof byte[]) {
+-                command.setResponse(null, (byte[]) value);
++                command.setResponse(HttpCommand.CONTENT_TYPE_BINARY, (byte[]) value);
+             } else if (value instanceof RestValue) {
+                 RestValue restValue = (RestValue) value;
+                 command.setResponse(restValue.getContentType(), restValue.getValue());

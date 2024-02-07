@@ -1,0 +1,31 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/replicatedmap/ReplicatedMapStatsTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/replicatedmap/ReplicatedMapStatsTest.java
+index 0c9c6a2eb..d59f9bcf3 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/replicatedmap/ReplicatedMapStatsTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/replicatedmap/ReplicatedMapStatsTest.java
+@@ -175,7 +175,7 @@ public class ReplicatedMapStatsTest extends HazelcastTestSupport {
+             @Override
+             public void run()
+                     throws Exception {
+-                assertTrue(stats.getLastAccessTime() > lastAccessTime);
++                assertTrue(stats.getLastAccessTime() >= lastAccessTime);
+             }
+         });
+     }
+@@ -194,7 +194,7 @@ public class ReplicatedMapStatsTest extends HazelcastTestSupport {
+         Thread.sleep(5);
+         replicatedMap.put(key, "value2");
+         long lastUpdateTime2 = replicatedMap.getReplicatedMapStats().getLastUpdateTime();
+-        assertTrue(lastUpdateTime2 > lastUpdateTime);
++        assertTrue(lastUpdateTime2 >= lastUpdateTime);
+     }
+ 
+     @Test
+@@ -222,7 +222,7 @@ public class ReplicatedMapStatsTest extends HazelcastTestSupport {
+             @Override
+             public void run()
+                     throws Exception {
+-                assertTrue(stats.getLastUpdateTime() > lastUpdateTime);
++                assertTrue(stats.getLastUpdateTime() >= lastUpdateTime);
+             }
+         });
+     }

@@ -1,0 +1,23 @@
+diff --git a/buggy/dropwizard-core/src/main/java/com/yammer/dropwizard/json/ObjectMapperFactory.java b/fixed/dropwizard-core/src/main/java/com/yammer/dropwizard/json/ObjectMapperFactory.java
+index c0ac835f1..e00d1a14d 100644
+--- a/buggy/dropwizard-core/src/main/java/com/yammer/dropwizard/json/ObjectMapperFactory.java
++++ b/fixed/dropwizard-core/src/main/java/com/yammer/dropwizard/json/ObjectMapperFactory.java
+@@ -506,15 +506,15 @@ public class ObjectMapperFactory {
+         }
+ 
+         for (Map.Entry<JsonGenerator.Feature, Boolean> entry : generatorFeatures.entrySet()) {
+-            mapper.getJsonFactory().configure(entry.getKey(), entry.getValue());
++            mapper.getFactory().configure(entry.getKey(), entry.getValue());
+         }
+ 
+         for (Map.Entry<JsonParser.Feature, Boolean> entry : parserFeatures.entrySet()) {
+-            mapper.getJsonFactory().configure(entry.getKey(), entry.getValue());
++            mapper.getFactory().configure(entry.getKey(), entry.getValue());
+         }
+ 
+         for (Map.Entry<JsonFactory.Feature, Boolean> entry : factoryFeatures.entrySet()) {
+-            mapper.getJsonFactory().configure(entry.getKey(), entry.getValue());
++            mapper.getFactory().configure(entry.getKey(), entry.getValue());
+         }
+ 
+         if (annotationIntrospector != null) {

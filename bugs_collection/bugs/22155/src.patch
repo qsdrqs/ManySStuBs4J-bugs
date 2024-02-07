@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/security/oauth2/client/CommonOAuth2Provider.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/security/oauth2/client/CommonOAuth2Provider.java
+index b43cf40b2..0ef890be6 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/security/oauth2/client/CommonOAuth2Provider.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/security/oauth2/client/CommonOAuth2Provider.java
+@@ -95,7 +95,7 @@ public enum CommonOAuth2Provider {
+ 
+ 	};
+ 
+-	private static final String DEFAULT_REDIRECT_URL = "{scheme}://{serverName}:{serverPort}{contextPath}/oauth2/authorize/code/{clientAlias}";
++	private static final String DEFAULT_REDIRECT_URL = "{scheme}://{serverName}:{serverPort}{contextPath}/oauth2/authorize/code/{registrationId}";
+ 
+ 	protected final ClientRegistration.Builder getBuilder(String registrationId,
+ 			ClientAuthenticationMethod method, String redirectUri) {

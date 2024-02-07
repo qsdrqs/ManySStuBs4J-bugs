@@ -1,0 +1,13 @@
+diff --git a/buggy/DesktopFilters/src/org/gephi/filters/impl/FilterControllerImpl.java b/fixed/DesktopFilters/src/org/gephi/filters/impl/FilterControllerImpl.java
+index 8c3122b85..ad4678ce5 100644
+--- a/buggy/DesktopFilters/src/org/gephi/filters/impl/FilterControllerImpl.java
++++ b/fixed/DesktopFilters/src/org/gephi/filters/impl/FilterControllerImpl.java
+@@ -93,7 +93,7 @@ public class FilterControllerImpl implements FilterController, PropertyExecutor
+ 
+             public void disable() {
+                 GraphModel graphModel = Lookup.getDefault().lookup(GraphController.class).getModel();
+-                if (model.getCurrentResult() != null) {
++                if (model.getCurrentResult() != null && graphModel != null) {
+                     graphModel.destroyView(model.getCurrentResult());
+                     model.setCurrentResult(null);
+                 }

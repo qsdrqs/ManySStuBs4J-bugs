@@ -1,0 +1,13 @@
+diff --git a/buggy/src/api/org/openmrs/arden/MLMObjectElement.java b/fixed/src/api/org/openmrs/arden/MLMObjectElement.java
+index c787857a8..994042404 100644
+--- a/buggy/src/api/org/openmrs/arden/MLMObjectElement.java
++++ b/fixed/src/api/org/openmrs/arden/MLMObjectElement.java
+@@ -122,7 +122,7 @@ public class MLMObjectElement {
+ 				w.append("\n\t\t\tResult " + key + "=new Result((String) parameters.get(\"" + key + "\")");
+ 			} else {
+ 				w.append("\n\t\t\tResult " + key + "=context.read(\n\t\t\t\tpatient,context.getLogicDataSource(\""
+-				        + this.datasource + "\"),\n\t\t\t\tnew LogicCriteria(\"" + cn.trim() + "\")");
++				        + this.datasource + "\"),\n\t\t\t\tnew LogicCriteriaImpl(\"" + cn.trim() + "\")");
+ 			}
+ 			if (hasWhere) {
+ 				if (whereType.equals("withinPreceding")) {

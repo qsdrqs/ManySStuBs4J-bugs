@@ -1,0 +1,13 @@
+diff --git a/buggy/community/graphviz/src/main/java/org/neo4j/visualization/graphviz/Script.java b/fixed/community/graphviz/src/main/java/org/neo4j/visualization/graphviz/Script.java
+index 347f949c7..7ecc22228 100644
+--- a/buggy/community/graphviz/src/main/java/org/neo4j/visualization/graphviz/Script.java
++++ b/fixed/community/graphviz/src/main/java/org/neo4j/visualization/graphviz/Script.java
+@@ -40,7 +40,7 @@ public class Script extends ConfigurationParser
+         super( format );
+     }
+ 
+-    private String storeDir;
++    protected String storeDir;
+ 
+     public static <S extends Script> S initialize( Class<S> scriptClass, String... args )
+     {

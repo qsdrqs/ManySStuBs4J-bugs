@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/com/metamx/druid/index/v1/IncrementalIndexStorageAdapter.java b/fixed/server/src/main/java/com/metamx/druid/index/v1/IncrementalIndexStorageAdapter.java
+index bf8e0ac96..8ec2cc10f 100644
+--- a/buggy/server/src/main/java/com/metamx/druid/index/v1/IncrementalIndexStorageAdapter.java
++++ b/fixed/server/src/main/java/com/metamx/druid/index/v1/IncrementalIndexStorageAdapter.java
+@@ -164,7 +164,7 @@ public class IncrementalIndexStorageAdapter implements StorageAdapter
+                                 timeStart, new String[][]{}
+                             ),
+                             new IncrementalIndex.TimeAndDims(
+-                                Math.min(actualInterval.getEndMillis(), gran.next(timeStart)), new String[][]{}
++                                Math.min(actualInterval.getEndMillis(), gran.next(input)), new String[][]{}
+                             )
+                         );
+                         time = gran.toDateTime(input);

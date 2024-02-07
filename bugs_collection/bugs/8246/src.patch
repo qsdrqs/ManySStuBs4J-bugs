@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/rpc/akka/FencedAkkaInvocationHandler.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/rpc/akka/FencedAkkaInvocationHandler.java
+index 3ca75e23c..564b1efa7 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/rpc/akka/FencedAkkaInvocationHandler.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/rpc/akka/FencedAkkaInvocationHandler.java
+@@ -60,7 +60,7 @@ public class FencedAkkaInvocationHandler<F extends Serializable> extends AkkaInv
+ 			ActorRef rpcEndpoint,
+ 			Time timeout,
+ 			long maximumFramesize,
+-			@Nullable CompletableFuture<Boolean> terminationFuture,
++			@Nullable CompletableFuture<Void> terminationFuture,
+ 			Supplier<F> fencingTokenSupplier) {
+ 		super(address, hostname, rpcEndpoint, timeout, maximumFramesize, terminationFuture);
+ 

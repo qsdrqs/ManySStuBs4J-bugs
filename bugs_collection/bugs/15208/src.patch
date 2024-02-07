@@ -1,0 +1,26 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/DefinitionsRemover.java b/fixed/src/com/google/javascript/jscomp/DefinitionsRemover.java
+index 42b9a753d..758df0efb 100644
+--- a/buggy/src/com/google/javascript/jscomp/DefinitionsRemover.java
++++ b/fixed/src/com/google/javascript/jscomp/DefinitionsRemover.java
+@@ -157,9 +157,8 @@ class DefinitionsRemover {
+     IncompleteDefinition(Node lValue, boolean inExterns) {
+       super(inExterns);
+       Preconditions.checkNotNull(lValue);
+-      Preconditions.checkArgument(
+-          ALLOWED_TYPES.contains(lValue.getType()),
+-          "Unexpected lValue type " + Token.name(lValue.getType()));
++      Preconditions.checkArgument(ALLOWED_TYPES.contains(lValue.getType()),
++          "Unexpected lValue type %s", Token.name(lValue.getType()));
+       this.lValue = lValue;
+     }
+ 
+@@ -374,8 +373,7 @@ class DefinitionsRemover {
+       super(inExterns);
+       Preconditions.checkArgument(NodeUtil.isVarDeclaration(node));
+       Preconditions.checkArgument(node.hasChildren(),
+-          "VAR Declaration of " + node.getString() +
+-          "should be assigned a value.");
++          "VAR Declaration of %sshould be assigned a value.", node.getString());
+       name = node;
+     }
+ 

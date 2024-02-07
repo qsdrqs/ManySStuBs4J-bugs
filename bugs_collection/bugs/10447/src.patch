@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionIllegalThrowsTest.java b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionIllegalThrowsTest.java
+index e75f84d3a..4873a2ebe 100644
+--- a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionIllegalThrowsTest.java
++++ b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionIllegalThrowsTest.java
+@@ -28,7 +28,7 @@ import org.junit.Test;
+ import com.puppycrawl.tools.checkstyle.DefaultConfiguration;
+ import com.puppycrawl.tools.checkstyle.checks.coding.IllegalThrowsCheck;
+ 
+-public class XpathRegressionIllegalThrowsTest extends AbstractXpathTestSupport {
++public class XpathRegressionIllegalThrowsTest extends XpathTestSupport {
+ 
+     @Test
+     public void testOne() throws Exception {

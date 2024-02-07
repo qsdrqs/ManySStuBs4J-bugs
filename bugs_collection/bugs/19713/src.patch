@@ -1,0 +1,13 @@
+diff --git a/buggy/handler/src/main/java/io/netty/handler/ssl/SslHandler.java b/fixed/handler/src/main/java/io/netty/handler/ssl/SslHandler.java
+index a8fabaff5..9970eff92 100644
+--- a/buggy/handler/src/main/java/io/netty/handler/ssl/SslHandler.java
++++ b/fixed/handler/src/main/java/io/netty/handler/ssl/SslHandler.java
+@@ -957,7 +957,7 @@ public class SslHandler extends ByteToMessageDecoder implements ChannelOutboundH
+             ctx.read();
+         }
+ 
+-        ctx.fireChannelReadComplete();
++        super.channelReadComplete(ctx);
+     }
+ 
+     /**

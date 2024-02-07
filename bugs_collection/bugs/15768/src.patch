@@ -1,0 +1,16 @@
+diff --git a/buggy/core/src/com/google/inject/spi/Message.java b/fixed/core/src/com/google/inject/spi/Message.java
+index 3571ecd66..14d3bcc8e 100644
+--- a/buggy/core/src/com/google/inject/spi/Message.java
++++ b/fixed/core/src/com/google/inject/spi/Message.java
+@@ -126,8 +126,8 @@ public final class Message implements Serializable, Element {
+     for (int i = 0; i < sourcesAsStrings.length; i++) {
+       sourcesAsStrings[i] = Errors.convert(sourcesAsStrings[i]).toString();
+     }
+-    return new Message(ImmutableList.of(sourcesAsStrings), message, cause);
++    return new Message(ImmutableList.copyOf(sourcesAsStrings), message, cause);
+   }
+ 
+   private static final long serialVersionUID = 0;
+-}
+\ No newline at end of file
++}

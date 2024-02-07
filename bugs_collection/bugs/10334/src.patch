@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/zaxxer/hikari/HikariPool.java b/fixed/src/main/java/com/zaxxer/hikari/HikariPool.java
+index e26f97e5e..f5d662a6e 100644
+--- a/buggy/src/main/java/com/zaxxer/hikari/HikariPool.java
++++ b/fixed/src/main/java/com/zaxxer/hikari/HikariPool.java
+@@ -429,7 +429,7 @@ public final class HikariPool implements HikariPoolMBean
+         }
+         catch (SQLException e)
+         {
+-            LOGGER.error("Exception during keep alive check.  Connection must be dead.", e);
++            LOGGER.warn("Exception during keep alive check, that means the connection must be dead.", e);
+             return false;
+         }
+     }

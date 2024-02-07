@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-client/src/main/java/io/dropwizard/client/HttpClientBuilder.java b/fixed/dropwizard-client/src/main/java/io/dropwizard/client/HttpClientBuilder.java
+index a1a81e698..d6b270463 100644
+--- a/buggy/dropwizard-client/src/main/java/io/dropwizard/client/HttpClientBuilder.java
++++ b/fixed/dropwizard-client/src/main/java/io/dropwizard/client/HttpClientBuilder.java
+@@ -88,7 +88,7 @@ public class HttpClientBuilder extends ApacheClientBuilderBase<HttpClientBuilder
+                 .setSoTimeout(timeout)
+                 .build();
+ 
+-        builder.setRequestExecutor(new InstrumentedHttpRequestExecutor(metricRegistry, metricNameStrategy))
++        builder.setRequestExecutor(new InstrumentedHttpRequestExecutor(metricRegistry, metricNameStrategy, name))
+                 .setConnectionManager(manager)
+                 .setDefaultRequestConfig(requestConfig)
+                 .setDefaultSocketConfig(socketConfig)

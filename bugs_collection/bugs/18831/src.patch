@@ -1,0 +1,13 @@
+diff --git a/buggy/plugins/undertow/src/main/java/com/navercorp/pinpoint/plugin/undertow/interceptor/ConnectorsExecuteRootHandlerInterceptor.java b/fixed/plugins/undertow/src/main/java/com/navercorp/pinpoint/plugin/undertow/interceptor/ConnectorsExecuteRootHandlerInterceptor.java
+index e902498f7..b895ea502 100644
+--- a/buggy/plugins/undertow/src/main/java/com/navercorp/pinpoint/plugin/undertow/interceptor/ConnectorsExecuteRootHandlerInterceptor.java
++++ b/fixed/plugins/undertow/src/main/java/com/navercorp/pinpoint/plugin/undertow/interceptor/ConnectorsExecuteRootHandlerInterceptor.java
+@@ -107,7 +107,7 @@ public class ConnectorsExecuteRootHandlerInterceptor implements AroundIntercepto
+         return 0;
+     }
+ 
+-    private class ConnectorsArgumentValidator implements ArgumentValidator {
++    private static class ConnectorsArgumentValidator implements ArgumentValidator {
+         @Override
+         public boolean validate(Object[] args) {
+             if (args == null) {

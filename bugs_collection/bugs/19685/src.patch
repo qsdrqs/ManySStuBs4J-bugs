@@ -1,0 +1,13 @@
+diff --git a/buggy/codec-http/src/test/java/io/netty/handler/codec/http/HttpObjectAggregatorTest.java b/fixed/codec-http/src/test/java/io/netty/handler/codec/http/HttpObjectAggregatorTest.java
+index 95d298550..2193e5550 100644
+--- a/buggy/codec-http/src/test/java/io/netty/handler/codec/http/HttpObjectAggregatorTest.java
++++ b/fixed/codec-http/src/test/java/io/netty/handler/codec/http/HttpObjectAggregatorTest.java
+@@ -320,7 +320,7 @@ public class HttpObjectAggregatorTest {
+ 
+     @Test(expected = IllegalArgumentException.class)
+     public void testInvalidConstructorUsage() {
+-        new HttpObjectAggregator(0);
++        new HttpObjectAggregator(-1);
+     }
+ 
+     @Test(expected = IllegalArgumentException.class)

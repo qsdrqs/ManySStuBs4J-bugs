@@ -1,0 +1,13 @@
+diff --git a/buggy/hikaricp-java6/src/test/java/com/zaxxer/hikari/TestFastList.java b/fixed/hikaricp-java6/src/test/java/com/zaxxer/hikari/TestFastList.java
+index 0a6dc91bd..4d7deae31 100644
+--- a/buggy/hikaricp-java6/src/test/java/com/zaxxer/hikari/TestFastList.java
++++ b/fixed/hikaricp-java6/src/test/java/com/zaxxer/hikari/TestFastList.java
+@@ -86,7 +86,7 @@ public class TestFastList
+           
+        }
+ 
+-       FastList<Base> list = new FastList<>(Base.class, 2);
++       FastList<Base> list = new FastList<Base>(Base.class, 2);
+        list.add(new Foo());
+        list.add(new Foo());
+        list.add(new Bar());

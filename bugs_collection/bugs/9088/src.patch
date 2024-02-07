@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/test/java/org/apache/hadoop/hbase/client/AbstractTestAsyncTableRegionReplicasRead.java b/fixed/hbase-server/src/test/java/org/apache/hadoop/hbase/client/AbstractTestAsyncTableRegionReplicasRead.java
+index c70af5123..1a5dc2b3a 100644
+--- a/buggy/hbase-server/src/test/java/org/apache/hadoop/hbase/client/AbstractTestAsyncTableRegionReplicasRead.java
++++ b/fixed/hbase-server/src/test/java/org/apache/hadoop/hbase/client/AbstractTestAsyncTableRegionReplicasRead.java
+@@ -107,7 +107,7 @@ public abstract class AbstractTestAsyncTableRegionReplicasRead {
+       }
+       REPLICA_ID_TO_COUNT.computeIfAbsent(region.getReplicaId(), k -> new AtomicInteger())
+         .incrementAndGet();
+-      if (region.getRegionId() == RegionReplicaUtil.DEFAULT_REPLICA_ID && FAIL_PRIMARY_GET) {
++      if (region.getReplicaId() == RegionReplicaUtil.DEFAULT_REPLICA_ID && FAIL_PRIMARY_GET) {
+         throw new IOException("Inject error");
+       }
+     }

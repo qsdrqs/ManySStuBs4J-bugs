@@ -1,0 +1,13 @@
+diff --git a/buggy/okhttp/src/main/java/okhttp3/internal/tls/TrustRootIndex.java b/fixed/okhttp/src/main/java/okhttp3/internal/tls/TrustRootIndex.java
+index e42ad1b0f..b677203e6 100644
+--- a/buggy/okhttp/src/main/java/okhttp3/internal/tls/TrustRootIndex.java
++++ b/fixed/okhttp/src/main/java/okhttp3/internal/tls/TrustRootIndex.java
+@@ -103,7 +103,7 @@ public abstract class TrustRootIndex {
+   static final class BasicTrustRootIndex extends TrustRootIndex {
+     private final Map<X500Principal, Set<X509Certificate>> subjectToCaCerts;
+ 
+-    public BasicTrustRootIndex(X509Certificate... caCerts) {
++    BasicTrustRootIndex(X509Certificate... caCerts) {
+       subjectToCaCerts = new LinkedHashMap<>();
+       for (X509Certificate caCert : caCerts) {
+         X500Principal subject = caCert.getSubjectX500Principal();

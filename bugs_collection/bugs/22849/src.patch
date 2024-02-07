@@ -1,0 +1,13 @@
+diff --git a/buggy/okhttp/src/main/java/okhttp3/internal/http2/Http2Writer.java b/fixed/okhttp/src/main/java/okhttp3/internal/http2/Http2Writer.java
+index 7490b09ba..5ef6bb9c4 100644
+--- a/buggy/okhttp/src/main/java/okhttp3/internal/http2/Http2Writer.java
++++ b/fixed/okhttp/src/main/java/okhttp3/internal/http2/Http2Writer.java
+@@ -54,7 +54,7 @@ final class Http2Writer implements Closeable {
+ 
+   final Hpack.Writer hpackWriter;
+ 
+-  public Http2Writer(BufferedSink sink, boolean client) {
++  Http2Writer(BufferedSink sink, boolean client) {
+     this.sink = sink;
+     this.client = client;
+     this.hpackBuffer = new Buffer();

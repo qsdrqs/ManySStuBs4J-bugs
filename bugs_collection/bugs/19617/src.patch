@@ -1,0 +1,13 @@
+diff --git a/buggy/codec-http/src/main/java/io/netty/handler/codec/http/HttpContentCompressor.java b/fixed/codec-http/src/main/java/io/netty/handler/codec/http/HttpContentCompressor.java
+index 70dbfe903..ac9e08f6a 100644
+--- a/buggy/codec-http/src/main/java/io/netty/handler/codec/http/HttpContentCompressor.java
++++ b/fixed/codec-http/src/main/java/io/netty/handler/codec/http/HttpContentCompressor.java
+@@ -141,7 +141,7 @@ public class HttpContentCompressor extends HttpContentEncoder {
+             int equalsPos = encoding.indexOf('=');
+             if (equalsPos != -1) {
+                 try {
+-                    q = Float.valueOf(encoding.substring(equalsPos + 1));
++                    q = Float.parseFloat(encoding.substring(equalsPos + 1));
+                 } catch (NumberFormatException e) {
+                     // Ignore encoding
+                     q = 0.0f;

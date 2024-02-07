@@ -1,0 +1,13 @@
+diff --git a/buggy/accumulo/src/main/java/com/yahoo/ycsb/db/AccumuloClient.java b/fixed/accumulo/src/main/java/com/yahoo/ycsb/db/AccumuloClient.java
+index 79be7d915..db78e8793 100644
+--- a/buggy/accumulo/src/main/java/com/yahoo/ycsb/db/AccumuloClient.java
++++ b/fixed/accumulo/src/main/java/com/yahoo/ycsb/db/AccumuloClient.java
+@@ -416,7 +416,7 @@ public class AccumuloClient extends DB {
+           // If the results are empty, the key is enqueued in
+           // Zookeeper
+           // and tried again, until the results are found.
+-          if (result.size() == 0) {
++          if (result.isEmpty()) {
+             q.produce(strKey);
+             int count = ((Integer) hmKeyNumReads.get(strKey)).intValue();
+             hmKeyNumReads.put(strKey, new Integer(count + 1));

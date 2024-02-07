@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-web/src/main/java/org/apache/camel/web/util/ExpressionNodeRenderer.java b/fixed/components/camel-web/src/main/java/org/apache/camel/web/util/ExpressionNodeRenderer.java
+index b5012a434..1d2733cb6 100644
+--- a/buggy/components/camel-web/src/main/java/org/apache/camel/web/util/ExpressionNodeRenderer.java
++++ b/fixed/components/camel-web/src/main/java/org/apache/camel/web/util/ExpressionNodeRenderer.java
+@@ -46,7 +46,7 @@ public final class ExpressionNodeRenderer {
+         // Utility class, no public or protected default constructor
+     }
+ 
+-    public static void render(StringBuilder buffer, ProcessorDefinition<?> processor) {
++    public static void render(StringBuilder buffer, ProcessorDefinition processor) {
+         ExpressionNode expNode = (ExpressionNode)processor;
+         buffer.append(".").append(expNode.getShortName());
+         if (expNode instanceof DelayDefinition) {

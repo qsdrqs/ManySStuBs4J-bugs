@@ -1,0 +1,22 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/proxy/ClientReplicatedMapProxy.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/proxy/ClientReplicatedMapProxy.java
+index 8f6146421..5c52a3682 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/proxy/ClientReplicatedMapProxy.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/proxy/ClientReplicatedMapProxy.java
+@@ -380,7 +380,7 @@ public class ClientReplicatedMapProxy<K, V> extends ClientProxy implements Repli
+ 
+     @Override
+     public LocalReplicatedMapStats getReplicatedMapStats() {
+-        throw new UnsupportedOperationException("Replicated Map statistics are not available for client !");
++        throw new UnsupportedOperationException("Replicated Map statistics are not available for client!");
+     }
+ 
+     @Override
+@@ -422,7 +422,7 @@ public class ClientReplicatedMapProxy<K, V> extends ClientProxy implements Repli
+             invalidationListenerId = registerListener(createNearCacheInvalidationListenerCodec(), handler);
+         } catch (Exception e) {
+             ILogger logger = getContext().getLoggingService().getLogger(ClientReplicatedMapProxy.class);
+-            logger.severe("-----------------\n Near Cache is not initialized!!! \n-----------------", e);
++            logger.severe("-----------------\nNear Cache is not initialized!\n-----------------", e);
+         }
+     }
+ 

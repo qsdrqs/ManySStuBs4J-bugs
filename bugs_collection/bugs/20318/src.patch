@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.s300th/src/main/java/org/openhab/binding/s300th/internal/S300THBinding.java b/fixed/bundles/binding/org.openhab.binding.s300th/src/main/java/org/openhab/binding/s300th/internal/S300THBinding.java
+index e84fb1fc4..ca1775a31 100644
+--- a/buggy/bundles/binding/org.openhab.binding.s300th/src/main/java/org/openhab/binding/s300th/internal/S300THBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.s300th/src/main/java/org/openhab/binding/s300th/internal/S300THBinding.java
+@@ -262,7 +262,7 @@ public class S300THBinding extends AbstractActiveBinding<S300THBindingProvider>i
+ 
+     @Override
+     public void error(Exception e) {
+-        logger.error("Received error from CUL instead fo data", e);
++        logger.error("Received error from CUL instead of data", e);
+ 
+     }
+ 

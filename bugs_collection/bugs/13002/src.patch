@@ -1,0 +1,13 @@
+diff --git a/buggy/services/src/main/java/io/druid/cli/CliHadoopIndexer.java b/fixed/services/src/main/java/io/druid/cli/CliHadoopIndexer.java
+index 4b5f9d31f..580bdd8f3 100644
+--- a/buggy/services/src/main/java/io/druid/cli/CliHadoopIndexer.java
++++ b/fixed/services/src/main/java/io/druid/cli/CliHadoopIndexer.java
+@@ -41,7 +41,7 @@ import java.util.List;
+  */
+ @Command(
+     name = "hadoop",
+-    description = "Runs the batch Hadoop Druid Indexer, see http://druid.io/docs/0.6.25/Batch-ingestion.html for a description."
++    description = "Runs the batch Hadoop Druid Indexer, see http://druid.io/docs/0.6.26/Batch-ingestion.html for a description."
+ )
+ public class CliHadoopIndexer implements Runnable
+ {

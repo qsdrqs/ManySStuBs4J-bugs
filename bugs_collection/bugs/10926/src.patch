@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/PackageObjectFactoryTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/PackageObjectFactoryTest.java
+index c172740f9..eb220d959 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/PackageObjectFactoryTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/PackageObjectFactoryTest.java
+@@ -135,7 +135,7 @@ public class PackageObjectFactoryTest {
+             fail("Exception is expected");
+         }
+         catch (CheckstyleException ex) {
+-            assertEquals("Unable to instatiate com.puppycrawl.tools.checkstyle."
++            assertEquals("Unable to instantiate com.puppycrawl.tools.checkstyle."
+                     + "PackageObjectFactoryTest$FailConstructorFileSet", ex.getMessage());
+             assertEquals("IllegalArgumentException", ex.getCause().getCause().getClass()
+                     .getSimpleName());

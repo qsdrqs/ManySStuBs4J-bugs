@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/gdx-tests/src/com/badlogic/gdx/tests/bullet/RayCastTest.java b/fixed/tests/gdx-tests/src/com/badlogic/gdx/tests/bullet/RayCastTest.java
+index 83fccbf06..7d67de2ad 100644
+--- a/buggy/tests/gdx-tests/src/com/badlogic/gdx/tests/bullet/RayCastTest.java
++++ b/fixed/tests/gdx-tests/src/com/badlogic/gdx/tests/bullet/RayCastTest.java
+@@ -88,7 +88,7 @@ public class RayCastTest extends BaseBulletTest {
+ 		if (rayTestCB.hasHit()) {
+ 			final btCollisionObject obj = rayTestCB.getM_collisionObject();
+ 			if (!obj.isStaticOrKinematicObject()) {
+-				final btRigidBody body = btRigidBody.upcast(obj);
++				final btRigidBody body = (btRigidBody)(obj);
+ 				body.activate();
+ 				body.applyCentralImpulse(Vector3.tmp2.set(ray.direction).scl(20f));
+ 			}

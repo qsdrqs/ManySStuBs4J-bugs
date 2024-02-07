@@ -1,0 +1,22 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.exec/src/main/java/org/openhab/binding/exec/internal/ExecGenericBindingProvider.java b/fixed/bundles/binding/org.openhab.binding.exec/src/main/java/org/openhab/binding/exec/internal/ExecGenericBindingProvider.java
+index 85088f655..852ce7612 100644
+--- a/buggy/bundles/binding/org.openhab.binding.exec/src/main/java/org/openhab/binding/exec/internal/ExecGenericBindingProvider.java
++++ b/fixed/bundles/binding/org.openhab.binding.exec/src/main/java/org/openhab/binding/exec/internal/ExecGenericBindingProvider.java
+@@ -49,7 +49,7 @@ import org.openhab.model.item.binding.BindingConfigParseException;
+  * 	<li><code>{ exec="ON:ssh user@openhab.org touch ~/test.txt" }</code> - connect to openhab.org via ssh and issue the command 'touch ~/test.txt'</li>
+  * 	<li><code>{ exec="OFF:ssh teichsta@openhab.org shutdown -p now" }</code></li>
+  *  <li><code>{ exec="OFF:ssh teichsta@wlan-router ifconfig wlan0 down" }</code></li>
+- *  <li><code>{ exec="OFF:some command, ON:'some other command, \'which is quite \' more complex', *:and a fallback" }</code></li>
++ *  <li><code>{ exec="OFF:some command, ON:'some other command\, \'which is quite \' more \\complex\\ ', *:and a fallback" }</code></li>
+  * </ul>
+  * 
+  * @author Thomas.Eichstaedt-Engelen
+@@ -116,7 +116,7 @@ public class ExecGenericBindingProvider extends AbstractGenericBindingProvider i
+ 			}
+ 		}
+ 		
+-		config.put(command, commandLine);
++		config.put(command, commandLine.replaceAll("(?<!\\\\)\\\\", ""));
+ 		
+ 	}
+ 	

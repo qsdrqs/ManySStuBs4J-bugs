@@ -1,0 +1,17 @@
+diff --git a/buggy/examples/java-webbit-websockets-selenium/src/test/java/cucumber/examples/java/websockets/TemperatureStepdefs.java b/fixed/examples/java-webbit-websockets-selenium/src/test/java/cucumber/examples/java/websockets/TemperatureStepdefs.java
+index be1ba6d45..ecf99d637 100644
+--- a/buggy/examples/java-webbit-websockets-selenium/src/test/java/cucumber/examples/java/websockets/TemperatureStepdefs.java
++++ b/fixed/examples/java-webbit-websockets-selenium/src/test/java/cucumber/examples/java/websockets/TemperatureStepdefs.java
+@@ -9,10 +9,10 @@ public class TemperatureStepdefs implements En {
+ 
+     public TemperatureStepdefs(SharedDriver webDriver) {
+ 
+-        When("^I enter (.+) (celcius|fahrenheit)$", (Double value, String unit) ->
++        When("^I enter (.+) (celsius|fahrenheit)$", (Double value, String unit) ->
+             webDriver.findElement(By.id(unit)).sendKeys(String.valueOf(value)));
+ 
+-        Then("^I should see (.+) (celcius|fahrenheit)$", (Double value, String unit) ->
++        Then("^I should see (.+) (celsius|fahrenheit)$", (Double value, String unit) ->
+             assertEquals(String.valueOf(value), webDriver.findElement(By.id(unit)).getAttribute("value")));
+     }
+ }

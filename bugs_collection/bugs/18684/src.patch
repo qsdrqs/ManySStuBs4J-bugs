@@ -1,0 +1,17 @@
+diff --git a/buggy/src/main/java/org/apache/ibatis/mapping/ParameterMapping.java b/fixed/src/main/java/org/apache/ibatis/mapping/ParameterMapping.java
+index 3d69a8912..216372e97 100644
+--- a/buggy/src/main/java/org/apache/ibatis/mapping/ParameterMapping.java
++++ b/fixed/src/main/java/org/apache/ibatis/mapping/ParameterMapping.java
+@@ -114,9 +114,9 @@ public class ParameterMapping {
+         }            
+       } else {
+         if (parameterMapping.typeHandler == null) { 
+-          throw new IllegalStateException("Type handler was null on parameter mapping for property '"  
+-              + parameterMapping.property + "'.  " 
+-              + "It was either not specified and/or could not be found for the javaType / jdbcType combination specified.");
++          throw new IllegalStateException("Type handler was null on parameter mapping for property '"
++            + parameterMapping.property + "'. It was either not specified and/or could not be found for the javaType ("
++            + parameterMapping.javaType.getName() + ") : jdbcType (" + parameterMapping.jdbcType + ") combination.");
+         }
+       }
+     }

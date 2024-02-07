@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/EmptyStatementCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/EmptyStatementCheck.java
+index 61de86988..cb3a1e298 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/EmptyStatementCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/EmptyStatementCheck.java
+@@ -68,7 +68,7 @@ public class EmptyStatementCheck extends AbstractCheck {
+ 
+     @Override
+     public void visitToken(DetailAST ast) {
+-        log(ast.getLineNo(), ast.getColumnNo(), MSG_KEY);
++        log(ast, MSG_KEY);
+     }
+ 
+ }

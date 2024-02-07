@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/HideUtilityClassConstructorCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/HideUtilityClassConstructorCheck.java
+index 576428b41..2c8139ba7 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/HideUtilityClassConstructorCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/HideUtilityClassConstructorCheck.java
+@@ -84,7 +84,7 @@ public class HideUtilityClassConstructorCheck extends AbstractCheck {
+                 && !hasNonStaticMethodOrField && hasNonPrivateStaticMethodOrField;
+ 
+             if (isUtilClass && hasAccessibleCtor && !hasStaticModifier) {
+-                log(ast.getLineNo(), ast.getColumnNo(), MSG_KEY);
++                log(ast, MSG_KEY);
+             }
+         }
+     }

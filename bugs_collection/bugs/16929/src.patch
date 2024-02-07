@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/map/operation/ClearOperation.java b/fixed/hazelcast/src/main/java/com/hazelcast/map/operation/ClearOperation.java
+index 4043ede89..144417459 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/map/operation/ClearOperation.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/map/operation/ClearOperation.java
+@@ -29,7 +29,7 @@ import static com.hazelcast.map.MapService.SERVICE_NAME;
+ 
+ public class ClearOperation extends AbstractMapOperation implements BackupAwareOperation, PartitionAwareOperation {
+ 
+-    boolean shouldBackup = false;
++    boolean shouldBackup = true;
+ 
+     public ClearOperation() {
+     }

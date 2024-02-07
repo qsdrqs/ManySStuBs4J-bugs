@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/DefaultPassConfig.java b/fixed/src/com/google/javascript/jscomp/DefaultPassConfig.java
+index 360d6dd61..671e66b6c 100644
+--- a/buggy/src/com/google/javascript/jscomp/DefaultPassConfig.java
++++ b/fixed/src/com/google/javascript/jscomp/DefaultPassConfig.java
+@@ -510,7 +510,7 @@ public class DefaultPassConfig extends PassConfig {
+ 
+       // After inlining some of the variable uses, some variables are unused.
+       // Re-run remove unused vars to clean it up.
+-      if (options.removeUnusedVars) {
++      if (options.removeUnusedVars || options.removeUnusedLocalVars) {
+         passes.add(removeUnusedVars);
+       }
+     }

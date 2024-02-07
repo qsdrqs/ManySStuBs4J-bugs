@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/builder/ExpressionClauseSupport.java b/fixed/camel-core/src/main/java/org/apache/camel/builder/ExpressionClauseSupport.java
+index e99175e70..f60c5e556 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/builder/ExpressionClauseSupport.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/builder/ExpressionClauseSupport.java
+@@ -92,7 +92,7 @@ public class ExpressionClauseSupport<T> {
+     /**
+      * An expression of an inbound message body converted to the expected type
+      */
+-    public T body(Class<?> expectedType) {
++    public T body(Class expectedType) {
+         return expression(ExpressionBuilder.bodyExpression(expectedType));
+     }
+ 

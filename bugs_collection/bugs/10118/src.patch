@@ -1,0 +1,13 @@
+diff --git a/buggy/aws-java-sdk-core/src/main/java/com/amazonaws/util/Base64.java b/fixed/aws-java-sdk-core/src/main/java/com/amazonaws/util/Base64.java
+index 6721994e6..a6630913a 100644
+--- a/buggy/aws-java-sdk-core/src/main/java/com/amazonaws/util/Base64.java
++++ b/fixed/aws-java-sdk-core/src/main/java/com/amazonaws/util/Base64.java
+@@ -42,7 +42,7 @@ public enum Base64 {
+ 
+         try {
+             String className = JAXBContext.newInstance().getClass().getName();
+-            if (inconsistentJaxbImpls.values().contains(className)) {
++            if (inconsistentJaxbImpls.containsKey(className)) {
+                 LOG.warn("A JAXB implementation known to produce base64 encodings that are " +
+                         "inconsistent with the reference implementation has been detected. The " +
+                         "results of the encodeAsString() method may be incorrect. Implementation: " +

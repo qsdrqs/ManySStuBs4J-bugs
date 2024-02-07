@@ -1,0 +1,13 @@
+diff --git a/buggy/resolver-dns/src/main/java/io/netty/resolver/dns/DnsNameResolverContext.java b/fixed/resolver-dns/src/main/java/io/netty/resolver/dns/DnsNameResolverContext.java
+index 6ca2801d0..0e193f753 100644
+--- a/buggy/resolver-dns/src/main/java/io/netty/resolver/dns/DnsNameResolverContext.java
++++ b/fixed/resolver-dns/src/main/java/io/netty/resolver/dns/DnsNameResolverContext.java
+@@ -133,7 +133,7 @@ abstract class DnsNameResolverContext<T> {
+             public void operationComplete(Future<AddressedEnvelope<DnsResponse, InetSocketAddress>> future) {
+                 queriesInProgress.remove(future);
+ 
+-                if (promise.isDone()) {
++                if (promise.isDone() || future.isCancelled()) {
+                     return;
+                 }
+ 

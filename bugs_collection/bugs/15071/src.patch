@@ -1,0 +1,15 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java b/fixed/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
+index c4bf157f0..847497cce 100644
+--- a/buggy/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
++++ b/fixed/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java
+@@ -2481,8 +2481,8 @@ public final class JsDocInfoParser {
+ 
+   private Node wrapNode(int type, Node n) {
+     return n == null ? null :
+-        new Node(type, n, stream.getLineno(),
+-            stream.getCharno()).clonePropsFrom(templateNode);
++        new Node(type, n, n.getLineno(),
++            n.getCharno()).clonePropsFrom(templateNode);
+   }
+ 
+   private Node newNode(int type) {

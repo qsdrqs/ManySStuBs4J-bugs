@@ -1,0 +1,22 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/spi/impl/BasicInvocationFuture.java b/fixed/hazelcast/src/main/java/com/hazelcast/spi/impl/BasicInvocationFuture.java
+index 7bc500797..bf5237546 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/spi/impl/BasicInvocationFuture.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/spi/impl/BasicInvocationFuture.java
+@@ -219,7 +219,7 @@ final class BasicInvocationFuture<E> implements InternalCompletableFuture<E> {
+             if (!interrupted && longPolling) {
+                 // no response!
+                 Address target = invocation.getTarget();
+-                if (invocation.nodeEngine.getThisAddress().equals(target)) {
++                if (invocation.remote && invocation.nodeEngine.getThisAddress().equals(target)) {
+                     // target may change during invocation because of migration!
+                     continue;
+                 }
+@@ -264,7 +264,7 @@ final class BasicInvocationFuture<E> implements InternalCompletableFuture<E> {
+     }
+ 
+     private Object newOperationTimeoutException(int pollCount, long pollTimeoutMs) {
+-        boolean hasResponse = invocation.pendingResponse == null;
++        boolean hasResponse = invocation.pendingResponse != null;
+         int backupsExpected = invocation.backupsExpected;
+         int backupsCompleted = invocation.backupsCompleted;
+ 

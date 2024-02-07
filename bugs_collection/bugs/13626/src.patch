@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/test/java/com/facebook/presto/sql/analyzer/TestAnalyzer.java b/fixed/presto-main/src/test/java/com/facebook/presto/sql/analyzer/TestAnalyzer.java
+index 3eeb85666..b0cb26ff8 100644
+--- a/buggy/presto-main/src/test/java/com/facebook/presto/sql/analyzer/TestAnalyzer.java
++++ b/fixed/presto-main/src/test/java/com/facebook/presto/sql/analyzer/TestAnalyzer.java
+@@ -354,7 +354,7 @@ public class TestAnalyzer
+             throws Exception
+     {
+         // TODO: validate output
+-        analyze("SELECT a, t1.* FROM t1 ORDER BY a");
++        analyze("SELECT t1.* FROM t1 ORDER BY a");
+     }
+ 
+     @Test

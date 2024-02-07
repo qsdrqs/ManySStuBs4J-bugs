@@ -1,0 +1,13 @@
+diff --git a/buggy/enterprise/ha/src/main/java/org/neo4j/kernel/ha/backup/HaBackupProvider.java b/fixed/enterprise/ha/src/main/java/org/neo4j/kernel/ha/backup/HaBackupProvider.java
+index 3e8514c03..0951ec108 100644
+--- a/buggy/enterprise/ha/src/main/java/org/neo4j/kernel/ha/backup/HaBackupProvider.java
++++ b/fixed/enterprise/ha/src/main/java/org/neo4j/kernel/ha/backup/HaBackupProvider.java
+@@ -132,7 +132,7 @@ public final class HaBackupProvider extends BackupExtensionService
+         {
+             if ( !infoReceivedLatch.tryAcquire( 10, TimeUnit.SECONDS ) )
+             {
+-                throw new RuntimeException( "Could not find master in cluster " + clusterName + " at " + from + ", " +
++                throw new RuntimeException( "Could not find backup server in cluster " + clusterName + " at " + from + ", " +
+                         "operation timed out" );
+             }
+         }

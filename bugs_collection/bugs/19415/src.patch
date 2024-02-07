@@ -1,0 +1,22 @@
+diff --git a/buggy/community/src/main/java/org/neo4j/visualization/graphviz/ConfigurationParser.java b/fixed/community/src/main/java/org/neo4j/visualization/graphviz/ConfigurationParser.java
+index 1ac26ebed..2cad04030 100644
+--- a/buggy/community/src/main/java/org/neo4j/visualization/graphviz/ConfigurationParser.java
++++ b/fixed/community/src/main/java/org/neo4j/visualization/graphviz/ConfigurationParser.java
+@@ -120,7 +120,7 @@ public class ConfigurationParser
+         }
+     }
+ 
+-    private List<StyleParameter> styles = new ArrayList<StyleParameter>();
++    private final List<StyleParameter> styles = new ArrayList<StyleParameter>();
+ 
+     public final StyleParameter[] styles( StyleParameter... params )
+     {
+@@ -227,7 +227,7 @@ public class ConfigurationParser
+         private String untilNonAlfa( int start )
+         {
+             int end = start;
+-            while ( Character.isLetter( pattern.charAt( end ) ) )
++            while ( end < pattern.length() && Character.isLetter( pattern.charAt( end ) ) )
+             {
+                 end++;
+             }

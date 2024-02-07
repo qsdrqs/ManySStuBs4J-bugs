@@ -1,0 +1,22 @@
+diff --git a/buggy/test/com/google/javascript/jscomp/VariableReferenceCheckTest.java b/fixed/test/com/google/javascript/jscomp/VariableReferenceCheckTest.java
+index 20771763c..720e16cbc 100644
+--- a/buggy/test/com/google/javascript/jscomp/VariableReferenceCheckTest.java
++++ b/fixed/test/com/google/javascript/jscomp/VariableReferenceCheckTest.java
+@@ -876,7 +876,7 @@ public final class VariableReferenceCheckTest extends CompilerTestCase {
+       "var x;",
+       "function x() {}",
+     };
+-    String message = "Variable x declared more than once. First occurence: input0";
++    String message = "Variable x declared more than once. First occurrence: input0";
+     testError(srcs(js), error(VarCheck.VAR_MULTIPLY_DECLARED_ERROR, message));
+   }
+ 
+@@ -885,7 +885,7 @@ public final class VariableReferenceCheckTest extends CompilerTestCase {
+       "function x() {}",
+       "var x;",
+     };
+-    String message = "Variable x declared more than once. First occurence: input0";
++    String message = "Variable x declared more than once. First occurrence: input0";
+     testError(srcs(js), error(VarCheck.VAR_MULTIPLY_DECLARED_ERROR, message));
+   }
+ 

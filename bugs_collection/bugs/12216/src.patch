@@ -1,0 +1,13 @@
+diff --git a/buggy/nd4j/nd4j-backends/nd4j-tests/src/test/java/org/nd4j/autodiff/opvalidation/ReductionOpValidation.java b/fixed/nd4j/nd4j-backends/nd4j-tests/src/test/java/org/nd4j/autodiff/opvalidation/ReductionOpValidation.java
+index cc67f00d8..528b6823e 100644
+--- a/buggy/nd4j/nd4j-backends/nd4j-tests/src/test/java/org/nd4j/autodiff/opvalidation/ReductionOpValidation.java
++++ b/fixed/nd4j/nd4j-backends/nd4j-tests/src/test/java/org/nd4j/autodiff/opvalidation/ReductionOpValidation.java
+@@ -535,7 +535,7 @@ public class ReductionOpValidation extends BaseOpValidation {
+                         name = "norm1";
+                         break;
+                     case 8:
+-                        maxRelError = 1e-4;
++                        maxRelError = 1e-3; //Norm2 can also run into numerical precision issues
+                         reduced = sd.norm2("reduced", second, reduceDim);
+                         name = "norm2";
+                         break;

@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/CovariantEqualsCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/CovariantEqualsCheck.java
+index 1ffabbf47..5c4bbcced 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/CovariantEqualsCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/CovariantEqualsCheck.java
+@@ -96,8 +96,7 @@ public class CovariantEqualsCheck extends AbstractCheck {
+                 for (DetailAST equalsAST : equalsMethods) {
+                     final DetailAST nameNode = equalsAST
+                             .findFirstToken(TokenTypes.IDENT);
+-                    log(nameNode.getLineNo(), nameNode.getColumnNo(),
+-                            MSG_KEY);
++                    log(nameNode, MSG_KEY);
+                 }
+             }
+         }

@@ -1,0 +1,28 @@
+diff --git a/buggy/factory/src/main/java/com/google/auto/factory/processor/FactoryDescriptor.java b/fixed/factory/src/main/java/com/google/auto/factory/processor/FactoryDescriptor.java
+index c3649f213..230f452db 100644
+--- a/buggy/factory/src/main/java/com/google/auto/factory/processor/FactoryDescriptor.java
++++ b/fixed/factory/src/main/java/com/google/auto/factory/processor/FactoryDescriptor.java
+@@ -45,12 +45,12 @@ final class FactoryDescriptor {
+   private final ImmutableSortedSet<String> implementingTypes;
+   private final boolean publicType;
+   private final ImmutableSet<FactoryMethodDescriptor> methodDescriptors;
+-  private final ImmutableSet<ImplemetationMethodDescriptor> implementationMethodDescriptors;
++  private final ImmutableSet<ImplementationMethodDescriptor> implementationMethodDescriptors;
+   private final ImmutableMap<Key, String> providerNames;
+ 
+   FactoryDescriptor(String name, String extendingType, ImmutableSortedSet<String> implementingTypes,
+       boolean publicType, ImmutableSet<FactoryMethodDescriptor> methodDescriptors,
+-      ImmutableSet<ImplemetationMethodDescriptor> implementationMethodDescriptors) {
++      ImmutableSet<ImplementationMethodDescriptor> implementationMethodDescriptors) {
+     this.name = checkNotNull(name);
+     this.extendingType = checkNotNull(extendingType);
+     this.implementingTypes = checkNotNull(implementingTypes);
+@@ -101,7 +101,7 @@ final class FactoryDescriptor {
+     return methodDescriptors;
+   }
+ 
+-  ImmutableSet<ImplemetationMethodDescriptor> implementationMethodDescriptors() {
++  ImmutableSet<ImplementationMethodDescriptor> implementationMethodDescriptors() {
+     return implementationMethodDescriptors;
+   }
+ 

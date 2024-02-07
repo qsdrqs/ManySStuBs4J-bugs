@@ -1,0 +1,18 @@
+diff --git a/buggy/dropwizard-core/src/main/java/com/yammer/dropwizard/config/HttpConfiguration.java b/fixed/dropwizard-core/src/main/java/com/yammer/dropwizard/config/HttpConfiguration.java
+index 6062485aa..1a91dc175 100644
+--- a/buggy/dropwizard-core/src/main/java/com/yammer/dropwizard/config/HttpConfiguration.java
++++ b/fixed/dropwizard-core/src/main/java/com/yammer/dropwizard/config/HttpConfiguration.java
+@@ -86,11 +86,11 @@ public class HttpConfiguration {
+ 
+     @NotNull
+     @JsonProperty
+-    private Size requestBufferSize = Size.kilobytes(32);
++    private Size requestBufferSize = Size.kilobytes(16);
+ 
+     @NotNull
+     @JsonProperty
+-    private Size requestHeaderBufferSize = Size.kilobytes(3);
++    private Size requestHeaderBufferSize = Size.kilobytes(6);
+ 
+     @NotNull
+     @JsonProperty

@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/sql/SqlBlueprintRoute.java b/fixed/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/sql/SqlBlueprintRoute.java
+index 515dd7e8a..27a6c6284 100644
+--- a/buggy/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/sql/SqlBlueprintRoute.java
++++ b/fixed/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/sql/SqlBlueprintRoute.java
+@@ -110,7 +110,7 @@ public class SqlBlueprintRoute extends OSGiBlueprintTestSupport {
+         template.sendBody("direct:insert", new Object[]{10, "test", "test"});
+         mock.assertIsSatisfied();
+         try {
+-            String projectName = (String) jdbcTemplate.queryForObject("select project from projects where id = 10", String.class);
++            String projectName = jdbcTemplate.queryForObject("select project from projects where id = 10", String.class);
+             assertEquals("test", projectName);
+         } catch (EmptyResultDataAccessException e) {
+             fail("no row inserted");

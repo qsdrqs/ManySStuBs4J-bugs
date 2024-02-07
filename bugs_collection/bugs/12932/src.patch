@@ -1,0 +1,13 @@
+diff --git a/buggy/processing/src/main/java/io/druid/query/groupby/GroupByQueryEngine.java b/fixed/processing/src/main/java/io/druid/query/groupby/GroupByQueryEngine.java
+index ea5850163..b8f63a5c4 100644
+--- a/buggy/processing/src/main/java/io/druid/query/groupby/GroupByQueryEngine.java
++++ b/fixed/processing/src/main/java/io/druid/query/groupby/GroupByQueryEngine.java
+@@ -182,7 +182,7 @@ public class GroupByQueryEngine
+ 
+         final DimensionSelector dimSelector = dims.get(0);
+         final IndexedInts row = dimSelector.getRow();
+-        if (row.size() == 0) {
++        if (row == null || row.size() == 0) {
+           ByteBuffer newKey = key.duplicate();
+           newKey.putInt(dimSelector.getValueCardinality());
+           unaggregatedBuffers = updateValues(newKey, dims.subList(1, dims.size()));

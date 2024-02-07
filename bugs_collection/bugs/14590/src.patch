@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/NodeUtil.java b/fixed/src/com/google/javascript/jscomp/NodeUtil.java
+index a89c7a7be..5990d7bc5 100644
+--- a/buggy/src/com/google/javascript/jscomp/NodeUtil.java
++++ b/fixed/src/com/google/javascript/jscomp/NodeUtil.java
+@@ -4584,7 +4584,7 @@ public final class NodeUtil {
+         }
+ 
+         throw new IllegalStateException(
+-            "Unexpected expression node" + value + "\n parent:" + value.getParent());
++            "Unexpected expression node: " + value + "\n parent:" + value.getParent());
+     }
+   }
+ 

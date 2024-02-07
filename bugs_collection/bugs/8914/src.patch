@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-applicationhistoryservice/src/test/java/org/apache/hadoop/yarn/server/applicationhistoryservice/TestApplicationHistoryServer.java b/fixed/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-applicationhistoryservice/src/test/java/org/apache/hadoop/yarn/server/applicationhistoryservice/TestApplicationHistoryServer.java
+index 3c6d69d2d..0ad48e262 100644
+--- a/buggy/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-applicationhistoryservice/src/test/java/org/apache/hadoop/yarn/server/applicationhistoryservice/TestApplicationHistoryServer.java
++++ b/fixed/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-applicationhistoryservice/src/test/java/org/apache/hadoop/yarn/server/applicationhistoryservice/TestApplicationHistoryServer.java
+@@ -40,7 +40,7 @@ public class TestApplicationHistoryServer {
+     Configuration config = new YarnConfiguration();
+     historyServer.init(config);
+     assertEquals(STATE.INITED, historyServer.getServiceState());
+-    assertEquals(3, historyServer.getServices().size());
++    assertEquals(2, historyServer.getServices().size());
+     ApplicationHistoryClientService historyService = historyServer
+         .getClientService();
+     assertNotNull(historyServer.getClientService());

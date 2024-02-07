@@ -1,0 +1,29 @@
+diff --git a/buggy/components/camel-jmxconnect/src/main/java/org/apache/camel/jmxconnect/MBeanCamelServerConnectionClient.java b/fixed/components/camel-jmxconnect/src/main/java/org/apache/camel/jmxconnect/MBeanCamelServerConnectionClient.java
+index 60ea8e8af..1e835e4db 100644
+--- a/buggy/components/camel-jmxconnect/src/main/java/org/apache/camel/jmxconnect/MBeanCamelServerConnectionClient.java
++++ b/fixed/components/camel-jmxconnect/src/main/java/org/apache/camel/jmxconnect/MBeanCamelServerConnectionClient.java
+@@ -42,7 +42,7 @@ public class MBeanCamelServerConnectionClient extends MBeanServerConnectionDeleg
+     private MBeanCamelServerConnection serverConnection;
+     private Endpoint replyToEndpoint;
+     private List listeners = new CopyOnWriteArrayList();
+-    private UuidGenerator idGenerator = new UuidGenerator();
++    private UuidGenerator idGenerator = UuidGenerator.get();
+     private NotificationBroadcasterSupport localNotifier = new NotificationBroadcasterSupport();
+ 
+     public MBeanCamelServerConnectionClient(MBeanCamelServerConnection serverConnection) {
+@@ -68,7 +68,7 @@ public class MBeanCamelServerConnectionClient extends MBeanServerConnectionDeleg
+     }
+ 
+     public String generateId() {
+-        return idGenerator.generateId();
++        return idGenerator.generateUuid();
+     }
+ 
+     /**
+@@ -111,4 +111,4 @@ public class MBeanCamelServerConnectionClient extends MBeanServerConnectionDeleg
+             LOG.warn("Received message which is not a Notification: " + exchange);
+         }
+     }
+-}
+\ No newline at end of file
++}

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/mapreduce/impl/task/JobSupervisor.java b/fixed/hazelcast/src/main/java/com/hazelcast/mapreduce/impl/task/JobSupervisor.java
+index 8f232e448..ca9185983 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/mapreduce/impl/task/JobSupervisor.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/mapreduce/impl/task/JobSupervisor.java
+@@ -382,7 +382,7 @@ public class JobSupervisor {
+         String jobId = getConfiguration().getJobId();
+         for (Address address : addresses) {
+             try {
+-                CancelJobSupervisorOperation operation = new CancelJobSupervisorOperation(name, jobId, jobOwner);
++                CancelJobSupervisorOperation operation = new CancelJobSupervisorOperation(name, jobId);
+                 mapReduceService.processRequest(address, operation, name);
+             } catch (Exception ignore) {
+                 // We can ignore this exception since we just want to cancel the job

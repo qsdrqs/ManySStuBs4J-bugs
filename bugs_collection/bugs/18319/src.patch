@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/graphics/g2d/BitmapFont.java b/fixed/gdx/src/com/badlogic/gdx/graphics/g2d/BitmapFont.java
+index 13cfa6035..6c53a0781 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/graphics/g2d/BitmapFont.java
++++ b/fixed/gdx/src/com/badlogic/gdx/graphics/g2d/BitmapFont.java
+@@ -318,7 +318,7 @@ public class BitmapFont implements Disposable {
+ 		this.integer = integer;
+ 		this.data = data;
+ 		load(data);
+-		ownsTexture = region != null;
++		ownsTexture = region == null;
+ 	}
+ 
+ 	private void load (BitmapFontData data) {

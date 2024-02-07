@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/kernel/Version.java b/fixed/community/kernel/src/main/java/org/neo4j/kernel/Version.java
+index a3bbc1328..a330cfe87 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/kernel/Version.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/kernel/Version.java
+@@ -62,7 +62,7 @@ public class Version extends Service
+      */
+     public String getVersion()
+     {
+-        if ( version == null )
++        if ( version == null || version.equals( "" ) )
+         {
+             return "<unknown>";
+         }

@@ -1,0 +1,13 @@
+diff --git a/buggy/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/task/MapTask.java b/fixed/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/task/MapTask.java
+index abab62e45..23d487fac 100644
+--- a/buggy/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/task/MapTask.java
++++ b/fixed/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/task/MapTask.java
+@@ -86,7 +86,7 @@ public class MapTask extends AbstractPactTask<MapStub>
+ 		}
+ 		while (this.running && input.next(record)) {
+ 			// DW: Start to temporary code
+-			consumedPactRecordsInBytes =+ record.getBinaryLength();
++			consumedPactRecordsInBytes += record.getBinaryLength();
+ 			// DW: End of temporary code
+ 			stub.map(record, output);
+ 			

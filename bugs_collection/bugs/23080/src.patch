@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/pipeline/CorefAnnotator.java b/fixed/src/edu/stanford/nlp/pipeline/CorefAnnotator.java
+index 204989b7d..5902d56b8 100644
+--- a/buggy/src/edu/stanford/nlp/pipeline/CorefAnnotator.java
++++ b/fixed/src/edu/stanford/nlp/pipeline/CorefAnnotator.java
+@@ -51,7 +51,7 @@ public class CorefAnnotator extends TextAnnotationCreator implements Annotator
+       if (CorefProperties.algorithm(props).equals(CorefProperties.CorefAlgorithmType.HYBRID) &&
+           CorefProperties.getLanguage(props).equals(Locale.ENGLISH)) {
+         log.error("Error: coref.algorithm=hybrid is not supported for English, " +
+-            "please change coref.algorithm or coref.langauge");
++            "please change coref.algorithm or coref.language");
+         throw new RuntimeException();
+       }
+       // suppress

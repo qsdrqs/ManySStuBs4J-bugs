@@ -1,0 +1,13 @@
+diff --git a/buggy/core/test/com/google/inject/BindingTest.java b/fixed/core/test/com/google/inject/BindingTest.java
+index 83c242874..670b97ecf 100644
+--- a/buggy/core/test/com/google/inject/BindingTest.java
++++ b/fixed/core/test/com/google/inject/BindingTest.java
+@@ -221,7 +221,7 @@ public class BindingTest extends TestCase {
+     }
+   }
+ 
+-  @SuppressWarnings("inject-constructors")
++  @SuppressWarnings("InjectMultipleAtInjectConstructors")
+   static class TooManyConstructors {
+     @Inject
+     TooManyConstructors(Injector i) {}

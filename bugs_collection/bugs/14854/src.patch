@@ -1,0 +1,13 @@
+diff --git a/buggy/test/com/google/javascript/jscomp/CompilerTestCase.java b/fixed/test/com/google/javascript/jscomp/CompilerTestCase.java
+index bd65a445d..7b2957cd5 100644
+--- a/buggy/test/com/google/javascript/jscomp/CompilerTestCase.java
++++ b/fixed/test/com/google/javascript/jscomp/CompilerTestCase.java
+@@ -1406,7 +1406,7 @@ public abstract class CompilerTestCase extends TestCase {
+     } else {
+       assertNull("expected must be null if error != null", expected);
+       assertEquals(
+-          "There should be one error of '" + errorMsg + "' but there were: "
++          "There should be one error of type '" + error.key + "' but there were: "
+           + Arrays.toString(compiler.getErrors()),
+           1, compiler.getErrorCount());
+       JSError actualError = compiler.getErrors()[0];

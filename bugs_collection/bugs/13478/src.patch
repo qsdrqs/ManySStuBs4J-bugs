@@ -1,0 +1,22 @@
+diff --git a/buggy/presto-main/src/test/java/com/facebook/presto/execution/resourceGroups/TestResourceGroups.java b/fixed/presto-main/src/test/java/com/facebook/presto/execution/resourceGroups/TestResourceGroups.java
+index cbf94371c..1cc024e53 100644
+--- a/buggy/presto-main/src/test/java/com/facebook/presto/execution/resourceGroups/TestResourceGroups.java
++++ b/fixed/presto-main/src/test/java/com/facebook/presto/execution/resourceGroups/TestResourceGroups.java
+@@ -177,7 +177,7 @@ public class TestResourceGroups
+         root.setSoftMemoryLimit(new DataSize(1, BYTE));
+         root.setMaxQueuedQueries(4);
+         root.setMaxRunningQueries(3);
+-        MockQueryExecution query1 = new MockQueryExecution(1);
++        MockQueryExecution query1 = new MockQueryExecution(2);
+         root.run(query1);
+         // Process the group to refresh stats
+         root.processQueuedQueries();
+@@ -207,7 +207,7 @@ public class TestResourceGroups
+         subgroup.setMaxQueuedQueries(4);
+         subgroup.setMaxRunningQueries(3);
+ 
+-        MockQueryExecution query1 = new MockQueryExecution(1);
++        MockQueryExecution query1 = new MockQueryExecution(2);
+         subgroup.run(query1);
+         // Process the group to refresh stats
+         root.processQueuedQueries();

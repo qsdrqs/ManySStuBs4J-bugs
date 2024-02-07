@@ -1,0 +1,20 @@
+diff --git a/buggy/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/OdnoklassnikiExample.java b/fixed/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/OdnoklassnikiExample.java
+index 4ecd3779c..ee7b46549 100644
+--- a/buggy/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/OdnoklassnikiExample.java
++++ b/fixed/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/OdnoklassnikiExample.java
+@@ -52,13 +52,13 @@ public final class OdnoklassnikiExample {
+ 
+         OAuth2AccessToken accessToken = service.getAccessToken(code);
+         System.out.println("Got the Access Token!");
+-        System.out.println("(if your curious the raw answer looks like this: " + accessToken.getRawResponse() + "')");
++        System.out.println("(The raw response looks like this: " + accessToken.getRawResponse() + "')");
+         System.out.println();
+ 
+         System.out.println("Refreshing the Access Token...");
+         accessToken = service.refreshAccessToken(accessToken.getRefreshToken());
+         System.out.println("Refreshed the Access Token!");
+-        System.out.println("(if your curious the raw answer looks like this: " + accessToken.getRawResponse() + "')");
++        System.out.println("(The raw response looks like this: " + accessToken.getRawResponse() + "')");
+         System.out.println();
+ 
+         // Now let's go and ask for a protected resource!

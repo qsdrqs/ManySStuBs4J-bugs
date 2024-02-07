@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/BlockParentHandler.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/BlockParentHandler.java
+index a9eaa636a..42bc18057 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/BlockParentHandler.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/BlockParentHandler.java
+@@ -162,7 +162,7 @@ public class BlockParentHandler extends AbstractExpressionHandler {
+             return;
+         }
+ 
+-        logError(lcurly, "lcurly", lcurlyPos);
++        logError(lcurly, "lcurly", lcurlyPos, curlyIndent());
+     }
+ 
+     /**

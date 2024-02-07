@@ -1,0 +1,14 @@
+diff --git a/buggy/server/src/test/java/io/druid/segment/realtime/plumber/RealtimePlumberSchoolTest.java b/fixed/server/src/test/java/io/druid/segment/realtime/plumber/RealtimePlumberSchoolTest.java
+index ff4808f68..3a9cdd3eb 100644
+--- a/buggy/server/src/test/java/io/druid/segment/realtime/plumber/RealtimePlumberSchoolTest.java
++++ b/fixed/server/src/test/java/io/druid/segment/realtime/plumber/RealtimePlumberSchoolTest.java
+@@ -125,8 +125,7 @@ public class RealtimePlumberSchoolTest
+           {
+             return new JSONParseSpec(
+                 new TimestampSpec("timestamp", "auto"),
+-                new DimensionsSpec(null, null, null),
+-                JSONParseSpec.JSON
++                new DimensionsSpec(null, null, null)
+             );
+           }
+ 

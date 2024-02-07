@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/CheckAccessControls.java b/fixed/src/com/google/javascript/jscomp/CheckAccessControls.java
+index 1462e41e7..902b9e864 100644
+--- a/buggy/src/com/google/javascript/jscomp/CheckAccessControls.java
++++ b/fixed/src/com/google/javascript/jscomp/CheckAccessControls.java
+@@ -96,7 +96,7 @@ class CheckAccessControls implements ScopedCallback, HotSwapCompilerPass {
+       DiagnosticType.error(
+           "JSC_BAD_PROPERTY_OVERRIDE_IN_FILE_WITH_FILEOVERVIEW_VISIBILITY",
+           "Overridden property {0} in file with fileoverview visibility {1}" +
+-          " must explicity redeclare superclass visibility");
++          " must explicitly redeclare superclass visibility");
+ 
+   static final DiagnosticType PRIVATE_OVERRIDE =
+       DiagnosticType.warning(

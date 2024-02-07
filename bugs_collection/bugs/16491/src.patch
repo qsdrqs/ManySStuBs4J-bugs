@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/map/impl/tx/TxnSetOperation.java b/fixed/hazelcast/src/main/java/com/hazelcast/map/impl/tx/TxnSetOperation.java
+index 182d5fa05..356e7588c 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/map/impl/tx/TxnSetOperation.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/map/impl/tx/TxnSetOperation.java
+@@ -112,7 +112,7 @@ public class TxnSetOperation extends BasePutOperation implements MapTxnOperation
+     public Operation getBackupOperation() {
+         final Record record = recordStore.getRecord(dataKey);
+         final RecordInfo replicationInfo = Records.buildRecordInfo(record);
+-        return new PutBackupOperation(name, dataKey, dataValue, replicationInfo, true);
++        return new PutBackupOperation(name, dataKey, dataValue, replicationInfo, true, false);
+     }
+ 
+     public void onWaitExpire() {

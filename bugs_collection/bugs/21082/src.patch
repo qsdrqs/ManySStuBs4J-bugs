@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/main/java/org/openmrs/module/Module.java b/fixed/api/src/main/java/org/openmrs/module/Module.java
+index e78d2dc71..ba449cd82 100644
+--- a/buggy/api/src/main/java/org/openmrs/module/Module.java
++++ b/fixed/api/src/main/java/org/openmrs/module/Module.java
+@@ -571,7 +571,7 @@ public final class Module {
+ 					log.debug("Added extension: " + ext.getExtensionId() + " : " + ext.getClass());
+ 				}
+ 				catch (NoClassDefFoundError e) {
+-					log.warn("Unable to find class definition for extension: " + point, e);
++					log.warn(getModuleId() + ": Unable to find class definition for extension: " + point, e);
+ 				}
+ 				catch (ClassNotFoundException e) {
+ 					log.warn("Unable to load class for extension: " + point, e);

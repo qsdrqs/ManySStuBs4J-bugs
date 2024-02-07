@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-actuator-autoconfigure/src/main/java/org/springframework/boot/actuate/autoconfigure/cassandra/CassandraReactiveHealthIndicatorAutoConfiguration.java b/fixed/spring-boot-project/spring-boot-actuator-autoconfigure/src/main/java/org/springframework/boot/actuate/autoconfigure/cassandra/CassandraReactiveHealthIndicatorAutoConfiguration.java
+index c82be1b7f..07a1790ab 100644
+--- a/buggy/spring-boot-project/spring-boot-actuator-autoconfigure/src/main/java/org/springframework/boot/actuate/autoconfigure/cassandra/CassandraReactiveHealthIndicatorAutoConfiguration.java
++++ b/fixed/spring-boot-project/spring-boot-actuator-autoconfigure/src/main/java/org/springframework/boot/actuate/autoconfigure/cassandra/CassandraReactiveHealthIndicatorAutoConfiguration.java
+@@ -61,7 +61,7 @@ public class CassandraReactiveHealthIndicatorAutoConfiguration extends
+ 	}
+ 
+ 	@Bean
+-	@ConditionalOnMissingBean(name = "cassandraReactiveHealthIndicator")
++	@ConditionalOnMissingBean(name = "cassandraHealthIndicator")
+ 	public ReactiveHealthIndicator cassandraHealthIndicator() {
+ 		return createHealthIndicator(this.reactiveCassandraOperations);
+ 	}

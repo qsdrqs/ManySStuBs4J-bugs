@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-hive/src/main/java/com/facebook/presto/hive/HiveMetadata.java b/fixed/presto-hive/src/main/java/com/facebook/presto/hive/HiveMetadata.java
+index bd57e957b..01dc1a1a3 100644
+--- a/buggy/presto-hive/src/main/java/com/facebook/presto/hive/HiveMetadata.java
++++ b/fixed/presto-hive/src/main/java/com/facebook/presto/hive/HiveMetadata.java
+@@ -269,7 +269,7 @@ public class HiveMetadata
+     public Optional<Object> getInfo(ConnectorTableLayoutHandle layoutHandle)
+     {
+         HiveTableLayoutHandle tableLayoutHandle = checkType(layoutHandle, HiveTableLayoutHandle.class, "layoutHandle");
+-        if (!tableLayoutHandle.getPartitions().isPresent()) {
++        if (tableLayoutHandle.getPartitions().isPresent()) {
+             return Optional.of(new HiveInputInfo(tableLayoutHandle.getPartitions().get().stream()
+                     .map(HivePartition::getPartitionId)
+                     .collect(Collectors.toList())));

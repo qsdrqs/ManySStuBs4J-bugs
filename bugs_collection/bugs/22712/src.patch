@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/provider/AuthorizationRequest.java b/fixed/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/provider/AuthorizationRequest.java
+index 26f3a7a9e..14633f24a 100644
+--- a/buggy/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/provider/AuthorizationRequest.java
++++ b/fixed/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/provider/AuthorizationRequest.java
+@@ -103,7 +103,7 @@ public class AuthorizationRequest extends BaseRequest {
+ 	}
+ 
+ 	public OAuth2Request createOAuth2Request() {
+-		return new OAuth2Request(getApprovalParameters(), getClientId(), getAuthorities(), isApproved(), getScope(), getResourceIds(), getRedirectUri(), getResponseTypes(), getExtensions());
++		return new OAuth2Request(getRequestParameters(), getClientId(), getAuthorities(), isApproved(), getScope(), getResourceIds(), getRedirectUri(), getResponseTypes(), getExtensions());
+ 	}
+ 
+ 	/**

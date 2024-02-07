@@ -1,0 +1,13 @@
+diff --git a/buggy/guava/src/com/google/common/math/LinearTransformation.java b/fixed/guava/src/com/google/common/math/LinearTransformation.java
+index b4ee4135d..1c44df083 100644
+--- a/buggy/guava/src/com/google/common/math/LinearTransformation.java
++++ b/fixed/guava/src/com/google/common/math/LinearTransformation.java
+@@ -300,7 +300,7 @@ public abstract class LinearTransformation {
+ 
+     @Override
+     public String toString() {
+-      return String.format("NaN");
++      return "NaN";
+     }
+   }
+ }

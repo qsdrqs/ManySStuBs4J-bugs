@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/processor/MulticastParallelTwoTimeoutTest.java b/fixed/camel-core/src/test/java/org/apache/camel/processor/MulticastParallelTwoTimeoutTest.java
+index bb858a287..4d4fe0aee 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/processor/MulticastParallelTwoTimeoutTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/processor/MulticastParallelTwoTimeoutTest.java
+@@ -54,7 +54,7 @@ public class MulticastParallelTwoTimeoutTest extends ContextTestSupport {
+                                 return oldExchange;
+                             }
+                         })
+-                        .parallelProcessing().timeout(2000).to("direct:a", "direct:b", "direct:c")
++                        .parallelProcessing().timeout(1000).to("direct:a", "direct:b", "direct:c")
+                     // use end to indicate end of multicast route
+                     .end()
+                     .to("mock:result");

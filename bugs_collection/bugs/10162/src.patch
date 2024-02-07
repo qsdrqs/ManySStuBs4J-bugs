@@ -1,0 +1,13 @@
+diff --git a/buggy/aws-java-sdk-core/src/main/java/com/amazonaws/util/StringUtils.java b/fixed/aws-java-sdk-core/src/main/java/com/amazonaws/util/StringUtils.java
+index e0146f36c..de98efb88 100644
+--- a/buggy/aws-java-sdk-core/src/main/java/com/amazonaws/util/StringUtils.java
++++ b/fixed/aws-java-sdk-core/src/main/java/com/amazonaws/util/StringUtils.java
+@@ -141,7 +141,7 @@ public class StringUtils {
+         int indexOf = buffer.indexOf( partToMatch );
+         while ( indexOf != -1 ) {
+             buffer = buffer.replace( indexOf, indexOf + partToMatch.length(), replacement );
+-            indexOf = buffer.indexOf( partToMatch );
++            indexOf = buffer.indexOf( partToMatch, indexOf + replacement.length() );
+         }
+ 
+         return buffer.toString();

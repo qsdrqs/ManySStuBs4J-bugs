@@ -1,0 +1,13 @@
+diff --git a/buggy/contrib/bcel/src/checkstyle/com/puppycrawl/tools/checkstyle/bcel/AbstractCheckVisitor.java b/fixed/contrib/bcel/src/checkstyle/com/puppycrawl/tools/checkstyle/bcel/AbstractCheckVisitor.java
+index 368c8521f..6e45e0988 100644
+--- a/buggy/contrib/bcel/src/checkstyle/com/puppycrawl/tools/checkstyle/bcel/AbstractCheckVisitor.java
++++ b/fixed/contrib/bcel/src/checkstyle/com/puppycrawl/tools/checkstyle/bcel/AbstractCheckVisitor.java
+@@ -77,7 +77,7 @@ public abstract class AbstractCheckVisitor
+                 aKey,
+                 aArgs,
+                 getSeverityLevel(),
+-                this.getClass().getName()));
++                this.getClass()));
+     }
+ 
+     /**

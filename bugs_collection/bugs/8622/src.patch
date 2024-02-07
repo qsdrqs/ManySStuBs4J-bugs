@@ -1,0 +1,13 @@
+diff --git a/buggy/sopremo/sopremo-common/src/main/java/eu/stratosphere/sopremo/io/Source.java b/fixed/sopremo/sopremo-common/src/main/java/eu/stratosphere/sopremo/io/Source.java
+index 4bab5c13d..2b2ddbf68 100644
+--- a/buggy/sopremo/sopremo-common/src/main/java/eu/stratosphere/sopremo/io/Source.java
++++ b/fixed/sopremo/sopremo-common/src/main/java/eu/stratosphere/sopremo/io/Source.java
+@@ -165,7 +165,7 @@ public class Source extends ElementaryOperator<Source> {
+ 			try {
+ 				final URI validURI = new URI(inputPath);
+ 				if (validURI.getScheme() == null)
+-					throw new IllegalStateException("Source does not have a valid file schema: " + inputPath);
++					throw new IllegalStateException("File name of source does not have a valid schema (such as hdfs or file): " + inputPath);
+ 			} catch (final URISyntaxException e) {
+ 				throw new IllegalStateException("Source does not have a valid path: " + inputPath, e);
+ 			}

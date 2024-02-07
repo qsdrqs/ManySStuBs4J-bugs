@@ -1,0 +1,13 @@
+diff --git a/buggy/profiler/src/main/java/com/navercorp/pinpoint/profiler/instrument/JavassistClass.java b/fixed/profiler/src/main/java/com/navercorp/pinpoint/profiler/instrument/JavassistClass.java
+index 3735bc737..b7c825535 100644
+--- a/buggy/profiler/src/main/java/com/navercorp/pinpoint/profiler/instrument/JavassistClass.java
++++ b/fixed/profiler/src/main/java/com/navercorp/pinpoint/profiler/instrument/JavassistClass.java
+@@ -525,7 +525,7 @@ public class JavassistClass implements InstrumentClass {
+ 
+     @Override
+     public int addGroupedInterceptor(MethodFilter filter, String interceptorClassName, InterceptorGroup group, ExecutionPolicy executionPolicy) throws InstrumentException {
+-        return addGroupedInterceptor(filter, interceptorClassName, group, executionPolicy);
++        return addGroupedInterceptor(filter, interceptorClassName, null, group, executionPolicy);
+     }
+ 
+     @Override

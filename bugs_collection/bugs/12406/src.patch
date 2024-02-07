@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-core/src/main/java/com/yammer/dropwizard/jetty/NonblockingServletHolder.java b/fixed/dropwizard-core/src/main/java/com/yammer/dropwizard/jetty/NonblockingServletHolder.java
+index 4b101f48e..d1f8ffd75 100644
+--- a/buggy/dropwizard-core/src/main/java/com/yammer/dropwizard/jetty/NonblockingServletHolder.java
++++ b/fixed/dropwizard-core/src/main/java/com/yammer/dropwizard/jetty/NonblockingServletHolder.java
+@@ -26,7 +26,7 @@ public class NonblockingServletHolder extends ServletHolder {
+     @Override
+     public int hashCode() {
+         int result = super.hashCode();
+-        result = (31 * result) + servlet.hashCode();
++        result = (31 * result) + ((servlet != null) ? servlet.hashCode() : 0);
+         return result;
+     }
+ 

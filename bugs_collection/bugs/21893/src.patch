@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-devtools/src/test/java/org/springframework/boot/devtools/integrationtest/HttpTunnelIntegrationTests.java b/fixed/spring-boot-project/spring-boot-devtools/src/test/java/org/springframework/boot/devtools/integrationtest/HttpTunnelIntegrationTests.java
+index 3444f0ca3..dfdee57e4 100644
+--- a/buggy/spring-boot-project/spring-boot-devtools/src/test/java/org/springframework/boot/devtools/integrationtest/HttpTunnelIntegrationTests.java
++++ b/fixed/spring-boot-project/spring-boot-devtools/src/test/java/org/springframework/boot/devtools/integrationtest/HttpTunnelIntegrationTests.java
+@@ -128,7 +128,7 @@ public class HttpTunnelIntegrationTests {
+ 
+ 	}
+ 
+-	@Configuration
++	@org.springframework.context.annotation.Configuration
+ 	static class TunnelConfiguration {
+ 
+ 		@Bean

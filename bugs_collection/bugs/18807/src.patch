@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/apache/ibatis/executor/BaseExecutor.java b/fixed/src/main/java/org/apache/ibatis/executor/BaseExecutor.java
+index b0594040d..d2e636d40 100644
+--- a/buggy/src/main/java/org/apache/ibatis/executor/BaseExecutor.java
++++ b/fixed/src/main/java/org/apache/ibatis/executor/BaseExecutor.java
+@@ -179,7 +179,7 @@ public abstract class BaseExecutor implements Executor {
+     if (!closed) {
+       try {
+         clearLocalCache();
+-        flushStatements(false);
++        flushStatements(true);
+       } finally {
+         if (required) {
+           transaction.rollback();

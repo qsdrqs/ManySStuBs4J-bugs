@@ -1,0 +1,13 @@
+diff --git a/buggy/commons/src/main/java/com/navercorp/pinpoint/common/util/DefaultSqlParser.java b/fixed/commons/src/main/java/com/navercorp/pinpoint/common/util/DefaultSqlParser.java
+index 977b582bd..74c2096a4 100644
+--- a/buggy/commons/src/main/java/com/navercorp/pinpoint/common/util/DefaultSqlParser.java
++++ b/fixed/commons/src/main/java/com/navercorp/pinpoint/common/util/DefaultSqlParser.java
+@@ -466,7 +466,7 @@ public class DefaultSqlParser implements SqlParser {
+     }
+ 
+     public String combineBindValues(String sql, List<String> bindValues) {
+-        if(sql == null || sql.length() ==0 || bindValues == null || bindValues.size() == 0) {
++        if(sql == null || sql.isEmpty() || bindValues == null || bindValues.isEmpty()) {
+             return sql;
+         }
+ 

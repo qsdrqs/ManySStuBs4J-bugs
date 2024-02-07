@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/spi/impl/operationservice/impl/BackPressureService.java b/fixed/hazelcast/src/main/java/com/hazelcast/spi/impl/operationservice/impl/BackPressureService.java
+index bc8a85ffd..8bade6674 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/spi/impl/operationservice/impl/BackPressureService.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/spi/impl/operationservice/impl/BackPressureService.java
+@@ -26,7 +26,7 @@ import static com.hazelcast.instance.OutOfMemoryErrorDispatcher.inspectOutputMem
+  * For information about the implementation see:
+  * https://hazelcast.atlassian.net/wiki/display/EN/Back+Pressure+Design
+  */
+-public class BackPressureService {
++public final class BackPressureService {
+ 
+     /**
+      * The percentage above and below a certain sync-window we should randomize.

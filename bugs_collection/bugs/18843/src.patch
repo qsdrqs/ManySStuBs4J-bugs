@@ -1,0 +1,13 @@
+diff --git a/buggy/collector/src/main/java/com/navercorp/pinpoint/collector/receiver/DispatchWorker.java b/fixed/collector/src/main/java/com/navercorp/pinpoint/collector/receiver/DispatchWorker.java
+index e90e7e315..ad1e33138 100644
+--- a/buggy/collector/src/main/java/com/navercorp/pinpoint/collector/receiver/DispatchWorker.java
++++ b/fixed/collector/src/main/java/com/navercorp/pinpoint/collector/receiver/DispatchWorker.java
+@@ -76,7 +76,7 @@ public class DispatchWorker {
+     }
+ 
+     public void shutdown() {
+-        logger.info("{] shutdown.", getName());
++        logger.info("{} shutdown.", getName());
+         worker.shutdown();
+         try {
+             worker.awaitTermination(1000 * 10, TimeUnit.MILLISECONDS);

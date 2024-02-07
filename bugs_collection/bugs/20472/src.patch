@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.caldav-personal/src/main/java/org/openhab/binding/caldav_personal/internal/CalDavBinding.java b/fixed/bundles/binding/org.openhab.binding.caldav-personal/src/main/java/org/openhab/binding/caldav_personal/internal/CalDavBinding.java
+index a25a27ef7..f6f8cb710 100644
+--- a/buggy/bundles/binding/org.openhab.binding.caldav-personal/src/main/java/org/openhab/binding/caldav_personal/internal/CalDavBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.caldav-personal/src/main/java/org/openhab/binding/caldav_personal/internal/CalDavBinding.java
+@@ -294,7 +294,7 @@ public class CalDavBinding extends AbstractBinding<CalDavBindingProvider>impleme
+ 
+             logger.debug("sending command {} for item {}", command, itemName);
+             eventPublisher.postUpdate(itemName, command);
+-            logger.trace("command {} successfuly send", command);
++            logger.trace("command {} successfully sent", command);
+         }
+     }
+ 

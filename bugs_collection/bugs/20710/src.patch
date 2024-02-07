@@ -1,0 +1,14 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/ZWaveNetworkMonitor.java b/fixed/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/ZWaveNetworkMonitor.java
+index 370492234..66cfe9bfb 100644
+--- a/buggy/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/ZWaveNetworkMonitor.java
++++ b/fixed/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/ZWaveNetworkMonitor.java
+@@ -331,7 +331,8 @@ public final class ZWaveNetworkMonitor implements ZWaveEventListener {
+ 
+ 			// We now have the oldest node that we've heard from - ping it!
+ 			// If we've actually received from this node recently, the don't bother to ping
+-			if (oldestNode != null && oldestNode.getLastReceived().getTime() < System.currentTimeMillis() - pollPeriod) {
++			if (oldestNode != null && oldestNode.getLastReceived() != null &&
++					oldestNode.getLastReceived().getTime() < System.currentTimeMillis() - pollPeriod) {
+ 				logger.debug("NODE {}: Sending periodic PING.", oldestNode.getNodeId());
+ 
+ 				// Reset the resend count - also resets the lastUpdate timer

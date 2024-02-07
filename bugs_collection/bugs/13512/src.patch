@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-spi/src/main/java/com/facebook/presto/spi/block/VariableWidthBlockBuilder.java b/fixed/presto-spi/src/main/java/com/facebook/presto/spi/block/VariableWidthBlockBuilder.java
+index eedc9a655..8de3da1b8 100644
+--- a/buggy/presto-spi/src/main/java/com/facebook/presto/spi/block/VariableWidthBlockBuilder.java
++++ b/fixed/presto-spi/src/main/java/com/facebook/presto/spi/block/VariableWidthBlockBuilder.java
+@@ -99,7 +99,7 @@ public class VariableWidthBlockBuilder
+     @Override
+     public long getSizeInBytes()
+     {
+-        long arraysSizeInBytes = (Integer.BYTES + Byte.BYTES) * positions;
++        long arraysSizeInBytes = (Integer.BYTES + Byte.BYTES) * (long) positions;
+         return sliceOutput.size() + arraysSizeInBytes;
+     }
+ 

@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/SimplifyBooleanExpressionCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/SimplifyBooleanExpressionCheck.java
+index 84d2b9d3e..88fc27c38 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/SimplifyBooleanExpressionCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/SimplifyBooleanExpressionCheck.java
+@@ -74,8 +74,7 @@ public class SimplifyBooleanExpressionCheck
+             case TokenTypes.LNOT:
+             case TokenTypes.LOR:
+             case TokenTypes.LAND:
+-                log(parent.getLineNo(), parent.getColumnNo(),
+-                    MSG_KEY);
++                log(parent, MSG_KEY);
+                 break;
+             default:
+                 break;

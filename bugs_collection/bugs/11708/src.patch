@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/FallThroughCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/FallThroughCheck.java
+index f79f1859a..c6aaa56bb 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/FallThroughCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/FallThroughCheck.java
+@@ -133,7 +133,7 @@ public class FallThroughCheck extends Check
+ 
+         final DetailAST slist = aAST.findFirstToken(TokenTypes.SLIST);
+ 
+-        if (!isTerminated(slist, true, true)
++        if (slist != null && !isTerminated(slist, true, true)
+             && !hasFallTruComment(aAST, nextGroup))
+         {
+             if (!isLastGroup) {

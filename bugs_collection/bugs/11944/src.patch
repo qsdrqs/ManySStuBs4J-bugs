@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/PersistentVector.java b/fixed/src/jvm/clojure/lang/PersistentVector.java
+index b842fc43a..460a40693 100644
+--- a/buggy/src/jvm/clojure/lang/PersistentVector.java
++++ b/fixed/src/jvm/clojure/lang/PersistentVector.java
+@@ -625,7 +625,7 @@ static final class TransientVector extends AFn implements ITransientVector, Coun
+ 			}
+ 		if(shift > 5 && newroot.array[1] == null)
+ 			{
+-			newroot = (Node) newroot.array[0];
++			newroot = ensureEditable((Node) newroot.array[0]);
+ 			newshift -= 5;
+ 			}
+ 		root = newroot;

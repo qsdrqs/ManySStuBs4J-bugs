@@ -1,0 +1,14 @@
+diff --git a/buggy/spring-boot-samples/spring-boot-sample-web-secure/src/main/java/sample/web/secure/SampleWebSecureApplication.java b/fixed/spring-boot-samples/spring-boot-sample-web-secure/src/main/java/sample/web/secure/SampleWebSecureApplication.java
+index 8bbc13b4e..a05d0cbf0 100644
+--- a/buggy/spring-boot-samples/spring-boot-sample-web-secure/src/main/java/sample/web/secure/SampleWebSecureApplication.java
++++ b/fixed/spring-boot-samples/spring-boot-sample-web-secure/src/main/java/sample/web/secure/SampleWebSecureApplication.java
+@@ -71,7 +71,8 @@ public class SampleWebSecureApplication extends WebMvcConfigurerAdapter {
+ 		@Override
+ 		protected void configure(HttpSecurity http) throws Exception {
+ 			http.authorizeRequests().anyRequest().fullyAuthenticated().and().formLogin()
+-					.loginPage("/login").failureUrl("/login?error").permitAll();
++					.loginPage("/login").failureUrl("/login?error").permitAll().and()
++					.logout().permitAll();
+ 		}
+ 
+ 		@Override

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/api/org/openmrs/Cohort.java b/fixed/src/api/org/openmrs/Cohort.java
+index 70e05fd33..ca6f3d66b 100644
+--- a/buggy/src/api/org/openmrs/Cohort.java
++++ b/fixed/src/api/org/openmrs/Cohort.java
+@@ -256,7 +256,7 @@ public class Cohort extends BaseOpenmrsData implements Serializable {
+ 	 */
+ 	public static Cohort intersect(Cohort a, Cohort b) {
+ 		Cohort ret = new Cohort();
+-		ret.setName("(" + a.getName() + " * " + b.getName() + ")");
++		ret.setName("(" + (a == null ? "NULL" : a.getName()) + " * " + (b == null ? "NULL" : b.getName()) + ")");
+ 		if (a != null && b != null) {
+ 			ret.getMemberIds().addAll(a.getMemberIds());
+ 			ret.getMemberIds().retainAll(b.getMemberIds());

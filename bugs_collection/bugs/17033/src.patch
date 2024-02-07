@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/cluster/ClusterManager.java b/fixed/hazelcast/src/main/java/com/hazelcast/cluster/ClusterManager.java
+index cb09fcdb6..00a411b35 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/cluster/ClusterManager.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/cluster/ClusterManager.java
+@@ -691,7 +691,7 @@ public final class ClusterManager extends BaseManager implements ConnectionListe
+         List<AsyncRemotelyBooleanOp> calls = new ArrayList<AsyncRemotelyBooleanOp>();
+         for (Member m : members) {
+             MemberImpl member = (MemberImpl) m;
+-            if (!member.localMember() && !member.isLiteMember()) {
++            if (!member.localMember()) {
+                 AsyncRemotelyBooleanOp op = new AsyncRemotelyBooleanOp(
+                         new FinalizeJoin(), member.getAddress(), false);
+                 op.execute();

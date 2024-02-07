@@ -1,0 +1,22 @@
+diff --git a/buggy/hbase-server/src/test/java/org/apache/hadoop/hbase/master/cleaner/TestLogsCleaner.java b/fixed/hbase-server/src/test/java/org/apache/hadoop/hbase/master/cleaner/TestLogsCleaner.java
+index 43fc6a4f3..2d517c4a4 100644
+--- a/buggy/hbase-server/src/test/java/org/apache/hadoop/hbase/master/cleaner/TestLogsCleaner.java
++++ b/fixed/hbase-server/src/test/java/org/apache/hadoop/hbase/master/cleaner/TestLogsCleaner.java
+@@ -134,7 +134,7 @@ public class TestLogsCleaner {
+ 
+     // Case 2: 5 Procedure WALs that are old which would be deleted
+     for (int i = 1; i < 6; i++) {
+-      Path fileName = new Path(oldProcedureWALDir, String.format("pv-%020d.log", i));
++      Path fileName = new Path(oldProcedureWALDir, String.format("pv2-%020d.log", i));
+       fs.createNewFile(fileName);
+     }
+ 
+@@ -155,7 +155,7 @@ public class TestLogsCleaner {
+ 
+     // Case 5: 5 Procedure WALs that are new, will stay
+     for (int i = 6; i < 11; i++) {
+-      Path fileName = new Path(oldProcedureWALDir, String.format("pv-%020d.log", i));
++      Path fileName = new Path(oldProcedureWALDir, String.format("pv2-%020d.log", i));
+       fs.createNewFile(fileName);
+     }
+ 

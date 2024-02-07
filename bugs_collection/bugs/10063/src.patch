@@ -1,0 +1,13 @@
+diff --git a/buggy/storm-core/src/jvm/backtype/storm/messaging/netty/Client.java b/fixed/storm-core/src/jvm/backtype/storm/messaging/netty/Client.java
+index 18582b439..00ca4498c 100644
+--- a/buggy/storm-core/src/jvm/backtype/storm/messaging/netty/Client.java
++++ b/fixed/storm-core/src/jvm/backtype/storm/messaging/netty/Client.java
+@@ -52,7 +52,7 @@ public class Client implements IConnection {
+     private final int buffer_size;
+     private boolean closing;
+ 
+-    private Integer messageBatchSize;
++    private int messageBatchSize;
+     
+     private AtomicLong pendings;
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/nioneo/store/RelationshipStore.java b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/nioneo/store/RelationshipStore.java
+index c6532bdda..816b01126 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/nioneo/store/RelationshipStore.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/nioneo/store/RelationshipStore.java
+@@ -182,7 +182,7 @@ public class RelationshipStore extends AbstractRecordStore<RelationshipRecord> i
+                 {
+                     cursor.setOffset( offset );
+                     recordIsInUse = isInUse( cursor.getByte() );
+-                } while ( cursor.retry() );
++                } while ( cursor.shouldRetry() );
+             }
+             return recordIsInUse;
+         }

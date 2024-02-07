@@ -1,0 +1,15 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/NestedTryDepthCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/NestedTryDepthCheckTest.java
+index 858837654..1c10a61de 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/NestedTryDepthCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/NestedTryDepthCheckTest.java
+@@ -34,7 +34,9 @@ public class NestedTryDepthCheckTest extends BaseCheckTestSupport {
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "coding" + File.separator + filename);
++                + "coding" + File.separator
++                + "nestedtrydepth" + File.separator
++                + filename);
+     }
+ 
+     @Test

@@ -1,0 +1,13 @@
+diff --git a/buggy/pact/pact-runtime/src/test/java/eu/stratosphere/pact/runtime/test/util/InfiniteInputIterator.java b/fixed/pact/pact-runtime/src/test/java/eu/stratosphere/pact/runtime/test/util/InfiniteInputIterator.java
+index ec46c3dc0..4d05afb23 100644
+--- a/buggy/pact/pact-runtime/src/test/java/eu/stratosphere/pact/runtime/test/util/InfiniteInputIterator.java
++++ b/fixed/pact/pact-runtime/src/test/java/eu/stratosphere/pact/runtime/test/util/InfiniteInputIterator.java
+@@ -30,7 +30,7 @@ public class InfiniteInputIterator implements MutableObjectIterator<PactRecord>
+ 	@Override
+ 	public boolean next(PactRecord target) {
+ 		target.setField(0, val1);
+-		target.setField(0, val2);
++		target.setField(1, val2);
+ 		return true;
+ 	}
+ }

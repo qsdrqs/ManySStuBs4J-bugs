@@ -1,0 +1,13 @@
+diff --git a/buggy/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidLiveWallpaper.java b/fixed/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidLiveWallpaper.java
+index ccad000af..15efbc0a8 100644
+--- a/buggy/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidLiveWallpaper.java
++++ b/fixed/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidLiveWallpaper.java
+@@ -328,7 +328,7 @@ public class AndroidLiveWallpaper implements Application {
+ 	}
+ 
+ 	@Override
+-	public void log (String tag, String message, Exception exception) {
++	public void log (String tag, String message, Throwable exception) {
+ 		if (logLevel >= LOG_INFO) Log.i(tag, message, exception);
+ 	}
+ 

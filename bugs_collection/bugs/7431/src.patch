@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/impl/ConfigurationHelper.java b/fixed/camel-core/src/main/java/org/apache/camel/impl/ConfigurationHelper.java
+index 9fd922712..9f5bf29e3 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/impl/ConfigurationHelper.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/impl/ConfigurationHelper.java
+@@ -48,7 +48,7 @@ public final class ConfigurationHelper {
+         //Utility Class
+     }
+ 
+-    public static interface ParameterSetter {
++    public interface ParameterSetter {
+         <T> void set(EndpointConfiguration config, String name, T value);
+     }
+ 

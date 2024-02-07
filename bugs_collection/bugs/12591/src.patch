@@ -1,0 +1,18 @@
+diff --git a/buggy/metrics-graphite/src/main/java/com/yammer/metrics/reporting/GraphiteReporter.java b/fixed/metrics-graphite/src/main/java/com/yammer/metrics/reporting/GraphiteReporter.java
+index 1f39cbbdb..304c5034a 100644
+--- a/buggy/metrics-graphite/src/main/java/com/yammer/metrics/reporting/GraphiteReporter.java
++++ b/fixed/metrics-graphite/src/main/java/com/yammer/metrics/reporting/GraphiteReporter.java
+@@ -298,11 +298,11 @@ public class GraphiteReporter implements Runnable {
+     }
+ 
+     private void printDoubleField(String name, double value, long epoch) {
+-        sendToGraphite(String.format("%s%s %2.2f %d\n", prefix, sanitizedName(name), value, epoch));
++        sendToGraphite(String.format("%s%s %2.2f %d\n", prefix, sanitizeName(name), value, epoch));
+     }
+ 
+     private void printLongField(String name, long value, long epoch) {
+-        sendToGraphite(String.format("%s%s %d %d\n", prefix, sanitizedName(name), value, epoch));
++        sendToGraphite(String.format("%s%s %d %d\n", prefix, sanitizeName(name), value, epoch));
+     }
+ 
+     private void printVmMetrics(long epoch) throws IOException {

@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/camel-example-axis/src/test/java/org/apache/camel/example/axis/AxisReportIncidentServiceTest.java b/fixed/examples/camel-example-axis/src/test/java/org/apache/camel/example/axis/AxisReportIncidentServiceTest.java
+index e546fb0c4..5228886cf 100644
+--- a/buggy/examples/camel-example-axis/src/test/java/org/apache/camel/example/axis/AxisReportIncidentServiceTest.java
++++ b/fixed/examples/camel-example-axis/src/test/java/org/apache/camel/example/axis/AxisReportIncidentServiceTest.java
+@@ -43,7 +43,7 @@ public class AxisReportIncidentServiceTest extends TestCase {
+         // add a listener on port 8080 on localhost (127.0.0.1)
+         Connector connector = new SelectChannelConnector();
+         connector.setPort(9080);
+-        connector.setHost("127.0.0.1");
++        connector.setHost("localhost");
+         server.addConnector(connector);
+ 
+         // add our web context path

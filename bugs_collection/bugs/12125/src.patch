@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/java-webbit-websockets-selenium/src/test/java/cucumber/examples/java/websockets/SharedDriver.java b/fixed/examples/java-webbit-websockets-selenium/src/test/java/cucumber/examples/java/websockets/SharedDriver.java
+index 61996ceb3..35a0a22cc 100644
+--- a/buggy/examples/java-webbit-websockets-selenium/src/test/java/cucumber/examples/java/websockets/SharedDriver.java
++++ b/fixed/examples/java-webbit-websockets-selenium/src/test/java/cucumber/examples/java/websockets/SharedDriver.java
+@@ -34,7 +34,7 @@ public class SharedDriver extends EventFiringWebDriver {
+     private static final Thread CLOSE_THREAD = new Thread() {
+         @Override
+         public void run() {
+-            REAL_DRIVER.close();
++            REAL_DRIVER.quit();
+         }
+     };
+ 

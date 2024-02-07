@@ -1,0 +1,22 @@
+diff --git a/buggy/RankingPlugin/src/org/gephi/ranking/plugin/AttributeRankingBuilder.java b/fixed/RankingPlugin/src/org/gephi/ranking/plugin/AttributeRankingBuilder.java
+index 2eecd4cf7..0e9b2e539 100644
+--- a/buggy/RankingPlugin/src/org/gephi/ranking/plugin/AttributeRankingBuilder.java
++++ b/fixed/RankingPlugin/src/org/gephi/ranking/plugin/AttributeRankingBuilder.java
+@@ -301,7 +301,7 @@ public class AttributeRankingBuilder implements RankingBuilder {
+         @Override
+         public Number getMaximumValue() {
+             if (maximum == null) {
+-                AbstractRanking.refreshMinMax(this, graph);
++                DynamicAttributeRanking.refreshMinMax(this, graph);
+             }
+             return maximum;
+         }
+@@ -309,7 +309,7 @@ public class AttributeRankingBuilder implements RankingBuilder {
+         @Override
+         public Number getMinimumValue() {
+             if (minimum == null) {
+-                AbstractRanking.refreshMinMax(this, graph);
++                DynamicAttributeRanking.refreshMinMax(this, graph);
+             }
+             return minimum;
+         }

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/spi/impl/merge/MapMergingEntryImpl.java b/fixed/hazelcast/src/main/java/com/hazelcast/spi/impl/merge/MapMergingEntryImpl.java
+index 175ae773d..32c689f71 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/spi/impl/merge/MapMergingEntryImpl.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/spi/impl/merge/MapMergingEntryImpl.java
+@@ -187,7 +187,7 @@ public class MapMergingEntryImpl
+         return maxIdle;
+     }
+ 
+-    public MapMergingEntryImpl setMaxIdle(long maxIdle) {
++    public MapMergingEntryImpl setMaxIdle(Long maxIdle) {
+         this.maxIdle = maxIdle;
+         return this;
+     }

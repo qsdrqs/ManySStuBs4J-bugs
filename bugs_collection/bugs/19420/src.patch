@@ -1,0 +1,13 @@
+diff --git a/buggy/community/com/src/main/java/org/neo4j/com/ChunkingChannelBuffer.java b/fixed/community/com/src/main/java/org/neo4j/com/ChunkingChannelBuffer.java
+index c286cc3b6..e6890dede 100644
+--- a/buggy/community/com/src/main/java/org/neo4j/com/ChunkingChannelBuffer.java
++++ b/fixed/community/com/src/main/java/org/neo4j/com/ChunkingChannelBuffer.java
+@@ -738,7 +738,7 @@ public class ChunkingChannelBuffer implements ChannelBuffer
+ 
+     public int compareTo( ChannelBuffer buffer )
+     {
+-        return buffer.compareTo( buffer );
++        return this.buffer.compareTo( buffer );
+     }
+ 
+     public String toString()

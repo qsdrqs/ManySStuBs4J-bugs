@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/test/java/com/facebook/presto/AbstractTestQueries.java b/fixed/presto-main/src/test/java/com/facebook/presto/AbstractTestQueries.java
+index d2c204486..b140f7d29 100644
+--- a/buggy/presto-main/src/test/java/com/facebook/presto/AbstractTestQueries.java
++++ b/fixed/presto-main/src/test/java/com/facebook/presto/AbstractTestQueries.java
+@@ -2944,7 +2944,7 @@ public abstract class AbstractTestQueries
+                 "  FROM orders\n" +
+                 "  GROUP BY orderstatus, clerk\n" +
+                 ")\n" +
+-                "ORDER BY clerk";
++                "ORDER BY orderstatus, clerk";
+ 
+         assertEquals(computeActual(sql), computeActual(sql.replace("custom_rank", "rank")));
+     }

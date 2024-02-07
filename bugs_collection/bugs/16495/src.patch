@@ -1,0 +1,20 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/concurrent/atomicreference/operations/AbstractAlterOperation.java b/fixed/hazelcast/src/main/java/com/hazelcast/concurrent/atomicreference/operations/AbstractAlterOperation.java
+index 566227202..75b81daa7 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/concurrent/atomicreference/operations/AbstractAlterOperation.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/concurrent/atomicreference/operations/AbstractAlterOperation.java
+@@ -58,13 +58,13 @@ public abstract class AbstractAlterOperation extends AtomicReferenceBackupAwareO
+     @Override
+     protected void writeInternal(ObjectDataOutput out) throws IOException {
+         super.writeInternal(out);
+-        out.writeObject(function);
++        out.writeData(function);
+     }
+ 
+     @Override
+     protected void readInternal(ObjectDataInput in) throws IOException {
+         super.readInternal(in);
+-        function = in.readObject();
++        function = in.readData();
+     }
+ 
+     @Override

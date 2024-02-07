@@ -1,0 +1,13 @@
+diff --git a/buggy/commons/src/main/java/com/navercorp/pinpoint/common/bo/ApiMetaDataBo.java b/fixed/commons/src/main/java/com/navercorp/pinpoint/common/bo/ApiMetaDataBo.java
+index 3d6ac1f04..7a0d74751 100644
+--- a/buggy/commons/src/main/java/com/navercorp/pinpoint/common/bo/ApiMetaDataBo.java
++++ b/fixed/commons/src/main/java/com/navercorp/pinpoint/common/bo/ApiMetaDataBo.java
+@@ -88,7 +88,7 @@ public class ApiMetaDataBo {
+     }
+ 
+     public void readRowKey(byte[] bytes) {
+-        this.agentId = BytesUtils.toString(bytes, 0, PinpointConstants.AGENT_NAME_MAX_LEN).trim();
++        this.agentId = BytesUtils.safeTrim(BytesUtils.toString(bytes, 0, PinpointConstants.AGENT_NAME_MAX_LEN));
+         this.startTime = TimeUtils.recoveryTimeMillis(readTime(bytes));
+         this.apiId = readKeyCode(bytes);
+     }

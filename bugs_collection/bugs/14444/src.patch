@@ -1,0 +1,13 @@
+diff --git a/buggy/test/com/google/javascript/jscomp/Es6RewriteGeneratorsTest.java b/fixed/test/com/google/javascript/jscomp/Es6RewriteGeneratorsTest.java
+index 4ee296c46..7c8da53c4 100644
+--- a/buggy/test/com/google/javascript/jscomp/Es6RewriteGeneratorsTest.java
++++ b/fixed/test/com/google/javascript/jscomp/Es6RewriteGeneratorsTest.java
+@@ -1378,7 +1378,7 @@ public final class Es6RewriteGeneratorsTest extends CompilerTestCase {
+     Node yieldedValue = callNode.getSecondChild(); // [1, 2]
+ 
+     checkState(yieldedValue.isArrayLit(), yieldedValue);
+-    assertThat(yieldedValue.getJSType().toString()).isEqualTo("Array"); // [1, 2]
++    assertThat(yieldedValue.getJSType().toString()).isEqualTo("Array<?>"); // [1, 2]
+     assertThat(yieldedValue.getFirstChild().getJSType().toString()).isEqualTo("number"); // 1
+     assertThat(yieldedValue.getSecondChild().getJSType().toString()).isEqualTo("number"); // 2
+ 

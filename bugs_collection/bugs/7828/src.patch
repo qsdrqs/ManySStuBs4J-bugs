@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/processor/StreamResequencer.java b/fixed/camel-core/src/main/java/org/apache/camel/processor/StreamResequencer.java
+index e01a2e6b6..e6101b67d 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/processor/StreamResequencer.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/processor/StreamResequencer.java
+@@ -193,7 +193,7 @@ public class StreamResequencer extends ServiceSupport implements SequenceSender<
+         
+         @Override
+         public void run() {
+-            while (true) {
++            while (isRunAllowed()) {
+                 try {
+                     deliveryRequestLock.lock();
+                     try {

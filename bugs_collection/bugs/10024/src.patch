@@ -1,0 +1,13 @@
+diff --git a/buggy/storm-core/src/jvm/backtype/storm/Config.java b/fixed/storm-core/src/jvm/backtype/storm/Config.java
+index 565ef23bd..ad745972b 100644
+--- a/buggy/storm-core/src/jvm/backtype/storm/Config.java
++++ b/fixed/storm-core/src/jvm/backtype/storm/Config.java
+@@ -1256,7 +1256,7 @@ public class Config extends HashMap<String, Object> {
+      * event logging will be disabled.</p>
+      */
+     @isInteger
+-    @isPositiveNumber
++    @isPositiveNumber(includeZero = true)
+     public static final String TOPOLOGY_EVENTLOGGER_EXECUTORS = "topology.eventlogger.executors";
+ 
+     /**

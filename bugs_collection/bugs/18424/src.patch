@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/files/FileHandle.java b/fixed/gdx/src/com/badlogic/gdx/files/FileHandle.java
+index 91e009d12..27c47a8ac 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/files/FileHandle.java
++++ b/fixed/gdx/src/com/badlogic/gdx/files/FileHandle.java
+@@ -188,7 +188,7 @@ public abstract class FileHandle {
+ 		for (int i = 0, n = relativePaths.length; i < n; i++) {
+ 			String path = relativePaths[i];
+ 			if (!path.endsWith(suffix)) continue;
+-			handles[i] = child(path);
++			handles[count] = child(path);
+ 			count++;
+ 		}
+ 		if (count < relativePaths.length) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/spi/impl/BasicInvocation.java b/fixed/hazelcast/src/main/java/com/hazelcast/spi/impl/BasicInvocation.java
+index eca15fd00..01d222298 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/spi/impl/BasicInvocation.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/spi/impl/BasicInvocation.java
+@@ -259,7 +259,7 @@ abstract class BasicInvocation implements ResponseHandler, Runnable {
+ 
+             if (!sent) {
+                 operationService.deregisterInvocation(callId);
+-                notify(new RetryableIOException("Packet not responseReceived to -> " + invTarget));
++                notify(new RetryableIOException("Packet not send to -> " + invTarget));
+             }
+         } else {
+             if (op instanceof BackupAwareOperation) {

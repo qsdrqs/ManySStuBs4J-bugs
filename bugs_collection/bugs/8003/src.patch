@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/camel-example-spring-jms/src/main/java/org/apache/camel/example/server/AuditTracker.java b/fixed/examples/camel-example-spring-jms/src/main/java/org/apache/camel/example/server/AuditTracker.java
+index 7caedb1b5..a07296207 100644
+--- a/buggy/examples/camel-example-spring-jms/src/main/java/org/apache/camel/example/server/AuditTracker.java
++++ b/fixed/examples/camel-example-spring-jms/src/main/java/org/apache/camel/example/server/AuditTracker.java
+@@ -37,7 +37,7 @@ public class AuditTracker {
+         this.store = store;
+     }
+ 
+-    @Before("execution(* org.apache.camel.example.server.Multiplier.*(..)) && args(originalNumber)")
++    @Before("execution(int org.apache.camel.example.server.Multiplier.multiply(int)) && args(originalNumber)")
+     public void audit(int originalNumber) throws Exception {
+         String msg = "Someone called us with this number " + originalNumber;
+         System.out.println(msg);

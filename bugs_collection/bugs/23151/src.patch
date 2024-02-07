@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/sentiment/RNNOptions.java b/fixed/src/edu/stanford/nlp/sentiment/RNNOptions.java
+index a3a7a2072..b8e78e6f6 100644
+--- a/buggy/src/edu/stanford/nlp/sentiment/RNNOptions.java
++++ b/fixed/src/edu/stanford/nlp/sentiment/RNNOptions.java
+@@ -142,7 +142,7 @@ public class RNNOptions implements Serializable {
+       wordVectors = args[argIndex + 1];
+       return argIndex + 2;
+     } else if (args[argIndex].equalsIgnoreCase("-unkWord")) {
+-      unkWord = args[argIndex] + 1;
++      unkWord = args[argIndex + 1];
+       return argIndex + 2;
+     } else if (args[argIndex].equalsIgnoreCase("-numHid")) {
+       numHid = Integer.parseInt(args[argIndex + 1]);

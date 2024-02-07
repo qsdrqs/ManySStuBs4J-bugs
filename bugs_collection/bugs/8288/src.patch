@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-libraries/flink-table/src/test/java/org/apache/flink/table/api/java/utils/UserDefinedAggFunctions.java b/fixed/flink-libraries/flink-table/src/test/java/org/apache/flink/table/api/java/utils/UserDefinedAggFunctions.java
+index 94c5c90c9..a32d6190d 100644
+--- a/buggy/flink-libraries/flink-table/src/test/java/org/apache/flink/table/api/java/utils/UserDefinedAggFunctions.java
++++ b/fixed/flink-libraries/flink-table/src/test/java/org/apache/flink/table/api/java/utils/UserDefinedAggFunctions.java
+@@ -59,7 +59,7 @@ public class UserDefinedAggFunctions {
+ 	/**
+ 	 * Accumulator for WeightedAvg.
+ 	 */
+-	public static class WeightedAvgAccum extends Tuple2<Long, Integer> {
++	public static class WeightedAvgAccum {
+ 		public long sum = 0;
+ 		public int count = 0;
+ 	}

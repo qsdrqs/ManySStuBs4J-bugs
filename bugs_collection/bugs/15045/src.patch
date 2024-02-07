@@ -1,0 +1,31 @@
+diff --git a/buggy/test/com/google/javascript/jscomp/NewTypeInferenceTest.java b/fixed/test/com/google/javascript/jscomp/NewTypeInferenceTest.java
+index 08dd06d42..27d199aad 100644
+--- a/buggy/test/com/google/javascript/jscomp/NewTypeInferenceTest.java
++++ b/fixed/test/com/google/javascript/jscomp/NewTypeInferenceTest.java
+@@ -6815,7 +6815,7 @@ public class NewTypeInferenceTest extends CompilerTypeTestCase {
+         TypeCheck.INEXISTENT_PROPERTY);
+   }
+ 
+-  public void testLooseFunctionSummaryDoesntCrash() {
++  public void testUnannotatedFunctionSummaryDoesntCrash() {
+     checkNoWarnings(
+         "/** @interface */\n" +
+         "var IThenable = function() {};\n" +
+@@ -6828,7 +6828,7 @@ public class NewTypeInferenceTest extends CompilerTypeTestCase {
+         " */\n" +
+         "Promise.prototype.then = function(onFulfilled) {};",
+         "var /** !Promise */ p;\n" +
+-        "function f(loose) {\n" +
++        "function f(unused) {\n" +
+         "  function g(){ return 5; }\n" +
+         "  p.then(g);\n" +
+         "}");
+@@ -6846,7 +6846,7 @@ public class NewTypeInferenceTest extends CompilerTypeTestCase {
+         " */\n" +
+         "Promise.prototype.then = function(onFulfilled) {};",
+         "var /** !Promise */ p;\n" +
+-        "function f(loose) {\n" +
++        "function f(unused) {\n" +
+         "  function g(){ return 5; }\n" +
+         "  var /** null */ n = p.then(g);\n" +
+         "}",

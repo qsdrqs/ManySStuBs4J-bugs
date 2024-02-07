@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/txn/ClientTxnTest.java b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/txn/ClientTxnTest.java
+index 16e4a678b..d55001442 100644
+--- a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/txn/ClientTxnTest.java
++++ b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/txn/ClientTxnTest.java
+@@ -106,7 +106,7 @@ public class ClientTxnTest {
+         try{
+             context.commitTransaction();
+             fail("commit should throw exception !");
+-        } catch (TransactionException e){
++        } catch (Exception e){
+             context.rollbackTransaction();
+             latch.countDown();
+         }

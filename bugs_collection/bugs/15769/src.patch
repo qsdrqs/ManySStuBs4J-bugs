@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/com/google/inject/spi/ProvisionListenerBinding.java b/fixed/core/src/com/google/inject/spi/ProvisionListenerBinding.java
+index 301d67053..479e9f596 100644
+--- a/buggy/core/src/com/google/inject/spi/ProvisionListenerBinding.java
++++ b/fixed/core/src/com/google/inject/spi/ProvisionListenerBinding.java
+@@ -41,7 +41,7 @@ public final class ProvisionListenerBinding implements Element {
+       ProvisionListener[] listeners) {
+     this.source = source;
+     this.keyMatcher = typeMatcher;
+-    this.listeners = ImmutableList.of(listeners);
++    this.listeners = ImmutableList.copyOf(listeners);
+   }
+ 
+   /** Returns the registered listeners. */

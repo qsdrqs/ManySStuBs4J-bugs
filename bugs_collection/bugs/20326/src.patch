@@ -1,0 +1,22 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.stiebelheatpump/src/main/java/org/openhab/binding/stiebelheatpump/internal/StiebelHeatPumpBinding.java b/fixed/bundles/binding/org.openhab.binding.stiebelheatpump/src/main/java/org/openhab/binding/stiebelheatpump/internal/StiebelHeatPumpBinding.java
+index 92a73d8d7..2ab7f5936 100644
+--- a/buggy/bundles/binding/org.openhab.binding.stiebelheatpump/src/main/java/org/openhab/binding/stiebelheatpump/internal/StiebelHeatPumpBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.stiebelheatpump/src/main/java/org/openhab/binding/stiebelheatpump/internal/StiebelHeatPumpBinding.java
+@@ -261,7 +261,7 @@ public class StiebelHeatPumpBinding extends AbstractActiveBinding<StiebelHeatPum
+                 if (host != null) {
+                     logger.info("Created heatpump configuration with tcp {}:{}, version:{} ", host, port, version);
+                 } else {
+-                    logger.info("Created heatpump configuration with  serialport:{}, baudrate:{}, version:{} ",
++                    logger.info("Created heatpump configuration with serialport:{}, baudrate:{}, version:{} ",
+                             serialPort, baudRate, version);
+                 }
+                 setProperlyConfigured(isInitialized);
+@@ -294,7 +294,7 @@ public class StiebelHeatPumpBinding extends AbstractActiveBinding<StiebelHeatPum
+                         return false;
+                     }
+                 } catch (InterruptedException e) {
+-                    logger.error("could not access Heat pump for has version {}", version);
++                    logger.error("could not access Heat pump for version {}", version);
+                 }
+             }
+ 

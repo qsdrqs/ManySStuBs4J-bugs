@@ -1,0 +1,13 @@
+diff --git a/buggy/itest/src/edu/stanford/nlp/pipeline/StanfordCoreNLPITest.java b/fixed/itest/src/edu/stanford/nlp/pipeline/StanfordCoreNLPITest.java
+index 402e64684..b66c5030e 100644
+--- a/buggy/itest/src/edu/stanford/nlp/pipeline/StanfordCoreNLPITest.java
++++ b/fixed/itest/src/edu/stanford/nlp/pipeline/StanfordCoreNLPITest.java
+@@ -186,7 +186,7 @@ public class StanfordCoreNLPITest extends TestCase {
+         {"is", "O"},
+         {"the", "O"},
+         {"first", "ORDINAL"},
+-        {"African", "MISC"},
++        {"African", "NATIONALITY"},
+         {"American", "NATIONALITY"},
+         {"president", "TITLE"},
+         {".", "O"},

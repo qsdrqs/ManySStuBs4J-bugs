@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/cache/impl/CacheStatisticsImpl.java b/fixed/hazelcast/src/main/java/com/hazelcast/cache/impl/CacheStatisticsImpl.java
+index 9d47f8b14..5c7a7ff10 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/cache/impl/CacheStatisticsImpl.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/cache/impl/CacheStatisticsImpl.java
+@@ -428,7 +428,7 @@ public class CacheStatisticsImpl
+ 
+     @Override
+     public NearCacheStats getNearCacheStatistics() {
+-        throw new UnsupportedOperationException("Near-Cache is not supported at server");
++        throw new UnsupportedOperationException("Near Cache is not supported at server");
+     }
+ 
+     @Override

@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/utils/BaseDrawable.java b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/utils/BaseDrawable.java
+index 6d581f3f8..ee3809c67 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/utils/BaseDrawable.java
++++ b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/utils/BaseDrawable.java
+@@ -99,7 +99,7 @@ public class BaseDrawable implements Drawable {
+ 
+ 	public void setMinSize (float minWidth, float minHeight) {
+ 		setMinWidth(minWidth);
+-		setMinHeight(minWidth);
++		setMinHeight(minHeight);
+ 	}
+ 
+ 	public String getName () {

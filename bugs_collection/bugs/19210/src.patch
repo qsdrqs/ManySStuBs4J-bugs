@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/kernel/api/properties/ByteProperty.java b/fixed/community/kernel/src/main/java/org/neo4j/kernel/api/properties/ByteProperty.java
+index 06326d597..a4c54eb43 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/kernel/api/properties/ByteProperty.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/kernel/api/properties/ByteProperty.java
+@@ -48,7 +48,7 @@ final class ByteProperty extends NumberPropertyWithin4Bytes
+     {
+         if ( other instanceof Byte )
+         {
+-            return other == (byte)value;
++            return ((Byte)other).byteValue() == value;
+         }
+ 
+         return valueCompare( value, other );

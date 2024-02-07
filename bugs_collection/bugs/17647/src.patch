@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/utils/IntFloatMap.java b/fixed/gdx/src/com/badlogic/gdx/utils/IntFloatMap.java
+index b3c95f565..03ff1adf4 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/utils/IntFloatMap.java
++++ b/fixed/gdx/src/com/badlogic/gdx/utils/IntFloatMap.java
+@@ -87,7 +87,7 @@ public class IntFloatMap implements Iterable<IntFloatMap.Entry> {
+ 
+ 	/** Creates a new map identical to the specified map. */
+ 	public IntFloatMap (IntFloatMap map) {
+-		this(map.capacity, map.loadFactor);
++		this((int)Math.floor(map.capacity * map.loadFactor), map.loadFactor);
+ 		stashSize = map.stashSize;
+ 		System.arraycopy(map.keyTable, 0, keyTable, 0, map.keyTable.length);
+ 		System.arraycopy(map.valueTable, 0, valueTable, 0, map.valueTable.length);

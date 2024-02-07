@@ -1,0 +1,13 @@
+diff --git a/buggy/hikaricp-common/src/test/java/com/zaxxer/hikari/StatementTest.java b/fixed/hikaricp-common/src/test/java/com/zaxxer/hikari/StatementTest.java
+index b6433730e..0cb5a9f1b 100644
+--- a/buggy/hikaricp-common/src/test/java/com/zaxxer/hikari/StatementTest.java
++++ b/fixed/hikaricp-common/src/test/java/com/zaxxer/hikari/StatementTest.java
+@@ -43,7 +43,7 @@ public class StatementTest
+         Assert.assertNotNull(connection);
+ 
+         Assert.assertTrue("Totals connections not as expected", TestElf.getPool(ds).getTotalConnections() >= 1);
+-        Assert.assertSame("Idle connections not as expected", 0, TestElf.getPool(ds).getIdleConnections());
++        Assert.assertTrue("Idle connections not as expected", TestElf.getPool(ds).getIdleConnections() >= 1);
+ 
+         Statement statement = connection.createStatement();
+         Assert.assertNotNull(statement);

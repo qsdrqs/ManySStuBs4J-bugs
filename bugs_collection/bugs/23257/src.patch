@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/international/spanish/pipeline/HamleDTMultiWordClassifier.java b/fixed/src/edu/stanford/nlp/international/spanish/pipeline/HamleDTMultiWordClassifier.java
+index 46b898867..c8dd21a8d 100644
+--- a/buggy/src/edu/stanford/nlp/international/spanish/pipeline/HamleDTMultiWordClassifier.java
++++ b/fixed/src/edu/stanford/nlp/international/spanish/pipeline/HamleDTMultiWordClassifier.java
+@@ -207,7 +207,7 @@ public class HamleDTMultiWordClassifier {
+     }
+ 
+     if (options.containsKey("dev")) {
+-      classifier.testClassifier(options.getProperty("test"));
++      classifier.testClassifier(options.getProperty("dev"));
+     }
+ 
+     // TODO support eval

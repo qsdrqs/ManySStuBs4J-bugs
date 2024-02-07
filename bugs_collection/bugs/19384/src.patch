@@ -1,0 +1,13 @@
+diff --git a/buggy/community/server/src/test/java/org/neo4j/server/rest/RESTDocsGenerator.java b/fixed/community/server/src/test/java/org/neo4j/server/rest/RESTDocsGenerator.java
+index 4d62b31c1..a6d37506c 100644
+--- a/buggy/community/server/src/test/java/org/neo4j/server/rest/RESTDocsGenerator.java
++++ b/fixed/community/server/src/test/java/org/neo4j/server/rest/RESTDocsGenerator.java
+@@ -477,7 +477,7 @@ public class RESTDocsGenerator extends AsciiDocGenerator
+                 line( fw, "" );
+             }
+             if( graph != null) {
+-                fw.append( AsciidocHelper.createGraphViz( "Final Graph:", graph, title));
++                fw.append( AsciidocHelper.createGraphViz( "Final Graph", graph, title));
+                 line(fw, "" );
+             }
+             line( fw, "_Example request_" );

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/dcoref/Constants.java b/fixed/src/edu/stanford/nlp/dcoref/Constants.java
+index a25b1321f..e5ed2779c 100644
+--- a/buggy/src/edu/stanford/nlp/dcoref/Constants.java
++++ b/fixed/src/edu/stanford/nlp/dcoref/Constants.java
+@@ -47,7 +47,7 @@ public class Constants {
+   public static final boolean PRINT_CONLL_OUTPUT = false;
+ 
+   /** Default path for conll scorer script */
+-  public static final String conllMentionEvalScript = "/scr/nlp/data/conll-2011/scorer/v4/scorer.pl";
++  public static final String conllMentionEvalScript = "/u/scr/nlp/data/conll-2011/scorer/v4/scorer.pl";
+ 
+   /** if true, skip coreference resolution. do mention detection only */
+   public static final boolean SKIP_COREF = false;

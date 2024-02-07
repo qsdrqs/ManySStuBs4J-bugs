@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/recovery/ZKRMStateStore.java b/fixed/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/recovery/ZKRMStateStore.java
+index b3100d1ac..1b1ec7629 100644
+--- a/buggy/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/recovery/ZKRMStateStore.java
++++ b/fixed/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/recovery/ZKRMStateStore.java
+@@ -608,7 +608,7 @@ public class ZKRMStateStore extends RMStateStore {
+         appState.attempts.put(attemptState.getAttemptId(), attemptState);
+       }
+     }
+-    LOG.debug("Done Loading applications from ZK state store");
++    LOG.debug("Done loading applications from ZK state store");
+   }
+ 
+   @Override

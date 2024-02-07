@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/channel/SimpleChannelHandler.java b/fixed/src/main/java/org/jboss/netty/channel/SimpleChannelHandler.java
+index c8ab3516b..812cf666e 100644
+--- a/buggy/src/main/java/org/jboss/netty/channel/SimpleChannelHandler.java
++++ b/fixed/src/main/java/org/jboss/netty/channel/SimpleChannelHandler.java
+@@ -134,7 +134,7 @@ public class SimpleChannelHandler implements ChannelUpstreamHandler, ChannelDown
+                 channelInterestChanged(ctx, evt);
+                 break;
+             default:
+-                ctx.sendDownstream(e);
++                ctx.sendUpstream(e);
+             }
+         } else if (e instanceof ExceptionEvent) {
+             exceptionCaught(ctx, (ExceptionEvent) e);

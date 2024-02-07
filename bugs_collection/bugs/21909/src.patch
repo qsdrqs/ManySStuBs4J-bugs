@@ -1,0 +1,14 @@
+diff --git a/buggy/spring-boot-project/spring-boot-tools/spring-boot-test-support/src/main/java/org/springframework/boot/testsupport/testcontainers/ElasticsearchContainer.java b/fixed/spring-boot-project/spring-boot-tools/spring-boot-test-support/src/main/java/org/springframework/boot/testsupport/testcontainers/ElasticsearchContainer.java
+index 29e2d94fd..86941c663 100644
+--- a/buggy/spring-boot-project/spring-boot-tools/spring-boot-test-support/src/main/java/org/springframework/boot/testsupport/testcontainers/ElasticsearchContainer.java
++++ b/fixed/spring-boot-project/spring-boot-tools/spring-boot-test-support/src/main/java/org/springframework/boot/testsupport/testcontainers/ElasticsearchContainer.java
+@@ -31,7 +31,8 @@ public class ElasticsearchContainer extends Container {
+ 	public ElasticsearchContainer() {
+ 		super("elasticsearch:6.4.3", 9200,
+ 				(container) -> container.withStartupTimeout(Duration.ofSeconds(120))
+-						.withStartupAttempts(5).addExposedPort(9300));
++						.withStartupAttempts(5).withEnv("discovery.type", "single-node")
++						.addExposedPort(9300));
+ 	}
+ 
+ 	public int getMappedTransportPort() {

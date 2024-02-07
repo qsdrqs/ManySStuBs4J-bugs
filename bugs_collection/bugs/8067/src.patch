@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-core/src/main/java/org/apache/flink/util/IOUtils.java b/fixed/flink-core/src/main/java/org/apache/flink/util/IOUtils.java
+index 498c899b8..02b11e661 100644
+--- a/buggy/flink-core/src/main/java/org/apache/flink/util/IOUtils.java
++++ b/fixed/flink-core/src/main/java/org/apache/flink/util/IOUtils.java
+@@ -231,7 +231,7 @@ public final class IOUtils {
+ 						closeable.close();
+ 					}
+ 				} catch (Exception e) {
+-					collectedExceptions = ExceptionUtils.firstOrSuppressed(collectedExceptions, e);
++					collectedExceptions = ExceptionUtils.firstOrSuppressed(e, collectedExceptions);
+ 				}
+ 			}
+ 

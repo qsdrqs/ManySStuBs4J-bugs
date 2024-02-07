@@ -1,0 +1,13 @@
+diff --git a/buggy/guava-tests/test/com/google/common/util/concurrent/TestThread.java b/fixed/guava-tests/test/com/google/common/util/concurrent/TestThread.java
+index 1a7c1a306..ac38a30c3 100644
+--- a/buggy/guava-tests/test/com/google/common/util/concurrent/TestThread.java
++++ b/fixed/guava-tests/test/com/google/common/util/concurrent/TestThread.java
+@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
+  */
+ public final class TestThread<L> extends Thread implements TearDown {
+ 
+-  private static final long DUE_DILIGENCE_MILLIS = 50;
++  private static final long DUE_DILIGENCE_MILLIS = 100;
+   private static final long TIMEOUT_MILLIS = 5000;
+ 
+   private final L lockLikeObject;

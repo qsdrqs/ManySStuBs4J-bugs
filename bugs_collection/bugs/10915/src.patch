@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/metrics/AbstractClassCouplingCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/metrics/AbstractClassCouplingCheck.java
+index 56cf7a244..03f522d96 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/metrics/AbstractClassCouplingCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/metrics/AbstractClassCouplingCheck.java
+@@ -139,8 +139,7 @@ public abstract class AbstractClassCouplingCheck extends AbstractCheck {
+      */
+     public void setExcludeClassesRegexps(String... from) {
+         excludeClassesRegexps.clear();
+-        excludeClassesRegexps.addAll(Arrays.asList(from.clone())
+-                .stream()
++        excludeClassesRegexps.addAll(Arrays.stream(from.clone())
+                 .map(CommonUtils::createPattern)
+                 .collect(Collectors.toSet()));
+     }

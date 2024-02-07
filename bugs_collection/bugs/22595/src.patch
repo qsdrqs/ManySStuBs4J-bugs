@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/health/SimpleHealthIndicator.java b/fixed/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/health/SimpleHealthIndicator.java
+index 8893f89d7..61fcc7358 100644
+--- a/buggy/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/health/SimpleHealthIndicator.java
++++ b/fixed/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/health/SimpleHealthIndicator.java
+@@ -50,7 +50,7 @@ public class SimpleHealthIndicator implements HealthIndicator<Map<String, Object
+ 		queries.put("Apache Derby", "SELECT 1 FROM SYSIBM.SYSDUMMY1");
+ 	}
+ 
+-	private static String DEFAULT_QUERY = "SELECT 'Hello'";
++	private static String DEFAULT_QUERY = "SELECT 1";
+ 
+ 	private String query = null;
+ 

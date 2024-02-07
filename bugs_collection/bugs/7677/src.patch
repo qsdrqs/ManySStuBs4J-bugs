@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-web/src/test/java/org/apache/camel/web/groovy/ResequenceDSLTest.java b/fixed/components/camel-web/src/test/java/org/apache/camel/web/groovy/ResequenceDSLTest.java
+index 39b88ff9a..c4778e868 100644
+--- a/buggy/components/camel-web/src/test/java/org/apache/camel/web/groovy/ResequenceDSLTest.java
++++ b/fixed/components/camel-web/src/test/java/org/apache/camel/web/groovy/ResequenceDSLTest.java
+@@ -32,7 +32,7 @@ public class ResequenceDSLTest extends GroovyRendererTestSupport {
+ 
+     @Test
+     public void testResequencer() throws Exception {
+-        String dsl = "from(\"direct:start\").resequencer(header(\"seqnum\")).stream().to(\"mock:result\")";
++        String dsl = "from(\"direct:start\").resequence(header(\"seqnum\")).stream().to(\"mock:result\")";
+         String expected = "from(\"direct:start\").resequence(header(\"seqnum\")).stream().to(\"mock:result\")";
+ 
+         assertEquals(expected, render(dsl));

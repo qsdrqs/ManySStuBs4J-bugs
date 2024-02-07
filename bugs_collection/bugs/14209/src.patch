@@ -1,0 +1,13 @@
+diff --git a/buggy/DesktopBranding/src/org/gephi/branding/desktop/multilingual/LanguageAction.java b/fixed/DesktopBranding/src/org/gephi/branding/desktop/multilingual/LanguageAction.java
+index da6165461..bdeb2a022 100644
+--- a/buggy/DesktopBranding/src/org/gephi/branding/desktop/multilingual/LanguageAction.java
++++ b/fixed/DesktopBranding/src/org/gephi/branding/desktop/multilingual/LanguageAction.java
+@@ -108,7 +108,7 @@ public final class LanguageAction extends CallableSystemAction {
+ 
+     private void setLanguage(Language language) {
+         String homePath;
+-        if (Utilities.isMac()) {
++        if (Utilities.isMac() || Utilities.isUnix()) {
+             homePath = System.getProperty("netbeans.home");
+         } else {
+             homePath = System.getProperty("user.dir");

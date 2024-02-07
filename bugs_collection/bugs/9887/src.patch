@@ -1,0 +1,14 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/parse/ImportSemanticAnalyzer.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/parse/ImportSemanticAnalyzer.java
+index 300157513..5a8118ccb 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/parse/ImportSemanticAnalyzer.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/parse/ImportSemanticAnalyzer.java
+@@ -309,7 +309,8 @@ public class ImportSemanticAnalyzer extends BaseSemanticAnalyzer {
+               Warehouse.makePartPath(addPartitionDesc.getPartSpec()));
+         }
+       } else {
+-        tgtPath = new Path(tblDesc.getLocation());
++        tgtPath = new Path(tblDesc.getLocation(),
++            Warehouse.makePartPath(addPartitionDesc.getPartSpec()));
+       }
+       checkTargetLocationEmpty(fs, tgtPath);
+       addPartitionDesc.setLocation(tgtPath.toString());

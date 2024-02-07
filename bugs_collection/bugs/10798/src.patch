@@ -1,0 +1,15 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/design/InterfaceIsTypeCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/design/InterfaceIsTypeCheckTest.java
+index f0580b1ee..1049a1960 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/design/InterfaceIsTypeCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/design/InterfaceIsTypeCheckTest.java
+@@ -36,7 +36,9 @@ public class InterfaceIsTypeCheckTest
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "design" + File.separator + filename);
++                + "design" + File.separator
++                + "interfaceistype" + File.separator
++                + filename);
+     }
+ 
+     @Test

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/internal/plugin/multicast/MulticastDiscoverySender.java b/fixed/hazelcast/src/main/java/com/hazelcast/internal/plugin/multicast/MulticastDiscoverySender.java
+index 3b1fd175e..941b4886d 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/internal/plugin/multicast/MulticastDiscoverySender.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/internal/plugin/multicast/MulticastDiscoverySender.java
+@@ -37,7 +37,7 @@ public class MulticastDiscoverySender implements Runnable {
+     ILogger logger;
+     String group;
+     int port;
+-    private boolean stop;
++    private volatile boolean stop;
+ 
+     public MulticastDiscoverySender(DiscoveryNode discoveryNode, MulticastSocket multicastSocket,
+                                     ILogger logger, String group, int port)

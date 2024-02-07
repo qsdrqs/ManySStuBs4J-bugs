@@ -1,0 +1,14 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/PackageDeclarationCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/PackageDeclarationCheckTest.java
+index e4cc8f9df..560d54b72 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/PackageDeclarationCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/PackageDeclarationCheckTest.java
+@@ -57,7 +57,8 @@ public class PackageDeclarationCheckTest extends BaseCheckTestSupport {
+             "4: " + getCheckMessage(MSG_KEY_MISSING),
+         };
+ 
+-        verify(checkConfig, getNonCompilablePath("InputNoPackage.java"), expected);
++        verify(checkConfig,
++                getNonCompilablePath("InputPackageDeclarationNoPackage.java"), expected);
+     }
+ 
+     @Test

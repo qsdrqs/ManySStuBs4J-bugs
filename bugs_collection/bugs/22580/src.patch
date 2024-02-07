@@ -1,0 +1,20 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/freemarker/FreeMarkerAutoConfiguration.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/freemarker/FreeMarkerAutoConfiguration.java
+index 1ed1c4459..64380ffed 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/freemarker/FreeMarkerAutoConfiguration.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/freemarker/FreeMarkerAutoConfiguration.java
+@@ -67,9 +67,12 @@ public class FreeMarkerAutoConfiguration {
+ 		if (this.properties.isCheckTemplateLocation()) {
+ 			Resource resource = this.resourceLoader.getResource(this.properties
+ 					.getTemplateLoaderPath());
+-			Assert.state(resource.exists(), "Cannot find template location: " + resource
+-					+ " (please add some templates "
+-					+ "or check your FreeMarker configuration)");
++			Assert.state(
++					resource.exists(),
++					"Cannot find template location: "
++							+ resource
++							+ " (please add some templates, check your FreeMarker configuration, or set "
++							+ "spring.freemarker.checkTemplateLocation=false)");
+ 		}
+ 	}
+ 

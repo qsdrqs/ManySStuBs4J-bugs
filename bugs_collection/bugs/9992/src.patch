@@ -1,0 +1,20 @@
+diff --git a/buggy/storm-core/src/jvm/org/apache/storm/blobstore/BlobStoreUtils.java b/fixed/storm-core/src/jvm/org/apache/storm/blobstore/BlobStoreUtils.java
+index bced13e08..c0b78d31c 100644
+--- a/buggy/storm-core/src/jvm/org/apache/storm/blobstore/BlobStoreUtils.java
++++ b/fixed/storm-core/src/jvm/org/apache/storm/blobstore/BlobStoreUtils.java
+@@ -150,7 +150,7 @@ public class BlobStoreUtils {
+         }
+ 
+         if (!isSuccess) {
+-            LOG.error("Could not download blob with key" + key);
++            LOG.error("Could not download the blob with key: {}", key);
+         }
+         return isSuccess;
+     }
+@@ -273,4 +273,4 @@ public class BlobStoreUtils {
+     }
+ 
+ 
+-}
+\ No newline at end of file
++}

@@ -1,0 +1,13 @@
+diff --git a/buggy/indexing-service/src/main/java/com/metamx/druid/indexing/coordinator/RemoteTaskRunner.java b/fixed/indexing-service/src/main/java/com/metamx/druid/indexing/coordinator/RemoteTaskRunner.java
+index 68f8f9b50..d13435de8 100644
+--- a/buggy/indexing-service/src/main/java/com/metamx/druid/indexing/coordinator/RemoteTaskRunner.java
++++ b/fixed/indexing-service/src/main/java/com/metamx/druid/indexing/coordinator/RemoteTaskRunner.java
+@@ -685,7 +685,7 @@ public class RemoteTaskRunner implements TaskRunner, TaskLogProvider
+               ZkWorker zkWorker, ZkWorker zkWorker2
+           )
+           {
+-            return -Ints.compare(zkWorker.getCurrCapacity(), zkWorker2.getCurrCapacity());
++            return -Ints.compare(zkWorker.getCurrCapacityUsed(), zkWorker2.getCurrCapacityUsed());
+           }
+         }
+     );

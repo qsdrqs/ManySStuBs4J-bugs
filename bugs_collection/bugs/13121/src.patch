@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/com/metamx/druid/master/ServerHolder.java b/fixed/server/src/main/java/com/metamx/druid/master/ServerHolder.java
+index 662aca053..6cf4d65ce 100644
+--- a/buggy/server/src/main/java/com/metamx/druid/master/ServerHolder.java
++++ b/fixed/server/src/main/java/com/metamx/druid/master/ServerHolder.java
+@@ -96,7 +96,7 @@ public class ServerHolder implements Comparable<ServerHolder>
+ 
+   public boolean containsSegment(DataSegment segment)
+   {
+-    return (server.getSegment(segment.getIdentifier()) != null && peon.getSegmentsToLoad().contains(segment));
++    return (server.getSegment(segment.getIdentifier()) != null || peon.getSegmentsToLoad().contains(segment));
+   }
+ 
+   @Override

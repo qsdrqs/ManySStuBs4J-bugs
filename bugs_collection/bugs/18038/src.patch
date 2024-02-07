@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/utils/async/AsyncExecutor.java b/fixed/gdx/src/com/badlogic/gdx/utils/async/AsyncExecutor.java
+index 0bd750b15..1f9fa132d 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/utils/async/AsyncExecutor.java
++++ b/fixed/gdx/src/com/badlogic/gdx/utils/async/AsyncExecutor.java
+@@ -62,7 +62,7 @@ public class AsyncExecutor implements Disposable {
+ 		try {
+ 			executor.awaitTermination(Long.MAX_VALUE, TimeUnit.SECONDS);
+ 		} catch (InterruptedException e) {
+-			new GdxRuntimeException("Couldn't shutdown loading thread");
++			throw new GdxRuntimeException("Couldn't shutdown loading thread", e);
+ 		}
+ 	}
+ }

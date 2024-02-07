@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/endpoint/mvc/AbstractEndpointHandlerMappingTests.java b/fixed/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/endpoint/mvc/AbstractEndpointHandlerMappingTests.java
+index cade38f6b..72a9daac0 100644
+--- a/buggy/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/endpoint/mvc/AbstractEndpointHandlerMappingTests.java
++++ b/fixed/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/endpoint/mvc/AbstractEndpointHandlerMappingTests.java
+@@ -42,7 +42,7 @@ public abstract class AbstractEndpointHandlerMappingTests {
+ 		TestMvcEndpoint endpoint = new TestMvcEndpoint(new TestEndpoint("a"));
+ 		TestActionEndpoint other = new TestActionEndpoint(new TestEndpoint("b"));
+ 		AbstractEndpointHandlerMapping<?> mapping = new TestEndpointHandlerMapping<MvcEndpoint>(
+-				Arrays.asList(endpoint, other));
++				Arrays.<MvcEndpoint>asList(endpoint, other));
+ 		mapping.setApplicationContext(this.context);
+ 		mapping.afterPropertiesSet();
+ 		assertThat(mapping.getHandlerMethods()).hasSize(1);

@@ -1,0 +1,19 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/utils/ModuleReflectionUtilsTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/utils/ModuleReflectionUtilsTest.java
+index de0229228..c415f7b51 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/utils/ModuleReflectionUtilsTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/utils/ModuleReflectionUtilsTest.java
+@@ -104,12 +104,12 @@ public class ModuleReflectionUtilsTest {
+ 
+     private static class Bar extends AbstractInvalidClass {
+         @Override
+-        void method() {
++        public void method() {
+         }
+     }
+ 
+     private abstract static class AbstractInvalidClass extends AutomaticBean {
+-        abstract void method();
++        public abstract void method();
+     }
+ 
+     private static class CheckClass extends AbstractCheck {

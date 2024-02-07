@@ -1,0 +1,13 @@
+diff --git a/buggy/compiler/src/main/java/dagger/internal/codegen/writer/Writables.java b/fixed/compiler/src/main/java/dagger/internal/codegen/writer/Writables.java
+index 612e7ebf4..be43fbefb 100644
+--- a/buggy/compiler/src/main/java/dagger/internal/codegen/writer/Writables.java
++++ b/fixed/compiler/src/main/java/dagger/internal/codegen/writer/Writables.java
+@@ -31,7 +31,7 @@ final class Writables {
+     try {
+       writable.write(builder, DEFAULT_CONTEXT);
+     } catch (IOException e) {
+-      throw new AssertionError("StringBuilder doesn't throw IOException", e);
++      throw new AssertionError("StringBuilder doesn't throw IOException" + e);
+     }
+     return builder.toString();
+   }

@@ -1,0 +1,15 @@
+diff --git a/buggy/src/tests/com/puppycrawl/tools/checkstyle/checks/FinalClassCheckTest.java b/fixed/src/tests/com/puppycrawl/tools/checkstyle/checks/FinalClassCheckTest.java
+index 4f9d26b96..30da32dff 100644
+--- a/buggy/src/tests/com/puppycrawl/tools/checkstyle/checks/FinalClassCheckTest.java
++++ b/fixed/src/tests/com/puppycrawl/tools/checkstyle/checks/FinalClassCheckTest.java
+@@ -11,8 +11,8 @@ public class FinalClassCheckTest
+         final DefaultConfiguration checkConfig =
+             createCheckConfig(FinalClassCheck.class);
+         final String[] expected = {
+-            "7: Class InputFinalClass should be declared as final",
+-            "15: Class test4 should be declared as final",
++            "7: Class InputFinalClass should be declared as final.",
++            "15: Class test4 should be declared as final.",
+         };
+         verify(checkConfig, getPath("InputFinalClass.java"), expected);
+     }

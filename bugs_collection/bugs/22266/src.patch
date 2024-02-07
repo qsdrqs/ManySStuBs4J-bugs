@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/main/java/org/springframework/boot/bind/YamlConfigurationFactory.java b/fixed/spring-boot/src/main/java/org/springframework/boot/bind/YamlConfigurationFactory.java
+index 3414b90e8..6ab2e551e 100644
+--- a/buggy/spring-boot/src/main/java/org/springframework/boot/bind/YamlConfigurationFactory.java
++++ b/fixed/spring-boot/src/main/java/org/springframework/boot/bind/YamlConfigurationFactory.java
+@@ -138,7 +138,7 @@ public class YamlConfigurationFactory<T>
+ 				+ "either set it directly or set the resource to load it from");
+ 		try {
+ 			if (this.logger.isTraceEnabled()) {
+-				this.logger.trace(String.format("Yaml document is %n%s" + this.yaml));
++				this.logger.trace(String.format("Yaml document is %n%s", this.yaml));
+ 			}
+ 			Constructor constructor = new YamlJavaBeanPropertyConstructor(this.type,
+ 					this.propertyAliases);

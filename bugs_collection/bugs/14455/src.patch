@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/DisambiguateProperties.java b/fixed/src/com/google/javascript/jscomp/DisambiguateProperties.java
+index b27253be5..dbb63844c 100644
+--- a/buggy/src/com/google/javascript/jscomp/DisambiguateProperties.java
++++ b/fixed/src/com/google/javascript/jscomp/DisambiguateProperties.java
+@@ -412,7 +412,7 @@ class DisambiguateProperties implements CompilerPass {
+     // Do the actual renaming.
+     renameProperties();
+     // Update any getters and setters we renamed.
+-    GatherGettersAndSetterProperties.update(compiler, externs, root);
++    GatherGetterAndSetterProperties.update(compiler, externs, root);
+   }
+ 
+   /** Returns the property for the given name, creating it if necessary. */

@@ -1,0 +1,13 @@
+diff --git a/buggy/aws-java-sdk-core/src/main/java/com/amazonaws/auth/SystemPropertiesCredentialsProvider.java b/fixed/aws-java-sdk-core/src/main/java/com/amazonaws/auth/SystemPropertiesCredentialsProvider.java
+index 010e660ce..f7fa79810 100644
+--- a/buggy/aws-java-sdk-core/src/main/java/com/amazonaws/auth/SystemPropertiesCredentialsProvider.java
++++ b/fixed/aws-java-sdk-core/src/main/java/com/amazonaws/auth/SystemPropertiesCredentialsProvider.java
+@@ -51,7 +51,7 @@ public class SystemPropertiesCredentialsProvider implements AWSCredentialsProvid
+         if (StringUtils.isNullOrEmpty(sessionToken)) {
+             return new BasicAWSCredentials(accessKey, secretKey);
+         } else {
+-            return new BasicAWSSessionCredentials(accessKey, secretKey, sessionToken);
++            return new BasicSessionCredentials(accessKey, secretKey, sessionToken);
+         }
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/graphics/g2d/BitmapFont.java b/fixed/gdx/src/com/badlogic/gdx/graphics/g2d/BitmapFont.java
+index 0b9a1ffef..626cbd644 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/graphics/g2d/BitmapFont.java
++++ b/fixed/gdx/src/com/badlogic/gdx/graphics/g2d/BitmapFont.java
+@@ -557,7 +557,7 @@ public class BitmapFont implements Disposable {
+ 					tokens.nextToken();
+ 					tokens.nextToken();
+ 					int ch = Integer.parseInt(tokens.nextToken());
+-					if (ch == -1)
++					if (ch <= 0)
+ 						missingGlyph = glyph;
+ 					else if (ch <= Character.MAX_VALUE)
+ 						setGlyph(ch, glyph);

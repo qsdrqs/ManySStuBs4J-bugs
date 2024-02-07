@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/main/java/cucumber/runtime/io/ZipResource.java b/fixed/core/src/main/java/cucumber/runtime/io/ZipResource.java
+index d3f6fa7cf..765dbcfad 100644
+--- a/buggy/core/src/main/java/cucumber/runtime/io/ZipResource.java
++++ b/fixed/core/src/main/java/cucumber/runtime/io/ZipResource.java
+@@ -19,7 +19,7 @@ class ZipResource implements Resource {
+ 
+     @Override
+     public URI getPath() {
+-        return URI.create(CLASSPATH_SCHEME_PREFIX + "/" + jarEntry.getName());
++        return URI.create(CLASSPATH_SCHEME_PREFIX + jarEntry.getName());
+     }
+ 
+     @Override

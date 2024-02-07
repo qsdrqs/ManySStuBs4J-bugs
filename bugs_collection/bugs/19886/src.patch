@@ -1,0 +1,13 @@
+diff --git a/buggy/transport-sctp/src/main/java/io/netty/channel/sctp/SctpChannelOption.java b/fixed/transport-sctp/src/main/java/io/netty/channel/sctp/SctpChannelOption.java
+index e89647e39..cdee5d1cb 100644
+--- a/buggy/transport-sctp/src/main/java/io/netty/channel/sctp/SctpChannelOption.java
++++ b/fixed/transport-sctp/src/main/java/io/netty/channel/sctp/SctpChannelOption.java
+@@ -54,7 +54,7 @@ public class SctpChannelOption<T> extends ChannelOption<T> {
+     public static final SctpChannelOption<SocketAddress> SCTP_SET_PEER_PRIMARY_ADDR =
+             new SctpChannelOption<SocketAddress>("SCTP_SET_PEER_PRIMARY_ADDR");
+ 
+-    private SctpChannelOption(String name) {
++    protected SctpChannelOption(String name) {
+         super(name);
+     }
+ }

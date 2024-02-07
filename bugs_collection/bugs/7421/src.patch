@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-script/src/main/java/org/apache/camel/script/osgi/Activator.java b/fixed/components/camel-script/src/main/java/org/apache/camel/script/osgi/Activator.java
+index 8d284ea99..5225dcf10 100644
+--- a/buggy/components/camel-script/src/main/java/org/apache/camel/script/osgi/Activator.java
++++ b/fixed/components/camel-script/src/main/java/org/apache/camel/script/osgi/Activator.java
+@@ -126,7 +126,7 @@ public class Activator implements BundleActivator, BundleTrackerCustomizer {
+             resolvers.add(new BundleScriptEngineResolver(bundle, configURL));
+         }
+     } 
+-    public static interface ScriptEngineResolver {
++    public interface ScriptEngineResolver {
+         ScriptEngine resolveScriptEngine(String name);
+     }
+     protected static class BundleScriptEngineResolver implements ScriptEngineResolver {

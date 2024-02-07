@@ -1,0 +1,24 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.knx/src/main/java/org/openhab/binding/knx/internal/config/KNXGenericBindingProvider.java b/fixed/bundles/binding/org.openhab.binding.knx/src/main/java/org/openhab/binding/knx/internal/config/KNXGenericBindingProvider.java
+index 60664fc29..69b86bcd4 100644
+--- a/buggy/bundles/binding/org.openhab.binding.knx/src/main/java/org/openhab/binding/knx/internal/config/KNXGenericBindingProvider.java
++++ b/fixed/bundles/binding/org.openhab.binding.knx/src/main/java/org/openhab/binding/knx/internal/config/KNXGenericBindingProvider.java
+@@ -415,16 +415,16 @@ public class KNXGenericBindingProvider extends AbstractGenericBindingProvider
+                                         }
+                                     } catch (NumberFormatException nfe) {
+                                         throw new BindingConfigParseException(
+-                                                "Autorefresh time must be a number, bust was '"
++                                                "Autorefresh time must be a number, but was '"
+                                                         + dataPoint.substring(1, endIndex) + "'.");
+                                     }
+                                 } else {
+                                     throw new BindingConfigParseException(
+-                                            "Autorefresh time paramter: missing time. Empty brackets are not allowed.");
++                                            "Autorefresh time parameter: missing time. Empty brackets are not allowed.");
+                                 }
+                             } else {
+                                 throw new BindingConfigParseException(
+-                                        "Closing ')' missing on autorefresh time paramter.");
++                                        "Closing ')' missing on autorefresh time parameter.");
+                             }
+                         }
+                     }

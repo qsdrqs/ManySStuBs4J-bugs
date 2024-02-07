@@ -1,0 +1,13 @@
+diff --git a/buggy/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/TumblrExample.java b/fixed/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/TumblrExample.java
+index 512ea2924..e0bb5660e 100644
+--- a/buggy/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/TumblrExample.java
++++ b/fixed/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/TumblrExample.java
+@@ -32,7 +32,7 @@ public abstract class TumblrExample {
+         System.out.println("Got the Request Token!");
+         System.out.println();
+ 
+-        System.out.println("Now go and authorize Scribe here:");
++        System.out.println("Now go and authorize ScribeJava here:");
+         System.out.println(service.getAuthorizationUrl(requestToken));
+         System.out.println("And paste the verifier here");
+         System.out.print(">>");

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/junit/runner/JUnitCore.java b/fixed/src/main/java/org/junit/runner/JUnitCore.java
+index b2c6aaa22..90bf03768 100644
+--- a/buggy/src/main/java/org/junit/runner/JUnitCore.java
++++ b/fixed/src/main/java/org/junit/runner/JUnitCore.java
+@@ -93,7 +93,7 @@ public class JUnitCore {
+         }
+         RunListener listener = new TextListener(system);
+         addListener(listener);
+-        Result result = run(classes.toArray(new Class[0]));
++        Result result = run(classes.toArray(new Class<?>[0]));
+         for (Failure each : missingClasses) {
+             result.getFailures().add(each);
+         }

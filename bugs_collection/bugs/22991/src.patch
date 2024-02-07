@@ -1,0 +1,13 @@
+diff --git a/buggy/itest/src/edu/stanford/nlp/pipeline/POSTaggerBenchmarkITest.java b/fixed/itest/src/edu/stanford/nlp/pipeline/POSTaggerBenchmarkITest.java
+index ce508cbbc..9bbcaa912 100644
+--- a/buggy/itest/src/edu/stanford/nlp/pipeline/POSTaggerBenchmarkITest.java
++++ b/fixed/itest/src/edu/stanford/nlp/pipeline/POSTaggerBenchmarkITest.java
+@@ -82,7 +82,7 @@ public class POSTaggerBenchmarkITest extends TestCase {
+     String englishPOSTestPath = "/u/nlp/data/pos-tagger/english/test-wsj-22-24";
+     List<String> sentences = readInPOSData(englishPOSTestPath);
+     double ENGLISH_BIDIRECTIONAL_TOKEN_ACCURACY = .972;
+-    double ENGLISH_BIDIRECTIONAL_SENTENCE_ACCURACY = .564;
++    double ENGLISH_BIDIRECTIONAL_SENTENCE_ACCURACY = .563;
+     runPOSTest(sentences, "_", englishBiDirectionalPipeline,
+         ENGLISH_BIDIRECTIONAL_TOKEN_ACCURACY, ENGLISH_BIDIRECTIONAL_SENTENCE_ACCURACY,
+         "English BiDirectional", false);

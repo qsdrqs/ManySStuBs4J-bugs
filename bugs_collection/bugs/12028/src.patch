@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/PersistentVector.java b/fixed/src/jvm/clojure/lang/PersistentVector.java
+index 8d7c61724..4e93dc9ca 100644
+--- a/buggy/src/jvm/clojure/lang/PersistentVector.java
++++ b/fixed/src/jvm/clojure/lang/PersistentVector.java
+@@ -140,7 +140,7 @@ public boolean equals(Object obj){
+ 			if(ms == null || !RT.equal(nth(i), ms.first()))
+ 				return false;
+ 			}
+-		if(ms.rest() != null)
++		if(ms != null)
+ 			return false;
+ 		}
+ 

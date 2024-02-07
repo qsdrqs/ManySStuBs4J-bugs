@@ -1,0 +1,17 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/filters/SuppressionCommentFilter.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/filters/SuppressionCommentFilter.java
+index 75f271023..a7e567942 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/filters/SuppressionCommentFilter.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/filters/SuppressionCommentFilter.java
+@@ -182,10 +182,10 @@ public class SuppressionCommentFilter
+         @Override
+         public int compareTo(Tag object) {
+             if (line == object.line) {
+-                return column - object.column;
++                return Integer.compare(column, object.column);
+             }
+ 
+-            return line - object.line;
++            return Integer.compare(line, object.line);
+         }
+ 
+         /** {@inheritDoc} */

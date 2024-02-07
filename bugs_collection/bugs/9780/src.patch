@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/processors/CommandUtil.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/processors/CommandUtil.java
+index 7eceb214a..87c8fbb5e 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/processors/CommandUtil.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/processors/CommandUtil.java
+@@ -68,7 +68,7 @@ class CommandUtil {
+   static void authorizeCommandThrowEx(SessionState ss, HiveOperationType type,
+       List<String> command) throws HiveAuthzPluginException, HiveAccessControlException {
+     HivePrivilegeObject commandObj = HivePrivilegeObject.createHivePrivilegeObject(command);
+-    ss.getAuthorizerV2().checkPrivileges(type, Arrays.asList(commandObj), null);
++    ss.getAuthorizerV2().checkPrivileges(type, Arrays.asList(commandObj), null, null);
+   }
+ 
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/taskmanager/bytebuffered/InputChannelContext.java b/fixed/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/taskmanager/bytebuffered/InputChannelContext.java
+index dd3369be6..c7dc60ca2 100644
+--- a/buggy/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/taskmanager/bytebuffered/InputChannelContext.java
++++ b/fixed/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/taskmanager/bytebuffered/InputChannelContext.java
+@@ -164,7 +164,7 @@ final class InputChannelContext implements ChannelContext, ByteBufferedInputChan
+ 
+ 		synchronized (this.queuedEnvelopes) {
+ 
+-			if (sequenceNumber <= this.lastReceivedEnvelope) {
++			if (sequenceNumber != (this.lastReceivedEnvelope + 1)) {
+ 
+ 				final Buffer buffer = transferEnvelope.getBuffer();
+ 				if (buffer != null) {

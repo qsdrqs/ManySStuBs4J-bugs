@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-formats/flink-json/src/test/java/org/apache/flink/table/descriptors/JsonTest.java b/fixed/flink-formats/flink-json/src/test/java/org/apache/flink/table/descriptors/JsonTest.java
+index 6e370a02c..ac6ff11c3 100644
+--- a/buggy/flink-formats/flink-json/src/test/java/org/apache/flink/table/descriptors/JsonTest.java
++++ b/fixed/flink-formats/flink-json/src/test/java/org/apache/flink/table/descriptors/JsonTest.java
+@@ -106,7 +106,7 @@ public class JsonTest extends DescriptorTestBase {
+ 		final Map<String, String> props3 = new HashMap<>();
+ 		props3.put("format.type", "json");
+ 		props3.put("format.property-version", "1");
+-		props3.put("format.schema", "ROW(test1 VARCHAR, test2 TIMESTAMP)");
++		props3.put("format.schema", "ROW<test1 VARCHAR, test2 TIMESTAMP>");
+ 		props3.put("format.fail-on-missing-field", "true");
+ 
+ 		final Map<String, String> props4 = new HashMap<>();

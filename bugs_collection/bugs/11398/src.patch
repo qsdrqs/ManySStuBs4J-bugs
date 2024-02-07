@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/ThrowsCountCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/ThrowsCountCheck.java
+index 3d6a469ef..d743555bd 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/ThrowsCountCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/ThrowsCountCheck.java
+@@ -71,7 +71,7 @@ public final class ThrowsCountCheck extends Check {
+ 
+     /** Creates new instance of the check. */
+     public ThrowsCountCheck() {
+-        setMax(DEFAULT_MAX);
++        max = DEFAULT_MAX;
+     }
+ 
+     @Override

@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/test/java/cucumber/formatter/TestFormatter.java b/fixed/core/src/test/java/cucumber/formatter/TestFormatter.java
+index c8cdd91b6..9be4b9a37 100644
+--- a/buggy/core/src/test/java/cucumber/formatter/TestFormatter.java
++++ b/fixed/core/src/test/java/cucumber/formatter/TestFormatter.java
+@@ -66,7 +66,7 @@ public class TestFormatter implements Formatter {
+     }
+ 
+     @Override
+-    public void syntaxError(String state, String event, List<String> legalEvents, String uri, int line) {
++    public void syntaxError(String state, String event, List<String> legalEvents, String uri, Integer line) {
+         throw new UnsupportedOperationException();
+     }
+ 

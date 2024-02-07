@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/backtype/storm/contrib/jms/trident/TridentJmsSpout.java b/fixed/src/main/java/backtype/storm/contrib/jms/trident/TridentJmsSpout.java
+index ef292ba5f..7b87959e1 100644
+--- a/buggy/src/main/java/backtype/storm/contrib/jms/trident/TridentJmsSpout.java
++++ b/fixed/src/main/java/backtype/storm/contrib/jms/trident/TridentJmsSpout.java
+@@ -321,7 +321,7 @@ public class TridentJmsSpout implements ITridentSpout<JmsBatch> {
+                 }
+                 
+                 try {
+-                    if (msg.getJMSDeliveryMode() != Session.AUTO_ACKNOWLEDGE) {
++                    if (TridentJmsSpout.this.jmsAcknowledgeMode != Session.AUTO_ACKNOWLEDGE) {
+                         batchMessages.add(msg);
+                     }
+                     Values tuple = tupleProducer.toTuple(msg);

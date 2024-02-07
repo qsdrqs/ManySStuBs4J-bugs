@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-hive/src/main/java/com/facebook/presto/hive/util/SortBuffer.java b/fixed/presto-hive/src/main/java/com/facebook/presto/hive/util/SortBuffer.java
+index 110ea49ce..cce1eafd6 100644
+--- a/buggy/presto-hive/src/main/java/com/facebook/presto/hive/util/SortBuffer.java
++++ b/fixed/presto-hive/src/main/java/com/facebook/presto/hive/util/SortBuffer.java
+@@ -85,7 +85,7 @@ public class SortBuffer
+     {
+         checkState(canAdd(page), "page buffer is full");
+         pages.add(page);
+-        usedMemoryBytes += page.getSizeInBytes();
++        usedMemoryBytes += page.getRetainedSizeInBytes();
+         rowCount = addExact(rowCount, page.getPositionCount());
+     }
+ 

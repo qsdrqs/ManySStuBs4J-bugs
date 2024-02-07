@@ -1,0 +1,13 @@
+diff --git a/buggy/processing/src/main/java/io/druid/query/dimension/DefaultDimensionSpec.java b/fixed/processing/src/main/java/io/druid/query/dimension/DefaultDimensionSpec.java
+index 78fb2b4d1..ee5ee6742 100644
+--- a/buggy/processing/src/main/java/io/druid/query/dimension/DefaultDimensionSpec.java
++++ b/fixed/processing/src/main/java/io/druid/query/dimension/DefaultDimensionSpec.java
+@@ -79,7 +79,7 @@ public class DefaultDimensionSpec implements DimensionSpec
+   @Override
+   public boolean preservesOrdering()
+   {
+-    return false;
++    return true;
+   }
+ 
+   @Override

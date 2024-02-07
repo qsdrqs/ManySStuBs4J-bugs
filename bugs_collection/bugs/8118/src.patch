@@ -1,0 +1,19 @@
+diff --git a/buggy/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/TimeType.java b/fixed/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/TimeType.java
+index f1e685cfa..3e8e7c11c 100644
+--- a/buggy/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/TimeType.java
++++ b/fixed/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/TimeType.java
+@@ -43,11 +43,11 @@ import java.util.Set;
+ @PublicEvolving
+ public final class TimeType extends LogicalType {
+ 
+-	private static final int MIN_PRECISION = 0;
++	public static final int MIN_PRECISION = 0;
+ 
+-	private static final int MAX_PRECISION = 9;
++	public static final int MAX_PRECISION = 9;
+ 
+-	private static final int DEFAULT_PRECISION = 0;
++	public static final int DEFAULT_PRECISION = 0;
+ 
+ 	private static final String FORMAT = "TIME(%d)";
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/template/PathBasedTemplateAvailabilityProvider.java b/fixed/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/template/PathBasedTemplateAvailabilityProvider.java
+index 871c2e546..82e90f198 100644
+--- a/buggy/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/template/PathBasedTemplateAvailabilityProvider.java
++++ b/fixed/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/template/PathBasedTemplateAvailabilityProvider.java
+@@ -74,7 +74,7 @@ public abstract class PathBasedTemplateAvailabilityProvider
+ 		return false;
+ 	}
+ 
+-	protected static abstract class TemplateAvailabilityProperties {
++	protected abstract static class TemplateAvailabilityProperties {
+ 
+ 		private String prefix;
+ 

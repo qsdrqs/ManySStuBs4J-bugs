@@ -1,0 +1,13 @@
+diff --git a/buggy/nephele/nephele-common/src/main/java/eu/stratosphere/nephele/services/iomanager/ChannelReader.java b/fixed/nephele/nephele-common/src/main/java/eu/stratosphere/nephele/services/iomanager/ChannelReader.java
+index 3b900887e..177d85932 100644
+--- a/buggy/nephele/nephele-common/src/main/java/eu/stratosphere/nephele/services/iomanager/ChannelReader.java
++++ b/fixed/nephele/nephele-common/src/main/java/eu/stratosphere/nephele/services/iomanager/ChannelReader.java
+@@ -62,7 +62,7 @@ public final class ChannelReader extends ChannelAccess<Buffer.Input> implements
+ 	{
+ 		synchronized (this) {
+ 			if (this.closed) {
+-				throw new IllegalStateException("Writer is already closing or has been closed.");
++				throw new IllegalStateException("Reader is already closing or has been closed.");
+ 			}
+ 			this.closed = true;
+ 		}

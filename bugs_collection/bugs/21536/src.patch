@@ -1,0 +1,13 @@
+diff --git a/buggy/src/api/org/openmrs/api/impl/PatientServiceImpl.java b/fixed/src/api/org/openmrs/api/impl/PatientServiceImpl.java
+index 55879ccf4..3bbc225d2 100644
+--- a/buggy/src/api/org/openmrs/api/impl/PatientServiceImpl.java
++++ b/fixed/src/api/org/openmrs/api/impl/PatientServiceImpl.java
+@@ -185,7 +185,7 @@ public class PatientServiceImpl extends BaseOpenmrsService implements PatientSer
+ 		List<PatientIdentifier> identifiers = new Vector<PatientIdentifier>();
+ 		identifiers.addAll(patient.getIdentifiers());
+ 		List<String> identifiersUsed = new Vector<String>();
+-		List<PatientIdentifierType> requiredTypes = getPatientIdentifierTypes(null, null, true, null);
++		List<PatientIdentifierType> requiredTypes = Context.getPatientService().getPatientIdentifierTypes(null, null, true, null);
+ 		if (requiredTypes == null)
+ 			requiredTypes = new ArrayList<PatientIdentifierType>();
+ 		List<PatientIdentifierType> foundRequiredTypes = new ArrayList<PatientIdentifierType>();

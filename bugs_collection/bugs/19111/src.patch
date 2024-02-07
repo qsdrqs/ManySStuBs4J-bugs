@@ -1,0 +1,13 @@
+diff --git a/buggy/enterprise/cluster/src/main/java/org/neo4j/cluster/protocol/atomicbroadcast/multipaxos/LearnerState.java b/fixed/enterprise/cluster/src/main/java/org/neo4j/cluster/protocol/atomicbroadcast/multipaxos/LearnerState.java
+index 9f478537e..521e562c0 100644
+--- a/buggy/enterprise/cluster/src/main/java/org/neo4j/cluster/protocol/atomicbroadcast/multipaxos/LearnerState.java
++++ b/fixed/enterprise/cluster/src/main/java/org/neo4j/cluster/protocol/atomicbroadcast/multipaxos/LearnerState.java
+@@ -240,7 +240,7 @@ public enum LearnerState
+ 
+                         case catchUp:
+                         {
+-                            long catchUpTo = message.getPayload();
++                            long catchUpTo = message.<Long>getPayload();
+ 
+                             if ( context.getLastKnownLearnedInstanceInCluster() < catchUpTo )
+                             {

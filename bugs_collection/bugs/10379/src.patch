@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/main/java/com/yahoo/ycsb/measurements/OneMeasurementHdrHistogram.java b/fixed/core/src/main/java/com/yahoo/ycsb/measurements/OneMeasurementHdrHistogram.java
+index 6712d78b3..5373b4006 100644
+--- a/buggy/core/src/main/java/com/yahoo/ycsb/measurements/OneMeasurementHdrHistogram.java
++++ b/fixed/core/src/main/java/com/yahoo/ycsb/measurements/OneMeasurementHdrHistogram.java
+@@ -101,7 +101,7 @@ public class OneMeasurementHdrHistogram extends OneMeasurement {
+     exporter.write(getName(), "AverageLatency(us)", totalHistogram.getMean());
+     exporter.write(getName(), "MinLatency(us)", totalHistogram.getMinValue());
+     exporter.write(getName(), "MaxLatency(us)", totalHistogram.getMaxValue());
+-    exporter.write(getName(), "95thPercentileLatency(us)", totalHistogram.getValueAtPercentile(90));
++    exporter.write(getName(), "95thPercentileLatency(us)", totalHistogram.getValueAtPercentile(95));
+     exporter.write(getName(), "99thPercentileLatency(us)", totalHistogram.getValueAtPercentile(99));
+     
+     exportReturnCodes(exporter);

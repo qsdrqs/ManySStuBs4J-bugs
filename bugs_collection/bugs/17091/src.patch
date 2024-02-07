@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/impl/ConcurrentMapManager.java b/fixed/hazelcast/src/main/java/com/hazelcast/impl/ConcurrentMapManager.java
+index d57f25ffd..51b5c1f01 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/impl/ConcurrentMapManager.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/impl/ConcurrentMapManager.java
+@@ -855,7 +855,7 @@ public class ConcurrentMapManager extends BaseManager {
+             DataRecordEntry dataRecordEntry = new DataRecordEntry(record, valueData);
+             request.setFromRecord(record);
+             request.operation = CONCURRENT_MAP_MERGE;
+-            request.value = toData(dataRecordEntry);
++            request.value = toData(dataRecordEntry.getValue());
+             request.setBooleanRequest();
+             doOp();
+             Boolean returnObject = getResultAsBoolean();

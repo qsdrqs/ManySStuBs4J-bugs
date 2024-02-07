@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/main/java/org/springframework/boot/web/support/ErrorPageFilter.java b/fixed/spring-boot/src/main/java/org/springframework/boot/web/support/ErrorPageFilter.java
+index 484bc42d0..6610a22c3 100644
+--- a/buggy/spring-boot/src/main/java/org/springframework/boot/web/support/ErrorPageFilter.java
++++ b/fixed/spring-boot/src/main/java/org/springframework/boot/web/support/ErrorPageFilter.java
+@@ -185,7 +185,7 @@ public class ErrorPageFilter implements Filter, ErrorPageRegistry {
+ 		request.getRequestDispatcher(path).forward(request, response);
+ 	}
+ 
+-	private String getDescription(HttpServletRequest request) {
++	protected String getDescription(HttpServletRequest request) {
+ 		return "[" + request.getServletPath()
+ 				+ (request.getPathInfo() == null ? "" : request.getPathInfo()) + "]";
+ 	}

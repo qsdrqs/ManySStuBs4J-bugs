@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/wal/FSHLog.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/wal/FSHLog.java
+index b118ecd96..fa69d63a3 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/wal/FSHLog.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/wal/FSHLog.java
+@@ -1844,7 +1844,7 @@ public class FSHLog implements WAL {
+         // Update metrics.
+         postAppend(entry, EnvironmentEdgeManager.currentTime() - start);
+       } catch (Exception e) {
+-        LOG.fatal("Could not append. Requesting close of wal", e);
++        LOG.warn("Could not append. Requesting close of wal", e);
+         requestLogRoll();
+         throw e;
+       }

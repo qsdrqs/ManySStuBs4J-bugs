@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/rhino/testing/TypeSubject.java b/fixed/src/com/google/javascript/rhino/testing/TypeSubject.java
+index 570a17839..157959397 100644
+--- a/buggy/src/com/google/javascript/rhino/testing/TypeSubject.java
++++ b/fixed/src/com/google/javascript/rhino/testing/TypeSubject.java
+@@ -64,7 +64,7 @@ import javax.annotation.Nullable;
+  *   assertType(type2).isObjectTypeWithProperty("propName").withTypeOfProp("propName").isNumber();
+  * </pre>
+  */
+-public final class TypeSubject extends Subject<TypeSubject, JSType> {
++public final class TypeSubject extends Subject {
+   @CheckReturnValue
+   public static TypeSubject assertType(JSType type) {
+     return assertAbout(types()).that(type);

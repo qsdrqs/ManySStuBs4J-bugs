@@ -1,0 +1,13 @@
+diff --git a/buggy/web/src/main/java/org/openmrs/web/filter/util/LocalizationTool.java b/fixed/web/src/main/java/org/openmrs/web/filter/util/LocalizationTool.java
+index 9217e6ca5..eff761633 100644
+--- a/buggy/web/src/main/java/org/openmrs/web/filter/util/LocalizationTool.java
++++ b/fixed/web/src/main/java/org/openmrs/web/filter/util/LocalizationTool.java
+@@ -81,7 +81,7 @@ public class LocalizationTool extends ResourceTool {
+ 		Object msg = super.get(code, resourceNamePrefixes, locale);
+ 		//if code's translation is blank, use the english equivalent
+ 		if (msg == null || StringUtils.isBlank(msg.toString())) {
+-			msg = super.get(code, resourceNamePrefixes, getDefaultResourceBundle().getLocale().toString());
++			msg = super.get(code, resourceNamePrefixes, Locale.ENGLISH.toString());
+ 		}
+ 		
+ 		return msg;

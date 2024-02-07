@@ -1,0 +1,20 @@
+diff --git a/buggy/processing/src/test/java/io/druid/query/RetryQueryRunnerTest.java b/fixed/processing/src/test/java/io/druid/query/RetryQueryRunnerTest.java
+index 16c8a5150..9c6329a3d 100644
+--- a/buggy/processing/src/test/java/io/druid/query/RetryQueryRunnerTest.java
++++ b/fixed/processing/src/test/java/io/druid/query/RetryQueryRunnerTest.java
+@@ -131,7 +131,7 @@ public class RetryQueryRunnerTest
+           @Override
+           public Sequence run(Query query, Map context)
+           {
+-            if (context.get("count") == 0) {
++            if ((int)context.get("count") == 0) {
+               ((List) context.get(RetryQueryRunner.missingSegments)).add(
+                   new SegmentDescriptor(
+                       new Interval(
+@@ -368,4 +368,4 @@ public class RetryQueryRunnerTest
+     Assert.assertTrue("Should have one entry in the list of missing segments", ((List) context.get(RetryQueryRunner.missingSegments)).size() == 1);
+   }
+ 
+-}
+\ No newline at end of file
++}

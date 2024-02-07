@@ -1,0 +1,13 @@
+diff --git a/buggy/backends/gdx-backend-iosmonotouch/src/com/badlogic/gdx/backends/ios/IOSInput.java b/fixed/backends/gdx-backend-iosmonotouch/src/com/badlogic/gdx/backends/ios/IOSInput.java
+index aaf51f9cc..8e09a6926 100644
+--- a/buggy/backends/gdx-backend-iosmonotouch/src/com/badlogic/gdx/backends/ios/IOSInput.java
++++ b/fixed/backends/gdx-backend-iosmonotouch/src/com/badlogic/gdx/backends/ios/IOSInput.java
+@@ -256,7 +256,7 @@ public class IOSInput implements Input {
+ 						break;
+ 					case UITouchPhase.Moved:
+ 					case UITouchPhase.Stationary:
+-						inputProcessor.touchDown(event.x, event.y, event.pointer, Buttons.LEFT);
++						inputProcessor.touchDragged(event.x, event.y, event.pointer);
+ 						break;
+ 					}
+ 				}

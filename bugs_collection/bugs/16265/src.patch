@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/map/impl/recordstore/AbstractRecordStore.java b/fixed/hazelcast/src/main/java/com/hazelcast/map/impl/recordstore/AbstractRecordStore.java
+index d7853496e..50107b9c3 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/map/impl/recordstore/AbstractRecordStore.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/map/impl/recordstore/AbstractRecordStore.java
+@@ -186,7 +186,7 @@ abstract class AbstractRecordStore implements RecordStore<Record> {
+ 
+     protected LockStore createLockStore() {
+         NodeEngine nodeEngine = mapServiceContext.getNodeEngine();
+-        final LockService lockService = nodeEngine.getService(LockService.SERVICE_NAME);
++        final LockService lockService = nodeEngine.getSharedService(LockService.SERVICE_NAME);
+         if (lockService == null) {
+             return null;
+         }

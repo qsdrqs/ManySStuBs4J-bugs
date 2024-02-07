@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/io/org.openhab.io.net/src/main/java/org/openhab/io/net/http/SecureHttpContext.java b/fixed/bundles/io/org.openhab.io.net/src/main/java/org/openhab/io/net/http/SecureHttpContext.java
+index bc0b3b2ab..ff3720555 100644
+--- a/buggy/bundles/io/org.openhab.io.net/src/main/java/org/openhab/io/net/http/SecureHttpContext.java
++++ b/fixed/bundles/io/org.openhab.io.net/src/main/java/org/openhab/io/net/http/SecureHttpContext.java
+@@ -278,7 +278,7 @@ public class SecureHttpContext implements HttpContext, ManagedService {
+ 	 */
+ 	private Subject authenticate(final String realm, final String username, final String password) {
+ 		try {
+-			logger.trace("going to authenticate user '{}', real '{}'", username, realm);
++			logger.trace("going to authenticate user '{}', realm '{}'", username, realm);
+ 
+ 			Subject subject = new Subject();
+ 			

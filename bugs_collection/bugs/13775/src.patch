@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-verifier/src/main/java/com/facebook/presto/verifier/Validator.java b/fixed/presto-verifier/src/main/java/com/facebook/presto/verifier/Validator.java
+index cc690ce9c..9391db904 100644
+--- a/buggy/presto-verifier/src/main/java/com/facebook/presto/verifier/Validator.java
++++ b/fixed/presto-verifier/src/main/java/com/facebook/presto/verifier/Validator.java
+@@ -390,7 +390,7 @@ public class Validator
+                         return new QueryResult(State.SUCCESS, null, nanosSince(start), getCpuTime(limitedStatement.getResultSet()), results);
+                     }
+                     else {
+-                        return new QueryResult(State.SUCCESS, null, nanosSince(start), getCpuTime(limitedStatement.getResultSet()), null);
++                        return new QueryResult(State.SUCCESS, null, nanosSince(start), null, null);
+                     }
+                 }
+                 catch (AssertionError e) {

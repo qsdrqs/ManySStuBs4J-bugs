@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/main/java/com/yahoo/ycsb/measurements/OneMeasurementRaw.java b/fixed/core/src/main/java/com/yahoo/ycsb/measurements/OneMeasurementRaw.java
+index 132952d90..15c3f1830 100644
+--- a/buggy/core/src/main/java/com/yahoo/ycsb/measurements/OneMeasurementRaw.java
++++ b/fixed/core/src/main/java/com/yahoo/ycsb/measurements/OneMeasurementRaw.java
+@@ -189,7 +189,7 @@ public class OneMeasurementRaw extends OneMeasurement {
+           measurements.get((int)(totalOps*0.9999)).value());
+     }
+ 
+-    exportReturnCodes(exporter);
++    exportStatusCounts(exporter);
+   }
+ 
+   @Override

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/util/scheduler/EntryTaskSchedulerFactory.java b/fixed/hazelcast/src/main/java/com/hazelcast/util/scheduler/EntryTaskSchedulerFactory.java
+index d1b44e5bf..bacba37fd 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/util/scheduler/EntryTaskSchedulerFactory.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/util/scheduler/EntryTaskSchedulerFactory.java
+@@ -46,7 +46,7 @@ public final class EntryTaskSchedulerFactory {
+      * @return EntryTaskScheduler
+      */
+     public static <K, V> EntryTaskScheduler<K, V> newScheduler(ScheduledExecutorService scheduledExecutorService,
+-                                                               ScheduledEntryProcessor entryProcessor,
++                                                               ScheduledEntryProcessor<K, V> entryProcessor,
+                                                                ScheduleType scheduleType) {
+         return new SecondsBasedEntryTaskScheduler<K, V>(scheduledExecutorService, entryProcessor, scheduleType);
+     }

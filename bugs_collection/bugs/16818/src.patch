@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientExecutionServiceImpl.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientExecutionServiceImpl.java
+index 9ccbcf88c..7b3281b68 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientExecutionServiceImpl.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientExecutionServiceImpl.java
+@@ -75,7 +75,7 @@ public final class ClientExecutionServiceImpl implements ClientExecutionService
+     @Override
+     public <T> ICompletableFuture<T> submitInternal(final Callable<T> command) {
+         CompletableFutureTask futureTask = new CompletableFutureTask(command, internalExecutor);
+-        internalExecutor.submit(command);
++        internalExecutor.submit(futureTask);
+         return futureTask;
+     }
+ 

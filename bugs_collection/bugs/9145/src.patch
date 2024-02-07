@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-common/src/main/java/org/apache/hadoop/hbase/NoTagsKeyValue.java b/fixed/hbase-common/src/main/java/org/apache/hadoop/hbase/NoTagsKeyValue.java
+index 8a57a01f8..088aff575 100644
+--- a/buggy/hbase-common/src/main/java/org/apache/hadoop/hbase/NoTagsKeyValue.java
++++ b/fixed/hbase-common/src/main/java/org/apache/hadoop/hbase/NoTagsKeyValue.java
+@@ -51,7 +51,7 @@ public class NoTagsKeyValue extends KeyValue {
+   }
+ 
+   @Override
+-  public Cell deepClone() {
++  public ExtendedCell deepClone() {
+     byte[] copy = Bytes.copy(this.bytes, this.offset, this.length);
+     KeyValue kv = new NoTagsKeyValue(copy, 0, copy.length);
+     kv.setSequenceId(this.getSequenceId());

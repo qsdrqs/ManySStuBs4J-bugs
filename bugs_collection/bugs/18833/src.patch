@@ -1,0 +1,13 @@
+diff --git a/buggy/profiler/src/main/java/com/navercorp/pinpoint/profiler/context/provider/plugin/Slf4jCommonLoggerFactory.java b/fixed/profiler/src/main/java/com/navercorp/pinpoint/profiler/context/provider/plugin/Slf4jCommonLoggerFactory.java
+index e277ee168..bd261da84 100644
+--- a/buggy/profiler/src/main/java/com/navercorp/pinpoint/profiler/context/provider/plugin/Slf4jCommonLoggerFactory.java
++++ b/fixed/profiler/src/main/java/com/navercorp/pinpoint/profiler/context/provider/plugin/Slf4jCommonLoggerFactory.java
+@@ -33,7 +33,7 @@ public class Slf4jCommonLoggerFactory implements CommonLoggerFactory {
+     }
+ 
+ 
+-    private class Sl4jCommonLogger implements CommonLogger {
++    private static class Sl4jCommonLogger implements CommonLogger {
+ 
+         private final Logger logger;
+ 

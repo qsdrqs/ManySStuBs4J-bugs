@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/international/arabic/parsesegment/JointParsingModel.java b/fixed/src/edu/stanford/nlp/international/arabic/parsesegment/JointParsingModel.java
+index 330499a05..c516f25e5 100644
+--- a/buggy/src/edu/stanford/nlp/international/arabic/parsesegment/JointParsingModel.java
++++ b/fixed/src/edu/stanford/nlp/international/arabic/parsesegment/JointParsingModel.java
+@@ -217,7 +217,7 @@ public class JointParsingModel {
+         Tree rawTree = null;
+         if(op.doPCFG && pparser.parse(lattice)) {
+           rawTree = pparser.getBestParse(); //1best segmentation
+-          bestSegmentationB = rawTree.yield(new ArrayList<>()); //has boundary symbol
++          bestSegmentationB = rawTree.yield(new ArrayList<CoreLabel>()); //has boundary symbol
+ 
+           if(op.doDep && dparser.parse(bestSegmentationB)) {
+             System.err.printf("%s: Dependency parse succeeded!%n", this.getClass().getName());

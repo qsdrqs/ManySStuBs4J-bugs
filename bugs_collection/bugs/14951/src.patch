@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/DefaultPassConfig.java b/fixed/src/com/google/javascript/jscomp/DefaultPassConfig.java
+index a44241e69..2371989e9 100644
+--- a/buggy/src/com/google/javascript/jscomp/DefaultPassConfig.java
++++ b/fixed/src/com/google/javascript/jscomp/DefaultPassConfig.java
+@@ -280,7 +280,7 @@ public final class DefaultPassConfig extends PassConfig {
+       checks.add(angularPass);
+     }
+ 
+-    if (options.checkProvides.isOn()) {
++    if (options.checkProvides.isOn() || options.enables(DiagnosticGroups.MISSING_PROVIDE)) {
+       checks.add(checkProvides);
+     }
+ 

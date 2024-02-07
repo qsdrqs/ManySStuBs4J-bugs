@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/mapreduce/impl/ListKeyValueSource.java b/fixed/hazelcast/src/main/java/com/hazelcast/mapreduce/impl/ListKeyValueSource.java
+index 302ee0bb9..0f3328b8b 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/mapreduce/impl/ListKeyValueSource.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/mapreduce/impl/ListKeyValueSource.java
+@@ -68,7 +68,7 @@ public class ListKeyValueSource<V>
+         PartitionService ps = nei.getPartitionService();
+         Data data = ss.toData(listName, StringAndPartitionAwarePartitioningStrategy.INSTANCE);
+         int partitionId = ps.getPartitionId(data);
+-        if (!ps.getPartitionOwner(partitionId).equals(thisAddress)) {
++        if (!thisAddress.equals(ps.getPartitionOwner(partitionId))) {
+             return;
+         }
+ 

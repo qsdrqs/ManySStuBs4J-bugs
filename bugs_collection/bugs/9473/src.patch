@@ -1,0 +1,13 @@
+diff --git a/buggy/src/java/org/apache/hadoop/hbase/client/HConnectionManager.java b/fixed/src/java/org/apache/hadoop/hbase/client/HConnectionManager.java
+index 1413de4f0..5fd1bca9a 100644
+--- a/buggy/src/java/org/apache/hadoop/hbase/client/HConnectionManager.java
++++ b/fixed/src/java/org/apache/hadoop/hbase/client/HConnectionManager.java
+@@ -445,7 +445,7 @@ public class HConnectionManager implements HConstants {
+           // second waits. The second thread will not do find.
+           
+           if (!useCache || rootRegionLocation == null) {
+-            return locateRootRegion();
++            this.rootRegionLocation = locateRootRegion();
+           }
+           return rootRegionLocation;
+         }        

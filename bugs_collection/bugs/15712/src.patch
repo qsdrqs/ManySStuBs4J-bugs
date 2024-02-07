@@ -1,0 +1,13 @@
+diff --git a/buggy/guava/src/com/google/common/io/Resources.java b/fixed/guava/src/com/google/common/io/Resources.java
+index 3d8149160..5fdc91f48 100644
+--- a/buggy/guava/src/com/google/common/io/Resources.java
++++ b/fixed/guava/src/com/google/common/io/Resources.java
+@@ -84,7 +84,7 @@ public final class Resources {
+ 
+     @Override
+     public String toString() {
+-      return "Resources.newByteSource(" + url + ")";
++      return "Resources.asByteSource(" + url + ")";
+     }
+   }
+ 

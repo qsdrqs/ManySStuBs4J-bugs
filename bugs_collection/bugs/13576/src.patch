@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/spiller/FileSingleStreamSpillerFactory.java b/fixed/presto-main/src/main/java/com/facebook/presto/spiller/FileSingleStreamSpillerFactory.java
+index 5e827121f..5ef585785 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/spiller/FileSingleStreamSpillerFactory.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/spiller/FileSingleStreamSpillerFactory.java
+@@ -156,7 +156,7 @@ public class FileSingleStreamSpillerFactory
+             return fileStore.getUsableSpace() > fileStore.getTotalSpace() * (1.0 - minimumFreeSpaceThreshold);
+         }
+         catch (IOException e) {
+-            throw new PrestoException(OUT_OF_SPILL_SPACE, "Cannot determine free space for spiell", e);
++            throw new PrestoException(OUT_OF_SPILL_SPACE, "Cannot determine free space for spill", e);
+         }
+     }
+ }

@@ -1,0 +1,13 @@
+diff --git a/buggy/processing/src/main/java/io/druid/query/metadata/SegmentAnalyzer.java b/fixed/processing/src/main/java/io/druid/query/metadata/SegmentAnalyzer.java
+index d67cb5bc6..a81aa80dd 100644
+--- a/buggy/processing/src/main/java/io/druid/query/metadata/SegmentAnalyzer.java
++++ b/fixed/processing/src/main/java/io/druid/query/metadata/SegmentAnalyzer.java
+@@ -76,7 +76,7 @@ public class SegmentAnalyzer
+     this.analysisTypes = analysisTypes;
+   }
+ 
+-  public int numRows(Segment segment)
++  public long numRows(Segment segment)
+   {
+     return Preconditions.checkNotNull(segment, "segment").asStorageAdapter().getNumRows();
+   }

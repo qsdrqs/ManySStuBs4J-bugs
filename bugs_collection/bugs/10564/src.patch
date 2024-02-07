@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/whitespace/EmptyLineSeparatorCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/whitespace/EmptyLineSeparatorCheckTest.java
+index 58fcfd630..e8f5310e1 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/whitespace/EmptyLineSeparatorCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/whitespace/EmptyLineSeparatorCheckTest.java
+@@ -44,7 +44,7 @@ public class EmptyLineSeparatorCheckTest
+     public void testGetRequiredTokens() {
+         final EmptyLineSeparatorCheck checkObj = new EmptyLineSeparatorCheck();
+         assertArrayEquals(
+-            "EmptyLineSeparatorCheck#getRequiredTockens should return empty array by default",
++            "EmptyLineSeparatorCheck#getRequiredTokens should return empty array by default",
+             CommonUtils.EMPTY_INT_ARRAY, checkObj.getRequiredTokens());
+     }
+ 

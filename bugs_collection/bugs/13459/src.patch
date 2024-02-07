@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-hive/src/test/java/com/facebook/presto/hive/AbstractTestHiveClient.java b/fixed/presto-hive/src/test/java/com/facebook/presto/hive/AbstractTestHiveClient.java
+index 530103007..f02ade72d 100644
+--- a/buggy/presto-hive/src/test/java/com/facebook/presto/hive/AbstractTestHiveClient.java
++++ b/fixed/presto-hive/src/test/java/com/facebook/presto/hive/AbstractTestHiveClient.java
+@@ -1263,7 +1263,7 @@ public abstract class AbstractTestHiveClient
+                 fail("Expected HiveNotReadableException");
+             }
+             catch (HiveNotReadableException e) {
+-                assertEquals(e.getMessage(), "Table 'default.presto_test_not_readable' is not readable: reason for not readable");
++                assertThat(e).hasMessageMatching("Table '.*\\.presto_test_not_readable' is not readable: reason for not readable");
+                 assertEquals(e.getTableName(), tableNotReadable);
+                 assertEquals(e.getPartition(), Optional.empty());
+             }

@@ -1,0 +1,14 @@
+diff --git a/buggy/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/health/SolrHealthIndicator.java b/fixed/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/health/SolrHealthIndicator.java
+index 25d89c274..5e2e41870 100644
+--- a/buggy/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/health/SolrHealthIndicator.java
++++ b/fixed/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/health/SolrHealthIndicator.java
+@@ -43,8 +43,7 @@ public class SolrHealthIndicator extends AbstractHealthIndicator {
+ 		CoreAdminResponse response = request.process(this.solrClient);
+ 		int statusCode = response.getStatus();
+ 		Status status = (statusCode == 0 ? Status.UP : Status.DOWN);
+-		builder.status(status).withDetail("solrStatus",
+-				(statusCode == 0 ? "OK" : statusCode));
++		builder.status(status).withDetail("status", statusCode);
+ 	}
+ 
+ }

@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.maxcube/src/main/java/org/openhab/binding/maxcube/internal/message/S_Message.java b/fixed/bundles/binding/org.openhab.binding.maxcube/src/main/java/org/openhab/binding/maxcube/internal/message/S_Message.java
+index e1c80c27d..7f2d81370 100644
+--- a/buggy/bundles/binding/org.openhab.binding.maxcube/src/main/java/org/openhab/binding/maxcube/internal/message/S_Message.java
++++ b/fixed/bundles/binding/org.openhab.binding.maxcube/src/main/java/org/openhab/binding/maxcube/internal/message/S_Message.java
+@@ -39,7 +39,7 @@ public final class S_Message extends Message {
+                 logger.debug("Exception occurred during parsing of S message: {}", e.getMessage(), e);
+             }
+         } else {
+-            logger.debug("Unexpected # of tolkens ({}) received in S message: {}", tokens.length, this.getPayload());
++            logger.debug("Unexpected # of tokens ({}) received in S message: {}", tokens.length, this.getPayload());
+         }
+     }
+ 

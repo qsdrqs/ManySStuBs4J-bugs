@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/cache/CacheAutoConfiguration.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/cache/CacheAutoConfiguration.java
+index 6509fd762..1054cf7f7 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/cache/CacheAutoConfiguration.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/cache/CacheAutoConfiguration.java
+@@ -84,7 +84,7 @@ public class CacheAutoConfiguration {
+ 		@Override
+ 		public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory)
+ 				throws BeansException {
+-			for (String name : beanFactory.getBeanNamesForType(CacheAspectSupport.class)) {
++			for (String name : beanFactory.getBeanNamesForType(CacheAspectSupport.class, false, false)) {
+ 				BeanDefinition definition = beanFactory.getBeanDefinition(name);
+ 				definition.setDependsOn(append(definition.getDependsOn(),
+ 						VALIDATOR_BEAN_NAME));

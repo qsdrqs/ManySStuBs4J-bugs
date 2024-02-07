@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.tinkerforge/src/main/java/org/openhab/binding/tinkerforge/internal/model/impl/MLCD20x4BacklightImpl.java b/fixed/bundles/binding/org.openhab.binding.tinkerforge/src/main/java/org/openhab/binding/tinkerforge/internal/model/impl/MLCD20x4BacklightImpl.java
+index 801cdefd1..73559e938 100644
+--- a/buggy/bundles/binding/org.openhab.binding.tinkerforge/src/main/java/org/openhab/binding/tinkerforge/internal/model/impl/MLCD20x4BacklightImpl.java
++++ b/fixed/bundles/binding/org.openhab.binding.tinkerforge/src/main/java/org/openhab/binding/tinkerforge/internal/model/impl/MLCD20x4BacklightImpl.java
+@@ -525,7 +525,7 @@ public class MLCD20x4BacklightImpl extends MinimalEObjectImpl.Container implemen
+                 logger.debug("setSwitchState on");
+                 brickletLCD20x4.backlightOn();
+             } else {
+-                logger.error("{} unkown switchstate {}", LoggerConstants.TFMODELUPDATE, state);
++                logger.error("{} unknown switchstate {}", LoggerConstants.TFMODELUPDATE, state);
+             }
+             setSwitchState(state);
+         } catch (TimeoutException e) {

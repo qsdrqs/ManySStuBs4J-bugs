@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/endpoint/mvc/LogFileMvcEndpoint.java b/fixed/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/endpoint/mvc/LogFileMvcEndpoint.java
+index b82c28838..716b143b1 100644
+--- a/buggy/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/endpoint/mvc/LogFileMvcEndpoint.java
++++ b/fixed/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/endpoint/mvc/LogFileMvcEndpoint.java
+@@ -145,7 +145,7 @@ public class LogFileMvcEndpoint implements MvcEndpoint, EnvironmentAware {
+ 
+ 		private final Resource resource;
+ 
+-		public Handler(Resource resource) {
++		Handler(Resource resource) {
+ 			this.resource = resource;
+ 		}
+ 

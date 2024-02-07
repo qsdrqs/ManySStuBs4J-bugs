@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/MultipleStringLiteralsCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/MultipleStringLiteralsCheck.java
+index c72edc903..43ff2dac1 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/MultipleStringLiteralsCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/MultipleStringLiteralsCheck.java
+@@ -91,7 +91,7 @@ public class MultipleStringLiteralsCheck extends Check {
+      * @throws org.apache.commons.beanutils.ConversionException
+      *         if unable to create Pattern object
+      */
+-    public void setIgnoreStringsRegexp(String ignoreStringsRegexp) {
++    public final void setIgnoreStringsRegexp(String ignoreStringsRegexp) {
+         if (ignoreStringsRegexp != null
+             && !ignoreStringsRegexp.isEmpty()) {
+             pattern = Utils.createPattern(ignoreStringsRegexp);

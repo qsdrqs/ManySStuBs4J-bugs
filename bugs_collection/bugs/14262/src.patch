@@ -1,0 +1,13 @@
+diff --git a/buggy/StatisticsAPI/src/org/gephi/statistics/StatisticsModelImpl.java b/fixed/StatisticsAPI/src/org/gephi/statistics/StatisticsModelImpl.java
+index 9bd201eeb..473fe1096 100644
+--- a/buggy/StatisticsAPI/src/org/gephi/statistics/StatisticsModelImpl.java
++++ b/fixed/StatisticsAPI/src/org/gephi/statistics/StatisticsModelImpl.java
+@@ -165,7 +165,7 @@ public class StatisticsModelImpl implements StatisticsModel {
+                 Element reportE = document.createElement("report");
+                 reportE.setAttribute("class", entry.getKey().getName());
+                 reportE.setAttribute("value", entry.getValue());
+-                resultsE.appendChild(reportE);
++                reportsE.appendChild(reportE);
+             }
+         }
+         modelE.appendChild(reportsE);

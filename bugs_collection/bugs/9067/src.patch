@@ -1,0 +1,21 @@
+diff --git a/buggy/hbase-server/src/test/java/org/apache/hadoop/hbase/client/TestFromClientSide.java b/fixed/hbase-server/src/test/java/org/apache/hadoop/hbase/client/TestFromClientSide.java
+index 38231037a..36d31b402 100644
+--- a/buggy/hbase-server/src/test/java/org/apache/hadoop/hbase/client/TestFromClientSide.java
++++ b/fixed/hbase-server/src/test/java/org/apache/hadoop/hbase/client/TestFromClientSide.java
+@@ -1155,14 +1155,14 @@ public class TestFromClientSide {
+     }
+   }
+ 
+-  @Test(expected = IOException.class)
++  @Test(expected = NullPointerException.class)
+   public void testNullTableName() throws IOException {
+     // Null table name (should NOT work)
+     TEST_UTIL.createTable((TableName)null, FAMILY);
+     fail("Creating a table with null name passed, should have failed");
+   }
+ 
+-  @Test(expected = IOException.class)
++  @Test(expected = IllegalArgumentException.class)
+   public void testNullFamilyName() throws IOException {
+     final TableName tableName = TableName.valueOf(name.getMethodName());
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/web/src/main/java/com/navercorp/pinpoint/web/vo/linechart/DownSamplers.java b/fixed/web/src/main/java/com/navercorp/pinpoint/web/vo/linechart/DownSamplers.java
+index 255aa7628..f3ec4ef18 100644
+--- a/buggy/web/src/main/java/com/navercorp/pinpoint/web/vo/linechart/DownSamplers.java
++++ b/fixed/web/src/main/java/com/navercorp/pinpoint/web/vo/linechart/DownSamplers.java
+@@ -64,7 +64,7 @@ public class DownSamplers {
+ 			if (doubles == null || doubles.length == 0) {
+ 				return 0.0;
+ 			}
+-			Double max = Double.MIN_VALUE;
++			Double max = -1 * Double.MAX_VALUE;
+ 			for (Double each : doubles) {
+ 				if (max < each) {
+ 					max = each;

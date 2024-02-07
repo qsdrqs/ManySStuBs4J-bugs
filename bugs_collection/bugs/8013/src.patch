@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/model/language/JXPathExpression.java b/fixed/camel-core/src/main/java/org/apache/camel/model/language/JXPathExpression.java
+index 4796e8613..a37d35bc2 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/model/language/JXPathExpression.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/model/language/JXPathExpression.java
+@@ -33,6 +33,6 @@ public class JXPathExpression extends ExpressionType {
+     }
+ 
+     public String getLanguage() {
+-        return "jaxpath";
++        return "jxpath";
+     }
+ }
+\ No newline at end of file

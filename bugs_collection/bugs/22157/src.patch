@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-test-autoconfigure/src/test/java/org/springframework/boot/test/autoconfigure/security/SecurityTestApplication.java b/fixed/spring-boot-test-autoconfigure/src/test/java/org/springframework/boot/test/autoconfigure/security/SecurityTestApplication.java
+index 8cfe8f5a4..5a68bb09c 100644
+--- a/buggy/spring-boot-test-autoconfigure/src/test/java/org/springframework/boot/test/autoconfigure/security/SecurityTestApplication.java
++++ b/fixed/spring-boot-test-autoconfigure/src/test/java/org/springframework/boot/test/autoconfigure/security/SecurityTestApplication.java
+@@ -35,7 +35,7 @@ public class SecurityTestApplication {
+ 
+ 	@Bean
+ 	public InMemoryUserDetailsManager inMemoryUserDetailsManager() throws Exception {
+-		return new InMemoryUserDetailsManager(User.withUsername("user").password("password").roles("USER").build());
++		return new InMemoryUserDetailsManager(User.withUsername("user").password("secret").roles("USER").build());
+ 	}
+ 
+ 	@RestController

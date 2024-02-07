@@ -1,0 +1,12 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/lint/CheckForInOverArray.java b/fixed/src/com/google/javascript/jscomp/lint/CheckForInOverArray.java
+index 52efeb743..916914171 100644
+--- a/buggy/src/com/google/javascript/jscomp/lint/CheckForInOverArray.java
++++ b/fixed/src/com/google/javascript/jscomp/lint/CheckForInOverArray.java
+@@ -89,6 +89,6 @@ public final class CheckForInOverArray
+ 
+   @Override
+   public void hotSwapScript(Node scriptRoot, Node originalRoot) {
+-    NodeTraversal.traverseEs6(compiler, originalRoot, this);
++    NodeTraversal.traverseEs6(compiler, scriptRoot, this);
+   }
+ }

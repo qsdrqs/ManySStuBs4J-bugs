@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/TextField.java b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/TextField.java
+index d9c1b77bf..40cbb00c9 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/TextField.java
++++ b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/TextField.java
+@@ -274,7 +274,7 @@ public class TextField extends Widget implements Disableable {
+ 		visibleTextEnd = Math.max(0, end - 1);
+ 
+ 		if ((textHAlign & Align.left) == 0) {
+-			textOffset = visibleWidth - (glyphPositions[visibleTextEnd] - startX);
++			textOffset = visibleWidth - glyphPositions[visibleTextEnd] - fontOffset + startX;
+ 			if ((textHAlign & Align.center) != 0) textOffset = Math.round(textOffset * 0.5f);
+ 		} else
+ 			textOffset = startX + renderOffset;

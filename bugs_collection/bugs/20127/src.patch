@@ -1,0 +1,13 @@
+diff --git a/buggy/library/src/com/nhaarman/listviewanimations/widget/DynamicListView.java b/fixed/library/src/com/nhaarman/listviewanimations/widget/DynamicListView.java
+index 151d9b937..b7a564750 100644
+--- a/buggy/library/src/com/nhaarman/listviewanimations/widget/DynamicListView.java
++++ b/fixed/library/src/com/nhaarman/listviewanimations/widget/DynamicListView.java
+@@ -483,7 +483,7 @@ public class DynamicListView extends ListView {
+                 return;
+             }
+ 
+-            if (getPositionForView(switchView) < getHeaderViewsCount()) {
++            if (getPositionForView(switchView) < getHeaderViewsCount() || getPositionForView(switchView) >= (getAdapter().getCount() - getHeaderViewsCount() - getFooterViewsCount())) {
+                 return;
+             }
+             swapElements(originalItem, getPositionForView(switchView));

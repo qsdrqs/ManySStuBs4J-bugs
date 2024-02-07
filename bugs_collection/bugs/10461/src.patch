@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/base/AbstractIndentationTestSupport.java b/fixed/src/it/java/com/google/checkstyle/test/base/AbstractIndentationTestSupport.java
+index 60fcc74b7..0b58bd465 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/base/AbstractIndentationTestSupport.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/base/AbstractIndentationTestSupport.java
+@@ -106,7 +106,7 @@ public abstract class AbstractIndentationTestSupport extends AbstractModuleTestS
+                 lineNumber++;
+             }
+         }
+-        return result.toArray(new Integer[result.size()]);
++        return result.toArray(new Integer[0]);
+     }
+ 
+     private static int getIndentFromComment(String comment) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/common/src/java/org/apache/hadoop/hive/common/HiveInterruptUtils.java b/fixed/common/src/java/org/apache/hadoop/hive/common/HiveInterruptUtils.java
+index 43f670e21..244d746be 100644
+--- a/buggy/common/src/java/org/apache/hadoop/hive/common/HiveInterruptUtils.java
++++ b/fixed/common/src/java/org/apache/hadoop/hive/common/HiveInterruptUtils.java
+@@ -64,7 +64,7 @@ public class HiveInterruptUtils {
+       } catch (InterruptedException e) {
+         interrupt = e;
+       }
+-      throw new RuntimeException("Interuppted", interrupt);
++      throw new RuntimeException("Interrupted", interrupt);
+     }
+   }
+ }

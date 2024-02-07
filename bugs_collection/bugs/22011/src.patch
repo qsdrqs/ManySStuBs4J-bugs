@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-tools/spring-boot-configuration-processor/src/main/java/org/springframework/boot/configurationprocessor/TypeUtils.java b/fixed/spring-boot-project/spring-boot-tools/spring-boot-configuration-processor/src/main/java/org/springframework/boot/configurationprocessor/TypeUtils.java
+index 7b4e3f739..2a008fc55 100644
+--- a/buggy/spring-boot-project/spring-boot-tools/spring-boot-configuration-processor/src/main/java/org/springframework/boot/configurationprocessor/TypeUtils.java
++++ b/fixed/spring-boot-project/spring-boot-tools/spring-boot-configuration-processor/src/main/java/org/springframework/boot/configurationprocessor/TypeUtils.java
+@@ -87,7 +87,7 @@ class TypeUtils {
+ 	private TypeMirror getDeclaredType(Types types, Class<?> typeClass,
+ 			int numberOfTypeArgs) {
+ 		TypeMirror[] typeArgs = new TypeMirror[numberOfTypeArgs];
+-		Arrays.setAll(typeArgs, i -> types.getWildcardType(null, null));
++		Arrays.setAll(typeArgs, (i) -> types.getWildcardType(null, null));
+ 		TypeElement typeElement = this.env.getElementUtils()
+ 				.getTypeElement(typeClass.getName());
+ 		try {

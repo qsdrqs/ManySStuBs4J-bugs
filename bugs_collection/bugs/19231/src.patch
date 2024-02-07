@@ -1,0 +1,13 @@
+diff --git a/buggy/enterprise/cluster/src/main/java/org/neo4j/cluster/protocol/cluster/ClusterState.java b/fixed/enterprise/cluster/src/main/java/org/neo4j/cluster/protocol/cluster/ClusterState.java
+index b4d50236e..d2936f0d6 100644
+--- a/buggy/enterprise/cluster/src/main/java/org/neo4j/cluster/protocol/cluster/ClusterState.java
++++ b/fixed/enterprise/cluster/src/main/java/org/neo4j/cluster/protocol/cluster/ClusterState.java
+@@ -83,7 +83,7 @@ public enum ClusterState
+                             Object[] args = message.<Object[]>getPayload();
+                             String name = ( String ) args[0];
+                             URI[] clusterInstanceUris = ( URI[] ) args[1];
+-                            context.joining( name, Iterables.iterable( clusterInstanceUris ) );
++                            context.joining( name, Iterables.<URI,URI>iterable( clusterInstanceUris ) );
+ 
+                             for ( URI potentialClusterInstanceUri : clusterInstanceUris )
+                             {

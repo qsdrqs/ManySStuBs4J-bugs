@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions/s3-extensions/src/main/java/io/druid/storage/s3/S3DataSegmentKiller.java b/fixed/extensions/s3-extensions/src/main/java/io/druid/storage/s3/S3DataSegmentKiller.java
+index c598f110d..a8d28790e 100644
+--- a/buggy/extensions/s3-extensions/src/main/java/io/druid/storage/s3/S3DataSegmentKiller.java
++++ b/fixed/extensions/s3-extensions/src/main/java/io/druid/storage/s3/S3DataSegmentKiller.java
+@@ -63,7 +63,7 @@ public class S3DataSegmentKiller implements DataSegmentKiller
+       }
+     }
+     catch (ServiceException e) {
+-      throw new SegmentLoadingException(e, "Couldn't kill segment[%s]", segment.getIdentifier());
++      throw new SegmentLoadingException(e, "Couldn't kill segment[%s]: [%s]", segment.getIdentifier(), e);
+     }
+   }
+ }

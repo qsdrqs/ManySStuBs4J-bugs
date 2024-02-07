@@ -1,0 +1,13 @@
+diff --git a/buggy/src/web/org/openmrs/web/dwr/DWRProgramWorkflowService.java b/fixed/src/web/org/openmrs/web/dwr/DWRProgramWorkflowService.java
+index 67b440965..4876d6e20 100644
+--- a/buggy/src/web/org/openmrs/web/dwr/DWRProgramWorkflowService.java
++++ b/fixed/src/web/org/openmrs/web/dwr/DWRProgramWorkflowService.java
+@@ -68,7 +68,7 @@ public class DWRProgramWorkflowService {
+ 	}
+ 	
+ 	public Vector<ListItem> getStatesByWorkflow(Integer programWorkflowId) {
+-		log.debug("In getStatesByWorkflow with workflowID of " + programWorkflowId.toString());
++		log.debug("In getStatesByWorkflow with workflowID of " + programWorkflowId);
+ 		Vector<ListItem> ret = new Vector<ListItem>();
+ 		
+ 		ProgramWorkflow workflow = Context.getProgramWorkflowService().getWorkflow(programWorkflowId);

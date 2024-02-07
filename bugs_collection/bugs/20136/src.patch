@@ -1,0 +1,13 @@
+diff --git a/buggy/library/src/com/haarman/listviewanimations/itemmanipulation/contextualundo/ContextualUndoAdapter.java b/fixed/library/src/com/haarman/listviewanimations/itemmanipulation/contextualundo/ContextualUndoAdapter.java
+index 8eb347223..f9bae17d3 100644
+--- a/buggy/library/src/com/haarman/listviewanimations/itemmanipulation/contextualundo/ContextualUndoAdapter.java
++++ b/fixed/library/src/com/haarman/listviewanimations/itemmanipulation/contextualundo/ContextualUndoAdapter.java
+@@ -137,7 +137,7 @@ public class ContextualUndoAdapter extends BaseAdapterDecorator implements Conte
+ 			contextualUndoView.findViewById(mUndoActionId).setOnClickListener(new UndoListener(contextualUndoView));
+ 		}
+ 
+-		View contentView = super.getView(position, contextualUndoView.getContentView(), parent);
++		View contentView = super.getView(position, contextualUndoView.getContentView(), contextualUndoView);
+ 		contextualUndoView.updateContentView(contentView);
+ 
+ 		long itemId = getItemId(position);

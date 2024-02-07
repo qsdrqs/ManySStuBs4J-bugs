@@ -1,0 +1,23 @@
+diff --git a/buggy/flink-runtime/src/test/java/org/apache/flink/runtime/io/network/partition/ResultPartitionBuilder.java b/fixed/flink-runtime/src/test/java/org/apache/flink/runtime/io/network/partition/ResultPartitionBuilder.java
+index 27eaab890..4bb1a85b0 100644
+--- a/buggy/flink-runtime/src/test/java/org/apache/flink/runtime/io/network/partition/ResultPartitionBuilder.java
++++ b/fixed/flink-runtime/src/test/java/org/apache/flink/runtime/io/network/partition/ResultPartitionBuilder.java
+@@ -113,7 +113,7 @@ public class ResultPartitionBuilder {
+ 		return this;
+ 	}
+ 
+-	public ResultPartitionBuilder setNetworkBufferSize(int networkBufferSize) {
++	ResultPartitionBuilder setNetworkBufferSize(int networkBufferSize) {
+ 		this.networkBufferSize = networkBufferSize;
+ 		return this;
+ 	}
+@@ -129,7 +129,8 @@ public class ResultPartitionBuilder {
+ 		return this;
+ 	}
+ 
+-	public ResultPartitionBuilder setBoundedBlockingSubpartitionType(BoundedBlockingSubpartitionType blockingSubpartitionType) {
++	ResultPartitionBuilder setBoundedBlockingSubpartitionType(
++			@SuppressWarnings("SameParameterValue") BoundedBlockingSubpartitionType blockingSubpartitionType) {
+ 		this.blockingSubpartitionType = blockingSubpartitionType;
+ 		return this;
+ 	}

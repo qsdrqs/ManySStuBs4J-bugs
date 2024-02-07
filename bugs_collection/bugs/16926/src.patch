@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/concurrent/atomiclong/proxy/AtomicLongProxy.java b/fixed/hazelcast/src/main/java/com/hazelcast/concurrent/atomiclong/proxy/AtomicLongProxy.java
+index 5c078af50..260d4c062 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/concurrent/atomiclong/proxy/AtomicLongProxy.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/concurrent/atomiclong/proxy/AtomicLongProxy.java
+@@ -67,7 +67,7 @@ public class AtomicLongProxy extends AbstractDistributedObject<AtomicLongService
+         try {
+             SetOperation operation = new SetOperation(name, newValue);
+             Invocation inv = getNodeEngine().getOperationService().createInvocationBuilder(AtomicLongService.SERVICE_NAME, operation, partitionId).build();
+-            inv.invoke();
++            inv.invoke().get();
+         } catch (Throwable throwable) {
+             throw ExceptionUtil.rethrow(throwable);
+         }

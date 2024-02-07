@@ -1,0 +1,13 @@
+diff --git a/buggy/storm-core/src/jvm/backtype/storm/blobstore/BlobStoreUtils.java b/fixed/storm-core/src/jvm/backtype/storm/blobstore/BlobStoreUtils.java
+index 5e3974321..97fb26255 100644
+--- a/buggy/storm-core/src/jvm/backtype/storm/blobstore/BlobStoreUtils.java
++++ b/fixed/storm-core/src/jvm/backtype/storm/blobstore/BlobStoreUtils.java
+@@ -43,7 +43,7 @@ import java.util.Set;
+ 
+ public class BlobStoreUtils {
+     private static final String BLOBSTORE_SUBTREE="/blobstore";
+-    private static final Logger LOG = LoggerFactory.getLogger(Utils.class);
++    private static final Logger LOG = LoggerFactory.getLogger(BlobStoreUtils.class);
+ 
+     public static CuratorFramework createZKClient(Map conf) {
+         List<String> zkServers = (List<String>) conf.get(Config.STORM_ZOOKEEPER_SERVERS);

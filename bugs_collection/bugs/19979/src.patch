@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/socket/nio/NioDatagramChannel.java b/fixed/transport/src/main/java/io/netty/channel/socket/nio/NioDatagramChannel.java
+index e5b419da8..ac82ecbee 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/socket/nio/NioDatagramChannel.java
++++ b/fixed/transport/src/main/java/io/netty/channel/socket/nio/NioDatagramChannel.java
+@@ -273,7 +273,7 @@ public final class NioDatagramChannel extends AbstractNioChannel implements io.n
+         if (remoteAddress == null || remoteAddress.equals(getRemoteAddress())) {
+             return super.write(message, null);
+         } else {
+-            return Channels.write(this, message, remoteAddress);
++            return super.write(message, remoteAddress);
+         }
+ 
+     }

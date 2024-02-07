@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/operator/PagesIndex.java b/fixed/presto-main/src/main/java/com/facebook/presto/operator/PagesIndex.java
+index 40c0cecf4..95cfa2721 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/operator/PagesIndex.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/operator/PagesIndex.java
+@@ -124,7 +124,7 @@ public class PagesIndex
+             int leftOffset = (int) leftSliceAddress;
+ 
+             long rightSliceAddress = sliceAddresses[rightPosition];
+-            Slice :rightSlice = slices[((int) (rightSliceAddress >> 32))];
++            Slice rightSlice = slices[((int) (rightSliceAddress >> 32))];
+             int rightOffset = (int) rightSliceAddress;
+ 
+             for (int i = 0; i < sortFields.length; i++) {

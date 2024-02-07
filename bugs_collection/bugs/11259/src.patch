@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/api/SeverityLevelCounter.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/api/SeverityLevelCounter.java
+index 767ef08fe..07040d39f 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/api/SeverityLevelCounter.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/api/SeverityLevelCounter.java
+@@ -38,7 +38,7 @@ public final class SeverityLevelCounter implements AuditListener {
+      */
+     public SeverityLevelCounter(SeverityLevel level) {
+         if (level == null) {
+-            throw new IllegalArgumentException();
++            throw new IllegalArgumentException("'level' cannot be null");
+         }
+         this.level = level;
+     }

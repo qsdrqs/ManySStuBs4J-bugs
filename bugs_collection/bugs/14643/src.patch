@@ -1,0 +1,14 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/Compiler.java b/fixed/src/com/google/javascript/jscomp/Compiler.java
+index 8415124ac..908e2fc95 100644
+--- a/buggy/src/com/google/javascript/jscomp/Compiler.java
++++ b/fixed/src/com/google/javascript/jscomp/Compiler.java
+@@ -2110,7 +2110,8 @@ public class Compiler extends AbstractCompiler implements ErrorHandler, SourceFi
+     }
+     for (CompilerInput input : filteredInputs) {
+       input.setCompiler(this);
+-      Node root = input.getAstRoot(this);
++      // Call getAstRoot to force parsing to happen.
++      input.getAstRoot(this);
+       input.getRequires();
+     }
+     return filteredInputs;

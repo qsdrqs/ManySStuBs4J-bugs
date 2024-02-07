@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/instance/Node.java b/fixed/hazelcast/src/main/java/com/hazelcast/instance/Node.java
+index 76792036b..c4f0e66c0 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/instance/Node.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/instance/Node.java
+@@ -806,7 +806,7 @@ public class Node {
+             logger.info("A non-empty group password is configured for the Hazelcast member."
+                     + " Starting with Hazelcast version 3.8.2, members with the same group name,"
+                     + " but with different group passwords (that do not use authentication) form a cluster."
+-                    + " The group password configuration will be removed completely in a future relase.");
++                    + " The group password configuration will be removed completely in a future release.");
+         }
+     }
+ }

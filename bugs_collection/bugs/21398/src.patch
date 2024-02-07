@@ -1,0 +1,13 @@
+diff --git a/buggy/web/src/main/java/org/openmrs/web/servlet/ComplexObsServlet.java b/fixed/web/src/main/java/org/openmrs/web/servlet/ComplexObsServlet.java
+index 28fcd4a2c..19fde1ab4 100644
+--- a/buggy/web/src/main/java/org/openmrs/web/servlet/ComplexObsServlet.java
++++ b/fixed/web/src/main/java/org/openmrs/web/servlet/ComplexObsServlet.java
+@@ -78,7 +78,7 @@ public class ComplexObsServlet extends HttpServlet {
+ 			OpenmrsUtil.copyFile(stream, response.getOutputStream());
+ 		} else if (RenderedImage.class.isAssignableFrom(data.getClass())) {
+ 			RenderedImage img = (RenderedImage) data;
+-			String[] parts = cd.getTitle().split(".");
++			String[] parts = cd.getTitle().split("\\.");
+ 			String extension = "jpg"; // default extension
+ 			if (parts.length > 0) {
+ 				extension = parts[parts.length - 1];

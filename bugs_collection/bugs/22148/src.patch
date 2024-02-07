@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration.java b/fixed/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration.java
+index dc2802431..eb7c25a60 100644
+--- a/buggy/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration.java
++++ b/fixed/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration.java
+@@ -219,7 +219,7 @@ public class FlywayAutoConfiguration {
+ 
+ 		private final DataSource dataSource;
+ 
+-		public LocationResolver(DataSource dataSource) {
++		LocationResolver(DataSource dataSource) {
+ 			this.dataSource = dataSource;
+ 		}
+ 

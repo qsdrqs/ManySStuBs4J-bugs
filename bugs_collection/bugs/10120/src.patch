@@ -1,0 +1,13 @@
+diff --git a/buggy/aws-java-sdk-cloudfront/src/main/java/com/amazonaws/services/cloudfront/CloudFrontUrlSigner.java b/fixed/aws-java-sdk-cloudfront/src/main/java/com/amazonaws/services/cloudfront/CloudFrontUrlSigner.java
+index ae76ca310..fdb10a1ec 100644
+--- a/buggy/aws-java-sdk-cloudfront/src/main/java/com/amazonaws/services/cloudfront/CloudFrontUrlSigner.java
++++ b/fixed/aws-java-sdk-cloudfront/src/main/java/com/amazonaws/services/cloudfront/CloudFrontUrlSigner.java
+@@ -190,7 +190,7 @@ public enum CloudFrontUrlSigner {
+                     ;
+             return signedUrl;
+         } catch (InvalidKeyException e) {
+-            throw new AmazonClientException("Coudln't sign url", e);
++            throw new AmazonClientException("Couldn't sign url", e);
+         }
+     }
+ 

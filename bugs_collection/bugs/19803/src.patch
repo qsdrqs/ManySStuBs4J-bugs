@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/AdaptiveRecvByteBufAllocator.java b/fixed/transport/src/main/java/io/netty/channel/AdaptiveRecvByteBufAllocator.java
+index d4aa0f7ef..03dc71042 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/AdaptiveRecvByteBufAllocator.java
++++ b/fixed/transport/src/main/java/io/netty/channel/AdaptiveRecvByteBufAllocator.java
+@@ -63,7 +63,7 @@ public class AdaptiveRecvByteBufAllocator implements RecvByteBufAllocator {
+     private static int getSizeTableIndex(final int size) {
+         for (int low = 0, high = SIZE_TABLE.length - 1;;) {
+             if (high < low) {
+-                return 0;
++                return low;
+             }
+             if (high == low) {
+                 return high;

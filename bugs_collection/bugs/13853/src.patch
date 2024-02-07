@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-base-jdbc/src/test/java/com/facebook/presto/plugin/jdbc/TestJdbcMetadata.java b/fixed/presto-base-jdbc/src/test/java/com/facebook/presto/plugin/jdbc/TestJdbcMetadata.java
+index fa6bd9515..3d83ad2d3 100644
+--- a/buggy/presto-base-jdbc/src/test/java/com/facebook/presto/plugin/jdbc/TestJdbcMetadata.java
++++ b/fixed/presto-base-jdbc/src/test/java/com/facebook/presto/plugin/jdbc/TestJdbcMetadata.java
+@@ -38,7 +38,7 @@ import static org.testng.Assert.assertNull;
+ import static org.testng.Assert.assertTrue;
+ import static org.testng.Assert.fail;
+ 
+-@Test
++@Test(singleThreaded = true)
+ public class TestJdbcMetadata
+ {
+     private static final ConnectorSession SESSION = new ConnectorSession("user", UTC_KEY, ENGLISH, System.currentTimeMillis(), null);

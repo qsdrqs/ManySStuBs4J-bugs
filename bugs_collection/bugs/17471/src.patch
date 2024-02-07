@@ -1,0 +1,13 @@
+diff --git a/buggy/junit/tests/runner/TextFeedbackTest.java b/fixed/junit/tests/runner/TextFeedbackTest.java
+index 232143cb9..a6f7f4f0b 100644
+--- a/buggy/junit/tests/runner/TextFeedbackTest.java
++++ b/fixed/junit/tests/runner/TextFeedbackTest.java
+@@ -79,7 +79,7 @@ public class TextFeedbackTest extends TestCase {
+ 	
+ 	public void testError() {
+ 		String expected= expected(new String[]{".E", "Time: 0", "Errors here", "", "FAILURES!!!", "Tests run: 1,  Failures: 0,  Errors: 1", ""});
+-		ResultPrinter printer= new ResultPrinter(new PrintStream(output)) {
++		ResultPrinter printer= new TestResultPrinter(new PrintStream(output)) {
+ 			public void printErrors(TestResult result) {
+ 				getWriter().println("Errors here");
+ 			}

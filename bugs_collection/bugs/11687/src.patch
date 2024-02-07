@@ -1,0 +1,15 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/ImportOrderCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/ImportOrderCheck.java
+index a10c82ae9..abbc020a6 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/ImportOrderCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/ImportOrderCheck.java
+@@ -347,8 +347,8 @@ public class ImportOrderCheck
+                     log(line, MSG_SEPARATION, name);
+                 }
+             }
+-            else if (groupIdx == lastGroup || (sortStaticImportsAlphabetically
+-                     && isAlphabeticallySortableStaticImport(isStatic)))
++            else if (groupIdx == lastGroup || sortStaticImportsAlphabetically
++                     && isAlphabeticallySortableStaticImport(isStatic))
+             {
+                 doVisitTokenInSameGroup(isStatic, previous, name, line);
+             }

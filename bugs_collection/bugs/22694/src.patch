@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-security-oauth/src/test/java/org/springframework/security/oauth/provider/filter/UserAuthorizationSuccessfulAuthenticationHandlerTests.java b/fixed/spring-security-oauth/src/test/java/org/springframework/security/oauth/provider/filter/UserAuthorizationSuccessfulAuthenticationHandlerTests.java
+index 7566c6cc6..adc112008 100644
+--- a/buggy/spring-security-oauth/src/test/java/org/springframework/security/oauth/provider/filter/UserAuthorizationSuccessfulAuthenticationHandlerTests.java
++++ b/fixed/spring-security-oauth/src/test/java/org/springframework/security/oauth/provider/filter/UserAuthorizationSuccessfulAuthenticationHandlerTests.java
+@@ -45,7 +45,7 @@ public class UserAuthorizationSuccessfulAuthenticationHandlerTests {
+ 		handler.setRedirectStrategy(redirectStrategy);
+ 
+ 		when(request.getAttribute(UserAuthorizationProcessingFilter.CALLBACK_ATTRIBUTE)).thenReturn(
+-				"http://my.host.com/my/context");
++				"https://my.host.com/my/context");
+ 		when(request.getAttribute(UserAuthorizationProcessingFilter.VERIFIER_ATTRIBUTE)).thenReturn("myver");
+ 		when(request.getParameter("requestToken")).thenReturn("mytok");
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-streaming-java/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamTask.java b/fixed/flink-streaming-java/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamTask.java
+index 182543def..6812871c8 100644
+--- a/buggy/flink-streaming-java/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamTask.java
++++ b/fixed/flink-streaming-java/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamTask.java
+@@ -1191,7 +1191,7 @@ public abstract class StreamTask<OUT, OP extends StreamOperator<OUT>>
+ 		@SuppressWarnings("unchecked")
+ 		StreamPartitioner<OUT> outputPartitioner = (StreamPartitioner<OUT>) edge.getPartitioner();
+ 
+-		LOG.debug("Using partitioner {} for output {} of task ", outputPartitioner, outputIndex, taskName);
++		LOG.debug("Using partitioner {} for output {} of task {}", outputPartitioner, outputIndex, taskName);
+ 
+ 		ResultPartitionWriter bufferWriter = environment.getWriter(outputIndex);
+ 

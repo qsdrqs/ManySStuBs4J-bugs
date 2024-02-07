@@ -1,0 +1,13 @@
+diff --git a/buggy/backends/gdx-backend-jglfw/src/com/badlogic/gdx/backends/jglfw/JglfwInput.java b/fixed/backends/gdx-backend-jglfw/src/com/badlogic/gdx/backends/jglfw/JglfwInput.java
+index 839834fa3..f712161b0 100644
+--- a/buggy/backends/gdx-backend-jglfw/src/com/badlogic/gdx/backends/jglfw/JglfwInput.java
++++ b/fixed/backends/gdx-backend-jglfw/src/com/badlogic/gdx/backends/jglfw/JglfwInput.java
+@@ -757,7 +757,7 @@ public class JglfwInput implements Input {
+ 				mousePressed++;
+ 				processor.touchDown(mouseX, mouseY, 0, button);
+ 			} else {
+-				mousePressed--;
++				mousePressed = Math.max(0, mousePressed - 1);
+ 				processor.touchUp(mouseX, mouseY, 0, button);
+ 			}
+ 		}

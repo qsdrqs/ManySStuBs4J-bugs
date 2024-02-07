@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/io/hfile/slab/SlabCache.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/io/hfile/slab/SlabCache.java
+index 32757e2d4..9b4621ec3 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/io/hfile/slab/SlabCache.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/io/hfile/slab/SlabCache.java
+@@ -179,7 +179,7 @@ public class SlabCache implements SlabItemActionWatcher, BlockCache, HeapSize {
+ 
+   private void addSlab(int blockSize, int numBlocks) {
+     LOG.info("Creating a slab of blockSize " + blockSize + " with " + numBlocks
+-        + " blocks, " + StringUtils.humanReadableInt(blockSize * numBlocks) + "bytes.");
++        + " blocks, " + StringUtils.humanReadableInt(blockSize * (long) numBlocks) + "bytes.");
+     sizer.put(blockSize, new SingleSizeCache(blockSize, numBlocks, this));
+   }
+ 

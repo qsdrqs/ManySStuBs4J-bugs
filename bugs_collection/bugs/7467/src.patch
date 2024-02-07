@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/component/file/FileConsumerPreMoveTest.java b/fixed/camel-core/src/test/java/org/apache/camel/component/file/FileConsumerPreMoveTest.java
+index 314e12e4a..9a890c0ef 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/component/file/FileConsumerPreMoveTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/component/file/FileConsumerPreMoveTest.java
+@@ -66,7 +66,7 @@ public class FileConsumerPreMoveTest extends ContextTestSupport {
+         return new RouteBuilder() {
+             @Override
+             public void configure() throws Exception {
+-                from("file://target/premove?preMove=work/work-${file:name}&initialDelay=0&delay=10")
++                from("file://target/premove?preMove=work/work-${file:name}&initialDelay=0&delay=100")
+                     .process(new MyPreMoveCheckerProcessor())
+                     .to("mock:result");
+             }

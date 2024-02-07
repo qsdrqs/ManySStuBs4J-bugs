@@ -1,0 +1,15 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java
+index e5e0729da..364c32ad9 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java
+@@ -7189,8 +7189,8 @@ public class HRegion implements HeapSize, PropagatingConfigurationObserver, Regi
+         stats.setHeapOccupancy((int)(occupancy * 100));
+       }
+     }
+-    stats.setCompactionPressure((int)rsServices.getCompactionPressure()*100 > 100 ? 100 :
+-                (int)rsServices.getCompactionPressure()*100);
++    stats.setCompactionPressure((int) (rsServices.getCompactionPressure() * 100 > 100 ? 100
++        : rsServices.getCompactionPressure() * 100));
+     return stats.build();
+   }
+ 

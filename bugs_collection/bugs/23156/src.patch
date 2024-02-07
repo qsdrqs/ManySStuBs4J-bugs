@@ -1,0 +1,14 @@
+diff --git a/buggy/src/edu/stanford/nlp/simple/Document.java b/fixed/src/edu/stanford/nlp/simple/Document.java
+index 73d50184a..683e3737f 100644
+--- a/buggy/src/edu/stanford/nlp/simple/Document.java
++++ b/fixed/src/edu/stanford/nlp/simple/Document.java
+@@ -476,7 +476,8 @@ public class Document {
+       List<CoreMap> sentences = ann.get(CoreAnnotations.SentencesAnnotation.class);
+       this.sentences = new ArrayList<>(sentences.size());
+       for (CoreMap sentence : sentences) {
+-        Sentence sent = new Sentence(this, sentence);
++        //Sentence sent = new Sentence(this, sentence);
++        Sentence sent = new Sentence(this, this.serializer.toProtoBuilder(sentence), sentence.get(CoreAnnotations.TextAnnotation.class));
+         this.sentences.add(sent);
+         this.impl.addSentence(sent.serialize());
+       }

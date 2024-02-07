@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/xaframework/PhysicalTransactionCursor.java b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/xaframework/PhysicalTransactionCursor.java
+index fdd125c53..b31e86e2d 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/xaframework/PhysicalTransactionCursor.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/xaframework/PhysicalTransactionCursor.java
+@@ -54,7 +54,7 @@ public class PhysicalTransactionCursor implements IOCursor
+         {
+             return false;
+         }
+-        assert entry instanceof LogEntry.Start;
++        assert entry instanceof LogEntry.Start : "Expected Start entry, read " + entry + " instead";
+         LogEntry.Start startEntry = (LogEntry.Start) entry;
+         LogEntry.Commit commitEntry;
+         while ( true )

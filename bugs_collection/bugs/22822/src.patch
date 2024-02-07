@@ -1,0 +1,13 @@
+diff --git a/buggy/okhttp-android-support/src/test/java/okhttp3/internal/huc/ResponseCacheTest.java b/fixed/okhttp-android-support/src/test/java/okhttp3/internal/huc/ResponseCacheTest.java
+index 17bd2d14b..7119bceb0 100644
+--- a/buggy/okhttp-android-support/src/test/java/okhttp3/internal/huc/ResponseCacheTest.java
++++ b/fixed/okhttp-android-support/src/test/java/okhttp3/internal/huc/ResponseCacheTest.java
+@@ -1196,7 +1196,7 @@ public final class ResponseCacheTest {
+     Date lastModifiedDate = new Date(System.currentTimeMillis() + TimeUnit.HOURS.toMillis(-1));
+     Date servedDate = new Date(System.currentTimeMillis() + TimeUnit.HOURS.toMillis(-2));
+     DateFormat dateFormat = new SimpleDateFormat("EEE dd-MMM-yyyy HH:mm:ss z", Locale.US);
+-    dateFormat.setTimeZone(TimeZone.getTimeZone("EDT"));
++    dateFormat.setTimeZone(TimeZone.getTimeZone("America/New_York"));
+     String lastModifiedString = dateFormat.format(lastModifiedDate);
+     String servedString = dateFormat.format(servedDate);
+ 

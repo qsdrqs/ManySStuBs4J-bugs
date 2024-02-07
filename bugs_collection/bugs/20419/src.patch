@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.mqttitude/src/main/java/org/openhab/binding/mqttitude/internal/MqttitudeBinding.java b/fixed/bundles/binding/org.openhab.binding.mqttitude/src/main/java/org/openhab/binding/mqttitude/internal/MqttitudeBinding.java
+index 38887d88e..786be0b77 100644
+--- a/buggy/bundles/binding/org.openhab.binding.mqttitude/src/main/java/org/openhab/binding/mqttitude/internal/MqttitudeBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.mqttitude/src/main/java/org/openhab/binding/mqttitude/internal/MqttitudeBinding.java
+@@ -91,7 +91,7 @@ public class MqttitudeBinding extends AbstractBinding<MqttitudeBindingProvider>i
+      */
+     @Override
+     public void deactivate() {
+-        logger.debug("Deactivating Mqtt binding");
++        logger.debug("Deactivating Mqttitude binding");
+         super.deactivate();
+         unregisterAll();
+     }

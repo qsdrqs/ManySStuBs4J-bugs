@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-cxf/src/main/java/org/apache/camel/component/cxf/invoker/CxfClient.java b/fixed/components/camel-cxf/src/main/java/org/apache/camel/component/cxf/invoker/CxfClient.java
+index 0f51968bd..3b4ccbf76 100644
+--- a/buggy/components/camel-cxf/src/main/java/org/apache/camel/component/cxf/invoker/CxfClient.java
++++ b/fixed/components/camel-cxf/src/main/java/org/apache/camel/component/cxf/invoker/CxfClient.java
+@@ -164,7 +164,7 @@ public class CxfClient extends ClientImpl {
+         return retval;
+     }
+ 
+-    private void waitResponse(Exchange exchange) {
++    protected void waitResponse(Exchange exchange) {
+         int remaining = synchronousTimeout;
+         while (!Boolean.TRUE.equals(exchange.get(FINISHED)) && remaining > 0) {
+             long start = System.currentTimeMillis();

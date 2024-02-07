@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/Connection.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/Connection.java
+index aef81efa8..e250adfbc 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/Connection.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/Connection.java
+@@ -58,7 +58,7 @@ public class Connection {
+     public Connection(int timeout, InetSocketAddress address, int id) {
+         this.id = id;
+         this.address = address;
+-        this.timeout=timeout
++        this.timeout=timeout;
+         try {
+             final InetSocketAddress isa = new InetSocketAddress(address.getAddress(), address.getPort());
+             final Socket socket = new Socket();

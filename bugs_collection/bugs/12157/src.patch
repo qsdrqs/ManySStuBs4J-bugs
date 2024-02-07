@@ -1,0 +1,13 @@
+diff --git a/buggy/java/src/main/java/cucumber/runtime/java/JavaStepDefinition.java b/fixed/java/src/main/java/cucumber/runtime/java/JavaStepDefinition.java
+index 46a0eefa5..f770e3b0d 100644
+--- a/buggy/java/src/main/java/cucumber/runtime/java/JavaStepDefinition.java
++++ b/fixed/java/src/main/java/cucumber/runtime/java/JavaStepDefinition.java
+@@ -14,7 +14,7 @@ import java.lang.reflect.Type;
+ import java.util.List;
+ import java.util.regex.Pattern;
+ 
+-public class JavaStepDefinition implements StepDefinition {
++class JavaStepDefinition implements StepDefinition {
+     private final Method method;
+     private final Pattern pattern;
+     private final int timeout;

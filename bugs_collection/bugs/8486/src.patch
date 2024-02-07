@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/test/java/org/apache/flink/runtime/io/network/netty/OutboundConnectionQueueTest.java b/fixed/flink-runtime/src/test/java/org/apache/flink/runtime/io/network/netty/OutboundConnectionQueueTest.java
+index 1f4d98abb..e2f3a1468 100644
+--- a/buggy/flink-runtime/src/test/java/org/apache/flink/runtime/io/network/netty/OutboundConnectionQueueTest.java
++++ b/fixed/flink-runtime/src/test/java/org/apache/flink/runtime/io/network/netty/OutboundConnectionQueueTest.java
+@@ -154,7 +154,7 @@ public class OutboundConnectionQueueTest {
+ 
+ 		Mockito.verify(connectionManager, Mockito.times(0)).close(Mockito.any(RemoteReceiver.class));
+ 
+-		boolean hasRequestedClose = Whitebox.getInternalState(queue, "hasRequestedClose");
++		Boolean hasRequestedClose = Whitebox.<Boolean>getInternalState(queue, "hasRequestedClose");
+ 		Assert.assertFalse("Close request while envelope in flight.", hasRequestedClose);
+ 
+ 		// Change writability of channel back to writable

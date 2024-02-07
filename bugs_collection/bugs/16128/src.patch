@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/durableexecutor/impl/TaskRingBuffer.java b/fixed/hazelcast/src/main/java/com/hazelcast/durableexecutor/impl/TaskRingBuffer.java
+index f66897038..c9588f785 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/durableexecutor/impl/TaskRingBuffer.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/durableexecutor/impl/TaskRingBuffer.java
+@@ -67,7 +67,7 @@ public class TaskRingBuffer {
+ 
+     private int findEmptySpot() {
+         if (callableCounter == ringItems.length) {
+-            throw new RejectedExecutionException("Capacity[" + ringItems.length + "] is reached!!! ");
++            throw new RejectedExecutionException("Capacity[" + ringItems.length + "] is reached! ");
+         }
+         for (Object ringItem : ringItems) {
+             head++;

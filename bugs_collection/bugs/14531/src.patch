@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/ImplicitNullabilityCheck.java b/fixed/src/com/google/javascript/jscomp/ImplicitNullabilityCheck.java
+index 192b2d449..1a9a5c235 100644
+--- a/buggy/src/com/google/javascript/jscomp/ImplicitNullabilityCheck.java
++++ b/fixed/src/com/google/javascript/jscomp/ImplicitNullabilityCheck.java
+@@ -75,7 +75,7 @@ public final class ImplicitNullabilityCheck extends AbstractPostOrderCallback
+               }
+             });
+ 
+-    Scope scope = t.getScope();
++    final Scope scope = t.getScope();
+     for (Node typeRoot : info.getTypeNodes()) {
+       NodeUtil.visitPreOrder(
+           typeRoot,

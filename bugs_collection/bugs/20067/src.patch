@@ -1,0 +1,31 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/util/internal/ConcurrentWeakKeyHashMap.java b/fixed/src/main/java/org/jboss/netty/util/internal/ConcurrentWeakKeyHashMap.java
+index 55d7114c5..af8b1e8cc 100644
+--- a/buggy/src/main/java/org/jboss/netty/util/internal/ConcurrentWeakKeyHashMap.java
++++ b/fixed/src/main/java/org/jboss/netty/util/internal/ConcurrentWeakKeyHashMap.java
+@@ -1339,7 +1339,7 @@ public final class ConcurrentWeakKeyHashMap<K, V> extends AbstractMap<K, V> impl
+ 
+         @Override
+         public boolean equals(Object o) {
+-            if (!(o instanceof Map.Entry)) {
++            if (!(o instanceof Map.Entry<?, ?>)) {
+                 return false;
+             }
+             @SuppressWarnings("unchecked")
+@@ -1470,7 +1470,7 @@ public final class ConcurrentWeakKeyHashMap<K, V> extends AbstractMap<K, V> impl
+ 
+         @Override
+         public boolean contains(Object o) {
+-            if (!(o instanceof Map.Entry)) {
++            if (!(o instanceof Map.Entry<?, ?>)) {
+                 return false;
+             }
+             Map.Entry<?, ?> e = (Map.Entry<?, ?>) o;
+@@ -1480,7 +1480,7 @@ public final class ConcurrentWeakKeyHashMap<K, V> extends AbstractMap<K, V> impl
+ 
+         @Override
+         public boolean remove(Object o) {
+-            if (!(o instanceof Map.Entry)) {
++            if (!(o instanceof Map.Entry<?, ?>)) {
+                 return false;
+             }
+             Map.Entry<?, ?> e = (Map.Entry<?, ?>) o;

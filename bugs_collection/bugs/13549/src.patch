@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/AddExchanges.java b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/AddExchanges.java
+index 8d00c5829..d887fe531 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/AddExchanges.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/AddExchanges.java
+@@ -181,7 +181,7 @@ public class AddExchanges
+     }
+ 
+     private class Rewriter
+-            extends PlanVisitor<Context, PlanWithProperties>
++            extends PlanVisitor<PlanWithProperties, Context>
+     {
+         private final PlanNodeIdAllocator idAllocator;
+         private final SymbolAllocator symbolAllocator;

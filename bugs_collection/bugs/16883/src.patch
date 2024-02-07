@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/nio/UTFEncoderDecoder.java b/fixed/hazelcast/src/main/java/com/hazelcast/nio/UTFEncoderDecoder.java
+index 81d325550..4004adbbc 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/nio/UTFEncoderDecoder.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/nio/UTFEncoderDecoder.java
+@@ -274,7 +274,7 @@ public final class UTFEncoderDecoder {
+ 
+         public FastStringCreator(Constructor<String> constructor) {
+             this.constructor = constructor;
+-            this.useOldStringConstructor = constructor.getTypeParameters().length == 3;
++            this.useOldStringConstructor = constructor.getParameterTypes().length == 3;
+         }
+ 
+         @Override

@@ -1,0 +1,16 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/social/SocialAutoConfigurerAdapter.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/social/SocialAutoConfigurerAdapter.java
+index 0f224c2f6..9e5c787e3 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/social/SocialAutoConfigurerAdapter.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/social/SocialAutoConfigurerAdapter.java
+@@ -26,9 +26,9 @@ import org.springframework.social.connect.ConnectionFactory;
+  *
+  * @author Craig Walls
+  * @author Phillip Webb
+- * @since 1.1.0
++ * @since 1.4.0
+  */
+-abstract class SocialAutoConfigurerAdapter extends SocialConfigurerAdapter {
++public abstract class SocialAutoConfigurerAdapter extends SocialConfigurerAdapter {
+ 
+ 	@Override
+ 	public void addConnectionFactories(ConnectionFactoryConfigurer configurer,

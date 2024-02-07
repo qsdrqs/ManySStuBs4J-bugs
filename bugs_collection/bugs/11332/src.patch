@@ -1,0 +1,22 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter5naming/rule525nonconstantfieldnames/MemberNameTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter5naming/rule525nonconstantfieldnames/MemberNameTest.java
+index 48e9f1463..f4947ebfc 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter5naming/rule525nonconstantfieldnames/MemberNameTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter5naming/rule525nonconstantfieldnames/MemberNameTest.java
+@@ -26,7 +26,7 @@ public class MemberNameTest extends BaseCheckTestSupport{
+     }
+ 
+     @Test
+-    public void memberNameTest() throws IOException, Exception {
++    public void memberNameTest() throws Exception {
+ 
+         final String[] expected = {
+             "5:16: " + getCheckMessage(checkConfig.getMessages(), msgKey, "mPublic", format),
+@@ -51,7 +51,7 @@ public class MemberNameTest extends BaseCheckTestSupport{
+     }
+ 
+     @Test
+-    public void simpleTest() throws IOException, Exception {
++    public void simpleTest() throws Exception {
+ 
+         final String[] expected = {
+             "12:17: " + getCheckMessage(checkConfig.getMessages(), msgKey, "bad$Static", format),

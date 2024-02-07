@@ -1,0 +1,14 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/operator/TableWriterOperator.java b/fixed/presto-main/src/main/java/com/facebook/presto/operator/TableWriterOperator.java
+index 0dfdfb6bd..d10f72ecb 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/operator/TableWriterOperator.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/operator/TableWriterOperator.java
+@@ -129,8 +129,7 @@ public class TableWriterOperator
+         protected void doClose()
+         {
+             if (!closed.getAndSet(true)) {
+-                checkState(!sourceIterator.hasNext(), "writer closed with source iterator still having data!");
+-
++                checkState(operatorStats.isDone() || !sourceIterator.hasNext(), "Writer was closed while source iterator still has data and the operator is not done!");
+                 commitFileHandle(fileHandle);
+                 sourceIterator.close();
+                 output.set(ImmutableSet.of(new TableWriterResult(input.get().getShardId(), nodeIdentifier)));

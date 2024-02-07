@@ -1,0 +1,31 @@
+diff --git a/buggy/hbase-server/src/test/java/org/apache/hadoop/hbase/client/TestHbck.java b/fixed/hbase-server/src/test/java/org/apache/hadoop/hbase/client/TestHbck.java
+index 8ee00b8a7..d9a7ca920 100644
+--- a/buggy/hbase-server/src/test/java/org/apache/hadoop/hbase/client/TestHbck.java
++++ b/fixed/hbase-server/src/test/java/org/apache/hadoop/hbase/client/TestHbck.java
+@@ -253,7 +253,7 @@ public class TestHbck {
+       Assert.assertEquals(1, result.size());
+       hbck.assigns(Arrays.asList(result.keySet().toArray(new String[0])).stream()
+           .map(regionName -> regionName.split("\\.")[1]).collect(Collectors.toList()));
+-      ProcedureTestingUtility.waitNoProcedureRunning(master.getMasterProcedureExecutor());
++      ProcedureTestingUtility.waitAllProcedures(master.getMasterProcedureExecutor());
+       // now the state should be fixed
+       result = hbck.getFailedSplitMergeLegacyRegions(Arrays.asList(TableName.valueOf(testTable)));
+       Assert.assertEquals(0, result.size());
+@@ -290,7 +290,7 @@ public class TestHbck {
+       Assert.assertEquals(2, result.size());
+       hbck.assigns(Arrays.asList(result.keySet().toArray(new String[0])).stream()
+           .map(regionName -> regionName.split("\\.")[1]).collect(Collectors.toList()));
+-      ProcedureTestingUtility.waitNoProcedureRunning(master.getMasterProcedureExecutor());
++      ProcedureTestingUtility.waitAllProcedures(master.getMasterProcedureExecutor());
+       // now the state should be fixed
+       result = hbck.getFailedSplitMergeLegacyRegions(Arrays.asList(TableName.valueOf(testTable)));
+       Assert.assertEquals(0, result.size());
+@@ -310,7 +310,7 @@ public class TestHbck {
+       Assert.assertEquals(2, result.size());
+       hbck.assigns(Arrays.asList(result.keySet().toArray(new String[0])).stream()
+           .map(regionName -> regionName.split("\\.")[1]).collect(Collectors.toList()));
+-      ProcedureTestingUtility.waitNoProcedureRunning(master.getMasterProcedureExecutor());
++      ProcedureTestingUtility.waitAllProcedures(master.getMasterProcedureExecutor());
+       // now the state should be fixed
+       result = hbck.getFailedSplitMergeLegacyRegions(Arrays.asList(TableName.valueOf(testTable)));
+       Assert.assertEquals(0, result.size());

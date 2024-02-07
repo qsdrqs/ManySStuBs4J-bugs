@@ -1,0 +1,13 @@
+diff --git a/buggy/standalone-metastore/metastore-server/src/main/java/org/apache/hadoop/hive/metastore/HiveMetaStore.java b/fixed/standalone-metastore/metastore-server/src/main/java/org/apache/hadoop/hive/metastore/HiveMetaStore.java
+index e971d0f6e..6b660f55a 100644
+--- a/buggy/standalone-metastore/metastore-server/src/main/java/org/apache/hadoop/hive/metastore/HiveMetaStore.java
++++ b/fixed/standalone-metastore/metastore-server/src/main/java/org/apache/hadoop/hive/metastore/HiveMetaStore.java
+@@ -7456,7 +7456,7 @@ public class HiveMetaStore extends ThriftHiveMetastore {
+ 
+     @Override
+     public WriteNotificationLogResponse add_write_notification_log(WriteNotificationLogRequest rqst)
+-            throws MetaException, NoSuchObjectException {
++            throws TException {
+       Table tableObj = getTblObject(rqst.getDb(), rqst.getTable());
+       Partition ptnObj = getPartitionObj(rqst.getDb(), rqst.getTable(), rqst.getPartitionVals(), tableObj);
+       addTxnWriteNotificationLog(tableObj, ptnObj, rqst);

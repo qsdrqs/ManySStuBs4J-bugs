@@ -1,0 +1,15 @@
+diff --git a/buggy/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/scheduler/AbstractYarnScheduler.java b/fixed/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/scheduler/AbstractYarnScheduler.java
+index bf720ae51..ad2b5d407 100644
+--- a/buggy/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/scheduler/AbstractYarnScheduler.java
++++ b/fixed/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/scheduler/AbstractYarnScheduler.java
+@@ -189,8 +189,8 @@ public abstract class AbstractYarnScheduler
+     }
+   }
+ 
+-  protected void containerLaunchedOnNode(ContainerId containerId,
+-                                         SchedulerNode node) {
++  protected synchronized void containerLaunchedOnNode(
++      ContainerId containerId, SchedulerNode node) {
+     // Get the application for the finished container
+     SchedulerApplicationAttempt application = getCurrentAttemptForContainer
+         (containerId);

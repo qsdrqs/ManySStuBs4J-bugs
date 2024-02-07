@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/ResourceManager.java b/fixed/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/ResourceManager.java
+index c20987349..4153ba113 100644
+--- a/buggy/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/ResourceManager.java
++++ b/fixed/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/ResourceManager.java
+@@ -1303,7 +1303,7 @@ public class ResourceManager extends CompositeService implements Recoverable {
+   }
+ 
+   private static void printUsage(PrintStream out) {
+-    out.println("Usage: java ResourceManager [-format-state-store]");
++    out.println("Usage: yarn resourcemanager [-format-state-store]");
+     out.println("                            "
+         + "[-remove-application-from-state-store <appId>]" + "\n");
+   }

@@ -1,0 +1,20 @@
+diff --git a/buggy/spring-boot-project/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/security/reactive/ReactiveUserDetailsServiceAutoConfigurationTests.java b/fixed/spring-boot-project/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/security/reactive/ReactiveUserDetailsServiceAutoConfigurationTests.java
+index dc8ea647b..1efdbdfa7 100644
+--- a/buggy/spring-boot-project/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/security/reactive/ReactiveUserDetailsServiceAutoConfigurationTests.java
++++ b/fixed/spring-boot-project/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/security/reactive/ReactiveUserDetailsServiceAutoConfigurationTests.java
+@@ -78,11 +78,10 @@ class ReactiveUserDetailsServiceAutoConfigurationTests {
+ 
+ 	@Test
+ 	void doesNotConfigureDefaultUserIfResourceServerWithJWTIsUsed() {
+-		this.contextRunner.withUserConfiguration(TestSecurityConfiguration.class, JwtDecoderConfiguration.class)
+-				.run((context) -> {
+-					assertThat(context).hasSingleBean(ReactiveJwtDecoder.class);
+-					assertThat(context).doesNotHaveBean(ReactiveUserDetailsService.class);
+-				});
++		this.contextRunner.withUserConfiguration(JwtDecoderConfiguration.class).run((context) -> {
++			assertThat(context).hasSingleBean(ReactiveJwtDecoder.class);
++			assertThat(context).doesNotHaveBean(ReactiveUserDetailsService.class);
++		});
+ 	}
+ 
+ 	@Test

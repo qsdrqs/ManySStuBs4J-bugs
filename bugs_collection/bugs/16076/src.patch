@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/internal/networking/nonblocking/NonBlockingIOThreadingModel.java b/fixed/hazelcast/src/main/java/com/hazelcast/internal/networking/nonblocking/NonBlockingIOThreadingModel.java
+index b9be29488..dd2504f7e 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/internal/networking/nonblocking/NonBlockingIOThreadingModel.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/internal/networking/nonblocking/NonBlockingIOThreadingModel.java
+@@ -156,7 +156,7 @@ public class NonBlockingIOThreadingModel
+         if (logger.isFineEnabled()) {
+             logger.fine("TcpIpConnectionManager configured with Non Blocking IO-threading model: "
+                     + inputThreadCount + " input threads and "
+-                    + outputThreads + " output threads");
++                    + outputThreadCount + " output threads");
+         }
+ 
+ 

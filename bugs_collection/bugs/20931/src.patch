@@ -1,0 +1,20 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.serial/src/main/java/org/openhab/binding/serial/internal/SerialDevice.java b/fixed/bundles/binding/org.openhab.binding.serial/src/main/java/org/openhab/binding/serial/internal/SerialDevice.java
+index c2ccc724a..fb6fa4830 100644
+--- a/buggy/bundles/binding/org.openhab.binding.serial/src/main/java/org/openhab/binding/serial/internal/SerialDevice.java
++++ b/fixed/bundles/binding/org.openhab.binding.serial/src/main/java/org/openhab/binding/serial/internal/SerialDevice.java
+@@ -222,13 +222,13 @@ public class SerialDevice implements SerialPortEventListener {
+ 	 * @param msg the string to send
+ 	 */
+ 	public void writeString(String msg) {
+-		logger.debug("Writing ‘{}‘ to serial port {}", new String[] { msg, port });
++		logger.debug("Writing '{}' to serial port {}", new String[] { msg, port });
+ 		try {
+ 			// write string to serial port
+ 			outputStream.write(msg.getBytes());
+ 			outputStream.flush();
+ 		} catch (IOException e) {
+-			logger.error("Error writing ‘{}‘ to serial port {}: {}", new String[] { msg, port, e.getMessage() });
++			logger.error("Error writing '{}' to serial port {}: {}", new String[] { msg, port, e.getMessage() });
+ 		}
+ 	}
+ 

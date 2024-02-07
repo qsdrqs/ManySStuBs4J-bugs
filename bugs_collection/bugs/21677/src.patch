@@ -1,0 +1,13 @@
+diff --git a/buggy/d2j-base-cmd/src/main/java/com/googlecode/dex2jar/tools/BaseCmd.java b/fixed/d2j-base-cmd/src/main/java/com/googlecode/dex2jar/tools/BaseCmd.java
+index 3a82eac53..32a55106d 100644
+--- a/buggy/d2j-base-cmd/src/main/java/com/googlecode/dex2jar/tools/BaseCmd.java
++++ b/fixed/d2j-base-cmd/src/main/java/com/googlecode/dex2jar/tools/BaseCmd.java
+@@ -226,7 +226,7 @@ public abstract class BaseCmd {
+             return new File(value);
+         }
+         if (type.equals(Path.class)) {
+-            return new File(value).getPath();
++            return new File(value).toPath();
+         }
+         try {
+             type.asSubclass(Enum.class);

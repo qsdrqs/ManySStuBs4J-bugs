@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/pipeline/KBPAnnotator.java b/fixed/src/edu/stanford/nlp/pipeline/KBPAnnotator.java
+index 974793df7..a8002b60f 100644
+--- a/buggy/src/edu/stanford/nlp/pipeline/KBPAnnotator.java
++++ b/fixed/src/edu/stanford/nlp/pipeline/KBPAnnotator.java
+@@ -49,7 +49,7 @@ public class KBPAnnotator implements Annotator {
+   @ArgumentParser.Option(name="kbp.semgrex", gloss="Semgrex patterns directory, set to \"none\" to not use semgrex")
+   private String semgrexdir = DefaultPaths.DEFAULT_KBP_SEMGREX_DIR;
+ 
+-  @ArgumentParser.Option(name="kbp.tokensregex", gloss="Tokensregex patterns directory, set to \"none\" ot not use tokensregex")
++  @ArgumentParser.Option(name="kbp.tokensregex", gloss="Tokensregex patterns directory, set to \"none\" to not use tokensregex")
+   private String tokensregexdir = DefaultPaths.DEFAULT_KBP_TOKENSREGEX_DIR;
+ 
+   @ArgumentParser.Option(name="kbp.verbose", gloss="Print out KBP logging info")

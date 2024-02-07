@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/queue/QueueContainer.java b/fixed/hazelcast/src/main/java/com/hazelcast/queue/QueueContainer.java
+index 69d334ec8..9f055a581 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/queue/QueueContainer.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/queue/QueueContainer.java
+@@ -224,7 +224,7 @@ public class QueueContainer implements IdentifiedDataSerializable {
+     public QueueItem txnPeek(long offerId, String transactionId) {
+         QueueItem item = getItemQueue().peek();
+         if (item == null) {
+-            if ( offerId == -1L ){
++            if ( offerId == -1 ){
+                 return null;
+             }
+             TxQueueItem txItem = txMap.get(offerId);

@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.zibase/src/main/java/org/openhab/binding/zibase/internal/ZibaseBinding.java b/fixed/bundles/binding/org.openhab.binding.zibase/src/main/java/org/openhab/binding/zibase/internal/ZibaseBinding.java
+index 1365cbb89..e9b13ee68 100644
+--- a/buggy/bundles/binding/org.openhab.binding.zibase/src/main/java/org/openhab/binding/zibase/internal/ZibaseBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.zibase/src/main/java/org/openhab/binding/zibase/internal/ZibaseBinding.java
+@@ -132,7 +132,7 @@ public class ZibaseBinding extends AbstractActiveBinding<ZibaseBindingProvider>i
+         logger.info("Shutting down zibase connection and/or thread...");
+         zibaseListener.shutdown();
+         zibase = null;
+-        logger.info("Zibase binding desactivated");
++        logger.info("Zibase binding deactivated");
+     }
+ 
+     /**

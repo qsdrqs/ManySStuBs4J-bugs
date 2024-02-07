@@ -1,0 +1,13 @@
+diff --git a/buggy/common/src/main/java/io/netty/util/ResourceLeakDetector.java b/fixed/common/src/main/java/io/netty/util/ResourceLeakDetector.java
+index f85513aaf..a13b59a75 100644
+--- a/buggy/common/src/main/java/io/netty/util/ResourceLeakDetector.java
++++ b/fixed/common/src/main/java/io/netty/util/ResourceLeakDetector.java
+@@ -221,7 +221,7 @@ public class ResourceLeakDetector<T> {
+         }
+ 
+         if (level.ordinal() < Level.PARANOID.ordinal()) {
+-            if ((leakCheckCnt ++ & mask) == 0) {
++            if ((++ leakCheckCnt & mask) == 0) {
+                 reportLeak(level);
+                 return new DefaultResourceLeak(obj);
+             } else {

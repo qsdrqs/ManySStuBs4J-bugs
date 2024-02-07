@@ -1,0 +1,13 @@
+diff --git a/buggy/guava-testlib/test/com/google/common/collect/testing/FeatureSpecificTestSuiteBuilderTest.java b/fixed/guava-testlib/test/com/google/common/collect/testing/FeatureSpecificTestSuiteBuilderTest.java
+index 2e0d59468..5328e9c66 100644
+--- a/buggy/guava-testlib/test/com/google/common/collect/testing/FeatureSpecificTestSuiteBuilderTest.java
++++ b/fixed/guava-testlib/test/com/google/common/collect/testing/FeatureSpecificTestSuiteBuilderTest.java
+@@ -38,7 +38,7 @@ public class FeatureSpecificTestSuiteBuilderTest extends TestCase {
+     testWasRun = false;
+   }
+ 
+-  public static final class MyAbstractTester extends AbstractTester {
++  public static final class MyAbstractTester extends AbstractTester<Void> {
+     public void testNothing() {
+       testWasRun = true;
+     }

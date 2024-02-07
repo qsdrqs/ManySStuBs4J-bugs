@@ -1,0 +1,14 @@
+diff --git a/buggy/src/tests/com/puppycrawl/tools/checkstyle/CheckerTest.java b/fixed/src/tests/com/puppycrawl/tools/checkstyle/CheckerTest.java
+index eff958db4..4a85771e4 100644
+--- a/buggy/src/tests/com/puppycrawl/tools/checkstyle/CheckerTest.java
++++ b/fixed/src/tests/com/puppycrawl/tools/checkstyle/CheckerTest.java
+@@ -59,7 +59,8 @@ public class CheckerTest
+     static String getPath(String aFilename)
+         throws IOException
+     {
+-        final File f = new File(System.getProperty("tests.dir"), aFilename);
++        final File f = new File(System.getProperty("testinputs.dir"),
++                                aFilename);
+         return f.getCanonicalPath();
+     }
+ 

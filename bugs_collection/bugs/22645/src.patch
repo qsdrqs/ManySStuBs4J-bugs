@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/web/BasicErrorController.java b/fixed/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/web/BasicErrorController.java
+index 0c64466d0..4cda5f4d7 100644
+--- a/buggy/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/web/BasicErrorController.java
++++ b/fixed/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/web/BasicErrorController.java
+@@ -84,7 +84,7 @@ public class BasicErrorController implements ErrorController {
+ 			}
+ 			map.put("status", status);
+ 			if (error != null) {
+-				while (error instanceof ServletException) {
++				while (error instanceof ServletException && error.getCause() != null) {
+ 					error = ((ServletException) error).getCause();
+ 				}
+ 				map.put("exception", error.getClass().getName());

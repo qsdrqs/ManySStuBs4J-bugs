@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/Compiler.java b/fixed/src/jvm/clojure/lang/Compiler.java
+index 4698940c7..6eb56fc68 100644
+--- a/buggy/src/jvm/clojure/lang/Compiler.java
++++ b/fixed/src/jvm/clojure/lang/Compiler.java
+@@ -7247,7 +7247,7 @@ static public class NewInstanceExpr extends ObjExpr{
+ 			//use array map to preserve ctor order
+ 			ret.closes = new PersistentArrayMap(closesvec);
+ 			ret.fields = fmap;
+-			for(int i=fieldSyms.count()-1;i >= 0 && ((Symbol)fieldSyms.nth(i)).name.startsWith("__");--i)
++			for(int i=fieldSyms.count()-1;i >= 0 && (((Symbol)fieldSyms.nth(i)).name.equals("__meta") || ((Symbol)fieldSyms.nth(i)).name.equals("__extmap"));--i)
+ 				ret.altCtorDrops++;
+ 			}
+ 		//todo - set up volatiles

@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/test/java/com/facebook/presto/sql/analyzer/TestAnalyzer.java b/fixed/presto-main/src/test/java/com/facebook/presto/sql/analyzer/TestAnalyzer.java
+index 7eaaeb2f5..337c2acf9 100644
+--- a/buggy/presto-main/src/test/java/com/facebook/presto/sql/analyzer/TestAnalyzer.java
++++ b/fixed/presto-main/src/test/java/com/facebook/presto/sql/analyzer/TestAnalyzer.java
+@@ -276,7 +276,7 @@ public class TestAnalyzer
+         assertFails(MISSING_ATTRIBUTE, "SELECT * FROM t1 WHERE f > 1");
+     }
+ 
+-    @Test(expectedExceptions = SemanticException.class, expectedExceptionsMessageRegExp = "line 1:8: Column '\"t\".\"y\"' cannot be resolved")
++    @Test(expectedExceptions = SemanticException.class, expectedExceptionsMessageRegExp = "line 1:8: Column 't.y' cannot be resolved")
+     public void testInvalidAttributeCorrectErrorMessage()
+             throws Exception
+     {

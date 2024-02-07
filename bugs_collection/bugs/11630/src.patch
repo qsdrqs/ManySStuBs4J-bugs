@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/modifier/RedundantModifierCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/modifier/RedundantModifierCheck.java
+index 4ed56d921..4dc01da56 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/modifier/RedundantModifierCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/modifier/RedundantModifierCheck.java
+@@ -46,7 +46,7 @@ public class RedundantModifierCheck
+     /**
+      * An array of tokens for interface modifiers.
+      */
+-    private static final int[] TOKENS_FOR_INTERFACE_MODIFIERS = new int[] {
++    private static final int[] TOKENS_FOR_INTERFACE_MODIFIERS = {
+         TokenTypes.LITERAL_STATIC,
+         TokenTypes.ABSTRACT,
+     };

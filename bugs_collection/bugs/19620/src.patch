@@ -1,0 +1,39 @@
+diff --git a/buggy/codec/src/main/java/io/netty/handler/codec/CharSequenceValueConverter.java b/fixed/codec/src/main/java/io/netty/handler/codec/CharSequenceValueConverter.java
+index 0e243ce64..dfdc856c6 100644
+--- a/buggy/codec/src/main/java/io/netty/handler/codec/CharSequenceValueConverter.java
++++ b/fixed/codec/src/main/java/io/netty/handler/codec/CharSequenceValueConverter.java
+@@ -82,7 +82,7 @@ public class CharSequenceValueConverter implements ValueConverter<CharSequence>
+         if (value instanceof AsciiString) {
+             return ((AsciiString) value).byteAt(0);
+         }
+-        return Byte.valueOf(value.toString());
++        return Byte.parseByte(value.toString());
+     }
+ 
+     @Override
+@@ -100,7 +100,7 @@ public class CharSequenceValueConverter implements ValueConverter<CharSequence>
+         if (value instanceof AsciiString) {
+             return ((AsciiString) value).parseShort();
+         }
+-        return Short.valueOf(value.toString());
++        return Short.parseShort(value.toString());
+     }
+ 
+     @Override
+@@ -139,7 +139,7 @@ public class CharSequenceValueConverter implements ValueConverter<CharSequence>
+         if (value instanceof AsciiString) {
+             return ((AsciiString) value).parseFloat();
+         }
+-        return Float.valueOf(value.toString());
++        return Float.parseFloat(value.toString());
+     }
+ 
+     @Override
+@@ -147,6 +147,6 @@ public class CharSequenceValueConverter implements ValueConverter<CharSequence>
+         if (value instanceof AsciiString) {
+             return ((AsciiString) value).parseDouble();
+         }
+-        return Double.valueOf(value.toString());
++        return Double.parseDouble(value.toString());
+     }
+ }

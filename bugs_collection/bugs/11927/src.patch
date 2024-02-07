@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/PersistentHashMap.java b/fixed/src/jvm/clojure/lang/PersistentHashMap.java
+index c36b159d5..6e37e2edf 100644
+--- a/buggy/src/jvm/clojure/lang/PersistentHashMap.java
++++ b/fixed/src/jvm/clojure/lang/PersistentHashMap.java
+@@ -304,7 +304,7 @@ static final class TransientHashMap extends ATransientMap {
+ 			else
+ 				return notFound;
+ 		if (root == null)
+-			return null;
++			return notFound;
+ 		return root.find(0, hash(key), key, notFound);
+ 	}
+ 

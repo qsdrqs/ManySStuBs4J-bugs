@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter2filebasic/rule232specialescape/IllegalTokenTextTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter2filebasic/rule232specialescape/IllegalTokenTextTest.java
+index 249c03842..7dc61c6a3 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter2filebasic/rule232specialescape/IllegalTokenTextTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter2filebasic/rule232specialescape/IllegalTokenTextTest.java
+@@ -17,7 +17,7 @@ public class IllegalTokenTextTest extends BaseCheckTestSupport{
+     
+     @BeforeClass
+     public static void setConfigurationBuilder()
+-    		throws CheckstyleException, IOException {
++    		throws CheckstyleException {
+         builder = new ConfigurationBuilder(new File("src/it/"));
+     }
+ 

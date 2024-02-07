@@ -1,0 +1,13 @@
+diff --git a/buggy/community/server/src/main/java/org/neo4j/server/plugins/PluginPointFactoryImpl.java b/fixed/community/server/src/main/java/org/neo4j/server/plugins/PluginPointFactoryImpl.java
+index 19ecca4ca..b78327714 100644
+--- a/buggy/community/server/src/main/java/org/neo4j/server/plugins/PluginPointFactoryImpl.java
++++ b/fixed/community/server/src/main/java/org/neo4j/server/plugins/PluginPointFactoryImpl.java
+@@ -78,7 +78,7 @@ class PluginPointFactoryImpl implements PluginPointFactory
+                 if ( types[ i ] != discovery )
+                 {
+                     throw new IllegalStateException(
+-                            "Source parameter type must equal the discovery type." );
++                            "Source parameter type (" + types[i] + ") must equal the discovery type ("+discovery.getName()+")." );
+                 }
+                 if ( sourceExtractor != null )
+                 {

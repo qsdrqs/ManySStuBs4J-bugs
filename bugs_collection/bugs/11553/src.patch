@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/api/SeverityLevelCounter.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/api/SeverityLevelCounter.java
+index 92e06d4d5..cc2ad9177 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/api/SeverityLevelCounter.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/api/SeverityLevelCounter.java
+@@ -54,7 +54,7 @@ public final class SeverityLevelCounter implements AuditListener {
+     /** {@inheritDoc} */
+     @Override
+     public void addException(AuditEvent evt, Throwable throwable) {
+-        if (SeverityLevel.ERROR == level) {
++        if (level == SeverityLevel.ERROR) {
+             count++;
+         }
+     }

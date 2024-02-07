@@ -1,0 +1,13 @@
+diff --git a/buggy/metrics-core/src/main/java/io/dropwizard/metrics/JmxReporter.java b/fixed/metrics-core/src/main/java/io/dropwizard/metrics/JmxReporter.java
+index 75fdc76a3..ad81e707b 100644
+--- a/buggy/metrics-core/src/main/java/io/dropwizard/metrics/JmxReporter.java
++++ b/fixed/metrics-core/src/main/java/io/dropwizard/metrics/JmxReporter.java
+@@ -497,7 +497,7 @@ public class JmxReporter implements Reporter, Closeable {
+             this.name = name;
+             this.filter = filter;
+             this.timeUnits = timeUnits;
+-            this.registered = new ConcurrentHashMap<ObjectName, ObjectName>();
++            this.registered = new ConcurrentHashMap<>();
+             this.objectNameFactory = objectNameFactory;
+         }
+ 

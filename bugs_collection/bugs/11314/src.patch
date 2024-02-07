@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4822variabledistance/VariableDeclarationUsageDistanceTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4822variabledistance/VariableDeclarationUsageDistanceTest.java
+index c5b1f30cd..2db06e34a 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4822variabledistance/VariableDeclarationUsageDistanceTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4822variabledistance/VariableDeclarationUsageDistanceTest.java
+@@ -22,7 +22,7 @@ public class VariableDeclarationUsageDistanceTest extends BaseCheckTestSupport{
+     }
+ 
+     @Test
+-    public void arrayTypeStyleTest() throws IOException, Exception {
++    public void arrayTypeStyleTest() throws Exception {
+ 
+         String msgExt = "variable.declaration.usage.distance.extend";
+         Class<VariableDeclarationUsageDistanceCheck> clazz = VariableDeclarationUsageDistanceCheck.class;

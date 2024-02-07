@@ -1,0 +1,13 @@
+diff --git a/buggy/codec/src/main/java/io/netty/handler/codec/compression/ByteBufChecksum.java b/fixed/codec/src/main/java/io/netty/handler/codec/compression/ByteBufChecksum.java
+index bd630f7a1..b825b861f 100644
+--- a/buggy/codec/src/main/java/io/netty/handler/codec/compression/ByteBufChecksum.java
++++ b/fixed/codec/src/main/java/io/netty/handler/codec/compression/ByteBufChecksum.java
+@@ -51,7 +51,7 @@ abstract class ByteBufChecksum implements Checksum {
+     private static Method updateByteBuffer(Checksum checksum) {
+         try {
+             Method method = checksum.getClass().getDeclaredMethod("update", ByteBuffer.class);
+-            method.invoke(method, ByteBuffer.allocate(1));
++            method.invoke(checksum, ByteBuffer.allocate(1));
+             return method;
+         } catch (Throwable ignore) {
+             return null;

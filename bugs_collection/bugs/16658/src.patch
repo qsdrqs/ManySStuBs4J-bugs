@@ -1,0 +1,16 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/util/IterableUtil.java b/fixed/hazelcast/src/main/java/com/hazelcast/util/IterableUtil.java
+index 6130a40dc..d515d57ec 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/util/IterableUtil.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/util/IterableUtil.java
+@@ -21,9 +21,9 @@ import java.util.Iterator;
+ /**
+  * Utility functions for working with {@link Iterable}
+  */
+-public class IterableUtil {
++public final class IterableUtil {
+ 
+-    private IterableUtil(){
++    private IterableUtil() {
+     }
+ 
+     /**

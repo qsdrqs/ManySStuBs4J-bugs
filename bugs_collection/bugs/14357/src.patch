@@ -1,0 +1,13 @@
+diff --git a/buggy/LayoutAPI/src/org/gephi/layout/LayoutModelImpl.java b/fixed/LayoutAPI/src/org/gephi/layout/LayoutModelImpl.java
+index 02c760840..a5510ba55 100644
+--- a/buggy/LayoutAPI/src/org/gephi/layout/LayoutModelImpl.java
++++ b/fixed/LayoutAPI/src/org/gephi/layout/LayoutModelImpl.java
+@@ -71,7 +71,7 @@ public class LayoutModelImpl implements LayoutModel {
+         executor.setDefaultErrorHandler(new LongTaskErrorHandler() {
+ 
+             public void fatalError(Throwable t) {
+-                Logger.getLogger("").log(Level.SEVERE, "", t.getCause());
++                Logger.getLogger("").log(Level.SEVERE, "", t.getCause() != null ? t.getCause() : t);
+             }
+         });
+     }

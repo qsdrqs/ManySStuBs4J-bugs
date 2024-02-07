@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/utils/AtomicQueue.java b/fixed/gdx/src/com/badlogic/gdx/utils/AtomicQueue.java
+index 8a02b9a67..d4b17726f 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/utils/AtomicQueue.java
++++ b/fixed/gdx/src/com/badlogic/gdx/utils/AtomicQueue.java
+@@ -38,7 +38,7 @@ public class AtomicQueue<T> {
+ 	}
+ 
+ 	private int next (int idx) {
+-		return idx + 1 & queue.length() - 1;
++		return (idx + 1) % queue.length();
+ 	}
+ 
+ 	public boolean put (T value) {

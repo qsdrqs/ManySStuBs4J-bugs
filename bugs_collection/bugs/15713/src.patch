@@ -1,0 +1,13 @@
+diff --git a/buggy/guava/src/com/google/common/io/ByteStreams.java b/fixed/guava/src/com/google/common/io/ByteStreams.java
+index 6b4bfa04f..4259d2b39 100644
+--- a/buggy/guava/src/com/google/common/io/ByteStreams.java
++++ b/fixed/guava/src/com/google/common/io/ByteStreams.java
+@@ -127,7 +127,7 @@ public final class ByteStreams {
+ 
+     @Override
+     public String toString() {
+-      return "ByteStreams.newByteSource(" + BaseEncoding.base16().encode(bytes) + ")";
++      return "ByteStreams.asByteSource(" + BaseEncoding.base16().encode(bytes) + ")";
+     }
+   }
+ 

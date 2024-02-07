@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-addons/flink-streaming/src/main/java/eu/stratosphere/streaming/util/PerformanceTracker.java b/fixed/flink-addons/flink-streaming/src/main/java/eu/stratosphere/streaming/util/PerformanceTracker.java
+index 172029fed..75bed18b7 100644
+--- a/buggy/flink-addons/flink-streaming/src/main/java/eu/stratosphere/streaming/util/PerformanceTracker.java
++++ b/fixed/flink-addons/flink-streaming/src/main/java/eu/stratosphere/streaming/util/PerformanceTracker.java
+@@ -27,7 +27,7 @@ public class PerformanceTracker {
+ 	protected List<String> labels;
+ 
+ 	protected long dumpInterval = 0;
+-	protected long lastDump = System.currentTimeMillis();
++	protected long lastDump = 0;
+ 	protected String fname;
+ 
+ 	protected long startTime;

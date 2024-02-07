@@ -1,0 +1,13 @@
+diff --git a/buggy/web/src/main/java/com/navercorp/pinpoint/web/websocket/ActiveThreadCountHandler.java b/fixed/web/src/main/java/com/navercorp/pinpoint/web/websocket/ActiveThreadCountHandler.java
+index 9eedd70b3..a75ce7e4a 100644
+--- a/buggy/web/src/main/java/com/navercorp/pinpoint/web/websocket/ActiveThreadCountHandler.java
++++ b/fixed/web/src/main/java/com/navercorp/pinpoint/web/websocket/ActiveThreadCountHandler.java
+@@ -162,7 +162,7 @@ public class ActiveThreadCountHandler extends TextWebSocketHandler implements Pi
+             unbindingResponseAggregator(closeSession);
+ 
+             sessionRepository.remove(closeSession);
+-            if (sessionRepository.size() == 0) {
++            if (sessionRepository.isEmpty()) {
+                 boolean turnOff = onTimerTask.compareAndSet(true, false);
+             }
+         }

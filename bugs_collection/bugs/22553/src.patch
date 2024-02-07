@@ -1,0 +1,22 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/DataSourceProperties.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/DataSourceProperties.java
+index d42222a84..b734a3409 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/DataSourceProperties.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/DataSourceProperties.java
+@@ -118,7 +118,7 @@ public class DataSourceProperties implements BeanClassLoaderAware, InitializingB
+ 		if (StringUtils.hasText(this.username)) {
+ 			return this.username;
+ 		}
+-		if (EmbeddedDatabaseConnection.isEmbedded(this.driverClassName)) {
++		if (EmbeddedDatabaseConnection.isEmbedded(getDriverClassName())) {
+ 			return "sa";
+ 		}
+ 		return null;
+@@ -128,7 +128,7 @@ public class DataSourceProperties implements BeanClassLoaderAware, InitializingB
+ 		if (StringUtils.hasText(this.password)) {
+ 			return this.password;
+ 		}
+-		if (EmbeddedDatabaseConnection.isEmbedded(this.driverClassName)) {
++		if (EmbeddedDatabaseConnection.isEmbedded(getDriverClassName())) {
+ 			return "";
+ 		}
+ 		return null;

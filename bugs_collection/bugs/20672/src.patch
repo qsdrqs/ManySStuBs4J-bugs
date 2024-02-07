@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/persistence/org.openhab.persistence.rrd4j/src/main/java/org/openhab/persistence/rrd4j/internal/RRD4jService.java b/fixed/bundles/persistence/org.openhab.persistence.rrd4j/src/main/java/org/openhab/persistence/rrd4j/internal/RRD4jService.java
+index 59ad23466..a76a538e5 100644
+--- a/buggy/bundles/persistence/org.openhab.persistence.rrd4j/src/main/java/org/openhab/persistence/rrd4j/internal/RRD4jService.java
++++ b/fixed/bundles/persistence/org.openhab.persistence.rrd4j/src/main/java/org/openhab/persistence/rrd4j/internal/RRD4jService.java
+@@ -165,7 +165,7 @@ public class RRD4jService implements QueryablePersistenceService {
+ 		RrdDb db = getDB(itemName, consolidationFunction);
+ 		if(db!=null) {
+ 			long start = 0L;
+-			long end = filter.getEndDate()==null ? System.currentTimeMillis()/1000 - 1 : filter.getEndDate().getTime()/1000;
++			long end = filter.getEndDate()==null ? System.currentTimeMillis()/1000 : filter.getEndDate().getTime()/1000;
+ 
+ 			try {
+ 				if(filter.getBeginDate()==null) {

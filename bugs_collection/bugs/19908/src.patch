@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/ChannelInboundMessageHandlerAdapter.java b/fixed/transport/src/main/java/io/netty/channel/ChannelInboundMessageHandlerAdapter.java
+index d4fa7a409..6f9e0ea96 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/ChannelInboundMessageHandlerAdapter.java
++++ b/fixed/transport/src/main/java/io/netty/channel/ChannelInboundMessageHandlerAdapter.java
+@@ -63,7 +63,7 @@ public abstract class ChannelInboundMessageHandlerAdapter<I>
+                     }
+                     messageReceived(ctx, (I) msg);
+                 } catch (Throwable t) {
+-                    ctx.fireExceptionCaught(t);
++                    exceptionCaught(ctx, t);
+                 }
+             }
+         } finally {

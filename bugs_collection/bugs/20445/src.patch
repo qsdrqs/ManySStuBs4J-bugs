@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.dscalarm/src/main/java/org/openhab/binding/dscalarm/internal/connector/TCPConnector.java b/fixed/bundles/binding/org.openhab.binding.dscalarm/src/main/java/org/openhab/binding/dscalarm/internal/connector/TCPConnector.java
+index 1b6c03ed2..9a6e7c6a4 100644
+--- a/buggy/bundles/binding/org.openhab.binding.dscalarm/src/main/java/org/openhab/binding/dscalarm/internal/connector/TCPConnector.java
++++ b/fixed/bundles/binding/org.openhab.binding.dscalarm/src/main/java/org/openhab/binding/dscalarm/internal/connector/TCPConnector.java
+@@ -144,7 +144,7 @@ public class TCPConnector implements DSCAlarmConnector {
+ 	  */
+ 	 public synchronized void handleIncomingMessage(String incomingMessage) {
+ 		APIMessage Message = new APIMessage(incomingMessage);
+-		logger.debug("handleIncomingMessage(): Message recieved: {} - {}",incomingMessage,Message.toString());
++		logger.debug("handleIncomingMessage(): Message received: {} - {}",incomingMessage,Message.toString());
+ 
+ 		DSCAlarmEvent event = new DSCAlarmEvent(this);
+ 		event.dscAlarmEventMessage(Message);

@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-app/src/main/java/org/apache/hadoop/mapreduce/jobhistory/JobHistoryEventHandler.java b/fixed/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-app/src/main/java/org/apache/hadoop/mapreduce/jobhistory/JobHistoryEventHandler.java
+index f7860922d..71e182ea0 100644
+--- a/buggy/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-app/src/main/java/org/apache/hadoop/mapreduce/jobhistory/JobHistoryEventHandler.java
++++ b/fixed/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-app/src/main/java/org/apache/hadoop/mapreduce/jobhistory/JobHistoryEventHandler.java
+@@ -601,7 +601,7 @@ public class JobHistoryEventHandler extends AbstractService
+       setSummarySlotSeconds(summary, context.getJob(jobId).getAllCounters());
+       break;
+     default:
+-      throw new YarnException("Invalid event type");
++      break;
+     }
+   }
+ 

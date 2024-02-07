@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/tests/SoundTest.java b/fixed/gdx/src/com/badlogic/gdx/tests/SoundTest.java
+index 901b072b1..deb2c3d29 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/tests/SoundTest.java
++++ b/fixed/gdx/src/com/badlogic/gdx/tests/SoundTest.java
+@@ -42,7 +42,7 @@ public class SoundTest implements RenderListener, InputListener
+ 		if( music == null )
+ 		{
+ 			app.getInput().addInputListener( this );	
+-			sound = app.getAudio().newSound( app.getFiles().getInternalFileHandle( "data/shotgun44k.ogg" ) );
++			sound = app.getAudio().newSound( app.getFiles().getInternalFileHandle( "data/shotgun.wav" ) );
+ 			
+ 			music = app.getAudio().newMusic( app.getFiles().getInternalFileHandle( "data/cloudconnected.ogg" ) );				
+ 			music.play();		

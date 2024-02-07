@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/execution/TaskExecutor.java b/fixed/presto-main/src/main/java/com/facebook/presto/execution/TaskExecutor.java
+index ea8c437e6..755f7f2af 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/execution/TaskExecutor.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/execution/TaskExecutor.java
+@@ -547,7 +547,7 @@ public class TaskExecutor
+             }
+ 
+             if (level < 4) {
+-                result = Long.compare(threadUsageNanos.get(), threadUsageNanos.get());
++                result = Long.compare(threadUsageNanos.get(), o.threadUsageNanos.get());
+             }
+             else {
+                 result = Long.compare(lastRun.get(), o.lastRun.get());

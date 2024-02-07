@@ -1,0 +1,13 @@
+diff --git a/buggy/metrics-core/src/main/java/com/codahale/metrics/InstrumentedExecutorService.java b/fixed/metrics-core/src/main/java/com/codahale/metrics/InstrumentedExecutorService.java
+index f63cf2fcb..1aa1d0107 100644
+--- a/buggy/metrics-core/src/main/java/com/codahale/metrics/InstrumentedExecutorService.java
++++ b/fixed/metrics-core/src/main/java/com/codahale/metrics/InstrumentedExecutorService.java
+@@ -131,7 +131,7 @@ public class InstrumentedExecutorService implements ExecutorService {
+     private <T> Collection<? extends Callable<T>> instrument(Collection<? extends Callable<T>> tasks) {
+         final List<InstrumentedCallable<T>> instrumented = new ArrayList<InstrumentedCallable<T>>(tasks.size());
+         for (Callable<T> task : tasks) {
+-            instrumented.add(new InstrumentedCallable(task));
++            instrumented.add(new InstrumentedCallable<T>(task));
+         }
+         return instrumented;
+     }

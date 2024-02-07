@@ -1,0 +1,14 @@
+diff --git a/buggy/flink-queryable-state/flink-queryable-state-runtime/src/test/java/org/apache/flink/queryablestate/network/ClientTest.java b/fixed/flink-queryable-state/flink-queryable-state-runtime/src/test/java/org/apache/flink/queryablestate/network/ClientTest.java
+index 8638efa68..6aa471094 100644
+--- a/buggy/flink-queryable-state/flink-queryable-state-runtime/src/test/java/org/apache/flink/queryablestate/network/ClientTest.java
++++ b/fixed/flink-queryable-state/flink-queryable-state-runtime/src/test/java/org/apache/flink/queryablestate/network/ClientTest.java
+@@ -111,7 +111,8 @@ public class ClientTest {
+ 	@After
+ 	public void tearDown() throws Exception {
+ 		if (nioGroup != null) {
+-			nioGroup.shutdownGracefully();
++			// note: no "quiet period" to not trigger Netty#4357
++			nioGroup.shutdownGracefully(0, 10, TimeUnit.SECONDS);
+ 		}
+ 	}
+ 

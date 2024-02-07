@@ -1,0 +1,22 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/ImportControlCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/ImportControlCheck.java
+index 19bb5918d..86a77ce5f 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/ImportControlCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/ImportControlCheck.java
+@@ -76,7 +76,7 @@ public class ImportControlCheck extends AbstractCheck implements ExternalResourc
+     private String fileLocation;
+ 
+     /** The root package controller. */
+-    private PkgControl root;
++    private ImportControl root;
+     /** The package doing the import. */
+     private String inPkg;
+ 
+@@ -84,7 +84,7 @@ public class ImportControlCheck extends AbstractCheck implements ExternalResourc
+      * The package controller for the current file. Used for performance
+      * optimisation.
+      */
+-    private PkgControl currentLeaf;
++    private ImportControl currentLeaf;
+ 
+     @Override
+     public int[] getDefaultTokens() {

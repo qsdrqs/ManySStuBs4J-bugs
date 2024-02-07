@@ -1,0 +1,22 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/helpers/Exceptions.java b/fixed/community/kernel/src/main/java/org/neo4j/helpers/Exceptions.java
+index 00d688f66..b4cf06bee 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/helpers/Exceptions.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/helpers/Exceptions.java
+@@ -31,7 +31,7 @@ public class Exceptions
+         }
+         catch ( Exception failure )
+         {
+-            // ok, we did our best, guess there will be no cause
++            // OK, we did our best, guess there will be no cause
+         }
+         return exception;
+     }
+@@ -58,7 +58,7 @@ public class Exceptions
+         }
+         else
+         {
+-            throw new RuntimeException( messageForUnexpected, exception );
++            return new RuntimeException( messageForUnexpected, exception );
+         }
+     }
+ 

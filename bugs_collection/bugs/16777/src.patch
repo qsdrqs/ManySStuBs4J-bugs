@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/nio/serialization/SerializationContextImpl.java b/fixed/hazelcast/src/main/java/com/hazelcast/nio/serialization/SerializationContextImpl.java
+index 9293dccf2..12725d3d1 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/nio/serialization/SerializationContextImpl.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/nio/serialization/SerializationContextImpl.java
+@@ -183,7 +183,7 @@ final class SerializationContextImpl implements SerializationContext {
+     }
+ 
+     static long combineToLong(int x, int y) {
+-        return ((long) x << 32) | ((long) y & 0xFFFFFFFL);
++        return ((long) x << 32) | ((long) y & 0xFFFFFFFFL);
+     }
+ 
+     static int extractInt(long value, boolean lowerBits) {

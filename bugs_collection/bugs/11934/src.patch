@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/Compiler.java b/fixed/src/jvm/clojure/lang/Compiler.java
+index fd658d8c1..4a2deb2c7 100644
+--- a/buggy/src/jvm/clojure/lang/Compiler.java
++++ b/fixed/src/jvm/clojure/lang/Compiler.java
+@@ -3221,7 +3221,7 @@ static class InvokeExpr implements Expr{
+ 			PersistentVector argvs = PersistentVector.EMPTY;
+ 			for(int i = 0; i < args.count(); i++)
+ 				argvs = argvs.cons(((Expr) args.nth(i)).eval());
+-			return fn.applyTo(RT.seq(argvs));
++			return fn.applyTo(RT.seq( Util.ret1(argvs, argvs = null) ));
+ 			}
+ 		catch(Throwable e)
+ 			{

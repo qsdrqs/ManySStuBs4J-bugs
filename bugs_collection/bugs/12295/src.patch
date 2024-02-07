@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-configuration/src/test/java/io/dropwizard/configuration/ConfigurationValidationExceptionTest.java b/fixed/dropwizard-configuration/src/test/java/io/dropwizard/configuration/ConfigurationValidationExceptionTest.java
+index 39a62d70d..955dbd21b 100644
+--- a/buggy/dropwizard-configuration/src/test/java/io/dropwizard/configuration/ConfigurationValidationExceptionTest.java
++++ b/fixed/dropwizard-configuration/src/test/java/io/dropwizard/configuration/ConfigurationValidationExceptionTest.java
+@@ -36,7 +36,7 @@ public class ConfigurationValidationExceptionTest {
+         assertThat(e.getMessage())
+                 .isEqualTo(String.format(
+                         "config.yml has an error:%n" +
+-                                "  * woo may not be null (was null)%n"
++                                "  * woo may not be null%n"
+                 ));
+     }
+ 

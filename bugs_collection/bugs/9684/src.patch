@@ -1,0 +1,14 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/FileSinkOperator.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/FileSinkOperator.java
+index 3ec63ee32..cd5e7e78b 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/FileSinkOperator.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/FileSinkOperator.java
+@@ -938,7 +938,8 @@ public class FileSinkOperator extends TerminalOperator<FileSinkDesc> implements
+           // we cannot proceed and need to tell the hive client that retries won't succeed either
+           throw new HiveFatalException(
+                ErrorMsg.DYNAMIC_PARTITIONS_TOO_MANY_PER_NODE_ERROR.getErrorCodedMsg()
+-               + "Maximum was set to: " + maxPartitions);
++               + "Maximum was set to " + maxPartitions + " partitions per node"
++               + ", number of dynamic partitions on this node: " + valToPaths.size());
+         }
+ 
+         if (!conf.getDpSortState().equals(DPSortState.NONE) && prevFsp != null) {

@@ -1,0 +1,20 @@
+diff --git a/buggy/spring-boot-test-autoconfigure/src/test/java/org/springframework/boot/test/autoconfigure/web/reactive/webclient/WebTestClientSpringBootTestIntegrationTests.java b/fixed/spring-boot-test-autoconfigure/src/test/java/org/springframework/boot/test/autoconfigure/web/reactive/webclient/WebTestClientSpringBootTestIntegrationTests.java
+index f97ae867b..f8c7261f0 100644
+--- a/buggy/spring-boot-test-autoconfigure/src/test/java/org/springframework/boot/test/autoconfigure/web/reactive/webclient/WebTestClientSpringBootTestIntegrationTests.java
++++ b/fixed/spring-boot-test-autoconfigure/src/test/java/org/springframework/boot/test/autoconfigure/web/reactive/webclient/WebTestClientSpringBootTestIntegrationTests.java
+@@ -48,13 +48,13 @@ public class WebTestClientSpringBootTestIntegrationTests {
+ 	@Test
+ 	public void shouldFindController1() {
+ 		this.webClient.get().uri("/one").exchange().expectStatus().isOk()
+-				.expectBody(String.class).value().isEqualTo("one");
++				.expectBody(String.class).isEqualTo("one");
+ 	}
+ 
+ 	@Test
+ 	public void shouldFindController2() {
+ 		this.webClient.get().uri("/two").exchange().expectStatus().isOk()
+-				.expectBody(String.class).value().isEqualTo("two");
++				.expectBody(String.class).isEqualTo("two");
+ 	}
+ 
+ 	@Test

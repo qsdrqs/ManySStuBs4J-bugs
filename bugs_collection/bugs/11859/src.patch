@@ -1,0 +1,13 @@
+diff --git a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/PackageNamesLoader.java b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/PackageNamesLoader.java
+index 781927db7..1c7d483e0 100644
+--- a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/PackageNamesLoader.java
++++ b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/PackageNamesLoader.java
+@@ -89,7 +89,7 @@ public class PackageNamesLoader
+     {
+         if (aQName.equals("package")) {
+             //push package name
+-            final String name = (String) aAtts.getValue("name");
++            final String name = aAtts.getValue("name");
+             if (name == null) {
+                 throw new SAXException("missing package name");
+             }

@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/main/java/org/openmrs/propertyeditor/ConceptSetsEditor.java b/fixed/api/src/main/java/org/openmrs/propertyeditor/ConceptSetsEditor.java
+index dd28d9fcf..0bb857711 100644
+--- a/buggy/api/src/main/java/org/openmrs/propertyeditor/ConceptSetsEditor.java
++++ b/fixed/api/src/main/java/org/openmrs/propertyeditor/ConceptSetsEditor.java
+@@ -58,7 +58,7 @@ public class ConceptSetsEditor extends PropertyEditorSupport {
+ 			// and removal of duplicates
+ 			for (String id : conceptIds) {
+ 				id = id.trim();
+-				if (!id.equals("") && !requestConceptIds.contains(Integer.valueOf(id))) { //remove whitespace, blank lines, and duplicate entries
++				if (!("".equals(id)) && !requestConceptIds.contains(Integer.valueOf(id))) { //remove whitespace, blank lines, and duplicate entries
+ 					requestConceptIds.add(Integer.valueOf(id));
+ 				}
+ 			}

@@ -1,0 +1,17 @@
+diff --git a/buggy/modules/VisualizationImpl/src/main/java/org/gephi/visualization/component/LabelAttributesPanel.java b/fixed/modules/VisualizationImpl/src/main/java/org/gephi/visualization/component/LabelAttributesPanel.java
+index 3bc24d12c..38637c202 100644
+--- a/buggy/modules/VisualizationImpl/src/main/java/org/gephi/visualization/component/LabelAttributesPanel.java
++++ b/fixed/modules/VisualizationImpl/src/main/java/org/gephi/visualization/component/LabelAttributesPanel.java
+@@ -133,10 +133,10 @@ public class LabelAttributesPanel extends javax.swing.JPanel {
+             target = nodeCheckBoxs;
+         } else {
+             for (Column c : graphController.getGraphModel().getEdgeTable()) {
+-                if (c.getOrigin().equals(Origin.DATA)) {
++                if (!c.isProperty()) {
+                     availableColumns.add(c);
+                 } else if (showProperties) {
+-                    if (c.getId().equalsIgnoreCase("label")) {
++                    if (showProperties && c.isProperty() && !c.getId().equals("timeset")) {
+                         availableColumns.add(c);
+                     }
+                 }

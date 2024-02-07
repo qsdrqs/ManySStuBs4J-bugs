@@ -1,0 +1,14 @@
+diff --git a/buggy/presto-parser/src/main/java/com/facebook/presto/sql/SqlFormatter.java b/fixed/presto-parser/src/main/java/com/facebook/presto/sql/SqlFormatter.java
+index a614ffce8..052003362 100644
+--- a/buggy/presto-parser/src/main/java/com/facebook/presto/sql/SqlFormatter.java
++++ b/fixed/presto-parser/src/main/java/com/facebook/presto/sql/SqlFormatter.java
+@@ -341,7 +341,8 @@ public final class SqlFormatter
+         @Override
+         protected Void visitTable(Table node, Integer indent)
+         {
+-            builder.append(node.getName().toString());
++            builder.append(formatName(node.getName()));
++
+             return null;
+         }
+ 

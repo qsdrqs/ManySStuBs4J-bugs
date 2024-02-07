@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/channel/group/DefaultChannelGroupFuture.java b/fixed/src/main/java/org/jboss/netty/channel/group/DefaultChannelGroupFuture.java
+index fc4ffd86b..74ed7f2fb 100644
+--- a/buggy/src/main/java/org/jboss/netty/channel/group/DefaultChannelGroupFuture.java
++++ b/fixed/src/main/java/org/jboss/netty/channel/group/DefaultChannelGroupFuture.java
+@@ -308,7 +308,7 @@ public class DefaultChannelGroupFuture implements ChannelGroupFuture {
+         if (IoWorkerRunnable.IN_IO_THREAD.get()) {
+             throw new IllegalStateException(
+                     "await*() in I/O thread causes a dead lock or " +
+-                    "sudden performance drop.");
++                    "sudden performance drop. Use addListener() instead.");
+         }
+     }
+ 

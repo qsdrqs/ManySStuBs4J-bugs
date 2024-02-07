@@ -1,0 +1,17 @@
+diff --git a/buggy/hcatalog/streaming/src/java/org/apache/hive/hcatalog/streaming/InvalidTable.java b/fixed/hcatalog/streaming/src/java/org/apache/hive/hcatalog/streaming/InvalidTable.java
+index 98ef688ec..d61dfbba5 100644
+--- a/buggy/hcatalog/streaming/src/java/org/apache/hive/hcatalog/streaming/InvalidTable.java
++++ b/fixed/hcatalog/streaming/src/java/org/apache/hive/hcatalog/streaming/InvalidTable.java
+@@ -29,10 +29,10 @@ public class InvalidTable extends StreamingException {
+   }
+ 
+   public InvalidTable(String db, String table, String msg) {
+-    super(msg);
++    super(makeMsg(db, table) + ": " + msg, null);
+   }
+ 
+   public InvalidTable(String db, String table, Exception inner) {
+-    super(inner.getMessage(), inner);
++    super(makeMsg(db, table) + ": " + inner.getMessage(), inner);
+   }
+ }

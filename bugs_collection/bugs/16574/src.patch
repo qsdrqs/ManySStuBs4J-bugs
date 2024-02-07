@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/spi/impl/operationservice/impl/OperationRunnerImpl.java b/fixed/hazelcast/src/main/java/com/hazelcast/spi/impl/operationservice/impl/OperationRunnerImpl.java
+index 5b913c8cc..bdb27deca 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/spi/impl/operationservice/impl/OperationRunnerImpl.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/spi/impl/operationservice/impl/OperationRunnerImpl.java
+@@ -219,7 +219,7 @@ class OperationRunnerImpl extends OperationRunner {
+         }
+ 
+         if (partitionId != getPartitionId()) {
+-            throw new IllegalStateException("wrong partition, expected: " + getPartitionId() + " but found:" + op);
++            throw new IllegalStateException("wrong partition, expected: " + getPartitionId() + " but found:" + partitionId);
+         }
+ 
+         if (internalPartition == null) {

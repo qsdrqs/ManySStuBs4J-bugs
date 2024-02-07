@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/channel/socket/oio/OioWorker.java b/fixed/src/main/java/org/jboss/netty/channel/socket/oio/OioWorker.java
+index 72690de71..1744253ec 100644
+--- a/buggy/src/main/java/org/jboss/netty/channel/socket/oio/OioWorker.java
++++ b/fixed/src/main/java/org/jboss/netty/channel/socket/oio/OioWorker.java
+@@ -46,7 +46,7 @@ import org.jboss.netty.channel.ChannelFuture;
+ class OioWorker implements Runnable {
+ 
+     private static final Pattern SOCKET_CLOSED_MESSAGE = Pattern.compile(
+-            "^.*(?:Socket\\s*closed).*$", Pattern.CASE_INSENSITIVE);
++            "^.*(?:Socket.*closed).*$", Pattern.CASE_INSENSITIVE);
+ 
+     private final OioSocketChannel channel;
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/web/src/main/java/org/openmrs/web/WebUtil.java b/fixed/web/src/main/java/org/openmrs/web/WebUtil.java
+index df240c277..36164ed04 100644
+--- a/buggy/web/src/main/java/org/openmrs/web/WebUtil.java
++++ b/fixed/web/src/main/java/org/openmrs/web/WebUtil.java
+@@ -297,7 +297,7 @@ public class WebUtil implements GlobalPropertyListener {
+ 			return null;
+ 		}
+ 		localeString = localeString.trim();
+-		if (localeString.isEmpty() || localeString.equals("_")) {
++		if (localeString.isEmpty() || "_".equals(localeString)) {
+ 			return null;
+ 		}
+ 		int len = localeString.length();

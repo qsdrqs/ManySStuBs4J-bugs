@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/graphics/g3d/decals/Decal.java b/fixed/gdx/src/com/badlogic/gdx/graphics/g3d/decals/Decal.java
+index 11b832882..3aeca66be 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/graphics/g3d/decals/Decal.java
++++ b/fixed/gdx/src/com/badlogic/gdx/graphics/g3d/decals/Decal.java
+@@ -57,7 +57,7 @@ public class Decal {
+ 	protected DecalMaterial material = new DecalMaterial();
+ 	protected boolean updated = false;
+ 
+-	protected Decal () {
++	public Decal () {
+ 	}
+ 
+ 	/** Sets the color of all four vertices to the specified color

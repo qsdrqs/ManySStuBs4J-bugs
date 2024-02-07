@@ -1,0 +1,26 @@
+diff --git a/buggy/guava-gwt/src-super/com/google/common/collect/super/com/google/common/collect/Maps.java b/fixed/guava-gwt/src-super/com/google/common/collect/super/com/google/common/collect/Maps.java
+index 682ab0202..de2c50d09 100644
+--- a/buggy/guava-gwt/src-super/com/google/common/collect/super/com/google/common/collect/Maps.java
++++ b/fixed/guava-gwt/src-super/com/google/common/collect/super/com/google/common/collect/Maps.java
+@@ -75,18 +75,18 @@ import javax.annotation.Nullable;
+ public final class Maps {
+   private Maps() {}
+ 
+-  private enum EntryFunction implements Function<Entry, Object> {
++  private enum EntryFunction implements Function<Entry<?, ?>, Object> {
+     KEY {
+       @Override
+       @Nullable
+-      public Object apply(Entry entry) {
++      public Object apply(Entry<?, ?> entry) {
+         return entry.getKey();
+       }
+     },
+     VALUE {
+       @Override
+       @Nullable
+-      public Object apply(Entry entry) {
++      public Object apply(Entry<?, ?> entry) {
+         return entry.getValue();
+       }
+     };

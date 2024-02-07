@@ -1,0 +1,22 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/Compiler.java b/fixed/src/com/google/javascript/jscomp/Compiler.java
+index 32514c79a..39a1adb09 100644
+--- a/buggy/src/com/google/javascript/jscomp/Compiler.java
++++ b/fixed/src/com/google/javascript/jscomp/Compiler.java
+@@ -937,7 +937,7 @@ public class Compiler extends AbstractCompiler {
+   Tracer newTracer(String passName) {
+     String comment = passName
+         + (recentChange.hasCodeChanged() ? " on recently changed AST" : "");
+-    if (options.tracer.isOn()) {
++    if (options.tracer.isOn() && tracker != null) {
+       tracker.recordPassStart(passName, true);
+     }
+     return new Tracer("Compiler", comment);
+@@ -945,7 +945,7 @@ public class Compiler extends AbstractCompiler {
+ 
+   void stopTracer(Tracer t, String passName) {
+     long result = t.stop();
+-    if (options.tracer.isOn()) {
++    if (options.tracer.isOn() && tracker != null) {
+       tracker.recordPassStop(passName, result);
+     }
+   }

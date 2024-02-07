@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/main/java/org/openmrs/module/ModuleFactory.java b/fixed/api/src/main/java/org/openmrs/module/ModuleFactory.java
+index 6792ed0e7..b0670fd2d 100644
+--- a/buggy/api/src/main/java/org/openmrs/module/ModuleFactory.java
++++ b/fixed/api/src/main/java/org/openmrs/module/ModuleFactory.java
+@@ -562,7 +562,7 @@ public class ModuleFactory {
+ 				// check for required modules
+ 				if (!requiredModulesStarted(module)) {
+ 					String[] params = {module.getName(), OpenmrsUtil.join(getMissingRequiredModules(module), ", ")};
+-					String message = Context.getMessageSourceService().getMessage("Module.error.moduleCannotBeAdded", params, Context.getLocale());
++					String message = Context.getMessageSourceService().getMessage("Module.error.moduleCannotBeInstalled", params, Context.getLocale());
+ 					throw new ModuleException(message);
+ 				}
+ 				

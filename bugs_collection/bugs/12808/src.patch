@@ -1,0 +1,14 @@
+diff --git a/buggy/server/src/main/java/io/druid/segment/indexing/granularity/GranularitySpec.java b/fixed/server/src/main/java/io/druid/segment/indexing/granularity/GranularitySpec.java
+index 87be565af..730077e8c 100644
+--- a/buggy/server/src/main/java/io/druid/segment/indexing/granularity/GranularitySpec.java
++++ b/fixed/server/src/main/java/io/druid/segment/indexing/granularity/GranularitySpec.java
+@@ -35,7 +35,8 @@ import java.util.SortedSet;
+  */
+ @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type", defaultImpl = UniformGranularitySpec.class)
+ @JsonSubTypes(value = {
+-    @JsonSubTypes.Type(name = "uniform", value = UniformGranularitySpec.class)
++    @JsonSubTypes.Type(name = "uniform", value = UniformGranularitySpec.class),
++    @JsonSubTypes.Type(name = "arbitrary", value = ArbitraryGranularitySpec.class)
+ })
+ public interface GranularitySpec
+ {

@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/processor/Pipeline.java b/fixed/camel-core/src/main/java/org/apache/camel/processor/Pipeline.java
+index 40ab5f9e9..1002274f2 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/processor/Pipeline.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/processor/Pipeline.java
+@@ -130,7 +130,7 @@ public class Pipeline extends MulticastProcessor implements AsyncProcessor {
+                 }
+ 
+                 ExchangeHelper.copyResults(original, nextExchange);
+-                callback.done(true);
++                callback.done(false);
+             }
+         });
+     }

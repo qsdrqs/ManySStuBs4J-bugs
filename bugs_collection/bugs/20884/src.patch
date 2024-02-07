@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/io/org.openhab.io.gcal/src/main/java/org/openhab/io/gcal/internal/GCalEventDownloader.java b/fixed/bundles/io/org.openhab.io.gcal/src/main/java/org/openhab/io/gcal/internal/GCalEventDownloader.java
+index 1ee59879c..1a990c2f4 100644
+--- a/buggy/bundles/io/org.openhab.io.gcal/src/main/java/org/openhab/io/gcal/internal/GCalEventDownloader.java
++++ b/fixed/bundles/io/org.openhab.io.gcal/src/main/java/org/openhab/io/gcal/internal/GCalEventDownloader.java
+@@ -118,7 +118,7 @@ public class GCalEventDownloader extends AbstractActiveService {
+ 	public void activate() {
+         try {
+             scheduler = StdSchedulerFactory.getDefaultScheduler();
+-        	start();
++            super.activate();
+         }
+         catch (SchedulerException se) {
+             logger.error("initializing scheduler throws exception", se);

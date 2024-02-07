@@ -1,0 +1,16 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.maxcul/src/main/java/org/openhab/binding/maxcul/internal/messages/PairPongMsg.java b/fixed/bundles/binding/org.openhab.binding.maxcul/src/main/java/org/openhab/binding/maxcul/internal/messages/PairPongMsg.java
+index 2b233da21..f61fb406a 100644
+--- a/buggy/bundles/binding/org.openhab.binding.maxcul/src/main/java/org/openhab/binding/maxcul/internal/messages/PairPongMsg.java
++++ b/fixed/bundles/binding/org.openhab.binding.maxcul/src/main/java/org/openhab/binding/maxcul/internal/messages/PairPongMsg.java
+@@ -4,9 +4,9 @@ public class PairPongMsg extends BaseMsg {
+ 
+ 	final static private int PAIR_PONG_PAYLOAD_LEN = 1; /* in bytes */
+ 
+-	public PairPongMsg(byte msgCount, byte msgFlag, MaxCulMsgType msgType,
++	public PairPongMsg(byte msgCount, byte msgFlag,
+ 			byte groupId, String srcAddr, String dstAddr) {
+-		super(msgCount, msgFlag, msgType, groupId, srcAddr, dstAddr);
++		super(msgCount, msgFlag, MaxCulMsgType.PAIR_PONG, groupId, srcAddr, dstAddr);
+ 
+ 		byte[] payload = new byte[PAIR_PONG_PAYLOAD_LEN];
+ 

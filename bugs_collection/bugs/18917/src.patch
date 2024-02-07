@@ -1,0 +1,13 @@
+diff --git a/buggy/web/src/main/java/com/navercorp/pinpoint/web/view/TransactionInfoViewModel.java b/fixed/web/src/main/java/com/navercorp/pinpoint/web/view/TransactionInfoViewModel.java
+index 1cfd02932..6981c9176 100644
+--- a/buggy/web/src/main/java/com/navercorp/pinpoint/web/view/TransactionInfoViewModel.java
++++ b/fixed/web/src/main/java/com/navercorp/pinpoint/web/view/TransactionInfoViewModel.java
+@@ -94,7 +94,7 @@ public class TransactionInfoViewModel {
+ 
+     @JsonProperty("logPageUrl")
+     public String getLogPageUrl() {
+-        if (logPageUrl != null || logPageUrl.length() > 0) {
++        if (logPageUrl != null && logPageUrl.length() > 0) {
+             try {
+                 URL url = new URL(logPageUrl);
+                 StringBuilder sb = new StringBuilder();

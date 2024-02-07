@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/jobmanager/web/JobManagerInfoServlet.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/jobmanager/web/JobManagerInfoServlet.java
+index ce57714ca..0ecc94146 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/jobmanager/web/JobManagerInfoServlet.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/jobmanager/web/JobManagerInfoServlet.java
+@@ -436,7 +436,7 @@ public class JobManagerInfoServlet extends HttpServlet {
+ 			if(ec != null) {
+ 				wrt.write("\"executionConfig\": {");
+ 				wrt.write("\"Execution Mode\": \""+ec.getExecutionMode()+"\",");
+-				wrt.write("\"Number of execution retries\": \""+ec.getNumberOfExecutionRetries()+"\",");
++				wrt.write("\"Max. number of execution retries\": \""+ec.getNumberOfExecutionRetries()+"\",");
+ 				wrt.write("\"Job parallelism\": \""+ec.getParallelism()+"\",");
+ 				wrt.write("\"Object reuse mode\": \""+ec.isObjectReuseEnabled()+"\"");
+ 				ExecutionConfig.GlobalJobParameters uc = ec.getGlobalJobParameters();

@@ -1,0 +1,16 @@
+diff --git a/buggy/src/main/java/org/apache/ibatis/reflection/ExceptionUtil.java b/fixed/src/main/java/org/apache/ibatis/reflection/ExceptionUtil.java
+index 73429dd21..2f021ccf4 100644
+--- a/buggy/src/main/java/org/apache/ibatis/reflection/ExceptionUtil.java
++++ b/fixed/src/main/java/org/apache/ibatis/reflection/ExceptionUtil.java
+@@ -9,9 +9,9 @@ public class ExceptionUtil {
+     Throwable unwrapped = wrapped;
+     while (true) {
+       if (unwrapped instanceof InvocationTargetException) {
+-        unwrapped = ((InvocationTargetException) wrapped).getTargetException();
++        unwrapped = ((InvocationTargetException) unwrapped).getTargetException();
+       } else if (unwrapped instanceof UndeclaredThrowableException) {
+-        unwrapped = ((UndeclaredThrowableException) wrapped).getUndeclaredThrowable();
++        unwrapped = ((UndeclaredThrowableException) unwrapped).getUndeclaredThrowable();
+       } else {
+         return unwrapped;
+       }

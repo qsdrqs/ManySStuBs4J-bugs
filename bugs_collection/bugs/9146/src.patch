@@ -1,0 +1,22 @@
+diff --git a/buggy/hbase-common/src/main/java/org/apache/hadoop/hbase/io/encoding/BufferedDataBlockEncoder.java b/fixed/hbase-common/src/main/java/org/apache/hadoop/hbase/io/encoding/BufferedDataBlockEncoder.java
+index 00ec0fce5..bc905e54b 100644
+--- a/buggy/hbase-common/src/main/java/org/apache/hadoop/hbase/io/encoding/BufferedDataBlockEncoder.java
++++ b/fixed/hbase-common/src/main/java/org/apache/hadoop/hbase/io/encoding/BufferedDataBlockEncoder.java
+@@ -470,7 +470,7 @@ abstract class BufferedDataBlockEncoder extends AbstractDataBlockEncoder {
+     }
+ 
+     @Override
+-    public Cell deepClone() {
++    public ExtendedCell deepClone() {
+       // This is not used in actual flow. Throwing UnsupportedOperationException
+       throw new UnsupportedOperationException();
+     }
+@@ -715,7 +715,7 @@ abstract class BufferedDataBlockEncoder extends AbstractDataBlockEncoder {
+     }
+ 
+     @Override
+-    public Cell deepClone() {
++    public ExtendedCell deepClone() {
+       // This is not used in actual flow. Throwing UnsupportedOperationException
+       throw new UnsupportedOperationException();
+     }

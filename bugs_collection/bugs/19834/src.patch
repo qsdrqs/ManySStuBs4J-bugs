@@ -1,0 +1,13 @@
+diff --git a/buggy/example/src/main/java/io/netty/example/udt/echo/message/MsgEchoClientHandler.java b/fixed/example/src/main/java/io/netty/example/udt/echo/message/MsgEchoClientHandler.java
+index cc8b143dd..21a598aa8 100644
+--- a/buggy/example/src/main/java/io/netty/example/udt/echo/message/MsgEchoClientHandler.java
++++ b/fixed/example/src/main/java/io/netty/example/udt/echo/message/MsgEchoClientHandler.java
+@@ -73,7 +73,7 @@ public class MsgEchoClientHandler extends
+         final ByteBuf byteBuf = message.data();
+         meter.mark(byteBuf.readableBytes());
+         final MessageBuf<Object> out = ctx.nextOutboundMessageBuffer();
+-        out.add(message);
++        out.add(message.retain());
+         ctx.flush();
+     }
+ 

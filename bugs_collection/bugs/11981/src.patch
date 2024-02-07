@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/ArraySeq.java b/fixed/src/jvm/clojure/lang/ArraySeq.java
+index 805ab6d5d..dfdb45600 100644
+--- a/buggy/src/jvm/clojure/lang/ArraySeq.java
++++ b/fixed/src/jvm/clojure/lang/ArraySeq.java
+@@ -81,7 +81,7 @@ public ISeq rest(){
+ 
+ public int count(){
+ 	if(oa != null)
+-		return oa.length;
++		return oa.length - i;
+ 	return Array.getLength(array) - i;
+ }
+ 

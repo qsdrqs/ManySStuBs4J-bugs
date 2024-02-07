@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-actuator-autoconfigure/src/test/java/org/springframework/boot/actuate/autoconfigure/scheduling/ScheduledTasksEndpointAutoConfigurationTests.java b/fixed/spring-boot-project/spring-boot-actuator-autoconfigure/src/test/java/org/springframework/boot/actuate/autoconfigure/scheduling/ScheduledTasksEndpointAutoConfigurationTests.java
+index 992c536eb..d210da763 100644
+--- a/buggy/spring-boot-project/spring-boot-actuator-autoconfigure/src/test/java/org/springframework/boot/actuate/autoconfigure/scheduling/ScheduledTasksEndpointAutoConfigurationTests.java
++++ b/fixed/spring-boot-project/spring-boot-actuator-autoconfigure/src/test/java/org/springframework/boot/actuate/autoconfigure/scheduling/ScheduledTasksEndpointAutoConfigurationTests.java
+@@ -62,7 +62,7 @@ public class ScheduledTasksEndpointAutoConfigurationTests {
+ 	}
+ 
+ 	@Configuration
+-	private static class CustomEndpointConfiguration {
++	static class CustomEndpointConfiguration {
+ 
+ 		@Bean
+ 		public CustomEndpoint customEndpoint() {

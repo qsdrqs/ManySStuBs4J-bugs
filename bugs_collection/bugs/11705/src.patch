@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/blocks/LeftCurlyCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/blocks/LeftCurlyCheck.java
+index ee5ff4a6c..52ae6dcc2 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/blocks/LeftCurlyCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/blocks/LeftCurlyCheck.java
+@@ -151,7 +151,7 @@ public class LeftCurlyCheck
+             final DetailAST objBlock = aAST.findFirstToken(TokenTypes.OBJBLOCK);
+             brace = (objBlock == null)
+                 ? null
+-                : (DetailAST) objBlock.getFirstChild();
++                : objBlock.getFirstChild();
+             break;
+ 
+         case TokenTypes.LITERAL_WHILE:

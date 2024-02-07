@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/operator/aggregation/ArrayAggregationFunction.java b/fixed/presto-main/src/main/java/com/facebook/presto/operator/aggregation/ArrayAggregationFunction.java
+index 3a23b4a9a..918ce407b 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/operator/aggregation/ArrayAggregationFunction.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/operator/aggregation/ArrayAggregationFunction.java
+@@ -113,7 +113,7 @@ public class ArrayAggregationFunction
+     {
+         BlockBuilder blockBuilder = state.getBlockBuilder();
+         if (blockBuilder == null) {
+-            blockBuilder = type.createBlockBuilder(new BlockBuilderStatus(), 100);
++            blockBuilder = type.createBlockBuilder(new BlockBuilderStatus(), 4);
+             state.setBlockBuilder(blockBuilder);
+         }
+         long startSize = blockBuilder.getRetainedSizeInBytes();

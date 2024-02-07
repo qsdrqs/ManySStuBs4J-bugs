@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/ui/org.openhab.ui.webapp/src/main/java/org/openhab/ui/webapp/internal/render/FrameRenderer.java b/fixed/bundles/ui/org.openhab.ui.webapp/src/main/java/org/openhab/ui/webapp/internal/render/FrameRenderer.java
+index b31a97ecc..d9ce2ae9a 100644
+--- a/buggy/bundles/ui/org.openhab.ui.webapp/src/main/java/org/openhab/ui/webapp/internal/render/FrameRenderer.java
++++ b/fixed/bundles/ui/org.openhab.ui.webapp/src/main/java/org/openhab/ui/webapp/internal/render/FrameRenderer.java
+@@ -57,7 +57,7 @@ public class FrameRenderer extends AbstractWidgetRenderer {
+ 	public EList<Widget> renderWidget(Widget w, StringBuilder sb) throws RenderException {
+ 		String snippet = getSnippet("frame");
+ 
+-		snippet = snippet.replaceAll("%label%", itemUIRegistry.getLabel(w));
++		snippet = snippet.replaceAll("%label%", getLabel(w));
+ 		
+ 		sb.append(snippet);
+ 		return ((Frame)w).getChildren();

@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/TomcatDataSourceConfiguration.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/TomcatDataSourceConfiguration.java
+index 54fbf7e15..de24c3197 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/TomcatDataSourceConfiguration.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/TomcatDataSourceConfiguration.java
+@@ -44,7 +44,7 @@ public class TomcatDataSourceConfiguration extends AbstractDataSourceConfigurati
+ 		this.pool.setMaxIdle(getMaxIdle());
+ 		this.pool.setMinIdle(getMinIdle());
+ 		this.pool.setTestOnBorrow(isTestOnBorrow());
+-		this.pool.setTestOnReturn(isTestOnBorrow());
++		this.pool.setTestOnReturn(isTestOnReturn());
+ 		this.pool.setValidationQuery(getValidationQuery());
+ 		return this.pool;
+ 	}

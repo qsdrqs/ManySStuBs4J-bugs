@@ -1,0 +1,22 @@
+diff --git a/buggy/storm-webapp/src/main/java/org/apache/storm/daemon/ui/UIHelpers.java b/fixed/storm-webapp/src/main/java/org/apache/storm/daemon/ui/UIHelpers.java
+index 1298b8739..ff121ae38 100644
+--- a/buggy/storm-webapp/src/main/java/org/apache/storm/daemon/ui/UIHelpers.java
++++ b/fixed/storm-webapp/src/main/java/org/apache/storm/daemon/ui/UIHelpers.java
+@@ -1226,7 +1226,7 @@ public class UIHelpers {
+      * @return nullToZero
+      */
+     private static Long nullToZero(Long value) {
+-        return Objects.isNull(value) ? value : 0;
++        return !Objects.isNull(value) ? value : 0;
+     }
+ 
+     /**
+@@ -1235,7 +1235,7 @@ public class UIHelpers {
+      * @return nullToZero
+      */
+     private static Double nullToZero(Double value) {
+-        return Objects.isNull(value) ? value : 0;
++        return !Objects.isNull(value) ? value : 0;
+     }
+ 
+     /**

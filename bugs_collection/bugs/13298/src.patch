@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/cost/CostCalculatorWithEstimatedExchanges.java b/fixed/presto-main/src/main/java/com/facebook/presto/cost/CostCalculatorWithEstimatedExchanges.java
+index 562c61906..fa98fa178 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/cost/CostCalculatorWithEstimatedExchanges.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/cost/CostCalculatorWithEstimatedExchanges.java
+@@ -148,7 +148,7 @@ public class CostCalculatorWithEstimatedExchanges
+             return calculateJoinCost(
+                     node.getLeft(),
+                     node.getRight(),
+-                    Objects.equals(node.getDistributionType(), Optional.of(JoinNode.DistributionType.REPLICATED)));
++                    node.getDistributionType() == SpatialJoinNode.DistributionType.REPLICATED);
+         }
+ 
+         private PlanNodeCostEstimate calculateJoinCost(PlanNode probe, PlanNode build, boolean replicated)

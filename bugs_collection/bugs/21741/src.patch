@@ -1,0 +1,13 @@
+diff --git a/buggy/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/MailruAsyncExample.java b/fixed/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/MailruAsyncExample.java
+index 181ab1b82..9814bcfbe 100644
+--- a/buggy/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/MailruAsyncExample.java
++++ b/fixed/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/MailruAsyncExample.java
+@@ -60,7 +60,7 @@ public final class MailruAsyncExample {
+             System.out.println("Trading the Request Token for an Access Token...");
+             final OAuth2AccessToken accessToken = service.getAccessToken(code);
+             System.out.println("Got the Access Token!");
+-            System.out.println("(if your curious the raw answer looks like this: " + accessToken.getRawResponse()
++            System.out.println("(The raw response looks like this: " + accessToken.getRawResponse()
+                     + "')");
+             System.out.println();
+ 

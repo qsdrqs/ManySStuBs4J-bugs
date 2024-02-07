@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractDeclarationCollector.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractDeclarationCollector.java
+index 792d88929..98c542257 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractDeclarationCollector.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractDeclarationCollector.java
+@@ -323,7 +323,7 @@ public abstract class AbstractDeclarationCollector extends Check {
+          * Creates new instance of ClassFrame
+          * @param parent parent frame
+          */
+-        public ClassFrame(LexicalFrame parent) {
++        ClassFrame(LexicalFrame parent) {
+             super(parent);
+             instanceMembers = Sets.newHashSet();
+             instanceMethods = Sets.newHashSet();

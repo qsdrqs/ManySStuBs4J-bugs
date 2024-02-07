@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/VisualizationImpl/src/main/java/org/gephi/visualization/bridge/DataBridge.java b/fixed/modules/VisualizationImpl/src/main/java/org/gephi/visualization/bridge/DataBridge.java
+index 995b9474d..64ca93126 100644
+--- a/buggy/modules/VisualizationImpl/src/main/java/org/gephi/visualization/bridge/DataBridge.java
++++ b/fixed/modules/VisualizationImpl/src/main/java/org/gephi/visualization/bridge/DataBridge.java
+@@ -272,7 +272,7 @@ public class DataBridge implements VizArchitecture {
+             }
+         } finally {
+             if (graphModel != null) {
+-                graphModel.getGraph().readUnlockAll();
++                graph.readUnlockAll();
+                 graph.writeUnlock();
+             }
+         }

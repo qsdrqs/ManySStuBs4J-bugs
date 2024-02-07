@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-tests/src/main/java/com/facebook/presto/tests/AbstractTestIntegrationSmokeTest.java b/fixed/presto-tests/src/main/java/com/facebook/presto/tests/AbstractTestIntegrationSmokeTest.java
+index 35017196b..e51af6a41 100644
+--- a/buggy/presto-tests/src/main/java/com/facebook/presto/tests/AbstractTestIntegrationSmokeTest.java
++++ b/fixed/presto-tests/src/main/java/com/facebook/presto/tests/AbstractTestIntegrationSmokeTest.java
+@@ -166,7 +166,7 @@ public abstract class AbstractTestIntegrationSmokeTest
+         MaterializedResult expectedTables = MaterializedResult.resultBuilder(queryRunner.getDefaultSession(), VARCHAR)
+                 .row("orders")
+                 .build();
+-        assertEquals(actualTables, expectedTables);
++        assertContains(actualTables, expectedTables);
+     }
+ 
+     @Test

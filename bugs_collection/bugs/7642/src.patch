@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-spring/src/test/java/org/apache/camel/spring/handler/ErrorHandlerDefinitionParserTest.java b/fixed/components/camel-spring/src/test/java/org/apache/camel/spring/handler/ErrorHandlerDefinitionParserTest.java
+index e07b8dccf..20a0080c3 100644
+--- a/buggy/components/camel-spring/src/test/java/org/apache/camel/spring/handler/ErrorHandlerDefinitionParserTest.java
++++ b/fixed/components/camel-spring/src/test/java/org/apache/camel/spring/handler/ErrorHandlerDefinitionParserTest.java
+@@ -74,7 +74,7 @@ public class ErrorHandlerDefinitionParserTest extends TestCase {
+     public void testDeadLetterErrorHandler() {
+         DeadLetterChannelBuilder errorHandler = (DeadLetterChannelBuilder) ctx.getBean("deadLetterErrorHandler");
+         assertNotNull(errorHandler);
+-        assertEquals("get worng deadletteruri", "log:dead", errorHandler.getDeadLetterUri());
++        assertEquals("Get wrong deadletteruri", "log:dead", errorHandler.getDeadLetterUri());
+         RedeliveryPolicy policy = errorHandler.getRedeliveryPolicy();
+         assertNotNull(policy);
+         assertEquals("Wrong maximumRedeliveries", 2, policy.getMaximumRedeliveries());

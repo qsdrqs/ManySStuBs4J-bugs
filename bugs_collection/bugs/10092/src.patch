@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/storm/kafka/ZkCoordinator.java b/fixed/src/jvm/storm/kafka/ZkCoordinator.java
+index b06975da3..f287d8070 100644
+--- a/buggy/src/jvm/storm/kafka/ZkCoordinator.java
++++ b/fixed/src/jvm/storm/kafka/ZkCoordinator.java
+@@ -129,7 +129,7 @@ public class ZkCoordinator implements PartitionCoordinator {
+     }
+     
+     private boolean myOwnership(GlobalPartitionId id) {
+-        int val = id.host.hashCode() + 23 * id.partition;        
++        int val = Math.abs(id.host.hashCode() + 23 * id.partition);        
+         return val % _totalTasks == _taskIndex;
+     }
+     

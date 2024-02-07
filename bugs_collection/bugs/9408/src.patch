@@ -1,0 +1,20 @@
+diff --git a/buggy/src/test/java/org/apache/hadoop/hbase/master/TestCatalogJanitor.java b/fixed/src/test/java/org/apache/hadoop/hbase/master/TestCatalogJanitor.java
+index 57d85d88a..c8e8f7566 100644
+--- a/buggy/src/test/java/org/apache/hadoop/hbase/master/TestCatalogJanitor.java
++++ b/fixed/src/test/java/org/apache/hadoop/hbase/master/TestCatalogJanitor.java
+@@ -85,7 +85,7 @@ public class TestCatalogJanitor {
+ 
+     @Override
+     public String getServerName() {
+-      return null;
++      return "mockserver.example.org,1234,-1L";
+     }
+ 
+     @Override
+@@ -248,4 +248,4 @@ public class TestCatalogJanitor {
+     assertTrue(fs.delete(p, true));
+     assertTrue(janitor.cleanParent(parent, r));
+   }
+-}
+\ No newline at end of file
++}

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/tests/com/puppycrawl/tools/checkstyle/checks/whitespace/FileTabCharacterCheckTest.java b/fixed/src/tests/com/puppycrawl/tools/checkstyle/checks/whitespace/FileTabCharacterCheckTest.java
+index 032b04246..8f4d64898 100644
+--- a/buggy/src/tests/com/puppycrawl/tools/checkstyle/checks/whitespace/FileTabCharacterCheckTest.java
++++ b/fixed/src/tests/com/puppycrawl/tools/checkstyle/checks/whitespace/FileTabCharacterCheckTest.java
+@@ -60,7 +60,7 @@ public class FileTabCharacterCheckTest
+         final String path = getPath("Claira");
+         final String[] expected = {
+             "0: Unable to read file: java.io.FileNotFoundException: " + path
+-                + " (The system cannot find the file specified.)"
++                + " (The system cannot find the file specified)"
+         };
+         final File[] files = {
+             new File(path),

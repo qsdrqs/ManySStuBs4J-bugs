@@ -1,0 +1,12 @@
+diff --git a/buggy/flink-yarn/src/test/java/org/apache/flink/yarn/UtilsTests.java b/fixed/flink-yarn/src/test/java/org/apache/flink/yarn/UtilsTests.java
+index 1d01b0357..39a9c02c9 100644
+--- a/buggy/flink-yarn/src/test/java/org/apache/flink/yarn/UtilsTests.java
++++ b/fixed/flink-yarn/src/test/java/org/apache/flink/yarn/UtilsTests.java
+@@ -27,6 +27,6 @@ public class UtilsTests {
+ 
+ 		// ASSUMES DEFAULT Configuration values.
+ 		Assert.assertEquals(800, Utils.calculateHeapSize(1000) );
+-		Assert.assertEquals(9500, Utils.calculateHeapSize(10000) );
++		Assert.assertEquals(9300, Utils.calculateHeapSize(10000) );
+ 	}
+ }

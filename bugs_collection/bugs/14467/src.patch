@@ -1,0 +1,17 @@
+diff --git a/buggy/src/com/google/javascript/rhino/jstype/NamedType.java b/fixed/src/com/google/javascript/rhino/jstype/NamedType.java
+index 941f68661..202827051 100644
+--- a/buggy/src/com/google/javascript/rhino/jstype/NamedType.java
++++ b/fixed/src/com/google/javascript/rhino/jstype/NamedType.java
+@@ -101,10 +101,8 @@ public final class NamedType extends ProxyObjectType {
+    */
+   private transient Predicate<JSType> validator;
+ 
+-  /**
+-   * Property-defining continuations.
+-   */
+-  private List<PropertyContinuation> propertyContinuations = null;
++  /** Property-defining continuations. */
++  private transient List<PropertyContinuation> propertyContinuations = null;
+ 
+   /**
+    * Template types defined on a named, not yet resolved type, or {@code null} if none. These are

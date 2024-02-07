@@ -1,0 +1,14 @@
+diff --git a/buggy/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/FtpChangedReadLockTest.java b/fixed/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/FtpChangedReadLockTest.java
+index 4662de49a..e5f9bd7ca 100644
+--- a/buggy/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/FtpChangedReadLockTest.java
++++ b/fixed/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/FtpChangedReadLockTest.java
+@@ -50,7 +50,8 @@ public class FtpChangedReadLockTest extends FtpServerTestSupport {
+         String[] lines = content.split("\n");
+         assertEquals("There should be 20 lines in the file", 20, lines.length);
+         for (int i = 0; i < 20; i++) {
+-            assertEquals("Line " + i, lines[i]);
++            // there may be windows line terminators
++            assertTrue(lines[i].startsWith("Line " + i));
+         }
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/VarCheck.java b/fixed/src/com/google/javascript/jscomp/VarCheck.java
+index e29631468..d069fe4e0 100644
+--- a/buggy/src/com/google/javascript/jscomp/VarCheck.java
++++ b/fixed/src/com/google/javascript/jscomp/VarCheck.java
+@@ -64,7 +64,7 @@ class VarCheck extends AbstractPostOrderCallback implements
+   static final DiagnosticType UNDEFINED_EXTERN_VAR_ERROR =
+     DiagnosticType.warning(
+       "JSC_UNDEFINED_EXTERN_VAR_ERROR",
+-      "name {0} is not undefined in the externs.");
++      "name {0} is not defined in the externs.");
+ 
+   static final DiagnosticType VAR_MULTIPLY_DECLARED_ERROR =
+       DiagnosticType.error(

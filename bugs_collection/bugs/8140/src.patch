@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/heartbeat/HeartbeatServices.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/heartbeat/HeartbeatServices.java
+index 22df75155..d87f7a893 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/heartbeat/HeartbeatServices.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/heartbeat/HeartbeatServices.java
+@@ -40,7 +40,7 @@ public class HeartbeatServices {
+ 
+ 	public HeartbeatServices(long heartbeatInterval, long heartbeatTimeout) {
+ 		Preconditions.checkArgument(0L < heartbeatInterval, "The heartbeat interval must be larger than 0.");
+-		Preconditions.checkArgument(heartbeatInterval <= heartbeatTimeout, "The heartbeat timeout should be larger or equal than the heartbeat timeout.");
++		Preconditions.checkArgument(heartbeatInterval <= heartbeatTimeout, "The heartbeat timeout should be larger or equal than the heartbeat interval.");
+ 
+ 		this.heartbeatInterval = heartbeatInterval;
+ 		this.heartbeatTimeout = heartbeatTimeout;

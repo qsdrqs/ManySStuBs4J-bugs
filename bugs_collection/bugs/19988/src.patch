@@ -1,0 +1,13 @@
+diff --git a/buggy/transport-sctp/src/main/java/io/netty/channel/sctp/SctpServerPipelineSink.java b/fixed/transport-sctp/src/main/java/io/netty/channel/sctp/SctpServerPipelineSink.java
+index ce3464331..c4001af99 100644
+--- a/buggy/transport-sctp/src/main/java/io/netty/channel/sctp/SctpServerPipelineSink.java
++++ b/fixed/transport-sctp/src/main/java/io/netty/channel/sctp/SctpServerPipelineSink.java
+@@ -44,7 +44,7 @@ import io.netty.util.internal.DeadLockProofWorker;
+ 
+ /**
+  */
+-class SctpServerPipelineSink extends AbstractScptChannelSink {
++class SctpServerPipelineSink extends AbstractSctpChannelSink {
+ 
+     static final InternalLogger logger =
+         InternalLoggerFactory.getInstance(SctpServerPipelineSink.class);

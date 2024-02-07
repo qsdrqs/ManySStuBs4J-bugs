@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions/gdx-jnigen/src/com/badlogic/gdx/jnigen/JniGenSharedLibraryLoader.java b/fixed/extensions/gdx-jnigen/src/com/badlogic/gdx/jnigen/JniGenSharedLibraryLoader.java
+index cb58dec34..6367e83c6 100644
+--- a/buggy/extensions/gdx-jnigen/src/com/badlogic/gdx/jnigen/JniGenSharedLibraryLoader.java
++++ b/fixed/extensions/gdx-jnigen/src/com/badlogic/gdx/jnigen/JniGenSharedLibraryLoader.java
+@@ -162,7 +162,7 @@ public class JniGenSharedLibraryLoader {
+ 		boolean isLinux = System.getProperty("os.name").contains("Linux");
+ 		boolean isMac = System.getProperty("os.name").contains("Mac");
+ 		boolean isAndroid = false;
+-		boolean is64Bit = System.getProperty("os.arch").equals("amd64");
++		boolean is64Bit = System.getProperty("os.arch").equals("amd64") || System.getProperty("os.arch").equals("x86_64");
+ 		String vm = System.getProperty("java.vm.name");
+ 		if (vm != null && vm.contains("Dalvik")) {
+ 			isAndroid = true;

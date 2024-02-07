@@ -1,0 +1,13 @@
+diff --git a/buggy/library/src/com/nhaarman/listviewanimations/widget/DynamicListView.java b/fixed/library/src/com/nhaarman/listviewanimations/widget/DynamicListView.java
+index b45c8f799..151d9b937 100644
+--- a/buggy/library/src/com/nhaarman/listviewanimations/widget/DynamicListView.java
++++ b/fixed/library/src/com/nhaarman/listviewanimations/widget/DynamicListView.java
+@@ -191,7 +191,7 @@ public class DynamicListView extends ListView {
+         int position = pointToPosition(mDownX, mDownY);
+         int itemNum = position - getFirstVisiblePosition();
+         View selectedView = getChildAt(itemNum);
+-        if (selectedView == null || position < getHeaderViewsCount() || position >= getAdapter().getCount() - getHeaderViewsCount()) {
++        if (selectedView == null || position < getHeaderViewsCount() || position >= getAdapter().getCount() - getHeaderViewsCount() - getFooterViewsCount()) {
+             return;
+         }
+ 

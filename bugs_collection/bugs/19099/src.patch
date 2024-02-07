@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/test/java/org/neo4j/kernel/impl/nioneo/store/TestNeoStore.java b/fixed/community/kernel/src/test/java/org/neo4j/kernel/impl/nioneo/store/TestNeoStore.java
+index cc06df1bd..4a17746d7 100644
+--- a/buggy/community/kernel/src/test/java/org/neo4j/kernel/impl/nioneo/store/TestNeoStore.java
++++ b/fixed/community/kernel/src/test/java/org/neo4j/kernel/impl/nioneo/store/TestNeoStore.java
+@@ -1296,7 +1296,7 @@ public class TestNeoStore
+     public void shouldAddUpgradeFieldsToTheNeoStoreIfNotPresent() throws IOException
+     {
+         FileSystemAbstraction fileSystem = fs.get();
+-        File neoStoreDir = new File( "/tmp/graph.db/neostore" );
++        File neoStoreDir = new File( "/tmp/graph.db/neostore" ).getAbsoluteFile();
+         StoreFactory factory =
+                 new StoreFactory( fileSystem, neoStoreDir, pageCache, StringLogger.DEV_NULL, new Monitors() );
+         NeoStore neoStore = factory.newNeoStore( true );

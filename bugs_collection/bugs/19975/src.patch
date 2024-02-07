@@ -1,0 +1,13 @@
+diff --git a/buggy/codec-http/src/main/java/io/netty/handler/codec/http/HttpPostRequestDecoder.java b/fixed/codec-http/src/main/java/io/netty/handler/codec/http/HttpPostRequestDecoder.java
+index 1347c1be8..88d96ad42 100644
+--- a/buggy/codec-http/src/main/java/io/netty/handler/codec/http/HttpPostRequestDecoder.java
++++ b/fixed/codec-http/src/main/java/io/netty/handler/codec/http/HttpPostRequestDecoder.java
+@@ -851,7 +851,7 @@ public class HttpPostRequestDecoder {
+         }
+ 
+         while (sao.pos < sao.limit) {
+-            char c = (char) sao.bytes[sao.pos ++];
++            char c = (char) ()sao.bytes[sao.pos ++] & 0xFF);
+             if (!Character.isISOControl(c) && !Character.isWhitespace(c)) {
+                 sao.setReadPosition(1);
+                 return;

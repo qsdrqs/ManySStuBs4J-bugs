@@ -1,0 +1,14 @@
+diff --git a/buggy/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-app/src/main/java/org/apache/hadoop/mapreduce/v2/app/JobEndNotifier.java b/fixed/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-app/src/main/java/org/apache/hadoop/mapreduce/v2/app/JobEndNotifier.java
+index 9ffe2181c..ca7f625c2 100644
+--- a/buggy/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-app/src/main/java/org/apache/hadoop/mapreduce/v2/app/JobEndNotifier.java
++++ b/fixed/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-app/src/main/java/org/apache/hadoop/mapreduce/v2/app/JobEndNotifier.java
+@@ -119,7 +119,8 @@ public class JobEndNotifier implements Configurable {
+     boolean success = false;
+     try {
+       Log.info("Job end notification trying " + urlToNotify);
+-      HttpURLConnection conn = (HttpURLConnection) urlToNotify.openConnection();
++      HttpURLConnection conn =
++        (HttpURLConnection) urlToNotify.openConnection(proxyToUse);
+       conn.setConnectTimeout(5*1000);
+       conn.setReadTimeout(5*1000);
+       conn.setAllowUserInteraction(false);

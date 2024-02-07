@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions/multibindings/src/com/google/inject/multibindings/Multibinder.java b/fixed/extensions/multibindings/src/com/google/inject/multibindings/Multibinder.java
+index 93b2900c4..5587607cd 100644
+--- a/buggy/extensions/multibindings/src/com/google/inject/multibindings/Multibinder.java
++++ b/fixed/extensions/multibindings/src/com/google/inject/multibindings/Multibinder.java
+@@ -328,7 +328,7 @@ public abstract class Multibinder<T> {
+     }
+     
+     @SuppressWarnings("unchecked")
+-    public <V, B> V acceptExtensionVisitor(
++    public <B, V> V acceptExtensionVisitor(
+         BindingTargetVisitor<B, V> visitor,
+         ProviderInstanceBinding<? extends B> binding) {
+       if(visitor instanceof MultibindingsTargetVisitor) {

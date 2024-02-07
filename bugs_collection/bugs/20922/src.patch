@@ -1,0 +1,15 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.knx/src/main/java/org/openhab/binding/knx/internal/config/KNXGenericBindingProvider.java b/fixed/bundles/binding/org.openhab.binding.knx/src/main/java/org/openhab/binding/knx/internal/config/KNXGenericBindingProvider.java
+index 560c76ab2..af2fb50ce 100644
+--- a/buggy/bundles/binding/org.openhab.binding.knx/src/main/java/org/openhab/binding/knx/internal/config/KNXGenericBindingProvider.java
++++ b/fixed/bundles/binding/org.openhab.binding.knx/src/main/java/org/openhab/binding/knx/internal/config/KNXGenericBindingProvider.java
+@@ -251,7 +251,9 @@ public class KNXGenericBindingProvider extends AbstractGenericBindingProvider im
+ 				String dptId = null;
+ 				String[] segments = datapointConfig.trim().split(":");
+ 				Class<? extends Type> typeClass = item.getAcceptedCommandTypes().size()>0 ?
+-					item.getAcceptedCommandTypes().get(i) : item.getAcceptedDataTypes().get(0);
++					item.getAcceptedCommandTypes().get(i) : 
++						item.getAcceptedDataTypes().size() >1 ? 
++								item.getAcceptedDataTypes().get(i) : item.getAcceptedDataTypes().get(0);
+ 				dptId = segments.length == 1 ? getDefaultDPTId(typeClass) : segments[0];
+ 				if (dptId == null || dptId.trim().isEmpty()) {
+ 					throw new BindingConfigParseException("No DPT could be determined for the type '"

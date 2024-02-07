@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/naming/MethodNameCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/naming/MethodNameCheck.java
+index ef8f86d32..a94f1cb69 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/naming/MethodNameCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/naming/MethodNameCheck.java
+@@ -129,7 +129,7 @@ public class MethodNameCheck
+             // new Outclass.InnerInterface(x) { ... }
+             // Such a rare case, will not have the logic to handle parsing
+             // down the tree looking for the first ident.
+-            if (null != classIdent
++            if (classIdent != null
+                 && method.getText().equals(classIdent.getText())) {
+                 log(method.getLineNo(), method.getColumnNo(),
+                     MSG_KEY, method.getText());

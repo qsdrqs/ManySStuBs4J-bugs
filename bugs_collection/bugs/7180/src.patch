@@ -1,0 +1,16 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/api/management/mbean/ManagedBacklogDebuggerMBean.java b/fixed/camel-core/src/main/java/org/apache/camel/api/management/mbean/ManagedBacklogDebuggerMBean.java
+index 0d938d1ab..5e0370ed0 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/api/management/mbean/ManagedBacklogDebuggerMBean.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/api/management/mbean/ManagedBacklogDebuggerMBean.java
+@@ -75,9 +75,9 @@ public interface ManagedBacklogDebuggerMBean {
+     String dumpTracedMessagesAsXml(String nodeId);
+ 
+     @ManagedAttribute(description = "Number of total debugged messages")
+-    public long getDebugCounter();
++    long getDebugCounter();
+ 
+     @ManagedOperation(description = "Resets the debug counter")
+-    public void resetDebugCounter();
++    void resetDebugCounter();
+ 
+ }

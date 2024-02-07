@@ -1,0 +1,13 @@
+diff --git a/buggy/test/com/google/javascript/jscomp/NodeTraversalTest.java b/fixed/test/com/google/javascript/jscomp/NodeTraversalTest.java
+index 0352f0fc3..a0ea68158 100644
+--- a/buggy/test/com/google/javascript/jscomp/NodeTraversalTest.java
++++ b/fixed/test/com/google/javascript/jscomp/NodeTraversalTest.java
+@@ -115,7 +115,7 @@ public class NodeTraversalTest extends TestCase {
+     } catch (RuntimeException e) {
+       assertTrue(e.getMessage().startsWith(
+           "INTERNAL COMPILER ERROR.\n" +
+-          "Please report this problem.\n" +
++          "Please report this problem.\n\n" +
+           "test me"));
+     }
+   }

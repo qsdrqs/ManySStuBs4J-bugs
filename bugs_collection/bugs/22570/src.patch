@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/test/java/org/springframework/boot/context/embedded/AbstractEmbeddedServletContainerFactoryTests.java b/fixed/spring-boot/src/test/java/org/springframework/boot/context/embedded/AbstractEmbeddedServletContainerFactoryTests.java
+index a551e2cdd..9a5a6162a 100644
+--- a/buggy/spring-boot/src/test/java/org/springframework/boot/context/embedded/AbstractEmbeddedServletContainerFactoryTests.java
++++ b/fixed/spring-boot/src/test/java/org/springframework/boot/context/embedded/AbstractEmbeddedServletContainerFactoryTests.java
+@@ -112,7 +112,7 @@ public abstract class AbstractEmbeddedServletContainerFactoryTests {
+ 		this.container.stop();
+ 		this.thrown.expect(IOException.class);
+ 		String response = getResponse(getLocalUrl("/hello"));
+-		throw new RuntimeException(response);
++		throw new RuntimeException(this.container.getPort() + " " + response);
+ 	}
+ 
+ 	@Test

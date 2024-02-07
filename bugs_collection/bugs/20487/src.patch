@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.rfxcom/src/main/java/org/openhab/binding/rfxcom/internal/messages/RFXComCurrentMessage.java b/fixed/bundles/binding/org.openhab.binding.rfxcom/src/main/java/org/openhab/binding/rfxcom/internal/messages/RFXComCurrentMessage.java
+index 995c6cd27..78522034a 100644
+--- a/buggy/bundles/binding/org.openhab.binding.rfxcom/src/main/java/org/openhab/binding/rfxcom/internal/messages/RFXComCurrentMessage.java
++++ b/fixed/bundles/binding/org.openhab.binding.rfxcom/src/main/java/org/openhab/binding/rfxcom/internal/messages/RFXComCurrentMessage.java
+@@ -128,7 +128,7 @@ public class RFXComCurrentMessage extends RFXComBaseMessage {
+ 
+     @Override
+     public byte[] decodeMessage() {
+-        byte[] data = new byte[13];
++        byte[] data = new byte[14];
+ 
+         data[0] = 0x0D;
+         data[1] = RFXComBaseMessage.PacketType.CURRENT.toByte();

@@ -1,0 +1,13 @@
+diff --git a/buggy/indexing-hadoop/src/main/java/io/druid/indexer/DeterminePartitionsJob.java b/fixed/indexing-hadoop/src/main/java/io/druid/indexer/DeterminePartitionsJob.java
+index 978919548..c57c58bba 100644
+--- a/buggy/indexing-hadoop/src/main/java/io/druid/indexer/DeterminePartitionsJob.java
++++ b/fixed/indexing-hadoop/src/main/java/io/druid/indexer/DeterminePartitionsJob.java
+@@ -601,7 +601,7 @@ public class DeterminePartitionsJob implements Jobby
+ 
+         // Respect poisoning
+         if (!currentDimSkip && dvc.numRows < 0) {
+-          log.info("Cannot partition on multi-valued dimension: %s", dvc.dim);
++          log.info("Cannot partition on multi-value dimension: %s", dvc.dim);
+           currentDimSkip = true;
+         }
+ 

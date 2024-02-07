@@ -1,0 +1,15 @@
+diff --git a/buggy/examples/camel-example-osgi/src/main/java/org/apache/camel/example/osgi/MyRouteBuilder.java b/fixed/examples/camel-example-osgi/src/main/java/org/apache/camel/example/osgi/MyRouteBuilder.java
+index 85e7e23e1..7732561cd 100644
+--- a/buggy/examples/camel-example-osgi/src/main/java/org/apache/camel/example/osgi/MyRouteBuilder.java
++++ b/fixed/examples/camel-example-osgi/src/main/java/org/apache/camel/example/osgi/MyRouteBuilder.java
+@@ -29,8 +29,9 @@ public class MyRouteBuilder extends RouteBuilder {
+      * Allow this route to be run as an application
+      *
+      * @param args
++     * @throws Exception 
+      */
+-    public static void main(String[] args) {
++    public static void main(String[] args) throws Exception {
+         new Main().run(args);
+     }
+ 

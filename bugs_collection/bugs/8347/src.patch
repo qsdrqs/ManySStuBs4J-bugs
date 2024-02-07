@@ -1,0 +1,14 @@
+diff --git a/buggy/flink-tests/src/test/java/org/apache/flink/test/streaming/api/StreamingOperatorsITCase.java b/fixed/flink-tests/src/test/java/org/apache/flink/test/streaming/api/StreamingOperatorsITCase.java
+index 0c0db0843..5d99de4e9 100644
+--- a/buggy/flink-tests/src/test/java/org/apache/flink/test/streaming/api/StreamingOperatorsITCase.java
++++ b/fixed/flink-tests/src/test/java/org/apache/flink/test/streaming/api/StreamingOperatorsITCase.java
+@@ -223,7 +223,8 @@ public class StreamingOperatorsITCase extends StreamingMultipleProgramsTestBase
+ 		@Override
+ 		public void run(SourceContext<Tuple2<Integer, Integer>> ctx) throws Exception {
+ 			for (int i = 0; i < numElements; i++) {
+-				Tuple2<Integer, Integer> result = new Tuple2<>(MathUtils.murmurHash(i) % numKeys, i);
++				// keys '1' and '2' hash to different buckets
++				Tuple2<Integer, Integer> result = new Tuple2<>(1 + (MathUtils.murmurHash(i) % numKeys), i);
+ 				ctx.collect(result);
+ 			}
+ 		}

@@ -1,0 +1,23 @@
+diff --git a/buggy/spring-boot/src/test/java/org/springframework/boot/logging/LoggingApplicationListenerTests.java b/fixed/spring-boot/src/test/java/org/springframework/boot/logging/LoggingApplicationListenerTests.java
+index 9650b1f79..3d5e3a4f6 100644
+--- a/buggy/spring-boot/src/test/java/org/springframework/boot/logging/LoggingApplicationListenerTests.java
++++ b/fixed/spring-boot/src/test/java/org/springframework/boot/logging/LoggingApplicationListenerTests.java
+@@ -110,8 +110,7 @@ public class LoggingApplicationListenerTests {
+ 		String output = this.outputCapture.toString().trim();
+ 		assertTrue("Wrong output:\n" + output, output.contains("Hello world"));
+ 		assertFalse("Wrong output:\n" + output, output.contains("???"));
+-		assertTrue("Wrong output:\n" + output,
+-				output.startsWith(tmpDir() + "/spring.log"));
++		assertTrue("Wrong output:\n" + output, output.startsWith(tmpDir() + "/tmp.log"));
+ 	}
+ 
+ 	@Test
+@@ -157,7 +156,7 @@ public class LoggingApplicationListenerTests {
+ 		Log logger = LogFactory.getLog(LoggingApplicationListenerTests.class);
+ 		logger.info("Hello world");
+ 		String output = this.outputCapture.toString().trim();
+-		assertTrue("Wrong output:\n" + output, output.startsWith("target/foo/spring.log"));
++		assertTrue("Wrong output:\n" + output, output.startsWith("target/foo/tmp.log"));
+ 	}
+ 
+ 	@Test

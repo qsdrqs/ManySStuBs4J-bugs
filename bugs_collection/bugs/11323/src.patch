@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4842fallthrow/FallThroughTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4842fallthrow/FallThroughTest.java
+index 11c3495d4..9960ccec6 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4842fallthrow/FallThroughTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4842fallthrow/FallThroughTest.java
+@@ -22,7 +22,7 @@ public class FallThroughTest extends BaseCheckTestSupport{
+     }
+ 
+     @Test
+-    public void fallThroughTest() throws IOException, Exception {
++    public void fallThroughTest() throws Exception {
+ 
+         String msg = getCheckMessage(FallThroughCheck.class, "fall.through");
+                      

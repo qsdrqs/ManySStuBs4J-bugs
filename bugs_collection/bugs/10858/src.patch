@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/utils/JavadocUtils.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/utils/JavadocUtils.java
+index f1044021a..bd146927a 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/utils/JavadocUtils.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/utils/JavadocUtils.java
+@@ -77,7 +77,7 @@ public final class JavadocUtils {
+ 
+     /** Inline tag pattern. */
+     private static final Pattern INLINE_TAG_PATTERN = Pattern.compile(
+-        ".*?\\{@(\\p{Alpha}+)\\s+(.*?)\\}");
++        ".*?\\{@(\\p{Alpha}+)\\s+(.*?)}");
+ 
+     /** Newline pattern. */
+     private static final Pattern NEWLINE = Pattern.compile("\n");

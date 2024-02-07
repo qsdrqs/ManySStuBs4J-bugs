@@ -1,0 +1,13 @@
+diff --git a/buggy/storm-server/src/main/java/org/apache/storm/daemon/supervisor/Slot.java b/fixed/storm-server/src/main/java/org/apache/storm/daemon/supervisor/Slot.java
+index 1dda41c49..b0116e25a 100644
+--- a/buggy/storm-server/src/main/java/org/apache/storm/daemon/supervisor/Slot.java
++++ b/fixed/storm-server/src/main/java/org/apache/storm/daemon/supervisor/Slot.java
+@@ -381,7 +381,7 @@ public class Slot extends Thread implements AutoCloseable, BlobChangingCallback
+      * @return the updated dynamicState
+      */
+     private static DynamicState filterChangingBlobsFor(DynamicState dynamicState, final LocalAssignment assignment) {
+-        if (!dynamicState.changingBlobs.isEmpty()) {
++        if (dynamicState.changingBlobs.isEmpty()) {
+             return dynamicState;
+         }
+ 

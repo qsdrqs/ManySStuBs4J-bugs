@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/io/druid/server/initialization/jetty/ChatHandlerServerModule.java b/fixed/server/src/main/java/io/druid/server/initialization/jetty/ChatHandlerServerModule.java
+index fdc17ea4a..b7147b25f 100644
+--- a/buggy/server/src/main/java/io/druid/server/initialization/jetty/ChatHandlerServerModule.java
++++ b/fixed/server/src/main/java/io/druid/server/initialization/jetty/ChatHandlerServerModule.java
+@@ -57,7 +57,7 @@ public class ChatHandlerServerModule implements Module
+     Jerseys.addResource(binder, ChatHandlerResource.class);
+ 
+     if (properties.containsKey(MAX_CHAT_REQUESTS_PROPERTY)) {
+-      final int maxRequests = Integer.parseInt(MAX_CHAT_REQUESTS_PROPERTY);
++      final int maxRequests = Integer.parseInt(properties.getProperty(MAX_CHAT_REQUESTS_PROPERTY));
+       JettyBindings.addQosFilter(binder, "/druid/worker/v1/chat/*", maxRequests);
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/services/src/main/java/org/apache/druid/cli/CliRealtimeExample.java b/fixed/services/src/main/java/org/apache/druid/cli/CliRealtimeExample.java
+index 64ad5e055..733ac74c3 100644
+--- a/buggy/services/src/main/java/org/apache/druid/cli/CliRealtimeExample.java
++++ b/fixed/services/src/main/java/org/apache/druid/cli/CliRealtimeExample.java
+@@ -54,7 +54,7 @@ import java.util.concurrent.Executor;
+ )
+ public class CliRealtimeExample extends ServerRunnable
+ {
+-  private static final Logger log = new Logger(CliBroker.class);
++  private static final Logger log = new Logger(CliRealtimeExample.class);
+ 
+   @Inject
+   private Properties properties;

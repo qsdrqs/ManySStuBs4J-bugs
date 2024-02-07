@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/SftpConsumer.java b/fixed/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/SftpConsumer.java
+index 1b79b2f0e..1a192f86d 100644
+--- a/buggy/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/SftpConsumer.java
++++ b/fixed/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/SftpConsumer.java
+@@ -126,7 +126,7 @@ public class SftpConsumer extends RemoteFileConsumer<RemoteFileExchange> {
+         }
+     }
+ 
+-    protected String getFullFileName(ChannelSftp.LsEntry sftpFile) throws IOException {
++    protected String getFullFileName(ChannelSftp.LsEntry sftpFile) throws IOException, SftpException {
+         return channel.pwd() + "/" + sftpFile.getFilename();
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/apache/hadoop/hbase/regionserver/MemStore.java b/fixed/src/main/java/org/apache/hadoop/hbase/regionserver/MemStore.java
+index 463e88038..4b5d62f92 100644
+--- a/buggy/src/main/java/org/apache/hadoop/hbase/regionserver/MemStore.java
++++ b/fixed/src/main/java/org/apache/hadoop/hbase/regionserver/MemStore.java
+@@ -823,7 +823,7 @@ public class MemStore implements HeapSize {
+   }
+ 
+   public final static long FIXED_OVERHEAD = ClassSize.align(
+-      ClassSize.OBJECT + (11 * ClassSize.REFERENCE));
++      ClassSize.OBJECT + (12 * ClassSize.REFERENCE));
+ 
+   public final static long DEEP_OVERHEAD = ClassSize.align(FIXED_OVERHEAD +
+       ClassSize.REENTRANT_LOCK + ClassSize.ATOMIC_LONG +

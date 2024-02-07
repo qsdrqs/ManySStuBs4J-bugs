@@ -1,0 +1,13 @@
+diff --git a/buggy/meteor/meteor-meteor/src/test/java/eu/stratosphere/meteor/base/DifferenceTest.java b/fixed/meteor/meteor-meteor/src/test/java/eu/stratosphere/meteor/base/DifferenceTest.java
+index 85188fbf2..c913bd70b 100644
+--- a/buggy/meteor/meteor-meteor/src/test/java/eu/stratosphere/meteor/base/DifferenceTest.java
++++ b/fixed/meteor/meteor-meteor/src/test/java/eu/stratosphere/meteor/base/DifferenceTest.java
+@@ -26,7 +26,7 @@ public class DifferenceTest extends MeteorTest {
+ 			withInputs(difference);
+ 		expectedPlan.setSinks(output);
+ 
+-		assertEquals(expectedPlan, actualPlan);
++		assertPlanEquals(expectedPlan, actualPlan);
+ 	}
+ 
+ }

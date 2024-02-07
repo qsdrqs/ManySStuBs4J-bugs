@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/yaml/SpringProfileDocumentMatcher.java b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/yaml/SpringProfileDocumentMatcher.java
+index 5a5aa380f..87410219a 100644
+--- a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/yaml/SpringProfileDocumentMatcher.java
++++ b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/yaml/SpringProfileDocumentMatcher.java
+@@ -124,7 +124,7 @@ public class SpringProfileDocumentMatcher implements DocumentMatcher {
+ 	/**
+ 	 * Base class for profile matchers.
+ 	 */
+-	private static abstract class ProfilesMatcher {
++	private abstract static class ProfilesMatcher {
+ 
+ 		public final MatchStatus matches(Set<String> profiles) {
+ 			if (CollectionUtils.isEmpty(profiles)) {

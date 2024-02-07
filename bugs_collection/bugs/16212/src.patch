@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/multimap/ClientMultiMapLockTest.java b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/multimap/ClientMultiMapLockTest.java
+index c6d4fdfac..e251ca923 100644
+--- a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/multimap/ClientMultiMapLockTest.java
++++ b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/multimap/ClientMultiMapLockTest.java
+@@ -347,7 +347,7 @@ public class ClientMultiMapLockTest extends HazelcastTestSupport {
+         new Thread() {
+             public void run() {
+                 try {
+-                    if (mm.tryLock(key, 4, TimeUnit.SECONDS)) {
++                    if (mm.tryLock(key, 10, TimeUnit.SECONDS)) {
+                         tryLockSuccess.countDown();
+                     }
+                 } catch (InterruptedException e) {

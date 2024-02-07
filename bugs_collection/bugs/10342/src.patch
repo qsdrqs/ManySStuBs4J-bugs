@@ -1,0 +1,13 @@
+diff --git a/buggy/memcached/src/main/java/com/yahoo/ycsb/db/MemcachedClient.java b/fixed/memcached/src/main/java/com/yahoo/ycsb/db/MemcachedClient.java
+index b8f69384e..40efb7ed7 100644
+--- a/buggy/memcached/src/main/java/com/yahoo/ycsb/db/MemcachedClient.java
++++ b/fixed/memcached/src/main/java/com/yahoo/ycsb/db/MemcachedClient.java
+@@ -277,7 +277,7 @@ public class MemcachedClient extends DB {
+          /* increment in loop body */) {
+       Map.Entry<String, JsonNode> jsonField = jsonFields.next();
+       String name = jsonField.getKey();
+-      if (checkFields && fields.contains(name)) {
++      if (checkFields && !fields.contains(name)) {
+         continue;
+       }
+       JsonNode jsonValue = jsonField.getValue();

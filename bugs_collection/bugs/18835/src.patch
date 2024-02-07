@@ -1,0 +1,13 @@
+diff --git a/buggy/plugins/mongodb/src/main/java/com/navercorp/pinpoint/plugin/mongo/MongoUtil.java b/fixed/plugins/mongodb/src/main/java/com/navercorp/pinpoint/plugin/mongo/MongoUtil.java
+index ca8c6eff8..a280033e5 100644
+--- a/buggy/plugins/mongodb/src/main/java/com/navercorp/pinpoint/plugin/mongo/MongoUtil.java
++++ b/fixed/plugins/mongodb/src/main/java/com/navercorp/pinpoint/plugin/mongo/MongoUtil.java
+@@ -124,7 +124,7 @@ public final class MongoUtil {
+ 
+     private static String toStringValue(Object value) {
+         if (value instanceof String) {
+-            return (String) value;
++            return "\"" + value +"\"";
+         } else {
+             return String.valueOf(value);
+         }

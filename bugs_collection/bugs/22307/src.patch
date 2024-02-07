@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/endpoint/InfoEndpointCompatibilityTests.java b/fixed/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/endpoint/InfoEndpointCompatibilityTests.java
+index 85b919366..1a5fc3578 100644
+--- a/buggy/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/endpoint/InfoEndpointCompatibilityTests.java
++++ b/fixed/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/endpoint/InfoEndpointCompatibilityTests.java
+@@ -41,7 +41,7 @@ public class InfoEndpointCompatibilityTests {
+ 	}
+ 
+ 	private InfoEndpoint getEndpointBean() {
+-		return new InfoEndpoint(Collections.singletonMap("foo", "bar"),
++		return new InfoEndpoint(Collections.<String, Object>singletonMap("foo", "bar"),
+ 				infoContributor());
+ 	}
+ 

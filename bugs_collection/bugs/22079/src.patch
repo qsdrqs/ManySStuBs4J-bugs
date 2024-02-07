@@ -1,0 +1,23 @@
+diff --git a/buggy/spring-boot-samples/spring-boot-sample-actuator/src/test/java/sample/actuator/SampleActuatorApplicationTests.java b/fixed/spring-boot-samples/spring-boot-sample-actuator/src/test/java/sample/actuator/SampleActuatorApplicationTests.java
+index 5102afc89..421ab14a5 100644
+--- a/buggy/spring-boot-samples/spring-boot-sample-actuator/src/test/java/sample/actuator/SampleActuatorApplicationTests.java
++++ b/fixed/spring-boot-samples/spring-boot-sample-actuator/src/test/java/sample/actuator/SampleActuatorApplicationTests.java
+@@ -69,14 +69,14 @@ public class SampleActuatorApplicationTests {
+ 	@Test
+ 	public void testMetricsIsSecure() {
+ 		@SuppressWarnings("rawtypes")
+-		ResponseEntity<Map> entity = this.restTemplate.getForEntity("/metrics",
++		ResponseEntity<Map> entity = this.restTemplate.getForEntity("/actuator/metrics",
+ 				Map.class);
+ 		assertThat(entity.getStatusCode()).isEqualTo(HttpStatus.UNAUTHORIZED);
+-		entity = this.restTemplate.getForEntity("/metrics/", Map.class);
++		entity = this.restTemplate.getForEntity("/actuator/metrics/", Map.class);
+ 		assertThat(entity.getStatusCode()).isEqualTo(HttpStatus.UNAUTHORIZED);
+-		entity = this.restTemplate.getForEntity("/metrics/foo", Map.class);
++		entity = this.restTemplate.getForEntity("/actuator/metrics/foo", Map.class);
+ 		assertThat(entity.getStatusCode()).isEqualTo(HttpStatus.UNAUTHORIZED);
+-		entity = this.restTemplate.getForEntity("/metrics.json", Map.class);
++		entity = this.restTemplate.getForEntity("/actuator/metrics.json", Map.class);
+ 		assertThat(entity.getStatusCode()).isEqualTo(HttpStatus.UNAUTHORIZED);
+ 	}
+ 

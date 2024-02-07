@@ -1,0 +1,16 @@
+diff --git a/buggy/src/main/java/com/yammer/metrics/core/UniformSample.java b/fixed/src/main/java/com/yammer/metrics/core/UniformSample.java
+index 1303b414b..5a51a911c 100644
+--- a/buggy/src/main/java/com/yammer/metrics/core/UniformSample.java
++++ b/fixed/src/main/java/com/yammer/metrics/core/UniformSample.java
+@@ -53,9 +53,9 @@ public class UniformSample implements Sample {
+ 		if (c <= values.length()) {
+ 			values.set((int) c - 1, value);
+ 		} else {
+-			final int r = (int) (Math.abs(RANDOM.nextLong()) % c);
++			final long r = Math.abs(RANDOM.nextLong()) % c;
+ 			if (r < values.length()) {
+-				values.set(r, value);
++				values.set((int) r, value);
+ 			}
+ 		}
+ 	}

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/web/org/openmrs/web/servlet/LoginServlet.java b/fixed/src/web/org/openmrs/web/servlet/LoginServlet.java
+index 7ce23c6c1..121c6e727 100644
+--- a/buggy/src/web/org/openmrs/web/servlet/LoginServlet.java
++++ b/fixed/src/web/org/openmrs/web/servlet/LoginServlet.java
+@@ -64,7 +64,7 @@ public class LoginServlet extends HttpServlet {
+ 			HttpServletResponse response) throws ServletException, IOException {
+ 		HttpSession httpSession = request.getSession();
+ 		
+-		String ipAddress = request.getLocalAddr();
++		String ipAddress = request.getRemoteAddr();
+ 		Integer loginAttempts = loginAttemptsByIP.get(ipAddress);
+ 		if (loginAttempts == null)
+ 			loginAttempts = 1;

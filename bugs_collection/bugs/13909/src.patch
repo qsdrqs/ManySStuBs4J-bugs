@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/test/java/com/facebook/presto/type/TestRowOperators.java b/fixed/presto-main/src/test/java/com/facebook/presto/type/TestRowOperators.java
+index e23666a76..7a60983dd 100644
+--- a/buggy/presto-main/src/test/java/com/facebook/presto/type/TestRowOperators.java
++++ b/fixed/presto-main/src/test/java/com/facebook/presto/type/TestRowOperators.java
+@@ -118,7 +118,7 @@ public class TestRowOperators
+         }
+ 
+         try {
+-            assertFunction("test_row(1, NULL) = test_row(1, 2)", false);
++            assertFunction("test_row(1, CAST(NULL AS BIGINT)) = test_row(1, 2)", false);
+             fail("ROW comparison not implemented for NULL values");
+         }
+         catch (PrestoException e) {

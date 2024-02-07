@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-yarn/src/main/java/org/apache/flink/yarn/cli/FlinkYarnSessionCli.java b/fixed/flink-yarn/src/main/java/org/apache/flink/yarn/cli/FlinkYarnSessionCli.java
+index e5311cdd2..931b22c03 100644
+--- a/buggy/flink-yarn/src/main/java/org/apache/flink/yarn/cli/FlinkYarnSessionCli.java
++++ b/fixed/flink-yarn/src/main/java/org/apache/flink/yarn/cli/FlinkYarnSessionCli.java
+@@ -253,7 +253,7 @@ public class FlinkYarnSessionCli extends AbstractCustomCommandLine<ApplicationId
+ 				yarnApplicationIdFromYarnProperties = ConverterUtils.toApplicationId(yarnApplicationIdString);
+ 			}
+ 			catch (Exception e) {
+-				throw new FlinkException("YARN properties contains an invalid entry for " +
++				throw new FlinkException("YARN properties contain an invalid entry for " +
+ 					"application id: " + yarnApplicationIdString + ". Please delete the file at " +
+ 					yarnPropertiesLocation.getAbsolutePath(), e);
+ 			}

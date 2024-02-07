@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/DatabaseDriver.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/DatabaseDriver.java
+index 1897ad311..455e6fdfb 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/DatabaseDriver.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/DatabaseDriver.java
+@@ -71,7 +71,7 @@ enum DatabaseDriver {
+ 	/**
+ 	 * Oracle
+ 	 */
+-	ORACLE("oracle.jdbc.OracleDriver", "oracle.jdbc.xa.OracleXADataSource"),
++	ORACLE("oracle.jdbc.OracleDriver", "oracle.jdbc.xa.client.OracleXADataSource"),
+ 
+ 	/**
+ 	 * Postres

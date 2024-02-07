@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFStdPopDouble.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFStdPopDouble.java
+index 5e78b94a5..ce42ce01e 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFStdPopDouble.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFStdPopDouble.java
+@@ -310,7 +310,7 @@ public class VectorUDAFStdPopDouble extends VectorAggregateExpression {
+       double[] vector = inputVector.vector;
+       
+       if (inputVector.isRepeating) {
+-        if (inputVector.noNulls || !inputVector.isNull[0]) {
++        if (inputVector.noNulls) {
+           iterateRepeatingNoNulls(myagg, vector[0], batchSize);
+         }
+       } 

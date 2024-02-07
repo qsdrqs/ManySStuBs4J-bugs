@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-mina/src/test/java/org/apache/camel/component/mina/MinaCustomCodecTest.java b/fixed/components/camel-mina/src/test/java/org/apache/camel/component/mina/MinaCustomCodecTest.java
+index 5fa724da4..82237602e 100644
+--- a/buggy/components/camel-mina/src/test/java/org/apache/camel/component/mina/MinaCustomCodecTest.java
++++ b/fixed/components/camel-mina/src/test/java/org/apache/camel/component/mina/MinaCustomCodecTest.java
+@@ -55,7 +55,7 @@ public class MinaCustomCodecTest extends CamelTestSupport {
+     @Test
+     public void testTCPEncodeUTF8InputIsString() throws Exception {
+         final String myUri = "mina:tcp://localhost:9085?encoding=UTF-8&sync=false";
+-        this.context.addRoutes(new RouteBuilder() {
++        context.addRoutes(new RouteBuilder() {
+             public void configure() {
+                 from(myUri).to("mock:result");
+             }

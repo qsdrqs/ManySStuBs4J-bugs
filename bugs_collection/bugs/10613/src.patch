@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/VisibilityModifierCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/VisibilityModifierCheck.java
+index aab4941b3..57941b074 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/VisibilityModifierCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/VisibilityModifierCheck.java
+@@ -777,7 +777,7 @@ public class VisibilityModifierCheck
+      * @return canonical type's name
+      */
+     private static String getCanonicalName(DetailAST type) {
+-        final StringBuilder canonicalNameBuilder = new StringBuilder();
++        final StringBuilder canonicalNameBuilder = new StringBuilder(256);
+         DetailAST toVisit = type.getFirstChild();
+         while (toVisit != null) {
+             toVisit = getNextSubTreeNode(toVisit, type);

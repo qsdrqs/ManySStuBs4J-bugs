@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/annotation/SuppressWarningsCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/annotation/SuppressWarningsCheck.java
+index a06ba24ed..5a3131844 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/annotation/SuppressWarningsCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/annotation/SuppressWarningsCheck.java
+@@ -110,7 +110,7 @@ public class SuppressWarningsCheck extends AbstractCheck {
+         "java.lang." + SUPPRESS_WARNINGS;
+ 
+     /** The regexp to match against. */
+-    private Pattern format = Pattern.compile("^$|^\\s+$");
++    private Pattern format = Pattern.compile("^\\s*+$");
+ 
+     /**
+      * Set the format for the specified regular expression.

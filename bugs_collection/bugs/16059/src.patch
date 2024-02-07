@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/map/impl/nearcache/ClientMapNearCacheBasicTest.java b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/map/impl/nearcache/ClientMapNearCacheBasicTest.java
+index 64de373b3..d645d4a32 100644
+--- a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/map/impl/nearcache/ClientMapNearCacheBasicTest.java
++++ b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/map/impl/nearcache/ClientMapNearCacheBasicTest.java
+@@ -69,7 +69,7 @@ public class ClientMapNearCacheBasicTest extends AbstractNearCacheBasicTest<Data
+ 
+     private final TestHazelcastFactory hazelcastFactory = new TestHazelcastFactory();
+ 
+-    @Parameters(name = "format:{0}, serializeKeys:{1}")
++    @Parameters(name = "format:{0} serializeKeys:{1}")
+     public static Collection<Object[]> parameters() {
+         return asList(new Object[][]{
+                 {InMemoryFormat.BINARY, true},

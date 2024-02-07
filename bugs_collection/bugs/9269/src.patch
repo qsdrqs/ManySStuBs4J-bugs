@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/wal/FSHLog.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/wal/FSHLog.java
+index d2ba69d66..248b71a87 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/wal/FSHLog.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/wal/FSHLog.java
+@@ -1684,7 +1684,7 @@ public class FSHLog implements WAL {
+     oldestUnflushedStoreSequenceIdsOfRegion =
+         new ConcurrentSkipListMap<byte[], Long>(Bytes.BYTES_COMPARATOR);
+     ConcurrentMap<byte[], Long> alreadyPut =
+-        oldestUnflushedStoreSequenceIds.put(encodedRegionName,
++        oldestUnflushedStoreSequenceIds.putIfAbsent(encodedRegionName,
+           oldestUnflushedStoreSequenceIdsOfRegion);
+     return alreadyPut == null ? oldestUnflushedStoreSequenceIdsOfRegion : alreadyPut;
+   }

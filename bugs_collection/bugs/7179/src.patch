@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/StreamCache.java b/fixed/camel-core/src/main/java/org/apache/camel/StreamCache.java
+index 615ad5b44..26ef5befc 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/StreamCache.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/StreamCache.java
+@@ -30,7 +30,7 @@ import java.io.OutputStream;
+  */
+ public interface StreamCache {
+ 
+-    public static final long DEFAULT_SPOOL_THRESHOLD = 128 * 1024;
++    long DEFAULT_SPOOL_THRESHOLD = 128 * 1024;
+ 
+     /**
+      * Resets the StreamCache for a new stream consumption.

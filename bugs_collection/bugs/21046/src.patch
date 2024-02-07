@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/main/java/org/openmrs/util/databasechange/GenerateUuid.java b/fixed/api/src/main/java/org/openmrs/util/databasechange/GenerateUuid.java
+index aa74dc920..aea084982 100644
+--- a/buggy/api/src/main/java/org/openmrs/util/databasechange/GenerateUuid.java
++++ b/fixed/api/src/main/java/org/openmrs/util/databasechange/GenerateUuid.java
+@@ -106,7 +106,7 @@ public class GenerateUuid implements CustomTaskChange {
+ 			initialAutoCommit = connection.getAutoCommit();
+ 			connection.setAutoCommit(false);
+ 			
+-			if (database.getTypeName().equals("mysql")) {
++			if ("mysql".equals(database.getTypeName())) {
+ 				String updateSql = "update %s set " + columnName + " = uuid() where " + columnName + " is null";
+ 				for (String tablename : tableNamesArray) {
+ 					String rawSql = String.format(updateSql, tablename);

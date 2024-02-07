@@ -1,0 +1,25 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/impl/ascii/memcache/GetCommand.java b/fixed/hazelcast/src/main/java/com/hazelcast/impl/ascii/memcache/GetCommand.java
+index c1acaa237..b01a35288 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/impl/ascii/memcache/GetCommand.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/impl/ascii/memcache/GetCommand.java
+@@ -56,14 +56,15 @@ public class GetCommand extends AbstractTextCommand {
+         if (lastOne != null) {
+             IOUtil.copyToHeapBuffer(lastOne, bb);
+         }
+-        return !(value != null && value.hasRemaining())
+-                || (lastOne != null && lastOne.hasRemaining());
++        return !((value != null && value.hasRemaining())
++                || (lastOne != null && lastOne.hasRemaining()));
+     }
+ 
+     @Override
+     public String toString() {
+         return "GetCommand{" +
+-                "key='" + key + '\'' +
+-                '}' + super.toString();
++                "key='" + key +
++                ", value=" + value + '\'' +
++                "} " + super.toString();
+     }
+ }
+\ No newline at end of file

@@ -1,0 +1,22 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/security/oauth2/OAuth2AutoConfigurationTests.java b/fixed/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/security/oauth2/OAuth2AutoConfigurationTests.java
+index dc32c4d16..750f009b5 100644
+--- a/buggy/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/security/oauth2/OAuth2AutoConfigurationTests.java
++++ b/fixed/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/security/oauth2/OAuth2AutoConfigurationTests.java
+@@ -196,7 +196,7 @@ public class OAuth2AutoConfigurationTests {
+ 				"security.oauth2.client.clientId=client",
+ 				"security.oauth2.client.grantType=client_credentials");
+ 		this.context.refresh();
+-		assertThat(context.getBean(OAuth2ClientContext.class).getAccessTokenRequest())
++		assertThat(this.context.getBean(OAuth2ClientContext.class).getAccessTokenRequest())
+ 				.isNotNull();
+ 		assertThat(countBeans(ClientCredentialsResourceDetails.class)).isEqualTo(1);
+ 		assertThat(countBeans(OAuth2ClientContext.class)).isEqualTo(1);
+@@ -212,7 +212,7 @@ public class OAuth2AutoConfigurationTests {
+ 				"security.oauth2.client.grantType=client_credentials");
+ 		this.context.refresh();
+ 		// Thr primary context is fine (not session scoped):
+-		assertThat(context.getBean(OAuth2ClientContext.class).getAccessTokenRequest())
++		assertThat(this.context.getBean(OAuth2ClientContext.class).getAccessTokenRequest())
+ 				.isNotNull();
+ 		assertThat(countBeans(ClientCredentialsResourceDetails.class)).isEqualTo(1);
+ 		/*

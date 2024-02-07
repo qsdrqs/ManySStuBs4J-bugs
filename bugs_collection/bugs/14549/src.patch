@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/SymbolTable.java b/fixed/src/com/google/javascript/jscomp/SymbolTable.java
+index b506bb3f3..4411e60d3 100644
+--- a/buggy/src/com/google/javascript/jscomp/SymbolTable.java
++++ b/fixed/src/com/google/javascript/jscomp/SymbolTable.java
+@@ -152,7 +152,7 @@ public final class SymbolTable {
+     return ImmutableList.copyOf(symbol.references.values());
+   }
+ 
+-  public Iterable<Symbol> getAllSymbols() {
++  public ImmutableList<Symbol> getAllSymbols() {
+     return ImmutableList.copyOf(symbols.values());
+   }
+ 

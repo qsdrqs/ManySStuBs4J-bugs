@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4821onevariablepreline/MultipleVariableDeclarationsTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4821onevariablepreline/MultipleVariableDeclarationsTest.java
+index 63ac54842..dc0a584b5 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4821onevariablepreline/MultipleVariableDeclarationsTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4821onevariablepreline/MultipleVariableDeclarationsTest.java
+@@ -22,7 +22,7 @@ public class MultipleVariableDeclarationsTest extends BaseCheckTestSupport{
+     }
+ 
+     @Test
+-    public void multipleVariableDeclarationsTest() throws IOException, Exception {
++    public void multipleVariableDeclarationsTest() throws Exception {
+         
+         String msgComma = getCheckMessage(MultipleVariableDeclarationsCheck.class, "multiple.variable.declarations.comma");
+         String msg = getCheckMessage(MultipleVariableDeclarationsCheck.class, "multiple.variable.declarations");

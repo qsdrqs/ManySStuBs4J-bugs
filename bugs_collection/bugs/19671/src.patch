@@ -1,0 +1,14 @@
+diff --git a/buggy/common/src/main/java/io/netty/util/internal/UnsafeAtomicLongFieldUpdater.java b/fixed/common/src/main/java/io/netty/util/internal/UnsafeAtomicLongFieldUpdater.java
+index 229fa8cdd..da630fd95 100644
+--- a/buggy/common/src/main/java/io/netty/util/internal/UnsafeAtomicLongFieldUpdater.java
++++ b/fixed/common/src/main/java/io/netty/util/internal/UnsafeAtomicLongFieldUpdater.java
+@@ -25,7 +25,8 @@ final class UnsafeAtomicLongFieldUpdater<T> extends AtomicLongFieldUpdater<T> {
+     private final long offset;
+     private final Unsafe unsafe;
+ 
+-    UnsafeAtomicLongFieldUpdater(Unsafe unsafe, Class<?> tClass, String fieldName) throws NoSuchFieldException {
++    UnsafeAtomicLongFieldUpdater(Unsafe unsafe, Class<? super T> tClass, String fieldName)
++            throws NoSuchFieldException {
+         Field field = tClass.getDeclaredField(fieldName);
+         if (!Modifier.isVolatile(field.getModifiers())) {
+             throw new IllegalArgumentException("Must be volatile");

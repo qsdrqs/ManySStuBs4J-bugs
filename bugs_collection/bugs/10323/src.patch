@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/zaxxer/hikari/proxy/ConnectionProxy.java b/fixed/src/main/java/com/zaxxer/hikari/proxy/ConnectionProxy.java
+index 445328f79..ce3034de2 100644
+--- a/buggy/src/main/java/com/zaxxer/hikari/proxy/ConnectionProxy.java
++++ b/fixed/src/main/java/com/zaxxer/hikari/proxy/ConnectionProxy.java
+@@ -58,7 +58,7 @@ public abstract class ConnectionProxy implements IHikariConnectionProxy
+     private boolean forceClose;
+     private boolean isAutoCommitDirty;
+     private boolean isCatalogDirty;
+-    private boolean isClosed;
++    private volatile boolean isClosed;
+     private boolean isReadOnlyDirty;
+     private boolean isTransactionIsolationDirty;
+     private volatile long lastAccess;

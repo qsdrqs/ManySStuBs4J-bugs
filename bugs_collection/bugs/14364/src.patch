@@ -1,0 +1,13 @@
+diff --git a/buggy/VisualizationModule/src/org/gephi/visualization/component/ActionsToolbar.java b/fixed/VisualizationModule/src/org/gephi/visualization/component/ActionsToolbar.java
+index 6b90e4b98..d2aace57c 100644
+--- a/buggy/VisualizationModule/src/org/gephi/visualization/component/ActionsToolbar.java
++++ b/fixed/VisualizationModule/src/org/gephi/visualization/component/ActionsToolbar.java
+@@ -95,7 +95,7 @@ public class ActionsToolbar extends JToolBar {
+                     n.getNodeData().setAlpha(1f);
+                 }
+                 for (Edge e : graph.getEdges().toArray()) {
+-                    e.getEdgeData().setR(color.getRed() / 255f);
++                    e.getEdgeData().setR(-1f);
+                     e.getEdgeData().setG(color.getGreen() / 255f);
+                     e.getEdgeData().setB(color.getBlue() / 255f);
+                     e.getEdgeData().setAlpha(1f);

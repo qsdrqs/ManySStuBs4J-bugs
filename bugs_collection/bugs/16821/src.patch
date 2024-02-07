@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/map/MapTransactionTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/map/MapTransactionTest.java
+index b22088bd6..5a345b455 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/map/MapTransactionTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/map/MapTransactionTest.java
+@@ -1057,7 +1057,7 @@ public class MapTransactionTest extends HazelcastTestSupport {
+         final SampleObjects.Employee emp = new SampleObjects.Employee("name", 77, true, 10D);
+         map.put(1, emp);
+ 
+-        boolean b = node.executeTransaction(options, new TransactionalTask<Boolean>() {
++        node.executeTransaction(options, new TransactionalTask<Boolean>() {
+             public Boolean execute(TransactionalTaskContext context) throws TransactionException {
+                 final TransactionalMap<Object, Object> txMap = context.getMap(mapName);
+                 txMap.remove(1);

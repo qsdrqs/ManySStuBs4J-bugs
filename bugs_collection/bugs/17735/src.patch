@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/math/CumulativeDistribution.java b/fixed/gdx/src/com/badlogic/gdx/math/CumulativeDistribution.java
+index d5adc35f6..55cf136b8 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/math/CumulativeDistribution.java
++++ b/fixed/gdx/src/com/badlogic/gdx/math/CumulativeDistribution.java
+@@ -88,7 +88,7 @@ public class CumulativeDistribution <T>{
+ 			else break;
+ 		}
+ 
+-		return value.value;
++		return values.items[imin].value;
+ 	}
+ 
+ 	/** @return the value whose interval contains a random probability in [0,1] */

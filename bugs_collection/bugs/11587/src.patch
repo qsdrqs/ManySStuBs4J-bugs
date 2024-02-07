@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/regexp/CommentSuppressor.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/regexp/CommentSuppressor.java
+index e3b68a11d..97cdcc2a7 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/regexp/CommentSuppressor.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/regexp/CommentSuppressor.java
+@@ -34,7 +34,7 @@ class CommentSuppressor implements MatchSuppressor {
+     @Override
+     public boolean shouldSuppress(int startLineNo, int startColNo,
+             int endLineNo, int endColNo) {
+-        return null != currentContents
++        return currentContents != null
+                 && currentContents.hasIntersectionWithComment(startLineNo,
+                         startColNo, endLineNo, endColNo);
+     }

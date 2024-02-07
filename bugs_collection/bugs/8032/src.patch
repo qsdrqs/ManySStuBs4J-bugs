@@ -1,0 +1,14 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/impl/converter/AsyncProcessorTypeConverter.java b/fixed/camel-core/src/main/java/org/apache/camel/impl/converter/AsyncProcessorTypeConverter.java
+index 3bb0d40fc..fe24df730 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/impl/converter/AsyncProcessorTypeConverter.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/impl/converter/AsyncProcessorTypeConverter.java
+@@ -45,7 +45,8 @@ public class AsyncProcessorTypeConverter implements TypeConverter {
+             } catch (Throwable e) {
+                 exchange.setException(e);
+             }
+-            callback.done(true);
++            // false means processing of the exchange asynchronously,
++            callback.done(false);
+             return true;
+         }
+ 

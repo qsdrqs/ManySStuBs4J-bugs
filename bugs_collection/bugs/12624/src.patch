@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions-core/druid-basic-security/src/test/java/org/apache/druid/security/authorization/CoordinatorBasicAuthorizerResourceTest.java b/fixed/extensions-core/druid-basic-security/src/test/java/org/apache/druid/security/authorization/CoordinatorBasicAuthorizerResourceTest.java
+index f53f5c363..f93cc0024 100644
+--- a/buggy/extensions-core/druid-basic-security/src/test/java/org/apache/druid/security/authorization/CoordinatorBasicAuthorizerResourceTest.java
++++ b/fixed/extensions-core/druid-basic-security/src/test/java/org/apache/druid/security/authorization/CoordinatorBasicAuthorizerResourceTest.java
+@@ -785,7 +785,7 @@ public class CoordinatorBasicAuthorizerResourceTest
+       String user
+   )
+   {
+-    Response response = resource.getUser(req, AUTHORIZER_NAME, user, "");
++    Response response = resource.getUser(req, AUTHORIZER_NAME, user, "", null);
+     Assert.assertEquals(200, response.getStatus());
+     BasicAuthorizerUserFull userFull = (BasicAuthorizerUserFull) response.getEntity();
+     Set<String> roleNames = new HashSet<>();

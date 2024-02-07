@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-spring/src/test/java/com/hazelcast/spring/context/TestAutoWire.java b/fixed/hazelcast-spring/src/test/java/com/hazelcast/spring/context/TestAutoWire.java
+index 9868f635b..45e178a5a 100644
+--- a/buggy/hazelcast-spring/src/test/java/com/hazelcast/spring/context/TestAutoWire.java
++++ b/fixed/hazelcast-spring/src/test/java/com/hazelcast/spring/context/TestAutoWire.java
+@@ -20,7 +20,7 @@ import static org.junit.Assert.assertNotNull;
+  * annotation.
+  * */
+ @RunWith(CustomSpringJUnit4ClassRunner.class)
+-@ContextConfiguration(locations = {"managedContext-applicationContext-hazelcast.xml"})
++@ContextConfiguration(locations = {"test-application-context.xml"})
+ @Category(QuickTest.class)
+ public class TestAutoWire {
+ 

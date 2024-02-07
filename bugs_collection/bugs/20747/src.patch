@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/action/org.openhab.action.xmpp/src/main/java/org/openhab/action/xmpp/internal/XMPP.java b/fixed/bundles/action/org.openhab.action.xmpp/src/main/java/org/openhab/action/xmpp/internal/XMPP.java
+index 641605893..b6b762c52 100644
+--- a/buggy/bundles/action/org.openhab.action.xmpp/src/main/java/org/openhab/action/xmpp/internal/XMPP.java
++++ b/fixed/bundles/action/org.openhab.action.xmpp/src/main/java/org/openhab/action/xmpp/internal/XMPP.java
+@@ -138,7 +138,7 @@ public class XMPP {
+ 				} catch (IOException e) {
+ 					logger.error("Could not open url '{}' for sending it via XMPP", attachmentUrl, e);
+ 				} finally {
+-					IOUtils.closeQuitely(is);
++					IOUtils.closeQuietly(is);
+ 				}
+ 			}
+ 		} catch (NotInitializedException e) {

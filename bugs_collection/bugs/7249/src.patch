@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/component/log/LogComponent.java b/fixed/camel-core/src/main/java/org/apache/camel/component/log/LogComponent.java
+index b49f23bda..849435963 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/component/log/LogComponent.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/component/log/LogComponent.java
+@@ -52,7 +52,7 @@ public class LogComponent extends DefaultComponent {
+             logger = new ThroughputLogger(camelLogger, this.getCamelContext(), groupInterval, groupDelay, groupActiveOnly);
+         } else {
+             LogFormatter formatter = new LogFormatter();
+-            IntrospectionSupport.setProperties(formatter, parameters);
++            setProperties(formatter, parameters);
+ 
+             logger = new CamelLogProcessor(camelLogger, formatter);
+         }

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientInvocation.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientInvocation.java
+index 48600f9d5..58aac2bfc 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientInvocation.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientInvocation.java
+@@ -242,7 +242,7 @@ public class ClientInvocation implements Runnable {
+         try {
+             execute();
+         } catch (RejectedExecutionException e) {
+-            clientInvocationFuture.complete(exception);
++            clientInvocationFuture.complete(new HazelcastClientNotActiveException("Client is shutting down", exception));
+         }
+ 
+     }

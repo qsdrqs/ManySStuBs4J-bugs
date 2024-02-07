@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/io/druid/segment/realtime/plumber/RealtimePlumberSchool.java b/fixed/server/src/main/java/io/druid/segment/realtime/plumber/RealtimePlumberSchool.java
+index cd0006517..43020d7cc 100644
+--- a/buggy/server/src/main/java/io/druid/segment/realtime/plumber/RealtimePlumberSchool.java
++++ b/fixed/server/src/main/java/io/druid/segment/realtime/plumber/RealtimePlumberSchool.java
+@@ -75,7 +75,7 @@ public class RealtimePlumberSchool implements PlumberSchool
+       @JsonProperty("basePersistDirectory") File basePersistDirectory,
+       @JsonProperty("segmentGranularity") Granularity segmentGranularity,
+       @JsonProperty("versioningPolicy") VersioningPolicy versioningPolicy,
+-      @JsonProperty("rejectionPolicyFactory") RejectionPolicyFactory rejectionPolicyFactory,
++      @JsonProperty("rejectionPolicy") RejectionPolicyFactory rejectionPolicyFactory,
+       @JsonProperty("maxPendingPersists") int maxPendingPersists
+   )
+   {

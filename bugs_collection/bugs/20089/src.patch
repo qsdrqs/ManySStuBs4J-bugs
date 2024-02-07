@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/handler/codec/base64/Base64.java b/fixed/src/main/java/org/jboss/netty/handler/codec/base64/Base64.java
+index cc4366b79..1dacb70a1 100644
+--- a/buggy/src/main/java/org/jboss/netty/handler/codec/base64/Base64.java
++++ b/fixed/src/main/java/org/jboss/netty/handler/codec/base64/Base64.java
+@@ -75,7 +75,7 @@ public class Base64 {
+         if (dialect == null) {
+             throw new NullPointerException("dialect");
+         }
+-        return breakLines(dialect);
++        return dialect.breakLinesByDefault;
+     }
+ 
+     public static ChannelBuffer encode(ChannelBuffer src) {

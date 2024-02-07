@@ -1,0 +1,22 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/JsMessageVisitor.java b/fixed/src/com/google/javascript/jscomp/JsMessageVisitor.java
+index 157f1a03c..f6bc02f93 100644
+--- a/buggy/src/com/google/javascript/jscomp/JsMessageVisitor.java
++++ b/fixed/src/com/google/javascript/jscomp/JsMessageVisitor.java
+@@ -746,7 +746,7 @@ public abstract class JsMessageVisitor extends AbstractPostOrderCallback
+       if (!phNames.contains(phName)) {
+         throw new MalformedException(
+             "Unrecognized message placeholder referenced: " + phName,
+-            objLitNode);
++            node);
+       }
+     }
+ 
+@@ -756,7 +756,7 @@ public abstract class JsMessageVisitor extends AbstractPostOrderCallback
+       if (!usedPlaceholders.contains(phName)) {
+         throw new MalformedException(
+             "Unused message placeholder: " + phName,
+-            objLitNode);
++            node);
+       }
+     }
+   }

@@ -1,0 +1,24 @@
+diff --git a/buggy/src/edu/stanford/nlp/pipeline/NERCombinerAnnotator.java b/fixed/src/edu/stanford/nlp/pipeline/NERCombinerAnnotator.java
+index f524de88f..7e4053e39 100644
+--- a/buggy/src/edu/stanford/nlp/pipeline/NERCombinerAnnotator.java
++++ b/fixed/src/edu/stanford/nlp/pipeline/NERCombinerAnnotator.java
+@@ -363,7 +363,8 @@ public class NERCombinerAnnotator extends SentenceAnnotator  {
+           CoreAnnotations.IndexAnnotation.class,
+           CoreAnnotations.OriginalTextAnnotation.class,
+           CoreAnnotations.SentenceIndexAnnotation.class,
+-          CoreAnnotations.IsNewlineAnnotation.class
++          CoreAnnotations.IsNewlineAnnotation.class,
++          CoreAnnotations.TokenIndexAnnotation.class
+       )));
+     } else {
+       return Collections.unmodifiableSet(new HashSet<>(Arrays.asList(
+@@ -379,7 +380,8 @@ public class NERCombinerAnnotator extends SentenceAnnotator  {
+           CoreAnnotations.IndexAnnotation.class,
+           CoreAnnotations.OriginalTextAnnotation.class,
+           CoreAnnotations.SentenceIndexAnnotation.class,
+-          CoreAnnotations.IsNewlineAnnotation.class
++          CoreAnnotations.IsNewlineAnnotation.class,
++          CoreAnnotations.TokenIndexAnnotation.class
+       )));
+     }
+   }

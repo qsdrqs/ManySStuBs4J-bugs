@@ -1,0 +1,13 @@
+diff --git a/buggy/pact/pact-compiler/src/main/java/eu/stratosphere/pact/compiler/jobgen/JSONGenerator.java b/fixed/pact/pact-compiler/src/main/java/eu/stratosphere/pact/compiler/jobgen/JSONGenerator.java
+index 6e19e4891..c9c489f81 100644
+--- a/buggy/pact/pact-compiler/src/main/java/eu/stratosphere/pact/compiler/jobgen/JSONGenerator.java
++++ b/fixed/pact/pact-compiler/src/main/java/eu/stratosphere/pact/compiler/jobgen/JSONGenerator.java
+@@ -410,7 +410,7 @@ public class JSONGenerator implements Visitor<OptimizerNode> {
+ 			String valuesKey = "(none)";
+ 			if (hints.getAvgNumValuesPerDistinctValues().size() > 0) {
+ 				valuesKey = "";
+-				for (Entry<FieldSet, Long> entry : visitable.getEstimatedCardinalities().entrySet()) {
++				for (Entry<FieldSet, Float> entry : hints.getAvgNumValuesPerDistinctValues().entrySet()) {
+ 					valuesKey += "[" + entry.getKey().toString() + "->" + entry.getValue() + "]"; 
+ 				}
+ 			}

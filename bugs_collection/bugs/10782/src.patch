@@ -1,0 +1,15 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/OneStatementPerLineCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/OneStatementPerLineCheckTest.java
+index e9bb1216a..9f061005f 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/OneStatementPerLineCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/OneStatementPerLineCheckTest.java
+@@ -42,7 +42,9 @@ public class OneStatementPerLineCheckTest extends BaseCheckTestSupport {
+     @Override
+     protected String getNonCompilablePath(String filename) throws IOException {
+         return super.getNonCompilablePath("checks" + File.separator
+-                + "coding" + File.separator + filename);
++                + "coding" + File.separator
++                + "onestatementperline" + File.separator
++                + filename);
+     }
+ 
+     @Test

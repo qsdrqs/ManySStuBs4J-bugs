@@ -1,0 +1,14 @@
+diff --git a/buggy/okhttp-tls/src/main/java/okhttp3/tls/HeldCertificate.java b/fixed/okhttp-tls/src/main/java/okhttp3/tls/HeldCertificate.java
+index 8709dc143..c659f5819 100644
+--- a/buggy/okhttp-tls/src/main/java/okhttp3/tls/HeldCertificate.java
++++ b/fixed/okhttp-tls/src/main/java/okhttp3/tls/HeldCertificate.java
+@@ -400,8 +400,7 @@ public final class HeldCertificate {
+       }
+ 
+       try {
+-        X509Certificate certificate = generator.generateX509Certificate(
+-            signedByKeyPair.getPrivate());
++        X509Certificate certificate = generator.generate(signedByKeyPair.getPrivate());
+         return new HeldCertificate(heldKeyPair, certificate);
+       } catch (GeneralSecurityException e) {
+         throw new AssertionError(e);

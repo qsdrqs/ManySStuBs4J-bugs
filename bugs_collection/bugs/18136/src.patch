@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/physics/box2d/Shape.java b/fixed/gdx/src/com/badlogic/gdx/physics/box2d/Shape.java
+index 4e806a63e..9728b76e5 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/physics/box2d/Shape.java
++++ b/fixed/gdx/src/com/badlogic/gdx/physics/box2d/Shape.java
+@@ -30,7 +30,7 @@ public abstract class Shape {
+ 	/** Enum describing the type of a shape
+ 	 * @author mzechner */
+ 	public enum Type {
+-		Circle, Polygon, Edge, Chain,
++		Circle, Edge, Polygon, Chain,
+ 	};
+ 
+ 	/** the address of the shape **/

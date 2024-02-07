@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-example-http/src/main/java/com/facebook/presto/example/ExampleSplit.java b/fixed/presto-example-http/src/main/java/com/facebook/presto/example/ExampleSplit.java
+index 74b18c1f8..5ffb638d6 100644
+--- a/buggy/presto-example-http/src/main/java/com/facebook/presto/example/ExampleSplit.java
++++ b/fixed/presto-example-http/src/main/java/com/facebook/presto/example/ExampleSplit.java
+@@ -32,7 +32,7 @@ public class ExampleSplit
+     private final String tableName;
+     private final URI uri;
+     private final boolean remotelyAccessible;
+-    private final ImmutableList<HostAddress> addresses;
++    private final List<HostAddress> addresses;
+ 
+     @JsonCreator
+     public ExampleSplit(

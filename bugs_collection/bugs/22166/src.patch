@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/main/java/org/springframework/boot/jdbc/DatabaseDriver.java b/fixed/spring-boot/src/main/java/org/springframework/boot/jdbc/DatabaseDriver.java
+index b1d4fd17d..18d78e9c3 100644
+--- a/buggy/spring-boot/src/main/java/org/springframework/boot/jdbc/DatabaseDriver.java
++++ b/fixed/spring-boot/src/main/java/org/springframework/boot/jdbc/DatabaseDriver.java
+@@ -123,7 +123,7 @@ public enum DatabaseDriver {
+ 	 * Firebird.
+ 	 */
+ 	FIREBIRD("Firebird", "org.firebirdsql.jdbc.FBDriver",
+-			"org.firebirdsql.pool.FBConnectionPoolDataSource",
++			"org.firebirdsql.ds.FBXADataSource",
+ 			"SELECT 1 FROM RDB$DATABASE") {
+ 
+ 		@Override

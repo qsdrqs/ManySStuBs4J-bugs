@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/core/ItemEvent.java b/fixed/hazelcast/src/main/java/com/hazelcast/core/ItemEvent.java
+index 2a6d3c687..edcd20599 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/core/ItemEvent.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/core/ItemEvent.java
+@@ -45,7 +45,7 @@ public class ItemEvent<E> extends EventObject {
+     public String toString() {
+         return "ItemEvent{" +
+                 "event=" + eventType +
+-                ", item=" + item +
++                ", item=" + getItem() +
+                 "} ";
+     }
+ }

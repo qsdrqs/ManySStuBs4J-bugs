@@ -1,0 +1,13 @@
+diff --git a/buggy/service/src/java/org/apache/hive/service/auth/LdapAuthenticationProviderImpl.java b/fixed/service/src/java/org/apache/hive/service/auth/LdapAuthenticationProviderImpl.java
+index 85abba773..534221422 100644
+--- a/buggy/service/src/java/org/apache/hive/service/auth/LdapAuthenticationProviderImpl.java
++++ b/fixed/service/src/java/org/apache/hive/service/auth/LdapAuthenticationProviderImpl.java
+@@ -70,7 +70,7 @@ public class LdapAuthenticationProviderImpl implements PasswdAuthenticationProvi
+       DirContext ctx = new InitialDirContext(env);
+       ctx.close();
+     } catch (NamingException e) {
+-      throw new AuthenticationException("Error validating LDAP user");
++      throw new AuthenticationException("Error validating LDAP user", e);
+     }
+   return;
+   }

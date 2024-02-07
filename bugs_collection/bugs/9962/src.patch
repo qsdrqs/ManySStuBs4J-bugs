@@ -1,0 +1,13 @@
+diff --git a/buggy/storm-server/src/main/java/org/apache/storm/daemon/supervisor/Slot.java b/fixed/storm-server/src/main/java/org/apache/storm/daemon/supervisor/Slot.java
+index 59fea1e61..3fd8cad24 100644
+--- a/buggy/storm-server/src/main/java/org/apache/storm/daemon/supervisor/Slot.java
++++ b/fixed/storm-server/src/main/java/org/apache/storm/daemon/supervisor/Slot.java
+@@ -1025,7 +1025,7 @@ public class Slot extends Thread implements AutoCloseable, BlobChangingCallback
+                 state = MachineState.RUNNING;
+             }
+ 
+-            this.startTime = System.currentTimeMillis();
++            this.startTime = Time.currentTimeMillis();
+             this.newAssignment = newAssignment;
+             this.pendingLocalization = null;
+             this.pendingDownload = null;

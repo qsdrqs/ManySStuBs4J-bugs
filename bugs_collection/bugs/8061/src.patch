@@ -1,0 +1,15 @@
+diff --git a/buggy/flink-end-to-end-tests/flink-stream-sql-test/src/main/java/org/apache/flink/sql/tests/StreamSQLTestProgram.java b/fixed/flink-end-to-end-tests/flink-stream-sql-test/src/main/java/org/apache/flink/sql/tests/StreamSQLTestProgram.java
+index cde040d83..47bca8e7c 100644
+--- a/buggy/flink-end-to-end-tests/flink-stream-sql-test/src/main/java/org/apache/flink/sql/tests/StreamSQLTestProgram.java
++++ b/fixed/flink-end-to-end-tests/flink-stream-sql-test/src/main/java/org/apache/flink/sql/tests/StreamSQLTestProgram.java
+@@ -106,9 +106,7 @@ public class StreamSQLTestProgram {
+ 		String tumbleQuery = String.format(
+ 			"SELECT " +
+ 			"  key, " +
+-			//TODO: The "WHEN -1 THEN NULL" part is a temporary workaround, to make the test pass, for
+-			// https://issues.apache.org/jira/browse/FLINK-12249. We should remove it once the issue is fixed.
+-			"  CASE SUM(cnt) / COUNT(*) WHEN 101 THEN 1 WHEN -1 THEN NULL ELSE 99 END AS correct, " +
++			"  CASE SUM(cnt) / COUNT(*) WHEN 101 THEN 1 ELSE 99 END AS correct, " +
+ 			"  TUMBLE_START(rowtime, INTERVAL '%d' SECOND) AS wStart, " +
+ 			"  TUMBLE_ROWTIME(rowtime, INTERVAL '%d' SECOND) AS rowtime " +
+ 			"FROM (%s) " +

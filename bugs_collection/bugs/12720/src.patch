@@ -1,0 +1,13 @@
+diff --git a/buggy/processing/src/main/java/io/druid/segment/incremental/IncrementalIndexStorageAdapter.java b/fixed/processing/src/main/java/io/druid/segment/incremental/IncrementalIndexStorageAdapter.java
+index 56a0e103d..64acece17 100644
+--- a/buggy/processing/src/main/java/io/druid/segment/incremental/IncrementalIndexStorageAdapter.java
++++ b/fixed/processing/src/main/java/io/druid/segment/incremental/IncrementalIndexStorageAdapter.java
+@@ -707,7 +707,7 @@ public class IncrementalIndexStorageAdapter implements StorageAdapter
+     {
+       IncrementalIndex.DimensionDesc dimensionDesc = index.getDimension(dimension);
+       if (dimensionDesc == null) {
+-        return new BooleanValueMatcher(false);
++        return new BooleanValueMatcher(predicate.apply(null));
+       }
+       final int dimIndex = dimensionDesc.getIndex();
+       final IncrementalIndex.DimDim dimDim = dimensionDesc.getValues();

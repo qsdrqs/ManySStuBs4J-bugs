@@ -1,0 +1,13 @@
+diff --git a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/Verifier.java b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/Verifier.java
+index fe0810964..6fb18222b 100644
+--- a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/Verifier.java
++++ b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/Verifier.java
+@@ -1460,7 +1460,7 @@ class Verifier
+         }
+ 
+         final int clsNameLen = aClassName.length();
+-        final int pkgNameLen = mPkgName.length();
++        final int pkgNameLen = (mPkgName == null) ? 0 : mPkgName.length();
+ 
+         final Iterator illIter = illegalInsts.iterator();
+         while (illIter.hasNext()) {

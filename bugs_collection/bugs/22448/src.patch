@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/cache/HazelcastCacheConfiguration.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/cache/HazelcastCacheConfiguration.java
+index 427ebaa02..81893823b 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/cache/HazelcastCacheConfiguration.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/cache/HazelcastCacheConfiguration.java
+@@ -81,7 +81,7 @@ class HazelcastCacheConfiguration {
+ 	static class ConfigAvailableCondition extends CacheConfigFileCondition {
+ 
+ 		public ConfigAvailableCondition() {
+-			super("Hazelcast", "spring.config.hazelcast", "file:./hazelcast.xml",
++			super("Hazelcast", "spring.cache.hazelcast", "file:./hazelcast.xml",
+ 					"classpath:/hazelcast.xml");
+ 		}
+ 

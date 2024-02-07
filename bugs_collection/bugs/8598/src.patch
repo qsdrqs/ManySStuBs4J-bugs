@@ -1,0 +1,13 @@
+diff --git a/buggy/nephele/nephele-common/src/test/java/eu/stratosphere/nephele/io/library/FileLineReadWriteTest.java b/fixed/nephele/nephele-common/src/test/java/eu/stratosphere/nephele/io/library/FileLineReadWriteTest.java
+index 0086389a7..02eb8aba6 100644
+--- a/buggy/nephele/nephele-common/src/test/java/eu/stratosphere/nephele/io/library/FileLineReadWriteTest.java
++++ b/fixed/nephele/nephele-common/src/test/java/eu/stratosphere/nephele/io/library/FileLineReadWriteTest.java
+@@ -118,7 +118,7 @@ public class FileLineReadWriteTest {
+ 		writer.invoke();
+ 
+ 		final FileInputSplit split = new FileInputSplit(0, new Path(this.file.toURI().toString()), 0,
+-			this.file.length(), null);
++			this.file.length(), new String[0]);
+ 		when(this.environment.getInputSplitProvider()).thenReturn(this.inputSplitProvider);
+ 		when(this.inputSplitProvider.getNextInputSplit()).thenReturn(split, (FileInputSplit) null);
+ 

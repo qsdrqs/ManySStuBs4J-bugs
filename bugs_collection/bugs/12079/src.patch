@@ -1,0 +1,13 @@
+diff --git a/buggy/webmagic-samples/src/main/java/us/codecraft/webmagic/annotation/samples/IteyeBlog.java b/fixed/webmagic-samples/src/main/java/us/codecraft/webmagic/annotation/samples/IteyeBlog.java
+index 48e4129db..a92705450 100644
+--- a/buggy/webmagic-samples/src/main/java/us/codecraft/webmagic/annotation/samples/IteyeBlog.java
++++ b/fixed/webmagic-samples/src/main/java/us/codecraft/webmagic/annotation/samples/IteyeBlog.java
+@@ -14,7 +14,7 @@ import us.codecraft.webmagic.annotation.TargetUrl;
+ public class IteyeBlog implements Blog{
+ 
+     @ExtractBy("//title")
+-    private int title;
++    private String title;
+ 
+     @ExtractBy(value = "div#blog_content",type = ExtractBy.Type.Css)
+     private String content;

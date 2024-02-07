@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/squareup/javapoet/TypeSpec.java b/fixed/src/main/java/com/squareup/javapoet/TypeSpec.java
+index 974237a33..b126be91f 100644
+--- a/buggy/src/main/java/com/squareup/javapoet/TypeSpec.java
++++ b/fixed/src/main/java/com/squareup/javapoet/TypeSpec.java
+@@ -321,7 +321,7 @@ public final class TypeSpec {
+     private final Set<Modifier> implicitTypeModifiers;
+     private final Set<Modifier> asMemberModifiers;
+ 
+-    private Kind(Set<Modifier> implicitFieldModifiers,
++    Kind(Set<Modifier> implicitFieldModifiers,
+         Set<Modifier> implicitMethodModifiers,
+         Set<Modifier> implicitTypeModifiers,
+         Set<Modifier> asMemberModifiers) {

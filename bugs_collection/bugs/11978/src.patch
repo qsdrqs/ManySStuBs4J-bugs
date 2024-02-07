@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/Compiler.java b/fixed/src/jvm/clojure/lang/Compiler.java
+index 0ee9aaeaf..b15b8efdf 100644
+--- a/buggy/src/jvm/clojure/lang/Compiler.java
++++ b/fixed/src/jvm/clojure/lang/Compiler.java
+@@ -825,7 +825,7 @@ static public abstract class HostExpr implements Expr, MaybePrimitiveExpr{
+ 				else if(sym.name.equals("doubles"))
+ 					c = double[].class;
+ 				else if(sym.name.equals("chars"))
+-					c = double[].class;
++					c = char[].class;
+ 				else if(sym.name.equals("shorts"))
+ 					c = short[].class;
+ 				else if(sym.name.equals("bytes"))

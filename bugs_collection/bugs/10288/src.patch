@@ -1,0 +1,13 @@
+diff --git a/buggy/hikaricp-common/src/main/java/com/zaxxer/hikari/AbstractHikariConfig.java b/fixed/hikaricp-common/src/main/java/com/zaxxer/hikari/AbstractHikariConfig.java
+index a7819bac4..44fe4b595 100644
+--- a/buggy/hikaricp-common/src/main/java/com/zaxxer/hikari/AbstractHikariConfig.java
++++ b/fixed/hikaricp-common/src/main/java/com/zaxxer/hikari/AbstractHikariConfig.java
+@@ -759,7 +759,7 @@ public abstract class AbstractHikariConfig implements HikariConfigMBean
+ 
+    abstract protected void loadProperties(String propertyFileName);
+ 
+-   void copyState(AbstractHikariConfig other)
++   public void copyState(AbstractHikariConfig other)
+    {
+       for (Field field : AbstractHikariConfig.class.getDeclaredFields()) {
+          if (!Modifier.isFinal(field.getModifiers())) {

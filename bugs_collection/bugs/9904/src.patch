@@ -1,0 +1,31 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/util/jdbm/recman/PhysicalRowIdManager.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/util/jdbm/recman/PhysicalRowIdManager.java
+index 357d59695..3c5d573dd 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/util/jdbm/recman/PhysicalRowIdManager.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/util/jdbm/recman/PhysicalRowIdManager.java
+@@ -138,7 +138,7 @@ final class PhysicalRowIdManager
+      *  Retrieves a record.
+      */
+     byte[] fetch( Location rowid )
+-        throws IOException 
++        throws IOException
+     {
+         // fetch the record header
+         PageCursor curs = new PageCursor( pageman, rowid.getBlock() );
+@@ -190,7 +190,7 @@ final class PhysicalRowIdManager
+     {
+         Location retval = freeman.get( size );
+         if ( retval == null ) {
+-            retval = allocNew( 2*size, pageman.getLast( Magic.USED_PAGE ) );
++            retval = allocNew( size, pageman.getLast( Magic.USED_PAGE ) );
+         }
+         return retval;
+     }
+@@ -337,7 +337,7 @@ final class PhysicalRowIdManager
+             if ( leftToWrite < toCopy ) {
+                 toCopy = leftToWrite;
+             }
+-            System.arraycopy( data, offsetInBuffer, block.getData(), 
++            System.arraycopy( data, offsetInBuffer, block.getData(),
+                               dataOffset, toCopy );
+ 
+             // Go to the next block

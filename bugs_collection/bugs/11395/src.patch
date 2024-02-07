@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/ant/CheckstyleAntTask.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/ant/CheckstyleAntTask.java
+index fcebffacd..67d88b857 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/ant/CheckstyleAntTask.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/ant/CheckstyleAntTask.java
+@@ -600,7 +600,7 @@ public class CheckstyleAntTask extends Task {
+ 
+         /** @param file set the property value from a File */
+         public void setFile(File file) {
+-            setValue(file.getAbsolutePath());
++            value = file.getAbsolutePath();
+         }
+     }
+ 

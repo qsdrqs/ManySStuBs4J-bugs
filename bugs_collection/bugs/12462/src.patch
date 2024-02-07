@@ -1,0 +1,13 @@
+diff --git a/buggy/metrics-jdbi/src/main/java/io/dropwizard/metrics/jdbi/strategies/DelegatingStatementNameStrategy.java b/fixed/metrics-jdbi/src/main/java/io/dropwizard/metrics/jdbi/strategies/DelegatingStatementNameStrategy.java
+index 359a8d501..ea50909b9 100644
+--- a/buggy/metrics-jdbi/src/main/java/io/dropwizard/metrics/jdbi/strategies/DelegatingStatementNameStrategy.java
++++ b/fixed/metrics-jdbi/src/main/java/io/dropwizard/metrics/jdbi/strategies/DelegatingStatementNameStrategy.java
+@@ -9,7 +9,7 @@ import java.util.Arrays;
+ import java.util.List;
+ 
+ public abstract class DelegatingStatementNameStrategy implements StatementNameStrategy {
+-    private final List<StatementNameStrategy> strategies = new ArrayList<StatementNameStrategy>();
++    private final List<StatementNameStrategy> strategies = new ArrayList<>();
+ 
+     protected DelegatingStatementNameStrategy(StatementNameStrategy... strategies) {
+         registerStrategies(strategies);

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/depparser/util/ParsingSystem.java b/fixed/src/edu/stanford/nlp/depparser/util/ParsingSystem.java
+index 8fbd2adb5..9c45526fe 100644
+--- a/buggy/src/edu/stanford/nlp/depparser/util/ParsingSystem.java
++++ b/fixed/src/edu/stanford/nlp/depparser/util/ParsingSystem.java
+@@ -108,7 +108,7 @@ public abstract class ParsingSystem
+ 						++ correctArcs;
+ 				}
+ 				++ sumArcs;
+-				if (!pPunct.matcher(tokens.get(j).tag()).matches())
++				if (!pPunct.matcher(tokens.get(j - 1).tag()).matches())
+ 				{
+ 					++ sumArcsWoPunc;
+ 					++ nonPunc;

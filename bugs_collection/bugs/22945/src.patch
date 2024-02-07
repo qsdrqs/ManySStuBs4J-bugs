@@ -1,0 +1,20 @@
+diff --git a/buggy/retrofit/src/main/java/retrofit/http/RestAdapter.java b/fixed/retrofit/src/main/java/retrofit/http/RestAdapter.java
+index 5679631b7..4bff10d1e 100644
+--- a/buggy/retrofit/src/main/java/retrofit/http/RestAdapter.java
++++ b/fixed/retrofit/src/main/java/retrofit/http/RestAdapter.java
+@@ -190,7 +190,7 @@ public class RestAdapter {
+             return new ResponseWrapper(response, response);
+           }
+           if (body == null) {
+-            return null;
++            return new ResponseWrapper(response, null);
+           }
+           try {
+             Object convert = converter.fromBody(body, type);
+@@ -367,4 +367,4 @@ public class RestAdapter {
+       }
+     }
+   }
+-}
+\ No newline at end of file
++}

@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-test/src/main/java/org/springframework/boot/test/web/reactive/server/WebTestClientContextCustomizer.java b/fixed/spring-boot-project/spring-boot-test/src/main/java/org/springframework/boot/test/web/reactive/server/WebTestClientContextCustomizer.java
+index 0ebfeb5b2..d5292f7b9 100644
+--- a/buggy/spring-boot-project/spring-boot-test/src/main/java/org/springframework/boot/test/web/reactive/server/WebTestClientContextCustomizer.java
++++ b/fixed/spring-boot-project/spring-boot-test/src/main/java/org/springframework/boot/test/web/reactive/server/WebTestClientContextCustomizer.java
+@@ -65,7 +65,7 @@ class WebTestClientContextCustomizer implements ContextCustomizer {
+ 	private void registerWebTestClient(ConfigurableApplicationContext context) {
+ 		ConfigurableListableBeanFactory beanFactory = context.getBeanFactory();
+ 		if (beanFactory instanceof BeanDefinitionRegistry) {
+-			registerWebTestClient((BeanDefinitionRegistry) context);
++			registerWebTestClient((BeanDefinitionRegistry) beanFactory);
+ 		}
+ 	}
+ 

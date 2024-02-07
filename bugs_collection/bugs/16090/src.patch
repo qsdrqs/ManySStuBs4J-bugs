@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/AwsAddressProvider.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/AwsAddressProvider.java
+index 6fe2f1c2c..1a4fd4dfd 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/AwsAddressProvider.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/AwsAddressProvider.java
+@@ -64,7 +64,7 @@ public class AwsAddressProvider implements AddressProvider {
+         try {
+             privateToPublic = awsClient.getAddresses();
+         } catch (Exception e) {
+-            logger.warning("Aws addresses are failed to load : " + e.getMessage());
++            logger.warning("Aws addresses failed to load: " + e.getMessage());
+         }
+     }
+ }

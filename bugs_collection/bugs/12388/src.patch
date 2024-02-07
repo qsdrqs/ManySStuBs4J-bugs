@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-core/src/main/java/com/yammer/dropwizard/tasks/TaskServlet.java b/fixed/dropwizard-core/src/main/java/com/yammer/dropwizard/tasks/TaskServlet.java
+index da3b8f842..d8650ba85 100644
+--- a/buggy/dropwizard-core/src/main/java/com/yammer/dropwizard/tasks/TaskServlet.java
++++ b/fixed/dropwizard-core/src/main/java/com/yammer/dropwizard/tasks/TaskServlet.java
+@@ -41,7 +41,7 @@ public class TaskServlet extends HttpServlet {
+     @Override
+     protected void doPost(HttpServletRequest req,
+                           HttpServletResponse resp) throws ServletException, IOException {
+-        final Task task = tasks.get(req.getRequestURI());
++        final Task task = tasks.get(req.getServletPath());
+         if (task != null) {
+             try {
+                 resp.setContentType(MediaType.TEXT_PLAIN);

@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/model/dataformat/DataFormatType.java b/fixed/camel-core/src/main/java/org/apache/camel/model/dataformat/DataFormatType.java
+index fc32570b0..2e8758702 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/model/dataformat/DataFormatType.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/model/dataformat/DataFormatType.java
+@@ -71,7 +71,7 @@ public class DataFormatType extends IdentifiedType {
+                     type = routeContext.getDataFormat(ref);
+                 }
+                 if (type != null) {
+-                    dataFormat = type.createDataFormat(routeContext);
++                    dataFormat = type.getDataFormat(routeContext);
+                 }
+             }
+ 

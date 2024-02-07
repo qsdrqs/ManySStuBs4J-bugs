@@ -1,0 +1,13 @@
+diff --git a/buggy/merger/src/main/java/com/metamx/druid/merger/coordinator/RemoteTaskRunner.java b/fixed/merger/src/main/java/com/metamx/druid/merger/coordinator/RemoteTaskRunner.java
+index f8d718366..2542d8254 100644
+--- a/buggy/merger/src/main/java/com/metamx/druid/merger/coordinator/RemoteTaskRunner.java
++++ b/fixed/merger/src/main/java/com/metamx/druid/merger/coordinator/RemoteTaskRunner.java
+@@ -687,7 +687,7 @@ public class RemoteTaskRunner implements TaskRunner, TaskLogProvider
+       );
+ 
+       if (workerQueue.isEmpty()) {
+-        log.info("Worker nodes %s do not have capacity to run any more tasks!", zkWorkers.values());
++        log.debug("Worker nodes %s do not have capacity to run any more tasks!", zkWorkers.values());
+         return null;
+       }
+ 

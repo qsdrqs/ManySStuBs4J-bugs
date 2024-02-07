@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/junit/runner/Version.java b/fixed/src/main/java/junit/runner/Version.java
+index 8f6156321..6da23799d 100644
+--- a/buggy/src/main/java/junit/runner/Version.java
++++ b/fixed/src/main/java/junit/runner/Version.java
+@@ -9,7 +9,7 @@ public class Version {
+ 	}
+ 
+ 	public static String id() {
+-		return "4.8";
++		return "4.8.1";
+ 	}
+ 	
+ 	public static void main(String[] args) {

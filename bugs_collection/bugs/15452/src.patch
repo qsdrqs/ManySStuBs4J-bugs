@@ -1,0 +1,13 @@
+diff --git a/buggy/guava-tests/test/com/google/common/util/concurrent/JSR166TestCase.java b/fixed/guava-tests/test/com/google/common/util/concurrent/JSR166TestCase.java
+index edbcd8ca7..2d200da7c 100644
+--- a/buggy/guava-tests/test/com/google/common/util/concurrent/JSR166TestCase.java
++++ b/fixed/guava-tests/test/com/google/common/util/concurrent/JSR166TestCase.java
+@@ -1199,7 +1199,7 @@ abstract class JSR166TestCase extends TestCase {
+             assertNull(q.peek());
+             assertNull(q.poll());
+             assertNull(q.poll(0, MILLISECONDS));
+-            assertEquals(q.toString(), "[]");
++      assertEquals("[]", q.toString());
+             assertTrue(Arrays.equals(q.toArray(), new Object[0]));
+             assertFalse(q.iterator().hasNext());
+             try {

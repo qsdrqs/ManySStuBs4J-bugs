@@ -1,0 +1,13 @@
+diff --git a/buggy/community/io/src/test/java/org/neo4j/io/pagecache/stress/StubPageCursor.java b/fixed/community/io/src/test/java/org/neo4j/io/pagecache/stress/StubPageCursor.java
+index 296328400..89977487a 100644
+--- a/buggy/community/io/src/test/java/org/neo4j/io/pagecache/stress/StubPageCursor.java
++++ b/fixed/community/io/src/test/java/org/neo4j/io/pagecache/stress/StubPageCursor.java
+@@ -166,7 +166,7 @@ public class StubPageCursor implements PageCursor
+     @Override
+     public boolean shouldRetry() throws IOException
+     {
+-        throw new UnsupportedOperationException( "TODO" );
++        return false;
+     }
+ 
+     public long getCount( int recordNumber, int counterNumber )

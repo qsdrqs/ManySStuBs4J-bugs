@@ -1,0 +1,22 @@
+diff --git a/buggy/guava/src/com/google/common/io/BaseEncoding.java b/fixed/guava/src/com/google/common/io/BaseEncoding.java
+index 653fdc0e6..4af07191b 100644
+--- a/buggy/guava/src/com/google/common/io/BaseEncoding.java
++++ b/fixed/guava/src/com/google/common/io/BaseEncoding.java
+@@ -181,7 +181,7 @@ public abstract class BaseEncoding {
+    */
+   @GwtIncompatible("Writer,OutputStream")
+   public final OutputSupplier<OutputStream> encodingStream(
+-      final OutputSupplier<Writer> writerSupplier) {
++      final OutputSupplier<? extends Writer> writerSupplier) {
+     checkNotNull(writerSupplier);
+     return new OutputSupplier<OutputStream>() {
+       @Override
+@@ -254,7 +254,7 @@ public abstract class BaseEncoding {
+    */
+   @GwtIncompatible("Reader,InputStream")
+   public final InputSupplier<InputStream> decodingStream(
+-      final InputSupplier<Reader> readerSupplier) {
++      final InputSupplier<? extends Reader> readerSupplier) {
+     checkNotNull(readerSupplier);
+     return new InputSupplier<InputStream>() {
+       @Override

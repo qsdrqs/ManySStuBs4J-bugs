@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidGraphics.java b/fixed/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidGraphics.java
+index 28c282dc6..b3fd3d339 100644
+--- a/buggy/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidGraphics.java
++++ b/fixed/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidGraphics.java
+@@ -337,7 +337,7 @@ final class AndroidGraphics implements Graphics, Renderer
+ 		synchronized( this )
+ 		{
+ 			if( this.listener != null )
+-				listener.dispose( app );
++				this.listener.dispose( app );
+ 			this.listener = listener;
+ 		}
+ 	}

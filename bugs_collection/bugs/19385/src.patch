@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/xaframework/XaLogicalLog.java b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/xaframework/XaLogicalLog.java
+index 6ee483d0b..1b06bcb92 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/xaframework/XaLogicalLog.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/xaframework/XaLogicalLog.java
+@@ -1449,7 +1449,7 @@ public class XaLogicalLog
+                 if ( entry instanceof LogEntry.Start )
+                 {
+                     LogEntry.Start startEntry = (LogEntry.Start) entry;
+-                    startEntry.setStartPosition( newLog.position() );
++                    startEntry.setStartPosition( newLogBuffer.getFileChannelPosition() ); // newLog.position() );
+                     // overwrite old start entry with new that has updated position
+                     xidIdentMap.put( startEntry.getIdentifier(), startEntry );
+                     // startEntriesWritten.add( entry.getIdentifier() );

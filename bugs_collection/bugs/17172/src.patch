@@ -1,0 +1,11 @@
+diff --git a/buggy/queue-load-leveling/src/main/java/org/queue/load/leveling/Task.java b/fixed/queue-load-leveling/src/main/java/org/queue/load/leveling/Task.java
+index f01a1531a..8796f5aae 100644
+--- a/buggy/queue-load-leveling/src/main/java/org/queue/load/leveling/Task.java
++++ b/fixed/queue-load-leveling/src/main/java/org/queue/load/leveling/Task.java
+@@ -26,5 +26,5 @@ package org.queue.load.leveling;
+  * 
+ */
+ public interface Task {
+-  public void submit(Message msg);
++  void submit(Message msg);
+ }

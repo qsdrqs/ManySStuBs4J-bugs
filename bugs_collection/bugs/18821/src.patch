@@ -1,0 +1,13 @@
+diff --git a/buggy/plugins/openwhisk/src/main/java/com/navercorp/pinpoint/plugin/openwhisk/interceptor/TransactionIdStartedInterceptor.java b/fixed/plugins/openwhisk/src/main/java/com/navercorp/pinpoint/plugin/openwhisk/interceptor/TransactionIdStartedInterceptor.java
+index 2033daa9f..34cda3a98 100644
+--- a/buggy/plugins/openwhisk/src/main/java/com/navercorp/pinpoint/plugin/openwhisk/interceptor/TransactionIdStartedInterceptor.java
++++ b/fixed/plugins/openwhisk/src/main/java/com/navercorp/pinpoint/plugin/openwhisk/interceptor/TransactionIdStartedInterceptor.java
+@@ -125,7 +125,7 @@ public class TransactionIdStartedInterceptor implements AroundInterceptor {
+                 }
+             }
+ 
+-            if (result instanceof AsyncContextAccessor) {
++            if (result instanceof AsyncContextAccessor && result instanceof PinpointTraceAccessor) {
+                 ((AsyncContextAccessor) (result))._$PINPOINT$_setAsyncContext(asyncContext);
+                 ((PinpointTraceAccessor) (result))._$PINPOINT$_setPinpointTrace(trace);
+             }

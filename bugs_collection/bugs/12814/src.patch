@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/test/java/io/druid/server/coordinator/DruidCoordinatorRuleRunnerTest.java b/fixed/server/src/test/java/io/druid/server/coordinator/DruidCoordinatorRuleRunnerTest.java
+index 5a1a45479..0d2489d42 100644
+--- a/buggy/server/src/test/java/io/druid/server/coordinator/DruidCoordinatorRuleRunnerTest.java
++++ b/fixed/server/src/test/java/io/druid/server/coordinator/DruidCoordinatorRuleRunnerTest.java
+@@ -443,7 +443,7 @@ public class DruidCoordinatorRuleRunnerTest
+   {
+     mockCoordinator();
+     emitter.emit(EasyMock.<ServiceEventBuilder>anyObject());
+-    EasyMock.expectLastCall().times(availableSegments.size());
++    EasyMock.expectLastCall().times(1);
+     EasyMock.replay(emitter);
+ 
+     EasyMock.expect(databaseRuleManager.getRulesWithDefault(EasyMock.<String>anyObject())).andReturn(

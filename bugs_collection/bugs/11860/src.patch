@@ -1,0 +1,13 @@
+diff --git a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/HeaderCheck.java b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/HeaderCheck.java
+index 191a70630..c574a175a 100644
+--- a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/HeaderCheck.java
++++ b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/HeaderCheck.java
+@@ -60,7 +60,7 @@ public class HeaderCheck
+     public void beginTree()
+     {
+         if (mHeaderLines == null) {
+-            log(1, "Unable to check as missing lines to check.");
++            log(1, "header.spec.missing");
+             return;
+         }
+ 

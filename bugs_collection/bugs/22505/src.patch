@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/data/mongo/MixedMongoRepositoriesAutoConfigurationTests.java b/fixed/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/data/mongo/MixedMongoRepositoriesAutoConfigurationTests.java
+index 291b6d3e5..e03c08702 100644
+--- a/buggy/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/data/mongo/MixedMongoRepositoriesAutoConfigurationTests.java
++++ b/fixed/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/data/mongo/MixedMongoRepositoriesAutoConfigurationTests.java
+@@ -105,7 +105,7 @@ public class MixedMongoRepositoriesAutoConfigurationTests {
+ 		this.context = new AnnotationConfigApplicationContext();
+ 		EnvironmentTestUtils.addEnvironment(this.context,
+ 				"spring.datasource.initialize:false",
+-				"spring.data.mongo.repositories.enabled:false");
++				"spring.data.mongodb.repositories.enabled:false");
+ 		this.context.register(OverlapConfiguration.class, BaseConfiguration.class);
+ 		this.context.refresh();
+ 		assertNotNull(this.context.getBean(CityRepository.class));

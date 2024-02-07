@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/actions/RotateBy.java b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/actions/RotateBy.java
+index bb767be66..a12f8b283 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/actions/RotateBy.java
++++ b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/actions/RotateBy.java
+@@ -49,7 +49,7 @@ public class RotateBy extends AnimationAction {
+ 	@Override public void act (float delta) {
+ 		float alpha = createInterpolatedAlpha(delta);
+ 		if (done) {
+-			target.rotation = rotation;
++			target.rotation = startRotation + rotation;
+ 		} else {
+ 			target.rotation = startRotation + deltaRotation * alpha;
+ 		}

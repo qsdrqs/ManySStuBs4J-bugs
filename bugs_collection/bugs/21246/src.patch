@@ -1,0 +1,15 @@
+diff --git a/buggy/api/src/main/java/org/openmrs/reporting/export/DataExportReportObject.java b/fixed/api/src/main/java/org/openmrs/reporting/export/DataExportReportObject.java
+index 8ffe873eb..466a41c57 100644
+--- a/buggy/api/src/main/java/org/openmrs/reporting/export/DataExportReportObject.java
++++ b/fixed/api/src/main/java/org/openmrs/reporting/export/DataExportReportObject.java
+@@ -191,8 +191,8 @@ public class DataExportReportObject extends AbstractReportObject implements Seri
+ 		if (getPatientIds() != null && getPatientIds().size() > 0) {
+ 			cohort = new Cohort(getPatientIds());
+ 		}
+-		
+-		if (location != null && !location.equals("")) {
++
++        if (location != null) {
+ 			cohort = intersectFast(cohort, pss.getPatientsHavingLocation(getLocation()));
+ 		}
+ 		

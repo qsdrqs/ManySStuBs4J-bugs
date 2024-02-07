@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions-core/lookups-cached-single/src/test/java/io/druid/server/lookup/PollingLookupTest.java b/fixed/extensions-core/lookups-cached-single/src/test/java/io/druid/server/lookup/PollingLookupTest.java
+index f73562a7c..1715341be 100644
+--- a/buggy/extensions-core/lookups-cached-single/src/test/java/io/druid/server/lookup/PollingLookupTest.java
++++ b/fixed/extensions-core/lookups-cached-single/src/test/java/io/druid/server/lookup/PollingLookupTest.java
+@@ -59,7 +59,7 @@ public class PollingLookupTest
+       "new-bad", "new-bar"
+   );
+ 
+-  private static final long POLL_PERIOD = 100L;
++  private static final long POLL_PERIOD = 1000L;
+ 
+   @JsonTypeName("mock")
+   private static class MockDataFetcher implements DataFetcher

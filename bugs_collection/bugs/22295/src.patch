@@ -1,0 +1,16 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/social/SocialProperties.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/social/SocialProperties.java
+index 17eef74a6..56e47a1c9 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/social/SocialProperties.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/social/SocialProperties.java
+@@ -22,9 +22,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
+  * Base {@link ConfigurationProperties properties} for spring social.
+  *
+  * @author Stephane Nicoll
+- * @since 1.2.0
++ * @since 1.4.0
+  */
+-abstract class SocialProperties {
++public abstract class SocialProperties {
+ 
+ 	/**
+ 	 * Application id.

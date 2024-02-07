@@ -1,0 +1,13 @@
+diff --git a/buggy/processing/src/main/java/io/druid/query/ChainedExecutionQueryRunner.java b/fixed/processing/src/main/java/io/druid/query/ChainedExecutionQueryRunner.java
+index 3e3e6b032..776276415 100644
+--- a/buggy/processing/src/main/java/io/druid/query/ChainedExecutionQueryRunner.java
++++ b/fixed/processing/src/main/java/io/druid/query/ChainedExecutionQueryRunner.java
+@@ -83,7 +83,7 @@ public class ChainedExecutionQueryRunner<T> implements QueryRunner<T>
+   @Override
+   public Sequence<T> run(final Query<T> query)
+   {
+-    final int priority = query.getContextValue("priority", 0);
++    final int priority = query.getContextPriority(0);
+ 
+     return new BaseSequence<T, Iterator<T>>(
+         new BaseSequence.IteratorMaker<T, Iterator<T>>()

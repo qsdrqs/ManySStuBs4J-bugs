@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/internal/utils/CheckUtil.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/internal/utils/CheckUtil.java
+index be0898136..ce0e81da9 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/internal/utils/CheckUtil.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/internal/utils/CheckUtil.java
+@@ -139,7 +139,7 @@ public final class CheckUtil {
+                 .getContextClassLoader();
+         final String packageName = "com.puppycrawl.tools.checkstyle";
+         return getCheckstyleModulesRecursive(packageName, loader).stream()
+-                .filter(ModuleReflectionUtils::isCheckstyleCheck)
++                .filter(ModuleReflectionUtils::isCheckstyleTreeWalkerCheck)
+                 .collect(Collectors.toSet());
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/test/java/io/druid/client/cache/CacheDistributionTest.java b/fixed/server/src/test/java/io/druid/client/cache/CacheDistributionTest.java
+index 56ae1668b..b483e80d3 100644
+--- a/buggy/server/src/test/java/io/druid/client/cache/CacheDistributionTest.java
++++ b/fixed/server/src/test/java/io/druid/client/cache/CacheDistributionTest.java
+@@ -140,7 +140,7 @@ public class CacheDistributionTest
+   }
+ 
+   private static MemcachedNode dummyNode(String host, int port) {
+-    SocketAddress address = new InetSocketAddress(host, port);
++    SocketAddress address = InetSocketAddress.createUnresolved(host, port);
+     MemcachedNode node = EasyMock.createNiceMock(MemcachedNode.class);
+     EasyMock.expect(node.getSocketAddress()).andReturn(address).anyTimes();
+     EasyMock.replay(node);

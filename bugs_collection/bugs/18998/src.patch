@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/profiler/modifier/tomcat/interceptors/StandardHostValveInvokeInterceptor.java b/fixed/src/main/java/com/profiler/modifier/tomcat/interceptors/StandardHostValveInvokeInterceptor.java
+index bff0ec96a..568d59085 100644
+--- a/buggy/src/main/java/com/profiler/modifier/tomcat/interceptors/StandardHostValveInvokeInterceptor.java
++++ b/fixed/src/main/java/com/profiler/modifier/tomcat/interceptors/StandardHostValveInvokeInterceptor.java
+@@ -52,7 +52,7 @@ public class StandardHostValveInvokeInterceptor implements StaticAroundIntercept
+ 			Trace.recordRpcName("TOMCAT", requestURL);
+ 			Trace.recordEndPoint(request.getProtocol() + ":" + request.getLocalName() + ":" + request.getLocalPort());
+ 			Trace.recordAttibute("http.url", request.getRequestURI());
+-			if (!org.apache.commons.lang.StringUtils.isEmpty(parameters)) {
++			if (parameters != null && parameters.length() > 0) {
+ 				Trace.recordAttibute("http.params", parameters);
+ 			}
+ 			Trace.record(Annotation.ServerRecv);

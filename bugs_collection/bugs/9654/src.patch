@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/security/authorization/plugin/SettableConfigUpdater.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/security/authorization/plugin/SettableConfigUpdater.java
+index f12cd5127..3d8b0cff0 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/security/authorization/plugin/SettableConfigUpdater.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/security/authorization/plugin/SettableConfigUpdater.java
+@@ -47,7 +47,7 @@ public class SettableConfigUpdater {
+     if(whiteListParamsStr == null || whiteListParamsStr.trim().isEmpty()) {
+       throw new HiveAuthzPluginException("Configuration parameter "
+           + ConfVars.HIVE_AUTHORIZATION_SQL_STD_AUTH_CONFIG_WHITELIST.varname
+-          + " is not iniatialized.");
++          + " is not initialized.");
+     }
+ 
+     // append regexes that user wanted to add

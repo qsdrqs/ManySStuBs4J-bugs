@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-jersey/src/main/java/io/dropwizard/jersey/jackson/JacksonMessageBodyProvider.java b/fixed/dropwizard-jersey/src/main/java/io/dropwizard/jersey/jackson/JacksonMessageBodyProvider.java
+index 1919ccd11..3535609d0 100644
+--- a/buggy/dropwizard-jersey/src/main/java/io/dropwizard/jersey/jackson/JacksonMessageBodyProvider.java
++++ b/fixed/dropwizard-jersey/src/main/java/io/dropwizard/jersey/jackson/JacksonMessageBodyProvider.java
+@@ -31,7 +31,7 @@ import java.util.*;
+  * {@link JsonIgnoreType}.)
+  */
+ public class JacksonMessageBodyProvider extends JacksonJaxbJsonProvider {
+-    private static final Logger LOGGER = LoggerFactory.getLogger(JsonProcessingExceptionMapper.class);
++    private static final Logger LOGGER = LoggerFactory.getLogger(JacksonMessageBodyProvider.class);
+     /**
+      * The default group array used in case any of the validate methods is called without a group.
+      */

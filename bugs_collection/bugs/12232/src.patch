@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-core/src/test/java/io/dropwizard/server/SimpleServerFactoryTest.java b/fixed/dropwizard-core/src/test/java/io/dropwizard/server/SimpleServerFactoryTest.java
+index eeed14c01..2f442bf17 100644
+--- a/buggy/dropwizard-core/src/test/java/io/dropwizard/server/SimpleServerFactoryTest.java
++++ b/fixed/dropwizard-core/src/test/java/io/dropwizard/server/SimpleServerFactoryTest.java
+@@ -46,7 +46,7 @@ public class SimpleServerFactoryTest {
+     public void setUp() throws Exception {
+         objectMapper.getSubtypeResolver().registerSubtypes(ConsoleAppenderFactory.class,
+                 FileAppenderFactory.class, SyslogAppenderFactory.class, HttpConnectorFactory.class);
+-        http = new YamlConfigurationFactory<>(SimpleServerFactory.class, validator, objectMapper, "dw")
++        http = (SimpleServerFactory) new YamlConfigurationFactory<>(ServerFactory.class, validator, objectMapper, "dw")
+                 .build(new File(Resources.getResource("yaml/simple_server.yml").toURI()));
+     }
+ 

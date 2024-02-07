@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/spi/InvocationTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/spi/InvocationTest.java
+index 4197872f5..0b7e86801 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/spi/InvocationTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/spi/InvocationTest.java
+@@ -95,7 +95,7 @@ public class InvocationTest extends HazelcastTestSupport {
+      */
+     private static class TargetOperation extends AbstractOperation {
+         public void run() throws InterruptedException {
+-            Thread.sleep(5000);
++            Thread.sleep(10000);
+         }
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/ChangeVerifier.java b/fixed/src/com/google/javascript/jscomp/ChangeVerifier.java
+index ea9a2299f..818125bd6 100644
+--- a/buggy/src/com/google/javascript/jscomp/ChangeVerifier.java
++++ b/fixed/src/com/google/javascript/jscomp/ChangeVerifier.java
+@@ -183,7 +183,7 @@ public class ChangeVerifier {
+         if (fnName == null) {
+           fnName = "anonymous@" + n.getLineno() + ":" + n.getCharno();
+         }
+-        return "FUNCTION: " + "" + " in " + sourceName;
++        return "FUNCTION: " + fnName + " in " + sourceName;
+       default:
+         throw new IllegalStateException("unexpected Node type");
+     }

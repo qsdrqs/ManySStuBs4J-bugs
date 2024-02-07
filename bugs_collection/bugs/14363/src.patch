@@ -1,0 +1,13 @@
+diff --git a/buggy/DHNSGraph/src/org/gephi/graph/dhns/graph/HierarchicalUndirectedGraphImplFiltered.java b/fixed/DHNSGraph/src/org/gephi/graph/dhns/graph/HierarchicalUndirectedGraphImplFiltered.java
+index 88f4d8ff7..0cdcc0f50 100644
+--- a/buggy/DHNSGraph/src/org/gephi/graph/dhns/graph/HierarchicalUndirectedGraphImplFiltered.java
++++ b/fixed/DHNSGraph/src/org/gephi/graph/dhns/graph/HierarchicalUndirectedGraphImplFiltered.java
+@@ -98,7 +98,7 @@ public class HierarchicalUndirectedGraphImplFiltered extends HierarchicalGraphIm
+     public int getDegree(Node node) {
+         view.checkUpdate();
+         AbstractNode absNode = checkNode(node);
+-        int count = view.getClusteredLayerInDegree(absNode);
++        int count = view.getClusteredLayerDegree(absNode);
+         return count;
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/fs/FileUtil.java b/fixed/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/fs/FileUtil.java
+index 9178844b3..e24f44524 100644
+--- a/buggy/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/fs/FileUtil.java
++++ b/fixed/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/fs/FileUtil.java
+@@ -728,7 +728,7 @@ public class FileUtil {
+    * @throws InterruptedException
+    */
+   public static int chmod(String filename, String perm
+-                          ) throws IOException {
++                          ) throws IOException, InterruptedException {
+     return chmod(filename, perm, false);
+   }
+ 

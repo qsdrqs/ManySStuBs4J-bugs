@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/actors/Image.java b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/actors/Image.java
+index e5ffd532d..1f552256b 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/actors/Image.java
++++ b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/actors/Image.java
+@@ -21,7 +21,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
+ import com.badlogic.gdx.scenes.scene2d.Actor;
+ 
+ public class Image extends Actor {
+-	public final TextureRegion region;
++	public TextureRegion region;
+ 
+ 	public Image (String name) {
+ 		super(name);

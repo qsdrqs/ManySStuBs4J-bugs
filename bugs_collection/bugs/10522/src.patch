@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/ThrowsCountCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/ThrowsCountCheck.java
+index 2c1da3f2f..536ae4a83 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/ThrowsCountCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/ThrowsCountCheck.java
+@@ -128,8 +128,7 @@ public final class ThrowsCountCheck extends AbstractCheck {
+             // Account for all the commas!
+             final int count = (ast.getChildCount() + 1) / 2;
+             if (count > max) {
+-                log(ast.getLineNo(), ast.getColumnNo(), MSG_KEY,
+-                    count, max);
++                log(ast, MSG_KEY, count, max);
+             }
+         }
+     }

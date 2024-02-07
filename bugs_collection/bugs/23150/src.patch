@@ -1,0 +1,13 @@
+diff --git a/buggy/itest/src/edu/stanford/nlp/international/spanish/SpanishTokenizerITest.java b/fixed/itest/src/edu/stanford/nlp/international/spanish/SpanishTokenizerITest.java
+index 7ab73fd46..7b0c5adf2 100644
+--- a/buggy/itest/src/edu/stanford/nlp/international/spanish/SpanishTokenizerITest.java
++++ b/fixed/itest/src/edu/stanford/nlp/international/spanish/SpanishTokenizerITest.java
+@@ -64,7 +64,7 @@ public class SpanishTokenizerITest extends TestCase {
+       { "12", "km", "/", "h" },
+       { "Los", "hombres", "sentados", "están", "muy", "guapos", "." },
+       { "Hizo", "abrir", "los", "." },
+-      { "sal", "os", "=RRB=", "=LRB=", "1", "de" },  // ["sal", "os"] is probably a mistake, but it's what we now get....
++      { "salos", "=RRB=", "=LRB=", "1", "de" },
+   };
+ 
+ 

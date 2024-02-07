@@ -1,0 +1,15 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/MagicNumberCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/MagicNumberCheckTest.java
+index 5f163eb78..50bae8425 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/MagicNumberCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/MagicNumberCheckTest.java
+@@ -34,7 +34,9 @@ public class MagicNumberCheckTest
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "coding" + File.separator + filename);
++                + "coding" + File.separator
++                + "magicnumber" + File.separator
++                + filename);
+     }
+ 
+     @Test

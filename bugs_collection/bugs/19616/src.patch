@@ -1,0 +1,14 @@
+diff --git a/buggy/buffer/src/test/java/io/netty/buffer/LittleEndianUnsafeNoCleanerDirectByteBufTest.java b/fixed/buffer/src/test/java/io/netty/buffer/LittleEndianUnsafeNoCleanerDirectByteBufTest.java
+index ef9043a76..3a4b0c43d 100644
+--- a/buggy/buffer/src/test/java/io/netty/buffer/LittleEndianUnsafeNoCleanerDirectByteBufTest.java
++++ b/fixed/buffer/src/test/java/io/netty/buffer/LittleEndianUnsafeNoCleanerDirectByteBufTest.java
+@@ -23,7 +23,8 @@ public class LittleEndianUnsafeNoCleanerDirectByteBufTest extends LittleEndianDi
+ 
+     @Before
+     public void checkHasUnsafe() {
+-        Assume.assumeTrue("sun.misc.Unsafe not found, skip tests", PlatformDependent.hasUnsafe());
++        Assume.assumeTrue("java.nio.DirectByteBuffer.<init>(long, int) not found, skip tests",
++                PlatformDependent.useDirectBufferNoCleaner());
+     }
+ 
+     @Override

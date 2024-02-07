@@ -1,0 +1,14 @@
+diff --git a/buggy/flink-core/src/main/java/org/apache/flink/api/common/typeutils/base/EnumSerializer.java b/fixed/flink-core/src/main/java/org/apache/flink/api/common/typeutils/base/EnumSerializer.java
+index e9818a511..cfd342c06 100644
+--- a/buggy/flink-core/src/main/java/org/apache/flink/api/common/typeutils/base/EnumSerializer.java
++++ b/fixed/flink-core/src/main/java/org/apache/flink/api/common/typeutils/base/EnumSerializer.java
+@@ -153,7 +153,8 @@ public final class EnumSerializer<T extends Enum<T>> extends TypeSerializer<T> {
+ 		if (obj instanceof EnumSerializer) {
+ 			EnumSerializer<?> other = (EnumSerializer<?>) obj;
+ 
+-			return other.enumClass == this.enumClass;
++			return other.enumClass == this.enumClass &&
++					Arrays.equals(values, other.values);
+ 		} else {
+ 			return false;
+ 		}

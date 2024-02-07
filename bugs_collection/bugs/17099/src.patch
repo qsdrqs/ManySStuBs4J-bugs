@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/impl/LocallyOwnedMap.java b/fixed/hazelcast/src/main/java/com/hazelcast/impl/LocallyOwnedMap.java
+index 201a5e424..02b62c0de 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/impl/LocallyOwnedMap.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/impl/LocallyOwnedMap.java
+@@ -68,7 +68,7 @@ class LocallyOwnedMap {
+             for (Map.Entry<Object, Record> entry : entries) {
+                 Object key = entry.getKey();
+                 Record record = entry.getValue();
+-                if (!record.isActive() || !record.isValid(now)) {
++                if (record == null || !record.isActive() || !record.isValid(now)) {
+                     lsKeysToRemove.add(key);
+                 }
+             }

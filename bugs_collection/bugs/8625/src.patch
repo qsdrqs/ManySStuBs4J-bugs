@@ -1,0 +1,13 @@
+diff --git a/buggy/sopremo/sopremo-common/src/main/java/eu/stratosphere/util/CachingList.java b/fixed/sopremo/sopremo-common/src/main/java/eu/stratosphere/util/CachingList.java
+index 928b786ae..8abb3e2bb 100644
+--- a/buggy/sopremo/sopremo-common/src/main/java/eu/stratosphere/util/CachingList.java
++++ b/fixed/sopremo/sopremo-common/src/main/java/eu/stratosphere/util/CachingList.java
+@@ -60,7 +60,7 @@ public class CachingList<T> extends AbstractList<T> implements Serializable {
+ 	 */
+ 	@Override
+ 	public void clear() {
+-		this.size--;
++		this.size = 0;
+ 	}
+ 
+ 	@Override

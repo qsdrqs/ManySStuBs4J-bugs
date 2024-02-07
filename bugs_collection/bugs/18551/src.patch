@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/physics/box2d/joints/PrismaticJointDef.java b/fixed/gdx/src/com/badlogic/gdx/physics/box2d/joints/PrismaticJointDef.java
+index 7205b2028..38bbe4d83 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/physics/box2d/joints/PrismaticJointDef.java
++++ b/fixed/gdx/src/com/badlogic/gdx/physics/box2d/joints/PrismaticJointDef.java
+@@ -63,7 +63,7 @@ public class PrismaticJointDef extends JointDef
+ 	/**
+ 	 *  The local translation axis in body1.
+ 	 */
+-	public final Vector2 localAxis1 = new Vector2( );
++	public final Vector2 localAxis1 = new Vector2(1, 0);
+ 
+ 	/**
+ 	 *  The constrained angle between the bodies: body2_angle - body1_angle.

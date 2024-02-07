@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions/s3-extensions/src/main/java/io/druid/storage/s3/S3DataSegmentMover.java b/fixed/extensions/s3-extensions/src/main/java/io/druid/storage/s3/S3DataSegmentMover.java
+index 02f84a3f4..9e9cf9bcc 100644
+--- a/buggy/extensions/s3-extensions/src/main/java/io/druid/storage/s3/S3DataSegmentMover.java
++++ b/fixed/extensions/s3-extensions/src/main/java/io/druid/storage/s3/S3DataSegmentMover.java
+@@ -98,7 +98,7 @@ public class S3DataSegmentMover implements DataSegmentMover
+       );
+     }
+     catch (ServiceException e) {
+-      throw new SegmentLoadingException(e, "Unable to move segment[%s]", segment.getIdentifier());
++      throw new SegmentLoadingException(e, "Unable to move segment[%s]: [%s]", segment.getIdentifier(), e);
+     }
+   }
+ 

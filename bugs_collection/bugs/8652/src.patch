@@ -1,0 +1,13 @@
+diff --git a/buggy/pact/pact-common/src/main/java/eu/stratosphere/pact/common/type/PactRecord.java b/fixed/pact/pact-common/src/main/java/eu/stratosphere/pact/common/type/PactRecord.java
+index 870f1b901..fb2aaefca 100644
+--- a/buggy/pact/pact-common/src/main/java/eu/stratosphere/pact/common/type/PactRecord.java
++++ b/fixed/pact/pact-common/src/main/java/eu/stratosphere/pact/common/type/PactRecord.java
+@@ -230,7 +230,7 @@ public final class PactRecord implements Value
+ 	{
+ 		// range check
+ 		if (fieldNum < 0 || fieldNum >= this.numFields) {
+-			throw new IndexOutOfBoundsException();
++			throw new IndexOutOfBoundsException(fieldNum+" for range [0.."+(this.numFields-1)+"]");
+ 		}
+ 		
+ 		// get offset and check for null

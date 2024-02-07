@@ -1,0 +1,13 @@
+diff --git a/buggy/factory/src/main/java/com/google/auto/factory/processor/FactoryWriter.java b/fixed/factory/src/main/java/com/google/auto/factory/processor/FactoryWriter.java
+index 9ef5286af..b2014f62f 100644
+--- a/buggy/factory/src/main/java/com/google/auto/factory/processor/FactoryWriter.java
++++ b/fixed/factory/src/main/java/com/google/auto/factory/processor/FactoryWriter.java
+@@ -131,7 +131,7 @@ final class FactoryWriter {
+       writer.endMethod();
+     }
+ 
+-    for (ImplemetationMethodDescriptor methodDescriptor
++    for (ImplementationMethodDescriptor methodDescriptor
+         : descriptor.implementationMethodDescriptors()) {
+       writer.emitAnnotation(Override.class);
+       writer.beginMethod(methodDescriptor.returnType(), methodDescriptor.name(),

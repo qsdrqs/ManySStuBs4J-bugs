@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/apache/hadoop/hbase/HBaseConfiguration.java b/fixed/src/main/java/org/apache/hadoop/hbase/HBaseConfiguration.java
+index 80ce6667e..1e59eaa3b 100644
+--- a/buggy/src/main/java/org/apache/hadoop/hbase/HBaseConfiguration.java
++++ b/fixed/src/main/java/org/apache/hadoop/hbase/HBaseConfiguration.java
+@@ -42,7 +42,7 @@ public class HBaseConfiguration extends Configuration {
+     //TODO:replace with private constructor, HBaseConfiguration should not extend Configuration
+     super();
+     addHbaseResources(this);
+-    LOG.warn("instantinating HBaseConfiguration() is deprecated. Please use" +
++    LOG.warn("instantiating HBaseConfiguration() is deprecated. Please use" +
+     		" HBaseConfiguration#create() to construct a plain Configuration");
+   }
+ 

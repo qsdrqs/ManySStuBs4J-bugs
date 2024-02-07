@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/security/SpringBootWebSecurityConfiguration.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/security/SpringBootWebSecurityConfiguration.java
+index 4a6e85369..1358495c6 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/security/SpringBootWebSecurityConfiguration.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/security/SpringBootWebSecurityConfiguration.java
+@@ -88,7 +88,7 @@ import org.springframework.util.StringUtils;
+ public class SpringBootWebSecurityConfiguration {
+ 
+ 	private static List<String> DEFAULT_IGNORED = Arrays.asList("/css/**", "/js/**",
+-			"/images/**", "/**/favicon.ico");
++			"/images/**", "/webjars/**", "/**/favicon.ico");
+ 
+ 	@Bean
+ 	@ConditionalOnMissingBean({ IgnoredPathsWebSecurityConfigurerAdapter.class })

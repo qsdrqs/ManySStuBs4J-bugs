@@ -1,0 +1,13 @@
+diff --git a/buggy/value/src/test/java/com/google/auto/value/processor/CompilationTest.java b/fixed/value/src/test/java/com/google/auto/value/processor/CompilationTest.java
+index 45bea3160..50b8d6b7d 100644
+--- a/buggy/value/src/test/java/com/google/auto/value/processor/CompilationTest.java
++++ b/fixed/value/src/test/java/com/google/auto/value/processor/CompilationTest.java
+@@ -959,7 +959,7 @@ public class CompilationTest {
+         "}");
+     assertAbout(javaSources())
+         .that(ImmutableList.of(javaFileObject, nestedJavaFileObject))
+-        .withCompilerOptions("-Xlint:-processing")
++        .withCompilerOptions("-Xlint:-processing", "-implicit:none")
+         .processedWith(new AutoValueProcessor())
+         .compilesWithoutWarnings()
+         .and()

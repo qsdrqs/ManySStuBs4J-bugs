@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-bindy/src/main/java/org/apache/camel/dataformat/bindy/BindyCsvFactory.java b/fixed/components/camel-bindy/src/main/java/org/apache/camel/dataformat/bindy/BindyCsvFactory.java
+index c358c8e17..88bf8624c 100644
+--- a/buggy/components/camel-bindy/src/main/java/org/apache/camel/dataformat/bindy/BindyCsvFactory.java
++++ b/fixed/components/camel-bindy/src/main/java/org/apache/camel/dataformat/bindy/BindyCsvFactory.java
+@@ -263,7 +263,7 @@ public class BindyCsvFactory extends BindyAbstractFactory implements BindyFactor
+ 
+             for (Entry<Integer, List> entry : sortValues.entrySet()) {
+                 // Get list of values
+-                List<String> val = (List<String>)entry.getValue();
++                List<String> val = entry.getValue();
+ 
+                 // For one to one relation
+                 // There is only one item in the list

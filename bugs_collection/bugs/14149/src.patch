@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/VisualizationImpl/src/main/java/org/gephi/visualization/model/node/NodeSphereModeler.java b/fixed/modules/VisualizationImpl/src/main/java/org/gephi/visualization/model/node/NodeSphereModeler.java
+index 1294f7436..86181a9cc 100644
+--- a/buggy/modules/VisualizationImpl/src/main/java/org/gephi/visualization/model/node/NodeSphereModeler.java
++++ b/fixed/modules/VisualizationImpl/src/main/java/org/gephi/visualization/model/node/NodeSphereModeler.java
+@@ -85,7 +85,7 @@ public class NodeSphereModeler extends NodeModeler {
+             return;
+         }
+ 
+-        float distance = cameraDistance(obj) / (obj.getNode().size() / 2f);
++        float distance = cameraDistance(obj) / obj.getNode().size();
+         if (distance > 600) {
+             obj.modelType = SHAPE_DIAMOND;
+         } else if (distance > 50) {

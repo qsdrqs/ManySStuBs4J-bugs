@@ -1,0 +1,13 @@
+diff --git a/buggy/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/LinkedInExampleWithScopes.java b/fixed/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/LinkedInExampleWithScopes.java
+index 3ab8bb006..2b26f11ea 100644
+--- a/buggy/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/LinkedInExampleWithScopes.java
++++ b/fixed/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/LinkedInExampleWithScopes.java
+@@ -28,7 +28,7 @@ public final class LinkedInExampleWithScopes {
+         final OAuth10aService service = new ServiceBuilder()
+                 .apiKey(clientId)
+                 .apiSecret(clientSecret)
+-                .build(new LinkedInApi("foo", "bar", "baz"));
++                .build(LinkedInApi.instance("foo", "bar", "baz"));
+         final Scanner in = new Scanner(System.in);
+ 
+         System.out.println("=== LinkedIn's OAuth Workflow ===");

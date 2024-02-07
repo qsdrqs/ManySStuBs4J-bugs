@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/io/druid/server/router/TieredBrokerConfig.java b/fixed/server/src/main/java/io/druid/server/router/TieredBrokerConfig.java
+index 283b9d23e..c23a15dff 100644
+--- a/buggy/server/src/main/java/io/druid/server/router/TieredBrokerConfig.java
++++ b/fixed/server/src/main/java/io/druid/server/router/TieredBrokerConfig.java
+@@ -60,7 +60,7 @@ public class TieredBrokerConfig
+   @NotNull
+   private List<TieredBrokerSelectorStrategy> strategies = Arrays.asList(
+       new TimeBoundaryTieredBrokerSelectorStrategy(),
+-      new PriorityTieredBrokerSelectorStrategy(0, 0)
++      new PriorityTieredBrokerSelectorStrategy(1, 1)
+   );
+ 
+   // tier, <bard, numThreads>

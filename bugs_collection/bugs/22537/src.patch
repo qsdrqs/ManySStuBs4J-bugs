@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-samples/spring-boot-sample-web-ui/src/main/java/sample/ui/SampleWebUiApplication.java b/fixed/spring-boot-samples/spring-boot-sample-web-ui/src/main/java/sample/ui/SampleWebUiApplication.java
+index 0dedf1c39..dc00e0997 100644
+--- a/buggy/spring-boot-samples/spring-boot-sample-web-ui/src/main/java/sample/ui/SampleWebUiApplication.java
++++ b/fixed/spring-boot-samples/spring-boot-sample-web-ui/src/main/java/sample/ui/SampleWebUiApplication.java
+@@ -30,7 +30,7 @@ public class SampleWebUiApplication {
+ 
+ 	@Bean
+ 	public MessageRepository messageRepository() {
+-		return new InMemoryMessageRespository();
++		return new InMemoryMessageRepository();
+ 	}
+ 
+ 	@Bean

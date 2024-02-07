@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/queue/tx/TransactionalQueueProxySupport.java b/fixed/hazelcast/src/main/java/com/hazelcast/queue/tx/TransactionalQueueProxySupport.java
+index 32f27361b..eee0ddb9c 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/queue/tx/TransactionalQueueProxySupport.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/queue/tx/TransactionalQueueProxySupport.java
+@@ -93,7 +93,7 @@ public abstract class TransactionalQueueProxySupport extends AbstractDistributed
+             if (item != null) {
+                 if (reservedOffer != null && item.getItemId() == reservedOffer.getItemId()) {
+                     offeredQueue.poll();
+-                    tx.removeTransactionLog(reservedOffer.getItemId());
++                    tx.removeTransactionLog(new TransactionLogKey(reservedOffer.getItemId(), name));
+                     return reservedOffer.getData();
+                 }
+                 //

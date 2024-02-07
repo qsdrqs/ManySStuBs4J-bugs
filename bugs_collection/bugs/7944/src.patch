@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/model/ProcessorType.java b/fixed/camel-core/src/main/java/org/apache/camel/model/ProcessorType.java
+index 8bbf0179c..1266159f3 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/model/ProcessorType.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/model/ProcessorType.java
+@@ -1663,7 +1663,7 @@ public abstract class ProcessorType<Type extends ProcessorType> extends Optional
+      * @return the builder
+      */
+     public Type setExchangePattern(ExchangePattern exchangePattern) {
+-        addOutput(new ExchangePatternType(exchangePattern));
++        addOutput(new SetExchangePatternType(exchangePattern));
+         return (Type) this;
+     }
+     

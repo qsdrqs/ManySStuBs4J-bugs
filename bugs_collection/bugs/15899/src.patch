@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/internal/networking/nio/NioInboundPipeline.java b/fixed/hazelcast/src/main/java/com/hazelcast/internal/networking/nio/NioInboundPipeline.java
+index 8e944561c..7db4352a2 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/internal/networking/nio/NioInboundPipeline.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/internal/networking/nio/NioInboundPipeline.java
+@@ -135,7 +135,7 @@ public final class NioInboundPipeline extends NioPipeline implements InboundPipe
+                 HandlerStatus handlerStatus = handler.onRead();
+ 
+                 if (localHandlers != handlers) {
+-                    handlerIndex = 0;
++                    handlerIndex = -1;
+                     localHandlers = handlers;
+                     continue;
+                 }

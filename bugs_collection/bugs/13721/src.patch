@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-raptor/src/main/java/com/facebook/presto/raptor/metadata/ShardMetadata.java b/fixed/presto-raptor/src/main/java/com/facebook/presto/raptor/metadata/ShardMetadata.java
+index a9043b785..9e5ba724c 100644
+--- a/buggy/presto-raptor/src/main/java/com/facebook/presto/raptor/metadata/ShardMetadata.java
++++ b/fixed/presto-raptor/src/main/java/com/facebook/presto/raptor/metadata/ShardMetadata.java
+@@ -133,7 +133,7 @@ public class ShardMetadata
+     public String toString()
+     {
+         ToStringHelper stringHelper = toStringHelper(this)
+-                .add("tableId", "tableId")
++                .add("tableId", tableId)
+                 .add("shardId", shardId)
+                 .add("shardUuid", shardUuid)
+                 .add("rowCount", rowCount)

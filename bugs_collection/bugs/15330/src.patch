@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/VarCheck.java b/fixed/src/com/google/javascript/jscomp/VarCheck.java
+index 19b4d216a..8de8c9386 100644
+--- a/buggy/src/com/google/javascript/jscomp/VarCheck.java
++++ b/fixed/src/com/google/javascript/jscomp/VarCheck.java
+@@ -53,7 +53,7 @@ class VarCheck extends AbstractPostOrderCallback implements CompilerPass {
+       "module {1}");
+ 
+   static final DiagnosticType NAME_REFERENCE_IN_EXTERNS_ERROR =
+-    DiagnosticType.error(
++    DiagnosticType.warning(
+       "JSC_NAME_REFERENCE_IN_EXTERNS",
+       "accessing name {0} in externs has no effect");
+ 

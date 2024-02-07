@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/ui/org.openhab.ui.webapp/src/main/java/org/openhab/ui/webapp/internal/render/TextRenderer.java b/fixed/bundles/ui/org.openhab.ui.webapp/src/main/java/org/openhab/ui/webapp/internal/render/TextRenderer.java
+index b185959bd..1a1999df8 100644
+--- a/buggy/bundles/ui/org.openhab.ui.webapp/src/main/java/org/openhab/ui/webapp/internal/render/TextRenderer.java
++++ b/fixed/bundles/ui/org.openhab.ui.webapp/src/main/java/org/openhab/ui/webapp/internal/render/TextRenderer.java
+@@ -62,7 +62,7 @@ public class TextRenderer extends AbstractWidgetRenderer {
+ 
+ 		snippet = snippet.replaceAll("%id%", itemUIRegistry.getWidgetId(w));
+ 		snippet = snippet.replaceAll("%icon%", itemUIRegistry.getIcon(w));
+-		snippet = snippet.replaceAll("%label%", itemUIRegistry.getLabel(w));
++		snippet = snippet.replaceAll("%label%", getLabel(w));
+ 		
+ 		sb.append(snippet);
+ 		return null;

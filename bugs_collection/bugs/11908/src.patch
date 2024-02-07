@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/Compiler.java b/fixed/src/jvm/clojure/lang/Compiler.java
+index bc3df9b97..d2eb21da9 100644
+--- a/buggy/src/jvm/clojure/lang/Compiler.java
++++ b/fixed/src/jvm/clojure/lang/Compiler.java
+@@ -5270,7 +5270,7 @@ public static class FnMethod extends ObjMethod{
+             if(rettag != null)
+                 {
+                 String retstr = ((Symbol)rettag).getName();
+-                if(!retstr.equals("long") || !retstr.equals("double"))
++                if(!(retstr.equals("long") || retstr.equals("double")))
+                    rettag = null;
+                 }
+ 			method.retClass = tagClass(tagOf(parms)!=null?tagOf(parms):rettag);

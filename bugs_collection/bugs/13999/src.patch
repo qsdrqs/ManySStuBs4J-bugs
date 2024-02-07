@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-jdbc/src/test/java/com/facebook/presto/jdbc/TestDriver.java b/fixed/presto-jdbc/src/test/java/com/facebook/presto/jdbc/TestDriver.java
+index d9456e7a8..03b2212f0 100644
+--- a/buggy/presto-jdbc/src/test/java/com/facebook/presto/jdbc/TestDriver.java
++++ b/fixed/presto-jdbc/src/test/java/com/facebook/presto/jdbc/TestDriver.java
+@@ -105,7 +105,7 @@ public class TestDriver
+         }
+     }
+ 
+-    @Test(expectedExceptions = SQLException.class, expectedExceptionsMessageRegExp = ".* Table .* does not exist")
++    @Test(expectedExceptions = SQLException.class, expectedExceptionsMessageRegExp = ".* does not exist")
+     public void testBadQuery()
+             throws Exception
+     {

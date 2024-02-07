@@ -1,0 +1,22 @@
+diff --git a/buggy/spring-boot-tests/spring-boot-deployment-tests/spring-boot-deployment-test-glassfish/src/test/java/sample/SampleGlassfishDeployApplicationIT.java b/fixed/spring-boot-tests/spring-boot-deployment-tests/spring-boot-deployment-test-glassfish/src/test/java/sample/SampleGlassfishDeployApplicationIT.java
+index ed2949f1a..491b5d505 100644
+--- a/buggy/spring-boot-tests/spring-boot-deployment-tests/spring-boot-deployment-test-glassfish/src/test/java/sample/SampleGlassfishDeployApplicationIT.java
++++ b/fixed/spring-boot-tests/spring-boot-deployment-tests/spring-boot-deployment-test-glassfish/src/test/java/sample/SampleGlassfishDeployApplicationIT.java
+@@ -32,7 +32,7 @@ public class SampleGlassfishDeployApplicationIT {
+ 	private int port = Integer.valueOf(System.getProperty("port"));
+ 
+ 	@Test
+-	public void testHome() throws Exception {
++	void testHome() throws Exception {
+ 		String url = "http://localhost:" + this.port + "/bootapp/";
+ 		System.out.println(url);
+ 		ResponseEntity<String> entity = new TestRestTemplate().getForEntity(url, String.class);
+@@ -41,7 +41,7 @@ public class SampleGlassfishDeployApplicationIT {
+ 	}
+ 
+ 	@Test
+-	public void testHealth() throws Exception {
++	void testHealth() throws Exception {
+ 		String url = "http://localhost:" + this.port + "/bootapp/actuator/health";
+ 		System.out.println(url);
+ 		ResponseEntity<String> entity = new TestRestTemplate().getForEntity(url, String.class);

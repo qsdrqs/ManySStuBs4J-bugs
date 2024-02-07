@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/type/TimestampWithTimeZoneOperators.java b/fixed/presto-main/src/main/java/com/facebook/presto/type/TimestampWithTimeZoneOperators.java
+index 4cacfd804..f60a51c9f 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/type/TimestampWithTimeZoneOperators.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/type/TimestampWithTimeZoneOperators.java
+@@ -152,7 +152,7 @@ public final class TimestampWithTimeZoneOperators
+             return parseTimestampWithTimeZone(session.getTimeZoneKey(), trim(value).toStringUtf8());
+         }
+         catch (IllegalArgumentException e) {
+-            throw new PrestoException(INVALID_CAST_ARGUMENT, e);
++            throw new PrestoException(INVALID_CAST_ARGUMENT, "Value cannot be cast to timestamp with time zone: " + value.toStringUtf8(), e);
+         }
+     }
+ 

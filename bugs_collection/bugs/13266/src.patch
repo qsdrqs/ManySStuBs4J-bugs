@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/test/java/com/facebook/presto/sql/planner/assertions/RowExpressionVerifier.java b/fixed/presto-main/src/test/java/com/facebook/presto/sql/planner/assertions/RowExpressionVerifier.java
+index c0d733ba5..db0cda9d4 100644
+--- a/buggy/presto-main/src/test/java/com/facebook/presto/sql/planner/assertions/RowExpressionVerifier.java
++++ b/fixed/presto-main/src/test/java/com/facebook/presto/sql/planner/assertions/RowExpressionVerifier.java
+@@ -137,7 +137,7 @@ final class RowExpressionVerifier
+             return false;
+         }
+ 
+-        if (!expected.getType().equals(actual.getType().toString())) {
++        if (!expected.getType().equalsIgnoreCase(actual.getType().toString())) {
+             return false;
+         }
+ 

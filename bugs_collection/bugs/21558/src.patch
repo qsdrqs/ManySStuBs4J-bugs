@@ -1,0 +1,13 @@
+diff --git a/buggy/src/web/org/openmrs/web/controller/RegimenPortletController.java b/fixed/src/web/org/openmrs/web/controller/RegimenPortletController.java
+index 2314416ed..1f6cd190e 100644
+--- a/buggy/src/web/org/openmrs/web/controller/RegimenPortletController.java
++++ b/fixed/src/web/org/openmrs/web/controller/RegimenPortletController.java
+@@ -68,7 +68,7 @@ public class RegimenPortletController extends PortletController {
+ 						setIdToUse = "*";
+ 					if (setIdToUse != null) {
+ 						helper(patientDrugOrderSets, setIdToUse, order);
+-						if (order.isCurrent())
++						if (order.isCurrent() || order.isFuture())
+ 							helper(currentDrugOrderSets, setIdToUse, order);
+ 						else
+ 							helper(completedDrugOrderSets, setIdToUse, order);

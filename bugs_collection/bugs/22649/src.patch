@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-cli/src/main/java/org/springframework/cli/SpringCli.java b/fixed/spring-cli/src/main/java/org/springframework/cli/SpringCli.java
+index bd14a0b6d..5f6490b93 100644
+--- a/buggy/spring-cli/src/main/java/org/springframework/cli/SpringCli.java
++++ b/fixed/spring-cli/src/main/java/org/springframework/cli/SpringCli.java
+@@ -220,7 +220,7 @@ public class SpringCli {
+ 
+ 		@Override
+ 		public String getUsageHelp() {
+-			return null;
++			return "command";
+ 		}
+ 
+ 		@Override

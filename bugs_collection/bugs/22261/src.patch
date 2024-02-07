@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/main/java/org/springframework/boot/jta/bitronix/PoolingConnectionFactoryBean.java b/fixed/spring-boot/src/main/java/org/springframework/boot/jta/bitronix/PoolingConnectionFactoryBean.java
+index 4a764780a..9b788cb97 100644
+--- a/buggy/spring-boot/src/main/java/org/springframework/boot/jta/bitronix/PoolingConnectionFactoryBean.java
++++ b/fixed/spring-boot/src/main/java/org/springframework/boot/jta/bitronix/PoolingConnectionFactoryBean.java
+@@ -148,7 +148,7 @@ public class PoolingConnectionFactoryBean extends PoolingConnectionFactory
+ 
+ 		@Override
+ 		public XAJMSContext createXAContext(String username, String password) {
+-			return this.createXAContext(username, password);
++			return this.connectionFactory.createXAContext(username, password);
+ 		}
+ 
+ 	}

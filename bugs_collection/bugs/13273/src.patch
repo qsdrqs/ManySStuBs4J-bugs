@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/HashGenerationOptimizer.java b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/HashGenerationOptimizer.java
+index 95432b6d2..86ab4f6b0 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/HashGenerationOptimizer.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/HashGenerationOptimizer.java
+@@ -838,7 +838,7 @@ public class HashGenerationOptimizer
+             return Optional.empty();
+         }
+ 
+-        Expression result = new LongLiteral(String.valueOf(INITIAL_HASH_VALUE));
++        Expression result = new GenericLiteral(StandardTypes.BIGINT, String.valueOf(INITIAL_HASH_VALUE));
+         for (Symbol symbol : symbols) {
+             Expression hashField = new FunctionCall(
+                     QualifiedName.of(HASH_CODE),

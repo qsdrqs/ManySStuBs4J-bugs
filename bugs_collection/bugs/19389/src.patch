@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/cache/WeakLruCache.java b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/cache/WeakLruCache.java
+index ddc698f5d..1af65fbc3 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/cache/WeakLruCache.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/cache/WeakLruCache.java
+@@ -72,7 +72,7 @@ public class WeakLruCache<K,V> extends ReferenceCache<K,V>
+             }
+             return counter.count( ref.get() );
+         }
+-        return counter.count( null );
++        return counter.<V>count( null );
+     }
+ 
+     public V remove( K key )

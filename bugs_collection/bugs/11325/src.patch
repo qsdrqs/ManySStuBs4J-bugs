@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule487modifiers/ModifierOrderTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule487modifiers/ModifierOrderTest.java
+index f1da57257..5dad78e28 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule487modifiers/ModifierOrderTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule487modifiers/ModifierOrderTest.java
+@@ -22,7 +22,7 @@ public class ModifierOrderTest extends BaseCheckTestSupport{
+     }
+ 
+     @Test
+-    public void modifierOrderTest() throws IOException, Exception {
++    public void modifierOrderTest() throws Exception {
+         
+         Class<ModifierOrderCheck> clazz = ModifierOrderCheck.class;
+         String msgMod = "mod.order";

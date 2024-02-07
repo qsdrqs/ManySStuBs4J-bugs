@@ -1,0 +1,13 @@
+diff --git a/buggy/codec-stomp/src/main/java/io/netty/handler/codec/stomp/DefaultStompFrame.java b/fixed/codec-stomp/src/main/java/io/netty/handler/codec/stomp/DefaultStompFrame.java
+index 75afdd187..5332ced47 100644
+--- a/buggy/codec-stomp/src/main/java/io/netty/handler/codec/stomp/DefaultStompFrame.java
++++ b/fixed/codec-stomp/src/main/java/io/netty/handler/codec/stomp/DefaultStompFrame.java
+@@ -94,7 +94,7 @@ public class DefaultStompFrame extends DefaultStompHeadersSubframe implements St
+ 
+     @Override
+     public String toString() {
+-        return "DefaultFullStompFrame{" +
++        return "DefaultStompFrame{" +
+             "command=" + command +
+             ", headers=" + headers +
+             ", content=" + content.toString(CharsetUtil.UTF_8) +

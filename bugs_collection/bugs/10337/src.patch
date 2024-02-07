@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/main/java/com/zaxxer/hikari/HikariPool.java b/fixed/core/src/main/java/com/zaxxer/hikari/HikariPool.java
+index 99e26bd6d..7aec534e3 100644
+--- a/buggy/core/src/main/java/com/zaxxer/hikari/HikariPool.java
++++ b/fixed/core/src/main/java/com/zaxxer/hikari/HikariPool.java
+@@ -304,7 +304,7 @@ public final class HikariPool implements HikariPoolMBean
+                         }
+                         backgroundFillQueued.set(false);
+                     }
+-    	        }, configuration.getConnectionTimeout() - 50/*ms*/);
++    	        }, 50/*ms*/);
+     	    }
+     	    break;
+     	}

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionExplicitInitializationTest.java b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionExplicitInitializationTest.java
+index 6d56fa88a..e1391f126 100644
+--- a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionExplicitInitializationTest.java
++++ b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionExplicitInitializationTest.java
+@@ -28,7 +28,7 @@ import org.junit.Test;
+ import com.puppycrawl.tools.checkstyle.DefaultConfiguration;
+ import com.puppycrawl.tools.checkstyle.checks.coding.ExplicitInitializationCheck;
+ 
+-public class XpathRegressionExplicitInitializationTest extends AbstractXpathTestSupport {
++public class XpathRegressionExplicitInitializationTest extends XpathTestSupport {
+ 
+     @Test
+     public void testOne() throws Exception {

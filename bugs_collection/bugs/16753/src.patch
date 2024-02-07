@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-spring/src/test/java/com/hazelcast/spring/TestFullApplicationContext.java b/fixed/hazelcast-spring/src/test/java/com/hazelcast/spring/TestFullApplicationContext.java
+index 65d882452..23a25eea7 100644
+--- a/buggy/hazelcast-spring/src/test/java/com/hazelcast/spring/TestFullApplicationContext.java
++++ b/fixed/hazelcast-spring/src/test/java/com/hazelcast/spring/TestFullApplicationContext.java
+@@ -310,7 +310,7 @@ public class TestFullApplicationContext {
+         assertEquals("sample-tag-key", aws.getTagKey());
+         assertEquals("sample-tag-value", aws.getTagValue());
+ 
+-        assertFalse("reuse-address", networkConfig.isReuseAddress());
++        assertTrue("reuse-address", networkConfig.isReuseAddress());
+     }
+ 
+ //    @Test

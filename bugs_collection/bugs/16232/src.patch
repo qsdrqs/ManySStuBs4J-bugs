@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/spi/impl/operationservice/impl/Invocation_BlockingTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/spi/impl/operationservice/impl/Invocation_BlockingTest.java
+index 684de7b70..b5ae2adab 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/spi/impl/operationservice/impl/Invocation_BlockingTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/spi/impl/operationservice/impl/Invocation_BlockingTest.java
+@@ -176,7 +176,7 @@ public class Invocation_BlockingTest extends HazelcastTestSupport {
+ 
+     @Test
+     public void async_whenOperationTimeout() {
+-        int callTimeout = 1000;
++        int callTimeout = 5000;
+         Config config = new Config().setProperty(OPERATION_CALL_TIMEOUT_MILLIS.getName(), "" + callTimeout);
+ 
+         TestHazelcastInstanceFactory factory = createHazelcastInstanceFactory(2);

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/APersistentSet.java b/fixed/src/jvm/clojure/lang/APersistentSet.java
+index d40ff988e..7cf94c31c 100644
+--- a/buggy/src/jvm/clojure/lang/APersistentSet.java
++++ b/fixed/src/jvm/clojure/lang/APersistentSet.java
+@@ -121,7 +121,7 @@ public Object[] toArray(Object[] a){
+ 			{
+ 			a[i] = s.first();
+ 			}
+-		if(a.length >= count())
++		if(a.length > count())
+ 			a[count()] = null;
+ 		return a;
+ 		}

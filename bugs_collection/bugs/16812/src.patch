@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientClusterServiceImpl.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientClusterServiceImpl.java
+index 35fba9a1b..e57a02553 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientClusterServiceImpl.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientClusterServiceImpl.java
+@@ -240,7 +240,7 @@ public final class ClientClusterServiceImpl implements ClientClusterService {
+                         }
+                     }
+ 
+-                    connectionManager.markOwnerAddressAsClosed();
++                    connectionManager.markOwnerConnectionAsClosed();
+                     IOUtil.closeResource(conn);
+                     conn = null;
+                     fireConnectionEvent(true);

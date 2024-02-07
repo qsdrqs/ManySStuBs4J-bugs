@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions/gdx-jnigen/src/com/badlogic/gdx/jnigen/NativeCodeGenerator.java b/fixed/extensions/gdx-jnigen/src/com/badlogic/gdx/jnigen/NativeCodeGenerator.java
+index fb49cb07f..a2b642894 100644
+--- a/buggy/extensions/gdx-jnigen/src/com/badlogic/gdx/jnigen/NativeCodeGenerator.java
++++ b/fixed/extensions/gdx-jnigen/src/com/badlogic/gdx/jnigen/NativeCodeGenerator.java
+@@ -89,7 +89,7 @@ public class NativeCodeGenerator {
+ 			mergeJavaAndCMethod(buffer, javaMethods.get(i), cMethods.get(i));
+ 			buffer.append("\n");
+ 		}
+-		cppFile.writeString(buffer.toString(), false);
++		cppFile.writeString(buffer.toString(), false, "UTF-8");
+ 	}
+ 	
+ 	private void mergeJavaAndCMethod(StringBuffer buffer, JavaMethod javaMethod, CMethod cMethod) {

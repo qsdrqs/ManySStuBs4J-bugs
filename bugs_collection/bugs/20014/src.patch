@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/bootstrap/ClientBootstrap.java b/fixed/src/main/java/org/jboss/netty/bootstrap/ClientBootstrap.java
+index 27a84c7fa..788aca216 100644
+--- a/buggy/src/main/java/org/jboss/netty/bootstrap/ClientBootstrap.java
++++ b/fixed/src/main/java/org/jboss/netty/bootstrap/ClientBootstrap.java
+@@ -182,7 +182,7 @@ public class ClientBootstrap extends Bootstrap {
+      */
+     public ChannelFuture connect(SocketAddress remoteAddress) {
+         if (remoteAddress == null) {
+-            throw new NullPointerException("remotedAddress");
++            throw new NullPointerException("remoteAddress");
+         }
+         SocketAddress localAddress = (SocketAddress) getOption("localAddress");
+         return connect(remoteAddress, localAddress);

@@ -1,0 +1,14 @@
+diff --git a/buggy/components/camel-cxf/src/main/java/org/apache/camel/component/cxf/CxfConsumer.java b/fixed/components/camel-cxf/src/main/java/org/apache/camel/component/cxf/CxfConsumer.java
+index 62902773e..53f56c97c 100644
+--- a/buggy/components/camel-cxf/src/main/java/org/apache/camel/component/cxf/CxfConsumer.java
++++ b/fixed/components/camel-cxf/src/main/java/org/apache/camel/component/cxf/CxfConsumer.java
+@@ -97,8 +97,7 @@ public class CxfConsumer extends DefaultConsumer {
+                             }
+                         });
+                         
+-                    }
+-                    if (continuation.isResumed()) {
++                    } else if (continuation.isResumed()) {
+                         org.apache.camel.Exchange camelExchange = (org.apache.camel.Exchange)continuation
+                             .getObject();
+                         setResponseBack(cxfExchange, camelExchange);

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/map/MapPortableHook.java b/fixed/hazelcast/src/main/java/com/hazelcast/map/MapPortableHook.java
+index 946dd5946..f4d2d2f9b 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/map/MapPortableHook.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/map/MapPortableHook.java
+@@ -128,7 +128,7 @@ public class MapPortableHook implements PortableHook {
+ 
+     public PortableFactory createFactory() {
+         return new PortableFactory() {
+-            final ConstructorFunction<Integer, Portable>[] constructors = new ConstructorFunction[EVICT_ALL + 1];
++            final ConstructorFunction<Integer, Portable>[] constructors = new ConstructorFunction[IS_EMPTY + 1];
+ 
+             {
+                 constructors[GET] = new ConstructorFunction<Integer, Portable>() {

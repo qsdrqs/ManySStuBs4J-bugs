@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/RT.java b/fixed/src/jvm/clojure/lang/RT.java
+index 9f5170122..05c1557bf 100644
+--- a/buggy/src/jvm/clojure/lang/RT.java
++++ b/fixed/src/jvm/clojure/lang/RT.java
+@@ -163,7 +163,7 @@ static public final Object[] EMPTY_ARRAY = new Object[]{};
+ static AtomicInteger id = new AtomicInteger(1);
+ 
+ static{
+-OUT.setTag(Symbol.create("java.io.PrintStream"));
++OUT.setTag(Symbol.create("java.io.OutputStreamWriter"));
+ }
+ //static
+ //	{

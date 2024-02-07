@@ -1,0 +1,13 @@
+diff --git a/buggy/src/api/org/openmrs/logic/result/Result.java b/fixed/src/api/org/openmrs/logic/result/Result.java
+index 1fe8b9c0f..43342fbdc 100644
+--- a/buggy/src/api/org/openmrs/logic/result/Result.java
++++ b/fixed/src/api/org/openmrs/logic/result/Result.java
+@@ -582,7 +582,7 @@ public class Result extends ArrayList<Result> {
+ 	public String toString() {
+ 		if (isSingleResult()) {
+ 			if (datatype == null) {
+-				return valueText;
++				return valueText == null ? "" : valueText;
+ 			}
+ 			
+ 			switch (datatype) {

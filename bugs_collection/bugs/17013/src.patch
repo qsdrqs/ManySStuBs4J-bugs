@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/query/Predicates.java b/fixed/hazelcast/src/main/java/com/hazelcast/query/Predicates.java
+index db91000c8..5a38b6344 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/query/Predicates.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/query/Predicates.java
+@@ -544,7 +544,7 @@ public final class Predicates {
+                 return value == null || value == IndexImpl.NULL;
+             }
+             value = convert(mapEntry, value);
+-            return value.equals(entryValue);
++            return value != null && value.equals(entryValue);
+         }
+ 
+         public void writeData(ObjectDataOutput out) throws IOException {

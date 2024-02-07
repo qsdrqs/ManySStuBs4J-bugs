@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-test/src/main/java/org/springframework/boot/test/json/AbstractJsonMarshalTester.java b/fixed/spring-boot-project/spring-boot-test/src/main/java/org/springframework/boot/test/json/AbstractJsonMarshalTester.java
+index 2daf685fc..46e3ef20f 100644
+--- a/buggy/spring-boot-project/spring-boot-test/src/main/java/org/springframework/boot/test/json/AbstractJsonMarshalTester.java
++++ b/fixed/spring-boot-project/spring-boot-test/src/main/java/org/springframework/boot/test/json/AbstractJsonMarshalTester.java
+@@ -354,7 +354,7 @@ public abstract class AbstractJsonMarshalTester<T> {
+ 	 *
+ 	 * @param <M> The marshaller type
+ 	 */
+-	protected static abstract class FieldInitializer<M> {
++	protected abstract static class FieldInitializer<M> {
+ 
+ 		private final Class<?> testerClass;
+ 

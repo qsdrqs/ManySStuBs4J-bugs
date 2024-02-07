@@ -1,0 +1,17 @@
+diff --git a/buggy/extensions-core/kafka-indexing-service/src/main/java/io/druid/indexing/kafka/KafkaIndexTask.java b/fixed/extensions-core/kafka-indexing-service/src/main/java/io/druid/indexing/kafka/KafkaIndexTask.java
+index eef8aac5d..8edda9e52 100644
+--- a/buggy/extensions-core/kafka-indexing-service/src/main/java/io/druid/indexing/kafka/KafkaIndexTask.java
++++ b/fixed/extensions-core/kafka-indexing-service/src/main/java/io/druid/indexing/kafka/KafkaIndexTask.java
+@@ -1063,10 +1063,10 @@ public class KafkaIndexTask extends AbstractTask implements ChatHandler
+          .emit();
+       // wait for being killed by supervisor
+       try {
+-        Thread.sleep(Long.MAX_VALUE);
++        pause(-1);
+       }
+       catch (InterruptedException e) {
+-        throw new RuntimeException("Got interrupted while waiting to be killed");
++        throw new RuntimeException("Got interrupted while pausing task");
+       }
+     } else {
+       log.makeAlert("Failed to send reset request for partitions [%s]", partitionOffsetMap.keySet()).emit();

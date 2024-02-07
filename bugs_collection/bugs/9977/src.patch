@@ -1,0 +1,13 @@
+diff --git a/buggy/external/storm-cassandra/src/main/java/org/apache/storm/cassandra/trident/state/CassandraState.java b/fixed/external/storm-cassandra/src/main/java/org/apache/storm/cassandra/trident/state/CassandraState.java
+index 7635ea56f..7fa138f54 100644
+--- a/buggy/external/storm-cassandra/src/main/java/org/apache/storm/cassandra/trident/state/CassandraState.java
++++ b/fixed/external/storm-cassandra/src/main/java/org/apache/storm/cassandra/trident/state/CassandraState.java
+@@ -149,7 +149,7 @@ public class CassandraState implements State {
+                 }
+             }
+         } catch (Exception e) {
+-            LOG.warn("Batch retrieve operation is failed.");
++            LOG.warn("Batch retrieve operation is failed", e);
+             throw new FailedException(e);
+         }
+         return batchRetrieveResult;

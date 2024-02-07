@@ -1,0 +1,14 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/AvoidInlineConditionalsCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/AvoidInlineConditionalsCheckTest.java
+index 5d4494d3b..780c3ab25 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/AvoidInlineConditionalsCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/AvoidInlineConditionalsCheckTest.java
+@@ -35,7 +35,8 @@ public class AvoidInlineConditionalsCheckTest
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "coding" + File.separator + filename);
++                + "coding" + File.separator
++                + "avoidinlineconditionals" + File.separator + filename);
+     }
+ 
+     @Test

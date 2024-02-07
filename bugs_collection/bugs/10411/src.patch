@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/utils/TokenUtilTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/utils/TokenUtilTest.java
+index b25787011..3d8d4dc3b 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/utils/TokenUtilTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/utils/TokenUtilTest.java
+@@ -239,7 +239,7 @@ public class TokenUtilTest {
+ 
+     @Test
+     public void testGetTokenNameWithGreatestPossibleId() {
+-        final Integer id = TokenTypes.COMMENT_CONTENT;
++        final int id = TokenTypes.COMMENT_CONTENT;
+         final String tokenName = TokenUtil.getTokenName(id);
+ 
+         assertEquals("Invalid token name", "COMMENT_CONTENT", tokenName);

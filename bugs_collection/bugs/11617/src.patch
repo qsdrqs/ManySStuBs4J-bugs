@@ -1,0 +1,15 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/api/LineColumn.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/api/LineColumn.java
+index 65bccd7f1..ce646dab0 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/api/LineColumn.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/api/LineColumn.java
+@@ -58,8 +58,8 @@ public class LineColumn implements Comparable<LineColumn> {
+     @Override
+     public int compareTo(LineColumn lineColumn) {
+         return this.getLine() != lineColumn.getLine()
+-            ? this.getLine() - lineColumn.getLine()
+-            : this.getColumn() - lineColumn.getColumn();
++            ? Integer.compare(this.getLine(), lineColumn.getLine())
++            : Integer.compare(this.getColumn(), lineColumn.getColumn());
+     }
+ 
+     /** {@inheritDoc} */

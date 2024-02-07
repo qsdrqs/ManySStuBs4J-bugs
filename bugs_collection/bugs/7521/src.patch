@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jaxb/src/test/java/org/apache/camel/example/DataFormatTest.java b/fixed/components/camel-jaxb/src/test/java/org/apache/camel/example/DataFormatTest.java
+index 5fbb9254e..cdbec6854 100644
+--- a/buggy/components/camel-jaxb/src/test/java/org/apache/camel/example/DataFormatTest.java
++++ b/fixed/components/camel-jaxb/src/test/java/org/apache/camel/example/DataFormatTest.java
+@@ -89,7 +89,7 @@ public class DataFormatTest extends CamelTestSupport {
+                         to("direct:marshalled");
+ 
+                 from("direct:marshalled").
+-                        unmarshal(example).//.jaxb("org.apache.camel.example").
++                        unmarshal().jaxb("org.apache.camel.example").
+                         to("mock:result");
+                 
+                 from("direct:prettyPrint").

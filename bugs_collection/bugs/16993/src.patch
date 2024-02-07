@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/map/proxy/MapProxySupport.java b/fixed/hazelcast/src/main/java/com/hazelcast/map/proxy/MapProxySupport.java
+index 120e0df3e..faa83eb4b 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/map/proxy/MapProxySupport.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/map/proxy/MapProxySupport.java
+@@ -124,7 +124,7 @@ abstract class MapProxySupport extends AbstractDistributedObject<MapService> {
+             for (int i = 0; i <= backupCount; i++) {
+                 int partitionId = partitionService.getPartitionId(key);
+                 PartitionView partition = partitionService.getPartition(partitionId);
+-                if (partition.getReplicaAddress(i).equals(getNodeEngine().getThisAddress())) {
++                if (getNodeEngine().getThisAddress().equals(partition.getReplicaAddress(i))) {
+                     Object val = mapService.getPartitionContainer(partitionId).getRecordStore(name).get(key);
+                     if (val != null) {
+                         mapService.interceptAfterGet(name, val);

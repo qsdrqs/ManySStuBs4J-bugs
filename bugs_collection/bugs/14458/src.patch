@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/RemoveUnusedCode.java b/fixed/src/com/google/javascript/jscomp/RemoveUnusedCode.java
+index 63d84a6e9..a42f81c49 100644
+--- a/buggy/src/com/google/javascript/jscomp/RemoveUnusedCode.java
++++ b/fixed/src/com/google/javascript/jscomp/RemoveUnusedCode.java
+@@ -249,7 +249,7 @@ class RemoveUnusedCode implements CompilerPass {
+     }
+     traverseAndRemoveUnusedReferences(root);
+     // This pass may remove definitions of getter or setter properties.
+-    GatherGettersAndSetterProperties.update(compiler, externs, root);
++    GatherGetterAndSetterProperties.update(compiler, externs, root);
+   }
+ 
+   /**

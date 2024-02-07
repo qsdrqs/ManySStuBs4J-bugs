@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/FiltersPlugin/src/main/java/org/gephi/filters/plugin/partition/IntraEdgesBuilder.java b/fixed/modules/FiltersPlugin/src/main/java/org/gephi/filters/plugin/partition/IntraEdgesBuilder.java
+index f3f83b67d..ad9645f3d 100644
+--- a/buggy/modules/FiltersPlugin/src/main/java/org/gephi/filters/plugin/partition/IntraEdgesBuilder.java
++++ b/fixed/modules/FiltersPlugin/src/main/java/org/gephi/filters/plugin/partition/IntraEdgesBuilder.java
+@@ -160,7 +160,7 @@ public class IntraEdgesBuilder implements CategoryBuilder {
+ 
+         @Override
+         public String getName() {
+-            return NbBundle.getMessage(IntraEdgesBuilder.class, "IntraEdgesBuilder.name") + " (" + partition.getColumn().getTitle() + ")";
++            return NbBundle.getMessage(IntraEdgesBuilder.class, "IntraEdgesBuilder.name") + " (" + column.getTitle() + ")";
+         }
+ 
+         @Override

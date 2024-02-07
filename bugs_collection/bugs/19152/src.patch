@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/test/java/org/neo4j/adversaries/AbstractAdversary.java b/fixed/community/kernel/src/test/java/org/neo4j/adversaries/AbstractAdversary.java
+index ddf8865fa..afc723a3c 100644
+--- a/buggy/community/kernel/src/test/java/org/neo4j/adversaries/AbstractAdversary.java
++++ b/fixed/community/kernel/src/test/java/org/neo4j/adversaries/AbstractAdversary.java
+@@ -42,7 +42,7 @@ public abstract class AbstractAdversary implements Adversary
+         }
+         catch ( Exception e )
+         {
+-            throw new AssertionError( "Failed to instantiate failure", e );
++            throw new AssertionError( new Exception( "Failed to instantiate failure", e ) );
+         }
+         sneakyThrow( throwable );
+     }

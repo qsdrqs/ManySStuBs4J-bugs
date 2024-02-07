@@ -1,0 +1,13 @@
+diff --git a/buggy/src/web/org/openmrs/web/taglib/FieldGenTag.java b/fixed/src/web/org/openmrs/web/taglib/FieldGenTag.java
+index 7c18e2d3c..48d69da2b 100644
+--- a/buggy/src/web/org/openmrs/web/taglib/FieldGenTag.java
++++ b/fixed/src/web/org/openmrs/web/taglib/FieldGenTag.java
+@@ -171,7 +171,7 @@ public class FieldGenTag extends TagSupport {
+ 							output += falseLabel;
+ 							output += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+ 							output += "<input type=\"radio\" name=\"" + formFieldName + "\" id=\"" + formFieldName
+-							        + "_t\" =\"t\"" + ("t".equals(startVal) ? " checked" : "") + "/> ";
++							        + "_t\" value=\"t\"" + ("t".equals(startVal) ? " checked" : "") + "/> ";
+ 							output += trueLabel;
+ 						} else {
+ 							output = "<input type=\"radio\" name=\"" + formFieldName + "\" id=\"" + formFieldName

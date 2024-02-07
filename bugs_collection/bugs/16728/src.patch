@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/cache/impl/CacheProxy.java b/fixed/hazelcast/src/main/java/com/hazelcast/cache/impl/CacheProxy.java
+index da63a6d4b..e80817844 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/cache/impl/CacheProxy.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/cache/impl/CacheProxy.java
+@@ -1000,7 +1000,7 @@ public class CacheProxy<K, V>
+                     if (eventObject instanceof CacheEventData) {
+                         CacheEventData cacheEventData = (CacheEventData) eventObject;
+                         if (cacheEventData.getCacheEventType() == CacheEventType.COMPLETED) {
+-                            int completionId = serializationService.toObject(cacheEventData.getDataValue());
++                            Integer completionId = serializationService.toObject(cacheEventData.getDataValue());
+                             countDownCompletionLatch(completionId);
+                         }
+                     }

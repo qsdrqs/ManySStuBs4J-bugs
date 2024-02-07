@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/channel/local/LocalChannel.java b/fixed/src/main/java/org/jboss/netty/channel/local/LocalChannel.java
+index c8ab71087..9285e3314 100644
+--- a/buggy/src/main/java/org/jboss/netty/channel/local/LocalChannel.java
++++ b/fixed/src/main/java/org/jboss/netty/channel/local/LocalChannel.java
+@@ -71,7 +71,8 @@ public class LocalChannel extends AbstractChannel {
+     }
+ 
+     public boolean isConnected() {
+-        return pairedChannel != null;
++        return localAddress != null &&
++               pairedChannel != null && pairedChannel.localAddress != null;
+     }
+ 
+     public LocalAddress getLocalAddress() {

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/naming/LocalFinalVariableNameCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/naming/LocalFinalVariableNameCheckTest.java
+index fd8532dc0..d705e1d79 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/naming/LocalFinalVariableNameCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/naming/LocalFinalVariableNameCheckTest.java
+@@ -42,7 +42,7 @@ public class LocalFinalVariableNameCheckTest
+         final LocalFinalVariableNameCheck checkObj =
+             new LocalFinalVariableNameCheck();
+         assertArrayEquals(
+-            "LocalFinalVariableNameCheck#getRequiredTockens should return empty array by default",
++            "LocalFinalVariableNameCheck#getRequiredTokens should return empty array by default",
+             CommonUtils.EMPTY_INT_ARRAY, checkObj.getRequiredTokens());
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/test/api/org/openmrs/validator/FieldTypeValidatorTest.java b/fixed/test/api/org/openmrs/validator/FieldTypeValidatorTest.java
+index 64fc59210..8b9177360 100644
+--- a/buggy/test/api/org/openmrs/validator/FieldTypeValidatorTest.java
++++ b/fixed/test/api/org/openmrs/validator/FieldTypeValidatorTest.java
+@@ -21,7 +21,7 @@ public class FieldTypeValidatorTest {
+ 			throws Exception {
+ 		FieldType type = new FieldType();
+ 		type.setName(null);
+-		type.setDescription("Humba humba humba t�tet���...");
++		type.setDescription("Humba humba humba ...");
+ 		
+ 		Errors errors = new BindException(type, "type");
+ 		new FieldTypeValidator().validate(type, errors);

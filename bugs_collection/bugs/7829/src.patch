@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/management/ManagedThrottlerTest.java b/fixed/camel-core/src/test/java/org/apache/camel/management/ManagedThrottlerTest.java
+index b88fb3baf..30a95d898 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/management/ManagedThrottlerTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/management/ManagedThrottlerTest.java
+@@ -63,7 +63,7 @@ public class ManagedThrottlerTest extends ContextTestSupport {
+         Long last = (Long) mbeanServer.getAttribute(routeName, "LastProcessingTime");
+         Long total = (Long) mbeanServer.getAttribute(routeName, "TotalProcessingTime");
+ 
+-        assertTrue("Should take at most 1.5 sec: was " + total, total < 1500);
++        assertTrue("Should take at most 2.0 sec: was " + total, total < 2000);
+ 
+         // change the throttler using JMX
+         mbeanServer.setAttribute(throttlerName, new Attribute("MaximumRequestsPerPeriod", (long) 2));

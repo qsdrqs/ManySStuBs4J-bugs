@@ -1,0 +1,13 @@
+diff --git a/buggy/src/tests/com/puppycrawl/tools/checkstyle/checks/MissingSwitchDefaultCheckTest.java b/fixed/src/tests/com/puppycrawl/tools/checkstyle/checks/MissingSwitchDefaultCheckTest.java
+index e19626c09..00a65a89d 100644
+--- a/buggy/src/tests/com/puppycrawl/tools/checkstyle/checks/MissingSwitchDefaultCheckTest.java
++++ b/fixed/src/tests/com/puppycrawl/tools/checkstyle/checks/MissingSwitchDefaultCheckTest.java
+@@ -16,7 +16,7 @@ public class MissingSwitchDefaultCheckTest
+     public void testMissingSwitchDefault() throws Exception
+     {
+         final String[] expected = {
+-            "15: switch without \"default\" clause",
++            "15: switch without \"default\" clause.",
+         };
+         verify(
+             mCheckConfig,

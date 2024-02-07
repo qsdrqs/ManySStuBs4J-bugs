@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/com/google/inject/ProvisionException.java b/fixed/core/src/com/google/inject/ProvisionException.java
+index e2394461f..3c590b993 100644
+--- a/buggy/core/src/com/google/inject/ProvisionException.java
++++ b/fixed/core/src/com/google/inject/ProvisionException.java
+@@ -57,7 +57,7 @@ public final class ProvisionException extends RuntimeException {
+   }
+ 
+   @Override public String getMessage() {
+-    return Errors.format("Guice provision errors", messages);
++    return Errors.format("Unable to provision, see the following errors", messages);
+   }
+ 
+   private static final long serialVersionUID = 0;

@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/component/file/FileConsumerAutoCreateDirectoryTest.java b/fixed/camel-core/src/test/java/org/apache/camel/component/file/FileConsumerAutoCreateDirectoryTest.java
+index e09af1fa7..12522f6e4 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/component/file/FileConsumerAutoCreateDirectoryTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/component/file/FileConsumerAutoCreateDirectoryTest.java
+@@ -100,7 +100,7 @@ public class FileConsumerAutoCreateDirectoryTest extends ContextTestSupport {
+             });
+             fail("Should have thrown an exception");
+         } catch (FileNotFoundException e) {
+-            assertEquals("Starting directory does not exist: target/file/foo", e.getMessage());
++            assertTrue(e.getMessage().startsWith("Starting directory does not exist"));
+         }
+ 
+         // the directory should NOT exists

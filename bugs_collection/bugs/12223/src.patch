@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-core/src/main/java/io/dropwizard/cli/Cli.java b/fixed/dropwizard-core/src/main/java/io/dropwizard/cli/Cli.java
+index ccec72656..7dc2b7dc2 100644
+--- a/buggy/dropwizard-core/src/main/java/io/dropwizard/cli/Cli.java
++++ b/fixed/dropwizard-core/src/main/java/io/dropwizard/cli/Cli.java
+@@ -106,7 +106,7 @@ public class Cli {
+ 
+     private ArgumentParser buildParser(JarLocation location) {
+         final String usage = "java -jar " + location;
+-        final ArgumentParser p = ArgumentParsers.newArgumentParser(usage, false);
++        final ArgumentParser p = ArgumentParsers.newFor(usage).addHelp(false).build();
+         p.version(location.getVersion().orElse(
+                 "No application version detected. Add a Implementation-Version " +
+                         "entry to your JAR's manifest to enable this."));

@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.maxcube/src/main/java/org/openhab/binding/maxcube/internal/MaxCubeBinding.java b/fixed/bundles/binding/org.openhab.binding.maxcube/src/main/java/org/openhab/binding/maxcube/internal/MaxCubeBinding.java
+index ccc3563cb..729ba3ad7 100644
+--- a/buggy/bundles/binding/org.openhab.binding.maxcube/src/main/java/org/openhab/binding/maxcube/internal/MaxCubeBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.maxcube/src/main/java/org/openhab/binding/maxcube/internal/MaxCubeBinding.java
+@@ -282,7 +282,7 @@ public class MaxCubeBinding extends AbstractActiveBinding<MaxCubeBindingProvider
+                     logger.info("Unsupported MAX!Cube message detected. Ignoring and continue with next Line.");
+                     this.messageProcessor.reset();
+                 } catch (MessageIsWaitingException ex) {
+-                    logger.info("There was and unhandled message waiting. Ignoring and continue with next Line.");
++                    logger.info("There was an unhandled message waiting. Ignoring and continue with next Line.");
+                     this.messageProcessor.reset();
+                 } catch (Exception e) {
+                     logger.info("Failed to process message received by MAX! protocol.");

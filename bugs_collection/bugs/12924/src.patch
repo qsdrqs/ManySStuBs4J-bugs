@@ -1,0 +1,13 @@
+diff --git a/buggy/s3-extensions/src/main/java/io/druid/storage/s3/S3DataSegmentArchiver.java b/fixed/s3-extensions/src/main/java/io/druid/storage/s3/S3DataSegmentArchiver.java
+index 69b1843c1..e8e98987b 100644
+--- a/buggy/s3-extensions/src/main/java/io/druid/storage/s3/S3DataSegmentArchiver.java
++++ b/fixed/s3-extensions/src/main/java/io/druid/storage/s3/S3DataSegmentArchiver.java
+@@ -39,7 +39,7 @@ public class S3DataSegmentArchiver extends S3DataSegmentMover implements DataSeg
+     S3DataSegmentPusherConfig restoreConfig
+   )
+   {
+-    super(s3Client);
++    super(s3Client, restoreConfig);
+     this.archiveConfig = archiveConfig;
+     this.restoreConfig = restoreConfig;
+   }

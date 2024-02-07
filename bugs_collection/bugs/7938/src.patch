@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-restlet/src/main/java/org/apache/camel/component/restlet/RestletComponent.java b/fixed/components/camel-restlet/src/main/java/org/apache/camel/component/restlet/RestletComponent.java
+index 291b7170c..77463a912 100644
+--- a/buggy/components/camel-restlet/src/main/java/org/apache/camel/component/restlet/RestletComponent.java
++++ b/fixed/components/camel-restlet/src/main/java/org/apache/camel/component/restlet/RestletComponent.java
+@@ -124,7 +124,7 @@ public class RestletComponent extends DefaultComponent implements HeaderFilterSt
+         if (!router.hasBeenAttached()) {
+             component.getDefaultHost().attach(endpoint.getUriPattern(), router);
+             if (LOG.isDebugEnabled()) {
+-                LOG.debug("attached methodRouter uriPattern: " + endpoint.getUriPattern());
++                LOG.debug("Attached methodRouter uriPattern: " + endpoint.getUriPattern());
+             }
+         }
+         

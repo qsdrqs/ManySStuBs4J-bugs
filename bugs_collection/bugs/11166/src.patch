@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/comments/AllBlockCommentsTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/comments/AllBlockCommentsTest.java
+index eb8577420..1d88f3748 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/comments/AllBlockCommentsTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/comments/AllBlockCommentsTest.java
+@@ -35,7 +35,7 @@ import com.puppycrawl.tools.checkstyle.api.DetailAST;
+ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
+ 
+ public class AllBlockCommentsTest extends BaseCheckTestSupport {
+-    protected static final Set<String> ALL_COMMENTS = Sets.newLinkedHashSet();
++    private static final Set<String> ALL_COMMENTS = Sets.newLinkedHashSet();
+ 
+     private static final String LINE_SEPARATOR = System.getProperty("line.separator");
+ 

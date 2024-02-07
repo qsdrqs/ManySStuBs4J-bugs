@@ -1,0 +1,13 @@
+diff --git a/buggy/enterprise/cluster/src/main/java/org/neo4j/cluster/MultiPaxosServerFactory.java b/fixed/enterprise/cluster/src/main/java/org/neo4j/cluster/MultiPaxosServerFactory.java
+index 5cb4db06e..7dc4905d1 100644
+--- a/buggy/enterprise/cluster/src/main/java/org/neo4j/cluster/MultiPaxosServerFactory.java
++++ b/fixed/enterprise/cluster/src/main/java/org/neo4j/cluster/MultiPaxosServerFactory.java
+@@ -100,7 +100,7 @@ public class MultiPaxosServerFactory
+ 
+         final MultiPaxosContext context = new MultiPaxosContext( me,
+                 Iterables.<ElectionRole,ElectionRole>iterable( new ElectionRole(ClusterConfiguration.COORDINATOR )),
+-                new ClusterConfiguration( initialConfig.getName(), logging.getMessagesLog( ClusterConfiguration.class ), initialConfig.getMemberURIs() ),executor, logging,
++                new ClusterConfiguration( initialConfig.getName(), initialConfig.getMemberURIs() ),executor, logging,
+                 objectInputStreamFactory, objectOutputStreamFactory, acceptorInstanceStore, timeouts);
+ 
+         SnapshotContext snapshotContext = new SnapshotContext( context.getClusterContext(), context.getLearnerContext() );

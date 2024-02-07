@@ -1,0 +1,13 @@
+diff --git a/buggy/test/com/google/javascript/jscomp/TypeCheckNoTranspileTest.java b/fixed/test/com/google/javascript/jscomp/TypeCheckNoTranspileTest.java
+index d99f79045..719b9a75a 100644
+--- a/buggy/test/com/google/javascript/jscomp/TypeCheckNoTranspileTest.java
++++ b/fixed/test/com/google/javascript/jscomp/TypeCheckNoTranspileTest.java
+@@ -1467,7 +1467,7 @@ public final class TypeCheckNoTranspileTest extends TypeCheckTestCase {
+             "}"),
+         lines(
+             "Can only iterate over a (non-null) Iterable type",
+-            "found   : (Array|number)",
++            "found   : (Array<?>|number)",
+             "required: Iterable"));
+   }
+ 

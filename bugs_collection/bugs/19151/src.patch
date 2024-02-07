@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/test/java/org/neo4j/kernel/impl/util/Neo4jJobSchedulerTest.java b/fixed/community/kernel/src/test/java/org/neo4j/kernel/impl/util/Neo4jJobSchedulerTest.java
+index f548a8bfd..ae447fa9f 100644
+--- a/buggy/community/kernel/src/test/java/org/neo4j/kernel/impl/util/Neo4jJobSchedulerTest.java
++++ b/fixed/community/kernel/src/test/java/org/neo4j/kernel/impl/util/Neo4jJobSchedulerTest.java
+@@ -86,7 +86,7 @@ public class Neo4jJobSchedulerTest
+         scheduler = new Neo4jJobScheduler( StringLogger.DEV_NULL );
+ 
+         scheduler.start();
+-        scheduler.scheduleRecurring( indexPopulation, countInvocationsJob, 1, MILLISECONDS );
++        scheduler.scheduleRecurring( indexPopulation, countInvocationsJob, 2, MILLISECONDS );
+ 
+         // When
+         scheduler.cancelRecurring( indexPopulation,  countInvocationsJob);

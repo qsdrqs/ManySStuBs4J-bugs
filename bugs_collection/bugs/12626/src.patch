@@ -1,0 +1,13 @@
+diff --git a/buggy/processing/src/test/java/org/apache/druid/query/topn/TopNQueryQueryToolChestTest.java b/fixed/processing/src/test/java/org/apache/druid/query/topn/TopNQueryQueryToolChestTest.java
+index cede671e6..81079df3c 100644
+--- a/buggy/processing/src/test/java/org/apache/druid/query/topn/TopNQueryQueryToolChestTest.java
++++ b/fixed/processing/src/test/java/org/apache/druid/query/topn/TopNQueryQueryToolChestTest.java
+@@ -134,7 +134,7 @@ public class TopNQueryQueryToolChestTest
+   }
+ 
+   @Test
+-  public void testComputeResultLevelCacheKeyWithDifferentPostAgg() throws IOException
++  public void testComputeResultLevelCacheKeyWithDifferentPostAgg()
+   {
+     final TopNQuery query1 = new TopNQuery(
+         new TableDataSource("dummy"),

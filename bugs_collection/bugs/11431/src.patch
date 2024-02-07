@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/api/AutomaticBeanTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/api/AutomaticBeanTest.java
+index 11c83ae28..3b986d360 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/api/AutomaticBeanTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/api/AutomaticBeanTest.java
+@@ -98,7 +98,7 @@ public class AutomaticBeanTest {
+     }
+ 
+     @SuppressWarnings("unused")
+-    public class TestBean extends AutomaticBean {
++    public static class TestBean extends AutomaticBean {
+ 
+         private String privateField;
+ 

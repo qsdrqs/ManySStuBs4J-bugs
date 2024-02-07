@@ -1,0 +1,22 @@
+diff --git a/buggy/DesktopImport/src/org/gephi/desktop/importer/DesktopImportControllerUI.java b/fixed/DesktopImport/src/org/gephi/desktop/importer/DesktopImportControllerUI.java
+index 70cf4d118..64fb1b62f 100644
+--- a/buggy/DesktopImport/src/org/gephi/desktop/importer/DesktopImportControllerUI.java
++++ b/fixed/DesktopImport/src/org/gephi/desktop/importer/DesktopImportControllerUI.java
+@@ -175,7 +175,7 @@ public class DesktopImportControllerUI implements ImportControllerUI {
+             }
+ 
+             //Execute task
+-            final String containerSource = "Stream " + importer;
++            final String containerSource = "Stream " + importerName;
+             executor.execute(task, new Runnable() {
+ 
+                 public void run() {
+@@ -234,7 +234,7 @@ public class DesktopImportControllerUI implements ImportControllerUI {
+             }
+ 
+             //Execute task
+-            final String containerSource = "Stream " + importer;
++            final String containerSource = "Stream " + importerName;
+             executor.execute(task, new Runnable() {
+ 
+                 public void run() {

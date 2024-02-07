@@ -1,0 +1,14 @@
+diff --git a/buggy/spring-boot-project/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/thymeleaf/ThymeleafReactiveAutoConfigurationTests.java b/fixed/spring-boot-project/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/thymeleaf/ThymeleafReactiveAutoConfigurationTests.java
+index 0575b6101..e737391bc 100644
+--- a/buggy/spring-boot-project/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/thymeleaf/ThymeleafReactiveAutoConfigurationTests.java
++++ b/fixed/spring-boot-project/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/thymeleaf/ThymeleafReactiveAutoConfigurationTests.java
+@@ -225,7 +225,8 @@ public class ThymeleafReactiveAutoConfigurationTests {
+ 						new TestingAuthenticationToken("alice", "admin")));
+ 		IContext attrs = new SpringWebFluxContext(exchange);
+ 		String result = engine.process("security-dialect", attrs);
+-		assertThat(result).isEqualTo("<html><body><div>alice</div></body></html>\n");
++		assertThat(result).isEqualTo(
++				"<html><body><div>alice</div></body></html>" + System.lineSeparator());
+ 	}
+ 
+ 	@Test

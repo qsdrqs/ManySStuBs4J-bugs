@@ -1,0 +1,14 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/TypeCheck.java b/fixed/src/com/google/javascript/jscomp/TypeCheck.java
+index 33782e94f..6c5d97150 100644
+--- a/buggy/src/com/google/javascript/jscomp/TypeCheck.java
++++ b/fixed/src/com/google/javascript/jscomp/TypeCheck.java
+@@ -1559,7 +1559,8 @@ public class TypeCheck implements NodeTraversal.Callback, CompilerPass {
+ 
+       boolean isExtern = false;
+       JSDocInfo functionJSDocInfo = functionType.getJSDocInfo();
+-      if(functionJSDocInfo != null) {
++      if( functionJSDocInfo != null  &&
++          functionJSDocInfo.getAssociatedNode() != null) {
+         isExtern = functionJSDocInfo.getAssociatedNode().isFromExterns();
+       }
+ 

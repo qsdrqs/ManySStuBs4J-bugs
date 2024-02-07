@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/main/java/org/springframework/boot/context/embedded/jetty/JettyEmbeddedServletContainerFactory.java b/fixed/spring-boot/src/main/java/org/springframework/boot/context/embedded/jetty/JettyEmbeddedServletContainerFactory.java
+index 142d584b3..f1c8e35bb 100644
+--- a/buggy/spring-boot/src/main/java/org/springframework/boot/context/embedded/jetty/JettyEmbeddedServletContainerFactory.java
++++ b/fixed/spring-boot/src/main/java/org/springframework/boot/context/embedded/jetty/JettyEmbeddedServletContainerFactory.java
+@@ -251,7 +251,7 @@ public class JettyEmbeddedServletContainerFactory
+ 		configureSslClientAuth(factory, ssl);
+ 		configureSslPasswords(factory, ssl);
+ 		factory.setCertAlias(ssl.getKeyAlias());
+-		if (!ObjectUtils.isEmpty(ssl.getCiphers() != null)) {
++		if (!ObjectUtils.isEmpty(ssl.getCiphers())) {
+ 			factory.setIncludeCipherSuites(ssl.getCiphers());
+ 			factory.setExcludeCipherSuites();
+ 		}

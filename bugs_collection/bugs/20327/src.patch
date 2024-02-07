@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.stiebelheatpump/src/main/java/org/openhab/binding/stiebelheatpump/protocol/DataParser.java b/fixed/bundles/binding/org.openhab.binding.stiebelheatpump/src/main/java/org/openhab/binding/stiebelheatpump/protocol/DataParser.java
+index f6d6df1e0..e601029b2 100644
+--- a/buggy/bundles/binding/org.openhab.binding.stiebelheatpump/src/main/java/org/openhab/binding/stiebelheatpump/protocol/DataParser.java
++++ b/fixed/bundles/binding/org.openhab.binding.stiebelheatpump/src/main/java/org/openhab/binding/stiebelheatpump/protocol/DataParser.java
+@@ -74,7 +74,7 @@ public class DataParser {
+         logger.debug("Parse bytes: {}", DataParser.bytesToHex(response));
+ 
+         if (response.length < 2) {
+-            logger.error("response does not have a valid length ogf bytes: {}", DataParser.bytesToHex(response));
++            logger.error("response does not have a valid length of bytes: {}", DataParser.bytesToHex(response));
+             return map;
+         }
+ 

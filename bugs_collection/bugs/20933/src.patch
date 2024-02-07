@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/model/org.openhab.model.item/src/org/openhab/model/item/internal/GenericItemProvider.java b/fixed/bundles/model/org.openhab.model.item/src/org/openhab/model/item/internal/GenericItemProvider.java
+index 9e1b745a1..7e90cdc0f 100644
+--- a/buggy/bundles/model/org.openhab.model.item/src/org/openhab/model/item/internal/GenericItemProvider.java
++++ b/fixed/bundles/model/org.openhab.model.item/src/org/openhab/model/item/internal/GenericItemProvider.java
+@@ -129,7 +129,7 @@ public class GenericItemProvider implements ItemProvider, ModelRepositoryChangeL
+ 				try {
+ 					reader.processBindingConfiguration(modelName, item, config);
+ 				} catch (BindingConfigParseException e) {
+-					logger.error("Binding information of type '" + bindingType + "' for item ‘{}‘ could not be parsed correctly.", item.getName() , e);
++					logger.error("Binding information of type '" + bindingType + "' for item ‘" + item.getName() + "‘ could not be parsed correctly.", e);
+ 				}
+ 			}
+ 		}

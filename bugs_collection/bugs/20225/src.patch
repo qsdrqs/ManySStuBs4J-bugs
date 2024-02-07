@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.davis/src/main/java/org/openhab/binding/davis/datatypes/DataTypeBarometricTrend.java b/fixed/bundles/binding/org.openhab.binding.davis/src/main/java/org/openhab/binding/davis/datatypes/DataTypeBarometricTrend.java
+index 5da9fed49..56d29293c 100644
+--- a/buggy/bundles/binding/org.openhab.binding.davis/src/main/java/org/openhab/binding/davis/datatypes/DataTypeBarometricTrend.java
++++ b/fixed/bundles/binding/org.openhab.binding.davis/src/main/java/org/openhab/binding/davis/datatypes/DataTypeBarometricTrend.java
+@@ -44,7 +44,7 @@ public class DataTypeBarometricTrend implements DavisDataType {
+                 trend = "no trend info available";
+                 break;
+             default:
+-                trend = "unkown";
++                trend = "unknown";
+                 break;
+         }
+         return trend;

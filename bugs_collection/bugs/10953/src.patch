@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/base/BaseCheckTestSupport.java b/fixed/src/it/java/com/google/checkstyle/test/base/BaseCheckTestSupport.java
+index 978867201..a939b07b5 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/base/BaseCheckTestSupport.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/base/BaseCheckTestSupport.java
+@@ -129,7 +129,7 @@ public class BaseCheckTestSupport {
+         // process each of the lines
+         final ByteArrayInputStream inputStream =
+                 new ByteArrayInputStream(stream.toByteArray());
+-        try (final LineNumberReader lnr = new LineNumberReader(
++        try (LineNumberReader lnr = new LineNumberReader(
+                 new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
+ 
+             int previousLineNumber = 0;

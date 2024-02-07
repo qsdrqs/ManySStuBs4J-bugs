@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/main/java/org/springframework/boot/logging/LoggingApplicationListener.java b/fixed/spring-boot/src/main/java/org/springframework/boot/logging/LoggingApplicationListener.java
+index 9c67a3deb..d89783a94 100644
+--- a/buggy/spring-boot/src/main/java/org/springframework/boot/logging/LoggingApplicationListener.java
++++ b/fixed/spring-boot/src/main/java/org/springframework/boot/logging/LoggingApplicationListener.java
+@@ -109,7 +109,7 @@ public class LoggingApplicationListener implements GenericApplicationListener {
+ 
+ 	private LoggingSystem loggingSystem;
+ 
+-	private int order = Ordered.HIGHEST_PRECEDENCE + 11;
++	private int order = Ordered.HIGHEST_PRECEDENCE + 20;
+ 
+ 	private boolean parseArgs = true;
+ 

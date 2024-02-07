@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-clients/src/main/java/org/apache/flink/client/program/PackagedProgram.java b/fixed/flink-clients/src/main/java/org/apache/flink/client/program/PackagedProgram.java
+index bff8e3ed6..2a8804352 100644
+--- a/buggy/flink-clients/src/main/java/org/apache/flink/client/program/PackagedProgram.java
++++ b/fixed/flink-clients/src/main/java/org/apache/flink/client/program/PackagedProgram.java
+@@ -679,7 +679,7 @@ public class PackagedProgram {
+ 					
+ 						File tempFile;
+ 						try {
+-							tempFile = File.createTempFile(String.valueOf(Math.abs(rnd.nextInt()) + "_"), name);
++							tempFile = File.createTempFile(rnd.nextInt(Integer.MAX_VALUE) + "_", name);
+ 							tempFile.deleteOnExit();
+ 						}
+ 						catch (IOException e) {

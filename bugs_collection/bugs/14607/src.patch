@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/IncrementalScopeCreator.java b/fixed/src/com/google/javascript/jscomp/IncrementalScopeCreator.java
+index 6d0db7e74..02139a2c7 100644
+--- a/buggy/src/com/google/javascript/jscomp/IncrementalScopeCreator.java
++++ b/fixed/src/com/google/javascript/jscomp/IncrementalScopeCreator.java
+@@ -240,7 +240,7 @@ class IncrementalScopeCreator implements ScopeCreator {
+     void expandInvalidatedScript(Node script) {
+       Collection<Node> pairs = scriptDeclarationsPairs.get(script);
+       for (Node n : pairs) {
+-        if (!scriptsToUpdate.add(n)) {
++        if (scriptsToUpdate.add(n)) {
+           expandInvalidatedScript(script);
+         }
+       }

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/tests/com/puppycrawl/tools/checkstyle/CheckerTest.java b/fixed/src/tests/com/puppycrawl/tools/checkstyle/CheckerTest.java
+index fffca5376..5aab5033a 100644
+--- a/buggy/src/tests/com/puppycrawl/tools/checkstyle/CheckerTest.java
++++ b/fixed/src/tests/com/puppycrawl/tools/checkstyle/CheckerTest.java
+@@ -20,7 +20,7 @@ public class CheckerTest
+     {
+         public BriefLogger(OutputStream out)
+         {
+-            super(out);
++            super(out, false);
+         }
+         public void auditStarted(AuditEvent evt) {}
+         public void fileFinished(AuditEvent evt) {}

@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-logging/src/test/java/io/dropwizard/logging/PrefixedRootCauseFirstThrowableProxyConverterTest.java b/fixed/dropwizard-logging/src/test/java/io/dropwizard/logging/PrefixedRootCauseFirstThrowableProxyConverterTest.java
+index 82fea769c..d7ebf3d8c 100644
+--- a/buggy/dropwizard-logging/src/test/java/io/dropwizard/logging/PrefixedRootCauseFirstThrowableProxyConverterTest.java
++++ b/fixed/dropwizard-logging/src/test/java/io/dropwizard/logging/PrefixedRootCauseFirstThrowableProxyConverterTest.java
+@@ -33,7 +33,7 @@ public class PrefixedRootCauseFirstThrowableProxyConverterTest {
+         return null; // unpossible, tell the type-system
+     }
+ 
+-    private void throwRoot() throws SocketTimeoutException {
++    private static void throwRoot() throws SocketTimeoutException {
+         throw new SocketTimeoutException("Timed-out reading from socket");
+     }
+ 

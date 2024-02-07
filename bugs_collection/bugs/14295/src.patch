@@ -1,0 +1,13 @@
+diff --git a/buggy/FiltersPlugin/src/org/gephi/filters/plugin/operator/UNIONBuilder.java b/fixed/FiltersPlugin/src/org/gephi/filters/plugin/operator/UNIONBuilder.java
+index e11f6245f..69dec0c8c 100644
+--- a/buggy/FiltersPlugin/src/org/gephi/filters/plugin/operator/UNIONBuilder.java
++++ b/fixed/FiltersPlugin/src/org/gephi/filters/plugin/operator/UNIONBuilder.java
+@@ -68,7 +68,7 @@ public class UNIONBuilder implements FilterBuilder {
+         return null;
+     }
+ 
+-    private static class UnionOperator implements Operator {
++    public static class UnionOperator implements Operator {
+ 
+         public int getInputCount() {
+             return Integer.MAX_VALUE;

@@ -1,0 +1,31 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule412nonemptyblocks/LeftCurlyRightCurlyTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule412nonemptyblocks/LeftCurlyRightCurlyTest.java
+index 37285aa6d..db9d0a08d 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule412nonemptyblocks/LeftCurlyRightCurlyTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule412nonemptyblocks/LeftCurlyRightCurlyTest.java
+@@ -30,7 +30,7 @@ public class LeftCurlyRightCurlyTest extends BaseCheckTestSupport {
+     }
+ 
+     @Test
+-    public void leftCurlyBracesTest() throws IOException, Exception {
++    public void leftCurlyBracesTest() throws Exception {
+ 
+         final String[] expected = {
+             "4:1: " + getCheckMessage(LeftCurlyCheck.class, MSG_KEY_LINE_PREVIOUS, "{", 1),
+@@ -50,7 +50,7 @@ public class LeftCurlyRightCurlyTest extends BaseCheckTestSupport {
+     }
+     
+     @Test
+-    public void leftCurlyAnnotationsTest() throws IOException, Exception {
++    public void leftCurlyAnnotationsTest() throws Exception {
+ 
+         final String[] expected = {
+             "10:1: " + getCheckMessage(LeftCurlyCheck.class, MSG_KEY_LINE_PREVIOUS, "{", 1),
+@@ -68,7 +68,7 @@ public class LeftCurlyRightCurlyTest extends BaseCheckTestSupport {
+     }
+     
+     @Test
+-    public void leftCurlyMethodsTest() throws IOException, Exception {
++    public void leftCurlyMethodsTest() throws Exception {
+ 
+         final String[] expected = {
+             "4:1: " + getCheckMessage(LeftCurlyCheck.class, MSG_KEY_LINE_PREVIOUS, "{", 1),

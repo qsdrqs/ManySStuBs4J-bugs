@@ -1,0 +1,22 @@
+diff --git a/buggy/spring-boot-project/spring-boot-tools/spring-boot-loader/src/test/java/org/springframework/boot/loader/jar/HandlerTests.java b/fixed/spring-boot-project/spring-boot-tools/spring-boot-loader/src/test/java/org/springframework/boot/loader/jar/HandlerTests.java
+index 4cfacb28a..52bfa43c9 100644
+--- a/buggy/spring-boot-project/spring-boot-tools/spring-boot-loader/src/test/java/org/springframework/boot/loader/jar/HandlerTests.java
++++ b/fixed/spring-boot-project/spring-boot-tools/spring-boot-loader/src/test/java/org/springframework/boot/loader/jar/HandlerTests.java
+@@ -130,7 +130,7 @@ public class HandlerTests {
+ 	@Test
+ 	public void urlWithSpecReferencingParentDirectory() throws MalformedURLException {
+ 		assertStandardAndCustomHandlerUrlsAreEqual("file:/test.jar!/BOOT-INF/classes!/xsd/folderA/a.xsd",
+-				"../folderB/b.xsd");
++				"../folderB/c/d/e.xsd");
+ 	}
+ 
+ 	@Test
+@@ -142,7 +142,7 @@ public class HandlerTests {
+ 	@Test
+ 	public void urlWithSpecReferencingCurrentDirectory() throws MalformedURLException {
+ 		assertStandardAndCustomHandlerUrlsAreEqual("file:/test.jar!/BOOT-INF/classes!/xsd/folderA/a.xsd",
+-				"./folderB/./b.xsd");
++				"./folderB/c/d/e.xsd");
+ 	}
+ 
+ 	@Test

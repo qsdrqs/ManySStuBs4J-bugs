@@ -1,0 +1,13 @@
+diff --git a/buggy/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/Box20Example.java b/fixed/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/Box20Example.java
+index f22aa6883..731e0b217 100644
+--- a/buggy/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/Box20Example.java
++++ b/fixed/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/Box20Example.java
+@@ -16,7 +16,7 @@ import java.util.Map;
+ public final class Box20Example {
+ 
+     private static final String NETWORK_NAME = "Box";
+-    private static final String PROTECTED_RESOURCE_URL = "https://app.box.com/profile";
++    private static final String PROTECTED_RESOURCE_URL = "https://api.box.com/2.0/users/me";
+ 
+     private Box20Example() {
+     }

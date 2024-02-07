@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-state-backends/flink-statebackend-rocksdb/src/main/java/org/apache/flink/contrib/streaming/state/RocksDBListState.java b/fixed/flink-state-backends/flink-statebackend-rocksdb/src/main/java/org/apache/flink/contrib/streaming/state/RocksDBListState.java
+index 00123f5d3..c18adb199 100644
+--- a/buggy/flink-state-backends/flink-statebackend-rocksdb/src/main/java/org/apache/flink/contrib/streaming/state/RocksDBListState.java
++++ b/fixed/flink-state-backends/flink-statebackend-rocksdb/src/main/java/org/apache/flink/contrib/streaming/state/RocksDBListState.java
+@@ -148,7 +148,7 @@ class RocksDBListState<K, N, V>
+ 				return element;
+ 			}
+ 		} catch (IOException e) {
+-			throw new FlinkRuntimeException("Unexpected list element deserialization failure");
++			throw new FlinkRuntimeException("Unexpected list element deserialization failure", e);
+ 		}
+ 		return null;
+ 	}

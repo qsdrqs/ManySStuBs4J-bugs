@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-security-oauth2/src/test/java/org/springframework/security/oauth2/provider/endpoint/DefaultRedirectResolverTests.java b/fixed/spring-security-oauth2/src/test/java/org/springframework/security/oauth2/provider/endpoint/DefaultRedirectResolverTests.java
+index 91b361979..e981a83cd 100644
+--- a/buggy/spring-security-oauth2/src/test/java/org/springframework/security/oauth2/provider/endpoint/DefaultRedirectResolverTests.java
++++ b/fixed/spring-security-oauth2/src/test/java/org/springframework/security/oauth2/provider/endpoint/DefaultRedirectResolverTests.java
+@@ -130,7 +130,7 @@ public class DefaultRedirectResolverTests {
+ 	public void testRedirectNotMatchingSubdomain() throws Exception {
+ 		Set<String> redirectUris = new HashSet<String>(Arrays.asList("https://anywhere.com/foo"));
+ 		client.setRegisteredRedirectUri(redirectUris);
+-		resolver.resolveRedirect("/OZSLZ/foo", client);
++		resolver.resolveRedirect("https://2anywhere.com/foo", client);
+ 	}
+ 
+ 	// gh-747

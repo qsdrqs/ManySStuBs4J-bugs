@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions/assistedinject/src/com/google/inject/assistedinject/FactoryProvider2.java b/fixed/extensions/assistedinject/src/com/google/inject/assistedinject/FactoryProvider2.java
+index dbccd5289..5292b1044 100644
+--- a/buggy/extensions/assistedinject/src/com/google/inject/assistedinject/FactoryProvider2.java
++++ b/fixed/extensions/assistedinject/src/com/google/inject/assistedinject/FactoryProvider2.java
+@@ -303,7 +303,7 @@ final class FactoryProvider2 <F> implements InvocationHandler,
+   }
+ 
+   @SuppressWarnings("unchecked")
+-  public <V, T> V acceptExtensionVisitor(BindingTargetVisitor<T, V> visitor,
++  public <T, V> V acceptExtensionVisitor(BindingTargetVisitor<T, V> visitor,
+       ProviderInstanceBinding<? extends T> binding) {
+     if (visitor instanceof AssistedInjectTargetVisitor) {
+       return ((AssistedInjectTargetVisitor<T, V>)visitor).visit((AssistedInjectBinding<T>)this);

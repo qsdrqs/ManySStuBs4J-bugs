@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/LineWrappingHandler.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/LineWrappingHandler.java
+index c02fbb7ab..9ee72d852 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/LineWrappingHandler.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/LineWrappingHandler.java
+@@ -251,7 +251,7 @@ public class LineWrappingHandler {
+      * @return true if all the nodes up to the last annotation node are end of scope nodes
+      *         false otherwise
+      */
+-    private boolean isEndOfScope(final DetailAST lastAnnotationNode, final DetailAST node) {
++    private static boolean isEndOfScope(final DetailAST lastAnnotationNode, final DetailAST node) {
+         DetailAST checkNode = node;
+         boolean endOfScope = true;
+         while (endOfScope && !checkNode.equals(lastAnnotationNode)) {

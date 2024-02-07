@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/map/impl/mapstore/MapStoreWriteBehindTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/map/impl/mapstore/MapStoreWriteBehindTest.java
+index c2f55a6dd..e92c5ce9f 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/map/impl/mapstore/MapStoreWriteBehindTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/map/impl/mapstore/MapStoreWriteBehindTest.java
+@@ -245,7 +245,7 @@ public class MapStoreWriteBehindTest extends AbstractMapStoreTest {
+     public void testOneMemberWriteBehindFlush() {
+         TestMapStore testMapStore = new TestMapStore(1, 1, 1);
+         testMapStore.setLoadAllKeys(false);
+-        int writeDelaySeconds = 2;
++        int writeDelaySeconds = 10;
+         Config config = newConfig(testMapStore, writeDelaySeconds);
+         TestHazelcastInstanceFactory nodeFactory = createHazelcastInstanceFactory(3);
+         HazelcastInstance instance = nodeFactory.newHazelcastInstance(config);

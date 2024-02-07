@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-jetty/src/test/java/io/dropwizard/jetty/HttpConnectorFactoryTest.java b/fixed/dropwizard-jetty/src/test/java/io/dropwizard/jetty/HttpConnectorFactoryTest.java
+index 2097d4094..1f1ee7891 100644
+--- a/buggy/dropwizard-jetty/src/test/java/io/dropwizard/jetty/HttpConnectorFactoryTest.java
++++ b/fixed/dropwizard-jetty/src/test/java/io/dropwizard/jetty/HttpConnectorFactoryTest.java
+@@ -130,7 +130,7 @@ public class HttpConnectorFactoryTest {
+         assertThat(connector.getHost()).isEqualTo("127.0.0.1");
+         assertThat(connector.getAcceptQueueSize()).isEqualTo(1024);
+         assertThat(connector.getReuseAddress()).isTrue();
+-        assertThat(connector.getSoLingerTime()).isEqualTo(30);
++        assertThat(connector.getSoLingerTime()).isEqualTo(30000);
+         assertThat(connector.getIdleTimeout()).isEqualTo(30000);
+         assertThat(connector.getName()).isEqualTo("test-http-connector");
+ 

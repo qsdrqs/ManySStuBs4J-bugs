@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/junit/runner/Description.java b/fixed/src/main/java/org/junit/runner/Description.java
+index 191dfc103..7cbd2542d 100644
+--- a/buggy/src/main/java/org/junit/runner/Description.java
++++ b/fixed/src/main/java/org/junit/runner/Description.java
+@@ -207,7 +207,7 @@ public class Description implements Serializable {
+ 		if (name == null)
+ 			return null;
+ 		try {
+-			return Class.forName(name);
++			return Class.forName(name, false, getClass().getClassLoader());
+ 		} catch (ClassNotFoundException e) {
+ 			return null;
+ 		}

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/PackageNamesLoaderTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/PackageNamesLoaderTest.java
+index fd202777b..3afa734d1 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/PackageNamesLoaderTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/PackageNamesLoaderTest.java
+@@ -61,7 +61,7 @@ public class PackageNamesLoaderTest {
+         validatePackageNames(packageNames);
+     }
+ 
+-    private void validatePackageNames(Set<String> pkgNames) {
++    private static void validatePackageNames(Set<String> pkgNames) {
+         final String[] checkstylePackages = {
+             "com.puppycrawl.tools.checkstyle.",
+             "com.puppycrawl.tools.checkstyle.checks.",

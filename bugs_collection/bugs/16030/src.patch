@@ -1,0 +1,22 @@
+diff --git a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/heartbeat/ClientHeartbeatTest.java b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/heartbeat/ClientHeartbeatTest.java
+index 93827be07..c0b152c94 100644
+--- a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/heartbeat/ClientHeartbeatTest.java
++++ b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/heartbeat/ClientHeartbeatTest.java
+@@ -292,7 +292,7 @@ public class ClientHeartbeatTest extends ClientTestSupport {
+         HazelcastInstance hazelcastInstance = hazelcastFactory.newHazelcastInstance(config);
+ 
+         ClientConfig clientConfig = new ClientConfig();
+-        clientConfig.setProperty(ClientProperty.HEARTBEAT_TIMEOUT.getName(), "4000");
++        clientConfig.setProperty(ClientProperty.HEARTBEAT_TIMEOUT.getName(), "10000");
+         clientConfig.setProperty(ClientProperty.HEARTBEAT_INTERVAL.getName(), "1000");
+ 
+         HazelcastInstance client = hazelcastFactory.newHazelcastClient(clientConfig);
+@@ -345,7 +345,7 @@ public class ClientHeartbeatTest extends ClientTestSupport {
+         hazelcastFactory.newHazelcastInstance();
+ 
+         ClientConfig clientConfig = new ClientConfig();
+-        clientConfig.setProperty(ClientProperty.HEARTBEAT_TIMEOUT.getName(), "4000");
++        clientConfig.setProperty(ClientProperty.HEARTBEAT_TIMEOUT.getName(), "10000");
+         clientConfig.setProperty(ClientProperty.HEARTBEAT_INTERVAL.getName(), "1000");
+ 
+         final HazelcastInstance client = hazelcastFactory.newHazelcastClient(clientConfig);

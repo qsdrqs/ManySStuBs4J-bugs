@@ -1,0 +1,13 @@
+diff --git a/buggy/itest/src/edu/stanford/nlp/hcoref/DcorefChineseBenchmarkSlowITest.java b/fixed/itest/src/edu/stanford/nlp/hcoref/DcorefChineseBenchmarkSlowITest.java
+index 321c86ddb..971e4e2b0 100644
+--- a/buggy/itest/src/edu/stanford/nlp/hcoref/DcorefChineseBenchmarkSlowITest.java
++++ b/fixed/itest/src/edu/stanford/nlp/hcoref/DcorefChineseBenchmarkSlowITest.java
+@@ -105,7 +105,7 @@ public class DcorefChineseBenchmarkSlowITest extends TestCase {
+ 
+ 
+     setAll(lowResults, highResults, expectedResults, MENTION_TP, 12370);
+-    setAll(lowResults, highResults, expectedResults, MENTION_F1, 55.6);
++    setLowHighExpected(lowResults, highResults, expectedResults, MENTION_F1, 55.5, 55.6, 55.7);
+ 
+     setLowHighExpected(lowResults, highResults, expectedResults, MUC_TP, 5965, 5970, 5965);
+     setAll(lowResults,highResults,expectedResults,MUC_F1,57.93);

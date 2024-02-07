@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/VisualizationImpl/src/main/java/org/gephi/visualization/component/ActionsToolbar.java b/fixed/modules/VisualizationImpl/src/main/java/org/gephi/visualization/component/ActionsToolbar.java
+index d19d90a73..98ec98cfc 100644
+--- a/buggy/modules/VisualizationImpl/src/main/java/org/gephi/visualization/component/ActionsToolbar.java
++++ b/fixed/modules/VisualizationImpl/src/main/java/org/gephi/visualization/component/ActionsToolbar.java
+@@ -71,7 +71,7 @@ public class ActionsToolbar extends JToolBar {
+ 
+     //Settings
+     private Color color = new Color(0.6f, 0.6f, 0.6f);
+-    private float size = 1f;
++    private float size = 10.0f;
+ 
+     public ActionsToolbar() {
+         initDesign();

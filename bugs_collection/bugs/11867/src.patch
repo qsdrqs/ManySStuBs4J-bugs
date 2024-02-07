@@ -1,0 +1,13 @@
+diff --git a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/FileLengthCheck.java b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/FileLengthCheck.java
+index 8df094607..1013602b8 100644
+--- a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/FileLengthCheck.java
++++ b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/FileLengthCheck.java
+@@ -37,7 +37,7 @@ import com.puppycrawl.tools.checkstyle.api.Check;
+ public class FileLengthCheck extends Check
+ {
+     /** the maximum number of lines */
+-    int mMaxFileLength = 2000;
++    private int mMaxFileLength = 2000;
+ 
+     /** @see com.puppycrawl.tools.checkstyle.api.Check */
+     public int[] getDefaultTokens()

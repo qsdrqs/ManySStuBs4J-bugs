@@ -1,0 +1,21 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/map/impl/operation/ReadonlyKeyBasedMapOperation.java b/fixed/hazelcast/src/main/java/com/hazelcast/map/impl/operation/ReadonlyKeyBasedMapOperation.java
+index 19ada7ff7..e94fa2c00 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/map/impl/operation/ReadonlyKeyBasedMapOperation.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/map/impl/operation/ReadonlyKeyBasedMapOperation.java
+@@ -52,14 +52,14 @@ public abstract class ReadonlyKeyBasedMapOperation extends MapOperation implemen
+ 
+     @Override
+     protected void writeInternal(ObjectDataOutput out) throws IOException {
+-        out.writeUTF(name);
++        super.writeInternal(out);
+         out.writeData(dataKey);
+         out.writeLong(threadId);
+     }
+ 
+     @Override
+     protected void readInternal(ObjectDataInput in) throws IOException {
+-        name = in.readUTF();
++        super.readInternal(in);
+         dataKey = in.readData();
+         threadId = in.readLong();
+     }

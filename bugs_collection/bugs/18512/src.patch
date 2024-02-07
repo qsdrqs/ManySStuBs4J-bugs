@@ -1,0 +1,13 @@
+diff --git a/buggy/backends/gdx-backend-lwjgl/src/com/badlogic/gdx/backends/lwjgl/LwjglAudio.java b/fixed/backends/gdx-backend-lwjgl/src/com/badlogic/gdx/backends/lwjgl/LwjglAudio.java
+index 3105e66f8..81312ecb1 100644
+--- a/buggy/backends/gdx-backend-lwjgl/src/com/badlogic/gdx/backends/lwjgl/LwjglAudio.java
++++ b/fixed/backends/gdx-backend-lwjgl/src/com/badlogic/gdx/backends/lwjgl/LwjglAudio.java
+@@ -115,7 +115,7 @@ final class LwjglAudio implements Audio, Runnable {
+ 		try {
+ 			LwjglMusic music = new LwjglMusic(((LwjglFileHandle)file));
+ 			return music;
+-		} catch (Exception e) {
++		} catch (Throwable e) {
+ 			throw new GdxRuntimeException("Couldn't create Music instance from file '" + file + "'", e);
+ 		}
+ 	}

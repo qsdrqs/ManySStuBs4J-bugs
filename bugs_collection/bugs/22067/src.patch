@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-test-autoconfigure/src/main/java/org/springframework/boot/test/autoconfigure/filter/FilterAnnotations.java b/fixed/spring-boot-project/spring-boot-test-autoconfigure/src/main/java/org/springframework/boot/test/autoconfigure/filter/FilterAnnotations.java
+index d5161244c..91d8db7bb 100644
+--- a/buggy/spring-boot-project/spring-boot-test-autoconfigure/src/main/java/org/springframework/boot/test/autoconfigure/filter/FilterAnnotations.java
++++ b/fixed/spring-boot-project/spring-boot-test-autoconfigure/src/main/java/org/springframework/boot/test/autoconfigure/filter/FilterAnnotations.java
+@@ -72,7 +72,7 @@ public class FilterAnnotations implements Iterable<TypeFilter> {
+ 		switch (filterType) {
+ 		case ANNOTATION:
+ 			Assert.isAssignable(Annotation.class, filterClass,
+-					"An error occurred while processing a ANNOTATION type filter: ");
++					"An error occurred while processing an ANNOTATION type filter: ");
+ 			return new AnnotationTypeFilter((Class<Annotation>) filterClass);
+ 		case ASSIGNABLE_TYPE:
+ 			return new AssignableTypeFilter(filterClass);

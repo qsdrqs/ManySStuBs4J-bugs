@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/Linter.java b/fixed/src/com/google/javascript/jscomp/Linter.java
+index b5d1da549..477bd324f 100644
+--- a/buggy/src/com/google/javascript/jscomp/Linter.java
++++ b/fixed/src/com/google/javascript/jscomp/Linter.java
+@@ -42,7 +42,7 @@ public class Linter {
+   @Option(name = "--fix", usage = "Fix lint warnings automatically")
+   private boolean fix = false;
+ 
+-  @Argument private final List<String> files = new ArrayList<>();
++  @Argument private List<String> files = new ArrayList<>();
+ 
+   public static void main(String[] args) throws IOException, CmdLineException {
+     new Linter().run(args);

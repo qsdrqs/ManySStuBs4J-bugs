@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/CheckerTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/CheckerTest.java
+index b6348f380..6484958dc 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/CheckerTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/CheckerTest.java
+@@ -194,7 +194,7 @@ public class CheckerTest {
+                 new HashSet<String>(), Thread.currentThread().getContextClassLoader());
+         c.setModuleFactory(factory);
+ 
+-        c.setFileExtensions(null);
++        c.setFileExtensions((String[]) null);
+         c.setFileExtensions(new String[]{".java", "xml"});
+ 
+         try {

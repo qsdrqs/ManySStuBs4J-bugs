@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/map/writebehind/store/DeleteStoreHandler.java b/fixed/hazelcast/src/main/java/com/hazelcast/map/writebehind/store/DeleteStoreHandler.java
+index 5d7f3f2af..ce8a529ff 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/map/writebehind/store/DeleteStoreHandler.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/map/writebehind/store/DeleteStoreHandler.java
+@@ -25,7 +25,7 @@ import java.util.Set;
+ /**
+  * Handles map store delete operations.
+  */
+-class DeleteStoreHandler extends AbstactStoreHandler<DelayedEntry> {
++class DeleteStoreHandler extends AbstractStoreHandler<DelayedEntry> {
+ 
+     protected DeleteStoreHandler(MapStoreWrapper storeWrapper) {
+         super(storeWrapper);

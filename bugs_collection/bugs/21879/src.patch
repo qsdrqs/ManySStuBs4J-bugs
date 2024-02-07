@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/web/reactive/error/AbstractErrorWebExceptionHandler.java b/fixed/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/web/reactive/error/AbstractErrorWebExceptionHandler.java
+index bad56b7c1..227411580 100644
+--- a/buggy/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/web/reactive/error/AbstractErrorWebExceptionHandler.java
++++ b/fixed/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/web/reactive/error/AbstractErrorWebExceptionHandler.java
+@@ -279,7 +279,7 @@ public abstract class AbstractErrorWebExceptionHandler
+ 	}
+ 
+ 	private boolean isDisconnectedClientErrorMessage(String message) {
+-		message = message != null ? message.toLowerCase() : "";
++		message = (message != null) ? message.toLowerCase() : "";
+ 		return (message.contains("broken pipe")
+ 				|| message.contains("connection reset by peer"));
+ 	}

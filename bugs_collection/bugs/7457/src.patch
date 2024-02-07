@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-mail/src/test/java/org/apache/camel/component/mail/MailShutdownCompleteAllTasksTest.java b/fixed/components/camel-mail/src/test/java/org/apache/camel/component/mail/MailShutdownCompleteAllTasksTest.java
+index 2247f6f70..99aceef1d 100644
+--- a/buggy/components/camel-mail/src/test/java/org/apache/camel/component/mail/MailShutdownCompleteAllTasksTest.java
++++ b/fixed/components/camel-mail/src/test/java/org/apache/camel/component/mail/MailShutdownCompleteAllTasksTest.java
+@@ -52,7 +52,7 @@ public class MailShutdownCompleteAllTasksTest extends CamelTestSupport {
+         context.addRoutes(new RouteBuilder() {
+             @Override
+             public void configure() throws Exception {
+-                from("pop3://jones@localhost?password=secret").routeId("route1")
++                from("pop3://jones@localhost?password=secret&initialDelay=2s").routeId("route1")
+                         // let it complete all tasks during shutdown
+                         .shutdownRunningTask(ShutdownRunningTask.CompleteAllTasks)
+                         .delay(1000).to("seda:foo");

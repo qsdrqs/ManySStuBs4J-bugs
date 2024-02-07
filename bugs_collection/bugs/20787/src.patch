@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.homematic/src/main/java/org/openhab/binding/homematic/internal/communicator/client/BinRpcClient.java b/fixed/bundles/binding/org.openhab.binding.homematic/src/main/java/org/openhab/binding/homematic/internal/communicator/client/BinRpcClient.java
+index 5c18a65bf..a9ca3b886 100644
+--- a/buggy/bundles/binding/org.openhab.binding.homematic/src/main/java/org/openhab/binding/homematic/internal/communicator/client/BinRpcClient.java
++++ b/fixed/bundles/binding/org.openhab.binding.homematic/src/main/java/org/openhab/binding/homematic/internal/communicator/client/BinRpcClient.java
+@@ -115,7 +115,7 @@ public class BinRpcClient implements CcuClient {
+ 		} catch (ConnectException cex) {
+ 			logger.info("Can't connect to interface {}", hmInterface);
+ 		} catch (Exception ex) {
+-			throw new CcuClientException(ex.getMessage(), ex);
++			throw new CcuClientException(ex.getMessage() + "(sending " + request + ")", ex);
+ 		} finally {
+ 			try {
+ 				if (socket != null) {

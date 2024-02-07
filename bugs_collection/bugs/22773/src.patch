@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/squareup/javawriter/ConstructorWriter.java b/fixed/src/main/java/com/squareup/javawriter/ConstructorWriter.java
+index fb0fb5904..3d9264c61 100644
+--- a/buggy/src/main/java/com/squareup/javawriter/ConstructorWriter.java
++++ b/fixed/src/main/java/com/squareup/javawriter/ConstructorWriter.java
+@@ -48,7 +48,7 @@ public final class ConstructorWriter extends Modifiable implements Writable, Has
+   }
+ 
+   public VariableWriter addParameter(Class<?> type, String name) {
+-    return addParameter(ClassName.fromClass(type), name);
++    return addParameter(TypeNames.forClass(type), name);
+   }
+ 
+   public VariableWriter addParameter(TypeElement type, String name) {

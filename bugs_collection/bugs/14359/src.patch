@@ -1,0 +1,13 @@
+diff --git a/buggy/FiltersPlugin/src/org/gephi/filters/plugin/attribute/AttributeEqualBuilder.java b/fixed/FiltersPlugin/src/org/gephi/filters/plugin/attribute/AttributeEqualBuilder.java
+index 695948993..46ed8d7e5 100644
+--- a/buggy/FiltersPlugin/src/org/gephi/filters/plugin/attribute/AttributeEqualBuilder.java
++++ b/fixed/FiltersPlugin/src/org/gephi/filters/plugin/attribute/AttributeEqualBuilder.java
+@@ -281,7 +281,7 @@ public class AttributeEqualBuilder implements CategoryBuilder {
+             }
+             Object[] valuesArray = vals.toArray();
+             min = AttributeUtils.getDefault().getMin(column, valuesArray);
+-            max = AttributeUtils.getDefault().getMin(column, valuesArray);
++            max = AttributeUtils.getDefault().getMax(column, valuesArray);
+         }
+ 
+         public String getName() {

@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/test/java/org/springframework/boot/bind/PropertiesConfigurationFactoryTests.java b/fixed/spring-boot/src/test/java/org/springframework/boot/bind/PropertiesConfigurationFactoryTests.java
+index ac3bfdd4d..d827da30d 100644
+--- a/buggy/spring-boot/src/test/java/org/springframework/boot/bind/PropertiesConfigurationFactoryTests.java
++++ b/fixed/spring-boot/src/test/java/org/springframework/boot/bind/PropertiesConfigurationFactoryTests.java
+@@ -173,7 +173,7 @@ public class PropertiesConfigurationFactoryTests {
+ 	@Test
+ 	public void propertyWithAllUpperCaseInTheMiddleCanBeBound() throws Exception {
+ 		Foo foo = createFoo("foo-d-l-q-bar:baz");
+-		assertEquals("baz", foo.fooDLQBar);
++		assertThat(foo.fooDLQBar).isEqualTo(("baz"));
+ 	}
+ 
+ 	private Foo createFoo(final String values) throws Exception {

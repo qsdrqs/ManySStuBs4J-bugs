@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/AbstractCellEditor.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/AbstractCellEditor.java
+index 927b2b762..653e460f1 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/AbstractCellEditor.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/AbstractCellEditor.java
+@@ -37,7 +37,7 @@ import javax.swing.event.EventListenerList;
+  *
+  * @author Philip Milne
+  */
+-public class AbstractCellEditor implements CellEditor {
++public abstract class AbstractCellEditor implements CellEditor {
+ 
+     /**
+      * A list of event listeners for the cell editor.

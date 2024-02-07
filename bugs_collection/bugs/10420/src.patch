@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsJavaDocsTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsJavaDocsTest.java
+index 9bc728d31..681af18a0 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsJavaDocsTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsJavaDocsTest.java
+@@ -499,7 +499,7 @@ public class XdocsJavaDocsTest extends AbstractModuleTestSupport {
+                         CHECK_TEXT.get("Description")
+                                 + CHECK_TEXT.computeIfAbsent("Rule Description", unused -> "")
+                                 + CHECK_TEXT.computeIfAbsent("Notes", unused -> "")
+-                                + CHECK_TEXT.get("Properties")
++                                + CHECK_TEXT.computeIfAbsent("Properties", unused -> "")
+                                 + CHECK_TEXT.get("Examples") + " @since "
+                                 + CHECK_TEXT.get("since"), getJavaDocText(ast));
+             }

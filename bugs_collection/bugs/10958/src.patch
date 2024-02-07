@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/XMLLoggerTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/XMLLoggerTest.java
+index a27ff2c4e..63a388968 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/XMLLoggerTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/XMLLoggerTest.java
+@@ -224,7 +224,7 @@ public class XMLLoggerTest {
+         final ByteArrayInputStream inStream =
+             new ByteArrayInputStream(bytes);
+         final List<String> lineList = Lists.newArrayList();
+-        try (final BufferedReader reader = new BufferedReader(
++        try (BufferedReader reader = new BufferedReader(
+                 new InputStreamReader(inStream, StandardCharsets.UTF_8))) {
+             while (true) {
+                 final String line = reader.readLine();

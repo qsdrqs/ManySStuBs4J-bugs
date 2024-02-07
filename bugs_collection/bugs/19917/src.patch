@@ -1,0 +1,13 @@
+diff --git a/buggy/codec-http/src/main/java/io/netty/handler/codec/http/multipart/HttpPostRequestEncoder.java b/fixed/codec-http/src/main/java/io/netty/handler/codec/http/multipart/HttpPostRequestEncoder.java
+index a7865dc62..551164010 100644
+--- a/buggy/codec-http/src/main/java/io/netty/handler/codec/http/multipart/HttpPostRequestEncoder.java
++++ b/fixed/codec-http/src/main/java/io/netty/handler/codec/http/multipart/HttpPostRequestEncoder.java
+@@ -749,7 +749,7 @@ public class HttpPostRequestEncoder implements ChunkedMessageInput<HttpChunk> {
+         }
+         ByteBuf buffer;
+         if (currentData instanceof InternalAttribute) {
+-            String internal = ((InternalAttribute) currentData).toString();
++            String internal = currentData.toString();
+             byte[] bytes;
+             try {
+                 bytes = internal.getBytes("ASCII");

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter3filestructure/rule32packagestate/LineLengthTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter3filestructure/rule32packagestate/LineLengthTest.java
+index 4ce5a1914..bfbae73e4 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter3filestructure/rule32packagestate/LineLengthTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter3filestructure/rule32packagestate/LineLengthTest.java
+@@ -22,7 +22,7 @@ public class LineLengthTest extends BaseCheckTestSupport{
+     }
+ 
+     @Test
+-    public void lineLengthTest() throws IOException, Exception {
++    public void lineLengthTest() throws Exception {
+ 
+         final String[] expected = {
+             "5: " + getCheckMessage(LineLengthCheck.class, "maxLineLen", 100, 112),

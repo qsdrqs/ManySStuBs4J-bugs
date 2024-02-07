@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/com/metamx/druid/master/rules/LoadRule.java b/fixed/server/src/main/java/com/metamx/druid/master/rules/LoadRule.java
+index ab093f4e0..fea94f882 100644
+--- a/buggy/server/src/main/java/com/metamx/druid/master/rules/LoadRule.java
++++ b/fixed/server/src/main/java/com/metamx/druid/master/rules/LoadRule.java
+@@ -84,7 +84,7 @@ public abstract class LoadRule implements Rule
+         break;
+       }
+       if (holder.containsSegment(segment)) {
+-        serverQueue.add(holder);
++        assignedServers.add(holder);
+         continue;
+       }
+ 

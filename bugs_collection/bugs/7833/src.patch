@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/camel-example-etl/src/main/java/org/apache/camel/example/etl/Main.java b/fixed/examples/camel-example-etl/src/main/java/org/apache/camel/example/etl/Main.java
+index e7d128293..fa375e190 100644
+--- a/buggy/examples/camel-example-etl/src/main/java/org/apache/camel/example/etl/Main.java
++++ b/fixed/examples/camel-example-etl/src/main/java/org/apache/camel/example/etl/Main.java
+@@ -22,7 +22,7 @@ package org.apache.camel.example.etl;
+  * @version $Revision$
+  */
+ public class Main extends org.apache.camel.spring.Main {
+-    public static void main(String[] args) {
++    public static void main(String[] args) throws Exception {
+         new Main().run(args);
+     }
+ }

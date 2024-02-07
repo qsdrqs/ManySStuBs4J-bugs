@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter5naming/rule526parameternames/ParameterNameTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter5naming/rule526parameternames/ParameterNameTest.java
+index a9eb52ce9..190c1f459 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter5naming/rule526parameternames/ParameterNameTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter5naming/rule526parameternames/ParameterNameTest.java
+@@ -47,7 +47,7 @@ public class ParameterNameTest extends BaseCheckTestSupport {
+     public static void setConfigurationBuilder() throws CheckstyleException {
+         final List<Configuration> configs = getCheckConfigs("ParameterName");
+ 
+-        Assert.assertEquals(configs.size(), 1);
++        Assert.assertEquals(1, configs.size());
+ 
+         config = configs.get(0);
+         format = config.getAttribute("format");

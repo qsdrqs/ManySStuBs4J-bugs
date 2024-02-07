@@ -1,0 +1,13 @@
+diff --git a/buggy/test/com/google/javascript/jscomp/UnreachableCodeEliminationTest.java b/fixed/test/com/google/javascript/jscomp/UnreachableCodeEliminationTest.java
+index d6785b0f3..97e0c5b38 100644
+--- a/buggy/test/com/google/javascript/jscomp/UnreachableCodeEliminationTest.java
++++ b/fixed/test/com/google/javascript/jscomp/UnreachableCodeEliminationTest.java
+@@ -418,6 +418,7 @@ public class UnreachableCodeEliminationTest extends CompilerTestCase {
+   }
+ 
+   public void testDontRemoveBreakInTryFinallySwitch() throws Exception {
+-    testSame("function f() {b:try{throw 9} finally {switch(x) {case 1: break b} } return 1;}");
++    testSame("function f() {b:try{throw 9} finally {" +
++             "switch(x) {case 1: break b} } return 1;}");
+   }
+ }

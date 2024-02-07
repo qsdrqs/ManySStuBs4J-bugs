@@ -1,0 +1,22 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/component/file/FileConcurrentAggregateBatchConsumerTest.java b/fixed/camel-core/src/test/java/org/apache/camel/component/file/FileConcurrentAggregateBatchConsumerTest.java
+index 83cb987a8..dc79dbb3a 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/component/file/FileConcurrentAggregateBatchConsumerTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/component/file/FileConcurrentAggregateBatchConsumerTest.java
+@@ -36,7 +36,7 @@ public class FileConcurrentAggregateBatchConsumerTest extends FileConcurrentTest
+         context.addRoutes(new RouteBuilder() {
+             @Override
+             public void configure() throws Exception {
+-                from("file://target/concurrent")
++                from("file://target/concurrent?sortBy=file:name")
+                     .setHeader("id", simple("${file:onlyname.noext}"))
+                     .threads(10)
+                     .beanRef("business")
+@@ -81,7 +81,7 @@ public class FileConcurrentAggregateBatchConsumerTest extends FileConcurrentTest
+         context.addRoutes(new RouteBuilder() {
+             @Override
+             public void configure() throws Exception {
+-                from("file://target/concurrent")
++                from("file://target/concurrent?sortBy=file:name")
+                     .setHeader("id", simple("${file:onlyname.noext}"))
+                     .beanRef("business")
+                     .aggregate(header("country"), new BodyInAggregatingStrategy())

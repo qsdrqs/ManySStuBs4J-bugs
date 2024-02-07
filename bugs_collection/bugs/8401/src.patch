@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-contrib/flink-storm-compatibility/flink-storm-compatibility-core/src/main/java/org/apache/flink/stormcompatibility/wrappers/AbstractStormSpoutWrapper.java b/fixed/flink-contrib/flink-storm-compatibility/flink-storm-compatibility-core/src/main/java/org/apache/flink/stormcompatibility/wrappers/AbstractStormSpoutWrapper.java
+index 65cde55db..3021bcb33 100644
+--- a/buggy/flink-contrib/flink-storm-compatibility/flink-storm-compatibility-core/src/main/java/org/apache/flink/stormcompatibility/wrappers/AbstractStormSpoutWrapper.java
++++ b/fixed/flink-contrib/flink-storm-compatibility/flink-storm-compatibility-core/src/main/java/org/apache/flink/stormcompatibility/wrappers/AbstractStormSpoutWrapper.java
+@@ -52,7 +52,7 @@ public abstract class AbstractStormSpoutWrapper<OUT> extends RichParallelSourceF
+ 	/**
+ 	 * Indicates, if the source is still running or was canceled.
+ 	 */
+-	protected boolean isRunning = true;
++	protected volatile boolean isRunning = true;
+ 
+ 	/**
+ 	 * Instantiates a new {@link AbstractStormSpoutWrapper} that wraps the given Storm {@link IRichSpout spout} such

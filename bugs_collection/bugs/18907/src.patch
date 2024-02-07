@@ -1,0 +1,13 @@
+diff --git a/buggy/web/src/main/java/com/navercorp/pinpoint/web/dao/hbase/HbaseMapResponseTimeDao.java b/fixed/web/src/main/java/com/navercorp/pinpoint/web/dao/hbase/HbaseMapResponseTimeDao.java
+index 653df7342..4bc783ca2 100644
+--- a/buggy/web/src/main/java/com/navercorp/pinpoint/web/dao/hbase/HbaseMapResponseTimeDao.java
++++ b/fixed/web/src/main/java/com/navercorp/pinpoint/web/dao/hbase/HbaseMapResponseTimeDao.java
+@@ -109,7 +109,7 @@ public class HbaseMapResponseTimeDao implements MapResponseDao {
+                 logger.debug("Self data {}", responseTimeList);
+             }
+ 
+-            if (responseTimeList.size() > 0) {
++            if (!responseTimeList.isEmpty()) {
+                 return responseTimeList;
+             }
+         }

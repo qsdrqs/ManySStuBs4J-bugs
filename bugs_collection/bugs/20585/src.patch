@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/protocol/ConfigurationParameter.java b/fixed/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/protocol/ConfigurationParameter.java
+index 8a43655a8..7fad9a883 100644
+--- a/buggy/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/protocol/ConfigurationParameter.java
++++ b/fixed/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/protocol/ConfigurationParameter.java
+@@ -34,7 +34,7 @@ public class ConfigurationParameter {
+ 	 */
+ 	public ConfigurationParameter(Integer index, Integer value, Integer size) throws IllegalArgumentException {
+ 		
+-		if (size != 1 && size != 2 && size != 4) {
++		if (size < 1 || size > 4) {
+ 			throw new IllegalArgumentException("illegal parameter size");
+ 		}
+ 		

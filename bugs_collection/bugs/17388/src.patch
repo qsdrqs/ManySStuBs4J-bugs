@@ -1,0 +1,13 @@
+diff --git a/buggy/jsonschema2pojo-ant/src/main/java/org/jsonschema2pojo/ant/Jsonschema2PojoTask.java b/fixed/jsonschema2pojo-ant/src/main/java/org/jsonschema2pojo/ant/Jsonschema2PojoTask.java
+index 699e30552..a005df873 100644
+--- a/buggy/jsonschema2pojo-ant/src/main/java/org/jsonschema2pojo/ant/Jsonschema2PojoTask.java
++++ b/fixed/jsonschema2pojo-ant/src/main/java/org/jsonschema2pojo/ant/Jsonschema2PojoTask.java
+@@ -491,7 +491,7 @@ public class Jsonschema2PojoTask extends Task implements GenerationConfig {
+     }
+ 
+     public void setClasspath(Path classpath) {
+-        if (classpath == null) {
++        if (this.classpath == null) {
+             this.classpath = classpath;
+         } else {
+             this.classpath.append(classpath);

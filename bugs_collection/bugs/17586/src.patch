@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/graphics/g2d/PolygonSpriteBatch.java b/fixed/gdx/src/com/badlogic/gdx/graphics/g2d/PolygonSpriteBatch.java
+index 3d2a0f276..058497503 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/graphics/g2d/PolygonSpriteBatch.java
++++ b/fixed/gdx/src/com/badlogic/gdx/graphics/g2d/PolygonSpriteBatch.java
+@@ -123,7 +123,7 @@ public class PolygonSpriteBatch implements Batch {
+ 	public PolygonSpriteBatch (int maxVertices, int maxTriangles, ShaderProgram defaultShader) {
+ 		// 32767 is max vertex index.
+ 		if (maxVertices > 32767)
+-			throw new IllegalArgumentException("Can't have more than 32767 vertices per batch: " + maxTriangles);
++			throw new IllegalArgumentException("Can't have more than 32767 vertices per batch: " + maxVertices);
+ 
+ 		Mesh.VertexDataType vertexDataType = Mesh.VertexDataType.VertexArray;
+ 		if (Gdx.gl30 != null) {

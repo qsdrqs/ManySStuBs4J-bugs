@@ -1,0 +1,22 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/gui/ParseTreeTablePresentationTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/gui/ParseTreeTablePresentationTest.java
+index 0afd3967d..52052bc00 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/gui/ParseTreeTablePresentationTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/gui/ParseTreeTablePresentationTest.java
+@@ -76,7 +76,7 @@ public class ParseTreeTablePresentationTest extends AbstractPathTestSupport {
+         final Object child = new ParseTreeTablePresentation(null).getChild(tree, 1);
+         Assert.assertTrue("Invalid child type", child instanceof DetailAST);
+         Assert.assertEquals("Invalid child token type",
+-                TokenTypes.BLOCK_COMMENT_BEGIN, ((AST) child).getType());
++                TokenTypes.BLOCK_COMMENT_BEGIN, ((DetailAST) child).getType());
+     }
+ 
+     @Test
+@@ -86,7 +86,7 @@ public class ParseTreeTablePresentationTest extends AbstractPathTestSupport {
+         final Object child = parseTree.getChild(tree, 1);
+         Assert.assertTrue("Invalid child type", child instanceof DetailAST);
+         Assert.assertEquals("Invalid child token type",
+-                TokenTypes.BLOCK_COMMENT_BEGIN, ((AST) child).getType());
++                TokenTypes.BLOCK_COMMENT_BEGIN, ((DetailAST) child).getType());
+     }
+ 
+     @Test

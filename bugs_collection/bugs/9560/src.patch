@@ -1,0 +1,13 @@
+diff --git a/buggy/service/src/java/org/apache/hive/service/cli/GetInfoValue.java b/fixed/service/src/java/org/apache/hive/service/cli/GetInfoValue.java
+index 2b2359cc1..bf3c6b27e 100644
+--- a/buggy/service/src/java/org/apache/hive/service/cli/GetInfoValue.java
++++ b/fixed/service/src/java/org/apache/hive/service/cli/GetInfoValue.java
+@@ -52,7 +52,7 @@ public class GetInfoValue {
+       stringValue = tGetInfoValue.getStringValue();
+       break;
+     default:
+-      throw new IllegalArgumentException("Unreconigzed TGetInfoValue");
++      throw new IllegalArgumentException("Unrecognized TGetInfoValue");
+     }
+   }
+ 

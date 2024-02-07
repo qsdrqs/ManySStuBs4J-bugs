@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/mobeta/android/dslv/DragSortListView.java b/fixed/src/com/mobeta/android/dslv/DragSortListView.java
+index d561fdafa..2a731d2db 100644
+--- a/buggy/src/com/mobeta/android/dslv/DragSortListView.java
++++ b/fixed/src/com/mobeta/android/dslv/DragSortListView.java
+@@ -451,7 +451,7 @@ public class DragSortListView extends ListView {
+ 
+             boolean useDefault = a.getBoolean(
+                     R.styleable.DragSortListView_use_default_controller,
+-                    false);
++                    true);
+ 
+             if (useDefault) {
+                 boolean removeEnabled = a.getBoolean(

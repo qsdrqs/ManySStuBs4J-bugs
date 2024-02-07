@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/main/java/cucumber/runtime/LinePredicate.java b/fixed/core/src/main/java/cucumber/runtime/LinePredicate.java
+index 042dfed07..e9e506990 100644
+--- a/buggy/core/src/main/java/cucumber/runtime/LinePredicate.java
++++ b/fixed/core/src/main/java/cucumber/runtime/LinePredicate.java
+@@ -17,7 +17,7 @@ public class LinePredicate implements PicklePredicate {
+     public boolean apply(PickleEvent pickleEvent) {
+         String picklePath = pickleEvent.uri;
+         if (!lineFilters.containsKey(picklePath)) {
+-            return false;
++            return true;
+         }
+         for (Long line : lineFilters.get(picklePath)) {
+             for (PickleLocation location : pickleEvent.pickle.getLocations()) {

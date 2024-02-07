@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/gdx-tests/src/com/badlogic/gdx/tests/InterpolationTest.java b/fixed/tests/gdx-tests/src/com/badlogic/gdx/tests/InterpolationTest.java
+index 4dc1dfe97..021497218 100644
+--- a/buggy/tests/gdx-tests/src/com/badlogic/gdx/tests/InterpolationTest.java
++++ b/fixed/tests/gdx-tests/src/com/badlogic/gdx/tests/InterpolationTest.java
+@@ -80,7 +80,7 @@ public class InterpolationTest extends GdxTest {
+ 		Gdx.gl.glClearColor(.3f, .3f, .3f, 1);
+ 		renderer = new ShapeRenderer();
+ 
+-		Skin skin = new Skin(Gdx.files.internal("data/uiskin.json"));
++		skin = new Skin(Gdx.files.internal("data/uiskin.json"));
+ 
+ 		stage = new Stage();
+ 		resetPositions();

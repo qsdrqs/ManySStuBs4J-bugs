@@ -1,0 +1,23 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/helpers/FutureAdapter.java b/fixed/community/kernel/src/main/java/org/neo4j/helpers/FutureAdapter.java
+index 9cf11b9c9..03b4d2cbf 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/helpers/FutureAdapter.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/helpers/FutureAdapter.java
+@@ -77,7 +77,8 @@ public abstract class FutureAdapter<V> implements Future<V>
+ 
+     public static final Future<Void> VOID = new Present<>( null );
+ 
+-    public static <T> Future<T> latchGuardedValue( final ValueGetter<T> value, final CountDownLatch guardedByLatch )
++    public static <T> Future<T> latchGuardedValue( final ValueGetter<T> value, final CountDownLatch guardedByLatch,
++            final String jobDescription )
+     {
+         return new FutureAdapter<T>()
+         {
+@@ -100,7 +101,7 @@ public abstract class FutureAdapter<V> implements Future<V>
+             {
+                 if ( !guardedByLatch.await( timeout, unit ) )
+                 {
+-                    throw new TimeoutException( "Index population job cancel didn't complete within " +
++                    throw new TimeoutException( jobDescription + " didn't complete within " +
+                             timeout + " " + unit );
+                 }
+                 return value.get();

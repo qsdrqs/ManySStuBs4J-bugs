@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/master/snapshot/SnapshotFileCache.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/master/snapshot/SnapshotFileCache.java
+index 006ca2a0c..522b1c93f 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/master/snapshot/SnapshotFileCache.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/master/snapshot/SnapshotFileCache.java
+@@ -190,7 +190,7 @@ public class SnapshotFileCache implements Stoppable {
+     }
+     if (lock == null || lock.tryLock()) {
+       try {
+-        if (snapshotManager == null || snapshotManager.isTakingAnySnapshot()) {
++        if (snapshotManager != null && snapshotManager.isTakingAnySnapshot()) {
+           LOG.warn("Not checking unreferenced files since snapshot is running, it will "
+               + "skip to clean the HFiles this time");
+           return unReferencedFiles;

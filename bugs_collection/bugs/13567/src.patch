@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/sql/relational/optimizer/ExpressionOptimizer.java b/fixed/presto-main/src/main/java/com/facebook/presto/sql/relational/optimizer/ExpressionOptimizer.java
+index 9e79c713d..a2e4f4eb9 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/sql/relational/optimizer/ExpressionOptimizer.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/sql/relational/optimizer/ExpressionOptimizer.java
+@@ -72,7 +72,7 @@ public class ExpressionOptimizer
+     }
+ 
+     private class Visitor
+-            implements RowExpressionVisitor<Void, RowExpression>
++            implements RowExpressionVisitor<RowExpression, Void>
+     {
+         @Override
+         public RowExpression visitInputReference(InputReferenceExpression reference, Void context)

@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/test/java/org/neo4j/test/JavaTestDocsGenerator.java b/fixed/community/kernel/src/test/java/org/neo4j/test/JavaTestDocsGenerator.java
+index 9ab890b3c..22b3325f5 100644
+--- a/buggy/community/kernel/src/test/java/org/neo4j/test/JavaTestDocsGenerator.java
++++ b/fixed/community/kernel/src/test/java/org/neo4j/test/JavaTestDocsGenerator.java
+@@ -92,7 +92,6 @@ public class JavaTestDocsGenerator extends AsciiDocGenerator
+ 
+     public void addImageSnippet( String tagName, String imageName, String title )
+     {
+-        this.addSnippet( tagName, "\nimage:" + imageName + "[" + title
+-                                  + "scaledwidth=75%]\n" );
++        this.addSnippet( tagName, "\nimage:" + imageName + "[" + title + "]\n" );
+     }
+ }

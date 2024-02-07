@@ -1,0 +1,13 @@
+diff --git a/buggy/community/server/src/main/java/org/neo4j/server/plugins/PluginPointFactoryImpl.java b/fixed/community/server/src/main/java/org/neo4j/server/plugins/PluginPointFactoryImpl.java
+index e21165a72..7ad130775 100644
+--- a/buggy/community/server/src/main/java/org/neo4j/server/plugins/PluginPointFactoryImpl.java
++++ b/fixed/community/server/src/main/java/org/neo4j/server/plugins/PluginPointFactoryImpl.java
+@@ -214,7 +214,7 @@ class PluginPointFactoryImpl implements PluginPointFactory
+         put( TYPES, new BooleanTypeCaster(), boolean.class, Boolean.class );
+         put( TYPES, new FloatTypeCaster(), float.class, Float.class );
+         put( TYPES, new DoubleTypeCaster(), double.class, Double.class );
+-        put( TYPES, new MapTypeCaster(), Map.class, Double.class );
++        put( TYPES, new MapTypeCaster(), Map.class );
+         put( TYPES, new NodeTypeCaster(), Node.class );
+         put( TYPES, new RelationshipTypeCaster(), Relationship.class );
+         put( TYPES, new RelationshipTypeTypeCaster(), RelationshipType.class );

@@ -1,0 +1,13 @@
+diff --git a/buggy/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/io/channels/FileBuffer.java b/fixed/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/io/channels/FileBuffer.java
+index f5b7404b7..ee8d456a8 100644
+--- a/buggy/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/io/channels/FileBuffer.java
++++ b/fixed/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/io/channels/FileBuffer.java
+@@ -183,7 +183,7 @@ public class FileBuffer implements InternalBuffer {
+ 			}
+ 
+ 			bytesWritten += b;
+-			this.totalBytesWritten += bytesWritten;
++			this.totalBytesWritten += b;
+ 			diff = this.bufferSize - this.totalBytesWritten;
+ 		}
+ 

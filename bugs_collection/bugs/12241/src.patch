@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-core/src/test/java/io/dropwizard/server/DefaultServerFactoryTest.java b/fixed/dropwizard-core/src/test/java/io/dropwizard/server/DefaultServerFactoryTest.java
+index 7e8a15f36..965a3bce4 100644
+--- a/buggy/dropwizard-core/src/test/java/io/dropwizard/server/DefaultServerFactoryTest.java
++++ b/fixed/dropwizard-core/src/test/java/io/dropwizard/server/DefaultServerFactoryTest.java
+@@ -171,7 +171,7 @@ public class DefaultServerFactoryTest {
+             return CharStreams.toString(new InputStreamReader(connection.getInputStream()));
+         });
+ 
+-        requestReceived.await();
++        requestReceived.await(10, TimeUnit.SECONDS);
+ 
+         Future<Void> serverStopped = executor.submit((Callable<Void>) () -> {
+             server.stop();

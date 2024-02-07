@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-spi/src/main/java/com/facebook/presto/spi/ColumnNotFoundException.java b/fixed/presto-spi/src/main/java/com/facebook/presto/spi/ColumnNotFoundException.java
+index 0f3420d9e..26b09fbcd 100644
+--- a/buggy/presto-spi/src/main/java/com/facebook/presto/spi/ColumnNotFoundException.java
++++ b/fixed/presto-spi/src/main/java/com/facebook/presto/spi/ColumnNotFoundException.java
+@@ -21,7 +21,7 @@ public class ColumnNotFoundException
+ 
+     public ColumnNotFoundException(SchemaTableName tableName, String columnName)
+     {
+-        this(tableName, columnName, "Table " + tableName + " not found");
++        this(tableName, columnName, "Column " + columnName + " not found in table " + tableName);
+     }
+ 
+     public ColumnNotFoundException(SchemaTableName tableName, String columnName, String message)

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/DefaultLogger.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/DefaultLogger.java
+index c7f88d5d4..5a9409232 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/DefaultLogger.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/DefaultLogger.java
+@@ -118,7 +118,7 @@ public class DefaultLogger
+                 sb.append(": warning");
+             }
+             sb.append(": ").append(message);
+-            errorWriter.println(sb.toString());
++            errorWriter.println(sb);
+         }
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/jdbc/TomcatDataSourceConfigurationTests.java b/fixed/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/jdbc/TomcatDataSourceConfigurationTests.java
+index ebc28c61c..83f962b82 100644
+--- a/buggy/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/jdbc/TomcatDataSourceConfigurationTests.java
++++ b/fixed/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/jdbc/TomcatDataSourceConfigurationTests.java
+@@ -126,7 +126,7 @@ public class TomcatDataSourceConfigurationTests {
+ 		assertThat(ds.getTimeBetweenEvictionRunsMillis()).isEqualTo(5000);
+ 		assertThat(ds.getMinEvictableIdleTimeMillis()).isEqualTo(60000);
+ 		assertThat(ds.getMaxWait()).isEqualTo(30000);
+-		assertThat(ds.getValidationInterval()).isEqualTo(30000L);
++		assertThat(ds.getValidationInterval()).isEqualTo(3000L);
+ 	}
+ 
+ 	@SuppressWarnings("unchecked")

@@ -1,0 +1,12 @@
+diff --git a/buggy/storm-core/src/jvm/backtype/storm/coordination/BatchBoltExecutor.java b/fixed/storm-core/src/jvm/backtype/storm/coordination/BatchBoltExecutor.java
+index 89ef028ac..8653010fc 100644
+--- a/buggy/storm-core/src/jvm/backtype/storm/coordination/BatchBoltExecutor.java
++++ b/fixed/storm-core/src/jvm/backtype/storm/coordination/BatchBoltExecutor.java
+@@ -103,6 +103,6 @@ public class BatchBoltExecutor implements IRichBolt, FinishedCallback, TimeoutCa
+     }
+     
+     private IBatchBolt newTransactionalBolt() {
+-        return Utils.deserialize(_boltSer, IBatchBolt.class);
++        return Utils.javaDeserialize(_boltSer, IBatchBolt.class);
+     }
+ }

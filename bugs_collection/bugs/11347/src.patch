@@ -1,0 +1,22 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter7javadoc/rule713atclauses/NonEmptyAtclauseDescriptionTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter7javadoc/rule713atclauses/NonEmptyAtclauseDescriptionTest.java
+index b31325101..58da716a7 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter7javadoc/rule713atclauses/NonEmptyAtclauseDescriptionTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter7javadoc/rule713atclauses/NonEmptyAtclauseDescriptionTest.java
+@@ -22,7 +22,7 @@ public class NonEmptyAtclauseDescriptionTest extends BaseCheckTestSupport{
+     }
+ 
+     @Test
+-    public void noFinalizerBasicTest() throws IOException, Exception {
++    public void noFinalizerBasicTest() throws Exception {
+         
+         String msg = getCheckMessage(NoFinalizerCheck.class, "avoid.finalizer.method");
+ 
+@@ -38,7 +38,7 @@ public class NonEmptyAtclauseDescriptionTest extends BaseCheckTestSupport{
+     }
+     
+     @Test
+-    public void noFinalizerExtendedTest() throws IOException, Exception {
++    public void noFinalizerExtendedTest() throws Exception {
+         
+         String msg = getCheckMessage(NoFinalizerCheck.class, "avoid.finalizer.method");
+ 

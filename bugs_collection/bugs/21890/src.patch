@@ -1,0 +1,14 @@
+diff --git a/buggy/spring-boot-project/spring-boot-actuator-autoconfigure/src/test/java/org/springframework/boot/actuate/autoconfigure/endpoint/jmx/DefaultEndpointObjectNameFactoryTests.java b/fixed/spring-boot-project/spring-boot-actuator-autoconfigure/src/test/java/org/springframework/boot/actuate/autoconfigure/endpoint/jmx/DefaultEndpointObjectNameFactoryTests.java
+index 04681f14b..0cea053ff 100644
+--- a/buggy/spring-boot-project/spring-boot-actuator-autoconfigure/src/test/java/org/springframework/boot/actuate/autoconfigure/endpoint/jmx/DefaultEndpointObjectNameFactoryTests.java
++++ b/fixed/spring-boot-project/spring-boot-actuator-autoconfigure/src/test/java/org/springframework/boot/actuate/autoconfigure/endpoint/jmx/DefaultEndpointObjectNameFactoryTests.java
+@@ -42,8 +42,7 @@ public class DefaultEndpointObjectNameFactoryTests {
+ 
+ 	private final MockEnvironment environment = new MockEnvironment();
+ 
+-	private final JmxEndpointProperties properties = new JmxEndpointProperties(
+-			this.environment);
++	private final JmxEndpointProperties properties = new JmxEndpointProperties();
+ 
+ 	private final MBeanServer mBeanServer = mock(MBeanServer.class);
+ 

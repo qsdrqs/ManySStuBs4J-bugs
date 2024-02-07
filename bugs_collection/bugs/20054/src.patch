@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/handler/codec/frame/FrameDecoder.java b/fixed/src/main/java/org/jboss/netty/handler/codec/frame/FrameDecoder.java
+index 626ca84c8..d5701b4a7 100644
+--- a/buggy/src/main/java/org/jboss/netty/handler/codec/frame/FrameDecoder.java
++++ b/fixed/src/main/java/org/jboss/netty/handler/codec/frame/FrameDecoder.java
+@@ -279,7 +279,7 @@ public abstract class FrameDecoder extends SimpleChannelUpstreamHandler {
+                 for (int i = 0; i < length; i ++) {
+                     Channels.fireMessageReceived(context, Array.get(result, i), remoteAddress);
+                 }
+-            } else if (result instanceof Iterable) {
++            } else if (result instanceof Iterable<?>) {
+                 for (Object r: (Iterable<?>) result) {
+                     Channels.fireMessageReceived(context, r, remoteAddress);
+                 }

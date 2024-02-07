@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/main/java/org/apache/druid/data/input/impl/prefetch/JsonIterator.java b/fixed/core/src/main/java/org/apache/druid/data/input/impl/prefetch/JsonIterator.java
+index 7c67556ed..6bd56cbc2 100644
+--- a/buggy/core/src/main/java/org/apache/druid/data/input/impl/prefetch/JsonIterator.java
++++ b/fixed/core/src/main/java/org/apache/druid/data/input/impl/prefetch/JsonIterator.java
+@@ -117,7 +117,7 @@ public class JsonIterator<T> implements Iterator<T>, Closeable
+       }
+       final JsonToken nextToken = jp.nextToken();
+       if (nextToken != JsonToken.START_ARRAY) {
+-        throw new IAE("First token should be START_ARRAY", jp.getCurrentToken());
++        throw new IAE("First token should be START_ARRAY, but it is actually [%s]", jp.getCurrentToken());
+       } else {
+         jp.nextToken();
+         objectCodec = jp.getCodec();

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/yammer/metrics/core/MetricsServlet.java b/fixed/src/main/java/com/yammer/metrics/core/MetricsServlet.java
+index dba4ecbc9..0d4fb4bdd 100644
+--- a/buggy/src/main/java/com/yammer/metrics/core/MetricsServlet.java
++++ b/fixed/src/main/java/com/yammer/metrics/core/MetricsServlet.java
+@@ -96,7 +96,7 @@ public class MetricsServlet extends HttpServlet {
+ 	@Override
+ 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+ 		final String uri = req.getPathInfo();
+-		if (uri.equals("/")) {
++		if (uri == null || uri.equals("/")) {
+ 			handleHome(resp);
+ 		} else if (uri.startsWith(metricsUri)) {
+ 			handleMetrics(req.getParameter("class"), Boolean.parseBoolean(req.getParameter("full-samples")), resp);

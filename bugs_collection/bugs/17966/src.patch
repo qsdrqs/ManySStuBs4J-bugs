@@ -1,0 +1,24 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/utils/JsonValue.java b/fixed/gdx/src/com/badlogic/gdx/utils/JsonValue.java
+index 7566481cf..b030ff3c5 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/utils/JsonValue.java
++++ b/fixed/gdx/src/com/badlogic/gdx/utils/JsonValue.java
+@@ -28,8 +28,8 @@ import java.util.NoSuchElementException;
+  * many children.<br>
+  * 
+  * <pre>
+- * JsonValue map = ...;
+- * for (JsonValue entry = map.child; entry != null; entry = entry.next)
++ * JsonValue map = ...;
++ * for (JsonValue entry = map.child; entry != null; entry = entry.next)
+  * 	System.out.println(entry.name + " = " + entry.asString());
+  * </pre>
+  * @author Nathan Sweet */
+@@ -305,7 +305,7 @@ public class JsonValue implements Iterable<JsonValue> {
+ 		int i = 0;
+ 		for (JsonValue value = child; value != null; value = value.next, i++) {
+ 			String v;
+-			switch (type) {
++			switch (value.type) {
+ 			case stringValue:
+ 				v = value.stringValue;
+ 				break;

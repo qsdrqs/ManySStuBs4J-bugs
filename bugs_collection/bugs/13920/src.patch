@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-orc/src/main/java/com/facebook/presto/orc/reader/StreamSources.java b/fixed/presto-orc/src/main/java/com/facebook/presto/orc/reader/StreamSources.java
+index cd4ed9946..70c662400 100644
+--- a/buggy/presto-orc/src/main/java/com/facebook/presto/orc/reader/StreamSources.java
++++ b/fixed/presto-orc/src/main/java/com/facebook/presto/orc/reader/StreamSources.java
+@@ -166,7 +166,7 @@ public final class StreamSources
+             return new LongStreamSource(byteSource, encoding, type, false, usesVInt, getPosition(offsetPositions, 0));
+         }
+ 
+-        throw new IllegalArgumentException("Unsupported column type " + type + " for stream " + streamId);
++        throw new IllegalArgumentException(String.format("Unsupported column type %s for stream %s with encoding %s", type, streamId, encoding));
+     }
+ 
+     public static int getBooleanStreamStartOffset(List<Integer> offsetPositions)

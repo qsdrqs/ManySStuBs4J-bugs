@@ -1,0 +1,11 @@
+diff --git a/buggy/src/main/java/org/junit/runners/model/MemberValueConsumer.java b/fixed/src/main/java/org/junit/runners/model/MemberValueConsumer.java
+index c768923e8..a6157bf3b 100644
+--- a/buggy/src/main/java/org/junit/runners/model/MemberValueConsumer.java
++++ b/fixed/src/main/java/org/junit/runners/model/MemberValueConsumer.java
+@@ -14,5 +14,5 @@ public interface MemberValueConsumer<T> {
+      * @param member declaring member ({@link FrameworkMethod} or {@link FrameworkField})
+      * @param value the value of the next member
+      */
+-    void accept(FrameworkMember member, T value);
++    void accept(FrameworkMember<?> member, T value);
+ }

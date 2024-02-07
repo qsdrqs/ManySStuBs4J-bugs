@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-jdbc/src/main/java/com/facebook/presto/jdbc/PrestoDriverUri.java b/fixed/presto-jdbc/src/main/java/com/facebook/presto/jdbc/PrestoDriverUri.java
+index 35908043e..f56ec1819 100644
+--- a/buggy/presto-jdbc/src/main/java/com/facebook/presto/jdbc/PrestoDriverUri.java
++++ b/fixed/presto-jdbc/src/main/java/com/facebook/presto/jdbc/PrestoDriverUri.java
+@@ -126,7 +126,7 @@ final class PrestoDriverUri
+ 
+         return uriBuilder()
+                 .scheme(scheme)
+-                .host(address.getHostText()).port(address.getPort())
++                .host(address.getHost()).port(address.getPort())
+                 .build();
+     }
+ 

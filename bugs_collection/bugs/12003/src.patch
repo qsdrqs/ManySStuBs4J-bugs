@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/Compiler.java b/fixed/src/jvm/clojure/lang/Compiler.java
+index a3542eef9..ef7a519f7 100644
+--- a/buggy/src/jvm/clojure/lang/Compiler.java
++++ b/fixed/src/jvm/clojure/lang/Compiler.java
+@@ -799,7 +799,7 @@ static class InstanceFieldExpr extends FieldExpr implements AssignableExpr{
+ 
+ 	public void emit(C context, FnExpr fn, GeneratorAdapter gen){
+ 		gen.visitLineNumber(line, gen.mark());
+-		if(targetClass != null)
++		if(targetClass != null && field != null)
+ 			{
+ 			if(context != C.STATEMENT)
+ 				{

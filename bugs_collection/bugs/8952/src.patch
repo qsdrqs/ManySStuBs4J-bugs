@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/util/CgroupsLCEResourcesHandler.java b/fixed/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/util/CgroupsLCEResourcesHandler.java
+index f83defb16..3a44afee0 100644
+--- a/buggy/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/util/CgroupsLCEResourcesHandler.java
++++ b/fixed/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/util/CgroupsLCEResourcesHandler.java
+@@ -222,7 +222,7 @@ public class CgroupsLCEResourcesHandler implements LCEResourcesHandler {
+     StringBuilder sb = new StringBuilder("cgroups=");
+ 
+     if (isCpuWeightEnabled()) {
+-      sb.append(pathForCgroup(CONTROLLER_CPU, containerName) + "/cgroup.procs");
++      sb.append(pathForCgroup(CONTROLLER_CPU, containerName) + "/tasks");
+       sb.append(",");
+     }
+ 

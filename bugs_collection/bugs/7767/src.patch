@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/model/ExpressionNode.java b/fixed/camel-core/src/main/java/org/apache/camel/model/ExpressionNode.java
+index 3f1d897be..174066de8 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/model/ExpressionNode.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/model/ExpressionNode.java
+@@ -36,7 +36,7 @@ import org.apache.camel.spi.RouteContext;
+  * @version $Revision$
+  */
+ @XmlAccessorType(XmlAccessType.FIELD)
+-public class ExpressionNode extends ProcessorDefinition<ProcessorDefinition> {
++public class ExpressionNode extends ProcessorDefinition<ExpressionNode> {
+     @XmlElementRef
+     private ExpressionDefinition expression;
+     @XmlElementRef

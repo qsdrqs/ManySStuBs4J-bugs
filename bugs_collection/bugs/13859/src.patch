@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/LiteralInterpreter.java b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/LiteralInterpreter.java
+index a4298b415..67149bdf4 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/LiteralInterpreter.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/LiteralInterpreter.java
+@@ -93,7 +93,7 @@ public final class LiteralInterpreter
+         }
+ 
+         if (object == null) {
+-            if (type == UNKNOWN) {
++            if (type.equals(UNKNOWN)) {
+                 return new NullLiteral();
+             }
+             return new Cast(new NullLiteral(), type.getTypeSignature().toString());

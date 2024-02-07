@@ -1,0 +1,13 @@
+diff --git a/buggy/processing/src/main/java/io/druid/query/aggregation/CountAggregatorFactory.java b/fixed/processing/src/main/java/io/druid/query/aggregation/CountAggregatorFactory.java
+index 88f416c22..ae4243d5e 100644
+--- a/buggy/processing/src/main/java/io/druid/query/aggregation/CountAggregatorFactory.java
++++ b/fixed/processing/src/main/java/io/druid/query/aggregation/CountAggregatorFactory.java
+@@ -115,7 +115,7 @@ public class CountAggregatorFactory implements AggregatorFactory
+   @Override
+   public String getTypeName()
+   {
+-    return "float";
++    return "long";
+   }
+ 
+   @Override

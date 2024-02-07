@@ -1,0 +1,13 @@
+diff --git a/buggy/plugins/vertx/src/main/java/com/navercorp/pinpoint/plugin/vertx/interceptor/AsyncContextSpanEventEndPointInterceptor.java b/fixed/plugins/vertx/src/main/java/com/navercorp/pinpoint/plugin/vertx/interceptor/AsyncContextSpanEventEndPointInterceptor.java
+index ffecf2b37..3072a6ddc 100644
+--- a/buggy/plugins/vertx/src/main/java/com/navercorp/pinpoint/plugin/vertx/interceptor/AsyncContextSpanEventEndPointInterceptor.java
++++ b/fixed/plugins/vertx/src/main/java/com/navercorp/pinpoint/plugin/vertx/interceptor/AsyncContextSpanEventEndPointInterceptor.java
+@@ -99,7 +99,7 @@ public abstract class AsyncContextSpanEventEndPointInterceptor implements Around
+             logger.debug("Asynchronous invocation. asyncContext={}", asyncContext);
+         }
+ 
+-        final Trace trace = asyncContext.continueAsyncTraceObject();
++        final Trace trace = asyncContext.currentAsyncTraceObject();
+         if (trace == null) {
+             return;
+         }

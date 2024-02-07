@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/io/druid/server/http/CoordinatorResource.java b/fixed/server/src/main/java/io/druid/server/http/CoordinatorResource.java
+index 218cd8190..6fbff0397 100644
+--- a/buggy/server/src/main/java/io/druid/server/http/CoordinatorResource.java
++++ b/fixed/server/src/main/java/io/druid/server/http/CoordinatorResource.java
+@@ -80,7 +80,7 @@ public class CoordinatorResource
+   @Produces("application/json")
+   public Response getLoadQueue(
+       @QueryParam("simple") String simple,
+-      @QueryParam("simple") String full
++      @QueryParam("full") String full
+   )
+   {
+     if (simple != null) {

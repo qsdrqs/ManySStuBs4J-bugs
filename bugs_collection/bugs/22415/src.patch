@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/main/java/org/springframework/boot/context/embedded/AbstractConfigurableEmbeddedServletContainer.java b/fixed/spring-boot/src/main/java/org/springframework/boot/context/embedded/AbstractConfigurableEmbeddedServletContainer.java
+index 1b8f351e5..c7295ee0d 100644
+--- a/buggy/spring-boot/src/main/java/org/springframework/boot/context/embedded/AbstractConfigurableEmbeddedServletContainer.java
++++ b/fixed/spring-boot/src/main/java/org/springframework/boot/context/embedded/AbstractConfigurableEmbeddedServletContainer.java
+@@ -114,7 +114,7 @@ public abstract class AbstractConfigurableEmbeddedServletContainer implements
+ 			}
+ 			if (!contextPath.startsWith("/") || contextPath.endsWith("/")) {
+ 				throw new IllegalArgumentException(
+-						"ContextPath must start with '/ and not end with '/'");
++						"ContextPath must start with '/' and not end with '/'");
+ 			}
+ 		}
+ 	}

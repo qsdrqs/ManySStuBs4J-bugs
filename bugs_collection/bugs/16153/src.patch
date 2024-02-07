@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClusterListenerSupport.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClusterListenerSupport.java
+index da466e4a6..7ecb7d845 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClusterListenerSupport.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClusterListenerSupport.java
+@@ -229,7 +229,7 @@ public abstract class ClusterListenerSupport implements ConnectionListener, Conn
+                         try {
+                             connectToCluster();
+                         } catch (Exception e) {
+-                            logger.warning("Could not re-connect to cluster shutting down the client", e);
++                            logger.warning("Could not re-connect to cluster shutting down the client" + e.getMessage());
+                             new Thread(new Runnable() {
+                                 @Override
+                                 public void run() {

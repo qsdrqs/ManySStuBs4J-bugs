@@ -1,0 +1,20 @@
+diff --git a/buggy/services/src/main/java/io/druid/cli/CliInternalHadoopIndexer.java b/fixed/services/src/main/java/io/druid/cli/CliInternalHadoopIndexer.java
+index ae7803eed..007b56fc0 100644
+--- a/buggy/services/src/main/java/io/druid/cli/CliInternalHadoopIndexer.java
++++ b/fixed/services/src/main/java/io/druid/cli/CliInternalHadoopIndexer.java
+@@ -38,7 +38,7 @@ import java.util.List;
+  */
+ @Command(
+     name = "hadoop-indexer",
+-    description = "Runs the batch Hadoop Druid Indexer, see https://github.com/metamx/druid/wiki/Batch-ingestion for a description."
++    description = "Runs the batch Hadoop Druid Indexer, see http://druid.io/docs/latest/Batch-ingestion.html for a description."
+ )
+ public class CliInternalHadoopIndexer implements Runnable
+ {
+@@ -76,4 +76,4 @@ public class CliInternalHadoopIndexer implements Runnable
+       throw Throwables.propagate(e);
+     }
+   }
+-}
+\ No newline at end of file
++}

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/map/mapstore/MapStoreTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/map/mapstore/MapStoreTest.java
+index ce81b7224..cf10c7e40 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/map/mapstore/MapStoreTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/map/mapstore/MapStoreTest.java
+@@ -1391,7 +1391,7 @@ public class MapStoreTest extends HazelcastTestSupport {
+         MapConfig writeBehindBackupConfig = config.getMapConfig(name);
+         MapStoreConfig mapStoreConfig = new MapStoreConfig();
+         mapStoreConfig.setWriteDelaySeconds(5);
+-        final MapStoreWithStoreCount mapStore = new MapStoreWithStoreCount(expectedStoreCount, 300, 100);
++        final MapStoreWithStoreCount mapStore = new MapStoreWithStoreCount(expectedStoreCount, 300, 50);
+         mapStoreConfig.setImplementation(mapStore);
+         writeBehindBackupConfig.setMapStoreConfig(mapStoreConfig);
+         // create nodes.

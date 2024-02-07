@@ -1,0 +1,16 @@
+diff --git a/buggy/itest/src/edu/stanford/nlp/pipeline/TokenizerBenchmarkTestCase.java b/fixed/itest/src/edu/stanford/nlp/pipeline/TokenizerBenchmarkTestCase.java
+index b78e7ac20..49d7656f2 100644
+--- a/buggy/itest/src/edu/stanford/nlp/pipeline/TokenizerBenchmarkTestCase.java
++++ b/fixed/itest/src/edu/stanford/nlp/pipeline/TokenizerBenchmarkTestCase.java
+@@ -150,9 +150,9 @@ public class TokenizerBenchmarkTestCase extends TestCase {
+             placeholderToken.setBeginPosition(beginPosition);
+             placeholderToken.setEndPosition(beginPosition + placeholderToken.word().length());
+             placeholderToken.set(TokenizerBenchmarkTestCase.MWTTokenCharacterOffsetBeginAnnotation.class,
+-                    containedToken.get(TokenizerBenchmarkTestCase.MWTTokenCharacterOffsetBeginAnnotation.class));
++                    containedToken.beginPosition());
+             placeholderToken.set(TokenizerBenchmarkTestCase.MWTTokenCharacterOffsetEndAnnotation.class,
+-                    containedToken.get(TokenizerBenchmarkTestCase.MWTTokenCharacterOffsetEndAnnotation.class));
++                    containedToken.endPosition());
+             placeholderToken.setIsMWT(true);
+             return placeholderToken;
+         }

@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-security-oauth/src/main/java/org/springframework/security/oauth/consumer/client/OAuthClientHttpRequestFactory.java b/fixed/spring-security-oauth/src/main/java/org/springframework/security/oauth/consumer/client/OAuthClientHttpRequestFactory.java
+index 1ee398580..16fe430f2 100644
+--- a/buggy/spring-security-oauth/src/main/java/org/springframework/security/oauth/consumer/client/OAuthClientHttpRequestFactory.java
++++ b/fixed/spring-security-oauth/src/main/java/org/springframework/security/oauth/consumer/client/OAuthClientHttpRequestFactory.java
+@@ -52,7 +52,7 @@ public class OAuthClientHttpRequestFactory implements ClientHttpRequestFactory {
+     if (!useAuthHeader) {
+       String queryString = this.support.getOAuthQueryString(this.resource, accessToken, uri.toURL(), httpMethod.name(), this.additionalOAuthParameters);
+       String uriValue = String.valueOf(uri);
+-      uri = URI.create(uriValue.contains("?") ? uriValue + "&" + queryString : uriValue + "?" + queryString);
++      uri = URI.create((uriValue.contains("?") ? uriValue.substring(0, uriValue.indexOf('?')) : uriValue) + "?" + queryString);
+     }
+ 
+     ClientHttpRequest req = delegate.createRequest(uri, httpMethod);

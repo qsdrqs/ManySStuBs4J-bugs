@@ -1,0 +1,12 @@
+diff --git a/buggy/src/main/java/com/zaxxer/hikari/pool/PoolInitializationException.java b/fixed/src/main/java/com/zaxxer/hikari/pool/PoolInitializationException.java
+index 4265e8a85..4e0c87700 100644
+--- a/buggy/src/main/java/com/zaxxer/hikari/pool/PoolInitializationException.java
++++ b/fixed/src/main/java/com/zaxxer/hikari/pool/PoolInitializationException.java
+@@ -31,6 +31,6 @@ public class PoolInitializationException extends RuntimeException
+     */
+    public PoolInitializationException(Throwable t)
+    {
+-      super("Exception during pool initialization", t);
++      super(t);
+    }
+ }

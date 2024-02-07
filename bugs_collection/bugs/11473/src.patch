@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/regexp/MultilineDetector.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/regexp/MultilineDetector.java
+index 1d58695a5..d9993cbe6 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/regexp/MultilineDetector.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/regexp/MultilineDetector.java
+@@ -76,7 +76,7 @@ class MultilineDetector {
+      * @param fileText the text to process
+      */
+     public void processLines(FileText fileText) {
+-        this.text = new FileText(fileText);
++        text = new FileText(fileText);
+         resetState();
+ 
+         if (Strings.isNullOrEmpty(options.getFormat())) {

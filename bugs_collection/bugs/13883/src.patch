@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/test/java/com/facebook/presto/operator/aggregation/AbstractTestApproximateCountDistinct.java b/fixed/presto-main/src/test/java/com/facebook/presto/operator/aggregation/AbstractTestApproximateCountDistinct.java
+index 97c0e23d1..fb5fd4778 100644
+--- a/buggy/presto-main/src/test/java/com/facebook/presto/operator/aggregation/AbstractTestApproximateCountDistinct.java
++++ b/fixed/presto-main/src/test/java/com/facebook/presto/operator/aggregation/AbstractTestApproximateCountDistinct.java
+@@ -167,7 +167,7 @@ public abstract class AbstractTestApproximateCountDistinct
+     /**
+      * Produce a block with the given values in the last field.
+      */
+-    private Block createBlock(Type type, List<Object> values)
++    private static Block createBlock(Type type, List<Object> values)
+     {
+         BlockBuilder blockBuilder = type.createBlockBuilder(new BlockBuilderStatus(), values.size());
+ 

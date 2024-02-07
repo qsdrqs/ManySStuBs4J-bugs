@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-client/src/main/java/org/apache/hadoop/hbase/client/HBaseAdmin.java b/fixed/hbase-client/src/main/java/org/apache/hadoop/hbase/client/HBaseAdmin.java
+index 7945e1da9..d3f84e193 100644
+--- a/buggy/hbase-client/src/main/java/org/apache/hadoop/hbase/client/HBaseAdmin.java
++++ b/fixed/hbase-client/src/main/java/org/apache/hadoop/hbase/client/HBaseAdmin.java
+@@ -2462,7 +2462,7 @@ public class HBaseAdmin implements Abortable, Closeable {
+   public void cloneSnapshot(final String snapshotName, final String tableName)
+       throws IOException, TableExistsException, RestoreSnapshotException, InterruptedException {
+     if (tableExists(tableName)) {
+-      throw new TableExistsException("Table '" + tableName + " already exists");
++      throw new TableExistsException(tableName);
+     }
+     internalRestoreSnapshot(snapshotName, tableName);
+     waitUntilTableIsEnabled(Bytes.toBytes(tableName));

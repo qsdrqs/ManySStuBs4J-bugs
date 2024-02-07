@@ -1,0 +1,13 @@
+diff --git a/buggy/services/src/main/java/io/druid/cli/CliRealtime.java b/fixed/services/src/main/java/io/druid/cli/CliRealtime.java
+index 9677016ac..69b9246e2 100644
+--- a/buggy/services/src/main/java/io/druid/cli/CliRealtime.java
++++ b/fixed/services/src/main/java/io/druid/cli/CliRealtime.java
+@@ -30,7 +30,7 @@ import java.util.List;
+  */
+ @Command(
+     name = "realtime",
+-    description = "Runs a realtime node, see https://github.com/metamx/druid/wiki/Realtime for a description"
++    description = "Runs a realtime node, see http://druid.io/docs/0.6.20/Realtime.html for a description"
+ )
+ public class CliRealtime extends ServerRunnable
+ {

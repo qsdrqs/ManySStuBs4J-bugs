@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/TrailingCommentCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/TrailingCommentCheck.java
+index d12ded6fb..282cbcb9a 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/TrailingCommentCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/TrailingCommentCheck.java
+@@ -109,7 +109,7 @@ public class TrailingCommentCheck extends AbstractCheck {
+     private Pattern legalComment;
+ 
+     /** The format string of the regexp. */
+-    private String format = "^[\\s\\}\\);]*$";
++    private String format = "^[\\s\\});]*$";
+ 
+     /** The regexp to match against. */
+     private Pattern regexp = Pattern.compile(format);

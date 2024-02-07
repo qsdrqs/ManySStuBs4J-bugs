@@ -1,0 +1,19 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.satel/src/main/java/org/openhab/binding/satel/config/IntegraStateBindingConfig.java b/fixed/bundles/binding/org.openhab.binding.satel/src/main/java/org/openhab/binding/satel/config/IntegraStateBindingConfig.java
+index 83009a1f9..e43347cbd 100644
+--- a/buggy/bundles/binding/org.openhab.binding.satel/src/main/java/org/openhab/binding/satel/config/IntegraStateBindingConfig.java
++++ b/fixed/bundles/binding/org.openhab.binding.satel/src/main/java/org/openhab/binding/satel/config/IntegraStateBindingConfig.java
+@@ -104,12 +104,12 @@ public class IntegraStateBindingConfig extends SatelBindingConfig {
+ 				for (int i = 0; i < objectNumbersStr.length; ++i) {
+ 					int objectNumber = Integer.parseInt(objectNumbersStr[i]);
+ 					if (objectNumber < 1 || objectNumber > 256) {
+-						throw new BindingConfigParseException(String.format("Invalid object number: {}", bindingConfig));
++						throw new BindingConfigParseException(String.format("Invalid object number: %s", bindingConfig));
+ 					}
+ 					objectNumbers[i] = objectNumber;
+ 				}
+ 			} catch (NumberFormatException e) {
+-				throw new BindingConfigParseException(String.format("Invalid object number: {}", bindingConfig));
++				throw new BindingConfigParseException(String.format("Invalid object number: %s", bindingConfig));
+ 			}
+ 		}
+ 

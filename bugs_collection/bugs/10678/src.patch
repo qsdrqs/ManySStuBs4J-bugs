@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/TranslationCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/TranslationCheckTest.java
+index 884fc0af1..22389779d 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/TranslationCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/TranslationCheckTest.java
+@@ -143,7 +143,7 @@ public class TranslationCheckTest extends BaseCheckTestSupport {
+         logIoException.invoke(check, new IOException("test exception"), file);
+ 
+         Mockito.verify(dispatcher, times(1)).fireErrors(any(String.class), captor.capture());
+-        assertThat(captor.getValue().first().getMessage(), endsWith("- test exception"));
++        assertThat(captor.getValue().first().getMessage(), endsWith("test exception"));
+     }
+ 
+     @Test

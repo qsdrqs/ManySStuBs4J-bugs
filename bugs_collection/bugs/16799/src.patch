@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/util/VersionCheck.java b/fixed/hazelcast/src/main/java/com/hazelcast/util/VersionCheck.java
+index 566cca7b2..575fb5d9f 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/util/VersionCheck.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/util/VersionCheck.java
+@@ -109,7 +109,7 @@ public final class VersionCheck {
+                 is = url.openStream();
+                 Manifest manifest = new Manifest(is);
+                 final Attributes mainAttributes = manifest.getMainAttributes();
+-                downloadId = mainAttributes.getValue("hazelcast.downloadId");
++                downloadId = mainAttributes.getValue("hazelcastDownloadId");
+                 if (downloadId != null) {
+                     break;
+                 }

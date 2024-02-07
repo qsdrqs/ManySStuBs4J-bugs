@@ -1,0 +1,13 @@
+diff --git a/buggy/codec-http2/src/main/java/io/netty/handler/codec/http2/internal/hpack/Decoder.java b/fixed/codec-http2/src/main/java/io/netty/handler/codec/http2/internal/hpack/Decoder.java
+index fa37acab5..b67a9dc4c 100644
+--- a/buggy/codec-http2/src/main/java/io/netty/handler/codec/http2/internal/hpack/Decoder.java
++++ b/fixed/codec-http2/src/main/java/io/netty/handler/codec/http2/internal/hpack/Decoder.java
+@@ -213,7 +213,7 @@ public final class Decoder {
+                     if (index == 0x7f) {
+                         state = READ_LITERAL_HEADER_NAME_LENGTH;
+                     } else {
+-                        if (nameLength > maxHeadersLength - headersLength) {
++                        if (index > maxHeadersLength - headersLength) {
+                             maxHeaderSizeExceeded();
+                         }
+                         nameLength = index;

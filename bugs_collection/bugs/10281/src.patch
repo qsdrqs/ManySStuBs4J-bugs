@@ -1,0 +1,13 @@
+diff --git a/buggy/hikaricp-common/src/main/java/com/zaxxer/hikari/pool/BaseHikariPool.java b/fixed/hikaricp-common/src/main/java/com/zaxxer/hikari/pool/BaseHikariPool.java
+index 91b88a58c..de32512a7 100644
+--- a/buggy/hikaricp-common/src/main/java/com/zaxxer/hikari/pool/BaseHikariPool.java
++++ b/fixed/hikaricp-common/src/main/java/com/zaxxer/hikari/pool/BaseHikariPool.java
+@@ -67,7 +67,7 @@ import com.zaxxer.hikari.util.LeakTask;
+  */
+ public abstract class BaseHikariPool implements HikariPoolMBean, IBagStateListener
+ {
+-   protected static final Logger LOGGER = LoggerFactory.getLogger("HikariPool");
++   protected final Logger LOGGER = LoggerFactory.getLogger(getClass());
+    private static final long ALIVE_BYPASS_WINDOW = Long.getLong("com.zaxxer.hikari.aliveBypassWindow", 1000L);
+ 
+    protected static final int POOL_RUNNING = 0;

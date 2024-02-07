@@ -1,0 +1,13 @@
+diff --git a/buggy/okio/src/main/java/okio/GzipSink.java b/fixed/okio/src/main/java/okio/GzipSink.java
+index 7397a67c1..f675f89ab 100644
+--- a/buggy/okio/src/main/java/okio/GzipSink.java
++++ b/fixed/okio/src/main/java/okio/GzipSink.java
+@@ -131,7 +131,7 @@ public final class GzipSink implements Sink {
+ 
+   private void writeFooter() throws IOException {
+     sink.writeIntLe((int) crc.getValue()); // CRC of original data.
+-    sink.writeIntLe(deflater.getTotalIn()); // Length of original data.
++    sink.writeIntLe((int) deflater.getBytesRead()); // Length of original data.
+   }
+ 
+   /** Updates the CRC with the given bytes. */

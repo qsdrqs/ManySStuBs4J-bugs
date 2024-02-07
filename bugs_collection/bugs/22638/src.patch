@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/main/java/org/springframework/boot/StartupInfoLogger.java b/fixed/spring-boot/src/main/java/org/springframework/boot/StartupInfoLogger.java
+index a30bb9ab0..b6f2a522b 100644
+--- a/buggy/spring-boot/src/main/java/org/springframework/boot/StartupInfoLogger.java
++++ b/fixed/spring-boot/src/main/java/org/springframework/boot/StartupInfoLogger.java
+@@ -74,7 +74,7 @@ class StartupInfoLogger {
+ 
+ 	private StringBuilder getRunningMessage() {
+ 		StringBuilder message = new StringBuilder();
+-		message.append("Running with Spring Bootstrap");
++		message.append("Running with Spring Boot");
+ 		message.append(getVersion(SpringApplication.class));
+ 		message.append(", Spring");
+ 		message.append(getVersion(ApplicationContext.class));

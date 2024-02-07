@@ -1,0 +1,13 @@
+diff --git a/buggy/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/taskmanager/TaskManager.java b/fixed/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/taskmanager/TaskManager.java
+index bcf1ed199..b4153013a 100644
+--- a/buggy/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/taskmanager/TaskManager.java
++++ b/fixed/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/taskmanager/TaskManager.java
+@@ -409,7 +409,7 @@ public class TaskManager implements TaskOperationProtocol, PluginCommunicationPr
+ 
+ 		if (task == null) {
+ 			final TaskCancelResult taskCancelResult = new TaskCancelResult(id, AbstractTaskResult.ReturnCode.ERROR);
+-			taskCancelResult.setDescription("No task with ID + " + id + " is currently running");
++			taskCancelResult.setDescription("No task with ID " + id + " is currently running");
+ 			return taskCancelResult;
+ 		}
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/pact/pact-common/src/main/java/eu/stratosphere/pact/common/contract/WorksetIteration.java b/fixed/pact/pact-common/src/main/java/eu/stratosphere/pact/common/contract/WorksetIteration.java
+index f6b06923d..d92691023 100644
+--- a/buggy/pact/pact-common/src/main/java/eu/stratosphere/pact/common/contract/WorksetIteration.java
++++ b/fixed/pact/pact-common/src/main/java/eu/stratosphere/pact/common/contract/WorksetIteration.java
+@@ -13,7 +13,7 @@ public class WorksetIteration extends Contract
+ 	
+ 	
+ 	public WorksetIteration() {
+-		super("blah");
++		super("WorksetIteration");
+ 	}
+ 	
+ 	/**

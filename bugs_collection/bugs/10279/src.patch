@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/zaxxer/hikari/ShutdownTest.java b/fixed/src/test/java/com/zaxxer/hikari/ShutdownTest.java
+index cb431993f..b322cd386 100644
+--- a/buggy/src/test/java/com/zaxxer/hikari/ShutdownTest.java
++++ b/fixed/src/test/java/com/zaxxer/hikari/ShutdownTest.java
+@@ -222,7 +222,7 @@ public class ShutdownTest
+            ds.getConnection();
+        }
+        catch (SQLException e) {
+-          Assert.assertTrue(e.getMessage().contains("Pool has been shutdown"));
++          Assert.assertTrue(e.getMessage().contains("has been shutdown"));
+        }
+    }
+ 

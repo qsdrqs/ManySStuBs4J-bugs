@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/ipc/SimpleRpcScheduler.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/ipc/SimpleRpcScheduler.java
+index 1f7e8ba8c..616f741d0 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/ipc/SimpleRpcScheduler.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/ipc/SimpleRpcScheduler.java
+@@ -87,7 +87,7 @@ public class SimpleRpcScheduler extends RpcScheduler implements ConfigurationObs
+     } else {
+       if (RpcExecutor.isFifoQueueType(callQueueType)) {
+         callExecutor = new FastPathBalancedQueueRpcExecutor("deafult.FPBQ", handlerCount,
+-            maxPriorityQueueLength, priority, conf, server);
++            maxQueueLength, priority, conf, server);
+       } else {
+         callExecutor = new BalancedQueueRpcExecutor("deafult.BQ", handlerCount, maxQueueLength,
+             priority, conf, server);

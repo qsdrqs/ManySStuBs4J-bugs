@@ -1,0 +1,16 @@
+diff --git a/buggy/src/main/java/org/apache/hadoop/hbase/master/LoadBalancer.java b/fixed/src/main/java/org/apache/hadoop/hbase/master/LoadBalancer.java
+index 935dd915b..5fbf0f7b4 100644
+--- a/buggy/src/main/java/org/apache/hadoop/hbase/master/LoadBalancer.java
++++ b/fixed/src/main/java/org/apache/hadoop/hbase/master/LoadBalancer.java
+@@ -591,7 +591,8 @@ public class LoadBalancer {
+     @Override
+     public String toString() {
+       return "hri=" + this.hri.getRegionNameAsString() + ", src=" +
+-        this.source.getServerName() + ", dest=" + this.dest.getServerName();
++        (this.source == null? "": this.source.getServerName()) +
++        ", dest=" + this.dest.getServerName();
+     }
+   }
+-}
+\ No newline at end of file
++}

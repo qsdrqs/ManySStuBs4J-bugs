@@ -1,0 +1,13 @@
+diff --git a/buggy/web/src/main/java/com/navercorp/pinpoint/web/service/AgentInfoServiceImpl.java b/fixed/web/src/main/java/com/navercorp/pinpoint/web/service/AgentInfoServiceImpl.java
+index e98cad17e..3283185c8 100644
+--- a/buggy/web/src/main/java/com/navercorp/pinpoint/web/service/AgentInfoServiceImpl.java
++++ b/fixed/web/src/main/java/com/navercorp/pinpoint/web/service/AgentInfoServiceImpl.java
+@@ -174,7 +174,7 @@ public class AgentInfoServiceImpl implements AgentInfoService {
+             throw new NullPointerException("applicationName must not be null");
+         }
+         if (timestamp < 0) {
+-            throw new IllegalArgumentException("timeDiff must not be less than 0");
++            throw new IllegalArgumentException("timestamp must not be less than 0");
+         }
+         if (timeDiff > timestamp) {
+             throw new IllegalArgumentException("timeDiff must not be greater than timestamp");

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionLeftCurlyTest.java b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionLeftCurlyTest.java
+index cee0f049a..d3f416681 100644
+--- a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionLeftCurlyTest.java
++++ b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionLeftCurlyTest.java
+@@ -30,7 +30,7 @@ import com.puppycrawl.tools.checkstyle.DefaultConfiguration;
+ import com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck;
+ import com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyOption;
+ 
+-public class XpathRegressionLeftCurlyTest extends AbstractXpathTestSupport {
++public class XpathRegressionLeftCurlyTest extends XpathTestSupport {
+ 
+     @Test
+     public void testOne() throws Exception {

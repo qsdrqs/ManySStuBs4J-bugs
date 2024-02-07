@@ -1,0 +1,13 @@
+diff --git a/buggy/enterprise/cluster/src/test/java/org/neo4j/cluster/protocol/heartbeat/HeartbeatContextTest.java b/fixed/enterprise/cluster/src/test/java/org/neo4j/cluster/protocol/heartbeat/HeartbeatContextTest.java
+index f7d0727d2..fb5e1f38c 100644
+--- a/buggy/enterprise/cluster/src/test/java/org/neo4j/cluster/protocol/heartbeat/HeartbeatContextTest.java
++++ b/fixed/enterprise/cluster/src/test/java/org/neo4j/cluster/protocol/heartbeat/HeartbeatContextTest.java
+@@ -80,7 +80,7 @@ public class HeartbeatContextTest
+         {
+             members.put( instanceIds[i], URI.create( initialHosts[i] ) );
+         }
+-        ClusterConfiguration config = new ClusterConfiguration( "clusterName", StringLogger.DEV_NULL, initialHosts );
++        ClusterConfiguration config = new ClusterConfiguration( "clusterName", initialHosts );
+         config.setMembers( members );
+ 
+         context = mock( ClusterContext.class );

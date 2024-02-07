@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/client/HBaseAdmin.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/client/HBaseAdmin.java
+index 947bd280e..1bfbfe295 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/client/HBaseAdmin.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/client/HBaseAdmin.java
+@@ -2237,7 +2237,7 @@ public class HBaseAdmin implements Abortable, Closeable {
+         LOG.debug("Interrupted while waiting for snapshot " + snapshot + " to complete");
+         Thread.currentThread().interrupt();
+       }
+-      LOG.debug("Getting current status of snasphot from master...");
++      LOG.debug("Getting current status of snapshot from master...");
+       done = execute(new MasterAdminCallable<IsSnapshotDoneResponse>() {
+         @Override
+         public IsSnapshotDoneResponse call() throws ServiceException {

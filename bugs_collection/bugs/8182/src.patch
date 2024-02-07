@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-core/src/main/java/org/apache/flink/api/common/typeutils/TypeSerializerSnapshotSerializationUtil.java b/fixed/flink-core/src/main/java/org/apache/flink/api/common/typeutils/TypeSerializerSnapshotSerializationUtil.java
+index 110b2ab79..0bcff93b8 100644
+--- a/buggy/flink-core/src/main/java/org/apache/flink/api/common/typeutils/TypeSerializerSnapshotSerializationUtil.java
++++ b/fixed/flink-core/src/main/java/org/apache/flink/api/common/typeutils/TypeSerializerSnapshotSerializationUtil.java
+@@ -149,7 +149,7 @@ public class TypeSerializerSnapshotSerializationUtil {
+ 			Class<? extends TypeSerializerSnapshot> serializerConfigSnapshotClass;
+ 			try {
+ 				serializerConfigSnapshotClass = (Class<? extends TypeSerializerSnapshot>)
+-					Class.forName(serializerConfigClassname, true, userCodeClassLoader);
++					Class.forName(serializerConfigClassname, false, userCodeClassLoader);
+ 			} catch (ClassNotFoundException e) {
+ 				throw new IOException(
+ 					"Could not find requested TypeSerializerConfigSnapshot class "

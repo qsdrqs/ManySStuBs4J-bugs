@@ -1,0 +1,13 @@
+diff --git a/buggy/itest/src/edu/stanford/nlp/pipeline/TokenizerGermanBenchmarkITest.java b/fixed/itest/src/edu/stanford/nlp/pipeline/TokenizerGermanBenchmarkITest.java
+index d337fb079..4ef49be21 100644
+--- a/buggy/itest/src/edu/stanford/nlp/pipeline/TokenizerGermanBenchmarkITest.java
++++ b/fixed/itest/src/edu/stanford/nlp/pipeline/TokenizerGermanBenchmarkITest.java
+@@ -17,7 +17,7 @@ public class TokenizerGermanBenchmarkITest extends TokenizerBenchmarkTestCase {
+ 
+     public void testOnDev() {
+         goldFilePath = "/u/nlp/data/stanford-corenlp-testing/data/tokenize/de_gsd-ud-dev.conllu";
+-        runTest("dev", "es", 0.5);
++        runTest("dev", "de", 0.5);
+     }
+ 
+ 

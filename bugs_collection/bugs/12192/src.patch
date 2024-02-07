@@ -1,0 +1,13 @@
+diff --git a/buggy/junit/src/main/java/cucumber/junit/JUnitReporter.java b/fixed/junit/src/main/java/cucumber/junit/JUnitReporter.java
+index ab0402609..5eed0ff9f 100644
+--- a/buggy/junit/src/main/java/cucumber/junit/JUnitReporter.java
++++ b/fixed/junit/src/main/java/cucumber/junit/JUnitReporter.java
+@@ -149,7 +149,7 @@ class JUnitReporter implements Reporter, Formatter {
+     }
+ 
+     @Override
+-    public void syntaxError(String state, String event, List<String> legalEvents, String uri, int line) {
++    public void syntaxError(String state, String event, List<String> legalEvents, String uri, Integer line) {
+         formatter.syntaxError(state, event, legalEvents, uri, line);
+     }
+ 

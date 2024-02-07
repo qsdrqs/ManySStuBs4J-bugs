@@ -1,0 +1,12 @@
+diff --git a/buggy/transport-sctp/src/main/java/io/netty/handler/codec/sctp/SctpOutboundByteStreamHandler.java b/fixed/transport-sctp/src/main/java/io/netty/handler/codec/sctp/SctpOutboundByteStreamHandler.java
+index 1cd098be5..453eb9e5e 100644
+--- a/buggy/transport-sctp/src/main/java/io/netty/handler/codec/sctp/SctpOutboundByteStreamHandler.java
++++ b/fixed/transport-sctp/src/main/java/io/netty/handler/codec/sctp/SctpOutboundByteStreamHandler.java
+@@ -53,6 +53,6 @@ public class SctpOutboundByteStreamHandler extends MessageToMessageEncoder<ByteB
+ 
+     @Override
+     protected void encode(ChannelHandlerContext ctx, ByteBuf msg, List<Object> out) throws Exception {
+-        out.add(new SctpMessage(streamIdentifier, protocolIdentifier, unordered, msg.retain()));
++        out.add(new SctpMessage(protocolIdentifier, streamIdentifier, unordered, msg.retain()));
+     }
+ }

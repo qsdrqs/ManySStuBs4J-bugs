@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/sizes/ExecutableStatementCountCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/sizes/ExecutableStatementCountCheck.java
+index a80b77b50..8a4940915 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/sizes/ExecutableStatementCountCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/sizes/ExecutableStatementCountCheck.java
+@@ -150,8 +150,7 @@ public final class ExecutableStatementCountCheck
+     private void leaveMemberDef(DetailAST ast) {
+         final int count = context.getCount();
+         if (count > max) {
+-            log(ast.getLineNo(), ast.getColumnNo(),
+-                    MSG_KEY, count, max);
++            log(ast, MSG_KEY, count, max);
+         }
+         context = contextStack.pop();
+     }

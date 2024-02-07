@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/VisibilityModifierCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/VisibilityModifierCheck.java
+index 3e1b63122..4b20cd193 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/VisibilityModifierCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/VisibilityModifierCheck.java
+@@ -467,8 +467,7 @@ public class VisibilityModifierCheck
+                 .getNextSibling();
+             final String varName = varNameAST.getText();
+             if (!hasProperAccessModifier(variableDef, varName)) {
+-                log(varNameAST.getLineNo(), varNameAST.getColumnNo(),
+-                        MSG_KEY, varName);
++                log(varNameAST, MSG_KEY, varName);
+             }
+         }
+     }

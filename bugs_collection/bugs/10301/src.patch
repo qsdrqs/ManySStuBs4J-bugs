@@ -1,0 +1,13 @@
+diff --git a/buggy/hikaricp-java6/src/main/java/com/zaxxer/hikari/util/PoolUtilities.java b/fixed/hikaricp-java6/src/main/java/com/zaxxer/hikari/util/PoolUtilities.java
+index c3dc8a511..5a97a7f3d 100644
+--- a/buggy/hikaricp-java6/src/main/java/com/zaxxer/hikari/util/PoolUtilities.java
++++ b/fixed/hikaricp-java6/src/main/java/com/zaxxer/hikari/util/PoolUtilities.java
+@@ -296,7 +296,7 @@ public final class PoolUtilities
+       }
+ 
+       final int networkTimeout = connection.getNetworkTimeout();
+-      connection.setNetworkTimeout(executor, Math.max(250, (int) timeoutMs)); 
++      connection.setNetworkTimeout(executor, (int) timeoutMs); 
+ 
+       return networkTimeout;
+    }

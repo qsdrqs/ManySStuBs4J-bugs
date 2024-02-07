@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions/model-loaders/model-loaders/src/com/badlogic/gdx/graphics/g3d/test/KeyframedModelViewer.java b/fixed/extensions/model-loaders/model-loaders/src/com/badlogic/gdx/graphics/g3d/test/KeyframedModelViewer.java
+index 8dee863b8..b3fe5ec38 100644
+--- a/buggy/extensions/model-loaders/model-loaders/src/com/badlogic/gdx/graphics/g3d/test/KeyframedModelViewer.java
++++ b/fixed/extensions/model-loaders/model-loaders/src/com/badlogic/gdx/graphics/g3d/test/KeyframedModelViewer.java
+@@ -179,6 +179,6 @@ public class KeyframedModelViewer implements ApplicationListener {
+ 	}
+ 
+ 	public static void main (String[] argv) {
+-		new JoglApplication(new KeyframedModelViewer("data/knight.md2", "data/knight.jpg"), "KeframedModel Viewer", 800, 480, false);
++		new JoglApplication(new KeyframedModelViewer("data/models/knight.md2", "data/models/knight.jpg"), "KeframedModel Viewer", 800, 480, false);
+ 	}
+ }
+\ No newline at end of file

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/inject/Scopes.java b/fixed/src/com/google/inject/Scopes.java
+index 31f3d690f..b0b040e74 100644
+--- a/buggy/src/com/google/inject/Scopes.java
++++ b/fixed/src/com/google/inject/Scopes.java
+@@ -58,7 +58,7 @@ public class Scopes {
+         }
+ 
+         public String toString() {
+-          return creator.toString();
++          return String.format("%s[%s]", creator, SINGLETON);
+         }
+       };
+     }

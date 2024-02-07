@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/ClassResolver.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/ClassResolver.java
+index 88e005443..bfc5938f1 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/ClassResolver.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/ClassResolver.java
+@@ -203,7 +203,7 @@ public class ClassResolver {
+         catch (final ClassNotFoundException ex) {
+             // we shouldn't get this exception here,
+             // so this is unexpected runtime exception
+-            throw new RuntimeException(ex);
++            throw new IllegalStateException(ex);
+         }
+ 
+         return null;

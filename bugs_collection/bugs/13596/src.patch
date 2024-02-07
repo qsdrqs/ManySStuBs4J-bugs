@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/test/java/com/facebook/presto/operator/scalar/TestJsonExtract.java b/fixed/presto-main/src/test/java/com/facebook/presto/operator/scalar/TestJsonExtract.java
+index cb90f1989..aa257ce8e 100644
+--- a/buggy/presto-main/src/test/java/com/facebook/presto/operator/scalar/TestJsonExtract.java
++++ b/fixed/presto-main/src/test/java/com/facebook/presto/operator/scalar/TestJsonExtract.java
+@@ -60,7 +60,7 @@ public class TestJsonExtract
+ 
+         assertQuotedPathToken("-1.1");
+         assertQuotedPathToken("!@#$%^&*()[]{}/?'");
+-        assertQuotedPathToken("ab\\u0001c");
++        assertQuotedPathToken("ab\u0001c");
+         assertQuotedPathToken("ab\0c");
+         assertQuotedPathToken("ab\t\n\rc");
+         assertQuotedPathToken(".");

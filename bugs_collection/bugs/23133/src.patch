@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/ie/util/RelationTriple.java b/fixed/src/edu/stanford/nlp/ie/util/RelationTriple.java
+index 732f0b7e3..618755b82 100644
+--- a/buggy/src/edu/stanford/nlp/ie/util/RelationTriple.java
++++ b/fixed/src/edu/stanford/nlp/ie/util/RelationTriple.java
+@@ -280,7 +280,7 @@ public class RelationTriple implements Comparable<RelationTriple>, Iterable<Core
+       // Return the longest chunk
+       return Pair.makePair(
+           relation.get(longestChunkStart).index() - 1,
+-          relation.get(longestChunkStart + longestChunk - 1).index()
++          relation.get(longestChunkStart).index() - 1 + longestChunk
+       );
+     }
+   }

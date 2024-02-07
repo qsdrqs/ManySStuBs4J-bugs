@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFVarSampLong.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFVarSampLong.java
+index 3acd40287..33405894b 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFVarSampLong.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFVarSampLong.java
+@@ -310,7 +310,7 @@ public class VectorUDAFVarSampLong extends VectorAggregateExpression {
+       long[] vector = inputVector.vector;
+       
+       if (inputVector.isRepeating) {
+-        if (inputVector.noNulls || !inputVector.isNull[0]) {
++        if (inputVector.noNulls) {
+           iterateRepeatingNoNulls(myagg, vector[0], batchSize);
+         }
+       } 

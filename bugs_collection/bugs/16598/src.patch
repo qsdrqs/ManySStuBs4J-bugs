@@ -1,0 +1,14 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/config/XmlConfigBuilder.java b/fixed/hazelcast/src/main/java/com/hazelcast/config/XmlConfigBuilder.java
+index 47821369d..7535f23d5 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/config/XmlConfigBuilder.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/config/XmlConfigBuilder.java
+@@ -649,7 +649,8 @@ public class XmlConfigBuilder extends AbstractConfigBuilder implements ConfigBui
+                 handleMemberList(n);
+             } else if (cleanNodeName(n.getNodeName()).equals("required-member")) {
+                 if (tcpIpConfig.getRequiredMember() != null) {
+-                    throw new InvalidConfigurationException("Duplicate required-member'" + "' definition found in XML configuration. ");
++                    throw new InvalidConfigurationException("Duplicate required-member"
++                            + " definition found in XML configuration. ");
+                 }
+                 tcpIpConfig.setRequiredMember(value);
+             } else if (memberTags.contains(cleanNodeName(n.getNodeName()))) {

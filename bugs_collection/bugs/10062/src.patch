@@ -1,0 +1,13 @@
+diff --git a/buggy/storm-core/src/jvm/backtype/storm/messaging/netty/StormClientPipelineFactory.java b/fixed/storm-core/src/jvm/backtype/storm/messaging/netty/StormClientPipelineFactory.java
+index 6bad8e386..e6e8b3dec 100644
+--- a/buggy/storm-core/src/jvm/backtype/storm/messaging/netty/StormClientPipelineFactory.java
++++ b/fixed/storm-core/src/jvm/backtype/storm/messaging/netty/StormClientPipelineFactory.java
+@@ -37,7 +37,7 @@ class StormClientPipelineFactory implements ChannelPipelineFactory {
+         // Encoder
+         pipeline.addLast("encoder", new MessageEncoder());
+         // business logic.
+-        pipeline.addLast("handler", new StormClientHandler(client));
++        pipeline.addLast("handler", new StormClientErrorHandler(client.name()));
+ 
+         return pipeline;
+     }

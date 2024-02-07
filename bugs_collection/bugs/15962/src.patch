@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/instance/DelegatingAddressPicker.java b/fixed/hazelcast/src/main/java/com/hazelcast/instance/DelegatingAddressPicker.java
+index 3b4f8dad0..8fc8d8eb5 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/instance/DelegatingAddressPicker.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/instance/DelegatingAddressPicker.java
+@@ -60,7 +60,7 @@ public class DelegatingAddressPicker implements AddressPicker {
+     public void pickAddress() throws Exception {
+         try {
+             bindAddress = memberAddressProvider.getBindAddress();
+-            logger.info("Using bind address: " + publicAddress);
++            logger.info("Using bind address: " + bindAddress);
+ 
+             publicAddress = memberAddressProvider.getPublicAddress();
+             validatePublicAddress(publicAddress);

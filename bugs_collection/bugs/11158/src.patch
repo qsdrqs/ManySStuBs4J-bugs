@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/api/AutomaticBeanTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/api/AutomaticBeanTest.java
+index 5cd4ded66..d8176a91d 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/api/AutomaticBeanTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/api/AutomaticBeanTest.java
+@@ -114,7 +114,7 @@ public class AutomaticBeanTest {
+         }
+ 
+         public void setExceptionalMethod(String value) {
+-            throw new IllegalStateException(privateField);
++            throw new IllegalStateException(privateField + value);
+         }
+ 
+     }

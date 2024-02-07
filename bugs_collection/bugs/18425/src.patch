@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/tablelayout/TableLayout.java b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/tablelayout/TableLayout.java
+index 9420ea581..1a8f65dd3 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/tablelayout/TableLayout.java
++++ b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/tablelayout/TableLayout.java
+@@ -339,7 +339,7 @@ public class TableLayout extends BaseTableLayout<Actor> {
+ 		final String type;
+ 
+ 		public DebugRect (String type, int x, int y, int width, int height) {
+-			super(x, y, width, height - 1);
++			super(x, y, width, height);
+ 			this.type = type;
+ 		}
+ 	}

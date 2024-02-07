@@ -1,0 +1,22 @@
+diff --git a/buggy/spring-boot-tools/spring-boot-loader/src/test/java/org/springframework/boot/loader/jar/JarFileTests.java b/fixed/spring-boot-tools/spring-boot-loader/src/test/java/org/springframework/boot/loader/jar/JarFileTests.java
+index f08243bb2..0dcee736a 100644
+--- a/buggy/spring-boot-tools/spring-boot-loader/src/test/java/org/springframework/boot/loader/jar/JarFileTests.java
++++ b/fixed/spring-boot-tools/spring-boot-loader/src/test/java/org/springframework/boot/loader/jar/JarFileTests.java
+@@ -321,14 +321,13 @@ public class JarFileTests {
+ 
+ 	@Test
+ 	public void createNonNestedUrlFromString() throws Exception {
+-		nonNestedJarFileFromString(
+-				"jar:file:" + this.rootJarFile.getAbsolutePath() + "!/2.dat");
++		nonNestedJarFileFromString("jar:" + this.rootJarFile.toURI() + "!/2.dat");
+ 	}
+ 
+ 	@Test
+-	public void createNonNestedUrlFromStringWithDoubleSlash() throws Exception {
++	public void createNonNestedUrlFromPathString() throws Exception {
+ 		nonNestedJarFileFromString(
+-				"jar:file://" + this.rootJarFile.getAbsolutePath() + "!/2.dat");
++				"jar:" + this.rootJarFile.toPath().toUri() + "!/2.dat");
+ 	}
+ 
+ 	private void nonNestedJarFileFromString(String spec) throws Exception {

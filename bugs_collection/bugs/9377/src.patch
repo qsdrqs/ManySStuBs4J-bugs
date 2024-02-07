@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/apache/hadoop/hbase/master/DefaultLoadBalancer.java b/fixed/src/main/java/org/apache/hadoop/hbase/master/DefaultLoadBalancer.java
+index d64e1476f..702f62276 100644
+--- a/buggy/src/main/java/org/apache/hadoop/hbase/master/DefaultLoadBalancer.java
++++ b/fixed/src/main/java/org/apache/hadoop/hbase/master/DefaultLoadBalancer.java
+@@ -106,7 +106,7 @@ public class DefaultLoadBalancer implements LoadBalancer {
+   * regions which were assigned to the server after some other region server
+   * crashed.
+   */
+-   private class RegionInfoComparator implements Comparator<HRegionInfo> {
++   private static class RegionInfoComparator implements Comparator<HRegionInfo> {
+        @Override
+        public int compare(HRegionInfo l, HRegionInfo r) {
+           long diff = r.getRegionId() - l.getRegionId();

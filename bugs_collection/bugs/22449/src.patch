@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/cache/EhCacheCacheConfiguration.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/cache/EhCacheCacheConfiguration.java
+index 4f0a0ea62..a3e19e3fe 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/cache/EhCacheCacheConfiguration.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/cache/EhCacheCacheConfiguration.java
+@@ -71,7 +71,7 @@ class EhCacheCacheConfiguration {
+ 	static class ConfigAvailableCondition extends CacheConfigFileCondition {
+ 
+ 		public ConfigAvailableCondition() {
+-			super("EhCache", "spring.config.ehcache", "classpath:/ehcache.xml");
++			super("EhCache", "spring.cache.ehcache", "classpath:/ehcache.xml");
+ 		}
+ 
+ 	}

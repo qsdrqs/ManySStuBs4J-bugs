@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFAvgLong.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFAvgLong.java
+index ff8ca5cc1..f12fe9828 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFAvgLong.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFAvgLong.java
+@@ -51,7 +51,7 @@ public class VectorUDAFAvgLong extends VectorAggregateExpression {
+     
+     /** class for storing the current aggregate value. */
+     static class Aggregation implements AggregationBuffer {
+-      long sum;
++      double sum;
+       long count;
+       boolean isNull;
+       

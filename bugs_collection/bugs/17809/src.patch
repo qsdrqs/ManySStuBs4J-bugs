@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions/gdx-freetype/src/com/badlogic/gdx/graphics/g2d/freetype/FreeType.java b/fixed/extensions/gdx-freetype/src/com/badlogic/gdx/graphics/g2d/freetype/FreeType.java
+index 58b572771..addebd4a3 100644
+--- a/buggy/extensions/gdx-freetype/src/com/badlogic/gdx/graphics/g2d/freetype/FreeType.java
++++ b/fixed/extensions/gdx-freetype/src/com/badlogic/gdx/graphics/g2d/freetype/FreeType.java
+@@ -625,7 +625,7 @@ public class FreeType {
+ 			}
+ 
+ 			Pixmap converted = pixmap;
+-			if (format != Format.RGBA8888) {
++			if (format != pixmap.getFormat()) {
+ 				converted = new Pixmap(pixmap.getWidth(), pixmap.getHeight(), format);
+ 				Blending blending = Pixmap.getBlending();
+ 				Pixmap.setBlending(Blending.None);

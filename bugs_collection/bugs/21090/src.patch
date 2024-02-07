@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/main/java/org/openmrs/validator/UserValidator.java b/fixed/api/src/main/java/org/openmrs/validator/UserValidator.java
+index 38f51fefc..6cc35b553 100644
+--- a/buggy/api/src/main/java/org/openmrs/validator/UserValidator.java
++++ b/fixed/api/src/main/java/org/openmrs/validator/UserValidator.java
+@@ -40,7 +40,7 @@ public class UserValidator implements Validator {
+ 	protected final Log log = LogFactory.getLog(getClass());
+ 	
+ 	private static final Pattern EMAIL_PATTERN = Pattern
+-	        .compile("^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
++	        .compile("^.+@.+\\..+$");
+ 	
+ 	@Autowired
+ 	private PersonValidator personValidator;

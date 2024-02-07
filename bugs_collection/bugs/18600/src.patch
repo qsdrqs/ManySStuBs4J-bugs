@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/apache/ibatis/executor/loader/ResultLoader.java b/fixed/src/main/java/org/apache/ibatis/executor/loader/ResultLoader.java
+index 920bc4ffa..a0dd8fd68 100644
+--- a/buggy/src/main/java/org/apache/ibatis/executor/loader/ResultLoader.java
++++ b/fixed/src/main/java/org/apache/ibatis/executor/loader/ResultLoader.java
+@@ -78,7 +78,7 @@ public class ResultLoader {
+       localExecutor = newExecutor();
+     }
+     try {
+-      return localExecutor.<E> query(mappedStatement, parameterObject, RowBounds.DEFAULT, Executor.NO_RESULT_HANDLER, cacheKey, boundSql);
++      return localExecutor.query(mappedStatement, parameterObject, RowBounds.DEFAULT, Executor.NO_RESULT_HANDLER, cacheKey, boundSql);
+     } finally {
+       if (localExecutor != executor) {
+         localExecutor.close(false);

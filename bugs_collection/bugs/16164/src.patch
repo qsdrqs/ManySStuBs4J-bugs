@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/internal/diagnostics/DiagnosticsLogWriter.java b/fixed/hazelcast/src/main/java/com/hazelcast/internal/diagnostics/DiagnosticsLogWriter.java
+index 7cee1616d..4a39413b4 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/internal/diagnostics/DiagnosticsLogWriter.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/internal/diagnostics/DiagnosticsLogWriter.java
+@@ -120,7 +120,7 @@ public abstract class DiagnosticsLogWriter {
+     private void appendDate() {
+         write(calendar.get(DAY_OF_MONTH));
+         write('-');
+-        write(calendar.get(MONTH));
++        write(calendar.get(MONTH) + 1);
+         write('-');
+         write(calendar.get(YEAR));
+     }

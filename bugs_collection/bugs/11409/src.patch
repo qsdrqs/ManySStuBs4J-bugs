@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/base/BaseCheckTestSupport.java b/fixed/src/it/java/com/google/checkstyle/test/base/BaseCheckTestSupport.java
+index b14a70b54..bc24f6cda 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/base/BaseCheckTestSupport.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/base/BaseCheckTestSupport.java
+@@ -147,7 +147,7 @@ public abstract class BaseCheckTestSupport
+             parseInt = parseInt.substring(0, parseInt.indexOf(":"));
+             int lineNumber = Integer.parseInt(parseInt);
+ 			Integer integer = Arrays.asList(aWarnsExpected).contains(lineNumber) ? lineNumber : 0;
+-            assertEquals("error message " + i, (long) integer, (long) lineNumber);
++            assertEquals("error message " + i, (long) integer, lineNumber);
+         }
+ 
+         assertEquals("unexpected output: " + lnr.readLine(),

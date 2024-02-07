@@ -1,0 +1,16 @@
+diff --git a/buggy/src/jvm/clojure/lang/Var.java b/fixed/src/jvm/clojure/lang/Var.java
+index 213beef2a..799a153c3 100644
+--- a/buggy/src/jvm/clojure/lang/Var.java
++++ b/fixed/src/jvm/clojure/lang/Var.java
+@@ -103,9 +103,9 @@ public static Object getThreadBindingFrame(){
+ }
+ 
+ public static Object cloneThreadBindingFrame(){
+-	Frame f = (Frame) dvals.get().clone();
++	Frame f = dvals.get();
+ 	if(f != null)
+-		return f;
++		return f.clone();
+ 	return new Frame();
+ }
+ 

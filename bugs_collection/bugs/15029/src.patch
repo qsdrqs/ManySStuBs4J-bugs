@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/CommandLineRunner.java b/fixed/src/com/google/javascript/jscomp/CommandLineRunner.java
+index 70e97b2be..547fcd174 100644
+--- a/buggy/src/com/google/javascript/jscomp/CommandLineRunner.java
++++ b/fixed/src/com/google/javascript/jscomp/CommandLineRunner.java
+@@ -1136,7 +1136,7 @@ public class CommandLineRunner extends
+     }
+ 
+     if (flags.exportLocalPropertyDefinitions) {
+-      options.setExportLocalPropertyDefinitions(flags.exportLocalPropertyDefinitions);
++      options.setExportLocalPropertyDefinitions(true);
+     }
+ 
+     WarningLevel wLevel = flags.warningLevel;

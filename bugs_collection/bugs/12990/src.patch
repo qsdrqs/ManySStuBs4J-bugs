@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/io/druid/segment/realtime/plumber/RealtimePlumber.java b/fixed/server/src/main/java/io/druid/segment/realtime/plumber/RealtimePlumber.java
+index e7a09df68..dabf462d4 100644
+--- a/buggy/server/src/main/java/io/druid/segment/realtime/plumber/RealtimePlumber.java
++++ b/fixed/server/src/main/java/io/druid/segment/realtime/plumber/RealtimePlumber.java
+@@ -517,7 +517,7 @@ public class RealtimePlumber implements Plumber
+                           sinkInterval.getStart(),
+                           sinkInterval.getEnd(),
+                           versioningPolicy.getVersion(sinkInterval),
+-                          new NoneShardSpec()
++                          schema.getShardSpec()
+                       ),
+                       IndexIO.loadIndex(segmentDir)
+                   ),

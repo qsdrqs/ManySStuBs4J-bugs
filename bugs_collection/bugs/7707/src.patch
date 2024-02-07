@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/processor/DelayerPerRouteTest.java b/fixed/camel-core/src/test/java/org/apache/camel/processor/DelayerPerRouteTest.java
+index ca4dbc2dd..63c9ebfb1 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/processor/DelayerPerRouteTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/processor/DelayerPerRouteTest.java
+@@ -39,7 +39,7 @@ public class DelayerPerRouteTest extends ContextTestSupport {
+         return new RouteBuilder() {
+             @Override
+             public void configure() throws Exception {
+-                context.setDelayer(2000);
++                context.setDelayer(2000L);
+ 
+                 from("seda:a").delayer(1000).to("mock:result");
+ 

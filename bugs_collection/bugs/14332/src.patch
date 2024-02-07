@@ -1,0 +1,13 @@
+diff --git a/buggy/StatisticsPlugin/src/org/gephi/statistics/plugin/DegreeDistribution.java b/fixed/StatisticsPlugin/src/org/gephi/statistics/plugin/DegreeDistribution.java
+index aba37f7a3..beb49b6f2 100644
+--- a/buggy/StatisticsPlugin/src/org/gephi/statistics/plugin/DegreeDistribution.java
++++ b/fixed/StatisticsPlugin/src/org/gephi/statistics/plugin/DegreeDistribution.java
+@@ -127,7 +127,7 @@ public class DegreeDistribution implements Statistics, LongTask {
+         if (this.mDirected) {
+             graph = graphModel.getDirectedGraphVisible();
+         } else {
+-            graph = graphModel.getUndirectedGraph();
++            graph = graphModel.getUndirectedGraphVisible();
+         }
+ 
+         graph.readLock();

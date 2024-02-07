@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/test/java/org/apache/flink/runtime/rest/compatibility/CompatibilityRoutine.java b/fixed/flink-runtime/src/test/java/org/apache/flink/runtime/rest/compatibility/CompatibilityRoutine.java
+index d98b4ffa7..a13b06925 100644
+--- a/buggy/flink-runtime/src/test/java/org/apache/flink/runtime/rest/compatibility/CompatibilityRoutine.java
++++ b/fixed/flink-runtime/src/test/java/org/apache/flink/runtime/rest/compatibility/CompatibilityRoutine.java
+@@ -71,7 +71,7 @@ final class CompatibilityRoutine<C> {
+ 	CompatibilityCheckResult checkCompatibility(final Optional<C> old, final Optional<C> cur) {
+ 		Preconditions.checkArgument(
+ 			old.isPresent() || cur.isPresent(),
+-			"Implementation error: Compatibility check container for routine {} for both old and new version is null.", key);
++			"Implementation error: Compatibility check container for routine %s for both old and new version is null.", key);
+ 
+ 		if (!old.isPresent()) {
+ 			// allow addition of new compatibility routines

@@ -1,0 +1,13 @@
+diff --git a/buggy/community/server/src/main/java/org/neo4j/server/plugins/ResultConverter.java b/fixed/community/server/src/main/java/org/neo4j/server/plugins/ResultConverter.java
+index 3a3986acd..b9ffc97d4 100644
+--- a/buggy/community/server/src/main/java/org/neo4j/server/plugins/ResultConverter.java
++++ b/fixed/community/server/src/main/java/org/neo4j/server/plugins/ResultConverter.java
+@@ -166,7 +166,7 @@ abstract class ResultConverter
+                 @Override
+                 Representation convert( Object obj )
+                 {
+-                    return new PathRepresentation( (Path) obj );
++                    return new PathRepresentation<Path>( (Path) obj );
+                 }
+             }, STRING_RESULT = new ValueResult( RepresentationType.STRING )
+             {

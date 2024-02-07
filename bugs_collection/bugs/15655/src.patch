@@ -1,0 +1,31 @@
+diff --git a/buggy/guava-gwt/test/com/google/common/testing/TearDownStackTest_gwt.java b/fixed/guava-gwt/test/com/google/common/testing/TearDownStackTest_gwt.java
+index 1e7bbfa7d..1f4eb6b40 100644
+--- a/buggy/guava-gwt/test/com/google/common/testing/TearDownStackTest_gwt.java
++++ b/fixed/guava-gwt/test/com/google/common/testing/TearDownStackTest_gwt.java
+@@ -29,7 +29,7 @@ public void testMultipleTearDownsHappenInOrder() throws Exception {
+   try {
+     testCase.tearDown();
+   } catch (Throwable t) {
+-    if (failure != null) {
++    if (failure == null) {
+       failure = t;
+     }
+   }
+@@ -55,7 +55,7 @@ public void testSingleTearDown() throws Exception {
+   try {
+     testCase.tearDown();
+   } catch (Throwable t) {
+-    if (failure != null) {
++    if (failure == null) {
+       failure = t;
+     }
+   }
+@@ -81,7 +81,7 @@ public void testThrowingTearDown() throws Exception {
+   try {
+     testCase.tearDown();
+   } catch (Throwable t) {
+-    if (failure != null) {
++    if (failure == null) {
+       failure = t;
+     }
+   }

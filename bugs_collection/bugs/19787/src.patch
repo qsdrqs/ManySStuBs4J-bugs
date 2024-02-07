@@ -1,0 +1,14 @@
+diff --git a/buggy/buffer/src/main/java/io/netty/buffer/SwappedByteBuf.java b/fixed/buffer/src/main/java/io/netty/buffer/SwappedByteBuf.java
+index c720f44f9..4d2a1bf82 100644
+--- a/buggy/buffer/src/main/java/io/netty/buffer/SwappedByteBuf.java
++++ b/fixed/buffer/src/main/java/io/netty/buffer/SwappedByteBuf.java
+@@ -741,8 +741,7 @@ public final class SwappedByteBuf extends ByteBuf {
+ 
+     @Override
+     public ByteBuffer internalNioBuffer(int index, int length) {
+-        // Do not mess with the internal buffer's byte order.
+-        return buf.nioBuffer(index, length).order(order);
++        return buf.internalNioBuffer(index, length).duplicate().order(order);
+     }
+ 
+     @Override

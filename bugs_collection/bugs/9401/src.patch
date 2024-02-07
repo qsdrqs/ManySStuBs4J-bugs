@@ -1,0 +1,12 @@
+diff --git a/buggy/src/test/java/org/apache/hadoop/hbase/util/TestCompressionTest.java b/fixed/src/test/java/org/apache/hadoop/hbase/util/TestCompressionTest.java
+index 3170ab38c..14bf24f01 100644
+--- a/buggy/src/test/java/org/apache/hadoop/hbase/util/TestCompressionTest.java
++++ b/fixed/src/test/java/org/apache/hadoop/hbase/util/TestCompressionTest.java
+@@ -54,6 +54,6 @@ public class TestCompressionTest {
+     assertFalse(CompressionTest.testCompression("LZO"));
+     assertTrue(CompressionTest.testCompression("NONE"));
+     assertTrue(CompressionTest.testCompression("GZ"));
+-    assertTrue(CompressionTest.testCompression("SNAPPY"));
++    assertFalse(CompressionTest.testCompression("SNAPPY"));
+   }
+ }

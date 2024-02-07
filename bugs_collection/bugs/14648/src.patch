@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/newtypes/ObjectType.java b/fixed/src/com/google/javascript/jscomp/newtypes/ObjectType.java
+index 9457f37d4..58e9ab5da 100644
+--- a/buggy/src/com/google/javascript/jscomp/newtypes/ObjectType.java
++++ b/fixed/src/com/google/javascript/jscomp/newtypes/ObjectType.java
+@@ -1425,7 +1425,7 @@ final class ObjectType implements TypeWithProperties {
+           builder.append(", ");
+         }
+         builder.append(pname);
+-        builder.append(':');
++        builder.append(": ");
+         props.get(pname).appendTo(builder, ctx);
+       }
+       builder.append('}');

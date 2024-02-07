@@ -1,0 +1,13 @@
+diff --git a/buggy/metrics-servlet/src/main/java/com/yammer/metrics/servlet/MetricsServlet.java b/fixed/metrics-servlet/src/main/java/com/yammer/metrics/servlet/MetricsServlet.java
+index 9e692f5c7..56b4e9f4f 100644
+--- a/buggy/metrics-servlet/src/main/java/com/yammer/metrics/servlet/MetricsServlet.java
++++ b/fixed/metrics-servlet/src/main/java/com/yammer/metrics/servlet/MetricsServlet.java
+@@ -296,7 +296,7 @@ public class MetricsServlet extends HttpServlet implements MetricProcessor<Metri
+                         try {
+                             dispatcher.dispatch(subEntry.getValue(), subEntry.getKey(), this, new Context(json, showFullSamples));
+                         } catch (Exception e) {
+-                            LOGGER.warn("Error writing out {}", subEntry.getKey(), e);
++                            LOGGER.warn("Error writing out " + subEntry.getKey(), e);
+                         }
+                     }
+                 }

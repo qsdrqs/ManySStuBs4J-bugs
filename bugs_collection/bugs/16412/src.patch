@@ -1,0 +1,22 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/concurrent/lock/LockResourceImpl.java b/fixed/hazelcast/src/main/java/com/hazelcast/concurrent/lock/LockResourceImpl.java
+index 623354a18..6baf4fb60 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/concurrent/lock/LockResourceImpl.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/concurrent/lock/LockResourceImpl.java
+@@ -85,7 +85,7 @@ final class LockResourceImpl implements DataSerializable, LockResource {
+             this.transactional = transactional;
+             return true;
+         } else if (isLockedBy(owner, threadId)) {
+-            if (this.referenceId == referenceId) {
++            if (!transactional && this.referenceId == referenceId) {
+                 return true;
+             }
+             this.referenceId = referenceId;
+@@ -134,7 +134,7 @@ final class LockResourceImpl implements DataSerializable, LockResource {
+             return false;
+         }
+ 
+-        if (this.referenceId == referenceId) {
++        if (!this.transactional && this.referenceId == referenceId) {
+             return true;
+         }
+ 

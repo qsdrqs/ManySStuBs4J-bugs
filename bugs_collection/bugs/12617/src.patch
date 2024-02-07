@@ -1,0 +1,13 @@
+diff --git a/buggy/services/src/main/java/org/apache/druid/cli/CliInternalHadoopIndexer.java b/fixed/services/src/main/java/org/apache/druid/cli/CliInternalHadoopIndexer.java
+index 6d3b6992a..3188a193e 100644
+--- a/buggy/services/src/main/java/org/apache/druid/cli/CliInternalHadoopIndexer.java
++++ b/fixed/services/src/main/java/org/apache/druid/cli/CliInternalHadoopIndexer.java
+@@ -55,7 +55,7 @@ import java.util.Properties;
+  */
+ @Command(
+     name = "hadoop-indexer",
+-    description = "Runs the batch Hadoop Druid Indexer, see http://druid.io/docs/latest/Batch-ingestion.html for a description."
++    description = "Runs the batch Hadoop Druid Indexer, see https://druid.apache.org/docs/latest/Batch-ingestion.html for a description."
+ )
+ public class CliInternalHadoopIndexer extends GuiceRunnable
+ {

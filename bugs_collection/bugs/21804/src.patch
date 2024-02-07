@@ -1,0 +1,13 @@
+diff --git a/buggy/zheng-pay/zheng-pay-rpc-service/src/main/java/com/zheng/pay/rpc/ZhengPayRpcServiceApplication.java b/fixed/zheng-pay/zheng-pay-rpc-service/src/main/java/com/zheng/pay/rpc/ZhengPayRpcServiceApplication.java
+index 61159d44f..c54fa3b09 100644
+--- a/buggy/zheng-pay/zheng-pay-rpc-service/src/main/java/com/zheng/pay/rpc/ZhengPayRpcServiceApplication.java
++++ b/fixed/zheng-pay/zheng-pay-rpc-service/src/main/java/com/zheng/pay/rpc/ZhengPayRpcServiceApplication.java
+@@ -14,7 +14,7 @@ public class ZhengPayRpcServiceApplication {
+ 
+ 	public static void main(String[] args) {
+ 		_log.info(">>>>> zheng-pay-rpc-service 正在启动 <<<<<");
+-		new ClassPathXmlApplicationContext("classpath*:applicationContext*.xml");
++		new ClassPathXmlApplicationContext("classpath:META-INF/spring/*.xml");
+ 		_log.info(">>>>> zheng-pay-rpc-service 启动完成 <<<<<");
+ 	}
+ 

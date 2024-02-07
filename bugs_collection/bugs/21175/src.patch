@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/main/java/org/openmrs/ConceptNumeric.java b/fixed/api/src/main/java/org/openmrs/ConceptNumeric.java
+index e483f6084..6450dd817 100644
+--- a/buggy/api/src/main/java/org/openmrs/ConceptNumeric.java
++++ b/fixed/api/src/main/java/org/openmrs/ConceptNumeric.java
+@@ -108,7 +108,7 @@ public class ConceptNumeric extends Concept implements java.io.Serializable {
+ 		
+ 		this.setConceptSets(new TreeSet<ConceptSet>(c.getConceptSets()));
+ 		for (ConceptSet cSet : this.getConceptSets()) {
+-			cSet.setConcept(this);
++			cSet.setConceptSet(this);
+ 		}
+ 		
+ 		this.setDescriptions(new HashSet<ConceptDescription>(c.getDescriptions()));

@@ -1,0 +1,13 @@
+diff --git a/buggy/metastore/src/java/org/apache/hadoop/hive/metastore/HiveMetaStore.java b/fixed/metastore/src/java/org/apache/hadoop/hive/metastore/HiveMetaStore.java
+index 233323bcd..35721a894 100644
+--- a/buggy/metastore/src/java/org/apache/hadoop/hive/metastore/HiveMetaStore.java
++++ b/fixed/metastore/src/java/org/apache/hadoop/hive/metastore/HiveMetaStore.java
+@@ -5487,7 +5487,7 @@ public class HiveMetaStore extends ThriftHiveMetastore {
+         ex = e;
+         throw newMetaException(e);
+       } finally {
+-        endFunction("get_database", func != null, ex);
++        endFunction("get_function", func != null, ex);
+       }
+ 
+       return func;

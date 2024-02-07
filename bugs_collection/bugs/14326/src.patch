@@ -1,0 +1,12 @@
+diff --git a/buggy/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGML.java b/fixed/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGML.java
+index 8da4208e2..87bcb13b1 100644
+--- a/buggy/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGML.java
++++ b/fixed/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGML.java
+@@ -309,6 +309,6 @@ public class ImporterGML implements TextImporter, LongTask {
+     }
+ 
+     public boolean isMatchingImporter(FileObject fileObject) {
+-        return fileObject.hasExt("gml");
++        return fileObject.hasExt("gml") || fileObject.hasExt("GML");
+     }
+ }

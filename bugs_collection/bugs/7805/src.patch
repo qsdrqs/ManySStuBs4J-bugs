@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-web/src/main/java/org/apache/camel/web/util/AggregateDefinitionRenderer.java b/fixed/components/camel-web/src/main/java/org/apache/camel/web/util/AggregateDefinitionRenderer.java
+index ca5dc47b2..231f48444 100644
+--- a/buggy/components/camel-web/src/main/java/org/apache/camel/web/util/AggregateDefinitionRenderer.java
++++ b/fixed/components/camel-web/src/main/java/org/apache/camel/web/util/AggregateDefinitionRenderer.java
+@@ -28,7 +28,7 @@ public final class AggregateDefinitionRenderer {
+         // Utility class, no public or protected default constructor
+     }    
+ 
+-    public static void render(StringBuilder buffer, ProcessorDefinition<?> processor) {
++    public static void render(StringBuilder buffer, ProcessorDefinition processor) {
+         
+         AggregateDefinition aggregate = (AggregateDefinition)processor;
+         buffer.append(".").append(aggregate.getShortName()).append("()");

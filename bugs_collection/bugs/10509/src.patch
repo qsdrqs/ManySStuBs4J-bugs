@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/FinalLocalVariableCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/FinalLocalVariableCheck.java
+index b8b492a89..14d37b507 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/FinalLocalVariableCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/FinalLocalVariableCheck.java
+@@ -271,7 +271,7 @@ public class FinalLocalVariableCheck extends AbstractCheck {
+         if (scope != null) {
+             for (FinalVariableCandidate candidate : scope.values()) {
+                 final DetailAST ident = candidate.variableIdent;
+-                log(ident.getLineNo(), ident.getColumnNo(), MSG_KEY, ident.getText());
++                log(ident, MSG_KEY, ident.getText());
+             }
+         }
+     }

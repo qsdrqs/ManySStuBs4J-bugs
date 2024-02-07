@@ -1,0 +1,14 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/mapreduce/LoadIncrementalHFiles.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/mapreduce/LoadIncrementalHFiles.java
+index df8a8406f..a1f79b46c 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/mapreduce/LoadIncrementalHFiles.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/mapreduce/LoadIncrementalHFiles.java
+@@ -692,7 +692,8 @@ public class LoadIncrementalHFiles extends Configured implements Tool {
+       // success
+       return toRetry;
+     } catch (IOException e) {
+-      LOG.error("Encountered unrecoverable error from region server", e);
++      LOG.error("Encountered unrecoverable error from region server, additional details: "
++          + svrCallable.getExceptionMessageAdditionalDetail(), e);
+       throw e;
+     }
+   }

@@ -1,0 +1,13 @@
+diff --git a/buggy/FiltersPlugin/src/org/gephi/filters/plugin/partition/PartitionBuilder.java b/fixed/FiltersPlugin/src/org/gephi/filters/plugin/partition/PartitionBuilder.java
+index c53f51aa0..ec96ae2d1 100644
+--- a/buggy/FiltersPlugin/src/org/gephi/filters/plugin/partition/PartitionBuilder.java
++++ b/fixed/FiltersPlugin/src/org/gephi/filters/plugin/partition/PartitionBuilder.java
+@@ -148,7 +148,7 @@ public class PartitionBuilder implements CategoryBuilder {
+         }
+     }
+ 
+-    public static class PartitionFilter implements Filter {
++    public static abstract class PartitionFilter implements Filter {
+ 
+         private Partition partition;
+         private FilterProperty[] filterProperties;

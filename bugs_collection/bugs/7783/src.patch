@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/processor/Logger.java b/fixed/camel-core/src/main/java/org/apache/camel/processor/Logger.java
+index 984b7744b..9b57c99cd 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/processor/Logger.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/processor/Logger.java
+@@ -255,7 +255,7 @@ public class Logger implements Processor {
+             break;
+         case INFO:
+             if (log.isInfoEnabled()) {
+-                log.debug(message, exception);
++                log.info(message, exception);
+             }
+             break;
+         case TRACE:

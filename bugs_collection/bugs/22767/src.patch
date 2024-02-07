@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/squareup/javapoet/CodeWriter.java b/fixed/src/main/java/com/squareup/javapoet/CodeWriter.java
+index 706713242..4743ea97c 100644
+--- a/buggy/src/main/java/com/squareup/javapoet/CodeWriter.java
++++ b/fixed/src/main/java/com/squareup/javapoet/CodeWriter.java
+@@ -116,7 +116,7 @@ final class CodeWriter {
+   }
+ 
+   public CodeWriter popPackage() {
+-    checkState(this.packageName != NO_PACKAGE, "package already set: %s", this.packageName);
++    checkState(this.packageName != NO_PACKAGE, "package not set");
+     this.packageName = NO_PACKAGE;
+     return this;
+   }

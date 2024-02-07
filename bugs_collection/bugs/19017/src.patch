@@ -1,0 +1,18 @@
+diff --git a/buggy/enterprise/com/src/main/java/org/neo4j/com/storecopy/StoreCopyClient.java b/fixed/enterprise/com/src/main/java/org/neo4j/com/storecopy/StoreCopyClient.java
+index c1a933f49..8f3d959a5 100644
+--- a/buggy/enterprise/com/src/main/java/org/neo4j/com/storecopy/StoreCopyClient.java
++++ b/fixed/enterprise/com/src/main/java/org/neo4j/com/storecopy/StoreCopyClient.java
+@@ -230,11 +230,11 @@ public class StoreCopyClient
+             private int totalFiles;
+ 
+             @Override
+-            public int write( String path, ReadableByteChannel data, ByteBuffer temporaryBuffer,
++            public long write( String path, ReadableByteChannel data, ByteBuffer temporaryBuffer,
+                               boolean hasData ) throws IOException
+             {
+                 console.log( "Copying " + path );
+-                int written = actual.write( path, data, temporaryBuffer, hasData );
++                long written = actual.write( path, data, temporaryBuffer, hasData );
+                 console.log( "Copied  " + path + " " + bytes( written ) );
+                 totalFiles++;
+                 return written;

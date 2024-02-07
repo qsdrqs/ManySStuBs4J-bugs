@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/impl/management/ManagementCenterService.java b/fixed/hazelcast/src/main/java/com/hazelcast/impl/management/ManagementCenterService.java
+index 11a1590dd..2fcd3e617 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/impl/management/ManagementCenterService.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/impl/management/ManagementCenterService.java
+@@ -308,7 +308,7 @@ public class ManagementCenterService implements LifecycleListener, MembershipLis
+             register(new RunGcRequest());
+             register(new GetMemberSystemPropertiesRequest());
+             register(new GetMapEntryRequest());
+-            register(new LogVersionMismatchRequest());
++            register(new VersionMismatchLogRequest());
+             register(new ShutdownMemberRequest());
+         }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/ascii/memcache/SetCommandParser.java b/fixed/hazelcast/src/main/java/com/hazelcast/ascii/memcache/SetCommandParser.java
+index c7d803b4d..5dcc1ca23 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/ascii/memcache/SetCommandParser.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/ascii/memcache/SetCommandParser.java
+@@ -44,7 +44,7 @@ public class SetCommandParser extends TypeAwareCommandParser {
+             return new ErrorCommand(ERROR_CLIENT);
+         }
+         if (st.hasMoreTokens()) {
+-            flag = Integer.valueOf(st.nextToken());
++            flag = Integer.parseInt(st.nextToken());
+         } else {
+             return new ErrorCommand(ERROR_CLIENT);
+         }

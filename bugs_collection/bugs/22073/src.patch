@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-tools/spring-boot-configuration-processor/src/main/java/org/springframework/boot/configurationprocessor/ConfigurationMetadataAnnotationProcessor.java b/fixed/spring-boot-project/spring-boot-tools/spring-boot-configuration-processor/src/main/java/org/springframework/boot/configurationprocessor/ConfigurationMetadataAnnotationProcessor.java
+index e0aa48b5f..629308a12 100644
+--- a/buggy/spring-boot-project/spring-boot-tools/spring-boot-configuration-processor/src/main/java/org/springframework/boot/configurationprocessor/ConfigurationMetadataAnnotationProcessor.java
++++ b/fixed/spring-boot-project/spring-boot-tools/spring-boot-configuration-processor/src/main/java/org/springframework/boot/configurationprocessor/ConfigurationMetadataAnnotationProcessor.java
+@@ -438,7 +438,7 @@ public class ConfigurationMetadataAnnotationProcessor extends AbstractProcessor
+ 		if (hasMainReadOperation(element)) {
+ 			this.metadataCollector.add(ItemMetadata.newProperty(endpointKey,
+ 					"cache.time-to-live", Duration.class.getName(), type, null,
+-					"Maximum time that a response can be cached.", 0, null));
++					"Maximum time that a response can be cached.", "0ms", null));
+ 		}
+ 	}
+ 

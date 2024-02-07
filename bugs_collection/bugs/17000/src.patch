@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientClusterServiceImpl.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientClusterServiceImpl.java
+index 8c511d0a4..8a207adf8 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientClusterServiceImpl.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientClusterServiceImpl.java
+@@ -500,7 +500,7 @@ public final class ClientClusterServiceImpl implements ClientClusterService {
+         final SerializationService serializationService = getSerializationService();
+         connection.write(serializationService.toData(auth));
+         final Data addressData = connection.read();
+-        Address address = (Address)serializationService.toObject(addressData);
++        Address address = ErrorHandler.returnResultOrThrowException(serializationService.toObject(addressData));
+         connection.setEndpoint(address);
+ 
+         final Data data = connection.read();

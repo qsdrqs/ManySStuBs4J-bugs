@@ -1,0 +1,13 @@
+diff --git a/buggy/jpa/locking-optimistic/src/test/java/org/javaee7/jpa/locking/optimistic/LockingOptimisticTest.java b/fixed/jpa/locking-optimistic/src/test/java/org/javaee7/jpa/locking/optimistic/LockingOptimisticTest.java
+index 47befacb3..1325b4beb 100644
+--- a/buggy/jpa/locking-optimistic/src/test/java/org/javaee7/jpa/locking/optimistic/LockingOptimisticTest.java
++++ b/fixed/jpa/locking-optimistic/src/test/java/org/javaee7/jpa/locking/optimistic/LockingOptimisticTest.java
+@@ -39,7 +39,7 @@ public class LockingOptimisticTest {
+             .addAsResource("META-INF/persistence.xml")
+             .addAsResource("META-INF/load.sql")
+             .addAsWebInfResource(
+-                new StringAsset(beansXml.createAlternatives()
++                new StringAsset(beansXml.getOrCreateAlternatives()
+                     .clazz(MovieBeanAlternative.class.getName()).up().exportAsString()),
+                 beansXml.getDescriptorName());
+         System.out.println(war.toString(true));

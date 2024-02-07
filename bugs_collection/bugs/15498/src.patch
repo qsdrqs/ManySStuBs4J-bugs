@@ -1,0 +1,13 @@
+diff --git a/buggy/guava/src/com/google/common/util/concurrent/CycleDetectingLockFactory.java b/fixed/guava/src/com/google/common/util/concurrent/CycleDetectingLockFactory.java
+index 6af73fe99..5d09d10bc 100644
+--- a/buggy/guava/src/com/google/common/util/concurrent/CycleDetectingLockFactory.java
++++ b/fixed/guava/src/com/google/common/util/concurrent/CycleDetectingLockFactory.java
+@@ -491,7 +491,7 @@ public class CycleDetectingLockFactory {
+ 
+     static final StackTraceElement[] EMPTY_STACK_TRACE = new StackTraceElement[0];
+ 
+-    static final Set<String> EXCLUDED_CLASS_NAMES =
++    static final ImmutableSet<String> EXCLUDED_CLASS_NAMES =
+         ImmutableSet.of(
+             CycleDetectingLockFactory.class.getName(),
+             ExampleStackTrace.class.getName(),

@@ -1,0 +1,22 @@
+diff --git a/buggy/src/jvm/clojure/lang/Numbers.java b/fixed/src/jvm/clojure/lang/Numbers.java
+index e40fe39a9..4a49c8cbe 100644
+--- a/buggy/src/jvm/clojure/lang/Numbers.java
++++ b/fixed/src/jvm/clojure/lang/Numbers.java
+@@ -1740,7 +1740,7 @@ static public int xor(int x, int y){
+ 
+ static public int minus(int x, int y){
+ 	int ret = x - y;
+-	if ((ret ^ x) < 0 && (ret ^ -y) < 0)
++	if (((ret ^ x) < 0 && (ret ^ -y) < 0) || (y == Integer.MIN_VALUE))
+ 		return throwIntOverflow();
+ 	return ret;
+ }
+@@ -1847,7 +1847,7 @@ static public long add(long x, long y){
+ 
+ static public long minus(long x, long y){
+ 	long ret = x - y;
+-	if ((ret ^ x) < 0 && (ret ^ -y) < 0)
++	if (((ret ^ x) < 0 && (ret ^ -y) < 0) || (y == Long.MIN_VALUE))
+ 		return throwIntOverflow();
+ 	return ret;
+ }

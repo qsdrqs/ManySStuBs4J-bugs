@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/activeandroid/Configuration.java b/fixed/src/com/activeandroid/Configuration.java
+index 09f38bb5a..f5fc92f76 100644
+--- a/buggy/src/com/activeandroid/Configuration.java
++++ b/fixed/src/com/activeandroid/Configuration.java
+@@ -75,7 +75,7 @@ public class Configuration {
+ 	}
+ 
+ 	public boolean isValid() {
+-		return mModelClasses.size() > 0;
++		return mModelClasses != null && mModelClasses.size() > 0;
+ 	}
+ 
+ 	//////////////////////////////////////////////////////////////////////////////////////

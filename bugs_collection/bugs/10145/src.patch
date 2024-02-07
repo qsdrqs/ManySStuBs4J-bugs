@@ -1,0 +1,19 @@
+diff --git a/buggy/aws-java-sdk-cloudfront/src/main/java/com/amazonaws/services/cloudfront/util/SignerUtils.java b/fixed/aws-java-sdk-cloudfront/src/main/java/com/amazonaws/services/cloudfront/util/SignerUtils.java
+index 772153d78..a76c83829 100644
+--- a/buggy/aws-java-sdk-cloudfront/src/main/java/com/amazonaws/services/cloudfront/util/SignerUtils.java
++++ b/fixed/aws-java-sdk-cloudfront/src/main/java/com/amazonaws/services/cloudfront/util/SignerUtils.java
+@@ -63,9 +63,11 @@ public class SignerUtils {
+                 + "\"DateLessThan\":{\"AWS:EpochTime\":"
+                 + MILLISECONDS.toSeconds(activeFrom.getTime())
+                 + "}"
+-                + ",\"IpAddress\":{\"AWS:SourceIp\":\""
+-                + ipAddress
+-                + "\"}"
++                + (ipAddress == null
++                   ? ""
++                   : ",\"IpAddress\":{\"AWS:SourceIp\":\""
++                     + ipAddress + "\"}"
++                  )
+                 + (expiresOn == null
+                    ? ""
+                    : ",\"DateGreaterThan\":{\"AWS:EpochTime\":"

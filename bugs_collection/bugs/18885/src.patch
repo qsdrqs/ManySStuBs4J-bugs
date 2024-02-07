@@ -1,0 +1,13 @@
+diff --git a/buggy/collector/src/main/java/com/navercorp/pinpoint/collector/cluster/zookeeper/PinpointServerRepository.java b/fixed/collector/src/main/java/com/navercorp/pinpoint/collector/cluster/zookeeper/PinpointServerRepository.java
+index b2d4219bc..40257d713 100644
+--- a/buggy/collector/src/main/java/com/navercorp/pinpoint/collector/cluster/zookeeper/PinpointServerRepository.java
++++ b/fixed/collector/src/main/java/com/navercorp/pinpoint/collector/cluster/zookeeper/PinpointServerRepository.java
+@@ -39,7 +39,7 @@ public class PinpointServerRepository {
+                 Set<PinpointServer> pinpointServerSet = pinpointServerRepository.get(key);
+                 pinpointServerSet.remove(pinpointServer);
+ 
+-                if (pinpointServerSet.size() == 0) {
++                if (pinpointServerSet.isEmpty()) {
+                     pinpointServerRepository.remove(key);
+                     return true;
+                 }

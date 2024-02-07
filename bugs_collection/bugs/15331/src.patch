@@ -1,0 +1,19 @@
+diff --git a/buggy/test/com/google/javascript/jscomp/VarCheckTest.java b/fixed/test/com/google/javascript/jscomp/VarCheckTest.java
+index 79d60c367..f23a7622a 100644
+--- a/buggy/test/com/google/javascript/jscomp/VarCheckTest.java
++++ b/fixed/test/com/google/javascript/jscomp/VarCheckTest.java
+@@ -107,12 +107,12 @@ public class VarCheckTest extends CompilerTestCase {
+ 
+   public void testVarReferenceInExterns() {
+     testSame("asdf;", "var asdf;",
+-        VarCheck.NAME_REFERENCE_IN_EXTERNS_ERROR, true);
++        VarCheck.NAME_REFERENCE_IN_EXTERNS_ERROR);
+   }
+ 
+   public void testCallInExterns() {
+     testSame("yz();", "function yz() {}",
+-        VarCheck.NAME_REFERENCE_IN_EXTERNS_ERROR, true);
++        VarCheck.NAME_REFERENCE_IN_EXTERNS_ERROR);
+   }
+ 
+   public void testPropReferenceInExterns1() {

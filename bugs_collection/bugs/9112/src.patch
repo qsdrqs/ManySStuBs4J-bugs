@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-procedure/src/main/java/org/apache/hadoop/hbase/procedure2/store/wal/ProcedureWALFile.java b/fixed/hbase-procedure/src/main/java/org/apache/hadoop/hbase/procedure2/store/wal/ProcedureWALFile.java
+index 1e9ef6e78..6226350a4 100644
+--- a/buggy/hbase-procedure/src/main/java/org/apache/hadoop/hbase/procedure2/store/wal/ProcedureWALFile.java
++++ b/fixed/hbase-procedure/src/main/java/org/apache/hadoop/hbase/procedure2/store/wal/ProcedureWALFile.java
+@@ -160,7 +160,7 @@ public class ProcedureWALFile implements Comparable<ProcedureWALFile> {
+     boolean archived = false;
+     if (walArchiveDir != null) {
+       Path archivedFile = new Path(walArchiveDir, logFile.getName());
+-      LOG.info("ARCHIVED (TODO: FILES ARE NOT PURGED FROM ARCHIVE!) " + logFile + " to " + archivedFile);
++      LOG.info("Archiving " + logFile + " to " + archivedFile);
+       if (!fs.rename(logFile, archivedFile)) {
+         LOG.warn("Failed archive of " + logFile + ", deleting");
+       } else {

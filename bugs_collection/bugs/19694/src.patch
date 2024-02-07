@@ -1,0 +1,13 @@
+diff --git a/buggy/codec-http/src/main/java/io/netty/handler/codec/http/multipart/MemoryFileUpload.java b/fixed/codec-http/src/main/java/io/netty/handler/codec/http/multipart/MemoryFileUpload.java
+index 90f2faf1f..f1a08fb09 100644
+--- a/buggy/codec-http/src/main/java/io/netty/handler/codec/http/multipart/MemoryFileUpload.java
++++ b/fixed/codec-http/src/main/java/io/netty/handler/codec/http/multipart/MemoryFileUpload.java
+@@ -124,7 +124,7 @@ public class MemoryFileUpload extends AbstractMemoryHttpData implements FileUplo
+                HttpHeaderValues.FORM_DATA + "; " + HttpHeaderValues.NAME + "=\"" + getName() +
+             "\"; " + HttpHeaderValues.FILENAME + "=\"" + filename + "\"\r\n" +
+             HttpHeaderNames.CONTENT_TYPE + ": " + contentType +
+-            (getCharset() != null? "; " + HttpHeaderValues.CHARSET + '=' + getCharset() + "\r\n" : "\r\n") +
++            (getCharset() != null? "; " + HttpHeaderValues.CHARSET + '=' + getCharset().name() + "\r\n" : "\r\n") +
+             HttpHeaderNames.CONTENT_LENGTH + ": " + length() + "\r\n" +
+             "Completed: " + isCompleted() +
+             "\r\nIsInMemory: " + isInMemory();

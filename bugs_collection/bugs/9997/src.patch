@@ -1,0 +1,13 @@
+diff --git a/buggy/external/storm-hive/src/main/java/org/apache/storm/hive/trident/HiveState.java b/fixed/external/storm-hive/src/main/java/org/apache/storm/hive/trident/HiveState.java
+index cef1a4faa..11f329c43 100644
+--- a/buggy/external/storm-hive/src/main/java/org/apache/storm/hive/trident/HiveState.java
++++ b/fixed/external/storm-hive/src/main/java/org/apache/storm/hive/trident/HiveState.java
+@@ -243,7 +243,7 @@ public class HiveState implements State {
+             LOG.warn("Interrupted when attempting to close writer for end point: " + eldest, e);
+             Thread.currentThread().interrupt();
+         } catch (Exception e) {
+-            LOG.warn("Interrupted when attempting to close writer for end point: " + ep, e);
++            LOG.warn("Interrupted when attempting to close writer for end point: " + eldest, e);
+         }
+     }
+ 

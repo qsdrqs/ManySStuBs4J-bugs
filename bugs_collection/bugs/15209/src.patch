@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/DiagnosticGroups.java b/fixed/src/com/google/javascript/jscomp/DiagnosticGroups.java
+index c178aaada..ad25f6e10 100644
+--- a/buggy/src/com/google/javascript/jscomp/DiagnosticGroups.java
++++ b/fixed/src/com/google/javascript/jscomp/DiagnosticGroups.java
+@@ -217,7 +217,7 @@ public class DiagnosticGroups {
+   void setWarningLevel(CompilerOptions options,
+       String name, CheckLevel level) {
+     DiagnosticGroup group = forName(name);
+-    Preconditions.checkNotNull(group, "No warning class for name: " + name);
++    Preconditions.checkNotNull(group, "No warning class for name: %s", name);
+     options.setWarningLevel(group, level);
+   }
+ }

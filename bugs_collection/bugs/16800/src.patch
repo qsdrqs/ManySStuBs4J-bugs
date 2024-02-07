@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/query/Predicates.java b/fixed/hazelcast/src/main/java/com/hazelcast/query/Predicates.java
+index 0f0a5eadf..4efedbe3c 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/query/Predicates.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/query/Predicates.java
+@@ -227,7 +227,7 @@ public final class Predicates {
+                 }
+                 convertedInValues = set;
+             }
+-            return entryValue != null && set.contains(entryValue);
++            return set.contains(entryValue);
+         }
+ 
+         @Override

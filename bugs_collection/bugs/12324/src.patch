@@ -1,0 +1,20 @@
+diff --git a/buggy/dropwizard-core/src/main/java/io/dropwizard/ConfiguredBundle.java b/fixed/dropwizard-core/src/main/java/io/dropwizard/ConfiguredBundle.java
+index 824ede819..fb626a2f3 100644
+--- a/buggy/dropwizard-core/src/main/java/io/dropwizard/ConfiguredBundle.java
++++ b/fixed/dropwizard-core/src/main/java/io/dropwizard/ConfiguredBundle.java
+@@ -9,7 +9,7 @@ import io.dropwizard.setup.Environment;
+  *
+  * @param <T>    the required configuration interface
+  */
+-public interface ConfiguredBundle<T extends Configuration> {
++public interface ConfiguredBundle<T> {
+     /**
+      * Initializes the environment.
+      *
+@@ -24,5 +24,5 @@ public interface ConfiguredBundle<T extends Configuration> {
+      *
+      * @param bootstrap the application bootstrap
+      */
+-    void initialize(Bootstrap<? extends T> bootstrap);
++    void initialize(Bootstrap<?> bootstrap);
+ }

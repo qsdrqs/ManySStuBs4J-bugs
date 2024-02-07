@@ -1,0 +1,13 @@
+diff --git a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/api/ScopeUtils.java b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/api/ScopeUtils.java
+index 60a912502..49722cfdc 100644
+--- a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/api/ScopeUtils.java
++++ b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/api/ScopeUtils.java
+@@ -26,7 +26,7 @@ import antlr.collections.AST;
+  * @author <a href="mailto:checkstyle@puppycrawl.com">Oliver Burn</a>
+  * @version 1.0
+  */
+-public class ScopeUtils
++public final class ScopeUtils
+ {
+     /** prevent instantiation */
+     private ScopeUtils()

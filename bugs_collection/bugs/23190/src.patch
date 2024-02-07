@@ -1,0 +1,22 @@
+diff --git a/buggy/src/edu/stanford/nlp/trees/UniversalEnglishGrammaticalStructure.java b/fixed/src/edu/stanford/nlp/trees/UniversalEnglishGrammaticalStructure.java
+index 891fd8550..2efe52ff2 100644
+--- a/buggy/src/edu/stanford/nlp/trees/UniversalEnglishGrammaticalStructure.java
++++ b/fixed/src/edu/stanford/nlp/trees/UniversalEnglishGrammaticalStructure.java
+@@ -1382,7 +1382,7 @@ public class UniversalEnglishGrammaticalStructure extends GrammaticalStructure {
+         
+         
+         /* Prevent cycles. */
+-        if (caseGovGov.equals(w1) || caseGovGov.equals(w2)) {
++        if (caseGovGov != null && (caseGovGov.equals(w1) || caseGovGov.equals(w2))) {
+           continue;
+         }
+         
+@@ -1434,7 +1434,7 @@ public class UniversalEnglishGrammaticalStructure extends GrammaticalStructure {
+         IndexedWord caseGovGov = sg.getParent(caseGov);
+         
+         /* Prevent cycles. */
+-        if (caseGovGov.equals(w1) || caseGovGov.equals(w2) || caseGovGov.equals(w3)) {
++        if (caseGovGov != null && (caseGovGov.equals(w1) || caseGovGov.equals(w2) || caseGovGov.equals(w3))) {
+           continue;
+         }
+         

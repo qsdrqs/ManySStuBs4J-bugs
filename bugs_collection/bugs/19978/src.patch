@@ -1,0 +1,13 @@
+diff --git a/buggy/codec-http/src/main/java/io/netty/handler/codec/http/MixedAttribute.java b/fixed/codec-http/src/main/java/io/netty/handler/codec/http/MixedAttribute.java
+index 5aa301037..2e3ab6949 100644
+--- a/buggy/codec-http/src/main/java/io/netty/handler/codec/http/MixedAttribute.java
++++ b/fixed/codec-http/src/main/java/io/netty/handler/codec/http/MixedAttribute.java
+@@ -65,7 +65,7 @@ public class MixedAttribute implements Attribute {
+                         .getName());
+                 if (((MemoryAttribute) attribute).getChannelBuffer() != null) {
+                     diskAttribute.addContent(((MemoryAttribute) attribute)
+-                        .getChannelBuffer(), last);
++                        .getChannelBuffer(), false);
+                 }
+                 attribute = diskAttribute;
+             }

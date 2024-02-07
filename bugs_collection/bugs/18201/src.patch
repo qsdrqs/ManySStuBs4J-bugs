@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/maps/tiled/TmxMapLoader.java b/fixed/gdx/src/com/badlogic/gdx/maps/tiled/TmxMapLoader.java
+index 40007f0f5..926da8244 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/maps/tiled/TmxMapLoader.java
++++ b/fixed/gdx/src/com/badlogic/gdx/maps/tiled/TmxMapLoader.java
+@@ -228,7 +228,7 @@ public class TmxMapLoader extends SynchronousAssetLoader<TiledMap, TmxMapLoader.
+ 				int localtid = tileElement.getIntAttribute("id", 0);
+ 				TiledMapTile tile = tileset.getTile(firstgid + localtid);
+ 				if (tile!= null) {
+-					Element properties = element.getChildByName("properties");
++					Element properties = tileElement.getChildByName("properties");
+ 					if (properties != null) {
+ 						loadProperties(tile.getProperties(), properties);
+ 					}

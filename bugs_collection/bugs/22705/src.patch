@@ -1,0 +1,22 @@
+diff --git a/buggy/spring-security-oauth2/src/test/java/org/springframework/security/oauth2/provider/endpoint/AuthorizationEndpointTests.java b/fixed/spring-security-oauth2/src/test/java/org/springframework/security/oauth2/provider/endpoint/AuthorizationEndpointTests.java
+index ff065ebd5..ea59b32e7 100644
+--- a/buggy/spring-security-oauth2/src/test/java/org/springframework/security/oauth2/provider/endpoint/AuthorizationEndpointTests.java
++++ b/fixed/spring-security-oauth2/src/test/java/org/springframework/security/oauth2/provider/endpoint/AuthorizationEndpointTests.java
+@@ -325,7 +325,7 @@ public class AuthorizationEndpointTests {
+ 		ModelAndView result = endpoint.authorize(model, authorizationRequest.getRequestParameters(), sessionStatus,
+ 				principal);
+ 		String url = ((RedirectView) result.getView()).getUrl();
+-		assertTrue("Wrong scope: " + result, url.contains("&scope=read"));
++		assertTrue("Wrong scope: " + result, url.contains("scope=read"));
+ 	}
+ 
+ 	@Test
+@@ -401,7 +401,7 @@ public class AuthorizationEndpointTests {
+ 		ModelAndView result = endpoint.authorize(model, authorizationRequest.getRequestParameters(), sessionStatus,
+ 				principal);
+ 		String url = ((RedirectView) result.getView()).getUrl();
+-		assertTrue("Wrong scope: " + result, url.contains("&scope=read%20write"));
++		assertTrue("Wrong scope: " + result, url.contains("scope=read%20write"));
+ 	}
+ 
+ 	@Test(expected = InvalidScopeException.class)

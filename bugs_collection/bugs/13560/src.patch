@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/plan/PlanVisitor.java b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/plan/PlanVisitor.java
+index c82e75131..236414ef6 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/plan/PlanVisitor.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/plan/PlanVisitor.java
+@@ -15,7 +15,7 @@ package com.facebook.presto.sql.planner.plan;
+ 
+ import com.facebook.presto.sql.planner.iterative.GroupReference;
+ 
+-public abstract class PlanVisitor<C, R>
++public abstract class PlanVisitor<R, C>
+ {
+     protected abstract R visitPlan(PlanNode node, C context);
+ 

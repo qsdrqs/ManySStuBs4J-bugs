@@ -1,0 +1,13 @@
+diff --git a/buggy/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/plugable/arrayrecord/ArrayRecordComparator.java b/fixed/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/plugable/arrayrecord/ArrayRecordComparator.java
+index d3988745c..53dc97540 100644
+--- a/buggy/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/plugable/arrayrecord/ArrayRecordComparator.java
++++ b/fixed/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/plugable/arrayrecord/ArrayRecordComparator.java
+@@ -33,7 +33,7 @@ import eu.stratosphere.pact.generic.types.TypeComparator;
+  * Implementation of the {@link TypeComparator} interface for the pact record. Instances of this class
+  * are parameterized with which fields are relevant to the comparison. 
+  */
+-public final class ArrayRecordComparator implements TypeComparator<Value[]> {
++public final class ArrayRecordComparator extends TypeComparator<Value[]> {
+ 	
+ 	private final ArrayRecordSerializer serializer;
+ 	

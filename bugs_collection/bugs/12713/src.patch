@@ -1,0 +1,13 @@
+diff --git a/buggy/indexing-service/src/main/java/io/druid/indexing/overlord/autoscaling/PendingTaskBasedWorkerResourceManagementStrategy.java b/fixed/indexing-service/src/main/java/io/druid/indexing/overlord/autoscaling/PendingTaskBasedWorkerResourceManagementStrategy.java
+index fe5fd8e77..50b3e7e9e 100644
+--- a/buggy/indexing-service/src/main/java/io/druid/indexing/overlord/autoscaling/PendingTaskBasedWorkerResourceManagementStrategy.java
++++ b/fixed/indexing-service/src/main/java/io/druid/indexing/overlord/autoscaling/PendingTaskBasedWorkerResourceManagementStrategy.java
+@@ -211,7 +211,7 @@ public class PendingTaskBasedWorkerResourceManagementStrategy extends AbstractWo
+     );
+ 
+     if (want > 0 && currValidWorkers >= maxWorkerCount) {
+-      log.warn("Unable to provision more workers. Current workerCount[%d] maximum workerCount[%d].");
++      log.warn("Unable to provision more workers. Current workerCount[%d] maximum workerCount[%d].", currValidWorkers, maxWorkerCount);
+       return 0;
+     }
+     want = Math.min(want, maxWorkerCount - currValidWorkers);

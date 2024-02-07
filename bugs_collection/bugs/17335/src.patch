@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jsoup/helper/DataUtil.java b/fixed/src/main/java/org/jsoup/helper/DataUtil.java
+index 71b0d4063..438e41648 100644
+--- a/buggy/src/main/java/org/jsoup/helper/DataUtil.java
++++ b/fixed/src/main/java/org/jsoup/helper/DataUtil.java
+@@ -178,7 +178,7 @@ public class DataUtil {
+         if (m.find()) {
+             String charset = m.group(1).trim();
+             charset = charset.replace("charset=", "");
+-            if (charset.isEmpty()) return null;
++            if (charset.length() == 0) return null;
+             try {
+                 if (Charset.isSupported(charset)) return charset;
+                 charset = charset.toUpperCase(Locale.ENGLISH);

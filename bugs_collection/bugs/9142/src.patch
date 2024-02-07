@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-common/src/main/java/org/apache/hadoop/hbase/IndividualBytesFieldCell.java b/fixed/hbase-common/src/main/java/org/apache/hadoop/hbase/IndividualBytesFieldCell.java
+index 0597c5e1e..14e35dfb9 100644
+--- a/buggy/hbase-common/src/main/java/org/apache/hadoop/hbase/IndividualBytesFieldCell.java
++++ b/fixed/hbase-common/src/main/java/org/apache/hadoop/hbase/IndividualBytesFieldCell.java
+@@ -183,7 +183,7 @@ public class IndividualBytesFieldCell implements ExtendedCell {
+   }
+ 
+   @Override
+-  public Cell deepClone() {
++  public ExtendedCell deepClone() {
+     // When being added to the memstore, deepClone() is called and KeyValue has less heap overhead.
+     return new KeyValue(this);
+   }

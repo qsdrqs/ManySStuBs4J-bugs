@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/security/HBasePolicyProvider.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/security/HBasePolicyProvider.java
+index a1c32ffe2..6fcaddddb 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/security/HBasePolicyProvider.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/security/HBasePolicyProvider.java
+@@ -51,7 +51,7 @@ public class HBasePolicyProvider extends PolicyProvider {
+     conf.set("hadoop.policy.file", "hbase-policy.xml");
+     if (conf.getBoolean(
+           ServiceAuthorizationManager.SERVICE_AUTHORIZATION_CONFIG, false)) {
+-      ServiceAuthorizationManager.refresh(conf, new HBasePolicyProvider());
++      authManager.refresh(conf, new HBasePolicyProvider());
+     }
+   }
+ }

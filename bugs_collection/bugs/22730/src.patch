@@ -1,0 +1,16 @@
+diff --git a/buggy/modules/metrics/src/main/java/org/springside/modules/metrics/CounterMetric.java b/fixed/modules/metrics/src/main/java/org/springside/modules/metrics/CounterMetric.java
+index 55c4401c9..bac384380 100644
+--- a/buggy/modules/metrics/src/main/java/org/springside/modules/metrics/CounterMetric.java
++++ b/fixed/modules/metrics/src/main/java/org/springside/modules/metrics/CounterMetric.java
+@@ -7,9 +7,9 @@ package org.springside.modules.metrics;
+ 
+ public class CounterMetric {
+ 	public long totalCount;
+-	public double meanRate;
++	public long meanRate;
+ 	public long lastCount;
+-	public double lastRate;
++	public long lastRate;
+ 
+ 	@Override
+ 	public String toString() {

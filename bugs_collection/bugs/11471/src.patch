@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocVariableCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocVariableCheck.java
+index de3ca70f7..539e5672a 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocVariableCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocVariableCheck.java
+@@ -142,7 +142,7 @@ public class JavadocVariableCheck
+ 
+         final Scope surroundingScope = ScopeUtils.getSurroundingScope(ast);
+ 
+-        return customScope.isIn(this.scope) && surroundingScope.isIn(this.scope)
++        return customScope.isIn(scope) && surroundingScope.isIn(scope)
+             && (excludeScope == null
+                 || !customScope.isIn(excludeScope)
+                 || !surroundingScope.isIn(excludeScope));

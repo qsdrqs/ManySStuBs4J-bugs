@@ -1,0 +1,13 @@
+diff --git a/buggy/community/server-api/src/main/java/org/neo4j/server/plugins/ParameterList.java b/fixed/community/server-api/src/main/java/org/neo4j/server/plugins/ParameterList.java
+index d383da1f3..edc0d633d 100644
+--- a/buggy/community/server-api/src/main/java/org/neo4j/server/plugins/ParameterList.java
++++ b/fixed/community/server-api/src/main/java/org/neo4j/server/plugins/ParameterList.java
+@@ -454,7 +454,7 @@ public abstract class ParameterList
+             throw new BadInputException(
+                     "Maps encoded as Strings not supported" );
+         }
+-        throw new BadInputException( "Unknown map encoding: " + value );
++        return null;
+ 
+     }
+ }

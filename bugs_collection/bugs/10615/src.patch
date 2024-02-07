@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/IndentLevel.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/IndentLevel.java
+index 09ea87c4e..35c11e66d 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/IndentLevel.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/IndentLevel.java
+@@ -119,7 +119,7 @@ public class IndentLevel {
+         if (levels.cardinality() == 1) {
+             return String.valueOf(levels.nextSetBit(0));
+         }
+-        final StringBuilder sb = new StringBuilder();
++        final StringBuilder sb = new StringBuilder(50);
+         for (int i = levels.nextSetBit(0); i >= 0;
+             i = levels.nextSetBit(i + 1)) {
+             if (sb.length() > 0) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/test/TestClientRegistry.java b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/test/TestClientRegistry.java
+index 0fe51ab3f..7b4c90e6d 100644
+--- a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/test/TestClientRegistry.java
++++ b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/test/TestClientRegistry.java
+@@ -352,7 +352,7 @@ class TestClientRegistry {
+         @Override
+         public String toString() {
+             return "MockedClientConnection{"
+-                    + ", localAddress=" + localAddress
++                    + "localAddress=" + localAddress
+                     + ", super=" + super.toString()
+                     + '}';
+         }

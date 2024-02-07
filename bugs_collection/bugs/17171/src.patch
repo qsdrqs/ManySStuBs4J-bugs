@@ -1,0 +1,13 @@
+diff --git a/buggy/hexagonal/src/main/java/com/iluwatar/hexagonal/service/ConsoleLottery.java b/fixed/hexagonal/src/main/java/com/iluwatar/hexagonal/service/ConsoleLottery.java
+index e8ff6c949..f7f7b274d 100644
+--- a/buggy/hexagonal/src/main/java/com/iluwatar/hexagonal/service/ConsoleLottery.java
++++ b/fixed/hexagonal/src/main/java/com/iluwatar/hexagonal/service/ConsoleLottery.java
+@@ -67,7 +67,7 @@ public class ConsoleLottery {
+           addFundsToLotteryAccount(bank, scanner);
+         } else if ("3".equals(cmd)) {
+           submitTicket(service, scanner);
+-        } else if (cmd.equals("4")) {
++        } else if ("4".equals(cmd)) {
+           checkTicket(service, scanner);
+         } else if ("5".equals(cmd)) {
+           exit = true;

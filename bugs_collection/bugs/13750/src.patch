@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-tests/src/main/java/com/facebook/presto/tests/QueryAssertions.java b/fixed/presto-tests/src/main/java/com/facebook/presto/tests/QueryAssertions.java
+index 44e486ca6..53247ff1e 100644
+--- a/buggy/presto-tests/src/main/java/com/facebook/presto/tests/QueryAssertions.java
++++ b/fixed/presto-tests/src/main/java/com/facebook/presto/tests/QueryAssertions.java
+@@ -61,7 +61,7 @@ public final class QueryAssertions
+             if (!count.isPresent()) {
+                 fail("update count should not be present");
+             }
+-            assertEquals(results.getUpdateCount().isPresent(), count.isPresent(), "update count");
++            assertEquals(results.getUpdateCount().getAsLong(), count.getAsLong(), "update count");
+         }
+         else if (count.isPresent()) {
+             fail("update count is not present");

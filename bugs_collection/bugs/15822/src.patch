@@ -1,0 +1,22 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/map/impl/operation/KeyBasedMapOperation.java b/fixed/hazelcast/src/main/java/com/hazelcast/map/impl/operation/KeyBasedMapOperation.java
+index 4ca6d07a2..0942cd476 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/map/impl/operation/KeyBasedMapOperation.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/map/impl/operation/KeyBasedMapOperation.java
+@@ -90,7 +90,7 @@ public abstract class KeyBasedMapOperation extends MapOperation
+ 
+     @Override
+     protected void writeInternal(ObjectDataOutput out) throws IOException {
+-        out.writeUTF(name);
++        super.writeInternal(out);
+         out.writeData(dataKey);
+         out.writeLong(threadId);
+         out.writeData(dataValue);
+@@ -103,7 +103,7 @@ public abstract class KeyBasedMapOperation extends MapOperation
+ 
+     @Override
+     protected void readInternal(ObjectDataInput in) throws IOException {
+-        name = in.readUTF();
++        super.readInternal(in);
+         dataKey = in.readData();
+         threadId = in.readLong();
+         dataValue = in.readData();

@@ -1,0 +1,13 @@
+diff --git a/buggy/backends/gdx-backend-lwjgl/src/com/badlogic/gdx/backends/lwjgl/LwjglCanvas.java b/fixed/backends/gdx-backend-lwjgl/src/com/badlogic/gdx/backends/lwjgl/LwjglCanvas.java
+index 38591b5d0..270c24413 100644
+--- a/buggy/backends/gdx-backend-lwjgl/src/com/badlogic/gdx/backends/lwjgl/LwjglCanvas.java
++++ b/fixed/backends/gdx-backend-lwjgl/src/com/badlogic/gdx/backends/lwjgl/LwjglCanvas.java
+@@ -356,7 +356,7 @@ public class LwjglCanvas implements Application {
+ 	}
+ 
+ 	@Override
+-	public void log (String tag, String message, Exception exception) {
++	public void log (String tag, String message, Throwable exception) {
+ 		if (logLevel >= LOG_INFO) {
+ 			System.out.println(tag + ": " + message);
+ 			exception.printStackTrace(System.out);

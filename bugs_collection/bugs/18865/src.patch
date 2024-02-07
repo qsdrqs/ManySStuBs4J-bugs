@@ -1,0 +1,13 @@
+diff --git a/buggy/plugins/spring-boot/src/main/java/com/navercorp/pinpoint/plugin/spring/boot/SpringBootPlugin.java b/fixed/plugins/spring-boot/src/main/java/com/navercorp/pinpoint/plugin/spring/boot/SpringBootPlugin.java
+index 12a7db353..f9f3e9ce8 100644
+--- a/buggy/plugins/spring-boot/src/main/java/com/navercorp/pinpoint/plugin/spring/boot/SpringBootPlugin.java
++++ b/fixed/plugins/spring-boot/src/main/java/com/navercorp/pinpoint/plugin/spring/boot/SpringBootPlugin.java
+@@ -43,7 +43,7 @@ public class SpringBootPlugin implements ProfilerPlugin, TransformTemplateAware
+     public void setup(ProfilerPluginSetupContext context) {
+         SpringBootConfiguration config = new SpringBootConfiguration(context.getConfig());
+         if (!config.isSpringBootEnabled()) {
+-            logger.info("SpringBootPlugin disbled");
++            logger.info("SpringBootPlugin disabled");
+             return;
+         }
+ 

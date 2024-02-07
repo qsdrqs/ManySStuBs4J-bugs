@@ -1,0 +1,13 @@
+diff --git a/buggy/testsuite/src/main/java/io/netty/testsuite/transport/socket/SocketSslClientRenegotiateTest.java b/fixed/testsuite/src/main/java/io/netty/testsuite/transport/socket/SocketSslClientRenegotiateTest.java
+index bae61306c..855f19140 100644
+--- a/buggy/testsuite/src/main/java/io/netty/testsuite/transport/socket/SocketSslClientRenegotiateTest.java
++++ b/fixed/testsuite/src/main/java/io/netty/testsuite/transport/socket/SocketSslClientRenegotiateTest.java
+@@ -162,7 +162,7 @@ public class SocketSslClientRenegotiateTest extends AbstractSocketTest {
+         Future<Channel> clientHandshakeFuture = clientSslHandler.handshakeFuture();
+         clientHandshakeFuture.sync();
+ 
+-        String renegotiation = "SSL_RSA_WITH_3DES_EDE_CBC_SHA";
++        String renegotiation = clientSslHandler.engine().getSupportedCipherSuites()[0];
+         clientSslHandler.engine().setEnabledCipherSuites(new String[] { renegotiation });
+         clientSslHandler.renegotiate().await();
+         serverChannel.close().awaitUninterruptibly();

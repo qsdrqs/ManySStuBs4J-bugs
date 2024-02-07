@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/camel-example-etl/src/main/java/org/apache/camel/example/etl/CustomerEntity.java b/fixed/examples/camel-example-etl/src/main/java/org/apache/camel/example/etl/CustomerEntity.java
+index 15cad801c..c6ca8c634 100644
+--- a/buggy/examples/camel-example-etl/src/main/java/org/apache/camel/example/etl/CustomerEntity.java
++++ b/fixed/examples/camel-example-etl/src/main/java/org/apache/camel/example/etl/CustomerEntity.java
+@@ -44,7 +44,7 @@ public class CustomerEntity {
+     private String phone;
+ 
+     public String toString() {
+-        return "Customer[userName: " + userName + " firstName: " + firstName + " surname: " + surname + "]";
++        return "Customer[userName: " + getUserName() + " firstName: " + getFirstName() + " surname: " + getSurname() + "]";
+     }
+ 
+     @Id

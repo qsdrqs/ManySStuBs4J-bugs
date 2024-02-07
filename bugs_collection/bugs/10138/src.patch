@@ -1,0 +1,13 @@
+diff --git a/buggy/aws-java-sdk-cloudwatchmetrics/src/main/java/com/amazonaws/metrics/internal/cloudwatch/MetricUploaderThread.java b/fixed/aws-java-sdk-cloudwatchmetrics/src/main/java/com/amazonaws/metrics/internal/cloudwatch/MetricUploaderThread.java
+index 542c669f4..ae095846f 100644
+--- a/buggy/aws-java-sdk-cloudwatchmetrics/src/main/java/com/amazonaws/metrics/internal/cloudwatch/MetricUploaderThread.java
++++ b/fixed/aws-java-sdk-cloudwatchmetrics/src/main/java/com/amazonaws/metrics/internal/cloudwatch/MetricUploaderThread.java
+@@ -50,7 +50,7 @@ class MetricUploaderThread extends Thread {
+ 			amazonCloudWatchClient = new AmazonCloudWatchClient(config.getCredentialsProvider());
+ 		} else if (config.getClientConfiguration() != null && config.getCredentialsProvider() == null) {
+ 			amazonCloudWatchClient = new AmazonCloudWatchClient(config.getClientConfiguration());
+-		} else if (config.getClientConfiguration() != null && config.getCredentialsProvider() == null) {
++		} else if (config.getClientConfiguration() != null && config.getCredentialsProvider() != null) {
+ 			amazonCloudWatchClient = new AmazonCloudWatchClient(config.getCredentialsProvider(),
+ 					config.getClientConfiguration());
+ 		}

@@ -1,0 +1,13 @@
+diff --git a/buggy/retrofit/src/main/java/retrofit/RestAdapter.java b/fixed/retrofit/src/main/java/retrofit/RestAdapter.java
+index 3d862a1dd..43186e434 100644
+--- a/buggy/retrofit/src/main/java/retrofit/RestAdapter.java
++++ b/fixed/retrofit/src/main/java/retrofit/RestAdapter.java
+@@ -584,7 +584,7 @@ public class RestAdapter {
+      * @deprecated Use {@link #setEndpoint(String)} or {@link #setEndpoint(Endpoint)}.
+      */
+     @Deprecated
+-    public Builder setServer(Endpoint server) {
++    public Builder setServer(Server server) {
+       return setEndpoint(server);
+     }
+ 

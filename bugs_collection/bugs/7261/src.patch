@@ -1,0 +1,15 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/management/ManagedRouteStopAndStartTest.java b/fixed/camel-core/src/test/java/org/apache/camel/management/ManagedRouteStopAndStartTest.java
+index 2d522e228..c59624d1e 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/management/ManagedRouteStopAndStartTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/management/ManagedRouteStopAndStartTest.java
+@@ -93,7 +93,9 @@ public class ManagedRouteStopAndStartTest extends ManagementTestSupport {
+         return new RouteBuilder() {
+             @Override
+             public void configure() throws Exception {
+-                from("file://target/managed").to("mock:result");
++                from("file://target/managed")
++                    .convertBodyTo(String.class)
++                    .to("mock:result");
+             }
+         };
+     }

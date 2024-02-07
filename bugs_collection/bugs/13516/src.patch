@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-benchmark-driver/src/main/java/com/facebook/presto/benchmark/driver/BenchmarkDriverOptions.java b/fixed/presto-benchmark-driver/src/main/java/com/facebook/presto/benchmark/driver/BenchmarkDriverOptions.java
+index 0685b7182..7e97b21ad 100644
+--- a/buggy/presto-benchmark-driver/src/main/java/com/facebook/presto/benchmark/driver/BenchmarkDriverOptions.java
++++ b/fixed/presto-benchmark-driver/src/main/java/com/facebook/presto/benchmark/driver/BenchmarkDriverOptions.java
+@@ -110,7 +110,7 @@ public class BenchmarkDriverOptions
+ 
+         HostAndPort host = HostAndPort.fromString(server);
+         try {
+-            return new URI("http", null, host.getHostText(), host.getPortOrDefault(80), null, null, null);
++            return new URI("http", null, host.getHost(), host.getPortOrDefault(80), null, null, null);
+         }
+         catch (URISyntaxException e) {
+             throw new IllegalArgumentException(e);

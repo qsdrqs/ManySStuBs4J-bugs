@@ -1,0 +1,31 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/Group.java b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/Group.java
+index b6172096d..da8ad0d6a 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/Group.java
++++ b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/Group.java
+@@ -227,7 +227,7 @@ public class Group extends Actor {
+ 		if (focusedActor[pointer] != null) {
+ 			point.x = x;
+ 			point.y = y;
+-			focusedActor[pointer].toLocalCoordinates(point);
++			toChildCoordinates(focusedActor[pointer], x, y, point);			
+ 			focusedActor[pointer].touchDown(point.x, point.y, pointer);
+ 			return true;
+ 		}
+@@ -257,7 +257,7 @@ public class Group extends Actor {
+ 		if (focusedActor[pointer] != null) {
+ 			point.x = x;
+ 			point.y = y;
+-			focusedActor[pointer].toLocalCoordinates(point);
++			toChildCoordinates(focusedActor[pointer], x, y, point);
+ 			focusedActor[pointer].touchUp(point.x, point.y, pointer);
+ 			return true;
+ 		}
+@@ -280,7 +280,7 @@ public class Group extends Actor {
+ 		if (focusedActor[pointer] != null) {
+ 			point.x = x;
+ 			point.y = y;
+-			focusedActor[pointer].toLocalCoordinates(point);
++			toChildCoordinates(focusedActor[pointer], x, y, point);
+ 			focusedActor[pointer].touchDragged(point.x, point.y, pointer);
+ 			return true;
+ 		}

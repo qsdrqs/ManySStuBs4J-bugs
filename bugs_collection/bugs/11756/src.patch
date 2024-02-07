@@ -1,0 +1,13 @@
+diff --git a/buggy/src/tests/com/puppycrawl/tools/checkstyle/grammars/GeneratedJava14LexerTest.java b/fixed/src/tests/com/puppycrawl/tools/checkstyle/grammars/GeneratedJava14LexerTest.java
+index 262ff4a15..99ad4b7f0 100644
+--- a/buggy/src/tests/com/puppycrawl/tools/checkstyle/grammars/GeneratedJava14LexerTest.java
++++ b/fixed/src/tests/com/puppycrawl/tools/checkstyle/grammars/GeneratedJava14LexerTest.java
+@@ -18,7 +18,7 @@ public class GeneratedJava14LexerTest
+         final DefaultConfiguration checkConfig =
+             createCheckConfig(MemberNameCheck.class);
+         final String[] expected = {
+-            "8:10: Got an exception - unexpected char: 0xA9",
++            "8:10: Got an exception - Unexpected character 0xa9 in identifier",
+         };
+         verify(checkConfig, getPath("grammars/InputGrammar.java"), expected);
+     }

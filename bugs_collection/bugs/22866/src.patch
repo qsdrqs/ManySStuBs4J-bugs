@@ -1,0 +1,13 @@
+diff --git a/buggy/okhttp-tests/src/test/java/okhttp3/SocksProxy.java b/fixed/okhttp-tests/src/test/java/okhttp3/SocksProxy.java
+index 9c1b5a83c..69ce1fab8 100644
+--- a/buggy/okhttp-tests/src/test/java/okhttp3/SocksProxy.java
++++ b/fixed/okhttp-tests/src/test/java/okhttp3/SocksProxy.java
+@@ -160,7 +160,7 @@ public final class SocksProxy {
+         String domainName = fromSource.readUtf8(domainNameLength);
+         // Resolve HOSTNAME_THAT_ONLY_THE_PROXY_KNOWS to localhost.
+         toAddress = domainName.equalsIgnoreCase(HOSTNAME_THAT_ONLY_THE_PROXY_KNOWS)
+-            ? InetAddress.getLoopbackAddress()
++            ? InetAddress.getByName("localhost")
+             : InetAddress.getByName(domainName);
+         break;
+ 

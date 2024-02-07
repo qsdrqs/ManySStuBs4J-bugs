@@ -1,0 +1,14 @@
+diff --git a/buggy/enterprise/backup/src/main/java/org/neo4j/backup/BackupTool.java b/fixed/enterprise/backup/src/main/java/org/neo4j/backup/BackupTool.java
+index cd1ee00a5..f7d12678f 100644
+--- a/buggy/enterprise/backup/src/main/java/org/neo4j/backup/BackupTool.java
++++ b/fixed/enterprise/backup/src/main/java/org/neo4j/backup/BackupTool.java
+@@ -156,7 +156,8 @@ public class BackupTool
+             }
+             else
+             {
+-                throw e;
++                exitAbnormally( "TransactionFailureException from existing backup at '"
++                                + from + "': , " + e.getMessage() );
+             }
+         }
+         catch ( ComException e )

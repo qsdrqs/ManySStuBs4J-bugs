@@ -1,0 +1,13 @@
+diff --git a/buggy/disconf-client/src/main/java/com/baidu/disconf/client/common/constants/SupportFileTypeEnum.java b/fixed/disconf-client/src/main/java/com/baidu/disconf/client/common/constants/SupportFileTypeEnum.java
+index 39f00187d..87ac28db9 100644
+--- a/buggy/disconf-client/src/main/java/com/baidu/disconf/client/common/constants/SupportFileTypeEnum.java
++++ b/fixed/disconf-client/src/main/java/com/baidu/disconf/client/common/constants/SupportFileTypeEnum.java
+@@ -30,7 +30,7 @@ public enum SupportFileTypeEnum {
+ 
+         String extension = FilenameUtils.getExtension(fileName);
+         if (StringUtils.isEmpty(extension)) {
+-            return null;
++            return SupportFileTypeEnum.ANY;
+         }
+ 
+         for (SupportFileTypeEnum supportFileTypeEnum : SupportFileTypeEnum.values()) {

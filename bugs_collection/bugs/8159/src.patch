@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/test/java/org/apache/flink/runtime/testutils/CommonTestUtils.java b/fixed/flink-runtime/src/test/java/org/apache/flink/runtime/testutils/CommonTestUtils.java
+index 18c42281e..da07dfdb4 100644
+--- a/buggy/flink-runtime/src/test/java/org/apache/flink/runtime/testutils/CommonTestUtils.java
++++ b/fixed/flink-runtime/src/test/java/org/apache/flink/runtime/testutils/CommonTestUtils.java
+@@ -160,7 +160,7 @@ public class CommonTestUtils {
+ 
+ 	public static void waitUntilCondition(SupplierWithException<Boolean, Exception> condition, Deadline timeout, long retryIntervalMillis) throws Exception {
+ 		while (timeout.hasTimeLeft() && !condition.get()) {
+-			Thread.sleep(Math.min(RETRY_INTERVAL, timeout.timeLeft().toMillis()));
++			Thread.sleep(Math.min(retryIntervalMillis, timeout.timeLeft().toMillis()));
+ 		}
+ 
+ 		if (!timeout.hasTimeLeft()) {

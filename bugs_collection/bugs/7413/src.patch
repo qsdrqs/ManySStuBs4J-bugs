@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/OSGiIntegrationTestSupport.java b/fixed/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/OSGiIntegrationTestSupport.java
+index 3527b8ffb..b3b2dedaf 100644
+--- a/buggy/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/OSGiIntegrationTestSupport.java
++++ b/fixed/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/OSGiIntegrationTestSupport.java
+@@ -131,7 +131,7 @@ public class OSGiIntegrationTestSupport extends CamelTestSupport {
+ 
+             // using the features to install the camel components             
+             scanFeatures(getCamelKarafFeatureUrl(),                         
+-                "camel-core", "camel-spring", "camel-test"),
++                "xml-specs-api", "camel-core", "camel-spring", "camel-test"),
+                                    
+             workingDirectory("target/paxrunner/"));
+ 

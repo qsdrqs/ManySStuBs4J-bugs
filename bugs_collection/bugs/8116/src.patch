@@ -1,0 +1,19 @@
+diff --git a/buggy/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/LocalZonedTimestampType.java b/fixed/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/LocalZonedTimestampType.java
+index 43934d567..3c7d39f3c 100644
+--- a/buggy/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/LocalZonedTimestampType.java
++++ b/fixed/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/LocalZonedTimestampType.java
+@@ -53,11 +53,11 @@ import java.util.Set;
+ @PublicEvolving
+ public final class LocalZonedTimestampType extends LogicalType {
+ 
+-	private static final int MIN_PRECISION = 0;
++	public static final int MIN_PRECISION = 0;
+ 
+-	private static final int MAX_PRECISION = 9;
++	public static final int MAX_PRECISION = 9;
+ 
+-	private static final int DEFAULT_PRECISION = 6;
++	public static final int DEFAULT_PRECISION = 6;
+ 
+ 	private static final String FORMAT = "TIMESTAMP(%d) WITH LOCAL TIME ZONE";
+ 

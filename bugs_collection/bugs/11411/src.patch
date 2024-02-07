@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/ExplicitInitializationCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/ExplicitInitializationCheck.java
+index 78315b596..5bff52ce2 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/ExplicitInitializationCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/ExplicitInitializationCheck.java
+@@ -173,7 +173,8 @@ public class ExplicitInitializationCheck extends Check {
+             case TokenTypes.NUM_INT:
+             case TokenTypes.NUM_LONG:
+                 final String text = expr.getText();
+-                return CheckUtils.parseDouble(text, type) == 0.0;
++                return Double.compare(
++                    CheckUtils.parseDouble(text, type), 0.0) == 0;
+             default:
+                 return false;
+         }

@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/autoconfigure/OnEnabledHealthIndicatorCondition.java b/fixed/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/autoconfigure/OnEnabledHealthIndicatorCondition.java
+index 2dba841ca..235520089 100644
+--- a/buggy/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/autoconfigure/OnEnabledHealthIndicatorCondition.java
++++ b/fixed/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/autoconfigure/OnEnabledHealthIndicatorCondition.java
+@@ -31,7 +31,7 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
+  */
+ class OnEnabledHealthIndicatorCondition extends SpringBootCondition {
+ 
+-	private static final String ANNOTATION_CLASS = ConditionalOnEnablednHealthIndicator.class
++	private static final String ANNOTATION_CLASS = ConditionalOnEnabledHealthIndicator.class
+ 			.getName();
+ 
+ 	@Override

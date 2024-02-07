@@ -1,0 +1,22 @@
+diff --git a/buggy/dropwizard-views-mustache/src/test/java/io/dropwizard/views/mustache/MustacheViewRendererTest.java b/fixed/dropwizard-views-mustache/src/test/java/io/dropwizard/views/mustache/MustacheViewRendererTest.java
+index 897549133..9e0816866 100644
+--- a/buggy/dropwizard-views-mustache/src/test/java/io/dropwizard/views/mustache/MustacheViewRendererTest.java
++++ b/fixed/dropwizard-views-mustache/src/test/java/io/dropwizard/views/mustache/MustacheViewRendererTest.java
+@@ -66,15 +66,13 @@ public class MustacheViewRendererTest extends JerseyTest {
+     @Test
+     public void rendersViewsWithAbsoluteTemplatePaths() throws Exception {
+         final String response = target("/test/absolute").request().get(String.class);
+-        assertThat(response)
+-                .isEqualTo("Woop woop. yay" + System.lineSeparator());
++        assertThat(response).isEqualTo("Woop woop. yay\n");
+     }
+ 
+     @Test
+     public void rendersViewsWithRelativeTemplatePaths() throws Exception {
+         final String response = target("/test/relative").request().get(String.class);
+-        assertThat(response)
+-                .isEqualTo("Ok." + System.lineSeparator());
++        assertThat(response).isEqualTo("Ok.\n");
+     }
+ 
+     @Test

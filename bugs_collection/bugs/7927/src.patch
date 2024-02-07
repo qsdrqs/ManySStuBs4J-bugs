@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/camel-example-reportincident/src/main/java/org/apache/camel/example/reportincident/ReportIncidentRoutes.java b/fixed/examples/camel-example-reportincident/src/main/java/org/apache/camel/example/reportincident/ReportIncidentRoutes.java
+index cc8127b56..4376e3232 100644
+--- a/buggy/examples/camel-example-reportincident/src/main/java/org/apache/camel/example/reportincident/ReportIncidentRoutes.java
++++ b/fixed/examples/camel-example-reportincident/src/main/java/org/apache/camel/example/reportincident/ReportIncidentRoutes.java
+@@ -33,7 +33,7 @@ public class ReportIncidentRoutes extends RouteBuilder {
+         ok.setCode("0");
+ 
+         // endpoint to our CXF webservice
+-        String cxfEndpoint = "cxf://http://localhost:8080/reportincident/webservices/incident"
++        String cxfEndpoint = "cxf://http://localhost:9080/reportincident/webservices/incident"
+                 + "?serviceClass=org.apache.camel.example.reportincident.ReportIncidentEndpoint"
+                 + "&wsdlURL=report_incident.wsdl";
+ 

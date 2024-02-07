@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-core/src/test/java/com/yammer/dropwizard/config/tests/ConfigurationFactoryTest.java b/fixed/dropwizard-core/src/test/java/com/yammer/dropwizard/config/tests/ConfigurationFactoryTest.java
+index f5e167574..2c51d3389 100644
+--- a/buggy/dropwizard-core/src/test/java/com/yammer/dropwizard/config/tests/ConfigurationFactoryTest.java
++++ b/fixed/dropwizard-core/src/test/java/com/yammer/dropwizard/config/tests/ConfigurationFactoryTest.java
+@@ -59,7 +59,7 @@ public class ConfigurationFactoryTest {
+             if ("en".equals(Locale.getDefault().getLanguage())) {
+                 assertThat(e.getMessage(),
+                            endsWith("factory-test-invalid.yml has the following errors:\n" +
+-                                    "  * name must match \"[\\w]+[\\s]+[\\w]+\" (was Boop)"));
++                                    "  * name must match \"[\\w]+[\\s]+[\\w]+\" (was Boop)\n"));
+             }
+         }
+     }

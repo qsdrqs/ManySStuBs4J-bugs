@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/modifier/RedundantModifierCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/modifier/RedundantModifierCheck.java
+index 99e9ccada..8468de9a7 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/modifier/RedundantModifierCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/modifier/RedundantModifierCheck.java
+@@ -192,7 +192,7 @@ public class RedundantModifierCheck
+      * @param ast AST node
+      * @return true if it is an enum member
+      */
+-    private boolean isEnumMember(DetailAST ast) {
++    private static boolean isEnumMember(DetailAST ast) {
+         final DetailAST parentTypeDef = ast.getParent().getParent();
+         return parentTypeDef.getType() == TokenTypes.ENUM_DEF;
+     }

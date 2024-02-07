@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/impl/ConcurrentMapManager.java b/fixed/hazelcast/src/main/java/com/hazelcast/impl/ConcurrentMapManager.java
+index b01c7115b..85eb787a2 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/impl/ConcurrentMapManager.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/impl/ConcurrentMapManager.java
+@@ -546,7 +546,7 @@ public class ConcurrentMapManager extends BaseManager {
+         }
+         for (Future<Pairs> future : lsFutures) {
+             Pairs pairs = future.get();
+-            if (pairs != null) {
++            if (pairs != null && pairs.getKeyValues()!=null) {
+                 for (KeyValue keyValue : pairs.getKeyValues()) {
+                     results.addKeyValue(keyValue);
+                 }

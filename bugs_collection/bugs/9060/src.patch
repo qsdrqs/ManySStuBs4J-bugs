@@ -1,0 +1,13 @@
+diff --git a/buggy/src/java/org/apache/hadoop/io/SetFile.java b/fixed/src/java/org/apache/hadoop/io/SetFile.java
+index c7a044680..e4d261a38 100644
+--- a/buggy/src/java/org/apache/hadoop/io/SetFile.java
++++ b/fixed/src/java/org/apache/hadoop/io/SetFile.java
+@@ -59,7 +59,7 @@ public class SetFile extends MapFile {
+                   SequenceFile.CompressionType compress) throws IOException {
+       super(conf, new Path(dirName), 
+             comparator(comparator), 
+-            keyClass(NullWritable.class), 
++            valueClass(NullWritable.class), 
+             compressionType(compress));
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/split/MappedRecordSet.java b/fixed/presto-main/src/main/java/com/facebook/presto/split/MappedRecordSet.java
+index 36dcfd8c8..186ed2a7f 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/split/MappedRecordSet.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/split/MappedRecordSet.java
+@@ -92,7 +92,7 @@ public class MappedRecordSet
+         @Override
+         public Type getType(int field)
+         {
+-            return delegate.getType(field);
++            return delegate.getType(toDelegateField(field));
+         }
+ 
+         @Override

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-web/src/main/java/org/apache/camel/web/util/LoadBalanceDefinitionRenderer.java b/fixed/components/camel-web/src/main/java/org/apache/camel/web/util/LoadBalanceDefinitionRenderer.java
+index 5ad9a3456..e65b2592f 100644
+--- a/buggy/components/camel-web/src/main/java/org/apache/camel/web/util/LoadBalanceDefinitionRenderer.java
++++ b/fixed/components/camel-web/src/main/java/org/apache/camel/web/util/LoadBalanceDefinitionRenderer.java
+@@ -36,7 +36,7 @@ public final class LoadBalanceDefinitionRenderer {
+         // Utility class, no public or protected default constructor
+     }    
+ 
+-    public static void render(StringBuilder buffer, ProcessorDefinition<?> processor) {
++    public static void render(StringBuilder buffer, ProcessorDefinition processor) {
+         LoadBalanceDefinition loadB = (LoadBalanceDefinition)processor;
+         // buffer.append(".").append(output.getShortName()).append("()");
+         buffer.append(".").append("loadBalance").append("()");

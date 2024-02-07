@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/util/ObjectHelper.java b/fixed/camel-core/src/main/java/org/apache/camel/util/ObjectHelper.java
+index d48da11c1..1fb10f6d2 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/util/ObjectHelper.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/util/ObjectHelper.java
+@@ -656,7 +656,7 @@ public final class ObjectHelper {
+         if (camelProperties != null) {
+             for (Map.Entry<String, String> entry : camelProperties.entrySet()) {
+                 String key = entry.getKey();
+-                if (key.startsWith(prefix)) {
++                if (key != null && key.startsWith(prefix)) {
+                     answer.put(key.substring(prefix.length()), entry.getValue());
+                 }
+             }

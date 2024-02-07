@@ -1,0 +1,12 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/design/InterfaceIsTypeCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/design/InterfaceIsTypeCheckTest.java
+index 6ee4c324c..40fab2f39 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/design/InterfaceIsTypeCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/design/InterfaceIsTypeCheckTest.java
+@@ -64,6 +64,6 @@ public class InterfaceIsTypeCheckTest
+     public void testGetRequiredTokens() {
+         InterfaceIsTypeCheck obj = new InterfaceIsTypeCheck();
+         int[] expected = {TokenTypes.INTERFACE_DEF};
+-        assertArrayEquals(expected, obj.getAcceptableTokens());
++        assertArrayEquals(expected, obj.getRequiredTokens());
+     }
+ }

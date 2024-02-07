@@ -1,0 +1,13 @@
+diff --git a/buggy/common/src/main/java/com/google/auto/common/MoreTypes.java b/fixed/common/src/main/java/com/google/auto/common/MoreTypes.java
+index d0f40a947..131909254 100644
+--- a/buggy/common/src/main/java/com/google/auto/common/MoreTypes.java
++++ b/fixed/common/src/main/java/com/google/auto/common/MoreTypes.java
+@@ -738,7 +738,7 @@ public final class MoreTypes {
+    * Returns a {@link WildcardType} if the {@link TypeMirror} represents a wildcard type or throws
+    * an {@link IllegalArgumentException}.
+    */
+-  public static WildcardType asWildcard(WildcardType maybeWildcardType) {
++  public static WildcardType asWildcard(TypeMirror maybeWildcardType) {
+     return maybeWildcardType.accept(WildcardTypeVisitor.INSTANCE, null);
+   }
+ 

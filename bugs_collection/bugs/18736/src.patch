@@ -1,0 +1,18 @@
+diff --git a/buggy/src/main/java/org/apache/ibatis/mapping/CacheBuilder.java b/fixed/src/main/java/org/apache/ibatis/mapping/CacheBuilder.java
+index ace4a331d..821f5a1e2 100644
+--- a/buggy/src/main/java/org/apache/ibatis/mapping/CacheBuilder.java
++++ b/fixed/src/main/java/org/apache/ibatis/mapping/CacheBuilder.java
+@@ -120,11 +120,11 @@ public class CacheBuilder {
+   private void setCacheProperties(Cache cache) {
+     if (properties != null) {
+       MetaObject metaCache = MetaObject.forObject(cache);
+-      for (Map.Entry entry : properties.entrySet()) {
++      for (Map.Entry<Object, Object> entry : properties.entrySet()) {
+         String name = (String) entry.getKey();
+         String value = (String) entry.getValue();
+         if (metaCache.hasSetter(name)) {
+-          Class type = metaCache.getSetterType(name);
++          Class<?> type = metaCache.getSetterType(name);
+           if (String.class == type) {
+             metaCache.setValue(name, value);
+           } else if (int.class == type

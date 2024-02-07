@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/Exchange.java b/fixed/camel-core/src/main/java/org/apache/camel/Exchange.java
+index 54d0dc3e9..d770e7a2e 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/Exchange.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/Exchange.java
+@@ -58,7 +58,7 @@ public interface Exchange {
+     String EXCEPTION_CAUGHT     = "CamelExceptionCaught";
+     String ERRORHANDLER_HANDLED = "CamelErrorHandlerHandled";
+     String FAILURE_HANDLED      = "CamelFailureHandled";
+-    String FAILURE_ENDPOINT     = "CamelFaulureEndpoint";
++    String FAILURE_ENDPOINT     = "CamelFailureEndpoint";
+ 
+     String FILE_LOCAL_WORK_PATH = "CamelFileLocalWorkPath";
+     String FILE_NAME            = "CamelFileName";

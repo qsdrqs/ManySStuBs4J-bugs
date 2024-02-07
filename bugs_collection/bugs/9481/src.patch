@@ -1,0 +1,20 @@
+diff --git a/buggy/src/java/org/apache/hadoop/hbase/regionserver/HStore.java b/fixed/src/java/org/apache/hadoop/hbase/regionserver/HStore.java
+index 242863f26..6f0d29fff 100644
+--- a/buggy/src/java/org/apache/hadoop/hbase/regionserver/HStore.java
++++ b/fixed/src/java/org/apache/hadoop/hbase/regionserver/HStore.java
+@@ -1524,7 +1524,7 @@ public class HStore implements HConstants {
+   private static boolean isExpired(final HStoreKey hsk, final long ttl,
+       final long now) {
+     boolean result = ttl != HConstants.FOREVER && now > hsk.getTimestamp() + ttl;
+-    if (LOG.isDebugEnabled()) {
++    if (result && LOG.isDebugEnabled()) {
+       LOG.debug("rowAtOrBeforeCandidate 1:" + hsk +
+         ": expired, skipped");
+     }
+@@ -1887,4 +1887,4 @@ public class HStore implements HConstants {
+       return key;
+     }
+   }
+-}
+\ No newline at end of file
++}

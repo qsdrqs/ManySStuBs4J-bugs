@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/processor/RedeliveryPolicy.java b/fixed/camel-core/src/main/java/org/apache/camel/processor/RedeliveryPolicy.java
+index 6cf910410..a4cc6ac90 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/processor/RedeliveryPolicy.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/processor/RedeliveryPolicy.java
+@@ -367,7 +367,7 @@ public class RedeliveryPolicy implements Cloneable, Serializable {
+     // -------------------------------------------------------------------------
+     @Deprecated
+     public long getRedeliverDelay() {
+-        return getRedeliverDelay();
++        return getRedeliveryDelay();
+     }
+     
+     @Deprecated

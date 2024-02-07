@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-spring/src/test/java/org/apache/camel/spring/issues/StringDataFormatTest.java b/fixed/components/camel-spring/src/test/java/org/apache/camel/spring/issues/StringDataFormatTest.java
+index 8e6b10fb5..1ec772de1 100644
+--- a/buggy/components/camel-spring/src/test/java/org/apache/camel/spring/issues/StringDataFormatTest.java
++++ b/fixed/components/camel-spring/src/test/java/org/apache/camel/spring/issues/StringDataFormatTest.java
+@@ -27,7 +27,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
+ public class StringDataFormatTest extends SpringTestSupport {
+ 
+     protected AbstractXmlApplicationContext createApplicationContext() {
+-        return new ClassPathXmlApplicationContext("org/apache/camel/spring/issues/StringDataFormatTest.xml");
++        return new ClassPathXmlApplicationContext("org/apache/camel/spring/issues/stringDataFormatTest.xml");
+     }
+ 
+     public void testMarshalString() throws Exception {

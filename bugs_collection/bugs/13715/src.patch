@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-hive/src/test/java/com/facebook/presto/hive/metastore/InMemoryHiveMetastore.java b/fixed/presto-hive/src/test/java/com/facebook/presto/hive/metastore/InMemoryHiveMetastore.java
+index 123679295..1881cee6e 100644
+--- a/buggy/presto-hive/src/test/java/com/facebook/presto/hive/metastore/InMemoryHiveMetastore.java
++++ b/fixed/presto-hive/src/test/java/com/facebook/presto/hive/metastore/InMemoryHiveMetastore.java
+@@ -170,7 +170,7 @@ public class InMemoryHiveMetastore
+ 
+         // if the name did not change, this is a simple schema change
+         if (oldName.equals(newName)) {
+-            if (relations.replace(oldName, newTable) != null) {
++            if (relations.replace(oldName, newTable) == null) {
+                 throw new TableNotFoundException(oldName);
+             }
+             return;

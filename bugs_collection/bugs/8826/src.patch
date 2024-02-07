@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/tools/DFSHAAdmin.java b/fixed/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/tools/DFSHAAdmin.java
+index 5c4b49d9b..1ec6d3509 100644
+--- a/buggy/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/tools/DFSHAAdmin.java
++++ b/fixed/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/tools/DFSHAAdmin.java
+@@ -89,7 +89,7 @@ public class DFSHAAdmin extends HAAdmin {
+ 
+   @Override
+   protected String getUsageString() {
+-    return "Usage: DFSHAAdmin [-ns <nameserviceId>]";
++    return "Usage: haadmin";
+   }
+ 
+   @Override

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/metrics/AbstractClassCouplingCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/metrics/AbstractClassCouplingCheck.java
+index d73250e35..86c549b19 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/metrics/AbstractClassCouplingCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/metrics/AbstractClassCouplingCheck.java
+@@ -145,7 +145,7 @@ public abstract class AbstractClassCouplingCheck extends AbstractCheck {
+      */
+     public final void setExcludedPackages(String... excludedPackages) {
+         final List<String> invalidIdentifiers = Arrays.stream(excludedPackages)
+-            .filter(x -> !CommonUtils.isName(x))
++            .filter(packageName -> !CommonUtils.isName(packageName))
+             .collect(Collectors.toList());
+         if (!invalidIdentifiers.isEmpty()) {
+             throw new IllegalArgumentException(

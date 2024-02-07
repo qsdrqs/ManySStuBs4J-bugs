@@ -1,0 +1,13 @@
+diff --git a/buggy/library/src/com/haarman/listviewanimations/itemmanipulation/SwipeDismissListViewTouchListener.java b/fixed/library/src/com/haarman/listviewanimations/itemmanipulation/SwipeDismissListViewTouchListener.java
+index 14c7ff634..832540dfb 100644
+--- a/buggy/library/src/com/haarman/listviewanimations/itemmanipulation/SwipeDismissListViewTouchListener.java
++++ b/fixed/library/src/com/haarman/listviewanimations/itemmanipulation/SwipeDismissListViewTouchListener.java
+@@ -293,7 +293,7 @@ public class SwipeDismissListViewTouchListener implements View.OnTouchListener {
+ 						ViewHelper.setAlpha(pendingDismiss.view, 1f);
+ 						ViewHelper.setTranslationX(pendingDismiss.view, 0);
+ 						lp = pendingDismiss.view.getLayoutParams();
+-						lp.height = originalHeight;
++						lp.height = 0;
+ 						pendingDismiss.view.setLayoutParams(lp);
+ 					}
+ 

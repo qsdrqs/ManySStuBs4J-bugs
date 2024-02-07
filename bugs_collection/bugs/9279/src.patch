@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-it/src/test/java/org/apache/hadoop/hbase/mapreduce/IntegrationTestBulkLoad.java b/fixed/hbase-it/src/test/java/org/apache/hadoop/hbase/mapreduce/IntegrationTestBulkLoad.java
+index c6f014c47..9dac95b3f 100644
+--- a/buggy/hbase-it/src/test/java/org/apache/hadoop/hbase/mapreduce/IntegrationTestBulkLoad.java
++++ b/fixed/hbase-it/src/test/java/org/apache/hadoop/hbase/mapreduce/IntegrationTestBulkLoad.java
+@@ -524,7 +524,7 @@ public class IntegrationTestBulkLoad extends IntegrationTestBase {
+                             LinkChain linkChain,
+                             int numPartitions) {
+       int hash = linkKey.getChainId().hashCode();
+-      return hash % numPartitions;
++      return Math.abs(hash % numPartitions);
+     }
+   }
+ 

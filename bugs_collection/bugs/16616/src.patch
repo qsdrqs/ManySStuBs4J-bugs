@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/util/MapUtil.java b/fixed/hazelcast/src/main/java/com/hazelcast/util/MapUtil.java
+index 28b53ccca..2907eb19f 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/util/MapUtil.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/util/MapUtil.java
+@@ -17,7 +17,7 @@ public final class MapUtil {
+      * to minimize rehash operations
+      */
+     public static <K, V> Map<K, V> createHashMap(int expectedMapSize) {
+-        int initialCapacity = (int) (expectedMapSize * HASHMAP_DEFAULT_LOAD_FACTOR) + 1;
++        int initialCapacity = (int) (expectedMapSize / HASHMAP_DEFAULT_LOAD_FACTOR) + 1;
+         return new HashMap<K, V>(initialCapacity);
+     }
+ 

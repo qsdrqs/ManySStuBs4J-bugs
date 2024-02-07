@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/jobmanager/JobManager.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/jobmanager/JobManager.java
+index 113f8fde0..f79fecb8e 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/jobmanager/JobManager.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/jobmanager/JobManager.java
+@@ -661,7 +661,7 @@ public class JobManager implements ExtendedManagementProtocol, InputSplitProvide
+ 
+ 	@Override
+ 	public InstanceID registerTaskManager(InstanceConnectionInfo instanceConnectionInfo, HardwareDescription hardwareDescription, int numberOfSlots) {
+-		if (this.instanceManager != null) {
++		if (this.instanceManager != null && this.scheduler != null) {
+ 			return this.instanceManager.registerTaskManager(instanceConnectionInfo, hardwareDescription, numberOfSlots);
+ 		} else {
+ 			return null;

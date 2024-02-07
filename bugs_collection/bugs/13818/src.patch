@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/Session.java b/fixed/presto-main/src/main/java/com/facebook/presto/Session.java
+index 3ed2c6e6a..9bef8c2d0 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/Session.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/Session.java
+@@ -195,7 +195,7 @@ public final class Session
+         return new Session(
+                 identity,
+                 source,
+-                catalog,
++                this.catalog,
+                 schema,
+                 timeZoneKey,
+                 locale,

@@ -1,0 +1,13 @@
+diff --git a/buggy/plugins/netty/src/main/java/com/navercorp/pinpoint/plugin/netty/interceptor/BootstrapConnectInterceptor.java b/fixed/plugins/netty/src/main/java/com/navercorp/pinpoint/plugin/netty/interceptor/BootstrapConnectInterceptor.java
+index 0dc7a410b..b0c69c934 100644
+--- a/buggy/plugins/netty/src/main/java/com/navercorp/pinpoint/plugin/netty/interceptor/BootstrapConnectInterceptor.java
++++ b/fixed/plugins/netty/src/main/java/com/navercorp/pinpoint/plugin/netty/interceptor/BootstrapConnectInterceptor.java
+@@ -75,7 +75,7 @@ public class BootstrapConnectInterceptor implements AroundInterceptor {
+             recorder.recordApi(descriptor);
+             recorder.recordException(throwable);
+ 
+-            if (args.length == 0 || !(args[0] instanceof SocketAddress)) {
++            if (args == null || args.length == 0 || !(args[0] instanceof SocketAddress)) {
+                 return;
+             }
+ 

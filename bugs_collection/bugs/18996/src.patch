@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/nhn/pinpoint/web/controller/ScatterChartController.java b/fixed/src/main/java/com/nhn/pinpoint/web/controller/ScatterChartController.java
+index d5220ea6f..1f11e681a 100644
+--- a/buggy/src/main/java/com/nhn/pinpoint/web/controller/ScatterChartController.java
++++ b/fixed/src/main/java/com/nhn/pinpoint/web/controller/ScatterChartController.java
+@@ -88,7 +88,7 @@ public class ScatterChartController {
+ 		} else {
+ 			List<TraceId> traceIds = scatter.selectScatterTraceIdList(applicationName, from, to, limit);
+ 
+-			if (!traceIds.isEmpty()) {
++			if (traceIds.isEmpty()) {
+ 				model.addAttribute("queryStart", -1);
+ 				model.addAttribute("queryEnd", -1);
+ 			} else {

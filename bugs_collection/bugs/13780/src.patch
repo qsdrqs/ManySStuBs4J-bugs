@@ -1,0 +1,12 @@
+diff --git a/buggy/presto-spi/src/main/java/com/facebook/presto/spi/type/AbstractType.java b/fixed/presto-spi/src/main/java/com/facebook/presto/spi/type/AbstractType.java
+index 9bec99a3a..af2a7e939 100644
+--- a/buggy/presto-spi/src/main/java/com/facebook/presto/spi/type/AbstractType.java
++++ b/fixed/presto-spi/src/main/java/com/facebook/presto/spi/type/AbstractType.java
+@@ -175,6 +175,6 @@ public abstract class AbstractType
+     @Override
+     public final int hashCode()
+     {
+-        return getClass().hashCode();
++        return signature.hashCode();
+     }
+ }

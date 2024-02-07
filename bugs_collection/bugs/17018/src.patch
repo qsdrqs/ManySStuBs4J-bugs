@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/collection/CollectionService.java b/fixed/hazelcast/src/main/java/com/hazelcast/collection/CollectionService.java
+index 972001ead..08a72f82e 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/collection/CollectionService.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/collection/CollectionService.java
+@@ -330,7 +330,7 @@ public class CollectionService implements ManagedService, RemoteService, Members
+         map.put(Command.MMCONTAINSENTRY, new ContainsEntryHandler(this));
+         map.put(Command.MMKEYS, new MMKeysHandler(this));
+         map.put(Command.MMLOCK, new LockHandler(this));
+-        map.put(Command.MMUNLOCK, new MMUnlockHandler(this));
++        map.put(Command.MMUNLOCK, new UnlockHandler(this));
+         map.put(Command.MMTRYLOCK, new TryLockHandler(this));
+         map.put(Command.MMLISTEN, new ListenHandler(this));
+         return map;

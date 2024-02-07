@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/test/java/io/netty/channel/local/LocalTransportThreadModelTest.java b/fixed/transport/src/test/java/io/netty/channel/local/LocalTransportThreadModelTest.java
+index 2dfa9e005..6e5c339cc 100644
+--- a/buggy/transport/src/test/java/io/netty/channel/local/LocalTransportThreadModelTest.java
++++ b/fixed/transport/src/test/java/io/netty/channel/local/LocalTransportThreadModelTest.java
+@@ -204,7 +204,7 @@ public class LocalTransportThreadModelTest {
+         }
+     }
+ 
+-    @Test(timeout = 120000)
++    @Test(timeout = 30000)
+     public void testConcurrentMessageBufferAccess() throws Throwable {
+         EventLoopGroup l = new LocalEventLoopGroup(4, new PrefixThreadFactory("l"));
+         EventExecutorGroup e1 = new DefaultEventExecutorGroup(4, new PrefixThreadFactory("e1"));

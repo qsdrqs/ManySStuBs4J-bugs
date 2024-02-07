@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/datastream/WindowedStream.java b/fixed/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/datastream/WindowedStream.java
+index a18a59c9d..e2f930a52 100644
+--- a/buggy/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/datastream/WindowedStream.java
++++ b/fixed/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/datastream/WindowedStream.java
+@@ -389,7 +389,7 @@ public class WindowedStream<T, K, W extends Window> {
+ 			Utils.getCallLocationName(), true);
+ 
+ 		TypeInformation<R> resultType = TypeExtractor.getUnaryOperatorReturnType(
+-			function, WindowFunction.class, true, true, getInputType(), null, false);
++			function, WindowFunction.class, true, true, foldAccumulatorType, null, false);
+ 
+ 		return fold(initialValue, foldFunction, function, foldAccumulatorType, resultType);
+ 	}

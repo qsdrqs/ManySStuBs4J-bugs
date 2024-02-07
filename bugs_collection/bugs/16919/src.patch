@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/util/scheduler/SecondsBasedEntryTaskScheduler.java b/fixed/hazelcast/src/main/java/com/hazelcast/util/scheduler/SecondsBasedEntryTaskScheduler.java
+index d34dc0b03..6c90530f8 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/util/scheduler/SecondsBasedEntryTaskScheduler.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/util/scheduler/SecondsBasedEntryTaskScheduler.java
+@@ -144,7 +144,7 @@ final class SecondsBasedEntryTaskScheduler<K, V> implements EntryTaskScheduler<K
+             if (second != null) {
+                 final ConcurrentMap<Object, ScheduledEntry<K, V>> entries = scheduledEntries.get(second);
+                 if (entries != null) {
+-                    result = entries.remove(key);
++                    result = entries.remove(timeKey);
+                 }
+             }
+         }

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/replicatedmap/ReplicatedMapWriteOrderTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/replicatedmap/ReplicatedMapWriteOrderTest.java
+index 97f62101b..7e9a3acce 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/replicatedmap/ReplicatedMapWriteOrderTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/replicatedmap/ReplicatedMapWriteOrderTest.java
+@@ -37,7 +37,7 @@ import static org.junit.Assert.assertEquals;
+ import static org.junit.Assert.assertNotNull;
+ 
+ @RunWith(Parameterized.class)
+-public class ReplicatedMapWriteOrderTest extends ReplicatedMapBaseTest {
++public class ReplicatedMapWriteOrderTest extends ReplicatedMapAbstractTest {
+ 
+     int nodeCount;
+     int operations;

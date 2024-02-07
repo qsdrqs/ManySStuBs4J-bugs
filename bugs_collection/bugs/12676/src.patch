@@ -1,0 +1,31 @@
+diff --git a/buggy/indexing-hadoop/src/main/java/io/druid/indexer/HadoopTuningConfig.java b/fixed/indexing-hadoop/src/main/java/io/druid/indexer/HadoopTuningConfig.java
+index bdf7fac00..de5c9156e 100644
+--- a/buggy/indexing-hadoop/src/main/java/io/druid/indexer/HadoopTuningConfig.java
++++ b/fixed/indexing-hadoop/src/main/java/io/druid/indexer/HadoopTuningConfig.java
+@@ -269,7 +269,7 @@ public class HadoopTuningConfig implements TuningConfig
+         numBackgroundPersistThreads,
+         forceExtendableShardSpecs,
+         useExplicitVersion,
+-        null
++        allowedHadoopPrefix
+     );
+   }
+ 
+@@ -294,7 +294,7 @@ public class HadoopTuningConfig implements TuningConfig
+         numBackgroundPersistThreads,
+         forceExtendableShardSpecs,
+         useExplicitVersion,
+-        null
++        allowedHadoopPrefix
+     );
+   }
+ 
+@@ -319,7 +319,7 @@ public class HadoopTuningConfig implements TuningConfig
+         numBackgroundPersistThreads,
+         forceExtendableShardSpecs,
+         useExplicitVersion,
+-        null
++        allowedHadoopPrefix
+     );
+   }
+ 

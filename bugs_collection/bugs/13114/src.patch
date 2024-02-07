@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/com/metamx/druid/query/metadata/SegmentMetadataQueryEngine.java b/fixed/server/src/main/java/com/metamx/druid/query/metadata/SegmentMetadataQueryEngine.java
+index edc4ea3ed..7522b4b47 100644
+--- a/buggy/server/src/main/java/com/metamx/druid/query/metadata/SegmentMetadataQueryEngine.java
++++ b/fixed/server/src/main/java/com/metamx/druid/query/metadata/SegmentMetadataQueryEngine.java
+@@ -72,7 +72,7 @@ public class SegmentMetadataQueryEngine
+         final Indexed<String> lookup = adapter.getDimValueLookup(input);
+         for (String dimVal : lookup) {
+           ImmutableConciseSet index = adapter.getInvertedIndex(input, dimVal);
+-          size += index.size() * Charsets.UTF_8.encode(dimVal).capacity();
++          size += (dimVal == null) ? 0 : index.size() * Charsets.UTF_8.encode(dimVal).capacity();
+         }
+         return new SegmentMetadataResultValue.Dimension(
+             size,

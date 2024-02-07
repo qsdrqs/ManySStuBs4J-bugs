@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/coref/statistical/StatisticalCorefTrainer.java b/fixed/src/edu/stanford/nlp/coref/statistical/StatisticalCorefTrainer.java
+index c5a4ad555..89970ada4 100644
+--- a/buggy/src/edu/stanford/nlp/coref/statistical/StatisticalCorefTrainer.java
++++ b/fixed/src/edu/stanford/nlp/coref/statistical/StatisticalCorefTrainer.java
+@@ -89,7 +89,7 @@ public class StatisticalCorefTrainer {
+     Dictionaries dictionaries = new Dictionaries(props);
+ 
+     setDataPath("train");
+-    wordCountsFile = "train/word_counts.ser";
++    wordCountsFile = trainingPath + "train/word_counts.ser";
+     CorefProperties.setInput(props, Dataset.TRAIN);
+     preprocess(props, dictionaries, true);
+ 

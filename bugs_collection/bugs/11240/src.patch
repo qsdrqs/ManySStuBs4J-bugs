@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter6programpractice/rule62donotignoreexceptions/EmptyBlockTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter6programpractice/rule62donotignoreexceptions/EmptyBlockTest.java
+index 971d9e70b..2d8060e73 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter6programpractice/rule62donotignoreexceptions/EmptyBlockTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter6programpractice/rule62donotignoreexceptions/EmptyBlockTest.java
+@@ -17,7 +17,7 @@ public class EmptyBlockTest extends BaseCheckTestSupport{
+     static ConfigurationBuilder builder;
+     
+     @BeforeClass
+-    public static void setConfigurationBuilder() throws CheckstyleException, IOException {
++    public static void setConfigurationBuilder() throws CheckstyleException {
+         builder = new ConfigurationBuilder(new File("src/it/"));
+     }
+ 

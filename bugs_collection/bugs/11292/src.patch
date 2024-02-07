@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter6programpractice/rule62donotignoreexceptions/EmptyBlockTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter6programpractice/rule62donotignoreexceptions/EmptyBlockTest.java
+index e3e56287e..971d9e70b 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter6programpractice/rule62donotignoreexceptions/EmptyBlockTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter6programpractice/rule62donotignoreexceptions/EmptyBlockTest.java
+@@ -22,7 +22,7 @@ public class EmptyBlockTest extends BaseCheckTestSupport{
+     }
+ 
+     @Test
+-    public void emptyBlockTestCatch() throws IOException, Exception {
++    public void emptyBlockTestCatch() throws Exception {
+         
+         final String[] expected = {
+             "29:17: " + getCheckMessage(EmptyBlockCheck.class, "block.empty", "finally"),

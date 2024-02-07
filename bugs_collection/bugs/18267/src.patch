@@ -1,0 +1,13 @@
+diff --git a/buggy/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/preloader/PreloaderBundleGenerator.java b/fixed/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/preloader/PreloaderBundleGenerator.java
+index 97005eae2..3c4dec247 100644
+--- a/buggy/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/preloader/PreloaderBundleGenerator.java
++++ b/fixed/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/preloader/PreloaderBundleGenerator.java
+@@ -164,7 +164,7 @@ public class PreloaderBundleGenerator extends Generator {
+ 			return null;
+ 		}
+ 		String path = assetPathProperty.getValues().get(0);
+-		if ( !path.endsWith("/")){
++		if (path != null && !path.endsWith("/")){
+ 			path += "/";
+ 		}			
+ 		return path;

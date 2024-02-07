@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/concurrent/lock/LockBasicTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/concurrent/lock/LockBasicTest.java
+index c4663edd4..e98199202 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/concurrent/lock/LockBasicTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/concurrent/lock/LockBasicTest.java
+@@ -180,7 +180,7 @@ public abstract class LockBasicTest extends HazelcastTestSupport {
+             }
+         }).start();
+         latch.await();
+-        assertTrue(lock.tryLock(3, TimeUnit.SECONDS));
++        assertTrue(lock.tryLock(30, TimeUnit.SECONDS));
+ 
+         assertTrue(lock.isLocked());
+         assertTrue(lock.isLockedByCurrentThread());

@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/impl/DefaultCamelContext.java b/fixed/camel-core/src/main/java/org/apache/camel/impl/DefaultCamelContext.java
+index c3c8a2d51..9ec06c1e6 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/impl/DefaultCamelContext.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/impl/DefaultCamelContext.java
+@@ -1564,7 +1564,7 @@ public class DefaultCamelContext extends ServiceSupport implements ModelCamelCon
+ 
+         // setup default thread pool for error handler
+         if (errorHandlerExecutorService == null || errorHandlerExecutorService.isShutdown()) {
+-            errorHandlerExecutorService = getExecutorServiceManager().newDefaultScheduledThreadPool(this, "ErrorHandlerRedeliveryTask");
++            errorHandlerExecutorService = getExecutorServiceManager().newDefaultScheduledThreadPool("ErrorHandlerRedeliveryThreadPool", "ErrorHandlerRedeliveryTask");
+         }
+ 
+         // start the route definitions before the routes is started

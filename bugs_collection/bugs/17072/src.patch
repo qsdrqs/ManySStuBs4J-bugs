@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/impl/concurrentmap/InitialState.java b/fixed/hazelcast/src/main/java/com/hazelcast/impl/concurrentmap/InitialState.java
+index 9d135f50a..470aea5bb 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/impl/concurrentmap/InitialState.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/impl/concurrentmap/InitialState.java
+@@ -29,7 +29,7 @@ import java.util.ArrayList;
+ import java.util.List;
+ 
+ public class InitialState extends AbstractRemotelyProcessable {
+-    List<MapState> lsMapStates = new ArrayList();
++    List<MapState> lsMapStates = new ArrayList<MapState>();
+ 
+     public InitialState() {
+     }

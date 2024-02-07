@@ -1,0 +1,13 @@
+diff --git a/buggy/tooling/maven/camel-maven-plugin/src/main/java/org/apache/camel/maven/EmbeddedMojo.java b/fixed/tooling/maven/camel-maven-plugin/src/main/java/org/apache/camel/maven/EmbeddedMojo.java
+index c99bb528e..89e7900a8 100644
+--- a/buggy/tooling/maven/camel-maven-plugin/src/main/java/org/apache/camel/maven/EmbeddedMojo.java
++++ b/fixed/tooling/maven/camel-maven-plugin/src/main/java/org/apache/camel/maven/EmbeddedMojo.java
+@@ -84,7 +84,7 @@ public class EmbeddedMojo extends AbstractExecMojo {
+     public void executeWithoutWrapping() throws MalformedURLException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, MojoExecutionException {
+         ClassLoader oldClassLoader = Thread.currentThread().getContextClassLoader();
+         try {
+-            ClassLoader newLoader = createClassLoader(oldClassLoader);
++            ClassLoader newLoader = createClassLoader(null);
+             Thread.currentThread().setContextClassLoader(newLoader);
+             runCamel(newLoader);
+         }

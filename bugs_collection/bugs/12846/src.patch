@@ -1,0 +1,14 @@
+diff --git a/buggy/processing/src/test/java/io/druid/data/input/ProtoBufInputRowParserTest.java b/fixed/processing/src/test/java/io/druid/data/input/ProtoBufInputRowParserTest.java
+index 570045daa..67d5fdc35 100644
+--- a/buggy/processing/src/test/java/io/druid/data/input/ProtoBufInputRowParserTest.java
++++ b/fixed/processing/src/test/java/io/druid/data/input/ProtoBufInputRowParserTest.java
+@@ -59,8 +59,7 @@ public class ProtoBufInputRowParserTest
+     ProtoBufInputRowParser parser = new ProtoBufInputRowParser(
+         new JSONParseSpec(
+             new TimestampSpec("timestamp", "iso"),
+-            new DimensionsSpec(Arrays.asList(DIMENSIONS), Arrays.<String>asList(), null),
+-            JSONParseSpec.JSON
++            new DimensionsSpec(Arrays.asList(DIMENSIONS), Arrays.<String>asList(), null)
+         ),
+         "prototest.desc",
+         null, null, null, null

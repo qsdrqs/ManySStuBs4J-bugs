@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/assets/AssetManager.java b/fixed/gdx/src/com/badlogic/gdx/assets/AssetManager.java
+index 501d233d4..13b85e2ce 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/assets/AssetManager.java
++++ b/fixed/gdx/src/com/badlogic/gdx/assets/AssetManager.java
+@@ -204,7 +204,7 @@ public class AssetManager implements Disposable {
+ 				if (preloadQueue.size == 0) return true;
+ 				nextTask();
+ 				// second check if we tried to load an asset that's already loaded and the queue became empty.
+-				if (preloadQueue.size == 0) return true;
++				if (preloadQueue.size == 0 || tasks.size() == 0) return true;
+ 			}
+ 			return updateTask() && preloadQueue.size == 0;
+ 		} catch (Throwable t) {

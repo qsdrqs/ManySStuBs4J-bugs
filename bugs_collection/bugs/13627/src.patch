@@ -1,0 +1,15 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/SystemSessionProperties.java b/fixed/presto-main/src/main/java/com/facebook/presto/SystemSessionProperties.java
+index 2e0f28960..2464b59af 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/SystemSessionProperties.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/SystemSessionProperties.java
+@@ -258,8 +258,8 @@ public final class SystemSessionProperties
+                 booleanSessionProperty(
+                         LEGACY_ORDER_BY,
+                         "Use legacy rules for column resolution in ORDER BY clause",
+-                        false,
+-                        featuresConfig.isLegacyOrderBy()));
++                        featuresConfig.isLegacyOrderBy(),
++                        false));
+     }
+ 
+     public List<PropertyMetadata<?>> getSessionProperties()

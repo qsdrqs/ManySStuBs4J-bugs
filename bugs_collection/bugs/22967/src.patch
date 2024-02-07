@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/examples/BasicPipelineExample.java b/fixed/src/edu/stanford/nlp/examples/BasicPipelineExample.java
+index f590e0260..d1a87b4e8 100644
+--- a/buggy/src/edu/stanford/nlp/examples/BasicPipelineExample.java
++++ b/fixed/src/edu/stanford/nlp/examples/BasicPipelineExample.java
+@@ -34,7 +34,7 @@ public class BasicPipelineExample {
+     // examples
+ 
+     // 10th token of the document
+-    CoreLabel token = document.tokens().get(10);
++    CoreLabel token = document.tokens().get(9);
+     System.out.println("Example: token");
+     System.out.println(token);
+     System.out.println();

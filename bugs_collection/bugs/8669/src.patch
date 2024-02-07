@@ -1,0 +1,18 @@
+diff --git a/buggy/pact/pact-compiler/src/main/java/eu/stratosphere/pact/compiler/plan/MatchNode.java b/fixed/pact/pact-compiler/src/main/java/eu/stratosphere/pact/compiler/plan/MatchNode.java
+index e86a01a9b..df6dd45de 100644
+--- a/buggy/pact/pact-compiler/src/main/java/eu/stratosphere/pact/compiler/plan/MatchNode.java
++++ b/fixed/pact/pact-compiler/src/main/java/eu/stratosphere/pact/compiler/plan/MatchNode.java
+@@ -1031,11 +1031,11 @@ public class MatchNode extends TwoInputNode {
+ 		double callsPerKey = 1;
+ 		
+ 		if(numKey1 != -1) {
+-			callsPerKey *= numKey1 / (double)numRecords1;
++			callsPerKey *= (double)numRecords1 / numKey1;
+ 		}
+ 		
+ 		if(numKey2 != -1) {
+-			callsPerKey *= numKey2 / (double)numRecords2;
++			callsPerKey *= (double)numRecords2 / numKey2;
+ 		}
+ 
+ 		return callsPerKey;

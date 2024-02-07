@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-spring-javaconfig/src/main/java/org/apache/camel/spring/javaconfig/CamelConfiguration.java b/fixed/components/camel-spring-javaconfig/src/main/java/org/apache/camel/spring/javaconfig/CamelConfiguration.java
+index 0585f6302..80a5e4315 100644
+--- a/buggy/components/camel-spring-javaconfig/src/main/java/org/apache/camel/spring/javaconfig/CamelConfiguration.java
++++ b/fixed/components/camel-spring-javaconfig/src/main/java/org/apache/camel/spring/javaconfig/CamelConfiguration.java
+@@ -44,7 +44,7 @@ public abstract class CamelConfiguration    {
+             @Override
+             public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+                 try {
+-                    SpringCamelContext context = getCamelContext();
++                    SpringCamelContext context = (SpringCamelContext) getCamelContext();
+                     if (context == null) {
+                         // we have not yet injected the context so lets set it
+                         setCamelContext(camelContext());

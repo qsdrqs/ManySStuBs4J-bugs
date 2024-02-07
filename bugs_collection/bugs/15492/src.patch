@@ -1,0 +1,15 @@
+diff --git a/buggy/guava-tests/test/com/google/common/collect/MultisetsCollectionTest.java b/fixed/guava-tests/test/com/google/common/collect/MultisetsCollectionTest.java
+index aea06937e..558075050 100644
+--- a/buggy/guava-tests/test/com/google/common/collect/MultisetsCollectionTest.java
++++ b/fixed/guava-tests/test/com/google/common/collect/MultisetsCollectionTest.java
+@@ -221,8 +221,8 @@ public class MultisetsCollectionTest extends TestCase {
+     };
+   }
+ 
+-  private static final Multiset<String> ELEMENTS_TO_FILTER_OUT = ImmutableMultiset.of(
+-      "foobar", "bazfoo", "foobar", "foobar");
++  private static final ImmutableMultiset<String> ELEMENTS_TO_FILTER_OUT =
++      ImmutableMultiset.of("foobar", "bazfoo", "foobar", "foobar");
+ 
+   private static final Predicate<String> PREDICATE =
+       Predicates.not(Predicates.in(ELEMENTS_TO_FILTER_OUT));

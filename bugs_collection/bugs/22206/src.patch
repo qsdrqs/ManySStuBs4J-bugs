@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-tools/spring-boot-loader-tools/src/test/java/org/springframework/boot/loader/tools/LayoutsTests.java b/fixed/spring-boot-tools/spring-boot-loader-tools/src/test/java/org/springframework/boot/loader/tools/LayoutsTests.java
+index e7a32fed1..e3fa328cf 100644
+--- a/buggy/spring-boot-tools/spring-boot-loader-tools/src/test/java/org/springframework/boot/loader/tools/LayoutsTests.java
++++ b/fixed/spring-boot-tools/spring-boot-loader-tools/src/test/java/org/springframework/boot/loader/tools/LayoutsTests.java
+@@ -55,7 +55,7 @@ public class LayoutsTests {
+ 
+ 	@Test
+ 	public void unknownFile() throws Exception {
+-		this.thrown.equals(IllegalStateException.class);
++		this.thrown.expect(IllegalStateException.class);
+ 		this.thrown.expectMessage("Unable to deduce layout for 'test.txt'");
+ 		Layouts.forFile(new File("test.txt"));
+ 	}

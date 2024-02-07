@@ -1,0 +1,13 @@
+diff --git a/buggy/singleton/src/main/java/com/iluwatar/IvoryTower.java b/fixed/singleton/src/main/java/com/iluwatar/IvoryTower.java
+index 30b8c4b29..dadfc3548 100644
+--- a/buggy/singleton/src/main/java/com/iluwatar/IvoryTower.java
++++ b/fixed/singleton/src/main/java/com/iluwatar/IvoryTower.java
+@@ -13,7 +13,7 @@ public class IvoryTower {
+ 
+ 	public static IvoryTower getInstance() {
+ 		if(instance ==  null){
+-			instance = IvoryTower();	
++			instance = new IvoryTower();	
+ 		}
+ 		return instance;
+ 	}

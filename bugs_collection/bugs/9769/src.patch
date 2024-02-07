@@ -1,0 +1,16 @@
+diff --git a/buggy/hcatalog/core/src/main/java/org/apache/hive/hcatalog/common/HCatUtil.java b/fixed/hcatalog/core/src/main/java/org/apache/hive/hcatalog/common/HCatUtil.java
+index 2f624df29..63909b893 100644
+--- a/buggy/hcatalog/core/src/main/java/org/apache/hive/hcatalog/common/HCatUtil.java
++++ b/fixed/hcatalog/core/src/main/java/org/apache/hive/hcatalog/common/HCatUtil.java
+@@ -84,8 +84,9 @@ public class HCatUtil {
+   private static volatile HiveClientCache hiveClientCache;
+ 
+   public static boolean checkJobContextIfRunningFromBackend(JobContext j) {
+-    if (j.getConfiguration().get("mapred.task.id", "").equals("") &&
+-        !("true".equals(j.getConfiguration().get("pig.illustrating")))) {
++    if (j.getConfiguration().get("pig.job.converted.fetch", "").equals("") &&
++          j.getConfiguration().get("mapred.task.id", "").equals("") &&
++          !("true".equals(j.getConfiguration().get("pig.illustrating")))) {
+       return false;
+     }
+     return true;

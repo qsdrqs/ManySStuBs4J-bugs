@@ -1,0 +1,13 @@
+diff --git a/buggy/benchmarks/src/main/java/okhttp3/benchmarks/NettyHttpClient.java b/fixed/benchmarks/src/main/java/okhttp3/benchmarks/NettyHttpClient.java
+index 01e6f6e25..cd7286d37 100644
+--- a/buggy/benchmarks/src/main/java/okhttp3/benchmarks/NettyHttpClient.java
++++ b/fixed/benchmarks/src/main/java/okhttp3/benchmarks/NettyHttpClient.java
+@@ -137,7 +137,7 @@ class NettyHttpClient implements HttpClient {
+     int total;
+     long start;
+ 
+-    public HttpChannel(SocketChannel channel) {
++    HttpChannel(SocketChannel channel) {
+       this.channel = channel;
+     }
+ 

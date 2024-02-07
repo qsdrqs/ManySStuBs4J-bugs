@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/internal/adapter/TransactionalMapDataStructureAdapter.java b/fixed/hazelcast/src/main/java/com/hazelcast/internal/adapter/TransactionalMapDataStructureAdapter.java
+index 1335e7c8f..0d28e99b6 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/internal/adapter/TransactionalMapDataStructureAdapter.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/internal/adapter/TransactionalMapDataStructureAdapter.java
+@@ -72,7 +72,7 @@ public class TransactionalMapDataStructureAdapter<K, V> implements DataStructure
+     @Override
+     public void set(K key, V value) {
+         begin();
+-        transactionalMap.put(key, value);
++        transactionalMap.set(key, value);
+         commit();
+     }
+ 

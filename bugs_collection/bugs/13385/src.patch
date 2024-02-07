@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-hive/src/test/java/com/facebook/presto/hive/AbstractTestHiveFileFormats.java b/fixed/presto-hive/src/test/java/com/facebook/presto/hive/AbstractTestHiveFileFormats.java
+index 3a060d51a..9f4c99953 100644
+--- a/buggy/presto-hive/src/test/java/com/facebook/presto/hive/AbstractTestHiveFileFormats.java
++++ b/fixed/presto-hive/src/test/java/com/facebook/presto/hive/AbstractTestHiveFileFormats.java
+@@ -615,7 +615,7 @@ public abstract class AbstractTestHiveFileFormats
+     private static <T> T newInstance(String className, Class<T> superType)
+             throws ReflectiveOperationException
+     {
+-        return HiveStorageFormat.class.getClassLoader().loadClass(className).asSubclass(superType).newInstance();
++        return HiveStorageFormat.class.getClassLoader().loadClass(className).asSubclass(superType).getConstructor().newInstance();
+     }
+ 
+     public static Object getFieldFromCursor(RecordCursor cursor, Type type, int field)

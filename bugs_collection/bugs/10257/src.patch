@@ -1,0 +1,40 @@
+diff --git a/buggy/src/main/java/com/zaxxer/hikari/metrics/PoolStats.java b/fixed/src/main/java/com/zaxxer/hikari/metrics/PoolStats.java
+index ff35727e9..cb17cc76d 100644
+--- a/buggy/src/main/java/com/zaxxer/hikari/metrics/PoolStats.java
++++ b/fixed/src/main/java/com/zaxxer/hikari/metrics/PoolStats.java
+@@ -42,7 +42,7 @@ public abstract class PoolStats
+       this.clock = ClockSource.INSTANCE;
+    }
+    
+-   protected int getTotalConnections()
++   public int getTotalConnections()
+    {
+       if (shouldLoad()) {
+          update();
+@@ -51,7 +51,7 @@ public abstract class PoolStats
+       return totalConnections;
+    }
+ 
+-   protected int getIdleConnections()
++   public int getIdleConnections()
+    {
+       if (shouldLoad()) {
+          update();
+@@ -60,7 +60,7 @@ public abstract class PoolStats
+       return idleConnections;
+    }
+ 
+-   protected int getActiveConnections()
++   public int getActiveConnections()
+    {
+       if (shouldLoad()) {
+          update();
+@@ -69,7 +69,7 @@ public abstract class PoolStats
+       return activeConnections;
+    }
+ 
+-   protected int getPendingThreads()
++   public int getPendingThreads()
+    {
+       if (shouldLoad()) {
+          update();

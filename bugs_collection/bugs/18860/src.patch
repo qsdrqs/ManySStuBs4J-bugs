@@ -1,0 +1,13 @@
+diff --git a/buggy/agent/src/test/java/com/navercorp/pinpoint/plugin/hikaricp/HikariCpIT.java b/fixed/agent/src/test/java/com/navercorp/pinpoint/plugin/hikaricp/HikariCpIT.java
+index 7ad0e3e86..907f25d82 100644
+--- a/buggy/agent/src/test/java/com/navercorp/pinpoint/plugin/hikaricp/HikariCpIT.java
++++ b/fixed/agent/src/test/java/com/navercorp/pinpoint/plugin/hikaricp/HikariCpIT.java
+@@ -39,7 +39,7 @@ import static com.navercorp.pinpoint.bootstrap.plugin.test.Expectations.event;
+  * @author Taejin Koo
+  */
+ @RunWith(PinpointPluginTestSuite.class)
+-@Dependency({"com.zaxxer:HikariCP-java6:[2.3.13],[2.0.0]", "com.h2database:h2:1.4.191"})
++@Dependency({"com.zaxxer:HikariCP-java6:[2.3.13]", "com.h2database:h2:1.4.191"})
+ public class HikariCpIT {
+ 
+     private static final String serviceType = "HIKARICP";

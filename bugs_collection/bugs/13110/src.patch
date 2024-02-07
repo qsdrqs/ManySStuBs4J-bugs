@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/com/metamx/druid/index/v1/IncrementalIndexStorageAdapter.java b/fixed/server/src/main/java/com/metamx/druid/index/v1/IncrementalIndexStorageAdapter.java
+index ef5ecef5d..bf8e0ac96 100644
+--- a/buggy/server/src/main/java/com/metamx/druid/index/v1/IncrementalIndexStorageAdapter.java
++++ b/fixed/server/src/main/java/com/metamx/druid/index/v1/IncrementalIndexStorageAdapter.java
+@@ -215,7 +215,7 @@ public class IncrementalIndexStorageAdapter implements StorageAdapter
+                           while (baseIter.hasNext()) {
+                             currEntry.set(baseIter.next());
+                             if (filterMatcher.matches()) {
+-                              break;
++                              return;
+                             }
+ 
+                             numAdvanced++;

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/container/spring/NettyResourceFactory.java b/fixed/src/main/java/org/jboss/netty/container/spring/NettyResourceFactory.java
+index b601ba10f..3441e2f23 100644
+--- a/buggy/src/main/java/org/jboss/netty/container/spring/NettyResourceFactory.java
++++ b/fixed/src/main/java/org/jboss/netty/container/spring/NettyResourceFactory.java
+@@ -60,7 +60,7 @@ public class NettyResourceFactory implements InitializingBean, DisposableBean {
+         unterminatableExecutor = null;
+     }
+ 
+-    public Executor getChannelFactoryExecutor() {
++    public synchronized Executor getChannelFactoryExecutor() {
+         return unterminatableExecutor;
+     }
+ }

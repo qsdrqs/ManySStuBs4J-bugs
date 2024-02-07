@@ -1,0 +1,17 @@
+diff --git a/buggy/codec-http/src/main/java/io/netty/handler/codec/http/multipart/InternalAttribute.java b/fixed/codec-http/src/main/java/io/netty/handler/codec/http/multipart/InternalAttribute.java
+index b0b034f77..991100ed2 100644
+--- a/buggy/codec-http/src/main/java/io/netty/handler/codec/http/multipart/InternalAttribute.java
++++ b/fixed/codec-http/src/main/java/io/netty/handler/codec/http/multipart/InternalAttribute.java
+@@ -79,10 +79,10 @@ final class InternalAttribute extends AbstractReferenceCounted implements Interf
+ 
+     @Override
+     public boolean equals(Object o) {
+-        if (!(o instanceof Attribute)) {
++        if (!(o instanceof InternalAttribute)) {
+             return false;
+         }
+-        Attribute attribute = (Attribute) o;
++        InternalAttribute attribute = (InternalAttribute) o;
+         return getName().equalsIgnoreCase(attribute.getName());
+     }
+ 

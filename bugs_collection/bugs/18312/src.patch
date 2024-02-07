@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions/gdx-tools/src/com/badlogic/gdx/tools/skins/SkinPacker.java b/fixed/extensions/gdx-tools/src/com/badlogic/gdx/tools/skins/SkinPacker.java
+index 53d799084..825e93077 100644
+--- a/buggy/extensions/gdx-tools/src/com/badlogic/gdx/tools/skins/SkinPacker.java
++++ b/fixed/extensions/gdx-tools/src/com/badlogic/gdx/tools/skins/SkinPacker.java
+@@ -141,7 +141,7 @@ public class SkinPacker {
+ 					Json json = new Json();
+ 					if (skinFile != null) {
+ 						FileHandle oldSkinFile = new FileHandle(skinFile);
+-						OrderedMap oldSkin = json.fromJson(OrderedMap.class, new FileHandle(skinFile));
++						OrderedMap oldSkin = json.fromJson(OrderedMap.class, oldSkinFile);
+ 						OrderedMap newSkin = json.fromJson(OrderedMap.class, newSkinFile);
+ 						OrderedMap oldResources = (OrderedMap)oldSkin.get("resources");
+ 						OrderedMap newResources = (OrderedMap)newSkin.get("resources");

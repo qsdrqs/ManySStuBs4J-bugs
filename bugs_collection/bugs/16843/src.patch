@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/queue/proxy/QueueProxySupport.java b/fixed/hazelcast/src/main/java/com/hazelcast/queue/proxy/QueueProxySupport.java
+index 6847a183c..f12d840d2 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/queue/proxy/QueueProxySupport.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/queue/proxy/QueueProxySupport.java
+@@ -88,7 +88,7 @@ abstract class QueueProxySupport extends AbstractDistributedObject<QueueService>
+         throwExceptionIfNull(data);
+         OfferOperation operation = new OfferOperation(name, timeout, data);
+         try {
+-            return invokeAndGet(operation);
++            return (Boolean) invokeAndGet(operation);
+         } catch (Throwable throwable) {
+             throw ExceptionUtil.rethrowAllowInterrupted(throwable);
+         }

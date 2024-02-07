@@ -1,0 +1,13 @@
+diff --git a/buggy/storm-core/src/jvm/org/apache/storm/utils/Utils.java b/fixed/storm-core/src/jvm/org/apache/storm/utils/Utils.java
+index 3bbad7cc3..53ca190ac 100644
+--- a/buggy/storm-core/src/jvm/org/apache/storm/utils/Utils.java
++++ b/fixed/storm-core/src/jvm/org/apache/storm/utils/Utils.java
+@@ -2116,7 +2116,7 @@ public class Utils {
+             allPaths.addAll(classpaths);
+         }
+         if(paths != null) {
+-            allpaths.addAll(classpaths);
++            allPaths.addAll(paths);
+         }
+         return StringUtils.join(allPaths, CLASS_PATH_SEPARATOR);
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-queryable-state/flink-queryable-state-client-java/src/main/java/org/apache/flink/queryablestate/network/AbstractServerHandler.java b/fixed/flink-queryable-state/flink-queryable-state-client-java/src/main/java/org/apache/flink/queryablestate/network/AbstractServerHandler.java
+index b2f7a47c3..fb835e31a 100644
+--- a/buggy/flink-queryable-state/flink-queryable-state-client-java/src/main/java/org/apache/flink/queryablestate/network/AbstractServerHandler.java
++++ b/fixed/flink-queryable-state/flink-queryable-state-client-java/src/main/java/org/apache/flink/queryablestate/network/AbstractServerHandler.java
+@@ -165,7 +165,7 @@ public abstract class AbstractServerHandler<REQ extends MessageBody, RESP extend
+ 	@Override
+ 	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+ 		final String msg = "Exception in server pipeline. Caused by: " + ExceptionUtils.stringifyException(cause);
+-		final ByteBuf err = serializer.serializeServerFailure(ctx.alloc(), new RuntimeException(msg));
++		final ByteBuf err = MessageSerializer.serializeServerFailure(ctx.alloc(), new RuntimeException(msg));
+ 
+ 		LOG.debug(msg);
+ 		ctx.writeAndFlush(err).addListener(ChannelFutureListener.CLOSE);

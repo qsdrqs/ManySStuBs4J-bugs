@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/connection/nio/ClientConnectionManagerImpl.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/connection/nio/ClientConnectionManagerImpl.java
+index 298dd6677..ec233c6d9 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/connection/nio/ClientConnectionManagerImpl.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/connection/nio/ClientConnectionManagerImpl.java
+@@ -235,7 +235,7 @@ public class ClientConnectionManagerImpl implements ClientConnectionManager {
+         }
+     }
+ 
+-    private class BlockingCallback implements AuthenticationCallback {
++    private static class BlockingCallback implements AuthenticationCallback {
+ 
+         private final CountDownLatch countDownLatch = new CountDownLatch(1);
+         private Connection connection;

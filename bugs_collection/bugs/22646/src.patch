@@ -1,0 +1,12 @@
+diff --git a/buggy/spring-boot-samples/spring-boot-sample-integration/src/test/java/org/springframework/boot/sample/integration/consumer/SampleIntegrationApplicationTests.java b/fixed/spring-boot-samples/spring-boot-sample-integration/src/test/java/org/springframework/boot/sample/integration/consumer/SampleIntegrationApplicationTests.java
+index 0b0c07138..c9143c561 100644
+--- a/buggy/spring-boot-samples/spring-boot-sample-integration/src/test/java/org/springframework/boot/sample/integration/consumer/SampleIntegrationApplicationTests.java
++++ b/fixed/spring-boot-samples/spring-boot-sample-integration/src/test/java/org/springframework/boot/sample/integration/consumer/SampleIntegrationApplicationTests.java
+@@ -84,6 +84,6 @@ public class SampleIntegrationApplicationTests {
+ 						return builder.toString();
+ 					}
+ 				});
+-		return future.get(10, TimeUnit.SECONDS);
++		return future.get(30, TimeUnit.SECONDS);
+ 	}
+ }

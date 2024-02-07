@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/condition/ConditionalOnResourceTests.java b/fixed/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/condition/ConditionalOnResourceTests.java
+index 309cde0fe..bd344ac38 100644
+--- a/buggy/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/condition/ConditionalOnResourceTests.java
++++ b/fixed/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/condition/ConditionalOnResourceTests.java
+@@ -59,7 +59,7 @@ public class ConditionalOnResourceTests {
+ 	}
+ 
+ 	@Configuration
+-	@ConditionalOnResource(resources = "logback-test.xml")
++	@ConditionalOnResource(resources = "schemq.sqlt")
+ 	protected static class BasicConfiguration {
+ 		@Bean
+ 		public String foo() {

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/PersistentTreeMap.java b/fixed/src/jvm/clojure/lang/PersistentTreeMap.java
+index 5a5a9beee..d69952b91 100644
+--- a/buggy/src/jvm/clojure/lang/PersistentTreeMap.java
++++ b/fixed/src/jvm/clojure/lang/PersistentTreeMap.java
+@@ -137,7 +137,7 @@ public ISeq seq(){
+ }
+ 
+ public IPersistentCollection empty(){
+-	return EMPTY.withMeta(meta());	
++	return new PersistentTreeMap(meta(), comp);	
+ }
+ 
+ public ISeq rseq() throws Exception{

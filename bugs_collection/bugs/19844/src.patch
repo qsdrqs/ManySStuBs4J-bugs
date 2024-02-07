@@ -1,0 +1,13 @@
+diff --git a/buggy/buffer/src/main/java/io/netty/buffer/PooledHeapByteBuf.java b/fixed/buffer/src/main/java/io/netty/buffer/PooledHeapByteBuf.java
+index a03c8f98c..6f2432786 100644
+--- a/buggy/buffer/src/main/java/io/netty/buffer/PooledHeapByteBuf.java
++++ b/fixed/buffer/src/main/java/io/netty/buffer/PooledHeapByteBuf.java
+@@ -81,7 +81,7 @@ final class PooledHeapByteBuf extends PooledByteBuf<byte[]> {
+         checkDstIndex(index, length, dstIndex, dst.capacity());
+         if (dst.hasMemoryAddress()) {
+             PlatformDependent.copyMemory(memory, idx(index), dst.memoryAddress() + dstIndex, length);
+-        } if (dst.hasArray()) {
++        } else if (dst.hasArray()) {
+             getBytes(index, dst.array(), dst.arrayOffset() + dstIndex, length);
+         } else {
+             dst.setBytes(dstIndex, memory, idx(index), length);

@@ -1,0 +1,22 @@
+diff --git a/buggy/indexer/src/main/java/com/metamx/druid/indexer/HadoopDruidIndexerConfig.java b/fixed/indexer/src/main/java/com/metamx/druid/indexer/HadoopDruidIndexerConfig.java
+index 1dfad9de1..956db5ac4 100644
+--- a/buggy/indexer/src/main/java/com/metamx/druid/indexer/HadoopDruidIndexerConfig.java
++++ b/fixed/indexer/src/main/java/com/metamx/druid/indexer/HadoopDruidIndexerConfig.java
+@@ -209,7 +209,7 @@ public class HadoopDruidIndexerConfig
+   )
+   {
+     this.dataSource = dataSource;
+-    this.timestampColumnName = timestampColumnName;
++    this.timestampColumnName = timestampColumnName.toLowerCase();
+     this.timestampFormat = timestampFormat;
+     this.dataSpec = dataSpec;
+     this.granularitySpec = granularitySpec;
+@@ -294,7 +294,7 @@ public class HadoopDruidIndexerConfig
+ 
+   public void setTimestampColumnName(String timestampColumnName)
+   {
+-    this.timestampColumnName = timestampColumnName;
++    this.timestampColumnName = timestampColumnName.toLowerCase();
+   }
+ 
+   @JsonProperty()

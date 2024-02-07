@@ -1,0 +1,13 @@
+diff --git a/buggy/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGEXF.java b/fixed/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGEXF.java
+index 3a59f0817..721e7d0b6 100644
+--- a/buggy/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGEXF.java
++++ b/fixed/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGEXF.java
+@@ -764,7 +764,7 @@ public class ImporterGEXF implements XMLImporter, LongTask {
+     }
+ 
+     public boolean isMatchingImporter(FileObject fileObject) {
+-        return fileObject.hasExt("gexf");
++        return fileObject.hasExt("gexf") || fileObject.hasExt("GEXF");
+     }
+ 
+     public boolean cancel() {

@@ -1,0 +1,13 @@
+diff --git a/buggy/community/lucene-index/src/test/java/org/neo4j/index/impl/lucene/TestLuceneIndex.java b/fixed/community/lucene-index/src/test/java/org/neo4j/index/impl/lucene/TestLuceneIndex.java
+index b626a1dbe..c905ce36d 100644
+--- a/buggy/community/lucene-index/src/test/java/org/neo4j/index/impl/lucene/TestLuceneIndex.java
++++ b/fixed/community/lucene-index/src/test/java/org/neo4j/index/impl/lucene/TestLuceneIndex.java
+@@ -1798,7 +1798,7 @@ public class TestLuceneIndex extends AbstractLuceneIndexTest
+ 
+         // WHEN
+         index.remove( node1, "name" );
+-        Set<Node> nodes = asSet( index.query( "*:*" ) );
++        Set<Node> nodes = asSet( (Iterable<Node>) index.query( "*:*" ) );
+ 
+         // THEN
+         assertEquals( asSet(), nodes );

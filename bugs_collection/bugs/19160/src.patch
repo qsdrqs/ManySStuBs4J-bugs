@@ -1,0 +1,13 @@
+diff --git a/buggy/enterprise/ha/src/test/java/org/neo4j/ha/BackupHaIT.java b/fixed/enterprise/ha/src/test/java/org/neo4j/ha/BackupHaIT.java
+index 19d123928..38980c7b6 100644
+--- a/buggy/enterprise/ha/src/test/java/org/neo4j/ha/BackupHaIT.java
++++ b/fixed/enterprise/ha/src/test/java/org/neo4j/ha/BackupHaIT.java
+@@ -42,7 +42,7 @@ import org.neo4j.test.DbRepresentation;
+ import org.neo4j.test.ha.ClusterManager;
+ import org.neo4j.test.ha.ClusterManager.ManagedCluster;
+ 
+-@Ignore("Temporarily, pending backport of fixes from master")
++@Ignore("Breaks occasionally, needs investigation")
+ public class BackupHaIT
+ {
+     private DbRepresentation representation;

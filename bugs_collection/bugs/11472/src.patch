@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/SingleLineJavadocCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/SingleLineJavadocCheck.java
+index 872246262..2c4a567b5 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/SingleLineJavadocCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/SingleLineJavadocCheck.java
+@@ -83,7 +83,7 @@ public class SingleLineJavadocCheck extends AbstractJavadocCheck {
+         for (String sTag : sTags) {
+             tagList.add(sTag.trim());
+         }
+-        this.ignoredTags = tagList;
++        ignoredTags = tagList;
+     }
+ 
+     /**

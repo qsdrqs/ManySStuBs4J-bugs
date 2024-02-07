@@ -1,0 +1,13 @@
+diff --git a/buggy/meteor/meteor-meteor/src/test/java/eu/stratosphere/meteor/base/IntersectionTest.java b/fixed/meteor/meteor-meteor/src/test/java/eu/stratosphere/meteor/base/IntersectionTest.java
+index 5d15b28d0..6ee1075b0 100644
+--- a/buggy/meteor/meteor-meteor/src/test/java/eu/stratosphere/meteor/base/IntersectionTest.java
++++ b/fixed/meteor/meteor-meteor/src/test/java/eu/stratosphere/meteor/base/IntersectionTest.java
+@@ -24,7 +24,7 @@ public class IntersectionTest extends MeteorTest {
+ 		final Sink output = new Sink("newUsers.json").withInputs(intersection);
+ 		expectedPlan.setSinks(output);
+ 
+-		assertEquals(expectedPlan, actualPlan);
++		assertPlanEquals(expectedPlan, actualPlan);
+ 	}
+ 
+ }

@@ -1,0 +1,13 @@
+diff --git a/buggy/disconf-client/src/main/java/com/baidu/disconf/client/DisconfMgrBean.java b/fixed/disconf-client/src/main/java/com/baidu/disconf/client/DisconfMgrBean.java
+index 75275aaa6..285d656f1 100644
+--- a/buggy/disconf-client/src/main/java/com/baidu/disconf/client/DisconfMgrBean.java
++++ b/fixed/disconf-client/src/main/java/com/baidu/disconf/client/DisconfMgrBean.java
+@@ -62,7 +62,7 @@ public class DisconfMgrBean implements BeanDefinitionRegistryPostProcessor, Prio
+ 
+     @Override
+     public int getOrder() {
+-        return Ordered.HIGHEST_PRECEDENCE - 1;
++        return Ordered.HIGHEST_PRECEDENCE;
+     }
+ 
+     /**

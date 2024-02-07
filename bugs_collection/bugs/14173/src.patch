@@ -1,0 +1,13 @@
+diff --git a/buggy/ImportAPI/src/org/gephi/io/importer/impl/ImportContainerImpl.java b/fixed/ImportAPI/src/org/gephi/io/importer/impl/ImportContainerImpl.java
+index 4b2937a39..d6a8b61fd 100644
+--- a/buggy/ImportAPI/src/org/gephi/io/importer/impl/ImportContainerImpl.java
++++ b/fixed/ImportAPI/src/org/gephi/io/importer/impl/ImportContainerImpl.java
+@@ -496,7 +496,7 @@ public class ImportContainerImpl implements Container, ContainerLoader, Containe
+                 }
+             }
+             for (AttributeColumn col : attributeModel.getEdgeTable().getColumns()) {
+-                dynamicGraph = col.getType().isDynamicType();
++                dynamicGraph = dynamicGraph || col.getType().isDynamicType();
+                 if (dynamicGraph) {
+                     break;
+                 }

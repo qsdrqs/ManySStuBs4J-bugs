@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/main/java/cucumber/runtime/Reflections.java b/fixed/core/src/main/java/cucumber/runtime/Reflections.java
+index b76d0de22..04918bcd0 100644
+--- a/buggy/core/src/main/java/cucumber/runtime/Reflections.java
++++ b/fixed/core/src/main/java/cucumber/runtime/Reflections.java
+@@ -16,7 +16,7 @@ public class Reflections {
+         Collection<? extends T> instances = instantiateSubclasses(parentType, packageName, constructorParams, constructorArgs);
+         if (instances.size() == 1) {
+             return instances.iterator().next();
+-        } else if (instances.size() == 0) {
++        } else if (instances.isEmpty()) {
+             throw new NoInstancesException(parentType);
+         } else {
+             throw new TooManyInstancesException(instances);

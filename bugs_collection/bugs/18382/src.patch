@@ -1,0 +1,32 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/graphics/g2d/BitmapFont.java b/fixed/gdx/src/com/badlogic/gdx/graphics/g2d/BitmapFont.java
+index fc82643a9..3f7645aa9 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/graphics/g2d/BitmapFont.java
++++ b/fixed/gdx/src/com/badlogic/gdx/graphics/g2d/BitmapFont.java
+@@ -504,11 +504,11 @@ public class BitmapFont implements Disposable {
+ 		while (start < length) {
+ 			int newLine = BitmapFont.indexOf(str, '\n', start);
+ 			int lineEnd = start + computeVisibleGlyphs(str, start, newLine, wrapWidth);
+-			int nextStart = lineEnd;
++			int nextStart = lineEnd + 1;
+ 			if (lineEnd < newLine) {
+ 				// Find char to break on.
+ 				while (lineEnd > start) {
+-					if (BitmapFont.isWhitespace(str.charAt(lineEnd))) break;
++					if (BitmapFont.isWhitespace(str.charAt(lineEnd - 1))) break;
+ 					lineEnd--;
+ 				}
+ 				if (lineEnd == start)
+@@ -613,11 +613,11 @@ public class BitmapFont implements Disposable {
+ 		while (start < length) {
+ 			int newLine = BitmapFont.indexOf(str, '\n', start);
+ 			int lineEnd = start + computeVisibleGlyphs(str, start, newLine, wrapWidth);
+-			int nextStart = lineEnd;
++			int nextStart = lineEnd + 1;
+ 			if (lineEnd < newLine) {
+ 				// Find char to break on.
+ 				while (lineEnd > start) {
+-					if (BitmapFont.isWhitespace(str.charAt(lineEnd))) break;
++					if (BitmapFont.isWhitespace(str.charAt(lineEnd - 1))) break;
+ 					lineEnd--;
+ 				}
+ 				if (lineEnd == start)

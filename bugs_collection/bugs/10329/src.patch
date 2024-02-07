@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/zaxxer/hikari/HikariDataSource.java b/fixed/src/main/java/com/zaxxer/hikari/HikariDataSource.java
+index 3effaf1a2..a67176997 100644
+--- a/buggy/src/main/java/com/zaxxer/hikari/HikariDataSource.java
++++ b/fixed/src/main/java/com/zaxxer/hikari/HikariDataSource.java
+@@ -246,7 +246,7 @@ public class HikariDataSource extends HikariConfig implements DataSource
+         @Override
+         public int hashCode()
+         {
+-            return password.hashCode();
++            return (password == null ? 0 : password.hashCode());
+         }
+ 
+         @Override

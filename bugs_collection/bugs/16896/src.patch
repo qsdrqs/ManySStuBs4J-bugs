@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/nio/ssl/BasicSSLContextFactory.java b/fixed/hazelcast/src/main/java/com/hazelcast/nio/ssl/BasicSSLContextFactory.java
+index 480f0674d..ad84d515a 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/nio/ssl/BasicSSLContextFactory.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/nio/ssl/BasicSSLContextFactory.java
+@@ -49,7 +49,7 @@ public class BasicSSLContextFactory implements SSLContextFactory {
+         String trustStore = getProperty(properties, "trustStore", keyStore);
+         String trustStorePassword = getProperty(properties, "trustStorePassword", keyStorePassword);
+ 
+-        String keyManagerAlgorithm = properties.getProperty("keyManagerAlgorithm", TrustManagerFactory.getDefaultAlgorithm());
++        String keyManagerAlgorithm = properties.getProperty("keyManagerAlgorithm", KeyManagerFactory.getDefaultAlgorithm());
+         String trustManagerAlgorithm = properties.getProperty("trustManagerAlgorithm", TrustManagerFactory.getDefaultAlgorithm());
+         String protocol = properties.getProperty("protocol", "TLS");
+ 

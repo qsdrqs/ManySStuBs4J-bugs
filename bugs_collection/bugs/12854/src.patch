@@ -1,0 +1,13 @@
+diff --git a/buggy/services/src/main/java/io/druid/cli/CliBridge.java b/fixed/services/src/main/java/io/druid/cli/CliBridge.java
+index 6da1ec21c..a1f893f96 100644
+--- a/buggy/services/src/main/java/io/druid/cli/CliBridge.java
++++ b/fixed/services/src/main/java/io/druid/cli/CliBridge.java
+@@ -71,7 +71,7 @@ public class CliBridge extends ServerRunnable
+           public void configure(Binder binder)
+           {
+             binder.bindConstant().annotatedWith(Names.named("serviceName")).to("druid/bridge");
+-            binder.bindConstant().annotatedWith(Names.named("servicePort")).to(8081);
++            binder.bindConstant().annotatedWith(Names.named("servicePort")).to(8089);
+ 
+             ConfigProvider.bind(binder, BridgeCuratorConfig.class);
+ 

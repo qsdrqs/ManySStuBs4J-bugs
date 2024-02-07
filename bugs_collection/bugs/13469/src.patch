@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/test/java/com/facebook/presto/sql/query/QueryAssertions.java b/fixed/presto-main/src/test/java/com/facebook/presto/sql/query/QueryAssertions.java
+index e0e90b524..fa224561d 100644
+--- a/buggy/presto-main/src/test/java/com/facebook/presto/sql/query/QueryAssertions.java
++++ b/fixed/presto-main/src/test/java/com/facebook/presto/sql/query/QueryAssertions.java
+@@ -60,7 +60,7 @@ class QueryAssertions
+ 
+         MaterializedResult expectedResults = null;
+         try {
+-            expectedResults = runner.execute(runner.getDefaultSession(), expected);
++            expectedResults = runner.execute(runner.getDefaultSession(), expected).toJdbcTypes();
+         }
+         catch (RuntimeException ex) {
+             fail("Execution of 'expected' query failed: " + expected, ex);

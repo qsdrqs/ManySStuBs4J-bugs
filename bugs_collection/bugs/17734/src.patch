@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/graphics/glutils/GLFrameBuffer.java b/fixed/gdx/src/com/badlogic/gdx/graphics/glutils/GLFrameBuffer.java
+index 4029b8eea..95b34e9cb 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/graphics/glutils/GLFrameBuffer.java
++++ b/fixed/gdx/src/com/badlogic/gdx/graphics/glutils/GLFrameBuffer.java
+@@ -238,7 +238,7 @@ public abstract class GLFrameBuffer<T extends GLTexture> implements Disposable {
+ 		disposeColorTexture(colorTexture);
+ 
+ 		if (hasDepthStencilPackedBuffer) {
+-			gl.glDeleteBuffer(depthStencilPackedBufferHandle);
++			gl.glDeleteRenderbuffer(depthStencilPackedBufferHandle);
+ 		} else {
+ 			if (hasDepth) gl.glDeleteRenderbuffer(depthbufferHandle);
+ 			if (hasStencil) gl.glDeleteRenderbuffer(stencilbufferHandle);

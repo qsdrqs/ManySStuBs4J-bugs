@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/impl/CMap.java b/fixed/hazelcast/src/main/java/com/hazelcast/impl/CMap.java
+index ea6225751..725944df5 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/impl/CMap.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/impl/CMap.java
+@@ -1005,7 +1005,7 @@ public class CMap {
+             if (owner != null && !partition.isMigrating()) {
+                 boolean owned = owner.localMember();
+                 if (owned) {
+-                    if (store != null && record.isDirty()) {
++                    if (store != null && writeDelayMillis > 0 && record.isDirty()) {
+                         if (now > record.getWriteTime()) {
+                             recordsDirty.add(record);
+                             record.setDirty(false);

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/concurrent/lock/LockResourceImpl.java b/fixed/hazelcast/src/main/java/com/hazelcast/concurrent/lock/LockResourceImpl.java
+index 98c253276..d56c5e141 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/concurrent/lock/LockResourceImpl.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/concurrent/lock/LockResourceImpl.java
+@@ -281,7 +281,7 @@ final class LockResourceImpl implements DataSerializable, LockResource {
+ 
+     @Override
+     public long getRemainingLeaseTime() {
+-        if (expirationTime == Long.MAX_VALUE && expirationTime < 0) {
++        if (expirationTime == Long.MAX_VALUE || expirationTime < 0) {
+             return Long.MAX_VALUE;
+         }
+         long now = Clock.currentTimeMillis();

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/PeepholeCollectPropertyAssignments.java b/fixed/src/com/google/javascript/jscomp/PeepholeCollectPropertyAssignments.java
+index e50356046..2137bc267 100644
+--- a/buggy/src/com/google/javascript/jscomp/PeepholeCollectPropertyAssignments.java
++++ b/fixed/src/com/google/javascript/jscomp/PeepholeCollectPropertyAssignments.java
+@@ -75,7 +75,7 @@ final class PeepholeCollectPropertyAssignments extends AbstractPeepholeOptimizat
+     }
+ 
+     if (codeChanged) {
+-      compiler.reportCodeChange();
++      reportCodeChange();
+     }
+     return subtree;
+   }

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/proxy/ClientMapProxy.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/proxy/ClientMapProxy.java
+index 2a569afea..e935d418f 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/proxy/ClientMapProxy.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/proxy/ClientMapProxy.java
+@@ -508,7 +508,7 @@ public final class ClientMapProxy<K, V> extends ClientProxy implements IMap<K, V
+                 }
+             }
+         }
+-        if (keys.isEmpty()) {
++        if (keySet.isEmpty()) {
+             return result;
+         }
+         MapGetAllRequest request = new MapGetAllRequest(name, keySet);

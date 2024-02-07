@@ -1,0 +1,13 @@
+diff --git a/buggy/indexing-service/src/main/java/io/druid/indexing/common/task/AppenderatorDriverRealtimeIndexTask.java b/fixed/indexing-service/src/main/java/io/druid/indexing/common/task/AppenderatorDriverRealtimeIndexTask.java
+index c1ee50b23..9a0ea6517 100644
+--- a/buggy/indexing-service/src/main/java/io/druid/indexing/common/task/AppenderatorDriverRealtimeIndexTask.java
++++ b/fixed/indexing-service/src/main/java/io/druid/indexing/common/task/AppenderatorDriverRealtimeIndexTask.java
+@@ -322,7 +322,7 @@ public class AppenderatorDriverRealtimeIndexTask extends AbstractTask implements
+             AppenderatorDriverAddResult addResult = driver.add(inputRow, sequenceName, committerSupplier);
+ 
+             if (addResult.isOk()) {
+-              if (addResult.getNumRowsInSegment() > tuningConfig.getMaxRowsPerSegment()) {
++              if (addResult.getNumRowsInSegment() >= tuningConfig.getMaxRowsPerSegment()) {
+                 publishSegments(driver, publisher, committerSupplier, sequenceName);
+ 
+                 sequenceNumber++;

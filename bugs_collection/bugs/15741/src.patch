@@ -1,0 +1,13 @@
+diff --git a/buggy/guava/src/com/google/common/primitives/UnsignedBytes.java b/fixed/guava/src/com/google/common/primitives/UnsignedBytes.java
+index 60dda46f0..8f6fc9f6e 100644
+--- a/buggy/guava/src/com/google/common/primitives/UnsignedBytes.java
++++ b/fixed/guava/src/com/google/common/primitives/UnsignedBytes.java
+@@ -206,7 +206,7 @@ public final class UnsignedBytes {
+ 
+     static final Comparator<byte[]> BEST_COMPARATOR = getBestComparator();
+ 
+-    @SuppressWarnings("unused") // only access this class via reflection!
++    @VisibleForTesting
+     enum UnsafeComparator implements Comparator<byte[]> {
+       INSTANCE;
+ 

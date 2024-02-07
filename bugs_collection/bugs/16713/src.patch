@@ -1,0 +1,17 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/core/EntryEvent.java b/fixed/hazelcast/src/main/java/com/hazelcast/core/EntryEvent.java
+index 9b614e06f..1a074cdd6 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/core/EntryEvent.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/core/EntryEvent.java
+@@ -78,9 +78,9 @@ public class EntryEvent<K, V> extends AbstractIMapEvent {
+     public String toString() {
+         return "EntryEvent{"
+                 + super.toString()
+-                + ", key=" + key
+-                + ", oldValue=" + oldValue
+-                + ", value=" + value
++                + ", key=" + getKey()
++                + ", oldValue=" + getOldValue()
++                + ", value=" + getValue()
+                 + '}';
+     }
+ }

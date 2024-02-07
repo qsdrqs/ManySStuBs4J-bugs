@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/IllegalCatchCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/IllegalCatchCheckTest.java
+index 61838f42c..572eb3393 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/IllegalCatchCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/IllegalCatchCheckTest.java
+@@ -34,7 +34,7 @@ public class IllegalCatchCheckTest extends BaseCheckTestSupport {
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "coding" + File.separator + filename);
++                + "coding" + File.separator + "illegalcatch" + File.separator + filename);
+     }
+ 
+     @Test

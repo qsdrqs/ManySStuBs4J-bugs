@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/AbstractExpressionHandler.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/AbstractExpressionHandler.java
+index c9f7786c5..c22cefcc2 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/AbstractExpressionHandler.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/AbstractExpressionHandler.java
+@@ -415,7 +415,7 @@ public abstract class AbstractExpressionHandler {
+      *
+      * @return the first line of the expression
+      */
+-    protected final int getFirstLine(int startLine, DetailAST tree) {
++    protected static int getFirstLine(int startLine, DetailAST tree) {
+         int realStart = startLine;
+         final int currLine = tree.getLineNo();
+         if (currLine < realStart) {

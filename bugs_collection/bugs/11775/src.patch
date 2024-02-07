@@ -1,0 +1,13 @@
+diff --git a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/design/MutableExceptionCheck.java b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/design/MutableExceptionCheck.java
+index d8b7b7014..b35522fb2 100644
+--- a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/design/MutableExceptionCheck.java
++++ b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/design/MutableExceptionCheck.java
+@@ -97,7 +97,7 @@ public final class MutableExceptionCheck extends AbstractFormatCheck
+      */
+     private void visitClassDef(DetailAST aAST)
+     {
+-        mCheckingStack.push(Boolean.valueOf(mChecking));
++        mCheckingStack.push(mChecking ? Boolean.TRUE : Boolean.FALSE);
+         mChecking =
+             isExceptionClass(aAST.findFirstToken(TokenTypes.IDENT).getText());
+     }

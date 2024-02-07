@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/apache/ibatis/builder/SqlSourceBuilder.java b/fixed/src/main/java/org/apache/ibatis/builder/SqlSourceBuilder.java
+index 1102b6633..9340b1f07 100644
+--- a/buggy/src/main/java/org/apache/ibatis/builder/SqlSourceBuilder.java
++++ b/fixed/src/main/java/org/apache/ibatis/builder/SqlSourceBuilder.java
+@@ -132,7 +132,7 @@ public class SqlSourceBuilder extends BaseBuilder {
+           if (parameterProperties.contains(name)) {
+             map.put(name, value);
+           } else {
+-            throw new BuilderException("An invalid property '" + name + "' was found in mapping " + content + ".  Valid properties are " + parameterProperties);
++            throw new BuilderException("An invalid property '" + name + "' was found in mapping #{" + content + "}.  Valid properties are " + parameterProperties);
+           }
+         } else {
+           throw new BuilderException("Improper inline parameter map format.  Should be: #{propName,attr1=val1,attr2=val2}");

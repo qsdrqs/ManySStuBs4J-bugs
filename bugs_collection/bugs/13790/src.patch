@@ -1,0 +1,15 @@
+diff --git a/buggy/presto-raptor/src/main/java/com/facebook/presto/raptor/storage/FileStorageService.java b/fixed/presto-raptor/src/main/java/com/facebook/presto/raptor/storage/FileStorageService.java
+index 71efe1beb..bb963b5f2 100644
+--- a/buggy/presto-raptor/src/main/java/com/facebook/presto/raptor/storage/FileStorageService.java
++++ b/fixed/presto-raptor/src/main/java/com/facebook/presto/raptor/storage/FileStorageService.java
+@@ -119,8 +119,8 @@ public class FileStorageService
+             throw new IOException("Failed to list directory: " + dir);
+         }
+         for (File file : files) {
+-            Files.delete(file.toPath());
++            Files.deleteIfExists(file.toPath());
+         }
+-        Files.delete(dir.toPath());
++        Files.deleteIfExists(dir.toPath());
+     }
+ }

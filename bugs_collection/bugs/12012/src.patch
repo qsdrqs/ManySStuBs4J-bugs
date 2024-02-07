@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/ASeq.java b/fixed/src/jvm/clojure/lang/ASeq.java
+index 67e2b7785..d19c8906c 100644
+--- a/buggy/src/jvm/clojure/lang/ASeq.java
++++ b/fixed/src/jvm/clojure/lang/ASeq.java
+@@ -124,7 +124,7 @@ public Object[] toArray(Object[] a){
+ 			{
+ 			a[i] = s.first();
+ 			}
+-		if(a.length >= count())
++		if(a.length > count())
+ 			a[count()] = null;
+ 		return a;
+ 		}

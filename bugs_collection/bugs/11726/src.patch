@@ -1,0 +1,13 @@
+diff --git a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/header/RegexpHeaderInfo.java b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/header/RegexpHeaderInfo.java
+index 47140014c..5d52c62a9 100644
+--- a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/header/RegexpHeaderInfo.java
++++ b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/header/RegexpHeaderInfo.java
+@@ -97,7 +97,7 @@ final class RegexpHeaderInfo extends HeaderInfo
+                 }
+                 catch (final PatternSyntaxException ex) {
+                     throw new ConversionException(
+-                            "line " + i + " in header specification"
++                            "line " + (i + 1) + " in header specification"
+                             + " is not a regular expression");
+                 }
+             }

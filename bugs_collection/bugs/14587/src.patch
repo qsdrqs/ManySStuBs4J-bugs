@@ -1,0 +1,22 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/AbstractCommandLineRunner.java b/fixed/src/com/google/javascript/jscomp/AbstractCommandLineRunner.java
+index 03a831b7d..d3a59dd84 100644
+--- a/buggy/src/com/google/javascript/jscomp/AbstractCommandLineRunner.java
++++ b/fixed/src/com/google/javascript/jscomp/AbstractCommandLineRunner.java
+@@ -1741,7 +1741,7 @@ public abstract class AbstractCommandLineRunner<A extends Compiler,
+     if (!config.variableMapOutputFile.isEmpty()) {
+       if (variableMapOutputPath != null) {
+         throw new FlagUsageException("The flags variable_map_output_file and "
+-            + "create_name_map_files cannot both be used simultaniously.");
++            + "create_name_map_files cannot both be used simultaneously.");
+       }
+ 
+       variableMapOutputPath = config.variableMapOutputFile;
+@@ -1750,7 +1750,7 @@ public abstract class AbstractCommandLineRunner<A extends Compiler,
+     if (!config.propertyMapOutputFile.isEmpty()) {
+       if (propertyMapOutputPath != null) {
+         throw new FlagUsageException("The flags property_map_output_file and "
+-            + "create_name_map_files cannot both be used simultaniously.");
++            + "create_name_map_files cannot both be used simultaneously.");
+       }
+ 
+       propertyMapOutputPath = config.propertyMapOutputFile;

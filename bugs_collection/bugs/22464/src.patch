@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-samples/spring-boot-sample-tomcat-multi-connectors/src/main/java/sample/tomcat/SampleTomcatTwoConnectorsApplication.java b/fixed/spring-boot-samples/spring-boot-sample-tomcat-multi-connectors/src/main/java/sample/tomcat/SampleTomcatTwoConnectorsApplication.java
+index 68f570462..3bf7fb3bb 100644
+--- a/buggy/spring-boot-samples/spring-boot-sample-tomcat-multi-connectors/src/main/java/sample/tomcat/SampleTomcatTwoConnectorsApplication.java
++++ b/fixed/spring-boot-samples/spring-boot-sample-tomcat-multi-connectors/src/main/java/sample/tomcat/SampleTomcatTwoConnectorsApplication.java
+@@ -40,7 +40,7 @@ import org.springframework.util.SocketUtils;
+ public class SampleTomcatTwoConnectorsApplication {
+ 
+ 	@Bean
+-	public int port() {
++	public Integer port() {
+ 		return SocketUtils.findAvailableTcpPort();
+ 	}
+ 

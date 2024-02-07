@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/naturalli/OperatorSpec.java b/fixed/src/edu/stanford/nlp/naturalli/OperatorSpec.java
+index 8fb9f828e..d498b294a 100644
+--- a/buggy/src/edu/stanford/nlp/naturalli/OperatorSpec.java
++++ b/fixed/src/edu/stanford/nlp/naturalli/OperatorSpec.java
+@@ -41,7 +41,7 @@ public class OperatorSpec {
+         Math.max(0, Math.min(sentenceLength, quantifierEnd)),
+         Math.max(0, Math.min(sentenceLength - 1, subjectBegin)),
+         Math.max(0, Math.min(sentenceLength, subjectEnd)),
+-        Math.max(0, Math.min(sentenceLength - 1, objectBegin)),
++        Math.max(0, objectBegin == sentenceLength ? sentenceLength : Math.min(sentenceLength - 1, objectBegin)),
+         Math.max(0, Math.min(sentenceLength, objectEnd)));
+   }
+ 

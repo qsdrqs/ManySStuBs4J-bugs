@@ -1,0 +1,13 @@
+diff --git a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/whitespace/WhitespaceAroundCheck.java b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/whitespace/WhitespaceAroundCheck.java
+index 820b18e39..1fb5e516a 100644
+--- a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/whitespace/WhitespaceAroundCheck.java
++++ b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/whitespace/WhitespaceAroundCheck.java
+@@ -185,7 +185,7 @@ public class WhitespaceAroundCheck
+ 
+         if ((before >= 0) && !Character.isWhitespace(line.charAt(before))) {
+             log(aAST.getLineNo(), aAST.getColumnNo(),
+-                    "ws.notPreceeded", new Object[]{aAST.getText()});
++                    "ws.notPreceded", new Object[]{aAST.getText()});
+         }
+ 
+         if (after >= line.length()) {

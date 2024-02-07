@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/handler/codec/replay/ReplayingDecoderBuffer.java b/fixed/src/main/java/org/jboss/netty/handler/codec/replay/ReplayingDecoderBuffer.java
+index 6f48d5f26..006e6f93f 100644
+--- a/buggy/src/main/java/org/jboss/netty/handler/codec/replay/ReplayingDecoderBuffer.java
++++ b/fixed/src/main/java/org/jboss/netty/handler/codec/replay/ReplayingDecoderBuffer.java
+@@ -215,7 +215,7 @@ class ReplayingDecoderBuffer implements ChannelBuffer {
+     }
+ 
+     public boolean readable() {
+-        return true;
++        return terminated? buffer.readable() : true;
+     }
+ 
+     public int readableBytes() {

@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/ExpressionEquivalence.java b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/ExpressionEquivalence.java
+index c699db0c1..f0cb82da2 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/ExpressionEquivalence.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/ExpressionEquivalence.java
+@@ -113,7 +113,7 @@ public class ExpressionEquivalence
+     }
+ 
+     private static class CanonicalizationVisitor
+-            implements RowExpressionVisitor<Void, RowExpression>
++            implements RowExpressionVisitor<RowExpression, Void>
+     {
+         @Override
+         public RowExpression visitCall(CallExpression call, Void context)

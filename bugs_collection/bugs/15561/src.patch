@@ -1,0 +1,13 @@
+diff --git a/buggy/guava-tests/test/com/google/common/base/CharMatcherTest.java b/fixed/guava-tests/test/com/google/common/base/CharMatcherTest.java
+index 228d91e11..2e52a6ef3 100644
+--- a/buggy/guava-tests/test/com/google/common/base/CharMatcherTest.java
++++ b/fixed/guava-tests/test/com/google/common/base/CharMatcherTest.java
+@@ -198,7 +198,7 @@ public class CharMatcherTest extends TestCase {
+   }
+ 
+   @GwtIncompatible("NullPointerTester")
+-  private void doTestNull(CharMatcher matcher) throws Exception {
++  private static void doTestNull(CharMatcher matcher) throws Exception {
+     NullPointerTester tester = new NullPointerTester();
+     tester.testAllPublicInstanceMethods(matcher);
+   }

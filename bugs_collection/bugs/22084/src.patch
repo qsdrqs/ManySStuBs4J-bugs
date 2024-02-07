@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-test/src/main/java/org/springframework/boot/test/context/runner/AbstractApplicationContextRunner.java b/fixed/spring-boot-project/spring-boot-test/src/main/java/org/springframework/boot/test/context/runner/AbstractApplicationContextRunner.java
+index df073e497..cf9e752d0 100644
+--- a/buggy/spring-boot-project/spring-boot-test/src/main/java/org/springframework/boot/test/context/runner/AbstractApplicationContextRunner.java
++++ b/fixed/spring-boot-project/spring-boot-test/src/main/java/org/springframework/boot/test/context/runner/AbstractApplicationContextRunner.java
+@@ -95,7 +95,7 @@ import org.springframework.util.Assert;
+  * @see ReactiveWebApplicationContextRunner
+  * @see ApplicationContextAssert
+  */
+-abstract class AbstractApplicationContextRunner<SELF extends AbstractApplicationContextRunner<SELF, C, A>, C extends ConfigurableApplicationContext, A extends ApplicationContextAssertProvider<C>> {
++public abstract class AbstractApplicationContextRunner<SELF extends AbstractApplicationContextRunner<SELF, C, A>, C extends ConfigurableApplicationContext, A extends ApplicationContextAssertProvider<C>> {
+ 
+ 	private final Supplier<C> contextFactory;
+ 

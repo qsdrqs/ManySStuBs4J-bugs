@@ -1,0 +1,13 @@
+diff --git a/buggy/agent/src/test/java/com/navercorp/pinpoint/plugin/cassandra/CassandraTestHelper.java b/fixed/agent/src/test/java/com/navercorp/pinpoint/plugin/cassandra/CassandraTestHelper.java
+index bea097f39..b609d2d7d 100644
+--- a/buggy/agent/src/test/java/com/navercorp/pinpoint/plugin/cassandra/CassandraTestHelper.java
++++ b/fixed/agent/src/test/java/com/navercorp/pinpoint/plugin/cassandra/CassandraTestHelper.java
+@@ -47,7 +47,7 @@ public class CassandraTestHelper {
+     }
+ 
+     public static String getHost() {
+-        return DatabaseDescriptor.getListenAddress().getHostName();
++        return DatabaseDescriptor.getListenAddress().getHostAddress();
+     }
+ 
+     public static int getNativeTransportPort() {

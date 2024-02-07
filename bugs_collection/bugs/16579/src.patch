@@ -1,0 +1,22 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/cache/impl/operation/CacheCreateConfigOperation.java b/fixed/hazelcast/src/main/java/com/hazelcast/cache/impl/operation/CacheCreateConfigOperation.java
+index 626cc70d9..37a4ac221 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/cache/impl/operation/CacheCreateConfigOperation.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/cache/impl/operation/CacheCreateConfigOperation.java
+@@ -73,7 +73,7 @@ public class CacheCreateConfigOperation
+         AbstractCacheService service = getService();
+         response = service.createCacheConfigIfAbsent(config);
+ 
+-        if (createAlsoOnOthers && response == null) {
++        if (createAlsoOnOthers) {
+             NodeEngine nodeEngine = getNodeEngine();
+             Collection<MemberImpl> members = nodeEngine.getClusterService().getMemberList();
+             int remoteNodeCount = members.size() - 1;
+@@ -85,7 +85,7 @@ public class CacheCreateConfigOperation
+                 OperationService operationService = nodeEngine.getOperationService();
+                 for (MemberImpl member : members) {
+                     if (!member.localMember()) {
+-                        CacheCreateConfigOperation op = new CacheCreateConfigOperation(config, true);
++                        CacheCreateConfigOperation op = new CacheCreateConfigOperation(config, false);
+                         operationService
+                                 .createInvocationBuilder(AbstractCacheService.SERVICE_NAME, op, member.getAddress())
+                                 .setCallback(callback)

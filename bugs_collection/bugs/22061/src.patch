@@ -1,0 +1,16 @@
+diff --git a/buggy/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/freemarker/FreeMarkerNonWebConfiguration.java b/fixed/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/freemarker/FreeMarkerNonWebConfiguration.java
+index edc3e15c8..d11d89dbe 100644
+--- a/buggy/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/freemarker/FreeMarkerNonWebConfiguration.java
++++ b/fixed/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/freemarker/FreeMarkerNonWebConfiguration.java
+@@ -30,9 +30,9 @@ import org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean;
+  */
+ @Configuration
+ @ConditionalOnNotWebApplication
+-public class FreeMarkerNonWebConfiguration extends AbstractFreeMarkerConfiguration {
++class FreeMarkerNonWebConfiguration extends AbstractFreeMarkerConfiguration {
+ 
+-	public FreeMarkerNonWebConfiguration(FreeMarkerProperties properties) {
++	FreeMarkerNonWebConfiguration(FreeMarkerProperties properties) {
+ 		super(properties);
+ 	}
+ 

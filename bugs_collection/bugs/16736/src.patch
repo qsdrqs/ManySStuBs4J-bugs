@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/transaction/impl/TransactionImpl.java b/fixed/hazelcast/src/main/java/com/hazelcast/transaction/impl/TransactionImpl.java
+index 248a4c72b..1052c46a7 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/transaction/impl/TransactionImpl.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/transaction/impl/TransactionImpl.java
+@@ -414,7 +414,7 @@ final class TransactionImpl implements Transaction, TransactionSupport {
+     public boolean setTimeoutMillis(long timeoutMillis) {
+ 
+         if (timeoutMillis < 0) {
+-            throw new IllegalArgumentException("Timeout must be positive!");
++            throw new IllegalArgumentException("Timeout can not be negative!");
+         }
+ 
+         if (state == NO_TXN && getTimeoutMillis() != timeoutMillis) {

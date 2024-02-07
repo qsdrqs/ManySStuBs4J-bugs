@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions-core/datasketches/src/test/java/org/apache/druid/query/aggregation/datasketches/quantiles/sql/DoublesSketchSqlAggregatorTest.java b/fixed/extensions-core/datasketches/src/test/java/org/apache/druid/query/aggregation/datasketches/quantiles/sql/DoublesSketchSqlAggregatorTest.java
+index ffbcc2275..2b4e5e0f7 100644
+--- a/buggy/extensions-core/datasketches/src/test/java/org/apache/druid/query/aggregation/datasketches/quantiles/sql/DoublesSketchSqlAggregatorTest.java
++++ b/fixed/extensions-core/datasketches/src/test/java/org/apache/druid/query/aggregation/datasketches/quantiles/sql/DoublesSketchSqlAggregatorTest.java
+@@ -157,7 +157,7 @@ public class DoublesSketchSqlAggregatorTest extends CalciteTestBase
+ 
+     final PlannerConfig plannerConfig = new PlannerConfig();
+     final DruidSchema druidSchema = CalciteTests.createMockSchema(conglomerate, walker, plannerConfig);
+-    final SystemSchema systemSchema = CalciteTests.createMockSystemSchema(druidSchema, walker);
++    final SystemSchema systemSchema = CalciteTests.createMockSystemSchema(druidSchema, walker, plannerConfig);
+     final DruidOperatorTable operatorTable = new DruidOperatorTable(
+         ImmutableSet.of(new DoublesSketchSqlAggregator()),
+         ImmutableSet.of()

@@ -1,0 +1,20 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.tcp/src/main/java/org/openhab/binding/tcp/protocol/internal/UDPBinding.java b/fixed/bundles/binding/org.openhab.binding.tcp/src/main/java/org/openhab/binding/tcp/protocol/internal/UDPBinding.java
+index 4ace83ed1..35697dd86 100644
+--- a/buggy/bundles/binding/org.openhab.binding.tcp/src/main/java/org/openhab/binding/tcp/protocol/internal/UDPBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.tcp/src/main/java/org/openhab/binding/tcp/protocol/internal/UDPBinding.java
+@@ -56,7 +56,7 @@ public class UDPBinding extends AbstractDatagramChannelBinding<UDPBindingProvide
+ 	// string to prepend to data being sent
+ 	private static String preAmble = "";
+ 	// string to append to data being sent
+-	private static String postAmble = "\r\n";
++	private static String postAmble = "";
+ 	// flag to use the reply of the remote end to update the status of the Item receiving the data
+ 	private static boolean updateWithResponse = true;
+ 	// used character set
+@@ -289,4 +289,4 @@ public class UDPBinding extends AbstractDatagramChannelBinding<UDPBindingProvide
+ 	}
+ 
+ 
+-}
+\ No newline at end of file
++}

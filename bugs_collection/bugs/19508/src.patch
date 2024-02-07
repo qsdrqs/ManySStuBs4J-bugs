@@ -1,0 +1,13 @@
+diff --git a/buggy/community/main/java/org/neo4j/index/impl/lucene/LuceneDataSource.java b/fixed/community/main/java/org/neo4j/index/impl/lucene/LuceneDataSource.java
+index 42af8874f..000d15675 100644
+--- a/buggy/community/main/java/org/neo4j/index/impl/lucene/LuceneDataSource.java
++++ b/fixed/community/main/java/org/neo4j/index/impl/lucene/LuceneDataSource.java
+@@ -267,7 +267,7 @@ public class LuceneDataSource extends LogBackedXaDataSource
+     
+     static IndexProviderStore newIndexStore( String dbStoreDir )
+     {
+-        return new IndexProviderStore( getStoreDir( dbStoreDir ) + "/lucene-store.db" );
++        return new IndexProviderStore( getStoreDir( dbStoreDir ).first() + "/lucene-store.db" );
+     }
+ 
+     @Override

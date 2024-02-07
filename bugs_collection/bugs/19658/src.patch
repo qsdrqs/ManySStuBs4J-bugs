@@ -1,0 +1,13 @@
+diff --git a/buggy/handler/src/test/java/io/netty/handler/ssl/SSLEngineTest.java b/fixed/handler/src/test/java/io/netty/handler/ssl/SSLEngineTest.java
+index d6459208c..312a7579a 100644
+--- a/buggy/handler/src/test/java/io/netty/handler/ssl/SSLEngineTest.java
++++ b/fixed/handler/src/test/java/io/netty/handler/ssl/SSLEngineTest.java
+@@ -397,7 +397,7 @@ public abstract class SSLEngineTest {
+             runDelegatedTasks(serverResult, serverEngine);
+             cTOs.compact();
+             sTOc.compact();
+-        } while (isHandshaking(clientResult) && isHandshaking(serverResult));
++        } while (isHandshaking(clientResult) || isHandshaking(serverResult));
+     }
+ 
+     private static boolean isHandshaking(SSLEngineResult result) {

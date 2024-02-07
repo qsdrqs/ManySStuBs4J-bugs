@@ -1,0 +1,13 @@
+diff --git a/buggy/samples/github-client/src/main/java/com/example/retrofit/GitHubClient.java b/fixed/samples/github-client/src/main/java/com/example/retrofit/GitHubClient.java
+index 7a5cf2e70..21085dfb4 100644
+--- a/buggy/samples/github-client/src/main/java/com/example/retrofit/GitHubClient.java
++++ b/fixed/samples/github-client/src/main/java/com/example/retrofit/GitHubClient.java
+@@ -23,7 +23,7 @@ import retrofit.RestAdapter;
+ public class GitHubClient {
+   private static final String API_URL = "https://api.github.com";
+ 
+-  class Contributor {
++  static class Contributor {
+     String login;
+     int contributions;
+   }

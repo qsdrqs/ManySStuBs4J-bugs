@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/main/java/cucumber/runtime/transformers/BooleanTransformer.java b/fixed/core/src/main/java/cucumber/runtime/transformers/BooleanTransformer.java
+index de07c55b7..01ccf821e 100644
+--- a/buggy/core/src/main/java/cucumber/runtime/transformers/BooleanTransformer.java
++++ b/fixed/core/src/main/java/cucumber/runtime/transformers/BooleanTransformer.java
+@@ -8,7 +8,7 @@ public class BooleanTransformer implements Transformer<Boolean> {
+         if ("false".equalsIgnoreCase(arguments[0]) || "true".equalsIgnoreCase(arguments[0])) {
+             return Boolean.parseBoolean(arguments[0]);
+         } else {
+-            throw new TransformationException(String.format(locale, "Could not convert %s to Boolean", arguments));
++            throw new TransformationException(String.format(locale, "Could not convert %s to Boolean", arguments[0]));
+         }
+     }
+ 

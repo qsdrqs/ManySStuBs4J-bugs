@@ -1,0 +1,22 @@
+diff --git a/buggy/bundles/model/org.openhab.model.script/src/org/openhab/model/script/lib/NumberExtensions.java b/fixed/bundles/model/org.openhab.model.script/src/org/openhab/model/script/lib/NumberExtensions.java
+index 2db1fce64..abc9d6546 100644
+--- a/buggy/bundles/model/org.openhab.model.script/src/org/openhab/model/script/lib/NumberExtensions.java
++++ b/fixed/bundles/model/org.openhab.model.script/src/org/openhab/model/script/lib/NumberExtensions.java
+@@ -100,7 +100,7 @@ public class NumberExtensions {
+ 		if(type instanceof DecimalType) {
+ 			return ((DecimalType)type).toBigDecimal().compareTo(new BigDecimal(x.toString()))==0;
+ 		} else {
+-			return false;
++			return type==x; // both might be null, then we should return true
+ 		}
+ 	}
+ 
+@@ -108,7 +108,7 @@ public class NumberExtensions {
+ 		if(type instanceof DecimalType) {
+ 			return ((DecimalType)type).toBigDecimal().compareTo(new BigDecimal(x.toString()))!=0;
+ 		} else {
+-			return false;
++			return type!=x; // both might be null, then we should return false, otherwise true
+ 		}
+ 	}
+ 

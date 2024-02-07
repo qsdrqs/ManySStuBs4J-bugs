@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/FiltersPlugin/src/main/java/org/gephi/filters/plugin/partition/PartitionBuilder.java b/fixed/modules/FiltersPlugin/src/main/java/org/gephi/filters/plugin/partition/PartitionBuilder.java
+index 20940eda5..64b039588 100644
+--- a/buggy/modules/FiltersPlugin/src/main/java/org/gephi/filters/plugin/partition/PartitionBuilder.java
++++ b/fixed/modules/FiltersPlugin/src/main/java/org/gephi/filters/plugin/partition/PartitionBuilder.java
+@@ -195,7 +195,7 @@ public class PartitionBuilder implements CategoryBuilder {
+ 
+         @Override
+         public boolean init(Graph graph) {
+-            partition = appearanceModel.getEdgePartition(graph, column);
++            partition = appearanceModel.getEdgePartition(graph.getModel().getGraph(), column);
+             return partition != null;
+         }
+     }

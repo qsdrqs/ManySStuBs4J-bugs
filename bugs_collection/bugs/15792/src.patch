@@ -1,0 +1,17 @@
+diff --git a/buggy/src/com/google/inject/DefaultConstructionProxyFactory.java b/fixed/src/com/google/inject/DefaultConstructionProxyFactory.java
+index 6addfb4f2..bf046963b 100644
+--- a/buggy/src/com/google/inject/DefaultConstructionProxyFactory.java
++++ b/fixed/src/com/google/inject/DefaultConstructionProxyFactory.java
+@@ -80,10 +80,10 @@ class DefaultConstructionProxyFactory implements ConstructionProxyFactory {
+         return (T) fastConstructor.newInstance(arguments);
+       }
+       public List<Parameter<?>> getParameters() {
+-        return Parameter.forConstructor(errorHandler, fastConstructor);
++        return Parameter.forConstructor(errorHandler, constructor);
+       }
+       public Member getMember() {
+-        return fastConstructor.getJavaConstructor();
++        return constructor;
+       }
+     };
+   }

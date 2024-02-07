@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/whitespace/MethodParamPadCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/whitespace/MethodParamPadCheckTest.java
+index c2714bcbc..0e5d9de4b 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/whitespace/MethodParamPadCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/whitespace/MethodParamPadCheckTest.java
+@@ -46,7 +46,7 @@ public class MethodParamPadCheckTest
+     public void testGetRequiredTokens() {
+         final MethodParamPadCheck checkObj = new MethodParamPadCheck();
+         assertArrayEquals(
+-            "MethodParamPadCheck#getRequiredTockens should return empty array by default",
++            "MethodParamPadCheck#getRequiredTokens should return empty array by default",
+             CommonUtils.EMPTY_INT_ARRAY, checkObj.getRequiredTokens());
+     }
+ 

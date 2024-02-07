@@ -1,0 +1,13 @@
+diff --git a/buggy/metrics-core/src/test/java/com/codahale/metrics/MetricRegistryTest.java b/fixed/metrics-core/src/test/java/com/codahale/metrics/MetricRegistryTest.java
+index cabfe4d32..9bf8a1c09 100644
+--- a/buggy/metrics-core/src/test/java/com/codahale/metrics/MetricRegistryTest.java
++++ b/fixed/metrics-core/src/test/java/com/codahale/metrics/MetricRegistryTest.java
+@@ -319,7 +319,7 @@ public class MetricRegistryTest {
+     @Test
+     @SuppressWarnings("NullArgumentToVariableArgMethod")
+     public void elidesNullValuesFromNamesWhenOnlyOneNullPassedIn() throws Exception {
+-        assertThat(name("one", null))
++        assertThat(name("one", (String)null))
+                 .isEqualTo("one");
+     }
+ 

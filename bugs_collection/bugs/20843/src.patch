@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.rfxcom/src/main/java/org/openhab/binding/rfxcom/internal/messages/RFXComLighting2Message.java b/fixed/bundles/binding/org.openhab.binding.rfxcom/src/main/java/org/openhab/binding/rfxcom/internal/messages/RFXComLighting2Message.java
+index c5f8889f0..1736bc41a 100644
+--- a/buggy/bundles/binding/org.openhab.binding.rfxcom/src/main/java/org/openhab/binding/rfxcom/internal/messages/RFXComLighting2Message.java
++++ b/fixed/bundles/binding/org.openhab.binding.rfxcom/src/main/java/org/openhab/binding/rfxcom/internal/messages/RFXComLighting2Message.java
+@@ -316,7 +316,7 @@ public class RFXComLighting2Message extends RFXComBaseMessage {
+ 	public void convertFromState(RFXComValueSelector valueSelector, String id,
+ 			Object subType, Type type, byte seqNumber) throws RFXComException {
+ 		
+-		subType = (SubType) subType;
++		this.subType = ((SubType) subType);
+ 		seqNbr = seqNumber;
+ 		String[] ids = id.split("\\.");
+ 		sensorId = Integer.parseInt(ids[0]);

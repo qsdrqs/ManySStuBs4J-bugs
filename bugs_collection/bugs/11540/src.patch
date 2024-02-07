@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/AbstractNestedDepthCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/AbstractNestedDepthCheck.java
+index 7738d88f3..4e14b0ffd 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/AbstractNestedDepthCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/AbstractNestedDepthCheck.java
+@@ -37,7 +37,7 @@ public abstract class AbstractNestedDepthCheck extends Check {
+      * Creates new instance of checks.
+      * @param max default allowed nesting depth.
+      */
+-    public AbstractNestedDepthCheck(int max) {
++    protected AbstractNestedDepthCheck(int max) {
+         setMax(max);
+     }
+ 

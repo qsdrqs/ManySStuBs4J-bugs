@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/org/apache/storm/hdfs/trident/TridentSequenceTopology.java b/fixed/src/test/java/org/apache/storm/hdfs/trident/TridentSequenceTopology.java
+index df1cd5056..9232650e5 100644
+--- a/buggy/src/test/java/org/apache/storm/hdfs/trident/TridentSequenceTopology.java
++++ b/fixed/src/test/java/org/apache/storm/hdfs/trident/TridentSequenceTopology.java
+@@ -40,7 +40,7 @@ public class TridentSequenceTopology {
+ 
+         HdfsState.Options seqOpts = new HdfsState.SequenceFileOptions()
+                 .withFileNameFormat(fileNameFormat)
+-                .withSequenceFormat(new DefaultSequenceFormat("key", "data"))
++                .withSequenceFormat(new DefaultSequenceFormat("key", "sentence"))
+                 .withRotationPolicy(rotationPolicy)
+                 .withFsUrl(hdfsUrl)
+                 .addRotationAction(new MoveFileAction().toDestination("/dest2/"));

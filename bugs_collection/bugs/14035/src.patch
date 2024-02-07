@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-jdbc/src/main/java/com/facebook/presto/jdbc/JdbcResultSet.java b/fixed/presto-jdbc/src/main/java/com/facebook/presto/jdbc/JdbcResultSet.java
+index ec1a4648b..9b9c6c997 100644
+--- a/buggy/presto-jdbc/src/main/java/com/facebook/presto/jdbc/JdbcResultSet.java
++++ b/fixed/presto-jdbc/src/main/java/com/facebook/presto/jdbc/JdbcResultSet.java
+@@ -1500,7 +1500,7 @@ public class JdbcResultSet
+                 case FAILED:
+                     throw new SQLException(failureMessage(queryInfo));
+                 default:
+-                    throw new SQLException("Query finished with no output (#%s)", queryInfo.getQueryId());
++                    throw new SQLException(format("Query finished with no output (#%s)", queryInfo.getQueryId()));
+             }
+         }
+         return queryInfo;

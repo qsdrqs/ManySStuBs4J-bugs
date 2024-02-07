@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsPagesTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsPagesTest.java
+index 72182a588..2dfd35bad 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsPagesTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsPagesTest.java
+@@ -742,7 +742,7 @@ public class XdocsPagesTest {
+ 
+         for (String s : list) {
+             expectedText.append(s);
+-            expectedText.append("\n");
++            expectedText.append('\n');
+         }
+ 
+         if (expectedText.length() > 0) {

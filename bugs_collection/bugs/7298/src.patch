@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-mail/src/test/java/org/apache/camel/component/mail/MultipleDestinationConsumeTest.java b/fixed/components/camel-mail/src/test/java/org/apache/camel/component/mail/MultipleDestinationConsumeTest.java
+index 2983be080..d04794e7f 100644
+--- a/buggy/components/camel-mail/src/test/java/org/apache/camel/component/mail/MultipleDestinationConsumeTest.java
++++ b/fixed/components/camel-mail/src/test/java/org/apache/camel/component/mail/MultipleDestinationConsumeTest.java
+@@ -112,7 +112,7 @@ public class MultipleDestinationConsumeTest extends CamelTestSupport {
+     protected RouteBuilder createRouteBuilder() {
+         return new RouteBuilder() {
+             public void configure() {
+-                from("pop3://james@localhost?password=foo").convertBodyTo(String.class).to("mock:result");
++                from("pop3://james@localhost?password=foo").to("mock:result");
+             }
+         };
+     }

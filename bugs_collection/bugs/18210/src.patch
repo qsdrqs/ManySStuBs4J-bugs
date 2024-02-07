@@ -1,0 +1,13 @@
+diff --git a/buggy/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidLiveWallpaper.java b/fixed/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidLiveWallpaper.java
+index 4ca39bda8..962696c83 100644
+--- a/buggy/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidLiveWallpaper.java
++++ b/fixed/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidLiveWallpaper.java
+@@ -83,7 +83,7 @@ class AndroidLiveWallpaper implements Application {
+ 		graphics = new AndroidGraphicsLiveWallpaper(this, config.useGL20, config.resolutionStrategy==null?new FillResolutionStrategy():config.resolutionStrategy);
+ 		input = AndroidInputFactory.newAndroidInput(this, this.getService(), null, config);
+ 		audio = new AndroidAudio(this.getService(), config);
+-		files = new AndroidFiles(this.getService().getAssets());
++		files = new AndroidFiles(this.getService().getAssets(), this.getService().getFilesDir().getAbsolutePath());
+ 		this.listener = listener;
+ 		
+ 		Gdx.app = this;

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/pipeline/EntityMentionsAnnotator.java b/fixed/src/edu/stanford/nlp/pipeline/EntityMentionsAnnotator.java
+index 7fe8c7ed8..906b3a049 100644
+--- a/buggy/src/edu/stanford/nlp/pipeline/EntityMentionsAnnotator.java
++++ b/fixed/src/edu/stanford/nlp/pipeline/EntityMentionsAnnotator.java
+@@ -85,7 +85,7 @@ public class EntityMentionsAnnotator implements Annotator {
+       if (props.containsKey(name + ".mentionsCoreAnnotation")) {
+         mentionsCoreAnnotationClass =
+             (Class<? extends CoreAnnotation<List<CoreMap>>>)
+-                Class.forName(props.getProperty(name + ".nerNormalizedCoreAnnotation"));
++                Class.forName(props.getProperty(name + ".mentionsCoreAnnotation"));
+       } else {
+         mentionsCoreAnnotationClass = CoreAnnotations.MentionsAnnotation.class;
+       }

@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.ekey/src/main/java/org/openhab/binding/ekey/internal/EKeyBinding.java b/fixed/bundles/binding/org.openhab.binding.ekey/src/main/java/org/openhab/binding/ekey/internal/EKeyBinding.java
+index ae39a5c21..44766728e 100644
+--- a/buggy/bundles/binding/org.openhab.binding.ekey/src/main/java/org/openhab/binding/ekey/internal/EKeyBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.ekey/src/main/java/org/openhab/binding/ekey/internal/EKeyBinding.java
+@@ -104,7 +104,7 @@ public class EKeyBinding extends AbstractBinding<EKeyBindingProvider>implements
+ 
+     @Override
+     public void deactivate() {
+-        logger.debug("Stoppig eKey listener...");
++        logger.debug("Stopping eKey listener...");
+         if (packetlistener != null) {
+             packetlistener.stopListener();
+         }

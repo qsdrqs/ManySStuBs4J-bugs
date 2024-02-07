@@ -1,0 +1,13 @@
+diff --git a/buggy/web/src/main/java/org/openmrs/web/filter/initialization/InitializationFilter.java b/fixed/web/src/main/java/org/openmrs/web/filter/initialization/InitializationFilter.java
+index 3fb406287..c1511aa56 100644
+--- a/buggy/web/src/main/java/org/openmrs/web/filter/initialization/InitializationFilter.java
++++ b/fixed/web/src/main/java/org/openmrs/web/filter/initialization/InitializationFilter.java
+@@ -645,7 +645,7 @@ public class InitializationFilter extends StartupFilter {
+ 				if (InitializationWizardModel.INSTALL_METHOD_SIMPLE.equals(wizardModel.installMethod)) {
+ 					page = SIMPLE_SETUP;
+ 				} else if (InitializationWizardModel.INSTALL_METHOD_TESTING.equals(wizardModel.installMethod)) {
+-					page = TESTING_AUTHENTICATION_SETUP;
++					page = DATABASE_TABLES_AND_USER;
+ 				} else {
+ 					page = IMPLEMENTATION_ID_SETUP;
+ 				}

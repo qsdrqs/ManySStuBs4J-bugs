@@ -1,0 +1,13 @@
+diff --git a/buggy/roboguice/src/main/java/roboguice/inject/PreferenceListener.java b/fixed/roboguice/src/main/java/roboguice/inject/PreferenceListener.java
+index 7d10f5b74..0a80217dd 100644
+--- a/buggy/roboguice/src/main/java/roboguice/inject/PreferenceListener.java
++++ b/fixed/roboguice/src/main/java/roboguice/inject/PreferenceListener.java
+@@ -108,7 +108,7 @@ class PreferenceMembersInjector<T> implements MembersInjector<T> {
+ 
+ 
+             field.setAccessible(true);
+-            field.set(instanceRef, value);
++            field.set(instance, value);
+ 
+         } catch (IllegalAccessException e) {
+             throw new RuntimeException(e);

@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-tools/spring-boot-loader/src/main/java/org/springframework/boot/loader/LaunchedURLClassLoader.java b/fixed/spring-boot-tools/spring-boot-loader/src/main/java/org/springframework/boot/loader/LaunchedURLClassLoader.java
+index 871f4c95c..451654a7b 100644
+--- a/buggy/spring-boot-tools/spring-boot-loader/src/main/java/org/springframework/boot/loader/LaunchedURLClassLoader.java
++++ b/fixed/spring-boot-tools/spring-boot-loader/src/main/java/org/springframework/boot/loader/LaunchedURLClassLoader.java
+@@ -46,7 +46,7 @@ public class LaunchedURLClassLoader extends URLClassLoader {
+ 	@Override
+ 	protected Class<?> loadClass(String name, boolean resolve)
+ 			throws ClassNotFoundException {
+-		synchronized (getClassLoadingLock(name)) {
++		synchronized (this) {
+ 			Class<?> loadedClass = findLoadedClass(name);
+ 			if (loadedClass == null) {
+ 				loadedClass = doLoadClass(name);

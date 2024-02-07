@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/collection/impl/collection/CollectionService.java b/fixed/hazelcast/src/main/java/com/hazelcast/collection/impl/collection/CollectionService.java
+index 1540cfb01..cd5810755 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/collection/impl/collection/CollectionService.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/collection/impl/collection/CollectionService.java
+@@ -232,7 +232,7 @@ public abstract class CollectionService implements ManagedService, RemoteService
+ 
+     private class Merger implements Runnable {
+ 
+-        private static final int TIMEOUT_FACTOR = 500;
++        private static final long TIMEOUT_FACTOR = 500;
+ 
+         private final ILogger logger = nodeEngine.getLogger(CollectionService.class);
+         private final Semaphore semaphore = new Semaphore(0);

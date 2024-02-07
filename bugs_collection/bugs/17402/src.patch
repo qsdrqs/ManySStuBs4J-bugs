@@ -1,0 +1,14 @@
+diff --git a/buggy/src/test/java/junit/samples/ListTest.java b/fixed/src/test/java/junit/samples/ListTest.java
+index 4533d71d6..324f12bd0 100644
+--- a/buggy/src/test/java/junit/samples/ListTest.java
++++ b/fixed/src/test/java/junit/samples/ListTest.java
+@@ -61,7 +61,7 @@ public class ListTest extends TestCase {
+     }
+ 
+     public void testRemoveElement() {
+-        fullList.remove(3);
++        fullList.remove(Integer.valueOf(3));
+         assertFalse(fullList.contains(3));
+     }
+ }
+\ No newline at end of file

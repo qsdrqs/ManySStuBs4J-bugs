@@ -1,0 +1,13 @@
+diff --git a/buggy/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/taskmanager/bytebuffered/RemoteReceiver.java b/fixed/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/taskmanager/bytebuffered/RemoteReceiver.java
+index 71dce5ba5..b9b6f431f 100644
+--- a/buggy/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/taskmanager/bytebuffered/RemoteReceiver.java
++++ b/fixed/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/taskmanager/bytebuffered/RemoteReceiver.java
+@@ -132,7 +132,7 @@ public final class RemoteReceiver implements IOReadableWritable {
+ 		final InetAddress ia = this.connectionAddress.getAddress();
+ 		out.writeInt(ia.getAddress().length);
+ 		out.write(ia.getAddress());
+-		out.write(this.connectionAddress.getPort());
++		out.writeInt(this.connectionAddress.getPort());
+ 
+ 		out.writeInt(this.connectionIndex);
+ 	}

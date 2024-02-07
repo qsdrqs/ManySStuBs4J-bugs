@@ -1,0 +1,14 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/instance/DefaultAddressPicker.java b/fixed/hazelcast/src/main/java/com/hazelcast/instance/DefaultAddressPicker.java
+index c74297ac4..5a32c73a4 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/instance/DefaultAddressPicker.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/instance/DefaultAddressPicker.java
+@@ -99,7 +99,8 @@ class DefaultAddressPicker implements AddressPicker {
+                 }
+             }
+             if (!serverSocket.isBound()) {
+-                throw new HazelcastException("ServerSocket bind has failed. Hazelcast cannot start!", error);
++                throw new HazelcastException("ServerSocket bind has failed. Hazelcast cannot start! " +
++                        "config-port: " + networkConfig.getPort() + ", latest-port: " + port, error);
+             }
+             serverSocketChannel.configureBlocking(false);
+             bindAddress = createAddress(bindAddressDef, port);

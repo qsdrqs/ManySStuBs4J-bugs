@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/main/java/org/apache/hadoop/yarn/util/ConverterUtils.java b/fixed/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/main/java/org/apache/hadoop/yarn/util/ConverterUtils.java
+index 73ec90607..0aa68a226 100644
+--- a/buggy/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/main/java/org/apache/hadoop/yarn/util/ConverterUtils.java
++++ b/fixed/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/main/java/org/apache/hadoop/yarn/util/ConverterUtils.java
+@@ -204,7 +204,7 @@ public class ConverterUtils {
+     try {
+       return toApplicationId(it);
+     } catch (NumberFormatException n) {
+-      throw new IllegalArgumentException("Invalid AppAttemptId: "
++      throw new IllegalArgumentException("Invalid ApplicationId: "
+           + appIdStr, n);
+     }
+   }

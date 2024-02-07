@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-spring/src/main/java/com/hazelcast/spring/cache/HazelcastCache.java b/fixed/hazelcast-spring/src/main/java/com/hazelcast/spring/cache/HazelcastCache.java
+index f532ab861..619f1819f 100644
+--- a/buggy/hazelcast-spring/src/main/java/com/hazelcast/spring/cache/HazelcastCache.java
++++ b/fixed/hazelcast-spring/src/main/java/com/hazelcast/spring/cache/HazelcastCache.java
+@@ -57,7 +57,7 @@ public class HazelcastCache implements Cache {
+ 
+     public void put(final Object key, final Object value) {
+         if (key != null) {
+-            map.set(key, toStoreValue(value), 0, TimeUnit.SECONDS);
++            map.set(key, toStoreValue(value));
+         }
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsJavaDocsTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsJavaDocsTest.java
+index ef3487196..eb2196539 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsJavaDocsTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsJavaDocsTest.java
+@@ -373,7 +373,7 @@ public class XdocsJavaDocsTest extends AbstractModuleTestSupport {
+ 
+             if (fixLinks && "a".equals(nodeName) && "href".equals(attrName)
+                     && attribute.getNodeValue().startsWith("apidocs/")) {
+-                attrValue = "http://checkstyle.sourceforge.net/" + attribute.getNodeValue();
++                attrValue = "https://checkstyle.org/" + attribute.getNodeValue();
+             }
+             else {
+                 attrValue = attribute.getNodeValue();

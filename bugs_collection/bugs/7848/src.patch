@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/model/RoutesDefinition.java b/fixed/camel-core/src/main/java/org/apache/camel/model/RoutesDefinition.java
+index aaf91d266..032c730f9 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/model/RoutesDefinition.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/model/RoutesDefinition.java
+@@ -36,7 +36,7 @@ import org.apache.camel.util.EndpointHelper;
+  */
+ @XmlRootElement(name = "routes")
+ @XmlAccessorType(XmlAccessType.FIELD)
+-public class RoutesDefinition extends OptionalIdentifiedType<RoutesDefinition> implements RouteContainer {
++public class RoutesDefinition extends OptionalIdentifiedDefinition<RoutesDefinition> implements RouteContainer {
+     @XmlElementRef
+     private List<RouteDefinition> routes = new ArrayList<RouteDefinition>();
+     @XmlTransient

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jmx/src/test/java/org/apache/camel/component/jmx/SimpleBeanFixture.java b/fixed/components/camel-jmx/src/test/java/org/apache/camel/component/jmx/SimpleBeanFixture.java
+index e88cb0b8e..aae37b294 100644
+--- a/buggy/components/camel-jmx/src/test/java/org/apache/camel/component/jmx/SimpleBeanFixture.java
++++ b/fixed/components/camel-jmx/src/test/java/org/apache/camel/component/jmx/SimpleBeanFixture.java
+@@ -112,7 +112,7 @@ public class SimpleBeanFixture {
+      * Gets the mxbean for our remote object using the specified name
+      */
+     protected ISimpleMXBean getMXBean(ObjectName aObjectName) {
+-        return (ISimpleMXBean) MBeanServerInvocationHandler.newProxyInstance(
++        return MBeanServerInvocationHandler.newProxyInstance(
+                 server,
+                 aObjectName,
+                 ISimpleMXBean.class,

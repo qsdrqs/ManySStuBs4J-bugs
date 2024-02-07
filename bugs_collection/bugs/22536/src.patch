@@ -1,0 +1,19 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/JndiDataSourceAutoConfiguration.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/JndiDataSourceAutoConfiguration.java
+index b033bde80..8dfe8079c 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/JndiDataSourceAutoConfiguration.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/JndiDataSourceAutoConfiguration.java
+@@ -44,11 +44,11 @@ import org.springframework.jdbc.datasource.lookup.JndiDataSourceLookup;
+ @EnableConfigurationProperties(DataSourceProperties.class)
+ public class JndiDataSourceAutoConfiguration {
+ 
+-	@Bean
++	@Bean(destroyMethod = "")
+ 	@ConditionalOnMissingBean
+ 	public DataSource dataSource(DataSourceProperties properties) {
+ 		JndiDataSourceLookup dataSourceLookup = new JndiDataSourceLookup();
+ 		return dataSourceLookup.getDataSource(properties.getJndiName());
+ 	}
+ 
+-}
+\ No newline at end of file
++}

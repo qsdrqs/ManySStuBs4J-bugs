@@ -1,0 +1,20 @@
+diff --git a/buggy/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/FSNamesystem.java b/fixed/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/FSNamesystem.java
+index 6e0ed1215..f3ab5144c 100644
+--- a/buggy/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/FSNamesystem.java
++++ b/fixed/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/FSNamesystem.java
+@@ -3976,13 +3976,13 @@ public class FSNamesystem implements Namesystem, FSClusterStats,
+    */
+   void renewLease(String holder) throws IOException {
+     checkOperation(OperationCategory.WRITE);
+-    writeLock();
++    readLock();
+     try {
+       checkOperation(OperationCategory.WRITE);
+       checkNameNodeSafeMode("Cannot renew lease for " + holder);
+       leaseManager.renewLease(holder);
+     } finally {
+-      writeUnlock();
++      readUnlock();
+     }
+   }
+ 

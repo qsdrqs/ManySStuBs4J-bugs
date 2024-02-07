@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/map/impl/query/QueryIndexPerformanceTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/map/impl/query/QueryIndexPerformanceTest.java
+index 47890e98b..752b92573 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/map/impl/query/QueryIndexPerformanceTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/map/impl/query/QueryIndexPerformanceTest.java
+@@ -64,7 +64,7 @@ public class QueryIndexPerformanceTest extends HazelcastTestSupport {
+         long tookWithIndex = runQuery(mapWithIndex, predicate);
+ 
+         assertTrue("withIndex: " + tookWithIndex + " nanos, withoutIndex: " + tookWithoutIndex + " nanos",
+-                tookWithIndex < (tookWithoutIndex / 2));
++                tookWithIndex < tookWithoutIndex);
+     }
+ 
+     private static long runQuery(IMap<String, Employee> map, Predicate predicate) {

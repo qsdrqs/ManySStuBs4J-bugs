@@ -1,0 +1,22 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/CovariantEqualsCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/CovariantEqualsCheckTest.java
+index 9f20ccaba..0a0bb703d 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/CovariantEqualsCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/CovariantEqualsCheckTest.java
+@@ -35,7 +35,7 @@ public class CovariantEqualsCheckTest
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "coding" + File.separator + filename);
++                + "coding" + File.separator + "covariantequals" + File.separator + filename);
+     }
+ 
+     @Test
+@@ -51,7 +51,7 @@ public class CovariantEqualsCheckTest
+             "134:20: " + getCheckMessage(MSG_KEY),
+             "138:9: " + getCheckMessage(MSG_KEY),
+         };
+-        verify(checkConfig, getPath("InputCovariant.java"), expected);
++        verify(checkConfig, getPath("InputCovariantEquals.java"), expected);
+     }
+ 
+     @Test

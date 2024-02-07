@@ -1,0 +1,14 @@
+diff --git a/buggy/dropwizard-db/src/main/java/com/yammer/dropwizard/db/ManagedPooledDataSource.java b/fixed/dropwizard-db/src/main/java/com/yammer/dropwizard/db/ManagedPooledDataSource.java
+index ca9f788c5..525b246af 100644
+--- a/buggy/dropwizard-db/src/main/java/com/yammer/dropwizard/db/ManagedPooledDataSource.java
++++ b/fixed/dropwizard-db/src/main/java/com/yammer/dropwizard/db/ManagedPooledDataSource.java
+@@ -14,7 +14,8 @@ public class ManagedPooledDataSource extends PoolingDataSource implements Manage
+         this.pool = pool;
+     }
+ 
+-    @Override
++    // JDK6 has JDBC 4.0 which doesn't have this -- don't add @Override
++    @SuppressWarnings("override")
+     public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+         throw new SQLFeatureNotSupportedException("Doesn't use java.util.logging");
+     }

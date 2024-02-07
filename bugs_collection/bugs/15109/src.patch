@@ -1,0 +1,13 @@
+diff --git a/buggy/test/com/google/javascript/jscomp/fuzzing/ControlledRandom.java b/fixed/test/com/google/javascript/jscomp/fuzzing/ControlledRandom.java
+index 415538190..d3bd8bdcf 100644
+--- a/buggy/test/com/google/javascript/jscomp/fuzzing/ControlledRandom.java
++++ b/fixed/test/com/google/javascript/jscomp/fuzzing/ControlledRandom.java
+@@ -26,7 +26,7 @@ import java.util.Random;
+  */
+ public class ControlledRandom extends Random {
+   public ControlledRandom() {
+-    super();
++    super(123);
+   }
+   /**
+    * @param seed

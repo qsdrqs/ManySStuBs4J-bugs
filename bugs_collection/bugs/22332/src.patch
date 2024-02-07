@@ -1,0 +1,14 @@
+diff --git a/buggy/spring-boot-samples/spring-boot-sample-cache/src/main/java/sample/cache/CacheManagerCheck.java b/fixed/spring-boot-samples/spring-boot-sample-cache/src/main/java/sample/cache/CacheManagerCheck.java
+index a9fd56ccf..657cefac0 100644
+--- a/buggy/spring-boot-samples/spring-boot-sample-cache/src/main/java/sample/cache/CacheManagerCheck.java
++++ b/fixed/spring-boot-samples/spring-boot-sample-cache/src/main/java/sample/cache/CacheManagerCheck.java
+@@ -27,8 +27,7 @@ import org.springframework.stereotype.Component;
+ @Component
+ public class CacheManagerCheck implements CommandLineRunner {
+ 
+-	private static final Logger logger = LoggerFactory
+-			.getLogger(SampleCacheApplication.class);
++	private static final Logger logger = LoggerFactory.getLogger(CacheManagerCheck.class);
+ 
+ 	private final CacheManager cacheManager;
+ 

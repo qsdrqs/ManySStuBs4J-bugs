@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/io/druid/server/coordination/ServerManager.java b/fixed/server/src/main/java/io/druid/server/coordination/ServerManager.java
+index e79e4a3a9..f3d22df8f 100644
+--- a/buggy/server/src/main/java/io/druid/server/coordination/ServerManager.java
++++ b/fixed/server/src/main/java/io/druid/server/coordination/ServerManager.java
+@@ -421,7 +421,7 @@ public class ServerManager implements QuerySegmentWalker
+                         },
+                         new ReferenceCountingSegmentQueryRunner<T>(factory, adapter),
+                         "scan/time"
+-                    ).withWaitMeasuredFromNow(),
++                    ),
+                     cacheConfig
+                 )
+             )

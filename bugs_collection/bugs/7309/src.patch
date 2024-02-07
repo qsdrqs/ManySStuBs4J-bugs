@@ -1,0 +1,18 @@
+diff --git a/buggy/components/camel-xmpp/src/test/java/org/apache/camel/component/xmpp/XmppMultiUserChatTest.java b/fixed/components/camel-xmpp/src/test/java/org/apache/camel/component/xmpp/XmppMultiUserChatTest.java
+index cce64aaf5..cbe403b9a 100644
+--- a/buggy/components/camel-xmpp/src/test/java/org/apache/camel/component/xmpp/XmppMultiUserChatTest.java
++++ b/fixed/components/camel-xmpp/src/test/java/org/apache/camel/component/xmpp/XmppMultiUserChatTest.java
+@@ -60,11 +60,11 @@ public class XmppMultiUserChatTest extends CamelTestSupport {
+     }
+ 
+     protected String getProducerUri() {
+-        return "xmpp://jabber.org:5222?room=camel-test&user=camel_producer&password=secret&serviceName=jabber.org";
++        return "xmpp://jabber.org:5222?room=camel-test&user=camel_producer@jabber.org&password=secret&serviceName=jabber.org";
+     }
+     
+     protected String getConsumerUri() {
+-        return "xmpp://jabber.org:5222?room=camel-test&user=camel_consumer&password=secret&serviceName=jabber.org";
++        return "xmpp://jabber.org:5222?room=camel-test&user=camel_consumer@jabber.org&password=secret&serviceName=jabber.org";
+     }
+ 
+ }

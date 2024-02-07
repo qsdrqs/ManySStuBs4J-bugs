@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-memory/src/test/java/com/facebook/presto/plugin/memory/TestMemoryMetadata.java b/fixed/presto-memory/src/test/java/com/facebook/presto/plugin/memory/TestMemoryMetadata.java
+index 5a83f3bb3..3575973e8 100644
+--- a/buggy/presto-memory/src/test/java/com/facebook/presto/plugin/memory/TestMemoryMetadata.java
++++ b/fixed/presto-memory/src/test/java/com/facebook/presto/plugin/memory/TestMemoryMetadata.java
+@@ -305,7 +305,7 @@ public class TestMemoryMetadata
+     @Test
+     public void testRenameTable()
+     {
+-        SchemaTableName tableName = new SchemaTableName("test_schema", "test_talbe_to_be_renamed");
++        SchemaTableName tableName = new SchemaTableName("test_schema", "test_table_to_be_renamed");
+         metadata.createSchema(SESSION, "test_schema", ImmutableMap.of());
+         ConnectorOutputTableHandle table = metadata.beginCreateTable(
+                 SESSION,

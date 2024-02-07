@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.plugwise/src/main/java/org/openhab/binding/plugwise/internal/CirclePlus.java b/fixed/bundles/binding/org.openhab.binding.plugwise/src/main/java/org/openhab/binding/plugwise/internal/CirclePlus.java
+index d8a568f09..ced076cd9 100644
+--- a/buggy/bundles/binding/org.openhab.binding.plugwise/src/main/java/org/openhab/binding/plugwise/internal/CirclePlus.java
++++ b/fixed/bundles/binding/org.openhab.binding.plugwise/src/main/java/org/openhab/binding/plugwise/internal/CirclePlus.java
+@@ -64,7 +64,7 @@ public class CirclePlus extends Circle {
+         try {
+             sched = StdSchedulerFactory.getDefaultScheduler();
+         } catch (SchedulerException e) {
+-            logger.error("Error getting a reference to the Quarz Scheduler");
++            logger.error("Error getting a reference to the Quartz Scheduler");
+         }
+ 
+         JobDataMap map = new JobDataMap();

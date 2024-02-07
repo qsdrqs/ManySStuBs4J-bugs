@@ -1,0 +1,13 @@
+diff --git a/buggy/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/task/AbstractPactTask.java b/fixed/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/task/AbstractPactTask.java
+index 70b54f56a..2b891d604 100644
+--- a/buggy/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/task/AbstractPactTask.java
++++ b/fixed/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/task/AbstractPactTask.java
+@@ -294,7 +294,7 @@ public abstract class AbstractPactTask<T extends Stub> extends AbstractTask
+ 			}
+ 			
+ 			final int groupSize = this.config.getGroupSize(i+1);
+-			if(groupSize == 1) {
++			if(groupSize < 2) {
+ 				inputs[i] = new NepheleReaderIterator(new MutableRecordReader<PactRecord>(this, dp));
+ 			} else {
+ 				@SuppressWarnings("unchecked")

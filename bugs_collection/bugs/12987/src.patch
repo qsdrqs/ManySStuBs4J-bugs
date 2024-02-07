@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/io/druid/segment/realtime/plumber/FlushingPlumber.java b/fixed/server/src/main/java/io/druid/segment/realtime/plumber/FlushingPlumber.java
+index da27418eb..e2120b1c7 100644
+--- a/buggy/server/src/main/java/io/druid/segment/realtime/plumber/FlushingPlumber.java
++++ b/fixed/server/src/main/java/io/druid/segment/realtime/plumber/FlushingPlumber.java
+@@ -182,7 +182,7 @@ public class FlushingPlumber extends RealtimePlumber
+     log.info("Stopping job");
+ 
+     for (final Map.Entry<Long, Sink> entry : getSinks().entrySet()) {
+-      flushAfterDuration(entry.getKey(), entry.getValue());
++      abandonSegment(entry.getKey(), entry.getValue());
+     }
+     shutdownExecutors();
+ 

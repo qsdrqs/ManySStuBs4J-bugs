@@ -1,0 +1,13 @@
+diff --git a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/Scope.java b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/Scope.java
+index 1db455260..398af7fa1 100644
+--- a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/Scope.java
++++ b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/Scope.java
+@@ -159,7 +159,7 @@ public final class Scope implements Comparable, Serializable
+     static Scope getInstance(String aScopeName)
+     {
+         // canonicalize argument
+-        String scopeName = aScopeName.toLowerCase();
++        final String scopeName = aScopeName.trim().toLowerCase();
+ 
+         final Scope retVal = (Scope) NAME_TO_SCOPE.get(scopeName);
+         if (retVal == null) {

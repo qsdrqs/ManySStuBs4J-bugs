@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/converter/IOConverter.java b/fixed/camel-core/src/main/java/org/apache/camel/converter/IOConverter.java
+index 958547a5a..ebc6dd1b3 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/converter/IOConverter.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/converter/IOConverter.java
+@@ -376,7 +376,7 @@ public final class IOConverter {
+      */
+     @Deprecated
+     public static String getCharsetName(Exchange exchange, boolean useDefault) {
+-        return IOHelper.getCharsetName(exchange);
++        return IOHelper.getCharsetName(exchange, useDefault);
+     }
+ 
+     /**

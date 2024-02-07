@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/io/druid/client/cache/BytesBoundedLinkedQueue.java b/fixed/server/src/main/java/io/druid/client/cache/BytesBoundedLinkedQueue.java
+index 50ca475c0..f0ab9763f 100644
+--- a/buggy/server/src/main/java/io/druid/client/cache/BytesBoundedLinkedQueue.java
++++ b/fixed/server/src/main/java/io/druid/client/cache/BytesBoundedLinkedQueue.java
+@@ -129,7 +129,7 @@ public abstract class BytesBoundedLinkedQueue<E> extends AbstractQueue<E> implem
+     try {
+       while (currentSize.get() >= capacity) {
+         if (nanos <= 0) {
+-          break;
++          return false;
+         }
+         nanos = notFull.awaitNanos(nanos);
+       }

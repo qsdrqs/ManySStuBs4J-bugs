@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.maxcube/src/main/java/org/openhab/binding/maxcube/internal/MaxCubeBinding.java b/fixed/bundles/binding/org.openhab.binding.maxcube/src/main/java/org/openhab/binding/maxcube/internal/MaxCubeBinding.java
+index ba6586bf5..f47a1b357 100644
+--- a/buggy/bundles/binding/org.openhab.binding.maxcube/src/main/java/org/openhab/binding/maxcube/internal/MaxCubeBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.maxcube/src/main/java/org/openhab/binding/maxcube/internal/MaxCubeBinding.java
+@@ -289,7 +289,7 @@ public class MaxCubeBinding extends AbstractActiveBinding<MaxCubeBindingProvider
+ 							} else if (provider.getBindingType(itemName) == BindingType.ACTUAL
+ 									&& ((HeatingThermostat) device).isTemperatureActualUpdated()) {
+ 								eventPublisher.postUpdate(itemName, ((HeatingThermostat) device).getTemperatureActual());
+-							} else if (((HeatingThermostat) device).isTemperatureSetpointUpdated()){
++							} else if (((HeatingThermostat) device).isTemperatureSetpointUpdated() && provider.getBindingType(itemName) == null){
+ 								eventPublisher.postUpdate(itemName, ((HeatingThermostat) device).getTemperatureSetpoint());
+ 							}
+ 							break;

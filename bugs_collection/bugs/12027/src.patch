@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/PersistentVector.java b/fixed/src/jvm/clojure/lang/PersistentVector.java
+index 4e93dc9ca..3910d118d 100644
+--- a/buggy/src/jvm/clojure/lang/PersistentVector.java
++++ b/fixed/src/jvm/clojure/lang/PersistentVector.java
+@@ -324,7 +324,7 @@ public PersistentVector pop(){
+ 		{
+ 		return (PersistentVector) EMPTY.withMeta(meta());
+ 		}
+-	if(newroot.length == 1)
++	if(shift > 0 && newroot.length == 1)
+ 		{
+ 		newroot = (Object[]) newroot[0];
+ 		newshift -= 5;

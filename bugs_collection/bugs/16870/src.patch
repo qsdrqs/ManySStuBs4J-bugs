@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-wm/src/main/java/com/hazelcast/web/WebFilter.java b/fixed/hazelcast-wm/src/main/java/com/hazelcast/web/WebFilter.java
+index 49468ddcb..26741a71b 100644
+--- a/buggy/hazelcast-wm/src/main/java/com/hazelcast/web/WebFilter.java
++++ b/fixed/hazelcast-wm/src/main/java/com/hazelcast/web/WebFilter.java
+@@ -456,7 +456,7 @@ public class WebFilter implements Filter {
+                         cacheEntry.value = value;
+                         cacheEntry.reload = false;
+                     }
+-                    localCache.put(name, NULL_ENTRY);
++                    localCache.put(name, cacheEntry);
+                 }
+                 return cacheEntry != NULL_ENTRY ? cacheEntry.value : null;
+             }

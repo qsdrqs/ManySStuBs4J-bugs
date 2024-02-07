@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/autoconfigure/EndpointWebMvcAutoConfigurationTests.java b/fixed/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/autoconfigure/EndpointWebMvcAutoConfigurationTests.java
+index a1f202009..66aec2b4d 100644
+--- a/buggy/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/autoconfigure/EndpointWebMvcAutoConfigurationTests.java
++++ b/fixed/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/autoconfigure/EndpointWebMvcAutoConfigurationTests.java
+@@ -296,7 +296,7 @@ public class EndpointWebMvcAutoConfigurationTests {
+ 		this.applicationContext.refresh();
+ 		// /health, /metrics, /env (/shutdown is disabled by default)
+ 		assertThat(this.applicationContext.getBeansOfType(MvcEndpoint.class).size(),
+-				is(equalTo(6)));
++				is(equalTo(5)));
+ 	}
+ 
+ 	@Test

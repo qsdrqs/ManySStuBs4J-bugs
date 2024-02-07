@@ -1,0 +1,14 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/scheduledexecutor/impl/ScheduledExecutorContainer.java b/fixed/hazelcast/src/main/java/com/hazelcast/scheduledexecutor/impl/ScheduledExecutorContainer.java
+index 90fcb2162..7666db724 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/scheduledexecutor/impl/ScheduledExecutorContainer.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/scheduledexecutor/impl/ScheduledExecutorContainer.java
+@@ -311,7 +311,8 @@ public class ScheduledExecutorContainer {
+ 
+     void checkNotAtCapacity() {
+         if (capacity != 0 && tasks.size() >= capacity) {
+-            throw new RejectedExecutionException("Maximum capacity of tasks reached.");
++            throw new RejectedExecutionException("Maximum capacity (" + capacity + ") of tasks reached, "
++                    + "for scheduled executor (" + name + ")");
+         }
+     }
+ 

@@ -1,0 +1,18 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/planPrinter/PlanPrinter.java b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/planPrinter/PlanPrinter.java
+index 5ae466d90..c206b649f 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/planPrinter/PlanPrinter.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/planPrinter/PlanPrinter.java
+@@ -156,11 +156,11 @@ public class PlanPrinter
+         this.functionManager = functionManager;
+ 
+         Optional<Duration> totalCpuTime = stats.map(s -> new Duration(s.values().stream()
+-                .mapToLong(planNode -> planNode.getPlanNodeScheduledTime().toMillis())
++                .mapToLong(planNode -> planNode.getPlanNodeCpuTime().toMillis())
+                 .sum(), MILLISECONDS));
+ 
+         Optional<Duration> totalScheduledTime = stats.map(s -> new Duration(s.values().stream()
+-                .mapToLong(planNode -> planNode.getPlanNodeCpuTime().toMillis())
++                .mapToLong(planNode -> planNode.getPlanNodeScheduledTime().toMillis())
+                 .sum(), MILLISECONDS));
+ 
+         this.representation = new PlanRepresentation(planRoot, types, totalCpuTime, totalScheduledTime);

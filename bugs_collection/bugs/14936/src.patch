@@ -1,0 +1,13 @@
+diff --git a/buggy/test/com/google/javascript/jscomp/Es6VariableReferenceCheckTest.java b/fixed/test/com/google/javascript/jscomp/Es6VariableReferenceCheckTest.java
+index b708fd01d..b64b2de74 100644
+--- a/buggy/test/com/google/javascript/jscomp/Es6VariableReferenceCheckTest.java
++++ b/fixed/test/com/google/javascript/jscomp/Es6VariableReferenceCheckTest.java
+@@ -367,7 +367,7 @@ public final class Es6VariableReferenceCheckTest extends CompilerTestCase {
+    * Expects the JS to generate one bad-read warning.
+    */
+   private void assertRedeclare(String js) {
+-    testWarning(js, VariableReferenceCheck.REDECLARED_VARIABLE);
++    testError(js, VariableReferenceCheck.REDECLARED_VARIABLE);
+   }
+ 
+   /**

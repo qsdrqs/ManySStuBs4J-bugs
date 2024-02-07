@@ -1,0 +1,13 @@
+diff --git a/buggy/RankingPluginUI/src/org/gephi/ui/ranking/plugin/LabelSizeTransformerUI.java b/fixed/RankingPluginUI/src/org/gephi/ui/ranking/plugin/LabelSizeTransformerUI.java
+index cd8c4e78e..88f6df01e 100644
+--- a/buggy/RankingPluginUI/src/org/gephi/ui/ranking/plugin/LabelSizeTransformerUI.java
++++ b/fixed/RankingPluginUI/src/org/gephi/ui/ranking/plugin/LabelSizeTransformerUI.java
+@@ -36,7 +36,7 @@ import org.openide.util.lookup.ServiceProvider;
+  *
+  * @author Mathieu Bastian
+  */
+-@ServiceProvider(service = TransformerUI.class)
++@ServiceProvider(service = TransformerUI.class, position = 400)
+ public class LabelSizeTransformerUI implements TransformerUI {
+ 
+     public Icon getIcon() {

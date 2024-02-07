@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionJavadocVariableTest.java b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionJavadocVariableTest.java
+index e922a9e53..549c53ba4 100644
+--- a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionJavadocVariableTest.java
++++ b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionJavadocVariableTest.java
+@@ -28,7 +28,7 @@ import org.junit.Test;
+ import com.puppycrawl.tools.checkstyle.DefaultConfiguration;
+ import com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck;
+ 
+-public class XpathRegressionJavadocVariableTest extends AbstractXpathTestSupport {
++public class XpathRegressionJavadocVariableTest extends XpathTestSupport {
+ 
+     @Test
+     public void testOne() throws Exception {

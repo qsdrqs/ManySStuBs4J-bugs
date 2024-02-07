@@ -1,0 +1,13 @@
+diff --git a/buggy/storm-core/test/jvm/backtype/storm/utils/DisruptorQueueTest.java b/fixed/storm-core/test/jvm/backtype/storm/utils/DisruptorQueueTest.java
+index 281c19a4c..2ab010925 100644
+--- a/buggy/storm-core/test/jvm/backtype/storm/utils/DisruptorQueueTest.java
++++ b/fixed/storm-core/test/jvm/backtype/storm/utils/DisruptorQueueTest.java
+@@ -126,7 +126,7 @@ public class DisruptorQueueTest extends TestCase {
+ 
+         @Override
+         public void run() {
+-            for (long i = 0; i < _max; i++) {
++            for (long i = 0; i < _max && !(Thread.currentThread().isInterrupted()); i++) {
+                 queue.publish(i);
+             }
+         }

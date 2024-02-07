@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-mapreduce-project/src/contrib/streaming/src/java/org/apache/hadoop/streaming/StreamJob.java b/fixed/hadoop-mapreduce-project/src/contrib/streaming/src/java/org/apache/hadoop/streaming/StreamJob.java
+index a019be7f3..b68e73e34 100644
+--- a/buggy/hadoop-mapreduce-project/src/contrib/streaming/src/java/org/apache/hadoop/streaming/StreamJob.java
++++ b/fixed/hadoop-mapreduce-project/src/contrib/streaming/src/java/org/apache/hadoop/streaming/StreamJob.java
+@@ -718,7 +718,7 @@ public class StreamJob implements Tool {
+     }
+ 
+     // general MapRed job properties
+-    jobConf_ = new JobConf(config_);
++    jobConf_ = new JobConf(config_, StreamJob.class);
+     
+     // All streaming jobs get the task timeout value
+     // from the configuration settings.

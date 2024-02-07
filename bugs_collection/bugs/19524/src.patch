@@ -1,0 +1,13 @@
+diff --git a/buggy/buffer/src/main/java/io/netty/buffer/ByteBufUtil.java b/fixed/buffer/src/main/java/io/netty/buffer/ByteBufUtil.java
+index e2eddf07a..1d5bfce1e 100644
+--- a/buggy/buffer/src/main/java/io/netty/buffer/ByteBufUtil.java
++++ b/fixed/buffer/src/main/java/io/netty/buffer/ByteBufUtil.java
+@@ -1095,7 +1095,7 @@ public final class ByteBufUtil {
+             if (length == 0) {
+               return StringUtil.EMPTY_STRING;
+             } else {
+-                int rows = length / 16 + (length % 15 == 0? 0 : 1) + 4;
++                int rows = length / 16 + ((length & 15) == 0? 0 : 1) + 4;
+                 StringBuilder buf = new StringBuilder(rows * 80);
+                 appendPrettyHexDump(buf, buffer, offset, length);
+                 return buf.toString();

@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/graphics/glutils/MipMapGenerator.java b/fixed/gdx/src/com/badlogic/gdx/graphics/glutils/MipMapGenerator.java
+index 99c374690..3e3b53065 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/graphics/glutils/MipMapGenerator.java
++++ b/fixed/gdx/src/com/badlogic/gdx/graphics/glutils/MipMapGenerator.java
+@@ -53,7 +53,7 @@ public class MipMapGenerator {
+ 			return;
+ 		}
+ 
+-		if (Gdx.app.getType() == ApplicationType.Android || Gdx.app.getType() == ApplicationType.WebGL) {
++		if (Gdx.app.getType() == ApplicationType.Android || Gdx.app.getType() == ApplicationType.WebGL || Gdx.app.getType() == ApplicationType.iOS) {
+ 			if (Gdx.graphics.isGL20Available())
+ 				generateMipMapGLES20(target, pixmap);
+ 			else

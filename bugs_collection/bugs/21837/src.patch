@@ -1,0 +1,19 @@
+diff --git a/buggy/spring-boot-project/spring-boot/src/test/java/org/springframework/boot/context/properties/PropertyMapperTests.java b/fixed/spring-boot-project/spring-boot/src/test/java/org/springframework/boot/context/properties/PropertyMapperTests.java
+index 2ef680e29..b96c581ad 100644
+--- a/buggy/spring-boot-project/spring-boot/src/test/java/org/springframework/boot/context/properties/PropertyMapperTests.java
++++ b/fixed/spring-boot-project/spring-boot/src/test/java/org/springframework/boot/context/properties/PropertyMapperTests.java
+@@ -197,12 +197,12 @@ class PropertyMapperTests {
+ 	}
+ 
+ 	@Test
+-	public void whenWhenValueNotMatchesShouldSupportChainedCalls() {
++	void whenWhenValueNotMatchesShouldSupportChainedCalls() {
+ 		this.map.from("123").when("456"::equals).when("123"::equals).toCall(Assertions::fail);
+ 	}
+ 
+ 	@Test
+-	public void whenWhenValueMatchesShouldSupportChainedCalls() {
++	void whenWhenValueMatchesShouldSupportChainedCalls() {
+ 		String result = this.map.from("123").when((s) -> s.contains("2")).when("123"::equals).toInstance(String::new);
+ 		assertThat(result).isEqualTo("123");
+ 	}

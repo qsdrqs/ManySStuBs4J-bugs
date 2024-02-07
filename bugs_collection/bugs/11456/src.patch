@@ -1,0 +1,17 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/VariableDeclarationUsageDistanceCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/VariableDeclarationUsageDistanceCheck.java
+index fb2e9f1d3..3a951bf68 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/VariableDeclarationUsageDistanceCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/VariableDeclarationUsageDistanceCheck.java
+@@ -777,10 +777,8 @@ public class VariableDeclarationUsageDistanceCheck extends Check {
+                 final DetailAST firstNodeInsideElseBlock = elseBlock.getFirstChild();
+ 
+                 if (firstNodeInsideElseBlock.getType() == TokenTypes.LITERAL_IF) {
+-                    isVarInOperatorDeclr |=
+-                            isVariableInOperatorExpr(
+-                                firstNodeInsideElseBlock,
+-                                    variable);
++                    isVarInOperatorDeclr =
++                        isVariableInOperatorExpr(firstNodeInsideElseBlock, variable);
+                 }
+             }
+         }

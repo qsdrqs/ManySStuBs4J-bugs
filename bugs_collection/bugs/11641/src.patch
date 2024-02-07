@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/ParseTreeModel.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/ParseTreeModel.java
+index 1468e9a12..b50b0ba6d 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/ParseTreeModel.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/ParseTreeModel.java
+@@ -52,7 +52,7 @@ public class ParseTreeModel extends AbstractTreeTableModel {
+         final Object[] path = {root};
+         // no need to setup remaining info, as the call results in a
+         // table structure changed event anyway - we just pass nulls
+-        fireTreeStructureChanged(this, path, null, null);
++        fireTreeStructureChanged(this, path, null, (Object[])null);
+     }
+ 
+     @Override

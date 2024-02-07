@@ -1,0 +1,24 @@
+diff --git a/buggy/spring-boot-project/spring-boot-test/src/main/java/org/springframework/boot/test/json/JsonContentAssert.java b/fixed/spring-boot-project/spring-boot-test/src/main/java/org/springframework/boot/test/json/JsonContentAssert.java
+index 166e2765b..79eb0d90c 100644
+--- a/buggy/spring-boot-project/spring-boot-test/src/main/java/org/springframework/boot/test/json/JsonContentAssert.java
++++ b/fixed/spring-boot-project/spring-boot-test/src/main/java/org/springframework/boot/test/json/JsonContentAssert.java
+@@ -96,7 +96,8 @@ public class JsonContentAssert extends AbstractAssert<JsonContentAssert, CharSeq
+ 		if (expected instanceof Resource) {
+ 			return isEqualToJson((Resource) expected);
+ 		}
+-		throw new AssertionError("Unsupport type for JSON assert " + expected.getClass());
++		throw new AssertionError(
++				"Unsupported type for JSON assert " + expected.getClass());
+ 	}
+ 
+ 	/**
+@@ -432,7 +433,8 @@ public class JsonContentAssert extends AbstractAssert<JsonContentAssert, CharSeq
+ 		if (expected instanceof Resource) {
+ 			return isNotEqualToJson((Resource) expected);
+ 		}
+-		throw new AssertionError("Unsupport type for JSON assert " + expected.getClass());
++		throw new AssertionError(
++				"Unsupported type for JSON assert " + expected.getClass());
+ 	}
+ 
+ 	/**

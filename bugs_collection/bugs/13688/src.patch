@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-hive/src/main/java/com/facebook/presto/hive/HiveWriteUtils.java b/fixed/presto-hive/src/main/java/com/facebook/presto/hive/HiveWriteUtils.java
+index d74eb2667..495194659 100644
+--- a/buggy/presto-hive/src/main/java/com/facebook/presto/hive/HiveWriteUtils.java
++++ b/fixed/presto-hive/src/main/java/com/facebook/presto/hive/HiveWriteUtils.java
+@@ -475,7 +475,7 @@ public final class HiveWriteUtils
+                 return isWritableType(listTypeInfo.getListElementTypeInfo());
+             case STRUCT:
+                 StructTypeInfo structTypeInfo = checkType(typeInfo, StructTypeInfo.class, "typeInfo");
+-                return structTypeInfo.getAllStructFieldTypeInfos().stream().allMatch(HiveType::isSupportedType);
++                return structTypeInfo.getAllStructFieldTypeInfos().stream().allMatch(HiveWriteUtils::isWritableType);
+         }
+         return false;
+     }

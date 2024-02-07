@@ -1,0 +1,18 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/XDocsPagesTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/XDocsPagesTest.java
+index a7e7b16f7..a43655a88 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/XDocsPagesTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/XDocsPagesTest.java
+@@ -112,11 +112,8 @@ public class XDocsPagesTest {
+ 
+     private static final List<String> UNDOCUMENTED_PROPERTIES = Arrays.asList(
+             "SuppressWithNearbyCommentFilter.fileContents",
+-            "SuppressionCommentFilter.fileContents",
+-            "MethodNameCheck.applyToPackage",
+-            "MethodNameCheck.applyToPrivate",
+-            "MethodNameCheck.applyToProtected",
+-            "MethodNameCheck.applyToPublic");
++            "SuppressionCommentFilter.fileContents"
++    );
+ 
+     @Test
+     public void testAllChecksPresentOnAvailableChecksPage() throws IOException {

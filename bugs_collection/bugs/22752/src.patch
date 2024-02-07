@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/showcase/src/test/java/org/springside/examples/showcase/common/JpaMappingTest.java b/fixed/examples/showcase/src/test/java/org/springside/examples/showcase/common/JpaMappingTest.java
+index 16bd168e2..ac650104a 100644
+--- a/buggy/examples/showcase/src/test/java/org/springside/examples/showcase/common/JpaMappingTest.java
++++ b/fixed/examples/showcase/src/test/java/org/springside/examples/showcase/common/JpaMappingTest.java
+@@ -14,7 +14,7 @@ import org.springside.modules.test.data.Fixtures;
+ import org.springside.modules.test.spring.SpringTxTestCase;
+ 
+ @ContextConfiguration(locations = { "/applicationContext.xml" })
+-@TransactionConfiguration()
++@TransactionConfiguration(transactionManager = "defaultTransactionManager")
+ public class JpaMappingTest extends SpringTxTestCase {
+ 
+ 	private static Logger logger = LoggerFactory.getLogger(JpaMappingTest.class);

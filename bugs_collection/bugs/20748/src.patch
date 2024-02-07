@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/protocol/ZWaveNode.java b/fixed/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/protocol/ZWaveNode.java
+index f70418115..287f8ed0f 100644
+--- a/buggy/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/protocol/ZWaveNode.java
++++ b/fixed/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/protocol/ZWaveNode.java
+@@ -439,7 +439,7 @@ public class ZWaveNode {
+ 		this.resendCount = 0;
+ 		if (this.nodeStageAdvancer.isInitializationComplete() && this.isDead() == false) {
+ 			this.nodeStage = NodeStage.DONE;
+-		this.lastUpdated = Calendar.getInstance().getTime();
++		}
+ 	}
+ 
+ 	/**

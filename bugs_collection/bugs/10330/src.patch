@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/zaxxer/hikari/TestConnectionTimeoutRetry.java b/fixed/src/test/java/com/zaxxer/hikari/TestConnectionTimeoutRetry.java
+index e3d67cb2d..d92d36204 100644
+--- a/buggy/src/test/java/com/zaxxer/hikari/TestConnectionTimeoutRetry.java
++++ b/fixed/src/test/java/com/zaxxer/hikari/TestConnectionTimeoutRetry.java
+@@ -185,7 +185,7 @@ public class TestConnectionTimeoutRetry
+         catch (SQLException e)
+         {
+             long elapsed = System.currentTimeMillis() - start;
+-            Assert.assertTrue("Didn't wait long enough for timeout", (elapsed > config.getConnectionTimeout()));
++            Assert.assertTrue("Didn't wait long enough for timeout", (elapsed >= config.getConnectionTimeout()));
+         }
+         finally
+         {

@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.tinkerforge/src/main/java/org/openhab/binding/tinkerforge/internal/model/impl/MServoImpl.java b/fixed/bundles/binding/org.openhab.binding.tinkerforge/src/main/java/org/openhab/binding/tinkerforge/internal/model/impl/MServoImpl.java
+index 449a8a2a8..2b3645fcf 100644
+--- a/buggy/bundles/binding/org.openhab.binding.tinkerforge/src/main/java/org/openhab/binding/tinkerforge/internal/model/impl/MServoImpl.java
++++ b/fixed/bundles/binding/org.openhab.binding.tinkerforge/src/main/java/org/openhab/binding/tinkerforge/internal/model/impl/MServoImpl.java
+@@ -1368,7 +1368,7 @@ public class MServoImpl extends MinimalEObjectImpl.Container implements MServo {
+                 return;
+             }
+         } else {
+-            logger.error("{} unkown switchstate {}", LoggerConstants.TFMODELUPDATE, state);
++            logger.error("{} unknown switchstate {}", LoggerConstants.TFMODELUPDATE, state);
+         }
+         setPoint(position, opts);
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/beeline/src/java/org/apache/hive/beeline/HiveSchemaTool.java b/fixed/beeline/src/java/org/apache/hive/beeline/HiveSchemaTool.java
+index 04576aed5..74591ac41 100644
+--- a/buggy/beeline/src/java/org/apache/hive/beeline/HiveSchemaTool.java
++++ b/fixed/beeline/src/java/org/apache/hive/beeline/HiveSchemaTool.java
+@@ -337,7 +337,7 @@ public class HiveSchemaTool {
+       }
+       pStmt.close();
+     } catch (SQLException e) {
+-      throw new HiveMetaException("Failed to get Partiton Location Info.", e);
++      throw new HiveMetaException("Failed to get Partition Location Info.", e);
+     }
+     if (numOfInvalid > 0) {
+       isValid = false;

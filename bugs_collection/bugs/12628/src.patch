@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/org/apache/druid/metadata/IndexerSQLMetadataStorageCoordinator.java b/fixed/server/src/main/java/org/apache/druid/metadata/IndexerSQLMetadataStorageCoordinator.java
+index c234148f0..c77dee153 100644
+--- a/buggy/server/src/main/java/org/apache/druid/metadata/IndexerSQLMetadataStorageCoordinator.java
++++ b/fixed/server/src/main/java/org/apache/druid/metadata/IndexerSQLMetadataStorageCoordinator.java
+@@ -893,7 +893,7 @@ public class IndexerSQLMetadataStorageCoordinator implements IndexerMetadataStor
+       // Not in the desired start state.
+       log.error(
+           "Not updating metadata, existing state[%s] in metadata store doesn't match to the new start state[%s].",
+-          oldCommitMetadataBytesFromDb,
++          oldCommitMetadataFromDb,
+           startMetadata
+       );
+       return DataSourceMetadataUpdateResult.FAILURE;

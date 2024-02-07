@@ -1,0 +1,11 @@
+diff --git a/buggy/src/main/java/org/apache/ibatis/reflection/invoker/Invoker.java b/fixed/src/main/java/org/apache/ibatis/reflection/invoker/Invoker.java
+index 152f8cee3..037fbe47e 100644
+--- a/buggy/src/main/java/org/apache/ibatis/reflection/invoker/Invoker.java
++++ b/fixed/src/main/java/org/apache/ibatis/reflection/invoker/Invoker.java
+@@ -20,5 +20,5 @@ import java.lang.reflect.InvocationTargetException;
+ public interface Invoker {
+   Object invoke(Object target, Object[] args) throws IllegalAccessException, InvocationTargetException;
+ 
+-  Class getType();
++  Class<?> getType();
+ }

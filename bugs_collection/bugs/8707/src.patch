@@ -1,0 +1,13 @@
+diff --git a/buggy/pact/pact-common/src/main/java/eu/stratosphere/pact/common/type/PactRecord.java b/fixed/pact/pact-common/src/main/java/eu/stratosphere/pact/common/type/PactRecord.java
+index 26a7fa33a..0cb0763d8 100644
+--- a/buggy/pact/pact-common/src/main/java/eu/stratosphere/pact/common/type/PactRecord.java
++++ b/fixed/pact/pact-common/src/main/java/eu/stratosphere/pact/common/type/PactRecord.java
+@@ -223,7 +223,7 @@ public final class PactRecord implements Value
+ 			return (T) this.fields[fieldNum];
+ 		}
+ 		
+-		final int limit = fieldNum < this.numFields - 1 ? this.offsets[fieldNum + 1] : this.binaryLen;
++		final int limit = offset + this.lengths[fieldNum];
+ 		
+ 		// get an instance, either from the instance cache or create a new one
+ 		final Value oldField = this.fields[fieldNum]; 

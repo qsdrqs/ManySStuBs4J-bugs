@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java
+index e390d6b2b..bd25a8241 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java
+@@ -5663,7 +5663,7 @@ public class HRegion implements HeapSize, PropagatingConfigurationObserver { //
+ 
+       long size = 0;
+       for (Cell c : results) {
+-        size += CellUtil.estimatedHeapSizeOf(c);
++        size += CellUtil.estimatedHeapSizeOfWithoutTags(c);
+       }
+ 
+       return size;

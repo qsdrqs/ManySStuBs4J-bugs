@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/test/java/org/neo4j/metatest/TestJavaTestDocsGenerator.java b/fixed/community/kernel/src/test/java/org/neo4j/metatest/TestJavaTestDocsGenerator.java
+index d3c687a2c..9676e6b15 100644
+--- a/buggy/community/kernel/src/test/java/org/neo4j/metatest/TestJavaTestDocsGenerator.java
++++ b/fixed/community/kernel/src/test/java/org/neo4j/metatest/TestJavaTestDocsGenerator.java
+@@ -107,7 +107,7 @@ public class TestJavaTestDocsGenerator implements GraphHolder
+         doc.addSnippet( "snippet1", snippet1 );
+         doc.addSnippet( "snippet2", snippet2 );
+         doc.document( directory.getAbsolutePath(), sectionName );
+-        String result = readFileAsString( new File(sectionDirectory, "title2.txt)"));
++        String result = readFileAsString( new File(sectionDirectory, "title2.txt"));
+         assertTrue( result.contains( snippet1 ) );
+         assertTrue( result.contains( snippet2 ) );
+     }

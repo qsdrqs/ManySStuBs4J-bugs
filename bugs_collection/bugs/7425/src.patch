@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/component/bean/ProxyReturnFutureListTest.java b/fixed/camel-core/src/test/java/org/apache/camel/component/bean/ProxyReturnFutureListTest.java
+index c0e03041a..2fc575ee1 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/component/bean/ProxyReturnFutureListTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/component/bean/ProxyReturnFutureListTest.java
+@@ -85,7 +85,7 @@ public class ProxyReturnFutureListTest extends ContextTestSupport {
+         };
+     }
+ 
+-    public static interface Users {
++    public interface Users {
+         Future<List<String>> getUsers(boolean gold);
+     }
+ 

@@ -1,0 +1,12 @@
+diff --git a/buggy/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGDF.java b/fixed/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGDF.java
+index 07623fb90..7a61921cf 100644
+--- a/buggy/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGDF.java
++++ b/fixed/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGDF.java
+@@ -562,6 +562,6 @@ public class ImporterGDF implements TextImporter, LongTask {
+     }
+ 
+     public boolean isMatchingImporter(FileObject fileObject) {
+-        return fileObject.hasExt("gdf");
++        return fileObject.hasExt("gdf") || fileObject.hasExt("GDF");
+     }
+ }

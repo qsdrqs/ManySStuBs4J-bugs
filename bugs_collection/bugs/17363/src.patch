@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/org/jsoup/select/ng/ElementSelector.java b/fixed/src/main/java/org/jsoup/select/ng/ElementSelector.java
+index 5b2f016d2..c56be7ba6 100644
+--- a/buggy/src/main/java/org/jsoup/select/ng/ElementSelector.java
++++ b/fixed/src/main/java/org/jsoup/select/ng/ElementSelector.java
+@@ -28,7 +28,8 @@ public class ElementSelector implements Selector {
+ 			if(tag != null && !el.tagName().equals(tag))
+ 				return false;
+ 			
+-			if(cls != null && !el.className().equals(cls))
++			
++			if(cls != null && !el.classNames().contains(cls))
+ 				return false;
+ 			
+ 			if(id != null && !el.id().equals(id))

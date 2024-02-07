@@ -1,0 +1,13 @@
+diff --git a/buggy/okhttp/src/main/java/okhttp3/internal/cache/FaultHidingSink.java b/fixed/okhttp/src/main/java/okhttp3/internal/cache/FaultHidingSink.java
+index b10fddb95..561a30507 100644
+--- a/buggy/okhttp/src/main/java/okhttp3/internal/cache/FaultHidingSink.java
++++ b/fixed/okhttp/src/main/java/okhttp3/internal/cache/FaultHidingSink.java
+@@ -24,7 +24,7 @@ import okio.Sink;
+ class FaultHidingSink extends ForwardingSink {
+   private boolean hasErrors;
+ 
+-  public FaultHidingSink(Sink delegate) {
++  FaultHidingSink(Sink delegate) {
+     super(delegate);
+   }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/storm-webapp/src/main/java/org/apache/storm/daemon/ui/filters/AuthorizedUserFilter.java b/fixed/storm-webapp/src/main/java/org/apache/storm/daemon/ui/filters/AuthorizedUserFilter.java
+index 9a4a2a1dc..9dd98c59f 100644
+--- a/buggy/storm-webapp/src/main/java/org/apache/storm/daemon/ui/filters/AuthorizedUserFilter.java
++++ b/fixed/storm-webapp/src/main/java/org/apache/storm/daemon/ui/filters/AuthorizedUserFilter.java
+@@ -169,7 +169,7 @@ public class AuthorizedUserFilter implements ContainerRequestFilter {
+                 containerRequestContext.abortWith(
+                         makeResponse(new AuthorizationException("UI request '" + op + "' for '"
+                                         + user + "' user is not authorized"),
+-                                containerRequestContext, 401)
++                                containerRequestContext, 403)
+                 );
+             }
+         }

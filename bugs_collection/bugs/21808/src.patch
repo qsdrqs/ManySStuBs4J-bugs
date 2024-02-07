@@ -1,0 +1,22 @@
+diff --git a/buggy/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/rsocket/RSocketServerAutoConfiguration.java b/fixed/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/rsocket/RSocketServerAutoConfiguration.java
+index 3df1e33bc..34bf6b658 100644
+--- a/buggy/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/rsocket/RSocketServerAutoConfiguration.java
++++ b/fixed/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/rsocket/RSocketServerAutoConfiguration.java
+@@ -71,7 +71,7 @@ public class RSocketServerAutoConfiguration {
+ 		RSocketWebSocketNettyRouteProvider rSocketWebsocketRouteProvider(RSocketProperties properties,
+ 				RSocketMessageHandler messageHandler) {
+ 			return new RSocketWebSocketNettyRouteProvider(properties.getServer().getMappingPath(),
+-					messageHandler.serverResponder());
++					messageHandler.responder());
+ 		}
+ 
+ 	}
+@@ -104,7 +104,7 @@ public class RSocketServerAutoConfiguration {
+ 		@ConditionalOnMissingBean
+ 		RSocketServerBootstrap rSocketServerBootstrap(RSocketServerFactory rSocketServerFactory,
+ 				RSocketMessageHandler rSocketMessageHandler) {
+-			return new RSocketServerBootstrap(rSocketServerFactory, rSocketMessageHandler.serverResponder());
++			return new RSocketServerBootstrap(rSocketServerFactory, rSocketMessageHandler.responder());
+ 		}
+ 
+ 		@Bean

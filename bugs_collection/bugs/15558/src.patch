@@ -1,0 +1,13 @@
+diff --git a/buggy/guava-testlib/src/com/google/common/collect/testing/google/MultisetNavigationTester.java b/fixed/guava-testlib/src/com/google/common/collect/testing/google/MultisetNavigationTester.java
+index efb2e642c..aaca5bb9a 100644
+--- a/buggy/guava-testlib/src/com/google/common/collect/testing/google/MultisetNavigationTester.java
++++ b/fixed/guava-testlib/src/com/google/common/collect/testing/google/MultisetNavigationTester.java
+@@ -453,7 +453,7 @@ public class MultisetNavigationTester<E> extends AbstractMultisetTester<E> {
+     }
+   }
+ 
+-  private int totalSize(Iterable<? extends Entry<?>> entries) {
++  private static int totalSize(Iterable<? extends Entry<?>> entries) {
+     int sum = 0;
+     for (Entry<?> entry : entries) {
+       sum += entry.getCount();

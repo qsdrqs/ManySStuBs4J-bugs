@@ -1,0 +1,13 @@
+diff --git a/buggy/lib/rhino/src/org/mozilla/javascript/NativeString.java b/fixed/lib/rhino/src/org/mozilla/javascript/NativeString.java
+index 3ee77a07c..478668e4f 100644
+--- a/buggy/lib/rhino/src/org/mozilla/javascript/NativeString.java
++++ b/fixed/lib/rhino/src/org/mozilla/javascript/NativeString.java
+@@ -484,7 +484,7 @@ final class NativeString extends IdScriptableObject
+         String search = ScriptRuntime.toString(args, 0);
+         double end = ScriptRuntime.toNumber(args, 1);
+ 
+-        if (end != end || end > target.length())
++        if (Double.isNaN(end) || end > target.length())
+             end = target.length();
+         else if (end < 0)
+             end = 0;

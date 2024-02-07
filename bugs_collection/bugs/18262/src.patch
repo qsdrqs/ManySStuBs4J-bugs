@@ -1,0 +1,12 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/math/collision/Sphere.java b/fixed/gdx/src/com/badlogic/gdx/math/collision/Sphere.java
+index 3b790d29c..2511006ee 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/math/collision/Sphere.java
++++ b/fixed/gdx/src/com/badlogic/gdx/math/collision/Sphere.java
+@@ -41,6 +41,6 @@ public class Sphere implements Serializable {
+ 	/** @param sphere the other sphere
+ 	 * @return whether this and the other sphere overlap */
+ 	public boolean overlaps (Sphere sphere) {
+-		return center.dst2(sphere.center) < radius * radius + sphere.radius * radius;
++		return center.dst2(sphere.center) < (radius+sphere.radius)*(radius+sphere.radius);
+ 	}
+ }

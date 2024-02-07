@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/RhinoErrorReporter.java b/fixed/src/com/google/javascript/jscomp/RhinoErrorReporter.java
+index 978c547bd..6aa99ac0e 100644
+--- a/buggy/src/com/google/javascript/jscomp/RhinoErrorReporter.java
++++ b/fixed/src/com/google/javascript/jscomp/RhinoErrorReporter.java
+@@ -109,7 +109,7 @@ class RhinoErrorReporter {
+    * holder {0} with a wild card that matches all possible strings.
+    * Also put the any non-place-holder in quotes for regex matching later.
+    */
+-  private Pattern replacePlaceHolders(String s) {
++  private static Pattern replacePlaceHolders(String s) {
+     s = Pattern.quote(s);
+     return Pattern.compile(s.replaceAll("\\{\\d+\\}", "\\\\E.*\\\\Q"));
+   }

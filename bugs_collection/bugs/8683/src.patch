@@ -1,0 +1,13 @@
+diff --git a/buggy/pact/pact-common/src/test/java/eu/stratosphere/pact/common/io/ExternalProcessInputFormatTest.java b/fixed/pact/pact-common/src/test/java/eu/stratosphere/pact/common/io/ExternalProcessInputFormatTest.java
+index a03d8e2c7..da5f39a15 100644
+--- a/buggy/pact/pact-common/src/test/java/eu/stratosphere/pact/common/io/ExternalProcessInputFormatTest.java
++++ b/fixed/pact/pact-common/src/test/java/eu/stratosphere/pact/common/io/ExternalProcessInputFormatTest.java
+@@ -97,7 +97,7 @@ public class ExternalProcessInputFormatTest {
+ 		Assert.assertTrue(invalidExitCode);
+ 		
+ 		invalidExitCode = false;
+-		config.setString(ExternalProcessInputFormat.ALLOWEDEXITCODES_PARAMETER_KEY,"0,2");
++		config.setString(ExternalProcessInputFormat.ALLOWEDEXITCODES_PARAMETER_KEY,"0,1,2");
+ 		format.configure(config);
+ 		try {
+ 			format.open(split);

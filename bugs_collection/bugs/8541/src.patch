@@ -1,0 +1,13 @@
+diff --git a/buggy/pact/pact-compiler/src/main/java/eu/stratosphere/pact/compiler/plantranslate/NepheleJobGraphGenerator.java b/fixed/pact/pact-compiler/src/main/java/eu/stratosphere/pact/compiler/plantranslate/NepheleJobGraphGenerator.java
+index 7db06db7f..6ecdb8e9d 100644
+--- a/buggy/pact/pact-compiler/src/main/java/eu/stratosphere/pact/compiler/plantranslate/NepheleJobGraphGenerator.java
++++ b/fixed/pact/pact-compiler/src/main/java/eu/stratosphere/pact/compiler/plantranslate/NepheleJobGraphGenerator.java
+@@ -229,7 +229,7 @@ public class NepheleJobGraphGenerator implements Visitor<PlanNode> {
+ 	@Override
+ 	public boolean preVisit(PlanNode node) {
+ 		// check if we have visited this node before. in non-tree graphs, this happens
+-		if (this.vertices.containsKey(node) || this.chainedTasks.containsKey(node)) {
++		if (this.vertices.containsKey(node) || this.chainedTasks.containsKey(node) || this.iterations.containsKey(node)) {
+ 			// return false to prevent further descend
+ 			return false;
+ 		}

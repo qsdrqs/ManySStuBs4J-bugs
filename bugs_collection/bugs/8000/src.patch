@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-script/src/main/java/org/apache/camel/builder/script/ScriptBuilder.java b/fixed/components/camel-script/src/main/java/org/apache/camel/builder/script/ScriptBuilder.java
+index b1ff52a4e..9d9d87a75 100644
+--- a/buggy/components/camel-script/src/main/java/org/apache/camel/builder/script/ScriptBuilder.java
++++ b/fixed/components/camel-script/src/main/java/org/apache/camel/builder/script/ScriptBuilder.java
+@@ -454,7 +454,7 @@ public class ScriptBuilder<E extends Exchange> implements Expression<E>, Predica
+     }
+ 
+     protected boolean matches(E exchange, Object scriptValue) {
+-        return ObjectConverter.toBoolean(scriptValue);
++        return ObjectConverter.toBool(scriptValue);
+     }
+ 
+     protected ScriptEngine createScriptEngine() {

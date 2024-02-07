@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-common/src/main/java/org/apache/hadoop/hbase/HBaseConfiguration.java b/fixed/hbase-common/src/main/java/org/apache/hadoop/hbase/HBaseConfiguration.java
+index 344658196..1be66a12c 100644
+--- a/buggy/hbase-common/src/main/java/org/apache/hadoop/hbase/HBaseConfiguration.java
++++ b/fixed/hbase-common/src/main/java/org/apache/hadoop/hbase/HBaseConfiguration.java
+@@ -71,7 +71,7 @@ public class HBaseConfiguration extends Configuration {
+     String thisVersion = VersionInfo.getVersion();
+     if (!thisVersion.equals(defaultsVersion)) {
+       throw new RuntimeException(
+-        "hbase-default.xml file seems to be for and old version of HBase (" +
++        "hbase-default.xml file seems to be for an older version of HBase (" +
+         defaultsVersion + "), this version is " + thisVersion);
+     }
+   }

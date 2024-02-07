@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/hazelcast/impl/ConcurrentMapManager.java b/fixed/src/com/hazelcast/impl/ConcurrentMapManager.java
+index 01cbfb802..6e4eda260 100644
+--- a/buggy/src/com/hazelcast/impl/ConcurrentMapManager.java
++++ b/fixed/src/com/hazelcast/impl/ConcurrentMapManager.java
+@@ -2182,7 +2182,7 @@ class ConcurrentMapManager extends BaseManager {
+         Record createNewRecord(Data key, Data value) {
+             int blockId = getBlockId(key);
+             Record rec = new Record(name, blockId, key, value);
+-            Block ownerBlock = blocks[blockId];
++            Block ownerBlock = getOrCreateBlock(blockId);
+             if (thisAddress.equals(ownerBlock.getRealOwner())) {
+                 ownedEntryCount++;
+             }

@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/action/org.openhab.action.mail/src/main/java/org/openhab/action/mail/internal/Mail.java b/fixed/bundles/action/org.openhab.action.mail/src/main/java/org/openhab/action/mail/internal/Mail.java
+index 3a5246f62..b53bda462 100644
+--- a/buggy/bundles/action/org.openhab.action.mail/src/main/java/org/openhab/action/mail/internal/Mail.java
++++ b/fixed/bundles/action/org.openhab.action.mail/src/main/java/org/openhab/action/mail/internal/Mail.java
+@@ -122,7 +122,7 @@ import org.slf4j.LoggerFactory;
+ 				logger.debug("Sent email to '{}' with subject '{}'.", to, subject);
+ 				success = true;
+ 			} catch (EmailException e) {
+-				logger.error("Could not send e-mail to '" + to + "‘.", e);
++				logger.error("Could not send e-mail to '" + to + "'.", e);
+ 			}
+ 		} else {
+ 			logger.error("Cannot send e-mail because of missing configuration settings. The current settings are: " +

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-mail/src/main/java/org/apache/camel/component/mail/MailConfiguration.java b/fixed/components/camel-mail/src/main/java/org/apache/camel/component/mail/MailConfiguration.java
+index 60c796803..679b2145c 100644
+--- a/buggy/components/camel-mail/src/main/java/org/apache/camel/component/mail/MailConfiguration.java
++++ b/fixed/components/camel-mail/src/main/java/org/apache/camel/component/mail/MailConfiguration.java
+@@ -64,7 +64,7 @@ public class MailConfiguration implements Cloneable {
+             setHost(value);
+         }
+ 
+-        if (getProtocol() != null && !isIgnoreUriScheme()) {
++        if (!isIgnoreUriScheme()) {
+             String scheme = uri.getScheme();
+             if (scheme != null) {
+                 setProtocol(scheme);

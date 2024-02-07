@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-sjms/src/test/java/org/apache/camel/component/sjms/tx/BatchTransactedConcurrentMultipleConsumerTest.java b/fixed/components/camel-sjms/src/test/java/org/apache/camel/component/sjms/tx/BatchTransactedConcurrentMultipleConsumerTest.java
+index 53ca2a3de..040d6c1a0 100644
+--- a/buggy/components/camel-sjms/src/test/java/org/apache/camel/component/sjms/tx/BatchTransactedConcurrentMultipleConsumerTest.java
++++ b/fixed/components/camel-sjms/src/test/java/org/apache/camel/component/sjms/tx/BatchTransactedConcurrentMultipleConsumerTest.java
+@@ -94,7 +94,7 @@ public class BatchTransactedConcurrentMultipleConsumerTest extends CamelTestSupp
+                             @Override
+                             public void process(Exchange exchange) throws Exception {
+                                 if (counter.incrementAndGet() == MAX_ATTEMPTS_COUNT) {
+-                                    log.info("Exchange does not have a retry message.  Set the exception and allow the retry.");
++                                    log.info("{} Messages have been processed. Failing the exchange to force a rollback of the transaction.", MAX_ATTEMPTS_COUNT);
+                                     exchange.getOut().setFault(true);
+                                 }
+                             }

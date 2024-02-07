@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/FileSinkOperator.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/FileSinkOperator.java
+index 5ef901f69..28d478910 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/FileSinkOperator.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/FileSinkOperator.java
+@@ -489,7 +489,7 @@ public class FileSinkOperator extends TerminalOperator<FileSinkDesc> implements
+     this.maxPartitions = dpCtx.getMaxPartitionsPerNode();
+ 
+     assert numDynParts == dpColNames.size()
+-        : "number of dynamic paritions should be the same as the size of DP mapping";
++        : "number of dynamic partitions should be the same as the size of DP mapping";
+ 
+     if (dpColNames != null && dpColNames.size() > 0) {
+       this.bDynParts = true;

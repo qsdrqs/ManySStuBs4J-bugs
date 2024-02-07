@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/management/JmxInstrumentationUsingDefaultsTest.java b/fixed/camel-core/src/test/java/org/apache/camel/management/JmxInstrumentationUsingDefaultsTest.java
+index 8844c8adf..cd5a0d673 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/management/JmxInstrumentationUsingDefaultsTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/management/JmxInstrumentationUsingDefaultsTest.java
+@@ -190,7 +190,7 @@ public class JmxInstrumentationUsingDefaultsTest extends ContextTestSupport {
+     }
+ 
+     protected void releaseMBeanServers() {
+-        for (MBeanServer server : MBeanServerFactory.findMBeanServer(null)) {
++        for (MBeanServer server : (List<MBeanServer>)MBeanServerFactory.findMBeanServer(null)) {
+             MBeanServerFactory.releaseMBeanServer(server);
+         }
+     }

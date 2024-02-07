@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/type/HyperLogLogOperators.java b/fixed/presto-main/src/main/java/com/facebook/presto/type/HyperLogLogOperators.java
+index a0ba385fc..746e6673c 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/type/HyperLogLogOperators.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/type/HyperLogLogOperators.java
+@@ -19,7 +19,7 @@ import io.airlift.slice.Slice;
+ 
+ import static com.facebook.presto.metadata.OperatorType.CAST;
+ 
+-public class HyperLogLogOperators
++public final class HyperLogLogOperators
+ {
+     private HyperLogLogOperators()
+     {

@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/maps/tiled/tiles/AnimatedTiledMapTile.java b/fixed/gdx/src/com/badlogic/gdx/maps/tiled/tiles/AnimatedTiledMapTile.java
+index 66e92a300..cf72b4ae6 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/maps/tiled/tiles/AnimatedTiledMapTile.java
++++ b/fixed/gdx/src/com/badlogic/gdx/maps/tiled/tiles/AnimatedTiledMapTile.java
+@@ -44,7 +44,7 @@ public class AnimatedTiledMapTile implements TiledMapTile {
+ 
+ 	@Override
+ 	public TextureRegion getTextureRegion () {
+-		long currentFrame = (lastTiledMapRenderTime / (long)animationInterval) % frameCount;
++		long currentFrame = (lastTiledMapRenderTime / (long)(animationInterval * 1000f)) % frameCount;
+ 		return frameTiles.get((int)currentFrame).getTextureRegion();
+ 	}
+ 

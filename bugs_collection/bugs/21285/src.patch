@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/test/java/org/openmrs/report/PepfarReportSerializationTest.java b/fixed/api/src/test/java/org/openmrs/report/PepfarReportSerializationTest.java
+index e6b410c42..d442b5aac 100644
+--- a/buggy/api/src/test/java/org/openmrs/report/PepfarReportSerializationTest.java
++++ b/fixed/api/src/test/java/org/openmrs/report/PepfarReportSerializationTest.java
+@@ -139,7 +139,7 @@ public class PepfarReportSerializationTest extends BaseContextSensitiveTest {
+ 	@Test
+ 	public void shouldCohortSerialization() throws Exception {
+ 		
+-		PatientSearch cohortByPatientSearch = PatientSearch.createCompositionSearch("[Male] AND [Adult]");
++		PatientSearch cohortByPatientSearch = PatientSearch.createCompositionSearch("[1] AND [2]");
+ 		
+ 		Serializer serializer = OpenmrsUtil.getSerializer();
+ 		StringWriter writer = new StringWriter();

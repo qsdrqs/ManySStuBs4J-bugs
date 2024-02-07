@@ -1,0 +1,20 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/TxManager.java b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/TxManager.java
+index aed27d54c..5146d97fd 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/TxManager.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/TxManager.java
+@@ -285,7 +285,7 @@ public class TxManager extends AbstractTransactionManager implements Lifecycle
+         if ( !tmOk )
+         {
+             SystemException ex = new SystemException( "TM has encountered some problem, "
+-                    + "please perform neccesary action (tx recovery/restart)" );
++                    + "please perform necessary action (tx recovery/restart)" );
+             if(tmNotOkCause != null)
+             {
+                 ex = Exceptions.withCause( ex, tmNotOkCause );
+@@ -1017,4 +1017,4 @@ public class TxManager extends AbstractTransactionManager implements Lifecycle
+             return Arrays.equals( branchId, ( ( RecoveredBranchInfo )obj ).branchId );
+         }
+     }
+-}
+\ No newline at end of file
++}

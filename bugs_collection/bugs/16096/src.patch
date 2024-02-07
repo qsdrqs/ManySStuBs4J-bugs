@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/spi/impl/operationservice/impl/Invocation.java b/fixed/hazelcast/src/main/java/com/hazelcast/spi/impl/operationservice/impl/Invocation.java
+index b38c77a0a..33b991052 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/spi/impl/operationservice/impl/Invocation.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/spi/impl/operationservice/impl/Invocation.java
+@@ -180,7 +180,7 @@ public abstract class Invocation implements OperationResponseHandler {
+     public void sendResponse(Operation op, Object response) {
+         if (!RESPONSE_RECEIVED.compareAndSet(this, FALSE, TRUE)) {
+             throw new ResponseAlreadySentException("NormalResponse already responseReceived for callback: " + this
+-                    + ", current-response: : " + response);
++                    + ", current-response: " + response);
+         }
+ 
+         if (response instanceof CallTimeoutResponse) {

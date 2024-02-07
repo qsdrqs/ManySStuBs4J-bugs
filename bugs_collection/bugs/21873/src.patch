@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/web/reactive/error/DefaultErrorWebExceptionHandlerIntegrationTests.java b/fixed/spring-boot-project/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/web/reactive/error/DefaultErrorWebExceptionHandlerIntegrationTests.java
+index ba925fcf3..aa31d7f66 100644
+--- a/buggy/spring-boot-project/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/web/reactive/error/DefaultErrorWebExceptionHandlerIntegrationTests.java
++++ b/fixed/spring-boot-project/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/web/reactive/error/DefaultErrorWebExceptionHandlerIntegrationTests.java
+@@ -335,7 +335,7 @@ public class DefaultErrorWebExceptionHandlerIntegrationTests {
+ 
+ 			@GetMapping("/commit")
+ 			public Mono<Void> commit(ServerWebExchange exchange) {
+-				return exchange.getResponse().writeWith(Mono.empty()).then(
++				return exchange.getResponse().setComplete().then(
+ 						Mono.error(new IllegalStateException("already committed!")));
+ 			}
+ 

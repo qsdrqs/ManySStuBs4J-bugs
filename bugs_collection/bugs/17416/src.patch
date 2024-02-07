@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/org/junit/tests/internal/runners/statements/FailOnTimeoutTest.java b/fixed/src/test/java/org/junit/tests/internal/runners/statements/FailOnTimeoutTest.java
+index 658e70241..055ef084c 100644
+--- a/buggy/src/test/java/org/junit/tests/internal/runners/statements/FailOnTimeoutTest.java
++++ b/fixed/src/test/java/org/junit/tests/internal/runners/statements/FailOnTimeoutTest.java
+@@ -26,7 +26,7 @@ import org.junit.runners.model.TestTimedOutException;
+  */
+ public class FailOnTimeoutTest {
+     private static final long TIMEOUT = 100;
+-    private static final long DURATION_THAT_EXCEEDS_TIMEOUT = TimeUnit.MILLISECONDS.convert(1, TimeUnit.HOURS);
++    private static final long DURATION_THAT_EXCEEDS_TIMEOUT = 60 * 60 * 1000; //1 hour
+ 
+     @Rule
+     public final ExpectedException thrown = ExpectedException.none();

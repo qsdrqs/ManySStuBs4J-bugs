@@ -1,0 +1,13 @@
+diff --git a/buggy/src/web/org/openmrs/web/controller/observation/ObsFormController.java b/fixed/src/web/org/openmrs/web/controller/observation/ObsFormController.java
+index dae538de0..4344f5112 100644
+--- a/buggy/src/web/org/openmrs/web/controller/observation/ObsFormController.java
++++ b/fixed/src/web/org/openmrs/web/controller/observation/ObsFormController.java
+@@ -159,7 +159,7 @@ public class ObsFormController extends SimpleFormController {
+ 	    	
+ 			if (obsId != null)
+ 	    		obs = os.getObs(Integer.valueOf(obsId));
+-	    	else if (encounterId != null) {
++	    	else if (StringUtils.hasText(encounterId)) {
+ 	    		Encounter e = es.getEncounter(Integer.valueOf(encounterId));
+ 	    		obs = new Obs();
+ 	    		obs.setEncounter(e);

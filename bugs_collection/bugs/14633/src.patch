@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/StrictModeCheck.java b/fixed/src/com/google/javascript/jscomp/StrictModeCheck.java
+index 5f1f61f44..ec8be6341 100644
+--- a/buggy/src/com/google/javascript/jscomp/StrictModeCheck.java
++++ b/fixed/src/com/google/javascript/jscomp/StrictModeCheck.java
+@@ -89,7 +89,7 @@ class StrictModeCheck extends AbstractPostOrderCallback
+ 
+   static final DiagnosticType DUPLICATE_CLASS_METHODS = DiagnosticType.error(
+       "JSC_DUPLICATE_CLASS_METHODS",
+-      "Class contain duplicate method name \"{0}\"");
++      "Class contains duplicate method name \"{0}\"");
+ 
+   private final AbstractCompiler compiler;
+ 

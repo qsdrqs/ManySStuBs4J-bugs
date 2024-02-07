@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/ringbuffer/impl/RingbufferBasicDistributedTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/ringbuffer/impl/RingbufferBasicDistributedTest.java
+index e5ac257af..49314c065 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/ringbuffer/impl/RingbufferBasicDistributedTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/ringbuffer/impl/RingbufferBasicDistributedTest.java
+@@ -26,7 +26,7 @@ import org.junit.runner.RunWith;
+ 
+ @RunWith(HazelcastParallelClassRunner.class)
+ @Category({QuickTest.class, ParallelTest.class})
+-public class RingbufferBasicDistributedTest extends RingbufferBasicTest {
++public class RingbufferBasicDistributedTest extends RingbufferAbstractTest {
+ 
+     @Override
+     protected HazelcastInstance[] newInstances(Config config) {

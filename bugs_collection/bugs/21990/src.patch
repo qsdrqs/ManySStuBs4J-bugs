@@ -1,0 +1,19 @@
+diff --git a/buggy/spring-boot-project/spring-boot-actuator-autoconfigure/src/main/java/org/springframework/boot/actuate/autoconfigure/security/servlet/EndpointRequest.java b/fixed/spring-boot-project/spring-boot-actuator-autoconfigure/src/main/java/org/springframework/boot/actuate/autoconfigure/security/servlet/EndpointRequest.java
+index ac6413006..f3633bd7b 100644
+--- a/buggy/spring-boot-project/spring-boot-actuator-autoconfigure/src/main/java/org/springframework/boot/actuate/autoconfigure/security/servlet/EndpointRequest.java
++++ b/fixed/spring-boot-project/spring-boot-actuator-autoconfigure/src/main/java/org/springframework/boot/actuate/autoconfigure/security/servlet/EndpointRequest.java
+@@ -317,11 +317,11 @@ public final class EndpointRequest {
+ 
+ 		public RequestMatcher antPath(RequestMatcherProvider matcherProvider,
+ 				String... parts) {
+-			String pattern = this.prefix;
++			StringBuilder pattern = new StringBuilder(this.prefix);
+ 			for (String part : parts) {
+-				pattern += part;
++				pattern.append(part);
+ 			}
+-			return matcherProvider.getRequestMatcher(pattern);
++			return matcherProvider.getRequestMatcher(pattern.toString());
+ 		}
+ 
+ 	}

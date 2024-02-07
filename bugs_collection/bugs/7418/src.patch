@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/SftpOperations.java b/fixed/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/SftpOperations.java
+index 4166a49e0..ea45b55f7 100644
+--- a/buggy/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/SftpOperations.java
++++ b/fixed/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/SftpOperations.java
+@@ -62,7 +62,7 @@ public class SftpOperations implements RemoteFileOperations<ChannelSftp.LsEntry>
+     /**
+      * Extended user info which supports interactive keyboard mode, by entering the password.
+      */
+-    public static interface ExtendedUserInfo extends UserInfo, UIKeyboardInteractive {
++    public interface ExtendedUserInfo extends UserInfo, UIKeyboardInteractive {
+     }
+ 
+     public void setEndpoint(GenericFileEndpoint endpoint) {

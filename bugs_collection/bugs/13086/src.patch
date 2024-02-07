@@ -1,0 +1,13 @@
+diff --git a/buggy/client/src/main/java/com/metamx/druid/http/ClientInfoResource.java b/fixed/client/src/main/java/com/metamx/druid/http/ClientInfoResource.java
+index 8bf344e88..307d28447 100644
+--- a/buggy/client/src/main/java/com/metamx/druid/http/ClientInfoResource.java
++++ b/fixed/client/src/main/java/com/metamx/druid/http/ClientInfoResource.java
+@@ -42,7 +42,7 @@ import java.util.Set;
+ 
+ /**
+  */
+-@Path("/datasources")
++@Path("/druid/v2/datasources")
+ public class ClientInfoResource
+ {
+   private static final int SEGMENT_HISTORY_MILLIS = 7 * 24 * 60 * 60 * 1000; // ONE WEEK

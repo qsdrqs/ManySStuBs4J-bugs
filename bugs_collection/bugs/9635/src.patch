@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/io/orc/encoded/EncodedReaderImpl.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/io/orc/encoded/EncodedReaderImpl.java
+index 0c5b675c9..edf321878 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/io/orc/encoded/EncodedReaderImpl.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/io/orc/encoded/EncodedReaderImpl.java
+@@ -643,7 +643,7 @@ class EncodedReaderImpl implements EncodedReader {
+       LOG.error("Failed " + (isCompressed ? "" : "un") + " compressed read; cOffset " + cOffset
+           + ", endCOffset " + endCOffset + ", streamOffset " + streamOffset
+           + ", unlockUntilCOffset " + unlockUntilCOffset + "; ranges passed in "
+-          + RecordReaderUtils.stringifyDiskRanges(start) + "; ranges passed to prepate "
++          + RecordReaderUtils.stringifyDiskRanges(start) + "; ranges passed to prepare "
+           + RecordReaderUtils.stringifyDiskRanges(current)); // Don't log exception here.
+       throw (ex instanceof IOException) ? (IOException)ex : new IOException(ex);
+     }

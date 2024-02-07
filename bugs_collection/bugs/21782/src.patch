@@ -1,0 +1,13 @@
+diff --git a/buggy/scribejava-core/src/main/java/com/github/scribejava/core/oauth/OAuthService.java b/fixed/scribejava-core/src/main/java/com/github/scribejava/core/oauth/OAuthService.java
+index c8f209e94..193061a6b 100644
+--- a/buggy/scribejava-core/src/main/java/com/github/scribejava/core/oauth/OAuthService.java
++++ b/fixed/scribejava-core/src/main/java/com/github/scribejava/core/oauth/OAuthService.java
+@@ -35,7 +35,7 @@ public abstract class OAuthService {
+             if (ForceTypeOfHttpRequest.PREFER_SYNC_ONLY_HTTP_REQUESTS == forceTypeOfHttpRequest) {
+                 config.log("Cannot use async operations, only sync");
+             }
+-            final OAuthConfigAsync asyncConfig = ((OAuthConfigAsync) config);
++            final OAuthConfigAsync asyncConfig = (OAuthConfigAsync) config;
+             final String asyncHttpProviderClassName = asyncConfig.getAsyncHttpProviderClassName();
+ 
+             asyncHttpClient = asyncHttpProviderClassName == null ? new AsyncHttpClient(asyncConfig.getAsyncHttpClientConfig())

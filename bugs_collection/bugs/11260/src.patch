@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/UtilsTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/UtilsTest.java
+index f3c66770c..e14f1035c 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/UtilsTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/UtilsTest.java
+@@ -288,7 +288,7 @@ public class UtilsTest {
+ 
+             @Override
+             public void close() throws IOException {
+-                throw new IOException();
++                throw new IOException("Test IOException");
+             }
+         });
+     }

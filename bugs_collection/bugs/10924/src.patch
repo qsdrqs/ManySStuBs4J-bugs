@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTagInfoTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTagInfoTest.java
+index 211f91ae4..ba1ef5970 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTagInfoTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTagInfoTest.java
+@@ -297,7 +297,7 @@ public class JavadocTagInfoTest {
+         ast.setFirstChild(astChild);
+         final DetailAST astChild2 = new DetailAST();
+         astChild2.setType(TokenTypes.ARRAY_DECLARATOR);
+-        astChild2.setText("ObjectStreafield");
++        astChild2.setText("ObjectStreamField");
+         astChild.setFirstChild(astChild2);
+ 
+         final int[] validTypes = {

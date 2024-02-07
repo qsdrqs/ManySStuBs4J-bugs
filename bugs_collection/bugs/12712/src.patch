@@ -1,0 +1,13 @@
+diff --git a/buggy/processing/src/main/java/io/druid/query/lookup/RegisteredLookupExtractionFn.java b/fixed/processing/src/main/java/io/druid/query/lookup/RegisteredLookupExtractionFn.java
+index 023a93615..ab58beb25 100644
+--- a/buggy/processing/src/main/java/io/druid/query/lookup/RegisteredLookupExtractionFn.java
++++ b/fixed/processing/src/main/java/io/druid/query/lookup/RegisteredLookupExtractionFn.java
+@@ -55,7 +55,7 @@ public class RegisteredLookupExtractionFn implements ExtractionFn
+     this.replaceMissingValueWith = replaceMissingValueWith;
+     this.retainMissingValue = retainMissingValue;
+     this.injective = injective;
+-    this.optimize = optimize;
++    this.optimize = optimize == null ? true : optimize;
+     this.lookup = lookup;
+   }
+ 

@@ -1,0 +1,15 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/multimap/impl/txn/TxnCommitBackupOperation.java b/fixed/hazelcast/src/main/java/com/hazelcast/multimap/impl/txn/TxnCommitBackupOperation.java
+index 1f32e313f..90a5a7ccc 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/multimap/impl/txn/TxnCommitBackupOperation.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/multimap/impl/txn/TxnCommitBackupOperation.java
+@@ -49,7 +49,9 @@ public class TxnCommitBackupOperation extends MultiMapKeyBasedOperation implemen
+             op.run();
+             op.afterRun();
+         }
+-        getOrCreateContainer().unlock(dataKey, caller, threadId);
++        // changed to forceUnlock because replica-sync of lock causes problems, same as IMap
++        // real solution is to make 'lock-and-get' backup-aware
++        getOrCreateContainer().forceUnlock(dataKey);
+     }
+ 
+     protected void writeInternal(ObjectDataOutput out) throws IOException {

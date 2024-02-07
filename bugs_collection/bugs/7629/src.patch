@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/impl/DefaultPackageScanClassResolver.java b/fixed/camel-core/src/main/java/org/apache/camel/impl/DefaultPackageScanClassResolver.java
+index d012eb752..4b91fbe7b 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/impl/DefaultPackageScanClassResolver.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/impl/DefaultPackageScanClassResolver.java
+@@ -206,7 +206,7 @@ public class DefaultPackageScanClassResolver implements PackageScanClassResolver
+                     log.trace("URL from classloader: " + url);
+                 }
+                 
+-                url = customerResourceLocator(url);
++                url = customResourceLocator(url);
+ 
+                 String urlPath = url.getFile();
+                 urlPath = URLDecoder.decode(urlPath, "UTF-8");

@@ -1,0 +1,17 @@
+diff --git a/buggy/stratosphere-runtime/src/main/java/eu/stratosphere/nephele/ipc/Server.java b/fixed/stratosphere-runtime/src/main/java/eu/stratosphere/nephele/ipc/Server.java
+index 51a14d7ab..406d7bec3 100644
+--- a/buggy/stratosphere-runtime/src/main/java/eu/stratosphere/nephele/ipc/Server.java
++++ b/fixed/stratosphere-runtime/src/main/java/eu/stratosphere/nephele/ipc/Server.java
+@@ -949,10 +949,10 @@ public abstract class Server {
+ 					responder.doRespond(call);
+ 				} catch (InterruptedException e) {
+ 					if (running) { // unexpected -- log it
+-						LOG.info(getName() + " caught: ", e);
++						LOG.error(getName() + " caught: ", e);
+ 					}
+ 				} catch (Exception e) {
+-					LOG.info(getName() + " caught: ", e);
++					LOG.error(getName() + " caught: ", e);
+ 				}
+ 			}
+ 			LOG.debug(getName() + ": exiting");

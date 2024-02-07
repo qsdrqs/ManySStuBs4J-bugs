@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/main/java/org/openmrs/api/context/ServiceContext.java b/fixed/api/src/main/java/org/openmrs/api/context/ServiceContext.java
+index 3e845c8d4..0abb5e4ef 100644
+--- a/buggy/api/src/main/java/org/openmrs/api/context/ServiceContext.java
++++ b/fixed/api/src/main/java/org/openmrs/api/context/ServiceContext.java
+@@ -75,7 +75,7 @@ public class ServiceContext implements ApplicationContextAware {
+ 	
+ 	private static final Log log = LogFactory.getLog(ServiceContext.class);
+ 	
+-	private static ServiceContext instance;
++	private static volatile ServiceContext instance;
+ 	
+ 	private ApplicationContext applicationContext;
+ 	

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/android/volley/Request.java b/fixed/src/main/java/com/android/volley/Request.java
+index 0db074b76..6234aa580 100644
+--- a/buggy/src/main/java/com/android/volley/Request.java
++++ b/fixed/src/main/java/com/android/volley/Request.java
+@@ -306,7 +306,7 @@ public abstract class Request<T> implements Comparable<Request<T>> {
+      * Returns the cache key for this request.  By default, this is the URL.
+      */
+     public String getCacheKey() {
+-        return getUrl();
++        return getOriginUrl();
+     }
+ 
+     /**

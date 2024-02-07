@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/main/java/org/apache/druid/data/input/Rows.java b/fixed/core/src/main/java/org/apache/druid/data/input/Rows.java
+index 2d482d2ce..545d98fa8 100644
+--- a/buggy/core/src/main/java/org/apache/druid/data/input/Rows.java
++++ b/fixed/core/src/main/java/org/apache/druid/data/input/Rows.java
+@@ -112,7 +112,7 @@ public final class Rows
+         throw new ParseException(e, "Unable to parse value[%s] for field[%s]", inputValue, name);
+       }
+     } else {
+-      throw new ParseException("Unknown type[%s] for field", inputValue.getClass(), inputValue);
++      throw new ParseException("Unknown type[%s] for field[%s]", inputValue.getClass(), name);
+     }
+   }
+ 

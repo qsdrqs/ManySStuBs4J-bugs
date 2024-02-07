@@ -1,0 +1,14 @@
+diff --git a/buggy/spring-boot-cli/src/main/java/org/springframework/boot/cli/compiler/grape/AetherGrapeEngine.java b/fixed/spring-boot-cli/src/main/java/org/springframework/boot/cli/compiler/grape/AetherGrapeEngine.java
+index ebca33f4b..72d879d45 100644
+--- a/buggy/spring-boot-cli/src/main/java/org/springframework/boot/cli/compiler/grape/AetherGrapeEngine.java
++++ b/fixed/spring-boot-cli/src/main/java/org/springframework/boot/cli/compiler/grape/AetherGrapeEngine.java
+@@ -195,7 +195,8 @@ public class AetherGrapeEngine implements GrapeEngine {
+ 					.getManagedDependencies());
+ 
+ 			DependencyRequest dependencyRequest = new DependencyRequest(collectRequest,
+-					DependencyFilterUtils.classpathFilter(JavaScopes.COMPILE));
++					DependencyFilterUtils.classpathFilter(JavaScopes.COMPILE,
++							JavaScopes.RUNTIME));
+ 
+ 			DependencyResult dependencyResult = this.repositorySystem
+ 					.resolveDependencies(this.session, dependencyRequest);

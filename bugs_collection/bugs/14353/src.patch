@@ -1,0 +1,13 @@
+diff --git a/buggy/RankingPluginUI/src/org/gephi/ui/ranking/plugin/LabelColorTransformerUI.java b/fixed/RankingPluginUI/src/org/gephi/ui/ranking/plugin/LabelColorTransformerUI.java
+index eed4999b7..4e00d2c6d 100644
+--- a/buggy/RankingPluginUI/src/org/gephi/ui/ranking/plugin/LabelColorTransformerUI.java
++++ b/fixed/RankingPluginUI/src/org/gephi/ui/ranking/plugin/LabelColorTransformerUI.java
+@@ -36,7 +36,7 @@ import org.openide.util.lookup.ServiceProvider;
+  *
+  * @author Mathieu Bastian
+  */
+-@ServiceProvider(service = TransformerUI.class)
++@ServiceProvider(service = TransformerUI.class, position = 300)
+ public class LabelColorTransformerUI implements TransformerUI {
+ 
+     public Icon getIcon() {

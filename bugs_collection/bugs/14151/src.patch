@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/ProcessorPlugin/src/main/java/org/gephi/io/processor/plugin/DefaultProcessor.java b/fixed/modules/ProcessorPlugin/src/main/java/org/gephi/io/processor/plugin/DefaultProcessor.java
+index 4bb471230..3a3f35e7a 100644
+--- a/buggy/modules/ProcessorPlugin/src/main/java/org/gephi/io/processor/plugin/DefaultProcessor.java
++++ b/fixed/modules/ProcessorPlugin/src/main/java/org/gephi/io/processor/plugin/DefaultProcessor.java
+@@ -132,7 +132,7 @@ public class DefaultProcessor extends AbstractProcessor implements Processor {
+                     edge = factory.newEdge(id, source, target, edgeType, draftEdge.getWeight(), true);
+                     break;
+                 case MIXED:
+-                    boolean directed = draftEdge.getDirection().equals(EdgeDirection.UNDIRECTED) ? false : true;
++                    boolean directed = draftEdge.getDirection() != null && draftEdge.getDirection().equals(EdgeDirection.UNDIRECTED) ? false : true;
+                     edge = factory.newEdge(id, source, target, edgeType, draftEdge.getWeight(), directed);
+             }
+             edgeCount++;

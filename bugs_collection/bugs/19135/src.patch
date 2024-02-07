@@ -1,0 +1,20 @@
+diff --git a/buggy/community/server/src/test/java/org/neo4j/server/rest/CypherDocIT.java b/fixed/community/server/src/test/java/org/neo4j/server/rest/CypherDocIT.java
+index 2c5cf4f60..4f71b563b 100644
+--- a/buggy/community/server/src/test/java/org/neo4j/server/rest/CypherDocIT.java
++++ b/fixed/community/server/src/test/java/org/neo4j/server/rest/CypherDocIT.java
+@@ -225,7 +225,7 @@ public class CypherDocIT extends AbstractRestFunctionalTestBase {
+      */
+     @Test
+     @Documented
+-    @Title( "Create mutiple nodes with properties" )
++    @Title( "Create multiple nodes with properties" )
+     @Graph
+     public void send_query_to_create_multipe_nodes_from_a_map() throws Exception
+     {
+@@ -411,4 +411,4 @@ public class CypherDocIT extends AbstractRestFunctionalTestBase {
+     {
+         return getDataUri() + "cypher";
+     }
+-}
+\ No newline at end of file
++}

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/ProcessCommonJSModules.java b/fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java
+index 11057560a..899a3cd42 100644
+--- a/buggy/src/com/google/javascript/jscomp/ProcessCommonJSModules.java
++++ b/fixed/src/com/google/javascript/jscomp/ProcessCommonJSModules.java
+@@ -483,7 +483,7 @@ public final class ProcessCommonJSModules implements CompilerPass {
+ 
+         Node rhsValue = ref.getNext();
+         Node newName = IR.name(moduleName).srcref(ref);
+-        newName.putProp(Node.ORIGINALNAME_PROP, rhsValue);
++        newName.putProp(Node.ORIGINALNAME_PROP, qName);
+ 
+         Node parent = ref.getParent();
+         parent.replaceChild(ref, newName);

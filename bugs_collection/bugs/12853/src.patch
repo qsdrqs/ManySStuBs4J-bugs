@@ -1,0 +1,13 @@
+diff --git a/buggy/indexing-service/src/main/java/io/druid/indexing/firehose/IngestSegmentFirehoseFactory.java b/fixed/indexing-service/src/main/java/io/druid/indexing/firehose/IngestSegmentFirehoseFactory.java
+index ca496d346..94adbc0f4 100644
+--- a/buggy/indexing-service/src/main/java/io/druid/indexing/firehose/IngestSegmentFirehoseFactory.java
++++ b/fixed/indexing-service/src/main/java/io/druid/indexing/firehose/IngestSegmentFirehoseFactory.java
+@@ -177,7 +177,7 @@ public class IngestSegmentFirehoseFactory implements FirehoseFactory<InputRowPar
+       } else {
+         Set<String> metricsSet = new HashSet<>();
+         for (TimelineObjectHolder<String, DataSegment> timelineObjectHolder : timeLineSegments) {
+-          metricsSet.addAll(timelineObjectHolder.getObject().getChunk(0).getObject().getDimensions());
++          metricsSet.addAll(timelineObjectHolder.getObject().getChunk(0).getObject().getMetrics());
+         }
+         metricsList = Lists.newArrayList(metricsSet);
+       }

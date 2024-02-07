@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/test/java/com/facebook/presto/sql/planner/assertions/JoinMatcher.java b/fixed/presto-main/src/test/java/com/facebook/presto/sql/planner/assertions/JoinMatcher.java
+index 2d13e4e18..4cefd33c6 100644
+--- a/buggy/presto-main/src/test/java/com/facebook/presto/sql/planner/assertions/JoinMatcher.java
++++ b/fixed/presto-main/src/test/java/com/facebook/presto/sql/planner/assertions/JoinMatcher.java
+@@ -109,7 +109,7 @@ final class JoinMatcher
+                 .add("type", joinType)
+                 .add("equiCriteria", equiCriteria)
+                 .add("filter", filter.orElse(null))
+-                .add("distributionType", distributionType.orElse(null))
++                .add("distributionType", distributionType)
+                 .toString();
+     }
+ }

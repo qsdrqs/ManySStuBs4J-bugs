@@ -1,0 +1,14 @@
+diff --git a/buggy/jta/user-transaction/src/test/java/org/javaee7/jta/UserTransactionTest.java b/fixed/jta/user-transaction/src/test/java/org/javaee7/jta/UserTransactionTest.java
+index 41fb57e50..a0cf1b2e7 100644
+--- a/buggy/jta/user-transaction/src/test/java/org/javaee7/jta/UserTransactionTest.java
++++ b/fixed/jta/user-transaction/src/test/java/org/javaee7/jta/UserTransactionTest.java
+@@ -23,8 +23,7 @@ public class UserTransactionTest {
+     @Deployment
+     public static Archive<?> deploy() {
+         return ShrinkWrap.create(JavaArchive.class)
+-                         .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+-        // WF 8.0.0.Beta1 needs the beans.xml file. Shouldn't be the case with JavaEE 7
++                         .addAsManifestResource("beans.xml");
+     }
+ 
+     @Inject UserTransaction ut;

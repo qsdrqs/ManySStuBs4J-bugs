@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/impl/BaseManager.java b/fixed/hazelcast/src/main/java/com/hazelcast/impl/BaseManager.java
+index c5ed78129..60a7987c1 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/impl/BaseManager.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/impl/BaseManager.java
+@@ -40,7 +40,7 @@ import java.util.concurrent.atomic.AtomicInteger;
+ import java.util.logging.Level;
+ import java.util.logging.Logger;
+ 
+-public abstract class BaseManager implements Constants {
++public abstract class BaseManager {
+ 
+     protected final static boolean zeroBackup = false;
+ 

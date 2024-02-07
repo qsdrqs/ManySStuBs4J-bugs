@@ -1,0 +1,18 @@
+diff --git a/buggy/processing/src/main/java/io/druid/query/groupby/GroupByQueryEngine.java b/fixed/processing/src/main/java/io/druid/query/groupby/GroupByQueryEngine.java
+index 84f877a8e..89498e6b5 100644
+--- a/buggy/processing/src/main/java/io/druid/query/groupby/GroupByQueryEngine.java
++++ b/fixed/processing/src/main/java/io/druid/query/groupby/GroupByQueryEngine.java
+@@ -366,11 +366,11 @@ public class GroupByQueryEngine
+         }
+         cursor.advance();
+       }
+-      while (!cursor.isDone()) {
++      while (!cursor.isDone() && rowUpdater.getNumRows() < config.getMaxIntermediateRows()) {
+         ByteBuffer key = ByteBuffer.allocate(dimensions.size() * Ints.BYTES);
+ 
+         unprocessedKeys = rowUpdater.updateValues(key, dimensions);
+-        if (unprocessedKeys != null || rowUpdater.getNumRows() > config.getMaxIntermediateRows()) {
++        if (unprocessedKeys != null) {
+           break;
+         }
+ 

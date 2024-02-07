@@ -1,0 +1,13 @@
+diff --git a/buggy/src/java/org/onelab/filter/HashFunction.java b/fixed/src/java/org/onelab/filter/HashFunction.java
+index 32730b3cc..2e26bc461 100644
+--- a/buggy/src/java/org/onelab/filter/HashFunction.java
++++ b/fixed/src/java/org/onelab/filter/HashFunction.java
+@@ -112,7 +112,7 @@ public final class HashFunction{
+       }
+       int[] result = new int[nbHash];
+       for (int i = 0, initval = 0; i < nbHash; i++) {
+-        initval = result[i] = Math.abs(JenkinsHash.hash(b, initval)) % maxValue;
++        initval = result[i] = Math.abs(JenkinsHash.hash(b, initval) % maxValue);
+       }
+       return result;
+   }//end hash() 

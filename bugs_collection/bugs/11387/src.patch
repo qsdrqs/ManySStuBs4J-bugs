@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/blocks/AvoidNestedBlocksCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/blocks/AvoidNestedBlocksCheckTest.java
+index 9f859e4e4..1a736319d 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/blocks/AvoidNestedBlocksCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/blocks/AvoidNestedBlocksCheckTest.java
+@@ -57,7 +57,7 @@ public class AvoidNestedBlocksCheckTest
+         throws Exception {
+         final DefaultConfiguration checkConfig =
+             createCheckConfig(AvoidNestedBlocksCheck.class);
+-        checkConfig.addAttribute("allowInSwitchCase", Boolean.TRUE.toString());
++        checkConfig.addAttribute("allowInSwitchCase", "true");
+ 
+         final String[] expected = {
+             "22:9: " + getCheckMessage(MSG_KEY_BLOCK_NESTED),

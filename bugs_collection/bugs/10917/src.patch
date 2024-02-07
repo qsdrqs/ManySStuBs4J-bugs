@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/DeclarationOrderCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/DeclarationOrderCheckTest.java
+index cb12f7fd3..c60da1bde 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/DeclarationOrderCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/DeclarationOrderCheckTest.java
+@@ -40,7 +40,7 @@ public class DeclarationOrderCheckTest
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "coding" + File.separator + filename);
++                + "coding" + File.separator + "declarationorder" + File.separator + filename);
+     }
+ 
+     @Test

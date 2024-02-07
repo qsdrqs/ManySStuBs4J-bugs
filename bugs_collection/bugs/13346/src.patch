@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-accumulo/src/main/java/com/facebook/presto/accumulo/index/IndexLookup.java b/fixed/presto-accumulo/src/main/java/com/facebook/presto/accumulo/index/IndexLookup.java
+index 213ec8c8c..ed6d59e5e 100644
+--- a/buggy/presto-accumulo/src/main/java/com/facebook/presto/accumulo/index/IndexLookup.java
++++ b/fixed/presto-accumulo/src/main/java/com/facebook/presto/accumulo/index/IndexLookup.java
+@@ -188,7 +188,7 @@ public class IndexLookup
+                 }
+             }
+             else {
+-                LOG.warn("Query containts constraint on non-indexed column %s. Is it worth indexing?", columnConstraint.getName());
++                LOG.warn("Query contains constraint on non-indexed column %s. Is it worth indexing?", columnConstraint.getName());
+             }
+         }
+         return builder.build();

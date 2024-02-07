@@ -1,0 +1,13 @@
+diff --git a/buggy/PreviewImpl/src/org/gephi/preview/PreviewGraphFactory.java b/fixed/PreviewImpl/src/org/gephi/preview/PreviewGraphFactory.java
+index 9ef404d3f..41122b787 100644
+--- a/buggy/PreviewImpl/src/org/gephi/preview/PreviewGraphFactory.java
++++ b/fixed/PreviewImpl/src/org/gephi/preview/PreviewGraphFactory.java
+@@ -167,7 +167,7 @@ public class PreviewGraphFactory {
+         org.gephi.graph.api.TextData sourceNodeTextData = sourceNodeData.getTextData();
+ 
+         String label = sourceNodeData.getLabel();
+-        if (sourceNodeTextData != null && sourceNodeTextData.getText() != null && sourceNodeTextData.getText().isEmpty()) {
++        if (sourceNodeTextData != null && sourceNodeTextData.getText() != null && !sourceNodeTextData.getText().isEmpty()) {
+             label = sourceNodeTextData.getText();
+         }
+ 

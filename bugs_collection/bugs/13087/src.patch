@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/com/metamx/druid/loading/SingleSegmentLoader.java b/fixed/server/src/main/java/com/metamx/druid/loading/SingleSegmentLoader.java
+index a377a4602..f40f2a52e 100644
+--- a/buggy/server/src/main/java/com/metamx/druid/loading/SingleSegmentLoader.java
++++ b/fixed/server/src/main/java/com/metamx/druid/loading/SingleSegmentLoader.java
+@@ -163,7 +163,7 @@ public class SingleSegmentLoader implements SegmentLoader
+   @Override
+   public void cleanup(DataSegment segment) throws SegmentLoadingException
+   {
+-    File cacheFile = getLocalStorageDir(segment).getParentFile();
++    File cacheFile = getLocalStorageDir(segment);
+ 
+     try {
+       log.info("Deleting directory[%s]", cacheFile);

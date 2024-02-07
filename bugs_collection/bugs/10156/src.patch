@@ -1,0 +1,13 @@
+diff --git a/buggy/aws-java-sdk-dynamodb/src/main/java/com/amazonaws/services/dynamodbv2/datamodeling/DynamoDBAutoGeneratorRegistry.java b/fixed/aws-java-sdk-dynamodb/src/main/java/com/amazonaws/services/dynamodbv2/datamodeling/DynamoDBAutoGeneratorRegistry.java
+index 6ed065a2f..c7cb9f568 100644
+--- a/buggy/aws-java-sdk-dynamodb/src/main/java/com/amazonaws/services/dynamodbv2/datamodeling/DynamoDBAutoGeneratorRegistry.java
++++ b/fixed/aws-java-sdk-dynamodb/src/main/java/com/amazonaws/services/dynamodbv2/datamodeling/DynamoDBAutoGeneratorRegistry.java
+@@ -218,7 +218,7 @@ final class DynamoDBAutoGeneratorRegistry {
+         }
+ 
+         public AbstractGenerator(final Class<T> generatedType, final DynamoDBAutoGenerateStrategy strategy) {
+-            this(generatedType, (DynamoDBAutoGenerateStrategy.CREATE == strategy ? CreateGeneratable.<T>instance() : AlwaysGeneratable.<T>instance()));
++            this(generatedType, (DynamoDBAutoGenerateStrategy.CREATE == strategy) ? CreateGeneratable.<T>instance() : AlwaysGeneratable.<T>instance());
+         }
+ 
+         private final Class<T> getGeneratedType() {

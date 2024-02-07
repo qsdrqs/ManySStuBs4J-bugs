@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/processor/StreamCachingCustomShouldSpoolRuleTest.java b/fixed/camel-core/src/test/java/org/apache/camel/processor/StreamCachingCustomShouldSpoolRuleTest.java
+index 7375e743a..88fd03d53 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/processor/StreamCachingCustomShouldSpoolRuleTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/processor/StreamCachingCustomShouldSpoolRuleTest.java
+@@ -54,7 +54,7 @@ public class StreamCachingCustomShouldSpoolRuleTest extends ContextTestSupport {
+         assertMockEndpointsSatisfied();
+     }
+ 
+-    private class MyInputStream extends FilterInputStream {
++    private final class MyInputStream extends FilterInputStream {
+ 
+         private MyInputStream(InputStream in) {
+             super(in);

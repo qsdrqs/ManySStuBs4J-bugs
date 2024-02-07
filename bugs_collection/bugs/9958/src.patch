@@ -1,0 +1,13 @@
+diff --git a/buggy/external/storm-hdfs-blobstore/src/main/java/org/apache/storm/hdfs/blobstore/HdfsBlobStore.java b/fixed/external/storm-hdfs-blobstore/src/main/java/org/apache/storm/hdfs/blobstore/HdfsBlobStore.java
+index 2627231e6..e6608c55f 100644
+--- a/buggy/external/storm-hdfs-blobstore/src/main/java/org/apache/storm/hdfs/blobstore/HdfsBlobStore.java
++++ b/fixed/external/storm-hdfs-blobstore/src/main/java/org/apache/storm/hdfs/blobstore/HdfsBlobStore.java
+@@ -162,7 +162,7 @@ public class HdfsBlobStore extends BlobStore {
+                 localSubject = getHadoopUser();
+             }
+         } catch (IOException e) {
+-            throw new RuntimeException("Error logging in from keytab!", e);
++            throw new RuntimeException("Error logging in from keytab: " + e.getMessage(), e);
+         }
+         aclHandler = new BlobStoreAclHandler(conf);
+         Path baseDir = new Path(overrideBase, BASE_BLOBS_DIR_NAME);

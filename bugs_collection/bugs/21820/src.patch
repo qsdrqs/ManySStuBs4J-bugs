@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/metrics/web/reactive/server/MetricsWebFilter.java b/fixed/spring-boot-project/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/metrics/web/reactive/server/MetricsWebFilter.java
+index b70d337d5..faf21ebfb 100644
+--- a/buggy/spring-boot-project/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/metrics/web/reactive/server/MetricsWebFilter.java
++++ b/fixed/spring-boot-project/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/metrics/web/reactive/server/MetricsWebFilter.java
+@@ -85,7 +85,7 @@ public class MetricsWebFilter implements WebFilter {
+ 		if (!this.autoTimer.isEnabled()) {
+ 			return chain.filter(exchange);
+ 		}
+-		return chain.filter(exchange).compose((call) -> filter(exchange, call));
++		return chain.filter(exchange).transformDeferred((call) -> filter(exchange, call));
+ 	}
+ 
+ 	private Publisher<Void> filter(ServerWebExchange exchange, Mono<Void> call) {

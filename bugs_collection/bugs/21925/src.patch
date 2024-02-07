@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-devtools/src/test/java/org/springframework/boot/devtools/filewatch/FileSystemWatcherTests.java b/fixed/spring-boot-project/spring-boot-devtools/src/test/java/org/springframework/boot/devtools/filewatch/FileSystemWatcherTests.java
+index e42fce7c3..90ac96c90 100644
+--- a/buggy/spring-boot-project/spring-boot-devtools/src/test/java/org/springframework/boot/devtools/filewatch/FileSystemWatcherTests.java
++++ b/fixed/spring-boot-project/spring-boot-devtools/src/test/java/org/springframework/boot/devtools/filewatch/FileSystemWatcherTests.java
+@@ -50,7 +50,7 @@ public class FileSystemWatcherTests {
+ 	private FileSystemWatcher watcher;
+ 
+ 	private List<Set<ChangedFiles>> changes = Collections
+-			.synchronizedList(new ArrayList<Set<ChangedFiles>>());
++			.synchronizedList(new ArrayList<>());
+ 
+ 	@Rule
+ 	public TemporaryFolder temp = new TemporaryFolder();

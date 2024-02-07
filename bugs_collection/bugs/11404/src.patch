@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter2filebasic/rule231filetab/FileTabCharacterTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter2filebasic/rule231filetab/FileTabCharacterTest.java
+index 3ac4b49f8..214ee8fa4 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter2filebasic/rule231filetab/FileTabCharacterTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter2filebasic/rule231filetab/FileTabCharacterTest.java
+@@ -56,7 +56,7 @@ public class FileTabCharacterTest extends BaseCheckTestSupport{
+     /**
+      * Creates a configuration that is functionally close to that in the docs.
+      */
+-    private DefaultConfiguration createConfig(boolean verbose)
++    private static DefaultConfiguration createConfig(boolean verbose)
+     {
+         final DefaultConfiguration checkConfig =
+             createCheckConfig(FileTabCharacterCheck.class);

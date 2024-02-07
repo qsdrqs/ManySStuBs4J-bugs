@@ -1,0 +1,22 @@
+diff --git a/buggy/external/storm-kafka/src/jvm/storm/kafka/PartitionManager.java b/fixed/external/storm-kafka/src/jvm/storm/kafka/PartitionManager.java
+index 36a0e85d8..6b0930b5c 100644
+--- a/buggy/external/storm-kafka/src/jvm/storm/kafka/PartitionManager.java
++++ b/fixed/external/storm-kafka/src/jvm/storm/kafka/PartitionManager.java
+@@ -307,7 +307,7 @@ public class PartitionManager {
+ 
+         private MessageRetryRecord(int retryNum) {
+             this.retryNum = retryNum;
+-            this.retryTimeUTC = new Date().getTime() + calculateRetryDelay();
++            this.retryTimeUTC = System.currentTimeMillis() + calculateRetryDelay();
+         }
+ 
+         public MessageRetryRecord createNextRetryRecord() {
+@@ -321,7 +321,7 @@ public class PartitionManager {
+         }
+ 
+         public boolean isReadyForRetry() {
+-            return new Date().getTime() > this.retryTimeUTC;
++            return System.currentTimeMillis() > this.retryTimeUTC;
+         }
+     }
+ }

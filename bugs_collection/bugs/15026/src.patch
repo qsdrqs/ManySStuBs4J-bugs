@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/TypeCheck.java b/fixed/src/com/google/javascript/jscomp/TypeCheck.java
+index 49994aaf5..e671356bb 100644
+--- a/buggy/src/com/google/javascript/jscomp/TypeCheck.java
++++ b/fixed/src/com/google/javascript/jscomp/TypeCheck.java
+@@ -140,7 +140,7 @@ public class TypeCheck implements NodeTraversal.Callback, CompilerPass {
+ 
+   static final DiagnosticType ENUM_NOT_CONSTANT =
+       DiagnosticType.warning("JSC_ENUM_NOT_CONSTANT",
+-          "enum key {0} must be a syntactic constant");
++          "enum key {0} must be in ALL_CAPS");
+ 
+   static final DiagnosticType INVALID_INTERFACE_MEMBER_DECLARATION =
+       DiagnosticType.warning(

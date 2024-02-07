@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/spark/FilterImpl.java b/fixed/src/main/java/spark/FilterImpl.java
+index b1ac4b147..4c867f1bb 100644
+--- a/buggy/src/main/java/spark/FilterImpl.java
++++ b/fixed/src/main/java/spark/FilterImpl.java
+@@ -26,7 +26,7 @@ import spark.utils.SparkUtils;
+  *
+  * @author Per Wendel
+  */
+-public abstract class FilterImpl {
++public abstract class FilterImpl implements Filter {
+ 
+     private static final String DEFAUT_CONTENT_TYPE = "text/html";
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/buffer/ChannelBufferInputStream.java b/fixed/src/main/java/org/jboss/netty/buffer/ChannelBufferInputStream.java
+index 980a594d0..10ec5d457 100644
+--- a/buggy/src/main/java/org/jboss/netty/buffer/ChannelBufferInputStream.java
++++ b/fixed/src/main/java/org/jboss/netty/buffer/ChannelBufferInputStream.java
+@@ -232,7 +232,7 @@ public class ChannelBufferInputStream extends InputStream implements DataInput {
+ 
+     private void checkAvailable(int fieldSize) throws IOException {
+         if (fieldSize < 0) {
+-            throw new IllegalArgumentException();
++            throw new IndexOutOfBoundsException();
+         }
+         if (fieldSize > available()) {
+             throw new EOFException();

@@ -1,0 +1,13 @@
+diff --git a/buggy/DesktopDataLaboratory/src/org/gephi/desktop/datalab/NodeDataTable.java b/fixed/DesktopDataLaboratory/src/org/gephi/desktop/datalab/NodeDataTable.java
+index b3fa9cbd4..a35bc2ee6 100644
+--- a/buggy/DesktopDataLaboratory/src/org/gephi/desktop/datalab/NodeDataTable.java
++++ b/fixed/DesktopDataLaboratory/src/org/gephi/desktop/datalab/NodeDataTable.java
+@@ -404,7 +404,7 @@ public class NodeDataTable {
+         }
+ 
+         private boolean outOfBounds(int position) {
+-            return position >= length;
++            return position >= length || position < 0;
+         }
+     }
+ 

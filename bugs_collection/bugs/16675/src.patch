@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/cache/impl/HazelcastCacheManager.java b/fixed/hazelcast/src/main/java/com/hazelcast/cache/impl/HazelcastCacheManager.java
+index 4de56c500..93d5ced89 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/cache/impl/HazelcastCacheManager.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/cache/impl/HazelcastCacheManager.java
+@@ -309,7 +309,7 @@ public abstract class HazelcastCacheManager implements CacheManager {
+      */
+     @Override
+     public <T> T unwrap(Class<T> clazz) {
+-        if (clazz.isAssignableFrom(HazelcastCacheManager.class)) {
++        if (HazelcastCacheManager.class.isAssignableFrom(clazz)) {
+             return (T) this;
+         }
+         throw new IllegalArgumentException();

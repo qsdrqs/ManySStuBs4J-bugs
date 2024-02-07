@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/CompilerOptions.java b/fixed/src/com/google/javascript/jscomp/CompilerOptions.java
+index aff29a3a8..c6eec0d1e 100644
+--- a/buggy/src/com/google/javascript/jscomp/CompilerOptions.java
++++ b/fixed/src/com/google/javascript/jscomp/CompilerOptions.java
+@@ -219,7 +219,7 @@ public class CompilerOptions implements Serializable {
+    * and the optimizations see the old types. We plan to switch these users to NTI-only builds
+    * and delete this option.
+    */
+-  private boolean runOTIafterNTI = false;
++  private boolean runOTIafterNTI = true;
+ 
+   /**
+    * Relevant only when {@link #useNewTypeInference} is true, where we normally disable OTI errors.

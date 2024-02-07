@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractTypeAwareCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractTypeAwareCheck.java
+index 38823a8f4..165bbbffc 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractTypeAwareCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractTypeAwareCheck.java
+@@ -491,8 +491,7 @@ public abstract class AbstractTypeAwareCheck extends Check {
+ 
+         @Override
+         public String toString() {
+-            return "ClassAlias[alias " + getName()
+-                + " for " + classInfo + "]";
++            return "ClassAlias[alias " + getName() + " for " + classInfo.getName() + "]";
+         }
+     }
+ 

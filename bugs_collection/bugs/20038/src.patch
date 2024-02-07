@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/buffer/ChannelBuffers.java b/fixed/src/main/java/org/jboss/netty/buffer/ChannelBuffers.java
+index 9f3cf48bf..e7c869810 100644
+--- a/buggy/src/main/java/org/jboss/netty/buffer/ChannelBuffers.java
++++ b/fixed/src/main/java/org/jboss/netty/buffer/ChannelBuffers.java
+@@ -293,7 +293,7 @@ public class ChannelBuffers {
+             return EMPTY_BUFFER;
+         }
+         if (!buffer.isReadOnly() && buffer.hasArray()) {
+-            return wrappedBuffer(buffer.array(), buffer.arrayOffset(),buffer.remaining());
++            return wrappedBuffer(buffer.order(), buffer.array(), buffer.arrayOffset(),buffer.remaining());
+         } else {
+             return new ByteBufferBackedChannelBuffer(buffer);
+         }

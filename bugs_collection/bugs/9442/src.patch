@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/org/apache/hadoop/hbase/regionserver/TestCompaction.java b/fixed/src/test/java/org/apache/hadoop/hbase/regionserver/TestCompaction.java
+index 34b80440d..2c3747d39 100644
+--- a/buggy/src/test/java/org/apache/hadoop/hbase/regionserver/TestCompaction.java
++++ b/fixed/src/test/java/org/apache/hadoop/hbase/regionserver/TestCompaction.java
+@@ -61,7 +61,7 @@ public class TestCompaction extends HBaseTestCase {
+ 
+     // Set cache flush size to 1MB
+     conf.setInt("hbase.hregion.memstore.flush.size", 1024*1024);
+-    conf.setInt("hbase.hregion.memstore.block.multiplier", 10);
++    conf.setInt("hbase.hregion.memstore.block.multiplier", 100);
+     this.cluster = null;
+   }
+ 

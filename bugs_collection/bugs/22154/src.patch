@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-tools/spring-boot-gradle-plugin/src/test/java/org/springframework/boot/gradle/testkit/GradleBuild.java b/fixed/spring-boot-project/spring-boot-tools/spring-boot-gradle-plugin/src/test/java/org/springframework/boot/gradle/testkit/GradleBuild.java
+index e2ae48367..351e201b5 100644
+--- a/buggy/spring-boot-project/spring-boot-tools/spring-boot-gradle-plugin/src/test/java/org/springframework/boot/gradle/testkit/GradleBuild.java
++++ b/fixed/spring-boot-project/spring-boot-tools/spring-boot-gradle-plugin/src/test/java/org/springframework/boot/gradle/testkit/GradleBuild.java
+@@ -196,7 +196,7 @@ public class GradleBuild implements TestRule {
+ 			XPathFactory xPathFactory = XPathFactory.newInstance();
+ 			XPath xpath = xPathFactory.newXPath();
+ 			XPathExpression expr = xpath.compile(expression);
+-			String version = expr.evaluate(new InputSource(new FileReader("pom.xml")));
++			String version = expr.evaluate(new InputSource(new FileReader(".flattened-pom.xml")));
+ 			return version;
+ 		}
+ 		catch (Exception ex) {

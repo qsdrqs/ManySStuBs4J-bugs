@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-parser/src/test/java/com/facebook/presto/sql/parser/TestStatementBuilder.java b/fixed/presto-parser/src/test/java/com/facebook/presto/sql/parser/TestStatementBuilder.java
+index cf3872a7d..607afbb9c 100644
+--- a/buggy/presto-parser/src/test/java/com/facebook/presto/sql/parser/TestStatementBuilder.java
++++ b/fixed/presto-parser/src/test/java/com/facebook/presto/sql/parser/TestStatementBuilder.java
+@@ -74,7 +74,7 @@ public class TestStatementBuilder
+         printStatement("select count(*) x from src group by rollup (k, v)");
+         printStatement("select count(*) x from src group by grouping sets ((k, v))");
+         printStatement("select count(*) x from src group by grouping sets ((k, v), (v))");
+-        printStatement("select count(*) x from src group by grouping sets ()");
++        printStatement("select count(*) x from src group by grouping sets (k, v, k)");
+ 
+         printStatement("" +
+                 "select depname, empno, salary\n" +

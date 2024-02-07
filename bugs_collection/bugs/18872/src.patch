@@ -1,0 +1,13 @@
+diff --git a/buggy/web/src/main/java/com/navercorp/pinpoint/web/scatter/DotGroups.java b/fixed/web/src/main/java/com/navercorp/pinpoint/web/scatter/DotGroups.java
+index 31fb40039..aff5f89ae 100644
+--- a/buggy/web/src/main/java/com/navercorp/pinpoint/web/scatter/DotGroups.java
++++ b/fixed/web/src/main/java/com/navercorp/pinpoint/web/scatter/DotGroups.java
+@@ -146,7 +146,7 @@ public class DotGroups {
+         }
+     }
+ 
+-    class Key {
++    static class Key {
+ 
+         private final Coordinates coordinates;
+         private final int code;

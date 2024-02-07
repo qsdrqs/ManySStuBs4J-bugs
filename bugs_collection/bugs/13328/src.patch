@@ -1,0 +1,17 @@
+diff --git a/buggy/presto-main/src/test/java/com/facebook/presto/memory/TestMemoryTracking.java b/fixed/presto-main/src/test/java/com/facebook/presto/memory/TestMemoryTracking.java
+index 975dc24dc..15c8054a1 100644
+--- a/buggy/presto-main/src/test/java/com/facebook/presto/memory/TestMemoryTracking.java
++++ b/fixed/presto-main/src/test/java/com/facebook/presto/memory/TestMemoryTracking.java
+@@ -152,10 +152,10 @@ public class TestMemoryTracking
+         assertOperatorMemoryAllocations(operatorContext.getOperatorMemoryContext(), 0, queryMaxTotalMemory.toBytes(), 0);
+         try {
+             systemMemoryContext.setBytes(queryMaxTotalMemory.toBytes() + 1);
+-            fail("allocation should hit the local total memory limit");
++            fail("allocation should hit the per-node total memory limit");
+         }
+         catch (ExceededMemoryLimitException e) {
+-            assertEquals(e.getMessage(), format("Query exceeded local total memory limit of %s", queryMaxTotalMemory));
++            assertEquals(e.getMessage(), format("Query exceeded per-node total memory limit of %s", queryMaxTotalMemory));
+         }
+     }
+ 

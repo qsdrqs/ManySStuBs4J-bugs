@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-procedure/src/test/java/org/apache/hadoop/hbase/procedure2/ProcedureTestingUtility.java b/fixed/hbase-procedure/src/test/java/org/apache/hadoop/hbase/procedure2/ProcedureTestingUtility.java
+index e3667b709..03fa51670 100644
+--- a/buggy/hbase-procedure/src/test/java/org/apache/hadoop/hbase/procedure2/ProcedureTestingUtility.java
++++ b/fixed/hbase-procedure/src/test/java/org/apache/hadoop/hbase/procedure2/ProcedureTestingUtility.java
+@@ -296,7 +296,7 @@ public class ProcedureTestingUtility {
+ 
+     @Override
+     public void setMaxProcId(long maxProcId) {
+-      maxProcId = maxProcId;
++      this.maxProcId = maxProcId;
+     }
+ 
+     @Override

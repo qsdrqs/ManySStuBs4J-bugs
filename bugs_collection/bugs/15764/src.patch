@@ -1,0 +1,20 @@
+diff --git a/buggy/core/src/com/google/inject/internal/Initializer.java b/fixed/core/src/com/google/inject/internal/Initializer.java
+index c5d76fa99..33dee8d4a 100644
+--- a/buggy/core/src/com/google/inject/internal/Initializer.java
++++ b/fixed/core/src/com/google/inject/internal/Initializer.java
+@@ -159,7 +159,7 @@ final class Initializer {
+         MembersInjectorImpl<T> membersInjector =
+             (MembersInjectorImpl<T>)pendingMembersInjectors.remove(instance);
+         Preconditions.checkState(membersInjector != null,
+-            "No membersInjector available for instance: " + instance + ", from key: " + key);
++            "No membersInjector available for instance: %s, from key: %s", instance, key);
+         
+         // if in Stage.TOOL, we only want to inject & notify toolable injection points.
+         // (otherwise we'll inject all of them)
+@@ -174,4 +174,4 @@ final class Initializer {
+       return instance.toString();
+     }
+   }
+-}
+\ No newline at end of file
++}

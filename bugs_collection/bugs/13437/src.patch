@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-spi/src/main/java/com/facebook/presto/spi/block/SingleArrayBlockWriter.java b/fixed/presto-spi/src/main/java/com/facebook/presto/spi/block/SingleArrayBlockWriter.java
+index e3a9fa6dc..ad1f9ef13 100644
+--- a/buggy/presto-spi/src/main/java/com/facebook/presto/spi/block/SingleArrayBlockWriter.java
++++ b/fixed/presto-spi/src/main/java/com/facebook/presto/spi/block/SingleArrayBlockWriter.java
+@@ -36,7 +36,7 @@ public class SingleArrayBlockWriter
+     }
+ 
+     @Override
+-    protected BlockBuilder getBlock()
++    protected Block getBlock()
+     {
+         return blockBuilder;
+     }

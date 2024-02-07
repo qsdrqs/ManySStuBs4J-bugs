@@ -1,0 +1,13 @@
+diff --git a/buggy/web/src/test/java/com/navercorp/pinpoint/web/vo/chart/TimeSeriesChartBuilderTest.java b/fixed/web/src/test/java/com/navercorp/pinpoint/web/vo/chart/TimeSeriesChartBuilderTest.java
+index e831082a0..1a84b92f0 100644
+--- a/buggy/web/src/test/java/com/navercorp/pinpoint/web/vo/chart/TimeSeriesChartBuilderTest.java
++++ b/fixed/web/src/test/java/com/navercorp/pinpoint/web/vo/chart/TimeSeriesChartBuilderTest.java
+@@ -42,7 +42,7 @@ public class TimeSeriesChartBuilderTest {
+     private static class TestPoint implements Point {
+ 
+         private static final int UNCOLLECTED_VALUE = -1;
+-        private static final Point.UncollectedPointCreater<TestPoint> UNCOLLECTED_POINT_CREATER = new Point.UncollectedPointCreater<TestPoint>() {
++        private static final UncollectedPointCreator<TestPoint> UNCOLLECTED_POINT_CREATER = new UncollectedPointCreator<TestPoint>() {
+             @Override
+             public TestPoint createUnCollectedPoint(long xVal) {
+                 return new TestPoint(xVal, UNCOLLECTED_VALUE);

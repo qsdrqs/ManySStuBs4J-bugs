@@ -1,0 +1,13 @@
+diff --git a/buggy/stratosphere-addons/avro/src/test/java/eu/stratosphere/api/avro/AvroExternalJarProgramITCase.java b/fixed/stratosphere-addons/avro/src/test/java/eu/stratosphere/api/avro/AvroExternalJarProgramITCase.java
+index a34666d8e..cb4eb35f6 100644
+--- a/buggy/stratosphere-addons/avro/src/test/java/eu/stratosphere/api/avro/AvroExternalJarProgramITCase.java
++++ b/fixed/stratosphere-addons/avro/src/test/java/eu/stratosphere/api/avro/AvroExternalJarProgramITCase.java
+@@ -36,7 +36,7 @@ public class AvroExternalJarProgramITCase {
+ 	private static final String TEST_DATA_FILE = "/testdata.avro";
+ 
+ 	static {
+-		LogUtils.initializeDefaultConsoleLogger();
++		LogUtils.initializeDefaultTestConsoleLogger();
+ 	}
+ 	
+ 	@Test

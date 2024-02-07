@@ -1,0 +1,22 @@
+diff --git a/buggy/src/api/org/openmrs/Concept.java b/fixed/src/api/org/openmrs/Concept.java
+index eb7b5eb91..a02cd1e69 100644
+--- a/buggy/src/api/org/openmrs/Concept.java
++++ b/fixed/src/api/org/openmrs/Concept.java
+@@ -675,7 +675,7 @@ public class Concept extends BaseOpenmrsObject implements Auditable, Retireable,
+ 		
+ 		if (compatibleNames.size() == 0) {
+ 			// no compatible names, so return first available name
+-			Iterator<ConceptName> nameIt = names.iterator();
++			Iterator<ConceptName> nameIt = getNames().iterator();
+ 			bestMatch = nameIt.next();
+ 		} else if (compatibleNames.size() == 1) {
+ 			bestMatch = compatibleNames.get(0);
+@@ -813,7 +813,7 @@ public class Concept extends BaseOpenmrsObject implements Auditable, Retireable,
+ 		
+ 		if (compatibleNames.size() == 0) {
+ 			// no compatible names, so return first available name
+-			Iterator<ConceptName> nameIt = names.iterator();
++			Iterator<ConceptName> nameIt = getNames().iterator();
+ 			bestMatch = nameIt.next();
+ 		} else if (compatibleNames.size() == 1) {
+ 			// only 1? it must be the best

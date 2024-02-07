@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-jdbi/src/test/java/io/dropwizard/jdbi/timestamps/DatabaseInTimeZone.java b/fixed/dropwizard-jdbi/src/test/java/io/dropwizard/jdbi/timestamps/DatabaseInTimeZone.java
+index 9dfef982a..9d1a2146b 100644
+--- a/buggy/dropwizard-jdbi/src/test/java/io/dropwizard/jdbi/timestamps/DatabaseInTimeZone.java
++++ b/fixed/dropwizard-jdbi/src/test/java/io/dropwizard/jdbi/timestamps/DatabaseInTimeZone.java
+@@ -29,7 +29,7 @@ public class DatabaseInTimeZone  {
+         String vmArguments = "-Duser.timezone=" + timeZone.getID();
+ 
+         ProcessBuilder pb = new ProcessBuilder(java, vmArguments, "-cp", h2jar.getAbsolutePath(), Server.class.getName(),
+-                                               "-tcp", "-baseDir", tempDir.resolve("database-in-time-zone").toString());
++                                               "-tcp", "-ifNotExists", "-baseDir", tempDir.resolve("database-in-time-zone").toString());
+         process = pb.start();
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/nephele/nephele-management/src/main/java/eu/stratosphere/nephele/profiling/types/ThreadProfilingEvent.java b/fixed/nephele/nephele-management/src/main/java/eu/stratosphere/nephele/profiling/types/ThreadProfilingEvent.java
+index e57d87fb4..15a6a5cbb 100644
+--- a/buggy/nephele/nephele-management/src/main/java/eu/stratosphere/nephele/profiling/types/ThreadProfilingEvent.java
++++ b/fixed/nephele/nephele-management/src/main/java/eu/stratosphere/nephele/profiling/types/ThreadProfilingEvent.java
+@@ -124,7 +124,7 @@ public class ThreadProfilingEvent extends VertexProfilingEvent {
+ 	@Override
+ 	public boolean equals(Object obj) {
+ 
+-		if (super.equals(obj)) {
++		if (!super.equals(obj)) {
+ 			return false;
+ 		}
+ 

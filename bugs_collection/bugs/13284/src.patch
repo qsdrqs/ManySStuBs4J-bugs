@@ -1,0 +1,19 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/planPrinter/PlanPrinter.java b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/planPrinter/PlanPrinter.java
+index 1e1223dcc..3aad8bcc4 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/planPrinter/PlanPrinter.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/planPrinter/PlanPrinter.java
+@@ -727,7 +727,13 @@ public class PlanPrinter
+                     .map(PlanNode::getId)
+                     .collect(toList());
+ 
+-            NodeRepresentation nodeOutput = addNode(node, operatorName, format(formatString, arguments.toArray(new Object[0])), allNodes, ImmutableList.of(), ImmutableList.of());
++            NodeRepresentation nodeOutput = addNode(
++                    node,
++                    operatorName,
++                    format(formatString, arguments.toArray(new Object[0])),
++                    allNodes,
++                    ImmutableList.of(sourceNode),
++                    ImmutableList.of());
+ 
+             if (projectNode.isPresent()) {
+                 printAssignments(nodeOutput, projectNode.get().getAssignments());

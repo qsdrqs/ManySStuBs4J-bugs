@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-configuration/src/test/java/io/dropwizard/configuration/ConfigurationFactoryTest.java b/fixed/dropwizard-configuration/src/test/java/io/dropwizard/configuration/ConfigurationFactoryTest.java
+index 67a8718e8..598c9a930 100644
+--- a/buggy/dropwizard-configuration/src/test/java/io/dropwizard/configuration/ConfigurationFactoryTest.java
++++ b/fixed/dropwizard-configuration/src/test/java/io/dropwizard/configuration/ConfigurationFactoryTest.java
+@@ -433,7 +433,7 @@ public class ConfigurationFactoryTest {
+                     "expected ',' or ']', but got StreamEnd\n" +
+                     " in 'reader', line 2, column 21:\n" +
+                     "    wizard\n" +
+-                    "          ^" + NEWLINE);
++                    "          ^\n");
+         }
+     }
+ }

@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions/assistedinject/src/com/google/inject/assistedinject/FactoryModuleBuilder.java b/fixed/extensions/assistedinject/src/com/google/inject/assistedinject/FactoryModuleBuilder.java
+index f0142942b..57f1035ac 100644
+--- a/buggy/extensions/assistedinject/src/com/google/inject/assistedinject/FactoryModuleBuilder.java
++++ b/fixed/extensions/assistedinject/src/com/google/inject/assistedinject/FactoryModuleBuilder.java
+@@ -314,7 +314,7 @@ public final class FactoryModuleBuilder {
+       @Override
+       protected void configure() {
+         Provider<F> provider = new FactoryProvider2<>(factoryInterface, bindings);
+-        bind(factoryInterface).toProvider(provider);
++        binder().skipSources(this.getClass()).bind(factoryInterface).toProvider(provider);
+       }
+     };
+   }

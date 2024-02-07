@@ -1,0 +1,13 @@
+diff --git a/buggy/scribejava-apis/src/main/java/com/github/scribejava/apis/service/OdnoklassnikiServiceImpl.java b/fixed/scribejava-apis/src/main/java/com/github/scribejava/apis/service/OdnoklassnikiServiceImpl.java
+index eea23a9f2..ddd5bc32b 100644
+--- a/buggy/scribejava-apis/src/main/java/com/github/scribejava/apis/service/OdnoklassnikiServiceImpl.java
++++ b/fixed/scribejava-apis/src/main/java/com/github/scribejava/apis/service/OdnoklassnikiServiceImpl.java
+@@ -20,7 +20,7 @@ public class OdnoklassnikiServiceImpl extends OAuth20Service {
+     public void signRequest(Token accessToken, AbstractRequest request) {
+         // sig = md5( request_params_composed_string+ md5(access_token + application_secret_key)  )
+         try {
+-            final String tokenDigest = md5Hex((accessToken.getToken() + getConfig().getApiSecret()));
++            final String tokenDigest = md5Hex(accessToken.getToken() + getConfig().getApiSecret());
+ 
+             final String completeUrl = request.getCompleteUrl();
+             final int queryIndex = completeUrl.indexOf('?');

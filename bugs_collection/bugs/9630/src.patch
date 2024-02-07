@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/Registry.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/Registry.java
+index c27493378..b4d35a468 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/Registry.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/Registry.java
+@@ -510,7 +510,7 @@ public class Registry {
+       if (prev != null) {
+         if (isBuiltInFunc(prev.getFunctionClass())) {
+           throw new RuntimeException("Function " + functionName + " is hive builtin function, " +
+-              "which cannot be overriden.");
++              "which cannot be overridden.");
+         }
+         prev.discarded();
+       }

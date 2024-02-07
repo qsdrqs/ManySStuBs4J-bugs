@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/TreeWalker.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/TreeWalker.java
+index 748f8fa15..8cd470742 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/TreeWalker.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/TreeWalker.java
+@@ -266,7 +266,7 @@ public final class TreeWalker
+                 else {
+                     throw new CheckstyleException("Token \""
+                         + token + "\" was not found in Acceptable tokens list"
+-                                + " in check " + check);
++                                + " in check " + check.getClass().getName());
+                 }
+             }
+         }

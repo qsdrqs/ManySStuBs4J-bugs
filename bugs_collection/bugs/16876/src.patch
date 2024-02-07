@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/map/MapStoreWriteProcessor.java b/fixed/hazelcast/src/main/java/com/hazelcast/map/MapStoreWriteProcessor.java
+index ed1d676da..a321e82fb 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/map/MapStoreWriteProcessor.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/map/MapStoreWriteProcessor.java
+@@ -74,7 +74,7 @@ public class MapStoreWriteProcessor implements ScheduledEntryProcessor<Data, Obj
+ 
+             // we will traverse duplicate keys to filter first duplicates from storeAll's map
+             for (ScheduledEntry duplicateKey : duplicateKeys) {
+-                Object key = duplicateKey.getKey();
++                Object key = mapService.toObject(duplicateKey.getKey());
+                 Object removed = map.remove(key);
+                 if(removed != null) {
+                     final Exception ex = tryStore(scheduler, new AbstractMap.SimpleEntry(key, removed));

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jpa/src/test/java/org/apache/camel/processor/jpa/FileConsumerJpaIdempotentTest.java b/fixed/components/camel-jpa/src/test/java/org/apache/camel/processor/jpa/FileConsumerJpaIdempotentTest.java
+index 94257742a..3cc6ffb6e 100644
+--- a/buggy/components/camel-jpa/src/test/java/org/apache/camel/processor/jpa/FileConsumerJpaIdempotentTest.java
++++ b/fixed/components/camel-jpa/src/test/java/org/apache/camel/processor/jpa/FileConsumerJpaIdempotentTest.java
+@@ -64,7 +64,7 @@ public class FileConsumerJpaIdempotentTest extends ContextTestSupport {
+     protected RouteBuilder createRouteBuilder() throws Exception {
+         return new RouteBuilder() {
+             public void configure() throws Exception {
+-                from("file://target/idempotent/?idempotent=true&idempotentRepository=#jpaStore&moveNamePrefix=done/").to("mock:result");
++                from("file://target/idempotent/?idempotent=true&idempotentRepository=#jpaStore&moveExpression=done/${file:name}").to("mock:result");
+             }
+         };
+     }

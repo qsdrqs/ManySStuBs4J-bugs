@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/CollapseProperties.java b/fixed/src/com/google/javascript/jscomp/CollapseProperties.java
+index 85dd6d2e9..6dccf9bdb 100644
+--- a/buggy/src/com/google/javascript/jscomp/CollapseProperties.java
++++ b/fixed/src/com/google/javascript/jscomp/CollapseProperties.java
+@@ -81,7 +81,7 @@ class CollapseProperties implements CompilerPass {
+ 
+   static final DiagnosticType UNSAFE_THIS = DiagnosticType.warning(
+       "JSC_UNSAFE_THIS",
+-      "dangerous use of 'this' in static method {0}");
++      "dangerous use of ''this'' in static method {0}");
+ 
+   private AbstractCompiler compiler;
+ 

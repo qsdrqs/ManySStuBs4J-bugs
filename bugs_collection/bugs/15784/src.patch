@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions/assistedinject/src/com/google/inject/assistedinject/Parameter.java b/fixed/extensions/assistedinject/src/com/google/inject/assistedinject/Parameter.java
+index f4c3b16da..42626154d 100644
+--- a/buggy/extensions/assistedinject/src/com/google/inject/assistedinject/Parameter.java
++++ b/fixed/extensions/assistedinject/src/com/google/inject/assistedinject/Parameter.java
+@@ -94,7 +94,7 @@ class Parameter {
+       }
+     }
+ 
+-    return provider.get();
++    return isProvider ? provider : provider.get();
+   }
+ 
+   public boolean isBound(Injector injector) {

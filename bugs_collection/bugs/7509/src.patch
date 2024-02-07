@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/processor/RoutePoliciesRefTest.java b/fixed/camel-core/src/test/java/org/apache/camel/processor/RoutePoliciesRefTest.java
+index 059d9b089..5460e9600 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/processor/RoutePoliciesRefTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/processor/RoutePoliciesRefTest.java
+@@ -40,7 +40,7 @@ public class RoutePoliciesRefTest extends ContextTestSupport {
+         return jndi;
+     }
+ 
+-    private class MyCustomRoutePolicy extends RoutePolicySupport {
++    private final class MyCustomRoutePolicy extends RoutePolicySupport {
+ 
+         private final String name;
+ 

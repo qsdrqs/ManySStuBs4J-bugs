@@ -1,0 +1,22 @@
+diff --git a/buggy/guava/src/com/google/common/io/Files.java b/fixed/guava/src/com/google/common/io/Files.java
+index 98aac69d9..c3dd506fa 100644
+--- a/buggy/guava/src/com/google/common/io/Files.java
++++ b/fixed/guava/src/com/google/common/io/Files.java
+@@ -191,7 +191,7 @@ public final class Files {
+ 
+     @Override
+     public String toString() {
+-      return "Files.newByteSource(" + file + ")";
++      return "Files.asByteSource(" + file + ")";
+     }
+   }
+ 
+@@ -225,7 +225,7 @@ public final class Files {
+ 
+     @Override
+     public String toString() {
+-      return "Files.newByteSink(" + file + ", " + modes + ")";
++      return "Files.asByteSink(" + file + ", " + modes + ")";
+     }
+   }
+ 

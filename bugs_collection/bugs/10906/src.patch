@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/HiddenFieldCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/HiddenFieldCheckTest.java
+index 334e213e3..a67b986dc 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/HiddenFieldCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/HiddenFieldCheckTest.java
+@@ -36,7 +36,7 @@ public class HiddenFieldCheckTest
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "coding" + File.separator + filename);
++                + "coding" + File.separator + "hiddenfield" + File.separator + filename);
+     }
+ 
+     @Override

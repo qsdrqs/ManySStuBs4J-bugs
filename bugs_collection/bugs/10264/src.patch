@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/zaxxer/hikari/TestValidation.java b/fixed/src/test/java/com/zaxxer/hikari/TestValidation.java
+index 0b280af9d..e0c8207e1 100644
+--- a/buggy/src/test/java/com/zaxxer/hikari/TestValidation.java
++++ b/fixed/src/test/java/com/zaxxer/hikari/TestValidation.java
+@@ -184,7 +184,7 @@ public class TestValidation
+          Assert.fail();
+       }
+       catch (IllegalStateException ise) {
+-         Assert.assertTrue(ise.getMessage().contains("cannot use"));
++         Assert.assertTrue(ise.getMessage().contains("together"));
+       }
+    }
+ 

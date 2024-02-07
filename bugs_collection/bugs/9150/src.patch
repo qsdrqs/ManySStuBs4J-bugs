@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-it/src/test/java/org/apache/hadoop/hbase/chaos/policies/PeriodicRandomActionPolicy.java b/fixed/hbase-it/src/test/java/org/apache/hadoop/hbase/chaos/policies/PeriodicRandomActionPolicy.java
+index 8b76e49ba..b11aa32d9 100644
+--- a/buggy/hbase-it/src/test/java/org/apache/hadoop/hbase/chaos/policies/PeriodicRandomActionPolicy.java
++++ b/fixed/hbase-it/src/test/java/org/apache/hadoop/hbase/chaos/policies/PeriodicRandomActionPolicy.java
+@@ -58,7 +58,7 @@ public class PeriodicRandomActionPolicy extends PeriodicPolicy {
+     try {
+       action.perform();
+     } catch (Exception ex) {
+-      LOG.warn("Exception occured during performing action: "
++      LOG.warn("Exception occurred during performing action: "
+           + StringUtils.stringifyException(ex));
+     }
+   }

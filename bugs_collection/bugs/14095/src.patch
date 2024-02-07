@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/StatisticsPlugin/src/main/java/org/gephi/statistics/plugin/WeightedDegree.java b/fixed/modules/StatisticsPlugin/src/main/java/org/gephi/statistics/plugin/WeightedDegree.java
+index 22c3c86a6..e05638bc0 100644
+--- a/buggy/modules/StatisticsPlugin/src/main/java/org/gephi/statistics/plugin/WeightedDegree.java
++++ b/fixed/modules/StatisticsPlugin/src/main/java/org/gephi/statistics/plugin/WeightedDegree.java
+@@ -150,7 +150,7 @@ public class WeightedDegree implements Statistics, LongTask {
+             Progress.progress(progress);
+         }
+ 
+-        averageWeightedDegree /= graph.getNodeCount();
++        averageWeightedDegree /= (isDirected ? 2.0 : 1.0) * graph.getNodeCount();
+ 
+         return averageWeightedDegree;
+ 

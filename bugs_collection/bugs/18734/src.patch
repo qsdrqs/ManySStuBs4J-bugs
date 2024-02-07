@@ -1,0 +1,22 @@
+diff --git a/buggy/src/main/java/org/apache/ibatis/reflection/invoker/MethodInvoker.java b/fixed/src/main/java/org/apache/ibatis/reflection/invoker/MethodInvoker.java
+index 1f73762bf..9ed9f6760 100644
+--- a/buggy/src/main/java/org/apache/ibatis/reflection/invoker/MethodInvoker.java
++++ b/fixed/src/main/java/org/apache/ibatis/reflection/invoker/MethodInvoker.java
+@@ -20,7 +20,7 @@ import java.lang.reflect.Method;
+ 
+ public class MethodInvoker implements Invoker {
+ 
+-  private Class type;
++  private Class<?> type;
+   private Method method;
+ 
+   public MethodInvoker(Method method) {
+@@ -37,7 +37,7 @@ public class MethodInvoker implements Invoker {
+     return method.invoke(target, args);
+   }
+ 
+-  public Class getType() {
++  public Class<?> getType() {
+     return type;
+   }
+ }

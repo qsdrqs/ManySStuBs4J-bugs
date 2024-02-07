@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/processor/aggregator/AggregateLostGroupIssueTest.java b/fixed/camel-core/src/test/java/org/apache/camel/processor/aggregator/AggregateLostGroupIssueTest.java
+index bf8c0102e..7ae1487db 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/processor/aggregator/AggregateLostGroupIssueTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/processor/aggregator/AggregateLostGroupIssueTest.java
+@@ -48,7 +48,7 @@ public class AggregateLostGroupIssueTest extends ContextTestSupport {
+         return new RouteBuilder() {
+             @Override
+             public void configure() throws Exception {
+-                from("timer://foo?period=100").startupOrder(2)
++                from("timer://foo?period=100&delay=1000").startupOrder(2)
+                         .process(new Processor() {
+                             public void process(Exchange exchange) throws Exception {
+                                 exchange.getOut().setBody(messageIndex++);

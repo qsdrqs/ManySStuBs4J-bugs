@@ -1,0 +1,13 @@
+diff --git a/buggy/external/storm-kafka/src/jvm/storm/kafka/trident/OpaqueTridentKafkaSpout.java b/fixed/external/storm-kafka/src/jvm/storm/kafka/trident/OpaqueTridentKafkaSpout.java
+index 4e2da42ad..fbd1d7a6e 100644
+--- a/buggy/external/storm-kafka/src/jvm/storm/kafka/trident/OpaqueTridentKafkaSpout.java
++++ b/fixed/external/storm-kafka/src/jvm/storm/kafka/trident/OpaqueTridentKafkaSpout.java
+@@ -37,7 +37,7 @@ public class OpaqueTridentKafkaSpout implements IOpaquePartitionedTridentSpout<L
+     }
+ 
+     @Override
+-    public IOpaquePartitionedTridentSpout.Emitter<GlobalPartitionInformation, Partition, Map> getEmitter(Map conf, TopologyContext context) {
++    public IOpaquePartitionedTridentSpout.Emitter<List<GlobalPartitionInformation>, Partition, Map> getEmitter(Map conf, TopologyContext context) {
+         return new TridentKafkaEmitter(conf, context, _config, context
+                 .getStormId()).asOpaqueEmitter();
+     }

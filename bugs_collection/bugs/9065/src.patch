@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/core/org/apache/hadoop/http/TestServletFilter.java b/fixed/src/test/core/org/apache/hadoop/http/TestServletFilter.java
+index 8052f9ad4..7d4198d2a 100644
+--- a/buggy/src/test/core/org/apache/hadoop/http/TestServletFilter.java
++++ b/fixed/src/test/core/org/apache/hadoop/http/TestServletFilter.java
+@@ -99,7 +99,7 @@ public class TestServletFilter extends junit.framework.TestCase {
+     //start a http server with CountingFilter
+     conf.set(HttpServer.FILTER_INITIALIZER_PROPERTY,
+         SimpleFilter.Initializer.class.getName());
+-    HttpServer http = new HttpServer("datanode", "localhost", 0, true, conf);
++    HttpServer http = new HttpServer("..", "localhost", 0, true, conf);
+     http.start();
+ 
+     final String fsckURL = "/fsck";

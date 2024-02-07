@@ -1,0 +1,13 @@
+diff --git a/buggy/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterDL.java b/fixed/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterDL.java
+index d56415445..41804d211 100644
+--- a/buggy/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterDL.java
++++ b/fixed/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterDL.java
+@@ -306,7 +306,7 @@ public class ImporterDL implements TextImporter, LongTask {
+     }
+ 
+     public boolean isMatchingImporter(FileObject fileObject) {
+-        return fileObject.hasExt("dl");
++        return fileObject.hasExt("dl") || fileObject.hasExt("DL");
+     }
+ 
+     public boolean cancel() {

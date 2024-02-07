@@ -1,0 +1,13 @@
+diff --git a/buggy/guava-tests/test/com/google/common/primitives/IntsTest.java b/fixed/guava-tests/test/com/google/common/primitives/IntsTest.java
+index 803c91357..77320b396 100644
+--- a/buggy/guava-tests/test/com/google/common/primitives/IntsTest.java
++++ b/fixed/guava-tests/test/com/google/common/primitives/IntsTest.java
+@@ -548,7 +548,7 @@ public class IntsTest extends TestCase {
+   public void testTryParse_withNullGwt() {
+     assertNull(Ints.tryParse("null"));
+     try {
+-      int unused = Ints.tryParse(null);
++      Integer unused = Ints.tryParse(null);
+       fail("Expected NPE");
+     } catch (NullPointerException expected) {
+     }

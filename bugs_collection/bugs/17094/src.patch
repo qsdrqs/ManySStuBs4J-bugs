@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/OutRunnable.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/OutRunnable.java
+index 3809bd91d..5903cac91 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/OutRunnable.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/OutRunnable.java
+@@ -104,7 +104,7 @@ public class OutRunnable extends IORunnable {
+         } catch (Throwable e) {
+             // nothing to do
+         }
+-        if (reconnectionCalls.isEmpty()) {
++        if (reconnectionCalls != null && reconnectionCalls.isEmpty()) {
+             reconnectionCalls = null;
+         }
+         if (oldCalls != null && reconnectionCalls == null) {

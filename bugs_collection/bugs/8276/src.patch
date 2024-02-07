@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/query/netty/message/KvStateRequestSerializer.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/query/netty/message/KvStateRequestSerializer.java
+index f0cc94a0d..68f06e3fd 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/query/netty/message/KvStateRequestSerializer.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/query/netty/message/KvStateRequestSerializer.java
+@@ -224,7 +224,7 @@ public final class KvStateRequestSerializer {
+ 		// Get the message type
+ 		int msgType = buf.readInt();
+ 		KvStateRequestType[] values = KvStateRequestType.values();
+-		if (msgType >= 0 && msgType <= values.length) {
++		if (msgType >= 0 && msgType < values.length) {
+ 			return values[msgType];
+ 		} else {
+ 			throw new IllegalArgumentException("Illegal message type with index " + msgType);

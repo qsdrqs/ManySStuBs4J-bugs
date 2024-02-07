@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/TranslationCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/TranslationCheck.java
+index 8ebe906ed..932870589 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/TranslationCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/TranslationCheck.java
+@@ -144,7 +144,7 @@ public class TranslationCheck
+      *
+      * @param basenameSeparator the basename separator
+      */
+-    public void setBasenameSeparator(String basenameSeparator) {
++    public final void setBasenameSeparator(String basenameSeparator) {
+         this.basenameSeparator = basenameSeparator;
+     }
+ 

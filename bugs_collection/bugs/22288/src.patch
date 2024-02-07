@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/test/java/org/springframework/boot/bind/PropertiesConfigurationFactoryTests.java b/fixed/spring-boot/src/test/java/org/springframework/boot/bind/PropertiesConfigurationFactoryTests.java
+index 3ace0fb03..d409267ee 100644
+--- a/buggy/spring-boot/src/test/java/org/springframework/boot/bind/PropertiesConfigurationFactoryTests.java
++++ b/fixed/spring-boot/src/test/java/org/springframework/boot/bind/PropertiesConfigurationFactoryTests.java
+@@ -167,7 +167,7 @@ public class PropertiesConfigurationFactoryTests {
+ 	@Test
+ 	public void propertyWithAllUpperCaseSuffixCanBeBound() throws Exception {
+ 		Foo foo = createFoo("foo-bar-u-r-i:baz");
+-		assertEquals("baz", foo.fooBarURI);
++		assertThat(foo.fooBarURI).isEqualTo("baz");
+ 	}
+ 
+ 	private Foo createFoo(final String values) throws Exception {

@@ -1,0 +1,13 @@
+diff --git a/buggy/dex-tools/src/main/java/com/googlecode/dex2jar/tools/StdApkCmd.java b/fixed/dex-tools/src/main/java/com/googlecode/dex2jar/tools/StdApkCmd.java
+index ee2445b3d..bafb9b469 100644
+--- a/buggy/dex-tools/src/main/java/com/googlecode/dex2jar/tools/StdApkCmd.java
++++ b/fixed/dex-tools/src/main/java/com/googlecode/dex2jar/tools/StdApkCmd.java
+@@ -59,7 +59,7 @@ public class StdApkCmd extends BaseCmd {
+                 if (!nEntry.isDirectory()) {
+                     try (InputStream is = zipFile.getInputStream(e)) {
+                         while (true) {
+-                            int c = is.read(data);
++                            int c = is.read(buffer);
+                             if (c < 0) {
+                                 break;
+                             }

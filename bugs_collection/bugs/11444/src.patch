@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/comments/CompareTreesWithComments.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/comments/CompareTreesWithComments.java
+index 7d72aefb9..30345e8eb 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/comments/CompareTreesWithComments.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/comments/CompareTreesWithComments.java
+@@ -23,7 +23,7 @@ public class CompareTreesWithComments extends Check {
+         Assert.assertTrue(isAstEquals(expectedTree, aRootAST));
+     }
+ 
+-    private boolean isAstEquals(DetailAST expected, DetailAST actual) {
++    private static boolean isAstEquals(DetailAST expected, DetailAST actual) {
+         boolean result = false;
+         if (expected == actual) {
+             result = true;

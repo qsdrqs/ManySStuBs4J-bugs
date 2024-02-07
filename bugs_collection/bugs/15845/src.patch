@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/internal/partition/impl/MigrationManager.java b/fixed/hazelcast/src/main/java/com/hazelcast/internal/partition/impl/MigrationManager.java
+index 1fbfdba6b..468c99db3 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/internal/partition/impl/MigrationManager.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/internal/partition/impl/MigrationManager.java
+@@ -666,7 +666,7 @@ public class MigrationManager {
+         assert node.isMaster();
+         assert partitionStateManager.isInitialized();
+ 
+-        List<MigrationInfo> migrations = getCompletedMigrationsCopy();
++        final List<MigrationInfo> migrations = getCompletedMigrationsCopy();
+         if (logger.isFineEnabled()) {
+             logger.fine("Publishing completed migrations [" + migrations.size() + "]: " + migrations);
+         }

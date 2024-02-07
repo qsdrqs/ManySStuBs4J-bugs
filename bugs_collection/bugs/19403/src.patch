@@ -1,0 +1,30 @@
+diff --git a/buggy/community/shell/src/main/java/org/neo4j/shell/util/json/JSONArray.java b/fixed/community/shell/src/main/java/org/neo4j/shell/util/json/JSONArray.java
+index 641bff535..258008b5c 100644
+--- a/buggy/community/shell/src/main/java/org/neo4j/shell/util/json/JSONArray.java
++++ b/fixed/community/shell/src/main/java/org/neo4j/shell/util/json/JSONArray.java
+@@ -105,14 +105,14 @@ public class JSONArray {
+     /**
+      * The arrayList where the JSONArray's properties are kept.
+      */
+-    private ArrayList myArrayList;
++    private ArrayList<Object> myArrayList;
+ 
+ 
+     /**
+      * Construct an empty JSONArray.
+      */
+     public JSONArray() {
+-        this.myArrayList = new ArrayList();
++        this.myArrayList = new ArrayList<Object>();
+     }
+ 
+     /**
+@@ -195,7 +195,7 @@ public class JSONArray {
+      */
+ 
+     public JSONArray(Collection collection, boolean includeSuperClass) {
+-		this.myArrayList = new ArrayList();
++		this.myArrayList = new ArrayList<Object>();
+ 		if (collection != null) {
+ 			Iterator iter = collection.iterator();;
+ 			while (iter.hasNext()) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/taskmanager/TaskManager.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/taskmanager/TaskManager.java
+index 305d39fa1..cbcc9f541 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/taskmanager/TaskManager.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/taskmanager/TaskManager.java
+@@ -120,7 +120,7 @@ public class TaskManager implements TaskOperationProtocol {
+ 	
+ 	// --------------------------------------------------------------------------------------------
+ 	
+-	private final ExecutorService executorService = Executors.newCachedThreadPool(ExecutorThreadFactory.INSTANCE);
++	private final ExecutorService executorService = Executors.newFixedThreadPool(2 * Hardware.getNumberCPUCores(), ExecutorThreadFactory.INSTANCE);
+ 	
+ 	
+ 	private final InstanceConnectionInfo localInstanceConnectionInfo;

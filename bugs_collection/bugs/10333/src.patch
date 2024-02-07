@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/zaxxer/hikari/util/FastStatementList.java b/fixed/src/main/java/com/zaxxer/hikari/util/FastStatementList.java
+index 89ed851ea..ad920daae 100644
+--- a/buggy/src/main/java/com/zaxxer/hikari/util/FastStatementList.java
++++ b/fixed/src/main/java/com/zaxxer/hikari/util/FastStatementList.java
+@@ -91,7 +91,7 @@ public final class FastStatementList
+      */
+     public void remove(Object element)
+     {
+-        for (int index = size - 1; index >= 0; index++)
++        for (int index = size - 1; index >= 0; index--)
+         {
+             if (element == elementData[index])
+             {

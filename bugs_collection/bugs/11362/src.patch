@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/metrics/BooleanExpressionComplexityCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/metrics/BooleanExpressionComplexityCheck.java
+index 17327c361..cc9a7a2b8 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/metrics/BooleanExpressionComplexityCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/metrics/BooleanExpressionComplexityCheck.java
+@@ -229,7 +229,7 @@ public final class BooleanExpressionComplexityCheck extends Check {
+          * Creates new instance.
+          * @param checking should we check in current context or not.
+          */
+-        public Context(boolean checking) {
++        Context(boolean checking) {
+             this.checking = checking;
+             count = 0;
+         }

@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/embedded/undertow/UndertowServletWebServer.java b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/embedded/undertow/UndertowServletWebServer.java
+index 847ede37c..d86d8bff3 100644
+--- a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/embedded/undertow/UndertowServletWebServer.java
++++ b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/embedded/undertow/UndertowServletWebServer.java
+@@ -321,7 +321,7 @@ public class UndertowServletWebServer implements WebServer {
+ 	/**
+ 	 * An active Undertow port.
+ 	 */
+-	private final static class Port {
++	private static final class Port {
+ 
+ 		private final int number;
+ 

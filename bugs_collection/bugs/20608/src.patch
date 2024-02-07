@@ -1,0 +1,20 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.tcp/src/main/java/org/openhab/binding/tcp/protocol/internal/TCPBinding.java b/fixed/bundles/binding/org.openhab.binding.tcp/src/main/java/org/openhab/binding/tcp/protocol/internal/TCPBinding.java
+index 7644d74e6..7ad6b3845 100644
+--- a/buggy/bundles/binding/org.openhab.binding.tcp/src/main/java/org/openhab/binding/tcp/protocol/internal/TCPBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.tcp/src/main/java/org/openhab/binding/tcp/protocol/internal/TCPBinding.java
+@@ -55,7 +55,7 @@ public class TCPBinding extends AbstractSocketChannelBinding<TCPBindingProvider>
+ 	// string to prepend to data being sent
+ 	private static String preAmble = "";
+ 	// string to append to data being sent
+-	private static String postAmble = "\r\n";
++	private static String postAmble = "";
+ 	// flag to use the reply of the remote end to update the status of the Item receving the data
+ 	private static boolean updateWithResponse = true;
+ 	// used character set
+@@ -286,4 +286,4 @@ public class TCPBinding extends AbstractSocketChannelBinding<TCPBindingProvider>
+ 		return "TCP Refresh Service";
+ 	}
+ 
+-}
+\ No newline at end of file
++}

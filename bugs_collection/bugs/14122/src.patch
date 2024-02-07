@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/StatisticsPlugin/src/test/java/org/gephi/statistics/plugin/GraphDistanceNGTest.java b/fixed/modules/StatisticsPlugin/src/test/java/org/gephi/statistics/plugin/GraphDistanceNGTest.java
+index 2c7e74cd9..4f61c856c 100644
+--- a/buggy/modules/StatisticsPlugin/src/test/java/org/gephi/statistics/plugin/GraphDistanceNGTest.java
++++ b/fixed/modules/StatisticsPlugin/src/test/java/org/gephi/statistics/plugin/GraphDistanceNGTest.java
+@@ -122,7 +122,7 @@ public class GraphDistanceNGTest {
+         d.calculateDistanceMetrics(graphModel.getGraph(), indicies, false, false);
+ 
+         double averageDegree = d.getPathLength();
+-        assertEquals(averageDegree, 0.0);
++        assertEquals(averageDegree, Double.NaN);
+     }
+ 
+     @Test

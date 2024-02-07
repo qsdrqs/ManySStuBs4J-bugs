@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientClusterServiceImpl.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientClusterServiceImpl.java
+index 547e0d6f1..e1e253f77 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientClusterServiceImpl.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientClusterServiceImpl.java
+@@ -325,7 +325,7 @@ public final class ClientClusterServiceImpl implements ClientClusterService {
+         try {
+             int connectionAttemptPeriodMs = client.getClientConfig().getConnectionAttemptPeriod();
+             int connectionAttempts = client.getClientConfig().getConnectionAttemptLimit();
+-            long timeoutMs = connectionAttempts*connectionAttemptPeriodMs+1000;
++            long timeoutMs = ((long)connectionAttempts)*connectionAttemptPeriodMs+1000;
+             final Connection connection = f.get(timeoutMs, TimeUnit.MILLISECONDS);
+             clusterThread.setInitialConn(connection);
+         } catch (Throwable e) {

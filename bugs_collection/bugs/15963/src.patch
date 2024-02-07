@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/util/SetUtilTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/util/SetUtilTest.java
+index 36a7a2a72..d304d294a 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/util/SetUtilTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/util/SetUtilTest.java
+@@ -37,7 +37,7 @@ public class SetUtilTest extends HazelcastTestSupport {
+ 
+     @Test
+     public void testConstructor() {
+-        assertUtilityConstructor(BitSetUtils.class);
++        assertUtilityConstructor(SetUtil.class);
+     }
+ 
+     @Test

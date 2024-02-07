@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-example/src/main/java/com/example/helloworld/HelloWorldConfiguration.java b/fixed/dropwizard-example/src/main/java/com/example/helloworld/HelloWorldConfiguration.java
+index be800c652..a1d7cc442 100644
+--- a/buggy/dropwizard-example/src/main/java/com/example/helloworld/HelloWorldConfiguration.java
++++ b/fixed/dropwizard-example/src/main/java/com/example/helloworld/HelloWorldConfiguration.java
+@@ -49,7 +49,7 @@ public class HelloWorldConfiguration extends Configuration {
+         return database;
+     }
+ 
+-    @JsonProperty
++    @JsonProperty("database")
+     public void setDatabaseConfiguration(DatabaseConfiguration databaseConfiguration) {
+         this.database = databaseConfiguration;
+     }

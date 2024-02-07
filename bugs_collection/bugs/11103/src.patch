@@ -1,0 +1,22 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/ant/CheckstyleAntTask.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/ant/CheckstyleAntTask.java
+index 08ef8b950..fb5ee5ee3 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/ant/CheckstyleAntTask.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/ant/CheckstyleAntTask.java
+@@ -345,7 +345,7 @@ public class CheckstyleAntTask extends Task {
+                 + " files", Project.MSG_INFO);
+         log("Using configuration " + configLocation, Project.MSG_VERBOSE);
+ 
+-        int numErrs;
++        final int numErrs;
+ 
+         try {
+             final long processingStartTime = System.currentTimeMillis();
+@@ -380,7 +380,7 @@ public class CheckstyleAntTask extends Task {
+      * @return new instance of {@code Checker}
+      */
+     private Checker createChecker() {
+-        Checker checker;
++        final Checker checker;
+         try {
+             final Properties props = createOverridingProperties();
+             final Configuration config =

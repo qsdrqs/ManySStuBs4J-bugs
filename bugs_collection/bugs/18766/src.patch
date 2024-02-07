@@ -1,0 +1,18 @@
+diff --git a/buggy/src/main/java/org/apache/ibatis/executor/statement/CallableStatementHandler.java b/fixed/src/main/java/org/apache/ibatis/executor/statement/CallableStatementHandler.java
+index fcbcd4697..49959e2a6 100644
+--- a/buggy/src/main/java/org/apache/ibatis/executor/statement/CallableStatementHandler.java
++++ b/fixed/src/main/java/org/apache/ibatis/executor/statement/CallableStatementHandler.java
+@@ -51,11 +51,11 @@ public class CallableStatementHandler extends BaseStatementHandler {
+     cs.addBatch();
+   }
+ 
+-  public List query(Statement statement, ResultHandler resultHandler)
++  public <E> List<E> query(Statement statement, ResultHandler resultHandler)
+       throws SQLException {
+     CallableStatement cs = (CallableStatement) statement;
+     cs.execute();
+-    List resultList = resultSetHandler.handleResultSets(cs);
++    List<E> resultList = resultSetHandler.<E>handleResultSets(cs);
+     resultSetHandler.handleOutputParameters(cs);
+     return resultList;
+   }

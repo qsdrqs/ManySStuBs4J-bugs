@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/ZKNamespaceManager.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/ZKNamespaceManager.java
+index b0aabb2c7..ee59c0158 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/ZKNamespaceManager.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/ZKNamespaceManager.java
+@@ -156,7 +156,7 @@ public class ZKNamespaceManager extends ZooKeeperListener {
+         refreshNodes(nodes);
+       } catch (KeeperException ke) {
+         LOG.error("Error reading data from zookeeper for path "+path, ke);
+-        watcher.abort("Zookeeper error get node children for path "+path, ke);
++        watcher.abort("ZooKeeper error get node children for path "+path, ke);
+       } catch (IOException e) {
+         LOG.error("Error deserializing namespace child from: "+path, e);
+         watcher.abort("Error deserializing namespace child from: " + path, e);

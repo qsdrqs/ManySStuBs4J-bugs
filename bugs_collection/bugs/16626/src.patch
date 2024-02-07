@@ -1,0 +1,22 @@
+diff --git a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/ClientIssueTest.java b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/ClientIssueTest.java
+index 2baf3f1c0..1347d971a 100644
+--- a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/ClientIssueTest.java
++++ b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/ClientIssueTest.java
+@@ -194,7 +194,7 @@ public class ClientIssueTest extends HazelcastTestSupport {
+                 } catch (InterruptedException e) {
+                     e.printStackTrace();
+                 }
+-                hz1.getLifecycleService().terminate();
++                hz1.getLifecycleService().shutdown();
+             }
+         };
+ 
+@@ -225,7 +225,7 @@ public class ClientIssueTest extends HazelcastTestSupport {
+                 } catch (InterruptedException e) {
+                     e.printStackTrace();
+                 }
+-                hz1.getLifecycleService().terminate();
++                hz1.getLifecycleService().shutdown();
+             }
+         };
+ 

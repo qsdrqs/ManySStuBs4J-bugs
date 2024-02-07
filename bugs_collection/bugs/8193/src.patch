@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-libraries/flink-sql-client/src/main/java/org/apache/flink/table/client/gateway/local/ExecutionContext.java b/fixed/flink-libraries/flink-sql-client/src/main/java/org/apache/flink/table/client/gateway/local/ExecutionContext.java
+index 926bdb01a..915290864 100644
+--- a/buggy/flink-libraries/flink-sql-client/src/main/java/org/apache/flink/table/client/gateway/local/ExecutionContext.java
++++ b/fixed/flink-libraries/flink-sql-client/src/main/java/org/apache/flink/table/client/gateway/local/ExecutionContext.java
+@@ -236,7 +236,7 @@ public class ExecutionContext<T> {
+ 				TableFactoryService.find(BatchTableSinkFactory.class, sinkProperties, classLoader);
+ 			return factory.createBatchTableSink(sinkProperties);
+ 		}
+-		throw new SqlExecutionException("Unsupported execution type for sources.");
++		throw new SqlExecutionException("Unsupported execution type for sinks.");
+ 	}
+ 
+ 	// --------------------------------------------------------------------------------------------

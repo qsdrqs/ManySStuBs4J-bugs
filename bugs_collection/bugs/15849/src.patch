@@ -1,0 +1,22 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/internal/cluster/impl/MembershipUpdateTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/internal/cluster/impl/MembershipUpdateTest.java
+index 6f19544c3..ea5df6f89 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/internal/cluster/impl/MembershipUpdateTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/internal/cluster/impl/MembershipUpdateTest.java
+@@ -647,7 +647,7 @@ public class MembershipUpdateTest extends HazelcastTestSupport {
+         assertClusterSizeEventually(3, hz1, hz4);
+         assertClusterSize(4, hz2);
+ 
+-        hz3 = newHazelcastInstance(initOrCreateConfig(new Config()), "test-instance", new StaticMemberNodeContext(factory, member3));
++        hz3 = newHazelcastInstance(initOrCreateConfig(new Config()), randomName(), new StaticMemberNodeContext(factory, member3));
+ 
+         assertClusterSizeEventually(4, hz1, hz4);
+ 
+@@ -702,7 +702,7 @@ public class MembershipUpdateTest extends HazelcastTestSupport {
+             @Override
+             public HazelcastInstance call() {
+                 NodeContext nodeContext = new StaticMemberNodeContext(factory, member3.getUuid(), factory.nextAddress());
+-                return newHazelcastInstance(initOrCreateConfig(new Config()), "test-instance", nodeContext);
++                return newHazelcastInstance(initOrCreateConfig(new Config()), randomName(), nodeContext);
+             }
+         });
+ 

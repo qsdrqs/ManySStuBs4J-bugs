@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-test-autoconfigure/src/test/java/org/springframework/boot/test/autoconfigure/data/neo4j/DataNeo4jTestIntegrationTests.java b/fixed/spring-boot-project/spring-boot-test-autoconfigure/src/test/java/org/springframework/boot/test/autoconfigure/data/neo4j/DataNeo4jTestIntegrationTests.java
+index 9e6e7728f..efee0964f 100644
+--- a/buggy/spring-boot-project/spring-boot-test-autoconfigure/src/test/java/org/springframework/boot/test/autoconfigure/data/neo4j/DataNeo4jTestIntegrationTests.java
++++ b/fixed/spring-boot-project/spring-boot-test-autoconfigure/src/test/java/org/springframework/boot/test/autoconfigure/data/neo4j/DataNeo4jTestIntegrationTests.java
+@@ -48,7 +48,7 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+ public class DataNeo4jTestIntegrationTests {
+ 
+ 	@ClassRule
+-	public static SkippableContainer<Neo4jContainer<?>> neo4j = new SkippableContainer<Neo4jContainer<?>>(
++	public static SkippableContainer<Neo4jContainer<?>> neo4j = new SkippableContainer<>(
+ 			() -> new Neo4jContainer<>().withAdminPassword(null));
+ 
+ 	@Autowired

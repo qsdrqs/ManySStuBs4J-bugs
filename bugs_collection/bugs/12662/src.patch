@@ -1,0 +1,13 @@
+diff --git a/buggy/indexing-service/src/main/java/io/druid/indexing/overlord/RemoteTaskRunner.java b/fixed/indexing-service/src/main/java/io/druid/indexing/overlord/RemoteTaskRunner.java
+index c2f2a1d78..26cdfb718 100644
+--- a/buggy/indexing-service/src/main/java/io/druid/indexing/overlord/RemoteTaskRunner.java
++++ b/fixed/indexing-service/src/main/java/io/druid/indexing/overlord/RemoteTaskRunner.java
+@@ -880,7 +880,7 @@ public class RemoteTaskRunner implements WorkerTaskRunner, TaskLogStreamer
+               task.getId(),
+               elapsed,
+               config.getTaskAssignmentTimeout()
+-          );
++          ).emit();
+           taskComplete(taskRunnerWorkItem, theZkWorker, TaskStatus.failure(task.getId()));
+           break;
+         }

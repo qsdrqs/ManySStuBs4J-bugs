@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-metrics/src/main/java/io/dropwizard/metrics/BaseReporterFactory.java b/fixed/dropwizard-metrics/src/main/java/io/dropwizard/metrics/BaseReporterFactory.java
+index 2a3b6e2fc..941521bb6 100644
+--- a/buggy/dropwizard-metrics/src/main/java/io/dropwizard/metrics/BaseReporterFactory.java
++++ b/fixed/dropwizard-metrics/src/main/java/io/dropwizard/metrics/BaseReporterFactory.java
+@@ -69,7 +69,7 @@ public abstract class BaseReporterFactory implements ReporterFactory {
+ 
+     @NotNull
+     @Valid
+-    private Optional<Duration> frequency = Optional.of(Duration.seconds(1));
++    private Optional<Duration> frequency = Optional.absent();
+ 
+     public TimeUnit getDurationUnit() {
+         return durationUnit;

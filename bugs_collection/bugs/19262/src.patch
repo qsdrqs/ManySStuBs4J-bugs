@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/core/NodeManager.java b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/core/NodeManager.java
+index 3359c83ae..445fb62d7 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/core/NodeManager.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/core/NodeManager.java
+@@ -1172,7 +1172,7 @@ public class NodeManager
+         relationshipPropertyTrackers.remove( relationshipPropertyTracker );
+     }
+ 
+-    public Boolean isDeleted( PropertyContainer resource )
++    public boolean isDeleted( PropertyContainer resource )
+     {
+         Transaction transaction;
+         try

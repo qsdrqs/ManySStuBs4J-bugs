@@ -1,0 +1,13 @@
+diff --git a/buggy/benchmarks/src/main/java/okhttp3/benchmarks/UrlConnection.java b/fixed/benchmarks/src/main/java/okhttp3/benchmarks/UrlConnection.java
+index f75d16083..560534c82 100644
+--- a/buggy/benchmarks/src/main/java/okhttp3/benchmarks/UrlConnection.java
++++ b/fixed/benchmarks/src/main/java/okhttp3/benchmarks/UrlConnection.java
+@@ -52,7 +52,7 @@ class UrlConnection extends SynchronousHttpClient {
+   static class UrlConnectionRequest implements Runnable {
+     private final HttpUrl url;
+ 
+-    public UrlConnectionRequest(HttpUrl url) {
++    UrlConnectionRequest(HttpUrl url) {
+       this.url = url;
+     }
+ 

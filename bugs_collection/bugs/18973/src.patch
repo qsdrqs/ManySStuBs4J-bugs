@@ -1,0 +1,13 @@
+diff --git a/buggy/commons/src/main/java/com/navercorp/pinpoint/common/util/BytesUtils.java b/fixed/commons/src/main/java/com/navercorp/pinpoint/common/util/BytesUtils.java
+index 9527543fe..781cf269e 100644
+--- a/buggy/commons/src/main/java/com/navercorp/pinpoint/common/util/BytesUtils.java
++++ b/fixed/commons/src/main/java/com/navercorp/pinpoint/common/util/BytesUtils.java
+@@ -415,7 +415,7 @@ public final class BytesUtils {
+             return null;
+         }
+         if (offset < 0) {
+-            throw new IllegalArgumentException("negative offset:" + offset);
++            throw new IndexOutOfBoundsException("negative offset:" + offset);
+         }
+         if (length == 0) {
+             return "";

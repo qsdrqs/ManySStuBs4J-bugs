@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/map/impl/record/DataRecordWithStats.java b/fixed/hazelcast/src/main/java/com/hazelcast/map/impl/record/DataRecordWithStats.java
+index 11028cc7b..d0613d150 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/map/impl/record/DataRecordWithStats.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/map/impl/record/DataRecordWithStats.java
+@@ -20,7 +20,7 @@ import com.hazelcast.nio.serialization.Data;
+ 
+ class DataRecordWithStats extends AbstractRecordWithStats<Data> {
+ 
+-    protected Data value;
++    protected volatile Data value;
+ 
+     DataRecordWithStats() {
+         super();

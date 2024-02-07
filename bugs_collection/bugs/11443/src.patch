@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/whitespace/FileTabCharacterCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/whitespace/FileTabCharacterCheckTest.java
+index f3b00a9b2..b8e607b4e 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/whitespace/FileTabCharacterCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/whitespace/FileTabCharacterCheckTest.java
+@@ -96,7 +96,7 @@ public class FileTabCharacterCheckTest
+      * Creates a configuration that is functionally close to that in the docs.
+      * @param verbose verbose mode
+      */
+-    private DefaultConfiguration createConfig(boolean verbose) {
++    private static DefaultConfiguration createConfig(boolean verbose) {
+         final DefaultConfiguration checkConfig =
+             createCheckConfig(FileTabCharacterCheck.class);
+         checkConfig.addAttribute("eachLine", Boolean.toString(verbose));

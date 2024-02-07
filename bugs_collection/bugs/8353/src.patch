@@ -1,0 +1,22 @@
+diff --git a/buggy/flink-runtime/src/test/java/org/apache/flink/runtime/executiongraph/ExecutionGraphRestartTest.java b/fixed/flink-runtime/src/test/java/org/apache/flink/runtime/executiongraph/ExecutionGraphRestartTest.java
+index c12f346af..12b866e62 100644
+--- a/buggy/flink-runtime/src/test/java/org/apache/flink/runtime/executiongraph/ExecutionGraphRestartTest.java
++++ b/fixed/flink-runtime/src/test/java/org/apache/flink/runtime/executiongraph/ExecutionGraphRestartTest.java
+@@ -286,7 +286,7 @@ public class ExecutionGraphRestartTest extends TestLogger {
+ 			new JobID(),
+ 			"TestJob",
+ 			new Configuration(),
+-			ExecutionConfigTest.getSerializedConfig(),
++			new SerializedValue<>(new ExecutionConfig()),
+ 			AkkaUtils.getDefaultTimeout(),
+ 			// We want to manually control the restart and delay
+ 			new FixedDelayRestartStrategy(Integer.MAX_VALUE, Long.MAX_VALUE));
+@@ -703,7 +703,7 @@ public class ExecutionGraphRestartTest extends TestLogger {
+ 			new JobID(),
+ 			"Test job",
+ 			new Configuration(),
+-			ExecutionConfigTest.getSerializedConfig(),
++			new SerializedValue<>(new ExecutionConfig()),
+ 			AkkaUtils.getDefaultTimeout(),
+ 			controllableRestartStrategy);
+ 

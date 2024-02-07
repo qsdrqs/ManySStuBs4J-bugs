@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-resource-group-managers/src/main/java/com/facebook/presto/resourceGroups/AbstractResourceConfigurationManager.java b/fixed/presto-resource-group-managers/src/main/java/com/facebook/presto/resourceGroups/AbstractResourceConfigurationManager.java
+index 6397bd19a..cb8aacead 100644
+--- a/buggy/presto-resource-group-managers/src/main/java/com/facebook/presto/resourceGroups/AbstractResourceConfigurationManager.java
++++ b/fixed/presto-resource-group-managers/src/main/java/com/facebook/presto/resourceGroups/AbstractResourceConfigurationManager.java
+@@ -72,7 +72,7 @@ public abstract class AbstractResourceConfigurationManager
+                 }
+                 else {
+                     for (ResourceGroupSpec subGroup : group.getSubGroups()) {
+-                        checkArgument(!subGroup.getSchedulingWeight().isPresent(), "Must use \"weight\" scheduling policy when using scheduling weight");
++                        checkArgument(!subGroup.getSchedulingWeight().isPresent(), "Must use \"weighted\" scheduling policy when using scheduling weight");
+                     }
+                 }
+             }

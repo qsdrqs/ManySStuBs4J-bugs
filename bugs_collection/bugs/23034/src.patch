@@ -1,0 +1,13 @@
+diff --git a/buggy/itest/src/edu/stanford/nlp/pipeline/ProtobufAnnotationSerializerSlowITest.java b/fixed/itest/src/edu/stanford/nlp/pipeline/ProtobufAnnotationSerializerSlowITest.java
+index 20f542471..4e31f30af 100644
+--- a/buggy/itest/src/edu/stanford/nlp/pipeline/ProtobufAnnotationSerializerSlowITest.java
++++ b/fixed/itest/src/edu/stanford/nlp/pipeline/ProtobufAnnotationSerializerSlowITest.java
+@@ -330,7 +330,7 @@ public class ProtobufAnnotationSerializerSlowITest {
+ 
+     // Check size
+     assertTrue("" + compressedProto.length, compressedProto.length < 392000);
+-    assertTrue("" + uncompressedProto.length, uncompressedProto.length < 2550000);
++    assertTrue("" + uncompressedProto.length, uncompressedProto.length < 2560000);
+   }
+ 
+   @Test

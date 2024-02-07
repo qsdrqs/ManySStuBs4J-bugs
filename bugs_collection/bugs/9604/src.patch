@@ -1,0 +1,22 @@
+diff --git a/buggy/metastore/src/java/org/apache/hadoop/hive/metastore/HiveMetaStore.java b/fixed/metastore/src/java/org/apache/hadoop/hive/metastore/HiveMetaStore.java
+index b43b4df7c..5b353c472 100644
+--- a/buggy/metastore/src/java/org/apache/hadoop/hive/metastore/HiveMetaStore.java
++++ b/fixed/metastore/src/java/org/apache/hadoop/hive/metastore/HiveMetaStore.java
+@@ -2031,7 +2031,7 @@ public class HiveMetaStore extends ThriftHiveMetastore {
+             transactionalListenerResponses =
+                 MetaStoreListenerNotifier.notifyEvent(transactionalListeners,
+                                                       EventType.DROP_TABLE,
+-                                                      new DropTableEvent(tbl, deleteData, true, this),
++                                                      new DropTableEvent(tbl, true, deleteData, this),
+                                                       envContext);
+           }
+           success = ms.commitTransaction();
+@@ -2051,7 +2051,7 @@ public class HiveMetaStore extends ThriftHiveMetastore {
+         if (!listeners.isEmpty()) {
+           MetaStoreListenerNotifier.notifyEvent(listeners,
+                                                 EventType.DROP_TABLE,
+-                                                new DropTableEvent(tbl, deleteData, success, this),
++                                                new DropTableEvent(tbl, success, deleteData, this),
+                                                 envContext,
+                                                 transactionalListenerResponses, ms);
+         }

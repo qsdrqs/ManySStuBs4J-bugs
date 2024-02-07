@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/sql/gen/OrderingCompiler.java b/fixed/presto-main/src/main/java/com/facebook/presto/sql/gen/OrderingCompiler.java
+index 937475f7f..5cc1a1233 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/sql/gen/OrderingCompiler.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/sql/gen/OrderingCompiler.java
+@@ -90,7 +90,7 @@ public class OrderingCompiler
+         PagesIndexComparator comparator;
+         try {
+             Class<? extends PagesIndexComparator> pagesHashStrategyClass = compilePagesIndexComparator(sortTypes, sortChannels, sortOrders);
+-            comparator = pagesHashStrategyClass.newInstance();
++            comparator = pagesHashStrategyClass.getConstructor().newInstance();
+         }
+         catch (Throwable e) {
+             log.error(e, "Error compiling comparator for channels %s with order %s", sortChannels, sortChannels);

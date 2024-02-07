@@ -1,0 +1,20 @@
+diff --git a/buggy/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/FtpServerTestSupport.java b/fixed/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/FtpServerTestSupport.java
+index 1c8b5c602..d057f5fac 100644
+--- a/buggy/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/FtpServerTestSupport.java
++++ b/fixed/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/FtpServerTestSupport.java
+@@ -136,7 +136,7 @@ public abstract class FtpServerTestSupport extends CamelTestSupport {
+ 
+     protected FtpServerFactory createFtpServerFactory() throws Exception {
+         assertTrue(USERS_FILE.exists());
+-        assertTrue("Port number is not initialized in an expected range: " + port, port > 21000);
++        assertTrue("Port number is not initialized in an expected range: " + port, port >= 21000);
+ 
+         NativeFileSystemFactory fsf = new NativeFileSystemFactory();
+         fsf.setCreateHome(true);
+@@ -166,4 +166,4 @@ public abstract class FtpServerTestSupport extends CamelTestSupport {
+     protected int getPort() {
+         return port;
+     }
+-}
+\ No newline at end of file
++}

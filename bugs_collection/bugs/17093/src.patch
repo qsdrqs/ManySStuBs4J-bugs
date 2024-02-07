@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/impl/ListenerManager.java b/fixed/hazelcast/src/main/java/com/hazelcast/impl/ListenerManager.java
+index 2bd5bc97b..f69c49bbf 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/impl/ListenerManager.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/impl/ListenerManager.java
+@@ -132,7 +132,7 @@ public class ListenerManager extends BaseManager {
+             return Boolean.TRUE;
+         }
+ 
+-        class AddListenerAtTarget extends TargetAwareOp {
++        private final class AddListenerAtTarget extends TargetAwareOp {
+             public AddListenerAtTarget(Address target) {
+                 request.reset();
+                 this.target = target;

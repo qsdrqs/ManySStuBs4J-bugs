@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/gdx-tests-android/src/com/badlogic/gdx/tests/android/MatrixTest.java b/fixed/tests/gdx-tests-android/src/com/badlogic/gdx/tests/android/MatrixTest.java
+index 141cf151e..f922ffb6e 100644
+--- a/buggy/tests/gdx-tests-android/src/com/badlogic/gdx/tests/android/MatrixTest.java
++++ b/fixed/tests/gdx-tests-android/src/com/badlogic/gdx/tests/android/MatrixTest.java
+@@ -75,7 +75,7 @@ public class MatrixTest extends GdxTest {
+ 	public void render () {
+ 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+ 		batch.begin();
+-		font.drawMultiLine(batch, results, 20, 300);
++		font.draw(batch, results, 20, 300);
+ 		batch.end();
+ 	}
+ }

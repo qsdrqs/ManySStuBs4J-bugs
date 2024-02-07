@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/internal/CommitValidationTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/internal/CommitValidationTest.java
+index 10e6633c6..97bcb4ae3 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/internal/CommitValidationTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/internal/CommitValidationTest.java
+@@ -87,7 +87,7 @@ public class CommitValidationTest {
+     private static final Pattern ACCEPTED_COMMIT_MESSAGE_PATTERN =
+             Pattern.compile(ACCEPTED_COMMIT_MESSAGE_REGEX_PATTERN);
+ 
+-    private static final Pattern INVALID_POSTFIX_PATTERN = Pattern.compile("^.*[\\. \\t]$");
++    private static final Pattern INVALID_POSTFIX_PATTERN = Pattern.compile("^.*[. \\t]$");
+ 
+     private static final int PREVIOUS_COMMITS_TO_CHECK_COUNT = 10;
+ 

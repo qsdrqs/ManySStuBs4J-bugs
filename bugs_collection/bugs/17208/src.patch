@@ -1,0 +1,13 @@
+diff --git a/buggy/jms/temp-destination/src/main/java/org/javaee7/jms/temp/destination/JmsClient.java b/fixed/jms/temp-destination/src/main/java/org/javaee7/jms/temp/destination/JmsClient.java
+index a6aed9a59..29ae31050 100644
+--- a/buggy/jms/temp-destination/src/main/java/org/javaee7/jms/temp/destination/JmsClient.java
++++ b/fixed/jms/temp-destination/src/main/java/org/javaee7/jms/temp/destination/JmsClient.java
+@@ -17,7 +17,7 @@ import java.lang.IllegalStateException;
+ @Stateless
+ public class JmsClient {
+ 
+-    @Resource(name = Resources.REQUEST_QUEUE)
++    @Resource(lookup = Resources.REQUEST_QUEUE)
+     Queue requestQueue;
+ 
+     @Inject

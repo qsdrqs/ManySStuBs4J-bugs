@@ -1,0 +1,13 @@
+diff --git a/buggy/okio/src/main/java/okio/AsyncTimeout.java b/fixed/okio/src/main/java/okio/AsyncTimeout.java
+index 32303ed0e..2520e0307 100644
+--- a/buggy/okio/src/main/java/okio/AsyncTimeout.java
++++ b/fixed/okio/src/main/java/okio/AsyncTimeout.java
+@@ -165,7 +165,7 @@ public class AsyncTimeout extends Timeout {
+           // Count how many bytes to write. This loop guarantees we split on a segment boundary.
+           long toWrite = 0L;
+           for (Segment s = source.head; toWrite < TIMEOUT_WRITE_SIZE; s = s.next) {
+-            int segmentSize = source.head.limit - source.head.pos;
++            int segmentSize = s.limit - s.pos;
+             toWrite += segmentSize;
+             if (toWrite >= byteCount) {
+               toWrite = byteCount;

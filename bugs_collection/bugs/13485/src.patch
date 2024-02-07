@@ -1,0 +1,21 @@
+diff --git a/buggy/presto-parser/src/main/java/com/facebook/presto/sql/tree/Unnest.java b/fixed/presto-parser/src/main/java/com/facebook/presto/sql/tree/Unnest.java
+index cfa459898..a689af9c0 100644
+--- a/buggy/presto-parser/src/main/java/com/facebook/presto/sql/tree/Unnest.java
++++ b/fixed/presto-parser/src/main/java/com/facebook/presto/sql/tree/Unnest.java
+@@ -80,7 +80,7 @@ public final class Unnest
+     @Override
+     public int hashCode()
+     {
+-        return Objects.hash(expressions);
++        return Objects.hash(expressions, withOrdinality);
+     }
+ 
+     @Override
+@@ -93,6 +93,6 @@ public final class Unnest
+             return false;
+         }
+         Unnest other = (Unnest) obj;
+-        return Objects.equals(this.expressions, other.expressions);
++        return Objects.equals(expressions, other.expressions) && withOrdinality == other.withOrdinality;
+     }
+ }

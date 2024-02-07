@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule451wheretobreack/OperatorWrapTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule451wheretobreack/OperatorWrapTest.java
+index 88166ac63..0e2d9802d 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule451wheretobreack/OperatorWrapTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule451wheretobreack/OperatorWrapTest.java
+@@ -24,7 +24,7 @@ public class OperatorWrapTest extends BaseCheckTestSupport{
+     }
+ 
+     @Test
+-    public void operatorWrapTest() throws IOException, Exception {
++    public void operatorWrapTest() throws Exception {
+         
+         Class<OperatorWrapCheck> clazz = OperatorWrapCheck.class;
+         String messageKey = "line.new";

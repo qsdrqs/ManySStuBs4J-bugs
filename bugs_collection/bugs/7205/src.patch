@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/processor/FlipRoutePolicy.java b/fixed/camel-core/src/test/java/org/apache/camel/processor/FlipRoutePolicy.java
+index aea5ae963..b9987de58 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/processor/FlipRoutePolicy.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/processor/FlipRoutePolicy.java
+@@ -54,7 +54,7 @@ public class FlipRoutePolicy extends RoutePolicySupport {
+     /**
+      * Use a thread to flip the routes.
+      */
+-    private class FlipThread extends Thread {
++    private final class FlipThread extends Thread {
+ 
+         private final CamelContext context;
+         private final String start;

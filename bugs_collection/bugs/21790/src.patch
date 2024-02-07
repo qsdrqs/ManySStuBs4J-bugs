@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/scribe/extractors/JsonTokenExtractor.java b/fixed/src/main/java/org/scribe/extractors/JsonTokenExtractor.java
+index 801cd6296..b51091f0b 100644
+--- a/buggy/src/main/java/org/scribe/extractors/JsonTokenExtractor.java
++++ b/fixed/src/main/java/org/scribe/extractors/JsonTokenExtractor.java
+@@ -20,7 +20,7 @@ public class JsonTokenExtractor implements AccessTokenExtractor
+     }
+     else
+     {
+-      throw new OAuthException("Cannot extract an acces token. Response was: " + response);
++      throw new OAuthException("Cannot extract an access token. Response was: " + response);
+     }
+   }
+ 

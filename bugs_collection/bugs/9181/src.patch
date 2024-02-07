@@ -1,0 +1,14 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/io/hfile/HFileReaderImpl.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/io/hfile/HFileReaderImpl.java
+index fc1c04ee1..c9e6aeae1 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/io/hfile/HFileReaderImpl.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/io/hfile/HFileReaderImpl.java
+@@ -662,7 +662,8 @@ public class HFileReaderImpl implements HFile.Reader, Configurable {
+         long i = 0;
+         offsetFromPos++;
+         if (remaining >= Bytes.SIZEOF_INT) {
+-          i = blockBuffer.getIntAfterPosition(offsetFromPos);
++          // The int read has to be converted to unsigned long so the & op
++          i = (blockBuffer.getIntAfterPosition(offsetFromPos) & 0x00000000ffffffffL);
+           remaining -= Bytes.SIZEOF_INT;
+           offsetFromPos += Bytes.SIZEOF_INT;
+         }

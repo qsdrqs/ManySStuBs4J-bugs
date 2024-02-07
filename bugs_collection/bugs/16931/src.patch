@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/map/DefaultRecordStore.java b/fixed/hazelcast/src/main/java/com/hazelcast/map/DefaultRecordStore.java
+index 568c162ad..4e4cb0f88 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/map/DefaultRecordStore.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/map/DefaultRecordStore.java
+@@ -384,7 +384,7 @@ public class DefaultRecordStore implements RecordStore {
+ 
+         if (store != null) {
+             store.deleteAll(keysObject);
+-            toBeRemovedKeys.clear();
++            toBeRemovedKeys.removeAll(keysToDelete);
+         }
+ 
+         clearRecordsMap(lockedRecords);

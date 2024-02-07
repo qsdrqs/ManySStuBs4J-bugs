@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/core/org.openhab.core/src/main/java/org/openhab/core/internal/items/ItemRegistryImpl.java b/fixed/bundles/core/org.openhab.core/src/main/java/org/openhab/core/internal/items/ItemRegistryImpl.java
+index ff0bf099c..d1f82423e 100644
+--- a/buggy/bundles/core/org.openhab.core/src/main/java/org/openhab/core/internal/items/ItemRegistryImpl.java
++++ b/fixed/bundles/core/org.openhab.core/src/main/java/org/openhab/core/internal/items/ItemRegistryImpl.java
+@@ -194,7 +194,7 @@ public class ItemRegistryImpl implements ItemRegistry, ItemsChangeListener {
+ 			}
+ 		}
+ 
+-		Collection<Item> items = Collections.synchronizedCollection(new HashSet<Item>());
++		Collection<Item> items = Collections.synchronizedCollection(new ArrayList<Item>());
+ 		itemMap.put(provider, items);
+ 
+ 		for(Item item : provider.getItems()) {

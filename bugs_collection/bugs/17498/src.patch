@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Table.java b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Table.java
+index ce102a162..d06450ad4 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Table.java
++++ b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Table.java
+@@ -691,7 +691,7 @@ public class Table extends WidgetGroup {
+ 			if (c.actorY + c.computedPadTop < y) break;
+ 			if (c.endRow) row++;
+ 		}
+-		return row;
++		return Math.min(row, rows - 1);
+ 	}
+ 
+ 	public void setSkin (Skin skin) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/DisambiguateProperties.java b/fixed/src/com/google/javascript/jscomp/DisambiguateProperties.java
+index 6ef12c8c6..79c9491fd 100644
+--- a/buggy/src/com/google/javascript/jscomp/DisambiguateProperties.java
++++ b/fixed/src/com/google/javascript/jscomp/DisambiguateProperties.java
+@@ -456,7 +456,7 @@ class DisambiguateProperties<T> implements CompilerPass {
+                     "consider using @this";
+             } else {
+               String qName = n.getFirstChild().getQualifiedName();
+-              suggestion = "Consider casting " + qName + " if you know it's type.";
++              suggestion = "Consider casting " + qName + " if you know its type.";
+             }
+           } else {
+             List<String> errors = new ArrayList<>();

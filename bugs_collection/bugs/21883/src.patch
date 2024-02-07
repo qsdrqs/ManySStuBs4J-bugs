@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-test-autoconfigure/src/test/java/org/springframework/boot/test/autoconfigure/data/neo4j/DataNeo4jTestPropertiesIntegrationTests.java b/fixed/spring-boot-project/spring-boot-test-autoconfigure/src/test/java/org/springframework/boot/test/autoconfigure/data/neo4j/DataNeo4jTestPropertiesIntegrationTests.java
+index 88f8cce04..8fdca527a 100644
+--- a/buggy/spring-boot-project/spring-boot-test-autoconfigure/src/test/java/org/springframework/boot/test/autoconfigure/data/neo4j/DataNeo4jTestPropertiesIntegrationTests.java
++++ b/fixed/spring-boot-project/spring-boot-test-autoconfigure/src/test/java/org/springframework/boot/test/autoconfigure/data/neo4j/DataNeo4jTestPropertiesIntegrationTests.java
+@@ -44,7 +44,7 @@ import static org.assertj.core.api.Assertions.assertThat;
+ public class DataNeo4jTestPropertiesIntegrationTests {
+ 
+ 	@ClassRule
+-	public static SkippableContainer<Neo4jContainer<?>> neo4j = new SkippableContainer<Neo4jContainer<?>>(
++	public static SkippableContainer<Neo4jContainer<?>> neo4j = new SkippableContainer<>(
+ 			() -> new Neo4jContainer<>().withAdminPassword(null));
+ 
+ 	@Autowired

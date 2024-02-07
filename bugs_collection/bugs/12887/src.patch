@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/io/druid/client/selector/TierSelectorStrategy.java b/fixed/server/src/main/java/io/druid/client/selector/TierSelectorStrategy.java
+index cadbd4354..715962f0e 100644
+--- a/buggy/server/src/main/java/io/druid/client/selector/TierSelectorStrategy.java
++++ b/fixed/server/src/main/java/io/druid/client/selector/TierSelectorStrategy.java
+@@ -29,7 +29,7 @@ import java.util.TreeMap;
+ 
+ /**
+  */
+-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type", defaultImpl = HighestPriorityTierSelectorStrategy.class)
++@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "tier", defaultImpl = HighestPriorityTierSelectorStrategy.class)
+ @JsonSubTypes(value = {
+     @JsonSubTypes.Type(name = "highestPriority", value = HighestPriorityTierSelectorStrategy.class),
+     @JsonSubTypes.Type(name = "lowestPriority", value = LowestPriorityTierSelectorStrategy.class),

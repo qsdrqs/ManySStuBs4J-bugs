@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/datastream/JoinedStreams.java b/fixed/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/datastream/JoinedStreams.java
+index c0053105c..ed1cbd7ed 100644
+--- a/buggy/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/datastream/JoinedStreams.java
++++ b/fixed/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/datastream/JoinedStreams.java
+@@ -306,7 +306,7 @@ public class JoinedStreams<T1, T2> {
+ 		public <T> DataStream<T> apply(FlatJoinFunction<T1, T2, T> function) {
+ 			TypeInformation<T> resultType = TypeExtractor.getBinaryOperatorReturnType(
+ 					function,
+-					JoinFunction.class,
++					FlatJoinFunction.class,
+ 					true,
+ 					true,
+ 					input1.getType(),

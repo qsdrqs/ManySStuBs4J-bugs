@@ -1,0 +1,17 @@
+diff --git a/buggy/bundles/core/org.openhab.core/src/main/java/org/openhab/core/internal/CoreActivator.java b/fixed/bundles/core/org.openhab.core/src/main/java/org/openhab/core/internal/CoreActivator.java
+index 1b014a6e6..e6162a9bf 100644
+--- a/buggy/bundles/core/org.openhab.core/src/main/java/org/openhab/core/internal/CoreActivator.java
++++ b/fixed/bundles/core/org.openhab.core/src/main/java/org/openhab/core/internal/CoreActivator.java
+@@ -194,10 +194,10 @@ public class CoreActivator implements BundleActivator {
+  			}
+ 		}
+ 		catch (HttpException he) {
+-			logger.debug("Fatal protocol violation: {}", he);
++			logger.debug("Fatal protocol violation: {}", he.getMessage());
+ 		}
+ 		catch (IOException ioe) {
+-			logger.debug("Fatal transport error: {}", ioe);
++			logger.debug("Fatal transport error: {}", ioe.getMessage());
+ 		}
+ 		finally {
+ 			method.releaseConnection();

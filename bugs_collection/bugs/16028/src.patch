@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/util/ClientStateListenerTest.java b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/util/ClientStateListenerTest.java
+index b7d3988ee..654d1e093 100644
+--- a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/util/ClientStateListenerTest.java
++++ b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/util/ClientStateListenerTest.java
+@@ -236,7 +236,7 @@ public class ClientStateListenerTest extends ClientTestSupport{
+         hazelcastFactory.newHazelcastInstance();
+ 
+         hazelcastFactory.newHazelcastClient(clientConfig);
+-        assertTrue(listener.awaitConnected(1, MILLISECONDS));
++        assertTrue(listener.awaitConnected(30, SECONDS));
+ 
+         assertFalse(listener.awaitDisconnected(1, MILLISECONDS));
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/test/java/org/openmrs/ConceptNumericTest.java b/fixed/api/src/test/java/org/openmrs/ConceptNumericTest.java
+index 73428574a..5e1e47b62 100644
+--- a/buggy/api/src/test/java/org/openmrs/ConceptNumericTest.java
++++ b/fixed/api/src/test/java/org/openmrs/ConceptNumericTest.java
+@@ -75,7 +75,7 @@ public class ConceptNumericTest extends BaseContextSensitiveTest {
+ 		ConceptNumeric cn = new ConceptNumeric(c);
+ 		
+ 		for (ConceptSet cSet : cn.getConceptSets()) {
+-			Assert.assertSame(cn, cSet.getConcept());
++			Assert.assertSame(cn, cSet.getConceptSet());
+ 		}
+ 	}
+ 	

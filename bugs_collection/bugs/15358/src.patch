@@ -1,0 +1,13 @@
+diff --git a/buggy/guava-gwt/src-super/com/google/common/base/super/com/google/common/base/Platform.java b/fixed/guava-gwt/src-super/com/google/common/base/super/com/google/common/base/Platform.java
+index 58b37b8f5..db6ce0931 100644
+--- a/buggy/guava-gwt/src-super/com/google/common/base/super/com/google/common/base/Platform.java
++++ b/fixed/guava-gwt/src-super/com/google/common/base/super/com/google/common/base/Platform.java
+@@ -67,7 +67,7 @@ final class Platform {
+     return string || null;
+   }-*/;
+ 
+-  @JsType(isNative = true, name = "Number", namespace = GLOBAL)
++  @JsType(isNative = true, name = "number", namespace = GLOBAL)
+   private interface Number {
+     double toPrecision(int precision);
+   }

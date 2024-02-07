@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-core/src/main/java/com/yammer/dropwizard/logging/LoggingBean.java b/fixed/dropwizard-core/src/main/java/com/yammer/dropwizard/logging/LoggingBean.java
+index 44ca89e19..eec0383bf 100644
+--- a/buggy/dropwizard-core/src/main/java/com/yammer/dropwizard/logging/LoggingBean.java
++++ b/fixed/dropwizard-core/src/main/java/com/yammer/dropwizard/logging/LoggingBean.java
+@@ -17,7 +17,7 @@ import java.util.logging.LoggingMXBean;
+ public class LoggingBean implements LoggingMXBean {
+     @Override
+     public String getLoggerLevel(String loggerName) {
+-        return Logger.getLogger(loggerName).getLevel().toString();
++        return Logger.getLogger(loggerName).getEffectiveLevel().toString();
+     }
+ 
+     @Override

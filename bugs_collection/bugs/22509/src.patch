@@ -1,0 +1,16 @@
+diff --git a/buggy/spring-boot-tools/spring-boot-configuration-processor/src/main/java/org/springframework/boot/configurationprocessor/TypeElementMembers.java b/fixed/spring-boot-tools/spring-boot-configuration-processor/src/main/java/org/springframework/boot/configurationprocessor/TypeElementMembers.java
+index b4d8b93a8..8e9bb0ebf 100644
+--- a/buggy/spring-boot-tools/spring-boot-configuration-processor/src/main/java/org/springframework/boot/configurationprocessor/TypeElementMembers.java
++++ b/fixed/spring-boot-tools/spring-boot-configuration-processor/src/main/java/org/springframework/boot/configurationprocessor/TypeElementMembers.java
+@@ -95,8 +95,9 @@ class TypeElementMembers {
+ 	}
+ 
+ 	private boolean isSetterReturnType(ExecutableElement method) {
+-		return (TypeKind.VOID == method.getReturnType().getKind() || method
+-				.getEnclosingElement().asType().equals(method.getReturnType()));
++		return (TypeKind.VOID == method.getReturnType().getKind() || this.env
++				.getTypeUtils().isSameType(method.getEnclosingElement().asType(),
++						method.getReturnType()));
+ 	}
+ 
+ 	private String getAccessorName(String methodName) {

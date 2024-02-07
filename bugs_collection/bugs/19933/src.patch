@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/socket/aio/AioEventLoop.java b/fixed/transport/src/main/java/io/netty/channel/socket/aio/AioEventLoop.java
+index 183355481..9424a48d8 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/socket/aio/AioEventLoop.java
++++ b/fixed/transport/src/main/java/io/netty/channel/socket/aio/AioEventLoop.java
+@@ -59,7 +59,7 @@ public class AioEventLoop extends MultithreadEventLoop {
+         AbstractAioChannel ch = null;
+         try {
+             ch = findChannel(command);
+-        } catch (Exception e) {
++        } catch (Throwable t) {
+             // Ignore
+         }
+ 

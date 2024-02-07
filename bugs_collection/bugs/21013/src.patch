@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/test/java/org/openmrs/annotation/OpenmrsProfileExcludeFilterTest.java b/fixed/api/src/test/java/org/openmrs/annotation/OpenmrsProfileExcludeFilterTest.java
+index 26cde1d50..e51ae3463 100644
+--- a/buggy/api/src/test/java/org/openmrs/annotation/OpenmrsProfileExcludeFilterTest.java
++++ b/fixed/api/src/test/java/org/openmrs/annotation/OpenmrsProfileExcludeFilterTest.java
+@@ -80,7 +80,7 @@ public class OpenmrsProfileExcludeFilterTest extends BaseContextSensitiveTest {
+ 	 */
+ 	@Test
+ 	public void match_shouldIncludeBeanIfModuleMissing() {
+-		OpenmrsProfileWithoutTest1Module bean = applicationContext.getBean(OpenmrsProfileWithoutTest1Module.class);
++		OpenmrsProfileWithoutMissingModule bean = applicationContext.getBean(OpenmrsProfileWithoutMissingModule.class);
+ 		
+ 		assertThat(bean, is(notNullValue()));
+ 	}

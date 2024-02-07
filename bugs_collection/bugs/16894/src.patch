@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/map/ClientMapIssueTest.java b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/map/ClientMapIssueTest.java
+index 55521117c..1253ae583 100644
+--- a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/map/ClientMapIssueTest.java
++++ b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/map/ClientMapIssueTest.java
+@@ -25,7 +25,7 @@ import static org.junit.Assert.assertTrue;
+ public class ClientMapIssueTest {
+ 
+     @After
+-    public static void destroy() {
++    public void destroy() {
+         HazelcastClient.shutdownAll();
+         Hazelcast.shutdownAll();
+     }

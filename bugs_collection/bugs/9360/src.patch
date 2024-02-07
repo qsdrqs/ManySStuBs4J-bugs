@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/master/HMaster.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/master/HMaster.java
+index 22c4570ff..d871ee751 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/master/HMaster.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/master/HMaster.java
+@@ -507,7 +507,7 @@ Server {
+   private void initializeZKBasedSystemTrackers() throws IOException,
+       InterruptedException, KeeperException {
+     this.catalogTracker = createCatalogTracker(this.zooKeeper, this.conf,
+-        this, conf.getInt("hbase.master.catalog.timeout", Integer.MAX_VALUE));
++        this, conf.getInt("hbase.master.catalog.timeout", 1800000));
+     this.catalogTracker.start();
+ 
+     this.balancer = LoadBalancerFactory.getLoadBalancer(conf);

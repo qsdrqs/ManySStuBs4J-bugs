@@ -1,0 +1,13 @@
+diff --git a/buggy/llap-common/src/java/org/apache/hadoop/hive/llap/protocol/LlapPluginProtocolPB.java b/fixed/llap-common/src/java/org/apache/hadoop/hive/llap/protocol/LlapPluginProtocolPB.java
+index 0d04b1459..5fcffc1ea 100644
+--- a/buggy/llap-common/src/java/org/apache/hadoop/hive/llap/protocol/LlapPluginProtocolPB.java
++++ b/fixed/llap-common/src/java/org/apache/hadoop/hive/llap/protocol/LlapPluginProtocolPB.java
+@@ -20,7 +20,7 @@ import org.apache.hadoop.security.token.TokenInfo;
+ import org.apache.hadoop.hive.llap.plugin.rpc.LlapPluginProtocolProtos;
+ import org.apache.tez.runtime.common.security.JobTokenSelector;
+ 
+-@ProtocolInfo(protocolName = "org.apache.hadoop.hive.llap.protocol.LlapPluginProtocolBlockingPB", protocolVersion = 1)
++@ProtocolInfo(protocolName = "org.apache.hadoop.hive.llap.protocol.LlapPluginProtocolPB", protocolVersion = 1)
+ @TokenInfo(JobTokenSelector.class)
+ @InterfaceAudience.Private
+ public interface LlapPluginProtocolPB extends LlapPluginProtocolProtos.LlapPluginProtocol.BlockingInterface {

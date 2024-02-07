@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.swegonventilation/src/main/java/org/openhab/binding/swegonventilation/protocol/SwegonVentilationUDPConnector.java b/fixed/bundles/binding/org.openhab.binding.swegonventilation/src/main/java/org/openhab/binding/swegonventilation/protocol/SwegonVentilationUDPConnector.java
+index 74935763d..6e238141c 100644
+--- a/buggy/bundles/binding/org.openhab.binding.swegonventilation/src/main/java/org/openhab/binding/swegonventilation/protocol/SwegonVentilationUDPConnector.java
++++ b/fixed/bundles/binding/org.openhab.binding.swegonventilation/src/main/java/org/openhab/binding/swegonventilation/protocol/SwegonVentilationUDPConnector.java
+@@ -74,7 +74,7 @@ public class SwegonVentilationUDPConnector extends SwegonVentilationConnector {
+ 	@Override
+ 	public void disconnect() throws SwegonVentilationException {
+ 
+-		if (socket == null) {
++		if (socket != null) {
+ 			socket.close();
+ 			socket = null;
+ 		}

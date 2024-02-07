@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/hankcs/demo/DemoSentimentAnalysis.java b/fixed/src/test/java/com/hankcs/demo/DemoSentimentAnalysis.java
+index ea77201f7..9b2e8ed03 100644
+--- a/buggy/src/test/java/com/hankcs/demo/DemoSentimentAnalysis.java
++++ b/fixed/src/test/java/com/hankcs/demo/DemoSentimentAnalysis.java
+@@ -29,7 +29,7 @@ public class DemoSentimentAnalysis
+     /**
+      * 中文情感挖掘语料-ChnSentiCorp 谭松波
+      */
+-    public static final String CORPUS_FOLDER = TestUtility.ensureTestData("ChnSentiCorp情感分析酒店评论", "http://hanlp.linrunsoft.com/release/corpus/ChnSentiCorp.zip");
++    public static final String CORPUS_FOLDER = TestUtility.ensureTestData("ChnSentiCorp情感分析酒店评论", "http://file.hankcs.com/corpus/ChnSentiCorp.zip");
+ 
+     public static void main(String[] args) throws IOException
+     {

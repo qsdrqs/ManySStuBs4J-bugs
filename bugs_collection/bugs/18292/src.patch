@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/Graphics.java b/fixed/gdx/src/com/badlogic/gdx/Graphics.java
+index 1fefb2db2..1877f2824 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/Graphics.java
++++ b/fixed/gdx/src/com/badlogic/gdx/Graphics.java
+@@ -62,7 +62,7 @@ public interface Graphics {
+ 	 * 
+ 	 * @author mzechner */
+ 	public enum GraphicsType {
+-		AndroidGL, JoglGL, LWJGL, Angle, WebGL
++		AndroidGL, JoglGL, LWJGL, Angle, WebGL, iOSGL
+ 	}
+ 
+ 	/** Class describing a fullscreen display mode

@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/util/RelIdArray.java b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/util/RelIdArray.java
+index 0992a8c50..359338060 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/util/RelIdArray.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/util/RelIdArray.java
+@@ -156,7 +156,7 @@ public class RelIdArray
+         IdBlock copy()
+         {
+             IdBlock copy = new IdBlock( highBits );
+-            copy.ids = new int[length];
++            copy.ids = new int[ids.length];
+             System.arraycopy( ids, 0, copy.ids, 0, length );
+             copy.length = length;
+             return copy;

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/client/impl/protocol/ClientMessage.java b/fixed/hazelcast/src/main/java/com/hazelcast/client/impl/protocol/ClientMessage.java
+index 582a38dae..8619ab880 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/client/impl/protocol/ClientMessage.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/client/impl/protocol/ClientMessage.java
+@@ -64,7 +64,7 @@ public class ClientMessage
+     /**
+      * Current protocol version
+      */
+-    public static final short VERSION = 0;
++    public static final short VERSION = 1;
+ 
+     /**
+      * Begin Flag

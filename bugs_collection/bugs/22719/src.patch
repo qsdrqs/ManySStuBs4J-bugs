@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/config/ResourceBeanDefinitionParser.java b/fixed/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/config/ResourceBeanDefinitionParser.java
+index 11a529292..2c1b014bf 100644
+--- a/buggy/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/config/ResourceBeanDefinitionParser.java
++++ b/fixed/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/config/ResourceBeanDefinitionParser.java
+@@ -94,7 +94,7 @@ public class ResourceBeanDefinitionParser extends AbstractSingleBeanDefinitionPa
+ 			}
+ 		}
+ 
+-		String preEstablishedRedirectUri = element.getAttribute("preEstablished-redirect-uri");
++		String preEstablishedRedirectUri = element.getAttribute("pre-established-redirect-uri");
+ 		if (StringUtils.hasText(preEstablishedRedirectUri)) {
+ 			builder.addPropertyValue("preEstablishedRedirectUri", preEstablishedRedirectUri);
+ 		}

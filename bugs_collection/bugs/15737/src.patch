@@ -1,0 +1,14 @@
+diff --git a/buggy/guava/src/com/google/common/net/InetAddresses.java b/fixed/guava/src/com/google/common/net/InetAddresses.java
+index ff48ab746..2cd9472b8 100644
+--- a/buggy/guava/src/com/google/common/net/InetAddresses.java
++++ b/fixed/guava/src/com/google/common/net/InetAddresses.java
+@@ -1078,8 +1078,7 @@ public final class InetAddresses {
+       i--;
+     }
+ 
+-    Preconditions.checkArgument(
+-        i >= 0, "Incrementing " + address + " would wrap.");
++    Preconditions.checkArgument(i >= 0, "Incrementing %s would wrap.", address);
+ 
+     addr[i]++;
+     try {

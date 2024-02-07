@@ -1,0 +1,13 @@
+diff --git a/buggy/src/api/org/openmrs/hl7/handler/ADTA28Handler.java b/fixed/src/api/org/openmrs/hl7/handler/ADTA28Handler.java
+index ad5a9527e..2c78d858d 100644
+--- a/buggy/src/api/org/openmrs/hl7/handler/ADTA28Handler.java
++++ b/fixed/src/api/org/openmrs/hl7/handler/ADTA28Handler.java
+@@ -288,7 +288,7 @@ public class ADTA28Handler implements Application {
+ 		
+ 		// Date of Birth
+ 		TS dateOfBirth = pid.getDateTimeOfBirth();
+-	    if (dateOfBirth == null)	
++	    if (dateOfBirth == null || dateOfBirth.getTime() == null || dateOfBirth.getTime().getValue() == null)	
+ 			throw new HL7Exception("Missing birth date in the PID segment");
+ 		patient.setBirthdate(tsToDate(dateOfBirth));
+ 		

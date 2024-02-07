@@ -1,0 +1,13 @@
+diff --git a/buggy/src/api/org/openmrs/util/DatabaseUpdater.java b/fixed/src/api/org/openmrs/util/DatabaseUpdater.java
+index d107ca82f..f3d60e7e3 100644
+--- a/buggy/src/api/org/openmrs/util/DatabaseUpdater.java
++++ b/fixed/src/api/org/openmrs/util/DatabaseUpdater.java
+@@ -217,7 +217,7 @@ public class DatabaseUpdater {
+ 			database.setDatabaseChangeLogTableName("liquibasechangelog");
+ 			database.setDatabaseChangeLogLockTableName("liquibasechangeloglock");
+ 			
+-			if (connection.getMetaData().getDatabaseProductName().contains("hsqldb")) {
++			if (connection.getMetaData().getDatabaseProductName().contains("HSQL Database Engine")) {
+ 				// a hack because hsqldb seems to be checking table names in the metadata section case sensitively
+ 				database.setDatabaseChangeLogTableName(database.getDatabaseChangeLogTableName().toUpperCase());
+ 				database.setDatabaseChangeLogLockTableName(database.getDatabaseChangeLogLockTableName().toUpperCase());

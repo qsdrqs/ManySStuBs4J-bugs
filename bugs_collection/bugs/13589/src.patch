@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/test/java/com/facebook/presto/type/TestJsonOperators.java b/fixed/presto-main/src/test/java/com/facebook/presto/type/TestJsonOperators.java
+index 04e77e365..2ce4dfa68 100644
+--- a/buggy/presto-main/src/test/java/com/facebook/presto/type/TestJsonOperators.java
++++ b/fixed/presto-main/src/test/java/com/facebook/presto/type/TestJsonOperators.java
+@@ -134,7 +134,7 @@ public class TestJsonOperators
+             throws Exception
+     {
+         assertFunction("cast(cast(null as decimal(5,2)) as JSON)", JSON, null);
+-        assertFunction("cast(3.14 as JSON)", JSON, "3.14");
++        assertFunction("cast(DECIMAL '3.14' as JSON)", JSON, "3.14");
+         assertFunction("cast(DECIMAL '12345678901234567890.123456789012345678' as JSON)", JSON, "12345678901234567890.123456789012345678");
+     }
+ 

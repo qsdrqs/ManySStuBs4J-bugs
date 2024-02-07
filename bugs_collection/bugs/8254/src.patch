@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/test/java/org/apache/flink/runtime/rest/handler/legacy/metrics/MetricFetcherTest.java b/fixed/flink-runtime/src/test/java/org/apache/flink/runtime/rest/handler/legacy/metrics/MetricFetcherTest.java
+index e5f1bd012..da8182a8e 100644
+--- a/buggy/flink-runtime/src/test/java/org/apache/flink/runtime/rest/handler/legacy/metrics/MetricFetcherTest.java
++++ b/fixed/flink-runtime/src/test/java/org/apache/flink/runtime/rest/handler/legacy/metrics/MetricFetcherTest.java
+@@ -108,7 +108,7 @@ public class MetricFetcherTest extends TestLogger {
+ 		when(queryServiceRetriever.retrieveService(eq(tmMetricQueryServicePath))).thenReturn(CompletableFuture.completedFuture(tmQueryService));
+ 
+ 		// ========= start MetricFetcher testing =======================================================================
+-		MetricFetcher fetcher = new MetricFetcher(
++		MetricFetcher fetcher = new MetricFetcher<>(
+ 			retriever,
+ 			queryServiceRetriever,
+ 			Executors.directExecutor(),

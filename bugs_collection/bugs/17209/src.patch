@@ -1,0 +1,13 @@
+diff --git a/buggy/batch/chunk-simple/src/test/java/org/javaee7/batch/chunk/simple/ChunkSimpleTest.java b/fixed/batch/chunk-simple/src/test/java/org/javaee7/batch/chunk/simple/ChunkSimpleTest.java
+index c53ee4359..ebe694bd1 100644
+--- a/buggy/batch/chunk-simple/src/test/java/org/javaee7/batch/chunk/simple/ChunkSimpleTest.java
++++ b/fixed/batch/chunk-simple/src/test/java/org/javaee7/batch/chunk/simple/ChunkSimpleTest.java
+@@ -36,7 +36,7 @@ public class ChunkSimpleTest {
+                                    .addClass(MyItemWriter.class)
+                                    .addClass(MyOutputRecord.class)
+                                    .addAsWebInfResource(EmptyAsset.INSTANCE, ArchivePaths.create("beans.xml"))
+-                                   .addAsManifestResource("META-INF/batch-jobs/myJob.xml", "batch-jobs/myJob.xml");
++                                   .addAsResource("META-INF/batch-jobs/myJob.xml");
+         System.out.println(war.toString(true));
+         return war;
+     }

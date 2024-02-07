@@ -1,0 +1,19 @@
+diff --git a/buggy/indexing-service/src/main/java/org/apache/druid/indexing/overlord/TaskRunnerUtils.java b/fixed/indexing-service/src/main/java/org/apache/druid/indexing/overlord/TaskRunnerUtils.java
+index 176a3a129..6352b867e 100644
+--- a/buggy/indexing-service/src/main/java/org/apache/druid/indexing/overlord/TaskRunnerUtils.java
++++ b/fixed/indexing-service/src/main/java/org/apache/druid/indexing/overlord/TaskRunnerUtils.java
+@@ -99,12 +99,12 @@ public class TaskRunnerUtils
+     }
+   }
+ 
+-  public static URL makeWorkerURL(Worker worker, String pathFormat, Object... pathParams)
++  public static URL makeWorkerURL(Worker worker, String pathFormat, String... pathParams)
+   {
+     Preconditions.checkArgument(pathFormat.startsWith("/"), "path must start with '/': %s", pathFormat);
+     final String path = StringUtils.format(
+         pathFormat,
+-        Arrays.stream(pathParams).map(s -> StringUtils.urlEncode(s.toString())).toArray()
++        Arrays.stream(pathParams).map(StringUtils::urlEncode).toArray()
+     );
+ 
+     try {

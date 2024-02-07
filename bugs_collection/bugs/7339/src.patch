@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/main/MainSupport.java b/fixed/camel-core/src/main/java/org/apache/camel/main/MainSupport.java
+index ed38abed4..ca66c1a0a 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/main/MainSupport.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/main/MainSupport.java
+@@ -406,7 +406,7 @@ public abstract class MainSupport extends ServiceSupport {
+             }
+             RouteDotGenerator generator = new RouteDotGenerator(outputDir);
+             LOG.info("Generating DOT file for routes: " + outputDir + " for: " + camelContext + " with name: " + name);
+-            generator.drawRoutes((ModelCamelContext)camelContext);
++            generator.drawRoutes(camelContext);
+         }
+     }
+ 

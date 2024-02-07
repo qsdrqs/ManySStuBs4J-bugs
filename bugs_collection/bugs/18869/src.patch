@@ -1,0 +1,13 @@
+diff --git a/buggy/commons-server/src/main/java/com/navercorp/pinpoint/common/server/util/concurrent/DisruptorExecutorService.java b/fixed/commons-server/src/main/java/com/navercorp/pinpoint/common/server/util/concurrent/DisruptorExecutorService.java
+index 561157053..c638f9851 100644
+--- a/buggy/commons-server/src/main/java/com/navercorp/pinpoint/common/server/util/concurrent/DisruptorExecutorService.java
++++ b/fixed/commons-server/src/main/java/com/navercorp/pinpoint/common/server/util/concurrent/DisruptorExecutorService.java
+@@ -182,7 +182,7 @@ public class DisruptorExecutorService extends AbstractExecutorService {
+         return false;
+     }
+ 
+-    private class RunnableExecuteHandler implements WorkHandler<RunnableEvent> {
++    private static class RunnableExecuteHandler implements WorkHandler<RunnableEvent> {
+ 
+         @Override
+         public void onEvent(RunnableEvent runnableEvent) throws Exception {

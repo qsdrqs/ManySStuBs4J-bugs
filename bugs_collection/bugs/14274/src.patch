@@ -1,0 +1,34 @@
+diff --git a/buggy/FiltersPlugin/src/org/gephi/filters/plugin/attribute/AttributeEqualBuilder.java b/fixed/FiltersPlugin/src/org/gephi/filters/plugin/attribute/AttributeEqualBuilder.java
+index e6091b520..3119d38a6 100644
+--- a/buggy/FiltersPlugin/src/org/gephi/filters/plugin/attribute/AttributeEqualBuilder.java
++++ b/fixed/FiltersPlugin/src/org/gephi/filters/plugin/attribute/AttributeEqualBuilder.java
+@@ -108,7 +108,8 @@ public class AttributeEqualBuilder implements CategoryBuilder {
+ 
+         public String getName() {
+             return "<font color='#000000'>" + column.getTitle() + "</font> "
+-                    + "<font color='#999999'><i>" + column.getType().toString() + "</i></font>";
++                    + "<font color='#999999'><i>" + column.getType().toString() + " "
++                    + (AttributeUtils.getDefault().isNodeColumn(column) ? "(Node)" : "(Edge)") + "</i></font>";
+         }
+ 
+         public Icon getIcon() {
+@@ -244,7 +245,8 @@ public class AttributeEqualBuilder implements CategoryBuilder {
+ 
+         public String getName() {
+             return "<font color='#000000'>" + column.getTitle() + "</font> "
+-                    + "<font color='#999999'><i>" + column.getType().toString() + "</i></font>";
++                    + "<font color='#999999'><i>" + column.getType().toString() + " "
++                    + (AttributeUtils.getDefault().isNodeColumn(column) ? "(Node)" : "(Edge)") + "</i></font>";
+         }
+ 
+         public Icon getIcon() {
+@@ -414,7 +416,8 @@ public class AttributeEqualBuilder implements CategoryBuilder {
+ 
+         public String getName() {
+             return "<font color='#000000'>" + column.getTitle() + "</font> "
+-                    + "<font color='#999999'><i>" + column.getType().toString() + "</i></font>";
++                    + "<font color='#999999'><i>" + column.getType().toString() + " "
++                    + (AttributeUtils.getDefault().isNodeColumn(column) ? "(Node)" : "(Edge)") + "</i></font>";
+         }
+ 
+         public Icon getIcon() {

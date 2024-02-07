@@ -1,0 +1,14 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/tez/DagUtils.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/tez/DagUtils.java
+index 42f63bb53..ea0fb4ec6 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/tez/DagUtils.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/tez/DagUtils.java
+@@ -191,7 +191,8 @@ public class DagUtils {
+         mrScratchDir.toUri().toString(), ctx);
+     Utilities.setInputPaths(conf, inputPaths);
+ 
+-    InputSplitInfo inputSplitInfo = MRHelpers.generateInputSplits(conf, tezDir);
++    InputSplitInfo inputSplitInfo = MRHelpers.generateInputSplits(conf, 
++        new Path(tezDir, ""+seqNo));
+ 
+     // create the directories FileSinkOperators need
+     Utilities.createTmpDirs(conf, mapWork);

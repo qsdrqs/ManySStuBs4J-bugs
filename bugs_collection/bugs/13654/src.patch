@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-rcfile/src/main/java/com/facebook/presto/rcfile/RcFileReader.java b/fixed/presto-rcfile/src/main/java/com/facebook/presto/rcfile/RcFileReader.java
+index 0cbaf6757..26be5c8dc 100644
+--- a/buggy/presto-rcfile/src/main/java/com/facebook/presto/rcfile/RcFileReader.java
++++ b/fixed/presto-rcfile/src/main/java/com/facebook/presto/rcfile/RcFileReader.java
+@@ -130,7 +130,7 @@ public class RcFileReader
+         else if (SEQUENCE_FILE_MAGIC.equals(magic)) {
+             // first version of RCFile used magic SEQ with version 6
+             byte sequenceFileVersion = input.readByte();
+-            if (sequenceFileVersion == SEQUENCE_FILE_VERSION) {
++            if (sequenceFileVersion != SEQUENCE_FILE_VERSION) {
+                 throw corrupt("File %s is a SequenceFile not an RCFile", dataSource);
+             }
+ 

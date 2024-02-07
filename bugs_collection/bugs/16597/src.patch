@@ -1,0 +1,12 @@
+diff --git a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/io/ClientExecutionPoolSizeLowTest.java b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/io/ClientExecutionPoolSizeLowTest.java
+index c1d320c66..13303f596 100644
+--- a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/io/ClientExecutionPoolSizeLowTest.java
++++ b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/io/ClientExecutionPoolSizeLowTest.java
+@@ -94,6 +94,6 @@ public class ClientExecutionPoolSizeLowTest {
+             }
+         }
+ 
+-        assertSizeEventually(COUNT, map);
++        assertSizeEventually(COUNT, map, 180);
+     }
+ }

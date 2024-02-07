@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/cp/internal/MetadataRaftGroupManager.java b/fixed/hazelcast/src/main/java/com/hazelcast/cp/internal/MetadataRaftGroupManager.java
+index 0ee2ee6fa..161392052 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/cp/internal/MetadataRaftGroupManager.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/cp/internal/MetadataRaftGroupManager.java
+@@ -400,7 +400,7 @@ public class MetadataRaftGroupManager implements SnapshotAwareService<MetadataRa
+                 return group.id();
+             }
+ 
+-            String msg = group.getId() + " already exists with a different size: " + group.memberCount();
++            String msg = group.id() + " already exists with a different size: " + group.memberCount();
+             logger.severe(msg);
+             throw new IllegalStateException(msg);
+         }

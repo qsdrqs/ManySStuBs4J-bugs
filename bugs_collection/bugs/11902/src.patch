@@ -1,0 +1,13 @@
+diff --git a/buggy/library/src/com/handmark/pulltorefresh/library/PullToRefreshAdapterViewBase.java b/fixed/library/src/com/handmark/pulltorefresh/library/PullToRefreshAdapterViewBase.java
+index 86a234093..da49df562 100644
+--- a/buggy/library/src/com/handmark/pulltorefresh/library/PullToRefreshAdapterViewBase.java
++++ b/fixed/library/src/com/handmark/pulltorefresh/library/PullToRefreshAdapterViewBase.java
+@@ -148,7 +148,7 @@ public abstract class PullToRefreshAdapterViewBase<T extends AbsListView> extend
+ 
+ 		if (count == getNumberInternalViews()) {
+ 			return true;
+-		} else if (lastVisiblePosition == (count - 1 - getNumberInternalFooterViews())) {
++		} else if (lastVisiblePosition == (count - getNumberInternalFooterViews())) {
+ 
+ 			final int childIndex = lastVisiblePosition - mRefreshableView.getFirstVisiblePosition();
+ 			final View lastVisibleChild = mRefreshableView.getChildAt(childIndex);

@@ -1,0 +1,13 @@
+diff --git a/buggy/codec-http/src/main/java/io/netty/handler/codec/spdy/SpdyFrameEncoder.java b/fixed/codec-http/src/main/java/io/netty/handler/codec/spdy/SpdyFrameEncoder.java
+index 9b5a0e21e..61d72b4ee 100644
+--- a/buggy/codec-http/src/main/java/io/netty/handler/codec/spdy/SpdyFrameEncoder.java
++++ b/fixed/codec-http/src/main/java/io/netty/handler/codec/spdy/SpdyFrameEncoder.java
+@@ -31,7 +31,7 @@ import static io.netty.handler.codec.spdy.SpdyCodecUtil.*;
+ /**
+  * Encodes a SPDY Data or Control Frame into a {@link ByteBuf}.
+  */
+-public class SpdyFrameEncoder extends MessageToByteEncoder {
++public class SpdyFrameEncoder extends MessageToByteEncoder<Object> {
+ 
+     private final int version;
+     private volatile boolean finished;

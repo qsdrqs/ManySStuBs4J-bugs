@@ -1,0 +1,13 @@
+diff --git a/buggy/processing/src/main/java/io/druid/segment/incremental/IncrementalIndexStorageAdapter.java b/fixed/processing/src/main/java/io/druid/segment/incremental/IncrementalIndexStorageAdapter.java
+index 3a19b4797..8c4681806 100644
+--- a/buggy/processing/src/main/java/io/druid/segment/incremental/IncrementalIndexStorageAdapter.java
++++ b/fixed/processing/src/main/java/io/druid/segment/incremental/IncrementalIndexStorageAdapter.java
+@@ -547,7 +547,7 @@ public class IncrementalIndexStorageAdapter implements StorageAdapter
+                     @Override
+                     public Class classOfObject()
+                     {
+-                      return Long.TYPE;
++                      return Long.class;
+                     }
+ 
+                     @Override

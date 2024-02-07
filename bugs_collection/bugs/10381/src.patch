@@ -1,0 +1,13 @@
+diff --git a/buggy/mongodb/src/main/java/com/yahoo/ycsb/db/OptionsSupport.java b/fixed/mongodb/src/main/java/com/yahoo/ycsb/db/OptionsSupport.java
+index a2e926d3f..a1c0264ea 100644
+--- a/buggy/mongodb/src/main/java/com/yahoo/ycsb/db/OptionsSupport.java
++++ b/fixed/mongodb/src/main/java/com/yahoo/ycsb/db/OptionsSupport.java
+@@ -76,7 +76,7 @@ public final class OptionsSupport {
+                 result = addUrlOption(result, "w", "1");
+             }
+             else if ("journaled".equals(writeConcernType)) {
+-                result = addUrlOption(result, "journal", "true");
++                result = addUrlOption(result, "j", "true");
+             }
+             else if ("replica_acknowledged".equals(writeConcernType)) {
+                 result = addUrlOption(result, "w", "2");

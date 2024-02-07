@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/main/java/cucumber/api/formatter/NiceAppendable.java b/fixed/core/src/main/java/cucumber/api/formatter/NiceAppendable.java
+index cf31ea5e1..cca1bf179 100644
+--- a/buggy/core/src/main/java/cucumber/api/formatter/NiceAppendable.java
++++ b/fixed/core/src/main/java/cucumber/api/formatter/NiceAppendable.java
+@@ -65,7 +65,7 @@ public class NiceAppendable {
+     public void close() {
+         try {
+             tryFlush();
+-            if (out instanceof Closeable) {
++            if (out instanceof Closeable && out != System.out && out != System.err) {
+                 ((Closeable) out).close();
+             }
+         } catch (IOException e) {

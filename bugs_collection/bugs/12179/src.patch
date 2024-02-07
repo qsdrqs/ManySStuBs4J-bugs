@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/main/java/cucumber/formatter/UsageFormatter.java b/fixed/core/src/main/java/cucumber/formatter/UsageFormatter.java
+index 8f6944db0..8b1fdefdf 100644
+--- a/buggy/core/src/main/java/cucumber/formatter/UsageFormatter.java
++++ b/fixed/core/src/main/java/cucumber/formatter/UsageFormatter.java
+@@ -90,7 +90,7 @@ public class UsageFormatter implements Formatter, Reporter {
+     }
+ 
+     @Override
+-    public void syntaxError(String state, String event, List<String> legalEvents, String uri, int line) {
++    public void syntaxError(String state, String event, List<String> legalEvents, String uri, Integer line) {
+     }
+ 
+     @Override

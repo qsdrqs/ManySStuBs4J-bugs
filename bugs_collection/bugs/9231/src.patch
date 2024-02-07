@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-rest/src/main/java/org/apache/hadoop/hbase/rest/client/Cluster.java b/fixed/hbase-rest/src/main/java/org/apache/hadoop/hbase/rest/client/Cluster.java
+index 2ad054156..549a1b25c 100644
+--- a/buggy/hbase-rest/src/main/java/org/apache/hadoop/hbase/rest/client/Cluster.java
++++ b/fixed/hbase-rest/src/main/java/org/apache/hadoop/hbase/rest/client/Cluster.java
+@@ -47,7 +47,7 @@ public class Cluster {
+    * @param nodes a list of service locations, in 'host:port' format
+    */
+   public Cluster(List<String> nodes) {
+-    nodes.addAll(nodes);
++    this.nodes.addAll(nodes);
+   }
+ 
+   /**

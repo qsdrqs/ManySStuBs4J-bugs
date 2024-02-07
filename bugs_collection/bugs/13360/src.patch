@@ -1,0 +1,19 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/memory/ClusterMemoryPool.java b/fixed/presto-main/src/main/java/com/facebook/presto/memory/ClusterMemoryPool.java
+index 061101d7a..ca0df4699 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/memory/ClusterMemoryPool.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/memory/ClusterMemoryPool.java
+@@ -130,12 +130,12 @@ public class ClusterMemoryPool
+ 
+     public synchronized Map<QueryId, Long> getQueryMemoryReservations()
+     {
+-        return queryMemoryReservations;
++        return ImmutableMap.copyOf(queryMemoryReservations);
+     }
+ 
+     public synchronized Map<QueryId, Long> getQueryMemoryRevocableReservations()
+     {
+-        return queryMemoryRevocableReservations;
++        return ImmutableMap.copyOf(queryMemoryRevocableReservations);
+     }
+ 
+     public synchronized void update(List<MemoryInfo> memoryInfos, int assignedQueries)

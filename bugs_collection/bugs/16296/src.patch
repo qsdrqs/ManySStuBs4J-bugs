@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/nio/tcp/nonblocking/NonBlockingSocketWriter.java b/fixed/hazelcast/src/main/java/com/hazelcast/nio/tcp/nonblocking/NonBlockingSocketWriter.java
+index c4623b136..92fa9f3d3 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/nio/tcp/nonblocking/NonBlockingSocketWriter.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/nio/tcp/nonblocking/NonBlockingSocketWriter.java
+@@ -448,7 +448,7 @@ public final class NonBlockingSocketWriter extends AbstractHandler implements Ru
+ 
+     @Override
+     public String toString() {
+-        return connection + ".writeHandler";
++        return connection + ".socketWriter";
+     }
+ 
+     /**

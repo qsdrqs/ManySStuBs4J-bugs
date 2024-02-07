@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/AutoConfigurationPackages.java b/fixed/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/AutoConfigurationPackages.java
+index 963af7265..379b526c0 100644
+--- a/buggy/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/AutoConfigurationPackages.java
++++ b/fixed/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/AutoConfigurationPackages.java
+@@ -139,7 +139,7 @@ public abstract class AutoConfigurationPackages {
+ 	/**
+ 	 * Wrapper for a package import.
+ 	 */
+-	private final static class PackageImport {
++	private static final class PackageImport {
+ 
+ 		private final String packageName;
+ 

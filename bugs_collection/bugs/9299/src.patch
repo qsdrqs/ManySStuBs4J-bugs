@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/mapreduce/TableInputFormatBase.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/mapreduce/TableInputFormatBase.java
+index 783ade980..e23ea37c6 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/mapreduce/TableInputFormatBase.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/mapreduce/TableInputFormatBase.java
+@@ -190,7 +190,7 @@ extends InputFormat<ImmutableBytesWritable, Result> {
+       try {
+         regionLocation = reverseDNS(regionAddress);
+       } catch (NamingException e) {
+-        LOG.error("Cannot resolve the host name for " + regionAddress + " because of " + e);
++        LOG.warn("Cannot resolve the host name for " + regionAddress + " because of " + e);
+         regionLocation = location.getHostname();
+       }
+ 

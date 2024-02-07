@@ -1,0 +1,13 @@
+diff --git a/buggy/nephele/nephele-visualization/src/main/java/eu/stratosphere/nephele/visualization/swt/SWTGateToolTip.java b/fixed/nephele/nephele-visualization/src/main/java/eu/stratosphere/nephele/visualization/swt/SWTGateToolTip.java
+index 8fa4a83c7..0bbd8adf8 100644
+--- a/buggy/nephele/nephele-visualization/src/main/java/eu/stratosphere/nephele/visualization/swt/SWTGateToolTip.java
++++ b/fixed/nephele/nephele-visualization/src/main/java/eu/stratosphere/nephele/visualization/swt/SWTGateToolTip.java
+@@ -91,7 +91,7 @@ public class SWTGateToolTip extends SWTToolTip {
+ 		this.channelTypeLabel = new Label(tableComposite, SWT.NONE);
+ 		this.channelTypeLabel.setText(channelType.toString());
+ 
+-		new Label(tableComposite, SWT.NONE).setText("Tramsmitted record type:");
++		new Label(tableComposite, SWT.NONE).setText("Transmitted record type:");
+ 		this.recordTypeLabel = new Label(tableComposite, SWT.NONE);
+ 		this.recordTypeLabel.setText(managementGate.getRecordType());
+ 

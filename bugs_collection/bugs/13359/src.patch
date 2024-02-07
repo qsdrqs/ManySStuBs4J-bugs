@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-spi/src/main/java/com/facebook/presto/spi/block/SingleRowBlock.java b/fixed/presto-spi/src/main/java/com/facebook/presto/spi/block/SingleRowBlock.java
+index 89867e998..33ee8fac5 100644
+--- a/buggy/presto-spi/src/main/java/com/facebook/presto/spi/block/SingleRowBlock.java
++++ b/fixed/presto-spi/src/main/java/com/facebook/presto/spi/block/SingleRowBlock.java
+@@ -55,7 +55,7 @@ public class SingleRowBlock
+     {
+         long sizeInBytes = 0;
+         for (int i = 0; i < fieldBlocks.length; i++) {
+-            sizeInBytes += getRawFieldBlock(i).getSizeInBytes();
++            sizeInBytes += getRawFieldBlock(i).getRegionSizeInBytes(rowIndex, 1);
+         }
+         return sizeInBytes;
+     }

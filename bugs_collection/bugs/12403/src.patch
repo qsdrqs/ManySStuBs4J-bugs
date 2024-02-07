@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-core/src/main/java/com/yammer/dropwizard/config/HttpConfiguration.java b/fixed/dropwizard-core/src/main/java/com/yammer/dropwizard/config/HttpConfiguration.java
+index 91707e680..6062485aa 100644
+--- a/buggy/dropwizard-core/src/main/java/com/yammer/dropwizard/config/HttpConfiguration.java
++++ b/fixed/dropwizard-core/src/main/java/com/yammer/dropwizard/config/HttpConfiguration.java
+@@ -69,7 +69,7 @@ public class HttpConfiguration {
+     @Min(1)
+     @Max(128)
+     @JsonProperty
+-    private int acceptorThreadCount = Runtime.getRuntime().availableProcessors();
++    private int acceptorThreadCount = 1;
+ 
+     @Min(-Thread.NORM_PRIORITY)
+     @Max(Thread.NORM_PRIORITY)

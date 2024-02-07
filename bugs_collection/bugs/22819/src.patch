@@ -1,0 +1,13 @@
+diff --git a/buggy/okhttp/src/main/java/okhttp3/RequestBody.java b/fixed/okhttp/src/main/java/okhttp3/RequestBody.java
+index 3cb29477d..baf33ce6c 100644
+--- a/buggy/okhttp/src/main/java/okhttp3/RequestBody.java
++++ b/fixed/okhttp/src/main/java/okhttp3/RequestBody.java
+@@ -102,7 +102,7 @@ public abstract class RequestBody {
+ 
+   /** Returns a new request body that transmits the content of {@code file}. */
+   public static RequestBody create(final @Nullable MediaType contentType, final File file) {
+-    if (file == null) throw new NullPointerException("content == null");
++    if (file == null) throw new NullPointerException("file == null");
+ 
+     return new RequestBody() {
+       @Override public @Nullable MediaType contentType() {

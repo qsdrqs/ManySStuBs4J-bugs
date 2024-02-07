@@ -1,0 +1,15 @@
+diff --git a/buggy/db/hbase/src/com/yahoo/ycsb/db/HBaseClient.java b/fixed/db/hbase/src/com/yahoo/ycsb/db/HBaseClient.java
+index 9a9f70b25..0a5c3f52e 100644
+--- a/buggy/db/hbase/src/com/yahoo/ycsb/db/HBaseClient.java
++++ b/fixed/db/hbase/src/com/yahoo/ycsb/db/HBaseClient.java
+@@ -47,7 +47,9 @@ import org.apache.hadoop.hbase.HBaseConfiguration;
+  */
+ public class HBaseClient extends com.yahoo.ycsb.DB
+ {
+-    private static final Configuration config = HBaseConfiguration.create();
++    // BFC: Change to fix broken build (with HBase 0.20.6)
++    //private static final Configuration config = HBaseConfiguration.create();
++    private static final HBaseConfiguration config = new HBaseConfiguration();
+ 
+     public boolean _debug=false;
+ 

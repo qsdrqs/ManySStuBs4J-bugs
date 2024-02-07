@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/concurrent/lock/ConditionBasicLocalTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/concurrent/lock/ConditionBasicLocalTest.java
+index fa2e3ab04..40cc2f307 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/concurrent/lock/ConditionBasicLocalTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/concurrent/lock/ConditionBasicLocalTest.java
+@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
+ 
+ @RunWith(HazelcastParallelClassRunner.class)
+ @Category({QuickTest.class, ParallelTest.class})
+-public class ConditionBasicLocalTest extends ConditionBasicTest {
++public class ConditionBasicLocalTest extends ConditionAbstractTest {
+     @Override
+     protected HazelcastInstance[] newInstances() {
+         return createHazelcastInstanceFactory(1).newInstances();

@@ -1,0 +1,13 @@
+diff --git a/buggy/guava-testlib/src/com/google/common/collect/testing/google/MultimapTestSuiteBuilder.java b/fixed/guava-testlib/src/com/google/common/collect/testing/google/MultimapTestSuiteBuilder.java
+index 395980eca..460024e42 100644
+--- a/buggy/guava-testlib/src/com/google/common/collect/testing/google/MultimapTestSuiteBuilder.java
++++ b/fixed/guava-testlib/src/com/google/common/collect/testing/google/MultimapTestSuiteBuilder.java
+@@ -263,7 +263,7 @@ public class MultimapTestSuiteBuilder<K, V, M extends Multimap<K, V>>
+     return derivedFeatures;
+   }
+ 
+-  private static final Multimap<Feature<?>, Feature<?>> GET_FEATURE_MAP =
++  private static final ImmutableMultimap<Feature<?>, Feature<?>> GET_FEATURE_MAP =
+       ImmutableMultimap.<Feature<?>, Feature<?>>builder()
+           .put(
+               MapFeature.FAILS_FAST_ON_CONCURRENT_MODIFICATION,

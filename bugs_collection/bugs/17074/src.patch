@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/impl/monitor/OperationsCounterSupport.java b/fixed/hazelcast/src/main/java/com/hazelcast/impl/monitor/OperationsCounterSupport.java
+index dca87ffbb..5597ef357 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/impl/monitor/OperationsCounterSupport.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/impl/monitor/OperationsCounterSupport.java
+@@ -29,7 +29,7 @@ abstract class OperationsCounterSupport<T extends LocalInstanceOperationStats> {
+ 	final Object lock = new Object();
+ 	long startTime = now();
+ 	long endTime = Long.MAX_VALUE;
+-	transient T published = null;
++	transient volatile T published = null;
+ 
+ 	final List listOfSubCounters = new ArrayList();
+ 

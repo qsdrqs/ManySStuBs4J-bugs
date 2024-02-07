@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/handler/stream/ChunkedNioFile.java b/fixed/src/main/java/org/jboss/netty/handler/stream/ChunkedNioFile.java
+index 4235485f4..84a950716 100644
+--- a/buggy/src/main/java/org/jboss/netty/handler/stream/ChunkedNioFile.java
++++ b/fixed/src/main/java/org/jboss/netty/handler/stream/ChunkedNioFile.java
+@@ -136,7 +136,7 @@ public class ChunkedNioFile implements ChunkedInput {
+     }
+ 
+     public boolean isEndOfInput() throws Exception {
+-        return hasNextChunk();
++        return !hasNextChunk();
+     }
+ 
+     public void close() throws Exception {

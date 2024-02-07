@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/handler/codec/http/CookieDecoder.java b/fixed/src/main/java/org/jboss/netty/handler/codec/http/CookieDecoder.java
+index b810f756b..62d9e3058 100644
+--- a/buggy/src/main/java/org/jboss/netty/handler/codec/http/CookieDecoder.java
++++ b/fixed/src/main/java/org/jboss/netty/handler/codec/http/CookieDecoder.java
+@@ -81,8 +81,7 @@ public class CookieDecoder {
+             // An exceptional case:
+             // 'Expires' attribute can contain a comma without surrounded with quotes.
+             if (name.equalsIgnoreCase(CookieHeaderNames.EXPIRES) &&
+-                value.length() <= 3) {
+-                // value contains comma, but not surrounded with quotes.
++                value.length() <= 9) { // Longest day of week is 'Wednesday'.
+                 if (m.find(pos)) {
+                     value = value + ", " + m.group(1);
+                     pos = m.end();

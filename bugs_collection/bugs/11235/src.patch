@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter5naming/rule525nonconstantfieldnames/MemberNameTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter5naming/rule525nonconstantfieldnames/MemberNameTest.java
+index 0814b4367..b4f8b01dc 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter5naming/rule525nonconstantfieldnames/MemberNameTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter5naming/rule525nonconstantfieldnames/MemberNameTest.java
+@@ -19,7 +19,7 @@ public class MemberNameTest extends BaseCheckTestSupport{
+ 	private static String format;
+ 
+     @BeforeClass
+-    public static void setConfigurationBuilder() throws CheckstyleException, IOException {
++    public static void setConfigurationBuilder() throws CheckstyleException {
+         builder = new ConfigurationBuilder(new File("src/it/"));
+         checkConfig = builder.getCheckConfig("MemberName");
+         format = checkConfig.getAttribute("format");

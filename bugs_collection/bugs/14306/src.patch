@@ -1,0 +1,13 @@
+diff --git a/buggy/DesktopImport/src/org/gephi/desktop/importer/DesktopImportControllerUI.java b/fixed/DesktopImport/src/org/gephi/desktop/importer/DesktopImportControllerUI.java
+index de825a423..09e7a9c03 100644
+--- a/buggy/DesktopImport/src/org/gephi/desktop/importer/DesktopImportControllerUI.java
++++ b/fixed/DesktopImport/src/org/gephi/desktop/importer/DesktopImportControllerUI.java
+@@ -327,7 +327,7 @@ public class DesktopImportControllerUI implements ImportControllerUI {
+             ImporterUI ui = controller.getUI(importer);
+             if (ui != null) {
+                 ui.setup(importer);
+-                String title = NbBundle.getMessage(DesktopImportControllerUI.class, "DesktopImportControllerUI.spigot.ui.dialog.title");
++                String title = NbBundle.getMessage(DesktopImportControllerUI.class, "DesktopImportControllerUI.spigot.ui.dialog.title", ui.getDisplayName());
+                 JPanel panel = ui.getPanel();
+                 final DialogDescriptor dd = new DialogDescriptor(panel, title);
+                 if (panel instanceof ValidationPanel) {

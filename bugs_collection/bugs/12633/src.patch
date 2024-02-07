@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions-core/datasketches/src/test/java/org/apache/druid/query/aggregation/datasketches/hll/sql/HllSketchSqlAggregatorTest.java b/fixed/extensions-core/datasketches/src/test/java/org/apache/druid/query/aggregation/datasketches/hll/sql/HllSketchSqlAggregatorTest.java
+index 46eb02c01..1690ef9b3 100644
+--- a/buggy/extensions-core/datasketches/src/test/java/org/apache/druid/query/aggregation/datasketches/hll/sql/HllSketchSqlAggregatorTest.java
++++ b/fixed/extensions-core/datasketches/src/test/java/org/apache/druid/query/aggregation/datasketches/hll/sql/HllSketchSqlAggregatorTest.java
+@@ -161,7 +161,7 @@ public class HllSketchSqlAggregatorTest extends CalciteTestBase
+ 
+     final PlannerConfig plannerConfig = new PlannerConfig();
+     final DruidSchema druidSchema = CalciteTests.createMockSchema(conglomerate, walker, plannerConfig);
+-    final SystemSchema systemSchema = CalciteTests.createMockSystemSchema(druidSchema, walker);
++    final SystemSchema systemSchema = CalciteTests.createMockSystemSchema(druidSchema, walker, plannerConfig);
+     final DruidOperatorTable operatorTable = new DruidOperatorTable(
+         ImmutableSet.of(new HllSketchSqlAggregator()),
+         ImmutableSet.of()

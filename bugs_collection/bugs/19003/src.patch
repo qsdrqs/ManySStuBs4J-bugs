@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/unsafe/impl/batchimport/ParallelBatchImporter.java b/fixed/community/kernel/src/main/java/org/neo4j/unsafe/impl/batchimport/ParallelBatchImporter.java
+index 96fa42215..0b5fcc1d0 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/unsafe/impl/batchimport/ParallelBatchImporter.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/unsafe/impl/batchimport/ParallelBatchImporter.java
+@@ -240,7 +240,7 @@ public class ParallelBatchImporter implements BatchImporter
+         public NodeStage( InputIterable<InputNode> nodes, IdMapper idMapper, IdGenerator idGenerator,
+                 BatchingNeoStore neoStore, InputCache inputCache, StatsProvider memoryUsage ) throws IOException
+         {
+-            super( "Nodes", config, idGenerator.dependsOnInput() );
++            super( "Nodes", config, true );
+             add( new InputIteratorBatcherStep<>( control(), config.batchSize(), config.movingAverageSize(),
+                     nodes.iterator(), InputNode.class ) );
+             if ( !nodes.supportsMultiplePasses() )

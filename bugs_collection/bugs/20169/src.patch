@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/persistence/org.openhab.persistence.jdbc/java/org/openhab/persistence/jdbc/internal/JdbcConfiguration.java b/fixed/bundles/persistence/org.openhab.persistence.jdbc/java/org/openhab/persistence/jdbc/internal/JdbcConfiguration.java
+index 280bb2d45..4daa7bda0 100644
+--- a/buggy/bundles/persistence/org.openhab.persistence.jdbc/java/org/openhab/persistence/jdbc/internal/JdbcConfiguration.java
++++ b/fixed/bundles/persistence/org.openhab.persistence.jdbc/java/org/openhab/persistence/jdbc/internal/JdbcConfiguration.java
+@@ -297,7 +297,7 @@ public class JdbcConfiguration {
+             } else if (serviceName.equals("postgresql")) {
+                 warn += "\tPostgreSQL:version >= 9.4.1208 from    http://mvnrepository.com/artifact/org.postgresql/postgresql\n";
+             } else if (serviceName.equals("sqlite")) {
+-                warn += "\tSQLite:    version >= 3.8.11.2 from           http://mvnrepository.com/artifact/org.xerial/sqlite-jdbc\n";
++                warn += "\tSQLite:    version >= 3.16.1 from           http://mvnrepository.com/artifact/org.xerial/sqlite-jdbc\n";
+             }
+             logger.warn(warn, serviceName);
+         }

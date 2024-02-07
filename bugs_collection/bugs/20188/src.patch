@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.weather/src/main/java/org/openhab/binding/weather/internal/scheduler/WeatherJobScheduler.java b/fixed/bundles/binding/org.openhab.binding.weather/src/main/java/org/openhab/binding/weather/internal/scheduler/WeatherJobScheduler.java
+index 3eed23003..86e9ada18 100644
+--- a/buggy/bundles/binding/org.openhab.binding.weather/src/main/java/org/openhab/binding/weather/internal/scheduler/WeatherJobScheduler.java
++++ b/fixed/bundles/binding/org.openhab.binding.weather/src/main/java/org/openhab/binding/weather/internal/scheduler/WeatherJobScheduler.java
+@@ -60,7 +60,7 @@ public class WeatherJobScheduler {
+     /**
+      * Restarts the JobScheduler after a short delay.
+      */
+-    public void restart() {
++    public synchronized void restart() {
+         delayedExecutor.cancel();
+         delayedExecutor.schedule(new TimerTask() {
+ 

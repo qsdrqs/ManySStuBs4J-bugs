@@ -1,0 +1,13 @@
+diff --git a/buggy/demos/cuboc/cuboc/src/com/badlogic/cubocy/MapRenderer.java b/fixed/demos/cuboc/cuboc/src/com/badlogic/cubocy/MapRenderer.java
+index f4972441c..e43c95377 100644
+--- a/buggy/demos/cuboc/cuboc/src/com/badlogic/cubocy/MapRenderer.java
++++ b/fixed/demos/cuboc/cuboc/src/com/badlogic/cubocy/MapRenderer.java
+@@ -17,7 +17,7 @@ public class MapRenderer {
+ 	Map map;
+ 	OrthographicCamera cam;
+ 	SpriteCache cache;
+-	SpriteBatch batch = new SpriteBatch(10000);
++	SpriteBatch batch = new SpriteBatch(5460);
+ 	ImmediateModeRenderer20 renderer = new ImmediateModeRenderer20(false, true, 0);
+ 	int[][] blocks;
+ 	TextureRegion tile;

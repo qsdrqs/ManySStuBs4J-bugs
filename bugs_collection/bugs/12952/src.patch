@@ -1,0 +1,13 @@
+diff --git a/buggy/indexing-service/src/main/java/io/druid/indexing/common/task/RestoreTask.java b/fixed/indexing-service/src/main/java/io/druid/indexing/common/task/RestoreTask.java
+index c518ab946..777086a9b 100644
+--- a/buggy/indexing-service/src/main/java/io/druid/indexing/common/task/RestoreTask.java
++++ b/fixed/indexing-service/src/main/java/io/druid/indexing/common/task/RestoreTask.java
+@@ -46,7 +46,7 @@ public class RestoreTask extends AbstractFixedIntervalTask
+   )
+   {
+     super(
+-        TaskUtils.makeId(id, "archive", dataSource, interval),
++        TaskUtils.makeId(id, "restore", dataSource, interval),
+         dataSource,
+         interval
+     );

@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/main/java/org/springframework/boot/BeanDefinitionLoader.java b/fixed/spring-boot/src/main/java/org/springframework/boot/BeanDefinitionLoader.java
+index 853de0d83..dffdd9d24 100644
+--- a/buggy/spring-boot/src/main/java/org/springframework/boot/BeanDefinitionLoader.java
++++ b/fixed/spring-boot/src/main/java/org/springframework/boot/BeanDefinitionLoader.java
+@@ -273,7 +273,7 @@ class BeanDefinitionLoader {
+ 		}
+ 		// Nested anonymous classes are not eligible for registration, nor are groovy
+ 		// closures
+-		if (type.isAnonymousClass() || type.getName().matches(".*\\$_.*closure.*")
++		if (type.getName().matches(".*\\$_.*closure.*") || type.isAnonymousClass()
+ 				|| type.getConstructors() == null || type.getConstructors().length == 0) {
+ 			return false;
+ 		}

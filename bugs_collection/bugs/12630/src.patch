@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions-core/druid-basic-security/src/main/java/org/apache/druid/security/basic/authentication/BasicHTTPAuthenticator.java b/fixed/extensions-core/druid-basic-security/src/main/java/org/apache/druid/security/basic/authentication/BasicHTTPAuthenticator.java
+index 98d4ecf9e..49d033896 100644
+--- a/buggy/extensions-core/druid-basic-security/src/main/java/org/apache/druid/security/basic/authentication/BasicHTTPAuthenticator.java
++++ b/fixed/extensions-core/druid-basic-security/src/main/java/org/apache/druid/security/basic/authentication/BasicHTTPAuthenticator.java
+@@ -203,7 +203,7 @@ public class BasicHTTPAuthenticator implements Authenticator
+   {
+     Map<String, BasicAuthenticatorUser> userMap = cacheManager.get().getUserMap(name);
+     if (userMap == null) {
+-      throw new IAE("No authenticator found with prefix: [%s]", name);
++      throw new IAE("No userMap is available for authenticator: [%s]", name);
+     }
+ 
+     BasicAuthenticatorUser user = userMap.get(username);

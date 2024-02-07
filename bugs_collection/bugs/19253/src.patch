@@ -1,0 +1,13 @@
+diff --git a/buggy/enterprise/cluster/src/test/java/org/neo4j/cluster/protocol/atomicbroadcast/multipaxos/MultiPaxosNetworkTest.java b/fixed/enterprise/cluster/src/test/java/org/neo4j/cluster/protocol/atomicbroadcast/multipaxos/MultiPaxosNetworkTest.java
+index 619f203e1..e7384a80b 100644
+--- a/buggy/enterprise/cluster/src/test/java/org/neo4j/cluster/protocol/atomicbroadcast/multipaxos/MultiPaxosNetworkTest.java
++++ b/fixed/enterprise/cluster/src/test/java/org/neo4j/cluster/protocol/atomicbroadcast/multipaxos/MultiPaxosNetworkTest.java
+@@ -159,7 +159,7 @@ public class MultiPaxosNetworkTest
+ 
+         LoggerFactory.getLogger( getClass() ).info( "Joined cluster - set data" );
+ 
+-        for ( int i = 0; i < 100; i++ )
++        for ( int i = 0; i < 10000; i++ )
+         {
+             map.put( "foo" + i, "bar" + i );
+         }

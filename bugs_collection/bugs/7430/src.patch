@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/component/file/FileEndpoint.java b/fixed/camel-core/src/main/java/org/apache/camel/component/file/FileEndpoint.java
+index 398f19571..8109971d7 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/component/file/FileEndpoint.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/component/file/FileEndpoint.java
+@@ -127,7 +127,7 @@ public class FileEndpoint extends GenericFileEndpoint<File> {
+ 
+     @Override
+     protected String createEndpointUri() {
+-        return "file://" + getFile().getAbsolutePath();
++        return getFile().toURI().toString();
+     }
+ 
+     @Override

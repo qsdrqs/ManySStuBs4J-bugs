@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/ConnectionManager.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/ConnectionManager.java
+index a98431297..2fe2290e0 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/ConnectionManager.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/ConnectionManager.java
+@@ -71,7 +71,7 @@ public class ConnectionManager implements MembershipListener {
+         heartbeatTimer.schedule(new TimerTask() {
+             @Override
+             public void run() {
+-                long diff = client.getInRunnable().lastReceived - Clock.currentTimeMillis();
++                long diff = Clock.currentTimeMillis() - client.getInRunnable().lastReceived;
+                 try {
+                     if (diff >= TIMEOUT / 5 && diff < TIMEOUT) {
+                         logger.log(Level.FINEST,

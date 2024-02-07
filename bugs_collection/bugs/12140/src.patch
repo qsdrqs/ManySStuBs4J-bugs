@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/main/java/cucumber/runtime/xstream/ConverterWithFormat.java b/fixed/core/src/main/java/cucumber/runtime/xstream/ConverterWithFormat.java
+index 05beac60f..e92eaabc3 100644
+--- a/buggy/core/src/main/java/cucumber/runtime/xstream/ConverterWithFormat.java
++++ b/fixed/core/src/main/java/cucumber/runtime/xstream/ConverterWithFormat.java
+@@ -18,7 +18,7 @@ abstract class ConverterWithFormat<T> extends Transformer<T> {
+     }
+ 
+     public T transform(String string) {
+-        if (string == null || string.length() == 0) {
++        if (string == null || string.isEmpty()) {
+             return null;
+         }
+         for (Format format : getFormats()) {

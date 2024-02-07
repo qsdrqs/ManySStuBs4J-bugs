@@ -1,0 +1,13 @@
+diff --git a/buggy/jta/transactional/src/main/java/org/javaee7/jta/transactional/TestServlet.java b/fixed/jta/transactional/src/main/java/org/javaee7/jta/transactional/TestServlet.java
+index 31b52087e..b2bc43761 100644
+--- a/buggy/jta/transactional/src/main/java/org/javaee7/jta/transactional/TestServlet.java
++++ b/fixed/jta/transactional/src/main/java/org/javaee7/jta/transactional/TestServlet.java
+@@ -117,7 +117,7 @@ public class TestServlet extends HttpServlet {
+             }
+             out.println("No stack trace, right ?<p/>");
+             
+-            out.println("</h2>Transactional.TxType.NEVER</h2>");
++            out.println("<h2>Transactional.TxType.NEVER</h2>");
+             try {
+                 bean.never();
+             } catch (Exception e) {

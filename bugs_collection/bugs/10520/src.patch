@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/InnerTypeLastCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/InnerTypeLastCheck.java
+index a5f20409d..8e10f4f01 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/InnerTypeLastCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/InnerTypeLastCheck.java
+@@ -71,8 +71,7 @@ public class InnerTypeLastCheck extends AbstractCheck {
+                 if (!ScopeUtils.isInCodeBlock(ast)
+                     && (nextSibling.getType() == TokenTypes.VARIABLE_DEF
+                         || nextSibling.getType() == TokenTypes.METHOD_DEF)) {
+-                    log(nextSibling.getLineNo(), nextSibling.getColumnNo(),
+-                        MSG_KEY);
++                    log(nextSibling, MSG_KEY);
+                 }
+                 nextSibling = nextSibling.getNextSibling();
+             }

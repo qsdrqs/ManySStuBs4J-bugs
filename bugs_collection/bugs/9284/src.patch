@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/coprocessor/CoprocessorHost.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/coprocessor/CoprocessorHost.java
+index 0c2829581..064a68fcd 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/coprocessor/CoprocessorHost.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/coprocessor/CoprocessorHost.java
+@@ -481,7 +481,7 @@ public abstract class CoprocessorHost<E extends CoprocessorEnvironment> {
+   }
+ 
+   protected void abortServer(final String coprocessorName, final Throwable e) {
+-    String message = "The coprocessor " + coprocessorName + " threw an unexpected exception";
++    String message = "The coprocessor " + coprocessorName + " threw " + e.toString();
+     LOG.error(message, e);
+     if (abortable != null) {
+       abortable.abort(message, e);

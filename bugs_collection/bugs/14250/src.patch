@@ -1,0 +1,12 @@
+diff --git a/buggy/RankingAPI/src/org/gephi/ranking/impl/AbstractSizeTransformer.java b/fixed/RankingAPI/src/org/gephi/ranking/impl/AbstractSizeTransformer.java
+index ada849305..4ab926801 100644
+--- a/buggy/RankingAPI/src/org/gephi/ranking/impl/AbstractSizeTransformer.java
++++ b/fixed/RankingAPI/src/org/gephi/ranking/impl/AbstractSizeTransformer.java
+@@ -64,6 +64,6 @@ public abstract class AbstractSizeTransformer<Target> extends AbstractTransforme
+         if (interpolator != null) {
+             normalizedValue = interpolator.interpolate(normalizedValue);
+         }
+-        return normalizedValue * maxSize + minSize;
++        return normalizedValue * (maxSize - minSize) + minSize;
+     }
+ }

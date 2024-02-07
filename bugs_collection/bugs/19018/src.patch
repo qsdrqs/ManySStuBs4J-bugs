@@ -1,0 +1,13 @@
+diff --git a/buggy/enterprise/com/src/main/java/org/neo4j/com/storecopy/StoreWriter.java b/fixed/enterprise/com/src/main/java/org/neo4j/com/storecopy/StoreWriter.java
+index 8c133d1da..90ea31945 100644
+--- a/buggy/enterprise/com/src/main/java/org/neo4j/com/storecopy/StoreWriter.java
++++ b/fixed/enterprise/com/src/main/java/org/neo4j/com/storecopy/StoreWriter.java
+@@ -29,7 +29,7 @@ public interface StoreWriter extends Closeable
+     // "hasData" is an effect of the block format not supporting a zero length block
+     // whereas a neostore file may actually be 0 bytes we'll have to keep track
+     // of that special case.
+-    int write( String path, ReadableByteChannel data, ByteBuffer temporaryBuffer, boolean hasData )
++    long write( String path, ReadableByteChannel data, ByteBuffer temporaryBuffer, boolean hasData )
+             throws IOException;
+ 
+     @Override

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/pipeline/EntityMentionsAnnotator.java b/fixed/src/edu/stanford/nlp/pipeline/EntityMentionsAnnotator.java
+index a4d64fc68..00be4ae22 100644
+--- a/buggy/src/edu/stanford/nlp/pipeline/EntityMentionsAnnotator.java
++++ b/fixed/src/edu/stanford/nlp/pipeline/EntityMentionsAnnotator.java
+@@ -309,7 +309,7 @@ public class EntityMentionsAnnotator implements Annotator {
+     if (doAcronyms) { addAcronyms(annotation); }
+ 
+     // Post-process add in KBP pronominal mentions, (English only for now)
+-    if (entityMentionsLanguage.equals(LanguageInfo.HumanLanguage.ENGLISH))
++    if (LanguageInfo.HumanLanguage.ENGLISH.equals(entityMentionsLanguage))
+       annotatePronominalMentions(annotation);
+ 
+     // build document wide entity mentions list

@@ -1,0 +1,15 @@
+diff --git a/buggy/examples/storm-mqtt-examples/src/main/java/org/apache/storm/mqtt/examples/CustomMessageMapper.java b/fixed/examples/storm-mqtt-examples/src/main/java/org/apache/storm/mqtt/examples/CustomMessageMapper.java
+index fa83bf9a9..b9a7c1fb0 100644
+--- a/buggy/examples/storm-mqtt-examples/src/main/java/org/apache/storm/mqtt/examples/CustomMessageMapper.java
++++ b/fixed/examples/storm-mqtt-examples/src/main/java/org/apache/storm/mqtt/examples/CustomMessageMapper.java
+@@ -72,8 +72,8 @@ public final class CustomMessageMapper implements MqttMessageMapper {
+     }
+ 
+     /**
+-     * Utility constructor.
++     * Constructor.
+      */
+-    private CustomMessageMapper() {
++    public CustomMessageMapper() {
+     }
+ }

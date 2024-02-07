@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-web/src/main/java/org/apache/camel/web/util/ProcessorDefinitionRenderer.java b/fixed/components/camel-web/src/main/java/org/apache/camel/web/util/ProcessorDefinitionRenderer.java
+index a6c21f28e..28e0337d3 100644
+--- a/buggy/components/camel-web/src/main/java/org/apache/camel/web/util/ProcessorDefinitionRenderer.java
++++ b/fixed/components/camel-web/src/main/java/org/apache/camel/web/util/ProcessorDefinitionRenderer.java
+@@ -45,7 +45,7 @@ public final class ProcessorDefinitionRenderer {
+         // Utility class, no public or protected default constructor
+     }
+ 
+-    public static void render(StringBuilder buffer, ProcessorDefinition<?> processor) {
++    public static void render(StringBuilder buffer, ProcessorDefinition processor) {
+         if (processor instanceof AggregateDefinition) {
+             AggregateDefinitionRenderer.render(buffer, processor);
+         } else if (processor instanceof CatchDefinition) {

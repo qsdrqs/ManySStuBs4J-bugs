@@ -1,0 +1,13 @@
+diff --git a/buggy/src/tests/com/puppycrawl/tools/checkstyle/checks/IndentationCheckTest.java b/fixed/src/tests/com/puppycrawl/tools/checkstyle/checks/IndentationCheckTest.java
+index e06ad41dd..fb0e240e2 100644
+--- a/buggy/src/tests/com/puppycrawl/tools/checkstyle/checks/IndentationCheckTest.java
++++ b/fixed/src/tests/com/puppycrawl/tools/checkstyle/checks/IndentationCheckTest.java
+@@ -654,7 +654,7 @@ public class IndentationCheckTest extends BaseCheckTestCase {
+         final DefaultConfiguration checkConfig = createCheckConfig(IndentationCheck.class);
+         checkConfig.addAttribute("braceAdjustment", new Integer(2).toString());
+         final String[] expected = {
+-            "24: if rcurly at indentation level 8 not at correct indentation, 8",
++            "24: if rcurly at indentation level 8 not at correct indentation, 10",
+         };
+         verify(checkConfig, getPath("indentation/InputBraceAdjustment.java"), expected);
+     }

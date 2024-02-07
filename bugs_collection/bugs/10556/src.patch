@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/annotation/AnnotationOnSameLineCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/annotation/AnnotationOnSameLineCheckTest.java
+index 678060458..ff81f4d7f 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/annotation/AnnotationOnSameLineCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/annotation/AnnotationOnSameLineCheckTest.java
+@@ -40,7 +40,7 @@ public class AnnotationOnSameLineCheckTest extends AbstractModuleTestSupport {
+     public void testGetRequiredTokens() {
+         final AnnotationOnSameLineCheck check = new AnnotationOnSameLineCheck();
+         assertArrayEquals(
+-            "AnnotationOnSameLineCheck#getRequiredTockens should return empty array by default",
++            "AnnotationOnSameLineCheck#getRequiredTokens should return empty array by default",
+             CommonUtils.EMPTY_INT_ARRAY, check.getRequiredTokens());
+     }
+ 

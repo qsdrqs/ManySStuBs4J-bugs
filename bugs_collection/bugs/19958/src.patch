@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/DefaultChannelPipeline.java b/fixed/transport/src/main/java/io/netty/channel/DefaultChannelPipeline.java
+index a89189377..d0425ac11 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/DefaultChannelPipeline.java
++++ b/fixed/transport/src/main/java/io/netty/channel/DefaultChannelPipeline.java
+@@ -742,7 +742,7 @@ public class DefaultChannelPipeline implements ChannelPipeline {
+             notifyHandlerException(t);
+         } finally {
+             ChannelBufferHolder<Object> inbound = ctx.inbound();
+-            if (inbound.isEmpty() && inbound.hasByteBuffer()) {
++            if (!inbound.isBypass() && inbound.isEmpty() && inbound.hasByteBuffer()) {
+                 inbound.byteBuffer().discardReadBytes();
+             }
+         }

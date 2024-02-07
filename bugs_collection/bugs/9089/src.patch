@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/master/procedure/ReopenTableRegionsProcedure.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/master/procedure/ReopenTableRegionsProcedure.java
+index 06348155f..34ce9627d 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/master/procedure/ReopenTableRegionsProcedure.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/master/procedure/ReopenTableRegionsProcedure.java
+@@ -88,7 +88,7 @@ public class ReopenTableRegionsProcedure
+     switch (state) {
+       case REOPEN_TABLE_REGIONS_GET_REGIONS:
+         if (!env.getAssignmentManager().isTableEnabled(tableName)) {
+-          LOG.info("Table {} is disabled, give up reopening its regions");
++          LOG.info("Table {} is disabled, give up reopening its regions", tableName);
+           return Flow.NO_MORE_STATE;
+         }
+         regions =

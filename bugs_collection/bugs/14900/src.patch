@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/TypeCheck.java b/fixed/src/com/google/javascript/jscomp/TypeCheck.java
+index 076d740d0..4a0dc69ce 100644
+--- a/buggy/src/com/google/javascript/jscomp/TypeCheck.java
++++ b/fixed/src/com/google/javascript/jscomp/TypeCheck.java
+@@ -1498,7 +1498,7 @@ public final class TypeCheck implements NodeTraversal.Callback, CompilerPass {
+     }
+   }
+ 
+-  private SuggestionPair getClosestPropertySuggestion(
++  private static SuggestionPair getClosestPropertySuggestion(
+       JSType objectType, String propName) {
+     return null;
+   }

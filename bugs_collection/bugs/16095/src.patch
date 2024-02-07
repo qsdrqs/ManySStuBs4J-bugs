@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/spi/impl/eventservice/impl/EventServiceImpl.java b/fixed/hazelcast/src/main/java/com/hazelcast/spi/impl/eventservice/impl/EventServiceImpl.java
+index 4c5a25b0c..5ed003079 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/spi/impl/eventservice/impl/EventServiceImpl.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/spi/impl/eventservice/impl/EventServiceImpl.java
+@@ -414,7 +414,7 @@ public class EventServiceImpl implements InternalEventService, MetricsProvider {
+ 
+             if (!nodeEngine.getNode().getConnectionManager().transmit(packet, subscriber)) {
+                 if (nodeEngine.isRunning()) {
+-                    logFailure("Failed to send event packet to: %s , connection might not alive.", subscriber);
++                    logFailure("Failed to send event packet to: %s, connection might not be alive.", subscriber);
+                 }
+             }
+         }

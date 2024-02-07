@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.weather/src/main/java/org/openhab/binding/weather/internal/common/binding/ForecastBindingConfig.java b/fixed/bundles/binding/org.openhab.binding.weather/src/main/java/org/openhab/binding/weather/internal/common/binding/ForecastBindingConfig.java
+index 19fc51b37..caa9e5b79 100644
+--- a/buggy/bundles/binding/org.openhab.binding.weather/src/main/java/org/openhab/binding/weather/internal/common/binding/ForecastBindingConfig.java
++++ b/fixed/bundles/binding/org.openhab.binding.weather/src/main/java/org/openhab/binding/weather/internal/common/binding/ForecastBindingConfig.java
+@@ -64,7 +64,7 @@ public class ForecastBindingConfig extends WeatherBindingConfig {
+ 	@Override
+ 	public String toString() {
+ 		ToStringBuilder tsb = new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE);
+-		tsb.append("locationId", getLocationId()).append("forecastDay", forecastDay).append("type", getType())
++		tsb.append("locationId", getLocationId()).append("forecast", forecastDay).append("type", getType())
+ 				.append("property", getProperty());
+ 		return tsb.toString();
+ 	}

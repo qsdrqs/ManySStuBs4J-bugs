@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/mapreduce/impl/SetKeyValueSource.java b/fixed/hazelcast/src/main/java/com/hazelcast/mapreduce/impl/SetKeyValueSource.java
+index 3aaecc4b7..b0fa84c4d 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/mapreduce/impl/SetKeyValueSource.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/mapreduce/impl/SetKeyValueSource.java
+@@ -68,7 +68,7 @@ public class SetKeyValueSource<V>
+         PartitionService ps = nei.getPartitionService();
+         Data data = ss.toData(setName, StringAndPartitionAwarePartitioningStrategy.INSTANCE);
+         int partitionId = ps.getPartitionId(data);
+-        if (!ps.getPartitionOwner(partitionId).equals(thisAddress)) {
++        if (!thisAddress.equals(ps.getPartitionOwner(partitionId))) {
+             return;
+         }
+ 

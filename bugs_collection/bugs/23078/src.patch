@@ -1,0 +1,14 @@
+diff --git a/buggy/src/edu/stanford/nlp/pipeline/TokenizerAnnotator.java b/fixed/src/edu/stanford/nlp/pipeline/TokenizerAnnotator.java
+index 6ad98a71c..b904da548 100644
+--- a/buggy/src/edu/stanford/nlp/pipeline/TokenizerAnnotator.java
++++ b/fixed/src/edu/stanford/nlp/pipeline/TokenizerAnnotator.java
+@@ -358,7 +358,8 @@ public class TokenizerAnnotator implements Annotator  {
+         CoreAnnotations.PositionAnnotation.class,
+         CoreAnnotations.IndexAnnotation.class,
+         CoreAnnotations.OriginalTextAnnotation.class,
+-        CoreAnnotations.ValueAnnotation.class
++        CoreAnnotations.ValueAnnotation.class,
++        CoreAnnotations.IsNewlineAnnotation.class
+     ));
+   }
+ 

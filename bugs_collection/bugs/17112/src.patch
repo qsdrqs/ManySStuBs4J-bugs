@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/HazelcastClientMapTest.java b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/HazelcastClientMapTest.java
+index 4a8dd4391..8c9703203 100644
+--- a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/HazelcastClientMapTest.java
++++ b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/HazelcastClientMapTest.java
+@@ -451,7 +451,7 @@ public class HazelcastClientMapTest {
+     @Test
+     public void putIfAbsentWithTtl() throws InterruptedException {
+         HazelcastClient hClient = getHazelcastClient();
+-        IMap<String, String> map = hClient.getMap("putIfAbsent");
++        IMap<String, String> map = hClient.getMap("putIfAbsentWithTtl");
+         String result = map.put("1", "CBDEF");
+         assertNull(result);
+         assertNull(map.putIfAbsent("2", "C", 100, TimeUnit.MILLISECONDS));

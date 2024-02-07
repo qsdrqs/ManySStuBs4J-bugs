@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-parser/src/main/java/com/facebook/presto/sql/tree/DereferenceExpression.java b/fixed/presto-parser/src/main/java/com/facebook/presto/sql/tree/DereferenceExpression.java
+index 351759bd4..d0624f796 100644
+--- a/buggy/presto-parser/src/main/java/com/facebook/presto/sql/tree/DereferenceExpression.java
++++ b/fixed/presto-parser/src/main/java/com/facebook/presto/sql/tree/DereferenceExpression.java
+@@ -56,7 +56,7 @@ public class DereferenceExpression
+     @Override
+     public List<Node> getChildren()
+     {
+-        return ImmutableList.of();
++        return ImmutableList.of(base);
+     }
+ 
+     public Expression getBase()

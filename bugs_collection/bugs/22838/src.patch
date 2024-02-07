@@ -1,0 +1,13 @@
+diff --git a/buggy/okhttp-urlconnection/src/main/java/okhttp3/internal/huc/OkHttpURLConnection.java b/fixed/okhttp-urlconnection/src/main/java/okhttp3/internal/huc/OkHttpURLConnection.java
+index 461b1f1c4..344a61e44 100644
+--- a/buggy/okhttp-urlconnection/src/main/java/okhttp3/internal/huc/OkHttpURLConnection.java
++++ b/fixed/okhttp-urlconnection/src/main/java/okhttp3/internal/huc/OkHttpURLConnection.java
+@@ -568,7 +568,7 @@ public final class OkHttpURLConnection extends HttpURLConnection implements Call
+       }
+     };
+ 
+-    public UnexpectedException(Throwable cause) {
++    UnexpectedException(Throwable cause) {
+       super(cause);
+     }
+   }

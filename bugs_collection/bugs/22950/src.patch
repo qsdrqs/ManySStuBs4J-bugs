@@ -1,0 +1,18 @@
+diff --git a/buggy/src/edu/stanford/nlp/pipeline/EntityMentionsAnnotator.java b/fixed/src/edu/stanford/nlp/pipeline/EntityMentionsAnnotator.java
+index d675697cd..ecc2a3ec3 100644
+--- a/buggy/src/edu/stanford/nlp/pipeline/EntityMentionsAnnotator.java
++++ b/fixed/src/edu/stanford/nlp/pipeline/EntityMentionsAnnotator.java
+@@ -303,8 +303,11 @@ public class EntityMentionsAnnotator implements Annotator {
+           }
+ 
+           if (!matchTokenText) {
+-            if (mention.get(CoreAnnotations.CharacterOffsetBeginAnnotation.class) != null &&
+-                    mention.get(CoreAnnotations.CharacterOffsetEndAnnotation.class) != null) {
++            if (
++                    annotation.get(CoreAnnotations.TextAnnotation.class) != null &&
++                    mention.get(CoreAnnotations.CharacterOffsetBeginAnnotation.class) != null &&
++                    mention.get(CoreAnnotations.CharacterOffsetEndAnnotation.class) != null
++            ) {
+               String entityMentionText =
+                       annotation.get(CoreAnnotations.TextAnnotation.class).substring(
+                               mention.get(CoreAnnotations.CharacterOffsetBeginAnnotation.class),

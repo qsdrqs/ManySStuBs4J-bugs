@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/config/ZWaveConfiguration.java b/fixed/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/config/ZWaveConfiguration.java
+index 9a689ac11..7eba696ab 100644
+--- a/buggy/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/config/ZWaveConfiguration.java
++++ b/fixed/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/config/ZWaveConfiguration.java
+@@ -390,7 +390,7 @@ public class ZWaveConfiguration implements OpenHABConfigurationService, ZWaveEve
+                     records.add(record);
+                 }
+ 
+-                if ((ZWaveConfigurationCommandClass) node.getCommandClass(CommandClass.WAKE_UP) != null) {
++                if ((ZWaveWakeUpCommandClass) node.getCommandClass(CommandClass.WAKE_UP) != null) {
+                     record = new OpenHABConfigurationRecord(domain + "wakeup/", "Wakeup Period");
+                     record.addAction("Refresh", "Refresh");
+                     records.add(record);

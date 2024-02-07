@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/camel-example-cxf/src/main/java/org/apache/camel/example/camel/transport/CamelTransportExample.java b/fixed/examples/camel-example-cxf/src/main/java/org/apache/camel/example/camel/transport/CamelTransportExample.java
+index 88c141aaa..1096a0af6 100644
+--- a/buggy/examples/camel-example-cxf/src/main/java/org/apache/camel/example/camel/transport/CamelTransportExample.java
++++ b/fixed/examples/camel-example-cxf/src/main/java/org/apache/camel/example/camel/transport/CamelTransportExample.java
+@@ -31,7 +31,7 @@ public final class CamelTransportExample {
+             // start the endpoints
+             server.start();
+             // set the client's service access point
+-            Client client = new Client("http://127.0.0.1:9091/GreeterContext/GreeterPort");
++            Client client = new Client("http://localhost:9091/GreeterContext/GreeterPort");
+             // invoking the services
+             client.invoke();
+ 

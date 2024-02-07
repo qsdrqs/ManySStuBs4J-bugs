@@ -1,0 +1,13 @@
+diff --git a/buggy/test/com/google/javascript/jscomp/CommandLineRunnerTest.java b/fixed/test/com/google/javascript/jscomp/CommandLineRunnerTest.java
+index 8abacff38..2446431ed 100644
+--- a/buggy/test/com/google/javascript/jscomp/CommandLineRunnerTest.java
++++ b/fixed/test/com/google/javascript/jscomp/CommandLineRunnerTest.java
+@@ -1759,7 +1759,7 @@ public final class CommandLineRunnerTest extends TestCase {
+         new PrintStream(errReader));
+   }
+ 
+-  private FlagEntry<JsSourceType> createZipFile(Map<String, String> entryContentsByName)
++  private static FlagEntry<JsSourceType> createZipFile(Map<String, String> entryContentsByName)
+       throws IOException {
+     File tempZipFile = File.createTempFile("testdata", ".js.zip");
+ 

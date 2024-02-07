@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-core/src/main/java/org/apache/hadoop/mapreduce/counters/AbstractCounters.java b/fixed/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-core/src/main/java/org/apache/hadoop/mapreduce/counters/AbstractCounters.java
+index 17b433d09..320992d21 100644
+--- a/buggy/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-core/src/main/java/org/apache/hadoop/mapreduce/counters/AbstractCounters.java
++++ b/fixed/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-core/src/main/java/org/apache/hadoop/mapreduce/counters/AbstractCounters.java
+@@ -82,7 +82,7 @@ public abstract class AbstractCounters<C extends Counter,
+                   TaskCounter.class.getName());
+     legacyMap.put("org.apache.hadoop.mapred.JobInProgress$Counter",
+                   JobCounter.class.getName());
+-    legacyMap.put("FileSystemCounter", FileSystemCounter.class.getName());
++    legacyMap.put("FileSystemCounters", FileSystemCounter.class.getName());
+   }
+ 
+   private final Limits limits = new Limits();

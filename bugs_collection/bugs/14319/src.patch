@@ -1,0 +1,13 @@
+diff --git a/buggy/LayoutPlugin/src/org/gephi/layout/plugin/scale/ScaleLayout.java b/fixed/LayoutPlugin/src/org/gephi/layout/plugin/scale/ScaleLayout.java
+index 25db7f718..ab66ce118 100644
+--- a/buggy/LayoutPlugin/src/org/gephi/layout/plugin/scale/ScaleLayout.java
++++ b/fixed/LayoutPlugin/src/org/gephi/layout/plugin/scale/ScaleLayout.java
+@@ -54,7 +54,7 @@ public class ScaleLayout extends AbstractLayout implements Layout {
+         double xMean = 0, yMean = 0;
+         for (Node n : graph.getNodes()) {
+             xMean += n.getNodeData().x();
+-            yMean += n.getNodeData().x();
++            yMean += n.getNodeData().y();
+         }
+         xMean /= graph.getNodeCount();
+         yMean /= graph.getNodeCount();

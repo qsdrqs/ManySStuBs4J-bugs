@@ -1,0 +1,22 @@
+diff --git a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/ClientRegressionTest.java b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/ClientRegressionTest.java
+index b2449a111..0901dbf2a 100644
+--- a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/ClientRegressionTest.java
++++ b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/ClientRegressionTest.java
+@@ -195,7 +195,7 @@ public class ClientRegressionTest
+                 } catch (InterruptedException e) {
+                     e.printStackTrace();
+                 }
+-                hz1.getLifecycleService().terminate();
++                hz1.getLifecycleService().shutdown();
+             }
+         };
+ 
+@@ -226,7 +226,7 @@ public class ClientRegressionTest
+                 } catch (InterruptedException e) {
+                     e.printStackTrace();
+                 }
+-                hz1.getLifecycleService().terminate();
++                hz1.getLifecycleService().shutdown();
+             }
+         };
+ 

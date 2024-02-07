@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-resource-group-managers/src/test/java/com/facebook/presto/resourceGroups/TestFileResourceGroupConfigurationManager.java b/fixed/presto-resource-group-managers/src/test/java/com/facebook/presto/resourceGroups/TestFileResourceGroupConfigurationManager.java
+index 4a422a086..b65857a18 100644
+--- a/buggy/presto-resource-group-managers/src/test/java/com/facebook/presto/resourceGroups/TestFileResourceGroupConfigurationManager.java
++++ b/fixed/presto-resource-group-managers/src/test/java/com/facebook/presto/resourceGroups/TestFileResourceGroupConfigurationManager.java
+@@ -42,7 +42,7 @@ public class TestFileResourceGroupConfigurationManager
+         assertFails("resource_groups_config_bad_root.json", "Duplicated root group: global");
+         assertFails("resource_groups_config_bad_sub_group.json", "Duplicated sub group: sub");
+         assertFails("resource_groups_config_bad_group_id.json", "Invalid resource group name. 'glo.bal' contains a '.'");
+-        assertFails("resource_groups_config_bad_query_priority_scheduling_policy.json", "Must use \"weight\" scheduling policy when using scheduling weight");
++        assertFails("resource_groups_config_bad_query_priority_scheduling_policy.json", "Must use \"weighted\" scheduling policy when using scheduling weight");
+         assertFails("resource_groups_config_bad_weighted_scheduling_policy.json", "Must specify scheduling weight for each sub group when using \"weighted\" scheduling policy");
+     }
+ 

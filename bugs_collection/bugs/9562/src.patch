@@ -1,0 +1,13 @@
+diff --git a/buggy/service/src/java/org/apache/hive/service/cli/session/SessionManager.java b/fixed/service/src/java/org/apache/hive/service/cli/session/SessionManager.java
+index 1846c919b..cc4dd52fc 100644
+--- a/buggy/service/src/java/org/apache/hive/service/cli/session/SessionManager.java
++++ b/fixed/service/src/java/org/apache/hive/service/cli/session/SessionManager.java
+@@ -415,7 +415,7 @@ public class SessionManager extends CompositeService {
+         session = (HiveSession) constructor.newInstance(sessionHandle, protocol, username, password,
+           hiveConf, ipAddress, forwardedAddresses);
+         } catch (Exception e) {
+-          throw new HiveSQLException("Cannot initilize session class:" + sessionImplclassName, e);
++          throw new HiveSQLException("Cannot initialize session class:" + sessionImplclassName, e);
+         }
+       }
+     }

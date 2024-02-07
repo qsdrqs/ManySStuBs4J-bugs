@@ -1,0 +1,13 @@
+diff --git a/buggy/android/guava-tests/test/com/google/common/util/concurrent/AbstractScheduledServiceTest.java b/fixed/android/guava-tests/test/com/google/common/util/concurrent/AbstractScheduledServiceTest.java
+index ff5d2c387..a0ac68a3e 100644
+--- a/buggy/android/guava-tests/test/com/google/common/util/concurrent/AbstractScheduledServiceTest.java
++++ b/fixed/android/guava-tests/test/com/google/common/util/concurrent/AbstractScheduledServiceTest.java
+@@ -91,7 +91,7 @@ public class AbstractScheduledServiceTest extends TestCase {
+     // An execution exception holds a runtime exception (from throwables.propogate) that holds our
+     // original exception.
+     assertEquals(service.runException, service.failureCause());
+-    assertEquals(service.state(), Service.State.FAILED);
++    assertEquals(Service.State.FAILED, service.state());
+   }
+ 
+   public void testFailOnExceptionFromStartUp() {

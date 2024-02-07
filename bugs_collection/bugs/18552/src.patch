@@ -1,0 +1,12 @@
+diff --git a/buggy/gdx-tests/src/com/badlogic/gdx/tests/AudioRecorderTest.java b/fixed/gdx-tests/src/com/badlogic/gdx/tests/AudioRecorderTest.java
+index 298dae91e..876b2da47 100644
+--- a/buggy/gdx-tests/src/com/badlogic/gdx/tests/AudioRecorderTest.java
++++ b/fixed/gdx-tests/src/com/badlogic/gdx/tests/AudioRecorderTest.java
+@@ -83,6 +83,6 @@ public class AudioRecorderTest implements RenderListener, ApplicationListener
+ 	public void resume(Application app) 
+ 	{
+ 		device = app.getAudio().newAudioDevice(true);
+-		recorder = app.getAudio().newAudioRecoder( 22050, true );		
++		recorder = app.getAudio().newAudioRecoder( 44100, true );		
+ 	}	
+ }

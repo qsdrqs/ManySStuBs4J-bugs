@@ -1,0 +1,22 @@
+diff --git a/buggy/spring-boot/src/main/java/org/springframework/boot/context/initializer/VcapApplicationContextInitializer.java b/fixed/spring-boot/src/main/java/org/springframework/boot/context/initializer/VcapApplicationContextInitializer.java
+index 1b66e800b..be2162988 100644
+--- a/buggy/spring-boot/src/main/java/org/springframework/boot/context/initializer/VcapApplicationContextInitializer.java
++++ b/fixed/spring-boot/src/main/java/org/springframework/boot/context/initializer/VcapApplicationContextInitializer.java
+@@ -160,7 +160,7 @@ public class VcapApplicationContextInitializer implements
+ 				properties.putAll(map);
+ 			}
+ 		}
+-		catch (IllegalArgumentException e) {
++		catch (Exception e) {
+ 			logger.error("Could not parse VCAP_APPLICATION", e);
+ 		}
+ 		return properties;
+@@ -187,7 +187,7 @@ public class VcapApplicationContextInitializer implements
+ 				}
+ 			}
+ 		}
+-		catch (IllegalArgumentException e) {
++		catch (Exception e) {
+ 			logger.error("Could not parse VCAP_APPLICATION", e);
+ 		}
+ 		return properties;

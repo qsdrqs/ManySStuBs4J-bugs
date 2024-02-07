@@ -1,0 +1,13 @@
+diff --git a/buggy/aws-java-sdk-s3/src/main/java/com/amazonaws/services/s3/internal/AbstractS3ResponseHandler.java b/fixed/aws-java-sdk-s3/src/main/java/com/amazonaws/services/s3/internal/AbstractS3ResponseHandler.java
+index 88de036cd..1dc586906 100644
+--- a/buggy/aws-java-sdk-s3/src/main/java/com/amazonaws/services/s3/internal/AbstractS3ResponseHandler.java
++++ b/fixed/aws-java-sdk-s3/src/main/java/com/amazonaws/services/s3/internal/AbstractS3ResponseHandler.java
+@@ -109,7 +109,7 @@ public abstract class AbstractS3ResponseHandler<T>
+     protected void populateObjectMetadata(HttpResponse response, ObjectMetadata metadata) {
+         for (Entry<String, String> header : response.getHeaders().entrySet()) {
+             String key = header.getKey();
+-            if (key.startsWith(Headers.S3_USER_METADATA_PREFIX)) {
++            if (key.regionMatches(true, 0, Headers.S3_USER_METADATA_PREFIX, 0, Headers.S3_USER_METADATA_PREFIX.length())) {
+                 key = key.substring(Headers.S3_USER_METADATA_PREFIX.length());
+                 metadata.addUserMetadata(key, header.getValue());
+             } else if (ignoredHeaders.contains(key)) {

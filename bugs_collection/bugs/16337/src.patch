@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/concurrent/idgen/IdGeneratorBasicDistributedTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/concurrent/idgen/IdGeneratorBasicDistributedTest.java
+index 3b7a75255..d76f73eee 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/concurrent/idgen/IdGeneratorBasicDistributedTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/concurrent/idgen/IdGeneratorBasicDistributedTest.java
+@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
+ 
+ @RunWith(HazelcastParallelClassRunner.class)
+ @Category({QuickTest.class, ParallelTest.class})
+-public class IdGeneratorBasicDistributedTest extends IdGeneratorBasicTest {
++public class IdGeneratorBasicDistributedTest extends IdGeneratorAbstractTest {
+ 
+     @Override
+     protected HazelcastInstance[] newInstances() {

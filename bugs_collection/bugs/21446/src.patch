@@ -1,0 +1,13 @@
+diff --git a/buggy/src/api/org/openmrs/module/ModuleFileParser.java b/fixed/src/api/org/openmrs/module/ModuleFileParser.java
+index 738cf0594..3606c48ac 100644
+--- a/buggy/src/api/org/openmrs/module/ModuleFileParser.java
++++ b/fixed/src/api/org/openmrs/module/ModuleFileParser.java
+@@ -480,7 +480,7 @@ public class ModuleFileParser {
+ 						ZipEntry entry = jarfile.getEntry(file);
+ 						if (entry == null)
+ 							throw new ModuleException(Context.getMessageSourceService().getMessage(
+-							    "Module.error.NoMessagePropsFile", new Object[] { file, lang }, Context.getLocale()));
++							    "Module.error.noMessagePropsFile", new Object[] { file, lang }, Context.getLocale()));
+ 						inStream = jarfile.getInputStream(entry);
+ 						Properties props = new Properties();
+ 						OpenmrsUtil.loadProperties(props, inStream);

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/nio/Packet.java b/fixed/hazelcast/src/main/java/com/hazelcast/nio/Packet.java
+index 958c94b31..ae1bd3189 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/nio/Packet.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/nio/Packet.java
+@@ -509,7 +509,7 @@ public final class Packet implements SocketWritable, SocketReadable {
+         return this.persistStatus >= status;
+     }
+ 
+-    private static int getDataSize(Data data, PortableContext context) {
++    public static int getDataSize(Data data, PortableContext context) {
+         // type
+         int total = INT_SIZE_IN_BYTES;
+         // class def flag

@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/gdx-tests/src/com/badlogic/gdx/tests/FilesTest.java b/fixed/tests/gdx-tests/src/com/badlogic/gdx/tests/FilesTest.java
+index 3321c6122..14f714e60 100644
+--- a/buggy/tests/gdx-tests/src/com/badlogic/gdx/tests/FilesTest.java
++++ b/fixed/tests/gdx-tests/src/com/badlogic/gdx/tests/FilesTest.java
+@@ -386,7 +386,7 @@ public class FilesTest extends GdxTest {
+ 		if (handle.delete()) fail();
+ 		if (handle.list().length != 0) fail();
+ 		if (handle.child("meow").exists()) fail();
+-		if (handle.parent().exists()) fail();
++		if (!handle.parent().exists()) fail();
+ 		try {
+ 			handle.read().close();
+ 			fail();

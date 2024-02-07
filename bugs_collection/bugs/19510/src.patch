@@ -1,0 +1,13 @@
+diff --git a/buggy/codec-http/src/test/java/io/netty/handler/codec/http/websocketx/WebSocketServerProtocolHandlerTest.java b/fixed/codec-http/src/test/java/io/netty/handler/codec/http/websocketx/WebSocketServerProtocolHandlerTest.java
+index 6238d0eb4..dbffc262d 100644
+--- a/buggy/codec-http/src/test/java/io/netty/handler/codec/http/websocketx/WebSocketServerProtocolHandlerTest.java
++++ b/fixed/codec-http/src/test/java/io/netty/handler/codec/http/websocketx/WebSocketServerProtocolHandlerTest.java
+@@ -66,7 +66,7 @@ public class WebSocketServerProtocolHandlerTest {
+     public void testWebSocketServerProtocolHandshakeHandlerReplacedBeforeHandshake() throws Exception {
+         EmbeddedChannel ch = createChannel(new MockOutboundHandler());
+         ChannelHandlerContext handshakerCtx = ch.pipeline().context(WebSocketServerProtocolHandshakeHandler.class);
+-        ch.pipeline().addLast(new ChannelInboundHandlerAdapter() {
++        ch.pipeline().addLast(new ChannelHandler() {
+             @Override
+             public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
+                 if (evt instanceof WebSocketServerProtocolHandler.HandshakeComplete) {

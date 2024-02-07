@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/spi/ProxyManager.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/spi/ProxyManager.java
+index 223e6d11c..d7ae6243d 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/spi/ProxyManager.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/spi/ProxyManager.java
+@@ -204,7 +204,7 @@ public final class ProxyManager {
+     private void initialize(ClientProxy clientProxy) {
+         final ClientCreateRequest request = new ClientCreateRequest(clientProxy.getName(), clientProxy.getServiceName());
+         try {
+-            client.getInvocationService().invokeOnRandomTarget(request);
++            client.getInvocationService().invokeOnRandomTarget(request).get();
+         } catch (Exception e) {
+             ExceptionUtil.rethrow(e);
+         }

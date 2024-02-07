@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/main/java/org/openmrs/scheduler/timer/TimerSchedulerServiceImpl.java b/fixed/api/src/main/java/org/openmrs/scheduler/timer/TimerSchedulerServiceImpl.java
+index 89cf2dc3d..596f2dd16 100644
+--- a/buggy/api/src/main/java/org/openmrs/scheduler/timer/TimerSchedulerServiceImpl.java
++++ b/fixed/api/src/main/java/org/openmrs/scheduler/timer/TimerSchedulerServiceImpl.java
+@@ -295,7 +295,7 @@ public class TimerSchedulerServiceImpl extends BaseOpenmrsService implements Sch
+ 			
+ 			// Update task that has been started
+ 			taskDefinition.setStarted(false);
+-			saveTask(taskDefinition);
++			saveTaskDefinition(taskDefinition);
+ 		}
+ 	}
+ 	

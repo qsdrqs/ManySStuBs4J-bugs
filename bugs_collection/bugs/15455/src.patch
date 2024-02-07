@@ -1,0 +1,28 @@
+diff --git a/buggy/android/guava/src/com/google/common/graph/AbstractUndirectedNetworkConnections.java b/fixed/android/guava/src/com/google/common/graph/AbstractUndirectedNetworkConnections.java
+index e06c6b492..03279d068 100644
+--- a/buggy/android/guava/src/com/google/common/graph/AbstractUndirectedNetworkConnections.java
++++ b/fixed/android/guava/src/com/google/common/graph/AbstractUndirectedNetworkConnections.java
+@@ -64,12 +64,12 @@ abstract class AbstractUndirectedNetworkConnections<N, E> implements NetworkConn
+   }
+ 
+   @Override
+-  public N oppositeNode(Object edge) {
++  public N adjacentNode(E edge) {
+     return checkNotNull(incidentEdgeMap.get(edge));
+   }
+ 
+   @Override
+-  public N removeInEdge(Object edge, boolean isSelfLoop) {
++  public N removeInEdge(E edge, boolean isSelfLoop) {
+     if (!isSelfLoop) {
+       return removeOutEdge(edge);
+     }
+@@ -77,7 +77,7 @@ abstract class AbstractUndirectedNetworkConnections<N, E> implements NetworkConn
+   }
+ 
+   @Override
+-  public N removeOutEdge(Object edge) {
++  public N removeOutEdge(E edge) {
+     N previousNode = incidentEdgeMap.remove(edge);
+     return checkNotNull(previousNode);
+   }

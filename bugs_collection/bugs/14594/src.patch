@@ -1,0 +1,12 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/testing/TypeSubject.java b/fixed/src/com/google/javascript/jscomp/testing/TypeSubject.java
+index 205392462..359e068d7 100644
+--- a/buggy/src/com/google/javascript/jscomp/testing/TypeSubject.java
++++ b/fixed/src/com/google/javascript/jscomp/testing/TypeSubject.java
+@@ -95,6 +95,6 @@ public final class TypeSubject extends Subject<TypeSubject, TypeI> {
+   }
+ 
+   public void toStringIsEqualTo(String typeString) {
+-    assertEquals(actual().toString(), typeString);
++    assertEquals(typeString, actual().toString());
+   }
+ }

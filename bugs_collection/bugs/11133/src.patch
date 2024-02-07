@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/XMLLogger.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/XMLLogger.java
+index 487d4938b..4d00a4d80 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/XMLLogger.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/XMLLogger.java
+@@ -141,7 +141,7 @@ public class XMLLogger
+         printer.println("]]>");
+         printer.println("</exception>");
+         printer.flush();
+-        this.writer.println(encode(stringWriter.toString()));
++        writer.println(encode(stringWriter.toString()));
+     }
+ 
+     /**

@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/graphics/g2d/TextureAtlas.java b/fixed/gdx/src/com/badlogic/gdx/graphics/g2d/TextureAtlas.java
+index 0642621d6..952e91975 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/graphics/g2d/TextureAtlas.java
++++ b/fixed/gdx/src/com/badlogic/gdx/graphics/g2d/TextureAtlas.java
+@@ -181,7 +181,7 @@ public class TextureAtlas implements Disposable {
+ 				}
+ 			}
+ 
+-			new Sort().sort(regions.items, indexComparator, 0, regions.size);
++			new Sort().sort((Object[])regions.items, (Comparator)indexComparator, 0, regions.size);
+ 		}
+ 
+ 		public Array<Page> getPages () {

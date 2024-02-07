@@ -1,0 +1,29 @@
+diff --git a/buggy/src/test/resources/com/puppycrawl/tools/checkstyle/coding/InputVariableDeclarationUsageDistanceCheck.java b/fixed/src/test/resources/com/puppycrawl/tools/checkstyle/coding/InputVariableDeclarationUsageDistanceCheck.java
+index 8c1504203..438895296 100644
+--- a/buggy/src/test/resources/com/puppycrawl/tools/checkstyle/coding/InputVariableDeclarationUsageDistanceCheck.java
++++ b/fixed/src/test/resources/com/puppycrawl/tools/checkstyle/coding/InputVariableDeclarationUsageDistanceCheck.java
+@@ -461,7 +461,7 @@ public class InputVariableDeclarationUsageDistanceCheck {
+     
+     public void testIssue32_7() {
+         String line = "abc";
+-        writer.write(line);
++        otherWriter.write(line);
+         line.charAt(1);
+         builder.append(line);
+         test(line, line, line);
+@@ -814,7 +814,7 @@ public class InputVariableDeclarationUsageDistanceCheck {
+     	
+     }
+     
+-    static class writer {
++    static class otherWriter {
+ 
+ 		public static void write(String line)
+ 		{
+@@ -836,4 +836,4 @@ public class InputVariableDeclarationUsageDistanceCheck {
+     	
+     }
+     
+-}
+\ No newline at end of file
++}

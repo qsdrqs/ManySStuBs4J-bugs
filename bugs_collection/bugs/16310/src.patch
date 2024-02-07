@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/map/impl/mapstore/writebehind/WriteBehindFlushTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/map/impl/mapstore/writebehind/WriteBehindFlushTest.java
+index 3e924f4a8..60ac6c9c0 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/map/impl/mapstore/writebehind/WriteBehindFlushTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/map/impl/mapstore/writebehind/WriteBehindFlushTest.java
+@@ -72,7 +72,7 @@ public class WriteBehindFlushTest extends HazelcastTestSupport {
+                 .mapName(mapName)
+                 .withMapStore(mapStore)
+                 .withNodeCount(nodeCount)
+-                .withBackupCount(2)
++                .withBackupCount(1)
+                 .withConfig(getConfig())
+                 .withNodeFactory(factory)
+                 .withWriteDelaySeconds(300);

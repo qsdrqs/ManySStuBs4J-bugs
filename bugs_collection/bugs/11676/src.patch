@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/DeclarationCollector.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/DeclarationCollector.java
+index df164529f..20ac6466b 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/DeclarationCollector.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/DeclarationCollector.java
+@@ -229,7 +229,7 @@ public abstract class DeclarationCollector extends Check
+      * @author Stephen Bloch
+      * June 19, 2003
+      */
+-    private abstract static class LexicalFrame
++    private static class LexicalFrame
+     {
+         /** Set of name of variables declared in this frame. */
+         private final Set<String> varNames;

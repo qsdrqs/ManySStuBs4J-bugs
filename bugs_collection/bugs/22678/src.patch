@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java b/fixed/src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java
+index 8dfbfe90b..3014c9b09 100644
+--- a/buggy/src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java
++++ b/fixed/src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java
+@@ -27,7 +27,7 @@ import javax.persistence.MappedSuperclass;
+  * @author Juergen Hoeller
+  */
+ @MappedSuperclass
+-public class BaseEntity {
++public class BaseEntity implements Serializable {
+     @Id
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
+     protected Integer id;

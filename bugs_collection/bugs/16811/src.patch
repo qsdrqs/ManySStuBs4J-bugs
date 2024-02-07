@@ -1,0 +1,14 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/map/operation/ClearExpiredOperation.java b/fixed/hazelcast/src/main/java/com/hazelcast/map/operation/ClearExpiredOperation.java
+index db43e6a91..30c21ef88 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/map/operation/ClearExpiredOperation.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/map/operation/ClearExpiredOperation.java
+@@ -41,7 +41,8 @@ public class ClearExpiredOperation extends AbstractMapOperation implements Parti
+     @Override
+     public void run() throws Exception {
+         final PartitionContainer partitionContainer = mapService.getPartitionContainer(getPartitionId());
+-        final RecordStore recordStore = partitionContainer.getRecordStore(name);
++        // this should be existing record store since we don't want to trigger record store creation.
++        final RecordStore recordStore = partitionContainer.getExistingRecordStore(name);
+         evictedKeyValueSequence = recordStore.clearUnLockedExpiredRecords();
+     }
+ 

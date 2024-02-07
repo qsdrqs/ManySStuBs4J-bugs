@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/instance/HazelcastInstanceImpl.java b/fixed/hazelcast/src/main/java/com/hazelcast/instance/HazelcastInstanceImpl.java
+index e843b0796..8a934b990 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/instance/HazelcastInstanceImpl.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/instance/HazelcastInstanceImpl.java
+@@ -148,7 +148,7 @@ public final class HazelcastInstanceImpl implements HazelcastInstance {
+     }
+ 
+     public ILock getLock(Object key) {
+-        if (name == null) {
++        if (key == null) {
+             throw new NullPointerException("Retrieving a lock instance with a null key is not allowed!");
+         }
+         return getDistributedObject(LockService.SERVICE_NAME, node.getSerializationService().toData(key));

@@ -1,0 +1,22 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/JTreeTable.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/JTreeTable.java
+index 62b2ddb3a..b09fd8d11 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/JTreeTable.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/JTreeTable.java
+@@ -62,7 +62,7 @@ public class JTreeTable extends JTable {
+     /** For Serialisation that will never happen. */
+     private static final long serialVersionUID = -8493693409423365387L;
+     /** A subclass of JTree. */
+-    protected final TreeTableCellRenderer tree;
++    private final TreeTableCellRenderer tree;
+     private JTextArea editor;
+     private List<Integer> linePositionMap;
+ 
+@@ -186,7 +186,7 @@ public class JTreeTable extends JTable {
+          */
+         private static final long serialVersionUID = 4324031590789321581L;
+         /** Last table/tree row asked to renderer. */
+-        protected int visibleRow;
++        private int visibleRow;
+ 
+         /** creates a new instance */
+         public TreeTableCellRenderer(TreeModel model) {

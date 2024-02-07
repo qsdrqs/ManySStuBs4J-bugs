@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jms/src/main/java/org/apache/camel/component/jms/JmsProducer.java b/fixed/components/camel-jms/src/main/java/org/apache/camel/component/jms/JmsProducer.java
+index 832937281..f3427b3d1 100644
+--- a/buggy/components/camel-jms/src/main/java/org/apache/camel/component/jms/JmsProducer.java
++++ b/fixed/components/camel-jms/src/main/java/org/apache/camel/component/jms/JmsProducer.java
+@@ -382,7 +382,7 @@ public class JmsProducer extends DefaultProducer {
+         if (exchange.hasOut()) {
+             JmsMessage out = (JmsMessage) exchange.getOut();
+             try {
+-                if (out != null) {
++                if (out != null && out.getJmsMessage() != null) {
+                     out.setMessageId(out.getJmsMessage().getJMSMessageID());
+                 }
+             } catch (JMSException e) {

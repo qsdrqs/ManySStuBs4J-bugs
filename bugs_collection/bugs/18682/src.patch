@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/apache/ibatis/annotations/Result.java b/fixed/src/main/java/org/apache/ibatis/annotations/Result.java
+index 0f58e88df..30ca38660 100644
+--- a/buggy/src/main/java/org/apache/ibatis/annotations/Result.java
++++ b/fixed/src/main/java/org/apache/ibatis/annotations/Result.java
+@@ -42,7 +42,7 @@ public @interface Result {
+ 
+   JdbcType jdbcType() default JdbcType.UNDEFINED;
+ 
+-  Class<? extends TypeHandler<?>> typeHandler() default UnknownTypeHandler.class;
++  Class<? extends TypeHandler> typeHandler() default UnknownTypeHandler.class;
+ 
+   One one() default @One;
+ 

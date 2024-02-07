@@ -1,0 +1,13 @@
+diff --git a/buggy/buffer/src/main/java/io/netty/buffer/AbstractByteBuf.java b/fixed/buffer/src/main/java/io/netty/buffer/AbstractByteBuf.java
+index d9799d5ed..0828ab1e0 100644
+--- a/buggy/buffer/src/main/java/io/netty/buffer/AbstractByteBuf.java
++++ b/fixed/buffer/src/main/java/io/netty/buffer/AbstractByteBuf.java
+@@ -331,7 +331,7 @@ public abstract class AbstractByteBuf implements ByteBuf {
+         if (endianness == null) {
+             throw new NullPointerException("endianness");
+         }
+-        if (endianness == order() || capacity() == 0) {
++        if (endianness == order()) {
+             return this;
+         }
+ 

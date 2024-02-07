@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/example/proxy/HexDumpProxyInboundHandler.java b/fixed/src/main/java/org/jboss/netty/example/proxy/HexDumpProxyInboundHandler.java
+index d204e93ec..fc950d65d 100644
+--- a/buggy/src/main/java/org/jboss/netty/example/proxy/HexDumpProxyInboundHandler.java
++++ b/fixed/src/main/java/org/jboss/netty/example/proxy/HexDumpProxyInboundHandler.java
+@@ -80,7 +80,7 @@ public class HexDumpProxyInboundHandler extends SimpleChannelUpstreamHandler {
+                     inboundChannel.setReadable(true);
+                 } else {
+                     // Close the connection if the connection attempt has failed.
+-                    future.getChannel().close();
++                    inboundChannel.close();
+                 }
+             }
+         });

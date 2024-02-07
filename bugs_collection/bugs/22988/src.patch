@@ -1,0 +1,13 @@
+diff --git a/buggy/itest/src/edu/stanford/nlp/parser/server/LexicalizedParserServerITest.java b/fixed/itest/src/edu/stanford/nlp/parser/server/LexicalizedParserServerITest.java
+index fd59ccd70..748cf0f28 100644
+--- a/buggy/itest/src/edu/stanford/nlp/parser/server/LexicalizedParserServerITest.java
++++ b/fixed/itest/src/edu/stanford/nlp/parser/server/LexicalizedParserServerITest.java
+@@ -36,7 +36,7 @@ public class LexicalizedParserServerITest extends TestCase {
+      "nsubj(works-3, Bauer-2)\n" +
+      "root(ROOT-0, works-3)\n" +
+      "case(Stanford-5, at-4)\n" +
+-     "nmod:at(works-3, Stanford-5)");
++     "obl:at(works-3, Stanford-5)");
+   static final String tokenizedString = "John Bauer works at Stanford .";
+ 
+   static final String lemmaTestString = "A man was walking in the rain.";

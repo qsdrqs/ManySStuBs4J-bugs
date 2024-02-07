@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-cli/src/main/java/org/springframework/boot/cli/command/InitCommand.java b/fixed/spring-boot-cli/src/main/java/org/springframework/boot/cli/command/InitCommand.java
+index e1b556ec0..1922894e9 100644
+--- a/buggy/spring-boot-cli/src/main/java/org/springframework/boot/cli/command/InitCommand.java
++++ b/fixed/spring-boot-cli/src/main/java/org/springframework/boot/cli/command/InitCommand.java
+@@ -79,7 +79,7 @@ public class InitCommand extends OptionParsingCommand {
+ 					"init.groovy", "spring.groovy");
+ 			String[] sources = sourceOptions.getSourcesArray();
+ 
+-			if (!(loader instanceof GroovyClassLoader)) {
++			if (!(loader instanceof GroovyClassLoader) && sources.length > 0) {
+ 
+ 				List<RepositoryConfiguration> repositoryConfiguration = RepositoryConfigurationFactory
+ 						.createDefaultRepositoryConfiguration();

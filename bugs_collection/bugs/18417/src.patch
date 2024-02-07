@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions/model-loaders/model-loaders/src/com/badlogic/gdx/graphics/g3d/test/Viewer.java b/fixed/extensions/model-loaders/model-loaders/src/com/badlogic/gdx/graphics/g3d/test/Viewer.java
+index be9fd4ce6..43ec15e2a 100644
+--- a/buggy/extensions/model-loaders/model-loaders/src/com/badlogic/gdx/graphics/g3d/test/Viewer.java
++++ b/fixed/extensions/model-loaders/model-loaders/src/com/badlogic/gdx/graphics/g3d/test/Viewer.java
+@@ -40,7 +40,7 @@ public class Viewer implements ApplicationListener {
+ 	
+ 	@Override public void create () {
+ 		
+-		Texture texture = new Texture(Gdx.files.internal("data/nskingr.jpg"));
++		Texture texture = new Texture(Gdx.files.internal("data/ninja.jpg"));
+ 		Material mat = new Material("mat", new TextureAttribute(texture, 0, "s_tex"));
+ 		model = new OgreXmlLoader().load(Gdx.files.internal("data/ninja.mesh.xml"), 
+ 													Gdx.files.internal("data/ninja.skeleton.xml"));		

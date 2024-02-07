@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-spring/src/main/java/com/hazelcast/spring/cache/HazelcastCache.java b/fixed/hazelcast-spring/src/main/java/com/hazelcast/spring/cache/HazelcastCache.java
+index 77639a131..a3fdb8303 100644
+--- a/buggy/hazelcast-spring/src/main/java/com/hazelcast/spring/cache/HazelcastCache.java
++++ b/fixed/hazelcast-spring/src/main/java/com/hazelcast/spring/cache/HazelcastCache.java
+@@ -55,7 +55,7 @@ public class HazelcastCache implements Cache {
+     }
+ 
+     @Override
+-    public Object getNativeCache() {
++    public IMap<Object, Object> getNativeCache() {
+         return map;
+     }
+ 

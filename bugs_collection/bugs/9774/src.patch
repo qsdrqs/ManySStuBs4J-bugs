@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/parse/SemanticAnalyzer.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/parse/SemanticAnalyzer.java
+index c2ed55c39..117f7b361 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/parse/SemanticAnalyzer.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/parse/SemanticAnalyzer.java
+@@ -8028,7 +8028,7 @@ public class SemanticAnalyzer extends BaseSemanticAnalyzer {
+       List<ASTNode> nodeConds = node.getExpressions().get(i + 1);
+       ArrayList<ASTNode> reordereNodeConds = new ArrayList<ASTNode>();
+       for(int k=0; k < tgtToNodeExprMap.length; k++) {
+-        reordereNodeConds.add(nodeConds.get(k));
++        reordereNodeConds.add(nodeConds.get(tgtToNodeExprMap[k]));
+       }
+       expr.add(reordereNodeConds);
+     }

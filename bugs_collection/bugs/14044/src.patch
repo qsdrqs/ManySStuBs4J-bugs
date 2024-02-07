@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/execution/SqlTaskExecution.java b/fixed/presto-main/src/main/java/com/facebook/presto/execution/SqlTaskExecution.java
+index 4a0522de9..77385b895 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/execution/SqlTaskExecution.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/execution/SqlTaskExecution.java
+@@ -235,7 +235,7 @@ public class SqlTaskExecution
+             try (PageIterator pages = operator.iterator(operatorStats)) {
+                 while (pages.hasNext()) {
+                     Page page = pages.next();
+-                    taskOutput.getStats().addOutputDataSize(new DataSize(page.getDataSize(), Unit.BYTE));
++                    taskOutput.getStats().addOutputDataSize(page.getDataSize());
+                     taskOutput.getStats().addOutputPositions(page.getPositionCount());
+                     if (!taskOutput.addPage(page)) {
+                         pages.close();

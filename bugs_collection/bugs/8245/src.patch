@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/rpc/akka/AkkaRpcService.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/rpc/akka/AkkaRpcService.java
+index a65fe4611..8e9649232 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/rpc/akka/AkkaRpcService.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/rpc/akka/AkkaRpcService.java
+@@ -195,7 +195,7 @@ public class AkkaRpcService implements RpcService {
+ 	public <C extends RpcEndpoint & RpcGateway> RpcServer startServer(C rpcEndpoint) {
+ 		checkNotNull(rpcEndpoint, "rpc endpoint");
+ 
+-		CompletableFuture<Boolean> terminationFuture = new CompletableFuture<>();
++		CompletableFuture<Void> terminationFuture = new CompletableFuture<>();
+ 		final Props akkaRpcActorProps;
+ 
+ 		if (rpcEndpoint instanceof FencedRpcEndpoint) {

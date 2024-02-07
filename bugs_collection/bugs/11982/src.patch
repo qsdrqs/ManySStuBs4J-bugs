@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/APersistentSet.java b/fixed/src/jvm/clojure/lang/APersistentSet.java
+index d8345f319..241d0917e 100644
+--- a/buggy/src/jvm/clojure/lang/APersistentSet.java
++++ b/fixed/src/jvm/clojure/lang/APersistentSet.java
+@@ -59,7 +59,7 @@ public boolean equals(Object obj){
+ 
+ 	for(Object aM : m)
+ 		{
+-		if(!m.contains(aM))
++		if(!contains(aM))
+ 			return false;
+ 		}
+ //	for(ISeq s = seq(); s != null; s = s.rest())

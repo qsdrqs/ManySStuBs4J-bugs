@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/model/HandledPredicate.java b/fixed/camel-core/src/main/java/org/apache/camel/model/HandledPredicate.java
+index 6df5ac5bc..b3aff26d2 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/model/HandledPredicate.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/model/HandledPredicate.java
+@@ -61,7 +61,7 @@ public class HandledPredicate {
+     }
+ 
+     public Predicate createPredicate(RouteContext routeContext) {
+-        ExpressionType predicateType = getCompletePredicate();
++        ExpressionType predicateType = getHandledPredicate();
+         if (predicateType != null && predicate == null) {
+             predicate = predicateType.createPredicate(routeContext);
+         }

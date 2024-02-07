@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/utils/Array.java b/fixed/gdx/src/com/badlogic/gdx/utils/Array.java
+index e088c30d7..73562d881 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/utils/Array.java
++++ b/fixed/gdx/src/com/badlogic/gdx/utils/Array.java
+@@ -311,7 +311,7 @@ public class Array<T> implements Iterable<T> {
+ 	 * @return {@link #items} */
+ 	public T[] ensureCapacity (int additionalCapacity) {
+ 		int sizeNeeded = size + additionalCapacity;
+-		if (sizeNeeded >= items.length) resize(Math.max(8, sizeNeeded));
++		if (sizeNeeded > items.length) resize(Math.max(8, sizeNeeded));
+ 		return items;
+ 	}
+ 

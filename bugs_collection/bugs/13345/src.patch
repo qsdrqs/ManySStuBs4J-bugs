@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/server/QuerySessionSupplier.java b/fixed/presto-main/src/main/java/com/facebook/presto/server/QuerySessionSupplier.java
+index df476590f..0cbd59fe8 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/server/QuerySessionSupplier.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/server/QuerySessionSupplier.java
+@@ -114,7 +114,7 @@ public class QuerySessionSupplier
+     public void setConfigurationManager(String name, Map<String, String> properties)
+     {
+         SessionPropertyConfigurationManagerFactory factory = sessionPropertyConfigurationManagerFactories.get(name);
+-        checkState(factory != null, "Session property configuration manager %s is not registered");
++        checkState(factory != null, "Session property configuration manager '%s' is not registered", name);
+ 
+         SessionPropertyConfigurationManager manager = factory.create(properties, configurationManagerContext);
+         checkState(sessionPropertyConfigurationManager.compareAndSet(null, manager), "sessionPropertyConfigurationManager is already set");

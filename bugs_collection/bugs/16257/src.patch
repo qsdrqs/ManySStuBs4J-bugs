@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/concurrent/lock/LockBasicTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/concurrent/lock/LockBasicTest.java
+index 5a58beff5..c4663edd4 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/concurrent/lock/LockBasicTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/concurrent/lock/LockBasicTest.java
+@@ -310,7 +310,7 @@ public abstract class LockBasicTest extends HazelcastTestSupport {
+             public void run() throws Exception {
+                 assertFalse(lock.isLocked());
+             }
+-        }, 5);
++        }, 20);
+     }
+ 
+     @Test(expected = NullPointerException.class, timeout = 60000)

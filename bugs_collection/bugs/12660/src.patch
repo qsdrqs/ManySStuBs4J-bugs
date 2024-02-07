@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/io/druid/server/coordinator/helper/DruidCoordinatorBalancer.java b/fixed/server/src/main/java/io/druid/server/coordinator/helper/DruidCoordinatorBalancer.java
+index 0ec2aeb49..88cd9b50a 100644
+--- a/buggy/server/src/main/java/io/druid/server/coordinator/helper/DruidCoordinatorBalancer.java
++++ b/fixed/server/src/main/java/io/druid/server/coordinator/helper/DruidCoordinatorBalancer.java
+@@ -99,7 +99,7 @@ public class DruidCoordinatorBalancer implements DruidCoordinatorHelper
+ 
+     if (!currentlyMovingSegments.get(tier).isEmpty()) {
+       reduceLifetimes(tier);
+-      log.info("[%s]: Still waiting on %,d segments to be moved", tier, currentlyMovingSegments.size());
++      log.info("[%s]: Still waiting on %,d segments to be moved", tier, currentlyMovingSegments.get(tier).size());
+       return;
+     }
+ 

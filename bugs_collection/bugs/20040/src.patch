@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/handler/timeout/IdleStateAwareChannelHandler.java b/fixed/src/main/java/org/jboss/netty/handler/timeout/IdleStateAwareChannelHandler.java
+index 8eb125af3..4a0a10bf7 100644
+--- a/buggy/src/main/java/org/jboss/netty/handler/timeout/IdleStateAwareChannelHandler.java
++++ b/fixed/src/main/java/org/jboss/netty/handler/timeout/IdleStateAwareChannelHandler.java
+@@ -52,7 +52,7 @@ public class IdleStateAwareChannelHandler extends SimpleChannelHandler {
+     /**
+      * Invoked when a {@link Channel} has been idle for a while.
+      */
+-    public void channelIdle(ChannelHandlerContext ctx, IdleStateEvent e) {
++    public void channelIdle(ChannelHandlerContext ctx, IdleStateEvent e) throws Exception {
+         ctx.sendUpstream(e);
+     }
+ }

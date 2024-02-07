@@ -1,0 +1,16 @@
+diff --git a/buggy/hbase-client/src/main/java/org/apache/hadoop/hbase/client/ZooKeeperRegistry.java b/fixed/hbase-client/src/main/java/org/apache/hadoop/hbase/client/ZooKeeperRegistry.java
+index 5aabb0cbf..9208f6e20 100644
+--- a/buggy/hbase-client/src/main/java/org/apache/hadoop/hbase/client/ZooKeeperRegistry.java
++++ b/fixed/hbase-client/src/main/java/org/apache/hadoop/hbase/client/ZooKeeperRegistry.java
+@@ -104,9 +104,9 @@ class ZooKeeperRegistry implements Registry {
+         LOG.info("ClusterId read in ZooKeeper is null");
+       }
+     } catch (KeeperException e) {
+-      LOG.warn("Can't retrieve clusterId from Zookeeper", e);
++      LOG.warn("Can't retrieve clusterId from ZooKeeper", e);
+     } catch (IOException e) {
+-      LOG.warn("Can't retrieve clusterId from Zookeeper", e);
++      LOG.warn("Can't retrieve clusterId from ZooKeeper", e);
+     } finally {
+       if (zkw != null) zkw.close();
+     }

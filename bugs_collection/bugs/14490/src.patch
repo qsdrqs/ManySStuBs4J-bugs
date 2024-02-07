@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/rhino/jstype/JSTypeRegistry.java b/fixed/src/com/google/javascript/rhino/jstype/JSTypeRegistry.java
+index 9a311438a..67c1b8c71 100644
+--- a/buggy/src/com/google/javascript/rhino/jstype/JSTypeRegistry.java
++++ b/fixed/src/com/google/javascript/rhino/jstype/JSTypeRegistry.java
+@@ -385,7 +385,7 @@ public class JSTypeRegistry implements Serializable {
+     NoObjectType noObjectType = new NoObjectType(this);
+     registerNativeType(JSTypeNative.NO_OBJECT_TYPE, noObjectType);
+ 
+-    NoObjectType noResolvedType = new NoResolvedType(this);
++    NoResolvedType noResolvedType = new NoResolvedType(this);
+     registerNativeType(JSTypeNative.NO_RESOLVED_TYPE, noResolvedType);
+ 
+     // Array

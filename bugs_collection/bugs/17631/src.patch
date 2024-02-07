@@ -1,0 +1,16 @@
+diff --git a/buggy/tests/gdx-tests/src/com/badlogic/gdx/tests/conformance/DisplayModeTest.java b/fixed/tests/gdx-tests/src/com/badlogic/gdx/tests/conformance/DisplayModeTest.java
+index b7eb99552..5ee8872f8 100644
+--- a/buggy/tests/gdx-tests/src/com/badlogic/gdx/tests/conformance/DisplayModeTest.java
++++ b/fixed/tests/gdx-tests/src/com/badlogic/gdx/tests/conformance/DisplayModeTest.java
+@@ -47,9 +47,9 @@ public class DisplayModeTest extends GdxTest {
+ 		if (a.length != b.length) {
+ 			throw new AssertionError("Display modes " + Arrays.toString(a) + " aren't equal to display modes " + Arrays.toString(b));
+ 		}
+-		boolean equal = false;
++		boolean equal = true;
+ 		for (int i = 0; i < a.length; i++) {
+-			equal = isDisplayModeEqual(a[i], b[i]);
++			equal = equal && isDisplayModeEqual(a[i], b[i]);
+ 		}
+ 		if (!equal) {
+ 			throw new AssertionError("Display modes " + Arrays.toString(a) + " aren't equal to display modes " + Arrays.toString(b));

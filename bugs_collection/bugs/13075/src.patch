@@ -1,0 +1,13 @@
+diff --git a/buggy/indexing-service/src/main/java/com/metamx/druid/indexing/coordinator/http/IndexerCoordinatorResource.java b/fixed/indexing-service/src/main/java/com/metamx/druid/indexing/coordinator/http/IndexerCoordinatorResource.java
+index e6f49b0d5..1211d69ad 100644
+--- a/buggy/indexing-service/src/main/java/com/metamx/druid/indexing/coordinator/http/IndexerCoordinatorResource.java
++++ b/fixed/indexing-service/src/main/java/com/metamx/druid/indexing/coordinator/http/IndexerCoordinatorResource.java
+@@ -78,7 +78,7 @@ public class IndexerCoordinatorResource
+               .put("id", input.getTask().getId())
+               .put("dataSource", input.getTask().getDataSource())
+               .put("interval",
+-                   input.getTask().getImplicitLockInterval().get() == null
++                   !input.getTask().getImplicitLockInterval().isPresent()
+                    ? ""
+                    : input.getTask().getImplicitLockInterval().get()
+               )

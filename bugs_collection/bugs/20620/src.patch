@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/converter/ZWaveMeterConverter.java b/fixed/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/converter/ZWaveMeterConverter.java
+index b2133f95a..a8bc72be9 100644
+--- a/buggy/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/converter/ZWaveMeterConverter.java
++++ b/fixed/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/converter/ZWaveMeterConverter.java
+@@ -126,7 +126,7 @@ public class ZWaveMeterConverter extends ZWaveCommandClassConverter<ZWaveMeterCo
+ 		SerialMessage serialMessage = node.encapsulate(commandClass.getResetMessage(), commandClass, endpointId);
+ 		
+ 		if (serialMessage == null) {
+-			logger.warn("NODE {}: Meter reset not supported for item = {}, endpoint = {}, ignoring event.", event.getNodeId(), item.getName(), event.getEndpoint());
++			logger.warn("NODE {}: Meter reset not supported for item = {}, endpoint = {}, ignoring event.", node.getNodeId(), item.getName(), endpointId);
+ 			return;
+ 		}
+ 		

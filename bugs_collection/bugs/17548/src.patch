@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/graphics/g2d/ParticleEmitter.java b/fixed/gdx/src/com/badlogic/gdx/graphics/g2d/ParticleEmitter.java
+index 1f18aca36..40a5ef0c4 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/graphics/g2d/ParticleEmitter.java
++++ b/fixed/gdx/src/com/badlogic/gdx/graphics/g2d/ParticleEmitter.java
+@@ -1528,7 +1528,7 @@ public class ParticleEmitter {
+ 
+ 		public void set (IndependentScaledNumericValue value) {
+ 			super.set(value);
+-			value.independent = independent;
++			independent = value.independent;
+ 		}
+ 
+ 		public void save (Writer output) throws IOException {

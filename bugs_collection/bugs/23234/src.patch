@@ -1,0 +1,13 @@
+diff --git a/buggy/test/src/edu/stanford/nlp/ie/util/RelationTripleTest.java b/fixed/test/src/edu/stanford/nlp/ie/util/RelationTripleTest.java
+index a929336b6..8a90e19ae 100644
+--- a/buggy/test/src/edu/stanford/nlp/ie/util/RelationTripleTest.java
++++ b/fixed/test/src/edu/stanford/nlp/ie/util/RelationTripleTest.java
+@@ -59,7 +59,7 @@ public class RelationTripleTest extends TestCase {
+         tree.addEdge(
+             new IndexedWord(sentence.get(parent - 1)),
+             new IndexedWord(sentence.get(i)),
+-            GrammaticalRelation.valueOf(GrammaticalRelation.Language.English, reln),
++            new GrammaticalRelation(GrammaticalRelation.Language.English, reln, null, null),
+             1.0, false
+         );
+       }

@@ -1,0 +1,13 @@
+diff --git a/buggy/profiler/src/main/java/com/navercorp/pinpoint/profiler/DefaultDynamicTransformerRegistry.java b/fixed/profiler/src/main/java/com/navercorp/pinpoint/profiler/DefaultDynamicTransformerRegistry.java
+index e3c3d7107..680be9943 100644
+--- a/buggy/profiler/src/main/java/com/navercorp/pinpoint/profiler/DefaultDynamicTransformerRegistry.java
++++ b/fixed/profiler/src/main/java/com/navercorp/pinpoint/profiler/DefaultDynamicTransformerRegistry.java
+@@ -24,7 +24,7 @@ import org.slf4j.Logger;
+ import org.slf4j.LoggerFactory;
+ 
+ 
+-public class DefaultDynamicTransformerRegistry implements DynamicTrnasformerRegistry {
++public class DefaultDynamicTransformerRegistry implements DynamicTransformerRegistry {
+ 
+     private final Logger logger = LoggerFactory.getLogger(this.getClass());
+     private final ConcurrentMap<TransformerKey, ClassFileTransformer> transformerMap = new ConcurrentHashMap<TransformerKey, ClassFileTransformer>();

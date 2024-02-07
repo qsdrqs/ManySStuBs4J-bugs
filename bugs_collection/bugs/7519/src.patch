@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/model/DataFormatDefinition.java b/fixed/camel-core/src/main/java/org/apache/camel/model/DataFormatDefinition.java
+index 246c72fc2..72e9aa7e5 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/model/DataFormatDefinition.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/model/DataFormatDefinition.java
+@@ -85,7 +85,7 @@ public class DataFormatDefinition extends IdentifiedType {
+         if (dataFormat == null) {
+             dataFormat = createDataFormat(routeContext);
+             if (dataFormat == null) {
+-                throw new IllegalArgumentException("Data format could not be created. Ensure that the dataformat is valid and the associated camel component is present on the classpath");
++                throw new IllegalArgumentException("Data format could not be created. Ensure that the dataformat is valid and the associated Camel component is present on the classpath");
+             } else {
+                 configureDataFormat(dataFormat);
+             }

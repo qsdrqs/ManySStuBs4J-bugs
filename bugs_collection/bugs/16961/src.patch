@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/map/MapService.java b/fixed/hazelcast/src/main/java/com/hazelcast/map/MapService.java
+index fa78d493d..4bb21f03c 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/map/MapService.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/map/MapService.java
+@@ -876,7 +876,7 @@ public class MapService implements ManagedService, MigrationAwareService,
+                 if (maxSizePolicy == MaxSizeConfig.MaxSizePolicy.USED_HEAP_SIZE) {
+                     return maxSize < (used / 1024 / 1024);
+                 } else {
+-                    return maxSize < (used / total);
++                    return maxSize < (100d * used / total);
+                 }
+             }
+             return false;

@@ -1,0 +1,13 @@
+diff --git a/buggy/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterTLP.java b/fixed/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterTLP.java
+index fe4b6f0b7..78c0b5137 100644
+--- a/buggy/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterTLP.java
++++ b/fixed/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterTLP.java
+@@ -145,7 +145,7 @@ public class ImporterTLP implements TextImporter, LongTask {
+     }
+ 
+     public boolean isMatchingImporter(FileObject fileObject) {
+-        return fileObject.hasExt("tlp");
++        return fileObject.hasExt("tlp") || fileObject.hasExt("TLP");
+     }
+ 
+     public boolean cancel() {

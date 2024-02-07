@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-spring/src/test/java/com/hazelcast/spring/replicatedmap/TestReplicatedMapApplicationContext.java b/fixed/hazelcast-spring/src/test/java/com/hazelcast/spring/replicatedmap/TestReplicatedMapApplicationContext.java
+index 2c23aef87..2e904786d 100644
+--- a/buggy/hazelcast-spring/src/test/java/com/hazelcast/spring/replicatedmap/TestReplicatedMapApplicationContext.java
++++ b/fixed/hazelcast-spring/src/test/java/com/hazelcast/spring/replicatedmap/TestReplicatedMapApplicationContext.java
+@@ -40,7 +40,7 @@ import static org.junit.Assert.assertNotNull;
+ import static org.junit.Assert.assertTrue;
+ 
+ @RunWith(CustomSpringJUnit4ClassRunner.class)
+-@ContextConfiguration(locations = {"replicatedmap-applicationContext-hazelcast.xml"})
++@ContextConfiguration(locations = {"replicatedMap-applicationContext-hazelcast.xml"})
+ @Category(QuickTest.class)
+ public class TestReplicatedMapApplicationContext {
+ 

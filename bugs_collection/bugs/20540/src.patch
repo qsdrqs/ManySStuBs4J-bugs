@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.energenie/src/main/java/org/openhab/binding/energenie/internal/EnergenieBinding.java b/fixed/bundles/binding/org.openhab.binding.energenie/src/main/java/org/openhab/binding/energenie/internal/EnergenieBinding.java
+index ff53bbfdc..2b8178032 100644
+--- a/buggy/bundles/binding/org.openhab.binding.energenie/src/main/java/org/openhab/binding/energenie/internal/EnergenieBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.energenie/src/main/java/org/openhab/binding/energenie/internal/EnergenieBinding.java
+@@ -223,7 +223,7 @@ public class EnergenieBinding extends AbstractActiveBinding<EnergenieBindingProv
+ 
+ 	private void sendLogOut(String pmsId) {
+ 		String pmsIp = pmsIpConfig.get(pmsId);
+-		String url = "http://"+pmsIp;
++		String url = "http://"+pmsIp+"/login.html";
+ 
+ 		try {
+ 			HttpUtil.executeUrl("POST", url, timeout);

@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-cli/src/main/java/com/facebook/presto/cli/FormatUtils.java b/fixed/presto-cli/src/main/java/com/facebook/presto/cli/FormatUtils.java
+index bb3c7d75d..3f243ff11 100644
+--- a/buggy/presto-cli/src/main/java/com/facebook/presto/cli/FormatUtils.java
++++ b/fixed/presto-cli/src/main/java/com/facebook/presto/cli/FormatUtils.java
+@@ -176,7 +176,7 @@ public final class FormatUtils
+         int range = width - markerWidth; // "lower" must fall within this range for the marker to fit within the bar
+         int lower = tick % range;
+ 
+-        if (((tick / range) % 2) == 1) { // are we going or coming back?
++        if (((tick / range) % 2) != 0) { // are we going or coming back?
+             lower = range - lower;
+         }
+ 

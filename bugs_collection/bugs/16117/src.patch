@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/proxy/NearCachedClientMapProxy.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/proxy/NearCachedClientMapProxy.java
+index 7f2aebf35..fadace93b 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/proxy/NearCachedClientMapProxy.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/proxy/NearCachedClientMapProxy.java
+@@ -481,7 +481,7 @@ public class NearCachedClientMapProxy<K, V> extends ClientMapProxy<K, V> {
+             invalidationListenerId = registerListener(createNearCacheEntryListenerCodec(), handler);
+         } catch (Exception e) {
+             ILogger logger = getContext().getLoggingService().getLogger(getClass());
+-            logger.severe("-----------------\n Near Cache is not initialized!!! \n-----------------", e);
++            logger.severe("-----------------\nNear Cache is not initialized!\n-----------------", e);
+         }
+     }
+ 

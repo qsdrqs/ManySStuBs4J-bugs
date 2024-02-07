@@ -1,0 +1,13 @@
+diff --git a/buggy/resolver-dns/src/main/java/io/netty/resolver/dns/DnsNameResolverContext.java b/fixed/resolver-dns/src/main/java/io/netty/resolver/dns/DnsNameResolverContext.java
+index c71946fab..cd5620d42 100644
+--- a/buggy/resolver-dns/src/main/java/io/netty/resolver/dns/DnsNameResolverContext.java
++++ b/fixed/resolver-dns/src/main/java/io/netty/resolver/dns/DnsNameResolverContext.java
+@@ -750,7 +750,7 @@ abstract class DnsNameResolverContext<T> {
+ 
+     private DnsServerAddressStream getNameServers(String hostname) {
+         DnsServerAddressStream stream = getNameServersFromCache(hostname);
+-        return stream == null ? nameServerAddrs : stream;
++        return stream == null ? nameServerAddrs.duplicate() : stream;
+     }
+ 
+     private void followCname(String cname, final DnsQueryLifecycleObserver queryLifecycleObserver, Promise<T> promise) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/pact/pact-common/src/main/java/eu/stratosphere/pact/common/type/PactRecord.java b/fixed/pact/pact-common/src/main/java/eu/stratosphere/pact/common/type/PactRecord.java
+index 197d21439..98d2b00d0 100644
+--- a/buggy/pact/pact-common/src/main/java/eu/stratosphere/pact/common/type/PactRecord.java
++++ b/fixed/pact/pact-common/src/main/java/eu/stratosphere/pact/common/type/PactRecord.java
+@@ -1074,7 +1074,7 @@ public final class PactRecord implements Value
+ 				int shift = 7;
+ 				int curr;
+ 				numFields = numFields & 0x7f;
+-				while ((curr = data[pos--]) >= MAX_BIT) {
++				while ((curr = data[pos--] & 0xff) >= MAX_BIT) {
+ 					numFields |= (curr & 0x7f) << shift;
+ 					shift += 7;
+ 				}

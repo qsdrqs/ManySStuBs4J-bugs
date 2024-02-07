@@ -1,0 +1,22 @@
+diff --git a/buggy/spring-boot-project/spring-boot-tools/spring-boot-test-support/src/main/java/org/springframework/boot/testsupport/testcontainers/CassandraContainer.java b/fixed/spring-boot-project/spring-boot-tools/spring-boot-test-support/src/main/java/org/springframework/boot/testsupport/testcontainers/CassandraContainer.java
+index ecee51792..a0dcedc22 100644
+--- a/buggy/spring-boot-project/spring-boot-tools/spring-boot-test-support/src/main/java/org/springframework/boot/testsupport/testcontainers/CassandraContainer.java
++++ b/fixed/spring-boot-project/spring-boot-tools/spring-boot-test-support/src/main/java/org/springframework/boot/testsupport/testcontainers/CassandraContainer.java
+@@ -44,7 +44,7 @@ public class CassandraContainer extends Container {
+ 	private static class WaitStrategy extends HostPortWaitStrategy {
+ 
+ 		@Override
+-		protected void waitUntilReady() {
++		public void waitUntilReady(GenericContainer container) {
+ 			super.waitUntilReady();
+ 
+ 			try {
+@@ -59,7 +59,7 @@ public class CassandraContainer extends Container {
+ 		private Callable<Boolean> checkConnection() {
+ 			return () -> {
+ 				try (Cluster cluster = Cluster.builder()
+-						.withPort(this.container.getMappedPort(PORT))
++						.withPort(container.getMappedPort(PORT))
+ 						.addContactPoint("localhost").build()) {
+ 					cluster.connect();
+ 					return true;

@@ -1,0 +1,13 @@
+diff --git a/buggy/itest/src/edu/stanford/nlp/pipeline/ChineseAnnotationPipelineITest.java b/fixed/itest/src/edu/stanford/nlp/pipeline/ChineseAnnotationPipelineITest.java
+index 4e6acb477..aff0c896b 100644
+--- a/buggy/itest/src/edu/stanford/nlp/pipeline/ChineseAnnotationPipelineITest.java
++++ b/fixed/itest/src/edu/stanford/nlp/pipeline/ChineseAnnotationPipelineITest.java
+@@ -34,7 +34,7 @@ public class ChineseAnnotationPipelineITest extends TestCase {
+                                    "北","京","吗","？"};
+     boolean[] expectedSegs = {true, true, false, true, false,
+                               true, false, true, true};
+-    String[] expectedNer = {"O", "O", "O", "GPE", "O", "O"};
++    String[] expectedNer = {"O", "O", "O", "STATE_OR_PROVINCE", "O", "O"};
+ 
+     assertEquals(expectedCharacters.length, expectedSegs.length);
+     assertEquals(expectedWords.length, expectedNer.length);

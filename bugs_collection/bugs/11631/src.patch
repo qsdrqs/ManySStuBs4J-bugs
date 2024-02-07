@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/whitespace/WhitespaceAfterCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/whitespace/WhitespaceAfterCheck.java
+index 45d918078..524a2499b 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/whitespace/WhitespaceAfterCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/whitespace/WhitespaceAfterCheck.java
+@@ -94,7 +94,7 @@ public class WhitespaceAfterCheck
+         }
+         else {
+             if (!isFollowedByWhitespace(ast, line)) {
+-                final Object[] message = new Object[]{ast.getText()};
++                final Object[] message = {ast.getText()};
+                 log(ast.getLineNo(),
+                     ast.getColumnNo() + ast.getText().length(),
+                     WS_NOT_FOLLOWED,

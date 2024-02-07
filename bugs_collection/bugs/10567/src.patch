@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/whitespace/WhitespaceAfterCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/whitespace/WhitespaceAfterCheckTest.java
+index 91452c1c6..f55c66b2e 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/whitespace/WhitespaceAfterCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/whitespace/WhitespaceAfterCheckTest.java
+@@ -41,7 +41,7 @@ public class WhitespaceAfterCheckTest
+     public void testGetRequiredTokens() {
+         final WhitespaceAfterCheck checkObj = new WhitespaceAfterCheck();
+         assertArrayEquals(
+-            "WhitespaceAfterCheck#getRequiredTockens should return empty array by default",
++            "WhitespaceAfterCheck#getRequiredTokens should return empty array by default",
+             CommonUtils.EMPTY_INT_ARRAY, checkObj.getRequiredTokens());
+     }
+ 

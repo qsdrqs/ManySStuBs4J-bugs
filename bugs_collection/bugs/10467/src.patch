@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsPagesTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsPagesTest.java
+index 336dd0e82..9ba477a8e 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsPagesTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsPagesTest.java
+@@ -985,7 +985,7 @@ public class XdocsPagesTest {
+                     result = '"' + value.toString().replace("\n", "\\n").replace("\t", "\\t")
+                             .replace("\r", "\\r").replace("\f", "\\f") + '"';
+ 
+-                    if ("\"$^\"".equals(result)) {
++                    if ("\"^$\"".equals(result)) {
+                         result += " (empty)";
+                     }
+                 }

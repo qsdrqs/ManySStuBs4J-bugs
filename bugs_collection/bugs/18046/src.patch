@@ -1,0 +1,13 @@
+diff --git a/buggy/backends/gdx-backends-gwt/src/com/badlogic/gwtref/client/Type.java b/fixed/backends/gdx-backends-gwt/src/com/badlogic/gwtref/client/Type.java
+index a5060bbcd..ec57695c3 100644
+--- a/buggy/backends/gdx-backends-gwt/src/com/badlogic/gwtref/client/Type.java
++++ b/fixed/backends/gdx-backends-gwt/src/com/badlogic/gwtref/client/Type.java
+@@ -61,7 +61,7 @@ public class Type {
+ 	/** @return the super class of this type or null */
+ 	public Type getSuperclass () {
+ 		try {
+-			return ReflectionCache.forName(superClass.getName());
++			return superClass == null ? null : ReflectionCache.forName(superClass.getName());
+ 		} catch (ClassNotFoundException e) {
+ 			return null;
+ 		}

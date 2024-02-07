@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/RhinoErrorReporter.java b/fixed/src/com/google/javascript/jscomp/RhinoErrorReporter.java
+index 772b22b15..e56db0706 100644
+--- a/buggy/src/com/google/javascript/jscomp/RhinoErrorReporter.java
++++ b/fixed/src/com/google/javascript/jscomp/RhinoErrorReporter.java
+@@ -49,7 +49,7 @@ class RhinoErrorReporter {
+       DiagnosticType.disabled("JSC_JSDOC_MISSING_TYPE_WARNING", "{0}");
+ 
+   static final DiagnosticType TOO_MANY_TEMPLATE_PARAMS =
+-      DiagnosticType.disabled("JSC_TOO_MANY_TEMPLATE_PARAMS", "{0}");
++      DiagnosticType.error("JSC_TOO_MANY_TEMPLATE_PARAMS", "{0}");
+ 
+   // Special-cased errors, so that they can be configured via the
+   // warnings API.

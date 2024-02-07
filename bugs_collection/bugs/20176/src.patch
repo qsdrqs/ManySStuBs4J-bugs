@@ -1,0 +1,15 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.onewire/src/main/java/org/openhab/binding/onewire/internal/deviceproperties/AbstractOneWireDevicePropertyBindingConfig.java b/fixed/bundles/binding/org.openhab.binding.onewire/src/main/java/org/openhab/binding/onewire/internal/deviceproperties/AbstractOneWireDevicePropertyBindingConfig.java
+index 244289644..51622937b 100644
+--- a/buggy/bundles/binding/org.openhab.binding.onewire/src/main/java/org/openhab/binding/onewire/internal/deviceproperties/AbstractOneWireDevicePropertyBindingConfig.java
++++ b/fixed/bundles/binding/org.openhab.binding.onewire/src/main/java/org/openhab/binding/onewire/internal/deviceproperties/AbstractOneWireDevicePropertyBindingConfig.java
+@@ -210,8 +210,8 @@ public abstract class AbstractOneWireDevicePropertyBindingConfig implements OneW
+         Type lvType = convertReadValueToUnmodifiedType(pvReadValue);
+ 
+         for (OneWireTypeModifier lvTypeModifier : getTypeModifieryList()) {
+-            logger.debug("type of " + getDevicePropertyPath() + " before modifier:" + lvTypeModifier.getModifierName()
+-                    + "type=" + lvType.toString());
++            logger.debug("type of {} before modifier:{} type={}", getDevicePropertyPath(),
++                    lvTypeModifier.getModifierName(), lvType);
+             lvType = lvTypeModifier.modify4Read(lvType);
+             logger.debug("type of {} after modifier:{} type={}", getDevicePropertyPath(),
+                     lvTypeModifier.getModifierName(), lvType);

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4843defaultcasepresent/MissingSwitchDefaultTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4843defaultcasepresent/MissingSwitchDefaultTest.java
+index af8ced75a..d1e5162eb 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4843defaultcasepresent/MissingSwitchDefaultTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4843defaultcasepresent/MissingSwitchDefaultTest.java
+@@ -54,7 +54,7 @@ public class MissingSwitchDefaultTest extends BaseCheckTestSupport {
+         };
+ 
+         final Configuration checkConfig = builder.getCheckConfig("MissingSwitchDefault");
+-        final String filePath = builder.getFilePath("MissingSwitchDefaultInput");
++        final String filePath = builder.getFilePath("InputMissingSwitchDefault");
+ 
+         final Integer[] warnList = builder.getLinesWithWarn(filePath);
+         verify(checkConfig, filePath, expected, warnList);

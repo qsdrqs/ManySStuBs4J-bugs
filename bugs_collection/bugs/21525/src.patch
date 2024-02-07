@@ -1,0 +1,13 @@
+diff --git a/buggy/src/web/org/openmrs/web/filter/update/UpdateFilter.java b/fixed/src/web/org/openmrs/web/filter/update/UpdateFilter.java
+index b305f4397..c27eb1250 100644
+--- a/buggy/src/web/org/openmrs/web/filter/update/UpdateFilter.java
++++ b/fixed/src/web/org/openmrs/web/filter/update/UpdateFilter.java
+@@ -132,7 +132,7 @@ public class UpdateFilter extends StartupFilter {
+ 				}
+ 				catch (InterruptedException e) {
+ 					log.error("Unable to sleep", e);
+-					throw new IOException(e);
++					throw new IOException("InterruptedException trying to sleep thread: " + e.getMessage());
+ 				}
+ 				errors.add("Unable to authenticate as a " + OpenmrsConstants.SUPERUSER_ROLE
+ 				        + ". Invalid username or password");

@@ -1,0 +1,19 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/LifecycleServiceClientImpl.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/LifecycleServiceClientImpl.java
+index 23f9db84d..2a57598e5 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/LifecycleServiceClientImpl.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/LifecycleServiceClientImpl.java
+@@ -83,12 +83,12 @@ public class LifecycleServiceClientImpl implements LifecycleService {
+         Callable<Boolean> callable = new Callable<Boolean>() {
+             public Boolean call() {
+                 synchronized (lifecycleLock) {
+-                    if (paused.get()) {
++                    if (!paused.get()) {
+                         fireLifecycleEvent(PAUSING);
+                     } else {
+                         return false;
+                     }
+-                    paused.set(false);
++                    paused.set(true);
+                     fireLifecycleEvent(PAUSED);
+                     return true;
+                 }

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/spi/discovery/impl/DefaultDiscoveryService.java b/fixed/hazelcast/src/main/java/com/hazelcast/spi/discovery/impl/DefaultDiscoveryService.java
+index 37393b695..c772b9e73 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/spi/discovery/impl/DefaultDiscoveryService.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/spi/discovery/impl/DefaultDiscoveryService.java
+@@ -150,7 +150,7 @@ public class DefaultDiscoveryService
+             return discoveryStrategies;
+         } catch (Exception e) {
+             if (e instanceof ValidationException) {
+-                throw new InvalidConfigurationException("Invalid configutation ", e);
++                throw new InvalidConfigurationException("Invalid configuration", e);
+             } else {
+                 throw new RuntimeException("Failed to configure discovery strategies", e);
+             }

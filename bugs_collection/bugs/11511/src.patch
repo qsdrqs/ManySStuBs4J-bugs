@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/TreeWalker.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/TreeWalker.java
+index 1bf78afa9..0ae00d3d6 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/TreeWalker.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/TreeWalker.java
+@@ -68,7 +68,7 @@ public final class TreeWalker
+      * State of AST.
+      * Indicates whether tree contains certain nodes.
+      */
+-    private static enum AstState {
++    private enum AstState {
+         /**
+          * Ordinary tree.
+          */

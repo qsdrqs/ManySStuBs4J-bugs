@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/execution/SqlTaskManager.java b/fixed/presto-main/src/main/java/com/facebook/presto/execution/SqlTaskManager.java
+index 730a15e41..e0ac722f0 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/execution/SqlTaskManager.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/execution/SqlTaskManager.java
+@@ -207,7 +207,7 @@ public class SqlTaskManager
+                 queryContexts.getUnchecked(assignment.getQueryId()).setMemoryPool(reservedPool);
+             }
+             else {
+-                new IllegalArgumentException(format("Cannot move %s to %s as the target memory pool id is invalid", assignment.getQueryId(), assignment.getPoolId()));
++                throw new IllegalArgumentException(format("Cannot move %s to %s as the target memory pool id is invalid", assignment.getQueryId(), assignment.getPoolId()));
+             }
+         }
+     }

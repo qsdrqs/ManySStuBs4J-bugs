@@ -1,0 +1,13 @@
+diff --git a/buggy/hikaricp-java6/src/main/java/com/zaxxer/hikari/proxy/ConnectionProxy.java b/fixed/hikaricp-java6/src/main/java/com/zaxxer/hikari/proxy/ConnectionProxy.java
+index 27356d0ad..fbcdc971b 100644
+--- a/buggy/hikaricp-java6/src/main/java/com/zaxxer/hikari/proxy/ConnectionProxy.java
++++ b/fixed/hikaricp-java6/src/main/java/com/zaxxer/hikari/proxy/ConnectionProxy.java
+@@ -473,7 +473,7 @@ public abstract class ConnectionProxy implements IHikariConnectionProxy
+       checkClosed();
+       try {
+          delegate.setCatalog(catalog);
+-         isCatalogDirty = !catalog.equals(parentPool.catalog);
++         isCatalogDirty = (catalog != null && !catalog.equals(parentPool.catalog)) || (catalog == null && parentPool.catalog != null);
+       }
+       catch (SQLException e) {
+          throw checkException(e);

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/Compiler.java b/fixed/src/jvm/clojure/lang/Compiler.java
+index 7eda65831..95cf816b3 100644
+--- a/buggy/src/jvm/clojure/lang/Compiler.java
++++ b/fixed/src/jvm/clojure/lang/Compiler.java
+@@ -2153,7 +2153,7 @@ public static class TryExpr implements Expr{
+                                             if(bodyExpr == null)
+                                                 try {
+                                                     Var.pushThreadBindings(RT.map(NO_RECUR, true));
+-						    bodyExpr = (new BodyExpr.Parser()).parse(C.EXPRESSION, RT.seq(body));
++						                            bodyExpr = (new BodyExpr.Parser()).parse(context, RT.seq(body));
+                                                 } finally {
+                                                     Var.popThreadBindings();
+                                                 }

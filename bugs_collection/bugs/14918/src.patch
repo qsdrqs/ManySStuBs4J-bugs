@@ -1,0 +1,13 @@
+diff --git a/buggy/test/com/google/javascript/jscomp/StrictModeCheckTest.java b/fixed/test/com/google/javascript/jscomp/StrictModeCheckTest.java
+index 6f39ba1bb..bf09cbde0 100644
+--- a/buggy/test/com/google/javascript/jscomp/StrictModeCheckTest.java
++++ b/fixed/test/com/google/javascript/jscomp/StrictModeCheckTest.java
+@@ -340,7 +340,7 @@ public final class StrictModeCheckTest extends Es6CompilerTestCase {
+         "}"), StrictModeCheck.ARGUMENTS_CALLER_FORBIDDEN);
+   }
+ 
+-  private String inFn(String body) {
++  private static String inFn(String body) {
+     return "function func() {" + body + "}";
+   }
+ }

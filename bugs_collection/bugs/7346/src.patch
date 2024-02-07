@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/management/JmxInstrumentationUsingPlatformMBSTest.java b/fixed/camel-core/src/test/java/org/apache/camel/management/JmxInstrumentationUsingPlatformMBSTest.java
+index bd6c2c87c..dbb3c455a 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/management/JmxInstrumentationUsingPlatformMBSTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/management/JmxInstrumentationUsingPlatformMBSTest.java
+@@ -55,7 +55,7 @@ public class JmxInstrumentationUsingPlatformMBSTest extends JmxInstrumentationUs
+     @Override
+     protected MBeanServerConnection getMBeanConnection() throws Exception {
+         if (mbsc == null) {
+-            List<MBeanServer> servers = (List<MBeanServer>)MBeanServerFactory.findMBeanServer(null);
++            List<MBeanServer> servers = MBeanServerFactory.findMBeanServer(null);
+ 
+             for (MBeanServer server : servers) {
+                 if (domainName.equals(server.getDefaultDomain())) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-hadoop-compat/src/main/java/org/apache/hadoop/hbase/master/MetricsAssignmentManagerSource.java b/fixed/hbase-hadoop-compat/src/main/java/org/apache/hadoop/hbase/master/MetricsAssignmentManagerSource.java
+index 92fd111cb..6c8a28024 100644
+--- a/buggy/hbase-hadoop-compat/src/main/java/org/apache/hadoop/hbase/master/MetricsAssignmentManagerSource.java
++++ b/fixed/hbase-hadoop-compat/src/main/java/org/apache/hadoop/hbase/master/MetricsAssignmentManagerSource.java
+@@ -25,7 +25,7 @@ public interface MetricsAssignmentManagerSource extends BaseSource {
+   /**
+    * The name of the metrics
+    */
+-  String METRICS_NAME = "AssignmentManger";
++  String METRICS_NAME = "AssignmentManager";
+ 
+   /**
+    * The context metrics will be under.

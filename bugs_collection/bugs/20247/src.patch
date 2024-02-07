@@ -1,0 +1,31 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.knx/src/main/java/org/openhab/binding/knx/internal/bus/KNXBusReaderScheduler.java b/fixed/bundles/binding/org.openhab.binding.knx/src/main/java/org/openhab/binding/knx/internal/bus/KNXBusReaderScheduler.java
+index f6e06c0e6..c0f09e353 100644
+--- a/buggy/bundles/binding/org.openhab.binding.knx/src/main/java/org/openhab/binding/knx/internal/bus/KNXBusReaderScheduler.java
++++ b/fixed/bundles/binding/org.openhab.binding.knx/src/main/java/org/openhab/binding/knx/internal/bus/KNXBusReaderScheduler.java
+@@ -142,7 +142,7 @@ public class KNXBusReaderScheduler {
+         }
+ 
+         if (mReadQueue.size() > KNXConnection.getMaxRefreshQueueEntries()) {
+-            sLogger.error("Maximium number of permissible reading queue entries reached ('{}'). Ignoring new entries.",
++            sLogger.error("Maximum number of permissible reading queue entries reached ('{}'). Ignoring new entries.",
+                     KNXConnection.getMaxRefreshQueueEntries());
+             return false;
+         }
+@@ -181,7 +181,7 @@ public class KNXBusReaderScheduler {
+         }
+ 
+         if (mReadQueue.size() > KNXConnection.getMaxRefreshQueueEntries()) {
+-            sLogger.error("Maximium number of permissible reading queue entries reached ('{}'). Ignoring new entries.",
++            sLogger.error("Maximum number of permissible reading queue entries reached ('{}'). Ignoring new entries.",
+                     KNXConnection.getMaxRefreshQueueEntries());
+             return false;
+         }
+@@ -190,7 +190,7 @@ public class KNXBusReaderScheduler {
+         int oldListNumber = getAutoRefreshTimeInSecs(datapoint);
+         if (oldListNumber > 0) {
+             if (oldListNumber == autoRefreshTimeInSecs) {
+-                sLogger.debug("Datapoint '{}' was already in  auto refresh list {}", datapoint.getName(),
++                sLogger.debug("Datapoint '{}' was already in auto refresh list {}", datapoint.getName(),
+                         autoRefreshTimeInSecs);
+                 return true;
+             }

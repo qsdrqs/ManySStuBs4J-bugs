@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/internal/serialization/impl/SerializationServiceV1.java b/fixed/hazelcast/src/main/java/com/hazelcast/internal/serialization/impl/SerializationServiceV1.java
+index 81eaffd20..323d25863 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/internal/serialization/impl/SerializationServiceV1.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/internal/serialization/impl/SerializationServiceV1.java
+@@ -137,7 +137,7 @@ public class SerializationServiceV1 extends AbstractSerializationService {
+         registerConstant(String[].class, new StringArraySerializer());
+     }
+ 
+-    public void registerJavaTypeSerializers() {
++    protected void registerJavaTypeSerializers() {
+         //Java extensions: more serializers
+         registerConstant(Date.class, new DateSerializer());
+         registerConstant(BigInteger.class, new BigIntegerSerializer());

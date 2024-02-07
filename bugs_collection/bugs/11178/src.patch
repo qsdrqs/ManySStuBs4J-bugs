@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocMethodCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocMethodCheck.java
+index 5b7f3864b..c332e2111 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocMethodCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocMethodCheck.java
+@@ -797,7 +797,7 @@ public class JavadocMethodCheck extends AbstractTypeAwareCheck {
+      * @param paramName name of parameter
+      * @return true if parameter found and removed
+      */
+-    private boolean removeMatchingParam(List<DetailAST> params, String paramName) {
++    private static boolean removeMatchingParam(List<DetailAST> params, String paramName) {
+         boolean found = false;
+         final Iterator<DetailAST> paramIt = params.iterator();
+         while (paramIt.hasNext()) {

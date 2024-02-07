@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/operator/project/PageFieldsToInputParametersRewriter.java b/fixed/presto-main/src/main/java/com/facebook/presto/operator/project/PageFieldsToInputParametersRewriter.java
+index 9d109eff6..8b7da048b 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/operator/project/PageFieldsToInputParametersRewriter.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/operator/project/PageFieldsToInputParametersRewriter.java
+@@ -47,7 +47,7 @@ public final class PageFieldsToInputParametersRewriter
+     }
+ 
+     private static class Visitor
+-            implements RowExpressionVisitor<Void, RowExpression>
++            implements RowExpressionVisitor<RowExpression, Void>
+     {
+         private final Map<Integer, Integer> fieldToParameter = new HashMap<>();
+         private final List<Integer> inputChannels = new ArrayList<>();

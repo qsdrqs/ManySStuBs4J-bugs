@@ -1,0 +1,13 @@
+diff --git a/buggy/aws-java-sdk-core/src/main/java/com/amazonaws/auth/ContainerCredentialsProvider.java b/fixed/aws-java-sdk-core/src/main/java/com/amazonaws/auth/ContainerCredentialsProvider.java
+index 7e2c3a9c0..7f8a6d6bf 100644
+--- a/buggy/aws-java-sdk-core/src/main/java/com/amazonaws/auth/ContainerCredentialsProvider.java
++++ b/fixed/aws-java-sdk-core/src/main/java/com/amazonaws/auth/ContainerCredentialsProvider.java
+@@ -72,7 +72,7 @@ public class ContainerCredentialsProvider implements AWSCredentialsProvider {
+             String path = System.getenv(ECS_CONTAINER_CREDENTIALS_PATH);
+             if (path == null) {
+                 throw new AmazonClientException(
+-                        "The environment varaible " + ECS_CONTAINER_CREDENTIALS_PATH + " is empty");
++                        "The environment variable " + ECS_CONTAINER_CREDENTIALS_PATH + " is empty");
+             }
+ 
+             return new URI(ECS_CREDENTIALS_ENDPOINT + path);

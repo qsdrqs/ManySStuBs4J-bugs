@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/security/oauth2/client/CommonOAuth2ProviderTests.java b/fixed/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/security/oauth2/client/CommonOAuth2ProviderTests.java
+index 9e3326c97..a61618eb2 100644
+--- a/buggy/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/security/oauth2/client/CommonOAuth2ProviderTests.java
++++ b/fixed/spring-boot-autoconfigure/src/test/java/org/springframework/boot/autoconfigure/security/oauth2/client/CommonOAuth2ProviderTests.java
+@@ -33,7 +33,7 @@ import static org.assertj.core.api.Assertions.assertThat;
+  */
+ public class CommonOAuth2ProviderTests {
+ 
+-	private static final String DEFAULT_REDIRECT_URL = "{scheme}://{serverName}:{serverPort}{contextPath}/oauth2/authorize/code/{clientAlias}";
++	private static final String DEFAULT_REDIRECT_URL = "{scheme}://{serverName}:{serverPort}{contextPath}/oauth2/authorize/code/{registrationId}";
+ 
+ 	@Test
+ 	public void getBuilderWhenGoogleShouldHaveGoogleSettings() throws Exception {

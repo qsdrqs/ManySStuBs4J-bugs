@@ -1,0 +1,24 @@
+diff --git a/buggy/guava-testlib/src/com/google/common/collect/testing/google/MultimapEqualsTester.java b/fixed/guava-testlib/src/com/google/common/collect/testing/google/MultimapEqualsTester.java
+index 6eb1ca717..066e94d4a 100644
+--- a/buggy/guava-testlib/src/com/google/common/collect/testing/google/MultimapEqualsTester.java
++++ b/fixed/guava-testlib/src/com/google/common/collect/testing/google/MultimapEqualsTester.java
+@@ -59,7 +59,8 @@ public class MultimapEqualsTester<K, V> extends AbstractMultimapTester<K, V, Mul
+     Multimap<K, V> withNull = multimap();
+     new EqualsTester()
+         .addEqualityGroup(original)
+-        .addEqualityGroup(withNull, getSubjectGenerator().create(createArrayWithNullKey()))
++        .addEqualityGroup(
++            withNull, getSubjectGenerator().create((Object[]) createArrayWithNullKey()))
+         .testEquals();
+   }
+   
+@@ -71,7 +72,8 @@ public class MultimapEqualsTester<K, V> extends AbstractMultimapTester<K, V, Mul
+     Multimap<K, V> withNull = multimap();
+     new EqualsTester()
+         .addEqualityGroup(original)
+-        .addEqualityGroup(withNull, getSubjectGenerator().create(createArrayWithNullValue()))
++        .addEqualityGroup(
++            withNull, getSubjectGenerator().create((Object[]) createArrayWithNullValue()))
+         .testEquals();
+   }
+ 

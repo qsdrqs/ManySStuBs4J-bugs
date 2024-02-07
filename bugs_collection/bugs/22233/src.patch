@@ -1,0 +1,15 @@
+diff --git a/buggy/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/health/MongoHealthIndicatorTests.java b/fixed/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/health/MongoHealthIndicatorTests.java
+index 92fab7892..4110b222d 100644
+--- a/buggy/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/health/MongoHealthIndicatorTests.java
++++ b/fixed/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/health/MongoHealthIndicatorTests.java
+@@ -85,8 +85,8 @@ public class MongoHealthIndicatorTests {
+ 		MongoHealthIndicator healthIndicator = new MongoHealthIndicator(mongoTemplate);
+ 		Health health = healthIndicator.health();
+ 		assertThat(health.getStatus()).isEqualTo(Status.DOWN);
+-		assertThat(((String) health.getDetails().get("error"))
+-				.contains("Connection failed"));
++		assertThat((String) health.getDetails().get("error"))
++				.contains("Connection failed");
+ 		verify(mongoTemplate).executeCommand("{ buildInfo: 1 }");
+ 	}
+ 

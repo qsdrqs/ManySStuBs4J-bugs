@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.sonos/src/main/java/org/openhab/binding/sonos/internal/SonosBinding.java b/fixed/bundles/binding/org.openhab.binding.sonos/src/main/java/org/openhab/binding/sonos/internal/SonosBinding.java
+index f03f2d2b3..9d6f61555 100644
+--- a/buggy/bundles/binding/org.openhab.binding.sonos/src/main/java/org/openhab/binding/sonos/internal/SonosBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.sonos/src/main/java/org/openhab/binding/sonos/internal/SonosBinding.java
+@@ -1005,7 +1005,7 @@ public class SonosBinding extends AbstractEventSubscriberBinding<SonosBindingPro
+ 	 * {@inheritDoc}
+ 	 */
+ 	public void bindingChanged(BindingProvider provider, String itemName) {
+-		if(bindingStarted = false) {
++		if(bindingStarted == false) {
+ 			start();
+ 			bindingStarted = true;
+ 		}

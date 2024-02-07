@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/core/DenseNodeChainPosition.java b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/core/DenseNodeChainPosition.java
+index db4806671..e01c4c54f 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/core/DenseNodeChainPosition.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/core/DenseNodeChainPosition.java
+@@ -123,7 +123,7 @@ public class DenseNodeChainPosition implements RelationshipLoadingPosition
+         for ( int type : types )
+         {
+             RelationshipLoadingPosition position = positions.get( type );
+-            if ( position == null || position.hasMore( direction, types ) )
++            if ( position != null && position.hasMore( direction, types ) )
+             {
+                 return true;
+             }

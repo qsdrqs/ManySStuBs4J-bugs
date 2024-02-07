@@ -1,0 +1,13 @@
+diff --git a/buggy/DHNSGraph/src/org/gephi/graph/dhns/edge/AbstractEdge.java b/fixed/DHNSGraph/src/org/gephi/graph/dhns/edge/AbstractEdge.java
+index fc00dd0d3..9b9e2a387 100644
+--- a/buggy/DHNSGraph/src/org/gephi/graph/dhns/edge/AbstractEdge.java
++++ b/fixed/DHNSGraph/src/org/gephi/graph/dhns/edge/AbstractEdge.java
+@@ -111,7 +111,7 @@ public abstract class AbstractEdge implements Edge, AVLItem {
+     }
+ 
+     public boolean hasAttributes() {
+-        return edgeData.getAttributes() == null;
++        return edgeData.getAttributes() != null;
+     }
+ 
+     public void setAttributes(Attributes attributes) {

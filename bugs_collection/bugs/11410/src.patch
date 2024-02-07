@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/TestUtils.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/TestUtils.java
+index 62166bb61..d82fb8986 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/TestUtils.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/TestUtils.java
+@@ -24,7 +24,7 @@ import java.lang.reflect.Modifier;
+ 
+ import org.junit.Assert;
+ 
+-public class TestUtils {
++public final class TestUtils {
+ 
+     private TestUtils() {
+     }

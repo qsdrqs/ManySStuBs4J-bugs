@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/base/BaseCheckTestSupport.java b/fixed/src/it/java/com/google/checkstyle/test/base/BaseCheckTestSupport.java
+index 5a1c98cbd..bb6aab94e 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/base/BaseCheckTestSupport.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/base/BaseCheckTestSupport.java
+@@ -34,7 +34,7 @@ public abstract class BaseCheckTestSupport
+     static class BriefLogger
+         extends DefaultLogger
+     {
+-        public BriefLogger(OutputStream out) throws UnsupportedEncodingException
++        BriefLogger(OutputStream out) throws UnsupportedEncodingException
+         {
+             super(out, true);
+         }

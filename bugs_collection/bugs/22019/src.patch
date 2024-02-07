@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/embedded/undertow/UndertowServletWebServerFactory.java b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/embedded/undertow/UndertowServletWebServerFactory.java
+index f16646391..53420263b 100644
+--- a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/embedded/undertow/UndertowServletWebServerFactory.java
++++ b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/embedded/undertow/UndertowServletWebServerFactory.java
+@@ -348,7 +348,7 @@ public class UndertowServletWebServerFactory extends AbstractServletWebServerFac
+ 			DeploymentInfo deployment, ServletContextInitializer... initializers) {
+ 		ServletContextInitializer[] mergedInitializers = mergeInitializers(initializers);
+ 		Initializer initializer = new Initializer(mergedInitializers);
+-		deployment.addServletContainerInitalizer(new ServletContainerInitializerInfo(
++		deployment.addServletContainerInitializer(new ServletContainerInitializerInfo(
+ 				Initializer.class,
+ 				new ImmediateInstanceFactory<ServletContainerInitializer>(initializer),
+ 				NO_CLASSES));

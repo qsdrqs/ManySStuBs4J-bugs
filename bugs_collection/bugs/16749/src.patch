@@ -1,0 +1,12 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/core/ICountDownLatch.java b/fixed/hazelcast/src/main/java/com/hazelcast/core/ICountDownLatch.java
+index 2aed34945..b2b94304c 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/core/ICountDownLatch.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/core/ICountDownLatch.java
+@@ -118,6 +118,6 @@ public interface ICountDownLatch extends DistributedObject {
+      *         count is not zero
+      * @throws IllegalArgumentException if {@code count} is negative
+      */
+-    boolean trySetCount(int count) throws IllegalArgumentException;
++    boolean trySetCount(int count);
+ 
+ }

@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/health/DiskSpaceHealthIndicatorProperties.java b/fixed/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/health/DiskSpaceHealthIndicatorProperties.java
+index 2e057effe..514c7bbd7 100644
+--- a/buggy/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/health/DiskSpaceHealthIndicatorProperties.java
++++ b/fixed/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/health/DiskSpaceHealthIndicatorProperties.java
+@@ -27,7 +27,7 @@ import org.springframework.util.Assert;
+  * @author Andy Wilkinson
+  * @since 1.2.0
+  */
+-@ConfigurationProperties("health.diskspace")
++@ConfigurationProperties("management.health.diskspace")
+ public class DiskSpaceHealthIndicatorProperties {
+ 
+ 	private static final int MEGABYTES = 1024 * 1024;

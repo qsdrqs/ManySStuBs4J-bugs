@@ -1,0 +1,22 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/AvoidInlineConditionalsCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/AvoidInlineConditionalsCheckTest.java
+index 780c3ab25..391e08ad2 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/AvoidInlineConditionalsCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/AvoidInlineConditionalsCheckTest.java
+@@ -40,7 +40,7 @@ public class AvoidInlineConditionalsCheckTest
+     }
+ 
+     @Test
+-    public void testIt()
++    public void testDefault()
+             throws Exception {
+         final DefaultConfiguration checkConfig =
+             createCheckConfig(AvoidInlineConditionalsCheck.class);
+@@ -49,7 +49,7 @@ public class AvoidInlineConditionalsCheckTest
+             "33:20: " + getCheckMessage(MSG_KEY),
+             "46:34: " + getCheckMessage(MSG_KEY),
+         };
+-        verify(checkConfig, getPath("InputWhitespace.java"), expected);
++        verify(checkConfig, getPath("InputAvoidInlineConditionals.java"), expected);
+     }
+ 
+     @Test

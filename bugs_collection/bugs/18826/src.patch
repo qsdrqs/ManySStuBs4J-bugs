@@ -1,0 +1,13 @@
+diff --git a/buggy/plugins/netty/src/main/java/com/navercorp/pinpoint/plugin/netty/interceptor/ChannelPipelineWriteInterceptor.java b/fixed/plugins/netty/src/main/java/com/navercorp/pinpoint/plugin/netty/interceptor/ChannelPipelineWriteInterceptor.java
+index 685690a83..1c457b58e 100644
+--- a/buggy/plugins/netty/src/main/java/com/navercorp/pinpoint/plugin/netty/interceptor/ChannelPipelineWriteInterceptor.java
++++ b/fixed/plugins/netty/src/main/java/com/navercorp/pinpoint/plugin/netty/interceptor/ChannelPipelineWriteInterceptor.java
+@@ -109,7 +109,7 @@ public class ChannelPipelineWriteInterceptor implements AroundInterceptor {
+     }
+ 
+     private boolean validate(Object[] args) {
+-        if (args.length == 0) {
++        if (args == null || args.length == 0) {
+             return false;
+         }
+ 

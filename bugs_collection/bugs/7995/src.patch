@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-http/src/test/java/org/apache/camel/component/http/HttpGetTest.java b/fixed/components/camel-http/src/test/java/org/apache/camel/component/http/HttpGetTest.java
+index 43e4c2fa4..19dd78fcb 100644
+--- a/buggy/components/camel-http/src/test/java/org/apache/camel/component/http/HttpGetTest.java
++++ b/fixed/components/camel-http/src/test/java/org/apache/camel/component/http/HttpGetTest.java
+@@ -29,7 +29,7 @@ import org.apache.camel.component.mock.MockEndpoint;
+  * @version $Revision$
+  */
+ public class HttpGetTest extends ContextTestSupport {
+-    protected String expectedText = "<html";
++    protected String expectedText = "activemq";
+ 
+     public void testHttpGet() throws Exception {
+         MockEndpoint mockEndpoint = resolveMandatoryEndpoint("mock:results", MockEndpoint.class);

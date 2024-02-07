@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/hankcs/hanlp/classification/utilities/CollectionUtility.java b/fixed/src/main/java/com/hankcs/hanlp/classification/utilities/CollectionUtility.java
+index c731ebc04..f0ebbef60 100644
+--- a/buggy/src/main/java/com/hankcs/hanlp/classification/utilities/CollectionUtility.java
++++ b/fixed/src/main/java/com/hankcs/hanlp/classification/utilities/CollectionUtility.java
+@@ -21,7 +21,7 @@ public class CollectionUtility
+     public static <K, V extends Comparable<V>> Map<K, V> sortMapByValue(Map<K, V> input, final boolean desc)
+     {
+         LinkedHashMap<K, V> output = new LinkedHashMap<K, V>(input.size());
+-        ArrayList<Map.Entry<K, V>> entryList = new ArrayList<Map.Entry<K, V>>(input.size());
++        ArrayList<Map.Entry<K, V>> entryList = new ArrayList<Map.Entry<K, V>>(input.entrySet());
+         Collections.sort(entryList, new Comparator<Map.Entry<K, V>>()
+         {
+             public int compare(Map.Entry<K, V> o1, Map.Entry<K, V> o2)

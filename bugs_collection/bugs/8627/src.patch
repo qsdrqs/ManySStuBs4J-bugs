@@ -1,0 +1,13 @@
+diff --git a/buggy/pact/pact-compiler/src/main/java/eu/stratosphere/pact/compiler/plan/candidate/LocalProperties.java b/fixed/pact/pact-compiler/src/main/java/eu/stratosphere/pact/compiler/plan/candidate/LocalProperties.java
+index d2ebe27ef..a5675c6e5 100644
+--- a/buggy/pact/pact-compiler/src/main/java/eu/stratosphere/pact/compiler/plan/candidate/LocalProperties.java
++++ b/fixed/pact/pact-compiler/src/main/java/eu/stratosphere/pact/compiler/plan/candidate/LocalProperties.java
+@@ -133,7 +133,7 @@ public final class LocalProperties implements Cloneable
+ 	}
+ 	
+ 	public boolean areFieldsGrouped(FieldSet set) {
+-		return this.groupedFields.isValidUnorderedPrefix(set);
++		return this.groupedFields != null && this.groupedFields.isValidUnorderedPrefix(set);
+ 	}
+ 	
+ 	public boolean meetsOrderingConstraint(Ordering o) {

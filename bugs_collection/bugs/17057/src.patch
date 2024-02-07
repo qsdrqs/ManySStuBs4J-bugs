@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/impl/MProxyImpl.java b/fixed/hazelcast/src/main/java/com/hazelcast/impl/MProxyImpl.java
+index 008c0c217..1c4bad67a 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/impl/MProxyImpl.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/impl/MProxyImpl.java
+@@ -741,7 +741,7 @@ public class MProxyImpl extends FactoryAwareNamedProxy implements MProxy, DataSe
+             } else {
+                 ttl = toMillis(ttl, timeunit);
+             }
+-            return putIfAbsent(key, value, -1, timeunit.toMillis(ttl));
++            return putIfAbsent(key, value, -1, ttl);
+         }
+ 
+         private Object putIfAbsent(Object key, Object value, long timeout, long ttl) {

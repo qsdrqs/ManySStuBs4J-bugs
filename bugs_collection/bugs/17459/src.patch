@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/junit/rules/TestWatcher.java b/fixed/src/main/java/org/junit/rules/TestWatcher.java
+index 1435c83e0..35811bcb5 100644
+--- a/buggy/src/main/java/org/junit/rules/TestWatcher.java
++++ b/fixed/src/main/java/org/junit/rules/TestWatcher.java
+@@ -36,7 +36,7 @@ import org.junit.runners.model.Statement;
+  * }
+  * </pre>
+  */
+-public class TestWatcher extends TestRule {
++public abstract class TestWatcher extends TestRule {
+ 	@Override
+ 	protected Statement apply(final Statement base, final Description description) {
+ 		return new Statement() {

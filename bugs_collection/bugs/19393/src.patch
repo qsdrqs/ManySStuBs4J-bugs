@@ -1,0 +1,22 @@
+diff --git a/buggy/community/jmx/src/main/java/org/neo4j/jmx/impl/JmxExtension.java b/fixed/community/jmx/src/main/java/org/neo4j/jmx/impl/JmxExtension.java
+index dc33e68b9..b5361fb34 100644
+--- a/buggy/community/jmx/src/main/java/org/neo4j/jmx/impl/JmxExtension.java
++++ b/fixed/community/jmx/src/main/java/org/neo4j/jmx/impl/JmxExtension.java
+@@ -54,7 +54,7 @@ public final class JmxExtension extends KernelExtension<JmxExtension.JmxData>
+         {
+             Neo4jMBean bean = new KernelBean( kernel, support );
+             mbs.registerMBean( bean, bean.objectName );
+-            beans.add( 0, bean );
++            beans.add( bean );
+         }
+         catch ( Exception e )
+         {
+@@ -80,7 +80,7 @@ public final class JmxExtension extends KernelExtension<JmxExtension.JmxData>
+         {
+             Neo4jMBean bean = new ConfigurationBean( kernel, support );
+             mbs.registerMBean( bean, bean.objectName );
+-            beans.add( 0, bean );
++            beans.add( bean );
+         }
+         catch ( Exception e )
+         {

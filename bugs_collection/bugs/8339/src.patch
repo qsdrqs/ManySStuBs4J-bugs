@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/test/java/org/apache/flink/runtime/metrics/groups/AbstractMetricGroupTest.java b/fixed/flink-runtime/src/test/java/org/apache/flink/runtime/metrics/groups/AbstractMetricGroupTest.java
+index ddfbf4b0d..d9b1ebe35 100644
+--- a/buggy/flink-runtime/src/test/java/org/apache/flink/runtime/metrics/groups/AbstractMetricGroupTest.java
++++ b/fixed/flink-runtime/src/test/java/org/apache/flink/runtime/metrics/groups/AbstractMetricGroupTest.java
+@@ -32,7 +32,7 @@ public class AbstractMetricGroupTest {
+ 	public void testGetAllVariables() {
+ 		MetricRegistry registry = new MetricRegistry(new Configuration());
+ 
+-		AbstractMetricGroup group = new AbstractMetricGroup<AbstractMetricGroup>(registry, new String[0], null) {
++		AbstractMetricGroup group = new AbstractMetricGroup<AbstractMetricGroup<?>>(registry, new String[0], null) {
+ 		};
+ 		assertTrue(group.getAllVariables().isEmpty());
+ 		

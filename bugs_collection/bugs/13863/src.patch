@@ -1,0 +1,12 @@
+diff --git a/buggy/presto-cassandra/src/test/java/com/datastax/driver/core/RowUtil.java b/fixed/presto-cassandra/src/test/java/com/datastax/driver/core/RowUtil.java
+index 0584cb917..8b2fc0802 100644
+--- a/buggy/presto-cassandra/src/test/java/com/datastax/driver/core/RowUtil.java
++++ b/fixed/presto-cassandra/src/test/java/com/datastax/driver/core/RowUtil.java
+@@ -30,6 +30,6 @@ public final class RowUtil
+     {
+         ColumnDefinitions definitions = new ColumnDefinitions(new Definition[] {new Definition("keyspace", "table", "column", DataType.ascii())});
+         ByteBuffer data = ByteBuffer.wrap(value.getBytes(UTF_8));
+-        return ArrayBackedRow.fromData(definitions, protocolVersion, ImmutableList.of(data));
++        return ArrayBackedRow.fromData(definitions, null, ProtocolVersion.fromInt(protocolVersion), ImmutableList.of(data));
+     }
+ }

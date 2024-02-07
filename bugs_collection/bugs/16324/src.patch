@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/collection/impl/txnset/TransactionalSetBasicDistributedTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/collection/impl/txnset/TransactionalSetBasicDistributedTest.java
+index fafcb67f5..1918175c6 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/collection/impl/txnset/TransactionalSetBasicDistributedTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/collection/impl/txnset/TransactionalSetBasicDistributedTest.java
+@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
+ 
+ @RunWith(HazelcastParallelClassRunner.class)
+ @Category({QuickTest.class, ParallelTest.class})
+-public class TransactionalSetBasicDistributedTest extends TransactionalSetBasicTest{
++public class TransactionalSetBasicDistributedTest extends TransactionalSetAbstractTest {
+     @Override
+     protected HazelcastInstance[] newInstances(Config config) {
+         return createHazelcastInstanceFactory(2).newInstances(config);

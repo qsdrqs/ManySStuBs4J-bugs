@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/ReduceSinkOperator.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/ReduceSinkOperator.java
+index 4eea6b915..9f8acc9c5 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/ReduceSinkOperator.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/ReduceSinkOperator.java
+@@ -322,7 +322,7 @@ public class ReduceSinkOperator extends TerminalOperator<ReduceSinkDesc>
+         if (conf.getWriteType() == AcidUtils.Operation.UPDATE ||
+             conf.getWriteType() == AcidUtils.Operation.DELETE) {
+           assert rowInspector instanceof StructObjectInspector :
+-              "Exptected rowInspector to be instance of StructObjectInspector but it is a " +
++              "Expected rowInspector to be instance of StructObjectInspector but it is a " +
+                   rowInspector.getClass().getName();
+           acidRowInspector = (StructObjectInspector)rowInspector;
+           // The record identifier is always in the first column

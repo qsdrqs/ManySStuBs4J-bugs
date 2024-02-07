@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/config/MapConfig.java b/fixed/hazelcast/src/main/java/com/hazelcast/config/MapConfig.java
+index 6bcad2b36..f9927980d 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/config/MapConfig.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/config/MapConfig.java
+@@ -943,7 +943,7 @@ public class MapConfig {
+     public String toString() {
+         return "MapConfig{"
+                 + "name='" + name + '\''
+-                + "', inMemoryFormat=" + inMemoryFormat + '\''
++                + ", inMemoryFormat=" + inMemoryFormat + '\''
+                 + ", backupCount=" + backupCount
+                 + ", asyncBackupCount=" + asyncBackupCount
+                 + ", timeToLiveSeconds=" + timeToLiveSeconds

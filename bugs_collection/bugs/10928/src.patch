@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/ArrayTrailingCommaCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/ArrayTrailingCommaCheckTest.java
+index 1ae1312c5..37d4502b2 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/ArrayTrailingCommaCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/ArrayTrailingCommaCheckTest.java
+@@ -35,7 +35,7 @@ public class ArrayTrailingCommaCheckTest
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "coding" + File.separator + filename);
++                + "coding" + File.separator + "arraytrailingcomma" + File.separator + filename);
+     }
+ 
+     @Test

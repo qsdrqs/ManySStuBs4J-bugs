@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/AbstractIllegalMethodCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/AbstractIllegalMethodCheck.java
+index 7fa446808..b829ab795 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/AbstractIllegalMethodCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/AbstractIllegalMethodCheck.java
+@@ -39,7 +39,7 @@ public abstract class AbstractIllegalMethodCheck extends Check {
+      * @param methodName name of the method to disallow.
+      * @param errorKey the error key to report with.
+      */
+-    public AbstractIllegalMethodCheck(String methodName, String errorKey) {
++    protected AbstractIllegalMethodCheck(String methodName, String errorKey) {
+         this.methodName = methodName;
+         this.errorKey = errorKey;
+     }

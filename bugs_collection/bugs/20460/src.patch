@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.freeswitch/src/main/java/org/openhab/binding/freeswitch/internal/FreeswitchBinding.java b/fixed/bundles/binding/org.openhab.binding.freeswitch/src/main/java/org/openhab/binding/freeswitch/internal/FreeswitchBinding.java
+index 761548dd9..c3f06574d 100644
+--- a/buggy/bundles/binding/org.openhab.binding.freeswitch/src/main/java/org/openhab/binding/freeswitch/internal/FreeswitchBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.freeswitch/src/main/java/org/openhab/binding/freeswitch/internal/FreeswitchBinding.java
+@@ -171,7 +171,7 @@ public class FreeswitchBinding extends AbstractBinding<FreeswitchBindingProvider
+ 
+     @Override
+     public void eventReceived(EslEvent event) {
+-        logger.debug("Recieved ESLEvent {}", event.getEventName());
++        logger.debug("Received ESLEvent {}", event.getEventName());
+         logger.trace(printEvent(event));
+         if (CHANNEl_CREATE.matches(event.getEventName())) {
+             handleNewCallEvent(event);

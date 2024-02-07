@@ -1,0 +1,13 @@
+diff --git a/buggy/bootstrap-core/src/test/java/com/navercorp/pinpoint/bootstrap/instrument/MethodFiltersTest.java b/fixed/bootstrap-core/src/test/java/com/navercorp/pinpoint/bootstrap/instrument/MethodFiltersTest.java
+index e6e4d284a..89067fdd6 100644
+--- a/buggy/bootstrap-core/src/test/java/com/navercorp/pinpoint/bootstrap/instrument/MethodFiltersTest.java
++++ b/fixed/bootstrap-core/src/test/java/com/navercorp/pinpoint/bootstrap/instrument/MethodFiltersTest.java
+@@ -17,7 +17,7 @@ public class MethodFiltersTest {
+         assertTrue(MethodFilters.name("call").accept(method));
+         assertFalse(MethodFilters.name("execute").accept(method));
+         assertFalse(MethodFilters.name().accept(method));
+-        assertFalse(MethodFilters.name(null).accept(method));
++        assertFalse(MethodFilters.name((String[]) null).accept(method));
+         assertFalse(MethodFilters.name(null, null).accept(method));
+     }
+     

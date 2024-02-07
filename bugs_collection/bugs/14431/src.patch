@@ -1,0 +1,13 @@
+diff --git a/buggy/value/src/test/java/com/google/auto/value/processor/CompilationTest.java b/fixed/value/src/test/java/com/google/auto/value/processor/CompilationTest.java
+index 9f43b2917..f2fa7567d 100644
+--- a/buggy/value/src/test/java/com/google/auto/value/processor/CompilationTest.java
++++ b/fixed/value/src/test/java/com/google/auto/value/processor/CompilationTest.java
+@@ -63,7 +63,7 @@ public class CompilationTest extends TestCase {
+         "final class AutoValue_Baz extends Baz {",
+         "  private final int buh;",
+         "",
+-        "  Auto_Baz(int buh) {",
++        "  AutoValue_Baz(int buh) {",
+         "    this.buh = buh;",
+         "  }",
+         "",

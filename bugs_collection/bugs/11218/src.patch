@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule451wheretobreack/MethodParamPadTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule451wheretobreack/MethodParamPadTest.java
+index 388601036..bd04e5f2f 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule451wheretobreack/MethodParamPadTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule451wheretobreack/MethodParamPadTest.java
+@@ -17,7 +17,7 @@ public class MethodParamPadTest extends BaseCheckTestSupport{
+     static ConfigurationBuilder builder;
+     
+     @BeforeClass
+-    public static void setConfigurationBuilder() throws CheckstyleException, IOException {
++    public static void setConfigurationBuilder() throws CheckstyleException {
+         builder = new ConfigurationBuilder(new File("src/it/"));
+     }
+ 

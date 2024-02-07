@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionCyclomaticComplexityTest.java b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionCyclomaticComplexityTest.java
+index 4422123da..57d7abbd9 100644
+--- a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionCyclomaticComplexityTest.java
++++ b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionCyclomaticComplexityTest.java
+@@ -28,7 +28,7 @@ import org.junit.Test;
+ import com.puppycrawl.tools.checkstyle.DefaultConfiguration;
+ import com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck;
+ 
+-public class XpathRegressionCyclomaticComplexityTest extends AbstractXpathTestSupport {
++public class XpathRegressionCyclomaticComplexityTest extends XpathTestSupport {
+ 
+     @Test
+     public void testOne() throws Exception {

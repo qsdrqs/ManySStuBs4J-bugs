@@ -1,0 +1,13 @@
+diff --git a/buggy/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/MicrosoftAzureActiveDirectory20Example.java b/fixed/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/MicrosoftAzureActiveDirectory20Example.java
+index c0bd6f88a..9a8ac4f1e 100644
+--- a/buggy/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/MicrosoftAzureActiveDirectory20Example.java
++++ b/fixed/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/MicrosoftAzureActiveDirectory20Example.java
+@@ -25,7 +25,7 @@ public class MicrosoftAzureActiveDirectory20Example {
+         final String clientSecret = "client secret here";
+         final OAuth20Service service = new ServiceBuilder(clientId)
+                 .apiSecret(clientSecret)
+-                .scope("openid")
++                .scope("openid User.Read")
+                 .callback("http://www.example.com/oauth_callback/")
+                 .build(MicrosoftAzureActiveDirectory20Api.instance());
+         final Scanner in = new Scanner(System.in, "UTF-8");

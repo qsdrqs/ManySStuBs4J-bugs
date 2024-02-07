@@ -1,0 +1,13 @@
+diff --git a/buggy/value/src/main/java/com/google/auto/value/processor/AutoValueOrOneOfProcessor.java b/fixed/value/src/main/java/com/google/auto/value/processor/AutoValueOrOneOfProcessor.java
+index f2ee4ad19..e95fc9dcd 100644
+--- a/buggy/value/src/main/java/com/google/auto/value/processor/AutoValueOrOneOfProcessor.java
++++ b/fixed/value/src/main/java/com/google/auto/value/processor/AutoValueOrOneOfProcessor.java
+@@ -771,7 +771,7 @@ abstract class AutoValueOrOneOfProcessor extends AbstractProcessor {
+           "An @"
+               + simpleAnnotationName
+               + " property that is a primitive array returns the original array, which can"
+-              + " therefore be modified by the caller. If this OK, you can suppress this warning"
++              + " therefore be modified by the caller. If this is OK, you can suppress this warning"
+               + " with @SuppressWarnings(\"mutable\"). Otherwise, you should replace the property"
+               + " with an immutable type, perhaps a simple wrapper around the original array.";
+       boolean sameClass = getter.getEnclosingElement().equals(autoValueClass);

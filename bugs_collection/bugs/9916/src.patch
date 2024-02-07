@@ -1,0 +1,20 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/plan/PlanUtils.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/plan/PlanUtils.java
+index 7fd7bcd80..03bfaaaa0 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/plan/PlanUtils.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/plan/PlanUtils.java
+@@ -49,7 +49,7 @@ public class PlanUtils {
+     return new mapredWork("", 
+                           new LinkedHashMap<String, ArrayList<String>> (),
+                           new LinkedHashMap<String, partitionDesc> (),
+-                          new HashMap<String, Operator<? extends Serializable>> (),
++                          new LinkedHashMap<String, Operator<? extends Serializable>> (),
+                           new tableDesc(),
+                           new ArrayList<tableDesc> (),
+                           null,
+@@ -251,4 +251,4 @@ public class PlanUtils {
+   
+   
+ }
+-  
+\ No newline at end of file
++  

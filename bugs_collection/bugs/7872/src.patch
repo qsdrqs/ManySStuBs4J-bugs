@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-osgi/src/main/java/org/apache/camel/osgi/OsgiPackageScanClassResolver.java b/fixed/components/camel-osgi/src/main/java/org/apache/camel/osgi/OsgiPackageScanClassResolver.java
+index 4662f1660..cd665be7a 100644
+--- a/buggy/components/camel-osgi/src/main/java/org/apache/camel/osgi/OsgiPackageScanClassResolver.java
++++ b/fixed/components/camel-osgi/src/main/java/org/apache/camel/osgi/OsgiPackageScanClassResolver.java
+@@ -70,7 +70,7 @@ public class OsgiPackageScanClassResolver extends DefaultPackageScanClassResolve
+             Method mth = osgiClassLoader.getClass().getMethod("getBundle", new Class[]{});
+             if (mth != null) {
+                 if (LOG.isDebugEnabled()) {
+-                    LOG.debug("Loading from osgi buindle using classloader: " + osgiClassLoader);
++                    LOG.debug("Loading from osgi bundle using classloader: " + osgiClassLoader);
+                 }
+                 loadImplementationsInBundle(test, packageName, osgiClassLoader, mth, classes);
+             }

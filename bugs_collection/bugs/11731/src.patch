@@ -1,0 +1,13 @@
+diff --git a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTypeCheck.java b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTypeCheck.java
+index 778332b11..b79689f3d 100644
+--- a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTypeCheck.java
++++ b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTypeCheck.java
+@@ -290,7 +290,7 @@ public class JavadocTypeCheck
+         final Vector aTags,
+         final List aTypeParamNames)
+     {
+-        Pattern pattern = Utils.getPattern("\\s*<([^>])+>.*");
++        Pattern pattern = Utils.getPattern("\\s*<([^>]+)>.*");
+         for (int i = aTags.size() - 1; i >= 0; i--) {
+             final JavadocTag tag = (JavadocTag) aTags.get(i);
+             if (tag.getTag().equals("param")) {

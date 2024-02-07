@@ -1,0 +1,13 @@
+diff --git a/buggy/nephele/nephele-common/src/main/java/eu/stratosphere/nephele/configuration/Configuration.java b/fixed/nephele/nephele-common/src/main/java/eu/stratosphere/nephele/configuration/Configuration.java
+index c9a80dadd..84957e8ce 100644
+--- a/buggy/nephele/nephele-common/src/main/java/eu/stratosphere/nephele/configuration/Configuration.java
++++ b/fixed/nephele/nephele-common/src/main/java/eu/stratosphere/nephele/configuration/Configuration.java
+@@ -59,7 +59,7 @@ public class Configuration implements IOReadableWritable {
+ 	 * Constructs a new configuration object.
+ 	 */
+ 	public Configuration() {
+-		this.classLoader = null;
++		this.classLoader = this.getClass().getClassLoader();
+ 	}
+ 
+ 	/**

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/ImportOrderCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/ImportOrderCheck.java
+index 373143110..778d6eb7b 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/ImportOrderCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/ImportOrderCheck.java
+@@ -482,7 +482,7 @@ public class ImportOrderCheck
+             final boolean shouldFireError =
+                 // current and previous static or current and
+                 // previous non-static
+-                !(lastImportStatic ^ isStatic)
++                lastImportStatic == isStatic
+                 &&
+                         // and out of lexicographic order
+                         compare(lastImport, name, caseSensitive) > 0

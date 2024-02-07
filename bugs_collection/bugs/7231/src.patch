@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/impl/osgi/Activator.java b/fixed/camel-core/src/main/java/org/apache/camel/impl/osgi/Activator.java
+index eb40f1ed8..79799a0a9 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/impl/osgi/Activator.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/impl/osgi/Activator.java
+@@ -410,7 +410,7 @@ public class Activator implements BundleActivator, BundleTrackerCustomizer {
+     protected abstract static class BaseService {
+ 
+         protected final Bundle bundle;
+-        private ServiceRegistration<?> reg;
++        private ServiceRegistration reg;
+ 
+         protected BaseService(Bundle bundle) {
+             this.bundle = bundle;

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/FileDrop.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/FileDrop.java
+index f8349a317..3c0c5453a 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/FileDrop.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/FileDrop.java
+@@ -249,7 +249,7 @@ class FileDrop {
+         public void dragEnter(DropTargetDragEvent evt) {
+             if (isDragOk(evt)) {
+                 if (component instanceof JComponent) {
+-                    final JComponent comp = (JComponent) this.component;
++                    final JComponent comp = (JComponent) component;
+                     normalBorder = comp.getBorder();
+                     comp.setBorder(dragBorder);
+                 }

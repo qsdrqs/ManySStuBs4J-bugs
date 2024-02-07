@@ -1,0 +1,28 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/handler/ssl/SslHandler.java b/fixed/src/main/java/org/jboss/netty/handler/ssl/SslHandler.java
+index 0d92a7707..73db7fcbb 100644
+--- a/buggy/src/main/java/org/jboss/netty/handler/ssl/SslHandler.java
++++ b/fixed/src/main/java/org/jboss/netty/handler/ssl/SslHandler.java
+@@ -306,6 +306,7 @@ public class SslHandler extends FrameDecoder implements ChannelDownstreamHandler
+      *         succeeds or fails.
+      */
+     public ChannelFuture handshake(Channel channel) throws SSLException {
++        // FIXME do not throw SSLException - return a failed future.
+         ChannelFuture handshakeFuture;
+         synchronized (handshakeLock) {
+             if (handshaking) {
+@@ -327,13 +328,14 @@ public class SslHandler extends FrameDecoder implements ChannelDownstreamHandler
+      * destroys the underlying {@link SSLEngine}.
+      */
+     public ChannelFuture close(Channel channel) throws SSLException {
++        // FIXME do not throw SSLException - return a failed future.
+         ChannelHandlerContext ctx = context(channel);
+         engine.closeOutbound();
+         return wrapNonAppData(ctx, channel);
+     }
+ 
+     private ChannelHandlerContext context(Channel channel) {
+-        return channel.getPipeline().getContext(getClass());
++        return channel.getPipeline().getContext(this);
+     }
+ 
+     public void handleDownstream(

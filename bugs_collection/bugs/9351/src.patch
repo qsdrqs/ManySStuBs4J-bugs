@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/backup/example/HFileArchiveManager.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/backup/example/HFileArchiveManager.java
+index dcbc9dfed..4b0e3b543 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/backup/example/HFileArchiveManager.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/backup/example/HFileArchiveManager.java
+@@ -47,7 +47,7 @@ class HFileArchiveManager {
+ 
+   public HFileArchiveManager(HConnection connection, Configuration conf)
+       throws ZooKeeperConnectionException, IOException {
+-    this.zooKeeper = new ZooKeeperWatcher(conf, "hfileArchiveManger-on-" + connection.toString(),
++    this.zooKeeper = new ZooKeeperWatcher(conf, "hfileArchiveManager-on-" + connection.toString(),
+         connection);
+     this.archiveZnode = ZKTableArchiveClient.getArchiveZNode(this.zooKeeper.getConfiguration(),
+       this.zooKeeper);

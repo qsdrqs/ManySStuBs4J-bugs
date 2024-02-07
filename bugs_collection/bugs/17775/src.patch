@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/graphics/g3d/utils/CameraInputController.java b/fixed/gdx/src/com/badlogic/gdx/graphics/g3d/utils/CameraInputController.java
+index 6f1dac127..34a0f9086 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/graphics/g3d/utils/CameraInputController.java
++++ b/fixed/gdx/src/com/badlogic/gdx/graphics/g3d/utils/CameraInputController.java
+@@ -163,7 +163,7 @@ public class CameraInputController extends GestureDetector {
+ 			startY = screenY;
+ 			this.button = button;
+ 		}
+-		return super.touchDown(screenX, screenY, pointer, button) || activatePressed;
++		return super.touchDown(screenX, screenY, pointer, button) || (activateKey == 0 || activatePressed);
+ 	}
+ 
+ 	@Override

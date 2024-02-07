@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/map/impl/nearcache/ClientMapNearCacheTest.java b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/map/impl/nearcache/ClientMapNearCacheTest.java
+index 89627aa2e..672d00dfe 100644
+--- a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/map/impl/nearcache/ClientMapNearCacheTest.java
++++ b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/map/impl/nearcache/ClientMapNearCacheTest.java
+@@ -625,7 +625,7 @@ public class ClientMapNearCacheTest extends NearCacheTestSupport {
+         int randomKey = random.nextInt(mapSize);
+         clientMap.submitToKey(randomKey, new IncrementEntryProcessor(), callback);
+ 
+-        assertOpenEventually(latch, 3);
++        assertOpenEventually(latch);
+         assertTrueEventually(new AssertTask() {
+             public void run() {
+                 assertThatOwnedEntryCountEquals(clientMap, mapSize - 1);

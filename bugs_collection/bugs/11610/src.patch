@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/AbstractSuperCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/AbstractSuperCheck.java
+index 5a0cfac60..807bcc521 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/AbstractSuperCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/AbstractSuperCheck.java
+@@ -173,7 +173,7 @@ public abstract class AbstractSuperCheck
+      * @param methodCallDotAst DOT DetailAST
+      * @return true if any parameters found
+      */
+-    private boolean hasArguments(DetailAST methodCallDotAst) {
++    private static boolean hasArguments(DetailAST methodCallDotAst) {
+         final DetailAST argumentsList = methodCallDotAst.getNextSibling();
+         return argumentsList.getChildCount() > 0;
+     }

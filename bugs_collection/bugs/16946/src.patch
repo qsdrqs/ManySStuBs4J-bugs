@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/config/XmlConfigBuilder.java b/fixed/hazelcast/src/main/java/com/hazelcast/config/XmlConfigBuilder.java
+index 971b2e502..e33bef4e3 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/config/XmlConfigBuilder.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/config/XmlConfigBuilder.java
+@@ -1052,7 +1052,7 @@ public class XmlConfigBuilder extends AbstractXmlConfigHelper implements ConfigB
+         final boolean enabled = enabledNode != null && checkTrue(getTextContent(enabledNode));
+         final Node intervalNode = attrs.getNamedItem("update-interval");
+         final int interval = intervalNode != null ? getIntegerValue("update-interval",
+-                getTextContent(intervalNode), 3) : 3;
++                getTextContent(intervalNode), 5) : 5;
+         config.getManagementCenterConfig().setEnabled(enabled);
+         config.getManagementCenterConfig().setUpdateInterval(interval);
+         config.getManagementCenterConfig().setUrl(getTextContent(node));

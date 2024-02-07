@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/buffer/CompositeChannelBuffer.java b/fixed/src/main/java/org/jboss/netty/buffer/CompositeChannelBuffer.java
+index d1f8223cc..2e5f940f1 100644
+--- a/buggy/src/main/java/org/jboss/netty/buffer/CompositeChannelBuffer.java
++++ b/fixed/src/main/java/org/jboss/netty/buffer/CompositeChannelBuffer.java
+@@ -261,7 +261,7 @@ public class CompositeChannelBuffer extends AbstractChannelBuffer {
+         if (index + 3 <= indices[sliceId + 1]) {
+             slices[sliceId].setMedium(index - indices[sliceId], value);
+         } else if (order() == ByteOrder.BIG_ENDIAN) {
+-            setShort(index, (short) (value >>> 8));
++            setShort(index, (short) (value >> 8));
+             setByte(index + 2, (byte) value);
+         } else {
+             setShort(index    , (short) value);

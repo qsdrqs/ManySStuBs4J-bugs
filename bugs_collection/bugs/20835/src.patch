@@ -1,0 +1,22 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.maxcube/src/main/java/org/openhab/binding/maxcube/internal/MaxCubeBinding.java b/fixed/bundles/binding/org.openhab.binding.maxcube/src/main/java/org/openhab/binding/maxcube/internal/MaxCubeBinding.java
+index 7b907ea7d..3d9a5dfff 100644
+--- a/buggy/bundles/binding/org.openhab.binding.maxcube/src/main/java/org/openhab/binding/maxcube/internal/MaxCubeBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.maxcube/src/main/java/org/openhab/binding/maxcube/internal/MaxCubeBinding.java
+@@ -176,7 +176,7 @@ public class MaxCubeBinding extends AbstractActiveBinding<MaxCubeBindingProvider
+ 								}
+ 							}
+ 							
+-							logger.debug(devices.size() + " devices found.");
++							logger.debug("{} devices found.", devices.size());
+ 
+ 							// the L message is the last one, while the reader
+ 							// would hang trying to read a new line and eventually the
+@@ -253,7 +253,7 @@ public class MaxCubeBinding extends AbstractActiveBinding<MaxCubeBindingProvider
+ 	 */
+ 	@Override
+ 	public void internalReceiveCommand(String itemName, Command command) {
+-		logger.debug("Received command from " + itemName);
++		logger.debug("Received command from {}", itemName);
+ 
+ 		// resolve serial number for item
+ 		String serialNumber = null;

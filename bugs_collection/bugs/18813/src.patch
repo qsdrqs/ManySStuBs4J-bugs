@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/apache/ibatis/datasource/unpooled/UnpooledDataSourceFactory.java b/fixed/src/main/java/org/apache/ibatis/datasource/unpooled/UnpooledDataSourceFactory.java
+index 2e754aa6b..599daa211 100644
+--- a/buggy/src/main/java/org/apache/ibatis/datasource/unpooled/UnpooledDataSourceFactory.java
++++ b/fixed/src/main/java/org/apache/ibatis/datasource/unpooled/UnpooledDataSourceFactory.java
+@@ -31,7 +31,7 @@ public class UnpooledDataSourceFactory implements DataSourceFactory {
+         Object convertedValue = convertValue(metaDataSource, propertyName, value);
+         metaDataSource.setValue(propertyName, convertedValue);
+       } else {
+-        throw new DataSourceException("Unkown DataSource property: " + propertyName);
++        throw new DataSourceException("Unknown DataSource property: " + propertyName);
+       }
+     }
+     if (driverProperties.size() > 0) {

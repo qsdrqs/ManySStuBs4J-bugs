@@ -1,0 +1,17 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/sql/analyzer/StatementAnalyzer.java b/fixed/presto-main/src/main/java/com/facebook/presto/sql/analyzer/StatementAnalyzer.java
+index 58c4727bc..f49401607 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/sql/analyzer/StatementAnalyzer.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/sql/analyzer/StatementAnalyzer.java
+@@ -1631,8 +1631,10 @@ class StatementAnalyzer
+                 .distinct()
+                 .collect(toImmutableList());
+ 
+-        // is this an aggregation query?
+-        if (!aggregates.isEmpty() || !allGroupingColumns.isEmpty()) {
++        // check if:
++        // - aggregation is present: SELECT SUM(x) FROM table; or
++        // - group by is present: SELECT ... FROM table GROUP BY category
++        if (!aggregates.isEmpty() || !groupingSets.isEmpty()) {
+             // ensure SELECT, ORDER BY and HAVING are constant with respect to group
+             // e.g, these are all valid expressions:
+             //     SELECT f(a) GROUP BY a

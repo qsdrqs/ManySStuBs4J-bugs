@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/queue/QueueContainer.java b/fixed/hazelcast/src/main/java/com/hazelcast/queue/QueueContainer.java
+index 70a8df998..dc6dbf77d 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/queue/QueueContainer.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/queue/QueueContainer.java
+@@ -200,7 +200,7 @@ public class QueueContainer implements IdentifiedDataSerializable {
+         else{
+             getBackupMap().put(itemId, item);
+         }
+-        if (store.isEnabled()) {
++        if (store.isEnabled() && !backup) {
+             try {
+                 store.store(item.getItemId(), data);
+             } catch (Exception e) {

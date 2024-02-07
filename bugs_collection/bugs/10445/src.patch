@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionFallThroughTest.java b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionFallThroughTest.java
+index b556cfe02..6a2f7998d 100644
+--- a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionFallThroughTest.java
++++ b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionFallThroughTest.java
+@@ -28,7 +28,7 @@ import org.junit.Test;
+ import com.puppycrawl.tools.checkstyle.DefaultConfiguration;
+ import com.puppycrawl.tools.checkstyle.checks.coding.FallThroughCheck;
+ 
+-public class XpathRegressionFallThroughTest extends AbstractXpathTestSupport {
++public class XpathRegressionFallThroughTest extends XpathTestSupport {
+ 
+     @Test
+     public void testOne() throws Exception {

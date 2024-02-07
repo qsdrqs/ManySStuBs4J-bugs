@@ -1,0 +1,13 @@
+diff --git a/buggy/test/com/google/debugging/sourcemap/SourceMapGeneratorV3Test.java b/fixed/test/com/google/debugging/sourcemap/SourceMapGeneratorV3Test.java
+index abc88fe3a..da4946ce8 100644
+--- a/buggy/test/com/google/debugging/sourcemap/SourceMapGeneratorV3Test.java
++++ b/fixed/test/com/google/debugging/sourcemap/SourceMapGeneratorV3Test.java
+@@ -52,7 +52,7 @@ public final class SourceMapGeneratorV3Test extends SourceMapTestCase {
+     return SourceMap.Format.V3;
+   }
+ 
+-  private String getEncodedFileName() {
++  private static String getEncodedFileName() {
+     if (File.separatorChar == '\\') {
+       return "c:/myfile.js";
+     } else {

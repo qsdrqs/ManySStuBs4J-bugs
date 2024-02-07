@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/utils/LongMap.java b/fixed/gdx/src/com/badlogic/gdx/utils/LongMap.java
+index ba96c4d6b..388193400 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/utils/LongMap.java
++++ b/fixed/gdx/src/com/badlogic/gdx/utils/LongMap.java
+@@ -678,7 +678,7 @@ public class LongMap<V> {
+ 				throw new IllegalStateException("next must be called before remove.");
+ 			} else if (currentIndex >= map.capacity) {
+ 				map.removeStashIndex(currentIndex);
+-				nextIndex = currentIndex;
++				nextIndex = currentIndex - 1;
+ 				findNextIndex();
+ 			} else {
+ 				map.keyTable[currentIndex] = EMPTY;

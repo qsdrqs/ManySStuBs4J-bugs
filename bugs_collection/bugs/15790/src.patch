@@ -1,0 +1,13 @@
+diff --git a/buggy/test/com/google/inject/internal/LineNumbersTest.java b/fixed/test/com/google/inject/internal/LineNumbersTest.java
+index f35d46e33..dfed5394a 100644
+--- a/buggy/test/com/google/inject/internal/LineNumbersTest.java
++++ b/fixed/test/com/google/inject/internal/LineNumbersTest.java
+@@ -49,7 +49,7 @@ public class LineNumbersTest extends TestCase {
+       fail();
+     } catch (CreationException expected) {
+       assertContains(expected.getMessage(),
+-          "Error at " + A.class.getName() + "<init>(LineNumbersTest:",
++          "Error at " + A.class.getName() + ".<init>(LineNumbersTest.java",
+           "No implementation for " + B.class.getName() + " was bound.");
+     }
+   }

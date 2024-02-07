@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-product-tests/src/main/java/com/facebook/presto/tests/hive/AllSimpleTypesTableDefinitions.java b/fixed/presto-product-tests/src/main/java/com/facebook/presto/tests/hive/AllSimpleTypesTableDefinitions.java
+index 88f3a9f80..df2c61165 100644
+--- a/buggy/presto-product-tests/src/main/java/com/facebook/presto/tests/hive/AllSimpleTypesTableDefinitions.java
++++ b/fixed/presto-product-tests/src/main/java/com/facebook/presto/tests/hive/AllSimpleTypesTableDefinitions.java
+@@ -111,7 +111,7 @@ public final class AllSimpleTypesTableDefinitions
+ 
+     public static void populateDataToHiveTable(String tableName)
+     {
+-        onHive().executeQuery(format("INSERT INTO %s SELECT * FROM %s",
++        onHive().executeQuery(format("INSERT INTO TABLE %s SELECT * FROM %s",
+                 tableName,
+                 format(tableNameFormat, "textfile")));
+     }

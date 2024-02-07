@@ -1,0 +1,13 @@
+diff --git a/buggy/metrics-core/src/main/java/com/yammer/metrics/core/MetricName.java b/fixed/metrics-core/src/main/java/com/yammer/metrics/core/MetricName.java
+index 32b18ed0b..6c1233f0a 100644
+--- a/buggy/metrics-core/src/main/java/com/yammer/metrics/core/MetricName.java
++++ b/fixed/metrics-core/src/main/java/com/yammer/metrics/core/MetricName.java
+@@ -40,7 +40,7 @@ public class MetricName implements Comparable<MetricName> {
+      * @param scope the scope of the {@link Metric}
+      */
+     public MetricName(Class<?> klass, String name, String scope) {
+-        this(klass.getPackage().getName(),
++        this(klass.getPackage() == null ? "": klass.getPackage().getName(),
+              klass.getSimpleName().replaceAll("\\$$", ""),
+              name,
+              scope);

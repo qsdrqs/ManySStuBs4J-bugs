@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/io/org.openhab.io.gcal/src/main/java/org/openhab/io/gcal/internal/GCalEventDownloader.java b/fixed/bundles/io/org.openhab.io.gcal/src/main/java/org/openhab/io/gcal/internal/GCalEventDownloader.java
+index 8b679bb0e..a4c0cc92c 100644
+--- a/buggy/bundles/io/org.openhab.io.gcal/src/main/java/org/openhab/io/gcal/internal/GCalEventDownloader.java
++++ b/fixed/bundles/io/org.openhab.io.gcal/src/main/java/org/openhab/io/gcal/internal/GCalEventDownloader.java
+@@ -292,7 +292,7 @@ public class GCalEventDownloader extends AbstractActiveService implements Manage
+ 
+             if (StringUtils.isNotBlank(eventContent)) {
+                 CalendarEventContent cec = parseEventContent(eventContent,
+-                        eventTitle.startsWith("[PresenceSimulation]"));
++                        (eventTitle != null) && eventTitle.startsWith("[PresenceSimulation]"));
+ 
+                 String modifiedByEvent = null;
+                 if (calendarCache.containsKey(cec.modifiedByEvent)) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/ObjectBlockHandler.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/ObjectBlockHandler.java
+index a7efddcb0..090a154e8 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/ObjectBlockHandler.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/ObjectBlockHandler.java
+@@ -96,7 +96,7 @@ public class ObjectBlockHandler extends BlockParentHandler {
+         level.addAcceptedIndent(level.getFirstIndentLevel() + getLineWrappingIndentation());
+ 
+         if (!level.isAcceptable(rcurlyPos) && isOnStartOfLine(rcurly)) {
+-            logError(rcurly, "rcurly", rcurlyPos, curlyIndent());
++            logError(rcurly, "rcurly", rcurlyPos, level);
+         }
+     }
+ 

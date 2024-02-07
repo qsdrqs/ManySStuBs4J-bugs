@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/internal/management/request/ChangeClusterStateRequest.java b/fixed/hazelcast/src/main/java/com/hazelcast/internal/management/request/ChangeClusterStateRequest.java
+index 986864489..982f009ee 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/internal/management/request/ChangeClusterStateRequest.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/internal/management/request/ChangeClusterStateRequest.java
+@@ -31,7 +31,7 @@ import static com.hazelcast.util.JsonUtil.getString;
+  */
+ public class ChangeClusterStateRequest implements AsyncConsoleRequest {
+ 
+-    private final static String FAILURE = "FAILURE: ";
++    private static final String FAILURE = "FAILURE: ";
+ 
+     private String state;
+ 

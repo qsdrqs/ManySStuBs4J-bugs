@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/zaxxer/hikari/pool/TestValidation.java b/fixed/src/test/java/com/zaxxer/hikari/pool/TestValidation.java
+index 96148c0ec..e837ce198 100644
+--- a/buggy/src/test/java/com/zaxxer/hikari/pool/TestValidation.java
++++ b/fixed/src/test/java/com/zaxxer/hikari/pool/TestValidation.java
+@@ -74,7 +74,7 @@ public class TestValidation
+          Assert.fail();
+       }
+       catch (IllegalArgumentException ise) {
+-         Assert.assertTrue(ise.getMessage().contains("dataSource or dataSourceClassName or jdbcUrl is required."));
++         Assert.assertTrue(ise.getMessage().contains("jdbcUrl is required with driverClassName"));
+       }
+    }
+ 

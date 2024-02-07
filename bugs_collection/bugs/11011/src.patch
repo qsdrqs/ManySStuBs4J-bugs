@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/MagicNumberCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/MagicNumberCheck.java
+index c11a9ce94..47b4f0ceb 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/MagicNumberCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/MagicNumberCheck.java
+@@ -220,7 +220,7 @@ public class MagicNumberCheck extends Check {
+         final DetailAST constantDefAST = findContainingConstantDef(ast);
+ 
+         if (constantDefAST == null) {
+-            if (!(ignoreFieldDeclaration && isFieldDeclaration(ast))) {
++            if (!ignoreFieldDeclaration || !isFieldDeclaration(ast)) {
+                 reportMagicNumber(ast);
+             }
+         }

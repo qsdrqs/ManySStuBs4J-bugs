@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/utils/AnnotationUtility.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/utils/AnnotationUtility.java
+index 72c99c871..bb673e99b 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/utils/AnnotationUtility.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/utils/AnnotationUtility.java
+@@ -84,7 +84,7 @@ public final class AnnotationUtility {
+             throw new IllegalArgumentException(THE_AST_IS_NULL);
+         }
+         final DetailAST holder = getAnnotationHolder(ast);
+-        return holder != null && holder.branchContains(TokenTypes.ANNOTATION);
++        return holder != null && holder.findFirstToken(TokenTypes.ANNOTATION) != null;
+     }
+ 
+     /**

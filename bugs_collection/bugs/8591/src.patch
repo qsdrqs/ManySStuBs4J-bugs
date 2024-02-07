@@ -1,0 +1,13 @@
+diff --git a/buggy/pact/pact-runtime/src/test/java/eu/stratosphere/pact/runtime/hash/HashTableITCase.java b/fixed/pact/pact-runtime/src/test/java/eu/stratosphere/pact/runtime/hash/HashTableITCase.java
+index 722d3594e..5d0fd0213 100644
+--- a/buggy/pact/pact-runtime/src/test/java/eu/stratosphere/pact/runtime/hash/HashTableITCase.java
++++ b/fixed/pact/pact-runtime/src/test/java/eu/stratosphere/pact/runtime/hash/HashTableITCase.java
+@@ -1466,7 +1466,7 @@ public class HashTableITCase
+ 	
+ 	// ============================================================================================
+ 	
+-	private static final class PactRecordPairComparatorFirstInt implements TypePairComparator<PactRecord, PactRecord>
++	private static final class PactRecordPairComparatorFirstInt extends TypePairComparator<PactRecord, PactRecord>
+ 	{
+ 		private int key;
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/core/org.openhab.core/src/main/java/org/openhab/core/service/AbstractActiveService.java b/fixed/bundles/core/org.openhab.core/src/main/java/org/openhab/core/service/AbstractActiveService.java
+index 1e1c8accf..09d980751 100644
+--- a/buggy/bundles/core/org.openhab.core/src/main/java/org/openhab/core/service/AbstractActiveService.java
++++ b/fixed/bundles/core/org.openhab.core/src/main/java/org/openhab/core/service/AbstractActiveService.java
+@@ -161,7 +161,7 @@ public abstract class AbstractActiveService {
+ 		
+ 		@Override
+ 		public void run() {
+-			logger.debug(getName() + " has been started");
++			logger.info(getName() + " has been started");
+ 			
+ 			while (!shutdown) {
+ 				try {

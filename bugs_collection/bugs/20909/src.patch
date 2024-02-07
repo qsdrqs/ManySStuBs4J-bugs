@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/io/org.openhab.io.monitor/src/main/java/org/openhab/io/monitor/internal/EventLogger.java b/fixed/bundles/io/org.openhab.io.monitor/src/main/java/org/openhab/io/monitor/internal/EventLogger.java
+index f2fbfb994..b295bd5ed 100644
+--- a/buggy/bundles/io/org.openhab.io.monitor/src/main/java/org/openhab/io/monitor/internal/EventLogger.java
++++ b/fixed/bundles/io/org.openhab.io.monitor/src/main/java/org/openhab/io/monitor/internal/EventLogger.java
+@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
+ 
+ public class EventLogger extends AbstractEventSubscriber {
+ 
+-	static private Logger logger = LoggerFactory.getLogger(EventLogger.class);
++	static private Logger logger = LoggerFactory.getLogger("runtime.busevents");
+ 
+ 	public void receiveCommand(String itemName, Command command) {
+ 		logger.info("{} received command {}", itemName, command);

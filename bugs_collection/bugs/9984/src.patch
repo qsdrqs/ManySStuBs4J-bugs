@@ -1,0 +1,22 @@
+diff --git a/buggy/external/storm-kafka/src/test/org/apache/storm/kafka/bolt/KafkaBoltTest.java b/fixed/external/storm-kafka/src/test/org/apache/storm/kafka/bolt/KafkaBoltTest.java
+index cccbce096..3b8bea101 100644
+--- a/buggy/external/storm-kafka/src/test/org/apache/storm/kafka/bolt/KafkaBoltTest.java
++++ b/fixed/external/storm-kafka/src/test/org/apache/storm/kafka/bolt/KafkaBoltTest.java
+@@ -97,7 +97,7 @@ public class KafkaBoltTest {
+     }
+ 
+     @Test
+-    public void shouldAcknowledgeTickTuples() throws Exception {
++    public void shouldNotAcknowledgeTickTuples() throws Exception {
+         // Given
+         Tuple tickTuple = mockTickTuple();
+ 
+@@ -105,7 +105,7 @@ public class KafkaBoltTest {
+         bolt.execute(tickTuple);
+ 
+         // Then
+-        verify(collector).ack(tickTuple);
++        verify(collector, never()).ack(tickTuple);
+     }
+ 
+     @Test

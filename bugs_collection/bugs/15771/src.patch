@@ -1,0 +1,13 @@
+diff --git a/buggy/core/test/com/google/inject/MethodInterceptionTest.java b/fixed/core/test/com/google/inject/MethodInterceptionTest.java
+index 7331c3215..1ce6966ed 100644
+--- a/buggy/core/test/com/google/inject/MethodInterceptionTest.java
++++ b/fixed/core/test/com/google/inject/MethodInterceptionTest.java
+@@ -172,7 +172,7 @@ public class MethodInterceptionTest extends TestCase {
+       fail();
+     } catch (Exception e) {
+       // validate all causes.
+-      for (Throwable t = e; t != null; t = e.getCause()) {
++      for (Throwable t = e; t != null; t = t.getCause()) {
+         StackTraceElement[] stackTraceElement = t.getStackTrace();
+         assertEquals("explode", stackTraceElement[0].getMethodName());
+         assertEquals("invoke", stackTraceElement[1].getMethodName());

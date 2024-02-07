@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/impl/ExecutorManager.java b/fixed/hazelcast/src/main/java/com/hazelcast/impl/ExecutorManager.java
+index 0e08a46e4..4afa00077 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/impl/ExecutorManager.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/impl/ExecutorManager.java
+@@ -73,7 +73,7 @@ public class ExecutorManager extends BaseManager {
+         ClassLoader classLoader = node.getConfig().getClassLoader();
+         threadPoolExecutor = new ThreadPoolExecutor(
+                 5, Integer.MAX_VALUE,
+-                6L,
++                60L,
+                 TimeUnit.SECONDS,
+                 new SynchronousQueue(),
+                 new ExecutorThreadFactory(node.threadGroup, node.getThreadPoolNamePrefix("cached"), classLoader),

@@ -1,0 +1,13 @@
+diff --git a/buggy/scribejava-core/src/main/java/com/github/scribejava/core/builder/api/DefaultApi20.java b/fixed/scribejava-core/src/main/java/com/github/scribejava/core/builder/api/DefaultApi20.java
+index 8a4d6115a..8c69ce2f5 100644
+--- a/buggy/scribejava-core/src/main/java/com/github/scribejava/core/builder/api/DefaultApi20.java
++++ b/fixed/scribejava-core/src/main/java/com/github/scribejava/core/builder/api/DefaultApi20.java
+@@ -125,7 +125,7 @@ public abstract class DefaultApi20 {
+     @Deprecated
+     public OAuth20Service createService(String apiKey, String apiSecret, String callback, String defaultScope,
+             String responseType, String userAgent, HttpClientConfig httpClientConfig, HttpClient httpClient) {
+-        return createService(apiKey, apiSecret, callback, defaultScope, responseType, userAgent, httpClientConfig,
++        return createService(apiKey, apiSecret, callback, defaultScope, responseType, null, userAgent, httpClientConfig,
+                 httpClient);
+     }
+ 

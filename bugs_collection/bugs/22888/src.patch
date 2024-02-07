@@ -1,0 +1,13 @@
+diff --git a/buggy/okhttp/src/main/java/com/squareup/okhttp/internal/spdy/SpdyConnection.java b/fixed/okhttp/src/main/java/com/squareup/okhttp/internal/spdy/SpdyConnection.java
+index d3ebee2e3..458fb6db2 100644
+--- a/buggy/okhttp/src/main/java/com/squareup/okhttp/internal/spdy/SpdyConnection.java
++++ b/fixed/okhttp/src/main/java/com/squareup/okhttp/internal/spdy/SpdyConnection.java
+@@ -695,7 +695,7 @@ public final class SpdyConnection implements Closeable {
+         }
+       }
+       if (streamsToNotify != null && delta != 0) {
+-        for (SpdyStream stream : streams.values()) {
++        for (SpdyStream stream : streamsToNotify) {
+           synchronized (stream) {
+             stream.addBytesToWriteWindow(delta);
+           }

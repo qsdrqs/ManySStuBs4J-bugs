@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/heartbeat/HeartbeatManagerImpl.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/heartbeat/HeartbeatManagerImpl.java
+index 42268fc46..242fbaa08 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/heartbeat/HeartbeatManagerImpl.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/heartbeat/HeartbeatManagerImpl.java
+@@ -277,7 +277,7 @@ public class HeartbeatManagerImpl<I, O> implements HeartbeatManager<I, O> {
+ 			this.scheduledExecutor = Preconditions.checkNotNull(scheduledExecutor);
+ 			this.heartbeatListener = Preconditions.checkNotNull(heartbeatListener);
+ 
+-			Preconditions.checkArgument(heartbeatTimeoutIntervalMs >= 0L, "The heartbeat timeout interval has to be larger than 0.");
++			Preconditions.checkArgument(heartbeatTimeoutIntervalMs > 0L, "The heartbeat timeout interval has to be larger than 0.");
+ 			this.heartbeatTimeoutIntervalMs = heartbeatTimeoutIntervalMs;
+ 
+ 			lastHeartbeat = 0L;

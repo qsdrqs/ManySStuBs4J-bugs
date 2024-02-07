@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jersey/JerseyAutoConfiguration.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jersey/JerseyAutoConfiguration.java
+index de2a106c7..caf5edf94 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jersey/JerseyAutoConfiguration.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jersey/JerseyAutoConfiguration.java
+@@ -52,7 +52,7 @@ import org.springframework.web.filter.RequestContextFilter;
+ @ConditionalOnClass(name = {
+ 		"org.glassfish.jersey.server.spring.SpringComponentProvider",
+ 		"javax.servlet.ServletRegistration" })
+-@ConditionalOnBean(ResourceConfig.class)
++@ConditionalOnBean(type = "org.glassfish.jersey.server.ResourceConfig")
+ @ConditionalOnWebApplication
+ @Order(Ordered.HIGHEST_PRECEDENCE)
+ @AutoConfigureBefore(DispatcherServletAutoConfiguration.class)

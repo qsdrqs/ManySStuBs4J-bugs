@@ -1,0 +1,13 @@
+diff --git a/buggy/okhttp/src/test/java/com/squareup/okhttp/internal/http/HttpResponseCacheTest.java b/fixed/okhttp/src/test/java/com/squareup/okhttp/internal/http/HttpResponseCacheTest.java
+index cbbeb987a..89f31da20 100644
+--- a/buggy/okhttp/src/test/java/com/squareup/okhttp/internal/http/HttpResponseCacheTest.java
++++ b/fixed/okhttp/src/test/java/com/squareup/okhttp/internal/http/HttpResponseCacheTest.java
+@@ -1819,7 +1819,7 @@ public final class HttpResponseCacheTest {
+ 
+   private String formatDate(Date date) {
+     DateFormat rfc1123 = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss zzz", Locale.US);
+-    rfc1123.setTimeZone(TimeZone.getTimeZone("UTC"));
++    rfc1123.setTimeZone(TimeZone.getTimeZone("GMT"));
+     return rfc1123.format(date);
+   }
+ 

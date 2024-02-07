@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/test/java/org/apache/hadoop/hbase/MiniHBaseCluster.java b/fixed/core/src/test/java/org/apache/hadoop/hbase/MiniHBaseCluster.java
+index b91c4e71d..b80c8ec0b 100644
+--- a/buggy/core/src/test/java/org/apache/hadoop/hbase/MiniHBaseCluster.java
++++ b/fixed/core/src/test/java/org/apache/hadoop/hbase/MiniHBaseCluster.java
+@@ -113,7 +113,7 @@ public class MiniHBaseCluster implements HConstants {
+    * Subclass so can get at protected methods (none at moment).
+    */
+   public static class MiniHBaseClusterRegionServer extends HRegionServer {
+-    public MiniHBaseClusterRegionServer(HBaseConfiguration conf)
++    public MiniHBaseClusterRegionServer(Configuration conf)
+         throws IOException {
+       super(conf);
+     }

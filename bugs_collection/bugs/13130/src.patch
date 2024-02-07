@@ -1,0 +1,13 @@
+diff --git a/buggy/client/src/main/java/com/metamx/druid/query/search/SearchQueryQueryToolChest.java b/fixed/client/src/main/java/com/metamx/druid/query/search/SearchQueryQueryToolChest.java
+index 82874e563..1b6a5e134 100644
+--- a/buggy/client/src/main/java/com/metamx/druid/query/search/SearchQueryQueryToolChest.java
++++ b/fixed/client/src/main/java/com/metamx/druid/query/search/SearchQueryQueryToolChest.java
+@@ -79,7 +79,7 @@ public class SearchQueryQueryToolChest implements QueryToolChest<Result<SearchRe
+     // I dislike this static loading of properies, but it's the only mechanism available right now.
+     Properties props = Initialization.loadProperties();
+ 
+-    maxSearchLimit = PropUtils.getPropertyAsInt(props, "com.metamx.query.topN.minSearchLimit", 1000);
++    maxSearchLimit = PropUtils.getPropertyAsInt(props, "com.metamx.query.search.maxSearchLimit", 1000);
+   }
+ 
+   @Override

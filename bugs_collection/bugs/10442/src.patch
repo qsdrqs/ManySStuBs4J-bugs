@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionDeclarationOrderTest.java b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionDeclarationOrderTest.java
+index 4db045578..81fe368cd 100644
+--- a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionDeclarationOrderTest.java
++++ b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionDeclarationOrderTest.java
+@@ -28,7 +28,7 @@ import org.junit.Test;
+ import com.puppycrawl.tools.checkstyle.DefaultConfiguration;
+ import com.puppycrawl.tools.checkstyle.checks.coding.DeclarationOrderCheck;
+ 
+-public class XpathRegressionDeclarationOrderTest extends AbstractXpathTestSupport {
++public class XpathRegressionDeclarationOrderTest extends XpathTestSupport {
+ 
+     @Test
+     public void testOne() throws Exception {

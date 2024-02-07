@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/com/metamx/druid/initialization/ServerInit.java b/fixed/server/src/main/java/com/metamx/druid/initialization/ServerInit.java
+index 8b3887260..bb1d0d631 100644
+--- a/buggy/server/src/main/java/com/metamx/druid/initialization/ServerInit.java
++++ b/fixed/server/src/main/java/com/metamx/druid/initialization/ServerInit.java
+@@ -103,7 +103,7 @@ public class ServerInit
+         final long memoryNeeded = (long) config.intermediateComputeSizeBytes() * (config.getNumThreads() + 1);
+         if (maxDirectMemory < memoryNeeded) {
+           throw new ISE(
+-              "Not enough direct memory.  Please adjust -XX:MaxDirectMemory or druid.computation.buffer.size: "
++              "Not enough direct memory.  Please adjust -XX:MaxDirectMemorySize or druid.computation.buffer.size: "
+               + "maxDirectMemory[%,d], memoryNeeded[%,d], druid.computation.buffer.size[%,d], numThreads[%,d]",
+               maxDirectMemory, memoryNeeded, config.intermediateComputeSizeBytes(), config.getNumThreads()
+           );

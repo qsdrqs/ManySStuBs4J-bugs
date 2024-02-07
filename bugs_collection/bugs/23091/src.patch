@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/pipeline/StanfordCoreNLP.java b/fixed/src/edu/stanford/nlp/pipeline/StanfordCoreNLP.java
+index 5bad7e262..22e9954f8 100644
+--- a/buggy/src/edu/stanford/nlp/pipeline/StanfordCoreNLP.java
++++ b/fixed/src/edu/stanford/nlp/pipeline/StanfordCoreNLP.java
+@@ -994,7 +994,7 @@ public class StanfordCoreNLP extends AnnotationPipeline  {
+             break;
+           case CUSTOM:
+             AnnotationOutputter outputter = ReflectionLoading.loadByReflection(properties.getProperty("customOutputter"));
+-            outputter.print(annotation, System.out, outputOptions);
++            outputter.print(annotation, fos, outputOptions);
+             break;
+           default:
+             throw new IllegalArgumentException("Unknown output format " + outputFormat);

@@ -1,0 +1,13 @@
+diff --git a/buggy/hikaricp-java6/src/main/java/com/zaxxer/hikari/pool/HikariPool.java b/fixed/hikaricp-java6/src/main/java/com/zaxxer/hikari/pool/HikariPool.java
+index 3e852dc91..89ec67786 100644
+--- a/buggy/hikaricp-java6/src/main/java/com/zaxxer/hikari/pool/HikariPool.java
++++ b/fixed/hikaricp-java6/src/main/java/com/zaxxer/hikari/pool/HikariPool.java
+@@ -170,7 +170,7 @@ public final class HikariPool implements HikariPoolMBean, IBagStateListener
+ 
+             if (now > connection.getExpirationTime() || (now - connection.getLastAccess() > 1000L && !isConnectionAlive(connection, timeout))) {
+                closeConnection(connection); // Throw away the dead connection and try again
+-               timeout -= elapsedTimeMs(start);
++               timeout = connectionTimeout - elapsedTimeMs(start);
+                continue;
+             }
+             else if (leakDetectionThreshold != 0) {

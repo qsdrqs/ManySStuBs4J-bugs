@@ -1,0 +1,13 @@
+diff --git a/buggy/FiltersPlugin/src/org/gephi/filters/plugin/operator/INTERSECTIONBuilder.java b/fixed/FiltersPlugin/src/org/gephi/filters/plugin/operator/INTERSECTIONBuilder.java
+index 7ed94c123..cb9643a49 100644
+--- a/buggy/FiltersPlugin/src/org/gephi/filters/plugin/operator/INTERSECTIONBuilder.java
++++ b/fixed/FiltersPlugin/src/org/gephi/filters/plugin/operator/INTERSECTIONBuilder.java
+@@ -68,7 +68,7 @@ public class INTERSECTIONBuilder implements FilterBuilder {
+         return null;
+     }
+ 
+-    private static class IntersectionOperator implements Operator {
++    public static class IntersectionOperator implements Operator {
+ 
+         public int getInputCount() {
+             return Integer.MAX_VALUE;

@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/byteCode/control/WhileLoop.java b/fixed/presto-main/src/main/java/com/facebook/presto/byteCode/control/WhileLoop.java
+index 3fa7043b1..4d24b5e1c 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/byteCode/control/WhileLoop.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/byteCode/control/WhileLoop.java
+@@ -88,7 +88,7 @@ public class WhileLoop
+     @Override
+     public void accept(MethodVisitor visitor, MethodGenerationContext generationContext)
+     {
+-        checkState(condition.isEmpty(), "WhileLoop does not have a condition set");
++        checkState(!condition.isEmpty(), "WhileLoop does not have a condition set");
+ 
+         Block block = new Block()
+                 .visitLabel(continueLabel)

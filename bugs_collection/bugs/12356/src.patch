@@ -1,0 +1,22 @@
+diff --git a/buggy/dropwizard-views/src/test/java/com/yammer/dropwizard/views/tests/ViewMessageBodyWriterTest.java b/fixed/dropwizard-views/src/test/java/com/yammer/dropwizard/views/tests/ViewMessageBodyWriterTest.java
+index 2150c0fa1..61eed1496 100644
+--- a/buggy/dropwizard-views/src/test/java/com/yammer/dropwizard/views/tests/ViewMessageBodyWriterTest.java
++++ b/fixed/dropwizard-views/src/test/java/com/yammer/dropwizard/views/tests/ViewMessageBodyWriterTest.java
+@@ -54,7 +54,7 @@ public class ViewMessageBodyWriterTest {
+                        output);
+ 
+         assertThat(output.toString())
+-                .isEqualTo("Woop woop. HONK\n");
++                .isEqualTo(String.format("Woop woop. HONK%n"));
+     }
+ 
+     @Test
+@@ -90,7 +90,7 @@ public class ViewMessageBodyWriterTest {
+                        output);
+ 
+         assertThat(output.toString())
+-                .isEqualTo("Ok.\n");
++                .isEqualTo(String.format("Ok.%n"));
+     }
+ 
+     @Test

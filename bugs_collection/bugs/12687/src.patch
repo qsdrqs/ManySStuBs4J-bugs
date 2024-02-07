@@ -1,0 +1,13 @@
+diff --git a/buggy/indexing-hadoop/src/main/java/io/druid/indexer/IndexGeneratorJob.java b/fixed/indexing-hadoop/src/main/java/io/druid/indexer/IndexGeneratorJob.java
+index 5edb1f69b..2a07fa521 100644
+--- a/buggy/indexing-hadoop/src/main/java/io/druid/indexer/IndexGeneratorJob.java
++++ b/fixed/indexing-hadoop/src/main/java/io/druid/indexer/IndexGeneratorJob.java
+@@ -454,7 +454,7 @@ public class IndexGeneratorJob implements Jobby
+       final ByteBuffer bytes = ByteBuffer.wrap(bytesWritable.getBytes());
+       bytes.position(4); // Skip length added by SortableBytes
+       int shardNum = bytes.getInt();
+-      if (config.get("mapred.job.tracker").equals("local")) {
++      if ("local".equals(config.get("mapreduce.jobtracker.address")) || "local".equals(config.get("mapred.job.tracker"))) {
+         return shardNum % numPartitions;
+       } else {
+         if (shardNum >= numPartitions) {

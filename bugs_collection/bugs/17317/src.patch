@@ -1,0 +1,14 @@
+diff --git a/buggy/library/src/com/slidingmenu/lib/CustomViewAbove.java b/fixed/library/src/com/slidingmenu/lib/CustomViewAbove.java
+index ec3f251a9..bd03dff79 100644
+--- a/buggy/library/src/com/slidingmenu/lib/CustomViewAbove.java
++++ b/fixed/library/src/com/slidingmenu/lib/CustomViewAbove.java
+@@ -914,7 +914,8 @@ public class CustomViewAbove extends ViewGroup {
+ 				mCustomViewBehind.scrollTo((int)((x + getBehindWidth())*mScrollScale), y);
+ 			} else if (mMode == SlidingMenu.RIGHT) {
+ 				// TODO right!
+-				mCustomViewBehind.scrollTo((int)(getBehindWidth() - getWidth()), y);
++				mCustomViewBehind.scrollTo((int)(getBehindWidth() - getWidth() + 
++						(x-getBehindWidth())*mScrollScale), y);
+ 			}
+ 		}
+ 		if (mShadowDrawable != null || mSelectorDrawable != null)

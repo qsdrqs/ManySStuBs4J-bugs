@@ -1,0 +1,17 @@
+diff --git a/buggy/examples/mini-web/src/main/java/org/springside/examples/miniweb/web/IndexController.java b/fixed/examples/mini-web/src/main/java/org/springside/examples/miniweb/web/IndexController.java
+index b79ad6c47..a2d93a949 100644
+--- a/buggy/examples/mini-web/src/main/java/org/springside/examples/miniweb/web/IndexController.java
++++ b/fixed/examples/mini-web/src/main/java/org/springside/examples/miniweb/web/IndexController.java
+@@ -12,9 +12,10 @@ public class IndexController {
+ 		return "redirect:/task";
+ 	}
+ 
+-	@RequestMapping(value = "/healthcheck", produces = "plain/text")
++	@RequestMapping(value = "/healthcheck", produces = "text/plain")
+ 	public @ResponseBody
+ 	String healthCheck() {
+-		return "ok";
++
++		return "ok222222";
+ 	}
+ }

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client-new/src/test/java/com/hazelcast/client/executor/ClientExecutorServiceSubmitTest.java b/fixed/hazelcast-client-new/src/test/java/com/hazelcast/client/executor/ClientExecutorServiceSubmitTest.java
+index c8d3bcad7..5ec6abbfa 100644
+--- a/buggy/hazelcast-client-new/src/test/java/com/hazelcast/client/executor/ClientExecutorServiceSubmitTest.java
++++ b/fixed/hazelcast-client-new/src/test/java/com/hazelcast/client/executor/ClientExecutorServiceSubmitTest.java
+@@ -586,7 +586,7 @@ public class ClientExecutorServiceSubmitTest {
+             }
+         });
+ 
+-        assertOpenEventually("responseLatch", responseLatch, 5);
++        assertOpenEventually("responseLatch", responseLatch);
+         assertEquals(msg + AppendCallable.APPENDAGE, result.get());
+     }
+ 

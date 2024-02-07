@@ -1,0 +1,58 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/imports/AvoidStaticImportCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/imports/AvoidStaticImportCheckTest.java
+index 141eada03..44995a81c 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/imports/AvoidStaticImportCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/imports/AvoidStaticImportCheckTest.java
+@@ -36,7 +36,7 @@ public class AvoidStaticImportCheckTest
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "imports" + File.separator + filename);
++                + "imports" + File.separator + "avoidstaticimport" + File.separator + filename);
+     }
+ 
+     @Test
+@@ -65,7 +65,7 @@ public class AvoidStaticImportCheckTest
+                     + "InputAvoidStaticImportNestedClass.InnerClass.one"),
+         };
+ 
+-        verify(checkConfig, getPath("InputAvoidStaticImport.java"), expected);
++        verify(checkConfig, getPath("InputAvoidStaticImportDefault.java"), expected);
+     }
+ 
+     @Test
+@@ -85,7 +85,7 @@ public class AvoidStaticImportCheckTest
+                 "com.puppycrawl.tools.checkstyle.checks.imports."
+                     + "InputAvoidStaticImportNestedClass.InnerClass.one"),
+         };
+-        verify(checkConfig, getPath("InputAvoidStaticImport.java"), expected);
++        verify(checkConfig, getPath("InputAvoidStaticImportDefault.java"), expected);
+     }
+ 
+     @Test
+@@ -107,7 +107,7 @@ public class AvoidStaticImportCheckTest
+                 "com.puppycrawl.tools.checkstyle.checks.imports."
+                     + "InputAvoidStaticImportNestedClass.InnerClass.one"),
+         };
+-        verify(checkConfig, getPath("InputAvoidStaticImport.java"), expected);
++        verify(checkConfig, getPath("InputAvoidStaticImportDefault.java"), expected);
+     }
+ 
+     @Test
+@@ -135,7 +135,7 @@ public class AvoidStaticImportCheckTest
+                 "com.puppycrawl.tools.checkstyle.checks.imports."
+                     + "InputAvoidStaticImportNestedClass.InnerClass.one"),
+         };
+-        verify(checkConfig, getPath("InputAvoidStaticImport.java"), expected);
++        verify(checkConfig, getPath("InputAvoidStaticImportDefault.java"), expected);
+     }
+ 
+     @Test
+@@ -160,7 +160,7 @@ public class AvoidStaticImportCheckTest
+                 "com.puppycrawl.tools.checkstyle.checks.imports."
+                     + "InputAvoidStaticImportNestedClass.InnerClass"),
+         };
+-        verify(checkConfig, getPath("InputAvoidStaticImport.java"), expected);
++        verify(checkConfig, getPath("InputAvoidStaticImportDefault.java"), expected);
+     }
+ 
+     @Test

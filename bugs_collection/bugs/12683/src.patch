@@ -1,0 +1,21 @@
+diff --git a/buggy/processing/src/test/java/io/druid/segment/incremental/OnheapIncrementalIndexBenchmark.java b/fixed/processing/src/test/java/io/druid/segment/incremental/OnheapIncrementalIndexBenchmark.java
+index 944b600e4..712dfcd7f 100644
+--- a/buggy/processing/src/test/java/io/druid/segment/incremental/OnheapIncrementalIndexBenchmark.java
++++ b/fixed/processing/src/test/java/io/druid/segment/incremental/OnheapIncrementalIndexBenchmark.java
+@@ -287,11 +287,11 @@ public class OnheapIncrementalIndexBenchmark extends AbstractBenchmark
+ 
+     final IncrementalIndex incrementalIndex = this.incrementalIndex.getConstructor(
+         IncrementalIndexSchema.class,
+-        Boolean.TYPE,
+-        Boolean.TYPE,
+-        Boolean.TYPE,
+-        Boolean.TYPE,
+-        Integer.TYPE
++        boolean.class,
++        boolean.class,
++        boolean.class,
++        boolean.class,
++        int.class
+     ).newInstance(
+         new IncrementalIndexSchema.Builder().withMetrics(factories).build(),
+         true,

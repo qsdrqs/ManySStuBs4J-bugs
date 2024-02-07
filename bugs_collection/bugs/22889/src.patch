@@ -1,0 +1,13 @@
+diff --git a/buggy/okhttp/src/main/java/com/squareup/okhttp/internal/http/RouteSelector.java b/fixed/okhttp/src/main/java/com/squareup/okhttp/internal/http/RouteSelector.java
+index 719313bd1..c5a24b564 100644
+--- a/buggy/okhttp/src/main/java/com/squareup/okhttp/internal/http/RouteSelector.java
++++ b/fixed/okhttp/src/main/java/com/squareup/okhttp/internal/http/RouteSelector.java
+@@ -243,7 +243,7 @@ public final class RouteSelector {
+     String socketHost;
+     int socketPort;
+     if (proxy.type() == Proxy.Type.DIRECT) {
+-      socketHost = uri.getHost();
++      socketHost = address.getUriHost();
+       socketPort = getEffectivePort(uri);
+     } else {
+       SocketAddress proxyAddress = proxy.address();

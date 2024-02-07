@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-rmi/src/test/java/org/apache/camel/component/rmi/RmiRouteTest.java b/fixed/components/camel-rmi/src/test/java/org/apache/camel/component/rmi/RmiRouteTest.java
+index 90083bfaf..ad04e03b5 100644
+--- a/buggy/components/camel-rmi/src/test/java/org/apache/camel/component/rmi/RmiRouteTest.java
++++ b/fixed/components/camel-rmi/src/test/java/org/apache/camel/component/rmi/RmiRouteTest.java
+@@ -59,7 +59,7 @@ public class RmiRouteTest extends TestCase {
+                 // be configured.
+                 RmiEndpoint bye = (RmiEndpoint)endpoint("rmi://localhost:37541/bye");
+                 bye.setRemoteInterfaces(ISay.class);
+-                from(bye).to("pojo:bye");
++                from(bye).to("bean:bye");
+             }
+         });
+         // END SNIPPET: route

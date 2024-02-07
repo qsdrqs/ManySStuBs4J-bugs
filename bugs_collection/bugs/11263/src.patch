@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/indentation/IndentationCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/indentation/IndentationCheckTest.java
+index cbbad88c4..c917a633d 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/indentation/IndentationCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/indentation/IndentationCheckTest.java
+@@ -154,7 +154,7 @@ public class IndentationCheckTest extends BaseCheckTestSupport {
+                     || indentInComment < expectedMinimalIndent && isWarnComment;
+         }
+ 
+-        throw new IllegalArgumentException();
++        throw new IllegalStateException();
+     }
+ 
+     private static int getLineStart(String line, final int tabWidth) {

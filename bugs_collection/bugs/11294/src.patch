@@ -1,0 +1,22 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter6programpractice/rule64finalizers/NoFinalizerTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter6programpractice/rule64finalizers/NoFinalizerTest.java
+index b916eb697..1ef93a764 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter6programpractice/rule64finalizers/NoFinalizerTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter6programpractice/rule64finalizers/NoFinalizerTest.java
+@@ -22,7 +22,7 @@ public class NoFinalizerTest extends BaseCheckTestSupport{
+     }
+ 
+     @Test
+-    public void noFinalizerBasicTest() throws IOException, Exception {
++    public void noFinalizerBasicTest() throws Exception {
+         
+         String msg = getCheckMessage(NoFinalizerCheck.class, "avoid.finalizer.method");
+ 
+@@ -38,7 +38,7 @@ public class NoFinalizerTest extends BaseCheckTestSupport{
+     }
+     
+     @Test
+-    public void noFinalizerExtendedTest() throws IOException, Exception {
++    public void noFinalizerExtendedTest() throws Exception {
+         
+         String msg = getCheckMessage(NoFinalizerCheck.class, "avoid.finalizer.method");
+ 

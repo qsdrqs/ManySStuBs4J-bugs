@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/optimizer/calcite/rules/HiveReduceExpressionsRule.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/optimizer/calcite/rules/HiveReduceExpressionsRule.java
+index 8f15ec7e5..1d2c4ccb6 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/optimizer/calcite/rules/HiveReduceExpressionsRule.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/optimizer/calcite/rules/HiveReduceExpressionsRule.java
+@@ -582,7 +582,7 @@ public abstract class HiveReduceExpressionsRule extends RelOptRule {
+       }
+       node = super.visitCall(call);
+       if (node != call) {
+-        node = RexUtil.simplify(rexBuilder, node);
++        node = HiveRexUtil.simplify(rexBuilder, node);
+       }
+       return node;
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/web/ServerProperties.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/web/ServerProperties.java
+index eeda381f9..4c827d890 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/web/ServerProperties.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/web/ServerProperties.java
+@@ -56,7 +56,7 @@ import org.springframework.util.StringUtils;
+  * @author Andy Wilkinson
+  * @author Ivan Sopov
+  */
+-@ConfigurationProperties(prefix = "server", ignoreUnknownFields = false)
++@ConfigurationProperties(prefix = "server", ignoreUnknownFields = true)
+ public class ServerProperties implements EmbeddedServletContainerCustomizer, Ordered {
+ 
+ 	/**

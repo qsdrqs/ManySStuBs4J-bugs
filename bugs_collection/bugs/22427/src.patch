@@ -1,0 +1,20 @@
+diff --git a/buggy/spring-boot-tools/spring-boot-configuration-metadata/src/main/java/org/springframework/boot/configurationmetadata/DescriptionExtractor.java b/fixed/spring-boot-tools/spring-boot-configuration-metadata/src/main/java/org/springframework/boot/configurationmetadata/DescriptionExtractor.java
+index d59745ce3..d4d346d59 100644
+--- a/buggy/spring-boot-tools/spring-boot-configuration-metadata/src/main/java/org/springframework/boot/configurationmetadata/DescriptionExtractor.java
++++ b/fixed/spring-boot-tools/spring-boot-configuration-metadata/src/main/java/org/springframework/boot/configurationmetadata/DescriptionExtractor.java
+@@ -20,13 +20,13 @@ import java.text.BreakIterator;
+ import java.util.Locale;
+ 
+ /**
+- * Utility to extract a descriptions.
++ * Utility to extract a description.
+  *
+  * @author Stephane Nicoll
+  */
+ class DescriptionExtractor {
+ 
+-	private static final String NEW_LINE = System.getProperty("line.separator");
++	static final String NEW_LINE = System.getProperty("line.separator");
+ 
+ 	public String getShortDescription(String description) {
+ 		if (description == null) {

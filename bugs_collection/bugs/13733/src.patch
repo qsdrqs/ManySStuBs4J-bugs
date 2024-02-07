@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/test/java/com/facebook/presto/execution/TestTaskManagerConfig.java b/fixed/presto-main/src/test/java/com/facebook/presto/execution/TestTaskManagerConfig.java
+index 7819961c3..2afa00ffd 100644
+--- a/buggy/presto-main/src/test/java/com/facebook/presto/execution/TestTaskManagerConfig.java
++++ b/fixed/presto-main/src/test/java/com/facebook/presto/execution/TestTaskManagerConfig.java
+@@ -97,7 +97,7 @@ public class TestTaskManagerConfig
+                 .setInfoMaxAge(new Duration(22, TimeUnit.MINUTES))
+                 .setClientTimeout(new Duration(10, TimeUnit.SECONDS))
+                 .setSinkMaxBufferSize(new DataSize(42, Unit.MEGABYTE))
+-                .setMaxPagePartitioningBufferSize(new DataSize(42, Unit.MEGABYTE))
++                .setMaxPagePartitioningBufferSize(new DataSize(40, Unit.MEGABYTE))
+                 .setWriterCount(3)
+                 .setTaskDefaultConcurrency(7)
+                 .setTaskJoinConcurrency(8)

@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/io/druid/server/http/BackwardsCompatibleCoordinatorResource.java b/fixed/server/src/main/java/io/druid/server/http/BackwardsCompatibleCoordinatorResource.java
+index ccccdaf0f..0ea5329e9 100644
+--- a/buggy/server/src/main/java/io/druid/server/http/BackwardsCompatibleCoordinatorResource.java
++++ b/fixed/server/src/main/java/io/druid/server/http/BackwardsCompatibleCoordinatorResource.java
+@@ -30,7 +30,7 @@ import javax.ws.rs.core.Response;
+ /**
+  */
+ @Deprecated
+-@Path("/druid/coordinator")
++@Path("/coordinator")
+ public class BackwardsCompatibleCoordinatorResource
+ {
+   private final DruidCoordinator coordinator;

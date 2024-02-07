@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-client/src/main/java/com/facebook/presto/client/QueryResults.java b/fixed/presto-client/src/main/java/com/facebook/presto/client/QueryResults.java
+index 9f57d4ef9..732aae610 100644
+--- a/buggy/presto-client/src/main/java/com/facebook/presto/client/QueryResults.java
++++ b/fixed/presto-client/src/main/java/com/facebook/presto/client/QueryResults.java
+@@ -256,7 +256,7 @@ public class QueryResults
+             }
+             return fixedValue;
+         }
+-        switch (type) {
++        switch (signature.getBase()) {
+             case BIGINT:
+                 if (value instanceof String) {
+                     return Long.parseLong((String) value);

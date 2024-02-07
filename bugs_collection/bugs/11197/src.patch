@@ -1,0 +1,31 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/TreeWalkerTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/TreeWalkerTest.java
+index 1b43b179f..2652140d6 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/TreeWalkerTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/TreeWalkerTest.java
+@@ -319,7 +319,7 @@ public class TreeWalkerTest extends BaseCheckTestSupport {
+         }
+     }
+ 
+-    public static class BadJavaDocCheck extends Check {
++    private static class BadJavaDocCheck extends Check {
+         @Override
+         public int[] getDefaultTokens() {
+             return getAcceptableTokens();
+@@ -336,7 +336,7 @@ public class TreeWalkerTest extends BaseCheckTestSupport {
+         }
+     }
+ 
+-    public static class RequiredTokenIsNotInDefaultsCheck extends Check {
++    private static class RequiredTokenIsNotInDefaultsCheck extends Check {
+         @Override
+         public int[] getRequiredTokens() {
+             return new int[] {TokenTypes.ASSIGN};
+@@ -353,7 +353,7 @@ public class TreeWalkerTest extends BaseCheckTestSupport {
+         }
+     }
+ 
+-    public static class RequiredTokenIsEmptyIntArray extends Check {
++    private static class RequiredTokenIsEmptyIntArray extends Check {
+         @Override
+         public int[] getRequiredTokens() {
+             return ArrayUtils.EMPTY_INT_ARRAY;

@@ -1,0 +1,13 @@
+diff --git a/buggy/java8/src/main/java/cucumber/runtime/java8/Java8StepDefinition.java b/fixed/java8/src/main/java/cucumber/runtime/java8/Java8StepDefinition.java
+index 0b7fa68f8..b9bdfc371 100644
+--- a/buggy/java8/src/main/java/cucumber/runtime/java8/Java8StepDefinition.java
++++ b/fixed/java8/src/main/java/cucumber/runtime/java8/Java8StepDefinition.java
+@@ -108,7 +108,7 @@ public class Java8StepDefinition implements StepDefinition {
+ 
+     @Override
+     public boolean isDefinedAt(StackTraceElement stackTraceElement) {
+-        return location.getFileName().equals(stackTraceElement.getFileName());
++        return location.getFileName() != null && location.getFileName().equals(stackTraceElement.getFileName());
+     }
+ 
+     @Override

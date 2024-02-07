@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/internal/ascii/RestTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/internal/ascii/RestTest.java
+index 3e8b1d882..38a178ed8 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/internal/ascii/RestTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/internal/ascii/RestTest.java
+@@ -266,7 +266,7 @@ public class RestTest extends HazelcastTestSupport {
+         final HazelcastInstance instance1 = Hazelcast.newHazelcastInstance(config);
+         HTTPCommunicator communicator = new HTTPCommunicator(instance1);
+ 
+-        assertEquals("OK", communicator.killMember("dev", "dev-pass"));
++        assertEquals("{\"status\":\"success\"}", communicator.killMember("dev", "dev-pass"));
+         assertTrueEventually(new AssertTask() {
+             @Override
+             public void run()

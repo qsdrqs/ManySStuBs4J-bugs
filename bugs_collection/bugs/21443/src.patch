@@ -1,0 +1,13 @@
+diff --git a/buggy/src/web/org/openmrs/web/user/CurrentUsers.java b/fixed/src/web/org/openmrs/web/user/CurrentUsers.java
+index 853acf4f3..bdaf3c958 100644
+--- a/buggy/src/web/org/openmrs/web/user/CurrentUsers.java
++++ b/fixed/src/web/org/openmrs/web/user/CurrentUsers.java
+@@ -57,7 +57,7 @@ public class CurrentUsers {
+ 		Map<String, String> currentUsers = (Map<String, String>) httpSession.getServletContext().getAttribute(
+ 		    WebConstants.CURRENT_USERS);
+ 		if (currentUsers == null) {
+-			init(httpSession.getServletContext());
++			currentUsers = init(httpSession.getServletContext());
+ 		}
+ 		return currentUsers;
+ 	}

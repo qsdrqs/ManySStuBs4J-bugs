@@ -1,0 +1,13 @@
+diff --git a/buggy/community/embedded-examples/src/main/java/org/neo4j/examples/CypherSql.java b/fixed/community/embedded-examples/src/main/java/org/neo4j/examples/CypherSql.java
+index 116be2ab0..25f39738d 100644
+--- a/buggy/community/embedded-examples/src/main/java/org/neo4j/examples/CypherSql.java
++++ b/fixed/community/embedded-examples/src/main/java/org/neo4j/examples/CypherSql.java
+@@ -562,7 +562,7 @@ public class CypherSql
+     String executeCypher( String cypher )
+     {
+         return engine.execute( cypher )
+-                .toString();
++                .dumpToString();
+     }
+ 
+     String executeSql( String sql ) throws SQLException

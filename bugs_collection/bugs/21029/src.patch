@@ -1,0 +1,13 @@
+diff --git a/buggy/tools/src/main/java/org/openmrs/tools/doclet/ShouldTaglet.java b/fixed/tools/src/main/java/org/openmrs/tools/doclet/ShouldTaglet.java
+index bac858f95..c759c2807 100644
+--- a/buggy/tools/src/main/java/org/openmrs/tools/doclet/ShouldTaglet.java
++++ b/fixed/tools/src/main/java/org/openmrs/tools/doclet/ShouldTaglet.java
+@@ -20,7 +20,7 @@ public class ShouldTaglet implements Taglet {
+ 	
+ 	private static final String NAME = "should";
+ 	
+-	private static final String HEADER = "Expected Behavior:";
++	private static final String HEADER = "Expected Behaviour:";
+ 	
+ 	/**
+ 	 * Return the name of this custom tag.

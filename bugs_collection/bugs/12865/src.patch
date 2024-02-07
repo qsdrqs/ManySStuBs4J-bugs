@@ -1,0 +1,22 @@
+diff --git a/buggy/server/src/main/java/io/druid/server/coordinator/LoadQueuePeon.java b/fixed/server/src/main/java/io/druid/server/coordinator/LoadQueuePeon.java
+index da0fd0066..f5965358f 100644
+--- a/buggy/server/src/main/java/io/druid/server/coordinator/LoadQueuePeon.java
++++ b/fixed/server/src/main/java/io/druid/server/coordinator/LoadQueuePeon.java
+@@ -174,7 +174,7 @@ public class LoadQueuePeon
+     synchronized (lock) {
+       if (segmentsToLoad.contains(holder)) {
+         if ((callback != null)) {
+-          currentlyProcessing.addCallback(callback);
++          holder.addCallback(callback);
+         }
+         return;
+       }
+@@ -206,7 +206,7 @@ public class LoadQueuePeon
+     synchronized (lock) {
+       if (segmentsToDrop.contains(holder)) {
+         if (callback != null) {
+-          currentlyProcessing.addCallback(callback);
++          holder.addCallback(callback);
+         }
+         return;
+       }

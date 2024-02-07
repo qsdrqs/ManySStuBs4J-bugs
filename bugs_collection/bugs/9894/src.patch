@@ -1,0 +1,14 @@
+diff --git a/buggy/hbase-handler/src/java/org/apache/hadoop/hive/hbase/HiveHBaseTableInputFormat.java b/fixed/hbase-handler/src/java/org/apache/hadoop/hive/hbase/HiveHBaseTableInputFormat.java
+index aaac2e071..770573d34 100644
+--- a/buggy/hbase-handler/src/java/org/apache/hadoop/hive/hbase/HiveHBaseTableInputFormat.java
++++ b/fixed/hbase-handler/src/java/org/apache/hadoop/hive/hbase/HiveHBaseTableInputFormat.java
+@@ -345,7 +345,8 @@ public class HiveHBaseTableInputFormat extends TableInputFormatBase
+     IndexPredicateAnalyzer analyzer = new IndexPredicateAnalyzer();
+ 
+     // for now, we only support equality comparisons
+-    analyzer.addComparisonOp("=");
++    analyzer.addComparisonOp(
++      "org.apache.hadoop.hive.ql.udf.generic.GenericUDFOPEqual");
+ 
+     // and only on the key column
+     analyzer.clearAllowedColumnNames();

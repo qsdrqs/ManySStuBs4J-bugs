@@ -1,0 +1,14 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/VectorColumnSetInfo.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/VectorColumnSetInfo.java
+index d9c16dc99..8c4b6ea21 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/VectorColumnSetInfo.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/VectorColumnSetInfo.java
+@@ -126,7 +126,8 @@ public class VectorColumnSetInfo {
+       doubleIndices[doubleIndicesIndex] = addIndex;
+       indexLookup[addIndex].setDouble(doubleIndicesIndex);
+       ++doubleIndicesIndex;
+-    } else if (VectorizationContext.isStringFamily(outputType)) {
++    } else if (VectorizationContext.isStringFamily(outputType) ||
++        outputType.equalsIgnoreCase("binary")) {
+       stringIndices[stringIndicesIndex]= addIndex;
+       indexLookup[addIndex].setString(stringIndicesIndex);
+       ++stringIndicesIndex;

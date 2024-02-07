@@ -1,0 +1,13 @@
+diff --git a/buggy/DesktopDataLaboratory/src/org/gephi/desktop/datalab/general/actions/MergeColumnsUI.java b/fixed/DesktopDataLaboratory/src/org/gephi/desktop/datalab/general/actions/MergeColumnsUI.java
+index ddb6c66fa..8c7ecf6a3 100644
+--- a/buggy/DesktopDataLaboratory/src/org/gephi/desktop/datalab/general/actions/MergeColumnsUI.java
++++ b/fixed/DesktopDataLaboratory/src/org/gephi/desktop/datalab/general/actions/MergeColumnsUI.java
+@@ -205,7 +205,7 @@ public class MergeColumnsUI extends javax.swing.JPanel {
+     public void execute() {
+         int index = availableStrategiesComboBox.getSelectedIndex();
+         if (index != -1) {
+-            Lookup.getDefault().lookup(DataLaboratoryHelper.class).executeManipulator(availableMergeStrategies[index]);
++            new DataLaboratoryHelper().executeManipulator(availableMergeStrategies[index]);
+         }
+     }
+ 

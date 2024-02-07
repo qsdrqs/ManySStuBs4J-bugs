@@ -1,0 +1,13 @@
+diff --git a/buggy/services/src/main/java/org/apache/druid/cli/CliIndexer.java b/fixed/services/src/main/java/org/apache/druid/cli/CliIndexer.java
+index fc1bed16b..97afa5b41 100644
+--- a/buggy/services/src/main/java/org/apache/druid/cli/CliIndexer.java
++++ b/fixed/services/src/main/java/org/apache/druid/cli/CliIndexer.java
+@@ -100,7 +100,7 @@ public class CliIndexer extends ServerRunnable
+           {
+             binder.bindConstant().annotatedWith(Names.named("serviceName")).to("druid/indexer");
+             binder.bindConstant().annotatedWith(Names.named("servicePort")).to(8091);
+-            binder.bindConstant().annotatedWith(Names.named("tlsServicePort")).to(8091);
++            binder.bindConstant().annotatedWith(Names.named("tlsServicePort")).to(8291);
+ 
+             IndexingServiceModuleHelper.configureTaskRunnerConfigs(binder);
+ 

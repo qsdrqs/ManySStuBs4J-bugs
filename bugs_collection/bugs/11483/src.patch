@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/UtilsTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/UtilsTest.java
+index 09b490fac..56911e69f 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/UtilsTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/UtilsTest.java
+@@ -76,7 +76,7 @@ public class UtilsTest {
+         final String[] fileExtensions = {"java"};
+         File file = new File("file.pdf");
+         assertFalse(Utils.fileExtensionMatches(file, fileExtensions));
+-        assertTrue(Utils.fileExtensionMatches(file, null));
++        assertTrue(Utils.fileExtensionMatches(file, (String[]) null));
+         file = new File("file.java");
+         assertTrue(Utils.fileExtensionMatches(file, fileExtensions));
+         file = new File("file.");

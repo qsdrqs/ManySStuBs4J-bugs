@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/multimap/impl/MultiMapPartitionContainer.java b/fixed/hazelcast/src/main/java/com/hazelcast/multimap/impl/MultiMapPartitionContainer.java
+index d11e2d5b4..1488b581d 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/multimap/impl/MultiMapPartitionContainer.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/multimap/impl/MultiMapPartitionContainer.java
+@@ -79,7 +79,7 @@ public class MultiMapPartitionContainer {
+ 
+     private void clearLockStore(String name) {
+         NodeEngine nodeEngine = service.getNodeEngine();
+-        LockService lockService = nodeEngine.getService(LockService.SERVICE_NAME);
++        LockService lockService = nodeEngine.getSharedService(LockService.SERVICE_NAME);
+         if (lockService != null) {
+             DefaultObjectNamespace namespace = new DefaultObjectNamespace(MultiMapService.SERVICE_NAME, name);
+             lockService.clearLockStore(partitionId, namespace);

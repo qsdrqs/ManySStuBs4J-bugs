@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions-contrib/kafka-eight-simpleConsumer/src/main/java/io/druid/firehose/kafka/KafkaEightSimpleConsumerFirehoseFactory.java b/fixed/extensions-contrib/kafka-eight-simpleConsumer/src/main/java/io/druid/firehose/kafka/KafkaEightSimpleConsumerFirehoseFactory.java
+index a28c47039..0c5300731 100644
+--- a/buggy/extensions-contrib/kafka-eight-simpleConsumer/src/main/java/io/druid/firehose/kafka/KafkaEightSimpleConsumerFirehoseFactory.java
++++ b/fixed/extensions-contrib/kafka-eight-simpleConsumer/src/main/java/io/druid/firehose/kafka/KafkaEightSimpleConsumerFirehoseFactory.java
+@@ -141,7 +141,7 @@ public class KafkaEightSimpleConsumerFirehoseFactory implements
+       }
+       log.info("Loaded offset map[%s]", offsetMap);
+     } else {
+-      log.makeAlert("Unable to cast lastCommit to Map for feed [%s]", feed);
++      log.makeAlert("Unable to cast lastCommit to Map for feed [%s]", feed).emit();
+     }
+     return offsetMap;
+   }

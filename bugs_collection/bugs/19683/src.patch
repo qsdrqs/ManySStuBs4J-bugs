@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/pool/FixedChannelPool.java b/fixed/transport/src/main/java/io/netty/channel/pool/FixedChannelPool.java
+index 1066358dd..ddafebb8d 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/pool/FixedChannelPool.java
++++ b/fixed/transport/src/main/java/io/netty/channel/pool/FixedChannelPool.java
+@@ -264,7 +264,7 @@ public final class FixedChannelPool extends SimpleChannelPool {
+     }
+ 
+     private void runTaskQueue() {
+-        while (acquiredChannelCount <= maxConnections) {
++        while (acquiredChannelCount < maxConnections) {
+             AcquireTask task = pendingAcquireQueue.poll();
+             if (task == null) {
+                 break;

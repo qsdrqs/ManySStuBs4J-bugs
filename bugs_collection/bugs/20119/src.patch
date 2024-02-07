@@ -1,0 +1,22 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/handler/ssl/SslHandler.java b/fixed/src/main/java/org/jboss/netty/handler/ssl/SslHandler.java
+index b21067238..3b864b209 100644
+--- a/buggy/src/main/java/org/jboss/netty/handler/ssl/SslHandler.java
++++ b/fixed/src/main/java/org/jboss/netty/handler/ssl/SslHandler.java
+@@ -503,7 +503,7 @@ public class SslHandler extends FrameDecoder implements ChannelDownstreamHandler
+             handshaking = false;
+             handshaken = true;
+ 
+-            if (handshakeFuture != null) {
++            if (handshakeFuture == null) {
+                 handshakeFuture = newHandshakeFuture(channel);
+             }
+         }
+@@ -515,7 +515,7 @@ public class SslHandler extends FrameDecoder implements ChannelDownstreamHandler
+             handshaking = false;
+             handshaken = false;
+ 
+-            if (handshakeFuture != null) {
++            if (handshakeFuture == null) {
+                 handshakeFuture = newHandshakeFuture(channel);
+             }
+         }

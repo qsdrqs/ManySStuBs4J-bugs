@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/org/apache/ibatis/builder/XmlConfigBuilderTest.java b/fixed/src/test/java/org/apache/ibatis/builder/XmlConfigBuilderTest.java
+index d7a4ba3cf..d950fdf40 100644
+--- a/buggy/src/test/java/org/apache/ibatis/builder/XmlConfigBuilderTest.java
++++ b/fixed/src/test/java/org/apache/ibatis/builder/XmlConfigBuilderTest.java
+@@ -156,7 +156,7 @@ public class XmlConfigBuilderTest {
+     TypeHandler<MyEnum> typeHandler = typeHandlerRegistry.getTypeHandler(MyEnum.class);
+ 
+     assertTrue(typeHandler instanceof EnumOrderTypeHandler);
+-    assertArrayEquals(MyEnum.values(), ((EnumOrderTypeHandler) typeHandler).constants);
++    assertArrayEquals(MyEnum.values(), ((EnumOrderTypeHandler<MyEnum>) typeHandler).constants);
+   }
+ 
+     @Test

@@ -1,0 +1,22 @@
+diff --git a/buggy/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/iterative/compensatable/danglingpagerank/custom/types/VertexWithRankDanglingToVertexWithRankPairComparatorFactory.java b/fixed/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/iterative/compensatable/danglingpagerank/custom/types/VertexWithRankDanglingToVertexWithRankPairComparatorFactory.java
+index 7563d304b..070ee4581 100644
+--- a/buggy/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/iterative/compensatable/danglingpagerank/custom/types/VertexWithRankDanglingToVertexWithRankPairComparatorFactory.java
++++ b/fixed/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/iterative/compensatable/danglingpagerank/custom/types/VertexWithRankDanglingToVertexWithRankPairComparatorFactory.java
+@@ -42,7 +42,7 @@ public class VertexWithRankDanglingToVertexWithRankPairComparatorFactory
+ 	
+ 
+ 	public static final class VertexWithRankDanglingToVertexWithRankComparator
+-		implements TypePairComparator<VertexWithRankAndDangling, VertexWithRank>
++		extends TypePairComparator<VertexWithRankAndDangling, VertexWithRank>
+ 	{
+ 		private long reference;
+ 		
+@@ -64,7 +64,7 @@ public class VertexWithRankDanglingToVertexWithRankPairComparatorFactory
+ 	}
+ 	
+ 	public static final class VertexWithRankToVertexWithRankDanglingPairComparator
+-		implements TypePairComparator<VertexWithRank, VertexWithRankAndDangling>
++		extends TypePairComparator<VertexWithRank, VertexWithRankAndDangling>
+ 	{
+ 		private long reference;
+ 		

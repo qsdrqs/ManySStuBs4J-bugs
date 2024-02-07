@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/DebugChecker.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/DebugChecker.java
+index 0cbb1b19a..e90276c44 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/DebugChecker.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/DebugChecker.java
+@@ -8,7 +8,7 @@ package com.puppycrawl.tools.checkstyle;
+ import com.puppycrawl.tools.checkstyle.api.CheckstyleException;
+ 
+ class DebugChecker extends Checker {
+-    public DebugChecker() throws CheckstyleException {
++    public DebugChecker() {
+     }
+ 
+     @Override

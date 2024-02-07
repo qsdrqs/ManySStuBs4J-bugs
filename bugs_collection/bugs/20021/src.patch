@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/handler/ssl/SslHandler.java b/fixed/src/main/java/org/jboss/netty/handler/ssl/SslHandler.java
+index 3fccab9bd..633f68bdb 100644
+--- a/buggy/src/main/java/org/jboss/netty/handler/ssl/SslHandler.java
++++ b/fixed/src/main/java/org/jboss/netty/handler/ssl/SslHandler.java
+@@ -935,7 +935,8 @@ public class SslHandler extends FrameDecoder
+     }
+ 
+     private void handleRenegotiation(HandshakeStatus handshakeStatus) {
+-        if (handshakeStatus == HandshakeStatus.NOT_HANDSHAKING) {
++        if (handshakeStatus == HandshakeStatus.NOT_HANDSHAKING ||
++            handshakeStatus == HandshakeStatus.FINISHED) {
+             // Not handshaking
+             return;
+         }

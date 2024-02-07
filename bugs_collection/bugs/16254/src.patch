@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/spi/impl/operationservice/impl/OperationServiceImpl_timeoutTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/spi/impl/operationservice/impl/OperationServiceImpl_timeoutTest.java
+index a575f027c..4e6fe0aad 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/spi/impl/operationservice/impl/OperationServiceImpl_timeoutTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/spi/impl/operationservice/impl/OperationServiceImpl_timeoutTest.java
+@@ -175,7 +175,7 @@ public class OperationServiceImpl_timeoutTest extends HazelcastTestSupport {
+ 
+     @Test
+     public void testOperationTimeoutForLongRunningRemoteOperation() throws Exception {
+-        int callTimeoutMillis = 1000;
++        int callTimeoutMillis = 3000;
+         Config config = new Config().setProperty(OPERATION_CALL_TIMEOUT_MILLIS.getName(), "" + callTimeoutMillis);
+ 
+         TestHazelcastInstanceFactory factory = createHazelcastInstanceFactory(2);

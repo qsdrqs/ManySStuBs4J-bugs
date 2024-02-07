@@ -1,0 +1,13 @@
+diff --git a/buggy/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/jobmanager/JobManager.java b/fixed/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/jobmanager/JobManager.java
+index ff67b469c..b0aee9728 100644
+--- a/buggy/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/jobmanager/JobManager.java
++++ b/fixed/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/jobmanager/JobManager.java
+@@ -676,7 +676,7 @@ public class JobManager implements ExtendedManagementProtocol, JobManagerProtoco
+ 
+ 			final ExecutionVertex vertex = it.next();
+ 			final ExecutionState state = vertex.getExecutionState();
+-			if (state == ExecutionState.RUNNING) {
++			if (state != ExecutionState.FAILED) {
+ 				final TaskCancelResult result = vertex.cancelTask();
+ 				if (result.getReturnCode() == AbstractTaskResult.ReturnCode.ERROR) {
+ 					errorResult = result;

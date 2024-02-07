@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-test-autoconfigure/src/main/java/org/springframework/boot/test/autoconfigure/json/JsonTestersAutoConfiguration.java b/fixed/spring-boot-test-autoconfigure/src/main/java/org/springframework/boot/test/autoconfigure/json/JsonTestersAutoConfiguration.java
+index 5391470b6..9035bb7eb 100644
+--- a/buggy/spring-boot-test-autoconfigure/src/main/java/org/springframework/boot/test/autoconfigure/json/JsonTestersAutoConfiguration.java
++++ b/fixed/spring-boot-test-autoconfigure/src/main/java/org/springframework/boot/test/autoconfigure/json/JsonTestersAutoConfiguration.java
+@@ -77,7 +77,7 @@ public class JsonTestersAutoConfiguration {
+ 
+ 	@Bean
+ 	@Scope("prototype")
+-	@ConditionalOnClass(ObjectMapper.class)
++	@ConditionalOnClass(Gson.class)
+ 	@ConditionalOnBean(Gson.class)
+ 	public FactoryBean<GsonTester<?>> gsonTesterFactoryBean(Gson gson) {
+ 		return new JsonTesterFactoryBean<GsonTester<?>, Gson>(GsonTester.class, gson);

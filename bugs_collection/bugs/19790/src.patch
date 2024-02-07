@@ -1,0 +1,13 @@
+diff --git a/buggy/handler/src/main/java/io/netty/handler/stream/ChunkedWriteHandler.java b/fixed/handler/src/main/java/io/netty/handler/stream/ChunkedWriteHandler.java
+index db9d62f17..d4b823416 100644
+--- a/buggy/handler/src/main/java/io/netty/handler/stream/ChunkedWriteHandler.java
++++ b/fixed/handler/src/main/java/io/netty/handler/stream/ChunkedWriteHandler.java
+@@ -350,7 +350,7 @@ public class ChunkedWriteHandler
+         void progress() {
+             progress ++;
+             if (promise instanceof ChannelProgressivePromise) {
+-                ((ChannelProgressivePromise) promise).setProgress(progress, -1);
++                ((ChannelProgressivePromise) promise).tryProgress(progress, -1);
+             }
+         }
+     }

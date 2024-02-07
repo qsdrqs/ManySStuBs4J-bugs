@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java b/fixed/src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java
+index f6586f317..bf552120d 100644
+--- a/buggy/src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java
++++ b/fixed/src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java
+@@ -3594,7 +3594,7 @@ public class HRegion implements HeapSize { // , Writable{
+   public static final long FIXED_OVERHEAD = ClassSize.align(
+       ClassSize.OBJECT +
+       ClassSize.ARRAY +
+-      ClassSize.align(27 * ClassSize.REFERENCE) +
++      27 * ClassSize.REFERENCE +
+       (4 * Bytes.SIZEOF_LONG) +
+       Bytes.SIZEOF_BOOLEAN);
+ 

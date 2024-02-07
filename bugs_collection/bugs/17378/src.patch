@@ -1,0 +1,31 @@
+diff --git a/buggy/jsonschema2pojo-cli/src/test/java/org/jsonschema2pojo/cli/ArgumentsTest.java b/fixed/jsonschema2pojo-cli/src/test/java/org/jsonschema2pojo/cli/ArgumentsTest.java
+index 00d2edb53..fdef31999 100644
+--- a/buggy/jsonschema2pojo-cli/src/test/java/org/jsonschema2pojo/cli/ArgumentsTest.java
++++ b/fixed/jsonschema2pojo-cli/src/test/java/org/jsonschema2pojo/cli/ArgumentsTest.java
+@@ -55,7 +55,7 @@ public class ArgumentsTest {
+         });
+ 
+         assertThat(args.didExit(), is(false));
+-        assertThat(args.getSource().next().getFile(), is("/home/source"));
++        assertThat(args.getSource().next().getFile(), endsWith("/home/source"));
+         assertThat(args.getTargetDirectory(), is(theFile("/home/target")));
+         assertThat(args.getTargetPackage(), is("mypackage"));
+         assertThat(args.isGenerateBuilders(), is(true));
+@@ -72,7 +72,7 @@ public class ArgumentsTest {
+         });
+ 
+         assertThat(args.didExit(), is(false));
+-        assertThat(args.getSource().next().getFile(), is("/home/source"));
++        assertThat(args.getSource().next().getFile(), endsWith("/home/source"));
+         assertThat(args.getTargetDirectory(), is(theFile("/home/target")));
+         assertThat(args.getTargetPackage(), is("mypackage"));
+         assertThat(args.isGenerateBuilders(), is(true));
+@@ -98,7 +98,7 @@ public class ArgumentsTest {
+         });
+ 
+         assertThat(args.didExit(), is(false));
+-        assertThat(args.getSource().next().getFile(), is("/home/source"));
++        assertThat(args.getSource().next().getFile(), endsWith("/home/source"));
+         assertThat(args.getTargetDirectory(), is(theFile("/home/target")));
+         assertThat(args.getTargetPackage(), is(nullValue()));
+         assertThat(args.isGenerateBuilders(), is(false));

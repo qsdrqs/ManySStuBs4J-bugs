@@ -1,0 +1,13 @@
+diff --git a/buggy/PartitionAPI/src/org/gephi/partition/impl/PartitionFactory.java b/fixed/PartitionAPI/src/org/gephi/partition/impl/PartitionFactory.java
+index ad2d9e2be..0e85330a5 100644
+--- a/buggy/PartitionAPI/src/org/gephi/partition/impl/PartitionFactory.java
++++ b/fixed/PartitionAPI/src/org/gephi/partition/impl/PartitionFactory.java
+@@ -63,7 +63,7 @@ public class PartitionFactory {
+                 }
+                 values.add(value);
+             }
+-            if (values.size() < 2f / 3f * nonNullvalues) {      //If #different values is < 2:3 of total non-null values
++            if (values.size() < 9f / 10f * nonNullvalues) {      //If #different values is < 2:3 of total non-null values
+                 return true;
+             }
+         }

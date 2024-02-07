@@ -1,0 +1,13 @@
+diff --git a/buggy/services/src/main/java/org/apache/druid/cli/CliPeon.java b/fixed/services/src/main/java/org/apache/druid/cli/CliPeon.java
+index ba64d7231..bbf11bd9f 100644
+--- a/buggy/services/src/main/java/org/apache/druid/cli/CliPeon.java
++++ b/fixed/services/src/main/java/org/apache/druid/cli/CliPeon.java
+@@ -117,7 +117,7 @@ import java.util.Set;
+ @Command(
+     name = "peon",
+     description = "Runs a Peon, this is an individual forked \"task\" used as part of the indexing service. "
+-                  + "This should rarely, if ever, be used directly. See http://druid.io/docs/latest/design/peons.html for a description"
++                  + "This should rarely, if ever, be used directly. See https://druid.apache.org/docs/latest/design/peons.html for a description"
+ )
+ public class CliPeon extends GuiceRunnable
+ {

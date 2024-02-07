@@ -1,0 +1,13 @@
+diff --git a/buggy/backends/gdx-backend-moe/src/com/badlogic/gdx/backends/iosmoe/IOSApplication.java b/fixed/backends/gdx-backend-moe/src/com/badlogic/gdx/backends/iosmoe/IOSApplication.java
+index d0293d782..4d649c449 100644
+--- a/buggy/backends/gdx-backend-moe/src/com/badlogic/gdx/backends/iosmoe/IOSApplication.java
++++ b/fixed/backends/gdx-backend-moe/src/com/badlogic/gdx/backends/iosmoe/IOSApplication.java
+@@ -387,7 +387,7 @@ public class IOSApplication implements Application {
+ 
+ 		// if it fails to get an existing dictionary, create a new one.
+ 		if (nsDictionary == null) {
+-			nsDictionary = (NSMutableDictionary<NSString, NSObject>)NSMutableDictionary.alloc();
++			nsDictionary = (NSMutableDictionary<NSString, NSObject>)NSMutableDictionary.alloc().init();
+ 			nsDictionary.writeToFileAtomically(path, false);
+ 		}
+ 		return new IOSPreferences(nsDictionary, finalPath.getAbsolutePath());

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/test/starter/Utils.java b/fixed/hazelcast/src/test/java/com/hazelcast/test/starter/Utils.java
+index 5e9a34694..347a31499 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/test/starter/Utils.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/test/starter/Utils.java
+@@ -61,7 +61,7 @@ public class Utils {
+ 
+             return transferredThrowable;
+         } catch (Exception e) {
+-            throw new GuardianException("Throwable transfer failed for: " + throwable.getMessage(), e);
++            throw new GuardianException("Throwable transfer failed for: " + throwable, e);
+         }
+     }
+ 

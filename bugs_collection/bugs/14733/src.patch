@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/rhino/Node.java b/fixed/src/com/google/javascript/rhino/Node.java
+index ecb2201cf..d5901c811 100644
+--- a/buggy/src/com/google/javascript/rhino/Node.java
++++ b/fixed/src/com/google/javascript/rhino/Node.java
+@@ -2624,7 +2624,7 @@ public class Node implements Serializable {
+    * This should only be called for STRING nodes children of OBJECTLIT.
+    */
+   public void setQuotedString() {
+-    throw new IllegalStateException("not a StringNode");
++    throw new IllegalStateException(this + " is not a StringNode");
+   }
+ 
+   static class NodeMismatch {

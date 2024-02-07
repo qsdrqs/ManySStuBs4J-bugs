@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-hive/src/main/java/com/facebook/presto/hive/HiveSessionProperties.java b/fixed/presto-hive/src/main/java/com/facebook/presto/hive/HiveSessionProperties.java
+index 286218c02..37bf715c8 100644
+--- a/buggy/presto-hive/src/main/java/com/facebook/presto/hive/HiveSessionProperties.java
++++ b/fixed/presto-hive/src/main/java/com/facebook/presto/hive/HiveSessionProperties.java
+@@ -53,7 +53,7 @@ public final class HiveSessionProperties
+                         true),
+                 dataSizeSessionProperty(
+                         ORC_MAX_MERGE_DISTANCE,
+-                        "ORC: Maximum size of gap between to reads to merge into a single read",
++                        "ORC: Maximum size of gap between two reads to merge into a single read",
+                         config.getOrcMaxMergeDistance(),
+                         false),
+                 dataSizeSessionProperty(

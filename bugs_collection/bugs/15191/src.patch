@@ -1,0 +1,16 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/DisambiguateProperties.java b/fixed/src/com/google/javascript/jscomp/DisambiguateProperties.java
+index 4e7046ee1..52082f64e 100644
+--- a/buggy/src/com/google/javascript/jscomp/DisambiguateProperties.java
++++ b/fixed/src/com/google/javascript/jscomp/DisambiguateProperties.java
+@@ -592,9 +592,9 @@ class DisambiguateProperties<T> implements CompilerPass {
+         }
+       }
+     }
+-    logger.info("Renamed " + instancesRenamed + " instances of "
++    logger.fine("Renamed " + instancesRenamed + " instances of "
+                 + propsRenamed + " properties.");
+-    logger.info("Skipped renaming " + instancesSkipped + " invalidated "
++    logger.fine("Skipped renaming " + instancesSkipped + " invalidated "
+                 + "properties, " + propsSkipped + " instances of properties "
+                 + "that were skipped for specific types and " + singleTypeProps
+                 + " properties that were referenced from only one type.");

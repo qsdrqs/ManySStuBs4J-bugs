@@ -1,0 +1,15 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/MissingCtorCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/MissingCtorCheckTest.java
+index bf8fbf554..951ac6308 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/MissingCtorCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/MissingCtorCheckTest.java
+@@ -34,7 +34,9 @@ public class MissingCtorCheckTest extends BaseCheckTestSupport {
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "coding" + File.separator + filename);
++                + "coding" + File.separator
++                + "missingctor" + File.separator
++                + filename);
+     }
+ 
+     @Test

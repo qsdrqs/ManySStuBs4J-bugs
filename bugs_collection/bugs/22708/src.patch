@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-security-oauth2/src/test/java/org/springframework/security/oauth2/config/annotation/AuthorizationServerConfigurationTests.java b/fixed/spring-security-oauth2/src/test/java/org/springframework/security/oauth2/config/annotation/AuthorizationServerConfigurationTests.java
+index 346fd4935..d5e1701f3 100644
+--- a/buggy/spring-security-oauth2/src/test/java/org/springframework/security/oauth2/config/annotation/AuthorizationServerConfigurationTests.java
++++ b/fixed/spring-security-oauth2/src/test/java/org/springframework/security/oauth2/config/annotation/AuthorizationServerConfigurationTests.java
+@@ -147,7 +147,7 @@ public class AuthorizationServerConfigurationTests {
+ 		            .authorities("ROLE_CLIENT", "ROLE_TRUSTED_CLIENT")
+ 		            .scopes("read", "write", "trust")
+ 		            .accessTokenValiditySeconds(60)
+-		            .additionalInformation("foo:bar", "spam:bucket");
++		            .additionalInformation("foo:bar", "spam:bucket", "crap");
+ 		 	// @formatter:on
+ 		}
+ 

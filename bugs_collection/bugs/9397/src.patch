@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/org/apache/hadoop/hbase/regionserver/TestHRegion.java b/fixed/src/test/java/org/apache/hadoop/hbase/regionserver/TestHRegion.java
+index 4dea8458f..48a5aee18 100644
+--- a/buggy/src/test/java/org/apache/hadoop/hbase/regionserver/TestHRegion.java
++++ b/fixed/src/test/java/org/apache/hadoop/hbase/regionserver/TestHRegion.java
+@@ -2670,7 +2670,7 @@ public class TestHRegion extends HBaseTestCase {
+       qualifiers[i] = Bytes.toBytes("qual" + i);
+     }
+ 
+-    String method = "testWritesWhileScanning";
++    String method = "testWritesWhileGetting";
+     initHRegion(tableName, method, families);
+     PutThread putThread = new PutThread(numRows, families, qualifiers);
+     putThread.start();

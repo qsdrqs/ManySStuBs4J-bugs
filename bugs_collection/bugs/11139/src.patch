@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule488numericliterals/UpperEllTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule488numericliterals/UpperEllTest.java
+index be69329eb..4899874ea 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule488numericliterals/UpperEllTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule488numericliterals/UpperEllTest.java
+@@ -49,7 +49,7 @@ public class UpperEllTest extends BaseCheckTestSupport{
+         };
+         
+         Configuration checkConfig = builder.getCheckConfig("UpperEll");
+-        String filePath = builder.getFilePath("UpperEllInput");
++        String filePath = builder.getFilePath("InputUpperEll");
+         
+         Integer[] warnList = builder.getLinesWithWarn(filePath);
+         verify(checkConfig, filePath, expected, warnList);

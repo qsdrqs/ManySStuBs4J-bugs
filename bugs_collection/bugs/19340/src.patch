@@ -1,0 +1,12 @@
+diff --git a/buggy/community/server/src/main/java/org/neo4j/server/webadmin/console/GremlinSession.java b/fixed/community/server/src/main/java/org/neo4j/server/webadmin/console/GremlinSession.java
+index ef4afe3ac..6122cbadb 100644
+--- a/buggy/community/server/src/main/java/org/neo4j/server/webadmin/console/GremlinSession.java
++++ b/fixed/community/server/src/main/java/org/neo4j/server/webadmin/console/GremlinSession.java
+@@ -138,6 +138,6 @@ public class GremlinSession implements ScriptSession
+ 
+     private TransactionalGraph getGremlinWrappedGraph() throws DatabaseBlockedException
+     {
+-        return new Neo4jGraph( database.graph );
++        return new Neo4jGraph( database.graph, false );
+     }
+ }

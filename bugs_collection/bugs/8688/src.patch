@@ -1,0 +1,13 @@
+diff --git a/buggy/nephele/nephele-common/src/main/java/eu/stratosphere/nephele/io/RecordReader.java b/fixed/nephele/nephele-common/src/main/java/eu/stratosphere/nephele/io/RecordReader.java
+index 92655d836..2ecdf5fa1 100644
+--- a/buggy/nephele/nephele-common/src/main/java/eu/stratosphere/nephele/io/RecordReader.java
++++ b/fixed/nephele/nephele-common/src/main/java/eu/stratosphere/nephele/io/RecordReader.java
+@@ -30,7 +30,7 @@ import eu.stratosphere.nephele.types.Record;
+  *        the type of the record that can be read from this record reader
+  */
+ 
+-public final class RecordReader<T extends Record> extends AbstractRecordReader<T> implements Reader<T> {
++public class RecordReader<T extends Record> extends AbstractRecordReader<T> implements Reader<T> {
+ 
+ 	/**
+ 	 * Temporarily stores an exception which may have occurred while reading data from the input gate.

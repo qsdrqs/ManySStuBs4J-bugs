@@ -1,0 +1,15 @@
+diff --git a/buggy/spring-boot-samples/spring-boot-sample-data-gemfire/src/main/java/sample/data/gemfire/service/GemstoneServiceImpl.java b/fixed/spring-boot-samples/spring-boot-sample-data-gemfire/src/main/java/sample/data/gemfire/service/GemstoneServiceImpl.java
+index 4d21d94cf..aec482089 100644
+--- a/buggy/spring-boot-samples/spring-boot-sample-data-gemfire/src/main/java/sample/data/gemfire/service/GemstoneServiceImpl.java
++++ b/fixed/spring-boot-samples/spring-boot-sample-data-gemfire/src/main/java/sample/data/gemfire/service/GemstoneServiceImpl.java
+@@ -42,8 +42,8 @@ public class GemstoneServiceImpl implements GemstoneService {
+ 
+ 	static {
+ 		APPROVED_GEMS = Collections.unmodifiableList(
+-				Arrays.asList("ALEXANDRITE,AQUAMARINE,DIAMOND,OPAL,PEARL,"
+-						+ "RUBY,SAPPHIRE,SPINEL,TOPAZ".split(",")));
++				Arrays.asList(("ALEXANDRITE,AQUAMARINE,DIAMOND,OPAL,PEARL,"
++						+ "RUBY,SAPPHIRE,SPINEL,TOPAZ").split(",")));
+ 	}
+ 
+ 	private final GemstoneRepository repository;

@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/datanode/DataNode.java b/fixed/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/datanode/DataNode.java
+index 441a65967..bae363f1d 100644
+--- a/buggy/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/datanode/DataNode.java
++++ b/fixed/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/datanode/DataNode.java
+@@ -1752,7 +1752,7 @@ public class DataNode extends Configured
+             + b + " (numBytes=" + b.getNumBytes() + ")"
+             + ", stage=" + stage
+             + ", clientname=" + clientname
+-            + ", targests=" + Arrays.asList(targets));
++            + ", targets=" + Arrays.asList(targets));
+       }
+       this.targets = targets;
+       this.targetStorageTypes = targetStorageTypes;

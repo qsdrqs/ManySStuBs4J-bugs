@@ -1,0 +1,13 @@
+diff --git a/buggy/processing/src/main/java/io/druid/query/metadata/SegmentMetadataQueryRunnerFactory.java b/fixed/processing/src/main/java/io/druid/query/metadata/SegmentMetadataQueryRunnerFactory.java
+index cb1cc0839..66071d03f 100644
+--- a/buggy/processing/src/main/java/io/druid/query/metadata/SegmentMetadataQueryRunnerFactory.java
++++ b/fixed/processing/src/main/java/io/druid/query/metadata/SegmentMetadataQueryRunnerFactory.java
+@@ -132,7 +132,7 @@ public class SegmentMetadataQueryRunnerFactory implements QueryRunnerFactory<Seg
+           if (metadata == null) {
+             metadata = segment.asStorageAdapter().getMetadata();
+           }
+-          queryGranularity = metadata.getQueryGranularity();
++          queryGranularity = metadata != null ? metadata.getQueryGranularity() : null;
+         } else {
+           queryGranularity = null;
+         }

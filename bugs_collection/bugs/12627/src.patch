@@ -1,0 +1,13 @@
+diff --git a/buggy/sql/src/test/java/org/apache/druid/sql/calcite/CalciteQueryTest.java b/fixed/sql/src/test/java/org/apache/druid/sql/calcite/CalciteQueryTest.java
+index efd65d917..d23d995dd 100644
+--- a/buggy/sql/src/test/java/org/apache/druid/sql/calcite/CalciteQueryTest.java
++++ b/fixed/sql/src/test/java/org/apache/druid/sql/calcite/CalciteQueryTest.java
+@@ -7694,7 +7694,7 @@ public class CalciteQueryTest extends BaseCalciteQueryTest
+                 )
+                 .columns("v0")
+                 .filters(selector("dim1", "1", null))
+-                .resultFormat(ScanQuery.RESULT_FORMAT_COMPACTED_LIST)
++                .resultFormat(ScanQuery.ResultFormat.RESULT_FORMAT_COMPACTED_LIST)
+                 .context(QUERY_CONTEXT_DEFAULT)
+                 .build()
+         ),

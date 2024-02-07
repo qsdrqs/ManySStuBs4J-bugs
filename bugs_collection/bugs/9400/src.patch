@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/apache/hadoop/hbase/master/handler/EnableTableHandler.java b/fixed/src/main/java/org/apache/hadoop/hbase/master/handler/EnableTableHandler.java
+index 72344c2e7..38e92163b 100644
+--- a/buggy/src/main/java/org/apache/hadoop/hbase/master/handler/EnableTableHandler.java
++++ b/fixed/src/main/java/org/apache/hadoop/hbase/master/handler/EnableTableHandler.java
+@@ -95,7 +95,7 @@ public class EnableTableHandler extends EventHandler {
+         break;
+       }
+       LOG.info("Table has " + countOfRegionsInTable + " regions of which " +
+-        regions.size() + " are online.");
++        regions.size() + " are offline.");
+       BulkEnabler bd = new BulkEnabler(this.server, regions,
+         countOfRegionsInTable);
+       try {

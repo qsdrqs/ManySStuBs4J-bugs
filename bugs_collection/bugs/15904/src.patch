@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/internal/config/MergePolicyValidator.java b/fixed/hazelcast/src/main/java/com/hazelcast/internal/config/MergePolicyValidator.java
+index ea0fbfd40..58c37b948 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/internal/config/MergePolicyValidator.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/internal/config/MergePolicyValidator.java
+@@ -289,7 +289,7 @@ public final class MergePolicyValidator {
+             throw new InvalidConfigurationException("The merge policy " + mergePolicyClassName
+                     + " can just be configured on data structures which provide the merging type "
+                     + requiredMergeTypeClass.getName()
+-                    + ". See SplitBrainMergingTypes for supported merging types.");
++                    + ". See SplitBrainMergeTypes for supported merging types.");
+         }
+         requiredMergeTypes.add(requiredMergeTypeClass);
+     }

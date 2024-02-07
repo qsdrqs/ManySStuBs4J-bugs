@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/test/java/com/facebook/presto/AbstractTestQueries.java b/fixed/presto-main/src/test/java/com/facebook/presto/AbstractTestQueries.java
+index 1e0606bc5..4542764a9 100644
+--- a/buggy/presto-main/src/test/java/com/facebook/presto/AbstractTestQueries.java
++++ b/fixed/presto-main/src/test/java/com/facebook/presto/AbstractTestQueries.java
+@@ -2980,7 +2980,7 @@ public abstract class AbstractTestQueries
+         assertTrue(stats.getVariance() > 0, "Samples all had the exact same size");
+     }
+ 
+-    @Test(expectedExceptions = RuntimeException.class, expectedExceptionsMessageRegExp = "\\QUnexpected parameters (bigint) for function length. Expected: length(varchar)\\E")
++    @Test(expectedExceptions = RuntimeException.class, expectedExceptionsMessageRegExp = "\\QUnexpected parameters (bigint) for function length. Expected:\\E.*")
+     public void testFunctionNotRegistered()
+     {
+         computeActual("SELECT length(1)");

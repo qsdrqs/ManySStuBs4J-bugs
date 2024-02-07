@@ -1,0 +1,13 @@
+diff --git a/buggy/codec-http/src/main/java/io/netty/handler/codec/http/HttpServerCodec.java b/fixed/codec-http/src/main/java/io/netty/handler/codec/http/HttpServerCodec.java
+index 29a11992a..a009df114 100644
+--- a/buggy/codec-http/src/main/java/io/netty/handler/codec/http/HttpServerCodec.java
++++ b/fixed/codec-http/src/main/java/io/netty/handler/codec/http/HttpServerCodec.java
+@@ -112,7 +112,7 @@ public final class HttpServerCodec extends CombinedChannelDuplexHandler<HttpRequ
+     private final class HttpServerResponseEncoder extends HttpResponseEncoder {
+ 
+         @Override
+-        boolean isContentAlwaysEmpty(@SuppressWarnings("unused") HttpResponse msg) {
++        protected boolean isContentAlwaysEmpty(@SuppressWarnings("unused") HttpResponse msg) {
+             return HttpMethod.HEAD.equals(queue.poll());
+         }
+     }

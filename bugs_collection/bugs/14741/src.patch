@@ -1,0 +1,13 @@
+diff --git a/buggy/test/com/google/javascript/refactoring/RefasterJsScannerTest.java b/fixed/test/com/google/javascript/refactoring/RefasterJsScannerTest.java
+index ffbf4442a..4f268e0c9 100644
+--- a/buggy/test/com/google/javascript/refactoring/RefasterJsScannerTest.java
++++ b/fixed/test/com/google/javascript/refactoring/RefasterJsScannerTest.java
+@@ -413,7 +413,7 @@ public class RefasterJsScannerTest {
+     String externs = ""
+         + "var obj = {};\n"
+         + "obj.prop = 6;"
+-        + "var CONSTANT = 3;n";
++        + "var CONSTANT = 3;\n";
+     String originalCode = "for (var i = CONSTANT; i < 5; i++) {}";
+     String expectedCode = "for (var i = CONSTANT2; i < 5; i++) {}";
+     String template = ""

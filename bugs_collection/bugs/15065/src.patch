@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/Es6ToEs3Converter.java b/fixed/src/com/google/javascript/jscomp/Es6ToEs3Converter.java
+index f37354227..d1656265b 100644
+--- a/buggy/src/com/google/javascript/jscomp/Es6ToEs3Converter.java
++++ b/fixed/src/com/google/javascript/jscomp/Es6ToEs3Converter.java
+@@ -244,7 +244,7 @@ public class Es6ToEs3Converter implements NodeTraversal.Callback, HotSwapCompile
+ 
+       nodeToDetach.getParent().addChildBefore(newNode, nodeToDetach);
+       // Explicitly visit the new nodes to translate nested destructuring.
+-      visit(t, child, newNode);
++      visit(t, child, child.getParent());
+     }
+     nodeToDetach.detachFromParent();
+     compiler.reportCodeChange();

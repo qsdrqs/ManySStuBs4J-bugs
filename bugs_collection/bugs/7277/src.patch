@@ -1,0 +1,18 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/model/dataformat/XMLSecurityDataFormat.java b/fixed/camel-core/src/main/java/org/apache/camel/model/dataformat/XMLSecurityDataFormat.java
+index c3c3e6578..76702388c 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/model/dataformat/XMLSecurityDataFormat.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/model/dataformat/XMLSecurityDataFormat.java
+@@ -317,11 +317,11 @@ public class XMLSecurityDataFormat extends DataFormatDefinition implements Names
+         this.keyOrTrustStoreParameters = keyOrTrustStoreParameters;
+     }
+     
+-    private String getKeyPassword() {
++    public String getKeyPassword() {
+         return this.keyPassword;
+     }
+     
+-    private void setKeyPassword(String keyPassword) {
++    public void setKeyPassword(String keyPassword) {
+         this.keyPassword = keyPassword;
+     }
+ 

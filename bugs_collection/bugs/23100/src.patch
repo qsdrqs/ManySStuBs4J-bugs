@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/pipeline/StanfordCoreNLPServer.java b/fixed/src/edu/stanford/nlp/pipeline/StanfordCoreNLPServer.java
+index 532acaf01..fc301771d 100644
+--- a/buggy/src/edu/stanford/nlp/pipeline/StanfordCoreNLPServer.java
++++ b/fixed/src/edu/stanford/nlp/pipeline/StanfordCoreNLPServer.java
+@@ -212,7 +212,7 @@ public class StanfordCoreNLPServer implements Runnable {
+       String query = uri.getQuery();
+       String[] queryFields = query
+           .replaceAll("\\\\&", "___AMP___")
+-          .replaceAll("\\\\+", "___PLUS___")
++          .replaceAll("\\\\\\+", "___PLUS___")
+           .split("&");
+       for (String queryField : queryFields) {
+         int firstEq = queryField.indexOf('=');

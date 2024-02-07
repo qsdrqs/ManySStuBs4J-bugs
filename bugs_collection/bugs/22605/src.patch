@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/main/java/org/springframework/boot/context/web/SpringBootServletInitializer.java b/fixed/spring-boot/src/main/java/org/springframework/boot/context/web/SpringBootServletInitializer.java
+index fef93f465..abbe9b221 100644
+--- a/buggy/spring-boot/src/main/java/org/springframework/boot/context/web/SpringBootServletInitializer.java
++++ b/fixed/spring-boot/src/main/java/org/springframework/boot/context/web/SpringBootServletInitializer.java
+@@ -85,7 +85,7 @@ public abstract class SpringBootServletInitializer implements WebApplicationInit
+ 		application.contextClass(AnnotationConfigEmbeddedWebApplicationContext.class);
+ 		application = configure(application);
+ 		// Ensure error pages are registered
+-		application.sources(ErrorWrapperEmbeddedServletContainerFactory.class);
++		application.sources(ErrorPageFilter.class);
+ 		return (WebApplicationContext) application.run();
+ 	}
+ 

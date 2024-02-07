@@ -1,0 +1,16 @@
+diff --git a/buggy/retrofit/src/test/java/retrofit2/RequestBuilderTest.java b/fixed/retrofit/src/test/java/retrofit2/RequestBuilderTest.java
+index 1a355feee..59b69f432 100644
+--- a/buggy/retrofit/src/test/java/retrofit2/RequestBuilderTest.java
++++ b/fixed/retrofit/src/test/java/retrofit2/RequestBuilderTest.java
+@@ -210,8 +210,9 @@ public final class RequestBuilderTest {
+       buildRequest(Example.class);
+       fail();
+     } catch (IllegalArgumentException e) {
+-      assertThat(e).hasMessage(
+-          "Only one HTTP method is allowed. Found: PATCH and POST.\n    for method Example.method");
++        assertThat(e.getMessage())
++            .isIn("Only one HTTP method is allowed. Found: PATCH and POST.\n    for method Example.method",
++                  "Only one HTTP method is allowed. Found: POST and PATCH.\n    for method Example.method");
+     }
+   }
+ 

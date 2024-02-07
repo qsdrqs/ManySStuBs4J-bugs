@@ -1,0 +1,23 @@
+diff --git a/buggy/plugins/apache-dubbo/src/main/java/com/navercorp/pinpoint/plugin/apache/dubbo/interceptor/ApacheDubboProviderInterceptor.java b/fixed/plugins/apache-dubbo/src/main/java/com/navercorp/pinpoint/plugin/apache/dubbo/interceptor/ApacheDubboProviderInterceptor.java
+index 65172bcea..7f9df925d 100644
+--- a/buggy/plugins/apache-dubbo/src/main/java/com/navercorp/pinpoint/plugin/apache/dubbo/interceptor/ApacheDubboProviderInterceptor.java
++++ b/fixed/plugins/apache-dubbo/src/main/java/com/navercorp/pinpoint/plugin/apache/dubbo/interceptor/ApacheDubboProviderInterceptor.java
+@@ -125,15 +125,14 @@ public class ApacheDubboProviderInterceptor extends SpanRecursiveAroundIntercept
+             logger.debug("localHost == null && rpcContextLocalhost == null");
+             return null;
+         }
+-        if (localHost == null && rpcContextLocalhost != null) {
++        if (localHost == null) {
+             logger.debug("return rpcContextLocalhost:{}", rpcContextLocalhost);
+             return rpcContextLocalhost;
+         }
+-        // TODO I think Dubbo should return the address of the listen socket
+         if (localHost.equals(rpcContextLocalhost)) {
+-            return rpcContextLocalhost;
++            return rpcContext.getLocalAddressString();
+         } else {
+-            return localHost + ":" + rpcContextLocalhost;
++            return localHost + ":" + rpcContext.getLocalPort();
+         }
+     }
+ 

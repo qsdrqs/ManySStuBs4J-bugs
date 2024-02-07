@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/util/MultipleCauseException.java b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/util/MultipleCauseException.java
+index f52d7acb7..e80722c18 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/util/MultipleCauseException.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/util/MultipleCauseException.java
+@@ -42,7 +42,7 @@ public class MultipleCauseException extends Exception
+         super( message, causes.get( 0 ) );
+         for (Throwable cause : causes)
+         {
+-            causes.add( cause );
++            addCause( cause );
+         }
+     }
+ 

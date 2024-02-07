@@ -1,0 +1,22 @@
+diff --git a/buggy/library/src/com/haarman/listviewanimations/itemmanipulation/contextualundo/ContextualUndoListViewTouchListener.java b/fixed/library/src/com/haarman/listviewanimations/itemmanipulation/contextualundo/ContextualUndoListViewTouchListener.java
+index e0ee08c07..1f7b0a657 100644
+--- a/buggy/library/src/com/haarman/listviewanimations/itemmanipulation/contextualundo/ContextualUndoListViewTouchListener.java
++++ b/fixed/library/src/com/haarman/listviewanimations/itemmanipulation/contextualundo/ContextualUndoListViewTouchListener.java
+@@ -124,7 +124,7 @@ public class ContextualUndoListViewTouchListener implements View.OnTouchListener
+                     }
+                 }
+ 
+-                if (mDownView != null) {
++                if (mDownView != null && mDownView instanceof ContextualUndoView) {
+                     mDownX = motionEvent.getRawX();
+                     mDownPosition = mListView.getPositionForView(mDownView);
+ 
+@@ -213,6 +213,6 @@ public class ContextualUndoListViewTouchListener implements View.OnTouchListener
+                 break;
+             }
+         }
+-        return false;
++    	return false;
+     }
+ }
+\ No newline at end of file

@@ -1,0 +1,13 @@
+diff --git a/buggy/handler/src/main/java/io/netty/handler/ssl/SslHandler.java b/fixed/handler/src/main/java/io/netty/handler/ssl/SslHandler.java
+index 0f5ecae84..7d2f54d0a 100644
+--- a/buggy/handler/src/main/java/io/netty/handler/ssl/SslHandler.java
++++ b/fixed/handler/src/main/java/io/netty/handler/ssl/SslHandler.java
+@@ -1025,7 +1025,7 @@ public class SslHandler extends ByteToMessageDecoder implements ChannelOutboundH
+                 @Override
+                 public void operationComplete(Future<Channel> future) throws Exception {
+                     if (!future.isSuccess()) {
+-                        future.cause().printStackTrace();
++                        logger.debug("Failed to complete handshake", future.cause());
+                         ctx.close();
+                     }
+                 }

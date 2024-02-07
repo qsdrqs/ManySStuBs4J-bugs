@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/test/java/org/apache/flink/runtime/dispatcher/MiniDispatcherTest.java b/fixed/flink-runtime/src/test/java/org/apache/flink/runtime/dispatcher/MiniDispatcherTest.java
+index 4291ef21d..2b989398e 100644
+--- a/buggy/flink-runtime/src/test/java/org/apache/flink/runtime/dispatcher/MiniDispatcherTest.java
++++ b/fixed/flink-runtime/src/test/java/org/apache/flink/runtime/dispatcher/MiniDispatcherTest.java
+@@ -222,7 +222,7 @@ public class MiniDispatcherTest extends TestLogger {
+ 
+ 			resultFuture.complete(archivedExecutionGraph);
+ 
+-			final CompletableFuture<Boolean> terminationFuture = miniDispatcher.getTerminationFuture();
++			final CompletableFuture<Void> terminationFuture = miniDispatcher.getTerminationFuture();
+ 
+ 			assertThat(terminationFuture.isDone(), is(false));
+ 

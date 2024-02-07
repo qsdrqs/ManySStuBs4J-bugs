@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-core-xml/src/main/java/org/apache/camel/core/xml/AbstractCamelThreadPoolFactoryBean.java b/fixed/components/camel-core-xml/src/main/java/org/apache/camel/core/xml/AbstractCamelThreadPoolFactoryBean.java
+index 542659094..d4200df67 100644
+--- a/buggy/components/camel-core-xml/src/main/java/org/apache/camel/core/xml/AbstractCamelThreadPoolFactoryBean.java
++++ b/fixed/components/camel-core-xml/src/main/java/org/apache/camel/core/xml/AbstractCamelThreadPoolFactoryBean.java
+@@ -76,7 +76,7 @@ public abstract class AbstractCamelThreadPoolFactoryBean extends AbstractCamelFa
+ 
+         int queueSize = -1;
+         if (maxQueueSize != null) {
+-            queueSize = CamelContextHelper.parseInteger(getCamelContext(), keepAliveTime);
++            queueSize = CamelContextHelper.parseInteger(getCamelContext(), maxQueueSize);
+         }
+ 
+         ExecutorService answer = getCamelContext().getExecutorServiceStrategy().newThreadPool(getId(), getThreadName(),

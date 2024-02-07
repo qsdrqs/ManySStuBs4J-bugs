@@ -1,0 +1,14 @@
+diff --git a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/SimplifyBooleanExpressionCheck.java b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/SimplifyBooleanExpressionCheck.java
+index e4e249d6f..9cca898ac 100644
+--- a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/SimplifyBooleanExpressionCheck.java
++++ b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/SimplifyBooleanExpressionCheck.java
+@@ -72,8 +72,7 @@ public class SimplifyBooleanExpressionCheck
+             case TokenTypes.LOR:
+             case TokenTypes.LAND:
+                 log(parent.getLineNo(), parent.getColumnNo(),
+-                        // TODO: i18n
+-                        "Expression can be simplified.");
++                        "simplify.expression");
+                 break;
+             default:
+                 break;

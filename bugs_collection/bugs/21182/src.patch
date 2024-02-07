@@ -1,0 +1,13 @@
+diff --git a/buggy/web/src/main/java/org/openmrs/web/filter/update/UpdateFilter.java b/fixed/web/src/main/java/org/openmrs/web/filter/update/UpdateFilter.java
+index 9c7b8d9f3..3638032e4 100644
+--- a/buggy/web/src/main/java/org/openmrs/web/filter/update/UpdateFilter.java
++++ b/fixed/web/src/main/java/org/openmrs/web/filter/update/UpdateFilter.java
+@@ -144,7 +144,7 @@ public class UpdateFilter extends StartupFilter {
+ 	 *      javax.servlet.http.HttpServletResponse)
+ 	 */
+ 	@Override
+-	protected void doPost(HttpServletRequest httpRequest, HttpServletResponse httpResponse) throws IOException,
++	protected synchronized void doPost(HttpServletRequest httpRequest, HttpServletResponse httpResponse) throws IOException,
+ 	        ServletException {
+ 		
+ 		String page = httpRequest.getParameter("page");

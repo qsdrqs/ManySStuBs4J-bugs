@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/test/java/io/druid/segment/realtime/FireDepartmentTest.java b/fixed/server/src/test/java/io/druid/segment/realtime/FireDepartmentTest.java
+index 2da5854e0..19c104a4f 100644
+--- a/buggy/server/src/test/java/io/druid/segment/realtime/FireDepartmentTest.java
++++ b/fixed/server/src/test/java/io/druid/segment/realtime/FireDepartmentTest.java
+@@ -63,7 +63,7 @@ public class FireDepartmentTest
+                         null
+                     )
+                 ),
+-                null, null, null
++                null, null, null, null
+             ),
+             new AggregatorFactory[]{
+                 new CountAggregatorFactory("count")

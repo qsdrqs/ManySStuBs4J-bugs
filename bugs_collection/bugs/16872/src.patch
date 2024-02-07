@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/test/HazelcastParallelClassRunner.java b/fixed/hazelcast/src/test/java/com/hazelcast/test/HazelcastParallelClassRunner.java
+index 4fbdf069f..1010df6ae 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/test/HazelcastParallelClassRunner.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/test/HazelcastParallelClassRunner.java
+@@ -47,7 +47,7 @@ public class HazelcastParallelClassRunner extends AbstractHazelcastClassRunner {
+ 
+     @Override
+     protected void runChild(final FrameworkMethod method, final RunNotifier notifier) {
+-        while (numThreads.get() > MAX_THREADS) {
++        while (numThreads.get() >= MAX_THREADS) {
+             try {
+                 Thread.sleep(25);
+             } catch (InterruptedException e) {

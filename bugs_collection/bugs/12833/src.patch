@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/io/druid/metadata/SQLMetadataStorageActionHandler.java b/fixed/server/src/main/java/io/druid/metadata/SQLMetadataStorageActionHandler.java
+index a23fbca2c..de260965b 100644
+--- a/buggy/server/src/main/java/io/druid/metadata/SQLMetadataStorageActionHandler.java
++++ b/fixed/server/src/main/java/io/druid/metadata/SQLMetadataStorageActionHandler.java
+@@ -115,7 +115,7 @@ public class SQLMetadataStorageActionHandler<TaskType, TaskStatusType, TaskActio
+                   )
+               )
+                     .bind("id", id)
+-                    .bind("created_date", createdDate)
++                    .bind("created_date", createdDate.toString())
+                     .bind("datasource", dataSource)
+                     .bind("payload", jsonMapper.writeValueAsBytes(task))
+                     .bind("active", active)

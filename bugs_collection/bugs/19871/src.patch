@@ -1,0 +1,22 @@
+diff --git a/buggy/transport/src/test/java/io/netty/channel/SingleThreadEventLoopTest.java b/fixed/transport/src/test/java/io/netty/channel/SingleThreadEventLoopTest.java
+index d2f5109f3..7aa790457 100644
+--- a/buggy/transport/src/test/java/io/netty/channel/SingleThreadEventLoopTest.java
++++ b/fixed/transport/src/test/java/io/netty/channel/SingleThreadEventLoopTest.java
+@@ -137,7 +137,7 @@ public class SingleThreadEventLoopTest {
+                 timestamps.add(System.nanoTime());
+                 if (empty) {
+                     try {
+-                        Thread.sleep(400);
++                        Thread.sleep(401);
+                     } catch (InterruptedException e) {
+                         // Ignore
+                     }
+@@ -176,7 +176,7 @@ public class SingleThreadEventLoopTest {
+             public void run() {
+                 timestamps.add(System.nanoTime());
+                 try {
+-                    Thread.sleep(50);
++                    Thread.sleep(51);
+                 } catch (InterruptedException e) {
+                     // Ignore
+                 }

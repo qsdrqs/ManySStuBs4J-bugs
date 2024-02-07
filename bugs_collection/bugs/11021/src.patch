@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/filters/SuppressionCommentFilter.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/filters/SuppressionCommentFilter.java
+index fcb504911..ccceba8de 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/filters/SuppressionCommentFilter.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/filters/SuppressionCommentFilter.java
+@@ -170,7 +170,7 @@ public class SuppressionCommentFilter
+      * @param checkCpp {@code true} if C++ comments are checked.
+      */
+     public void setCheckCPP(boolean checkCpp) {
+-        this.checkCPP = checkCpp;
++        checkCPP = checkCpp;
+     }
+ 
+     /**

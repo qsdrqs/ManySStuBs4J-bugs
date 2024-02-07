@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-kafka/src/main/java/com/facebook/presto/kafka/KafkaColumnHandle.java b/fixed/presto-kafka/src/main/java/com/facebook/presto/kafka/KafkaColumnHandle.java
+index 068707eac..199cf8152 100644
+--- a/buggy/presto-kafka/src/main/java/com/facebook/presto/kafka/KafkaColumnHandle.java
++++ b/fixed/presto-kafka/src/main/java/com/facebook/presto/kafka/KafkaColumnHandle.java
+@@ -160,7 +160,7 @@ public final class KafkaColumnHandle
+ 
+     ColumnMetadata getColumnMetadata()
+     {
+-        return new ColumnMetadata(getName(), getType(), getOrdinalPosition(), isHidden());
++        return new ColumnMetadata(name, type, ordinalPosition, false, null, hidden);
+     }
+ 
+     @Override

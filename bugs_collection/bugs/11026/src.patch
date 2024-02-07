@@ -1,0 +1,18 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/filters/FilterSetTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/filters/FilterSetTest.java
+index 07c40e6aa..afebf11d0 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/filters/FilterSetTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/filters/FilterSetTest.java
+@@ -32,11 +32,11 @@ import nl.jqno.equalsverifier.EqualsVerifier;
+ 
+ /** Tests SuppressElementFilter. */
+ public class FilterSetTest {
+-    private CSVFilter filter;
++    private CsvFilter filter;
+ 
+     @Before
+     public void setUp() {
+-        filter = new CSVFilter("");
++        filter = new CsvFilter("");
+     }
+ 
+     @Test

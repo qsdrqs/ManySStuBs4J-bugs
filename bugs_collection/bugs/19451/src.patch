@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/kernel/Version.java b/fixed/community/kernel/src/main/java/org/neo4j/kernel/Version.java
+index 3d587a2f3..a3bbc1328 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/kernel/Version.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/kernel/Version.java
+@@ -25,7 +25,7 @@ import org.neo4j.helpers.Service;
+ 
+ public class Version extends Service
+ {
+-    private static final String KERNEL_ARTIFACT_ID = "neo4j-kernel";
++    protected static final String KERNEL_ARTIFACT_ID = "neo4j-kernel";
+     private static final Version KERNEL_VERSION;
+     static
+     {

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/org/jsoup/parser/HtmlParserTest.java b/fixed/src/test/java/org/jsoup/parser/HtmlParserTest.java
+index e41eba586..fc7b06010 100644
+--- a/buggy/src/test/java/org/jsoup/parser/HtmlParserTest.java
++++ b/fixed/src/test/java/org/jsoup/parser/HtmlParserTest.java
+@@ -894,7 +894,7 @@ public class HtmlParserTest {
+     }
+ 
+     @Test public void testSupportsPartiallyNonAsciiTags() {
+-        String body = "<div>Check</div>";
++        String body = "<div>Check</divá>";
+         Document doc = Jsoup.parse(body);
+         Elements els = doc.select("div");
+         assertEquals("Check", els.text());

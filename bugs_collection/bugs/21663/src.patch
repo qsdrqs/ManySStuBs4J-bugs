@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/spark/route/SimpleRouteMatcher.java b/fixed/src/main/java/spark/route/SimpleRouteMatcher.java
+index 8a3369cd9..58967de93 100644
+--- a/buggy/src/main/java/spark/route/SimpleRouteMatcher.java
++++ b/fixed/src/main/java/spark/route/SimpleRouteMatcher.java
+@@ -245,7 +245,7 @@ public class SimpleRouteMatcher {
+             }
+ 
+             if (routeEntry.matches(httpMethodToMatch, path)) {
+-                LOG.debug("Removing path %s", path, httpMethod == null ? "" : " with HTTP method " + httpMethod);
++                LOG.debug("Removing path {}", path, httpMethod == null ? "" : " with HTTP method " + httpMethod);
+ 
+                 forRemoval.add(routeEntry);
+             }

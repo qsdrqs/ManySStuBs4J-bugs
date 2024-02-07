@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/zaxxer/hikari/ShutdownTest.java b/fixed/src/test/java/com/zaxxer/hikari/ShutdownTest.java
+index b399036e3..424af6a16 100644
+--- a/buggy/src/test/java/com/zaxxer/hikari/ShutdownTest.java
++++ b/fixed/src/test/java/com/zaxxer/hikari/ShutdownTest.java
+@@ -225,7 +225,7 @@ public class ShutdownTest
+            ds.getConnection();
+        }
+        catch (SQLException e) {
+-          Assert.assertTrue(e.getMessage().contains("has been shutdown"));
++          Assert.assertTrue(e.getMessage().contains("has been closed."));
+        }
+    }
+ 

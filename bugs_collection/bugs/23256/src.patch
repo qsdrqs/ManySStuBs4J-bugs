@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/international/spanish/pipeline/HamleDTMultiWordClassifier.java b/fixed/src/edu/stanford/nlp/international/spanish/pipeline/HamleDTMultiWordClassifier.java
+index 76a08ef32..efe42aaf2 100644
+--- a/buggy/src/edu/stanford/nlp/international/spanish/pipeline/HamleDTMultiWordClassifier.java
++++ b/fixed/src/edu/stanford/nlp/international/spanish/pipeline/HamleDTMultiWordClassifier.java
+@@ -133,7 +133,7 @@ public class HamleDTMultiWordClassifier {
+           if (next.equals(guess))
+             contingency.incrementCount(next + "|FP");
+           else
+-            contingency.incrementCount(next + "|FN");
++            contingency.incrementCount(next + "|TN");
+         }
+       }
+ 

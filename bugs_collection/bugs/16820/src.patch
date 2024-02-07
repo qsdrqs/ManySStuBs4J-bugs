@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/spi/impl/BasicInvocation.java b/fixed/hazelcast/src/main/java/com/hazelcast/spi/impl/BasicInvocation.java
+index 774097d02..caebfe73e 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/spi/impl/BasicInvocation.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/spi/impl/BasicInvocation.java
+@@ -763,7 +763,7 @@ abstract class BasicInvocation implements Callback<Object>, BackupCompletionCall
+         }
+ 
+         private Object newOperationTimeoutException(int pollCount, long pollTimeoutMs) {
+-            boolean hasResponse = potentialResponse == null;
++            boolean hasResponse = potentialResponse != null;
+             int backupsExpected = expectedBackupCount;
+             int backupsCompleted = availableBackups;
+ 

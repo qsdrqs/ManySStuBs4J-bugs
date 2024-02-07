@@ -1,0 +1,13 @@
+diff --git a/buggy/library/src/com/nhaarman/listviewanimations/swinginadapters/AnimationAdapter.java b/fixed/library/src/com/nhaarman/listviewanimations/swinginadapters/AnimationAdapter.java
+index 38556a52d..d707344bd 100644
+--- a/buggy/library/src/com/nhaarman/listviewanimations/swinginadapters/AnimationAdapter.java
++++ b/fixed/library/src/com/nhaarman/listviewanimations/swinginadapters/AnimationAdapter.java
+@@ -144,7 +144,7 @@ public abstract class AnimationAdapter extends BaseAdapterDecorator {
+     }
+ 
+     private void animateViewIfNecessary(int position, View view, ViewGroup parent) {
+-        boolean isMeasuringGridViewItem = parent.getHeight() == 0;
++        boolean isMeasuringGridViewItem = getAbsListView() instanceof GridView && parent.getHeight() == 0;
+ 
+         if (position > mLastAnimatedPosition && mShouldAnimate && !isMeasuringGridViewItem) {
+             animateView(position, parent, view);

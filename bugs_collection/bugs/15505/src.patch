@@ -1,0 +1,13 @@
+diff --git a/buggy/guava/src/com/google/common/collect/ImmutableSortedMultiset.java b/fixed/guava/src/com/google/common/collect/ImmutableSortedMultiset.java
+index f22588fe3..09813340f 100644
+--- a/buggy/guava/src/com/google/common/collect/ImmutableSortedMultiset.java
++++ b/fixed/guava/src/com/google/common/collect/ImmutableSortedMultiset.java
+@@ -343,7 +343,7 @@ public abstract class ImmutableSortedMultiset<E> extends ImmutableSortedMultiset
+     if (result == null) {
+       return descendingMultiset =
+           this.isEmpty()
+-              ? emptyMultiset(Ordering.from(comparator()).reverse())
++              ? emptyMultiset(Ordering.from(comparator()).<E>reverse())
+               : new DescendingImmutableSortedMultiset<E>(this);
+     }
+     return result;

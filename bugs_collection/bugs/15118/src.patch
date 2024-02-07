@@ -1,0 +1,13 @@
+diff --git a/buggy/lib/rhino/src/org/mozilla/javascript/IRFactory.java b/fixed/lib/rhino/src/org/mozilla/javascript/IRFactory.java
+index f409ba4a8..2340864f2 100644
+--- a/buggy/lib/rhino/src/org/mozilla/javascript/IRFactory.java
++++ b/fixed/lib/rhino/src/org/mozilla/javascript/IRFactory.java
+@@ -2243,7 +2243,7 @@ public final class IRFactory extends Parser
+             return ALWAYS_TRUE_BOOLEAN;
+           case Token.NUMBER: {
+             double num = node.getDouble();
+-            if (num == num && num != 0.0) {
++            if (!Double.isNaN(num) && num != 0.0) {
+                 return ALWAYS_TRUE_BOOLEAN;
+             } else {
+                 return ALWAYS_FALSE_BOOLEAN;

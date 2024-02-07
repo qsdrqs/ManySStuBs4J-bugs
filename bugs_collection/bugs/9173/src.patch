@@ -1,0 +1,23 @@
+diff --git a/buggy/hbase-annotations/src/main/java/org/apache/hadoop/hbase/classification/tools/RootDocProcessor.java b/fixed/hbase-annotations/src/main/java/org/apache/hadoop/hbase/classification/tools/RootDocProcessor.java
+index 97d934398..6cc755187 100644
+--- a/buggy/hbase-annotations/src/main/java/org/apache/hadoop/hbase/classification/tools/RootDocProcessor.java
++++ b/fixed/hbase-annotations/src/main/java/org/apache/hadoop/hbase/classification/tools/RootDocProcessor.java
+@@ -79,8 +79,7 @@ final class RootDocProcessor {
+     return obj;
+   }
+ 
+-  private static Map<Object, Object> proxies =
+-    new WeakHashMap<Object, Object>();
++  private static Map<Object, Object> proxies = new WeakHashMap<>();
+ 
+   private static Object getProxy(Object obj) {
+     Object proxy = proxies.get(obj);
+@@ -207,7 +206,7 @@ final class RootDocProcessor {
+       if (array == null || array.length == 0) {
+         return array;
+       }
+-      List<Object> list = new ArrayList<Object>(array.length);
++      List<Object> list = new ArrayList<>(array.length);
+       for (Doc entry : array) {
+         if (!exclude(entry)) {
+           list.add(process(entry, componentType));

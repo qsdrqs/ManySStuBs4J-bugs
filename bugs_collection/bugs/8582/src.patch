@@ -1,0 +1,13 @@
+diff --git a/buggy/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/iterative/compensatable/danglingpagerank/custom/types/VertexWithRankSerializer.java b/fixed/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/iterative/compensatable/danglingpagerank/custom/types/VertexWithRankSerializer.java
+index 3bb86636c..292640310 100644
+--- a/buggy/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/iterative/compensatable/danglingpagerank/custom/types/VertexWithRankSerializer.java
++++ b/fixed/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/iterative/compensatable/danglingpagerank/custom/types/VertexWithRankSerializer.java
+@@ -24,7 +24,7 @@ import eu.stratosphere.pact.generic.types.TypeSerializer;
+ /**
+  *
+  */
+-public final class VertexWithRankSerializer implements TypeSerializer<VertexWithRank> {
++public final class VertexWithRankSerializer extends TypeSerializer<VertexWithRank> {
+ 
+ 	@Override
+ 	public VertexWithRank createInstance() {

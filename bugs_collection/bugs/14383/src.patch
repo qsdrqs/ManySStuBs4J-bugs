@@ -1,0 +1,13 @@
+diff --git a/buggy/value/src/main/java/com/google/auto/value/processor/AutoAnnotationProcessor.java b/fixed/value/src/main/java/com/google/auto/value/processor/AutoAnnotationProcessor.java
+index 02a519b13..ba7f806cd 100644
+--- a/buggy/value/src/main/java/com/google/auto/value/processor/AutoAnnotationProcessor.java
++++ b/fixed/value/src/main/java/com/google/auto/value/processor/AutoAnnotationProcessor.java
+@@ -182,7 +182,7 @@ public class AutoAnnotationProcessor extends AbstractProcessor {
+   private String getGeneratedTypeName() {
+     return generatedAnnotation(elementUtils, processingEnv.getSourceVersion())
+         .map(generatedAnnotation -> TypeEncoder.encode(generatedAnnotation.asType()))
+-        .orElse(null);
++        .orElse("");
+   }
+ 
+   /**

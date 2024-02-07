@@ -1,0 +1,13 @@
+diff --git a/buggy/retrofit/src/main/java/retrofit/RestAdapter.java b/fixed/retrofit/src/main/java/retrofit/RestAdapter.java
+index 8e91bb296..8bb196179 100644
+--- a/buggy/retrofit/src/main/java/retrofit/RestAdapter.java
++++ b/fixed/retrofit/src/main/java/retrofit/RestAdapter.java
+@@ -709,7 +709,7 @@ public class RestAdapter {
+     /** Create the {@link RestAdapter} instances. */
+     public RestAdapter build() {
+       if (endpoint == null) {
+-        throw new IllegalArgumentException("Server may not be null.");
++        throw new IllegalArgumentException("Endpoint may not be null.");
+       }
+       ensureSaneDefaults();
+       return new RestAdapter(endpoint, clientProvider, httpExecutor, callbackExecutor,

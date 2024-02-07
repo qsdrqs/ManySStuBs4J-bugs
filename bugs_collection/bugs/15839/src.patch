@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/config/XmlConfigImportVariableReplacementTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/config/XmlConfigImportVariableReplacementTest.java
+index f19d4b2ba..0cbaa68e1 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/config/XmlConfigImportVariableReplacementTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/config/XmlConfigImportVariableReplacementTest.java
+@@ -580,7 +580,7 @@ public class XmlConfigImportVariableReplacementTest extends AbstractConfigImport
+ 
+         Properties properties = new Properties();
+         properties.put("variable", "foobar");
+-        Config config = new UrlXmlConfig("file://" + file.getPath(), properties);
++        Config config = new UrlXmlConfig("file:///" + file.getPath(), properties);
+ 
+         assertEquals("foobar", config.getProperty("prop"));
+     }

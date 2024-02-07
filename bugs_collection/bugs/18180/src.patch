@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/maps/tiled/TmxMapLoader.java b/fixed/gdx/src/com/badlogic/gdx/maps/tiled/TmxMapLoader.java
+index e014412d1..278515c64 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/maps/tiled/TmxMapLoader.java
++++ b/fixed/gdx/src/com/badlogic/gdx/maps/tiled/TmxMapLoader.java
+@@ -44,7 +44,7 @@ public class TmxMapLoader extends SynchronousAssetLoader<TiledMap, TmxMapLoader.
+ 
+ 	public static class Parameters extends AssetLoaderParameters<TiledMap> {
+ 		/** Whether to load the map for a y-up coordinate system */
+-		boolean yUp = true;
++		public boolean yUp = true;
+ 	}
+ 	
+ 	protected static final int FLAG_FLIP_HORIZONTALLY = 0x80000000;

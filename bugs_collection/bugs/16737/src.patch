@@ -1,0 +1,22 @@
+diff --git a/buggy/hazelcast-wm/src/main/java/com/hazelcast/web/WebFilter.java b/fixed/hazelcast-wm/src/main/java/com/hazelcast/web/WebFilter.java
+index c3e1c827e..6883615f6 100644
+--- a/buggy/hazelcast-wm/src/main/java/com/hazelcast/web/WebFilter.java
++++ b/fixed/hazelcast-wm/src/main/java/com/hazelcast/web/WebFilter.java
+@@ -742,7 +742,7 @@ public class WebFilter implements Filter {
+                 entry.value = value;
+                 entry.dirty = true;
+             } else {
+-                getClusterMap().put(buildAttributeName(name), value);
++                getClusterMap().set(buildAttributeName(name), value);
+             }
+         }
+ 
+@@ -828,7 +828,7 @@ public class WebFilter implements Filter {
+                             clusterMap.delete(buildAttributeName(entry.getKey()));
+                             iterator.remove();
+                         } else {
+-                            clusterMap.put(buildAttributeName(entry.getKey()), cacheEntry.value);
++                            clusterMap.set(buildAttributeName(entry.getKey()), cacheEntry.value);
+                             cacheEntry.dirty = false;
+                         }
+                     }

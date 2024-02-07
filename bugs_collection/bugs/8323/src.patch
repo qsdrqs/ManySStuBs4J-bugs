@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-optimizer/src/main/java/org/apache/flink/optimizer/operators/CoGroupRawDescriptor.java b/fixed/flink-optimizer/src/main/java/org/apache/flink/optimizer/operators/CoGroupRawDescriptor.java
+index 61561a466..5a981b63a 100644
+--- a/buggy/flink-optimizer/src/main/java/org/apache/flink/optimizer/operators/CoGroupRawDescriptor.java
++++ b/fixed/flink-optimizer/src/main/java/org/apache/flink/optimizer/operators/CoGroupRawDescriptor.java
+@@ -114,7 +114,7 @@ public class CoGroupRawDescriptor extends OperatorDescriptorDual {
+ 		Ordering prod2 = produced2.getOrdering();
+ 
+ 		if (prod1 == null || prod2 == null || prod1.getNumberOfFields() < numRelevantFields
+-				|| prod2.getNumberOfFields() < prod2.getNumberOfFields()) {
++				|| prod2.getNumberOfFields() < numRelevantFields) {
+ 			throw new CompilerException("The given properties do not meet this operators requirements.");
+ 		}
+ 

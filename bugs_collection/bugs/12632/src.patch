@@ -1,0 +1,16 @@
+diff --git a/buggy/extensions-core/s3-extensions/src/main/java/org/apache/druid/storage/s3/S3Utils.java b/fixed/extensions-core/s3-extensions/src/main/java/org/apache/druid/storage/s3/S3Utils.java
+index e0a3dac8c..97858864b 100644
+--- a/buggy/extensions-core/s3-extensions/src/main/java/org/apache/druid/storage/s3/S3Utils.java
++++ b/fixed/extensions-core/s3-extensions/src/main/java/org/apache/druid/storage/s3/S3Utils.java
+@@ -251,7 +251,10 @@ public class S3Utils
+         .withMaxKeys(1);
+     final ListObjectsV2Result result = s3Client.listObjectsV2(request);
+ 
+-    if (result.getKeyCount() == 0) {
++    // Using getObjectSummaries().size() instead of getKeyCount as, in some cases
++    // it is observed that even though the getObjectSummaries returns some data
++    // keyCount is still zero.
++    if (result.getObjectSummaries().size() == 0) {
+       throw new ISE("Cannot find object for bucket[%s] and key[%s]", bucket, key);
+     }
+     final S3ObjectSummary objectSummary = result.getObjectSummaries().get(0);

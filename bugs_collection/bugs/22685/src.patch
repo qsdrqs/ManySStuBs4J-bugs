@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/springframework/samples/petclinic/web/PetController.java b/fixed/src/main/java/org/springframework/samples/petclinic/web/PetController.java
+index b18ab995e..55e4e9391 100644
+--- a/buggy/src/main/java/org/springframework/samples/petclinic/web/PetController.java
++++ b/fixed/src/main/java/org/springframework/samples/petclinic/web/PetController.java
+@@ -51,7 +51,7 @@ public class PetController {
+ 		dataBinder.setDisallowedFields("id");
+ 	}
+ 
+-	@RequestMapping( method = RequestMethod.GET)
++	@RequestMapping(value="/owners/{ownerId}/pets/new",  method = RequestMethod.GET)
+ 	public String initCreationForm(@PathVariable("ownerId") int ownerId, Model model) {
+ 		Owner owner = this.clinic.findOwner(ownerId);
+ 		Pet pet = new Pet();

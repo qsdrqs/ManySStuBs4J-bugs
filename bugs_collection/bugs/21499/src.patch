@@ -1,0 +1,13 @@
+diff --git a/buggy/src/web/org/openmrs/web/controller/user/UserFormController.java b/fixed/src/web/org/openmrs/web/controller/user/UserFormController.java
+index 3da286b43..8f8ab63ad 100644
+--- a/buggy/src/web/org/openmrs/web/controller/user/UserFormController.java
++++ b/fixed/src/web/org/openmrs/web/controller/user/UserFormController.java
+@@ -120,7 +120,7 @@ public class UserFormController extends PersonFormController {
+ 			//check password strength
+ 			if (password.length() > 0) {
+ 				try {
+-					OpenmrsUtil.validatePassword(user.getUsername(), password, String.valueOf(user.getUserId()));
++					OpenmrsUtil.validatePassword(user.getUsername(), password, user.getSystemId());
+ 				}
+ 				catch (PasswordException e) {
+ 					errors.reject(e.getMessage());

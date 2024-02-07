@@ -1,0 +1,13 @@
+diff --git a/buggy/backends/gdx-openal/src/com/badlogic/gdx/backends/openal/OpenALAudio.java b/fixed/backends/gdx-openal/src/com/badlogic/gdx/backends/openal/OpenALAudio.java
+index 4d81f0c68..d5a6c4eb9 100644
+--- a/buggy/backends/gdx-openal/src/com/badlogic/gdx/backends/openal/OpenALAudio.java
++++ b/fixed/backends/gdx-openal/src/com/badlogic/gdx/backends/openal/OpenALAudio.java
+@@ -67,7 +67,7 @@ public class OpenALAudio implements Audio {
+ 	boolean noDevice = false;
+ 
+ 	public OpenALAudio () {
+-		this(16, 512, 9);
++		this(16, 9, 512);
+ 	}
+ 
+ 	public OpenALAudio (int simultaneousSources, int deviceBufferCount, int deviceBufferSize) {

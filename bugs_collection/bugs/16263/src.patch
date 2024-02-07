@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/map/impl/MapManagedService.java b/fixed/hazelcast/src/main/java/com/hazelcast/map/impl/MapManagedService.java
+index 40b8019e7..209a6c3f6 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/map/impl/MapManagedService.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/map/impl/MapManagedService.java
+@@ -40,7 +40,7 @@ public class MapManagedService implements ManagedService {
+ 
+     @Override
+     public void init(NodeEngine nodeEngine, Properties properties) {
+-        final LockService lockService = nodeEngine.getService(LockService.SERVICE_NAME);
++        final LockService lockService = nodeEngine.getSharedService(LockService.SERVICE_NAME);
+         if (lockService != null) {
+             lockService.registerLockStoreConstructor(MapService.SERVICE_NAME,
+                     new ObjectNamespaceLockStoreInfoConstructorFunction());

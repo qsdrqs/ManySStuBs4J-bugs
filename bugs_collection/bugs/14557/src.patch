@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/deps/Es6SortedDependencies.java b/fixed/src/com/google/javascript/jscomp/deps/Es6SortedDependencies.java
+index 913cafb0d..2a7296c3f 100644
+--- a/buggy/src/com/google/javascript/jscomp/deps/Es6SortedDependencies.java
++++ b/fixed/src/com/google/javascript/jscomp/deps/Es6SortedDependencies.java
+@@ -110,7 +110,7 @@ public final class Es6SortedDependencies<INPUT extends DependencyInfo>
+   }
+ 
+   @Override
+-  public List<INPUT> getSortedDependenciesOf(List<INPUT> roots) {
++  public ImmutableList<INPUT> getSortedDependenciesOf(List<INPUT> roots) {
+     return getDependenciesOf(roots, true);
+   }
+ 

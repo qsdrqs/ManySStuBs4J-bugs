@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/DefaultChannelHandlerContext.java b/fixed/transport/src/main/java/io/netty/channel/DefaultChannelHandlerContext.java
+index 11d4eb650..e74042fe3 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/DefaultChannelHandlerContext.java
++++ b/fixed/transport/src/main/java/io/netty/channel/DefaultChannelHandlerContext.java
+@@ -1023,7 +1023,7 @@ final class DefaultChannelHandlerContext extends DefaultAttributeMap implements
+     public void fireChannelReadSuspended() {
+         final DefaultChannelHandlerContext next = findContextInbound();
+         EventExecutor executor = next.executor();
+-        if (prev != null && executor.inEventLoop()) {
++        if (executor.inEventLoop()) {
+             next.invokeChannelReadSuspended();
+         } else {
+             Runnable task = next.invokeChannelReadSuspendedTask;

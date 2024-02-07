@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/main/java/org/springframework/boot/jdbc/DatabaseDriver.java b/fixed/spring-boot/src/main/java/org/springframework/boot/jdbc/DatabaseDriver.java
+index 202287a40..cedc477f5 100644
+--- a/buggy/spring-boot/src/main/java/org/springframework/boot/jdbc/DatabaseDriver.java
++++ b/fixed/spring-boot/src/main/java/org/springframework/boot/jdbc/DatabaseDriver.java
+@@ -68,7 +68,7 @@ public enum DatabaseDriver {
+ 	/**
+ 	 * Maria DB.
+ 	 */
+-	MARIADB("maridb", "MySQL", "org.mariadb.jdbc.Driver",
++	MARIADB("mariadb", "MySQL", "org.mariadb.jdbc.Driver",
+ 			"org.mariadb.jdbc.MariaDbDataSource", "SELECT 1"),
+ 
+ 	/**

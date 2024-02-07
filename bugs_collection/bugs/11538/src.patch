@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractOptionCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractOptionCheck.java
+index 29753770b..e9c0e0db6 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractOptionCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractOptionCheck.java
+@@ -48,7 +48,7 @@ public abstract class AbstractOptionCheck<T extends Enum<T>>
+      * @param optionClass the class for the option. Required due to a quirk
+      *        in the Java language.
+      */
+-    public AbstractOptionCheck(T literalDefault, Class<T> optionClass) {
++    protected AbstractOptionCheck(T literalDefault, Class<T> optionClass) {
+         option = literalDefault;
+         this.optionClass = optionClass;
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/web/org/openmrs/web/filter/startuperror/StartupErrorFilter.java b/fixed/src/web/org/openmrs/web/filter/startuperror/StartupErrorFilter.java
+index e2c3be8de..aa8881bc2 100644
+--- a/buggy/src/web/org/openmrs/web/filter/startuperror/StartupErrorFilter.java
++++ b/fixed/src/web/org/openmrs/web/filter/startuperror/StartupErrorFilter.java
+@@ -51,7 +51,7 @@ public class StartupErrorFilter extends StartupFilter {
+ 	protected void doGet(HttpServletRequest httpRequest, HttpServletResponse httpResponse) throws IOException,
+ 	                                                                                      ServletException {
+ 		
+-		renderTemplate(DEFAULT_PAGE, new HashMap<String, Object>(), httpResponse.getWriter());
++		renderTemplate(DEFAULT_PAGE, new HashMap<String, Object>(), httpResponse);
+ 	}
+ 	
+ 	/**

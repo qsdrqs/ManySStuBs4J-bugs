@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/instance/DefaultNodeInitializer.java b/fixed/hazelcast/src/main/java/com/hazelcast/instance/DefaultNodeInitializer.java
+index ff09b3443..7a8ff3716 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/instance/DefaultNodeInitializer.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/instance/DefaultNodeInitializer.java
+@@ -41,7 +41,7 @@ public class DefaultNodeInitializer implements NodeInitializer {
+ 
+     @Override
+     public void printNodeInfo(Node node) {
+-        systemLogger.info("Hazelcast Community Edition " + version + " ("
++        systemLogger.info("Hazelcast (Apache License) " + version + " ("
+                 + build + ") starting at " + node.getThisAddress());
+         systemLogger.info("Copyright (C) 2008-2014 Hazelcast.com");
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.tinkerforge/src/main/java/org/openhab/binding/tinkerforge/internal/model/impl/MBrickDCImpl.java b/fixed/bundles/binding/org.openhab.binding.tinkerforge/src/main/java/org/openhab/binding/tinkerforge/internal/model/impl/MBrickDCImpl.java
+index 244cd05e8..5c6c9e299 100644
+--- a/buggy/bundles/binding/org.openhab.binding.tinkerforge/src/main/java/org/openhab/binding/tinkerforge/internal/model/impl/MBrickDCImpl.java
++++ b/fixed/bundles/binding/org.openhab.binding.tinkerforge/src/main/java/org/openhab/binding/tinkerforge/internal/model/impl/MBrickDCImpl.java
+@@ -1702,7 +1702,7 @@ public class MBrickDCImpl extends MinimalEObjectImpl.Container implements MBrick
+         } else if (state == OnOffValue.ON) {
+             setSpeed(Tools.getShortOpt(ConfigOptsSwitchSpeed.SPEED.toString(), opts), null, null, null);
+         } else {
+-            logger.error("{} unkown switchstate {}", LoggerConstants.TFMODELUPDATE, state);
++            logger.error("{} unknown switchstate {}", LoggerConstants.TFMODELUPDATE, state);
+         }
+     }
+ 

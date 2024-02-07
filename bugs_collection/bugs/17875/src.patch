@@ -1,0 +1,12 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/graphics/g2d/PolygonSpriteBatch.java b/fixed/gdx/src/com/badlogic/gdx/graphics/g2d/PolygonSpriteBatch.java
+index 397702a35..f934a6108 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/graphics/g2d/PolygonSpriteBatch.java
++++ b/fixed/gdx/src/com/badlogic/gdx/graphics/g2d/PolygonSpriteBatch.java
+@@ -1201,6 +1201,6 @@ public class PolygonSpriteBatch implements Batch {
+ 	}
+ 
+ 	public boolean isDrawing () {
+-		return false;
++		return drawing;
+ 	}
+ }

@@ -1,0 +1,14 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/zookeeper/ZKServerTool.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/zookeeper/ZKServerTool.java
+index c82e96bfa..455cfd262 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/zookeeper/ZKServerTool.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/zookeeper/ZKServerTool.java
+@@ -58,7 +58,8 @@ public class ZKServerTool {
+    */
+   public static void main(String args[]) {
+     for(ServerName server: readZKNodes(HBaseConfiguration.create())) {
+-      System.out.println("Zk host: " + server.getHostname());
++      // bin/zookeeper.sh relies on the "ZK host" string for grepping which is case sensitive.
++      System.out.println("ZK host: " + server.getHostname());
+     }
+   }
+ }

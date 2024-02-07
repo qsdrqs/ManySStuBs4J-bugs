@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/CheckAccessControls.java b/fixed/src/com/google/javascript/jscomp/CheckAccessControls.java
+index ef6226ba6..9289e0e0f 100644
+--- a/buggy/src/com/google/javascript/jscomp/CheckAccessControls.java
++++ b/fixed/src/com/google/javascript/jscomp/CheckAccessControls.java
+@@ -987,7 +987,7 @@ class CheckAccessControls implements Callback, HotSwapCompilerPass {
+     // enclosing class.
+     // TODO(tbreisacher): Should we also include the filename where ownerType is defined?
+     String readableTypeName =
+-        Objects.equals(ownerType, propRef.getReceiverType())
++        ownerType == null || ownerType.equals(propRef.getReceiverType())
+             ? propRef.getReadableTypeNameOrDefault()
+             : ownerType.toString();
+     compiler.report(

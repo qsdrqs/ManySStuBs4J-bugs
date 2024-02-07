@@ -1,0 +1,12 @@
+diff --git a/buggy/hazelcast-all/src/test/java/com/hazelcast/it/CheckAllDependenciesIT.java b/fixed/hazelcast-all/src/test/java/com/hazelcast/it/CheckAllDependenciesIT.java
+index abb780d69..4f282fc34 100644
+--- a/buggy/hazelcast-all/src/test/java/com/hazelcast/it/CheckAllDependenciesIT.java
++++ b/fixed/hazelcast-all/src/test/java/com/hazelcast/it/CheckAllDependenciesIT.java
+@@ -6,6 +6,6 @@ public class CheckAllDependenciesIT extends CheckDependenciesIT {
+ 
+     @Override
+     protected boolean isMatching(String urlString) {
+-        return urlString.contains("hazelcast-all-") && urlString.contains("target");
++        return urlString.contains("hazelcast/hazelcast/") && !urlString.contains("test");
+     }
+ }

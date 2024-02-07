@@ -1,0 +1,15 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/config/CacheDeserializedValues.java b/fixed/hazelcast/src/main/java/com/hazelcast/config/CacheDeserializedValues.java
+index b3e8a5de0..602054f80 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/config/CacheDeserializedValues.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/config/CacheDeserializedValues.java
+@@ -69,8 +69,8 @@ public enum CacheDeserializedValues {
+         } else if ("ALWAYS".equals(upperCase)) {
+             return ALWAYS;
+         } else {
+-            throw new IllegalArgumentException("Unknown CacheDeserializedValues option '" + string + ". "
+-                    + "Possible options: " + Arrays.toString(CacheDeserializedValues.values()) + " .");
++            throw new IllegalArgumentException("Unknown CacheDeserializedValues option '" + string + "'. "
++                    + "Possible options: " + Arrays.toString(CacheDeserializedValues.values()));
+         }
+     }
+ }

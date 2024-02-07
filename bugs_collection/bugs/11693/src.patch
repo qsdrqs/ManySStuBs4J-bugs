@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/CustomImportOrderCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/CustomImportOrderCheck.java
+index 3b805aa41..b6a1a2e37 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/CustomImportOrderCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/CustomImportOrderCheck.java
+@@ -700,7 +700,7 @@ public class CustomImportOrderCheck extends Check
+      * group.
+      * @author max
+      */
+-    class ImportDetails
++    static class ImportDetails
+     {
+         /** Import full path */
+         private String importFullPath;

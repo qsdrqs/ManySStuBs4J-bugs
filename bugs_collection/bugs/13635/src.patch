@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/test/java/com/facebook/presto/execution/resourceGroups/TestResourceGroups.java b/fixed/presto-main/src/test/java/com/facebook/presto/execution/resourceGroups/TestResourceGroups.java
+index 28c7c4b1e..c74bdbccb 100644
+--- a/buggy/presto-main/src/test/java/com/facebook/presto/execution/resourceGroups/TestResourceGroups.java
++++ b/fixed/presto-main/src/test/java/com/facebook/presto/execution/resourceGroups/TestResourceGroups.java
+@@ -62,7 +62,7 @@ public class TestResourceGroups
+         MockQueryExecution query3 = new MockQueryExecution(0);
+         root.run(query3);
+         assertEquals(query3.getState(), FAILED);
+-        assertEquals(query3.getFailureCause().getMessage(), "Too many queued queries for \"root\"!");
++        assertEquals(query3.getFailureCause().getMessage(), "Too many queued queries for \"root\"");
+     }
+ 
+     @Test(timeOut = 10_000)

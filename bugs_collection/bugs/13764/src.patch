@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-tests/src/main/java/com/facebook/presto/tests/AbstractTestQueries.java b/fixed/presto-tests/src/main/java/com/facebook/presto/tests/AbstractTestQueries.java
+index 2af8c3b20..5b9dd4820 100644
+--- a/buggy/presto-tests/src/main/java/com/facebook/presto/tests/AbstractTestQueries.java
++++ b/fixed/presto-tests/src/main/java/com/facebook/presto/tests/AbstractTestQueries.java
+@@ -5004,7 +5004,7 @@ public abstract class AbstractTestQueries
+         computeActual("SELECT CAST(null AS array(foo))");
+     }
+ 
+-    @Test(expectedExceptions = RuntimeException.class, expectedExceptionsMessageRegExp = "\\Qline 1:21: '+' cannot be applied to varchar(2147483647), bigint\\E")
++    @Test(expectedExceptions = RuntimeException.class, expectedExceptionsMessageRegExp = "\\Qline 1:21: '+' cannot be applied to varchar, bigint\\E")
+     public void testInvalidTypeInfixOperator()
+     {
+         // Comment on why error message references varchar(214783647) instead of varchar(2) which seems expected result type for concatenation in expression.

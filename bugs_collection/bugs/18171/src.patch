@@ -1,0 +1,16 @@
+diff --git a/buggy/extensions/gdx-tools/src/com/badlogic/gdx/tools/FileProcessor.java b/fixed/extensions/gdx-tools/src/com/badlogic/gdx/tools/FileProcessor.java
+index d6ef4e55c..41fbd68fe 100644
+--- a/buggy/extensions/gdx-tools/src/com/badlogic/gdx/tools/FileProcessor.java
++++ b/fixed/extensions/gdx-tools/src/com/badlogic/gdx/tools/FileProcessor.java
+@@ -201,9 +201,9 @@ public class FileProcessor {
+ 				entry.outputDir = outputDir;
+ 
+ 				if (flattenOutput) {
+-					entry.outputFile = outputRoot.length() == 0 ? new File(outputName) : new File(outputRoot, outputName);
++					entry.outputFile = new File(outputRoot, outputName);
+ 				} else {
+-					entry.outputFile = outputDir.length() == 0 ? new File(outputName) : new File(outputDir, outputName);
++					entry.outputFile = new File(outputDir, outputName);
+ 				}
+ 
+ 				dirToEntries.get(dir).add(entry);

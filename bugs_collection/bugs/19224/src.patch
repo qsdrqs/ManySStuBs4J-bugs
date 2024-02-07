@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/kernel/KernelDiagnostics.java b/fixed/community/kernel/src/main/java/org/neo4j/kernel/KernelDiagnostics.java
+index caeb4dae4..ad9d0b26e 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/kernel/KernelDiagnostics.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/kernel/KernelDiagnostics.java
+@@ -142,7 +142,7 @@ abstract class KernelDiagnostics implements DiagnosticsProvider
+         {
+             long free = storeDir.getFreeSpace();
+             long total = storeDir.getTotalSpace();
+-            long percentage = total != 0 ? ((total - free) * 100 / total) : 0;
++            long percentage = total != 0 ? (free * 100 / total) : 0;
+             return String.format( "Disk space on partition (Total / Free / Free %%): %s / %s / %s", total, free, percentage );
+         }
+     }

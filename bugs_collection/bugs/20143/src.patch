@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.weather/src/main/java/org/openhab/binding/weather/internal/provider/AbstractWeatherProvider.java b/fixed/bundles/binding/org.openhab.binding.weather/src/main/java/org/openhab/binding/weather/internal/provider/AbstractWeatherProvider.java
+index a19d5bf6f..4111db87c 100644
+--- a/buggy/bundles/binding/org.openhab.binding.weather/src/main/java/org/openhab/binding/weather/internal/provider/AbstractWeatherProvider.java
++++ b/fixed/bundles/binding/org.openhab.binding.weather/src/main/java/org/openhab/binding/weather/internal/provider/AbstractWeatherProvider.java
+@@ -115,7 +115,7 @@ public abstract class AbstractWeatherProvider implements WeatherProvider {
+             }
+ 
+             if (weather.hasError()) {
+-                logger.error("{}[{}]: Can't retreive weather data: {}", getProviderName(),
++                logger.error("{}[{}]: Can't retrieve weather data: {}", getProviderName(),
+                         locationConfig.getLocationId(), weather.getError());
+             } else {
+                 setLastUpdate(weather);

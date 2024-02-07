@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.plex/src/main/java/org/openhab/binding/plex/internal/PlexBinding.java b/fixed/bundles/binding/org.openhab.binding.plex/src/main/java/org/openhab/binding/plex/internal/PlexBinding.java
+index 0a59dc6d4..00caaeccf 100644
+--- a/buggy/bundles/binding/org.openhab.binding.plex/src/main/java/org/openhab/binding/plex/internal/PlexBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.plex/src/main/java/org/openhab/binding/plex/internal/PlexBinding.java
+@@ -191,7 +191,7 @@ public class PlexBinding extends AbstractActiveBinding<PlexBindingProvider> {
+     }
+ 
+     public void deactivate(final int reason) {
+-        logger.trace("Plex binding deactived");
++        logger.trace("Plex binding deactivated");
+         disconnect();
+     }
+ 

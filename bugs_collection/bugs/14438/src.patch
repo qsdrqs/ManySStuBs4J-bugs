@@ -1,0 +1,13 @@
+diff --git a/buggy/compile-testing/src/main/java/com/google/testing/compile/JavaSourcesSubject.java b/fixed/compile-testing/src/main/java/com/google/testing/compile/JavaSourcesSubject.java
+index 13d65eb4d..8e66c3d44 100644
+--- a/buggy/compile-testing/src/main/java/com/google/testing/compile/JavaSourcesSubject.java
++++ b/fixed/compile-testing/src/main/java/com/google/testing/compile/JavaSourcesSubject.java
+@@ -170,7 +170,7 @@ public final class JavaSourcesSubject
+               });
+           if (diagnosticsInFile.isEmpty()) {
+             failureStrategy.fail(String.format(
+-                "Expeceted an error in %s, but only found errors in ", file.getName(),
++                "Expected an error in %s, but only found errors in ", file.getName(),
+                 diagnosticsWithMessage.transform(
+                     new Function<Diagnostic<? extends FileObject>, String>() {
+                       @Override public String apply(Diagnostic<? extends FileObject> input) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule451wheretobreack/MethodParamPadTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule451wheretobreack/MethodParamPadTest.java
+index e54098073..d77da9b6f 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule451wheretobreack/MethodParamPadTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule451wheretobreack/MethodParamPadTest.java
+@@ -50,7 +50,7 @@ public class MethodParamPadTest extends BaseCheckTestSupport {
+             "130:9: " + getCheckMessage(clazz, messageKey, "("),
+         };
+         final Configuration checkConfig = builder.getCheckConfig("MethodParamPad");
+-        final String filePath = builder.getFilePath("MethodParamPadInput");
++        final String filePath = builder.getFilePath("InputMethodParamPad");
+ 
+         final Integer[] warnList = builder.getLinesWithWarn(filePath);
+         verify(checkConfig, filePath, expected, warnList);

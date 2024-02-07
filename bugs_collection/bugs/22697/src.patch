@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/config/annotation/web/configuration/ResourceServerConfiguration.java b/fixed/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/config/annotation/web/configuration/ResourceServerConfiguration.java
+index a88431b84..da4779d1f 100644
+--- a/buggy/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/config/annotation/web/configuration/ResourceServerConfiguration.java
++++ b/fixed/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/config/annotation/web/configuration/ResourceServerConfiguration.java
+@@ -94,7 +94,7 @@ public class ResourceServerConfiguration extends WebSecurityConfigurerAdapter im
+ 		public boolean matches(HttpServletRequest request) {
+ 			String requestPath = getRequestPath(request);
+ 			for (String path : mapping.getPaths()) {
+-				if (requestPath.startsWith(path)) {
++				if (requestPath.startsWith(mapping.getPath(path))) {
+ 					return false;
+ 				}
+ 			}

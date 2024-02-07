@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/parse/TypeCheckProcFactory.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/parse/TypeCheckProcFactory.java
+index 96293b949..44f5c2370 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/parse/TypeCheckProcFactory.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/parse/TypeCheckProcFactory.java
+@@ -377,7 +377,7 @@ public class TypeCheckProcFactory {
+       // not a conversion function 
+       if (funcText == null) return false;
+       // return true when the child type and the conversion target type is the same
+-      return ((PrimitiveTypeInfo)children.get(0).getTypeInfo()).getPrimitiveWritableClass().getName().equals(funcText);
++      return ((PrimitiveTypeInfo)children.get(0).getTypeInfo()).getTypeName().equalsIgnoreCase(funcText);
+     }
+     
+     public static String getFunctionText(ASTNode expr, boolean isFunction) {

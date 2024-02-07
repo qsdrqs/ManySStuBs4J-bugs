@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HStore.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HStore.java
+index 8f8f98abd..c4ea2b1fb 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HStore.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HStore.java
+@@ -727,7 +727,7 @@ public class HStore implements Store {
+         LOG.warn("Failed flushing store file, retring num=" + i, e);
+         lastException = e;
+       }
+-      if (lastException != null) {
++      if (lastException != null && i < (flushRetriesNumber - 1)) {
+         try {
+           Thread.sleep(pauseTime);
+         } catch (InterruptedException e) {

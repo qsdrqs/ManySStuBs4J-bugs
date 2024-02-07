@@ -1,0 +1,20 @@
+diff --git a/buggy/flink-core/src/test/java/org/apache/flink/util/InstantiationUtilTest.java b/fixed/flink-core/src/test/java/org/apache/flink/util/InstantiationUtilTest.java
+index b3697637a..cf27ca204 100644
+--- a/buggy/flink-core/src/test/java/org/apache/flink/util/InstantiationUtilTest.java
++++ b/fixed/flink-core/src/test/java/org/apache/flink/util/InstantiationUtilTest.java
+@@ -182,12 +182,12 @@ public class InstantiationUtilTest extends TestLogger {
+ 		}
+ 	}
+ 	
+-	private static final class WritableType implements IOReadableWritable {
++	public static final class WritableType implements IOReadableWritable {
+ 		
+ 		private int aInt;
+ 		private long aLong;
+-		
+-		private WritableType() {
++
++		public WritableType() {
+ 			Random rnd = new Random();
+ 			this.aInt = rnd.nextInt();
+ 			this.aLong = rnd.nextLong();

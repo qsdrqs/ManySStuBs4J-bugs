@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/BaseCheckTestSupport.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/BaseCheckTestSupport.java
+index 4e7c445ca..065d54154 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/BaseCheckTestSupport.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/BaseCheckTestSupport.java
+@@ -20,7 +20,7 @@ import com.google.common.collect.Lists;
+ import com.puppycrawl.tools.checkstyle.api.AuditEvent;
+ import com.puppycrawl.tools.checkstyle.api.Configuration;
+ 
+-public abstract class BaseCheckTestSupport {
++public class BaseCheckTestSupport {
+     /**
+      * A brief logger that only display info about errors.
+      */

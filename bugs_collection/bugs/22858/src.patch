@@ -1,0 +1,13 @@
+diff --git a/buggy/samples/guide/src/main/java/okhttp3/recipes/Progress.java b/fixed/samples/guide/src/main/java/okhttp3/recipes/Progress.java
+index f04de7934..30566908a 100644
+--- a/buggy/samples/guide/src/main/java/okhttp3/recipes/Progress.java
++++ b/fixed/samples/guide/src/main/java/okhttp3/recipes/Progress.java
+@@ -72,7 +72,7 @@ public final class Progress {
+     private final ProgressListener progressListener;
+     private BufferedSource bufferedSource;
+ 
+-    public ProgressResponseBody(ResponseBody responseBody, ProgressListener progressListener) {
++    ProgressResponseBody(ResponseBody responseBody, ProgressListener progressListener) {
+       this.responseBody = responseBody;
+       this.progressListener = progressListener;
+     }

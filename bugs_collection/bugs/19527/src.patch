@@ -1,0 +1,13 @@
+diff --git a/buggy/common/src/main/java/io/netty/util/internal/NativeLibraryLoader.java b/fixed/common/src/main/java/io/netty/util/internal/NativeLibraryLoader.java
+index 7d381e183..6ae062d1a 100644
+--- a/buggy/common/src/main/java/io/netty/util/internal/NativeLibraryLoader.java
++++ b/fixed/common/src/main/java/io/netty/util/internal/NativeLibraryLoader.java
+@@ -139,7 +139,7 @@ public final class NativeLibraryLoader {
+         } catch (Throwable ex) {
+             suppressed.add(ex);
+             logger.debug(
+-                    "{} cannot be loaded from java.libary.path, "
++                    "{} cannot be loaded from java.library.path, "
+                     + "now trying export to -Dio.netty.native.workdir: {}", name, WORKDIR, ex);
+         }
+ 

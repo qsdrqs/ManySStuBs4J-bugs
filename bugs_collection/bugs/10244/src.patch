@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/zaxxer/hikari/pool/TestConnections.java b/fixed/src/test/java/com/zaxxer/hikari/pool/TestConnections.java
+index 33de91180..88cfc4587 100644
+--- a/buggy/src/test/java/com/zaxxer/hikari/pool/TestConnections.java
++++ b/fixed/src/test/java/com/zaxxer/hikari/pool/TestConnections.java
+@@ -366,7 +366,7 @@ public class TestConnections
+ 
+          pool.logPoolState("before check ");
+          Assert.assertNull((ref.get() != null ? ref.get().toString() : ""), ref.get());
+-         Assert.assertSame("StubConnection count not as expected", 4, StubConnection.count.get());
++         Assert.assertSame("StubConnection count not as expected", 4+1, StubConnection.count.get()); // 1 connection is created in init 
+       }
+    }
+ 

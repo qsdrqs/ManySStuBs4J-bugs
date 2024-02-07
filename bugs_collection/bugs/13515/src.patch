@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/operator/PipelineContext.java b/fixed/presto-main/src/main/java/com/facebook/presto/operator/PipelineContext.java
+index a8b39e668..30f26ecea 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/operator/PipelineContext.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/operator/PipelineContext.java
+@@ -455,7 +455,7 @@ public class PipelineContext
+                 new Duration(totalCpuTime, NANOSECONDS).convertToMostSuccinctTimeUnit(),
+                 new Duration(totalUserTime, NANOSECONDS).convertToMostSuccinctTimeUnit(),
+                 new Duration(totalBlockedTime, NANOSECONDS).convertToMostSuccinctTimeUnit(),
+-                fullyBlocked && (runningDrivers > 0 || runningPartitionedDrivers > 0),
++                fullyBlocked,
+                 blockedReasons,
+ 
+                 succinctBytes(rawInputDataSize),

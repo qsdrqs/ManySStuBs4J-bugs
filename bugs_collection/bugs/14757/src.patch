@@ -1,0 +1,17 @@
+diff --git a/buggy/test/com/google/javascript/jscomp/ConstCheckTest.java b/fixed/test/com/google/javascript/jscomp/ConstCheckTest.java
+index 3b061c5ed..1b7acf601 100644
+--- a/buggy/test/com/google/javascript/jscomp/ConstCheckTest.java
++++ b/fixed/test/com/google/javascript/jscomp/ConstCheckTest.java
+@@ -186,10 +186,10 @@ public final class ConstCheckTest extends CompilerTestCase {
+   public void testConstNameInExterns() {
+     String externs = "/** @const */ var FOO;";
+     String js = "FOO = 1;";
+-    test(externs, js, (String) null, ConstCheck.CONST_REASSIGNED_VALUE_ERROR, null);
++    test(externs, js, (String) null, null, ConstCheck.CONST_REASSIGNED_VALUE_ERROR);
+   }
+ 
+   private void testError(String js) {
+-    testError(js, ConstCheck.CONST_REASSIGNED_VALUE_ERROR);
++    testWarning(js, ConstCheck.CONST_REASSIGNED_VALUE_ERROR);
+   }
+ }

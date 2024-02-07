@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/TxManager.java b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/TxManager.java
+index 1dab220b8..cc1c56c9a 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/TxManager.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/TxManager.java
+@@ -458,7 +458,7 @@ public class TxManager extends AbstractTransactionManager implements Lifecycle
+                     default:
+                         setTmNotOk( e );
+                         throw logAndReturn("TM error tx commit",new TransactionFailureException(
+-                                "commit threw exception but status is committed?", e ));
++                                "commit threw exception", e ));
+                 }
+             }
+             catch ( Throwable t )

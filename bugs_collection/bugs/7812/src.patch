@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-web/src/main/java/org/apache/camel/web/util/OnExceptionDefinitionRenderer.java b/fixed/components/camel-web/src/main/java/org/apache/camel/web/util/OnExceptionDefinitionRenderer.java
+index 7ebc61cd8..fbd20ba76 100644
+--- a/buggy/components/camel-web/src/main/java/org/apache/camel/web/util/OnExceptionDefinitionRenderer.java
++++ b/fixed/components/camel-web/src/main/java/org/apache/camel/web/util/OnExceptionDefinitionRenderer.java
+@@ -31,7 +31,7 @@ public final class OnExceptionDefinitionRenderer {
+         // Utility class, no public or protected default constructor
+     }
+ 
+-    public static void render(StringBuilder buffer, ProcessorDefinition<?> processor) {
++    public static void render(StringBuilder buffer, ProcessorDefinition processor) {
+         // if not a global onCompletion, add a period
+         boolean notGlobal = buffer.toString().endsWith(")");
+         if (notGlobal) {

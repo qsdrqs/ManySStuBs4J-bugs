@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-hive/src/main/java/com/facebook/presto/hive/HiveSessionProperties.java b/fixed/presto-hive/src/main/java/com/facebook/presto/hive/HiveSessionProperties.java
+index b92b6e720..6ec5d0189 100644
+--- a/buggy/presto-hive/src/main/java/com/facebook/presto/hive/HiveSessionProperties.java
++++ b/fixed/presto-hive/src/main/java/com/facebook/presto/hive/HiveSessionProperties.java
+@@ -311,7 +311,7 @@ public final class HiveSessionProperties
+                         false),
+                 booleanProperty(
+                         OPTIMIZE_MISMATCHED_BUCKET_COUNT,
+-                        "Experimenal: Enable optimization to avoid shuffle when bucket count is compatible but not the same",
++                        "Experimental: Enable optimization to avoid shuffle when bucket count is compatible but not the same",
+                         hiveClientConfig.isOptimizeMismatchedBucketCount(),
+                         false),
+                 booleanProperty(

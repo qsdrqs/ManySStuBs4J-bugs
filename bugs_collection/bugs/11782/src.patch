@@ -1,0 +1,21 @@
+diff --git a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/whitespace/AbstractParenPadCheck.java b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/whitespace/AbstractParenPadCheck.java
+index 84e41732a..b6570d6d0 100644
+--- a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/whitespace/AbstractParenPadCheck.java
++++ b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/whitespace/AbstractParenPadCheck.java
+@@ -77,14 +77,14 @@ abstract class AbstractParenPadCheck
+                 && Character.isWhitespace(line.charAt(before))
+                 && !Utils.whitespaceBefore(before, line))
+             {
+-                log(aAST.getLineNo(), before, "ws.preceeded", ")");
++                log(aAST.getLineNo(), before, "ws.preceded", ")");
+             }
+             else if ((PadOption.SPACE == getAbstractOption())
+                 && !Character.isWhitespace(line.charAt(before))
+                 && (line.charAt(before) != '('))
+             {
+                 log(aAST.getLineNo(), aAST.getColumnNo(),
+-                    "ws.notPreceeded", ")");
++                    "ws.notPreceded", ")");
+             }
+         }
+     }

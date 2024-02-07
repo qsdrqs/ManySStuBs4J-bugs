@@ -1,0 +1,16 @@
+diff --git a/buggy/components/camel-web/src/main/java/org/apache/camel/web/util/SendDefinitionRenderer.java b/fixed/components/camel-web/src/main/java/org/apache/camel/web/util/SendDefinitionRenderer.java
+index 6520eebf5..92dc79bc9 100644
+--- a/buggy/components/camel-web/src/main/java/org/apache/camel/web/util/SendDefinitionRenderer.java
++++ b/fixed/components/camel-web/src/main/java/org/apache/camel/web/util/SendDefinitionRenderer.java
+@@ -29,9 +29,9 @@ public final class SendDefinitionRenderer {
+         // Utility class, no public or protected default constructor
+     }
+ 
+-    public static void render(StringBuilder buffer, ProcessorDefinition<?> processor) {
++    public static void render(StringBuilder buffer, ProcessorDefinition processor) {
+         buffer.append(".");
+-        SendDefinition<?> send = (SendDefinition<?>)processor;
++        SendDefinition send = (SendDefinition)processor;
+         if (send instanceof WireTapDefinition) {
+             // for wireTap
+             buffer.append(send.getShortName());

@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/compactions/CompactionRequest.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/compactions/CompactionRequest.java
+index 76085faea..01bf41485 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/compactions/CompactionRequest.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/compactions/CompactionRequest.java
+@@ -216,7 +216,7 @@ public class CompactionRequest implements Comparable<CompactionRequest> {
+    */
+   public boolean isRetainDeleteMarkers() {
+     return (this.retainDeleteMarkers != null) ? this.retainDeleteMarkers.booleanValue()
+-        : isAllFiles();
++        : !isAllFiles();
+   }
+ 
+   @Override

@@ -1,0 +1,13 @@
+diff --git a/buggy/enterprise/ha/src/test/java/slavetest/SingleJvmWithNettyTest.java b/fixed/enterprise/ha/src/test/java/slavetest/SingleJvmWithNettyTest.java
+index 95ffc50a4..1f0500b82 100644
+--- a/buggy/enterprise/ha/src/test/java/slavetest/SingleJvmWithNettyTest.java
++++ b/fixed/enterprise/ha/src/test/java/slavetest/SingleJvmWithNettyTest.java
+@@ -569,7 +569,7 @@ public class SingleJvmWithNettyTest extends SingleJvmTest
+         } );
+         
+         DoubleLatch latch = latchFetcher.fetch();
+-        latch.countDownFirst();
++        latch.awaitFirst(); // Wait for lockHolder to grab the lock
+         try
+         {
+             executeJob( new CommonJobs.SetNodePropertyWithThrowJob( otherNodeId.longValue(),

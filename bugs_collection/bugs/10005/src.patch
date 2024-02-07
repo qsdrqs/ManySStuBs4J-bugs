@@ -1,0 +1,13 @@
+diff --git a/buggy/storm-core/src/jvm/backtype/storm/utils/Utils.java b/fixed/storm-core/src/jvm/backtype/storm/utils/Utils.java
+index b2100708a..0e70e04e7 100644
+--- a/buggy/storm-core/src/jvm/backtype/storm/utils/Utils.java
++++ b/fixed/storm-core/src/jvm/backtype/storm/utils/Utils.java
+@@ -596,7 +596,7 @@ public class Utils {
+     }
+ 
+ 
+-    public static IFn loadClojureFn(String namespace, String name) {
++    public static synchronized IFn loadClojureFn(String namespace, String name) {
+         try {
+             clojure.lang.Compiler.eval(RT.readString("(require '" + namespace + ")"));
+         } catch (Exception e) {

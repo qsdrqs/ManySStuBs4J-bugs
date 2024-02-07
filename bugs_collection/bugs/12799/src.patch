@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/io/druid/server/QueryResource.java b/fixed/server/src/main/java/io/druid/server/QueryResource.java
+index 318c0d4df..5f17609c9 100644
+--- a/buggy/server/src/main/java/io/druid/server/QueryResource.java
++++ b/fixed/server/src/main/java/io/druid/server/QueryResource.java
+@@ -121,7 +121,7 @@ public class QueryResource
+ 
+   @POST
+   @Produces({MediaType.APPLICATION_JSON, SmileMediaTypes.APPLICATION_JACKSON_SMILE})
+-  @Consumes({MediaType.APPLICATION_JSON, SmileMediaTypes.APPLICATION_JACKSON_SMILE})
++  @Consumes({MediaType.APPLICATION_JSON, SmileMediaTypes.APPLICATION_JACKSON_SMILE, APPLICATION_SMILE})
+   public Response doPost(
+       InputStream in,
+       @QueryParam("pretty") String pretty,

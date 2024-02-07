@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/CustomImportOrderCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/CustomImportOrderCheck.java
+index 35aaa1222..f953ce450 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/CustomImportOrderCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/CustomImportOrderCheck.java
+@@ -726,7 +726,7 @@ public class CustomImportOrderCheck extends Check {
+ 
+         }
+         else {
+-            throw new RuntimeException("Unexpected rule: " + ruleStr);
++            throw new IllegalStateException("Unexpected rule: " + ruleStr);
+         }
+     }
+ 

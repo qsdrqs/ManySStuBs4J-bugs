@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/client/impl/protocol/task/cache/AbstractCacheMessageTask.java b/fixed/hazelcast/src/main/java/com/hazelcast/client/impl/protocol/task/cache/AbstractCacheMessageTask.java
+index b809f23d3..2ab051b67 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/client/impl/protocol/task/cache/AbstractCacheMessageTask.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/client/impl/protocol/task/cache/AbstractCacheMessageTask.java
+@@ -79,7 +79,7 @@ public abstract class AbstractCacheMessageTask<P>
+         if (BuildInfo.UNKNOWN_HAZELCAST_VERSION == getClientVersion()) {
+             boolean compatibilityEnabled = nodeEngine.getProperties().getBoolean(GroupProperty.COMPATIBILITY_3_6_CLIENT_ENABLED);
+             if (compatibilityEnabled) {
+-                responseData = nodeEngine.toData(new LegacyCacheConfig((CacheConfig) response));
++                responseData = nodeEngine.toData(response == null ? null : new LegacyCacheConfig((CacheConfig) response));
+             }
+         }
+ 

@@ -1,0 +1,15 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/SourceMap.java b/fixed/src/com/google/javascript/jscomp/SourceMap.java
+index 6c96be7e3..7ac84211c 100644
+--- a/buggy/src/com/google/javascript/jscomp/SourceMap.java
++++ b/fixed/src/com/google/javascript/jscomp/SourceMap.java
+@@ -180,7 +180,9 @@ public final class SourceMap {
+         lineNo = sourceMapping.getLineNumber();
+         charNo = sourceMapping.getColumnPosition();
+         String identifier = sourceMapping.getIdentifier();
+-        if (sourceMapping != null && !identifier.isEmpty()) {
++        // TODO(bradfordcsmith): When we move off of GWT we should be able
++        //     to use sourceMapping.hasIdentifier() instead of a null check.
++        if (identifier != null && !identifier.isEmpty()) {
+           originalName = identifier;
+         }
+       }

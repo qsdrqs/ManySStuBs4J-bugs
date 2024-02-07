@@ -1,0 +1,16 @@
+diff --git a/buggy/bundles/core/org.openhab.core/src/main/java/org/openhab/core/internal/items/ItemUpdater.java b/fixed/bundles/core/org.openhab.core/src/main/java/org/openhab/core/internal/items/ItemUpdater.java
+index 16d833ce4..67a096aee 100644
+--- a/buggy/bundles/core/org.openhab.core/src/main/java/org/openhab/core/internal/items/ItemUpdater.java
++++ b/fixed/bundles/core/org.openhab.core/src/main/java/org/openhab/core/internal/items/ItemUpdater.java
+@@ -81,9 +81,9 @@ public class ItemUpdater extends AbstractEventSubscriber {
+ 								break;
+ 							}
+ 						} catch (InstantiationException e) {
+-							logger.warn("InstantiationException on ", e.getMessage()); // Should never happen
++							logger.warn("InstantiationException on {}", e.getMessage()); // Should never happen
+ 						} catch (IllegalAccessException e) {
+-							logger.warn("IllegalAccessException on ", e.getMessage()); // Should never happen
++							logger.warn("IllegalAccessException on {}", e.getMessage()); // Should never happen
+ 						}
+ 					}
+ 				}				

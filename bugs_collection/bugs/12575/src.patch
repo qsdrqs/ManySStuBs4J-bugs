@@ -1,0 +1,13 @@
+diff --git a/buggy/metrics-core/src/main/java/com/yammer/metrics/core/VirtualMachineMetrics.java b/fixed/metrics-core/src/main/java/com/yammer/metrics/core/VirtualMachineMetrics.java
+index 6a82c5d7d..52ebd1272 100644
+--- a/buggy/metrics-core/src/main/java/com/yammer/metrics/core/VirtualMachineMetrics.java
++++ b/fixed/metrics-core/src/main/java/com/yammer/metrics/core/VirtualMachineMetrics.java
+@@ -31,7 +31,7 @@ public class VirtualMachineMetrics {
+         }
+     }
+ 
+-    public static VirtualMachineMetrics INSTANCE = new VirtualMachineMetrics();
++    public static final VirtualMachineMetrics INSTANCE = new VirtualMachineMetrics();
+ 
+     private VirtualMachineMetrics() { /* unused */ }
+ 

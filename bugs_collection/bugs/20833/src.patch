@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.maxcube/src/main/java/org/openhab/binding/maxcube/internal/MaxCubeBinding.java b/fixed/bundles/binding/org.openhab.binding.maxcube/src/main/java/org/openhab/binding/maxcube/internal/MaxCubeBinding.java
+index 3d9a5dfff..2fc55296a 100644
+--- a/buggy/bundles/binding/org.openhab.binding.maxcube/src/main/java/org/openhab/binding/maxcube/internal/MaxCubeBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.maxcube/src/main/java/org/openhab/binding/maxcube/internal/MaxCubeBinding.java
+@@ -261,7 +261,7 @@ public class MaxCubeBinding extends AbstractActiveBinding<MaxCubeBindingProvider
+ 		for (MaxCubeBindingProvider provider : providers) {
+ 			serialNumber = provider.getSerialNumber(itemName);
+ 
+-			if (serialNumber.equals(null))
++			if (!serialNumber.equals(null))
+ 				break;
+ 		}
+ 

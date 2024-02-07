@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsPagesTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsPagesTest.java
+index 1608ea3f9..72182a588 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsPagesTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsPagesTest.java
+@@ -738,7 +738,7 @@ public class XdocsPagesTest {
+             list.add(field.get(null).toString());
+         }
+ 
+-        final StringBuilder expectedText = new StringBuilder();
++        final StringBuilder expectedText = new StringBuilder(120);
+ 
+         for (String s : list) {
+             expectedText.append(s);

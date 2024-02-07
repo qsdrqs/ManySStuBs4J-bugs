@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/Compiler.java b/fixed/src/jvm/clojure/lang/Compiler.java
+index 8543df821..3ed366408 100644
+--- a/buggy/src/jvm/clojure/lang/Compiler.java
++++ b/fixed/src/jvm/clojure/lang/Compiler.java
+@@ -4687,7 +4687,7 @@ static public class ObjExpr implements Expr{
+ 				{
+ 				Symbol field = (Symbol) s.first();
+ 				Class k = tagClass(tagOf(field));
+-				Object val = Reflector.getInstanceField(value, field.name);
++				Object val = Reflector.getInstanceField(value, munge(field.name));
+ 				emitValue(val, gen);
+ 
+ 				if(k.isPrimitive())

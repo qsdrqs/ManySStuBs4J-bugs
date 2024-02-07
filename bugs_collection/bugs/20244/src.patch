@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.intertechno/src/main/java/org/openhab/binding/intertechno/internal/CULIntertechnoBinding.java b/fixed/bundles/binding/org.openhab.binding.intertechno/src/main/java/org/openhab/binding/intertechno/internal/CULIntertechnoBinding.java
+index 2e3642971..c8e62f954 100644
+--- a/buggy/bundles/binding/org.openhab.binding.intertechno/src/main/java/org/openhab/binding/intertechno/internal/CULIntertechnoBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.intertechno/src/main/java/org/openhab/binding/intertechno/internal/CULIntertechnoBinding.java
+@@ -97,7 +97,7 @@ public class CULIntertechnoBinding extends AbstractBinding<CULIntertechnoBinding
+                 break;
+             }
+         }
+-        if (config != null && command instanceof OnOffType) {
++        if (config != null && culHandlerLifecycle.isCulReady() && command instanceof OnOffType) {
+             OnOffType type = (OnOffType) command;
+             String commandValue = null;
+             switch (type) {

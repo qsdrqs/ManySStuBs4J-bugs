@@ -1,0 +1,23 @@
+diff --git a/buggy/metrics-core/src/main/java/com/yammer/metrics/stats/ExponentiallyDecayingSample.java b/fixed/metrics-core/src/main/java/com/yammer/metrics/stats/ExponentiallyDecayingSample.java
+index 2b36224de..337aa43ff 100644
+--- a/buggy/metrics-core/src/main/java/com/yammer/metrics/stats/ExponentiallyDecayingSample.java
++++ b/fixed/metrics-core/src/main/java/com/yammer/metrics/stats/ExponentiallyDecayingSample.java
+@@ -51,15 +51,15 @@ public class ExponentiallyDecayingSample implements Sample {
+ 
+     @Override
+     public void clear() {
+-	lockForRegularUsage();
++        lockForRescale();
+         try {
+            values.clear();
+            count.set(0);
+            this.startTime = tick();
+            nextScaleTime.set(System.nanoTime() + RESCALE_THRESHOLD);
+         } finally {
+-            unlockForRegularUsage();
+-	}
++            lockForRescale();
++        }
+     }
+ 
+     @Override

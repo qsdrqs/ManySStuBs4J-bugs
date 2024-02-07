@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/graphics/g2d/BitmapFontCache.java b/fixed/gdx/src/com/badlogic/gdx/graphics/g2d/BitmapFontCache.java
+index b32941f62..dc7ca1262 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/graphics/g2d/BitmapFontCache.java
++++ b/fixed/gdx/src/com/badlogic/gdx/graphics/g2d/BitmapFontCache.java
+@@ -38,7 +38,7 @@ public class BitmapFontCache implements Disposable {
+ 	private boolean integer = true;
+ 
+ 	public BitmapFontCache (BitmapFont font) {
+-		this(font, true);
++		this(font, font.usesIntegerPositions());
+ 	}
+ 
+ 	/** Creates a new BitmapFontCache

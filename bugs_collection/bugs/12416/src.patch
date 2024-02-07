@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard/src/main/java/com/yammer/dropwizard/cli/ConfiguredCommand.java b/fixed/dropwizard/src/main/java/com/yammer/dropwizard/cli/ConfiguredCommand.java
+index 3c54055c5..5a20a2b46 100644
+--- a/buggy/dropwizard/src/main/java/com/yammer/dropwizard/cli/ConfiguredCommand.java
++++ b/fixed/dropwizard/src/main/java/com/yammer/dropwizard/cli/ConfiguredCommand.java
+@@ -39,7 +39,7 @@ public abstract class ConfiguredCommand<T extends Configuration> extends Command
+         final StringBuilder syntax = new StringBuilder("<config file>");
+         final Optional<String> configured = getConfiguredSyntax();
+         if (configured.isPresent() && !configured.get().isEmpty()) {
+-            syntax.append(' ').append(configured);
++            syntax.append(' ').append(configured.get());
+         }
+         return syntax.toString();
+     }

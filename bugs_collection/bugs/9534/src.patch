@@ -1,0 +1,13 @@
+diff --git a/buggy/service/src/java/org/apache/hive/http/LlapServlet.java b/fixed/service/src/java/org/apache/hive/http/LlapServlet.java
+index a0eb4095f..2bc59b59b 100644
+--- a/buggy/service/src/java/org/apache/hive/http/LlapServlet.java
++++ b/fixed/service/src/java/org/apache/hive/http/LlapServlet.java
+@@ -34,7 +34,7 @@ import org.apache.hadoop.hive.llap.cli.LlapStatusServiceDriver;
+ @SuppressWarnings("serial")
+ public class LlapServlet extends HttpServlet {
+ 
+-  private static final Log LOG = LogFactory.getLog(JMXJsonServlet.class);
++  private static final Log LOG = LogFactory.getLog(LlapServlet.class);
+ 
+   /**
+    * Initialize this servlet.

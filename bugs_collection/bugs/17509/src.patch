@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/gdx-tests/src/com/badlogic/gdx/tests/gwt/GwtTestWrapper.java b/fixed/tests/gdx-tests/src/com/badlogic/gdx/tests/gwt/GwtTestWrapper.java
+index 4b7cca4dc..269e81437 100644
+--- a/buggy/tests/gdx-tests/src/com/badlogic/gdx/tests/gwt/GwtTestWrapper.java
++++ b/fixed/tests/gdx-tests/src/com/badlogic/gdx/tests/gwt/GwtTestWrapper.java
+@@ -465,7 +465,7 @@ public class GwtTestWrapper extends GdxTest {
+ 
+ 		@Override
+ 		public void setCursorPosition (int x, int y) {
+-			setCursorPosition(x, y);
++			input.setCursorPosition(x, y);
+ 		}
+ 	}
+ 

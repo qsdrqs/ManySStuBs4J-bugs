@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/sizes/ExecutableStatementCountCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/sizes/ExecutableStatementCountCheck.java
+index 448f6ef89..62e606bce 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/sizes/ExecutableStatementCountCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/sizes/ExecutableStatementCountCheck.java
+@@ -203,7 +203,7 @@ public final class ExecutableStatementCountCheck
+          * Creates new member context.
+          * @param ast member AST node.
+          */
+-        public Context(DetailAST ast) {
++        Context(DetailAST ast) {
+             this.ast = ast;
+             count = 0;
+         }

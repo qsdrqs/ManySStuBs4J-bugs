@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/xaframework/TransactionMonitorImpl.java b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/xaframework/TransactionMonitorImpl.java
+index f4f152979..b755ed1db 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/xaframework/TransactionMonitorImpl.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/xaframework/TransactionMonitorImpl.java
+@@ -68,7 +68,7 @@ public class TransactionMonitorImpl implements TransactionMonitor
+     @Override
+     public long getNumberOfCommittedTransactions()
+     {
+-        return startedTransactionCount.get() - activeTransactionCount.get();
++        return startedTransactionCount.get() - activeTransactionCount.get() - rolledBackTransactionCount.get();
+     }
+ 
+     @Override

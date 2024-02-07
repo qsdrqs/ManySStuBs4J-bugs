@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/io/org.openhab.io.servicediscovery/src/main/java/org/openhab/io/servicediscovery/internal/DiscoveryServiceImpl.java b/fixed/bundles/io/org.openhab.io.servicediscovery/src/main/java/org/openhab/io/servicediscovery/internal/DiscoveryServiceImpl.java
+index 6dbc397ea..ef38775c0 100644
+--- a/buggy/bundles/io/org.openhab.io.servicediscovery/src/main/java/org/openhab/io/servicediscovery/internal/DiscoveryServiceImpl.java
++++ b/fixed/bundles/io/org.openhab.io.servicediscovery/src/main/java/org/openhab/io/servicediscovery/internal/DiscoveryServiceImpl.java
+@@ -74,7 +74,7 @@ public class DiscoveryServiceImpl implements DiscoveryService {
+ 	public void unregisterService(ServiceDescription description) {
+ 		ServiceInfo serviceInfo = ServiceInfo.create(description.serviceType, description.serviceName, description.servicePort,
+ 				0, 0, description.serviceProperties);
+-		logger.info("Unregistering new service " + description.serviceType + " at port " + 
++		logger.info("Unregistering service " + description.serviceType + " at port " + 
+ 				String.valueOf(description.servicePort));
+ 		jmdns.unregisterService(serviceInfo);
+ 	}

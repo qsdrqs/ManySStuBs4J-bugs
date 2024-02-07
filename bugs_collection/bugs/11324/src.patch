@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule485annotations/AnnotationLocationTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule485annotations/AnnotationLocationTest.java
+index 4ea25bd23..ab1ed93fc 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule485annotations/AnnotationLocationTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule485annotations/AnnotationLocationTest.java
+@@ -22,7 +22,7 @@ public class AnnotationLocationTest extends BaseCheckTestSupport{
+     }
+ 
+     @Test
+-    public void annotationTest() throws IOException, Exception {
++    public void annotationTest() throws Exception {
+         
+         Class<AnnotationLocationCheck> clazz = AnnotationLocationCheck.class;
+         String msgLocation = "annotation.location";

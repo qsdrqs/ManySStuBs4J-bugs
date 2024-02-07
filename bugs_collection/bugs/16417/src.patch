@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/concurrent/lock/client/LockRequest.java b/fixed/hazelcast/src/main/java/com/hazelcast/concurrent/lock/client/LockRequest.java
+index 11974db76..ce74009d4 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/concurrent/lock/client/LockRequest.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/concurrent/lock/client/LockRequest.java
+@@ -57,7 +57,7 @@ public final class LockRequest extends AbstractLockRequest {
+ 
+     @Override
+     public Object[] getParameters() {
+-        if (timeout == -1 && ttl != Long.MAX_VALUE) {
++        if (timeout == -1 && ttl != -1L) {
+             // lock (lease, TimeUnit)
+             return new Object[]{ttl, TimeUnit.MILLISECONDS};
+         } else if (timeout >= 0) {

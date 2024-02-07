@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/io/org.openhab.io.net/src/main/java/org/openhab/io/net/exec/ExecUtil.java b/fixed/bundles/io/org.openhab.io.net/src/main/java/org/openhab/io/net/exec/ExecUtil.java
+index 337f8011f..b5f51b753 100644
+--- a/buggy/bundles/io/org.openhab.io.net/src/main/java/org/openhab/io/net/exec/ExecUtil.java
++++ b/fixed/bundles/io/org.openhab.io.net/src/main/java/org/openhab/io/net/exec/ExecUtil.java
+@@ -112,7 +112,7 @@ public class ExecUtil {
+         ByteArrayOutputStream stdout = new ByteArrayOutputStream();
+         PumpStreamHandler streamHandler = new PumpStreamHandler(stdout);
+ 
+-        executor.setExitValue(1);
++        executor.setExitValues(null);
+         executor.setStreamHandler(streamHandler);
+         executor.setWatchdog(watchdog);
+ 

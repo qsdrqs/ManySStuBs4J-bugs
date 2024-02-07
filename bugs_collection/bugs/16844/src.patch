@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/multimap/MultiMapDataSerializerHook.java b/fixed/hazelcast/src/main/java/com/hazelcast/multimap/MultiMapDataSerializerHook.java
+index fbfd0b7b1..bd55b6166 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/multimap/MultiMapDataSerializerHook.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/multimap/MultiMapDataSerializerHook.java
+@@ -211,7 +211,7 @@ public class MultiMapDataSerializerHook implements DataSerializerHook {
+                 return new TxnRemoveAllOperation();
+             }
+         };
+-        constructors[TXN_REMOVE_ALL] = new ConstructorFunction<Integer, IdentifiedDataSerializable>() {
++        constructors[TXN_REMOVE_ALL_BACKUP] = new ConstructorFunction<Integer, IdentifiedDataSerializable>() {
+             public IdentifiedDataSerializable createNew(Integer arg) {
+                 return new TxnRemoveAllBackupOperation();
+             }

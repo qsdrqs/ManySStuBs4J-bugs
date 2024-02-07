@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/event/query/QueryMonitor.java b/fixed/presto-main/src/main/java/com/facebook/presto/event/query/QueryMonitor.java
+index f8ab18c40..5bdd4d513 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/event/query/QueryMonitor.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/event/query/QueryMonitor.java
+@@ -153,7 +153,7 @@ public class QueryMonitor
+                         input.getSchema(),
+                         input.getTable(),
+                         input.getColumns().stream()
+-                                .map(Column::toString).collect(Collectors.toList()),
++                                .map(Column::getName).collect(Collectors.toList()),
+                         input.getConnectorInfo()));
+             }
+ 

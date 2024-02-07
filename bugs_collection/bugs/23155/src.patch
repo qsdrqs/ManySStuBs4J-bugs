@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/pipeline/DependencyParseAnnotator.java b/fixed/src/edu/stanford/nlp/pipeline/DependencyParseAnnotator.java
+index e54ca37d5..c924ea7a2 100644
+--- a/buggy/src/edu/stanford/nlp/pipeline/DependencyParseAnnotator.java
++++ b/fixed/src/edu/stanford/nlp/pipeline/DependencyParseAnnotator.java
+@@ -46,7 +46,7 @@ public class DependencyParseAnnotator extends SentenceAnnotator {
+   }
+ 
+   public DependencyParseAnnotator(Properties properties) {
+-    String modelPath = PropertiesUtils.getString(properties, "depparse.model", DependencyParser.DEFAULT_MODEL);
++    String modelPath = PropertiesUtils.getString(properties, "model", DependencyParser.DEFAULT_MODEL);
+     parser = DependencyParser.loadFromModelFile(modelPath, properties);
+ 
+     nThreads = PropertiesUtils.getInt(properties, "testThreads", DEFAULT_NTHREADS);

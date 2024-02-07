@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/FtpPollingConsumerTest.java b/fixed/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/FtpPollingConsumerTest.java
+index 5966faa64..d8fe3adb3 100644
+--- a/buggy/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/FtpPollingConsumerTest.java
++++ b/fixed/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/FtpPollingConsumerTest.java
+@@ -44,7 +44,7 @@ public class FtpPollingConsumerTest extends FtpServerTestSupport {
+     @Test
+     public void testPollingConsumer() throws Exception {
+         MockEndpoint result = getMockEndpoint("mock:result");
+-        result.expectedBodiesReceivedInAnyOrder("Message 1", "Message 2", "Message 3", "Message 4", "Message 5");
++        result.expectedBodiesReceived(5);
+         result.expectedFileExists(FTP_ROOT_DIR + "polling/done/1.txt");
+         result.expectedFileExists(FTP_ROOT_DIR + "polling/done/2.txt");
+         result.expectedFileExists(FTP_ROOT_DIR + "polling/done/3.txt");

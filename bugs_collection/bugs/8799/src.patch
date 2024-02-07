@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/metrics2/impl/MetricsSystemImpl.java b/fixed/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/metrics2/impl/MetricsSystemImpl.java
+index 4507e3579..b7660e571 100644
+--- a/buggy/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/metrics2/impl/MetricsSystemImpl.java
++++ b/fixed/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/metrics2/impl/MetricsSystemImpl.java
+@@ -387,7 +387,7 @@ public class MetricsSystemImpl extends MetricsSystem implements MetricsSource {
+    * Requests an immediate publish of all metrics from sources to sinks.
+    */
+   @Override
+-  public void publishMetricsNow() {
++  public synchronized void publishMetricsNow() {
+     if (sinks.size() > 0) {
+       publishMetrics(sampleMetrics(), true);
+     }    

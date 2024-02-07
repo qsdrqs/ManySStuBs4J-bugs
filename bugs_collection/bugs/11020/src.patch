@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/filters/SuppressWithNearbyCommentFilter.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/filters/SuppressWithNearbyCommentFilter.java
+index 4db7791aa..bc98d509f 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/filters/SuppressWithNearbyCommentFilter.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/filters/SuppressWithNearbyCommentFilter.java
+@@ -181,7 +181,7 @@ public class SuppressWithNearbyCommentFilter
+      * @param checkCpp {@code true} if C++ comments are checked.
+      */
+     public void setCheckCPP(boolean checkCpp) {
+-        this.checkCPP = checkCpp;
++        checkCPP = checkCpp;
+     }
+ 
+     /**

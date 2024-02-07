@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/map/impl/RecordStoreTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/map/impl/RecordStoreTest.java
+index a9fd0a48a..91e2ba4f7 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/map/impl/RecordStoreTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/map/impl/RecordStoreTest.java
+@@ -82,7 +82,7 @@ public class RecordStoreTest extends HazelcastTestSupport {
+ 
+     private DefaultRecordStore getRecordStore(IMap<Object, Object> map, int key) {
+         MapProxyImpl mapProxy = (MapProxyImpl) map;
+-        MapService mapService = mapProxy.getService();
++        MapService mapService = (MapService) mapProxy.getService();
+         MapServiceContext mapServiceContext = mapService.getMapServiceContext();
+         NodeEngine nodeEngine = mapServiceContext.getNodeEngine();
+         InternalPartitionService partitionService = nodeEngine.getPartitionService();

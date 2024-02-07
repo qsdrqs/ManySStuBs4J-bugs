@@ -1,0 +1,18 @@
+diff --git a/buggy/metrics-graphite/src/test/java/io/dropwizard/metrics/graphite/GraphiteReporterTest.java b/fixed/metrics-graphite/src/test/java/io/dropwizard/metrics/graphite/GraphiteReporterTest.java
+index e2a7d6079..eadf5ea17 100644
+--- a/buggy/metrics-graphite/src/test/java/io/dropwizard/metrics/graphite/GraphiteReporterTest.java
++++ b/fixed/metrics-graphite/src/test/java/io/dropwizard/metrics/graphite/GraphiteReporterTest.java
+@@ -412,11 +412,11 @@ public class GraphiteReporterTest {
+     }
+ 
+     private <T> SortedMap<MetricName, T> map() {
+-        return new TreeMap<MetricName, T>();
++        return new TreeMap<>();
+     }
+ 
+     private <T> SortedMap<MetricName, T> map(String name, Map<String,String> tags, T metric) {
+-        final TreeMap<MetricName, T> map = new TreeMap<MetricName, T>();
++        final TreeMap<MetricName, T> map = new TreeMap<>();
+         map.put(new MetricName(name,tags), metric);
+         return map;
+     }

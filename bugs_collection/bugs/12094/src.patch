@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/main/java/cucumber/runtime/filter/Filters.java b/fixed/core/src/main/java/cucumber/runtime/filter/Filters.java
+index 69c9d6f85..d78d1f8bf 100644
+--- a/buggy/core/src/main/java/cucumber/runtime/filter/Filters.java
++++ b/fixed/core/src/main/java/cucumber/runtime/filter/Filters.java
+@@ -45,7 +45,7 @@ public class Filters {
+     }
+     
+     public List<PickleEvent> limitPickleEvents(List<PickleEvent> pickleEvents) {
+-    	if (count > pickleEvents.size() || count < 0) {
++    	if (count > pickleEvents.size() || count < 1) {
+     		return pickleEvents;
+     	}
+ 		return pickleEvents.subList(0, count);

@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-common/src/main/java/org/apache/hadoop/hbase/io/TimeRange.java b/fixed/hbase-common/src/main/java/org/apache/hadoop/hbase/io/TimeRange.java
+index 6b0cd5c00..16dc7ae59 100644
+--- a/buggy/hbase-common/src/main/java/org/apache/hadoop/hbase/io/TimeRange.java
++++ b/fixed/hbase-common/src/main/java/org/apache/hadoop/hbase/io/TimeRange.java
+@@ -74,7 +74,7 @@ public class TimeRange {
+   throws IOException {
+     if (minStamp < 0 || maxStamp < 0) {
+       throw new IllegalArgumentException("Timestamp cannot be negative. minStamp:" + minStamp
+-        + ", maxStamp" + maxStamp);
++        + ", maxStamp:" + maxStamp);
+     }
+     if(maxStamp < minStamp) {
+       throw new IOException("maxStamp is smaller than minStamp");

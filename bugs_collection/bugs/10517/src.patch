@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/StringLiteralEqualityCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/StringLiteralEqualityCheck.java
+index 904d14d91..5fba50bfd 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/StringLiteralEqualityCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/StringLiteralEqualityCheck.java
+@@ -69,8 +69,7 @@ public class StringLiteralEqualityCheck extends AbstractCheck {
+ 
+         if (firstChild.getType() == TokenTypes.STRING_LITERAL
+                 || secondChild.getType() == TokenTypes.STRING_LITERAL) {
+-            log(ast.getLineNo(), ast.getColumnNo(),
+-                    MSG_KEY, ast.getText());
++            log(ast, MSG_KEY, ast.getText());
+         }
+     }
+ 

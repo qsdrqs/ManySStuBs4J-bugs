@@ -1,0 +1,16 @@
+diff --git a/buggy/components/camel-soap/src/test/java/org/apache/camel/dataformat/soap/SoapCxfServerTest.java b/fixed/components/camel-soap/src/test/java/org/apache/camel/dataformat/soap/SoapCxfServerTest.java
+index b276d9c5f..b81af73ca 100644
+--- a/buggy/components/camel-soap/src/test/java/org/apache/camel/dataformat/soap/SoapCxfServerTest.java
++++ b/fixed/components/camel-soap/src/test/java/org/apache/camel/dataformat/soap/SoapCxfServerTest.java
+@@ -74,10 +74,7 @@ public class SoapCxfServerTest extends RouteBuilder {
+         ElementNameStrategy elNameStrat = new ServiceInterfaceStrategy(CustomerService.class, true);
+         SoapJaxbDataFormat soapDataFormat = new SoapJaxbDataFormat(jaxbPackage, elNameStrat);
+         from("direct:camelClient") //
+-            .onException(NoSuchCustomerException.class) //
+-                .handled(true) //
+-                .unmarshal(soapDataFormat) //
+-            .end().marshal(soapDataFormat) //
++            .marshal(soapDataFormat) //
+             .to("direct:cxfEndpoint") //
+             .unmarshal(soapDataFormat);
+     }

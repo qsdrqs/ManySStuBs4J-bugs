@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions/gdx-tools/src/com/badlogic/gdx/tools/particleeditor/ScaledNumericPanel.java b/fixed/extensions/gdx-tools/src/com/badlogic/gdx/tools/particleeditor/ScaledNumericPanel.java
+index 186f4a8b8..b96098021 100644
+--- a/buggy/extensions/gdx-tools/src/com/badlogic/gdx/tools/particleeditor/ScaledNumericPanel.java
++++ b/fixed/extensions/gdx-tools/src/com/badlogic/gdx/tools/particleeditor/ScaledNumericPanel.java
+@@ -123,7 +123,7 @@ class ScaledNumericPanel extends EditorPanel {
+ 				GridBagConstraints expandButtonConstraints = layout.getConstraints(expandButton);
+ 				if (expanded) {
+ 					chart.setPreferredSize(new Dimension(150, 200));
+-					expandButton.setText("�");
++					expandButton.setText("-");
+ 					chartConstraints.weightx = 1;
+ 					expandButtonConstraints.weightx = 0;
+ 				} else {

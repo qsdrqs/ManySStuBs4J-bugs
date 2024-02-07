@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/springframework/samples/petclinic/web/VisitController.java b/fixed/src/main/java/org/springframework/samples/petclinic/web/VisitController.java
+index d2f1e6026..85a4d5429 100644
+--- a/buggy/src/main/java/org/springframework/samples/petclinic/web/VisitController.java
++++ b/fixed/src/main/java/org/springframework/samples/petclinic/web/VisitController.java
+@@ -73,7 +73,7 @@ public class VisitController {
+ 	 */
+ 	@RequestMapping(value="/owners/*/pets/{petId}/visits", method=RequestMethod.GET)
+ 	public ModelAndView showVisits(@PathVariable int petId) {
+-		ModelAndView mav = new ModelAndView("visits");
++		ModelAndView mav = new ModelAndView("visitList");
+ 		mav.addObject("visits", this.clinicService.findPetById(petId).getVisits());
+ 		return mav;
+ 	}

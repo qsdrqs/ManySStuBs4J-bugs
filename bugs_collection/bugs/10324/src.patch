@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/zaxxer/hikari/HikariDataSource.java b/fixed/src/main/java/com/zaxxer/hikari/HikariDataSource.java
+index 6bbe7c33b..6e8b86339 100644
+--- a/buggy/src/main/java/com/zaxxer/hikari/HikariDataSource.java
++++ b/fixed/src/main/java/com/zaxxer/hikari/HikariDataSource.java
+@@ -190,7 +190,7 @@ public class HikariDataSource extends HikariConfig implements DataSource
+     @Override
+     public boolean isWrapperFor(Class<?> iface) throws SQLException
+     {
+-        return (pool != null & pool.getDataSource().getClass().isAssignableFrom(iface));
++        return (pool != null && pool.getDataSource().getClass().isAssignableFrom(iface));
+     }
+ 
+     /**

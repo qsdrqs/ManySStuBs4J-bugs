@@ -1,0 +1,28 @@
+diff --git a/buggy/community/cypher/cypher/src/test/java/org/neo4j/cypher/javacompat/CypherLoggingTest.java b/fixed/community/cypher/cypher/src/test/java/org/neo4j/cypher/javacompat/CypherLoggingTest.java
+index 7bfb0590f..9c9727fd8 100644
+--- a/buggy/community/cypher/cypher/src/test/java/org/neo4j/cypher/javacompat/CypherLoggingTest.java
++++ b/fixed/community/cypher/cypher/src/test/java/org/neo4j/cypher/javacompat/CypherLoggingTest.java
+@@ -51,12 +51,12 @@ public class CypherLoggingTest
+ 
+         // when
+         engine.execute( "CREATE (n:Reference) CREATE (foo {test:'me'}) RETURN n" );
+-        engine.execute( "START n=node(*) RETURN n" );
++        engine.execute( "MATCH n RETURN n" );
+ 
+         // then
+         assertEquals(
+                 "CREATE (n:Reference) CREATE (foo {test:'me'}) RETURN n" + LINE_SEPARATOR +
+-                        "START n=node(*) RETURN n" + LINE_SEPARATOR,
++                        "MATCH n RETURN n" + LINE_SEPARATOR,
+                 logger.toString() );
+     }
+ 
+@@ -68,7 +68,7 @@ public class CypherLoggingTest
+ 
+         // when
+         engine.execute( "CREATE (n:Reference) CREATE (foo {test:'me'}) RETURN n" );
+-        engine.execute( "START n=node(*) RETURN n" );
++        engine.execute( "MATCH n RETURN n" );
+ 
+         // then
+         assertEquals("", logger.toString() );

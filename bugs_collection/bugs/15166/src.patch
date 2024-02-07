@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/Tracer.java b/fixed/src/com/google/javascript/jscomp/Tracer.java
+index 6e195044e..a3b0d7efe 100644
+--- a/buggy/src/com/google/javascript/jscomp/Tracer.java
++++ b/fixed/src/com/google/javascript/jscomp/Tracer.java
+@@ -967,7 +967,7 @@ final class Tracer {
+ 
+   /** Remove any ThreadTrace associated with the current thread */
+   static void clearThreadTrace() {
+-    traces.set(null);
++    traces.remove();
+   }
+ 
+   /**

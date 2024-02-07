@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/impl/MulticastService.java b/fixed/hazelcast/src/main/java/com/hazelcast/impl/MulticastService.java
+index 985642b64..7b456f512 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/impl/MulticastService.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/impl/MulticastService.java
+@@ -47,7 +47,7 @@ public class MulticastService implements Runnable {
+         this.node = node;
+         Config config = node.getConfig();
+         this.multicastSocket = multicastSocket;
+-        int bufferSize = 1024;
++        int bufferSize = 1024 * 1024;
+         this.datagramPacketReceive = new DatagramPacket(new byte[bufferSize], bufferSize);
+         this.datagramPacketSend = new DatagramPacket(new byte[bufferSize], bufferSize, InetAddress
+                 .getByName(config.getNetworkConfig().getJoin().getMulticastConfig().getMulticastGroup()),

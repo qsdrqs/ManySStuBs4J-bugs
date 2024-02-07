@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.zibase/src/main/java/org/openhab/binding/zibase/internal/ZibaseListener.java b/fixed/bundles/binding/org.openhab.binding.zibase/src/main/java/org/openhab/binding/zibase/internal/ZibaseListener.java
+index 98cb31ca5..75067bcea 100644
+--- a/buggy/bundles/binding/org.openhab.binding.zibase/src/main/java/org/openhab/binding/zibase/internal/ZibaseListener.java
++++ b/fixed/bundles/binding/org.openhab.binding.zibase/src/main/java/org/openhab/binding/zibase/internal/ZibaseListener.java
+@@ -161,7 +161,7 @@ public class ZibaseListener extends Thread {
+             } catch (UnknownHostException ex) {
+                 logger.error("Given Zibase host not reachable : " + ex);
+             } catch (IOException ex) {
+-                logger.error("IO eror reading Zibase soket : " + ex);
++                logger.error("IO eror reading Zibase socket : " + ex);
+             }
+ 
+         } else {

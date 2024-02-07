@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-hive/src/main/java/com/facebook/presto/hive/HiveWriterFactory.java b/fixed/presto-hive/src/main/java/com/facebook/presto/hive/HiveWriterFactory.java
+index fa8ff24d9..136f72e16 100644
+--- a/buggy/presto-hive/src/main/java/com/facebook/presto/hive/HiveWriterFactory.java
++++ b/fixed/presto-hive/src/main/java/com/facebook/presto/hive/HiveWriterFactory.java
+@@ -327,7 +327,7 @@ public class HiveWriterFactory
+                 throw new PrestoException(HIVE_PARTITION_READ_ONLY, "Cannot insert into existing partition of bucketed Hive table: " + partitionName.get());
+             }
+             if (immutablePartitions) {
+-                throw new PrestoException(HIVE_PARTITION_READ_ONLY, "Hive partitions are immutable: " + partitionName.get());
++                throw new PrestoException(HIVE_PARTITION_READ_ONLY, "Cannot insert into an existing partition of Hive table: " + partitionName.get());
+             }
+             isNew = false;
+ 

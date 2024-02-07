@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/Main.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/Main.java
+index 3bfc457a5..34a27db9a 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/Main.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/Main.java
+@@ -623,7 +623,7 @@ public final class Main {
+ 
+         /** Switch whether to generate suppressions file or not. */
+         @Option(names = {"-g", "--generate-xpath-suppression"},
+-                description = "Generates to output a suppression.xml to use to suppress all"
++                description = "Generates to output a suppression xml to use to suppress all"
+                         + " violations from user's config")
+         private boolean generateXpathSuppressionsFile;
+ 

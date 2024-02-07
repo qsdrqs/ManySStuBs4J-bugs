@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionDefaultComesLastTest.java b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionDefaultComesLastTest.java
+index 009914f90..68c051255 100644
+--- a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionDefaultComesLastTest.java
++++ b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionDefaultComesLastTest.java
+@@ -29,7 +29,7 @@ import org.junit.Test;
+ import com.puppycrawl.tools.checkstyle.DefaultConfiguration;
+ import com.puppycrawl.tools.checkstyle.checks.coding.DefaultComesLastCheck;
+ 
+-public class XpathRegressionDefaultComesLastTest extends AbstractXpathTestSupport {
++public class XpathRegressionDefaultComesLastTest extends XpathTestSupport {
+ 
+     @Test
+     public void testOne() throws Exception {

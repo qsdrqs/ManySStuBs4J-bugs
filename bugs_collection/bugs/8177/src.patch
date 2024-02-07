@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-libraries/flink-table-common/src/main/java/org/apache/flink/table/utils/EncodingUtils.java b/fixed/flink-libraries/flink-table-common/src/main/java/org/apache/flink/table/utils/EncodingUtils.java
+index 47aac25e8..553108261 100644
+--- a/buggy/flink-libraries/flink-table-common/src/main/java/org/apache/flink/table/utils/EncodingUtils.java
++++ b/fixed/flink-libraries/flink-table-common/src/main/java/org/apache/flink/table/utils/EncodingUtils.java
+@@ -76,7 +76,7 @@ public abstract class EncodingUtils {
+ 			return instance;
+ 		} catch (Exception e) {
+ 			throw new ValidationException(
+-				"Unable to deserialize string '" + base64String + "' of base class '" + baseClass.getName() + "'.");
++				"Unable to deserialize string '" + base64String + "' of base class '" + baseClass.getName() + "'.", e);
+ 		}
+ 	}
+ 

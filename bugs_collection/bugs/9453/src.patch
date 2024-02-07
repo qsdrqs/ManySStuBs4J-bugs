@@ -1,0 +1,13 @@
+diff --git a/buggy/src/java/org/apache/hadoop/hbase/regionserver/HRegionServer.java b/fixed/src/java/org/apache/hadoop/hbase/regionserver/HRegionServer.java
+index 6fb327d79..4e7f45ad8 100644
+--- a/buggy/src/java/org/apache/hadoop/hbase/regionserver/HRegionServer.java
++++ b/fixed/src/java/org/apache/hadoop/hbase/regionserver/HRegionServer.java
+@@ -1236,7 +1236,7 @@ public class HRegionServer implements HConstants, HRegionInterface,
+   }
+ 
+   /** @return the HLog */
+-  HLog getLog() {
++  public HLog getLog() {
+     return this.hlog;
+   }
+ 

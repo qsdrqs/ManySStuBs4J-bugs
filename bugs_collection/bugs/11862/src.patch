@@ -1,0 +1,16 @@
+diff --git a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/SimplifyBooleanReturnCheck.java b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/SimplifyBooleanReturnCheck.java
+index 2e27c63de..5dd2879bd 100644
+--- a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/SimplifyBooleanReturnCheck.java
++++ b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/SimplifyBooleanReturnCheck.java
+@@ -67,10 +67,7 @@ public class SimplifyBooleanReturnCheck
+         if (returnsOnlyBooleanLiteral(thenStatement)
+             && returnsOnlyBooleanLiteral(elseStatement))
+         {
+-            // TODO: i18n
+-            log(aAST.getLineNo(),
+-                aAST.getColumnNo(),
+-                "Remove conditional logic.");
++            log(aAST.getLineNo(), aAST.getColumnNo(), "simplify.boolreturn");
+         }
+     }
+ 

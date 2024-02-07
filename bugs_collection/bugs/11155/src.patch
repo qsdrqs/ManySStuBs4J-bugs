@@ -1,0 +1,31 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/AllChecksTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/AllChecksTest.java
+index 7e58d3f9e..59c14f678 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/AllChecksTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/AllChecksTest.java
+@@ -80,7 +80,7 @@ public class AllChecksTest extends BaseCheckTestSupport {
+ 
+         for (Class<?> check : checkstyleChecks) {
+             if (Check.class.isAssignableFrom(check)) {
+-                final Check testedCheck = (Check) check.newInstance();
++                final Check testedCheck = (Check) check.getDeclaredConstructor().newInstance();
+                 final int[] defaultTokens = testedCheck.getDefaultTokens();
+                 final int[] acceptableTokens = testedCheck.getAcceptableTokens();
+ 
+@@ -100,7 +100,7 @@ public class AllChecksTest extends BaseCheckTestSupport {
+ 
+         for (Class<?> check : checkstyleChecks) {
+             if (Check.class.isAssignableFrom(check)) {
+-                final Check testedCheck = (Check) check.newInstance();
++                final Check testedCheck = (Check) check.getDeclaredConstructor().newInstance();
+                 final int[] requiredTokens = testedCheck.getRequiredTokens();
+                 final int[] acceptableTokens = testedCheck.getAcceptableTokens();
+ 
+@@ -120,7 +120,7 @@ public class AllChecksTest extends BaseCheckTestSupport {
+ 
+         for (Class<?> check : checkstyleChecks) {
+             if (Check.class.isAssignableFrom(check)) {
+-                final Check testedCheck = (Check) check.newInstance();
++                final Check testedCheck = (Check) check.getDeclaredConstructor().newInstance();
+                 final int[] defaultTokens = testedCheck.getDefaultTokens();
+                 final int[] requiredTokens = testedCheck.getRequiredTokens();
+ 

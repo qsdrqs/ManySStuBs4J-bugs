@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/main/java/org/openmrs/api/impl/PatientServiceImpl.java b/fixed/api/src/main/java/org/openmrs/api/impl/PatientServiceImpl.java
+index 870156d8e..71a9a874a 100644
+--- a/buggy/api/src/main/java/org/openmrs/api/impl/PatientServiceImpl.java
++++ b/fixed/api/src/main/java/org/openmrs/api/impl/PatientServiceImpl.java
+@@ -125,7 +125,7 @@ public class PatientServiceImpl extends BaseOpenmrsService implements PatientSer
+ 			Context.requirePrivilege(PrivilegeConstants.DELETE_PATIENTS);
+ 		}
+ 		
+-		if (patient.getIdentifiers().size() == 1) {
++		if (!patient.isVoided() && patient.getIdentifiers().size() == 1) {
+ 			patient.getPatientIdentifier().setPreferred(true);
+ 		}
+ 		

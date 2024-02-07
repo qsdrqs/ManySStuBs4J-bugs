@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/client/impl/protocol/task/AbstractMessageTask.java b/fixed/hazelcast/src/main/java/com/hazelcast/client/impl/protocol/task/AbstractMessageTask.java
+index e0f239c30..0a07f9f05 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/client/impl/protocol/task/AbstractMessageTask.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/client/impl/protocol/task/AbstractMessageTask.java
+@@ -129,7 +129,7 @@ public abstract class AbstractMessageTask<P>
+         } else {
+             exception = new HazelcastInstanceNotActiveException();
+         }
+-        endpoint.sendResponse(exception, clientMessage.getCorrelationId());
++        sendClientMessage(exception);
+         endpointManager.removeEndpoint(endpoint);
+     }
+ 

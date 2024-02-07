@@ -1,0 +1,11 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/Version.java b/fixed/gdx/src/com/badlogic/gdx/Version.java
+index 82096b999..10775b7af 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/Version.java
++++ b/fixed/gdx/src/com/badlogic/gdx/Version.java
+@@ -24,5 +24,5 @@ package com.badlogic.gdx;
+ public class Version 
+ {	
+ 	/** the current version of libgdx in the major.minor format **/
+-	public static String VERSION = "0.52";
++	public static String VERSION = "0.6";
+ }

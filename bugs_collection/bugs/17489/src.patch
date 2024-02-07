@@ -1,0 +1,20 @@
+diff --git a/buggy/extensions/gdx-tools/src/com/badlogic/gdx/tools/texturepacker/TexturePacker.java b/fixed/extensions/gdx-tools/src/com/badlogic/gdx/tools/texturepacker/TexturePacker.java
+index fd050b039..32e173acd 100644
+--- a/buggy/extensions/gdx-tools/src/com/badlogic/gdx/tools/texturepacker/TexturePacker.java
++++ b/fixed/extensions/gdx-tools/src/com/badlogic/gdx/tools/texturepacker/TexturePacker.java
+@@ -167,13 +167,13 @@ public class TexturePacker {
+ 			}
+ 			progress.end();
+ 
+-			progress.start(0.19f);
++			progress.start(0.35f);
+ 			progress.count = 0;
+ 			progress.total = imageProcessor.getImages().size;
+ 			Array<Page> pages = packer.pack(progress, imageProcessor.getImages());
+ 			progress.end();
+ 
+-			progress.start(0.45f);
++			progress.start(0.29f);
+ 			progress.count = 0;
+ 			progress.total = pages.size;
+ 			String scaledPackFileName = settings.getScaledPackFileName(packFileName, i);

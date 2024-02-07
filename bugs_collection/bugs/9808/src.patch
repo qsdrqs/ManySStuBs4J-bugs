@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFAvgDouble.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFAvgDouble.java
+index 2187f5518..c15388a0a 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFAvgDouble.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFAvgDouble.java
+@@ -308,7 +308,7 @@ public class VectorUDAFAvgDouble extends VectorAggregateExpression {
+         double[] vector = inputVector.vector;
+         
+         if (inputVector.isRepeating) {
+-          if (inputVector.noNulls || !inputVector.isNull[0]) {
++          if (inputVector.noNulls) {
+             if (myagg.isNull) {
+               myagg.isNull = false;
+               myagg.sum = 0;

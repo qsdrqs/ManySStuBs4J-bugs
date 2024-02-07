@@ -1,0 +1,13 @@
+diff --git a/buggy/junit/src/main/java/cucumber/runtime/junit/JUnitOptions.java b/fixed/junit/src/main/java/cucumber/runtime/junit/JUnitOptions.java
+index b89fd786a..0f828ed8f 100644
+--- a/buggy/junit/src/main/java/cucumber/runtime/junit/JUnitOptions.java
++++ b/fixed/junit/src/main/java/cucumber/runtime/junit/JUnitOptions.java
+@@ -36,7 +36,7 @@ public class JUnitOptions {
+                 System.exit(0);
+             } else if (arg.equals("--no-allow-started-ignored") || arg.equals("--allow-started-ignored")) {
+                 allowStartedIgnored = !arg.startsWith("--no-");
+-            } else if (arg.equals("--filename-compatible-names") || arg.equals("--filename-compatible-names")) {
++            } else if (arg.equals("--no-filename-compatible-names") || arg.equals("--filename-compatible-names")) {
+                 filenameCompatibleNames = !arg.startsWith("--no-");
+             } else {
+                 throw new CucumberException("Unknown option: " + arg);

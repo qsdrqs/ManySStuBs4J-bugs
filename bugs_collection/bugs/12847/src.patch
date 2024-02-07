@@ -1,0 +1,14 @@
+diff --git a/buggy/server/src/test/java/io/druid/segment/realtime/FireDepartmentTest.java b/fixed/server/src/test/java/io/druid/segment/realtime/FireDepartmentTest.java
+index d212342ab..5fca643fc 100644
+--- a/buggy/server/src/test/java/io/druid/segment/realtime/FireDepartmentTest.java
++++ b/fixed/server/src/test/java/io/druid/segment/realtime/FireDepartmentTest.java
+@@ -61,8 +61,7 @@ public class FireDepartmentTest
+                         Arrays.asList("dim1", "dim2"),
+                         null,
+                         null
+-                    ),
+-                    JSONParseSpec.JSON
++                    )
+                 ),
+                 null, null, null, null
+             ),

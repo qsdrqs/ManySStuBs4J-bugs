@@ -1,0 +1,17 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/impl/MultipleLifecycleStrategyTest.java b/fixed/camel-core/src/test/java/org/apache/camel/impl/MultipleLifecycleStrategyTest.java
+index c55b4f70e..0cdd80897 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/impl/MultipleLifecycleStrategyTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/impl/MultipleLifecycleStrategyTest.java
+@@ -50,9 +50,9 @@ public class MultipleLifecycleStrategyTest extends TestSupport {
+         context.removeComponent("log");
+         context.stop();
+ 
+-        List<String> expectedEvents = Arrays.asList("onThreadPoolAdd", "onContextStart", "onServiceAdd", "onServiceAdd",
+-                "onServiceAdd", "onServiceAdd", "onServiceAdd", "onServiceAdd", "onServiceAdd",
+-                "onThreadPoolAdd", "onComponentAdd", "onEndpointAdd", "onComponentRemove", "onContextStop");
++        List<String> expectedEvents = Arrays.asList("onContextStart", "onServiceAdd", "onServiceAdd", "onServiceAdd",
++                "onServiceAdd", "onServiceAdd", "onServiceAdd", "onServiceAdd", "onThreadPoolAdd", "onThreadPoolAdd",
++                "onComponentAdd", "onEndpointAdd", "onComponentRemove", "onContextStop");
+         
+         assertEquals(expectedEvents, dummy1.getEvents());
+         assertEquals(expectedEvents, dummy2.getEvents());

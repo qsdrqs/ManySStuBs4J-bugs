@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/DFSClient.java b/fixed/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/DFSClient.java
+index 1fbd2ed5c..3c431438c 100644
+--- a/buggy/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/DFSClient.java
++++ b/fixed/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/DFSClient.java
+@@ -764,7 +764,7 @@ public class DFSClient implements java.io.Closeable {
+         final long elapsed = Time.now() - getLastLeaseRenewal();
+         if (elapsed > HdfsConstants.LEASE_HARDLIMIT_PERIOD) {
+           LOG.warn("Failed to renew lease for " + clientName + " for "
+-              + (elapsed/1000) + " seconds (>= soft-limit ="
++              + (elapsed/1000) + " seconds (>= hard-limit ="
+               + (HdfsConstants.LEASE_HARDLIMIT_PERIOD/1000) + " seconds.) "
+               + "Closing all files being written ...", e);
+           closeAllFilesBeingWritten(true);

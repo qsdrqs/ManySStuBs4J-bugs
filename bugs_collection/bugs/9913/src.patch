@@ -1,0 +1,22 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/udf/UDFRegExpReplace.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/udf/UDFRegExpReplace.java
+index e4ddab101..361f1cbab 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/udf/UDFRegExpReplace.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/udf/UDFRegExpReplace.java
+@@ -30,7 +30,7 @@ public class UDFRegExpReplace extends UDF {
+   private Pattern p = null;
+   
+   private Text lastReplacement = new Text();
+-  private String replacementString = null; 
++  private String replacementString = ""; 
+ 
+   Text result = new Text();
+   public UDFRegExpReplace() {
+@@ -41,7 +41,7 @@ public class UDFRegExpReplace extends UDF {
+       return null;
+     }
+     // If the regex is changed, make sure we compile the regex again.
+-    if (!regex.equals(lastRegex)) {
++    if (!regex.equals(lastRegex) || p == null) {
+       lastRegex.set(regex);
+       p = Pattern.compile(regex.toString());
+     }

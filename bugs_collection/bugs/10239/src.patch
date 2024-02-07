@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/mobeta/android/dslv/DragSortListView.java b/fixed/src/com/mobeta/android/dslv/DragSortListView.java
+index 75e8bd81e..81ce772e5 100644
+--- a/buggy/src/com/mobeta/android/dslv/DragSortListView.java
++++ b/fixed/src/com/mobeta/android/dslv/DragSortListView.java
+@@ -488,7 +488,7 @@ public class DragSortListView extends ListView {
+ 					visItemTop += mItemHeightCollapsed + divHeight;
+ 				}
+ 
+-				if (position < mSrcDragPos && position >= mExpDragPos) {
++				if (position <= mSrcDragPos && position > mExpDragPos) {
+ 					visItemPos = position + 1;
+ 				} else {
+ 					visItemPos = position;

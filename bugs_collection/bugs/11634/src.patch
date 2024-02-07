@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/TreeWalkerTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/TreeWalkerTest.java
+index 6752f7337..82a0b3947 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/TreeWalkerTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/TreeWalkerTest.java
+@@ -133,7 +133,7 @@ public class TreeWalkerTest extends BaseCheckTestSupport {
+         final TreeWalker treeWalker = new TreeWalker();
+         treeWalker.configure(new DefaultConfiguration("default config"));
+         //https://support.microsoft.com/en-us/kb/177506
+-        treeWalker.setCacheFile("/:invalid");
++        treeWalker.setCacheFile(File.separator + ":invalid");
+         try {
+             treeWalker.destroy();
+             fail();

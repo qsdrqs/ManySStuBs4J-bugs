@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/metrics/web/client/MetricsClientHttpRequestInterceptor.java b/fixed/spring-boot-project/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/metrics/web/client/MetricsClientHttpRequestInterceptor.java
+index 1c4f79e28..08044ed65 100644
+--- a/buggy/spring-boot-project/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/metrics/web/client/MetricsClientHttpRequestInterceptor.java
++++ b/fixed/spring-boot-project/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/metrics/web/client/MetricsClientHttpRequestInterceptor.java
+@@ -105,7 +105,7 @@ class MetricsClientHttpRequestInterceptor implements ClientHttpRequestIntercepto
+ 	}
+ 
+ 	private String ensureLeadingSlash(String url) {
+-		return (url.startsWith("/") ? url : "/" + url);
++		return (url == null || url.startsWith("/") ? url : "/" + url);
+ 	}
+ 
+ }

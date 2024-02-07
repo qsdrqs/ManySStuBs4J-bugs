@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-state-backends/flink-statebackend-rocksdb/src/main/java/org/apache/flink/contrib/streaming/state/AbstractRocksDBState.java b/fixed/flink-state-backends/flink-statebackend-rocksdb/src/main/java/org/apache/flink/contrib/streaming/state/AbstractRocksDBState.java
+index 4ac912c05..d915da9f2 100644
+--- a/buggy/flink-state-backends/flink-statebackend-rocksdb/src/main/java/org/apache/flink/contrib/streaming/state/AbstractRocksDBState.java
++++ b/fixed/flink-state-backends/flink-statebackend-rocksdb/src/main/java/org/apache/flink/contrib/streaming/state/AbstractRocksDBState.java
+@@ -210,7 +210,7 @@ public abstract class AbstractRocksDBState<K, N, V> implements InternalKvState<K
+ 			V value = priorSerializer.deserialize(serializedOldValueInput);
+ 			newSerializer.serialize(value, serializedMigratedValueOutput);
+ 		} catch (Exception e) {
+-			throw new StateMigrationException("Error while trying to migration RocksDB state.", e);
++			throw new StateMigrationException("Error while trying to migrate RocksDB state.", e);
+ 		}
+ 	}
+ 

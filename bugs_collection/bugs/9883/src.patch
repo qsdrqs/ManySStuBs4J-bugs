@@ -1,0 +1,19 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/parse/DDLSemanticAnalyzer.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/parse/DDLSemanticAnalyzer.java
+index 6660a913b..c80403d53 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/parse/DDLSemanticAnalyzer.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/parse/DDLSemanticAnalyzer.java
+@@ -1166,12 +1166,12 @@ public class DDLSemanticAnalyzer extends BaseSemanticAnalyzer {
+           bucketCols = part.getBucketCols();
+           inputFormatClass = part.getInputFormatClass();
+           isArchived = ArchiveUtils.isArchived(part);
+-          tblPartLoc = part.getDataLocation().toString();
++          tblPartLoc = part.getPartitionPath().toString();
+         }
+       } else {
+         inputFormatClass = tblObj.getInputFormatClass();
+         bucketCols = tblObj.getBucketCols();
+-        tblPartLoc = tblObj.getDataLocation().toString();
++        tblPartLoc = tblObj.getPath().toString();
+       }
+ 
+       // throw a HiveException for non-rcfile.

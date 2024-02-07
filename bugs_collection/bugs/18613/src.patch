@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/apache/ibatis/annotations/Options.java b/fixed/src/main/java/org/apache/ibatis/annotations/Options.java
+index ca0d93707..124e81e09 100644
+--- a/buggy/src/main/java/org/apache/ibatis/annotations/Options.java
++++ b/fixed/src/main/java/org/apache/ibatis/annotations/Options.java
+@@ -58,7 +58,7 @@ public @interface Options {
+ 
+   boolean useGeneratedKeys() default false;
+ 
+-  String keyProperty() default "id";
++  String keyProperty() default "";
+ 
+   String keyColumn() default "";
+   

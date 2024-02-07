@@ -1,0 +1,17 @@
+diff --git a/buggy/aws-java-sdk-dynamodb/src/main/java/com/amazonaws/services/dynamodbv2/datamodeling/DynamoDBReflector.java b/fixed/aws-java-sdk-dynamodb/src/main/java/com/amazonaws/services/dynamodbv2/datamodeling/DynamoDBReflector.java
+index 5b6913e75..75a283831 100644
+--- a/buggy/aws-java-sdk-dynamodb/src/main/java/com/amazonaws/services/dynamodbv2/datamodeling/DynamoDBReflector.java
++++ b/fixed/aws-java-sdk-dynamodb/src/main/java/com/amazonaws/services/dynamodbv2/datamodeling/DynamoDBReflector.java
+@@ -265,10 +265,10 @@ class DynamoDBReflector {
+                     setter = getter.getDeclaringClass().getMethod(setterName, getter.getReturnType());
+                 } catch ( NoSuchMethodException e ) {
+                     throw new DynamoDBMappingException("Expected a public, one-argument method called " + setterName
+-                            + " on class " + getter.getDeclaringClass(), e);
++                            + " on " + getter.getDeclaringClass(), e);
+                 } catch ( SecurityException e ) {
+                     throw new DynamoDBMappingException("No access to public, one-argument method called " + setterName
+-                            + " on class " + getter.getDeclaringClass(), e);
++                            + " on " + getter.getDeclaringClass(), e);
+                 }
+                 setterCache.put(getter, setter);
+             }

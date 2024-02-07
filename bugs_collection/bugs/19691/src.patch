@@ -1,0 +1,13 @@
+diff --git a/buggy/codec-http/src/main/java/io/netty/handler/codec/http/multipart/DiskFileUpload.java b/fixed/codec-http/src/main/java/io/netty/handler/codec/http/multipart/DiskFileUpload.java
+index 5158702d0..0fc46b0d0 100644
+--- a/buggy/codec-http/src/main/java/io/netty/handler/codec/http/multipart/DiskFileUpload.java
++++ b/fixed/codec-http/src/main/java/io/netty/handler/codec/http/multipart/DiskFileUpload.java
+@@ -137,7 +137,7 @@ public class DiskFileUpload extends AbstractDiskHttpData implements FileUpload {
+                HttpHeaderValues.FORM_DATA + "; " + HttpHeaderValues.NAME + "=\"" + getName() +
+                 "\"; " + HttpHeaderValues.FILENAME + "=\"" + filename + "\"\r\n" +
+                 HttpHeaderNames.CONTENT_TYPE + ": " + contentType +
+-                (getCharset() != null? "; " + HttpHeaderValues.CHARSET + '=' + getCharset() + "\r\n" : "\r\n") +
++                (getCharset() != null? "; " + HttpHeaderValues.CHARSET + '=' + getCharset().name() + "\r\n" : "\r\n") +
+                 HttpHeaderNames.CONTENT_LENGTH + ": " + length() + "\r\n" +
+                 "Completed: " + isCompleted() +
+                 "\r\nIsInMemory: " + isInMemory() + "\r\nRealFile: " +

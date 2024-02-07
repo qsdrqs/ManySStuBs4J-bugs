@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-http4/src/main/java/org/apache/camel/component/http4/CamelServlet.java b/fixed/components/camel-http4/src/main/java/org/apache/camel/component/http4/CamelServlet.java
+index 4ba1f8be1..a236f8efb 100644
+--- a/buggy/components/camel-http4/src/main/java/org/apache/camel/component/http4/CamelServlet.java
++++ b/fixed/components/camel-http4/src/main/java/org/apache/camel/component/http4/CamelServlet.java
+@@ -51,7 +51,7 @@ public class CamelServlet extends HttpServlet {
+ 
+             // Have the camel process the HTTP exchange.
+             DefaultExchange exchange = new DefaultExchange(consumer.getEndpoint(), ExchangePattern.InOut);
+-            if (((HttpEndpoint)consumer.getEndpoint()).isBridgeEndpoint()) {
++            if (consumer.getEndpoint().isBridgeEndpoint()) {
+                 exchange.setProperty(Exchange.SKIP_GZIP_ENCODING, Boolean.TRUE);
+             }
+             if (consumer.getEndpoint().isDisableStreamCache()) {

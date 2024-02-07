@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/test/java/org/openmrs/annotation/OpenmrsProfileExcludeFilterWithModulesTest.java b/fixed/api/src/test/java/org/openmrs/annotation/OpenmrsProfileExcludeFilterWithModulesTest.java
+index 2150b3097..df31d0c80 100644
+--- a/buggy/api/src/test/java/org/openmrs/annotation/OpenmrsProfileExcludeFilterWithModulesTest.java
++++ b/fixed/api/src/test/java/org/openmrs/annotation/OpenmrsProfileExcludeFilterWithModulesTest.java
+@@ -21,6 +21,6 @@ public class OpenmrsProfileExcludeFilterWithModulesTest extends BaseContextSensi
+ 	 */
+ 	@Test(expected = NoSuchBeanDefinitionException.class)
+ 	public void match_shouldNotIncludeBeanIfModuleIsStarted() {
+-		applicationContext.getBean(OpenmrsProfileWithoutTest1Module.class);
++		applicationContext.getBean(OpenmrsProfileWithoutMissingModule.class);
+ 	}
+ }
+\ No newline at end of file

@@ -1,0 +1,16 @@
+diff --git a/buggy/bundles/ui/org.openhab.ui/src/main/java/org/openhab/ui/internal/chart/ChartServlet.java b/fixed/bundles/ui/org.openhab.ui/src/main/java/org/openhab/ui/internal/chart/ChartServlet.java
+index a800e1b3b..51a622e0e 100644
+--- a/buggy/bundles/ui/org.openhab.ui/src/main/java/org/openhab/ui/internal/chart/ChartServlet.java
++++ b/fixed/bundles/ui/org.openhab.ui/src/main/java/org/openhab/ui/internal/chart/ChartServlet.java
+@@ -246,9 +246,9 @@ public class ChartServlet extends HttpServlet implements ManagedService {
+ 					req.getParameter("items"), req.getParameter("groups"));
+ 			ImageIO.write(chart, provider.getChartType().toString(), res.getOutputStream());
+ 		} catch (ItemNotFoundException e) {
+-			logger.debug("Item not found error while generating chart.");
++			logger.error("Item not found error while generating chart.", e);
+ 		} catch (IllegalArgumentException e) {
+-			logger.debug("Illegal argument in chart: {}", e);
++			logger.error("Illegal argument in chart", e);
+ 		}
+ 	}
+ 

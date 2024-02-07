@@ -1,0 +1,31 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsJavaDocsTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsJavaDocsTest.java
+index b62bd8fbe..442cb8aaa 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsJavaDocsTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsJavaDocsTest.java
+@@ -278,7 +278,7 @@ public class XdocsJavaDocsTest extends AbstractModuleTestSupport {
+         final boolean changeToTag = "code".equals(name);
+ 
+         if (newLineOpenBefore) {
+-            result.append(System.lineSeparator());
++            result.append('\n');
+         }
+         else if (shouldAppendSpace(result, '<')) {
+             result.append(' ');
+@@ -297,7 +297,7 @@ public class XdocsJavaDocsTest extends AbstractModuleTestSupport {
+         }
+ 
+         if (newLineOpenAfter) {
+-            result.append(System.lineSeparator());
++            result.append('\n');
+         }
+ 
+         if (sanitize) {
+@@ -308,7 +308,7 @@ public class XdocsJavaDocsTest extends AbstractModuleTestSupport {
+         }
+ 
+         if (newLineClose) {
+-            result.append(System.lineSeparator());
++            result.append('\n');
+         }
+ 
+         if (changeToTag) {

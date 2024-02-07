@@ -1,0 +1,13 @@
+diff --git a/buggy/enterprise/ha/src/test/java/jmx/JmxDocTest.java b/fixed/enterprise/ha/src/test/java/jmx/JmxDocTest.java
+index 63acaf6b3..fe946b3f5 100644
+--- a/buggy/enterprise/ha/src/test/java/jmx/JmxDocTest.java
++++ b/fixed/enterprise/ha/src/test/java/jmx/JmxDocTest.java
+@@ -321,7 +321,7 @@ public class JmxDocTest
+                                        MBeanOperationInfo[] operations, boolean nonHtml )
+     {
+         addNonHtmlCondition( beanInfo, nonHtml );
+-        beanInfo.append( "[options=\"header\", cols=\"20m,40,20m,20m\"]\n"
++        beanInfo.append( "[options=\"header\", cols=\"23m,37,20m,20m\"]\n"
+                 + "|===\n"
+                 + "|Name|Description|ReturnType|Signature\n" );
+         SortedSet<String> operationInfo = new TreeSet<String>(

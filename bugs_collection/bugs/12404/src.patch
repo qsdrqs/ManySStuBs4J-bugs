@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-core/src/main/java/com/yammer/dropwizard/config/HttpConfiguration.java b/fixed/dropwizard-core/src/main/java/com/yammer/dropwizard/config/HttpConfiguration.java
+index 29a8835bc..91707e680 100644
+--- a/buggy/dropwizard-core/src/main/java/com/yammer/dropwizard/config/HttpConfiguration.java
++++ b/fixed/dropwizard-core/src/main/java/com/yammer/dropwizard/config/HttpConfiguration.java
+@@ -64,7 +64,7 @@ public class HttpConfiguration {
+ 
+     @NotNull
+     @JsonProperty
+-    private Duration maxIdleTime = Duration.seconds(1);
++    private Duration maxIdleTime = Duration.seconds(200);
+ 
+     @Min(1)
+     @Max(128)

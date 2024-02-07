@@ -1,0 +1,14 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/cache/impl/AbstractCacheRecordStore.java b/fixed/hazelcast/src/main/java/com/hazelcast/cache/impl/AbstractCacheRecordStore.java
+index fb39ddc69..67c1e8b90 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/cache/impl/AbstractCacheRecordStore.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/cache/impl/AbstractCacheRecordStore.java
+@@ -104,7 +104,8 @@ public abstract class AbstractCacheRecordStore<
+         this.cacheService = cacheService;
+         this.cacheConfig = cacheService.getCacheConfig(name);
+         if (cacheConfig == null) {
+-            throw new CacheNotExistsException("Cache already destroyed, node " + nodeEngine.getLocalMember());
++            throw new CacheNotExistsException("Cache is already destroyed or not created yet, on "
++                    + nodeEngine.getLocalMember());
+         }
+         this.records = createRecordCacheMap();
+         if (cacheConfig.getCacheLoaderFactory() != null) {

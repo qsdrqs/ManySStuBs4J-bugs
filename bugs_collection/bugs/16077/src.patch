@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/internal/cluster/impl/ClusterServiceImpl.java b/fixed/hazelcast/src/main/java/com/hazelcast/internal/cluster/impl/ClusterServiceImpl.java
+index 823535b09..4ec258fbd 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/internal/cluster/impl/ClusterServiceImpl.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/internal/cluster/impl/ClusterServiceImpl.java
+@@ -199,7 +199,7 @@ public class ClusterServiceImpl implements ClusterService, ConnectionListener, M
+         lock.lock();
+         try {
+             if (!isJoined()) {
+-                logger.warning("Ignoring heartbeat of sender: " + membersViewMetadata + " because not joined!");
++                logger.warning("Ignoring master confirmation of sender: " + membersViewMetadata + " because not joined!");
+                 return;
+             }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-jobclient/src/test/java/org/apache/hadoop/mapreduce/v2/TestMRJobsWithProfiler.java b/fixed/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-jobclient/src/test/java/org/apache/hadoop/mapreduce/v2/TestMRJobsWithProfiler.java
+index de17528d7..ac8189655 100644
+--- a/buggy/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-jobclient/src/test/java/org/apache/hadoop/mapreduce/v2/TestMRJobsWithProfiler.java
++++ b/fixed/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-jobclient/src/test/java/org/apache/hadoop/mapreduce/v2/TestMRJobsWithProfiler.java
+@@ -104,7 +104,7 @@ public class TestMRJobsWithProfiler {
+   }
+ 
+ 
+-  @Test (timeout = 120000)
++  @Test (timeout = 150000)
+   public void testProfiler() throws IOException, InterruptedException,
+       ClassNotFoundException {
+     if (!(new File(MiniMRYarnCluster.APPJAR)).exists()) {

@@ -1,0 +1,22 @@
+diff --git a/buggy/src/test/java/org/apache/hadoop/hbase/regionserver/handler/TestOpenRegionHandler.java b/fixed/src/test/java/org/apache/hadoop/hbase/regionserver/handler/TestOpenRegionHandler.java
+index 2c33d6acd..11b535c60 100644
+--- a/buggy/src/test/java/org/apache/hadoop/hbase/regionserver/handler/TestOpenRegionHandler.java
++++ b/fixed/src/test/java/org/apache/hadoop/hbase/regionserver/handler/TestOpenRegionHandler.java
+@@ -132,7 +132,7 @@ public class TestOpenRegionHandler {
+   @Test
+   public void testFailedOpenRegion() throws Exception {
+     Server server = new MockServer(HTU);
+-    RegionServerServices rsServices = Mockito.mock(RegionServerServices.class);
++    RegionServerServices rsServices = new MockRegionServerServices();
+ 
+     // Create it OFFLINE, which is what it expects
+     ZKAssign.createNodeOffline(server.getZooKeeper(), TEST_HRI, server.getServerName());
+@@ -157,7 +157,7 @@ public class TestOpenRegionHandler {
+   @Test
+   public void testFailedUpdateMeta() throws Exception {
+     Server server = new MockServer(HTU);
+-    RegionServerServices rsServices = Mockito.mock(RegionServerServices.class);
++    RegionServerServices rsServices = new MockRegionServerServices();
+ 
+     // Create it OFFLINE, which is what it expects
+     ZKAssign.createNodeOffline(server.getZooKeeper(), TEST_HRI, server.getServerName());

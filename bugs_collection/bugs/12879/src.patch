@@ -1,0 +1,13 @@
+diff --git a/buggy/services/src/main/java/io/druid/guice/RealtimeModule.java b/fixed/services/src/main/java/io/druid/guice/RealtimeModule.java
+index 6770b6500..7bcce1582 100644
+--- a/buggy/services/src/main/java/io/druid/guice/RealtimeModule.java
++++ b/fixed/services/src/main/java/io/druid/guice/RealtimeModule.java
+@@ -65,7 +65,7 @@ public class RealtimeModule implements Module
+         binder,
+         "druid.realtime.chathandler.type",
+         Key.get(ChatHandlerProvider.class),
+-        Key.get(ServiceAnnouncingChatHandlerProvider.class)
++        Key.get(NoopChatHandlerProvider.class)
+     );
+     final MapBinder<String, ChatHandlerProvider> handlerProviderBinder = PolyBind.optionBinder(
+         binder, Key.get(ChatHandlerProvider.class)

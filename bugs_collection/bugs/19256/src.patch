@@ -1,0 +1,13 @@
+diff --git a/buggy/enterprise/ha/src/main/java/org/neo4j/kernel/ha/zookeeper/ZooClient.java b/fixed/enterprise/ha/src/main/java/org/neo4j/kernel/ha/zookeeper/ZooClient.java
+index 118864895..98b8e4e46 100644
+--- a/buggy/enterprise/ha/src/main/java/org/neo4j/kernel/ha/zookeeper/ZooClient.java
++++ b/fixed/enterprise/ha/src/main/java/org/neo4j/kernel/ha/zookeeper/ZooClient.java
+@@ -1141,7 +1141,7 @@ public class ZooClient extends AbstractZooKeeperManager
+                             {
+                                 electionHappening = true;
+                                 clusterReceiver.newMaster( new InformativeStackTrace(
+-                                        "NodeDataChanged event received (someone though I should be the master)" ) );
++                                        "NodeDataChanged event received (someone thought I should be the master)" ) );
+                                 serversRefreshed = true;
+                             }
+                             finally

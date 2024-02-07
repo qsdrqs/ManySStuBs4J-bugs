@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/ui/org.openhab.ui.webapp/src/main/java/org/openhab/ui/webapp/internal/render/SelectionRenderer.java b/fixed/bundles/ui/org.openhab.ui.webapp/src/main/java/org/openhab/ui/webapp/internal/render/SelectionRenderer.java
+index 9c2115b41..77d186fd9 100644
+--- a/buggy/bundles/ui/org.openhab.ui.webapp/src/main/java/org/openhab/ui/webapp/internal/render/SelectionRenderer.java
++++ b/fixed/bundles/ui/org.openhab.ui.webapp/src/main/java/org/openhab/ui/webapp/internal/render/SelectionRenderer.java
+@@ -59,7 +59,7 @@ public class SelectionRenderer extends AbstractWidgetRenderer {
+ 		String snippet = getSnippet("selection");
+ 
+ 		snippet = snippet.replaceAll("%icon%", itemUIRegistry.getIcon(w));
+-		snippet = snippet.replace("%label_header%", itemUIRegistry.getLabel(w));
++		snippet = snippet.replace("%label_header%", getLabel(w));
+ 		
+ 		String state = itemUIRegistry.getState(w).toString();
+ 		Selection selection = (Selection) w;

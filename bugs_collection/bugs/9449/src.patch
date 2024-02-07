@@ -1,0 +1,13 @@
+diff --git a/buggy/contrib/stargate/core/src/main/java/org/apache/hadoop/hbase/stargate/util/UserData.java b/fixed/contrib/stargate/core/src/main/java/org/apache/hadoop/hbase/stargate/util/UserData.java
+index 0fd2252b1..16874d461 100644
+--- a/buggy/contrib/stargate/core/src/main/java/org/apache/hadoop/hbase/stargate/util/UserData.java
++++ b/fixed/contrib/stargate/core/src/main/java/org/apache/hadoop/hbase/stargate/util/UserData.java
+@@ -45,7 +45,7 @@ public class UserData {
+   }
+ 
+   public synchronized Object remove(int sel) {
+-    return remove(sel);
++    return data.remove(sel);
+   }
+ 
+ }

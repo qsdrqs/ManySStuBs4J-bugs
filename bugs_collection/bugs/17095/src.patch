@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/impl/Record.java b/fixed/hazelcast/src/main/java/com/hazelcast/impl/Record.java
+index a40063b91..43c0d7086 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/impl/Record.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/impl/Record.java
+@@ -343,7 +343,7 @@ public final class Record implements MapEntry {
+     @Override
+     public boolean equals(Object o) {
+         if (this == o) return true;
+-        if ((o instanceof Record)) return false;
++        if (!(o instanceof Record)) return false;
+         Record record = (Record) o;
+         return record.getId().equals(getId());
+     }

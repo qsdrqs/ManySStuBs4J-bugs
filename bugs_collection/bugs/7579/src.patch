@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/RemoteFilePollingConsumerPollStrategy.java b/fixed/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/RemoteFilePollingConsumerPollStrategy.java
+index 1d807ac5a..5d8a523da 100644
+--- a/buggy/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/RemoteFilePollingConsumerPollStrategy.java
++++ b/fixed/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/RemoteFilePollingConsumerPollStrategy.java
+@@ -39,7 +39,7 @@ public class RemoteFilePollingConsumerPollStrategy extends DefaultPollingConsume
+                 rfc.disconnect();
+             } catch (Throwable t) {
+                 // ignore the exception
+-                log.debug("Error occurred during disconnect from: " + rfc.remoteServer() + ". This example will be ignored.", t);
++                log.debug("Error occurred during disconnect from: " + rfc.remoteServer() + ". This exception will be ignored.", t);
+             }
+         }
+ 

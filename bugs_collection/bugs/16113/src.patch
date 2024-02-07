@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/proxy/ClientQueueProxy.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/proxy/ClientQueueProxy.java
+index e007d319f..88ec79677 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/proxy/ClientQueueProxy.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/proxy/ClientQueueProxy.java
+@@ -147,7 +147,7 @@ public final class ClientQueueProxy<E> extends PartitionSpecificClientProxy impl
+ 
+     @Override
+     public LocalQueueStats getLocalQueueStats() {
+-        throw new UnsupportedOperationException("Locality is ambiguous for client!!!");
++        throw new UnsupportedOperationException("Locality is ambiguous for client!");
+     }
+ 
+     @Override

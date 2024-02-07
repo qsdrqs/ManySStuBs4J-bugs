@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/example/localtime/LocalTimeServerHandler.java b/fixed/src/main/java/org/jboss/netty/example/localtime/LocalTimeServerHandler.java
+index df0264f66..348dfe61a 100644
+--- a/buggy/src/main/java/org/jboss/netty/example/localtime/LocalTimeServerHandler.java
++++ b/fixed/src/main/java/org/jboss/netty/example/localtime/LocalTimeServerHandler.java
+@@ -83,7 +83,7 @@ public class LocalTimeServerHandler extends SimpleChannelHandler {
+                     setMonth(calendar.get(MONTH) + 1).
+                     setDayOfMonth(calendar.get(DAY_OF_MONTH)).
+                     setDayOfWeek(DayOfWeek.valueOf(calendar.get(DAY_OF_WEEK))).
+-                    setHour(calendar.get(HOUR)).
++                    setHour(calendar.get(HOUR_OF_DAY)).
+                     setMinute(calendar.get(MINUTE)).
+                     setSecond(calendar.get(SECOND)).build());
+         }

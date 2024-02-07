@@ -1,0 +1,22 @@
+diff --git a/buggy/src/main/java/org/apache/ibatis/session/defaults/DefaultSqlSession.java b/fixed/src/main/java/org/apache/ibatis/session/defaults/DefaultSqlSession.java
+index d1c64bc9b..45d91622e 100644
+--- a/buggy/src/main/java/org/apache/ibatis/session/defaults/DefaultSqlSession.java
++++ b/fixed/src/main/java/org/apache/ibatis/session/defaults/DefaultSqlSession.java
+@@ -67,7 +67,7 @@ public class DefaultSqlSession implements SqlSession {
+ 
+   @Override
+   public <T> T selectOne(String statement) {
+-    return this.<T>selectOne(statement, null);
++    return this.selectOne(statement, null);
+   }
+ 
+   @Override
+@@ -288,7 +288,7 @@ public class DefaultSqlSession implements SqlSession {
+ 
+   @Override
+   public <T> T getMapper(Class<T> type) {
+-    return configuration.<T>getMapper(type, this);
++    return configuration.getMapper(type, this);
+   }
+ 
+   @Override

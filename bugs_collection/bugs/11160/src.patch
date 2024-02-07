@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/base/BaseCheckTestSupport.java b/fixed/src/it/java/com/google/checkstyle/test/base/BaseCheckTestSupport.java
+index eb4f4544e..2486b4f58 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/base/BaseCheckTestSupport.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/base/BaseCheckTestSupport.java
+@@ -32,7 +32,7 @@ import com.puppycrawl.tools.checkstyle.api.Configuration;
+ public abstract class BaseCheckTestSupport
+ {
+     /** A brief logger that only display info about errors */
+-    protected static class BriefLogger
++    static class BriefLogger
+         extends DefaultLogger
+     {
+         public BriefLogger(OutputStream out) throws UnsupportedEncodingException

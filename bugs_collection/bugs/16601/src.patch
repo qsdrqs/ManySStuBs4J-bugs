@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/client/impl/messagehandlers/AbstractPartitionsMessageHandler.java b/fixed/hazelcast/src/main/java/com/hazelcast/client/impl/messagehandlers/AbstractPartitionsMessageHandler.java
+index c2ae6ba99..b3a3fe6fb 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/client/impl/messagehandlers/AbstractPartitionsMessageHandler.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/client/impl/messagehandlers/AbstractPartitionsMessageHandler.java
+@@ -74,7 +74,7 @@ abstract class AbstractPartitionsMessageHandler extends AbstractMessageHandler {
+         return response;
+     }
+ 
+-    private class CallbackImpl implements Callback<Object> {
++    private static class CallbackImpl implements Callback<Object> {
+         private final ClientEndpoint endpoint;
+         private final MessageHandlerContext context;
+ 

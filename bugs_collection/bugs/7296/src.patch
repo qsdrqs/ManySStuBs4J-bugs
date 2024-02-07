@@ -1,0 +1,20 @@
+diff --git a/buggy/components/camel-bam/src/main/java/org/apache/camel/bam/rules/ProcessRules.java b/fixed/components/camel-bam/src/main/java/org/apache/camel/bam/rules/ProcessRules.java
+index 276ab2c2b..dd202c626 100644
+--- a/buggy/components/camel-bam/src/main/java/org/apache/camel/bam/rules/ProcessRules.java
++++ b/fixed/components/camel-bam/src/main/java/org/apache/camel/bam/rules/ProcessRules.java
+@@ -33,13 +33,13 @@ public class ProcessRules extends ServiceSupport {
+     private ProcessDefinition processDefinition;
+     private List<ActivityRules> activities = new ArrayList<ActivityRules>();
+ 
+-    public void processExpired(ActivityState activityState) throws Exception {
++    public synchronized void processExpired(ActivityState activityState) throws Exception {
+         for (ActivityRules activityRules : activities) {
+             activityRules.processExpired(activityState);
+         }
+     }
+ 
+-    public void processExchange(Exchange exchange, ProcessInstance process) {
++    public synchronized void processExchange(Exchange exchange, ProcessInstance process) {
+         for (ActivityRules activityRules : activities) {
+             activityRules.processExchange(exchange, process);
+         }

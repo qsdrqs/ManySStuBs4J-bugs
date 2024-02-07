@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/protobuf/ProtobufRouteTest.java b/fixed/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/protobuf/ProtobufRouteTest.java
+index d98a67322..cbcec8e6d 100644
+--- a/buggy/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/protobuf/ProtobufRouteTest.java
++++ b/fixed/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/protobuf/ProtobufRouteTest.java
+@@ -104,7 +104,7 @@ public class ProtobufRouteTest extends OSGiIntegrationTestSupport {
+                 from("direct:back").unmarshal(format).to("mock:reverse");
+                 
+                 from("direct:marshal").marshal().protobuf();
+-                from("direct:unmarshalA").unmarshal().protobuf("org.apache.camel.itest.osgi.protobuf.generated.AddressBookProtos$Person").to("mock:reverse");
++                from("direct:unmarshalA").unmarshal().protobuf("org.apache.camel.dataformat.protobuf.generated.AddressBookProtos$Person").to("mock:reverse");
+                 
+                 from("direct:unmarshalB").unmarshal().protobuf(AddressBookProtos.Person.getDefaultInstance()).to("mock:reverse");
+                 

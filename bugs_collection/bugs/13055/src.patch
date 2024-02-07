@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/com/metamx/druid/loading/OmniSegmentLoader.java b/fixed/server/src/main/java/com/metamx/druid/loading/OmniSegmentLoader.java
+index 38b811ca1..ffe419246 100644
+--- a/buggy/server/src/main/java/com/metamx/druid/loading/OmniSegmentLoader.java
++++ b/fixed/server/src/main/java/com/metamx/druid/loading/OmniSegmentLoader.java
+@@ -211,7 +211,7 @@ public class OmniSegmentLoader implements SegmentLoader
+ 
+     private synchronized void addSegment(DataSegment segment)
+     {
+-      if (! segments.add(segment)) {
++      if (segments.add(segment)) {
+         currSize += segment.getSize();
+       }
+     }

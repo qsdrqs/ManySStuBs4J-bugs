@@ -1,0 +1,11 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/WaitForTaskToComplete.java b/fixed/camel-core/src/main/java/org/apache/camel/WaitForTaskToComplete.java
+index 7e9ba3fb2..bd6cced51 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/WaitForTaskToComplete.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/WaitForTaskToComplete.java
+@@ -32,5 +32,5 @@ import javax.xml.bind.annotation.XmlType;
+ @XmlEnum(String.class)
+ public enum WaitForTaskToComplete {
+ 
+-    Newer, IfReplyExpected, Always
++    Never, IfReplyExpected, Always
+ }

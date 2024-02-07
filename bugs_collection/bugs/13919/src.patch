@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-raptor/src/test/java/com/facebook/presto/raptor/metadata/TestRaptorSplitManager.java b/fixed/presto-raptor/src/test/java/com/facebook/presto/raptor/metadata/TestRaptorSplitManager.java
+index 935a9536e..36e6e4954 100644
+--- a/buggy/presto-raptor/src/test/java/com/facebook/presto/raptor/metadata/TestRaptorSplitManager.java
++++ b/fixed/presto-raptor/src/test/java/com/facebook/presto/raptor/metadata/TestRaptorSplitManager.java
+@@ -121,7 +121,7 @@ public class TestRaptorSplitManager
+         List<ConnectorPartition> partitions = partitionResult.getPartitions();
+         ConnectorPartition partition = Iterables.getOnlyElement(partitions);
+         TupleDomain<ConnectorColumnHandle> columnUnionedTupleDomain = TupleDomain.columnWiseUnion(partition.getTupleDomain(), partition.getTupleDomain());
+-        assertEquals(columnUnionedTupleDomain, TupleDomain.all());
++        assertEquals(columnUnionedTupleDomain, TupleDomain.<ConnectorColumnHandle>all());
+ 
+         ConnectorSplitSource splitSource = raptorSplitManager.getPartitionSplits(tableHandle, partitions);
+         int splitCount = 0;

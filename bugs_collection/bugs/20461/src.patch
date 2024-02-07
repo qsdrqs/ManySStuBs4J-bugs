@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.akm868/src/main/java/org/openhab/binding/akm868/internal/AKM868Binding.java b/fixed/bundles/binding/org.openhab.binding.akm868/src/main/java/org/openhab/binding/akm868/internal/AKM868Binding.java
+index f2648f84d..5b79ac7d7 100644
+--- a/buggy/bundles/binding/org.openhab.binding.akm868/src/main/java/org/openhab/binding/akm868/internal/AKM868Binding.java
++++ b/fixed/bundles/binding/org.openhab.binding.akm868/src/main/java/org/openhab/binding/akm868/internal/AKM868Binding.java
+@@ -64,7 +64,7 @@ public class AKM868Binding extends AbstractActiveBinding<AKM868BindingProvider>
+     }
+ 
+     private void stopListener() {
+-        logger.debug("Stoppig AKM868 listener...");
++        logger.debug("Stopping AKM868 listener...");
+         if (packetlistener != null) {
+             packetlistener.stopListener();
+         }

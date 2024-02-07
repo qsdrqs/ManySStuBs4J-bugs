@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/ha/ZKFailoverController.java b/fixed/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/ha/ZKFailoverController.java
+index 788d48ec9..b1f592070 100644
+--- a/buggy/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/ha/ZKFailoverController.java
++++ b/fixed/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/ha/ZKFailoverController.java
+@@ -84,7 +84,7 @@ public abstract class ZKFailoverController {
+   };
+   
+   protected static final String USAGE = 
+-      "Usage: java zkfc [ -formatZK [-force] [-nonInteractive] ]";
++      "Usage: hdfs zkfc [ -formatZK [-force] [-nonInteractive] ]";
+ 
+   /** Unable to format the parent znode in ZK */
+   static final int ERR_CODE_FORMAT_DENIED = 2;

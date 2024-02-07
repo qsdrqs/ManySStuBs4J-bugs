@@ -1,0 +1,13 @@
+diff --git a/buggy/enterprise/ha/src/main/java/org/neo4j/graphdb/factory/HighlyAvailableGraphDatabaseFactory.java b/fixed/enterprise/ha/src/main/java/org/neo4j/graphdb/factory/HighlyAvailableGraphDatabaseFactory.java
+index 4aa405298..a9bc3f761 100644
+--- a/buggy/enterprise/ha/src/main/java/org/neo4j/graphdb/factory/HighlyAvailableGraphDatabaseFactory.java
++++ b/fixed/enterprise/ha/src/main/java/org/neo4j/graphdb/factory/HighlyAvailableGraphDatabaseFactory.java
+@@ -32,7 +32,7 @@ public class HighlyAvailableGraphDatabaseFactory extends GraphDatabaseFactory
+ 
+     public GraphDatabaseService newHighlyAvailableDatabase( String path )
+     {
+-        return newEmbeddedDatabaseBuilder( path ).newGraphDatabase();
++        return newHighlyAvailableDatabaseBuilder( path ).newGraphDatabase();
+     }
+ 
+     public GraphDatabaseBuilder newHighlyAvailableDatabaseBuilder( final String path )

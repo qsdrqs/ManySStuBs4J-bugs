@@ -1,0 +1,22 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/internal/CheckUtil.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/internal/CheckUtil.java
+index 3564e45e1..fcca5b7fd 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/internal/CheckUtil.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/internal/CheckUtil.java
+@@ -280,7 +280,7 @@ public final class CheckUtil {
+                 result.append("empty");
+             }
+             else {
+-                result.append(".");
++                result.append('.');
+             }
+ 
+             tokenText = result.toString();
+@@ -330,7 +330,7 @@ public final class CheckUtil {
+             result.append("empty");
+         }
+         else {
+-            result.append(".");
++            result.append('.');
+         }
+ 
+         return result.toString();

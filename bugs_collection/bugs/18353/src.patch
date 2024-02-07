@@ -1,0 +1,22 @@
+diff --git a/buggy/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidAudio.java b/fixed/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidAudio.java
+index 891192ce1..ad8c3012b 100644
+--- a/buggy/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidAudio.java
++++ b/fixed/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidAudio.java
+@@ -102,7 +102,7 @@ public final class AndroidAudio implements Audio {
+ 			}
+ 		} else {
+ 			try {
+-				mediaPlayer.setDataSource(aHandle.path());
++				mediaPlayer.setDataSource(aHandle.file().getPath());
+ 				mediaPlayer.prepare();
+ 				AndroidMusic music = new AndroidMusic(this, mediaPlayer);
+ 				synchronized (musics) {
+@@ -132,7 +132,7 @@ public final class AndroidAudio implements Audio {
+ 			}
+ 		} else {
+ 			try {
+-				return new AndroidSound(soundPool, manager, soundPool.load(aHandle.path(), 1));
++				return new AndroidSound(soundPool, manager, soundPool.load(aHandle.file().getPath(), 1));
+ 			} catch (Exception ex) {
+ 				throw new GdxRuntimeException("Error loading audio file: " + file, ex);
+ 			}

@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/io/org.openhab.io.transport.cul/src/main/java/org/openhab/io/transport/cul/CULManager.java b/fixed/bundles/io/org.openhab.io.transport.cul/src/main/java/org/openhab/io/transport/cul/CULManager.java
+index feb5a736b..02dc20917 100644
+--- a/buggy/bundles/io/org.openhab.io.transport.cul/src/main/java/org/openhab/io/transport/cul/CULManager.java
++++ b/fixed/bundles/io/org.openhab.io.transport.cul/src/main/java/org/openhab/io/transport/cul/CULManager.java
+@@ -51,7 +51,7 @@ public class CULManager {
+ 	 * @throws CULDeviceException
+ 	 */
+ 	public static CULHandler getOpenCULHandler(String deviceName, CULMode mode) throws CULDeviceException {
+-		return getOpenCULHandler(deviceName, mode, null);
++		return getOpenCULHandler(deviceName, mode, new HashMap<String, Object>());
+ 	}
+ 	
+ 	/**

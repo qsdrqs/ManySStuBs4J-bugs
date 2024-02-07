@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/IllegalImportCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/IllegalImportCheck.java
+index 8b5a17a29..cb72825f1 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/IllegalImportCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/imports/IllegalImportCheck.java
+@@ -80,7 +80,7 @@ public class IllegalImportCheck
+      * Set the list of illegal packages.
+      * @param from array of illegal packages
+      */
+-    public void setIllegalPkgs(String... from) {
++    public final void setIllegalPkgs(String... from) {
+         illegalPkgs = from.clone();
+     }
+ 

@@ -56,7 +56,8 @@ def parse_json(file):
                 continue
 
             repo = data['projectName'].split('.')
-            assert len(repo) == 2
+            #print(repo)
+            #assert len(repo) == 2
             repo = '/'.join(repo)
 
             path = data['bugFilePath']

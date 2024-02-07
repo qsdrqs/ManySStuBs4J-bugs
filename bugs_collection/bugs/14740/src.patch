@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/refactoring/ErrorToFixMapper.java b/fixed/src/com/google/javascript/refactoring/ErrorToFixMapper.java
+index b8e572c5e..b7c75002b 100644
+--- a/buggy/src/com/google/javascript/refactoring/ErrorToFixMapper.java
++++ b/fixed/src/com/google/javascript/refactoring/ErrorToFixMapper.java
+@@ -102,7 +102,7 @@ public final class ErrorToFixMapper {
+         .insertBefore(error.node, "!")
+         .setDescription("Make type non-nullable")
+         .build();
+-    return ImmutableList.of(qmark, bang);
++    return ImmutableList.of(bang, qmark);
+   }
+ 
+   private static SuggestedFix removeNode(JSError error) {

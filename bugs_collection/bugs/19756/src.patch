@@ -1,0 +1,13 @@
+diff --git a/buggy/transport-native-epoll/src/main/java/io/netty/channel/epoll/EpollServerSocketChannel.java b/fixed/transport-native-epoll/src/main/java/io/netty/channel/epoll/EpollServerSocketChannel.java
+index 4a9cebd38..390ca3d0e 100644
+--- a/buggy/transport-native-epoll/src/main/java/io/netty/channel/epoll/EpollServerSocketChannel.java
++++ b/fixed/transport-native-epoll/src/main/java/io/netty/channel/epoll/EpollServerSocketChannel.java
+@@ -123,7 +123,7 @@ public final class EpollServerSocketChannel extends AbstractEpollChannel impleme
+                 // * The user called Channel.read() or ChannelHandlerContext.read() in channelReadComplete(...) method
+                 //
+                 // See https://github.com/netty/netty/issues/2254
+-                if (config.isAutoRead() && !readPending) {
++                if (!config.isAutoRead() && !readPending) {
+                     clearEpollIn();
+                 }
+             }

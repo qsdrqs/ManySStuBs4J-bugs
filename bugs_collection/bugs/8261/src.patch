@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/test/java/org/apache/flink/runtime/dispatcher/DispatcherTest.java b/fixed/flink-runtime/src/test/java/org/apache/flink/runtime/dispatcher/DispatcherTest.java
+index 8627c8ecf..1e356f636 100644
+--- a/buggy/flink-runtime/src/test/java/org/apache/flink/runtime/dispatcher/DispatcherTest.java
++++ b/fixed/flink-runtime/src/test/java/org/apache/flink/runtime/dispatcher/DispatcherTest.java
+@@ -159,7 +159,7 @@ public class DispatcherTest extends TestLogger {
+ 			mock(ResourceManagerGateway.class),
+ 			new BlobServer(blobServerConfig, new VoidBlobStore()),
+ 			heartbeatServices,
+-			new NoOpMetricRegistry(),
++			NoOpMetricRegistry.INSTANCE,
+ 			fatalErrorHandler,
+ 			TEST_JOB_ID);
+ 

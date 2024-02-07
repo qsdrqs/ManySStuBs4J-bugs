@@ -1,0 +1,12 @@
+diff --git a/buggy/dropwizard-core/src/test/java/com/yammer/dropwizard/config/tests/ConfigurationExceptionTest.java b/fixed/dropwizard-core/src/test/java/com/yammer/dropwizard/config/tests/ConfigurationExceptionTest.java
+index 01699f9c7..be6d5b30e 100644
+--- a/buggy/dropwizard-core/src/test/java/com/yammer/dropwizard/config/tests/ConfigurationExceptionTest.java
++++ b/fixed/dropwizard-core/src/test/java/com/yammer/dropwizard/config/tests/ConfigurationExceptionTest.java
+@@ -17,6 +17,6 @@ public class ConfigurationExceptionTest {
+ 
+         assertThat(e.getMessage(),
+                    is("config.yml has the following errors:\n" +
+-                      "  * woo may not be null"));
++                      "  * woo may not be null\n"));
+     }
+ }

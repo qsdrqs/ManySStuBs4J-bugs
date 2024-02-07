@@ -1,0 +1,40 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/AuditEventDefaultFormatterTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/AuditEventDefaultFormatterTest.java
+index e22c9770c..e29f8110c 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/AuditEventDefaultFormatterTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/AuditEventDefaultFormatterTest.java
+@@ -44,7 +44,7 @@ public class AuditEventDefaultFormatterTest {
+         when(mock.getColumn()).thenReturn(1);
+         when(mock.getMessage()).thenReturn("Mocked message.");
+         when(mock.getFileName()).thenReturn("InputMockFile.java");
+-        final AuditEvemtFormatter formatter = new AuditEventDefaultFormatter();
++        final AuditEventFormatter formatter = new AuditEventDefaultFormatter();
+ 
+         final String expected = "[WARN] InputMockFile.java:1:1: Mocked message. [TestModule]";
+ 
+@@ -60,7 +60,7 @@ public class AuditEventDefaultFormatterTest {
+         when(mock.getColumn()).thenReturn(1);
+         when(mock.getMessage()).thenReturn("Mocked message.");
+         when(mock.getFileName()).thenReturn("InputMockFile.java");
+-        final AuditEvemtFormatter formatter = new AuditEventDefaultFormatter();
++        final AuditEventFormatter formatter = new AuditEventDefaultFormatter();
+ 
+         final String expected = "[WARN] InputMockFile.java:1:1: Mocked message. [TestModule]";
+ 
+@@ -76,7 +76,7 @@ public class AuditEventDefaultFormatterTest {
+         when(mock.getColumn()).thenReturn(1);
+         when(mock.getMessage()).thenReturn("Mocked message.");
+         when(mock.getFileName()).thenReturn("InputMockFile.java");
+-        final AuditEvemtFormatter formatter = new AuditEventDefaultFormatter();
++        final AuditEventFormatter formatter = new AuditEventDefaultFormatter();
+ 
+         final String expected = "[WARN] InputMockFile.java:1:1: Mocked message. [TestModule]";
+ 
+@@ -92,7 +92,7 @@ public class AuditEventDefaultFormatterTest {
+         when(mock.getColumn()).thenReturn(1);
+         when(mock.getMessage()).thenReturn("Mocked message.");
+         when(mock.getFileName()).thenReturn("InputMockFile.java");
+-        final AuditEvemtFormatter formatter = new AuditEventDefaultFormatter();
++        final AuditEventFormatter formatter = new AuditEventDefaultFormatter();
+ 
+         final String expected = "[WARN] InputMockFile.java:1:1: Mocked message. [TestModule]";
+ 

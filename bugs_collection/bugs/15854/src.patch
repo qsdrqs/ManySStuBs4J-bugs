@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/config/AliasedDiscoveryConfigUtils.java b/fixed/hazelcast/src/main/java/com/hazelcast/config/AliasedDiscoveryConfigUtils.java
+index f85d07dad..1fb15c0a3 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/config/AliasedDiscoveryConfigUtils.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/config/AliasedDiscoveryConfigUtils.java
+@@ -37,7 +37,7 @@ public final class AliasedDiscoveryConfigUtils {
+         ALIAS_MAPPINGS.put("gcp", "com.hazelcast.gcp.GcpDiscoveryStrategy");
+         ALIAS_MAPPINGS.put("azure", "com.hazelcast.azure.AzureDiscoveryStrategy");
+         ALIAS_MAPPINGS.put("kubernetes", "com.hazelcast.kubernetes.HazelcastKubernetesDiscoveryStrategy");
+-        ALIAS_MAPPINGS.put("eureka", "com.hazelcast.eureka.one.HazelcastKubernetesDiscoveryStrategy");
++        ALIAS_MAPPINGS.put("eureka", "com.hazelcast.eureka.one.EurekaOneDiscoveryStrategy");
+     }
+ 
+     /**

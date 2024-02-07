@@ -1,0 +1,13 @@
+diff --git a/buggy/PreviewExport/src/org/gephi/io/exporter/preview/ExporterBuilderSVG.java b/fixed/PreviewExport/src/org/gephi/io/exporter/preview/ExporterBuilderSVG.java
+index 834ca1dfc..b0edc2c13 100644
+--- a/buggy/PreviewExport/src/org/gephi/io/exporter/preview/ExporterBuilderSVG.java
++++ b/fixed/PreviewExport/src/org/gephi/io/exporter/preview/ExporterBuilderSVG.java
+@@ -38,7 +38,7 @@ public class ExporterBuilderSVG implements VectorFileExporterBuilder {
+     }
+ 
+     public FileType[] getFileTypes() {
+-        FileType ft = new FileType(".SVG", NbBundle.getMessage(ExporterBuilderSVG.class, "fileType_SVG_Name"));
++        FileType ft = new FileType(".svg", NbBundle.getMessage(ExporterBuilderSVG.class, "fileType_SVG_Name"));
+         return new FileType[]{ft};
+     }
+ 

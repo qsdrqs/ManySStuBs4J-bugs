@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/BasicDataSourceConfiguration.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/BasicDataSourceConfiguration.java
+index 53398e325..98f8ab416 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/BasicDataSourceConfiguration.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/BasicDataSourceConfiguration.java
+@@ -54,7 +54,7 @@ public class BasicDataSourceConfiguration extends AbstractDataSourceConfiguratio
+ 		this.pool.setMaxIdle(getMaxIdle());
+ 		this.pool.setMinIdle(getMinIdle());
+ 		this.pool.setTestOnBorrow(isTestOnBorrow());
+-		this.pool.setTestOnReturn(isTestOnBorrow());
++		this.pool.setTestOnReturn(isTestOnReturn());
+ 		this.pool.setValidationQuery(getValidationQuery());
+ 		return this.pool;
+ 	}

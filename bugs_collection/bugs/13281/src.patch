@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-raptor/src/main/java/com/facebook/presto/raptor/storage/BackupStats.java b/fixed/presto-raptor/src/main/java/com/facebook/presto/raptor/storage/BackupStats.java
+index fa3d088eb..d4e697de4 100644
+--- a/buggy/presto-raptor/src/main/java/com/facebook/presto/raptor/storage/BackupStats.java
++++ b/fixed/presto-raptor/src/main/java/com/facebook/presto/raptor/storage/BackupStats.java
+@@ -39,7 +39,7 @@ public class BackupStats
+     public void addCopyShardDataRate(DataSize size, Duration duration)
+     {
+         DataSize rate = dataRate(size, duration).convertToMostSuccinctDataSize();
+-        copyToBackupBytesPerSecond.add(Math.round(rate.toBytes()));
++        copyToBackupBytesPerSecond.add(rate.toBytes());
+         copyToBackupShardSizeBytes.add(size.toBytes());
+         copyToBackupTimeInMilliSeconds.add(duration.toMillis());
+     }

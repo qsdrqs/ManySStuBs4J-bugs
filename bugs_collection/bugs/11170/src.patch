@@ -1,0 +1,20 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/filters/SuppressWarningsFilterTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/filters/SuppressWarningsFilterTest.java
+index 72d744091..da6376268 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/filters/SuppressWarningsFilterTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/filters/SuppressWarningsFilterTest.java
+@@ -74,12 +74,12 @@ public class SuppressWarningsFilterTest
+         verifySuppressed(filterConfig, suppressed);
+     }
+ 
+-    public static DefaultConfiguration createFilterConfig(Class<?> classObj) {
++    private static DefaultConfiguration createFilterConfig(Class<?> classObj) {
+         return new DefaultConfiguration(classObj.getName());
+     }
+ 
+-    protected void verifySuppressed(Configuration aFilterConfig,
+-        String... aSuppressed) throws Exception {
++    private void verifySuppressed(Configuration aFilterConfig,
++            String... aSuppressed) throws Exception {
+         verify(createChecker(aFilterConfig),
+             getPath("filters/InputSuppressWarningsFilter.java"),
+             removeSuppressed(ALL_MESSAGES, aSuppressed));

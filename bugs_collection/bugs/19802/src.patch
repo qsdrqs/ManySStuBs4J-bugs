@@ -1,0 +1,13 @@
+diff --git a/buggy/example/src/main/java/io/netty/example/telnet/TelnetServer.java b/fixed/example/src/main/java/io/netty/example/telnet/TelnetServer.java
+index 6d319366a..d69da7a30 100644
+--- a/buggy/example/src/main/java/io/netty/example/telnet/TelnetServer.java
++++ b/fixed/example/src/main/java/io/netty/example/telnet/TelnetServer.java
+@@ -38,7 +38,7 @@ public class TelnetServer {
+             ServerBootstrap b = new ServerBootstrap();
+             b.group(bossGroup, workerGroup)
+              .channel(NioServerSocketChannel.class)
+-             .childHandler(new TelnetServerPipelineFactory());
++             .childHandler(new TelnetServerInitializer());
+ 
+             b.bind(port).sync().channel().closeFuture().sync();
+         } finally {

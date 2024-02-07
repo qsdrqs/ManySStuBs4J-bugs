@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-core/src/main/java/com/yammer/dropwizard/cli/ServerCommand.java b/fixed/dropwizard-core/src/main/java/com/yammer/dropwizard/cli/ServerCommand.java
+index 70af298b5..311abb2d0 100644
+--- a/buggy/dropwizard-core/src/main/java/com/yammer/dropwizard/cli/ServerCommand.java
++++ b/fixed/dropwizard-core/src/main/java/com/yammer/dropwizard/cli/ServerCommand.java
+@@ -52,7 +52,7 @@ public class ServerCommand<T extends Configuration> extends ConfiguredCommand<T>
+         log.info("Starting {}", service.getName());
+ 
+         try {
+-            log.info("{}\n", Resources.toString(Resources.getResource("banner.txt"), Charsets.UTF_8));
++            log.info("\n{}", Resources.toString(Resources.getResource("banner.txt"), Charsets.UTF_8));
+         } catch (IllegalArgumentException ignored) {
+             // don't display the banner if there isn't one
+         }

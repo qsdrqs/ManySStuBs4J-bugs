@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/blocks/AvoidNestedBlocksCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/blocks/AvoidNestedBlocksCheck.java
+index a25ba7b86..74fca69c7 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/blocks/AvoidNestedBlocksCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/blocks/AvoidNestedBlocksCheck.java
+@@ -121,7 +121,7 @@ public class AvoidNestedBlocksCheck extends AbstractCheck {
+                 && (!allowInSwitchCase
+                     || parent.getParent().getType() != TokenTypes.CASE_GROUP
+                     || parent.getNumberOfChildren() != 1)) {
+-            log(ast.getLineNo(), ast.getColumnNo(), MSG_KEY_BLOCK_NESTED);
++            log(ast, MSG_KEY_BLOCK_NESTED);
+         }
+     }
+ 

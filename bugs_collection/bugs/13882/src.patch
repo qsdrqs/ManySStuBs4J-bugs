@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/sql/gen/PageProcessorCompiler.java b/fixed/presto-main/src/main/java/com/facebook/presto/sql/gen/PageProcessorCompiler.java
+index f1ecf7bfb..f1835fce6 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/sql/gen/PageProcessorCompiler.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/sql/gen/PageProcessorCompiler.java
+@@ -258,7 +258,7 @@ public class PageProcessorCompiler
+ 
+         Block body = method.getBody()
+                 .comment("boolean wasNull = false;")
+-                .putVariable(wasNullVariable, projection.getType().getJavaType() == void.class);
++                .putVariable(wasNullVariable, false);
+ 
+         ByteCodeExpressionVisitor visitor = new ByteCodeExpressionVisitor(callSiteBinder, fieldReferenceCompiler(callSiteBinder, positionVariable, wasNullVariable), metadata.getFunctionRegistry());
+ 

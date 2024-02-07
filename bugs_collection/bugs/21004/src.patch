@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/main/java/org/openmrs/api/SerializationService.java b/fixed/api/src/main/java/org/openmrs/api/SerializationService.java
+index 4d89dda53..f142a3b38 100644
+--- a/buggy/api/src/main/java/org/openmrs/api/SerializationService.java
++++ b/fixed/api/src/main/java/org/openmrs/api/SerializationService.java
+@@ -66,7 +66,7 @@ public interface SerializationService extends OpenmrsService {
+ 	 */
+ 	@Logging(ignoredArgumentIndexes = { 0 })
+     @Authorized
+-	public <T extends Object> T deserialize(String serializedObject, Class<? extends T> objectClass,
++	public <T> T deserialize(String serializedObject, Class<? extends T> objectClass,
+ 	        Class<? extends OpenmrsSerializer> serializerClass) throws SerializationException;
+ 	
+ 	/**

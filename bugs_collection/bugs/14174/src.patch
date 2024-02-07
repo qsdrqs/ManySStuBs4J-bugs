@@ -1,0 +1,17 @@
+diff --git a/buggy/FiltersPlugin/src/org/gephi/filters/plugin/AbstractAttributeFilter.java b/fixed/FiltersPlugin/src/org/gephi/filters/plugin/AbstractAttributeFilter.java
+index de55405c8..bb6865503 100644
+--- a/buggy/FiltersPlugin/src/org/gephi/filters/plugin/AbstractAttributeFilter.java
++++ b/fixed/FiltersPlugin/src/org/gephi/filters/plugin/AbstractAttributeFilter.java
+@@ -18,10 +18,10 @@ public abstract class AbstractAttributeFilter extends AbstractFilter implements
+     protected AbstractAttributeFilter.Type type;
+ 
+     public AbstractAttributeFilter(String name, AttributeColumn column) {
+-        super(name);
++        super(name + " (" + column.getTitle() + ")");
+         this.column = column;
+         this.type = AttributeUtils.getDefault().isNodeColumn(column) ? Type.NODE : Type.EDGE;
+-        
++
+         //Add column property
+         addProperty(AttributeColumn.class, "column");
+     }

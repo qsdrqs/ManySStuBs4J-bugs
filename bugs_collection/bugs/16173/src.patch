@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/monitor/impl/MemberStateImpl.java b/fixed/hazelcast/src/main/java/com/hazelcast/monitor/impl/MemberStateImpl.java
+index c6f60f101..7a01ce81f 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/monitor/impl/MemberStateImpl.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/monitor/impl/MemberStateImpl.java
+@@ -334,7 +334,7 @@ public class MemberStateImpl implements MemberState {
+             nodeState.fromJson(jsonNodeState);
+         }
+         JsonObject jsonHotRestartState = getObject(json, "hotRestartState", null);
+-        if (hotRestartState != null) {
++        if (jsonHotRestartState != null) {
+             hotRestartState = new HotRestartStateImpl();
+             hotRestartState.fromJson(jsonHotRestartState);
+         }

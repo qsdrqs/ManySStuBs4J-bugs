@@ -1,0 +1,19 @@
+diff --git a/buggy/flink-runtime/src/test/java/org/apache/flink/runtime/util/clock/ManualClock.java b/fixed/flink-runtime/src/test/java/org/apache/flink/runtime/util/clock/ManualClock.java
+index 69ae7be17..a3a15e505 100644
+--- a/buggy/flink-runtime/src/test/java/org/apache/flink/runtime/util/clock/ManualClock.java
++++ b/fixed/flink-runtime/src/test/java/org/apache/flink/runtime/util/clock/ManualClock.java
+@@ -30,12 +30,12 @@ public class ManualClock extends Clock {
+ 
+ 	@Override
+ 	public long absoluteTimeMillis() {
+-		return currentTime.get() / 1_000L;
++		return currentTime.get() / 1_000_000L;
+ 	}
+ 
+ 	@Override
+ 	public long relativeTimeMillis() {
+-		return currentTime.get() / 1_000L;
++		return currentTime.get() / 1_000_000L;
+ 	}
+ 
+ 	@Override

@@ -1,0 +1,13 @@
+diff --git a/buggy/lib/rhino/src/org/mozilla/javascript/optimizer/OptRuntime.java b/fixed/lib/rhino/src/org/mozilla/javascript/optimizer/OptRuntime.java
+index 8bbbccfcd..c409b3948 100644
+--- a/buggy/lib/rhino/src/org/mozilla/javascript/optimizer/OptRuntime.java
++++ b/fixed/lib/rhino/src/org/mozilla/javascript/optimizer/OptRuntime.java
+@@ -151,7 +151,7 @@ public final class OptRuntime extends ScriptRuntime
+             return oneObj;
+         } else if (num == -1.0) {
+             return minusOneObj;
+-        } else if (num != num) {
++        } else if (Double.isNaN(num)) {
+             return NaNobj;
+         }
+         return new Double(num);

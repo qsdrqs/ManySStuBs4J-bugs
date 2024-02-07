@@ -1,0 +1,19 @@
+diff --git a/buggy/scribejava-core/src/main/java/com/github/scribejava/core/services/TimestampService.java b/fixed/scribejava-core/src/main/java/com/github/scribejava/core/services/TimestampService.java
+index fca170c83..42e97fc4f 100644
+--- a/buggy/scribejava-core/src/main/java/com/github/scribejava/core/services/TimestampService.java
++++ b/fixed/scribejava-core/src/main/java/com/github/scribejava/core/services/TimestampService.java
+@@ -14,12 +14,12 @@ public interface TimestampService {
+      *
+      * @return timestamp
+      */
+-    public String getTimestampInSeconds();
++    String getTimestampInSeconds();
+ 
+     /**
+      * Returns a nonce (unique value for each request)
+      *
+      * @return nonce
+      */
+-    public String getNonce();
++    String getNonce();
+ }

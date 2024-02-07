@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-orc/src/test/java/com/facebook/presto/orc/TempFile.java b/fixed/presto-orc/src/test/java/com/facebook/presto/orc/TempFile.java
+index 3b73f6a97..322067edd 100644
+--- a/buggy/presto-orc/src/test/java/com/facebook/presto/orc/TempFile.java
++++ b/fixed/presto-orc/src/test/java/com/facebook/presto/orc/TempFile.java
+@@ -29,7 +29,7 @@ class TempFile
+     {
+         tempDir = createTempDir();
+         tempDir.mkdirs();
+-        file = new File(tempDir, "data.rcfile");
++        file = new File(tempDir, "data.orc");
+     }
+ 
+     public File getFile()

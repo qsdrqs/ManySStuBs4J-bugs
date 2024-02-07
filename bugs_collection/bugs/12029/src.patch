@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/RT.java b/fixed/src/jvm/clojure/lang/RT.java
+index 941a7f870..d5464f65b 100644
+--- a/buggy/src/jvm/clojure/lang/RT.java
++++ b/fixed/src/jvm/clojure/lang/RT.java
+@@ -383,7 +383,7 @@ static public Object nth(Object coll, int n){
+ 		return null;
+ 		}
+ 	else
+-		return null;
++		throw new UnsupportedOperationException("nth not supported on this type");
+ }
+ 
+ static public Object assocN(int n, Object val, Object coll){

@@ -1,0 +1,13 @@
+diff --git a/buggy/merger/src/main/java/com/metamx/druid/merger/worker/WorkerTaskMonitor.java b/fixed/merger/src/main/java/com/metamx/druid/merger/worker/WorkerTaskMonitor.java
+index 400abec76..02e95a0ef 100644
+--- a/buggy/merger/src/main/java/com/metamx/druid/merger/worker/WorkerTaskMonitor.java
++++ b/fixed/merger/src/main/java/com/metamx/druid/merger/worker/WorkerTaskMonitor.java
+@@ -175,7 +175,7 @@ public class WorkerTaskMonitor implements QuerySegmentWalker
+   private boolean isTaskRunning(final Task task)
+   {
+     for (final Task runningTask : running) {
+-      if (runningTask.equals(task.getId())) {
++      if (runningTask.getId().equals(task.getId())) {
+         return true;
+       }
+     }

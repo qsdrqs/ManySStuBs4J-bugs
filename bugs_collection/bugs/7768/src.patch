@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/processor/SendProcessor.java b/fixed/camel-core/src/main/java/org/apache/camel/processor/SendProcessor.java
+index 7ce2157fd..6883c6592 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/processor/SendProcessor.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/processor/SendProcessor.java
+@@ -62,7 +62,7 @@ public class SendProcessor extends ServiceSupport implements Processor, Traceabl
+     }
+ 
+     public String getTraceLabel() {
+-        return "to(" + destination.getEndpointUri() + ")";
++        return destination.getEndpointUri();
+     }
+ 
+     public void process(final Exchange exchange) throws Exception {

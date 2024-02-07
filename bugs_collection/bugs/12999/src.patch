@@ -1,0 +1,13 @@
+diff --git a/buggy/processing/src/test/java/io/druid/segment/filter/SpatialFilterTest.java b/fixed/processing/src/test/java/io/druid/segment/filter/SpatialFilterTest.java
+index b59d4a3d5..d342c12c5 100644
+--- a/buggy/processing/src/test/java/io/druid/segment/filter/SpatialFilterTest.java
++++ b/fixed/processing/src/test/java/io/druid/segment/filter/SpatialFilterTest.java
+@@ -83,7 +83,7 @@ public class SpatialFilterTest
+     return Arrays.asList(
+         new Object[][]{
+             {
+-                new IncrementalIndexSegment(rtIndex)
++                new IncrementalIndexSegment(rtIndex, null)
+             },
+             {
+                 new QueryableIndexSegment(null, mMappedTestIndex)

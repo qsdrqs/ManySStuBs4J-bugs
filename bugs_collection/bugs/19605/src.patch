@@ -1,0 +1,13 @@
+diff --git a/buggy/handler/src/test/java/io/netty/handler/ssl/JdkSslEngineTest.java b/fixed/handler/src/test/java/io/netty/handler/ssl/JdkSslEngineTest.java
+index 640823ade..d975b3065 100644
+--- a/buggy/handler/src/test/java/io/netty/handler/ssl/JdkSslEngineTest.java
++++ b/fixed/handler/src/test/java/io/netty/handler/ssl/JdkSslEngineTest.java
+@@ -286,7 +286,7 @@ public class JdkSslEngineTest extends SSLEngineTest {
+     @Override
+     protected boolean mySetupMutualAuthServerIsValidException(Throwable cause) {
+         // TODO(scott): work around for a JDK issue. The exception should be SSLHandshakeException.
+-        return super.mySetupMutualAuthServerIsValidException(cause) || cause instanceof SSLException;
++        return super.mySetupMutualAuthServerIsValidException(cause) || causedBySSLException(cause);
+     }
+ 
+     private void runTest() throws Exception {

@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-common/src/main/java/org/apache/hadoop/hbase/ByteBufferKeyValue.java b/fixed/hbase-common/src/main/java/org/apache/hadoop/hbase/ByteBufferKeyValue.java
+index f906681e7..c59b947f5 100644
+--- a/buggy/hbase-common/src/main/java/org/apache/hadoop/hbase/ByteBufferKeyValue.java
++++ b/fixed/hbase-common/src/main/java/org/apache/hadoop/hbase/ByteBufferKeyValue.java
+@@ -302,7 +302,7 @@ public class ByteBufferKeyValue extends ByteBufferCell implements ExtendedCell {
+   }
+ 
+   @Override
+-  public Cell deepClone() {
++  public ExtendedCell deepClone() {
+     byte[] copy = new byte[this.length];
+     ByteBufferUtils.copyFromBufferToArray(copy, this.buf, this.offset, 0, this.length);
+     KeyValue kv = new KeyValue(copy, 0, copy.length);

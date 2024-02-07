@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-raptor/src/main/java/com/facebook/presto/raptor/backup/TimeoutBackupStore.java b/fixed/presto-raptor/src/main/java/com/facebook/presto/raptor/backup/TimeoutBackupStore.java
+index 92d368c5b..ce7fccbe5 100644
+--- a/buggy/presto-raptor/src/main/java/com/facebook/presto/raptor/backup/TimeoutBackupStore.java
++++ b/fixed/presto-raptor/src/main/java/com/facebook/presto/raptor/backup/TimeoutBackupStore.java
+@@ -81,7 +81,7 @@ public class TimeoutBackupStore
+             return store.shardExists(uuid);
+         }
+         catch (UncheckedTimeoutException e) {
+-            throw new PrestoException(RAPTOR_BACKUP_TIMEOUT, "Shard backup size fetch timed out");
++            throw new PrestoException(RAPTOR_BACKUP_TIMEOUT, "Shard existence check timed out");
+         }
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/whitespace/SingleSpaceSeparatorCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/whitespace/SingleSpaceSeparatorCheckTest.java
+index cad431560..f91290f9c 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/whitespace/SingleSpaceSeparatorCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/whitespace/SingleSpaceSeparatorCheckTest.java
+@@ -47,7 +47,7 @@ public class SingleSpaceSeparatorCheckTest extends AbstractModuleTestSupport {
+     public void testGetAcceptableTokens() {
+         final SingleSpaceSeparatorCheck check = new SingleSpaceSeparatorCheck();
+ 
+-        assertArrayEquals("Invalid acceptable tockens",
++        assertArrayEquals("Invalid acceptable tokens",
+             CommonUtils.EMPTY_INT_ARRAY, check.getAcceptableTokens());
+     }
+ 

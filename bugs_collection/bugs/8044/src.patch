@@ -1,0 +1,15 @@
+diff --git a/buggy/flink-table/flink-table-api-java/src/main/java/org/apache/flink/table/catalog/CatalogManager.java b/fixed/flink-table/flink-table-api-java/src/main/java/org/apache/flink/table/catalog/CatalogManager.java
+index 839d5a9a6..564770978 100644
+--- a/buggy/flink-table/flink-table-api-java/src/main/java/org/apache/flink/table/catalog/CatalogManager.java
++++ b/fixed/flink-table/flink-table-api-java/src/main/java/org/apache/flink/table/catalog/CatalogManager.java
+@@ -182,8 +182,8 @@ public class CatalogManager {
+ 
+ 			LOG.info(
+ 				"Set the current default database as [{}] in the current default catalog [{}].",
+-				currentCatalogName,
+-				currentDatabaseName);
++				currentDatabaseName,
++				currentCatalogName);
+ 		}
+ 	}
+ 

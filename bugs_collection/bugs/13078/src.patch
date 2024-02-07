@@ -1,0 +1,13 @@
+diff --git a/buggy/merger/src/main/java/com/metamx/druid/merger/worker/executor/ExecutorMain.java b/fixed/merger/src/main/java/com/metamx/druid/merger/worker/executor/ExecutorMain.java
+index b55060b3f..f495aad64 100644
+--- a/buggy/merger/src/main/java/com/metamx/druid/merger/worker/executor/ExecutorMain.java
++++ b/fixed/merger/src/main/java/com/metamx/druid/merger/worker/executor/ExecutorMain.java
+@@ -37,7 +37,7 @@ public class ExecutorMain
+   {
+     LogLevelAdjuster.register();
+ 
+-    if (args.length != 3) {
++    if (args.length != 2) {
+       log.info("Usage: ExecutorMain <task.json> <status.json>");
+       System.exit(2);
+     }

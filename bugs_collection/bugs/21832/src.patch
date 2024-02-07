@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-tools/spring-boot-loader/src/main/java/org/springframework/boot/loader/jar/Handler.java b/fixed/spring-boot-project/spring-boot-tools/spring-boot-loader/src/main/java/org/springframework/boot/loader/jar/Handler.java
+index e6a7b5998..6829eca65 100644
+--- a/buggy/spring-boot-project/spring-boot-tools/spring-boot-loader/src/main/java/org/springframework/boot/loader/jar/Handler.java
++++ b/fixed/spring-boot-project/spring-boot-tools/spring-boot-loader/src/main/java/org/springframework/boot/loader/jar/Handler.java
+@@ -51,7 +51,7 @@ public class Handler extends URLStreamHandler {
+ 
+ 	private static final String CURRENT_DIR = "/./";
+ 
+-	private static final Pattern CURRENT_DIR_PATTERN = Pattern.compile(CURRENT_DIR);
++	private static final Pattern CURRENT_DIR_PATTERN = Pattern.compile(CURRENT_DIR, Pattern.LITERAL);
+ 
+ 	private static final String PARENT_DIR = "/../";
+ 

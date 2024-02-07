@@ -1,0 +1,13 @@
+diff --git a/buggy/junit/textui/TestRunner.java b/fixed/junit/textui/TestRunner.java
+index e39e4b874..01b9d6df9 100644
+--- a/buggy/junit/textui/TestRunner.java
++++ b/fixed/junit/textui/TestRunner.java
+@@ -179,7 +179,7 @@ public class TestRunner extends BaseTestRunner {
+ 			throw new Exception("Usage: TestRunner [-wait] testCaseName, where name is the name of the TestCase class");
+ 
+ 		try {
+-			if (method != null) 
++			if (!method.equals("")) 
+ 				return runSingleMethod(testCase, method, wait);
+ 			Test suite= getTest(testCase);
+ 			return doRun(suite, wait);

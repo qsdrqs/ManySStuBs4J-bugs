@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/graphics/g2d/PolygonRegionLoader.java b/fixed/gdx/src/com/badlogic/gdx/graphics/g2d/PolygonRegionLoader.java
+index 9488ba99c..ec720f073 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/graphics/g2d/PolygonRegionLoader.java
++++ b/fixed/gdx/src/com/badlogic/gdx/graphics/g2d/PolygonRegionLoader.java
+@@ -87,7 +87,7 @@ public class PolygonRegionLoader extends SynchronousAssetLoader<PolygonRegion, P
+ 				}
+ 			reader.close();
+ 		} catch (IOException e) {
+-			Gdx.app.error(PolygonRegionLoader.class.getSimpleName(), "could not read " + fileName, e);
++			throw new GdxRuntimeException("Error reading " + fileName, e);
+ 		}
+ 
+ 		if (image == null && params.textureExtensions != null) for (String extension : params.textureExtensions) {

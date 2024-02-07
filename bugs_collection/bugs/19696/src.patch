@@ -1,0 +1,15 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/ChannelOutboundBuffer.java b/fixed/transport/src/main/java/io/netty/channel/ChannelOutboundBuffer.java
+index fb44342bd..ed6dd1c8a 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/ChannelOutboundBuffer.java
++++ b/fixed/transport/src/main/java/io/netty/channel/ChannelOutboundBuffer.java
+@@ -192,8 +192,8 @@ public final class ChannelOutboundBuffer {
+         }
+ 
+         long newWriteBufferSize = TOTAL_PENDING_SIZE_UPDATER.addAndGet(this, -size);
+-        if (notifyWritability && newWriteBufferSize == 0
+-            || newWriteBufferSize <= channel.config().getWriteBufferLowWaterMark()) {
++        if (notifyWritability && (newWriteBufferSize == 0
++            || newWriteBufferSize <= channel.config().getWriteBufferLowWaterMark())) {
+             setWritable(invokeLater);
+         }
+     }

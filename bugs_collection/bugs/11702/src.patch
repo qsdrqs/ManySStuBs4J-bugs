@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/grammars/GeneratedJava14LexerTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/grammars/GeneratedJava14LexerTest.java
+index e3251c387..073c81234 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/grammars/GeneratedJava14LexerTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/grammars/GeneratedJava14LexerTest.java
+@@ -22,7 +22,7 @@ public class GeneratedJava14LexerTest
+         final DefaultConfiguration checkConfig =
+             createCheckConfig(MemberNameCheck.class);
+         final String[] expected = {
+-            "8:9: Name 'é' must match pattern '^[a-z][a-zA-Z0-9]*$'.",
++            "7:9: Name 'ÃЯ' must match pattern '^[a-z][a-zA-Z0-9]*$'.",
+         };
+         verify(checkConfig, getPath("grammars/InputGrammar.java"), expected);
+     }

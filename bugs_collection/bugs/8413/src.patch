@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-core/src/main/java/org/apache/flink/api/common/io/FileInputFormat.java b/fixed/flink-core/src/main/java/org/apache/flink/api/common/io/FileInputFormat.java
+index 61837781c..efa5631c0 100644
+--- a/buggy/flink-core/src/main/java/org/apache/flink/api/common/io/FileInputFormat.java
++++ b/fixed/flink-core/src/main/java/org/apache/flink/api/common/io/FileInputFormat.java
+@@ -543,7 +543,7 @@ public abstract class FileInputFormat<OT> implements InputFormat<OT, FileInputSp
+ 		for(FileStatus dir: fs.listStatus(path)) {
+ 			if (dir.isDir()) {
+ 				if (acceptFile(dir)) {
+-					addNestedFiles(dir.getPath(), files, length, logExcludedFiles);
++					length += addNestedFiles(dir.getPath(), files, length, logExcludedFiles);
+ 				} else {
+ 					if (logExcludedFiles && LOG.isDebugEnabled()) {
+ 						LOG.debug("Directory "+dir.getPath().toString()+" did not pass the file-filter and is excluded.");

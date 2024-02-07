@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/graphics/SpriteBatch.java b/fixed/gdx/src/com/badlogic/gdx/graphics/SpriteBatch.java
+index 5dd600cdf..ba50be238 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/graphics/SpriteBatch.java
++++ b/fixed/gdx/src/com/badlogic/gdx/graphics/SpriteBatch.java
+@@ -85,7 +85,7 @@ public class SpriteBatch {
+ 
+ 	private ShaderProgram shader;
+ 
+-	private float color = Color.WHITE.toFloatBits();
++	float color = Color.WHITE.toFloatBits();
+ 	private Color tempColor = new Color(1, 1, 1, 1);
+ 
+ 	/** number of render calls **/

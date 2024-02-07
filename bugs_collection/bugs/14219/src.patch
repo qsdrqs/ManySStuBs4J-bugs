@@ -1,0 +1,17 @@
+diff --git a/buggy/DesktopDataLaboratory/src/org/gephi/desktop/datalab/EdgeDataTable.java b/fixed/DesktopDataLaboratory/src/org/gephi/desktop/datalab/EdgeDataTable.java
+index aeb985d3d..db1e77400 100644
+--- a/buggy/DesktopDataLaboratory/src/org/gephi/desktop/datalab/EdgeDataTable.java
++++ b/fixed/DesktopDataLaboratory/src/org/gephi/desktop/datalab/EdgeDataTable.java
+@@ -271,10 +271,10 @@ public class EdgeDataTable {
+         }
+ 
+         if (model == null) {
+-            model = new EdgeDataTableModel(graph.getEdges().toArray(), columns.toArray(new EdgeDataColumn[0]));
++            model = new EdgeDataTableModel(graph.getEdgesAndMetaEdges().toArray(), columns.toArray(new EdgeDataColumn[0]));
+             table.setModel(model);
+         } else {
+-            model.setEdges(graph.getEdges().toArray());
++            model.setEdges(graph.getEdgesAndMetaEdges().toArray());
+             model.setColumns(columns.toArray(new EdgeDataColumn[0]));
+         }
+ 

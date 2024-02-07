@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/AbstractTreeTableModel.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/AbstractTreeTableModel.java
+index 93041e856..4402c2acb 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/AbstractTreeTableModel.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/AbstractTreeTableModel.java
+@@ -76,7 +76,7 @@ public abstract class AbstractTreeTableModel implements TreeTableModel {
+     private final Object root;
+     private final EventListenerList listenerList = new EventListenerList();
+ 
+-    public AbstractTreeTableModel(Object root) {
++    protected AbstractTreeTableModel(Object root) {
+         this.root = root;
+     }
+ 

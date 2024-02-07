@@ -1,0 +1,13 @@
+diff --git a/buggy/codec-http/src/main/java/io/netty/handler/codec/http/CookieEncoder.java b/fixed/codec-http/src/main/java/io/netty/handler/codec/http/CookieEncoder.java
+index 50e95b491..4ad856dc0 100644
+--- a/buggy/codec-http/src/main/java/io/netty/handler/codec/http/CookieEncoder.java
++++ b/fixed/codec-http/src/main/java/io/netty/handler/codec/http/CookieEncoder.java
+@@ -255,7 +255,7 @@ public class CookieEncoder {
+         sb.append((char) HttpConstants.SEMICOLON);
+     }
+ 
+-    private static void add(StringBuilder sb, String name, int val) {
++    private static void add(StringBuilder sb, String name, long val) {
+         sb.append(name);
+         sb.append((char) HttpConstants.EQUALS);
+         sb.append(val);

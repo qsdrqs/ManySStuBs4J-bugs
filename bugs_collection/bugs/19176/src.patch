@@ -1,0 +1,22 @@
+diff --git a/buggy/enterprise/cluster/src/main/java/org/neo4j/cluster/protocol/cluster/ClusterState.java b/fixed/enterprise/cluster/src/main/java/org/neo4j/cluster/protocol/cluster/ClusterState.java
+index d7872acd7..81596ae02 100644
+--- a/buggy/enterprise/cluster/src/main/java/org/neo4j/cluster/protocol/cluster/ClusterState.java
++++ b/fixed/enterprise/cluster/src/main/java/org/neo4j/cluster/protocol/cluster/ClusterState.java
+@@ -194,7 +194,7 @@ public enum ClusterState
+                             if ( context.hasJoinBeenDenied() )
+                             {
+                                 outgoing.offer( internal( ClusterMessage.joinFailure,
+-                                        new ClusterEntryDeniedException( context.me, context.configuration ) ) );
++                                        new ClusterEntryDeniedException( context.getMyId(), context.getConfiguration() ) ) );
+                                 return start;
+                             }
+                             ClusterMessage.ConfigurationTimeoutState state = message.getPayload();
+@@ -362,7 +362,7 @@ public enum ClusterState
+                             if ( context.hasJoinBeenDenied() )
+                             {
+                                 outgoing.offer( internal( ClusterMessage.joinFailure,
+-                                    new ClusterEntryDeniedException( context.me, context.configuration ) ) );
++                                    new ClusterEntryDeniedException( context.getMyId(), context.getConfiguration()) ) );
+                                 return start;
+                             }
+ 

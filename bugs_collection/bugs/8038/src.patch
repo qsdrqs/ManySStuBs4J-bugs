@@ -1,0 +1,21 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/processor/IdempotentConsumerTest.java b/fixed/camel-core/src/test/java/org/apache/camel/processor/IdempotentConsumerTest.java
+index bcc102e00..260e8b4f0 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/processor/IdempotentConsumerTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/processor/IdempotentConsumerTest.java
+@@ -71,14 +71,14 @@ public class IdempotentConsumerTest extends ContextTestSupport {
+     protected void setUp() throws Exception {
+         super.setUp();
+ 
+-        startEndpoint = resolveMandatoryEndpoint("direct:test.a");
++        startEndpoint = resolveMandatoryEndpoint("direct:start");
+         resultEndpoint = (MockEndpoint) resolveMandatoryEndpoint("mock:result");
+     }
+ 
+     protected RouteBuilder createRouteBuilder() {
+         return new RouteBuilder() {
+             public void configure() {
+-                from("direct:test.a").idempotentConsumer(header("messageId"), memoryMessageIdRepository()).to("mock:result");
++                from("direct:start").idempotentConsumer(header("messageId"), memoryMessageIdRepository()).to("mock:result");
+             }
+         };
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/security/token/SecretManager.java b/fixed/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/security/token/SecretManager.java
+index cda36fe65..37634b646 100644
+--- a/buggy/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/security/token/SecretManager.java
++++ b/fixed/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/security/token/SecretManager.java
+@@ -93,7 +93,7 @@ public abstract class SecretManager<T extends TokenIdentifier> {
+   /**
+    * The length of the random keys to use.
+    */
+-  private static final int KEY_LENGTH = 20;
++  private static final int KEY_LENGTH = 64;
+ 
+   /**
+    * A thread local store for the Macs.

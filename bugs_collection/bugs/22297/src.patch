@@ -1,0 +1,19 @@
+diff --git a/buggy/spring-boot-test-autoconfigure/src/main/java/org/springframework/boot/test/autoconfigure/orm/jpa/TestEntityManagerAutoConfiguration.java b/fixed/spring-boot-test-autoconfigure/src/main/java/org/springframework/boot/test/autoconfigure/orm/jpa/TestEntityManagerAutoConfiguration.java
+index 756dfea25..27790a4cd 100644
+--- a/buggy/spring-boot-test-autoconfigure/src/main/java/org/springframework/boot/test/autoconfigure/orm/jpa/TestEntityManagerAutoConfiguration.java
++++ b/fixed/spring-boot-test-autoconfigure/src/main/java/org/springframework/boot/test/autoconfigure/orm/jpa/TestEntityManagerAutoConfiguration.java
+@@ -29,12 +29,13 @@ import org.springframework.context.annotation.Configuration;
+  * Auto-configuration for {@link TestEntityManager}.
+  *
+  * @author Phillip Webb
++ * @since 1.4.0
+  * @see AutoConfigureTestEntityManager
+  */
+ @Configuration
+ @ConditionalOnClass({ EntityManagerFactory.class })
+ @AutoConfigureAfter(HibernateJpaAutoConfiguration.class)
+-class TestEntityManagerAutoConfiguration {
++public class TestEntityManagerAutoConfiguration {
+ 
+ 	@Bean
+ 	@ConditionalOnMissingBean

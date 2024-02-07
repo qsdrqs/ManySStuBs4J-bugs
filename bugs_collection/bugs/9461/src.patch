@@ -1,0 +1,15 @@
+diff --git a/buggy/src/java/org/apache/hadoop/hbase/HConstants.java b/fixed/src/java/org/apache/hadoop/hbase/HConstants.java
+index a7a89407f..9f3c3a520 100644
+--- a/buggy/src/java/org/apache/hadoop/hbase/HConstants.java
++++ b/fixed/src/java/org/apache/hadoop/hbase/HConstants.java
+@@ -49,8 +49,8 @@ public interface HConstants {
+    * Version 6 enables blockcaching on catalog tables.
+    * Version 7 introduces hfile -- hbase 0.19 to 0.20..
+    */
+-  // public static final String FILE_SYSTEM_VERSION = "6";
+-  public static final String FILE_SYSTEM_VERSION = "7";
++  public static final String FILE_SYSTEM_VERSION = "6";
++  // public static final String FILE_SYSTEM_VERSION = "7";
+   
+   // Configuration parameters
+   

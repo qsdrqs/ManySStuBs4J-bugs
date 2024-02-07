@@ -1,0 +1,13 @@
+diff --git a/buggy/backends/gdx-backend-lwjgl/src/com/badlogic/gdx/backends/lwjgl/LwjglGraphics.java b/fixed/backends/gdx-backend-lwjgl/src/com/badlogic/gdx/backends/lwjgl/LwjglGraphics.java
+index 9019b7a6f..3288ccac6 100644
+--- a/buggy/backends/gdx-backend-lwjgl/src/com/badlogic/gdx/backends/lwjgl/LwjglGraphics.java
++++ b/fixed/backends/gdx-backend-lwjgl/src/com/badlogic/gdx/backends/lwjgl/LwjglGraphics.java
+@@ -444,7 +444,7 @@ public class LwjglGraphics implements Graphics {
+ 		synchronized (this) {
+ 			boolean rq = requestRendering;
+ 			requestRendering = false;
+-			return rq || isContinuous;
++			return rq || isContinuous || Display.isDirty();
+ 		}
+ 	}
+ 

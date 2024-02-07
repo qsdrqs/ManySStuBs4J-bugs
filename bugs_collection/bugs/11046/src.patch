@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter5naming/rule528typevariablenames/ClassTypeParameterNameTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter5naming/rule528typevariablenames/ClassTypeParameterNameTest.java
+index 401111dc8..a7475c639 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter5naming/rule528typevariablenames/ClassTypeParameterNameTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter5naming/rule528typevariablenames/ClassTypeParameterNameTest.java
+@@ -52,7 +52,7 @@ public class ClassTypeParameterNameTest extends BaseCheckTestSupport {
+             "27:24: " + getCheckMessage(configuration.getMessages(), MSG_KEY, "$foo", format),
+         };
+ 
+-        final String filePath = builder.getFilePath("ClassTypeParameterNameInput");
++        final String filePath = builder.getFilePath("InputClassTypeParameterName");
+ 
+         final Integer[] warnList = builder.getLinesWithWarn(filePath);
+         verify(configuration, filePath, expected, warnList);

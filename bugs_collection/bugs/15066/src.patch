@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/parsing/TypeTransformationParser.java b/fixed/src/com/google/javascript/jscomp/parsing/TypeTransformationParser.java
+index f43ee0860..3ca2a0d20 100644
+--- a/buggy/src/com/google/javascript/jscomp/parsing/TypeTransformationParser.java
++++ b/fixed/src/com/google/javascript/jscomp/parsing/TypeTransformationParser.java
+@@ -39,7 +39,7 @@ public final class TypeTransformationParser {
+   private ErrorReporter errorReporter;
+   private int templateLineno, templateCharno;
+ 
+-  private static final int VAR_ARGS = Integer.MAX_VALUE;
++  private static final int VAR_ARGS = Integer.MAX_VALUE - 1;
+ 
+   /** The classification of the keywords */
+   public static enum OperationKind {

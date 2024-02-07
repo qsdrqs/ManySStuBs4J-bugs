@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-spi/src/main/java/com/facebook/presto/spi/block/SingleMapBlock.java b/fixed/presto-spi/src/main/java/com/facebook/presto/spi/block/SingleMapBlock.java
+index 16187c23b..d031eae95 100644
+--- a/buggy/presto-spi/src/main/java/com/facebook/presto/spi/block/SingleMapBlock.java
++++ b/fixed/presto-spi/src/main/java/com/facebook/presto/spi/block/SingleMapBlock.java
+@@ -30,7 +30,7 @@ import static io.airlift.slice.SizeOf.sizeOfIntArray;
+ public class SingleMapBlock
+         extends AbstractSingleMapBlock
+ {
+-    private static final int INSTANCE_SIZE = ClassLayout.parseClass(SingleMapBlockWriter.class).instanceSize();
++    private static final int INSTANCE_SIZE = ClassLayout.parseClass(SingleMapBlock.class).instanceSize();
+ 
+     private final int offset;
+     private final int positionCount;

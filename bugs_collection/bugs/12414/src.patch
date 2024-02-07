@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard/src/main/java/com/yammer/dropwizard/jersey/OptionalQueryParamInjectableProvider.java b/fixed/dropwizard/src/main/java/com/yammer/dropwizard/jersey/OptionalQueryParamInjectableProvider.java
+index 220be7b68..aed7312c2 100644
+--- a/buggy/dropwizard/src/main/java/com/yammer/dropwizard/jersey/OptionalQueryParamInjectableProvider.java
++++ b/fixed/dropwizard/src/main/java/com/yammer/dropwizard/jersey/OptionalQueryParamInjectableProvider.java
+@@ -29,7 +29,7 @@ public class OptionalQueryParamInjectableProvider implements InjectableProvider<
+                 c.getParameterClass().isAssignableFrom(Optional.class)) {
+             return new MultivaluedParameterExtractorQueryParamInjectable(
+                     new OptionalExtractor(parameterName, c.getDefaultValue()),
+-                    c.isEncoded()
++                    !c.isEncoded()
+             );
+         }
+         return null;

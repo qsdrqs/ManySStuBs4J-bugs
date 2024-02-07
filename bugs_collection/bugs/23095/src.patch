@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/parser/tools/ParseAndSetLabels.java b/fixed/src/edu/stanford/nlp/parser/tools/ParseAndSetLabels.java
+index ded511060..08bc8b876 100644
+--- a/buggy/src/edu/stanford/nlp/parser/tools/ParseAndSetLabels.java
++++ b/fixed/src/edu/stanford/nlp/parser/tools/ParseAndSetLabels.java
+@@ -259,7 +259,7 @@ public class ParseAndSetLabels {
+     Map<String, String> labelMap = readLabelMap(labelsFile, separator, remapLabels);
+ 
+     List<String> sentences;
+-    if (sentencesFile == null) {
++    if (sentencesFile != null) {
+       sentences = readSentences(sentencesFile);
+     } else {
+       sentences = new ArrayList<String>(labelMap.keySet());

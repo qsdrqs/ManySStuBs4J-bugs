@@ -1,0 +1,14 @@
+diff --git a/buggy/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/condition/OnBeanCondition.java b/fixed/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/condition/OnBeanCondition.java
+index 29d124abb..b55073d7e 100644
+--- a/buggy/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/condition/OnBeanCondition.java
++++ b/fixed/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/condition/OnBeanCondition.java
+@@ -158,7 +158,8 @@ class OnBeanCondition extends FilteringSpringBootCondition implements Configurat
+ 		ConfigurableListableBeanFactory beanFactory = context.getBeanFactory();
+ 		if (beans.getStrategy() == SearchStrategy.ANCESTORS) {
+ 			BeanFactory parent = beanFactory.getParentBeanFactory();
+-			Assert.isInstanceOf(ConfigurableListableBeanFactory.class, parent, "Unable to use SearchStrategy.PARENTS");
++			Assert.isInstanceOf(ConfigurableListableBeanFactory.class, parent,
++					"Unable to use SearchStrategy.ANCESTORS");
+ 			beanFactory = (ConfigurableListableBeanFactory) parent;
+ 		}
+ 		MatchResult matchResult = new MatchResult();

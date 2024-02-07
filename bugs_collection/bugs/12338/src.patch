@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-jersey/src/main/java/io/dropwizard/jersey/jackson/JsonProcessingExceptionMapper.java b/fixed/dropwizard-jersey/src/main/java/io/dropwizard/jersey/jackson/JsonProcessingExceptionMapper.java
+index 2d79e1409..2195758d1 100644
+--- a/buggy/dropwizard-jersey/src/main/java/io/dropwizard/jersey/jackson/JsonProcessingExceptionMapper.java
++++ b/fixed/dropwizard-jersey/src/main/java/io/dropwizard/jersey/jackson/JsonProcessingExceptionMapper.java
+@@ -41,7 +41,7 @@ public class JsonProcessingExceptionMapper implements ExceptionMapper<JsonProces
+         LOGGER.debug("Unable to process JSON", exception);
+         return Response.status(Response.Status.BAD_REQUEST)
+                        .entity(new ErrorMessage(Response.Status.BAD_REQUEST.getStatusCode(),
+-                               message))
++                               "Unable to process JSON"))
+                        .build();
+     }
+ }

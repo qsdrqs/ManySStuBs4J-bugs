@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-jetty/src/main/java/io/dropwizard/jetty/HttpConnectorFactory.java b/fixed/dropwizard-jetty/src/main/java/io/dropwizard/jetty/HttpConnectorFactory.java
+index db9fb3982..5389265fa 100644
+--- a/buggy/dropwizard-jetty/src/main/java/io/dropwizard/jetty/HttpConnectorFactory.java
++++ b/fixed/dropwizard-jetty/src/main/java/io/dropwizard/jetty/HttpConnectorFactory.java
+@@ -555,7 +555,7 @@ public class HttpConnectorFactory implements ConnectorFactory {
+ 
+         connector.setReuseAddress(reuseAddress);
+         if (soLingerTime != null) {
+-            connector.setSoLingerTime((int) soLingerTime.toSeconds());
++            connector.setSoLingerTime((int) soLingerTime.toMilliseconds());
+         }
+         connector.setIdleTimeout(idleTimeout.toMilliseconds());
+         connector.setName(name);

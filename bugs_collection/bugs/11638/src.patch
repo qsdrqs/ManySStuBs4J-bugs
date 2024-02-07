@@ -1,0 +1,29 @@
+diff --git a/buggy/src/it/resources/com/google/checkstyle/test/chapter4formatting/rule4822variabledistance/InputVariableDeclarationUsageDistanceCheck.java b/fixed/src/it/resources/com/google/checkstyle/test/chapter4formatting/rule4822variabledistance/InputVariableDeclarationUsageDistanceCheck.java
+index e33607503..873e6fea2 100644
+--- a/buggy/src/it/resources/com/google/checkstyle/test/chapter4formatting/rule4822variabledistance/InputVariableDeclarationUsageDistanceCheck.java
++++ b/fixed/src/it/resources/com/google/checkstyle/test/chapter4formatting/rule4822variabledistance/InputVariableDeclarationUsageDistanceCheck.java
+@@ -461,7 +461,7 @@ public class InputVariableDeclarationUsageDistanceCheck {
+     
+     public void testIssue32_7() {
+         String line = "abc";
+-        writer.write(line);
++        otherWriter.write(line);
+         line.charAt(1);
+         builder.append(line);
+         test(line, line, line);
+@@ -777,7 +777,7 @@ public class InputVariableDeclarationUsageDistanceCheck {
+     	
+     }
+     
+-    static class writer {
++    static class otherWriter {
+ 
+ 		public static void write(String line)
+ 		{
+@@ -799,4 +799,4 @@ public class InputVariableDeclarationUsageDistanceCheck {
+     	
+     }
+     
+-}
+\ No newline at end of file
++}

@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/builder/BuilderSupport.java b/fixed/camel-core/src/main/java/org/apache/camel/builder/BuilderSupport.java
+index da28e5183..cc8e777d1 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/builder/BuilderSupport.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/builder/BuilderSupport.java
+@@ -184,7 +184,7 @@ public abstract class BuilderSupport {
+         if (beanOrBeanRef instanceof String) {
+             expression = new MethodCallExpression((String) beanOrBeanRef, method);
+         } else {
+-            expression = new MethodCallExpression((Object) beanOrBeanRef, method);
++            expression = new MethodCallExpression(beanOrBeanRef, method);
+         }
+         return new ValueBuilder(expression);
+     }

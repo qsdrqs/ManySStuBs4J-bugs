@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/cluster/ClusterService.java b/fixed/hazelcast/src/main/java/com/hazelcast/cluster/ClusterService.java
+index baddae0ce..0ef94a53b 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/cluster/ClusterService.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/cluster/ClusterService.java
+@@ -154,7 +154,7 @@ public final class ClusterService implements Runnable, Constants {
+         unpark();
+     }
+ 
+-    void unpark() {
++    private void unpark() {
+         LockSupport.unpark(serviceThread);
+     }
+ 

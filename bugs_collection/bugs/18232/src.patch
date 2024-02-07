@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/utils/BufferUtils.java b/fixed/gdx/src/com/badlogic/gdx/utils/BufferUtils.java
+index de495d1cb..e9353e70c 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/utils/BufferUtils.java
++++ b/fixed/gdx/src/com/badlogic/gdx/utils/BufferUtils.java
+@@ -300,7 +300,7 @@ public class BufferUtils {
+ 	 * @return the address of the Buffer.
+ 	 */
+ 	public static long getUnsafeBufferAddress(Buffer buffer) {
+-		return getBufferAddress(buffer);
++		return getBufferAddress(buffer) + buffer.position();
+ 	}
+ 	
+ 	/**

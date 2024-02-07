@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/api/FileText.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/api/FileText.java
+index 271c258b9..7b2539118 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/api/FileText.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/api/FileText.java
+@@ -156,7 +156,7 @@ public final class FileText extends AbstractList<String> {
+             new BufferedReader(new StringReader(fullText));
+         while (true) {
+             final String line = br.readLine();
+-            if (null == line) {
++            if (line == null) {
+                 break;
+             }
+             lines.add(line);

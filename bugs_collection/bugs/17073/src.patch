@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/cluster/ClusterService.java b/fixed/hazelcast/src/main/java/com/hazelcast/cluster/ClusterService.java
+index cce1e9c2e..b071bab93 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/cluster/ClusterService.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/cluster/ClusterService.java
+@@ -59,7 +59,7 @@ public final class ClusterService implements Runnable, Constants {
+ 
+     private long lastCheck = 0;
+ 
+-    private boolean running = true;
++    private volatile boolean running = true;
+ 
+     private final ThreadWatcher threadWatcher = new ThreadWatcher();
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/junit/runners/ParentRunner.java b/fixed/src/main/java/org/junit/runners/ParentRunner.java
+index 467163677..d26fbf9d7 100644
+--- a/buggy/src/main/java/org/junit/runners/ParentRunner.java
++++ b/fixed/src/main/java/org/junit/runners/ParentRunner.java
+@@ -276,7 +276,7 @@ public abstract class ParentRunner<T> extends Runner implements Filterable,
+             Collection<T> filteredChildren) {
+         final RunnerScheduler scheduler= fScheduler;
+         try {
+-            for (final T each : getFilteredChildren()) {
++            for (final T each : filteredChildren) {
+                 scheduler.schedule(new Runnable() {
+                     public void run() {
+                         ParentRunner.this.runChild(each, notifier);

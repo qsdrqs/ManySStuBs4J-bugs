@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4843defaultcasepresent/MissingSwitchDefaultTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4843defaultcasepresent/MissingSwitchDefaultTest.java
+index daedfc723..8ca18238f 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4843defaultcasepresent/MissingSwitchDefaultTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4843defaultcasepresent/MissingSwitchDefaultTest.java
+@@ -22,7 +22,7 @@ public class MissingSwitchDefaultTest extends BaseCheckTestSupport{
+     }
+ 
+     @Test
+-    public void missingSwitchDefaultTest() throws IOException, Exception {
++    public void missingSwitchDefaultTest() throws Exception {
+         
+         String msg = getCheckMessage(MissingSwitchDefaultCheck.class, "missing.switch.default");
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/optimizer/correlation/QueryPlanTreeTransformation.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/optimizer/correlation/QueryPlanTreeTransformation.java
+index c8aa48c36..684150353 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/optimizer/correlation/QueryPlanTreeTransformation.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/optimizer/correlation/QueryPlanTreeTransformation.java
+@@ -229,7 +229,7 @@ public class QueryPlanTreeTransformation {
+               handledRSs.add((ReduceSinkOperator)op);
+               parentsOfMux.add(CorrelationUtilities.getSingleParent(op, true));
+             } else {
+-              throw new SemanticException("An slibing of ReduceSinkOperator is nethier a " +
++              throw new SemanticException("A sibling of ReduceSinkOperator is neither a " +
+                   "DemuxOperator nor a ReduceSinkOperator");
+             }
+           }

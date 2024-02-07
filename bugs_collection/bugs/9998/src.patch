@@ -1,0 +1,13 @@
+diff --git a/buggy/storm-core/test/jvm/org/apache/storm/scheduler/resource/TestUtilsForResourceAwareScheduler.java b/fixed/storm-core/test/jvm/org/apache/storm/scheduler/resource/TestUtilsForResourceAwareScheduler.java
+index 28dc16fb8..fbc042122 100644
+--- a/buggy/storm-core/test/jvm/org/apache/storm/scheduler/resource/TestUtilsForResourceAwareScheduler.java
++++ b/fixed/storm-core/test/jvm/org/apache/storm/scheduler/resource/TestUtilsForResourceAwareScheduler.java
+@@ -103,7 +103,7 @@ public class TestUtilsForResourceAwareScheduler {
+             for (int j = 0; j < numPorts; j++) {
+                 ports.add(j);
+             }
+-            SupervisorDetails sup = new SupervisorDetails("sup-" + i, "host-" + i, null, ports, new HashMap<>(resourceMap));
++            SupervisorDetails sup = new SupervisorDetails("sup-" + i, "host-" + i, null, ports, new HashMap<String, Double>(resourceMap));
+             retList.put(sup.getId(), sup);
+         }
+         return retList;

@@ -1,0 +1,13 @@
+diff --git a/buggy/meteor/meteor-meteor/src/test/java/eu/stratosphere/meteor/base/TransformTest.java b/fixed/meteor/meteor-meteor/src/test/java/eu/stratosphere/meteor/base/TransformTest.java
+index 81fd818bf..ffe18e748 100644
+--- a/buggy/meteor/meteor-meteor/src/test/java/eu/stratosphere/meteor/base/TransformTest.java
++++ b/fixed/meteor/meteor-meteor/src/test/java/eu/stratosphere/meteor/base/TransformTest.java
+@@ -49,7 +49,7 @@ public class TransformTest extends MeteorTest {
+ 		final Sink output = new Sink("output.json").withInputs(projection);
+ 		expectedPlan.setSinks(output);
+ 
+-		assertEquals(expectedPlan, actualPlan);
++		assertPlanEquals(expectedPlan, actualPlan);
+ 	}
+ 
+ }

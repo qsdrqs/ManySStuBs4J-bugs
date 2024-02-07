@@ -1,0 +1,22 @@
+diff --git a/buggy/components/camel-nagios/src/test/java/org/apache/camel/component/nagios/NagiosEventNotifierTest.java b/fixed/components/camel-nagios/src/test/java/org/apache/camel/component/nagios/NagiosEventNotifierTest.java
+index c3fcb353c..86684a2cd 100644
+--- a/buggy/components/camel-nagios/src/test/java/org/apache/camel/component/nagios/NagiosEventNotifierTest.java
++++ b/fixed/components/camel-nagios/src/test/java/org/apache/camel/component/nagios/NagiosEventNotifierTest.java
+@@ -73,7 +73,7 @@ public class NagiosEventNotifierTest extends CamelTestSupport {
+         context.stop();
+ 
+         List<MessagePayload> events = nagios.getMessagePayloadList();
+-        assertEquals(10, events.size());
++        assertEquals(12, events.size());
+     }
+ 
+     @Test
+@@ -87,7 +87,7 @@ public class NagiosEventNotifierTest extends CamelTestSupport {
+         context.stop();
+ 
+         List<MessagePayload> events = nagios.getMessagePayloadList();
+-        assertEquals(10, events.size());
++        assertEquals(11, events.size());
+     }
+ 
+     @Override

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/java/org/apache/hadoop/fs/FsShell.java b/fixed/src/java/org/apache/hadoop/fs/FsShell.java
+index 6f7d6b059..e3c895b25 100644
+--- a/buggy/src/java/org/apache/hadoop/fs/FsShell.java
++++ b/fixed/src/java/org/apache/hadoop/fs/FsShell.java
+@@ -1568,7 +1568,7 @@ public class FsShell extends Configured implements Tool {
+       System.out.println(chown);
+     } else if ("chgrp".equals(cmd)) {
+       System.out.println(chgrp);
+-    } else if (Count.matches(cmd)) {
++    } else if (Count.NAME.equals(cmd)) {
+       System.out.println(Count.DESCRIPTION);
+     } else if ("help".equals(cmd)) {
+       System.out.println(help);

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/ClassResolver.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/ClassResolver.java
+index 88eb625ad..035ddf760 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/ClassResolver.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/ClassResolver.java
+@@ -121,7 +121,7 @@ public class ClassResolver {
+             throws ClassNotFoundException {
+         Class<?> clazz = null;
+         if (!currentClass.isEmpty()) {
+-            final String innerClass = (!pkg.isEmpty() ? pkg + "." : "")
++            final String innerClass = (pkg.isEmpty() ? "" : pkg + ".")
+                 + currentClass + "$" + name;
+             if (isLoadable(innerClass)) {
+                 clazz = safeLoad(innerClass);

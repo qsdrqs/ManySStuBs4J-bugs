@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/apache/hadoop/hbase/master/LoadBalancer.java b/fixed/src/main/java/org/apache/hadoop/hbase/master/LoadBalancer.java
+index 92acb3522..9f01a964d 100644
+--- a/buggy/src/main/java/org/apache/hadoop/hbase/master/LoadBalancer.java
++++ b/fixed/src/main/java/org/apache/hadoop/hbase/master/LoadBalancer.java
+@@ -243,7 +243,7 @@ public class LoadBalancer {
+         "servers=" + numServers + " " +
+         "regions=" + numRegions + " average=" + average + " " +
+         "mostloaded=" + serversByLoad.lastKey().getLoad() +
+-        " leastloaded=" + serversByLoad.lastKey().getLoad());
++        " leastloaded=" + serversByLoad.firstKey().getLoad());
+       return null;
+     }
+     int min = numRegions / numServers;

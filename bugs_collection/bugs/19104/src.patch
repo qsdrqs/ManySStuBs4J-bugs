@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/test/java/org/neo4j/kernel/impl/nioneo/xa/NeoStoreFileListingTest.java b/fixed/community/kernel/src/test/java/org/neo4j/kernel/impl/nioneo/xa/NeoStoreFileListingTest.java
+index b3984dba0..5d6aa073d 100644
+--- a/buggy/community/kernel/src/test/java/org/neo4j/kernel/impl/nioneo/xa/NeoStoreFileListingTest.java
++++ b/fixed/community/kernel/src/test/java/org/neo4j/kernel/impl/nioneo/xa/NeoStoreFileListingTest.java
+@@ -293,7 +293,7 @@ public class NeoStoreFileListingTest
+         {
+             File file = mock( File.class );
+ 
+-            String[] fileNameParts = filename.split( File.separator );
++            String[] fileNameParts = filename.split( "/" );
+             when( file.getName() ).thenReturn( fileNameParts[fileNameParts.length - 1] );
+ 
+             when( file.isFile() ).thenReturn( !isDirectories );

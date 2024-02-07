@@ -1,0 +1,13 @@
+diff --git a/buggy/backends/gdx-backend-robovm/src/com/badlogic/gdx/backends/iosrobovm/objectal/OALAudioTrack.java b/fixed/backends/gdx-backend-robovm/src/com/badlogic/gdx/backends/iosrobovm/objectal/OALAudioTrack.java
+index 531934abb..763fe077f 100644
+--- a/buggy/backends/gdx-backend-robovm/src/com/badlogic/gdx/backends/iosrobovm/objectal/OALAudioTrack.java
++++ b/fixed/backends/gdx-backend-robovm/src/com/badlogic/gdx/backends/iosrobovm/objectal/OALAudioTrack.java
+@@ -55,7 +55,7 @@ public class OALAudioTrack extends NSObject {
+ 	@Property
+ 	public native void setPaused (boolean paused);
+ 
+-	@Property(selector = "isPlaying")
++	@Property
+ 	public native boolean isPlaying ();
+ 
+ 	@Property

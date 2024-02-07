@@ -1,0 +1,22 @@
+diff --git a/buggy/components/camel-hawtdb/src/test/java/org/apache/camel/component/hawtdb/HawtDBAggregateRecoverDeadLetterChannelFailedTest.java b/fixed/components/camel-hawtdb/src/test/java/org/apache/camel/component/hawtdb/HawtDBAggregateRecoverDeadLetterChannelFailedTest.java
+index dc1268429..13f106fcb 100644
+--- a/buggy/components/camel-hawtdb/src/test/java/org/apache/camel/component/hawtdb/HawtDBAggregateRecoverDeadLetterChannelFailedTest.java
++++ b/fixed/components/camel-hawtdb/src/test/java/org/apache/camel/component/hawtdb/HawtDBAggregateRecoverDeadLetterChannelFailedTest.java
+@@ -39,7 +39,7 @@ public class HawtDBAggregateRecoverDeadLetterChannelFailedTest extends CamelTest
+         // and move to this dead letter channel
+         repo.setDeadLetterUri("direct:dead");
+         // check faster
+-        repo.setRecoveryInterval(500, TimeUnit.MILLISECONDS);
++        repo.setRecoveryInterval(1000, TimeUnit.MILLISECONDS);
+ 
+         super.setUp();
+     }
+@@ -65,7 +65,7 @@ public class HawtDBAggregateRecoverDeadLetterChannelFailedTest extends CamelTest
+         template.sendBodyAndHeader("direct:start", "D", "id", 123);
+         template.sendBodyAndHeader("direct:start", "E", "id", 123);
+ 
+-        assertMockEndpointsSatisfied();
++        assertMockEndpointsSatisfied(30, TimeUnit.SECONDS);
+     }
+ 
+     @Override

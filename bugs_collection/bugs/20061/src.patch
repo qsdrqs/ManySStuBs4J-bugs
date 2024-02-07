@@ -1,0 +1,31 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/util/internal/ConcurrentIdentityHashMap.java b/fixed/src/main/java/org/jboss/netty/util/internal/ConcurrentIdentityHashMap.java
+index daef02544..cfd03eebe 100644
+--- a/buggy/src/main/java/org/jboss/netty/util/internal/ConcurrentIdentityHashMap.java
++++ b/fixed/src/main/java/org/jboss/netty/util/internal/ConcurrentIdentityHashMap.java
+@@ -1261,7 +1261,7 @@ public final class ConcurrentIdentityHashMap<K, V> extends AbstractMap<K, V>
+ 
+         @Override
+         public boolean equals(Object o) {
+-            if (!(o instanceof Map.Entry)) {
++            if (!(o instanceof Map.Entry<?, ?>)) {
+                 return false;
+             }
+             @SuppressWarnings("unchecked")
+@@ -1392,7 +1392,7 @@ public final class ConcurrentIdentityHashMap<K, V> extends AbstractMap<K, V>
+ 
+         @Override
+         public boolean contains(Object o) {
+-            if (!(o instanceof Map.Entry)) {
++            if (!(o instanceof Map.Entry<?, ?>)) {
+                 return false;
+             }
+             Map.Entry<?, ?> e = (Map.Entry<?, ?>) o;
+@@ -1402,7 +1402,7 @@ public final class ConcurrentIdentityHashMap<K, V> extends AbstractMap<K, V>
+ 
+         @Override
+         public boolean remove(Object o) {
+-            if (!(o instanceof Map.Entry)) {
++            if (!(o instanceof Map.Entry<?, ?>)) {
+                 return false;
+             }
+             Map.Entry<?, ?> e = (Map.Entry<?, ?>) o;

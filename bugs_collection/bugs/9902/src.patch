@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/ScriptOperator.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/ScriptOperator.java
+index 161927d5d..b6feb9342 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/ScriptOperator.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/ScriptOperator.java
+@@ -337,7 +337,7 @@ public class ScriptOperator extends Operator<scriptDesc> implements Serializable
+         }
+         int exitVal = 0;
+         if (scriptPid != null)
+-          scriptPid.waitFor();
++          exitVal = scriptPid.waitFor();
+         if (exitVal != 0) {
+           LOG.error("Script failed with code " + exitVal);
+           new_abort = true;

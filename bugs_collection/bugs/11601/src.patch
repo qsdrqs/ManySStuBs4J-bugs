@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/whitespace/EmptyLineSeparatorCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/whitespace/EmptyLineSeparatorCheck.java
+index 915f7285d..31a8ec123 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/whitespace/EmptyLineSeparatorCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/whitespace/EmptyLineSeparatorCheck.java
+@@ -331,7 +331,7 @@ public class EmptyLineSeparatorCheck extends Check {
+      */
+     private static boolean hasEmptyLineAfter(DetailAST token) {
+         DetailAST lastToken = token.getLastChild().getLastChild();
+-        if (null == lastToken) {
++        if (lastToken == null) {
+             lastToken = token.getLastChild();
+         }
+         return token.getNextSibling().getLineNo() - lastToken.getLineNo() > 1;

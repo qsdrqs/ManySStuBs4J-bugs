@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/multimap/impl/MultiMapService.java b/fixed/hazelcast/src/main/java/com/hazelcast/multimap/impl/MultiMapService.java
+index 09113874b..3bd7e47d9 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/multimap/impl/MultiMapService.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/multimap/impl/MultiMapService.java
+@@ -101,7 +101,7 @@ public class MultiMapService implements ManagedService, RemoteService, Migration
+         for (int partition = 0; partition < partitionCount; partition++) {
+             partitionContainers[partition] = new MultiMapPartitionContainer(this, partition);
+         }
+-        final LockService lockService = nodeEngine.getService(LockService.SERVICE_NAME);
++        final LockService lockService = nodeEngine.getSharedService(LockService.SERVICE_NAME);
+         if (lockService != null) {
+             lockService.registerLockStoreConstructor(SERVICE_NAME,
+                     new ConstructorFunction<ObjectNamespace, LockStoreInfo>() {

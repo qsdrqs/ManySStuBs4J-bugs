@@ -1,0 +1,13 @@
+diff --git a/buggy/web/src/main/java/org/openmrs/web/controller/form/FormFormController.java b/fixed/web/src/main/java/org/openmrs/web/controller/form/FormFormController.java
+index 0f7ebc4c8..33e5af1ae 100644
+--- a/buggy/web/src/main/java/org/openmrs/web/controller/form/FormFormController.java
++++ b/fixed/web/src/main/java/org/openmrs/web/controller/form/FormFormController.java
+@@ -112,7 +112,7 @@ public class FormFormController extends SimpleFormController {
+ 						log.error("Error while deleting form " + form.getFormId(), e);
+ 						errors.reject(e.getMessage());
+ 						httpSession.setAttribute(WebConstants.OPENMRS_ERROR_ATTR, "Form.cannot.delete");
+-						throw e;
++						return showForm(request, response, errors);
+ 						//return new ModelAndView(new RedirectView(getSuccessView()));
+ 					}
+ 				} else if (action.equals(msa.getMessage("Form.updateSortOrder"))) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/connection/nio/ClusterConnectorServiceImpl.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/connection/nio/ClusterConnectorServiceImpl.java
+index a5c7e2cb5..6259b07b8 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/connection/nio/ClusterConnectorServiceImpl.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/connection/nio/ClusterConnectorServiceImpl.java
+@@ -214,7 +214,7 @@ public class ClusterConnectorServiceImpl implements ClusterConnectorService, Con
+         if (!client.getLifecycleService().isRunning()) {
+             throw new IllegalStateException("Client is being shutdown.");
+         } else {
+-            throw new IllegalStateException("No alternative cluster is found to connect.");
++            throw new IllegalStateException("Unable to connect to any cluster.");
+         }
+     }
+ 

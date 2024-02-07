@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/config/ZWaveConfiguration.java b/fixed/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/config/ZWaveConfiguration.java
+index 75c4b8b13..9a689ac11 100644
+--- a/buggy/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/config/ZWaveConfiguration.java
++++ b/fixed/bundles/binding/org.openhab.binding.zwave/src/main/java/org/openhab/binding/zwave/internal/config/ZWaveConfiguration.java
+@@ -384,7 +384,7 @@ public class ZWaveConfiguration implements OpenHABConfigurationService, ZWaveEve
+                     records.add(record);
+                 }
+ 
+-                if ((ZWaveConfigurationCommandClass) node.getCommandClass(CommandClass.ASSOCIATION) != null) {
++                if ((ZWaveAssociationCommandClass) node.getCommandClass(CommandClass.ASSOCIATION) != null) {
+                     record = new OpenHABConfigurationRecord(domain + "associations/", "Association Groups");
+                     record.addAction("Refresh", "Refresh");
+                     records.add(record);

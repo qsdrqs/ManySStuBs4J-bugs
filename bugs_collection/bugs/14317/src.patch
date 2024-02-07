@@ -1,0 +1,13 @@
+diff --git a/buggy/DesktopFilters/src/org/gephi/desktop/filters/query/QueryNode.java b/fixed/DesktopFilters/src/org/gephi/desktop/filters/query/QueryNode.java
+index a86081662..c4807a93f 100644
+--- a/buggy/DesktopFilters/src/org/gephi/desktop/filters/query/QueryNode.java
++++ b/fixed/DesktopFilters/src/org/gephi/desktop/filters/query/QueryNode.java
+@@ -53,7 +53,7 @@ public class QueryNode extends AbstractNode {
+     }
+ 
+     private boolean isSelected() {
+-        return FiltersTopComponent.findInstance().getUiModel().getSelectedQuery() == query;
++        return FiltersTopComponent.findInstance().getUiModel().getSelectedRoot() == query;
+     }
+ 
+ 

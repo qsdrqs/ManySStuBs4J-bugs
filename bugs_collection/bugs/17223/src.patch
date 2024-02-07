@@ -1,0 +1,13 @@
+diff --git a/buggy/el/standalone/src/main/java/org/javaee7/el/standalone/TestServlet.java b/fixed/el/standalone/src/main/java/org/javaee7/el/standalone/TestServlet.java
+index 1c76b9846..4daf31b68 100644
+--- a/buggy/el/standalone/src/main/java/org/javaee7/el/standalone/TestServlet.java
++++ b/fixed/el/standalone/src/main/java/org/javaee7/el/standalone/TestServlet.java
+@@ -79,7 +79,7 @@ public class TestServlet extends HttpServlet {
+             ELProcessor elp = new ELProcessor();
+             out.println("Simple array access<br>");
+             out.println((elp.eval("a = [1, 2, 3]; a[1]")) + "<br>");
+-            out.println("Lamda expressions<br>");
++            out.println("Lambda expressions<br>");
+             out.println(((elp.eval("((x,y) -> x+y)(4, 5)"))) + "<br>");            
+             out.println("</body>");
+             out.println("</html>");

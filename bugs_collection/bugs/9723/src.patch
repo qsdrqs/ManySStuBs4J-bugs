@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/metadata/Hive.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/metadata/Hive.java
+index 39c48b526..1bb9b154c 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/metadata/Hive.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/metadata/Hive.java
+@@ -782,7 +782,7 @@ public class Hive {
+       }
+ 
+       org.apache.hadoop.hive.metastore.api.Table baseTbl = getTable(tableName).getTTable();
+-      if (baseTbl.getTableType() == TableType.VIRTUAL_VIEW.toString()) {
++      if (TableType.VIRTUAL_VIEW.toString().equals(baseTbl.getTableType())) {
+         throw new HiveException("tableName="+ tableName +" is a VIRTUAL VIEW. Index on VIRTUAL VIEW is not supported.");
+       }
+       if (baseTbl.isTemporary()) {

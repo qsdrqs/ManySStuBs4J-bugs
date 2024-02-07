@@ -1,0 +1,13 @@
+diff --git a/buggy/processing/src/test/java/io/druid/query/timeseries/TimeseriesQueryRunnerBonusTest.java b/fixed/processing/src/test/java/io/druid/query/timeseries/TimeseriesQueryRunnerBonusTest.java
+index b31ff2bf1..d1497a190 100644
+--- a/buggy/processing/src/test/java/io/druid/query/timeseries/TimeseriesQueryRunnerBonusTest.java
++++ b/fixed/processing/src/test/java/io/druid/query/timeseries/TimeseriesQueryRunnerBonusTest.java
+@@ -90,7 +90,7 @@ public class TimeseriesQueryRunnerBonusTest
+     final QueryRunnerFactory factory = TimeseriesQueryRunnerFactory.create();
+     final QueryRunner<Result<TimeseriesResultValue>> runner = makeQueryRunner(
+         factory,
+-        new IncrementalIndexSegment(index)
++        new IncrementalIndexSegment(index, null)
+     );
+ 
+     TimeseriesQuery query = Druids.newTimeseriesQueryBuilder()

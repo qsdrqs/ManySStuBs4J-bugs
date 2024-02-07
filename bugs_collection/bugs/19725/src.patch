@@ -1,0 +1,13 @@
+diff --git a/buggy/example/src/main/java/io/netty/example/http/websocketx/server/WebSocketServerHandler.java b/fixed/example/src/main/java/io/netty/example/http/websocketx/server/WebSocketServerHandler.java
+index 14e036085..7712a71b8 100644
+--- a/buggy/example/src/main/java/io/netty/example/http/websocketx/server/WebSocketServerHandler.java
++++ b/fixed/example/src/main/java/io/netty/example/http/websocketx/server/WebSocketServerHandler.java
+@@ -94,7 +94,7 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler<Object>
+ 
+         // Handshake
+         WebSocketServerHandshakerFactory wsFactory = new WebSocketServerHandshakerFactory(
+-                getWebSocketLocation(req), null, false);
++                getWebSocketLocation(req), null, true);
+         handshaker = wsFactory.newHandshaker(req);
+         if (handshaker == null) {
+             WebSocketServerHandshakerFactory.sendUnsupportedVersionResponse(ctx.channel());

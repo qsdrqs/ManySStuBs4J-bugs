@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-orc/src/main/java/com/facebook/presto/orc/zstd/FseTableReader.java b/fixed/presto-orc/src/main/java/com/facebook/presto/orc/zstd/FseTableReader.java
+index 9a98b03d7..11977c4bd 100644
+--- a/buggy/presto-orc/src/main/java/com/facebook/presto/orc/zstd/FseTableReader.java
++++ b/fixed/presto-orc/src/main/java/com/facebook/presto/orc/zstd/FseTableReader.java
+@@ -48,7 +48,7 @@ class FseTableReader
+         int remaining = (1 << tableLog) + 1;
+         threshold = 1 << tableLog;
+ 
+-        while ((remaining > 1) && symbolNumber < maxSymbol) {
++        while (remaining > 1 && symbolNumber <= maxSymbol) {
+             if (previousIsZero) {
+                 int n0 = symbolNumber;
+                 while ((bitStream & 0xFFFF) == 0xFFFF) {

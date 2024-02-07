@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions-contrib/kafka-eight-simpleConsumer/src/main/java/io/druid/firehose/kafka/KafkaEightSimpleConsumerFirehoseFactory.java b/fixed/extensions-contrib/kafka-eight-simpleConsumer/src/main/java/io/druid/firehose/kafka/KafkaEightSimpleConsumerFirehoseFactory.java
+index db41462b0..f677bc93c 100644
+--- a/buggy/extensions-contrib/kafka-eight-simpleConsumer/src/main/java/io/druid/firehose/kafka/KafkaEightSimpleConsumerFirehoseFactory.java
++++ b/fixed/extensions-contrib/kafka-eight-simpleConsumer/src/main/java/io/druid/firehose/kafka/KafkaEightSimpleConsumerFirehoseFactory.java
+@@ -153,7 +153,7 @@ public class KafkaEightSimpleConsumerFirehoseFactory implements
+       );
+       Long startOffset = lastOffsets.get(partition);
+       PartitionConsumerWorker worker = new PartitionConsumerWorker(
+-          feed, kafkaSimpleConsumer, partition, startOffset == null ? 0 : startOffset
++          feed, kafkaSimpleConsumer, partition, startOffset == null ? -1 : startOffset
+       );
+       consumerWorkers.add(worker);
+     }

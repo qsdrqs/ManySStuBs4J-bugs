@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/org/apache/hadoop/hbase/avro/TestAvroServer.java b/fixed/src/test/java/org/apache/hadoop/hbase/avro/TestAvroServer.java
+index cc5cc2ecf..015563c89 100644
+--- a/buggy/src/test/java/org/apache/hadoop/hbase/avro/TestAvroServer.java
++++ b/fixed/src/test/java/org/apache/hadoop/hbase/avro/TestAvroServer.java
+@@ -94,7 +94,7 @@ public class TestAvroServer {
+    *
+    * @throws Exception
+    */
+-  @Test (timeout=60000)
++  @Test (timeout=300000)
+   public void testTableAdminAndMetadata() throws Exception {
+     AvroServer.HBaseImpl impl = new AvroServer.HBaseImpl();
+ 

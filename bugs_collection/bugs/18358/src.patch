@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/gdx-tests/src/com/badlogic/gdx/tests/Mpg123Test.java b/fixed/tests/gdx-tests/src/com/badlogic/gdx/tests/Mpg123Test.java
+index ad896552c..405d8109e 100644
+--- a/buggy/tests/gdx-tests/src/com/badlogic/gdx/tests/Mpg123Test.java
++++ b/fixed/tests/gdx-tests/src/com/badlogic/gdx/tests/Mpg123Test.java
+@@ -46,7 +46,7 @@ public class Mpg123Test extends GdxTest {
+ 		// Create the decoder and log some properties. Note that we need
+ 		// an external or absolute file
+ 		decoder = new Mpg123Decoder(externalFile);
+-		Gdx.app.log("Vorbis", "channels: " + decoder.getChannels() + ", rate: " + decoder.getRate() + ", length: " + decoder.getLength());
++		Gdx.app.log("Mp3", "channels: " + decoder.getChannels() + ", rate: " + decoder.getRate() + ", length: " + decoder.getLength());
+ 
+ 		// Create an audio device for playback
+ 		device = Gdx.audio.newAudioDevice(decoder.getRate(), decoder.getChannels() == 1? true: false);

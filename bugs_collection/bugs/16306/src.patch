@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/map/ClientMapStoreTest.java b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/map/ClientMapStoreTest.java
+index 61b2b3e27..49b6631e4 100644
+--- a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/map/ClientMapStoreTest.java
++++ b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/map/ClientMapStoreTest.java
+@@ -150,7 +150,7 @@ public class ClientMapStoreTest extends HazelcastTestSupport {
+                 future.get();
+                 success++;
+             } catch (ExecutionException e) {
+-                assertInstanceOf(ReachedMaxSizeException.class, e);
++                assertInstanceOf(ReachedMaxSizeException.class, e.getCause());
+             }
+         }
+ 

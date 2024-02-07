@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/tez/DagUtils.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/tez/DagUtils.java
+index 0a0418e75..7703d6916 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/tez/DagUtils.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/tez/DagUtils.java
+@@ -971,7 +971,7 @@ public class DagUtils {
+   public JobConf createConfiguration(HiveConf hiveConf) throws IOException {
+     hiveConf.setBoolean("mapred.mapper.new-api", false);
+ 
+-    JobConf conf = new JobConf(hiveConf);
++    JobConf conf = new JobConf(new TezConfiguration(hiveConf));
+ 
+     conf.set("mapred.output.committer.class", NullOutputCommitter.class.getName());
+ 

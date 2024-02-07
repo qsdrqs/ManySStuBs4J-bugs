@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/test/java/io/druid/server/bridge/DruidClusterBridgeTest.java b/fixed/server/src/test/java/io/druid/server/bridge/DruidClusterBridgeTest.java
+index 27f414935..657d64f2d 100644
+--- a/buggy/server/src/test/java/io/druid/server/bridge/DruidClusterBridgeTest.java
++++ b/fixed/server/src/test/java/io/druid/server/bridge/DruidClusterBridgeTest.java
+@@ -129,7 +129,7 @@ public class DruidClusterBridgeTest
+         8080
+     );
+ 
+-    AtomicReference<LeaderLatch> leaderLatch = new AtomicReference<>(new LeaderLatch(localCf, "test"));
++    AtomicReference<LeaderLatch> leaderLatch = new AtomicReference<>(new LeaderLatch(localCf, "/test"));
+ 
+     ZkPathsConfig zkPathsConfig = new ZkPathsConfig()
+     {

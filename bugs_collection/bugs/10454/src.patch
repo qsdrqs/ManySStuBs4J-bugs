@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionNestedForDepthTest.java b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionNestedForDepthTest.java
+index dc2796d1d..aa64da518 100644
+--- a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionNestedForDepthTest.java
++++ b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionNestedForDepthTest.java
+@@ -28,7 +28,7 @@ import org.junit.Test;
+ import com.puppycrawl.tools.checkstyle.DefaultConfiguration;
+ import com.puppycrawl.tools.checkstyle.checks.coding.NestedForDepthCheck;
+ 
+-public class XpathRegressionNestedForDepthTest extends AbstractXpathTestSupport {
++public class XpathRegressionNestedForDepthTest extends XpathTestSupport {
+ 
+     @Test
+     public void testCorrect() throws Exception {

@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/main/java/org/openmrs/hl7/handler/ADTA28Handler.java b/fixed/api/src/main/java/org/openmrs/hl7/handler/ADTA28Handler.java
+index a8ae49d9a..0dde3c04f 100644
+--- a/buggy/api/src/main/java/org/openmrs/hl7/handler/ADTA28Handler.java
++++ b/fixed/api/src/main/java/org/openmrs/hl7/handler/ADTA28Handler.java
+@@ -254,7 +254,7 @@ public class ADTA28Handler implements Application {
+ 			}
+ 
+ 			else {
+-				log.debug("PID contains identifier with no assigning authority");
++				log.error("PID contains identifier with no assigning authority");
+ 				continue;
+ 			}
+ 		}

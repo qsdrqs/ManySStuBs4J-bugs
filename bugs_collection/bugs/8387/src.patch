@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/executiongraph/ExecutionJobVertex.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/executiongraph/ExecutionJobVertex.java
+index 53d94d7a3..1d4be144f 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/executiongraph/ExecutionJobVertex.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/executiongraph/ExecutionJobVertex.java
+@@ -310,7 +310,7 @@ public class ExecutionJobVertex implements Serializable {
+ 					pos = 0;
+ 					assignments.put(host, 0);
+ 				} else {
+-					assignments.put(host, pos + 1 % instancesOnHost.size());
++					assignments.put(host, (pos + 1) % instancesOnHost.size());
+ 				}
+ 				
+ 				v.setLocationConstraintHosts(Collections.singletonList(instancesOnHost.get(pos)));

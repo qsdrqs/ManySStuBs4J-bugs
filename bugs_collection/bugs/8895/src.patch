@@ -1,0 +1,14 @@
+diff --git a/buggy/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/FSImage.java b/fixed/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/FSImage.java
+index e78153f38..c123cdfc7 100644
+--- a/buggy/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/FSImage.java
++++ b/fixed/hadoop-hdfs-project/hadoop-hdfs/src/main/java/org/apache/hadoop/hdfs/server/namenode/FSImage.java
+@@ -229,7 +229,8 @@ public class FSImage implements Closeable {
+           + RollingUpgradeStartupOption.STARTED.getOptionString()
+           + "\" option if a rolling upgraded is already started;"
+           + " or restart NameNode with the \""
+-          + StartupOption.UPGRADE + "\" to start a new upgrade.");
++          + StartupOption.UPGRADE.getName() + "\" option to start"
++          + " a new upgrade.");
+     }
+     
+     storage.processStartupOptionsForUpgrade(startOpt, layoutVersion);

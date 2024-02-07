@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-hibernate/src/main/java/io/dropwizard/hibernate/HibernateBundle.java b/fixed/dropwizard-hibernate/src/main/java/io/dropwizard/hibernate/HibernateBundle.java
+index a04b78299..5567a8bc6 100644
+--- a/buggy/dropwizard-hibernate/src/main/java/io/dropwizard/hibernate/HibernateBundle.java
++++ b/fixed/dropwizard-hibernate/src/main/java/io/dropwizard/hibernate/HibernateBundle.java
+@@ -31,7 +31,7 @@ public abstract class HibernateBundle<T extends Configuration> implements Config
+     }
+ 
+     @Override
+-    public final void initialize(Bootstrap<?> bootstrap) {
++    public final void initialize(Bootstrap<? extends T> bootstrap) {
+         bootstrap.getObjectMapper().registerModule(createHibernate4Module());
+     }
+ 

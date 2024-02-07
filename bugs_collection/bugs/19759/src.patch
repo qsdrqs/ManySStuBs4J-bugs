@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/nio/AbstractNioMessageChannel.java b/fixed/transport/src/main/java/io/netty/channel/nio/AbstractNioMessageChannel.java
+index d96200de5..47581cc69 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/nio/AbstractNioMessageChannel.java
++++ b/fixed/transport/src/main/java/io/netty/channel/nio/AbstractNioMessageChannel.java
+@@ -112,7 +112,7 @@ public abstract class AbstractNioMessageChannel extends AbstractNioChannel {
+                 // * The user called Channel.read() or ChannelHandlerContext.read() in channelReadComplete(...) method
+                 //
+                 // See https://github.com/netty/netty/issues/2254
+-                if (config.isAutoRead() && !readPending) {
++                if (!config.isAutoRead() && !readPending) {
+                     removeReadOp();
+                 }
+             }

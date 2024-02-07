@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/config/XmlConfigBuilder.java b/fixed/hazelcast/src/main/java/com/hazelcast/config/XmlConfigBuilder.java
+index 0e4adf572..938b8d086 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/config/XmlConfigBuilder.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/config/XmlConfigBuilder.java
+@@ -448,7 +448,7 @@ public class XmlConfigBuilder extends AbstractXmlConfigHelper implements ConfigB
+             final Node att = atts.item(a);
+             final String value = getTextContent(att).trim();
+             if ("enabled".equalsIgnoreCase(att.getNodeName())) {
+-                join.getAwsConfig().setEnabled(true);
++                join.getAwsConfig().setEnabled(checkTrue(value));
+             } else if (att.getNodeName().equals("conn-timeout-seconds")) {
+                 join.getTcpIpConfig().setConnectionTimeoutSeconds(getIntegerValue("conn-timeout-seconds", value, 5));
+             }

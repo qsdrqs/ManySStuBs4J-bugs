@@ -1,0 +1,13 @@
+diff --git a/buggy/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/checkpointing/ReplayInputChannelContext.java b/fixed/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/checkpointing/ReplayInputChannelContext.java
+index 8cabb4b2f..015ef80dc 100644
+--- a/buggy/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/checkpointing/ReplayInputChannelContext.java
++++ b/fixed/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/checkpointing/ReplayInputChannelContext.java
+@@ -59,7 +59,7 @@ final class ReplayInputChannelContext implements InputChannelContext {
+ 	@Override
+ 	public ChannelType getType() {
+ 
+-		return this.encapsulatedContext.getType();
++		return null;
+ 	}
+ 
+ 	/**

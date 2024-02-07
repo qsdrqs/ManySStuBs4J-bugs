@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/imports/CustomImportOrderCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/imports/CustomImportOrderCheckTest.java
+index c0dbf8897..7d00314a9 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/imports/CustomImportOrderCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/imports/CustomImportOrderCheckTest.java
+@@ -339,7 +339,7 @@ public class CustomImportOrderCheckTest extends BaseCheckTestSupport {
+         try {
+             Class<?> clazz = Class.forName(
+                     "com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck");
+-            Object t = clazz.newInstance();
++            Object t = clazz.getConstructor().newInstance();
+             Method method = clazz.getDeclaredMethod("getFullImportIdent", DetailAST.class);
+             method.setAccessible(true);
+             actual = method.invoke(t, (DetailAST) null);

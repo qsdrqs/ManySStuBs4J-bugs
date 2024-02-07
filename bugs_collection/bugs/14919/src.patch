@@ -1,0 +1,21 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/DependencyOptions.java b/fixed/src/com/google/javascript/jscomp/DependencyOptions.java
+index e2c1ddda0..882bc537c 100644
+--- a/buggy/src/com/google/javascript/jscomp/DependencyOptions.java
++++ b/fixed/src/com/google/javascript/jscomp/DependencyOptions.java
+@@ -207,14 +207,14 @@ public final class DependencyOptions implements Serializable {
+      *     "goog:" when provided as a flag from the command line.
+      *
+      * Closure entry points may also be formatted as:
+-     *     'moduleName:name.space'
++     *     'goog:moduleName:name.space'
+      * which specifies that the module name and provided namespace
+      * are different
+      */
+     public static ModuleIdentifier forClosure(String name) {
+       String normalizedName = name;
+       if (normalizedName.startsWith("goog:")) {
+-        normalizedName = normalizedName.substring(5);
++        normalizedName = normalizedName.substring("goog:".length());
+       }
+ 
+       String namespace = normalizedName;

@@ -1,0 +1,13 @@
+diff --git a/buggy/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/emu/com/badlogic/gdx/utils/Json.java b/fixed/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/emu/com/badlogic/gdx/utils/Json.java
+index 51a1cf772..1539fad64 100644
+--- a/buggy/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/emu/com/badlogic/gdx/utils/Json.java
++++ b/fixed/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/emu/com/badlogic/gdx/utils/Json.java
+@@ -478,7 +478,7 @@ public class Json {
+ 			}
+ 
+ 			if (value instanceof Map) {
+-				if (knownType == null) knownType = ReflectionCache.getType(OrderedMap.class);
++				if (knownType == null) knownType = ReflectionCache.getType(HashMap.class);
+ 				writeObjectStart(actualType.getClassOfType(), knownType.getClassOfType());
+ 				for (Map.Entry entry : ((Map<?, ?>)value).entrySet()) {
+ 					writer.name(convertToString(entry.getKey()));

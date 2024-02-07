@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-streaming-java/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamTask.java b/fixed/flink-streaming-java/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamTask.java
+index bae012866..80c63dab9 100644
+--- a/buggy/flink-streaming-java/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamTask.java
++++ b/fixed/flink-streaming-java/src/main/java/org/apache/flink/streaming/runtime/tasks/StreamTask.java
+@@ -525,7 +525,7 @@ public abstract class StreamTask<OUT, Operator extends StreamOperator<OUT>>
+ 						Class<? extends StateBackendFactory> clazz =
+ 							Class.forName(backendName, false, userClassLoader).asSubclass(StateBackendFactory.class);
+ 
+-						return (StateBackend<?>) clazz.newInstance();
++						return clazz.newInstance().createFromConfig(flinkConfig);
+ 					} catch (ClassNotFoundException e) {
+ 						throw new IllegalConfigurationException("Cannot find configured state backend: " + backendName);
+ 					} catch (ClassCastException e) {

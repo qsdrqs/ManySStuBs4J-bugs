@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/examples/SimpleMapTest.java b/fixed/hazelcast/src/main/java/com/hazelcast/examples/SimpleMapTest.java
+index cb6091dd9..a8d260dab 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/examples/SimpleMapTest.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/examples/SimpleMapTest.java
+@@ -59,7 +59,7 @@ public class SimpleMapTest {
+         this.putPercentage = putPercentage;
+         this.load = load;
+         Config cfg = new Config();
+-        cfg.getMapConfig("default").setRecordType("OBJECT");
++        cfg.getMapConfig("default").setRecordType("DATA");
+         instance = Hazelcast.newHazelcastInstance(cfg);
+         logger = instance.getLoggingService().getLogger("SimpleMapTest");
+     }

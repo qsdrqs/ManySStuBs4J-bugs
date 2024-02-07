@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/impl/partition/MigrationOperation.java b/fixed/hazelcast/src/main/java/com/hazelcast/impl/partition/MigrationOperation.java
+index 2824628ee..339135fd2 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/impl/partition/MigrationOperation.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/impl/partition/MigrationOperation.java
+@@ -114,7 +114,7 @@ public class MigrationOperation extends AbstractOperation implements NonBlocking
+                         + ", replica: " + replicaIndex);
+             }
+ //            pm.doMigrate(partitionId, replicaIndex, recordSet, from);
+-            final boolean result = pm.runMigrationTasks(this, tasks, partitionId, replicaIndex, from);
++            final boolean result = pm.runMigrationTasks(tasks, partitionId, replicaIndex, from);
+             getResponseHandler().sendResponse(result);
+ //            getNodeService().send(PartitionManager.PARTITION_SERVICE_NAME, new Response(result), -1, 0, getCallId(), getCaller());
+         } catch (Throwable e) {

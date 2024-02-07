@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/AbstractJavadocCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/AbstractJavadocCheck.java
+index 77e7f90f8..0ad0cacb3 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/AbstractJavadocCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/AbstractJavadocCheck.java
+@@ -752,7 +752,7 @@ public abstract class AbstractJavadocCheck extends Check
+ 
+         public Object[] getMessageArguments()
+         {
+-            return messageArguments;
++            return messageArguments.clone();
+         }
+ 
+     }

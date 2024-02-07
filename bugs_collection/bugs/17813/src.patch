@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/ScrollPane.java b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/ScrollPane.java
+index 4a0a6daf2..cc89796c6 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/ScrollPane.java
++++ b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/ScrollPane.java
+@@ -1008,7 +1008,7 @@ public class ScrollPane extends WidgetGroup {
+ 	}
+ 
+ 	public void drawDebug (ShapeRenderer shapes) {
+-		drawDebugBounds(shapes);
++		shapes.flush();
+ 		applyTransform(shapes, computeTransform());
+ 		if (ScissorStack.pushScissors(scissorBounds)) {
+ 			drawDebugChildren(shapes);

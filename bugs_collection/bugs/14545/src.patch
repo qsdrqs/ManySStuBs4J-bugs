@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/JsAst.java b/fixed/src/com/google/javascript/jscomp/JsAst.java
+index 1562e3aaa..b94b9091d 100644
+--- a/buggy/src/com/google/javascript/jscomp/JsAst.java
++++ b/fixed/src/com/google/javascript/jscomp/JsAst.java
+@@ -172,7 +172,7 @@ public class JsAst implements SourceAst {
+       }
+     } catch (IOException e) {
+       compiler.report(
+-          JSError.make(AbstractCompiler.READ_ERROR, sourceFile.getName()));
++          JSError.make(AbstractCompiler.READ_ERROR, sourceFile.getName(), e.getMessage()));
+     }
+ 
+     if (root == null) {

@@ -1,0 +1,20 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/DefaultPassConfig.java b/fixed/src/com/google/javascript/jscomp/DefaultPassConfig.java
+index dcbb6cb63..940934be5 100644
+--- a/buggy/src/com/google/javascript/jscomp/DefaultPassConfig.java
++++ b/fixed/src/com/google/javascript/jscomp/DefaultPassConfig.java
+@@ -383,12 +383,13 @@ public final class DefaultPassConfig extends PassConfig {
+       checks.add(dartSuperAccessorsPass);
+     }
+ 
+-    if (options.needsTranspilationFrom(ES7)) {
++    if (options.needsTranspilationFrom(ES8)) {
+       TranspilationPasses.addEs2017Passes(checks);
+       checks.add(setFeatureSet(ES7));
+     }
+ 
+-    if (options.needsTranspilationFrom(ES6) && !options.skipTranspilationAndCrash) {
++    if ((options.needsTranspilationFrom(ES6) || options.needsTranspilationFrom(ES7))
++        && !options.skipTranspilationAndCrash) {
+       checks.add(es6ExternsCheck);
+       TranspilationPasses.addEs6EarlyPasses(checks);
+     }

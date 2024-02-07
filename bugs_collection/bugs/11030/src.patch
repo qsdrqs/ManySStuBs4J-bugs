@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractOptionCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractOptionCheck.java
+index cea70232d..ae02c04ee 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractOptionCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractOptionCheck.java
+@@ -68,7 +68,7 @@ public abstract class AbstractOptionCheck<T extends Enum<T>>
+                     Enum.valueOf(optionClass, optionStr.trim().toUpperCase(Locale.ENGLISH));
+         }
+         catch (IllegalArgumentException iae) {
+-            throw new ConversionException("unable to parse " + abstractOption, iae);
++            throw new ConversionException("unable to parse " + optionStr, iae);
+         }
+     }
+ 

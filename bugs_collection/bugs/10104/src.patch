@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/backtype/storm/transactional/partitioned/PartitionedTransactionalSpoutExecutor.java b/fixed/src/jvm/backtype/storm/transactional/partitioned/PartitionedTransactionalSpoutExecutor.java
+index 7639e2289..1d61e9569 100644
+--- a/buggy/src/jvm/backtype/storm/transactional/partitioned/PartitionedTransactionalSpoutExecutor.java
++++ b/fixed/src/jvm/backtype/storm/transactional/partitioned/PartitionedTransactionalSpoutExecutor.java
+@@ -54,7 +54,7 @@ public class PartitionedTransactionalSpoutExecutor implements ITransactionalSpou
+         @Override
+         public void emitBatch(final TransactionAttempt tx, final Object coordinatorMeta,
+                 final TransactionalOutputCollector collector) {
+-            int partitions = (int) coordinatorMeta;
++            int partitions = (Integer) coordinatorMeta;
+             for(int i=_index; i < partitions; i+=_numTasks) {
+                 if(!_partitionStates.containsKey(i)) {
+                     _partitionStates.put(i, new RotatingTransactionalState(_state, "" + i));

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/CompilerInput.java b/fixed/src/com/google/javascript/jscomp/CompilerInput.java
+index 4b71ebbb6..c6f162f7f 100644
+--- a/buggy/src/com/google/javascript/jscomp/CompilerInput.java
++++ b/fixed/src/com/google/javascript/jscomp/CompilerInput.java
+@@ -306,7 +306,7 @@ public class CompilerInput implements SourceAst, DependencyInfo {
+         return new LazyParsedDependencyInfo(info, (JsAst) ast, compiler);
+       } catch (IOException e) {
+         compiler.getErrorManager().report(CheckLevel.ERROR,
+-            JSError.make(AbstractCompiler.READ_ERROR, getName()));
++            JSError.make(AbstractCompiler.READ_ERROR, getName(), e.getMessage()));
+         return SimpleDependencyInfo.EMPTY;
+       }
+     } else {

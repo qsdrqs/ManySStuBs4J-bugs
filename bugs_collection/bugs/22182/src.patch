@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/main/java/org/springframework/boot/context/properties/source/DefaultPropertyMapper.java b/fixed/spring-boot/src/main/java/org/springframework/boot/context/properties/source/DefaultPropertyMapper.java
+index bb60f04a9..34111a6ab 100644
+--- a/buggy/spring-boot/src/main/java/org/springframework/boot/context/properties/source/DefaultPropertyMapper.java
++++ b/fixed/spring-boot/src/main/java/org/springframework/boot/context/properties/source/DefaultPropertyMapper.java
+@@ -89,7 +89,7 @@ class DefaultPropertyMapper implements PropertyMapper {
+ 
+ 		@Override
+ 		protected boolean removeEldestEntry(Map.Entry<K, List<PropertyMapping>> eldest) {
+-			return size() >= this.capacity;
++			return size() > this.capacity;
+ 
+ 		}
+ 

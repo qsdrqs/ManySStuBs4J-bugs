@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/impl/DefaultProducerTemplateWithCustomCacheMaxSizeTest.java b/fixed/camel-core/src/test/java/org/apache/camel/impl/DefaultProducerTemplateWithCustomCacheMaxSizeTest.java
+index 26f676b89..442827a31 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/impl/DefaultProducerTemplateWithCustomCacheMaxSizeTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/impl/DefaultProducerTemplateWithCustomCacheMaxSizeTest.java
+@@ -41,7 +41,7 @@ public class DefaultProducerTemplateWithCustomCacheMaxSizeTest extends ContextTe
+ 
+         // test that we cache at most 500 producers to avoid it eating to much memory
+         for (int i = 0; i < 203; i++) {
+-            Endpoint e = context.getEndpoint("direct:queue:" + i);
++            Endpoint e = context.getEndpoint("seda:queue:" + i);
+             template.sendBody(e, "Hello");
+         }
+ 

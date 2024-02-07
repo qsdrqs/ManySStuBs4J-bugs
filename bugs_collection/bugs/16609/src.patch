@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/cluster/impl/ConfigCheck.java b/fixed/hazelcast/src/main/java/com/hazelcast/cluster/impl/ConfigCheck.java
+index bbdbb29af..8c1feb0ea 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/cluster/impl/ConfigCheck.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/cluster/impl/ConfigCheck.java
+@@ -153,7 +153,7 @@ public final class ConfigCheck implements IdentifiedDataSerializable {
+ 
+     private void verifyJoiner(ConfigCheck found) {
+         if (!equals(joinerType, found.joinerType)) {
+-            throw new ConfigMismatchException("Incompatible joiners! expected: " + joinerType + ", found" + found.joinerType);
++            throw new ConfigMismatchException("Incompatible joiners! expected: " + joinerType + ", found: " + found.joinerType);
+         }
+     }
+ 

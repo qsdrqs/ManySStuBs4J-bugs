@@ -1,0 +1,13 @@
+diff --git a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/filters/SuppressElement.java b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/filters/SuppressElement.java
+index d08ded74b..82d234258 100644
+--- a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/filters/SuppressElement.java
++++ b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/filters/SuppressElement.java
+@@ -173,7 +173,7 @@ public class SuppressElement
+     @Override
+     public String toString()
+     {
+-        return "SupressElement[files=" + mFilePattern + ",checks="
++        return "SuppressElement[files=" + mFilePattern + ",checks="
+             + mCheckPattern + ",lines=" + mLinesCSV + ",columns="
+             + mColumnsCSV + "]";
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/sizes/MethodCountCheck.java b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/sizes/MethodCountCheck.java
+index 24a93d5d7..76adfb142 100644
+--- a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/sizes/MethodCountCheck.java
++++ b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/sizes/MethodCountCheck.java
+@@ -92,7 +92,7 @@ public final class MethodCountCheck extends Check
+     };
+ 
+     /** default maximum number of methods */
+-    private static final int DEFAULT_MAX_METHODS = 999;
++    private static final int DEFAULT_MAX_METHODS = 100;
+     /** Maximum private methods. */
+     private int mMaxPrivate = DEFAULT_MAX_METHODS;
+     /** Maximum package methods. */

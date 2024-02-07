@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/concurrent/atomiclong/AtomicLongBasicDistributedTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/concurrent/atomiclong/AtomicLongBasicDistributedTest.java
+index 34890eb8d..006abba9b 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/concurrent/atomiclong/AtomicLongBasicDistributedTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/concurrent/atomiclong/AtomicLongBasicDistributedTest.java
+@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
+ 
+ @RunWith(HazelcastParallelClassRunner.class)
+ @Category({QuickTest.class, ParallelTest.class})
+-public class AtomicLongBasicDistributedTest extends AtomicLongBasicTest {
++public class AtomicLongBasicDistributedTest extends AtomicLongAbstractTest {
+ 
+     @Override
+     protected HazelcastInstance[] newInstances() {

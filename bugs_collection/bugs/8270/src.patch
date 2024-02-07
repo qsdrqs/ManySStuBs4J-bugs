@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-connectors/flink-connector-kafka-0.11/src/main/java/org/apache/flink/streaming/connectors/kafka/FlinkKafkaProducer011.java b/fixed/flink-connectors/flink-connector-kafka-0.11/src/main/java/org/apache/flink/streaming/connectors/kafka/FlinkKafkaProducer011.java
+index e83966c27..6242a2084 100644
+--- a/buggy/flink-connectors/flink-connector-kafka-0.11/src/main/java/org/apache/flink/streaming/connectors/kafka/FlinkKafkaProducer011.java
++++ b/fixed/flink-connectors/flink-connector-kafka-0.11/src/main/java/org/apache/flink/streaming/connectors/kafka/FlinkKafkaProducer011.java
+@@ -136,7 +136,7 @@ public class FlinkKafkaProducer011<IN>
+ 		NONE
+ 	}
+ 
+-	private static final Logger LOG = LoggerFactory.getLogger(FlinkKafkaProducerBase.class);
++	private static final Logger LOG = LoggerFactory.getLogger(FlinkKafkaProducer011.class);
+ 
+ 	private static final long serialVersionUID = 1L;
+ 

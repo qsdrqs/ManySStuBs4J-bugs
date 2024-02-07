@@ -1,0 +1,13 @@
+diff --git a/buggy/codec-http/src/main/java/io/netty/handler/codec/http/MixedFileUpload.java b/fixed/codec-http/src/main/java/io/netty/handler/codec/http/MixedFileUpload.java
+index 6f0146cb3..b1a135061 100644
+--- a/buggy/codec-http/src/main/java/io/netty/handler/codec/http/MixedFileUpload.java
++++ b/fixed/codec-http/src/main/java/io/netty/handler/codec/http/MixedFileUpload.java
+@@ -58,7 +58,7 @@ public class MixedFileUpload implements FileUpload {
+                         definedSize);
+                 if (((MemoryFileUpload) fileUpload).getChannelBuffer() != null) {
+                     diskFileUpload.addContent(((MemoryFileUpload) fileUpload)
+-                        .getChannelBuffer(), last);
++                        .getChannelBuffer(), false);
+                 }
+                 fileUpload = diskFileUpload;
+             }

@@ -1,0 +1,14 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/metrics/MetricsMBeanBase.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/metrics/MetricsMBeanBase.java
+index ce5e3230c..88dd95d6d 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/metrics/MetricsMBeanBase.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/metrics/MetricsMBeanBase.java
+@@ -75,7 +75,8 @@ public class MetricsMBeanBase extends MetricsDynamicMBeanBase {
+   private static MetricsRegistry copyMinusHBaseMetrics(final MetricsRegistry mr) {
+     MetricsRegistry copy = new MetricsRegistry();
+     for (MetricsBase metric : mr.getMetricsList()) {
+-      if (metric instanceof MetricsRate || metric instanceof MetricsString) {
++      if (metric instanceof MetricsRate || metric instanceof MetricsString ||
++          metric instanceof MetricsHistogram || metric instanceof ExactCounterMetric) {
+         continue;
+       }
+       copy.add(metric.getName(), metric);

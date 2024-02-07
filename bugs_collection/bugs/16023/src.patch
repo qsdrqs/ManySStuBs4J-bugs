@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/test/TestHazelcastFactory.java b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/test/TestHazelcastFactory.java
+index 8c789cccc..bed4ff58d 100644
+--- a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/test/TestHazelcastFactory.java
++++ b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/test/TestHazelcastFactory.java
+@@ -96,7 +96,7 @@ public class TestHazelcastFactory extends TestHazelcastInstanceFactory {
+                 Collection<InetSocketAddress> inetAddresses = new ArrayList<InetSocketAddress>();
+                 for (Address address : getKnownAddresses()) {
+                     Collection<InetSocketAddress> addresses = AddressHelper.getPossibleSocketAddresses(address.getPort(),
+-                            address.getHost(), 3);
++                            address.getHost(), 1);
+                     inetAddresses.addAll(addresses);
+                 }
+                 return inetAddresses;

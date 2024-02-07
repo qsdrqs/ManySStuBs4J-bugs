@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/netty/PartitionRequestClientHandler.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/netty/PartitionRequestClientHandler.java
+index f0c08c858..f1dba423e 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/netty/PartitionRequestClientHandler.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/netty/PartitionRequestClientHandler.java
+@@ -429,7 +429,7 @@ class PartitionRequestClientHandler extends ChannelInboundHandlerAdapter {
+ 					success = true;
+ 				}
+ 				else {
+-					cancelRequestFor(inputChannel.getInputChannelId());
++					cancelRequestFor(stagedBufferResponse.receiverId);
+ 				}
+ 
+ 				stagedBufferResponse = null;

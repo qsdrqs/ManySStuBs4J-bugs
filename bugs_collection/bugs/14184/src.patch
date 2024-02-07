@@ -1,0 +1,13 @@
+diff --git a/buggy/DataLaboratoryAPI/src/org/gephi/datalab/impl/AttributeColumnsControllerImpl.java b/fixed/DataLaboratoryAPI/src/org/gephi/datalab/impl/AttributeColumnsControllerImpl.java
+index a96e6846d..60ed66d81 100644
+--- a/buggy/DataLaboratoryAPI/src/org/gephi/datalab/impl/AttributeColumnsControllerImpl.java
++++ b/fixed/DataLaboratoryAPI/src/org/gephi/datalab/impl/AttributeColumnsControllerImpl.java
+@@ -671,7 +671,7 @@ public class AttributeColumnsControllerImpl implements AttributeColumnsControlle
+                     if (edge == null) {
+                         //Not from source to target but undirected and reverse?
+                         edge = graph.getEdge(target, source);
+-                        if(edge.isDirected()){
++                        if(edge != null && edge.isDirected()){
+                             edge=null;
+                         }
+                     }

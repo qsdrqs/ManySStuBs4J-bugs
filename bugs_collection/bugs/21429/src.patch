@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/test/java/org/openmrs/util/UserByNameComparatorTest.java b/fixed/api/src/test/java/org/openmrs/util/UserByNameComparatorTest.java
+index 51c43d882..019c9de89 100644
+--- a/buggy/api/src/test/java/org/openmrs/util/UserByNameComparatorTest.java
++++ b/fixed/api/src/test/java/org/openmrs/util/UserByNameComparatorTest.java
+@@ -41,7 +41,7 @@ public class UserByNameComparatorTest {
+ 	public void compare_shouldSortUsersByPersonNames() throws Exception {
+ 		
+ 		Person person1 = new Person();
+-		person1.addName(new PersonName("givenName", "midsdleName", "familyName"));
++		person1.addName(new PersonName("givenName", "middleName", "familyName"));
+ 		User user1 = new User(person1);
+ 		Person person2 = new Person();
+ 		person2.addName(new PersonName("givenName", "middleNamf", "familyName"));

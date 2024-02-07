@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-client/src/main/java/com/yammer/dropwizard/client/JerseyClientConfiguration.java b/fixed/dropwizard-client/src/main/java/com/yammer/dropwizard/client/JerseyClientConfiguration.java
+index e14e4d9a8..5f8d98da0 100644
+--- a/buggy/dropwizard-client/src/main/java/com/yammer/dropwizard/client/JerseyClientConfiguration.java
++++ b/fixed/dropwizard-client/src/main/java/com/yammer/dropwizard/client/JerseyClientConfiguration.java
+@@ -111,7 +111,7 @@ public class JerseyClientConfiguration extends HttpClientConfiguration {
+         return minThreads <= maxThreads;
+     }
+ 
+-    @ValidationMethod(message = ".compressRequestEntity requires gzipEnabled set to true")
++    @ValidationMethod(message = ".gzipEnabledForRequests requires gzipEnabled set to true")
+     public boolean isCompressionConfigurationValid() {
+         return !gzipEnabledForRequests || gzipEnabled;
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/importer/PeriodicImportDao.java b/fixed/presto-main/src/main/java/com/facebook/presto/importer/PeriodicImportDao.java
+index eef76e0c9..93d724535 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/importer/PeriodicImportDao.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/importer/PeriodicImportDao.java
+@@ -67,7 +67,7 @@ public interface PeriodicImportDao
+             "  job_start_time DATETIME NOT NULL,\n" +
+             "  job_end_time DATETIME,\n" +
+             "  success BOOLEAN NOT NULL DEFAULT FALSE,\n" +
+-            "  FOREIGN KEY (job_id) REFERENCES job (job_id)\n" +
++            "  FOREIGN KEY (job_id) REFERENCES job (job_id) ON DELETE CASCADE\n" +
+             ")")
+     void createRunTable();
+ 

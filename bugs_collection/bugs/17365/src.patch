@@ -1,0 +1,13 @@
+diff --git a/buggy/jsonschema2pojo-core/src/main/java/org/jsonschema2pojo/rules/ConstructorRule.java b/fixed/jsonschema2pojo-core/src/main/java/org/jsonschema2pojo/rules/ConstructorRule.java
+index 73ad9fb41..d45951ed5 100644
+--- a/buggy/jsonschema2pojo-core/src/main/java/org/jsonschema2pojo/rules/ConstructorRule.java
++++ b/fixed/jsonschema2pojo-core/src/main/java/org/jsonschema2pojo/rules/ConstructorRule.java
+@@ -167,7 +167,7 @@ public class ConstructorRule  implements Rule<JDefinedClass, JDefinedClass> {
+     // The constructor invocation will also need all the parameters passed through
+     JInvocation instanceConstructorInvocation = JExpr._new(instanceClass);
+     for(JVar param : instanceConstructor.params()) {
+-      instanceConstructorInvocation.arg(param.name());
++      instanceConstructorInvocation.arg(param);
+     }
+ 
+     // Only initialize the instance if the object being constructed is actually this class

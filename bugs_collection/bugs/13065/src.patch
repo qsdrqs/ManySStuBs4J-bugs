@@ -1,0 +1,13 @@
+diff --git a/buggy/indexing-service/src/main/java/com/metamx/druid/indexing/coordinator/config/RemoteTaskRunnerConfig.java b/fixed/indexing-service/src/main/java/com/metamx/druid/indexing/coordinator/config/RemoteTaskRunnerConfig.java
+index 7018e37a7..2acadd3ae 100644
+--- a/buggy/indexing-service/src/main/java/com/metamx/druid/indexing/coordinator/config/RemoteTaskRunnerConfig.java
++++ b/fixed/indexing-service/src/main/java/com/metamx/druid/indexing/coordinator/config/RemoteTaskRunnerConfig.java
+@@ -33,7 +33,7 @@ public abstract class RemoteTaskRunnerConfig extends IndexerZkConfig
+   @Default("PT5M")
+   public abstract Duration getTaskAssignmentTimeoutDuration();
+ 
+-  @Config("druid.curator.compression.enable")
++  @Config("druid.curator.compress")
+   @Default("false")
+   public abstract boolean enableCompression();
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionImportControlTest.java b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionImportControlTest.java
+index 9796851c8..4fb34a394 100644
+--- a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionImportControlTest.java
++++ b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionImportControlTest.java
+@@ -28,7 +28,7 @@ import org.junit.Test;
+ import com.puppycrawl.tools.checkstyle.DefaultConfiguration;
+ import com.puppycrawl.tools.checkstyle.checks.imports.ImportControlCheck;
+ 
+-public class XpathRegressionImportControlTest extends AbstractXpathTestSupport {
++public class XpathRegressionImportControlTest extends XpathTestSupport {
+ 
+     @Test
+     public void testOne() throws Exception {

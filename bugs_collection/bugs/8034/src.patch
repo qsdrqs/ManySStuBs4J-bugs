@@ -1,0 +1,13 @@
+diff --git a/buggy/tooling/maven/maven-html-to-docbook/src/main/java/org/apache/camel/maven/GenerateDocBookMojo.java b/fixed/tooling/maven/maven-html-to-docbook/src/main/java/org/apache/camel/maven/GenerateDocBookMojo.java
+index 3de22e5c6..531ab06e3 100644
+--- a/buggy/tooling/maven/maven-html-to-docbook/src/main/java/org/apache/camel/maven/GenerateDocBookMojo.java
++++ b/fixed/tooling/maven/maven-html-to-docbook/src/main/java/org/apache/camel/maven/GenerateDocBookMojo.java
+@@ -183,7 +183,7 @@ public class GenerateDocBookMojo extends AbstractMojo {
+ 					Element element = (Element) node;
+ 					element.setAttribute("chapterId", chapterId);
+ 					element.setAttribute("baseURL", baseURL);
+-					element.setAttribute("imageLocation", "..\\images\\");
++					element.setAttribute("imageLocation", "../images/");
+ 
+ 					DOMSource source = new DOMSource(node);
+ 

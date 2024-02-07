@@ -1,0 +1,15 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/naming/AbstractClassNameCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/naming/AbstractClassNameCheckTest.java
+index aa4d6a8d9..9e0ea4b30 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/naming/AbstractClassNameCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/naming/AbstractClassNameCheckTest.java
+@@ -36,7 +36,9 @@ public class AbstractClassNameCheckTest extends BaseCheckTestSupport {
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "naming" + File.separator + filename);
++                + "naming" + File.separator
++                + "abstractclassname" + File.separator
++                + filename);
+     }
+ 
+     @Test

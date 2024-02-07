@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-script/src/test/java/org/apache/camel/builder/script/Jsr223Test.java b/fixed/components/camel-script/src/test/java/org/apache/camel/builder/script/Jsr223Test.java
+index 9b807e385..2e8531eb3 100644
+--- a/buggy/components/camel-script/src/test/java/org/apache/camel/builder/script/Jsr223Test.java
++++ b/fixed/components/camel-script/src/test/java/org/apache/camel/builder/script/Jsr223Test.java
+@@ -31,7 +31,7 @@ public class Jsr223Test extends TestCase {
+         ScriptEngineManager manager = new ScriptEngineManager();
+         for (String scriptName : scriptNames) {
+             ScriptEngine engine = manager.getEngineByName(scriptName);
+-            assertNotNull("We should get the scrpte engine for " + scriptName , engine);
++            assertNotNull("We should get the script engine for " + scriptName , engine);
+         }
+     }
+ }

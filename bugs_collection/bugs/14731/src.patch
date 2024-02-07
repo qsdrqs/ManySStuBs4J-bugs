@@ -1,0 +1,14 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/ConformanceRules.java b/fixed/src/com/google/javascript/jscomp/ConformanceRules.java
+index 4f9e50a13..8a95ef300 100644
+--- a/buggy/src/com/google/javascript/jscomp/ConformanceRules.java
++++ b/fixed/src/com/google/javascript/jscomp/ConformanceRules.java
+@@ -1261,8 +1261,7 @@ public final class ConformanceRules {
+       // TODO(tbreisacher): Figure out how to remove this restriction.
+       String filename = n.getSourceFileName();
+       if (filename != null
+-          && (filename.contains("synthetic:es6/symbol")
+-              || filename.contains("synthetic:es6/weakmap")
++          && (filename.contains("synthetic:es6/weakmap")
+               || filename.contains("synthetic:es6/weakset")
+               || filename.contains("synthetic:runtime_type_check"))) {
+         return ConformanceResult.CONFORMANCE;

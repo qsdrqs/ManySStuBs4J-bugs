@@ -1,0 +1,13 @@
+diff --git a/buggy/storm-core/src/jvm/backtype/storm/torrent/BitTorrentCodeDistributor.java b/fixed/storm-core/src/jvm/backtype/storm/torrent/BitTorrentCodeDistributor.java
+index f4512b40a..a0d2fc85f 100644
+--- a/buggy/storm-core/src/jvm/backtype/storm/torrent/BitTorrentCodeDistributor.java
++++ b/fixed/storm-core/src/jvm/backtype/storm/torrent/BitTorrentCodeDistributor.java
+@@ -138,7 +138,7 @@ public class BitTorrentCodeDistributor implements ICodeDistributor {
+             }
+         }
+ 
+-        throw new RuntimeException("No valid InetAddress could be obtained, something really wrong with network configuration.")
++        throw new RuntimeException("No valid InetAddress could be obtained, something really wrong with network configuration.");
+     }
+ 
+     @Override

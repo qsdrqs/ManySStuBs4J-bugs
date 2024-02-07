@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-client/src/main/java/org/apache/hadoop/hbase/util/PoolMap.java b/fixed/hbase-client/src/main/java/org/apache/hadoop/hbase/util/PoolMap.java
+index b683fcc9e..f89215b1a 100644
+--- a/buggy/hbase-client/src/main/java/org/apache/hadoop/hbase/util/PoolMap.java
++++ b/fixed/hbase-client/src/main/java/org/apache/hadoop/hbase/util/PoolMap.java
+@@ -360,7 +360,7 @@ public class PoolMap<K, V> implements Map<K, V> {
+ 
+     @Override
+     public R get() {
+-      if (super.size() < maxSize) {
++      if (super.size() <= 0) {
+         return null;
+       }
+       nextResource %= super.size();

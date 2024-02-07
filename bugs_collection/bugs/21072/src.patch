@@ -1,0 +1,13 @@
+diff --git a/buggy/web/src/main/java/org/openmrs/module/web/filter/ModuleFilterMapping.java b/fixed/web/src/main/java/org/openmrs/module/web/filter/ModuleFilterMapping.java
+index 123c189ab..790296d27 100644
+--- a/buggy/web/src/main/java/org/openmrs/module/web/filter/ModuleFilterMapping.java
++++ b/fixed/web/src/main/java/org/openmrs/module/web/filter/ModuleFilterMapping.java
+@@ -190,7 +190,7 @@ public class ModuleFilterMapping implements Serializable {
+ 		log.debug("Checking URL <" + requestPath + "> against pattern <" + patternToCheck + ">");
+ 		
+ 		// Match exact or full wildcard
+-		if (patternToCheck.equals("*") || patternToCheck.equals("/*") || patternToCheck.equals(requestPath)) {
++		if ("*".equals(patternToCheck) || "/*".equals(patternToCheck) || patternToCheck.equals(requestPath)) {
+ 			return true;
+ 		}
+ 		

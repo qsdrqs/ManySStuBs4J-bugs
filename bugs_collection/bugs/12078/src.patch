@@ -1,0 +1,13 @@
+diff --git a/buggy/webmagic-samples/src/main/java/us/codecraft/webmagic/annotation/samples/IteyeBlog.java b/fixed/webmagic-samples/src/main/java/us/codecraft/webmagic/annotation/samples/IteyeBlog.java
+index a92705450..09a1d5b24 100644
+--- a/buggy/webmagic-samples/src/main/java/us/codecraft/webmagic/annotation/samples/IteyeBlog.java
++++ b/fixed/webmagic-samples/src/main/java/us/codecraft/webmagic/annotation/samples/IteyeBlog.java
+@@ -32,7 +32,7 @@ public class IteyeBlog implements Blog{
+     }
+ 
+     public String getTitle() {
+-        return null;
++        return title;
+     }
+ 
+     public String getContent() {

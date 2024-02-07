@@ -1,0 +1,18 @@
+diff --git a/buggy/src/com/google/javascript/rhino/testing/TypeSubject.java b/fixed/src/com/google/javascript/rhino/testing/TypeSubject.java
+index 1376a2220..90f8d824a 100644
+--- a/buggy/src/com/google/javascript/rhino/testing/TypeSubject.java
++++ b/fixed/src/com/google/javascript/rhino/testing/TypeSubject.java
+@@ -87,11 +87,11 @@ public final class TypeSubject extends Subject<TypeSubject, JSType> {
+   }
+ 
+   public void isNotUnknown() {
+-    check("isNotUnknownType()").that(actual().isUnknownType()).isFalse();
++    check("isUnknownType()").that(actual().isUnknownType()).isFalse();
+   }
+ 
+   public void isNotEmpty() {
+-    check("isNotEmptyType()").that(actual().isEmptyType()).isFalse();
++    check("isEmptyType()").that(actual().isEmptyType()).isFalse();
+   }
+ 
+   public void isLiteralObject() {

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/apache/hadoop/hbase/master/AssignmentManager.java b/fixed/src/main/java/org/apache/hadoop/hbase/master/AssignmentManager.java
+index f4625f69d..2cb605087 100644
+--- a/buggy/src/main/java/org/apache/hadoop/hbase/master/AssignmentManager.java
++++ b/fixed/src/main/java/org/apache/hadoop/hbase/master/AssignmentManager.java
+@@ -954,7 +954,7 @@ public class AssignmentManager extends ZooKeeperListener {
+         this.regionPlans.put(encodedName, randomPlan);
+         return randomPlan;
+       }
+-      LOG.debug("Using pre-exisitng plan for region " +
++      LOG.debug("Using pre-existing plan for region " +
+           state.getRegion().getRegionNameAsString() + "; plan=" + existingPlan);
+       return existingPlan;
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/client/RestTemplateBuilder.java b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/client/RestTemplateBuilder.java
+index c32a74409..8e39f3434 100644
+--- a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/client/RestTemplateBuilder.java
++++ b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/client/RestTemplateBuilder.java
+@@ -630,7 +630,7 @@ public class RestTemplateBuilder {
+ 	/**
+ 	 * {@link RequestFactoryCustomizer} to call a "set timeout" method.
+ 	 */
+-	private static abstract class TimeoutRequestFactoryCustomizer
++	private abstract static class TimeoutRequestFactoryCustomizer
+ 			implements RequestFactoryCustomizer {
+ 
+ 		private final int timeout;

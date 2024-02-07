@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/com/metamx/druid/db/DatabaseRuleManager.java b/fixed/server/src/main/java/com/metamx/druid/db/DatabaseRuleManager.java
+index a9955d843..2840eb037 100644
+--- a/buggy/server/src/main/java/com/metamx/druid/db/DatabaseRuleManager.java
++++ b/fixed/server/src/main/java/com/metamx/druid/db/DatabaseRuleManager.java
+@@ -69,7 +69,7 @@ public class DatabaseRuleManager
+             {
+               List<Map<String, Object>> existing = handle.select(
+                   String.format(
+-                      "SELECT id from %s where datasource=%s;",
++                      "SELECT id from %s where datasource='%s';",
+                       ruleTable,
+                       defaultDatasource
+                   )

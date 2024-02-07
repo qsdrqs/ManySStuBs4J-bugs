@@ -1,0 +1,13 @@
+diff --git a/buggy/jsonschema2pojo-integration-tests/src/test/java/org/jsonschema2pojo/integration/util/Jsonschema2PojoRule.java b/fixed/jsonschema2pojo-integration-tests/src/test/java/org/jsonschema2pojo/integration/util/Jsonschema2PojoRule.java
+index be263e1d0..881abea03 100644
+--- a/buggy/jsonschema2pojo-integration-tests/src/test/java/org/jsonschema2pojo/integration/util/Jsonschema2PojoRule.java
++++ b/fixed/jsonschema2pojo-integration-tests/src/test/java/org/jsonschema2pojo/integration/util/Jsonschema2PojoRule.java
+@@ -241,7 +241,7 @@ public class Jsonschema2PojoRule implements TestRule {
+     static String classNameToPath(String className) {
+         return className
+                 .replaceAll("\\A(?:.*\\.)?([^\\.]*)\\Z", "$1")
+-                .replaceAll("\\$", File.separator);
++                .replaceAll("\\$", Pattern.quote(File.separator));
+     }
+ 
+ }

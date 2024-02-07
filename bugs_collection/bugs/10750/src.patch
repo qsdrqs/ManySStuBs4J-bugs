@@ -1,0 +1,14 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/api/FullIdentTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/api/FullIdentTest.java
+index 63d44929d..d3b5c76c7 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/api/FullIdentTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/api/FullIdentTest.java
+@@ -24,7 +24,8 @@ import org.junit.Test;
+ 
+ public class FullIdentTest {
+ 
+-    public static void testToString() {
++    @Test
++    public void testToString() {
+         final DetailAST ast = new DetailAST();
+         ast.setType(TokenTypes.LITERAL_NEW);
+         ast.setColumnNo(14);

@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/execution/QueryInfo.java b/fixed/presto-main/src/main/java/com/facebook/presto/execution/QueryInfo.java
+index 0ed3c0acd..29b072283 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/execution/QueryInfo.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/execution/QueryInfo.java
+@@ -344,7 +344,7 @@ public class QueryInfo
+     @JsonProperty
+     public boolean isFinalQueryInfo()
+     {
+-        return state.isDone() && getAllStages(outputStage).stream().allMatch(StageInfo::isFinalStageInfo);
++        return state.equals(QueryState.FAILED) || state.isDone() && getAllStages(outputStage).stream().allMatch(StageInfo::isFinalStageInfo);
+     }
+ 
+     @JsonProperty

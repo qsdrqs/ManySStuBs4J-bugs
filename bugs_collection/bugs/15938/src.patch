@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/scheduledexecutor/impl/DistributedScheduledExecutorService.java b/fixed/hazelcast/src/main/java/com/hazelcast/scheduledexecutor/impl/DistributedScheduledExecutorService.java
+index 2a65b5568..93f625414 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/scheduledexecutor/impl/DistributedScheduledExecutorService.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/scheduledexecutor/impl/DistributedScheduledExecutorService.java
+@@ -356,7 +356,7 @@ public class DistributedScheduledExecutorService
+     private class Merger
+             implements Runnable {
+ 
+-        private static final int TIMEOUT_FACTOR = 500;
++        private static final long TIMEOUT_FACTOR = 500;
+ 
+         private final ILogger logger = nodeEngine.getLogger(DistributedScheduledExecutorService.class);
+         private final Semaphore semaphore = new Semaphore(0);

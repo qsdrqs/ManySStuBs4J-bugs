@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-libraries/flink-table/src/test/java/org/apache/flink/api/java/batch/table/AggregationsITCase.java b/fixed/flink-libraries/flink-table/src/test/java/org/apache/flink/api/java/batch/table/AggregationsITCase.java
+index 6df3f65a9..6bcac560c 100644
+--- a/buggy/flink-libraries/flink-table/src/test/java/org/apache/flink/api/java/batch/table/AggregationsITCase.java
++++ b/fixed/flink-libraries/flink-table/src/test/java/org/apache/flink/api/java/batch/table/AggregationsITCase.java
+@@ -196,7 +196,7 @@ public class AggregationsITCase extends MultipleProgramsTestBase {
+ 
+ 		Table filtered = table
+ 				.groupBy("word")
+-				.select("word.frequency as frequency, word")
++				.select("word.count as frequency, word")
+ 				.filter("frequency = 2");
+ 
+ 		List<String> result = tableEnv.toDataSet(filtered, WC.class)

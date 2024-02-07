@@ -1,0 +1,18 @@
+diff --git a/buggy/standalone-metastore/src/main/java/org/apache/hadoop/hive/metastore/HiveMetaStore.java b/fixed/standalone-metastore/src/main/java/org/apache/hadoop/hive/metastore/HiveMetaStore.java
+index 8d7b0c394..7dbdba8f7 100644
+--- a/buggy/standalone-metastore/src/main/java/org/apache/hadoop/hive/metastore/HiveMetaStore.java
++++ b/fixed/standalone-metastore/src/main/java/org/apache/hadoop/hive/metastore/HiveMetaStore.java
+@@ -350,11 +350,11 @@ public class HiveMetaStore extends ThriftHiveMetastore {
+       return null;
+     }
+ 
+-    private static int nextSerialNum = 0;
++    private static AtomicInteger nextSerialNum = new AtomicInteger();
+     private static ThreadLocal<Integer> threadLocalId = new ThreadLocal<Integer>() {
+       @Override
+       protected Integer initialValue() {
+-        return nextSerialNum++;
++        return nextSerialNum.getAndIncrement();
+       }
+     };
+ 

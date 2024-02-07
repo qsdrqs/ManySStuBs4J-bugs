@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/actors/Button.java b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/actors/Button.java
+index 9b9741d20..df3479423 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/actors/Button.java
++++ b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/actors/Button.java
+@@ -102,7 +102,7 @@ public class Button extends Actor {
+ 	}
+ 
+ 	@Override protected boolean touchDragged (float x, float y, int pointer) {
+-		return true;
++		return pressed;
+ 	}
+ 
+ 	public Actor hit (float x, float y) {

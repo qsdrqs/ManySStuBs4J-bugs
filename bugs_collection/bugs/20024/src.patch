@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/handler/stream/ChunkedFile.java b/fixed/src/main/java/org/jboss/netty/handler/stream/ChunkedFile.java
+index de3598d2b..ba8d605f5 100644
+--- a/buggy/src/main/java/org/jboss/netty/handler/stream/ChunkedFile.java
++++ b/fixed/src/main/java/org/jboss/netty/handler/stream/ChunkedFile.java
+@@ -130,7 +130,7 @@ public class ChunkedFile implements ChunkedInput {
+     }
+ 
+     public boolean isEndOfInput() throws Exception {
+-        return hasNextChunk();
++        return !hasNextChunk();
+     }
+ 
+     public void close() throws Exception {

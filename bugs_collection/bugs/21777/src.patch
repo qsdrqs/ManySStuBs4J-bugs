@@ -1,0 +1,11 @@
+diff --git a/buggy/scribejava-core/src/main/java/com/github/scribejava/core/extractors/RequestTokenExtractor.java b/fixed/scribejava-core/src/main/java/com/github/scribejava/core/extractors/RequestTokenExtractor.java
+index bc054713c..bc518c617 100644
+--- a/buggy/scribejava-core/src/main/java/com/github/scribejava/core/extractors/RequestTokenExtractor.java
++++ b/fixed/scribejava-core/src/main/java/com/github/scribejava/core/extractors/RequestTokenExtractor.java
+@@ -15,5 +15,5 @@ public interface RequestTokenExtractor {
+      * @param response the contents of the response
+      * @return OAuth access token
+      */
+-    public Token extract(String response);
++    Token extract(String response);
+ }

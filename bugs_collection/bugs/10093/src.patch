@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/backtype/storm/transactional/TransactionalTopologyBuilder.java b/fixed/src/jvm/backtype/storm/transactional/TransactionalTopologyBuilder.java
+index 67dae419b..721a7d47e 100644
+--- a/buggy/src/jvm/backtype/storm/transactional/TransactionalTopologyBuilder.java
++++ b/fixed/src/jvm/backtype/storm/transactional/TransactionalTopologyBuilder.java
+@@ -52,7 +52,7 @@ public class TransactionalTopologyBuilder {
+         _id = id;
+         _spoutId = spoutId;
+         _spout = spout;
+-        _spoutParallelism = spoutParallelism.intValue();
++        _spoutParallelism = (spoutParallelism == null) ? null : spoutParallelism.intValue();
+     }
+     
+     public TransactionalTopologyBuilder(String id, String spoutId, ITransactionalSpout spout) {

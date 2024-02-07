@@ -1,0 +1,14 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/base/IndentationConfigurationBuilder.java b/fixed/src/it/java/com/google/checkstyle/test/base/IndentationConfigurationBuilder.java
+index 560ffdd9e..95cb05e91 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/base/IndentationConfigurationBuilder.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/base/IndentationConfigurationBuilder.java
+@@ -18,8 +18,7 @@ public class IndentationConfigurationBuilder extends ConfigurationBuilder
+     private static final int TAB_WIDTH = 4;
+ 
+     public IndentationConfigurationBuilder(File aROOT)
+-        throws CheckstyleException, IOException
+-    {
++        throws CheckstyleException {
+         super(aROOT);
+     }
+ 

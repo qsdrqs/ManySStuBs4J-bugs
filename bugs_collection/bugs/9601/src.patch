@@ -1,0 +1,13 @@
+diff --git a/buggy/common/src/java/org/apache/hadoop/hive/conf/HiveConf.java b/fixed/common/src/java/org/apache/hadoop/hive/conf/HiveConf.java
+index 00d2e465b..e2bd38b4e 100644
+--- a/buggy/common/src/java/org/apache/hadoop/hive/conf/HiveConf.java
++++ b/fixed/common/src/java/org/apache/hadoop/hive/conf/HiveConf.java
+@@ -4500,7 +4500,7 @@ public class HiveConf extends Configuration {
+     "mapred\\.map\\..*",
+     "mapred\\.reduce\\..*",
+     "mapred\\.output\\.compression\\.codec",
+-    "mapred\\.job\\.queuename",
++    "mapred\\.job\\.queue\\.name",
+     "mapred\\.output\\.compression\\.type",
+     "mapred\\.min\\.split\\.size",
+     "mapreduce\\.job\\.reduce\\.slowstart\\.completedmaps",

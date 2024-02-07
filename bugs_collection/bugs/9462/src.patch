@@ -1,0 +1,13 @@
+diff --git a/buggy/src/java/org/apache/hadoop/hbase/zookeeper/HQuorumPeer.java b/fixed/src/java/org/apache/hadoop/hbase/zookeeper/HQuorumPeer.java
+index 226e20f66..c7cc69b15 100644
+--- a/buggy/src/java/org/apache/hadoop/hbase/zookeeper/HQuorumPeer.java
++++ b/fixed/src/java/org/apache/hadoop/hbase/zookeeper/HQuorumPeer.java
+@@ -213,7 +213,7 @@ public class HQuorumPeer implements HConstants {
+     } catch (IOException e) {
+       String msg = "fail to read properties from " + ZOOKEEPER_CONFIG_NAME;
+       LOG.fatal(msg);
+-      throw new IOException(msg);
++      throw new IOException(msg, e);
+     }
+     for (Entry<Object, Object> entry : properties.entrySet()) {
+       String value = entry.getValue().toString().trim();

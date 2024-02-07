@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/HazelcastClientTest.java b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/HazelcastClientTest.java
+index 8306cb04c..e33e5806f 100644
+--- a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/HazelcastClientTest.java
++++ b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/HazelcastClientTest.java
+@@ -392,7 +392,7 @@ public class HazelcastClientTest extends HazelcastClientTestBase {
+         }
+     }
+ 
+-    @Test(expected = UnsupportedOperationException.class)
++    @Test
+     public void testQueueItemListener() {
+         final CountDownLatch latch = new CountDownLatch(2);
+         IQueue<String> queue = getHazelcastClient().getQueue("testQueueListener");

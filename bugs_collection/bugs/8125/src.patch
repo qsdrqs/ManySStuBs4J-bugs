@@ -1,0 +1,19 @@
+diff --git a/buggy/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/VarBinaryType.java b/fixed/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/VarBinaryType.java
+index 7ed6b5a0f..8322518c6 100644
+--- a/buggy/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/VarBinaryType.java
++++ b/fixed/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/VarBinaryType.java
+@@ -36,11 +36,11 @@ import java.util.Set;
+ @PublicEvolving
+ public final class VarBinaryType extends LogicalType {
+ 
+-	private static final int MIN_LENGTH = 1;
++	public static final int MIN_LENGTH = 1;
+ 
+-	private static final int MAX_LENGTH = Integer.MAX_VALUE;
++	public static final int MAX_LENGTH = Integer.MAX_VALUE;
+ 
+-	private static final int DEFAULT_LENGTH = 1;
++	public static final int DEFAULT_LENGTH = 1;
+ 
+ 	private static final String FORMAT = "VARBINARY(%d)";
+ 

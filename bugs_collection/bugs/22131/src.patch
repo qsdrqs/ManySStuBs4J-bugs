@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/context/ConfigurationWarningsApplicationContextInitializer.java b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/context/ConfigurationWarningsApplicationContextInitializer.java
+index ecacf8b24..d0e240665 100644
+--- a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/context/ConfigurationWarningsApplicationContextInitializer.java
++++ b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/context/ConfigurationWarningsApplicationContextInitializer.java
+@@ -72,7 +72,7 @@ public class ConfigurationWarningsApplicationContextInitializer
+ 	/**
+ 	 * {@link BeanDefinitionRegistryPostProcessor} to report warnings.
+ 	 */
+-	protected final static class ConfigurationWarningsPostProcessor
++	protected static final class ConfigurationWarningsPostProcessor
+ 			implements PriorityOrdered, BeanDefinitionRegistryPostProcessor {
+ 
+ 		private Check[] checks;

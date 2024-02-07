@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/security/SecurityFilterAutoConfiguration.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/security/SecurityFilterAutoConfiguration.java
+index e79441c99..5872f5614 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/security/SecurityFilterAutoConfiguration.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/security/SecurityFilterAutoConfiguration.java
+@@ -52,7 +52,7 @@ import org.springframework.security.web.context.AbstractSecurityWebApplicationIn
+ @EnableConfigurationProperties
+ @ConditionalOnClass({ AbstractSecurityWebApplicationInitializer.class,
+ 		SessionCreationPolicy.class })
+-@AutoConfigureAfter(SpringBootWebSecurityConfiguration.class)
++@AutoConfigureAfter(SecurityAutoConfiguration.class)
+ public class SecurityFilterAutoConfiguration {
+ 
+ 	private static final String DEFAULT_FILTER_NAME = AbstractSecurityWebApplicationInitializer.DEFAULT_FILTER_NAME;

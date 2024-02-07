@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/BlockParentHandler.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/BlockParentHandler.java
+index 90e0ec1a4..11c1cbfd1 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/BlockParentHandler.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/BlockParentHandler.java
+@@ -45,7 +45,7 @@ public class BlockParentHandler extends AbstractExpressionHandler {
+     /**
+      * Children checked by parent handlers.
+      */
+-    private static final int[] CHECKED_CHILDREN = new int[] {
++    private static final int[] CHECKED_CHILDREN = {
+         TokenTypes.VARIABLE_DEF,
+         TokenTypes.EXPR,
+         TokenTypes.OBJBLOCK,

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/apache/ibatis/builder/MapperBuilderAssistant.java b/fixed/src/main/java/org/apache/ibatis/builder/MapperBuilderAssistant.java
+index 04bf4b934..06141ad80 100644
+--- a/buggy/src/main/java/org/apache/ibatis/builder/MapperBuilderAssistant.java
++++ b/fixed/src/main/java/org/apache/ibatis/builder/MapperBuilderAssistant.java
+@@ -337,7 +337,7 @@ public class MapperBuilderAssistant extends BaseBuilder {
+         try {
+           resultMaps.add(configuration.getResultMap(resultMapName.trim()));
+         } catch (IllegalArgumentException e) {
+-          throw new IncompleteElementException("Could not find result map " + resultMapName, e);
++          throw new IncompleteElementException("Could not find result map " + resultMapName + " [statementId]" + statementId, e);
+         }
+       }
+     } else if (resultType != null) {

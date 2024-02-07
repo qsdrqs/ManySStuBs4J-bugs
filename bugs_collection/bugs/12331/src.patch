@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-jdbi/src/main/java/io/dropwizard/jdbi/NamePrependingStatementRewriter.java b/fixed/dropwizard-jdbi/src/main/java/io/dropwizard/jdbi/NamePrependingStatementRewriter.java
+index 8d70a1053..de670d9a3 100644
+--- a/buggy/dropwizard-jdbi/src/main/java/io/dropwizard/jdbi/NamePrependingStatementRewriter.java
++++ b/fixed/dropwizard-jdbi/src/main/java/io/dropwizard/jdbi/NamePrependingStatementRewriter.java
+@@ -8,7 +8,7 @@ import org.skife.jdbi.v2.tweak.StatementRewriter;
+ public class NamePrependingStatementRewriter implements StatementRewriter {
+     private final StatementRewriter rewriter;
+ 
+-    NamePrependingStatementRewriter(StatementRewriter rewriter) {
++    public NamePrependingStatementRewriter(StatementRewriter rewriter) {
+         this.rewriter = rewriter;
+     }
+ 

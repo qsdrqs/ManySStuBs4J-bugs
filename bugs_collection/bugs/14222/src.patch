@@ -1,0 +1,13 @@
+diff --git a/buggy/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGraphML.java b/fixed/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGraphML.java
+index 816126078..b391a04a1 100644
+--- a/buggy/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGraphML.java
++++ b/fixed/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGraphML.java
+@@ -481,7 +481,7 @@ public class ImporterGraphML implements FileImporter, LongTask {
+             }
+ 
+             //Data attribute value
+-            AttributeColumn column = container.getAttributeModel().getNodeTable().getColumn(fore);
++            AttributeColumn column = container.getAttributeModel().getEdgeTable().getColumn(fore);
+             if (column != null) {
+                 try {
+                     Object val = column.getType().parse(value);

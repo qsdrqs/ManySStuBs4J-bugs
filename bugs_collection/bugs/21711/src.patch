@@ -1,0 +1,13 @@
+diff --git a/buggy/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/AWeberExample.java b/fixed/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/AWeberExample.java
+index f79dfa4ef..ed7c20b96 100644
+--- a/buggy/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/AWeberExample.java
++++ b/fixed/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/AWeberExample.java
+@@ -50,7 +50,7 @@ public final class AWeberExample {
+         System.out.println("Trading the Request Token for an Access Token...");
+         final OAuth1AccessToken accessToken = service.getAccessToken(requestToken, oauthVerifier);
+         System.out.println("Got the Access Token!");
+-        System.out.println("(if your curious the raw answer looks like this: " + accessToken.getRawResponse() + "')");
++        System.out.println("(The raw response looks like this: " + accessToken.getRawResponse() + "')");
+         System.out.println();
+ 
+         // Now let's go and ask for a protected resource!

@@ -1,0 +1,13 @@
+diff --git a/buggy/buffer/src/main/java/io/netty/buffer/SwappedByteBuf.java b/fixed/buffer/src/main/java/io/netty/buffer/SwappedByteBuf.java
+index 9874e630d..4539c9b41 100644
+--- a/buggy/buffer/src/main/java/io/netty/buffer/SwappedByteBuf.java
++++ b/fixed/buffer/src/main/java/io/netty/buffer/SwappedByteBuf.java
+@@ -59,7 +59,7 @@ public final class SwappedByteBuf implements ByteBuf {
+ 
+     @Override
+     public ByteBuf unwrap() {
+-        return buf;
++        return buf.unwrap();
+     }
+ 
+     @Override

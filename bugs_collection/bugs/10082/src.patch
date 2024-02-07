@@ -1,0 +1,11 @@
+diff --git a/buggy/src/jvm/storm/trident/state/Serializer.java b/fixed/src/jvm/storm/trident/state/Serializer.java
+index 0c18b7125..9f91a3831 100644
+--- a/buggy/src/jvm/storm/trident/state/Serializer.java
++++ b/fixed/src/jvm/storm/trident/state/Serializer.java
+@@ -5,5 +5,5 @@ import java.io.Serializable;
+ 
+ public interface Serializer<T> extends Serializable {
+     byte[] serialize(T obj);
+-    Object deserialize(byte[] b);
++    T deserialize(byte[] b);
+ }

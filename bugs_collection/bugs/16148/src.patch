@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/map/impl/MapContainer.java b/fixed/hazelcast/src/main/java/com/hazelcast/map/impl/MapContainer.java
+index 007b0472e..684eeda28 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/map/impl/MapContainer.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/map/impl/MapContainer.java
+@@ -288,7 +288,7 @@ public class MapContainer {
+     }
+ 
+     public boolean shouldCloneOnEntryProcessing() {
+-        return getIndexes().hasIndex() & OBJECT.equals(mapConfig.getInMemoryFormat());
++        return getIndexes().hasIndex() && OBJECT.equals(mapConfig.getInMemoryFormat());
+     }
+ }
+ 

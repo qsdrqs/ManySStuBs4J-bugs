@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/neural/rnn/RNNCoreAnnotations.java b/fixed/src/edu/stanford/nlp/neural/rnn/RNNCoreAnnotations.java
+index bf16c844b..f0f09db06 100644
+--- a/buggy/src/edu/stanford/nlp/neural/rnn/RNNCoreAnnotations.java
++++ b/fixed/src/edu/stanford/nlp/neural/rnn/RNNCoreAnnotations.java
+@@ -116,7 +116,7 @@ public class RNNCoreAnnotations {
+    */
+   public static double getPredictedClassProb(Label label) {
+     if (!(label instanceof CoreLabel)) {
+-      throw new IllegalArgumentException("CoreLabels required to get the attached predicted class");
++      throw new IllegalArgumentException("CoreLabels required to get the attached predicted class probability");
+     }
+     Integer val = ((CoreLabel) label).get(PredictedClass.class);
+     SimpleMatrix predictions = ((CoreLabel) label).get(Predictions.class);

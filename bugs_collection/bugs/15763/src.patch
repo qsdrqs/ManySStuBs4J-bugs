@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/com/google/inject/spi/InjectionPoint.java b/fixed/core/src/com/google/inject/spi/InjectionPoint.java
+index 76197e3a1..36c10be04 100644
+--- a/buggy/core/src/com/google/inject/spi/InjectionPoint.java
++++ b/fixed/core/src/com/google/inject/spi/InjectionPoint.java
+@@ -678,7 +678,7 @@ public final class InjectionPoint {
+             InjectableMethod injectableMethod = new InjectableMethod(
+                 current, method, atInject);
+             if (checkForMisplacedBindingAnnotations(method, errors)
+-                | !isValidMethod(injectableMethod, errors)) {
++                || !isValidMethod(injectableMethod, errors)) {
+               if (overrideIndex != null) {
+                 boolean removed = overrideIndex.removeIfOverriddenBy(method, false, injectableMethod);
+                 if(removed) {

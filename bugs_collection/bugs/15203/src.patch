@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/debugging/sourcemap/SourceMapConsumerV3.java b/fixed/src/com/google/debugging/sourcemap/SourceMapConsumerV3.java
+index f2106376b..3b07ae455 100644
+--- a/buggy/src/com/google/debugging/sourcemap/SourceMapConsumerV3.java
++++ b/fixed/src/com/google/debugging/sourcemap/SourceMapConsumerV3.java
+@@ -229,7 +229,7 @@ public class SourceMapConsumerV3 implements SourceMapConsumer,
+     }
+ 
+     int index = search(entries, column, 0, entries.size() - 1);
+-    Preconditions.checkState(index >= 0, "unexpected:" + index);
++    Preconditions.checkState(index >= 0, "unexpected:%s", index);
+     return getOriginalMappingForEntry(entries.get(index));
+   }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/LayoutPlugin/src/org/gephi/layout/plugin/rotate/ClockwiseRotate.java b/fixed/LayoutPlugin/src/org/gephi/layout/plugin/rotate/ClockwiseRotate.java
+index 21af04d2f..e5e79148f 100644
+--- a/buggy/LayoutPlugin/src/org/gephi/layout/plugin/rotate/ClockwiseRotate.java
++++ b/fixed/LayoutPlugin/src/org/gephi/layout/plugin/rotate/ClockwiseRotate.java
+@@ -38,7 +38,7 @@ public class ClockwiseRotate implements LayoutBuilder {
+     private ClockwiseRotateLayoutUI ui = new ClockwiseRotateLayoutUI();
+ 
+     public Layout buildLayout() {
+-        return new RotateLayout(this, -90);
++        return new RotateLayout(this, 90);
+     }
+ 
+     public String getName() {

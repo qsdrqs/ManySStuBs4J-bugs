@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-spi/src/main/java/com/facebook/presto/spi/block/DictionaryBlock.java b/fixed/presto-spi/src/main/java/com/facebook/presto/spi/block/DictionaryBlock.java
+index 7ddcfabfc..2ccedeba9 100644
+--- a/buggy/presto-spi/src/main/java/com/facebook/presto/spi/block/DictionaryBlock.java
++++ b/fixed/presto-spi/src/main/java/com/facebook/presto/spi/block/DictionaryBlock.java
+@@ -271,7 +271,7 @@ public class DictionaryBlock
+                 used[getId(i)] = true;
+             }
+         }
+-        return dictionary.getPositionsSizeInBytes(used) + Integer.BYTES * countUsedPositions(positions);
++        return dictionary.getPositionsSizeInBytes(used) + (Integer.BYTES * (long) countUsedPositions(positions));
+     }
+ 
+     @Override

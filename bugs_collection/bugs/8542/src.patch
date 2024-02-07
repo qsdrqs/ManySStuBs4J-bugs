@@ -1,0 +1,13 @@
+diff --git a/buggy/pact/pact-common/src/main/java/eu/stratosphere/pact/common/type/PactRecord.java b/fixed/pact/pact-common/src/main/java/eu/stratosphere/pact/common/type/PactRecord.java
+index 67811676a..784940483 100644
+--- a/buggy/pact/pact-common/src/main/java/eu/stratosphere/pact/common/type/PactRecord.java
++++ b/fixed/pact/pact-common/src/main/java/eu/stratosphere/pact/common/type/PactRecord.java
+@@ -1556,7 +1556,7 @@ public final class PactRecord implements Value {
+ 				throw new UTFDataFormatException("Encoded string is too long: " + utflen);
+ 			
+ 			else if (this.position > this.memory.length - utflen - 2) {
+-				resize(utflen);
++				resize(utflen + 2);
+ 			}
+ 			
+ 			byte[] bytearr = this.memory;

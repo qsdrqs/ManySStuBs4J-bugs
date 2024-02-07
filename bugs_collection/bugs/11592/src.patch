@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/sizes/OuterTypeNumberCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/sizes/OuterTypeNumberCheck.java
+index 1a8f6c092..b23a09de3 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/sizes/OuterTypeNumberCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/sizes/OuterTypeNumberCheck.java
+@@ -69,7 +69,7 @@ public class OuterTypeNumberCheck extends Check {
+ 
+     @Override
+     public void visitToken(DetailAST ast) {
+-        if (0 == currentDepth) {
++        if (currentDepth == 0) {
+             outerNum++;
+         }
+         currentDepth++;

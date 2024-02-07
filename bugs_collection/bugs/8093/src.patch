@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-clients/src/main/java/org/apache/flink/client/cli/CliFrontend.java b/fixed/flink-clients/src/main/java/org/apache/flink/client/cli/CliFrontend.java
+index c591e6e5d..fe641fe78 100644
+--- a/buggy/flink-clients/src/main/java/org/apache/flink/client/cli/CliFrontend.java
++++ b/fixed/flink-clients/src/main/java/org/apache/flink/client/cli/CliFrontend.java
+@@ -786,7 +786,7 @@ public class CliFrontend {
+ 			entryPointClass = PythonDriver.class.getCanonicalName();
+ 		} else {
+ 			if (jarFilePath == null) {
+-				throw new IllegalArgumentException("The program JAR file was not specified.");
++				throw new IllegalArgumentException("Java program should be specified a JAR file.");
+ 			}
+ 			jarFile = getJarFile(jarFilePath);
+ 			// Get assembler class

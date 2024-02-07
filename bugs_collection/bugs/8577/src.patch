@@ -1,0 +1,13 @@
+diff --git a/buggy/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/iterative/compensatable/danglingpagerank/custom/types/VertexWithRankComparator.java b/fixed/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/iterative/compensatable/danglingpagerank/custom/types/VertexWithRankComparator.java
+index 8dcd710a9..b4cfff26c 100644
+--- a/buggy/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/iterative/compensatable/danglingpagerank/custom/types/VertexWithRankComparator.java
++++ b/fixed/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/iterative/compensatable/danglingpagerank/custom/types/VertexWithRankComparator.java
+@@ -24,7 +24,7 @@ import eu.stratosphere.pact.generic.types.TypeComparator;
+ /**
+  *
+  */
+-public final class VertexWithRankComparator implements TypeComparator<VertexWithRank> {
++public final class VertexWithRankComparator extends TypeComparator<VertexWithRank> {
+ 
+ 	private long reference;
+ 	

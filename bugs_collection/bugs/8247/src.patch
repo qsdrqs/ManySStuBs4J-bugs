@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/taskexecutor/TaskManagerRunner.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/taskexecutor/TaskManagerRunner.java
+index 462058559..2de1be81c 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/taskexecutor/TaskManagerRunner.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/taskexecutor/TaskManagerRunner.java
+@@ -198,7 +198,7 @@ public class TaskManagerRunner implements FatalErrorHandler {
+ 	}
+ 
+ 	// export the termination future for caller to know it is terminated
+-	public CompletableFuture<Boolean> getTerminationFuture() {
++	public CompletableFuture<Void> getTerminationFuture() {
+ 		return taskManager.getTerminationFuture();
+ 	}
+ 

@@ -1,0 +1,19 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/map/record/DataRecord.java b/fixed/hazelcast/src/main/java/com/hazelcast/map/record/DataRecord.java
+index 1d296a256..5761963de 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/map/record/DataRecord.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/map/record/DataRecord.java
+@@ -22,12 +22,12 @@ class DataRecord extends AbstractRecord<Data> {
+ 
+     protected Data value;
+ 
+-    public DataRecord(Data keyData, Data value) {
++    DataRecord(Data keyData, Data value) {
+         super(keyData);
+         this.value = value;
+     }
+ 
+-    public DataRecord() {
++    DataRecord() {
+     }
+ 
+     /*

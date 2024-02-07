@@ -1,0 +1,13 @@
+diff --git a/buggy/src/web/org/openmrs/web/servlet/LogoutServlet.java b/fixed/src/web/org/openmrs/web/servlet/LogoutServlet.java
+index d0abdc52e..e59d90611 100644
+--- a/buggy/src/web/org/openmrs/web/servlet/LogoutServlet.java
++++ b/fixed/src/web/org/openmrs/web/servlet/LogoutServlet.java
+@@ -44,7 +44,7 @@ public class LogoutServlet extends HttpServlet {
+ 		
+ 		Context.logout();
+ 		
+-		response.sendRedirect(request.getContextPath() + "?noredirect=true");
++		response.sendRedirect(request.getContextPath() + "/index.htm?noredirect=true");
+ 		
+ 		// clears attributes and makes sure that no one can access this session
+ 		httpSession.invalidate();

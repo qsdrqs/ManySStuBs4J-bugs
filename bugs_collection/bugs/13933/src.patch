@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/metadata/FunctionRegistry.java b/fixed/presto-main/src/main/java/com/facebook/presto/metadata/FunctionRegistry.java
+index 66971c00f..95db1f3a6 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/metadata/FunctionRegistry.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/metadata/FunctionRegistry.java
+@@ -320,7 +320,7 @@ public class FunctionRegistry
+ 
+             // lookup the type
+             Type type = typeManager.getType(typeName);
+-            checkArgument(type != null, "Type %s not registered", typeName);
++            checkNotNull(type, "Type %s not registered", typeName);
+ 
+             // verify we have one parameter of the proper type
+             checkArgument(parameterTypes.size() == 1, "Expected one argument to literal function, but got %s", parameterTypes);

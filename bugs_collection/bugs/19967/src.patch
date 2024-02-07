@@ -1,0 +1,13 @@
+diff --git a/buggy/handler/src/main/java/io/netty/handler/traffic/AbstractTrafficShapingHandler.java b/fixed/handler/src/main/java/io/netty/handler/traffic/AbstractTrafficShapingHandler.java
+index 3e8f294ac..ff97783fd 100644
+--- a/buggy/handler/src/main/java/io/netty/handler/traffic/AbstractTrafficShapingHandler.java
++++ b/fixed/handler/src/main/java/io/netty/handler/traffic/AbstractTrafficShapingHandler.java
+@@ -91,7 +91,7 @@ public abstract class AbstractTrafficShapingHandler extends
+     /**
+      * used in releaseExternalResources() to cancel the timer
+      */
+-    volatile private Timeout timeout = null;
++    private volatile Timeout timeout;
+     
+     /**
+      * Limit in B/s to apply to write

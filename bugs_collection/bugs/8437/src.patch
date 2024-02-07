@@ -1,0 +1,24 @@
+diff --git a/buggy/flink-java/src/main/java/org/apache/flink/api/java/ExecutionEnvironment.java b/fixed/flink-java/src/main/java/org/apache/flink/api/java/ExecutionEnvironment.java
+index 35d8c4463..204ba2945 100644
+--- a/buggy/flink-java/src/main/java/org/apache/flink/api/java/ExecutionEnvironment.java
++++ b/fixed/flink-java/src/main/java/org/apache/flink/api/java/ExecutionEnvironment.java
+@@ -395,7 +395,8 @@ public abstract class ExecutionEnvironment {
+ 		}
+ 		catch (Exception e) {
+ 			throw new InvalidProgramException("The type returned by the input format could not be automatically determined. " +
+-					"Please specify the TypeInformation of the produced type explicitly.");
++					"Please specify the TypeInformation of the produced type explicitly by using the " +
++					"'createInput(InputFormat, TypeInformation)' method instead.");
+ 		}
+ 	}
+ 	
+@@ -427,7 +428,8 @@ public abstract class ExecutionEnvironment {
+ 		}
+ 		catch (Exception e) {
+ 			throw new InvalidProgramException("The type returned by the input format could not be automatically determined. " +
+-					"Please specify the TypeInformation of the produced type explicitly.");
++					"Please specify the TypeInformation of the produced type explicitly by using the " +
++					"'createInput(InputFormat, TypeInformation)' method instead.");
+ 		}
+ 	}
+ 

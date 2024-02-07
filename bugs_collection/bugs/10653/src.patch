@@ -1,0 +1,14 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/NonEmptyAtclauseDescriptionCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/NonEmptyAtclauseDescriptionCheckTest.java
+index 3dc063b55..b589e0025 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/NonEmptyAtclauseDescriptionCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/NonEmptyAtclauseDescriptionCheckTest.java
+@@ -36,7 +36,8 @@ public class NonEmptyAtclauseDescriptionCheckTest
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "javadoc" + File.separator + filename);
++                + "javadoc" + File.separator
++                + "nonemptyatclausedescription" + File.separator + filename);
+     }
+ 
+     @Test

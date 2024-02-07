@@ -1,0 +1,14 @@
+diff --git a/buggy/spring-boot-tools/spring-boot-maven-plugin/src/main/java/org/springframework/boot/maven/RunMojo.java b/fixed/spring-boot-tools/spring-boot-maven-plugin/src/main/java/org/springframework/boot/maven/RunMojo.java
+index 9ca3babd1..684b96289 100644
+--- a/buggy/spring-boot-tools/spring-boot-maven-plugin/src/main/java/org/springframework/boot/maven/RunMojo.java
++++ b/fixed/spring-boot-tools/spring-boot-maven-plugin/src/main/java/org/springframework/boot/maven/RunMojo.java
+@@ -171,7 +171,8 @@ public class RunMojo extends AbstractDependencyFilterMojo {
+ 		findAgent();
+ 		boolean hasAgent = (this.agent != null && this.agent.length > 0);
+ 		boolean hasJvmArgs = (this.jvmArguments != null && this.jvmArguments.length() > 0);
+-		if (Boolean.TRUE.equals(this.fork) || hasAgent || hasJvmArgs) {
++		if (Boolean.TRUE.equals(this.fork)
++				|| (this.fork == null && (hasAgent || hasJvmArgs))) {
+ 			runWithForkedJvm(startClassName);
+ 		}
+ 		else {

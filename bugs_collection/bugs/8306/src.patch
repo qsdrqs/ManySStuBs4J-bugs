@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/WindowOperatorTest.java b/fixed/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/WindowOperatorTest.java
+index 1137c6a7d..474548cb1 100644
+--- a/buggy/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/WindowOperatorTest.java
++++ b/fixed/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/operators/windowing/WindowOperatorTest.java
+@@ -2560,7 +2560,7 @@ public class WindowOperatorTest extends TestLogger {
+ 					if (comparison != 0) {
+ 						return comparison;
+ 					}
+-					return (int) (sr0.getValue().f1 - sr1.getValue().f1);
++					return (int) (sr0.getValue().f2 - sr1.getValue().f2);
+ 				}
+ 			}
+ 		}

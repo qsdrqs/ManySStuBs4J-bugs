@@ -1,0 +1,12 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/modifier/ModifierOrderCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/modifier/ModifierOrderCheck.java
+index d2e48bd0a..6632dac29 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/modifier/ModifierOrderCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/modifier/ModifierOrderCheck.java
+@@ -173,6 +173,6 @@ public class ModifierOrderCheck
+             }
+         }
+ 
+-        return modifier;
++        return null;
+     }
+ }

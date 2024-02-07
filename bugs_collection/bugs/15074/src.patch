@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/TypeCheck.java b/fixed/src/com/google/javascript/jscomp/TypeCheck.java
+index 29fb11355..24f910e8a 100644
+--- a/buggy/src/com/google/javascript/jscomp/TypeCheck.java
++++ b/fixed/src/com/google/javascript/jscomp/TypeCheck.java
+@@ -64,7 +64,7 @@ public class TypeCheck implements NodeTraversal.Callback, CompilerPass {
+   //
+   static final DiagnosticType UNEXPECTED_TOKEN = DiagnosticType.error(
+       "JSC_INTERNAL_ERROR_UNEXPECTED_TOKEN",
+-      "Internal Error: Don''t know how to handle {0}");
++      "Internal Error: TypeCheck doesn''t know how to handle {0}");
+ 
+ 
+   //

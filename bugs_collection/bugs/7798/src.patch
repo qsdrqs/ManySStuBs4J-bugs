@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/util/FileUtil.java b/fixed/camel-core/src/main/java/org/apache/camel/util/FileUtil.java
+index bca1ce2b7..c0a9e9b50 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/util/FileUtil.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/util/FileUtil.java
+@@ -166,7 +166,7 @@ public final class FileUtil {
+         
+         String separatorRegex = File.separator;
+         if (FileUtil.isWindows()) {
+-            separatorRegex = "////";
++            separatorRegex = "\\\\";
+         }
+         String[] parts = path.split(separatorRegex);
+         for (String part : parts) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/astroboy/src/roboguice/astroboy/activity/ExampleBackgroundTask.java b/fixed/astroboy/src/roboguice/astroboy/activity/ExampleBackgroundTask.java
+index f133483fb..a694b0926 100644
+--- a/buggy/astroboy/src/roboguice/astroboy/activity/ExampleBackgroundTask.java
++++ b/fixed/astroboy/src/roboguice/astroboy/activity/ExampleBackgroundTask.java
+@@ -17,7 +17,7 @@ public class ExampleBackgroundTask extends RoboAsyncTask<Void> {
+     }
+ 
+     @Override
+-    protected void onInterrupted(InterruptedException e) {
++    protected void onInterrupted(Exception e) {
+         Ln.d("Interrupting background task %s", this);
+     }
+ 

@@ -1,0 +1,12 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/map/impl/journal/InternalEventJournalMapEvent.java b/fixed/hazelcast/src/main/java/com/hazelcast/map/impl/journal/InternalEventJournalMapEvent.java
+index 4a54e84b4..2848dcd34 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/map/impl/journal/InternalEventJournalMapEvent.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/map/impl/journal/InternalEventJournalMapEvent.java
+@@ -128,6 +128,6 @@ public class InternalEventJournalMapEvent implements IdentifiedDataSerializable
+ 
+     @Override
+     public String toString() {
+-        return "InternalEventJournalMapEvent{eventType=" + eventType + '}';
++        return getClass().getSimpleName() + "{eventType=" + eventType + '}';
+     }
+ }

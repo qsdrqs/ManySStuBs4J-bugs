@@ -1,0 +1,14 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/WriteTagCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/WriteTagCheckTest.java
+index 0f85ee671..3279982fa 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/WriteTagCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/WriteTagCheckTest.java
+@@ -58,7 +58,8 @@ public class WriteTagCheckTest extends BaseCheckTestSupport {
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "javadoc" + File.separator + filename);
++                + "javadoc" + File.separator
++                + "writetag" + File.separator + filename);
+     }
+ 
+     @Test

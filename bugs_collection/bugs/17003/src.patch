@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/HazelcastClient.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/HazelcastClient.java
+index 35147ceb6..302516237 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/HazelcastClient.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/HazelcastClient.java
+@@ -201,7 +201,7 @@ public class HazelcastClient implements HazelcastInstance {
+                 }
+             }
+         }
+-        return mapProxies.get(o);
++        return proxy;
+     }
+ 
+     public com.hazelcast.core.Transaction getTransaction() {

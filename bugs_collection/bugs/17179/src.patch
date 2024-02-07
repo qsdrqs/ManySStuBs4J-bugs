@@ -1,0 +1,13 @@
+diff --git a/buggy/dao/src/main/java/com/iluwatar/dao/App.java b/fixed/dao/src/main/java/com/iluwatar/dao/App.java
+index a63289ae9..8a0c06739 100644
+--- a/buggy/dao/src/main/java/com/iluwatar/dao/App.java
++++ b/fixed/dao/src/main/java/com/iluwatar/dao/App.java
+@@ -50,7 +50,7 @@ import org.h2.jdbcx.JdbcDataSource;
+  * 
+  */
+ public class App {
+-  private static final String DB_URL = "jdbc:h2:~/dao:customerdb";
++  private static final String DB_URL = "jdbc:h2:~/dao";
+   private static Logger log = Logger.getLogger(App.class);
+   
+   /**

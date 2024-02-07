@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/DefaultChannelPipeline.java b/fixed/transport/src/main/java/io/netty/channel/DefaultChannelPipeline.java
+index 3efe73442..6697f13ff 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/DefaultChannelPipeline.java
++++ b/fixed/transport/src/main/java/io/netty/channel/DefaultChannelPipeline.java
+@@ -751,7 +751,7 @@ final class DefaultChannelPipeline implements ChannelPipeline {
+     @Override
+     public ChannelHandler first() {
+         DefaultChannelHandlerContext first = head.next;
+-        if (first == null) {
++        if (first == head) {
+             return null;
+         }
+         return first.handler();

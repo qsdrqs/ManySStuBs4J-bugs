@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/partition/consumer/InputGateMetrics.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/partition/consumer/InputGateMetrics.java
+index c9fed9bb9..796a6db7e 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/partition/consumer/InputGateMetrics.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/partition/consumer/InputGateMetrics.java
+@@ -130,7 +130,7 @@ public class InputGateMetrics {
+ 			}
+ 		}
+ 
+-		return total / (float) count;
++		return count == 0 ? 0 : total / (float) count;
+ 	}
+ 
+ 	// ------------------------------------------------------------------------

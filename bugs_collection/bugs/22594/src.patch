@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/main/java/org/springframework/boot/BeanDefinitionLoader.java b/fixed/spring-boot/src/main/java/org/springframework/boot/BeanDefinitionLoader.java
+index 2b9723aed..fff1256f4 100644
+--- a/buggy/spring-boot/src/main/java/org/springframework/boot/BeanDefinitionLoader.java
++++ b/fixed/spring-boot/src/main/java/org/springframework/boot/BeanDefinitionLoader.java
+@@ -81,7 +81,7 @@ class BeanDefinitionLoader {
+ 		this.annotatedReader = new AnnotatedBeanDefinitionReader(registry);
+ 		this.xmlReader = new XmlBeanDefinitionReader(registry);
+ 		if (isGroovyPresent()) {
+-			this.groovyReader = new GroovyBeanDefinitionReader(this.xmlReader);
++			this.groovyReader = new GroovyBeanDefinitionReader(registry);
+ 		}
+ 		this.scanner = new ClassPathBeanDefinitionScanner(registry);
+ 		this.scanner.addExcludeFilter(new ClassExcludeFilter(sources));

@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/audit/InMemoryAuditEventRepository.java b/fixed/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/audit/InMemoryAuditEventRepository.java
+index 260270174..c2fa51a89 100644
+--- a/buggy/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/audit/InMemoryAuditEventRepository.java
++++ b/fixed/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/audit/InMemoryAuditEventRepository.java
+@@ -31,7 +31,7 @@ import org.springframework.util.Assert;
+  */
+ public class InMemoryAuditEventRepository implements AuditEventRepository {
+ 
+-	private static final int DEFAULT_CAPACITY = 4000;
++	private static final int DEFAULT_CAPACITY = 1000;
+ 
+ 	private final Object monitor = new Object();
+ 

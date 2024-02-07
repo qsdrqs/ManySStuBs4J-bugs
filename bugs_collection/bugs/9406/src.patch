@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/apache/hadoop/hbase/client/coprocessor/ExecResult.java b/fixed/src/main/java/org/apache/hadoop/hbase/client/coprocessor/ExecResult.java
+index eb107ed0a..8cbf64621 100644
+--- a/buggy/src/main/java/org/apache/hadoop/hbase/client/coprocessor/ExecResult.java
++++ b/fixed/src/main/java/org/apache/hadoop/hbase/client/coprocessor/ExecResult.java
+@@ -72,7 +72,7 @@ public class ExecResult implements Writable {
+   public void write(DataOutput out) throws IOException {
+     Bytes.writeByteArray(out, regionName);
+     HbaseObjectWritable.writeObject(out, value,
+-        value != null ? value.getClass() : valueType, null);
++        value != null ? value.getClass() : Writable.class, null);
+     Class<?> alternativeSerializationClass;
+     if(value instanceof Writable){
+       alternativeSerializationClass = Writable.class;

@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot/src/test/java/org/springframework/boot/web/embedded/jetty/JettyReactiveWebServerFactoryTests.java b/fixed/spring-boot-project/spring-boot/src/test/java/org/springframework/boot/web/embedded/jetty/JettyReactiveWebServerFactoryTests.java
+index 430ca8409..1be5c17bd 100644
+--- a/buggy/spring-boot-project/spring-boot/src/test/java/org/springframework/boot/web/embedded/jetty/JettyReactiveWebServerFactoryTests.java
++++ b/fixed/spring-boot-project/spring-boot/src/test/java/org/springframework/boot/web/embedded/jetty/JettyReactiveWebServerFactoryTests.java
+@@ -68,7 +68,7 @@ public class JettyReactiveWebServerFactoryTests
+ 		HttpHandler handler = mock(HttpHandler.class);
+ 		JettyReactiveWebServerFactory factory = getFactory();
+ 		JettyServerCustomizer[] configurations = new JettyServerCustomizer[4];
+-		Arrays.setAll(configurations, i -> mock(JettyServerCustomizer.class));
++		Arrays.setAll(configurations, (i) -> mock(JettyServerCustomizer.class));
+ 		factory.setServerCustomizers(Arrays.asList(configurations[0], configurations[1]));
+ 		factory.addServerCustomizers(configurations[2], configurations[3]);
+ 		this.webServer = factory.getWebServer(handler);

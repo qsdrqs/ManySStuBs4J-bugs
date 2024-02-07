@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/apache/ibatis/builder/MapperBuilderAssistant.java b/fixed/src/main/java/org/apache/ibatis/builder/MapperBuilderAssistant.java
+index 3666a0886..f8ddf6c19 100644
+--- a/buggy/src/main/java/org/apache/ibatis/builder/MapperBuilderAssistant.java
++++ b/fixed/src/main/java/org/apache/ibatis/builder/MapperBuilderAssistant.java
+@@ -426,7 +426,7 @@ public class MapperBuilderAssistant extends BaseBuilder {
+ 
+   private List<ResultMapping> parseCompositeColumnName(String columnName) {
+     List<ResultMapping> composites = new ArrayList<ResultMapping>();
+-    if (columnName != null && columnName.indexOf('=') > -1 || columnName.indexOf(',') > -1) {
++    if (columnName != null && (columnName.indexOf('=') > -1 || columnName.indexOf(',') > -1)) {
+       StringTokenizer parser = new StringTokenizer(columnName, "{}=, ", false);
+       while (parser.hasMoreTokens()) {
+         String property = parser.nextToken();

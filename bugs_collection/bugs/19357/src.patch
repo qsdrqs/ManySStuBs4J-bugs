@@ -1,0 +1,13 @@
+diff --git a/buggy/community/server/src/functionaltest/java/org/neo4j/server/rest/AbstractRestFunctionalTestBase.java b/fixed/community/server/src/functionaltest/java/org/neo4j/server/rest/AbstractRestFunctionalTestBase.java
+index 9a8ea51b7..8b910e7e3 100644
+--- a/buggy/community/server/src/functionaltest/java/org/neo4j/server/rest/AbstractRestFunctionalTestBase.java
++++ b/fixed/community/server/src/functionaltest/java/org/neo4j/server/rest/AbstractRestFunctionalTestBase.java
+@@ -88,7 +88,7 @@ public class AbstractRestFunctionalTestBase implements GraphHolder
+         String queryString = "{\"script\": \"" + createScript( script ) + "\"," + parameterString+"},"  ;
+ 
+         gen.get().expectedStatus( status.getStatusCode() ).payload(
+-                queryString ).description(formatGroovy( script ) );
++                queryString ).description(formatGroovy( createScript( script ) ) );
+         return gen.get().post( endpoint ).entity();
+     }
+     

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/EqualsAvoidNullCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/EqualsAvoidNullCheck.java
+index 34d694a83..33bedaca2 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/EqualsAvoidNullCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/EqualsAvoidNullCheck.java
+@@ -543,7 +543,7 @@ public class EqualsAvoidNullCheck extends Check {
+          * @param value value to set.
+          */
+         public void setClassOrEnumOrEnumConstDef(boolean value) {
+-            this.classOrEnumOrEnumConstDef = value;
++            classOrEnumOrEnumConstDef = value;
+         }
+ 
+         /**

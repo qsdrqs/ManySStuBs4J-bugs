@@ -1,0 +1,13 @@
+diff --git a/buggy/guava-tests/test/com/google/common/primitives/DoublesTest.java b/fixed/guava-tests/test/com/google/common/primitives/DoublesTest.java
+index 6c9a5c70e..ebc51af5c 100644
+--- a/buggy/guava-tests/test/com/google/common/primitives/DoublesTest.java
++++ b/fixed/guava-tests/test/com/google/common/primitives/DoublesTest.java
+@@ -560,7 +560,7 @@ public class DoublesTest extends TestCase {
+   public void testTryParse_withNullNoGwt() {
+     assertNull(Doubles.tryParse("null"));
+     try {
+-      double unused = Doubles.tryParse(null);
++      Double unused = Doubles.tryParse(null);
+       fail("Expected NPE");
+     } catch (NullPointerException expected) {
+     }

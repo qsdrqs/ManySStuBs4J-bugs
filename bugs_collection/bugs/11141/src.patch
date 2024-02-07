@@ -1,0 +1,22 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/annotation/MissingDeprecatedTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/annotation/MissingDeprecatedTest.java
+index 57f1caf45..8a5538c80 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/annotation/MissingDeprecatedTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/annotation/MissingDeprecatedTest.java
+@@ -71,7 +71,7 @@ public class MissingDeprecatedTest extends BaseCheckTestSupport {
+             "56: " + getCheckMessage(MSG_KEY_ANNOTATION_MISSING_DEPRECATED),
+         };
+ 
+-        verify(checkConfig, getPath("annotation" + File.separator + "BadDeprecatedAnnotation.java"), expected);
++        verify(checkConfig, getPath("annotation" + File.separator + "InputBadDeprecatedAnnotation.java"), expected);
+     }
+ 
+     /**
+@@ -121,7 +121,7 @@ public class MissingDeprecatedTest extends BaseCheckTestSupport {
+             "51: " + getCheckMessage(MSG_KEY_JAVADOC_DUPLICATE_TAG, "@deprecated"),
+         };
+ 
+-        verify(checkConfig, getPath("annotation" + File.separator + "SpecialCaseDeprecated.java"), expected);
++        verify(checkConfig, getPath("annotation" + File.separator + "InputSpecialCaseDeprecated.java"), expected);
+     }
+ 
+     /**

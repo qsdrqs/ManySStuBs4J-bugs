@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/execution/StartTransactionTask.java b/fixed/presto-main/src/main/java/com/facebook/presto/execution/StartTransactionTask.java
+index 08aa38ee9..f78f43051 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/execution/StartTransactionTask.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/execution/StartTransactionTask.java
+@@ -110,7 +110,7 @@ public class StartTransactionTask
+                 return IsolationLevel.REPEATABLE_READ;
+             case READ_COMMITTED:
+                 return IsolationLevel.READ_COMMITTED;
+-            case READ_UNCOMMITED:
++            case READ_UNCOMMITTED:
+                 return IsolationLevel.READ_UNCOMMITTED;
+             default:
+                 throw new AssertionError("Unhandled isolation level: " + level);

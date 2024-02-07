@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/DiagnosticGroups.java b/fixed/src/com/google/javascript/jscomp/DiagnosticGroups.java
+index 73d90c5b7..5b639e732 100644
+--- a/buggy/src/com/google/javascript/jscomp/DiagnosticGroups.java
++++ b/fixed/src/com/google/javascript/jscomp/DiagnosticGroups.java
+@@ -47,7 +47,7 @@ public class DiagnosticGroups {
+       DiagnosticType.warning("JSC_UNUSED", "{0}");
+ 
+   public static final Set<String> wildcardExcludedGroups =
+-      ImmutableSet.of("reportUnknownTypes");
++      ImmutableSet.of("reportUnknownTypes", "analyzerChecks");
+ 
+   public DiagnosticGroups() {}
+ 

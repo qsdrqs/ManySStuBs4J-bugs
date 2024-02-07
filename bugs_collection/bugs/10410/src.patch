@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/gui/CodeSelectorPresentationTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/gui/CodeSelectorPresentationTest.java
+index 2e4fc41d5..af62d4ac1 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/gui/CodeSelectorPresentationTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/gui/CodeSelectorPresentationTest.java
+@@ -78,7 +78,7 @@ public class CodeSelectorPresentationTest extends AbstractPathTestSupport {
+                 linesToPosition);
+         selector.findSelectionPositions();
+         Assert.assertEquals("Invalid selection start", 94, selector.getSelectionStart());
+-        Assert.assertEquals("Invalid selection end", 280, selector.getSelectionEnd());
++        Assert.assertEquals("Invalid selection end", 279, selector.getSelectionEnd());
+     }
+ 
+     @Test

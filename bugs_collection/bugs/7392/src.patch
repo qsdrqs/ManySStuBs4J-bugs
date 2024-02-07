@@ -1,0 +1,21 @@
+diff --git a/buggy/components/camel-shiro/src/main/java/org/apache/camel/component/shiro/security/ShiroSecurityPolicy.java b/fixed/components/camel-shiro/src/main/java/org/apache/camel/component/shiro/security/ShiroSecurityPolicy.java
+index 760f6ab9e..f3ef34a67 100644
+--- a/buggy/components/camel-shiro/src/main/java/org/apache/camel/component/shiro/security/ShiroSecurityPolicy.java
++++ b/fixed/components/camel-shiro/src/main/java/org/apache/camel/component/shiro/security/ShiroSecurityPolicy.java
+@@ -73,14 +73,14 @@ public class ShiroSecurityPolicy implements AuthorizationPolicy {
+     public ShiroSecurityPolicy(String iniResourcePath) {
+         this();
+         Factory<SecurityManager> factory = new IniSecurityManagerFactory(iniResourcePath);
+-        securityManager = (SecurityManager) factory.getInstance();
++        securityManager = factory.getInstance();
+         SecurityUtils.setSecurityManager(securityManager);
+     }
+     
+     public ShiroSecurityPolicy(Ini ini) {
+         this();
+         Factory<SecurityManager> factory = new IniSecurityManagerFactory(ini);
+-        securityManager = (SecurityManager) factory.getInstance();
++        securityManager = factory.getInstance();
+         SecurityUtils.setSecurityManager(securityManager);
+     }
+     

@@ -1,0 +1,13 @@
+diff --git a/buggy/standalone-metastore/src/main/java/org/apache/hadoop/hive/metastore/security/TokenStoreDelegationTokenSecretManager.java b/fixed/standalone-metastore/src/main/java/org/apache/hadoop/hive/metastore/security/TokenStoreDelegationTokenSecretManager.java
+index 3f5bd537d..7b325449c 100644
+--- a/buggy/standalone-metastore/src/main/java/org/apache/hadoop/hive/metastore/security/TokenStoreDelegationTokenSecretManager.java
++++ b/fixed/standalone-metastore/src/main/java/org/apache/hadoop/hive/metastore/security/TokenStoreDelegationTokenSecretManager.java
+@@ -118,7 +118,7 @@ public class TokenStoreDelegationTokenSecretManager extends DelegationTokenSecre
+   public DelegationTokenIdentifier cancelToken(Token<DelegationTokenIdentifier> token,
+       String canceller) throws IOException {
+     DelegationTokenIdentifier id = getTokenIdentifier(token);
+-    LOGGER.info("Token cancelation requested for identifier: "+id);
++    LOGGER.info("Token cancellation requested for identifier: "+id);
+     this.tokenStore.removeToken(id);
+     return id;
+   }

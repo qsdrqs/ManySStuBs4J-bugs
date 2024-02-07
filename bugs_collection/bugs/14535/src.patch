@@ -1,0 +1,13 @@
+diff --git a/buggy/test/com/google/javascript/jscomp/StrictModeCheckTest.java b/fixed/test/com/google/javascript/jscomp/StrictModeCheckTest.java
+index 39627b819..75929cc4b 100644
+--- a/buggy/test/com/google/javascript/jscomp/StrictModeCheckTest.java
++++ b/fixed/test/com/google/javascript/jscomp/StrictModeCheckTest.java
+@@ -44,7 +44,7 @@ public final class StrictModeCheckTest extends TypeICompilerTestCase {
+ 
+   private void testSameEs6Strict(String js) {
+     setAcceptedLanguage(LanguageMode.ECMASCRIPT_2015);
+-    testSame(js, js);
++    testSame(js);
+   }
+ 
+   public void testUseOfWith1() {

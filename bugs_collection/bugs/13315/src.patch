@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-hive/src/main/java/com/facebook/presto/hive/HiveUtil.java b/fixed/presto-hive/src/main/java/com/facebook/presto/hive/HiveUtil.java
+index 6b6738066..67997b17a 100644
+--- a/buggy/presto-hive/src/main/java/com/facebook/presto/hive/HiveUtil.java
++++ b/fixed/presto-hive/src/main/java/com/facebook/presto/hive/HiveUtil.java
+@@ -389,7 +389,7 @@ public final class HiveUtil
+             configuration = copy(configuration); // Some SerDes (e.g. Avro) modify passed configuration
+             deserializer.initialize(configuration, schema);
+         }
+-        catch (SerDeException e) {
++        catch (SerDeException | RuntimeException e) {
+             throw new RuntimeException("error initializing deserializer: " + deserializer.getClass().getName(), e);
+         }
+     }

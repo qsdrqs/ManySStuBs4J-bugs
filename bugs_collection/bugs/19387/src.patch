@@ -1,0 +1,13 @@
+diff --git a/buggy/community/src/test/java/org/neo4j/visualization/graphviz/TestNewGraphvizWriter.java b/fixed/community/src/test/java/org/neo4j/visualization/graphviz/TestNewGraphvizWriter.java
+index 4a637e568..ac30aa6e1 100644
+--- a/buggy/community/src/test/java/org/neo4j/visualization/graphviz/TestNewGraphvizWriter.java
++++ b/fixed/community/src/test/java/org/neo4j/visualization/graphviz/TestNewGraphvizWriter.java
+@@ -65,7 +65,7 @@ public class TestNewGraphvizWriter
+ 		try
+ 		{
+ 			final Node emil = neo.createNode();
+-			emil.setProperty( "name", "Emil Eifr�m" );
++			emil.setProperty( "name", "Emil Eifrém" );
+ 			emil.setProperty( "age", 30 );
+ 			final Node tobias = neo.createNode();
+ 			tobias.setProperty( "name", "Tobias \"thobe\" Ivarsson" );

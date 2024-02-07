@@ -1,0 +1,14 @@
+diff --git a/buggy/src/jvm/clojure/lang/Compiler.java b/fixed/src/jvm/clojure/lang/Compiler.java
+index 7af1cc022..0efc26f2e 100644
+--- a/buggy/src/jvm/clojure/lang/Compiler.java
++++ b/fixed/src/jvm/clojure/lang/Compiler.java
+@@ -3168,7 +3168,8 @@ static class LocalBinding{
+ 	}
+ 
+ 	public boolean hasJavaClass() throws Exception{
+-		if(init != null && init.hasJavaClass() && init.getJavaClass().isPrimitive()
++		if(init != null && init.hasJavaClass()
++		   && Util.isPrimitive(init.getJavaClass())
+ 		   && !(init instanceof MaybePrimitiveExpr))
+ 			return false;
+ 		return tag != null

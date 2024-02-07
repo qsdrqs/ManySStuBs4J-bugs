@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/zaxxer/hikari/proxy/JavassistProxyFactory.java b/fixed/src/main/java/com/zaxxer/hikari/proxy/JavassistProxyFactory.java
+index 7ca62efe9..1e7989de0 100644
+--- a/buggy/src/main/java/com/zaxxer/hikari/proxy/JavassistProxyFactory.java
++++ b/fixed/src/main/java/com/zaxxer/hikari/proxy/JavassistProxyFactory.java
+@@ -192,7 +192,7 @@ public final class JavassistProxyFactory
+                 }
+                 else
+                 {
+-                    modifiedBody = "return ((cast) delegate).method($$);".replace("method", method.getName()).replace("cast", primaryInterface.getName());
++                    modifiedBody = "{ return ((cast) delegate).method($$); }".replace("method", method.getName()).replace("cast", primaryInterface.getName());
+                 }
+ 
+                 if (method.getReturnType() == CtClass.voidType)

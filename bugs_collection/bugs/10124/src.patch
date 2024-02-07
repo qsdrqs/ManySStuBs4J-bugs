@@ -1,0 +1,13 @@
+diff --git a/buggy/aws-java-sdk-core/src/main/java/com/amazonaws/AmazonWebServiceClient.java b/fixed/aws-java-sdk-core/src/main/java/com/amazonaws/AmazonWebServiceClient.java
+index 45b76d8c9..ba294d6a6 100644
+--- a/buggy/aws-java-sdk-core/src/main/java/com/amazonaws/AmazonWebServiceClient.java
++++ b/fixed/aws-java-sdk-core/src/main/java/com/amazonaws/AmazonWebServiceClient.java
+@@ -76,7 +76,7 @@ public abstract class AmazonWebServiceClient {
+         boolean success = com.amazonaws.log.InternalLogFactory.configureFactory(
+                             new CommonsLogFactory());
+         if (log.isDebugEnabled())
+-            log.debug("Internal logging succesfully configured to commons logger: "
++            log.debug("Internal logging successfully configured to commons logger: "
+                     + success);
+     }
+ 

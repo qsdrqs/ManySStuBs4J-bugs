@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/model/XmlParseTest.java b/fixed/camel-core/src/test/java/org/apache/camel/model/XmlParseTest.java
+index a81a0dfae..1ef55fd39 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/model/XmlParseTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/model/XmlParseTest.java
+@@ -301,7 +301,7 @@ public class XmlParseTest extends XmlTestSupport {
+         assertEquals("Expression", languageExpression, expression.getExpression());
+     }
+ 
+-    protected void assertInterceptorRefs(ProcessorType<?> route, String... names) {
++    protected void assertInterceptorRefs(ProcessorType route, String... names) {
+         RouteType rt = (RouteType)route;
+         assertNotNull(rt);
+         

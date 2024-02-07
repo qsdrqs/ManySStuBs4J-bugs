@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/DesktopDataLaboratory/src/main/java/org/gephi/desktop/datalab/ConfigurationPanel.java b/fixed/modules/DesktopDataLaboratory/src/main/java/org/gephi/desktop/datalab/ConfigurationPanel.java
+index f28c61411..f295bd3d8 100644
+--- a/buggy/modules/DesktopDataLaboratory/src/main/java/org/gephi/desktop/datalab/ConfigurationPanel.java
++++ b/fixed/modules/DesktopDataLaboratory/src/main/java/org/gephi/desktop/datalab/ConfigurationPanel.java
+@@ -130,7 +130,7 @@ public class ConfigurationPanel extends javax.swing.JPanel {
+     }
+ 
+     private boolean canChangeTimeRepresentation(GraphModel graphModel) {
+-        if (graphModel.getGraph().getEdgeCount() > 0) {
++        if (graphModel.getGraph().getNodeCount() > 0) {
+             return false;//Graph has to be empty
+         }
+ 

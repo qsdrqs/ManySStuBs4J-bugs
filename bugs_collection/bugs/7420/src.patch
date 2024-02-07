@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/model/SplitDefinition.java b/fixed/camel-core/src/main/java/org/apache/camel/model/SplitDefinition.java
+index f7e2f72d4..07745b33c 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/model/SplitDefinition.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/model/SplitDefinition.java
+@@ -329,7 +329,7 @@ public class SplitDefinition extends ExpressionNode implements ExecutorServiceAw
+     }
+ 
+     public Long getTimeout() {
+-        return timeout != null ? timeout : 0;
++        return timeout;
+     }
+ 
+     public void setTimeout(Long timeout) {

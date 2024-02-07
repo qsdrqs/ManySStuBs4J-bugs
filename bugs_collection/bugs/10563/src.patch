@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/sizes/ParameterNumberCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/sizes/ParameterNumberCheckTest.java
+index 17d688491..56d9aaec4 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/sizes/ParameterNumberCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/sizes/ParameterNumberCheckTest.java
+@@ -41,7 +41,7 @@ public class ParameterNumberCheckTest
+     public void testGetRequiredTokens() {
+         final ParameterNumberCheck checkObj = new ParameterNumberCheck();
+         assertArrayEquals(
+-            "ParameterNumberCheck#getRequiredTockens should return empty array by default",
++            "ParameterNumberCheck#getRequiredTokens should return empty array by default",
+             CommonUtils.EMPTY_INT_ARRAY, checkObj.getRequiredTokens());
+     }
+ 

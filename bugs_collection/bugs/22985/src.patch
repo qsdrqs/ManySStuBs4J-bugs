@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/pipeline/QuoteAnnotator.java b/fixed/src/edu/stanford/nlp/pipeline/QuoteAnnotator.java
+index 6cf13297b..017a56567 100644
+--- a/buggy/src/edu/stanford/nlp/pipeline/QuoteAnnotator.java
++++ b/fixed/src/edu/stanford/nlp/pipeline/QuoteAnnotator.java
+@@ -171,7 +171,7 @@ public class QuoteAnnotator implements Annotator  {
+     }
+     if (ATTRIBUTE_QUOTES)  {
+       Properties relevantProperties = PropertiesUtils.extractPrefixedProperties(props,
+-        "attribution.");
++        "quote.attribution.");
+       quoteAttributionAnnotator = new QuoteAttributionAnnotator(relevantProperties);
+     }
+     if (VERBOSE) {

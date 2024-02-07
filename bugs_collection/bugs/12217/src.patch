@@ -1,0 +1,13 @@
+diff --git a/buggy/nd4j/nd4j-backends/nd4j-tests/src/test/java/org/nd4j/linalg/serde/NumpyFormatTests.java b/fixed/nd4j/nd4j-backends/nd4j-tests/src/test/java/org/nd4j/linalg/serde/NumpyFormatTests.java
+index 22cc2a753..8b3e98f2a 100644
+--- a/buggy/nd4j/nd4j-backends/nd4j-tests/src/test/java/org/nd4j/linalg/serde/NumpyFormatTests.java
++++ b/fixed/nd4j/nd4j-backends/nd4j-tests/src/test/java/org/nd4j/linalg/serde/NumpyFormatTests.java
+@@ -310,7 +310,7 @@ public class NumpyFormatTests extends BaseNd4jTest {
+         INDArray act1 = Nd4j.createFromNpyFile(f);
+     }
+ 
+-    @Test
++    @Test(expected = IllegalArgumentException.class)
+     public void testAbsentNumpyFile_2() throws Exception {
+         val f = new File("c:/develop/batch-x-1.npy");
+         INDArray act1 = Nd4j.createFromNpyFile(f);

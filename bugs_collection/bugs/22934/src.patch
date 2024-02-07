@@ -1,0 +1,20 @@
+diff --git a/buggy/retrofit/src/main/java/retrofit/RestMethodInfo.java b/fixed/retrofit/src/main/java/retrofit/RestMethodInfo.java
+index 4830cb9ae..7ba93689c 100644
+--- a/buggy/retrofit/src/main/java/retrofit/RestMethodInfo.java
++++ b/fixed/retrofit/src/main/java/retrofit/RestMethodInfo.java
+@@ -168,13 +168,13 @@ final class RestMethodInfo {
+     if (!requestHasBody) {
+       if (requestType == RequestType.MULTIPART) {
+         throw new IllegalStateException(
+-            "Multipart can only be specific on HTTP methods with request body (e.g., POST). ("
++            "Multipart can only be specified on HTTP methods with request body (e.g., POST). ("
+                 + method.getName()
+                 + ")");
+       }
+       if (requestType == RequestType.FORM_URL_ENCODED) {
+         throw new IllegalStateException(
+-            "FormUrlEncoded can only be specific on HTTP methods with request body (e.g., POST). ("
++            "FormUrlEncoded can only be specified on HTTP methods with request body (e.g., POST). ("
+                 + method.getName()
+                 + ")");
+       }

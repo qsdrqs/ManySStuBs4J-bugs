@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/executiongraph/ExecutionVertex.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/executiongraph/ExecutionVertex.java
+index 1b9108937..e7e019f2e 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/executiongraph/ExecutionVertex.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/executiongraph/ExecutionVertex.java
+@@ -599,7 +599,7 @@ public class ExecutionVertex implements Serializable {
+ 		return new TaskDeploymentDescriptor(getJobId(), getJobvertexId(), executionId, getTaskName(),
+ 				subTaskIndex, getTotalNumberOfParallelSubtasks(), getExecutionGraph().getJobConfiguration(),
+ 				jobVertex.getJobVertex().getConfiguration(), jobVertex.getJobVertex().getInvokableClassName(),
+-				producedPartitions, consumedPartitions, jarFiles, targetSlot.getSlotNumber(), operatorState);
++				producedPartitions, consumedPartitions, jarFiles, targetSlot.getRoot().getSlotNumber(), operatorState);
+ 	}
+ 
+ 	// --------------------------------------------------------------------------------------------

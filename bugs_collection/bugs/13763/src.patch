@@ -1,0 +1,14 @@
+diff --git a/buggy/presto-example-http/src/test/java/com/facebook/presto/example/MetadataUtil.java b/fixed/presto-example-http/src/test/java/com/facebook/presto/example/MetadataUtil.java
+index 3ffa95764..5922b0f77 100644
+--- a/buggy/presto-example-http/src/test/java/com/facebook/presto/example/MetadataUtil.java
++++ b/fixed/presto-example-http/src/test/java/com/facebook/presto/example/MetadataUtil.java
+@@ -59,8 +59,7 @@ public final class MetadataUtil
+                 StandardTypes.BOOLEAN, BOOLEAN,
+                 StandardTypes.BIGINT, BIGINT,
+                 StandardTypes.DOUBLE, DOUBLE,
+-                StandardTypes.VARCHAR, VARCHAR,
+-                VARCHAR.getTypeSignature().toString(), VARCHAR); // varchar(MAX_INT)
++                StandardTypes.VARCHAR, VARCHAR);
+ 
+         public TestingTypeDeserializer()
+         {

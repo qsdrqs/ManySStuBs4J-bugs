@@ -1,0 +1,13 @@
+diff --git a/buggy/src/tests/com/puppycrawl/tools/checkstyle/checks/usage/UnusedPrivateMethodCheckTest.java b/fixed/src/tests/com/puppycrawl/tools/checkstyle/checks/usage/UnusedPrivateMethodCheckTest.java
+index 44ec75e37..84ed31baa 100644
+--- a/buggy/src/tests/com/puppycrawl/tools/checkstyle/checks/usage/UnusedPrivateMethodCheckTest.java
++++ b/fixed/src/tests/com/puppycrawl/tools/checkstyle/checks/usage/UnusedPrivateMethodCheckTest.java
+@@ -11,7 +11,7 @@ public class UnusedPrivateMethodCheckTest
+         final DefaultConfiguration checkConfig =
+             createCheckConfig(UnusedPrivateMethodCheck.class);
+         final String[] expected = {
+-            "7:18: Unused method 'methodUnused0'.",
++            "7:18: Unused private method 'methodUnused0'.",
+         };
+         verify(checkConfig, getPath("usage/InputUnusedMethod.java"), expected);
+     }

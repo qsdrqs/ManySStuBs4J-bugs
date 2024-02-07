@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/imports/CustomImportOrderCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/imports/CustomImportOrderCheckTest.java
+index acab708a6..5c389085e 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/imports/CustomImportOrderCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/imports/CustomImportOrderCheckTest.java
+@@ -350,7 +350,7 @@ public class CustomImportOrderCheckTest extends BaseCheckTestSupport {
+         }
+ 
+         String expected = "";
+-        assertEquals(expected, (String) actual);
++        assertEquals(expected, actual);
+     }
+ 
+     @Test

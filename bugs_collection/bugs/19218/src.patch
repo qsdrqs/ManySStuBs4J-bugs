@@ -1,0 +1,13 @@
+diff --git a/buggy/enterprise/server-enterprise/src/test/java/org/neo4j/server/enterprise/functional/DumpPortListenerOnNettyBindFailure.java b/fixed/enterprise/server-enterprise/src/test/java/org/neo4j/server/enterprise/functional/DumpPortListenerOnNettyBindFailure.java
+index 15ce55eae..6c64aa89f 100644
+--- a/buggy/enterprise/server-enterprise/src/test/java/org/neo4j/server/enterprise/functional/DumpPortListenerOnNettyBindFailure.java
++++ b/fixed/enterprise/server-enterprise/src/test/java/org/neo4j/server/enterprise/functional/DumpPortListenerOnNettyBindFailure.java
+@@ -71,7 +71,7 @@ public class DumpPortListenerOnNettyBindFailure implements TestRule
+                 }
+                 catch ( Throwable failure )
+                 {
+-                    for ( Throwable cause = failure; cause != null; cause = failure.getCause() )
++                    for ( Throwable cause = failure; cause != null; cause = cause.getCause() )
+                     {
+                         if ( cause instanceof ChannelException )
+                         {

@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/main/java/org/openmrs/util/OpenmrsConstants.java b/fixed/api/src/main/java/org/openmrs/util/OpenmrsConstants.java
+index 3ed948b5b..dee85c874 100644
+--- a/buggy/api/src/main/java/org/openmrs/util/OpenmrsConstants.java
++++ b/fixed/api/src/main/java/org/openmrs/util/OpenmrsConstants.java
+@@ -1406,7 +1406,7 @@ public final class OpenmrsConstants {
+ 		props.add(new GlobalProperty(GP_ALLOWED_FAILED_LOGINS_BEFORE_LOCKOUT, "7",
+ 		        "Maximum number of failed logins allowed after which username is locked out"));
+ 		
+-		props.add(new GlobalProperty(GP_DEFAULT_CONCEPT_MAP_TYPE, "same-as",
++		props.add(new GlobalProperty(GP_DEFAULT_CONCEPT_MAP_TYPE, "NARROWER-THAN",
+ 		        "Default concept map type which is used when no other is set"));
+ 		
+ 		for (GlobalProperty gp : ModuleFactory.getGlobalProperties()) {

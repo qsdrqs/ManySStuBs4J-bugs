@@ -1,0 +1,14 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/sizes/AnonInnerLengthCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/sizes/AnonInnerLengthCheckTest.java
+index 56f99ec0d..429d758d7 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/sizes/AnonInnerLengthCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/sizes/AnonInnerLengthCheckTest.java
+@@ -40,7 +40,8 @@ public class AnonInnerLengthCheckTest extends BaseCheckTestSupport {
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "sizes" + File.separator + filename);
++                + "sizes" + File.separator + "anoninnerlength"
++                + File.separator + filename);
+     }
+ 
+     @Test

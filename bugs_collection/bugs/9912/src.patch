@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/udf/UDFRegExpExtract.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/udf/UDFRegExpExtract.java
+index 8bdf8be24..cec996d4a 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/udf/UDFRegExpExtract.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/udf/UDFRegExpExtract.java
+@@ -43,7 +43,7 @@ public class UDFRegExpExtract extends UDF {
+     if (s == null || regex == null) {
+       return null;
+     }
+-    if (!regex.equals(lastRegex)) {
++    if (!regex.equals(lastRegex) || p == null) {
+       lastRegex = regex;
+       p = Pattern.compile(regex);
+     }

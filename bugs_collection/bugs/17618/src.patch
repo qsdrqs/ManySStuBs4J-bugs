@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions/gdx-tools/src/com/badlogic/gdx/tools/hiero/BMFontUtil.java b/fixed/extensions/gdx-tools/src/com/badlogic/gdx/tools/hiero/BMFontUtil.java
+index f18bad632..45ed19b93 100644
+--- a/buggy/extensions/gdx-tools/src/com/badlogic/gdx/tools/hiero/BMFontUtil.java
++++ b/fixed/extensions/gdx-tools/src/com/badlogic/gdx/tools/hiero/BMFontUtil.java
+@@ -196,7 +196,7 @@ public class BMFontUtil {
+ 	}
+ 
+ 	void writeGlyph (PrintStream out, int pageWidth, int pageHeight, int pageIndex, Glyph glyph) {
+-		out.println("char id=" + String.format("%-6s", glyph.getCodePoint()) //
++		out.println("char id=" + String.format("%-7s ", glyph.getCodePoint()) //
+ 			+ "x=" + String.format("%-5s", (int)(glyph.getU() * pageWidth)) //
+ 			+ "y=" + String.format("%-5s", (int)(glyph.getV() * pageHeight)) //
+ 			+ "width=" + String.format("%-5s", glyph.getWidth()) //

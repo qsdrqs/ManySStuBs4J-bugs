@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.onewire/src/main/java/org/openhab/binding/onewire/internal/OneWireGenericBindingProvider.java b/fixed/bundles/binding/org.openhab.binding.onewire/src/main/java/org/openhab/binding/onewire/internal/OneWireGenericBindingProvider.java
+index 187a2883b..1f6a1179c 100644
+--- a/buggy/bundles/binding/org.openhab.binding.onewire/src/main/java/org/openhab/binding/onewire/internal/OneWireGenericBindingProvider.java
++++ b/fixed/bundles/binding/org.openhab.binding.onewire/src/main/java/org/openhab/binding/onewire/internal/OneWireGenericBindingProvider.java
+@@ -45,7 +45,7 @@ import org.openhab.model.item.binding.BindingConfigParseException;
+  * @since 0.6.0
+  */
+ public class OneWireGenericBindingProvider extends AbstractGenericBindingProvider implements OneWireBindingProvider {
+-	private static final TreeSet<String> filterTypes = new TreeSet<String>(Arrays.asList("tuckey"));
++	private static final TreeSet<String> filterTypes = new TreeSet<String>(Arrays.asList("tukey"));
+ 	/**
+ 	 * {@inheritDoc}
+ 	 */

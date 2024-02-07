@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/activeandroid/ModelInfo.java b/fixed/src/com/activeandroid/ModelInfo.java
+index 6aaefe09c..d905aad42 100644
+--- a/buggy/src/com/activeandroid/ModelInfo.java
++++ b/fixed/src/com/activeandroid/ModelInfo.java
+@@ -147,7 +147,7 @@ final class ModelInfo {
+ 
+ 		for (String path : paths) {
+ 			File file = new File(path);
+-			scanForModelClasses(file, packageName, context.getClass().getClassLoader());
++			scanForModelClasses(file, packageName, context.getClassLoader());
+ 		}
+ 	}
+ 

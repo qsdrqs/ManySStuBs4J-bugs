@@ -1,0 +1,13 @@
+diff --git a/buggy/handler/src/main/java/io/netty/handler/traffic/TrafficCounter.java b/fixed/handler/src/main/java/io/netty/handler/traffic/TrafficCounter.java
+index 4590fb578..ac49367a7 100644
+--- a/buggy/handler/src/main/java/io/netty/handler/traffic/TrafficCounter.java
++++ b/fixed/handler/src/main/java/io/netty/handler/traffic/TrafficCounter.java
+@@ -113,7 +113,7 @@ public class TrafficCounter {
+     /**
+      * used in stop() to cancel the timer
+      */
+-    volatile private Timeout timeout = null;
++    private volatile Timeout timeout;
+ 
+     /**
+      * Is Monitor active

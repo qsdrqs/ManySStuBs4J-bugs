@@ -1,0 +1,14 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/newtypes/JSType.java b/fixed/src/com/google/javascript/jscomp/newtypes/JSType.java
+index d78095fbf..dd65a121d 100644
+--- a/buggy/src/com/google/javascript/jscomp/newtypes/JSType.java
++++ b/fixed/src/com/google/javascript/jscomp/newtypes/JSType.java
+@@ -389,7 +389,8 @@ public class JSType {
+   }
+ 
+   public JSType substituteGenerics(Map<String, JSType> concreteTypes) {
+-    if (isTop() || isUnknown()) {
++    if (isTop() || isUnknown()
++        || objs == null && typeVar == null) {
+       return this;
+     }
+     ImmutableSet<ObjectType> newObjs = null;

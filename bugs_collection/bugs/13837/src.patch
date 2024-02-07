@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/metadata/CatalogManager.java b/fixed/presto-main/src/main/java/com/facebook/presto/metadata/CatalogManager.java
+index f107654bb..88cfc6554 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/metadata/CatalogManager.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/metadata/CatalogManager.java
+@@ -81,7 +81,7 @@ public class CatalogManager
+         Map<String, String> properties = new HashMap<>(loadProperties(file));
+ 
+         String connectorName = properties.remove("connector.name");
+-        checkState(connectorName != null, "Catalog configuration %s does not contain conector.name", file.getAbsoluteFile());
++        checkState(connectorName != null, "Catalog configuration %s does not contain connector.name", file.getAbsoluteFile());
+ 
+         String catalogName = Files.getNameWithoutExtension(file.getName());
+ 

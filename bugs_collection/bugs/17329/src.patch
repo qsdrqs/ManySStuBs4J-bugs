@@ -1,0 +1,28 @@
+diff --git a/buggy/src/main/java/org/jsoup/helper/HttpConnection.java b/fixed/src/main/java/org/jsoup/helper/HttpConnection.java
+index 17459f7f0..550210678 100644
+--- a/buggy/src/main/java/org/jsoup/helper/HttpConnection.java
++++ b/fixed/src/main/java/org/jsoup/helper/HttpConnection.java
+@@ -286,7 +286,7 @@ public class HttpConnection implements Connection {
+         }
+ 
+         public String cookie(String name) {
+-            Validate.notNull(name, "Cookie name must not be null");
++            Validate.notEmpty(name, "Cookie name must not be empty");
+             return cookies.get(name);
+         }
+ 
+@@ -298,12 +298,12 @@ public class HttpConnection implements Connection {
+         }
+ 
+         public boolean hasCookie(String name) {
+-            Validate.notEmpty("Cookie name must not be empty");
++            Validate.notEmpty(name, "Cookie name must not be empty");
+             return cookies.containsKey(name);
+         }
+ 
+         public T removeCookie(String name) {
+-            Validate.notEmpty("Cookie name must not be empty");
++            Validate.notEmpty(name, "Cookie name must not be empty");
+             cookies.remove(name);
+             return (T) this;
+         }

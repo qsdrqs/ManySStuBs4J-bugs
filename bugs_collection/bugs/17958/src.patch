@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/utils/IntIntMap.java b/fixed/gdx/src/com/badlogic/gdx/utils/IntIntMap.java
+index 2411a1865..812e6252f 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/utils/IntIntMap.java
++++ b/fixed/gdx/src/com/badlogic/gdx/utils/IntIntMap.java
+@@ -662,7 +662,7 @@ public class IntIntMap {
+ 				throw new IllegalStateException("next must be called before remove.");
+ 			} else if (currentIndex >= map.capacity) {
+ 				map.removeStashIndex(currentIndex);
+-				nextIndex = currentIndex;
++				nextIndex = currentIndex - 1;
+ 				findNextIndex();
+ 			} else {
+ 				map.keyTable[currentIndex] = EMPTY;

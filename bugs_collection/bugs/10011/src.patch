@@ -1,0 +1,13 @@
+diff --git a/buggy/storm-core/src/jvm/backtype/storm/windowing/EventImpl.java b/fixed/storm-core/src/jvm/backtype/storm/windowing/EventImpl.java
+index 035f41be3..b518e425b 100644
+--- a/buggy/storm-core/src/jvm/backtype/storm/windowing/EventImpl.java
++++ b/fixed/storm-core/src/jvm/backtype/storm/windowing/EventImpl.java
+@@ -17,7 +17,7 @@
+  */
+ package backtype.storm.windowing;
+ 
+-class EventImpl<T> implements Event<T> {
++public class EventImpl<T> implements Event<T> {
+     private final T event;
+     private long ts;
+ 

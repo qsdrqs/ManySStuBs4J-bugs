@@ -1,0 +1,18 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/DefaultChannelHandlerContext.java b/fixed/transport/src/main/java/io/netty/channel/DefaultChannelHandlerContext.java
+index eba9f6849..f67787ca1 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/DefaultChannelHandlerContext.java
++++ b/fixed/transport/src/main/java/io/netty/channel/DefaultChannelHandlerContext.java
+@@ -1559,11 +1559,11 @@ final class DefaultChannelHandlerContext extends DefaultAttributeMap implements
+         DefaultChannelHandlerContext ctx = prev;
+         for (;;) {
+             if (ctx.hasOutboundByteBuffer()) {
+-                return ctx.isWritable();
++                return ctx.outboundByteBuffer().isWritable();
+             }
+ 
+             if (ctx.hasOutboundMessageBuffer()) {
+-                return ctx.isWritable();
++                return ctx.outboundMessageBuffer().isWritable();
+             }
+             ctx = ctx.prev;
+         }

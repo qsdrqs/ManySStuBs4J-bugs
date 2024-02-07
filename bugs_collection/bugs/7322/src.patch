@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jsch/src/main/java/org/apache/camel/component/jsch/ScpOperations.java b/fixed/components/camel-jsch/src/main/java/org/apache/camel/component/jsch/ScpOperations.java
+index 365d14e8f..6ee9aa698 100644
+--- a/buggy/components/camel-jsch/src/main/java/org/apache/camel/component/jsch/ScpOperations.java
++++ b/fixed/components/camel-jsch/src/main/java/org/apache/camel/component/jsch/ScpOperations.java
+@@ -241,7 +241,7 @@ public class ScpOperations implements RemoteFileOperations<ScpFile> {
+ 
+             writeFile(filename.substring(pos + 1), data, os, is);
+ 
+-            os.write(("E\n").getBytes());
++            os.write("E\n".getBytes());
+             os.flush();
+             is.read();
+         } else {

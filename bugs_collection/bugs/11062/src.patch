@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule411bracesareused/NeedBracesTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule411bracesareused/NeedBracesTest.java
+index f8868e940..2e68aa7e9 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule411bracesareused/NeedBracesTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule411bracesareused/NeedBracesTest.java
+@@ -86,7 +86,7 @@ public class NeedBracesTest extends BaseCheckTestSupport {
+         };
+ 
+         final Configuration checkConfig = builder.getCheckConfig("NeedBraces");
+-        final String filePath = builder.getFilePath("NeedBracesInput");
++        final String filePath = builder.getFilePath("InputNeedBraces");
+ 
+         final Integer[] warnList = builder.getLinesWithWarn(filePath);
+         verify(checkConfig, filePath, expected, warnList);

@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.rme/src/main/java/org/openhab/binding/rme/internal/RMEBinding.java b/fixed/bundles/binding/org.openhab.binding.rme/src/main/java/org/openhab/binding/rme/internal/RMEBinding.java
+index 08cd7082f..8063ee233 100644
+--- a/buggy/bundles/binding/org.openhab.binding.rme/src/main/java/org/openhab/binding/rme/internal/RMEBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.rme/src/main/java/org/openhab/binding/rme/internal/RMEBinding.java
+@@ -360,7 +360,7 @@ public class RMEBinding extends AbstractActiveBinding<RMEBindingProvider>impleme
+                                                     matcher.group(selector.getFieldIndex()));
+                                         }
+                                     } catch (BindingConfigParseException e) {
+-                                        logger.error("An exception occured while converting {} to a valide state : {}",
++                                        logger.error("An exception occured while converting {} to a valid state : {}",
+                                                 matcher.group(selector.getFieldIndex()), e.getMessage());
+                                         return;
+                                     }

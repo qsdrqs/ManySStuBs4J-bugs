@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/handler/codec/frame/LengthFieldBasedFrameDecoder.java b/fixed/src/main/java/org/jboss/netty/handler/codec/frame/LengthFieldBasedFrameDecoder.java
+index 2733109f2..671a0f4ba 100644
+--- a/buggy/src/main/java/org/jboss/netty/handler/codec/frame/LengthFieldBasedFrameDecoder.java
++++ b/fixed/src/main/java/org/jboss/netty/handler/codec/frame/LengthFieldBasedFrameDecoder.java
+@@ -239,7 +239,7 @@ public class LengthFieldBasedFrameDecoder extends FrameDecoder {
+             int maxFrameLength,
+             int lengthFieldOffset, int lengthFieldLength,
+             int lengthAdjustment, int initialBytesToStrip) {
+-        this(maxFrameLength, lengthFieldOffset, lengthFieldOffset, lengthAdjustment,
++        this(maxFrameLength, lengthFieldOffset, lengthFieldLength, lengthAdjustment,
+                 initialBytesToStrip, false);
+     }
+ 

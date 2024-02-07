@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/IllegalInstantiationCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/IllegalInstantiationCheck.java
+index d741c8efd..7e4eaf89a 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/IllegalInstantiationCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/IllegalInstantiationCheck.java
+@@ -344,7 +344,7 @@ public class IllegalInstantiationCheck
+             final boolean isSameFile = classNames.contains(className);
+             final boolean isSamePackage = isSamePackage(className);
+ 
+-            if (!(isSameFile || isSamePackage)) {
++            if (!isSameFile && !isSamePackage) {
+                 return true;
+             }
+         }

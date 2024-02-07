@@ -1,0 +1,13 @@
+diff --git a/buggy/handler/src/main/java/io/netty/handler/traffic/AbstractTrafficShapingHandler.java b/fixed/handler/src/main/java/io/netty/handler/traffic/AbstractTrafficShapingHandler.java
+index 1e0300157..05586e0a3 100644
+--- a/buggy/handler/src/main/java/io/netty/handler/traffic/AbstractTrafficShapingHandler.java
++++ b/fixed/handler/src/main/java/io/netty/handler/traffic/AbstractTrafficShapingHandler.java
+@@ -205,7 +205,7 @@ public abstract class AbstractTrafficShapingHandler extends ChannelDuplexHandler
+             // Time is too short, so just lets continue
+             return 0;
+         }
+-        return (bytes * 1000 / limit - interval / 10) * 10;
++        return (bytes * 1000 / limit - interval) / 10 * 10;
+     }
+ 
+     @Override

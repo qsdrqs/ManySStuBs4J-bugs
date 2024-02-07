@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-test-blueprint/src/main/java/org/apache/camel/test/blueprint/CamelBlueprintHelper.java b/fixed/components/camel-test-blueprint/src/main/java/org/apache/camel/test/blueprint/CamelBlueprintHelper.java
+index 1637248a5..8849e64e7 100644
+--- a/buggy/components/camel-test-blueprint/src/main/java/org/apache/camel/test/blueprint/CamelBlueprintHelper.java
++++ b/fixed/components/camel-test-blueprint/src/main/java/org/apache/camel/test/blueprint/CamelBlueprintHelper.java
+@@ -183,7 +183,7 @@ public final class CamelBlueprintHelper {
+                     // must force type cast to have code compile with both java6
+                     // and 7 with the
+                     // (org.apache.felix.utils.properties.Properties)
+-                    String value = cfg.get(key);
++                    String value = (String)cfg.get(key);
+                     props.put(key, value);
+                 }
+ 

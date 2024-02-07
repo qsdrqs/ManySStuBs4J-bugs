@@ -1,0 +1,13 @@
+diff --git a/buggy/pact/pact-compiler/src/main/java/eu/stratosphere/pact/compiler/costs/CostEstimator.java b/fixed/pact/pact-compiler/src/main/java/eu/stratosphere/pact/compiler/costs/CostEstimator.java
+index 7cd9e2751..20cbdafac 100644
+--- a/buggy/pact/pact-compiler/src/main/java/eu/stratosphere/pact/compiler/costs/CostEstimator.java
++++ b/fixed/pact/pact-compiler/src/main/java/eu/stratosphere/pact/compiler/costs/CostEstimator.java
+@@ -132,7 +132,7 @@ public abstract class CostEstimator {
+ 		}
+ 
+ 		// if we have a second input, add its costs
+-		if (secConn != null) {
++		if (secConn != null && secConn.size() > 0) {
+ 			Costs secCost = new Costs();
+ 
+ 			// we assume that all connections in the list have the same ship strategy;

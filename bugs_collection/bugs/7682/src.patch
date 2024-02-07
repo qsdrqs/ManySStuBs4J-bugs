@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-servlet/src/main/java/org/apache/camel/component/servlet/ServletComponent.java b/fixed/components/camel-servlet/src/main/java/org/apache/camel/component/servlet/ServletComponent.java
+index 49885644b..6219e181a 100644
+--- a/buggy/components/camel-servlet/src/main/java/org/apache/camel/component/servlet/ServletComponent.java
++++ b/fixed/components/camel-servlet/src/main/java/org/apache/camel/component/servlet/ServletComponent.java
+@@ -67,7 +67,7 @@ public class ServletComponent extends HttpComponent {
+                 CastUtils.cast(parameters));
+         uri = httpUri.toString();
+ 
+-        ServletEndpoint result = createServletEndpoint(uri, this, httpUri, clientParams, getHttpConnectionManager(), httpClientConfigurer);
++        ServletEndpoint result = createServletEndpoint(uri, this, httpUri, clientParams, getClientConnectionManager(), httpClientConfigurer);
+         if (httpBinding != null) {
+             result.setBinding(httpBinding);
+         }

@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-hive/src/main/java/com/facebook/presto/hive/HiveClientConfig.java b/fixed/presto-hive/src/main/java/com/facebook/presto/hive/HiveClientConfig.java
+index 8301dcd45..75c00819d 100644
+--- a/buggy/presto-hive/src/main/java/com/facebook/presto/hive/HiveClientConfig.java
++++ b/fixed/presto-hive/src/main/java/com/facebook/presto/hive/HiveClientConfig.java
+@@ -778,7 +778,7 @@ public class HiveClientConfig
+     }
+ 
+     @Config("hive.orc.writer.validate")
+-    @ConfigDescription("Validate RCFile after write by re-reading the whole file")
++    @ConfigDescription("Validate ORC file after write by re-reading the whole file")
+     public HiveClientConfig setOrcWriterValidate(boolean orcWriterValidate)
+     {
+         this.orcWriterValidate = orcWriterValidate;

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/buffer/AbstractChannelBuffer.java b/fixed/src/main/java/org/jboss/netty/buffer/AbstractChannelBuffer.java
+index 9c9af649f..1b326e587 100644
+--- a/buggy/src/main/java/org/jboss/netty/buffer/AbstractChannelBuffer.java
++++ b/fixed/src/main/java/org/jboss/netty/buffer/AbstractChannelBuffer.java
+@@ -267,7 +267,7 @@ public abstract class AbstractChannelBuffer implements ChannelBuffer {
+         if (length == 0) {
+             return ChannelBuffers.EMPTY_BUFFER;
+         }
+-        ChannelBuffer buf = ChannelBuffers.buffer(length);
++        ChannelBuffer buf = ChannelBuffers.buffer(order(), length);
+         buf.writeBytes(this, readerIndex, length);
+         readerIndex += length;
+         return buf;

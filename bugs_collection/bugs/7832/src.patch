@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/camel-example-bam/src/main/java/org/apache/camel/example/bam/Main.java b/fixed/examples/camel-example-bam/src/main/java/org/apache/camel/example/bam/Main.java
+index 729a026d1..5c3855cba 100644
+--- a/buggy/examples/camel-example-bam/src/main/java/org/apache/camel/example/bam/Main.java
++++ b/fixed/examples/camel-example-bam/src/main/java/org/apache/camel/example/bam/Main.java
+@@ -23,7 +23,7 @@ public final class Main {
+     private Main() {
+         // do nothing here
+     }
+-    public static void main(String[] args) {
++    public static void main(String[] args) throws Exception {
+         org.apache.camel.spring.Main.main(args);
+     }
+ }

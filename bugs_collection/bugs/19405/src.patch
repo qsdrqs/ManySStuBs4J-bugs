@@ -1,0 +1,13 @@
+diff --git a/buggy/community/server/src/functionaltest/java/org/neo4j/server/rest/BatchOperationFunctionalTest.java b/fixed/community/server/src/functionaltest/java/org/neo4j/server/rest/BatchOperationFunctionalTest.java
+index 93daec494..670f30227 100644
+--- a/buggy/community/server/src/functionaltest/java/org/neo4j/server/rest/BatchOperationFunctionalTest.java
++++ b/fixed/community/server/src/functionaltest/java/org/neo4j/server/rest/BatchOperationFunctionalTest.java
+@@ -149,7 +149,7 @@ public class BatchOperationFunctionalTest
+ 
+                         .object()
+                         .key("method").value("POST")
+-                        .key("to").value("/NODE")
++                        .key("to").value("/node")
+                         .key("body").object().key("age").value(1).endObject()
+                         .endObject()
+ 

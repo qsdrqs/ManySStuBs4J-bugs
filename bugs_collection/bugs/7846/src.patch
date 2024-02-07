@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/model/FromDefinition.java b/fixed/camel-core/src/main/java/org/apache/camel/model/FromDefinition.java
+index b658bc32f..e444ee8d5 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/model/FromDefinition.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/model/FromDefinition.java
+@@ -33,7 +33,7 @@ import org.apache.camel.util.ObjectHelper;
+  */
+ @XmlRootElement(name = "from")
+ @XmlAccessorType(XmlAccessType.FIELD)
+-public class FromDefinition extends OptionalIdentifiedType<FromDefinition> {
++public class FromDefinition extends OptionalIdentifiedDefinition<FromDefinition> {
+     @XmlAttribute
+     private String uri;
+     @XmlAttribute

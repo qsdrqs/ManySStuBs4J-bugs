@@ -1,0 +1,13 @@
+diff --git a/buggy/client/src/main/java/com/metamx/druid/initialization/CuratorConfig.java b/fixed/client/src/main/java/com/metamx/druid/initialization/CuratorConfig.java
+index 741bc59d3..be46aea41 100644
+--- a/buggy/client/src/main/java/com/metamx/druid/initialization/CuratorConfig.java
++++ b/fixed/client/src/main/java/com/metamx/druid/initialization/CuratorConfig.java
+@@ -33,7 +33,7 @@ public abstract class CuratorConfig
+   @Default("30000")
+   public abstract int getZkSessionTimeoutMs();
+ 
+-  @Config("druid.curator.compression.enable")
++  @Config("druid.curator.compress")
+   @Default("false")
+   public abstract boolean enableCompression();
+ }

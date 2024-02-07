@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.homematic/src/main/java/org/openhab/binding/homematic/internal/communicator/client/XmlRpcClient.java b/fixed/bundles/binding/org.openhab.binding.homematic/src/main/java/org/openhab/binding/homematic/internal/communicator/client/XmlRpcClient.java
+index 7e64a293c..e8b57dcaf 100644
+--- a/buggy/bundles/binding/org.openhab.binding.homematic/src/main/java/org/openhab/binding/homematic/internal/communicator/client/XmlRpcClient.java
++++ b/fixed/bundles/binding/org.openhab.binding.homematic/src/main/java/org/openhab/binding/homematic/internal/communicator/client/XmlRpcClient.java
+@@ -54,7 +54,7 @@ public class XmlRpcClient implements CcuClient {
+ 	 */
+ 	@Override
+ 	public void release(HmInterface hmInterface) throws CcuClientException {
+-		xmlRpcConnections.get(hmInterface).init("", hmInterface.toString());
++		xmlRpcConnections.get(hmInterface).init(config.getXmlRpcCallbackUrl(), "");
+ 	}
+ 
+ 	/**

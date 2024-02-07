@@ -1,0 +1,15 @@
+diff --git a/buggy/modules/AppearanceAPI/src/main/java/org/gephi/appearance/AppearanceModelImpl.java b/fixed/modules/AppearanceAPI/src/main/java/org/gephi/appearance/AppearanceModelImpl.java
+index 4179b8cb8..ef4f1f596 100644
+--- a/buggy/modules/AppearanceAPI/src/main/java/org/gephi/appearance/AppearanceModelImpl.java
++++ b/fixed/modules/AppearanceAPI/src/main/java/org/gephi/appearance/AppearanceModelImpl.java
+@@ -557,7 +557,9 @@ public class AppearanceModelImpl implements AppearanceModel {
+                             partition = new AttributePartitionImpl(column, graph);
+                         }
+                         partitions.put(getIdCol(column), partition);
+-                    } else if (forcedRanking.contains(id) || isRanking(graph, column)) {
++                    }
++                    
++                    if (forcedRanking.contains(id) || isRanking(graph, column)) {
+                         if (column.isIndexed()) {
+                             ranking = new AttributeRankingImpl(column, getIndex(localScale));
+                         } else {

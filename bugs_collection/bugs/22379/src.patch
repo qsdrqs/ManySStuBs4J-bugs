@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/test/java/org/springframework/boot/context/embedded/AbstractEmbeddedServletContainerFactoryTests.java b/fixed/spring-boot/src/test/java/org/springframework/boot/context/embedded/AbstractEmbeddedServletContainerFactoryTests.java
+index 9a587068d..3df99931e 100644
+--- a/buggy/spring-boot/src/test/java/org/springframework/boot/context/embedded/AbstractEmbeddedServletContainerFactoryTests.java
++++ b/fixed/spring-boot/src/test/java/org/springframework/boot/context/embedded/AbstractEmbeddedServletContainerFactoryTests.java
+@@ -223,7 +223,7 @@ public abstract class AbstractEmbeddedServletContainerFactoryTests {
+ 	@Test
+ 	public void specificPort() throws Exception {
+ 		AbstractEmbeddedServletContainerFactory factory = getFactory();
+-		int specificPort = SocketUtils.findAvailableTcpPort(40000);
++		int specificPort = SocketUtils.findAvailableTcpPort(41000);
+ 		factory.setPort(specificPort);
+ 		this.container = factory
+ 				.getEmbeddedServletContainer(exampleServletRegistration());

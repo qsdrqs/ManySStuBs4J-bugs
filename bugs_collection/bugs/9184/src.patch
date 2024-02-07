@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/mapreduce/replication/VerifyReplication.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/mapreduce/replication/VerifyReplication.java
+index c0aa74597..c4dd3ad09 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/mapreduce/replication/VerifyReplication.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/mapreduce/replication/VerifyReplication.java
+@@ -80,7 +80,7 @@ public class VerifyReplication extends Configured implements Tool {
+   static int versions = -1;
+   static String tableName = null;
+   static String families = null;
+-  static String delimiter = null;
++  static String delimiter = "";
+   static String peerId = null;
+   static String rowPrefixes = null;
+ 

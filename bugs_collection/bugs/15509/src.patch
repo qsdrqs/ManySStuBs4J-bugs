@@ -1,0 +1,15 @@
+diff --git a/buggy/guava/src/com/google/common/base/CaseFormat.java b/fixed/guava/src/com/google/common/base/CaseFormat.java
+index 1f4d3d66d..eec7a2a70 100644
+--- a/buggy/guava/src/com/google/common/base/CaseFormat.java
++++ b/fixed/guava/src/com/google/common/base/CaseFormat.java
+@@ -218,6 +218,9 @@ public enum CaseFormat {
+   private static String firstCharOnlyToUpper(String word) {
+     return (word.isEmpty())
+         ? word
+-        : Ascii.toUpperCase(word.charAt(0)) + Ascii.toLowerCase(word.substring(1));
++        : new StringBuilder(word.length())
++            .append(Ascii.toUpperCase(word.charAt(0)))
++            .append(Ascii.toLowerCase(word.substring(1)))
++            .toString();
+   }
+ }

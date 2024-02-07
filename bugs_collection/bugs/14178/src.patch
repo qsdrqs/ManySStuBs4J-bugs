@@ -1,0 +1,13 @@
+diff --git a/buggy/ToolsPlugin/src/org/gephi/tools/plugin/NodePencil.java b/fixed/ToolsPlugin/src/org/gephi/tools/plugin/NodePencil.java
+index c1cc4eb22..751936e7f 100644
+--- a/buggy/ToolsPlugin/src/org/gephi/tools/plugin/NodePencil.java
++++ b/fixed/ToolsPlugin/src/org/gephi/tools/plugin/NodePencil.java
+@@ -74,7 +74,7 @@ public class NodePencil implements Tool {
+ 
+     public NodePencil() {
+         //Default settings
+-        color = Color.BLACK;
++        color = new Color(153, 153, 153);//Default gray of nodes
+         size = 10f;
+     }
+ 

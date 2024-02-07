@@ -1,0 +1,20 @@
+diff --git a/buggy/flink-core/src/main/java/org/apache/flink/metrics/MetricRegistry.java b/fixed/flink-core/src/main/java/org/apache/flink/metrics/MetricRegistry.java
+index 09beef6f2..dafa3bdf5 100644
+--- a/buggy/flink-core/src/main/java/org/apache/flink/metrics/MetricRegistry.java
++++ b/fixed/flink-core/src/main/java/org/apache/flink/metrics/MetricRegistry.java
+@@ -74,13 +74,13 @@ public class MetricRegistry {
+ 	 * Creates a new MetricRegistry and starts the configured reporter.
+ 	 */
+ 	public MetricRegistry(Configuration config) {
+-		// first parse the scopeName formats, these are needed for all reporters
++		// first parse the scope formats, these are needed for all reporters
+ 		ScopeFormats scopeFormats;
+ 		try {
+ 			scopeFormats = createScopeConfig(config);
+ 		}
+ 		catch (Exception e) {
+-			LOG.warn("Failed to parse scopeName format, using default scopeName formats", e);
++			LOG.warn("Failed to parse scope format, using default scope formats", e);
+ 			scopeFormats = new ScopeFormats();
+ 		}
+ 		this.scopeFormats = scopeFormats;

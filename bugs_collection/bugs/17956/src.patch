@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/utils/IdentityMap.java b/fixed/gdx/src/com/badlogic/gdx/utils/IdentityMap.java
+index cd9e3b452..f82db0ff8 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/utils/IdentityMap.java
++++ b/fixed/gdx/src/com/badlogic/gdx/utils/IdentityMap.java
+@@ -627,7 +627,7 @@ public class IdentityMap<K, V> {
+ 			if (currentIndex < 0) throw new IllegalStateException("next must be called before remove.");
+ 			if (currentIndex >= map.capacity) {
+ 				map.removeStashIndex(currentIndex);
+-				nextIndex = currentIndex;
++				nextIndex = currentIndex - 1;
+ 				findNextIndex();
+ 			} else {
+ 				map.keyTable[currentIndex] = null;

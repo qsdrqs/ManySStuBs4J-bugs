@@ -1,0 +1,13 @@
+diff --git a/buggy/pact/pact-runtime/src/test/java/eu/stratosphere/pact/runtime/sort/UnilateralSortMergerITCase.java b/fixed/pact/pact-runtime/src/test/java/eu/stratosphere/pact/runtime/sort/UnilateralSortMergerITCase.java
+index d0f47f0f8..547d5ea01 100644
+--- a/buggy/pact/pact-runtime/src/test/java/eu/stratosphere/pact/runtime/sort/UnilateralSortMergerITCase.java
++++ b/fixed/pact/pact-runtime/src/test/java/eu/stratosphere/pact/runtime/sort/UnilateralSortMergerITCase.java
+@@ -159,7 +159,7 @@ public class UnilateralSortMergerITCase {
+ 		LOG.debug("initializing sortmerger");
+ 		SortMerger<TestData.Key, TestData.Value> merger = new UnilateralSortMerger<TestData.Key, TestData.Value>(
+ 			memoryManager, ioManager, 40 * 1024 * 1024, 1024 * 1024 * 1, 10, 2, keySerialization, valSerialization,
+-			keyComparator, reader, parentTask);
++			keyComparator, reader, parentTask, 0.7f);
+ 
+ 		// emit data
+ 		LOG.debug("emitting data");

@@ -1,0 +1,15 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTypeCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTypeCheck.java
+index 04239245b..4c3f07a2f 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTypeCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTypeCheck.java
+@@ -222,8 +222,8 @@ public class JavadocTypeCheck
+                 ? Scope.PUBLIC : declaredScope;
+         final Scope surroundingScope = ScopeUtils.getSurroundingScope(ast);
+ 
+-        return customScope.isIn(this.scope)
+-            && (surroundingScope == null || surroundingScope.isIn(this.scope))
++        return customScope.isIn(scope)
++            && (surroundingScope == null || surroundingScope.isIn(scope))
+             && (excludeScope == null
+                 || !customScope.isIn(excludeScope)
+                 || surroundingScope != null

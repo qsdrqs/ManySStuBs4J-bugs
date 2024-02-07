@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/parse/DDLSemanticAnalyzer.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/parse/DDLSemanticAnalyzer.java
+index 3f5813018..050522f2f 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/parse/DDLSemanticAnalyzer.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/parse/DDLSemanticAnalyzer.java
+@@ -1637,7 +1637,7 @@ public class DDLSemanticAnalyzer extends BaseSemanticAnalyzer {
+       if (!((inputFormatClass.equals(RCFileInputFormat.class) ||
+           (inputFormatClass.equals(OrcInputFormat.class))))) {
+         throw new SemanticException(
+-            "Only RCFile and ORCFile Formats are supportted right now.");
++            "Only RCFile and ORCFile Formats are supported right now.");
+       }
+       mergeDesc.setInputFormatClass(inputFormatClass);
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/test/java/com/facebook/presto/operator/scalar/FunctionAssertions.java b/fixed/presto-main/src/test/java/com/facebook/presto/operator/scalar/FunctionAssertions.java
+index d18e919a9..3968aa95e 100644
+--- a/buggy/presto-main/src/test/java/com/facebook/presto/operator/scalar/FunctionAssertions.java
++++ b/fixed/presto-main/src/test/java/com/facebook/presto/operator/scalar/FunctionAssertions.java
+@@ -431,7 +431,7 @@ public final class FunctionAssertions
+                             rewrittenExpression,
+                             coercion.getTypeSignature().toString(),
+                             false,
+-                            isTypeOnlyCoercion(type.getTypeSignature(), coercion.getTypeSignature()));
++                            isTypeOnlyCoercion(type, coercion));
+                 }
+ 
+                 return rewrittenExpression;

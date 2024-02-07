@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/ArrayTypeStyleCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/ArrayTypeStyleCheck.java
+index c07e082cf..0dd8124e6 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/ArrayTypeStyleCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/ArrayTypeStyleCheck.java
+@@ -72,7 +72,7 @@ public class ArrayTypeStyleCheck extends AbstractCheck {
+                     || variableAST.getColumnNo() - ast.getColumnNo() > -1;
+ 
+                 if (isJavaStyle != javaStyle) {
+-                    log(ast.getLineNo(), ast.getColumnNo(), MSG_KEY);
++                    log(ast, MSG_KEY);
+                 }
+             }
+         }

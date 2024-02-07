@@ -1,0 +1,13 @@
+diff --git a/buggy/StatisticsAPI/src/org/gephi/statistics/StatisticsModelImpl.java b/fixed/StatisticsAPI/src/org/gephi/statistics/StatisticsModelImpl.java
+index 3e1bd949f..bf8ac4dd6 100644
+--- a/buggy/StatisticsAPI/src/org/gephi/statistics/StatisticsModelImpl.java
++++ b/fixed/StatisticsAPI/src/org/gephi/statistics/StatisticsModelImpl.java
+@@ -83,7 +83,7 @@ public class StatisticsModelImpl implements StatisticsModel {
+ 
+     public boolean isRunning(StatisticsUI statisticsUI) {
+         for (Statistics s : runningList.toArray(new Statistics[0])) {
+-            if (statisticsUI.getStatisticsClass().equals(s)) {
++            if (statisticsUI.getStatisticsClass().equals(s.getClass())) {
+                 return true;
+             }
+         }

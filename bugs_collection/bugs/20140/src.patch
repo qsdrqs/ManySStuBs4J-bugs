@@ -1,0 +1,13 @@
+diff --git a/buggy/library/src/com/haarman/listviewanimations/SwingBottomInAnimationAdapter.java b/fixed/library/src/com/haarman/listviewanimations/SwingBottomInAnimationAdapter.java
+index 5733a45b7..b99be2311 100644
+--- a/buggy/library/src/com/haarman/listviewanimations/SwingBottomInAnimationAdapter.java
++++ b/fixed/library/src/com/haarman/listviewanimations/SwingBottomInAnimationAdapter.java
+@@ -22,7 +22,7 @@ import android.view.ViewGroup;
+ 
+ import com.nineoldandroids.animation.PropertyValuesHolder;
+ 
+-public abstract class SwingBottomInAnimationAdapter<T> extends AnimationAdapter<T> {
++public abstract class SwingBottomInAnimationAdapter<T> extends PropertyValuesAnimationAdapter<T> {
+ 
+ 	public SwingBottomInAnimationAdapter(Context context) {
+ 		super(context);

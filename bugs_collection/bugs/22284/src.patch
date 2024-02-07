@@ -1,0 +1,14 @@
+diff --git a/buggy/spring-boot-actuator-docs/src/restdoc/java/org/springframework/boot/actuate/hypermedia/LimitedEnvironmentEndpoint.java b/fixed/spring-boot-actuator-docs/src/restdoc/java/org/springframework/boot/actuate/hypermedia/LimitedEnvironmentEndpoint.java
+index 8b6cefde3..b6730e9ad 100644
+--- a/buggy/spring-boot-actuator-docs/src/restdoc/java/org/springframework/boot/actuate/hypermedia/LimitedEnvironmentEndpoint.java
++++ b/fixed/spring-boot-actuator-docs/src/restdoc/java/org/springframework/boot/actuate/hypermedia/LimitedEnvironmentEndpoint.java
+@@ -67,7 +67,8 @@ public class LimitedEnvironmentEndpoint extends EnvironmentEndpoint {
+ 		systemEnvironment.add("DISPLAY");
+ 		systemEnvironment.add("LOGNAME");
+ 		includes.put("systemEnvironment", systemEnvironment);
+-		INCLUDES = new LinkedMultiValueMap<>(Collections.unmodifiableMap(includes));
++		INCLUDES = new LinkedMultiValueMap<String, String>(
++				Collections.unmodifiableMap(includes));
+ 	}
+ 
+ 	@Override

@@ -1,0 +1,26 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/BlockParentHandler.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/BlockParentHandler.java
+index 780a10259..b3e273a15 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/BlockParentHandler.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/indentation/BlockParentHandler.java
+@@ -173,10 +173,7 @@ public class BlockParentHandler extends ExpressionHandler
+         final DetailAST lcurly = getLCurly();
+         final int lcurlyPos = expandedTabsColumnNo(lcurly);
+ 
+-        if (lcurly == null
+-            || curlyLevel().accept(lcurlyPos)
+-            || !startsLine(lcurly))
+-        {
++        if (curlyLevel().accept(lcurlyPos) || !startsLine(lcurly)) {
+             return;
+         }
+ 
+@@ -224,8 +221,7 @@ public class BlockParentHandler extends ExpressionHandler
+         final DetailAST rcurly = getRCurly();
+         final int rcurlyPos = expandedTabsColumnNo(rcurly);
+ 
+-        if (rcurly == null
+-            || curlyLevel().accept(rcurlyPos)
++        if (curlyLevel().accept(rcurlyPos)
+             || !rcurlyMustStart() && !startsLine(rcurly)
+             || areOnSameLine(rcurly, lcurly))
+         {

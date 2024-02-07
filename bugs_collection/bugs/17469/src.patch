@@ -1,0 +1,13 @@
+diff --git a/buggy/junit/swingui/DefaultFailureDetailView.java b/fixed/junit/swingui/DefaultFailureDetailView.java
+index e676b95df..51e79c728 100644
+--- a/buggy/junit/swingui/DefaultFailureDetailView.java
++++ b/fixed/junit/swingui/DefaultFailureDetailView.java
+@@ -48,7 +48,7 @@ public class DefaultFailureDetailView implements FailureDetailView {
+ 			fLines.removeAllElements();
+      		StringTokenizer st= new StringTokenizer(trace, "\n\r", false);
+ 	    	while (st.hasMoreTokens()) 
+- 				fLines.add(st.nextToken());
++ 				fLines.addElement(st.nextToken());
+ 		}
+ 	}
+ 	

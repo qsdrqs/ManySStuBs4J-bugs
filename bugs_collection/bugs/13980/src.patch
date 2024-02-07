@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/PlanPrinter.java b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/PlanPrinter.java
+index 7cd39856c..bb2d6d633 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/PlanPrinter.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/PlanPrinter.java
+@@ -452,7 +452,7 @@ public class PlanPrinter
+         {
+             for (PlanFragmentId planFragmentId : node.getSourceFragmentIds()) {
+                 PlanFragment target = fragmentsById.get().get(planFragmentId);
+-                target.getRoot().accept(this, indent);
++                target.getRoot().accept(new Visitor(target.getSymbols(), fragmentsById), indent);
+             }
+             return null;
+         }

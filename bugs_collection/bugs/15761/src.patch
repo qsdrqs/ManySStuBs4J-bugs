@@ -1,0 +1,15 @@
+diff --git a/buggy/core/test/com/googlecode/guice/Jsr330Test.java b/fixed/core/test/com/googlecode/guice/Jsr330Test.java
+index cffaca5a7..57cd6e09a 100644
+--- a/buggy/core/test/com/googlecode/guice/Jsr330Test.java
++++ b/fixed/core/test/com/googlecode/guice/Jsr330Test.java
+@@ -448,7 +448,9 @@ public class Jsr330Test extends TestCase {
+   }
+ 
+   static abstract class AbstractM {
+-    @Inject abstract void setB(B b);
++    @SuppressWarnings("InjectJavaxInjectOnAbstractMethod")
++    @Inject
++    abstract void setB(B b);
+   }
+ 
+   static class M extends AbstractM {

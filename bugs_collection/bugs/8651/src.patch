@@ -1,0 +1,13 @@
+diff --git a/buggy/nephele/nephele-common/src/main/java/eu/stratosphere/nephele/event/job/VertexEvent.java b/fixed/nephele/nephele-common/src/main/java/eu/stratosphere/nephele/event/job/VertexEvent.java
+index 45213848d..d3a3834eb 100644
+--- a/buggy/nephele/nephele-common/src/main/java/eu/stratosphere/nephele/event/job/VertexEvent.java
++++ b/fixed/nephele/nephele-common/src/main/java/eu/stratosphere/nephele/event/job/VertexEvent.java
+@@ -203,7 +203,7 @@ public class VertexEvent extends AbstractEvent {
+ 	public String toString() {
+ 
+ 		return timestampToString(getTimestamp()) + ":\t" + this.jobVertexName + " (" + (this.indexOfSubtask + 1) + "/"
+-			+ this.totalNumberOfSubtasks + ") switch to " + this.currentExecutionState
++			+ this.totalNumberOfSubtasks + ") switched to " + this.currentExecutionState
+ 			+ ((this.description != null) ? ("\n" + this.description) : "");
+ 	}
+ 

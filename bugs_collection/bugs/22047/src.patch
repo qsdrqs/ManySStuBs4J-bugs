@@ -1,0 +1,19 @@
+diff --git a/buggy/spring-boot-project/spring-boot-actuator-autoconfigure/src/main/java/org/springframework/boot/actuate/autoconfigure/security/servlet/EndpointRequest.java b/fixed/spring-boot-project/spring-boot-actuator-autoconfigure/src/main/java/org/springframework/boot/actuate/autoconfigure/security/servlet/EndpointRequest.java
+index 8ce38af30..79894be53 100644
+--- a/buggy/spring-boot-project/spring-boot-actuator-autoconfigure/src/main/java/org/springframework/boot/actuate/autoconfigure/security/servlet/EndpointRequest.java
++++ b/fixed/spring-boot-project/spring-boot-actuator-autoconfigure/src/main/java/org/springframework/boot/actuate/autoconfigure/security/servlet/EndpointRequest.java
+@@ -115,12 +115,12 @@ public final class EndpointRequest {
+ 	/**
+ 	 * Base class for supported request matchers.
+ 	 */
+-	private static abstract class AbstractRequestMatcher
++	private abstract static class AbstractRequestMatcher
+ 			extends ApplicationContextRequestMatcher<WebApplicationContext> {
+ 
+ 		private volatile RequestMatcher delegate;
+ 
+-		public AbstractRequestMatcher() {
++		AbstractRequestMatcher() {
+ 			super(WebApplicationContext.class);
+ 		}
+ 

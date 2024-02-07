@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTagInfo.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTagInfo.java
+index 9389dc9d6..5dec86a81 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTagInfo.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTagInfo.java
+@@ -265,7 +265,7 @@ public enum JavadocTagInfo {
+ 
+             return astType == TokenTypes.VARIABLE_DEF
+                 && varType.getFirstChild().getType() == TokenTypes.ARRAY_DECLARATOR
+-                && "ObjectStreafield".equals(varType.getFirstChild().getText());
++                && "ObjectStreamField".equals(varType.getFirstChild().getText());
+         }
+     },
+ 

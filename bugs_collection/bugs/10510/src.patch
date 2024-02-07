@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/InnerAssignmentCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/InnerAssignmentCheck.java
+index 1848ccd5d..e10a13c6c 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/InnerAssignmentCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/InnerAssignmentCheck.java
+@@ -136,7 +136,7 @@ public class InnerAssignmentCheck
+         if (!isInContext(ast, ALLOWED_ASSIGNMENT_CONTEXT)
+                 && !isInNoBraceControlStatement(ast)
+                 && !isInWhileIdiom(ast)) {
+-            log(ast.getLineNo(), ast.getColumnNo(), MSG_KEY);
++            log(ast, MSG_KEY);
+         }
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-orc/src/main/java/com/facebook/presto/orc/AbstractOrcDataSource.java b/fixed/presto-orc/src/main/java/com/facebook/presto/orc/AbstractOrcDataSource.java
+index 7efaa0dd4..1afda5350 100644
+--- a/buggy/presto-orc/src/main/java/com/facebook/presto/orc/AbstractOrcDataSource.java
++++ b/fixed/presto-orc/src/main/java/com/facebook/presto/orc/AbstractOrcDataSource.java
+@@ -201,7 +201,7 @@ public abstract class AbstractOrcDataSource
+                 readFully(diskRange.getOffset() + position, bufferReference.getBuffer(), 0, length);
+             }
+             catch (IOException e) {
+-                new RuntimeIOException(e);
++                throw new RuntimeIOException(e);
+             }
+         }
+ 

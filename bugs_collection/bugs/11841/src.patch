@@ -1,0 +1,23 @@
+diff --git a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/DesignForInheritanceCheck.java b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/DesignForInheritanceCheck.java
+index 5ff2ae14f..88fe07ee3 100644
+--- a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/DesignForInheritanceCheck.java
++++ b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/DesignForInheritanceCheck.java
+@@ -53,7 +53,7 @@ import com.puppycrawl.tools.checkstyle.api.ScopeUtils;
+  * </p>
+  *
+  * @author lkuehne
+- * @version $Revision: 1.3 $
++ * @version $Revision: 1.4 $
+  */
+ public class DesignForInheritanceCheck extends Check
+ {
+@@ -75,7 +75,8 @@ public class DesignForInheritanceCheck extends Check
+         DetailAST modifiers = aAST.findFirstToken(TokenTypes.MODIFIERS);
+         if (modifiers.branchContains(TokenTypes.LITERAL_PRIVATE)
+             || modifiers.branchContains(TokenTypes.ABSTRACT)
+-            || modifiers.branchContains(TokenTypes.FINAL))
++            || modifiers.branchContains(TokenTypes.FINAL)
++            || modifiers.branchContains(TokenTypes.LITERAL_STATIC))
+         {
+             return;
+         }

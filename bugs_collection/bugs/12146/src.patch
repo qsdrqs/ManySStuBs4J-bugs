@@ -1,0 +1,13 @@
+diff --git a/buggy/java/src/main/java/cucumber/runtime/java/Java8StepDefinition.java b/fixed/java/src/main/java/cucumber/runtime/java/Java8StepDefinition.java
+index c3bd6c262..c8b127f48 100644
+--- a/buggy/java/src/main/java/cucumber/runtime/java/Java8StepDefinition.java
++++ b/fixed/java/src/main/java/cucumber/runtime/java/Java8StepDefinition.java
+@@ -65,7 +65,7 @@ public class Java8StepDefinition implements StepDefinition {
+ 
+     @Override
+     public Integer getParameterCount() {
+-        return pattern.matcher("").groupCount();
++        return parameterInfos.size();
+     }
+ 
+     @Override

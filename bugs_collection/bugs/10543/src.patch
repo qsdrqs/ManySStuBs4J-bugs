@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/sizes/MethodLengthCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/sizes/MethodLengthCheck.java
+index d8dcf5134..1c5e513bd 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/sizes/MethodLengthCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/sizes/MethodLengthCheck.java
+@@ -96,8 +96,7 @@ public class MethodLengthCheck extends AbstractCheck {
+                 openingBrace.findFirstToken(TokenTypes.RCURLY);
+             final int length = getLengthOfBlock(openingBrace, closingBrace);
+             if (length > max) {
+-                log(ast.getLineNo(), ast.getColumnNo(), MSG_KEY,
+-                        length, max);
++                log(ast, MSG_KEY, length, max);
+             }
+         }
+     }

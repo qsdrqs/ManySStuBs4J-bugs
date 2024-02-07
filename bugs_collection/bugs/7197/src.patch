@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/language/simple/SimpleTokenizer.java b/fixed/camel-core/src/main/java/org/apache/camel/language/simple/SimpleTokenizer.java
+index e252a187d..0fb2c80c2 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/language/simple/SimpleTokenizer.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/language/simple/SimpleTokenizer.java
+@@ -172,7 +172,7 @@ public final class SimpleTokenizer {
+             StringBuilder sb = new StringBuilder();
+             char ch = expression.charAt(index);
+             boolean escaped = '\\' == ch;
+-            if (escaped && index < expression.length()) {
++            if (escaped && index < expression.length() - 1) {
+                 // grab next character to escape
+                 char next = expression.charAt(++index);
+                 // special for new line, tabs and carriage return

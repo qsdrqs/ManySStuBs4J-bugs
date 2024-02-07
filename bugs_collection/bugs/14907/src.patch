@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/rhino/SimpleErrorReporter.java b/fixed/src/com/google/javascript/rhino/SimpleErrorReporter.java
+index a0767b98e..d0a9c3787 100644
+--- a/buggy/src/com/google/javascript/rhino/SimpleErrorReporter.java
++++ b/fixed/src/com/google/javascript/rhino/SimpleErrorReporter.java
+@@ -72,7 +72,7 @@ public class SimpleErrorReporter implements ErrorReporter {
+         errors.add(formatDetailedMessage(message, sourceName, line));
+     }
+ 
+-    private String formatDetailedMessage(
++    private static String formatDetailedMessage(
+         String message, String sourceName, int lineNumber) {
+       String details = message;
+       if (sourceName == null || lineNumber <= 0) {

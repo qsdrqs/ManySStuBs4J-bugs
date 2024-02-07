@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/ArchiveUtils.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/ArchiveUtils.java
+index be38b9a51..6381a2137 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/ArchiveUtils.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/ArchiveUtils.java
+@@ -87,7 +87,7 @@ public final class ArchiveUtils {
+         }
+         if (!itrPsKeys.next().toLowerCase().equals(
+             fs.getName().toLowerCase())) {
+-          throw new HiveException("Invalid partition specifiation: "
++          throw new HiveException("Invalid partition specification: "
+               + partSpec);
+         }
+         prefixFields.add(fs);

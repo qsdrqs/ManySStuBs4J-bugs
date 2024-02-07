@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/semgraph/semgrex/SemgrexPattern.java b/fixed/src/edu/stanford/nlp/semgraph/semgrex/SemgrexPattern.java
+index 01bccce45..28f39a586 100644
+--- a/buggy/src/edu/stanford/nlp/semgraph/semgrex/SemgrexPattern.java
++++ b/fixed/src/edu/stanford/nlp/semgraph/semgrex/SemgrexPattern.java
+@@ -410,7 +410,7 @@ public abstract class SemgrexPattern implements Serializable {
+         treebank.loadPath(treeFile);
+         for (Tree tree : treebank) {
+           // TODO: allow other languages... this defaults to English
+-          SemanticGraph graph = SemanticGraphFactory.makeFromTree(tree, mode, useExtras ? GrammaticalStructure.Extras.MAXIMAL : GrammaticalStructure.Extras.NONE, true, null);
++          SemanticGraph graph = SemanticGraphFactory.makeFromTree(tree, mode, useExtras ? GrammaticalStructure.Extras.MAXIMAL : GrammaticalStructure.Extras.NONE, true);
+           graphs.add(graph);
+         }
+       }

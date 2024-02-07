@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/com/google/inject/spi/Elements.java b/fixed/core/src/com/google/inject/spi/Elements.java
+index 44d49ffdc..61292557a 100644
+--- a/buggy/core/src/com/google/inject/spi/Elements.java
++++ b/fixed/core/src/com/google/inject/spi/Elements.java
+@@ -325,7 +325,7 @@ public final class Elements {
+     }
+ 
+     public RecordingBinder withSource(final Object source) {            
+-      return new RecordingBinder(this, source, null);
++      return source == this.source ? this : new RecordingBinder(this, source, null);
+     }
+ 
+     public RecordingBinder skipSources(Class... classesToSkip) {

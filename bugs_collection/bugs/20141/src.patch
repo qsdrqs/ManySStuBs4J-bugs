@@ -1,0 +1,13 @@
+diff --git a/buggy/library/src/com/haarman/listviewanimations/SwingLeftInAnimationAdapter.java b/fixed/library/src/com/haarman/listviewanimations/SwingLeftInAnimationAdapter.java
+index 2440b9f1f..b90ca597a 100644
+--- a/buggy/library/src/com/haarman/listviewanimations/SwingLeftInAnimationAdapter.java
++++ b/fixed/library/src/com/haarman/listviewanimations/SwingLeftInAnimationAdapter.java
+@@ -22,7 +22,7 @@ import android.view.ViewGroup;
+ 
+ import com.nineoldandroids.animation.PropertyValuesHolder;
+ 
+-public abstract class SwingLeftInAnimationAdapter<T> extends AnimationAdapter<T> {
++public abstract class SwingLeftInAnimationAdapter<T> extends PropertyValuesAnimationAdapter<T> {
+ 
+ 	public SwingLeftInAnimationAdapter(Context context) {
+ 		super(context);

@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/mini-web/src/test/functional/org/springside/examples/miniweb/functional/BaseFunctionalTestCase.java b/fixed/examples/mini-web/src/test/functional/org/springside/examples/miniweb/functional/BaseFunctionalTestCase.java
+index 1568df784..081943de4 100644
+--- a/buggy/examples/mini-web/src/test/functional/org/springside/examples/miniweb/functional/BaseFunctionalTestCase.java
++++ b/fixed/examples/mini-web/src/test/functional/org/springside/examples/miniweb/functional/BaseFunctionalTestCase.java
+@@ -38,7 +38,7 @@ public class BaseFunctionalTestCase {
+ 
+ 	protected static Selenium2 s;
+ 
+-	protected static PropertiesLoader propertiesLoader = new PropertiesLoader(
++	protected static PropertiesLoader propertiesLoader = new PropertiesLoader("classpath:/application.properties",
+ 			"classpath:/application.functional.properties", "classpath:/application.functional-local.properties");
+ 
+ 	private static Logger logger = LoggerFactory.getLogger(BaseFunctionalTestCase.class);

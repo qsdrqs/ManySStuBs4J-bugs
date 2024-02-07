@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/test/java/org/neo4j/kernel/impl/api/KernelStatementTest.java b/fixed/community/kernel/src/test/java/org/neo4j/kernel/impl/api/KernelStatementTest.java
+index e97e24383..0af823620 100644
+--- a/buggy/community/kernel/src/test/java/org/neo4j/kernel/impl/api/KernelStatementTest.java
++++ b/fixed/community/kernel/src/test/java/org/neo4j/kernel/impl/api/KernelStatementTest.java
+@@ -89,7 +89,7 @@ public class KernelStatementTest
+         KernelStatement statement =
+                 new KernelStatement(
+                         mock( KernelTransactionImplementation.class ),
+-                        mock( IndexReaderFactory.class ), scanStore, null, null, null, null );
++                        mock( IndexReaderFactory.class ), scanStore, null, null, null );
+ 
+         statement.acquire();
+ 

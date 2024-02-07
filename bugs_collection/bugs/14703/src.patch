@@ -1,0 +1,14 @@
+diff --git a/buggy/src/com/google/javascript/refactoring/SuggestedFix.java b/fixed/src/com/google/javascript/refactoring/SuggestedFix.java
+index 42db7e75b..5ae7f2866 100644
+--- a/buggy/src/com/google/javascript/refactoring/SuggestedFix.java
++++ b/fixed/src/com/google/javascript/refactoring/SuggestedFix.java
+@@ -574,8 +574,7 @@ public final class SuggestedFix {
+       String shortName = namespace.substring(namespace.lastIndexOf('.') + 1);
+ 
+       if (script.isModuleBody()) {
+-        // TODO(tbreisacher): Switch to IR.const() once ES6+ is on by default everywhere.
+-        googRequireNode = IR.var(IR.name(shortName), googRequireNode);
++        googRequireNode = IR.constNode(IR.name(shortName), googRequireNode);
+       } else {
+         googRequireNode = IR.exprResult(googRequireNode);
+       }

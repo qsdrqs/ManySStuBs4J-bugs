@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/main/java/org/openmrs/api/impl/FormServiceImpl.java b/fixed/api/src/main/java/org/openmrs/api/impl/FormServiceImpl.java
+index 8ca3e7c07..b3ac8c19c 100644
+--- a/buggy/api/src/main/java/org/openmrs/api/impl/FormServiceImpl.java
++++ b/fixed/api/src/main/java/org/openmrs/api/impl/FormServiceImpl.java
+@@ -784,7 +784,7 @@ public class FormServiceImpl extends BaseOpenmrsService implements FormService {
+ 	public void checkIfFormsAreLocked() {
+ 		String locked = Context.getAdministrationService().getGlobalProperty(OpenmrsConstants.GLOBAL_PROPERTY_FORMS_LOCKED,
+ 		    "false");
+-		if (locked.toLowerCase().equals("true")) {
++		if ("true".equals(locked.toLowerCase())) {
+ 			throw new FormsLockedException();
+ 		}
+ 	}

@@ -1,0 +1,13 @@
+diff --git a/buggy/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/VkontakteExample.java b/fixed/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/VkontakteExample.java
+index 9954116cc..b8f1fd2fc 100644
+--- a/buggy/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/VkontakteExample.java
++++ b/fixed/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/VkontakteExample.java
+@@ -48,7 +48,7 @@ public final class VkontakteExample {
+         System.out.println("Trading the Request Token for an Access Token...");
+         final OAuth2AccessToken accessToken = service.getAccessToken(code);
+         System.out.println("Got the Access Token!");
+-        System.out.println("(if your curious the raw answer looks like this: " + accessToken.getRawResponse() + "')");
++        System.out.println("(The raw response looks like this: " + accessToken.getRawResponse() + "')");
+         System.out.println();
+ 
+         // Now let's go and ask for a protected resource!

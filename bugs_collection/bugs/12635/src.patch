@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions-core/datasketches/src/test/java/org/apache/druid/query/aggregation/datasketches/theta/sql/ThetaSketchSqlAggregatorTest.java b/fixed/extensions-core/datasketches/src/test/java/org/apache/druid/query/aggregation/datasketches/theta/sql/ThetaSketchSqlAggregatorTest.java
+index e844864f6..919a59618 100644
+--- a/buggy/extensions-core/datasketches/src/test/java/org/apache/druid/query/aggregation/datasketches/theta/sql/ThetaSketchSqlAggregatorTest.java
++++ b/fixed/extensions-core/datasketches/src/test/java/org/apache/druid/query/aggregation/datasketches/theta/sql/ThetaSketchSqlAggregatorTest.java
+@@ -162,7 +162,7 @@ public class ThetaSketchSqlAggregatorTest extends CalciteTestBase
+ 
+     final PlannerConfig plannerConfig = new PlannerConfig();
+     final DruidSchema druidSchema = CalciteTests.createMockSchema(conglomerate, walker, plannerConfig);
+-    final SystemSchema systemSchema = CalciteTests.createMockSystemSchema(druidSchema, walker);
++    final SystemSchema systemSchema = CalciteTests.createMockSystemSchema(druidSchema, walker, plannerConfig);
+     final DruidOperatorTable operatorTable = new DruidOperatorTable(
+         ImmutableSet.of(new ThetaSketchSqlAggregator()),
+         ImmutableSet.of()

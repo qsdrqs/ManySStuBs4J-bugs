@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/impl/ExecutorServiceProxy.java b/fixed/hazelcast/src/main/java/com/hazelcast/impl/ExecutorServiceProxy.java
+index d4e745855..da6b1d776 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/impl/ExecutorServiceProxy.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/impl/ExecutorServiceProxy.java
+@@ -64,7 +64,7 @@ public class ExecutorServiceProxy implements ExecutorService {
+         return false;
+     }
+ 
+-    public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks) throws InterruptedException {
++    public <T> List<Future<T>> invokeAll(Collection<Callable<T>> tasks) throws InterruptedException {
+     	// Inspired to JDK7
+     	if (tasks == null)
+     		throw new NullPointerException();

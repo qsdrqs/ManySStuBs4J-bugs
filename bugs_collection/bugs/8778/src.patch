@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-hdfs-project/hadoop-hdfs/src/test/java/org/apache/hadoop/hdfs/server/datanode/fsdataset/impl/TestFsDatasetImpl.java b/fixed/hadoop-hdfs-project/hadoop-hdfs/src/test/java/org/apache/hadoop/hdfs/server/datanode/fsdataset/impl/TestFsDatasetImpl.java
+index 73fcd197a..56a4287d6 100644
+--- a/buggy/hadoop-hdfs-project/hadoop-hdfs/src/test/java/org/apache/hadoop/hdfs/server/datanode/fsdataset/impl/TestFsDatasetImpl.java
++++ b/fixed/hadoop-hdfs-project/hadoop-hdfs/src/test/java/org/apache/hadoop/hdfs/server/datanode/fsdataset/impl/TestFsDatasetImpl.java
+@@ -330,7 +330,7 @@ public class TestFsDatasetImpl {
+     Storage.StorageDirectory sd = createStorageDirectory(badDir);
+     sd.lock();
+     DataStorage.VolumeBuilder builder = new DataStorage.VolumeBuilder(storage, sd);
+-    when(storage.prepareVolume(eq(datanode), eq(badDir),
++    when(storage.prepareVolume(eq(datanode), eq(badDir.getAbsoluteFile()),
+         Matchers.<List<NamespaceInfo>>any()))
+         .thenReturn(builder);
+ 

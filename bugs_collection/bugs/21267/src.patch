@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/main/java/org/openmrs/api/impl/ProgramWorkflowServiceImpl.java b/fixed/api/src/main/java/org/openmrs/api/impl/ProgramWorkflowServiceImpl.java
+index 7da094498..ea21e9d71 100644
+--- a/buggy/api/src/main/java/org/openmrs/api/impl/ProgramWorkflowServiceImpl.java
++++ b/fixed/api/src/main/java/org/openmrs/api/impl/ProgramWorkflowServiceImpl.java
+@@ -333,7 +333,7 @@ public class ProgramWorkflowServiceImpl extends BaseOpenmrsService implements Pr
+ 		}
+ 		if (!outcomesConcept.getAnswers().isEmpty()) {
+ 			for (ConceptAnswer conceptAnswer : outcomesConcept.getAnswers()) {
+-				possibleOutcomes.add(conceptAnswer.getConcept());
++				possibleOutcomes.add(conceptAnswer.getAnswerConcept());
+ 			}
+ 			return possibleOutcomes;
+ 		}

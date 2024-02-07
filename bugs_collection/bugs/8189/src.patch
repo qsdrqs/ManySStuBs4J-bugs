@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/state/heap/CopyOnWriteStateTableSnapshot.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/state/heap/CopyOnWriteStateTableSnapshot.java
+index 11a23bfa3..21abf8dc6 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/state/heap/CopyOnWriteStateTableSnapshot.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/state/heap/CopyOnWriteStateTableSnapshot.java
+@@ -268,7 +268,7 @@ public class CopyOnWriteStateTableSnapshot<K, N, S>
+ 		int tryAddToSource(int currentIndex, CopyOnWriteStateTable.StateTableEntry<K, N, S> entry) {
+ 			CopyOnWriteStateTable.StateTableEntry<K, N, S> filteredEntry = filterEntry(entry);
+ 			if (filteredEntry != null) {
+-				return tryAddToSource(currentIndex, filteredEntry);
++				return super.tryAddToSource(currentIndex, filteredEntry);
+ 			}
+ 			return currentIndex;
+ 		}

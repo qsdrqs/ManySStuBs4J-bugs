@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/io/druid/server/coordinator/DruidCoordinatorConfig.java b/fixed/server/src/main/java/io/druid/server/coordinator/DruidCoordinatorConfig.java
+index e4f50baa6..30ed7e4e7 100644
+--- a/buggy/server/src/main/java/io/druid/server/coordinator/DruidCoordinatorConfig.java
++++ b/fixed/server/src/main/java/io/druid/server/coordinator/DruidCoordinatorConfig.java
+@@ -31,7 +31,7 @@ public abstract class DruidCoordinatorConfig
+   public abstract String getHost();
+ 
+   @Config("druid.coordinator.startDelay")
+-  @Default("PT120s")
++  @Default("PT300s")
+   public abstract Duration getCoordinatorStartDelay();
+ 
+   @Config("druid.coordinator.period")

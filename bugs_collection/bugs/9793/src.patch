@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/session/SessionState.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/session/SessionState.java
+index 78f1a8fbe..93eccf8f2 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/session/SessionState.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/session/SessionState.java
+@@ -387,7 +387,7 @@ public class SessionState {
+         authorizerV2 = authorizerFactory.createHiveAuthorizer(new HiveMetastoreClientFactoryImpl(),
+             getConf(), authenticator);
+         // grant all privileges for table to its owner
+-        getConf().setVar(ConfVars.HIVE_AUTHORIZATION_TABLE_OWNER_GRANTS, "insert,select,update,delete");
++        getConf().setVar(ConfVars.HIVE_AUTHORIZATION_TABLE_OWNER_GRANTS, "INSERT,SELECT,UPDATE,DELETE");
+         String hooks = getConf().getVar(ConfVars.PREEXECHOOKS).trim();
+         if (hooks.isEmpty()) {
+           hooks = DisallowTransformHook.class.getName();

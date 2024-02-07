@@ -1,0 +1,13 @@
+diff --git a/buggy/client/src/main/java/com/metamx/druid/http/BrokerNode.java b/fixed/client/src/main/java/com/metamx/druid/http/BrokerNode.java
+index 665a2fbd4..b8f1f5c4d 100644
+--- a/buggy/client/src/main/java/com/metamx/druid/http/BrokerNode.java
++++ b/fixed/client/src/main/java/com/metamx/druid/http/BrokerNode.java
+@@ -221,7 +221,7 @@ public class BrokerNode extends BaseNode<BrokerNode>
+ 
+       final ServiceDiscoveryConfig serviceDiscoveryConfig = getConfigFactory().build(ServiceDiscoveryConfig.class);
+       CuratorFramework curatorFramework = Initialization.makeCuratorFrameworkClient(
+-          serviceDiscoveryConfig.getZkHosts(), lifecycle
++          serviceDiscoveryConfig, lifecycle
+       );
+ 
+       final ServiceDiscovery serviceDiscovery = Initialization.makeServiceDiscoveryClient(

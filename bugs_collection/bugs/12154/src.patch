@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/main/java/cucumber/runtime/formatter/JUnitFormatter.java b/fixed/core/src/main/java/cucumber/runtime/formatter/JUnitFormatter.java
+index b339d7ef9..012f5a90f 100644
+--- a/buggy/core/src/main/java/cucumber/runtime/formatter/JUnitFormatter.java
++++ b/fixed/core/src/main/java/cucumber/runtime/formatter/JUnitFormatter.java
+@@ -97,7 +97,7 @@ class JUnitFormatter implements Formatter, Reporter {
+             DOMSource source = new DOMSource(doc);
+             trans.transform(source, result);
+         } catch (TransformerException e) {
+-            new CucumberException("Error while transforming.", e);
++            throw new CucumberException("Error while transforming.", e);
+         }
+     }
+ 

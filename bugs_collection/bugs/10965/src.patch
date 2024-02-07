@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/OuterTypeFilenameCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/OuterTypeFilenameCheck.java
+index 9f500eccd..ac0392c32 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/OuterTypeFilenameCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/OuterTypeFilenameCheck.java
+@@ -39,7 +39,7 @@ public class OuterTypeFilenameCheck extends AbstractCheck {
+     public static final String MSG_KEY = "type.file.mismatch";
+ 
+     /** Pattern matching any file extension with dot included. */
+-    private static final Pattern FILE_EXTENSION_PATTERN = Pattern.compile("\\.[^\\.]*$");
++    private static final Pattern FILE_EXTENSION_PATTERN = Pattern.compile("\\.[^.]*$");
+ 
+     /** Indicates whether the first token has been seen in the file. */
+     private boolean seenFirstToken;

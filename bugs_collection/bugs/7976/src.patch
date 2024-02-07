@@ -1,0 +1,15 @@
+diff --git a/buggy/components/camel-amqp/src/test/java/org/apache/camel/component/amqp/AMQPRouteTest.java b/fixed/components/camel-amqp/src/test/java/org/apache/camel/component/amqp/AMQPRouteTest.java
+index ee33d5969..e5a84359b 100644
+--- a/buggy/components/camel-amqp/src/test/java/org/apache/camel/component/amqp/AMQPRouteTest.java
++++ b/fixed/components/camel-amqp/src/test/java/org/apache/camel/component/amqp/AMQPRouteTest.java
+@@ -40,8 +40,8 @@ public class AMQPRouteTest extends ContextTestSupport {
+         resultEndpoint.message(0).header("cheese").isEqualTo(123);
+ 
+         sendExchange(expectedBody);
+-        if (System.getProperty("os.name").equals("Windows Vista")) {
+-            // send the message twice to walk around the AMQP's drop first message issue on Windows Vista box
++        if (System.getProperty("os.name").startsWith("Windows")) {
++            // send the message twice to walk around the AMQP's drop first message issue on Windows box
+             sendExchange(expectedBody);
+         }
+ 

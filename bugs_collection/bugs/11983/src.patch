@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/TransactionalHashMap.java b/fixed/src/jvm/clojure/lang/TransactionalHashMap.java
+index 656f4ee80..66700ec76 100644
+--- a/buggy/src/jvm/clojure/lang/TransactionalHashMap.java
++++ b/fixed/src/jvm/clojure/lang/TransactionalHashMap.java
+@@ -124,7 +124,7 @@ public Set<Entry<K, V>> entrySet(){
+ 		{
+ 		IPersistentMap map = mapAt(i);
+ 		if(map.count() > 0)
+-			entries.addAll((Collection) map);
++			entries.addAll((Collection) RT.seq(map));
+ 		}
+ 	return new AbstractSet<Entry<K, V>>(){
+ 		public Iterator iterator(){

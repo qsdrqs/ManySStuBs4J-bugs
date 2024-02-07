@@ -1,0 +1,13 @@
+diff --git a/buggy/metrics-servlet/src/main/java/io/dropwizard/metrics/servlet/AbstractInstrumentedFilter.java b/fixed/metrics-servlet/src/main/java/io/dropwizard/metrics/servlet/AbstractInstrumentedFilter.java
+index 8d2630d56..24e56a69c 100644
+--- a/buggy/metrics-servlet/src/main/java/io/dropwizard/metrics/servlet/AbstractInstrumentedFilter.java
++++ b/fixed/metrics-servlet/src/main/java/io/dropwizard/metrics/servlet/AbstractInstrumentedFilter.java
+@@ -63,7 +63,7 @@ public abstract class AbstractInstrumentedFilter implements Filter {
+             metricName = getClass().getName();
+         }
+ 
+-        this.metersByStatusCode = new ConcurrentHashMap<Integer, Meter>(meterNamesByStatusCode
++        this.metersByStatusCode = new ConcurrentHashMap<>(meterNamesByStatusCode
+                 .size());
+         for (Entry<Integer, String> entry : meterNamesByStatusCode.entrySet()) {
+             metersByStatusCode.put(entry.getKey(),

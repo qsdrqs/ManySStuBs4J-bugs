@@ -1,0 +1,13 @@
+diff --git a/buggy/processing/src/test/java/io/druid/segment/TestIndex.java b/fixed/processing/src/test/java/io/druid/segment/TestIndex.java
+index 434042b11..958232105 100644
+--- a/buggy/processing/src/test/java/io/druid/segment/TestIndex.java
++++ b/fixed/processing/src/test/java/io/druid/segment/TestIndex.java
+@@ -182,7 +182,7 @@ public class TestIndex
+                     "\t",
+                     Arrays.asList(COLUMNS)
+                 ),
+-                null, null, null
++                null, null, null, null
+             );
+             boolean runOnce = false;
+             int lineCount = 0;

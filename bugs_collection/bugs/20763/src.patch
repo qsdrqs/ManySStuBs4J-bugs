@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.squeezebox/src/main/java/org/openhab/binding/squeezebox/internal/SqueezeboxBinding.java b/fixed/bundles/binding/org.openhab.binding.squeezebox/src/main/java/org/openhab/binding/squeezebox/internal/SqueezeboxBinding.java
+index 6dc611d9e..e3afdd2d3 100644
+--- a/buggy/bundles/binding/org.openhab.binding.squeezebox/src/main/java/org/openhab/binding/squeezebox/internal/SqueezeboxBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.squeezebox/src/main/java/org/openhab/binding/squeezebox/internal/SqueezeboxBinding.java
+@@ -135,7 +135,7 @@ public class SqueezeboxBinding extends AbstractBinding<SqueezeboxBindingProvider
+ 						if (command.equals(OnOffType.ON))
+ 							squeezeServer.syncPlayer(playerId, bindingConfig.getExtra()); 
+ 						else if (command.equals(OnOffType.OFF))
+-							squeezeServer.unSyncPlayer(playerId);
++							squeezeServer.unSyncPlayer(bindingConfig.getExtra());
+ 						break;
+ 
+ 					default:

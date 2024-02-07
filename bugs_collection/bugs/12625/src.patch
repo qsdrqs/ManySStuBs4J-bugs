@@ -1,0 +1,13 @@
+diff --git a/buggy/integration-tests/src/test/java/org/apache/druid/tests/security/ITBasicAuthConfigurationTest.java b/fixed/integration-tests/src/test/java/org/apache/druid/tests/security/ITBasicAuthConfigurationTest.java
+index dfa3791b2..67e1f3700 100644
+--- a/buggy/integration-tests/src/test/java/org/apache/druid/tests/security/ITBasicAuthConfigurationTest.java
++++ b/fixed/integration-tests/src/test/java/org/apache/druid/tests/security/ITBasicAuthConfigurationTest.java
+@@ -120,7 +120,7 @@ public class ITBasicAuthConfigurationTest
+   private CoordinatorResourceTestClient coordinatorClient;
+ 
+   @BeforeMethod
+-  public void before() throws Exception
++  public void before()
+   {
+     // ensure that auth_test segments are loaded completely, we use them for testing system schema tables
+     RetryUtil.retryUntilTrue(

@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/main/java/org/springframework/boot/logging/LoggingApplicationListener.java b/fixed/spring-boot/src/main/java/org/springframework/boot/logging/LoggingApplicationListener.java
+index d2e7760f6..5bee1bab7 100644
+--- a/buggy/spring-boot/src/main/java/org/springframework/boot/logging/LoggingApplicationListener.java
++++ b/fixed/spring-boot/src/main/java/org/springframework/boot/logging/LoggingApplicationListener.java
+@@ -337,7 +337,7 @@ public class LoggingApplicationListener implements GenericApplicationListener {
+ 			Runnable shutdownHandler = loggingSystem.getShutdownHandler();
+ 			if (shutdownHandler != null
+ 					&& shutdownHookRegistered.compareAndSet(false, true)) {
+-				Runtime.getRuntime().addShutdownHook(new Thread());
++				Runtime.getRuntime().addShutdownHook(new Thread(shutdownHandler));
+ 			}
+ 		}
+ 	}

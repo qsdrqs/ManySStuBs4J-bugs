@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-spring/src/test/java/org/apache/camel/component/xslt/XsltIncludeRelativeTest.java b/fixed/components/camel-spring/src/test/java/org/apache/camel/component/xslt/XsltIncludeRelativeTest.java
+index a90a78766..a1774fdca 100644
+--- a/buggy/components/camel-spring/src/test/java/org/apache/camel/component/xslt/XsltIncludeRelativeTest.java
++++ b/fixed/components/camel-spring/src/test/java/org/apache/camel/component/xslt/XsltIncludeRelativeTest.java
+@@ -29,7 +29,7 @@ public class XsltIncludeRelativeTest extends ContextTestSupport {
+         MockEndpoint mock = getMockEndpoint("mock:result");
+         mock.expectedMessageCount(1);
+         // the include file has the span style so check that its there
+-        mock.message(0).constant("<span style=\"font-size=22px;\">Minnie Mouse</span>");
++        mock.message(0).body().contains("<span style=\"font-size=22px;\">Minnie Mouse</span>");
+ 
+         assertMockEndpointsSatisfied();
+     }

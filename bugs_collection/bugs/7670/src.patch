@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/camel-example-cafe/src/test/java/org/apache/camel/example/cafe/CafeRouteSpringTest.java b/fixed/examples/camel-example-cafe/src/test/java/org/apache/camel/example/cafe/CafeRouteSpringTest.java
+index 9f51f91c9..7ffccc539 100644
+--- a/buggy/examples/camel-example-cafe/src/test/java/org/apache/camel/example/cafe/CafeRouteSpringTest.java
++++ b/fixed/examples/camel-example-cafe/src/test/java/org/apache/camel/example/cafe/CafeRouteSpringTest.java
+@@ -32,7 +32,7 @@ public class CafeRouteSpringTest extends CafeRouteBuilderTest {
+     
+     @Before
+     public void setUp() throws Exception {
+-        applicationContext = new ClassPathXmlApplicationContext("META-INF/spring/camel-context.xml");
++        applicationContext = new ClassPathXmlApplicationContext("META-INF/camel-routes.xml");
+         setUseRouteBuilder(false);
+         super.setUp();
+         waiter = (TestWaiter) applicationContext.getBean("waiter");

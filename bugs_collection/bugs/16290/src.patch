@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/map/nearcache/NearCacheTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/map/nearcache/NearCacheTest.java
+index 1d1c0fee8..248370f70 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/map/nearcache/NearCacheTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/map/nearcache/NearCacheTest.java
+@@ -830,7 +830,7 @@ public class NearCacheTest extends HazelcastTestSupport {
+         NearCacheConfig nearCacheConfig = newNearCacheConfig();
+         nearCacheConfig.setInMemoryFormat(InMemoryFormat.OBJECT);
+         String name = randomName();
+-        Config config = new Config();
++        Config config = getConfig();
+         config.addMapConfig(new MapConfig(name).setNearCacheConfig(nearCacheConfig));
+         HazelcastInstance instance = createHazelcastInstance(config);
+         IMap<Integer, Integer> map = instance.getMap(name);

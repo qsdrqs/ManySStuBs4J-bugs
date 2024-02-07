@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/Compiler.java b/fixed/src/com/google/javascript/jscomp/Compiler.java
+index 8707710a5..222dca3af 100644
+--- a/buggy/src/com/google/javascript/jscomp/Compiler.java
++++ b/fixed/src/com/google/javascript/jscomp/Compiler.java
+@@ -2224,7 +2224,7 @@ public class Compiler extends AbstractCompiler {
+   void throwInternalError(String message, Exception cause) {
+     String finalMessage =
+       "INTERNAL COMPILER ERROR.\n" +
+-      "Please report this problem.\n" + message;
++      "Please report this problem.\n\n" + message;
+ 
+     RuntimeException e = new RuntimeException(finalMessage, cause);
+     if (cause != null) {

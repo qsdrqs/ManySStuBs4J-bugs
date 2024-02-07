@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/component/bean/BeanHolder.java b/fixed/camel-core/src/main/java/org/apache/camel/component/bean/BeanHolder.java
+index e80a7e005..b1a0741ad 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/component/bean/BeanHolder.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/component/bean/BeanHolder.java
+@@ -25,7 +25,7 @@ import org.apache.camel.Processor;
+  */
+ public interface BeanHolder {
+ 
+-    Object getBean() throws Exception;
++    Object getBean() throws NoBeanAvailableException;
+ 
+     Processor getProcessor();
+ 

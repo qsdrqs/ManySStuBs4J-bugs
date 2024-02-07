@@ -1,0 +1,13 @@
+diff --git a/buggy/test/com/google/javascript/jscomp/CompilerTest.java b/fixed/test/com/google/javascript/jscomp/CompilerTest.java
+index 0e8c21236..68c2d5998 100644
+--- a/buggy/test/com/google/javascript/jscomp/CompilerTest.java
++++ b/fixed/test/com/google/javascript/jscomp/CompilerTest.java
+@@ -155,7 +155,7 @@ public final class CompilerTest extends TestCase {
+         error.contains("Failed to load module \"missing\" at gin.js"));
+   }
+ 
+-  private String normalize(String path) {
++  private static String normalize(String path) {
+     return path.replace(File.separator, "/");
+   }
+ 

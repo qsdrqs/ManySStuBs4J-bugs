@@ -1,0 +1,12 @@
+diff --git a/buggy/presto-spi/src/main/java/com/facebook/presto/spi/connector/ConnectorMetadata.java b/fixed/presto-spi/src/main/java/com/facebook/presto/spi/connector/ConnectorMetadata.java
+index 867cd650e..a7b1b3bf1 100644
+--- a/buggy/presto-spi/src/main/java/com/facebook/presto/spi/connector/ConnectorMetadata.java
++++ b/fixed/presto-spi/src/main/java/com/facebook/presto/spi/connector/ConnectorMetadata.java
+@@ -281,6 +281,6 @@ public interface ConnectorMetadata
+      */
+     default Optional<ConnectorResolvedIndex> resolveIndex(ConnectorSession session, ConnectorTableHandle tableHandle, Set<ColumnHandle> indexableColumns, Set<ColumnHandle> outputColumns, TupleDomain<ColumnHandle> tupleDomain)
+     {
+-        throw new PrestoException(NOT_SUPPORTED, "This connector does not support indexes");
++        return Optional.empty();
+     }
+ }

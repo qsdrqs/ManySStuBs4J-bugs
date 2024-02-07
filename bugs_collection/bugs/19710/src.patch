@@ -1,0 +1,13 @@
+diff --git a/buggy/codec/src/main/java/io/netty/handler/codec/ReplayingDecoder.java b/fixed/codec/src/main/java/io/netty/handler/codec/ReplayingDecoder.java
+index bc583bcdf..f43e11b88 100644
+--- a/buggy/codec/src/main/java/io/netty/handler/codec/ReplayingDecoder.java
++++ b/fixed/codec/src/main/java/io/netty/handler/codec/ReplayingDecoder.java
+@@ -269,7 +269,7 @@ public abstract class ReplayingDecoder<S> extends ByteToMessageDecoder {
+ 
+     static final Signal REPLAY = Signal.valueOf(ReplayingDecoder.class, "REPLAY");
+ 
+-    private final ReplayingDecoderBuffer replayable = new ReplayingDecoderBuffer();
++    private final ReplayingDecoderByteBuf replayable = new ReplayingDecoderByteBuf();
+     private S state;
+     private int checkpoint = -1;
+ 

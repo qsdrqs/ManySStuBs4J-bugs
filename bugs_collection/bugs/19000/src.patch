@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/profiler/interceptor/bci/JavaAssistByteCodeInstrumentor.java b/fixed/src/main/java/com/profiler/interceptor/bci/JavaAssistByteCodeInstrumentor.java
+index ac51f1100..584378dcd 100644
+--- a/buggy/src/main/java/com/profiler/interceptor/bci/JavaAssistByteCodeInstrumentor.java
++++ b/fixed/src/main/java/com/profiler/interceptor/bci/JavaAssistByteCodeInstrumentor.java
+@@ -56,7 +56,7 @@ public class JavaAssistByteCodeInstrumentor implements ByteCodeInstrumentor {
+     public void checkLibrary(ClassLoader classLoader, String javassistClassName) {
+ 		// TODO Util로 뽑을까?
+ 		boolean findClass = findClass(javassistClassName);
+-		if (findClass) {
++		if (!findClass) {
+ 			return;
+ 		}
+ 		loadClassLoaderLibraries(classLoader);

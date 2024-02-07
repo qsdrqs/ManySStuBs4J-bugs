@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/org/junit/tests/experimental/theories/TestedOnSupplierTest.java b/fixed/src/test/java/org/junit/tests/experimental/theories/TestedOnSupplierTest.java
+index 2cfd793d3..c21aaf704 100644
+--- a/buggy/src/test/java/org/junit/tests/experimental/theories/TestedOnSupplierTest.java
++++ b/fixed/src/test/java/org/junit/tests/experimental/theories/TestedOnSupplierTest.java
+@@ -21,7 +21,7 @@ public class TestedOnSupplierTest {
+     public void descriptionStatesParameterName() throws Exception {
+         TestedOnSupplier supplier = new TestedOnSupplier();
+         List<PotentialAssignment> assignments = supplier.getValueSources(signatureOfFoo());
+-        assertThat(assignments.get(0).getDescription(), is("ints"));
++        assertThat(assignments.get(0).getDescription(), is("ints: 1"));
+     }
+ 
+     private ParameterSignature signatureOfFoo() throws NoSuchMethodException {

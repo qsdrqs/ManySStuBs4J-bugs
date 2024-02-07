@@ -1,0 +1,13 @@
+diff --git a/buggy/pact/pact-runtime/src/test/java/eu/stratosphere/pact/runtime/test/util/types/IntPairPairComparator.java b/fixed/pact/pact-runtime/src/test/java/eu/stratosphere/pact/runtime/test/util/types/IntPairPairComparator.java
+index c04b8f0f4..ec19e9ef5 100644
+--- a/buggy/pact/pact-runtime/src/test/java/eu/stratosphere/pact/runtime/test/util/types/IntPairPairComparator.java
++++ b/fixed/pact/pact-runtime/src/test/java/eu/stratosphere/pact/runtime/test/util/types/IntPairPairComparator.java
+@@ -21,7 +21,7 @@ import eu.stratosphere.pact.generic.types.TypePairComparator;
+ /**
+  * @author Stephan Ewen
+  */
+-public class IntPairPairComparator implements TypePairComparator<IntPair, IntPair>
++public class IntPairPairComparator extends TypePairComparator<IntPair, IntPair>
+ {
+ 	private int key;
+ 	

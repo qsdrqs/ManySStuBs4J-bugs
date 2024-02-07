@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-common/src/main/java/org/apache/hadoop/hbase/KeyValue.java b/fixed/hbase-common/src/main/java/org/apache/hadoop/hbase/KeyValue.java
+index 0ee8b8056..ae9573834 100644
+--- a/buggy/hbase-common/src/main/java/org/apache/hadoop/hbase/KeyValue.java
++++ b/fixed/hbase-common/src/main/java/org/apache/hadoop/hbase/KeyValue.java
+@@ -2808,7 +2808,7 @@ public class KeyValue implements ExtendedCell {
+   }
+ 
+   @Override
+-  public Cell deepClone() {
++  public ExtendedCell deepClone() {
+     byte[] copy = Bytes.copy(this.bytes, this.offset, this.length);
+     KeyValue kv = new KeyValue(copy, 0, copy.length);
+     kv.setSequenceId(this.getSequenceId());

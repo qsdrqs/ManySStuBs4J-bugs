@@ -1,0 +1,13 @@
+diff --git a/buggy/processing/src/main/java/io/druid/query/aggregation/FilteredAggregatorFactory.java b/fixed/processing/src/main/java/io/druid/query/aggregation/FilteredAggregatorFactory.java
+index c04770c0c..f2e97b21c 100644
+--- a/buggy/processing/src/main/java/io/druid/query/aggregation/FilteredAggregatorFactory.java
++++ b/fixed/processing/src/main/java/io/druid/query/aggregation/FilteredAggregatorFactory.java
+@@ -174,7 +174,7 @@ public class FilteredAggregatorFactory extends AggregatorFactory
+   public String toString()
+   {
+     return "FilteredAggregatorFactory{" +
+-           ", delegate=" + delegate +
++           "delegate=" + delegate +
+            ", filter=" + filter +
+            '}';
+   }

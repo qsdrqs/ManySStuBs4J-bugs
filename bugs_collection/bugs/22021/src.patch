@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/security/reactive/ApplicationContextServerWebExchangeMatcher.java b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/security/reactive/ApplicationContextServerWebExchangeMatcher.java
+index f809689fa..9e4cca694 100644
+--- a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/security/reactive/ApplicationContextServerWebExchangeMatcher.java
++++ b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/security/reactive/ApplicationContextServerWebExchangeMatcher.java
+@@ -88,7 +88,7 @@ public abstract class ApplicationContextServerWebExchangeMatcher<C>
+ 	@SuppressWarnings("unchecked")
+ 	private Supplier<C> createContext(ServerWebExchange exchange) {
+ 		ApplicationContext context = exchange.getApplicationContext();
+-		Assert.state(context != null, "No WebApplicationContext found.");
++		Assert.state(context != null, "No ApplicationContext found.");
+ 		if (this.contextClass.isInstance(context)) {
+ 			return () -> (C) context;
+ 		}

@@ -1,0 +1,13 @@
+diff --git a/buggy/naked-objects/dom/src/main/java/domainapp/dom/modules/simple/SimpleObjects.java b/fixed/naked-objects/dom/src/main/java/domainapp/dom/modules/simple/SimpleObjects.java
+index 0634dd16a..47ab6c160 100644
+--- a/buggy/naked-objects/dom/src/main/java/domainapp/dom/modules/simple/SimpleObjects.java
++++ b/fixed/naked-objects/dom/src/main/java/domainapp/dom/modules/simple/SimpleObjects.java
+@@ -70,7 +70,7 @@ public class SimpleObjects {
+             final String name
+     ) {
+         return container.allMatches(
+-                new QueryDefault<>(
++                new QueryDefault<SimpleObject>(
+                         SimpleObject.class,
+                         "findByName",
+                         "name", name));

@@ -1,0 +1,13 @@
+diff --git a/buggy/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/Box20Example.java b/fixed/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/Box20Example.java
+index 9fd966ad8..cc5adffd2 100644
+--- a/buggy/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/Box20Example.java
++++ b/fixed/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/Box20Example.java
+@@ -24,7 +24,7 @@ public final class Box20Example {
+     public static void main(String... args) throws IOException {
+         //Replace these with your client id and secret
+         final String clientId = "your client id";
+-        final string clientSecret = "your client secret";
++        final String clientSecret = "your client secret";
+         final String secretState = "secret" + new Random().nextInt(999_999);
+         final OAuth20Service service = new ServiceBuilder()
+                 .apiKey(clientId)

@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/gdx-tests/src/com/badlogic/gdx/tests/utils/OrthoCamController.java b/fixed/tests/gdx-tests/src/com/badlogic/gdx/tests/utils/OrthoCamController.java
+index 39414939c..5810f98ff 100644
+--- a/buggy/tests/gdx-tests/src/com/badlogic/gdx/tests/utils/OrthoCamController.java
++++ b/fixed/tests/gdx-tests/src/com/badlogic/gdx/tests/utils/OrthoCamController.java
+@@ -23,7 +23,7 @@ import com.badlogic.gdx.math.Vector3;
+ public class OrthoCamController extends InputAdapter {
+ 	final OrthographicCamera camera;
+ 	final Vector3 curr = new Vector3();
+-	final Vector3 last = new Vector3(-1, -1, 0);	
++	final Vector3 last = new Vector3(-1, -1, -1);	
+ 	final Vector3 delta = new Vector3();
+ 	
+ 	public OrthoCamController(OrthographicCamera camera) {

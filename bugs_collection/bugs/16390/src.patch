@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/cache/impl/AbstractCacheRecordStore.java b/fixed/hazelcast/src/main/java/com/hazelcast/cache/impl/AbstractCacheRecordStore.java
+index 4c98dcde2..b3f88bd89 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/cache/impl/AbstractCacheRecordStore.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/cache/impl/AbstractCacheRecordStore.java
+@@ -113,7 +113,7 @@ public abstract class AbstractCacheRecordStore<R extends CacheRecord, CRM extend
+         this.cacheConfig = cacheService.getCacheConfig(name);
+         this.cacheContext = cacheService.getOrCreateCacheContext(name);
+         if (cacheConfig == null) {
+-            throw new CacheNotExistsException("Cache is already destroyed or not created yet, on "
++            throw new CacheNotExistsException("Cache " + name +" is already destroyed or not created yet, on "
+                     + nodeEngine.getLocalMember());
+         }
+         this.wanReplicationEnabled = cacheConfig.getWanReplicationRef() != null;

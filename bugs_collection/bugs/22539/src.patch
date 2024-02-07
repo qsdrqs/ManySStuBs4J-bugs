@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-samples/spring-boot-sample-jersey1/src/main/java/sample/jersey1/SampleJersey1Application.java b/fixed/spring-boot-samples/spring-boot-sample-jersey1/src/main/java/sample/jersey1/SampleJersey1Application.java
+index f8c530170..975150193 100644
+--- a/buggy/spring-boot-samples/spring-boot-sample-jersey1/src/main/java/sample/jersey1/SampleJersey1Application.java
++++ b/fixed/spring-boot-samples/spring-boot-sample-jersey1/src/main/java/sample/jersey1/SampleJersey1Application.java
+@@ -40,7 +40,7 @@ public class SampleJersey1Application {
+     public FilterRegistrationBean jersey() {
+     	FilterRegistrationBean bean = new FilterRegistrationBean();
+     	bean.setFilter(new ServletContainer());
+-    	bean.addInitParameter("com.sun.jersey.config.property.packages", "com.sun.jersey;demo");
++    	bean.addInitParameter("com.sun.jersey.config.property.packages", "com.sun.jersey;sample.jersey1");
+ 		return bean;
+     }
+     

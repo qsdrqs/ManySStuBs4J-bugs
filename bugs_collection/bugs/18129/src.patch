@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/gdx-tests/src/com/badlogic/gdx/tests/ObjTest.java b/fixed/tests/gdx-tests/src/com/badlogic/gdx/tests/ObjTest.java
+index e1384602a..d5bc590bc 100644
+--- a/buggy/tests/gdx-tests/src/com/badlogic/gdx/tests/ObjTest.java
++++ b/fixed/tests/gdx-tests/src/com/badlogic/gdx/tests/ObjTest.java
+@@ -47,7 +47,7 @@ public class ObjTest extends GdxTest implements InputProcessor {
+ 		model =  objLoader.loadModel(Gdx.files.internal("data/cube.obj"));
+ 		
+ 		BoundingBox bbox = new BoundingBox();
+-		model.getBoundingBox(bbox);
++		model.calculateBoundingBox(bbox);
+ 		
+ 		Gdx.app.log("ObjTest", "obj bounds: " + bbox);
+ 		texture = new Texture(Gdx.files.internal("data/badlogic.jpg"), true);

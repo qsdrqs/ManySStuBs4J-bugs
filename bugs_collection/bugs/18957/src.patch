@@ -1,0 +1,13 @@
+diff --git a/buggy/collector/src/main/java/com/navercorp/pinpoint/collector/receiver/udp/PooledPacketWrap.java b/fixed/collector/src/main/java/com/navercorp/pinpoint/collector/receiver/udp/PooledPacketWrap.java
+index 2bcbc36e0..57afcead1 100644
+--- a/buggy/collector/src/main/java/com/navercorp/pinpoint/collector/receiver/udp/PooledPacketWrap.java
++++ b/fixed/collector/src/main/java/com/navercorp/pinpoint/collector/receiver/udp/PooledPacketWrap.java
+@@ -43,7 +43,7 @@ public class PooledPacketWrap implements Runnable {
+         final DatagramPacket packet = pooledObject.getObject();
+         try {
+             packetHandler.receive(packet);
+-        } catch (Exception e) {
++        } finally {
+             pooledObject.returnObject();
+         }
+     }

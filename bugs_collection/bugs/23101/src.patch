@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/patterns/GetPatternsFromDataMultiClass.java b/fixed/src/edu/stanford/nlp/patterns/GetPatternsFromDataMultiClass.java
+index a8e3f64db..4cd52d683 100644
+--- a/buggy/src/edu/stanford/nlp/patterns/GetPatternsFromDataMultiClass.java
++++ b/fixed/src/edu/stanford/nlp/patterns/GetPatternsFromDataMultiClass.java
+@@ -3044,7 +3044,7 @@ public class GetPatternsFromDataMultiClass<E extends Pattern> implements Seriali
+     }
+ 
+     if(props.getProperty(Flags.patternType) == null)
+-      throw new RuntimeException("PattenrType not specified. Options are SURFACE and DEP");
++      throw new RuntimeException("PatternType not specified. Options are SURFACE and DEP");
+ 
+     PatternFactory.PatternType patternType = PatternFactory.PatternType.valueOf(props.getProperty(Flags.patternType));
+ 

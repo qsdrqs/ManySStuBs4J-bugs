@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-jdbi/src/main/java/io/dropwizard/jdbi/jersey/LoggingSQLExceptionMapper.java b/fixed/dropwizard-jdbi/src/main/java/io/dropwizard/jdbi/jersey/LoggingSQLExceptionMapper.java
+index 99b5a6ea2..504c190e4 100644
+--- a/buggy/dropwizard-jdbi/src/main/java/io/dropwizard/jdbi/jersey/LoggingSQLExceptionMapper.java
++++ b/fixed/dropwizard-jdbi/src/main/java/io/dropwizard/jdbi/jersey/LoggingSQLExceptionMapper.java
+@@ -24,7 +24,7 @@ public class LoggingSQLExceptionMapper extends LoggingExceptionMapper<SQLExcepti
+     }
+ 
+     @VisibleForTesting
+-    static void setLogger(Logger newLogger) {
++    static synchronized void setLogger(Logger newLogger) {
+         logger = newLogger;
+     }
+ }

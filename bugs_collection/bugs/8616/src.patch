@@ -1,0 +1,12 @@
+diff --git a/buggy/meteor/meteor-meteor/src/test/java/eu/stratosphere/meteor/base/UnionTest.java b/fixed/meteor/meteor-meteor/src/test/java/eu/stratosphere/meteor/base/UnionTest.java
+index d02a2920b..025db61d8 100644
+--- a/buggy/meteor/meteor-meteor/src/test/java/eu/stratosphere/meteor/base/UnionTest.java
++++ b/fixed/meteor/meteor-meteor/src/test/java/eu/stratosphere/meteor/base/UnionTest.java
+@@ -25,6 +25,6 @@ public class UnionTest extends MeteorTest {
+ 		final Sink output = new Sink("allUsers.json").withInputs(union);
+ 		expectedPlan.setSinks(output);
+ 
+-		assertEquals(expectedPlan, actualPlan);
++		assertPlanEquals(expectedPlan, actualPlan);
+ 	}
+ }

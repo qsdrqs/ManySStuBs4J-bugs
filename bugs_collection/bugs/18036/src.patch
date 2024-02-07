@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/ScrollPane.java b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/ScrollPane.java
+index acc41d32e..c4c4e2409 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/ScrollPane.java
++++ b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/ScrollPane.java
+@@ -499,7 +499,7 @@ public class ScrollPane extends WidgetGroup {
+ 				if (vScrollOnRight) {
+ 					vKnobBounds.x = width - bgRightWidth - vScrollKnob.getMinWidth();
+ 				} else {
+-					vKnobBounds.x = 0;
++					vKnobBounds.x = bgLeftWidth;
+ 				}
+ 				vKnobBounds.y = vScrollBounds.y + (int)((vScrollBounds.height - vKnobBounds.height) * (1 - getScrollPercentY()));
+ 			} else {

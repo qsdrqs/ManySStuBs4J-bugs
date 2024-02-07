@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/hankcs/hanlp/corpus/dictionary/NSDictionaryMaker.java b/fixed/src/main/java/com/hankcs/hanlp/corpus/dictionary/NSDictionaryMaker.java
+index e404bd82d..3f7be8dd9 100644
+--- a/buggy/src/main/java/com/hankcs/hanlp/corpus/dictionary/NSDictionaryMaker.java
++++ b/fixed/src/main/java/com/hankcs/hanlp/corpus/dictionary/NSDictionaryMaker.java
+@@ -91,7 +91,7 @@ public class NSDictionaryMaker extends CommonDictionaryMaker
+             while (iterator.hasNext())
+             {
+                 IWord current = iterator.next();
+-                if (current.getLabel().startsWith("ns") && !pre.getLabel().startsWith("ns"))
++                if (current.getLabel().startsWith("ns") && !pre.getLabel().startsWith("ns") && !pre.getValue().equals(Predefine.TAG_BIGIN))
+                 {
+                     pre.setLabel(NS.A.toString());
+                 }

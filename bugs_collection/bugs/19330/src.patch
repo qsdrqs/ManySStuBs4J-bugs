@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/test/java/org/neo4j/helpers/TestFormat.java b/fixed/community/kernel/src/test/java/org/neo4j/helpers/TestFormat.java
+index 3a9e9c842..7f6bc3eb7 100644
+--- a/buggy/community/kernel/src/test/java/org/neo4j/helpers/TestFormat.java
++++ b/fixed/community/kernel/src/test/java/org/neo4j/helpers/TestFormat.java
+@@ -76,7 +76,7 @@ public class TestFormat
+ 
+     private long translateToDate( long timeWithDate, long time, TimeZone timeIsGivenInThisTimeZone )
+     {
+-        Calendar calendar = Calendar.getInstance();
++        Calendar calendar = Calendar.getInstance(timeIsGivenInThisTimeZone);
+         calendar.setTimeInMillis( timeWithDate );
+         
+         Calendar timeCalendar = Calendar.getInstance();

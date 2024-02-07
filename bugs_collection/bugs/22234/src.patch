@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/test/java/org/springframework/boot/SpringApplicationTests.java b/fixed/spring-boot/src/test/java/org/springframework/boot/SpringApplicationTests.java
+index 917a12775..ba3ea541f 100644
+--- a/buggy/spring-boot/src/test/java/org/springframework/boot/SpringApplicationTests.java
++++ b/fixed/spring-boot/src/test/java/org/springframework/boot/SpringApplicationTests.java
+@@ -816,7 +816,7 @@ public class SpringApplicationTests {
+ 		this.context = application.run();
+ 		assertThat(this.context.getEnvironment())
+ 				.isNotInstanceOf(StandardServletEnvironment.class);
+-		assertThat(this.context.getEnvironment().getProperty("foo"));
++		assertThat(this.context.getEnvironment().getProperty("foo")).isEqualTo("bar");
+ 		assertThat(this.context.getEnvironment().getPropertySources().iterator().next()
+ 				.getName()).isEqualTo(
+ 						TestPropertySourceUtils.INLINED_PROPERTIES_PROPERTY_SOURCE_NAME);

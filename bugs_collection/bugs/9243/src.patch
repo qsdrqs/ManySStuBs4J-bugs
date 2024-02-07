@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/test/java/org/apache/hadoop/hbase/client/TestFastFail.java b/fixed/hbase-server/src/test/java/org/apache/hadoop/hbase/client/TestFastFail.java
+index 4121c1688..3980f013f 100644
+--- a/buggy/hbase-server/src/test/java/org/apache/hadoop/hbase/client/TestFastFail.java
++++ b/fixed/hbase-server/src/test/java/org/apache/hadoop/hbase/client/TestFastFail.java
+@@ -95,7 +95,7 @@ public class TestFastFail {
+     // Nothing to do.
+   }
+ 
+-  @Test
++  @Ignore ("Can go zombie -- see HBASE-14421; FIX") @Test
+   public void testFastFail() throws IOException, InterruptedException {
+     Admin admin = TEST_UTIL.getHBaseAdmin();
+ 

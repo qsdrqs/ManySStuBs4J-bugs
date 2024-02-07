@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/cache/impl/HazelcastClientCacheManager.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/cache/impl/HazelcastClientCacheManager.java
+index c48936560..b0e40e6ce 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/cache/impl/HazelcastClientCacheManager.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/cache/impl/HazelcastClientCacheManager.java
+@@ -126,7 +126,7 @@ public final class HazelcastClientCacheManager extends AbstractHazelcastCacheMan
+     protected <K, V> CacheConfig<K, V> createConfigOnPartition(CacheConfig<K, V> cacheConfig) {
+         try {
+             int partitionId = clientContext.getPartitionService().getPartitionId(cacheConfig.getNameWithPrefix());
+-            CacheCreateConfigRequest request = new CacheCreateConfigRequest(cacheConfig, true, partitionId);
++            CacheCreateConfigRequest request = new CacheCreateConfigRequest(cacheConfig, false, partitionId);
+             Future future = clientContext.getInvocationService()
+                                 .invokeOnKeyOwner(request, cacheConfig.getNameWithPrefix());
+             return (CacheConfig<K, V>) clientContext.getSerializationService().toObject(future.get());

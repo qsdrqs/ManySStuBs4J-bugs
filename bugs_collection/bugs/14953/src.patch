@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/lint/CheckJSDocStyle.java b/fixed/src/com/google/javascript/jscomp/lint/CheckJSDocStyle.java
+index 961f07faf..0277f6a0f 100644
+--- a/buggy/src/com/google/javascript/jscomp/lint/CheckJSDocStyle.java
++++ b/fixed/src/com/google/javascript/jscomp/lint/CheckJSDocStyle.java
+@@ -75,7 +75,7 @@ public final class CheckJSDocStyle extends AbstractPostOrderCallback implements
+           param = param.getFirstChild();
+           nameOptional = true;
+         } else {
+-          nameOptional = compiler.getCodingConvention().isOptionalParameter(param);
++          nameOptional = param.getString().startsWith("opt_");
+         }
+ 
+         if (!jsDoc.hasParameterType(param.getString())) {

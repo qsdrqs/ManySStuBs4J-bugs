@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/TrailingCommentCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/TrailingCommentCheck.java
+index 2a7ac52d4..4448f6701 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/TrailingCommentCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/TrailingCommentCheck.java
+@@ -109,7 +109,7 @@ public class TrailingCommentCheck extends AbstractCheck {
+     private Pattern legalComment;
+ 
+     /** The regexp to match against. */
+-    private Pattern format = Pattern.compile("^[\\s\\});]*$");
++    private Pattern format = Pattern.compile("^[\\s});]*$");
+ 
+     /**
+      * Sets patter for legal trailing comments.

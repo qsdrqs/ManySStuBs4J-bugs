@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/model/org.openhab.model.item/src/org/openhab/model/item/internal/GenericItemProvider.java b/fixed/bundles/model/org.openhab.model.item/src/org/openhab/model/item/internal/GenericItemProvider.java
+index 963aa6049..2268064c3 100644
+--- a/buggy/bundles/model/org.openhab.model.item/src/org/openhab/model/item/internal/GenericItemProvider.java
++++ b/fixed/bundles/model/org.openhab.model.item/src/org/openhab/model/item/internal/GenericItemProvider.java
+@@ -143,7 +143,7 @@ public class GenericItemProvider implements ItemProvider, ModelRepositoryChangeL
+ 	 */
+ 	@Override
+ 	public Collection<Item> getItems() {
+-		Set<Item> items = new HashSet<Item>();
++		List<Item> items = new ArrayList<Item>();
+ 		for (String name : modelRepository.getAllModelNamesOfType("items")) {
+ 			items.addAll(getItemsFromModel(name));
+ 		}

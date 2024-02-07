@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule485annotations/AnnotationLocationTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule485annotations/AnnotationLocationTest.java
+index f669ab99c..774975055 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule485annotations/AnnotationLocationTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule485annotations/AnnotationLocationTest.java
+@@ -17,7 +17,7 @@ public class AnnotationLocationTest extends BaseCheckTestSupport{
+     static ConfigurationBuilder builder;
+     
+     @BeforeClass
+-    public static void setConfigurationBuilder() throws CheckstyleException, IOException {
++    public static void setConfigurationBuilder() throws CheckstyleException {
+         builder = new ConfigurationBuilder(new File("src/it/"));
+     }
+ 

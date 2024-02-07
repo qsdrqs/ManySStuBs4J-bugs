@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client-new/src/main/java/com/hazelcast/client/proxy/ClientMultiMapProxy.java b/fixed/hazelcast-client-new/src/main/java/com/hazelcast/client/proxy/ClientMultiMapProxy.java
+index ddd52e68c..a2cf0d60b 100644
+--- a/buggy/hazelcast-client-new/src/main/java/com/hazelcast/client/proxy/ClientMultiMapProxy.java
++++ b/fixed/hazelcast-client-new/src/main/java/com/hazelcast/client/proxy/ClientMultiMapProxy.java
+@@ -313,7 +313,7 @@ public class ClientMultiMapProxy<K, V> extends ClientProxy implements MultiMap<K
+         checkNotNull(key, NULL_KEY_IS_NOT_ALLOWED);
+ 
+         try {
+-            return tryLock(key, 0, null);
++            return tryLock(key, 0, TimeUnit.MILLISECONDS);
+         } catch (InterruptedException e) {
+             return false;
+         }

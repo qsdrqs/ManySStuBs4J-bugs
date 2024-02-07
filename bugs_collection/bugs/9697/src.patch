@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/optimizer/calcite/translator/RexNodeConverter.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/optimizer/calcite/translator/RexNodeConverter.java
+index 9c929af3e..ee4f4ead6 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/optimizer/calcite/translator/RexNodeConverter.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/optimizer/calcite/translator/RexNodeConverter.java
+@@ -455,7 +455,7 @@ public class RexNodeConverter {
+         // An alternative would be to throw CboSemanticException and fall back
+         // to no CBO.
+         RelDataType relType = cluster.getTypeFactory().createSqlType(SqlTypeName.DECIMAL,
+-            bd.scale(), unscaled.toString().length());
++            unscaled.toString().length(), bd.scale());
+         calciteLiteral = rexBuilder.makeExactLiteral(bd, relType);
+       }
+       break;

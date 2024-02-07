@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-security-oauth/src/main/java/org/springframework/security/oauth/consumer/client/CoreOAuthConsumerSupport.java b/fixed/spring-security-oauth/src/main/java/org/springframework/security/oauth/consumer/client/CoreOAuthConsumerSupport.java
+index 8301fff3e..3852a8203 100644
+--- a/buggy/spring-security-oauth/src/main/java/org/springframework/security/oauth/consumer/client/CoreOAuthConsumerSupport.java
++++ b/fixed/spring-security-oauth/src/main/java/org/springframework/security/oauth/consumer/client/CoreOAuthConsumerSupport.java
+@@ -377,7 +377,7 @@ public class CoreOAuthConsumerSupport implements OAuthConsumerSupport, Initializ
+         while (valuesIt.hasNext()) {
+           CharSequence parameterValue = valuesIt.next();
+           if (parameterValue != null) {
+-            queryString.append('=').append(parameterValue);
++            queryString.append('=').append(urlEncode(parameterValue.toString()));
+           }
+           if (valuesIt.hasNext()) {
+             queryString.append('&').append(parameter);

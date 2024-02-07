@@ -1,0 +1,13 @@
+diff --git a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/api/FileText.java b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/api/FileText.java
+index e86449d19..d2a8aa227 100644
+--- a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/api/FileText.java
++++ b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/api/FileText.java
+@@ -122,7 +122,7 @@ public final class FileText extends AbstractList<String>
+             decoder.onUnmappableCharacter(CodingErrorAction.REPLACE);
+         }
+         catch (final UnsupportedCharsetException ex) {
+-            final String message = "Unsuppored charset: " + aCharsetName;
++            final String message = "Unsupported charset: " + aCharsetName;
+             final UnsupportedEncodingException ex2;
+             ex2 = new UnsupportedEncodingException(message);
+             ex2.initCause(ex);

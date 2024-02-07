@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/filters/SuppressionsLoaderTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/filters/SuppressionsLoaderTest.java
+index 3916d01e2..fabb71d69 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/filters/SuppressionsLoaderTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/filters/SuppressionsLoaderTest.java
+@@ -56,7 +56,7 @@ import com.puppycrawl.tools.checkstyle.api.FilterSet;
+ public class SuppressionsLoaderTest extends BaseCheckTestSupport {
+ 
+     @Rule
+-    public final ExpectedException thrown = ExpectedException.none();
++    private final ExpectedException thrown = ExpectedException.none();
+ 
+     @Test
+     public void testNoSuppressions()

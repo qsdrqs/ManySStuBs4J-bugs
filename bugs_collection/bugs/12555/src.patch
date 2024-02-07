@@ -1,0 +1,13 @@
+diff --git a/buggy/metrics-ganglia/src/main/java/com/yammer/metrics/ganglia/GangliaReporter.java b/fixed/metrics-ganglia/src/main/java/com/yammer/metrics/ganglia/GangliaReporter.java
+index d6b2fb609..8761188e8 100644
+--- a/buggy/metrics-ganglia/src/main/java/com/yammer/metrics/ganglia/GangliaReporter.java
++++ b/fixed/metrics-ganglia/src/main/java/com/yammer/metrics/ganglia/GangliaReporter.java
+@@ -139,7 +139,7 @@ public class GangliaReporter extends AbstractPollingReporter {
+     private void reportCounter(String name, Counter counter) {
+         final String group = group(name);
+         try {
+-            announce(name, group, counter.getCount(), "");
++            announce(name(name, "count"), group, counter.getCount(), "");
+         } catch (GangliaException e) {
+             LOGGER.warn("Unable to report counter {}", name, e);
+         }

@@ -1,0 +1,26 @@
+diff --git a/buggy/jsonschema2pojo-maven-plugin/src/main/java/com/googlecode/jsonschema2pojo/maven/Jsonschema2PojoMojo.java b/fixed/jsonschema2pojo-maven-plugin/src/main/java/com/googlecode/jsonschema2pojo/maven/Jsonschema2PojoMojo.java
+index 2cedcb407..1701a039f 100644
+--- a/buggy/jsonschema2pojo-maven-plugin/src/main/java/com/googlecode/jsonschema2pojo/maven/Jsonschema2PojoMojo.java
++++ b/fixed/jsonschema2pojo-maven-plugin/src/main/java/com/googlecode/jsonschema2pojo/maven/Jsonschema2PojoMojo.java
+@@ -121,10 +121,10 @@ public class Jsonschema2PojoMojo extends AbstractMojo implements GenerationConfi
+      * JSON properties will be considered to contain a single word when creating
+      * Java Bean property names.
+      * 
+-     * @param expression=${jsonschema2pojo.propertyWordDelimiters} default-value=""
++     * @parameter expression=${jsonschema2pojo.propertyWordDelimiters} default-value=""
+      * @since 0.2.2
+      */
+-    private char[] propertyWordDelimiters;
++    private String propertyWordDelimiters;
+     
+     /**
+      * The project being built.
+@@ -210,7 +210,7 @@ public class Jsonschema2PojoMojo extends AbstractMojo implements GenerationConfi
+     
+     @Override
+     public char[] getPropertyWordDelimiters() {
+-        return propertyWordDelimiters;
++        return propertyWordDelimiters.toCharArray();
+     }
+ 
+ }

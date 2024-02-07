@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/RagManager.java b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/RagManager.java
+index ba14a4e3e..c12d5d016 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/RagManager.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/RagManager.java
+@@ -181,7 +181,7 @@ public class RagManager
+             {
+                 continue;
+             }
+-            graphStack.push( tx );
++            graphStack.push( lockingTx );
+             checkWaitOnRecursive( lockingTx, tx, checkedTransactions,
+                 graphStack );
+             graphStack.pop();

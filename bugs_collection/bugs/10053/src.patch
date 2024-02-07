@@ -1,0 +1,17 @@
+diff --git a/buggy/examples/storm-starter/src/jvm/storm/starter/PrintSampleStream.java b/fixed/examples/storm-starter/src/jvm/storm/starter/PrintSampleStream.java
+index 2734fffac..021cc171e 100644
+--- a/buggy/examples/storm-starter/src/jvm/storm/starter/PrintSampleStream.java
++++ b/fixed/examples/storm-starter/src/jvm/storm/starter/PrintSampleStream.java
+@@ -39,10 +39,10 @@ public class PrintSampleStream {
+         
+         TopologyBuilder builder = new TopologyBuilder();
+         
+-        builder.setSpout("spoutId", new TwitterSampleSpout(consumerKey, consumerSecret,
++        builder.setSpout("twitter", new TwitterSampleSpout(consumerKey, consumerSecret,
+                                 accessToken, accessTokenSecret, keyWords));
+         builder.setBolt("print", new PrinterBolt())
+-                .shuffleGrouping("spout");
++                .shuffleGrouping("twitter");
+                 
+                 
+         Config conf = new Config();

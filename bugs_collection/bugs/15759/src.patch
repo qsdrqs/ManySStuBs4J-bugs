@@ -1,0 +1,15 @@
+diff --git a/buggy/core/test/com/google/inject/ErrorHandlingTest.java b/fixed/core/test/com/google/inject/ErrorHandlingTest.java
+index 3a1a142d0..19161ca84 100644
+--- a/buggy/core/test/com/google/inject/ErrorHandlingTest.java
++++ b/fixed/core/test/com/google/inject/ErrorHandlingTest.java
+@@ -100,7 +100,9 @@ public class ErrorHandlingTest {
+     Invalid(String s) {}
+   }
+ 
+-  @Singleton @GoodScope
++  @SuppressWarnings("MoreThanOneScopeAnnotationOnClass") // suppress compiler error to test
++  @Singleton 
++  @GoodScope
+   static class TooManyScopes {
+   }
+ 

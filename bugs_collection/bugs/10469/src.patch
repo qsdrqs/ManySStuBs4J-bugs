@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/SummaryJavadocCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/SummaryJavadocCheck.java
+index 48ad4e135..2b9d26de0 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/SummaryJavadocCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/SummaryJavadocCheck.java
+@@ -239,7 +239,7 @@ public class SummaryJavadocCheck extends AbstractJavadocCheck {
+ 
+             if (child.getType() != JavadocTokenTypes.JAVADOC_INLINE_TAG
+                 && text.contains(periodSuffix)) {
+-                result.append(text.substring(0, text.indexOf(periodSuffix) + 1));
++                result.append(text, 0, text.indexOf(periodSuffix) + 1);
+                 break;
+             }
+             else {

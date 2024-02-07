@@ -1,0 +1,22 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/AliasStrings.java b/fixed/src/com/google/javascript/jscomp/AliasStrings.java
+index 36ed3e971..9e7625cb7 100644
+--- a/buggy/src/com/google/javascript/jscomp/AliasStrings.java
++++ b/fixed/src/com/google/javascript/jscomp/AliasStrings.java
+@@ -110,7 +110,7 @@ class AliasStrings extends AbstractPostOrderCallback
+ 
+   @Override
+   public void process(Node externs, Node root) {
+-    logger.info("Aliasing common strings");
++    logger.fine("Aliasing common strings");
+ 
+     // Traverse the tree and collect strings
+     NodeTraversal.traverse(compiler, root, this);
+@@ -330,7 +330,7 @@ class AliasStrings extends AbstractPostOrderCallback
+       }
+     }
+     // TODO(user): Make this save to file OR output to the application
+-    logger.info(sb.toString());
++    logger.fine(sb.toString());
+   }
+ 
+   // -------------------------------------------------------------------------

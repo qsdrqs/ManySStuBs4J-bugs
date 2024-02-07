@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/coref/data/DocumentMaker.java b/fixed/src/edu/stanford/nlp/coref/data/DocumentMaker.java
+index 8aa924e92..b248378a9 100644
+--- a/buggy/src/edu/stanford/nlp/coref/data/DocumentMaker.java
++++ b/fixed/src/edu/stanford/nlp/coref/data/DocumentMaker.java
+@@ -114,7 +114,7 @@ public class DocumentMaker {
+     } else {
+       pipelineProps.setProperty("annotators", "pos, lemma, ner, " +
+               (CorefProperties.useConstituencyParse(props) ? "parse" : "depparse") +
+-              (CorefProperties.useGoldMentions(props) ? "" : ", mention"));
++              (CorefProperties.useGoldMentions(props) ? "" : ", coref.mention"));
+     }
+     return (coreNLP = new StanfordCoreNLP(pipelineProps, false));
+   }

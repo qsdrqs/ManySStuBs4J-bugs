@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/processor/WireTapProcessor.java b/fixed/camel-core/src/main/java/org/apache/camel/processor/WireTapProcessor.java
+index f1fab5aff..d2bbcf57e 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/processor/WireTapProcessor.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/processor/WireTapProcessor.java
+@@ -44,7 +44,7 @@ import org.slf4j.LoggerFactory;
+  * @version 
+  */
+ public class WireTapProcessor extends ServiceSupport implements AsyncProcessor, Traceable {
+-    private final static transient Logger LOG = LoggerFactory.getLogger(WireTapProcessor.class);
++    private static final transient Logger LOG = LoggerFactory.getLogger(WireTapProcessor.class);
+     private final Endpoint destination;
+     private final Processor processor;
+     private final ExchangePattern exchangePattern;

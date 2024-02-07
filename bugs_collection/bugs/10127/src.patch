@@ -1,0 +1,14 @@
+diff --git a/buggy/aws-java-sdk-s3/src/main/java/com/amazonaws/services/s3/transfer/TransferManager.java b/fixed/aws-java-sdk-s3/src/main/java/com/amazonaws/services/s3/transfer/TransferManager.java
+index 6d7c4b8d9..85b1b9f8b 100644
+--- a/buggy/aws-java-sdk-s3/src/main/java/com/amazonaws/services/s3/transfer/TransferManager.java
++++ b/fixed/aws-java-sdk-s3/src/main/java/com/amazonaws/services/s3/transfer/TransferManager.java
+@@ -1207,8 +1207,7 @@ public class TransferManager {
+             // MultipleFileTransferStateChangeListener
+             GetObjectRequest req = new GetObjectRequest(summary.getBucketName(), summary.getKey())
+                     .<GetObjectRequest>withGeneralProgressListener(
+-                                            listener)
+-                    .withRange(0L);
++                                            listener);
+             downloads.add((DownloadImpl) doDownload(
+                             req,
+                             f,

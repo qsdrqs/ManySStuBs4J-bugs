@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/map/impl/nearcache/invalidation/InvalidationMemberAddRemoveTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/map/impl/nearcache/invalidation/InvalidationMemberAddRemoveTest.java
+index 87ce4cdff..9ed7930b2 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/map/impl/nearcache/invalidation/InvalidationMemberAddRemoveTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/map/impl/nearcache/invalidation/InvalidationMemberAddRemoveTest.java
+@@ -153,7 +153,7 @@ public class InvalidationMemberAddRemoveTest extends NearCacheTestSupport {
+         //stop threads
+         stopTest.set(true);
+         shadowMember.join();
+-        clearFromMember.start();
++        clearFromMember.join();
+         populateClientNearCache.join();
+         putFromMember.join();
+ 

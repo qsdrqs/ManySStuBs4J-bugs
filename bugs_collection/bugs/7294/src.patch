@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/velocity/VelocityFileTest.java b/fixed/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/velocity/VelocityFileTest.java
+index 42e8dbbe6..aac09e0e4 100644
+--- a/buggy/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/velocity/VelocityFileTest.java
++++ b/fixed/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/velocity/VelocityFileTest.java
+@@ -33,7 +33,7 @@ public class VelocityFileTest extends VelocityTest {
+         deleteDirectory("mydir");
+         createDirectory("mydir");
+ 
+-        File src = new File("../../src/test/resources/org/apache/camel/itest/osgi/velocity/example.vm");
++        File src = new File("../../../src/test/resources/org/apache/camel/itest/osgi/velocity/example.vm");
+         File dest = new File("mydir/example.vm");
+         FileInputStream fis = new FileInputStream(src);
+         FileOutputStream fos = new FileOutputStream(dest, false);

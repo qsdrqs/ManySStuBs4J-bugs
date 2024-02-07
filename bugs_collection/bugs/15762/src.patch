@@ -1,0 +1,15 @@
+diff --git a/buggy/core/test/com/googlecode/guice/Jsr330Test.java b/fixed/core/test/com/googlecode/guice/Jsr330Test.java
+index 32e331f56..cffaca5a7 100644
+--- a/buggy/core/test/com/googlecode/guice/Jsr330Test.java
++++ b/fixed/core/test/com/googlecode/guice/Jsr330Test.java
+@@ -442,7 +442,9 @@ public class Jsr330Test extends TestCase {
+   }
+ 
+   static class L {
+-    @Inject final B b = null;
++    @SuppressWarnings("InjectJavaxInjectOnFinalField")
++    @Inject
++    final B b = null;
+   }
+ 
+   static abstract class AbstractM {

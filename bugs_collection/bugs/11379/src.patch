@@ -1,0 +1,16 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/filters/SuppressWithNearbyCommentFilterTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/filters/SuppressWithNearbyCommentFilterTest.java
+index ced30502c..a95b5c9dd 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/filters/SuppressWithNearbyCommentFilterTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/filters/SuppressWithNearbyCommentFilterTest.java
+@@ -264,9 +264,8 @@ public class SuppressWithNearbyCommentFilterTest
+     @Test
+     public void testAcceptNullFileContents() {
+         final LocalizedMessage message =
+-            new LocalizedMessage(1, 1,
+-                "messages.properties", "key", null, SeverityLevel.ERROR, null,
+-                this.getClass(), null);
++            new LocalizedMessage(1, 1, "messages.properties", "key", null, SeverityLevel.ERROR,
++                    null, getClass(), null);
+         final AuditEvent auditEvent = new AuditEvent(this, "Test.java", message);
+         SuppressWithNearbyCommentFilter filter = new SuppressWithNearbyCommentFilter();
+         Assert.assertTrue(filter.accept(auditEvent));

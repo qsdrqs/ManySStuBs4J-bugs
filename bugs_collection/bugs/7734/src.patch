@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/impl/DefaultCamelContext.java b/fixed/camel-core/src/main/java/org/apache/camel/impl/DefaultCamelContext.java
+index 41daa4532..d06be1e4f 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/impl/DefaultCamelContext.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/impl/DefaultCamelContext.java
+@@ -966,7 +966,7 @@ public class DefaultCamelContext extends ServiceSupport implements CamelContext
+ 
+                     if (!multipleConsumersSupported && routeInputs.contains(endpoint)) {
+                         throw new FailedToStartRouteException(routeService.getId(),
+-                            "Multiple consumers for the same endpoint is now allowed: " + endpoint);
++                            "Multiple consumers for the same endpoint is not allowed: " + endpoint);
+                     } else {
+                         routeInputs.add(endpoint);
+                     }

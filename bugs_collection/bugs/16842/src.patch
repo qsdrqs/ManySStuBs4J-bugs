@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/map/SizeEstimatorTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/map/SizeEstimatorTest.java
+index 666db8c5f..55e3c949f 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/map/SizeEstimatorTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/map/SizeEstimatorTest.java
+@@ -56,7 +56,7 @@ public class SizeEstimatorTest extends HazelcastTestSupport {
+ 
+         final IMap<Integer, Long> map = h.getMap(MAP_NAME);
+         map.put(0, 10L);
+-        assertEquals(148, map.getLocalMapStats().getHeapCost());
++        assertEquals(156, map.getLocalMapStats().getHeapCost());
+     }
+ 
+     @Test

@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/com/google/inject/internal/InjectorImpl.java b/fixed/core/src/com/google/inject/internal/InjectorImpl.java
+index 320efb7e5..40cb77ae0 100644
+--- a/buggy/core/src/com/google/inject/internal/InjectorImpl.java
++++ b/fixed/core/src/com/google/inject/internal/InjectorImpl.java
+@@ -220,7 +220,7 @@ final class InjectorImpl implements Injector, Lookups {
+   }
+ 
+   public Injector createChildInjector(Module... modules) {
+-    return createChildInjector(ImmutableList.of(modules));
++    return createChildInjector(ImmutableList.copyOf(modules));
+   }
+ 
+   /**

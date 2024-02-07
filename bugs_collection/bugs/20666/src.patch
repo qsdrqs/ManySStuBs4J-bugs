@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/action/org.openhab.action.xmpp/src/main/java/org/openhab/action/xmpp/internal/XMPPConsole.java b/fixed/bundles/action/org.openhab.action.xmpp/src/main/java/org/openhab/action/xmpp/internal/XMPPConsole.java
+index 8d0b680e4..c914c79bd 100644
+--- a/buggy/bundles/action/org.openhab.action.xmpp/src/main/java/org/openhab/action/xmpp/internal/XMPPConsole.java
++++ b/fixed/bundles/action/org.openhab.action.xmpp/src/main/java/org/openhab/action/xmpp/internal/XMPPConsole.java
+@@ -61,7 +61,7 @@ public class XMPPConsole implements ChatManagerListener, MessageListener {
+ 
+ 	public void processMessage(Chat chat, Message msg) {
+ 		logger.debug("Received XMPP message: {} of type {}", msg.getBody(), msg.getType());
+-		if (msg.getType() == Message.Type.error) {
++		if (msg.getType() == Message.Type.error || msg.getBody() == null) {
+ 			return;
+ 		}
+ 		String cmd = msg.getBody();

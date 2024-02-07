@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter5naming/rule526parameternames/ParameterNameTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter5naming/rule526parameternames/ParameterNameTest.java
+index ae3899494..0b3e984e8 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter5naming/rule526parameternames/ParameterNameTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter5naming/rule526parameternames/ParameterNameTest.java
+@@ -26,7 +26,7 @@ public class ParameterNameTest extends BaseCheckTestSupport{
+     }
+ 
+     @Test
+-    public void parameterNameTest() throws IOException, Exception {
++    public void parameterNameTest() throws Exception {
+ 
+         final String[] expected = {
+             "8:21: " + getCheckMessage(checkConfig.getMessages(), MSG_KEY, "$arg1", format),

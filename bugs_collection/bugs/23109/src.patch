@@ -1,0 +1,14 @@
+diff --git a/buggy/src/edu/stanford/nlp/pipeline/StanfordCoreNLPServer.java b/fixed/src/edu/stanford/nlp/pipeline/StanfordCoreNLPServer.java
+index 3e0c78abc..eacb7027f 100644
+--- a/buggy/src/edu/stanford/nlp/pipeline/StanfordCoreNLPServer.java
++++ b/fixed/src/edu/stanford/nlp/pipeline/StanfordCoreNLPServer.java
+@@ -678,7 +678,8 @@ public class StanfordCoreNLPServer implements Runnable {
+         if (languagePropertiesFile != null) {
+           Properties languageSpecificProperties = new Properties();
+           try {
+-            languageSpecificProperties.load(StanfordCoreNLPServer.class.getResourceAsStream(languagePropertiesFile));
++            languageSpecificProperties.load(
++                    IOUtils.getInputStreamFromURLOrClasspathOrFileSystem(languagePropertiesFile));
+             PropertiesUtils.overWriteProperties(props,languageSpecificProperties);
+           } catch (IOException e) {
+             err("Failure to load language specific properties.");

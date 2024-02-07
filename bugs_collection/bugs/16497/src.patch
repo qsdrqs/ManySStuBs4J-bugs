@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/ringbuffer/impl/RingbufferDataSerializerHook.java b/fixed/hazelcast/src/main/java/com/hazelcast/ringbuffer/impl/RingbufferDataSerializerHook.java
+index bf2909a54..b179aa8f1 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/ringbuffer/impl/RingbufferDataSerializerHook.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/ringbuffer/impl/RingbufferDataSerializerHook.java
+@@ -34,7 +34,7 @@ import com.hazelcast.ringbuffer.impl.operations.ReplicationOperation;
+  */
+ public class RingbufferDataSerializerHook implements DataSerializerHook {
+ 
+-    public static final int F_ID = FactoryIdHelper.getFactoryId(FactoryIdHelper.COLLECTION_DS_FACTORY, -26);
++    public static final int F_ID = FactoryIdHelper.getFactoryId(FactoryIdHelper.COLLECTION_DS_FACTORY, -29);
+ 
+     public static final int GENERIC_OPERATION = 1;
+     public static final int ADD_BACKUP_OPERATION = 2;

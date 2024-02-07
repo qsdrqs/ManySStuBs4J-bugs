@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/backtype/storm/Config.java b/fixed/src/jvm/backtype/storm/Config.java
+index d68de3986..e5008e96a 100644
+--- a/buggy/src/jvm/backtype/storm/Config.java
++++ b/fixed/src/jvm/backtype/storm/Config.java
+@@ -343,7 +343,7 @@ public class Config extends HashMap<String, Object> {
+         put(Config.TOPOLOGY_MESSAGE_TIMEOUT_SECS, secs);
+     }
+     
+-    public void addSerialization(int token, Class<ISerialization> serialization) {
++    public void addSerialization(int token, Class<? extends ISerialization> serialization) {
+         if(!containsKey(Config.TOPOLOGY_SERIALIZATIONS)) {
+             put(Config.TOPOLOGY_SERIALIZATIONS, new HashMap());
+         }

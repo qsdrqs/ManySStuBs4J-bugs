@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/couchbase/CouchbaseAutoConfiguration.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/couchbase/CouchbaseAutoConfiguration.java
+index 4eb6a72c3..9f5a7dcd5 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/couchbase/CouchbaseAutoConfiguration.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/couchbase/CouchbaseAutoConfiguration.java
+@@ -44,7 +44,7 @@ import org.springframework.data.couchbase.config.CouchbaseConfigurer;
+  * @since 1.4.0
+  */
+ @Configuration
+-@ConditionalOnClass({ CouchbaseBucket.class, Cluster.class })
++@ConditionalOnClass({ CouchbaseBucket.class, Cluster.class, CouchbaseConfigurer.class })
+ @Conditional(CouchbaseAutoConfiguration.CouchbaseCondition.class)
+ @EnableConfigurationProperties(CouchbaseProperties.class)
+ public class CouchbaseAutoConfiguration {

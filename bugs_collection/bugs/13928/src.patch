@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-hive/src/test/java/com/facebook/presto/hive/HiveBenchmarkQueryRunner.java b/fixed/presto-hive/src/test/java/com/facebook/presto/hive/HiveBenchmarkQueryRunner.java
+index c30d4a756..82d9bde04 100644
+--- a/buggy/presto-hive/src/test/java/com/facebook/presto/hive/HiveBenchmarkQueryRunner.java
++++ b/fixed/presto-hive/src/test/java/com/facebook/presto/hive/HiveBenchmarkQueryRunner.java
+@@ -75,7 +75,7 @@ public final class HiveBenchmarkQueryRunner
+                 new TypeRegistry());
+ 
+         Map<String, String> hiveCatalogConfig = ImmutableMap.<String, String>builder()
+-                .put("hive.metastore.uri", "thrift://none.invalid")
++                .put("hive.metastore.uri", "thrift://none.invalid:0")
+                 .put("hive.max-split-size", "10GB")
+                 .build();
+ 

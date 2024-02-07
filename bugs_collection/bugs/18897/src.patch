@@ -1,0 +1,13 @@
+diff --git a/buggy/web/src/main/java/com/navercorp/pinpoint/web/applicationmap/ApplicationMapBuilder.java b/fixed/web/src/main/java/com/navercorp/pinpoint/web/applicationmap/ApplicationMapBuilder.java
+index db3bf0535..4fb483123 100644
+--- a/buggy/web/src/main/java/com/navercorp/pinpoint/web/applicationmap/ApplicationMapBuilder.java
++++ b/fixed/web/src/main/java/com/navercorp/pinpoint/web/applicationmap/ApplicationMapBuilder.java
+@@ -304,7 +304,7 @@ public class ApplicationMapBuilder {
+                 if (fromLink.size() > 1) {
+                     logger.warn("Invalid from UserNode:{}", linkList);
+                     throw new IllegalArgumentException("Invalid from UserNode.size() :" + fromLink.size());
+-                } else if (fromLink.size() == 0) {
++                } else if (fromLink.isEmpty()) {
+                     logger.warn("from UserNode not found:{}", userNode);
+                     continue;
+                 }

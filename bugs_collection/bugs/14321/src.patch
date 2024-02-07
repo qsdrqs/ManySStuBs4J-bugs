@@ -1,0 +1,13 @@
+diff --git a/buggy/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterCSV.java b/fixed/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterCSV.java
+index 054b0623e..ddab040d5 100644
+--- a/buggy/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterCSV.java
++++ b/fixed/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterCSV.java
+@@ -125,7 +125,7 @@ public class ImporterCSV implements TextImporter, LongTask {
+     }
+ 
+     public boolean isMatchingImporter(FileObject fileObject) {
+-        return fileObject.hasExt("csv");
++        return fileObject.hasExt("csv") || fileObject.hasExt("CSV");
+     }
+ 
+     public boolean cancel() {

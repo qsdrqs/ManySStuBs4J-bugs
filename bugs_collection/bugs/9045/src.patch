@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-common/src/main/java/org/apache/hadoop/yarn/conf/YarnConfiguration.java b/fixed/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-common/src/main/java/org/apache/hadoop/yarn/conf/YarnConfiguration.java
+index 151cfc9e8..8236e06c0 100644
+--- a/buggy/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-common/src/main/java/org/apache/hadoop/yarn/conf/YarnConfiguration.java
++++ b/fixed/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-common/src/main/java/org/apache/hadoop/yarn/conf/YarnConfiguration.java
+@@ -218,7 +218,7 @@ public class YarnConfiguration extends Configuration {
+   
+   /** address of node manager IPC.*/
+   public static final String NM_ADDRESS = NM_PREFIX + "address";
+-  public static final String DEFAULT_NM_ADDRESS = "0.0.0.0:45454";
++  public static final String DEFAULT_NM_ADDRESS = "0.0.0.0:0";
+   
+   /** who will execute(launch) the containers.*/
+   public static final String NM_CONTAINER_EXECUTOR = 

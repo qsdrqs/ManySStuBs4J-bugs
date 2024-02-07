@@ -1,0 +1,13 @@
+diff --git a/buggy/src/java/org/apache/hadoop/hbase/util/Migrate.java b/fixed/src/java/org/apache/hadoop/hbase/util/Migrate.java
+index aa87eaef1..47bdb6cae 100644
+--- a/buggy/src/java/org/apache/hadoop/hbase/util/Migrate.java
++++ b/fixed/src/java/org/apache/hadoop/hbase/util/Migrate.java
+@@ -342,7 +342,7 @@ public class Migrate extends Configured implements Tool {
+   throws IOException {
+     // Create directory where table will live
+ 
+-    Path tableDir = new Path(rootdir, tableName.toString());
++    Path tableDir = new Path(rootdir, Bytes.toString(tableName));
+     fs.mkdirs(tableDir);
+ 
+     // Move the old region directory under the table directory

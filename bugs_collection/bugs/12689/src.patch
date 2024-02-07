@@ -1,0 +1,13 @@
+diff --git a/buggy/services/src/main/java/io/druid/cli/InsertSegment.java b/fixed/services/src/main/java/io/druid/cli/InsertSegment.java
+index 2d43b629c..f6b1850d2 100644
+--- a/buggy/services/src/main/java/io/druid/cli/InsertSegment.java
++++ b/fixed/services/src/main/java/io/druid/cli/InsertSegment.java
+@@ -92,7 +92,7 @@ public class InsertSegment extends GuiceRunnable
+     indexerMetadataStorageCoordinator = injector.getInstance(IndexerMetadataStorageCoordinator.class);
+     final DataSegmentFinder dataSegmentFinder = injector.getInstance(DataSegmentFinder.class);
+ 
+-    log.info("Start seraching segments under [%s]", workingDirPath);
++    log.info("Start searching segments under [%s]", workingDirPath);
+ 
+     Set<DataSegment> segments = null;
+     try {

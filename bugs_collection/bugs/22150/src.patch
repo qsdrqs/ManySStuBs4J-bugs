@@ -1,0 +1,14 @@
+diff --git a/buggy/spring-boot/src/main/java/org/springframework/boot/context/properties/ConfigurationPropertiesBindingPostProcessor.java b/fixed/spring-boot/src/main/java/org/springframework/boot/context/properties/ConfigurationPropertiesBindingPostProcessor.java
+index e08a7476e..62ee9b20d 100644
+--- a/buggy/spring-boot/src/main/java/org/springframework/boot/context/properties/ConfigurationPropertiesBindingPostProcessor.java
++++ b/fixed/spring-boot/src/main/java/org/springframework/boot/context/properties/ConfigurationPropertiesBindingPostProcessor.java
+@@ -84,7 +84,8 @@ public class ConfigurationPropertiesBindingPostProcessor implements BeanPostProc
+ 	public static final String VALIDATOR_BEAN_NAME = "configurationPropertiesValidator";
+ 
+ 	private static final String[] VALIDATOR_CLASSES = { "javax.validation.Validator",
+-			"javax.validation.ValidatorFactory" };
++			"javax.validation.ValidatorFactory",
++			"javax.validation.bootstrap.GenericBootstrap" };
+ 
+ 	private static final Log logger = LogFactory
+ 			.getLog(ConfigurationPropertiesBindingPostProcessor.class);

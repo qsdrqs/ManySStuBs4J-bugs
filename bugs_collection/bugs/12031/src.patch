@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/ASeq.java b/fixed/src/jvm/clojure/lang/ASeq.java
+index aa02aa984..0a31797cb 100644
+--- a/buggy/src/jvm/clojure/lang/ASeq.java
++++ b/fixed/src/jvm/clojure/lang/ASeq.java
+@@ -32,7 +32,7 @@ public boolean equals(Object obj){
+ 		if(ms == null || !RT.equal(s.first(), ms.first()))
+ 			return false;
+ 		}
+-	if(ms.rest() != null)
++	if(ms != null)
+ 		return false;
+ 
+ 	return true;

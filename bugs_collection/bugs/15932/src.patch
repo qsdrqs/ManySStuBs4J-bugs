@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/concurrent/atomiclong/AtomicLongService.java b/fixed/hazelcast/src/main/java/com/hazelcast/concurrent/atomiclong/AtomicLongService.java
+index abd5f58af..443672f51 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/concurrent/atomiclong/AtomicLongService.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/concurrent/atomiclong/AtomicLongService.java
+@@ -227,7 +227,7 @@ public class AtomicLongService
+ 
+     private class Merger implements Runnable {
+ 
+-        private static final int TIMEOUT_FACTOR = 500;
++        private static final long TIMEOUT_FACTOR = 500;
+ 
+         private final ILogger logger = nodeEngine.getLogger(AtomicLongService.class);
+         private final Semaphore semaphore = new Semaphore(0);

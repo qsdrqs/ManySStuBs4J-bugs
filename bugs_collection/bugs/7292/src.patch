@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/OSGiIntegrationTestSupport.java b/fixed/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/OSGiIntegrationTestSupport.java
+index 12ab7c916..3fa9d9dc3 100644
+--- a/buggy/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/OSGiIntegrationTestSupport.java
++++ b/fixed/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/OSGiIntegrationTestSupport.java
+@@ -137,7 +137,7 @@ public class OSGiIntegrationTestSupport extends CamelTestSupport {
+             dir = new File(workDir);
+         }
+         createDirectory(workDir);
+-        System.out.println("Using working directory: " + workDir);
++        System.out.println("*** Using working directory: " + workDir + " ***");
+ 
+         Option[] options = combine(
+             // Set the karaf environment with some customer configuration

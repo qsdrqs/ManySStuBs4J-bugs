@@ -1,0 +1,14 @@
+diff --git a/buggy/src/web/org/openmrs/web/controller/PortletController.java b/fixed/src/web/org/openmrs/web/controller/PortletController.java
+index b776dbb8d..9571cda4b 100644
+--- a/buggy/src/web/org/openmrs/web/controller/PortletController.java
++++ b/fixed/src/web/org/openmrs/web/controller/PortletController.java
+@@ -270,7 +270,8 @@ public class PortletController implements Controller {
+ 								model.put("standardRegimens", standardRegimens);
+ 						}
+ 						
+-						if (Context.hasPrivilege(OpenmrsConstants.PRIV_VIEW_PROGRAMS)) {
++						if (Context.hasPrivilege(OpenmrsConstants.PRIV_VIEW_PROGRAMS) &&
++							Context.hasPrivilege(OpenmrsConstants.PRIV_VIEW_PATIENT_PROGRAMS)) {
+ 							model.put("patientPrograms", Context.getProgramWorkflowService().getPatientPrograms(p));
+ 							model.put("patientCurrentPrograms", Context.getProgramWorkflowService().getCurrentPrograms(p, null));
+ 						}

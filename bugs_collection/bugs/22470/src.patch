@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration.java
+index b72f2e5ec..cd1297968 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration.java
+@@ -281,7 +281,7 @@ public class WebMvcAutoConfiguration {
+ 						// Ignore
+ 					}
+ 					// Use forward: prefix so that no view resolution is done
+-					registry.addViewController("/").setViewName("forward:/index.html");
++					registry.addViewController("/").setViewName("forward:index.html");
+ 					return;
+ 				}
+ 			}

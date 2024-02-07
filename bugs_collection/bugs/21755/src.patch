@@ -1,0 +1,13 @@
+diff --git a/buggy/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/SinaWeibo2Example.java b/fixed/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/SinaWeibo2Example.java
+index e314a82d7..9233e1b32 100644
+--- a/buggy/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/SinaWeibo2Example.java
++++ b/fixed/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/SinaWeibo2Example.java
+@@ -47,7 +47,7 @@ public final class SinaWeibo2Example {
+         System.out.println("Trading the Request Token for an Access Token...");
+         final OAuth2AccessToken accessToken = service.getAccessToken(code);
+         System.out.println("Got the Access Token!");
+-        System.out.println("(if your curious the raw answer looks like this: " + accessToken.getRawResponse() + "')");
++        System.out.println("(The raw response looks like this: " + accessToken.getRawResponse() + "')");
+         System.out.println();
+ 
+         // Now let's go and ask for a protected resource!

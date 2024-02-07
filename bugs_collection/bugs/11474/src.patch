@@ -1,0 +1,12 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/regexp/RegexpSinglelineJavaCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/regexp/RegexpSinglelineJavaCheck.java
+index 3d69a8408..094176be1 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/regexp/RegexpSinglelineJavaCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/regexp/RegexpSinglelineJavaCheck.java
+@@ -106,6 +106,6 @@ public class RegexpSinglelineJavaCheck extends Check {
+      * @param ignore whether to ignore comments when matching.
+      */
+     public void setIgnoreComments(boolean ignore) {
+-        this.ignoreComments = ignore;
++        ignoreComments = ignore;
+     }
+ }

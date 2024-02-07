@@ -1,0 +1,13 @@
+diff --git a/buggy/src/java/org/apache/hadoop/hbase/regionserver/HStoreFile.java b/fixed/src/java/org/apache/hadoop/hbase/regionserver/HStoreFile.java
+index d11d598c9..6bbe06a7a 100644
+--- a/buggy/src/java/org/apache/hadoop/hbase/regionserver/HStoreFile.java
++++ b/fixed/src/java/org/apache/hadoop/hbase/regionserver/HStoreFile.java
+@@ -470,7 +470,7 @@ public class HStoreFile implements HConstants {
+   /** {@inheritDoc} */
+   @Override
+   public String toString() {
+-    return encodedRegionName + "/" + colFamily + "/" + fileId +
++    return encodedRegionName + "/" + Bytes.toString(colFamily) + "/" + fileId +
+       (isReference()? "-" + reference.toString(): "");
+   }
+   

@@ -1,0 +1,13 @@
+diff --git a/buggy/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/SalesforceExample.java b/fixed/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/SalesforceExample.java
+index d9c9ff819..866718bea 100644
+--- a/buggy/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/SalesforceExample.java
++++ b/fixed/scribejava-apis/src/test/java/com/github/scribejava/apis/examples/SalesforceExample.java
+@@ -76,7 +76,7 @@ public final class SalesforceExample {
+         }
+         System.out.println("Got the Access Token!");
+ 
+-        System.out.println("(if your curious the raw answer looks like this: " + accessToken.getRawResponse() + "')");
++        System.out.println("(The raw response looks like this: " + accessToken.getRawResponse() + "')");
+         System.out.println();
+ 
+         System.out.println("instance_url is: " + salesforceAccessToken.getInstanceUrl());

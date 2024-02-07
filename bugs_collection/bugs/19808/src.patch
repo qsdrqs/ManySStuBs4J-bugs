@@ -1,0 +1,13 @@
+diff --git a/buggy/handler/src/main/java/io/netty/handler/ssl/SslHandler.java b/fixed/handler/src/main/java/io/netty/handler/ssl/SslHandler.java
+index 63561a35f..bfa59600c 100644
+--- a/buggy/handler/src/main/java/io/netty/handler/ssl/SslHandler.java
++++ b/fixed/handler/src/main/java/io/netty/handler/ssl/SslHandler.java
+@@ -267,7 +267,7 @@ public class SslHandler
+     }
+ 
+     public long getCloseNotifyTimeoutMillis() {
+-        return handshakeTimeoutMillis;
++        return closeNotifyTimeoutMillis;
+     }
+ 
+     public void setCloseNotifyTimeout(long closeNotifyTimeout, TimeUnit unit) {

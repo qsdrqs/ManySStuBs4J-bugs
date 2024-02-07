@@ -1,0 +1,13 @@
+diff --git a/buggy/itests/hive-unit/src/test/java/org/apache/hive/service/cli/session/TestHiveSessionImpl.java b/fixed/itests/hive-unit/src/test/java/org/apache/hive/service/cli/session/TestHiveSessionImpl.java
+index c9e6a1389..d58a9133b 100644
+--- a/buggy/itests/hive-unit/src/test/java/org/apache/hive/service/cli/session/TestHiveSessionImpl.java
++++ b/fixed/itests/hive-unit/src/test/java/org/apache/hive/service/cli/session/TestHiveSessionImpl.java
+@@ -70,7 +70,7 @@ public class TestHiveSessionImpl {
+     Map<String, String> confOverlay = new HashMap<String, String>();
+     String hql = "drop table if exists table_not_exists";
+     Mockito.when(operationManager.newExecuteStatementOperation(same(session), eq(hql),
+-        (Map<String, String>)Mockito.any(), eq(true), eq(0))).thenReturn(operation);
++        (Map<String, String>)Mockito.any(), eq(true), eq(0L))).thenReturn(operation);
+ 
+     try {
+ 

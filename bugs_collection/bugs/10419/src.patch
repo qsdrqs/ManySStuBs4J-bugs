@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/metrics/NPathComplexityCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/metrics/NPathComplexityCheckTest.java
+index 80172d5c0..35c535fae 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/metrics/NPathComplexityCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/metrics/NPathComplexityCheckTest.java
+@@ -156,7 +156,7 @@ public class NPathComplexityCheckTest extends AbstractModuleTestSupport {
+ 
+         final NPathComplexityCheck check = new NPathComplexityCheck();
+         Assert.assertTrue("Stateful field is not cleared after beginTree",
+-            TestUtil.isStatefulFieldClearedDuringBeginTree(check, ast, "isAfterValues",
++            TestUtil.isStatefulFieldClearedDuringBeginTree(check, ast, "afterValues",
+                 isAfterValues -> ((Collection<Context>) isAfterValues).isEmpty()));
+     }
+ 

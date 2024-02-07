@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/mustache/MustacheProperties.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/mustache/MustacheProperties.java
+index 4988b15bb..4ef59de51 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/mustache/MustacheProperties.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/mustache/MustacheProperties.java
+@@ -30,7 +30,7 @@ public class MustacheProperties extends AbstractTemplateViewResolverProperties {
+ 
+ 	public static final String DEFAULT_PREFIX = "classpath:/templates/";
+ 
+-	public static final String DEFAULT_SUFFIX = ".html";
++	public static final String DEFAULT_SUFFIX = ".mustache";
+ 
+ 	/**
+ 	 * Prefix to apply to template names.

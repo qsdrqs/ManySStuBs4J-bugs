@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/operator/SourceHashProviderFactory.java b/fixed/presto-main/src/main/java/com/facebook/presto/operator/SourceHashProviderFactory.java
+index b9d438c46..621b4e0ff 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/operator/SourceHashProviderFactory.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/operator/SourceHashProviderFactory.java
+@@ -12,7 +12,7 @@ public class SourceHashProviderFactory
+ {
+     private final IdentityHashMap<JoinNode, SourceHashProvider> joinHashes = new IdentityHashMap<>();
+ 
+-    public SourceHashProvider getSourceHashProvider(JoinNode node, ExecutionPlanner executionPlanner)
++    public synchronized SourceHashProvider getSourceHashProvider(JoinNode node, ExecutionPlanner executionPlanner)
+     {
+         SourceHashProvider hashProvider = joinHashes.get(node);
+         if (hashProvider == null) {

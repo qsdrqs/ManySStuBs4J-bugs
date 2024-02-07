@@ -1,0 +1,13 @@
+diff --git a/buggy/aws-java-sdk-s3/src/main/java/com/amazonaws/services/s3/transfer/TransferManager.java b/fixed/aws-java-sdk-s3/src/main/java/com/amazonaws/services/s3/transfer/TransferManager.java
+index c709909df..98f7351e9 100644
+--- a/buggy/aws-java-sdk-s3/src/main/java/com/amazonaws/services/s3/transfer/TransferManager.java
++++ b/fixed/aws-java-sdk-s3/src/main/java/com/amazonaws/services/s3/transfer/TransferManager.java
+@@ -1526,7 +1526,7 @@ public class TransferManager {
+                             .replaceAll("\\\\", "/");
+ 
+                     ObjectMetadata metadata = new ObjectMetadata();
+-                    ObjectTagging objectTagging = new ObjectTagging();
++                    ObjectTagging objectTagging = new ObjectTagging(new ArrayList<Tag>());
+ 
+                     // Invoke the callback if it's present.
+                     // The callback allows the user to customize the metadata

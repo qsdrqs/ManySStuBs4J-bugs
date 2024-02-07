@@ -1,0 +1,13 @@
+diff --git a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/indentation/BlockParentHandler.java b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/indentation/BlockParentHandler.java
+index 3f6b8a6fb..69d7b7785 100644
+--- a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/indentation/BlockParentHandler.java
++++ b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/indentation/BlockParentHandler.java
+@@ -204,7 +204,7 @@ public class BlockParentHandler extends ExpressionHandler
+         {
+             return;
+         }
+-        logError(rcurly, "rcurly", expandedTabsColumnNo(rcurly));
++        logError(rcurly, "rcurly", expandedTabsColumnNo(rcurly), curlyLevel());
+     }
+ 
+     /**

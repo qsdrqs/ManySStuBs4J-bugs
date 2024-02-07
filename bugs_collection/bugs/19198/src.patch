@@ -1,0 +1,13 @@
+diff --git a/buggy/community/server/src/test/java/org/neo4j/server/rest/transactional/ExecutionResultSerializerTest.java b/fixed/community/server/src/test/java/org/neo4j/server/rest/transactional/ExecutionResultSerializerTest.java
+index c32222282..17f3ff983 100644
+--- a/buggy/community/server/src/test/java/org/neo4j/server/rest/transactional/ExecutionResultSerializerTest.java
++++ b/fixed/community/server/src/test/java/org/neo4j/server/rest/transactional/ExecutionResultSerializerTest.java
+@@ -475,7 +475,7 @@ public class ExecutionResultSerializerTest
+         // when
+         serializer.statementResult( mockExecutionResult(
+                 map( "node", node[0], "rel", rel[0], "path", path, "map", map( "n1", node[1], "r1", rel[1] ) )
+-        ), ResultDataContent.rest );
++        ), false, ResultDataContent.rest );
+         serializer.finish();
+ 
+         // then

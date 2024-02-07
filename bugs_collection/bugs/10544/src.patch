@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/sizes/ParameterNumberCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/sizes/ParameterNumberCheck.java
+index 770be512a..dffd9a6b0 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/sizes/ParameterNumberCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/sizes/ParameterNumberCheck.java
+@@ -126,7 +126,7 @@ public class ParameterNumberCheck
+         final int count = params.getChildCount(TokenTypes.PARAMETER_DEF);
+         if (count > max && !shouldIgnoreNumberOfParameters(ast)) {
+             final DetailAST name = ast.findFirstToken(TokenTypes.IDENT);
+-            log(name.getLineNo(), name.getColumnNo(), MSG_KEY, max, count);
++            log(name, MSG_KEY, max, count);
+         }
+     }
+ 

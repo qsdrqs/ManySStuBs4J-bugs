@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/coreapi/PropertyContainerLocker.java b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/coreapi/PropertyContainerLocker.java
+index 0c34101e2..ee62fdbca 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/coreapi/PropertyContainerLocker.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/coreapi/PropertyContainerLocker.java
+@@ -87,7 +87,7 @@ public class PropertyContainerLocker
+             else if(container instanceof Relationship )
+             {
+                 statement.readOperations().acquireShared( ResourceTypes.RELATIONSHIP, ((Relationship) container).getId() );
+-                return new CoreAPILock(stmtProvider, ResourceTypes.RELATIONSHIP, ((Node) container).getId())
++                return new CoreAPILock(stmtProvider, ResourceTypes.RELATIONSHIP, ((Relationship) container).getId())
+                 {
+                     @Override
+                     void release( Statement statement, Locks.ResourceType type, long resourceId )

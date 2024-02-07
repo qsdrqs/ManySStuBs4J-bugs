@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/TypedScopeCreator.java b/fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java
+index c87a3a53e..31ff27136 100644
+--- a/buggy/src/com/google/javascript/jscomp/TypedScopeCreator.java
++++ b/fixed/src/com/google/javascript/jscomp/TypedScopeCreator.java
+@@ -215,7 +215,7 @@ final class TypedScopeCreator implements ScopeCreator, StaticSymbolTable<TypedVa
+   }
+ 
+   @Override
+-  public Iterable<TypedVar> getReferences(TypedVar var) {
++  public ImmutableList<TypedVar> getReferences(TypedVar var) {
+     return ImmutableList.of(var);
+   }
+ 

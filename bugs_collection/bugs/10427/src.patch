@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter5naming/rule526parameternames/ParameterNameTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter5naming/rule526parameternames/ParameterNameTest.java
+index 1f67b1f63..3cceac22c 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter5naming/rule526parameternames/ParameterNameTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter5naming/rule526parameternames/ParameterNameTest.java
+@@ -42,7 +42,7 @@ public class ParameterNameTest extends AbstractModuleTestSupport {
+         final Map<String, String> messages = config.getMessages();
+         final String[] expected = {
+             "10:21: " + getCheckMessage(messages, MSG_KEY, "bB", format),
+-            "33:22: " + getCheckMessage(messages, MSG_KEY, "llll_llll", format),
++            "33:18: " + getCheckMessage(messages, MSG_KEY, "llll_llll", format),
+             "34:21: " + getCheckMessage(messages, MSG_KEY, "bB", format),
+             "64:13: " + getCheckMessage(messages, MSG_KEY, "$arg1", format),
+             "65:13: " + getCheckMessage(messages, MSG_KEY, "ar$g2", format),

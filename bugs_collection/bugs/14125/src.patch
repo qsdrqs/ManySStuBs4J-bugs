@@ -1,0 +1,24 @@
+diff --git a/buggy/modules/AppearanceAPI/src/main/java/org/gephi/appearance/EdgeTypePartitionImpl.java b/fixed/modules/AppearanceAPI/src/main/java/org/gephi/appearance/EdgeTypePartitionImpl.java
+index 3e5f53fa5..e3f9e986a 100644
+--- a/buggy/modules/AppearanceAPI/src/main/java/org/gephi/appearance/EdgeTypePartitionImpl.java
++++ b/fixed/modules/AppearanceAPI/src/main/java/org/gephi/appearance/EdgeTypePartitionImpl.java
+@@ -66,8 +66,7 @@ public class EdgeTypePartitionImpl extends PartitionImpl {
+ 
+     @Override
+     public Collection getValues() {
+-//        return Arrays.asList(model.getEdgeTypeLabels());
+-        return null;
++        return Arrays.asList(model.getEdgeTypeLabels());
+     }
+ 
+     @Override
+@@ -93,8 +92,7 @@ public class EdgeTypePartitionImpl extends PartitionImpl {
+ 
+     @Override
+     public int size() {
+-//        return model.getEdgeTypeCount();
+-        return 0;
++        return model.getEdgeTypeCount();
+     }
+ 
+     @Override

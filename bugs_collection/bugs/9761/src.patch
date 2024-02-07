@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/StringGroupConcatColCol.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/StringGroupConcatColCol.java
+index 910b5e308..56bc97bc1 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/StringGroupConcatColCol.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/StringGroupConcatColCol.java
+@@ -416,7 +416,7 @@ public class StringGroupConcatColCol extends VectorExpression {
+ 
+   @Override
+   public String getOutputType() {
+-    return "StringGroup";
++    return "String_Family";
+   }
+ 
+   public int getColNum1() {

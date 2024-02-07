@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/processor/interceptor/StreamCaching.java b/fixed/camel-core/src/main/java/org/apache/camel/processor/interceptor/StreamCaching.java
+index e272b71f0..a98caa3e9 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/processor/interceptor/StreamCaching.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/processor/interceptor/StreamCaching.java
+@@ -24,7 +24,7 @@ import org.apache.camel.spi.RouteContext;
+ /**
+  * {@link InterceptStrategy} implementation to configure stream caching on a RouteContext
+  */
+-public class StreamCaching implements InterceptStrategy {
++public final class StreamCaching implements InterceptStrategy {
+     
+     /*
+      * Hide constructor -- instances will be created through static enable() methods

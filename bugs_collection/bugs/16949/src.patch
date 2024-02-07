@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/config/ClientConfig.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/config/ClientConfig.java
+index 3bc5b4835..1aee17e2e 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/config/ClientConfig.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/config/ClientConfig.java
+@@ -227,7 +227,7 @@ public class ClientConfig {
+         return this;
+     }
+ 
+-    public Collection<String> getAddressList() {
++    public List<String> getAddresses() {
+         if (addressList.size() == 0) {
+             addAddress("localhost");
+         }

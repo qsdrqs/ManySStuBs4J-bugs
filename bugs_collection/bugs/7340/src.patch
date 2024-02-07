@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/management/DefaultManagementAgent.java b/fixed/camel-core/src/main/java/org/apache/camel/management/DefaultManagementAgent.java
+index a8e22abe7..5d60d7c22 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/management/DefaultManagementAgent.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/management/DefaultManagementAgent.java
+@@ -372,7 +372,7 @@ public class DefaultManagementAgent extends ServiceSupport implements Management
+         }
+ 
+         // look for the first mbean server that has match default domain name
+-        List<MBeanServer> servers = (List<MBeanServer>)MBeanServerFactory.findMBeanServer(null);
++        List<MBeanServer> servers = MBeanServerFactory.findMBeanServer(null);
+ 
+         for (MBeanServer server : servers) {
+             LOG.debug("Found MBeanServer with default domain {}", server.getDefaultDomain());

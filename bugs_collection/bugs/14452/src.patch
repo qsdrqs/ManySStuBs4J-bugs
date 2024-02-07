@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/AmbiguateProperties.java b/fixed/src/com/google/javascript/jscomp/AmbiguateProperties.java
+index 2712ddadc..5da59da72 100644
+--- a/buggy/src/com/google/javascript/jscomp/AmbiguateProperties.java
++++ b/fixed/src/com/google/javascript/jscomp/AmbiguateProperties.java
+@@ -234,7 +234,7 @@ class AmbiguateProperties implements CompilerPass {
+     }
+ 
+     // We may have renamed getter / setter properties.
+-    GatherGettersAndSetterProperties.update(compiler, externs, root);
++    GatherGetterAndSetterProperties.update(compiler, externs, root);
+ 
+     if (logger.isLoggable(Level.FINE)) {
+       logger.fine("Collapsed " + numRenamedPropertyNames + " properties into "

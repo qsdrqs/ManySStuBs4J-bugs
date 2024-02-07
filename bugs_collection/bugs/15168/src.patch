@@ -1,0 +1,22 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/CleanupPasses.java b/fixed/src/com/google/javascript/jscomp/CleanupPasses.java
+index f283e6c74..0c4ab7f8b 100644
+--- a/buggy/src/com/google/javascript/jscomp/CleanupPasses.java
++++ b/fixed/src/com/google/javascript/jscomp/CleanupPasses.java
+@@ -51,7 +51,7 @@ class CleanupPasses extends PassConfig {
+   }
+ 
+   @Override
+-  State getIntermediateState() {
++  protected State getIntermediateState() {
+     return state;
+   }
+ 
+@@ -61,7 +61,7 @@ class CleanupPasses extends PassConfig {
+   }
+ 
+   @Override
+-  void setIntermediateState(State state) {
++  protected void setIntermediateState(State state) {
+     this.state = state;
+   }
+ 

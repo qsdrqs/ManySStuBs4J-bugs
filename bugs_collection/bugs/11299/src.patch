@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter2filebasic/rule231filetab/FileTabCharacterTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter2filebasic/rule231filetab/FileTabCharacterTest.java
+index 214ee8fa4..0310e5b17 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter2filebasic/rule231filetab/FileTabCharacterTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter2filebasic/rule231filetab/FileTabCharacterTest.java
+@@ -32,7 +32,7 @@ public class FileTabCharacterTest extends BaseCheckTestSupport{
+     }
+ 
+     @Test
+-    public void fileTabTest() throws IOException, Exception {
++    public void fileTabTest() throws Exception {
+ 
+         final DefaultConfiguration checkConfig = createConfig(true);
+         final String[] expected = {

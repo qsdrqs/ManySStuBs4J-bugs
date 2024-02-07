@@ -1,0 +1,13 @@
+diff --git a/buggy/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/preloader/Preloader.java b/fixed/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/preloader/Preloader.java
+index 09fd03c8d..a256fb3b0 100644
+--- a/buggy/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/preloader/Preloader.java
++++ b/fixed/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/preloader/Preloader.java
+@@ -101,7 +101,7 @@ public class Preloader {
+ 	public final String baseUrl;
+ 
+ 	public Preloader () {
+-		baseUrl = GWT.getModuleBaseURL().replace(GWT.getModuleName() + "/", "") + "assets/";
++		baseUrl = GWT.getHostPageBaseURL() + "assets/";
+ 		// trigger copying of assets and creation of assets.txt
+ 		GWT.create(PreloaderBundle.class);
+ 	}

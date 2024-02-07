@@ -1,0 +1,18 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/MapClientProxy.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/MapClientProxy.java
+index 59220a33f..dd0851913 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/MapClientProxy.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/MapClientProxy.java
+@@ -188,11 +188,11 @@ public class MapClientProxy<K, V> implements IMap<K, V>, ClientProxy, EntryHolde
+         return size() == 0;
+     }
+ 
+-    public <K> Set<K> localKeySet() {
++    public Set<K> localKeySet() {
+         throw new UnsupportedOperationException();
+     }
+ 
+-    public <K> Set<K> localKeySet(Predicate predicate) {
++    public Set<K> localKeySet(Predicate predicate) {
+         throw new UnsupportedOperationException();
+     }
+ 

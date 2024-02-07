@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/security/AuthenticationManagerConfiguration.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/security/AuthenticationManagerConfiguration.java
+index 862af6ec5..ce13fdd67 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/security/AuthenticationManagerConfiguration.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/security/AuthenticationManagerConfiguration.java
+@@ -128,7 +128,7 @@ public class AuthenticationManagerConfiguration extends
+ 
+ 			User user = AuthenticationManagerConfiguration.this.security.getUser();
+ 			if (user.isDefaultPassword()) {
+-				logger.info("\n\nUsing default password for application endpoints: "
++				logger.info("\n\nUsing default security password: "
+ 						+ user.getPassword() + "\n\n");
+ 			}
+ 

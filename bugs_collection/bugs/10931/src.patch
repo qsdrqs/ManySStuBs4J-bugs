@@ -1,0 +1,14 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/sizes/ExecutableStatementCountCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/sizes/ExecutableStatementCountCheckTest.java
+index e782fa817..490e9f94e 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/sizes/ExecutableStatementCountCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/sizes/ExecutableStatementCountCheckTest.java
+@@ -40,7 +40,8 @@ public class ExecutableStatementCountCheckTest
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "sizes" + File.separator + filename);
++                + "sizes" + File.separator + "executablestatementcount"
++                + File.separator + filename);
+     }
+ 
+     @Test

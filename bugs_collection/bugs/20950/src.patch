@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/main/java/org/openmrs/OrderType.java b/fixed/api/src/main/java/org/openmrs/OrderType.java
+index e304dc0d1..a63e5d0fa 100644
+--- a/buggy/api/src/main/java/org/openmrs/OrderType.java
++++ b/fixed/api/src/main/java/org/openmrs/OrderType.java
+@@ -151,7 +151,7 @@ public class OrderType extends BaseChangeableOpenmrsMetadata {
+ 	 * @return The Java class as {@link java.lang.Class}
+ 	 * @throws APIException
+ 	 */
+-	public Class getJavaClass() throws APIException {
++	public Class getJavaClass() {
+ 		try {
+ 			return Context.loadClass(javaClassName);
+ 		}

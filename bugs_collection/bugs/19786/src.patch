@@ -1,0 +1,13 @@
+diff --git a/buggy/buffer/src/main/java/io/netty/buffer/SlicedByteBuf.java b/fixed/buffer/src/main/java/io/netty/buffer/SlicedByteBuf.java
+index 561cada37..93678f648 100644
+--- a/buggy/buffer/src/main/java/io/netty/buffer/SlicedByteBuf.java
++++ b/fixed/buffer/src/main/java/io/netty/buffer/SlicedByteBuf.java
+@@ -271,7 +271,7 @@ public class SlicedByteBuf extends AbstractDerivedByteBuf {
+     @Override
+     public ByteBuffer internalNioBuffer(int index, int length) {
+         checkIndex(index, length);
+-        return buffer.internalNioBuffer(index + adjustment, length);
++        return buffer.internalNioBuffer(index + adjustment, length).duplicate();
+     }
+ 
+     @Override

@@ -1,0 +1,17 @@
+diff --git a/buggy/presto-hive/src/test/java/com/facebook/presto/hive/AbstractTestHiveClientS3.java b/fixed/presto-hive/src/test/java/com/facebook/presto/hive/AbstractTestHiveClientS3.java
+index dbbff72b2..831173e04 100644
+--- a/buggy/presto-hive/src/test/java/com/facebook/presto/hive/AbstractTestHiveClientS3.java
++++ b/fixed/presto-hive/src/test/java/com/facebook/presto/hive/AbstractTestHiveClientS3.java
+@@ -250,10 +250,10 @@ public abstract class AbstractTestHiveClientS3
+             assertEquals(row.getField(0), 1L);
+ 
+             row = result.getMaterializedRows().get(1);
+-            assertEquals(row.getField(0), 2L);
++            assertEquals(row.getField(0), 3L);
+ 
+             row = result.getMaterializedRows().get(2);
+-            assertEquals(row.getField(0), 3L);
++            assertEquals(row.getField(0), 2L);
+         }
+     }
+ 

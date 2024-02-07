@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/jobmaster/JobMaster.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/jobmaster/JobMaster.java
+index dd2a7eaef..015751b1a 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/jobmaster/JobMaster.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/jobmaster/JobMaster.java
+@@ -407,7 +407,7 @@ public class JobMaster extends FencedRpcEndpoint<JobMasterId> implements JobMast
+ 
+ 		// shut down will internally release all registered slots
+ 		slotPool.shutDown();
+-		CompletableFuture<Boolean> terminationFuture = slotPool.getTerminationFuture();
++		CompletableFuture<Void> terminationFuture = slotPool.getTerminationFuture();
+ 
+ 		Exception exception = null;
+ 

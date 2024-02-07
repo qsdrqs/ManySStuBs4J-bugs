@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/block/uncompressed/UncompressedDoubleBlockCursor.java b/fixed/presto-main/src/main/java/com/facebook/presto/block/uncompressed/UncompressedDoubleBlockCursor.java
+index 3566e5313..2ad692c3b 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/block/uncompressed/UncompressedDoubleBlockCursor.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/block/uncompressed/UncompressedDoubleBlockCursor.java
+@@ -92,7 +92,7 @@ public class UncompressedDoubleBlockCursor
+         }
+ 
+         // advance to specified position
+-        position = newPosition;
++        position = Math.max(newPosition, this.range.getStart());
+         offset = (int) ((position - this.range.getStart()) * SIZE_OF_DOUBLE);
+         return SUCCESS;
+     }

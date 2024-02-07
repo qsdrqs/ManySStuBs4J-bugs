@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/io/druid/segment/realtime/plumber/FlushingPlumber.java b/fixed/server/src/main/java/io/druid/segment/realtime/plumber/FlushingPlumber.java
+index 07308a071..da27418eb 100644
+--- a/buggy/server/src/main/java/io/druid/segment/realtime/plumber/FlushingPlumber.java
++++ b/fixed/server/src/main/java/io/druid/segment/realtime/plumber/FlushingPlumber.java
+@@ -96,7 +96,7 @@ public class FlushingPlumber extends RealtimePlumber
+     log.info(
+         "Abandoning segment %s at %s",
+         sink.getSegment().getIdentifier(),
+-        new DateTime().plusMillis(flushDuration.getMillis())
++        new DateTime().plusMillis((int) flushDuration.getMillis())
+     );
+ 
+     ScheduledExecutors.scheduleWithFixedDelay(

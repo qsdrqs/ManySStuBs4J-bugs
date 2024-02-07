@@ -1,0 +1,17 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/client/impl/protocol/parameters/ReplicatedMapTemplate.java b/fixed/hazelcast/src/main/java/com/hazelcast/client/impl/protocol/parameters/ReplicatedMapTemplate.java
+index e7c1e44bc..8ce004715 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/client/impl/protocol/parameters/ReplicatedMapTemplate.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/client/impl/protocol/parameters/ReplicatedMapTemplate.java
+@@ -64,10 +64,10 @@ public interface ReplicatedMapTemplate {
+     @EncodeMethod(id = 13)
+     void addEntryListener(String name);
+ 
+-    @EncodeMethod(id = 15)
++    @EncodeMethod(id = 14)
+     void removeEntryListener(String name, String registrationId);
+ 
+-    @EncodeMethod(id = 16)
++    @EncodeMethod(id = 15)
+     void keySet(String name);
+ 
+     @EncodeMethod(id = 16)

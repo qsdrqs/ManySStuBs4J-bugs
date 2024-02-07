@@ -1,0 +1,21 @@
+diff --git a/buggy/src/com/activeandroid/Model.java b/fixed/src/com/activeandroid/Model.java
+index 110437931..0fa40c4d3 100644
+--- a/buggy/src/com/activeandroid/Model.java
++++ b/fixed/src/com/activeandroid/Model.java
+@@ -254,13 +254,13 @@ public abstract class Model {
+ 				}
+ 			}
+ 			catch (IllegalArgumentException e) {
+-				Log.e(e.getMessage());
++                Log.e(e.getClass().getName(), e);
+ 			}
+ 			catch (IllegalAccessException e) {
+-				Log.e(e.getMessage());
++                Log.e(e.getClass().getName(), e);
+ 			}
+ 			catch (SecurityException e) {
+-				Log.e(e.getMessage());
++                Log.e(e.getClass().getName(), e);
+ 			}
+ 		}
+ 	}

@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/ChannelHandlerMask.java b/fixed/transport/src/main/java/io/netty/channel/ChannelHandlerMask.java
+index baa36891f..8edc4b703 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/ChannelHandlerMask.java
++++ b/fixed/transport/src/main/java/io/netty/channel/ChannelHandlerMask.java
+@@ -179,7 +179,7 @@ final class ChannelHandlerMask {
+                         "Class {} missing method {}, assume we can not skip execution", handlerType, methodName, e);
+                 return false;
+             }
+-            return m.isAnnotationPresent(Skip.class);
++            return m != null && m.isAnnotationPresent(Skip.class);
+         });
+     }
+ 

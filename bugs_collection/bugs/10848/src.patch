@@ -1,0 +1,15 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/MissingSwitchDefaultCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/MissingSwitchDefaultCheckTest.java
+index 92600ce71..06e1f1ae6 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/MissingSwitchDefaultCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/MissingSwitchDefaultCheckTest.java
+@@ -43,7 +43,9 @@ public class MissingSwitchDefaultCheckTest
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "coding" + File.separator + filename);
++                + "coding" + File.separator
++                + "missingswitchdefault" + File.separator
++                + filename);
+     }
+ 
+     @Test

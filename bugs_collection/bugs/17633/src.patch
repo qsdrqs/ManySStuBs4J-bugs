@@ -1,0 +1,13 @@
+diff --git a/buggy/backends/gdx-backend-moe/src/com/badlogic/gdx/backends/iosmoe/IOSAudio.java b/fixed/backends/gdx-backend-moe/src/com/badlogic/gdx/backends/iosmoe/IOSAudio.java
+index 7fcaa757f..e6f79bf15 100644
+--- a/buggy/backends/gdx-backend-moe/src/com/badlogic/gdx/backends/iosmoe/IOSAudio.java
++++ b/fixed/backends/gdx-backend-moe/src/com/badlogic/gdx/backends/iosmoe/IOSAudio.java
+@@ -58,7 +58,7 @@ public class IOSAudio implements Audio {
+ 	@Override
+ 	public Music newMusic (FileHandle fileHandle) {
+ 		String path = fileHandle.file().getPath().replace('\\', '/');
+-		OALAudioTrack track = OALAudioTrack.alloc();
++		OALAudioTrack track = OALAudioTrack.alloc().init();
+ 		if (track != null) {
+ 			if (track.preloadFile(path)) {
+ 				return new IOSMusic(track);

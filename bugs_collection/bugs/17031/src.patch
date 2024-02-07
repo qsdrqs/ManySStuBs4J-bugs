@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/impl/CMap.java b/fixed/hazelcast/src/main/java/com/hazelcast/impl/CMap.java
+index 4026a0e02..6d535686f 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/impl/CMap.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/impl/CMap.java
+@@ -1308,7 +1308,7 @@ public class CMap {
+         @Override
+         public int getMaxSize() {
+             final int maxSize = maxSizeConfig.getSize();
+-            final int clusterMemberSize = node.getClusterImpl().getMembers().size();
++            final int clusterMemberSize = concurrentMapManager.dataMemberCount.get();
+             final int memberCount = (clusterMemberSize == 0) ? 1 : clusterMemberSize;
+             return maxSize / memberCount;
+         }

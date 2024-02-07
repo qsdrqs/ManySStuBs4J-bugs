@@ -1,0 +1,13 @@
+diff --git a/buggy/jsonschema2pojo-core/src/main/java/org/jsonschema2pojo/util/TypeUtil.java b/fixed/jsonschema2pojo-core/src/main/java/org/jsonschema2pojo/util/TypeUtil.java
+index 57f88c849..8ba69ec33 100644
+--- a/buggy/jsonschema2pojo-core/src/main/java/org/jsonschema2pojo/util/TypeUtil.java
++++ b/fixed/jsonschema2pojo-core/src/main/java/org/jsonschema2pojo/util/TypeUtil.java
+@@ -41,7 +41,7 @@ public class TypeUtil {
+ 
+             return buildClass(_package, c, 0);
+         } catch (ParseException e) {
+-            throw new GenerationException(e);
++            throw new GenerationException("Couldn't parse type: " + typeDefinition, e);
+         }
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/whitespace/AbstractParenPadCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/whitespace/AbstractParenPadCheck.java
+index eae298b7d..10c5f25ef 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/whitespace/AbstractParenPadCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/whitespace/AbstractParenPadCheck.java
+@@ -34,7 +34,7 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtils;
+  * </p>
+  * @author Oliver Burn
+  */
+-abstract class AbstractParenPadCheck
++public abstract class AbstractParenPadCheck
+     extends Check {
+ 
+     /**

@@ -1,0 +1,13 @@
+diff --git a/buggy/sql/src/main/java/io/druid/sql/avatica/AvaticaServerConfig.java b/fixed/sql/src/main/java/io/druid/sql/avatica/AvaticaServerConfig.java
+index db8eff47a..c7e436201 100644
+--- a/buggy/sql/src/main/java/io/druid/sql/avatica/AvaticaServerConfig.java
++++ b/fixed/sql/src/main/java/io/druid/sql/avatica/AvaticaServerConfig.java
+@@ -34,7 +34,7 @@ public class AvaticaServerConfig
+   public Period connectionIdleTimeout = new Period("PT5M");
+ 
+   @JsonProperty
+-  public int maxRowsPerFrame = 100_000;
++  public int maxRowsPerFrame = 5000;
+ 
+   public int getMaxConnections()
+   {

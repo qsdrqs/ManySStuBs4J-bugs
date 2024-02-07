@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/component/mock/MockEndpoint.java b/fixed/camel-core/src/main/java/org/apache/camel/component/mock/MockEndpoint.java
+index 7f4af395a..b066f0f73 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/component/mock/MockEndpoint.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/component/mock/MockEndpoint.java
+@@ -318,7 +318,7 @@ public class MockEndpoint extends DefaultEndpoint implements BrowsableEndpoint {
+             public void run() {
+                 assertTrue("No header with name " + headerName + " found.", actualHeader != null);
+ 
+-                assertEquals("Header of message", headerValue, actualHeader);
++                assertEquals("Header of message", headerValue, actualHeader.toString());
+             }
+         });
+     }

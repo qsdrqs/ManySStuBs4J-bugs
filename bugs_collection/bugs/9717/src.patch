@@ -1,0 +1,13 @@
+diff --git a/buggy/beeline/src/java/org/apache/hive/beeline/BeeLine.java b/fixed/beeline/src/java/org/apache/hive/beeline/BeeLine.java
+index 1d468eb89..c4dbcd42d 100644
+--- a/buggy/beeline/src/java/org/apache/hive/beeline/BeeLine.java
++++ b/fixed/beeline/src/java/org/apache/hive/beeline/BeeLine.java
+@@ -889,7 +889,7 @@ public class BeeLine implements Closeable {
+     FileInputStream initStream = null;
+     try {
+       initStream = new FileInputStream(fileName);
+-      return execute(getConsoleReader(initStream), true);
++      return execute(getConsoleReader(initStream), !getOpts().getForce());
+     } catch (Throwable t) {
+       handleException(t);
+       return ERRNO_OTHER;

@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/ContextTestSupport.java b/fixed/camel-core/src/test/java/org/apache/camel/ContextTestSupport.java
+index ef4c6ffcd..798b7410c 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/ContextTestSupport.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/ContextTestSupport.java
+@@ -49,7 +49,7 @@ public abstract class ContextTestSupport extends TestSupport {
+         context.stop();
+     }
+ 
+-    protected CamelContext createCamelContext() {
++    protected CamelContext createCamelContext() throws Exception {
+         return new DefaultCamelContext();
+     }
+ 

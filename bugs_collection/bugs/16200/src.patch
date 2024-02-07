@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/replicatedmap/ReplicatedMapTtlTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/replicatedmap/ReplicatedMapTtlTest.java
+index 6941e1fac..8be9bcf5c 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/replicatedmap/ReplicatedMapTtlTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/replicatedmap/ReplicatedMapTtlTest.java
+@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
+ 
+ @RunWith(HazelcastSerialClassRunner.class)
+ @Category(SlowTest.class)
+-public class ReplicatedMapTtlTest extends ReplicatedMapBaseTest {
++public class ReplicatedMapTtlTest extends ReplicatedMapAbstractTest {
+ 
+     @Test
+     public void testPutWithTTL_withMigration() throws Exception {

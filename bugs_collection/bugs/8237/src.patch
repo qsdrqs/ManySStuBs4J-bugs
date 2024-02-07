@@ -1,0 +1,17 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/jobmaster/JobManagerRunner.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/jobmaster/JobManagerRunner.java
+index 5740bd7c2..42692434b 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/jobmaster/JobManagerRunner.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/jobmaster/JobManagerRunner.java
+@@ -225,10 +225,10 @@ public class JobManagerRunner implements LeaderContender, OnCompletionActions, F
+ 
+ 				jobManager.shutDown();
+ 
+-				final CompletableFuture<Boolean> jobManagerTerminationFuture = jobManager.getTerminationFuture();
++				final CompletableFuture<Void> jobManagerTerminationFuture = jobManager.getTerminationFuture();
+ 
+ 				jobManagerTerminationFuture.whenComplete(
+-					(Boolean ignored, Throwable throwable) -> {
++					(Void ignored, Throwable throwable) -> {
+ 						try {
+ 							leaderElectionService.stop();
+ 						} catch (Throwable t) {

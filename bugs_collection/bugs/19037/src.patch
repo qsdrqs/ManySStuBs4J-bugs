@@ -1,0 +1,13 @@
+diff --git a/buggy/community/server/src/test/java/org/neo4j/server/configuration/PropertyFileConfiguratorTest.java b/fixed/community/server/src/test/java/org/neo4j/server/configuration/PropertyFileConfiguratorTest.java
+index 74285d0b3..736daa7d0 100644
+--- a/buggy/community/server/src/test/java/org/neo4j/server/configuration/PropertyFileConfiguratorTest.java
++++ b/fixed/community/server/src/test/java/org/neo4j/server/configuration/PropertyFileConfiguratorTest.java
+@@ -127,7 +127,7 @@ public class PropertyFileConfiguratorTest
+     public void shouldSetStoreDirSetting() throws Exception
+     {
+         // Given
+-        String dbLocation = "/tmp/deosntmatter";
++        String dbLocation = new File( "/tmp/deosntmatter" ).getAbsolutePath();
+         File propertyFile = PropertyFileBuilder.builder( folder.getRoot() ).withNameValue( Configurator.DATABASE_LOCATION_PROPERTY_KEY, dbLocation ).build();
+         PropertyFileConfigurator serverConfig = new PropertyFileConfigurator( propertyFile );
+ 

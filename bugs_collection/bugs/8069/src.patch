@@ -1,0 +1,15 @@
+diff --git a/buggy/flink-table/flink-table-planner-blink/src/main/java/org/apache/flink/table/executor/ExecutorBase.java b/fixed/flink-table/flink-table-planner-blink/src/main/java/org/apache/flink/table/executor/ExecutorBase.java
+index 4d284072d..fb6bbf179 100644
+--- a/buggy/flink-table/flink-table-planner-blink/src/main/java/org/apache/flink/table/executor/ExecutorBase.java
++++ b/fixed/flink-table/flink-table-planner-blink/src/main/java/org/apache/flink/table/executor/ExecutorBase.java
+@@ -32,7 +32,9 @@ import java.util.List;
+  */
+ @Internal
+ public abstract class ExecutorBase implements Executor {
+-	private final String DEFAULT_JOB_NAME = "Flink Exec Table Job";
++
++	private static final String DEFAULT_JOB_NAME = "Flink Exec Table Job";
++
+ 	private final StreamExecutionEnvironment executionEnvironment;
+ 	protected List<Transformation<?>> transformations = new ArrayList<>();
+ 

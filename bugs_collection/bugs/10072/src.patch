@@ -1,0 +1,13 @@
+diff --git a/buggy/storm-core/src/jvm/storm/trident/testing/MemoryMapState.java b/fixed/storm-core/src/jvm/storm/trident/testing/MemoryMapState.java
+index efaa2ae75..72759680b 100644
+--- a/buggy/storm-core/src/jvm/storm/trident/testing/MemoryMapState.java
++++ b/fixed/storm-core/src/jvm/storm/trident/testing/MemoryMapState.java
+@@ -69,7 +69,7 @@ public class MemoryMapState<T> implements Snapshottable<T>, ITupleCollection, Ma
+ 
+         @Override
+         public State makeState(Map conf, IMetricsContext metrics, int partitionIndex, int numPartitions) {
+-            return new MemoryMapState(_id);
++            return new MemoryMapState(_id + partitionIndex);
+         }
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/utils/IntSet.java b/fixed/gdx/src/com/badlogic/gdx/utils/IntSet.java
+index 6f53ebfd1..dca8d8c8c 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/utils/IntSet.java
++++ b/fixed/gdx/src/com/badlogic/gdx/utils/IntSet.java
+@@ -525,7 +525,7 @@ public class IntSet {
+ 				throw new IllegalStateException("next must be called before remove.");
+ 			} else if (currentIndex >= set.capacity) {
+ 				set.removeStashIndex(currentIndex);
+-				nextIndex = currentIndex;
++				nextIndex = currentIndex - 1;
+ 				findNextIndex();
+ 			} else {
+ 				set.keyTable[currentIndex] = EMPTY;

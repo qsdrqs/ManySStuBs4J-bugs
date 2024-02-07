@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/util/MathUtils.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/util/MathUtils.java
+index 2acc55cf1..5d261866f 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/util/MathUtils.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/util/MathUtils.java
+@@ -147,7 +147,7 @@ public final class MathUtils {
+ 		code *= 0x1b873593;
+ 
+ 		code = Integer.rotateLeft(code, 13);
+-		code *= 0xe6546b64;
++		code = code * 5 + 0xe6546b64;
+ 
+ 		code ^= 4;
+ 		code ^= code >>> 16;

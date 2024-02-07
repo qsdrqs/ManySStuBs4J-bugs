@@ -1,0 +1,13 @@
+diff --git a/buggy/hikaricp/src/main/java/com/zaxxer/hikari/util/PoolUtilities.java b/fixed/hikaricp/src/main/java/com/zaxxer/hikari/util/PoolUtilities.java
+index 4e4cfaffa..32d79f06c 100644
+--- a/buggy/hikaricp/src/main/java/com/zaxxer/hikari/util/PoolUtilities.java
++++ b/fixed/hikaricp/src/main/java/com/zaxxer/hikari/util/PoolUtilities.java
+@@ -290,7 +290,7 @@ public final class PoolUtilities
+    {
+       if (connectionTimeout != Integer.MAX_VALUE) {
+          try {
+-            dataSource.setLoginTimeout((int) TimeUnit.MILLISECONDS.toSeconds(Math.min(1000L, connectionTimeout)));
++            dataSource.setLoginTimeout((int) TimeUnit.MILLISECONDS.toSeconds(Math.max(1000L, connectionTimeout)));
+          }
+          catch (SQLException e) {
+             logger.warn("Unable to set DataSource login timeout", e);

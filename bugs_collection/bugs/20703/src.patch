@@ -1,0 +1,16 @@
+diff --git a/buggy/bundles/core/org.openhab.core.transform/src/main/java/org/openhab/core/transform/internal/service/JSonPathTransformationService.java b/fixed/bundles/core/org.openhab.core.transform/src/main/java/org/openhab/core/transform/internal/service/JSonPathTransformationService.java
+index 8f98cb608..70d0136be 100644
+--- a/buggy/bundles/core/org.openhab.core.transform/src/main/java/org/openhab/core/transform/internal/service/JSonPathTransformationService.java
++++ b/fixed/bundles/core/org.openhab.core.transform/src/main/java/org/openhab/core/transform/internal/service/JSonPathTransformationService.java
+@@ -41,9 +41,9 @@ public class JSonPathTransformationService implements TransformationService {
+ 		logger.debug("about to transform '{}' by the function '{}'", source, JSonPathExpression);
+ 
+ 		try {
+-			String transformationResult = JsonPath.read(source, JSonPathExpression);
++			Object transformationResult = JsonPath.read(source, JSonPathExpression);
+ 			logger.debug("transformation resulted in '{}'", transformationResult);
+-			return transformationResult;
++			return (transformationResult != null) ? transformationResult.toString() : null;
+ 		} catch(InvalidPathException e) {
+ 			throw new TransformationException("An error occured while transforming JSON expression.", e);
+ 		} 

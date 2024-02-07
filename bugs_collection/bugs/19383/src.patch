@@ -1,0 +1,13 @@
+diff --git a/buggy/community/server/src/functionaltest/java/org/neo4j/server/rest/AbstractRestFunctionalTestBase.java b/fixed/community/server/src/functionaltest/java/org/neo4j/server/rest/AbstractRestFunctionalTestBase.java
+index d92d06882..2ce1f6f6e 100644
+--- a/buggy/community/server/src/functionaltest/java/org/neo4j/server/rest/AbstractRestFunctionalTestBase.java
++++ b/fixed/community/server/src/functionaltest/java/org/neo4j/server/rest/AbstractRestFunctionalTestBase.java
+@@ -67,7 +67,7 @@ public class AbstractRestFunctionalTestBase implements GraphHolder
+     
+     protected String startGraph( String name )
+     {
+-        return AsciidocHelper.createGraphViz( "Starting Graph:", graphdb(), name);
++        return AsciidocHelper.createGraphViz( "Starting Graph", graphdb(), name);
+     }
+ 
+   

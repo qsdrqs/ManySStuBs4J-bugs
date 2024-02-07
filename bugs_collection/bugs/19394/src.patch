@@ -1,0 +1,13 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/nioneo/store/PersistenceWindowPool.java b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/nioneo/store/PersistenceWindowPool.java
+index 0e6dec5f6..67be248ea 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/nioneo/store/PersistenceWindowPool.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/nioneo/store/PersistenceWindowPool.java
+@@ -531,7 +531,7 @@ class PersistenceWindowPool
+                 {
+                     ((MappedPersistenceWindow) window).unmap();
+                 }
+-                else if ( window instanceof PlainPersistenceWindow )
++                else if ( !readOnly && window instanceof PlainPersistenceWindow )
+                 {
+                     ((PlainPersistenceWindow) window).writeOut();
+                 }

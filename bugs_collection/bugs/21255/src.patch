@@ -1,0 +1,15 @@
+diff --git a/buggy/api/src/main/java/org/openmrs/util/LocaleUtility.java b/fixed/api/src/main/java/org/openmrs/util/LocaleUtility.java
+index 5a09fef5d..4986208a9 100644
+--- a/buggy/api/src/main/java/org/openmrs/util/LocaleUtility.java
++++ b/fixed/api/src/main/java/org/openmrs/util/LocaleUtility.java
+@@ -225,9 +225,7 @@ public class LocaleUtility implements GlobalPropertyListener {
+ 	 */
+ 	public static boolean isValid(Locale locale) {
+ 		try {
+-			//Check if the language is available and then verify the country separately, because e.g. fr_RW combination is not among available locales.
+-			return (LocaleUtils.isAvailableLocale(new Locale(locale.getLanguage())) || locale.getISO3Language() != null)
+-			        && locale.getISO3Country() != null;
++			return locale.getISO3Language() != null && locale.getISO3Country() != null;
+ 		}
+ 		catch (MissingResourceException e) {
+ 			return false;

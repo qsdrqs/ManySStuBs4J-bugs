@@ -1,0 +1,13 @@
+diff --git a/buggy/okhttp/src/main/java/okhttp3/internal/cache2/FileOperator.java b/fixed/okhttp/src/main/java/okhttp3/internal/cache2/FileOperator.java
+index 70914226c..b1326cddc 100644
+--- a/buggy/okhttp/src/main/java/okhttp3/internal/cache2/FileOperator.java
++++ b/fixed/okhttp/src/main/java/okhttp3/internal/cache2/FileOperator.java
+@@ -41,7 +41,7 @@ final class FileOperator {
+   private final ByteBuffer byteBuffer = ByteBuffer.wrap(byteArray);
+   private final FileChannel fileChannel;
+ 
+-  public FileOperator(FileChannel fileChannel) {
++  FileOperator(FileChannel fileChannel) {
+     this.fileChannel = fileChannel;
+   }
+ 

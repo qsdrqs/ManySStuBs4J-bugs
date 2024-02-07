@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/config/YamlConfigImportVariableReplacementTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/config/YamlConfigImportVariableReplacementTest.java
+index b05783c6e..5711c9649 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/config/YamlConfigImportVariableReplacementTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/config/YamlConfigImportVariableReplacementTest.java
+@@ -571,7 +571,7 @@ public class YamlConfigImportVariableReplacementTest extends AbstractConfigImpor
+ 
+         Properties properties = new Properties();
+         properties.put("variable", "foobar");
+-        Config config = new UrlYamlConfig("file://" + file.getPath(), properties);
++        Config config = new UrlYamlConfig("file:///" + file.getPath(), properties);
+ 
+         assertEquals("foobar", config.getProperty("prop"));
+     }

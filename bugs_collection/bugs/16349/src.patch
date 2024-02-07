@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/map/impl/record/DataRecord.java b/fixed/hazelcast/src/main/java/com/hazelcast/map/impl/record/DataRecord.java
+index 8f575c8d7..4ab8b0535 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/map/impl/record/DataRecord.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/map/impl/record/DataRecord.java
+@@ -20,7 +20,7 @@ import com.hazelcast.nio.serialization.Data;
+ 
+ class DataRecord extends AbstractRecord<Data> {
+ 
+-    protected Data value;
++    protected volatile Data value;
+ 
+     DataRecord(Data value) {
+         this.value = value;

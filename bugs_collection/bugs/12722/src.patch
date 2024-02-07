@@ -1,0 +1,13 @@
+diff --git a/buggy/processing/src/main/java/io/druid/segment/QueryableIndexStorageAdapter.java b/fixed/processing/src/main/java/io/druid/segment/QueryableIndexStorageAdapter.java
+index 229845012..f990f451a 100644
+--- a/buggy/processing/src/main/java/io/druid/segment/QueryableIndexStorageAdapter.java
++++ b/fixed/processing/src/main/java/io/druid/segment/QueryableIndexStorageAdapter.java
+@@ -614,7 +614,7 @@ public class QueryableIndexStorageAdapter implements StorageAdapter
+ 
+                         if (columnVals.hasMultipleValues()) {
+                           throw new UnsupportedOperationException(
+-                              "makeObjectColumnSelector does not support multivalued GenericColumns"
++                              "makeObjectColumnSelector does not support multi-value GenericColumns"
+                           );
+                         }
+ 

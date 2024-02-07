@@ -1,0 +1,13 @@
+diff --git a/buggy/web/src/main/java/org/openmrs/web/controller/visit/VisitFormController.java b/fixed/web/src/main/java/org/openmrs/web/controller/visit/VisitFormController.java
+index 5990f271a..a322aa285 100644
+--- a/buggy/web/src/main/java/org/openmrs/web/controller/visit/VisitFormController.java
++++ b/fixed/web/src/main/java/org/openmrs/web/controller/visit/VisitFormController.java
+@@ -326,7 +326,7 @@ public class VisitFormController {
+ 	
+ 	@ModelAttribute("visitTypes")
+ 	public List<VisitType> getVisitTypes() throws Exception {
+-		return Context.getVisitService().getAllVisitTypes();
++		return Context.getVisitService().getAllVisitTypes(true);
+ 	}
+ 	
+ 	@ModelAttribute("attributeTypes")

@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/SplitPane.java b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/SplitPane.java
+index 6c13e38fe..e72bac045 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/SplitPane.java
++++ b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/SplitPane.java
+@@ -251,7 +251,7 @@ public class SplitPane extends WidgetGroup {
+ 				ScissorStack.popScissors();
+ 			}
+ 		}
+-		batch.setColor(color.r, color.g, color.b, color.a);
++		batch.setColor(color.r, color.g, color.b, parentAlpha * color.a);
+ 		handle.draw(batch, handleBounds.x, handleBounds.y, handleBounds.width, handleBounds.height);
+ 		resetTransform(batch);
+ 	}

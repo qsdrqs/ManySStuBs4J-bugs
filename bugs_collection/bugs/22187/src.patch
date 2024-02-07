@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-samples/spring-boot-sample-webflux/src/test/java/sample/webflux/SampleWebFluxApplicationTests.java b/fixed/spring-boot-samples/spring-boot-sample-webflux/src/test/java/sample/webflux/SampleWebFluxApplicationTests.java
+index bc35ef4ee..19478faac 100644
+--- a/buggy/spring-boot-samples/spring-boot-sample-webflux/src/test/java/sample/webflux/SampleWebFluxApplicationTests.java
++++ b/fixed/spring-boot-samples/spring-boot-sample-webflux/src/test/java/sample/webflux/SampleWebFluxApplicationTests.java
+@@ -41,7 +41,7 @@ public class SampleWebFluxApplicationTests {
+ 	@Test
+ 	public void testWelcome() throws Exception {
+ 		this.webClient.get().uri("/").accept(MediaType.TEXT_PLAIN).exchange()
+-				.expectBody(String.class).value().isEqualTo("Hello World");
++				.expectBody(String.class).isEqualTo("Hello World");
+ 	}
+ 
+ }

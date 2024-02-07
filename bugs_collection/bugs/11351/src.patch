@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter7javadoc/rule731selfexplanatory/JavadocMethodTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter7javadoc/rule731selfexplanatory/JavadocMethodTest.java
+index ea36e09e8..9dd60f94a 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter7javadoc/rule731selfexplanatory/JavadocMethodTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter7javadoc/rule731selfexplanatory/JavadocMethodTest.java
+@@ -22,7 +22,7 @@ public class JavadocMethodTest extends BaseCheckTestSupport{
+     }
+ 
+     @Test
+-    public void javadocMethodTest() throws IOException, Exception {
++    public void javadocMethodTest() throws Exception {
+ 
+         String msg = getCheckMessage(JavadocMethodCheck.class, "javadoc.missing");
+ 

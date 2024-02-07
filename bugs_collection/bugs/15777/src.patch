@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions/servlet/src/com/google/inject/servlet/ServletDefinition.java b/fixed/extensions/servlet/src/com/google/inject/servlet/ServletDefinition.java
+index 5d7195888..e433436d2 100644
+--- a/buggy/extensions/servlet/src/com/google/inject/servlet/ServletDefinition.java
++++ b/fixed/extensions/servlet/src/com/google/inject/servlet/ServletDefinition.java
+@@ -71,7 +71,7 @@ class ServletDefinition implements ProviderWithExtensionVisitor<ServletDefinitio
+     return this;
+   }
+   
+-  public <V, B> V acceptExtensionVisitor(BindingTargetVisitor<B, V> visitor,
++  public <B, V> V acceptExtensionVisitor(BindingTargetVisitor<B, V> visitor,
+       ProviderInstanceBinding<? extends B> binding) {
+     if(visitor instanceof ServletModuleTargetVisitor) {
+       if(servletInstance != null) {

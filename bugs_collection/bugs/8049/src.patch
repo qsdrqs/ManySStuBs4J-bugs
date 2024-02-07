@@ -1,0 +1,14 @@
+diff --git a/buggy/flink-table/flink-table-planner-blink/src/main/java/org/apache/flink/table/planner/functions/sql/FlinkSqlOperatorTable.java b/fixed/flink-table/flink-table-planner-blink/src/main/java/org/apache/flink/table/planner/functions/sql/FlinkSqlOperatorTable.java
+index f78bd1c04..b619eb5c9 100644
+--- a/buggy/flink-table/flink-table-planner-blink/src/main/java/org/apache/flink/table/planner/functions/sql/FlinkSqlOperatorTable.java
++++ b/fixed/flink-table/flink-table-planner-blink/src/main/java/org/apache/flink/table/planner/functions/sql/FlinkSqlOperatorTable.java
+@@ -632,8 +632,7 @@ public class FlinkSqlOperatorTable extends ReflectiveSqlOperatorTable {
+ 		OperandTypes.or(
+ 			OperandTypes.NILADIC,
+ 			OperandTypes.family(SqlTypeFamily.STRING),
+-			OperandTypes.family(SqlTypeFamily.STRING, SqlTypeFamily.STRING),
+-			OperandTypes.family(SqlTypeFamily.TIMESTAMP)),
++			OperandTypes.family(SqlTypeFamily.STRING, SqlTypeFamily.STRING)),
+ 		SqlFunctionCategory.TIMEDATE) {
+ 
+ 		@Override

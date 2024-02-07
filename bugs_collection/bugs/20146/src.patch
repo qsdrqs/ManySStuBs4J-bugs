@@ -1,0 +1,22 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.knx.test/src/test/java/org/openhab/binding/knx/internal/dpt/KNXCoreTypeMapperTest.java b/fixed/bundles/binding/org.openhab.binding.knx.test/src/test/java/org/openhab/binding/knx/internal/dpt/KNXCoreTypeMapperTest.java
+index a1721f442..002e31b10 100644
+--- a/buggy/bundles/binding/org.openhab.binding.knx.test/src/test/java/org/openhab/binding/knx/internal/dpt/KNXCoreTypeMapperTest.java
++++ b/fixed/bundles/binding/org.openhab.binding.knx.test/src/test/java/org/openhab/binding/knx/internal/dpt/KNXCoreTypeMapperTest.java
+@@ -1439,7 +1439,7 @@ public class KNXCoreTypeMapperTest {
+ 
+                 try {
+                     Type type = testToType(dpt, new byte[] { 0x00, 0x00, 0x00, 0x00 }, DecimalType.class);
+-                    testToDPTValue(dpt, type, "0.0");
++                    testToDPTValue(dpt, type, "0");
+                 } catch (NumberFormatException nfe) {
+                     fail("DptId: " + dpt.getID() + ", locale: " + locale + ", NumberFormatException. Expecting 0.0");
+                 }
+@@ -1985,7 +1985,7 @@ public class KNXCoreTypeMapperTest {
+                 testToType(dpt, new byte[] {}, expectedClass));
+ 
+         Type type = testToType(dpt, new byte[] { 0x00, 0x00 }, expectedClass);
+-        testToDPTValue(dpt, type, "0.0");
++        testToDPTValue(dpt, type, "0");
+ 
+         if (expectedClass.equals(DecimalType.class.getClass())) {
+             /*

@@ -1,0 +1,13 @@
+diff --git a/buggy/java8/src/test/java/cucumber/runtime/java8/test/LambdaStepdefs.java b/fixed/java8/src/test/java/cucumber/runtime/java8/test/LambdaStepdefs.java
+index 1f41b28eb..05c5923b4 100644
+--- a/buggy/java8/src/test/java/cucumber/runtime/java8/test/LambdaStepdefs.java
++++ b/fixed/java8/src/test/java/cucumber/runtime/java8/test/LambdaStepdefs.java
+@@ -46,7 +46,7 @@ public class LambdaStepdefs implements En {
+                 -> {
+             assertEquals((Integer) 1, a);
+             assertEquals((Float) 2.2f, b);
+-            assertEquals("threed", c);
++            assertEquals("three", c);
+             assertEquals((Integer) 4, d);
+         });
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/common/src/test/java/io/netty/util/internal/TypeParameterMatcherTest.java b/fixed/common/src/test/java/io/netty/util/internal/TypeParameterMatcherTest.java
+index 8cd618090..47d8fb439 100644
+--- a/buggy/common/src/test/java/io/netty/util/internal/TypeParameterMatcherTest.java
++++ b/fixed/common/src/test/java/io/netty/util/internal/TypeParameterMatcherTest.java
+@@ -131,7 +131,7 @@ public class TypeParameterMatcherTest {
+         assertTrue(m.match(new Object()));
+     }
+ 
+-    private static abstract class W<E> {
++    private abstract static class W<E> {
+         E e;
+     }
+ 

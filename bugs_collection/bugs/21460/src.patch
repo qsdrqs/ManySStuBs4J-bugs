@@ -1,0 +1,13 @@
+diff --git a/buggy/src/web/org/openmrs/web/controller/user/UserFormController.java b/fixed/src/web/org/openmrs/web/controller/user/UserFormController.java
+index 82e6b047b..5a9aa3605 100644
+--- a/buggy/src/web/org/openmrs/web/controller/user/UserFormController.java
++++ b/fixed/src/web/org/openmrs/web/controller/user/UserFormController.java
+@@ -256,7 +256,7 @@ public class UserFormController {
+ 				}
+ 			}
+             
+-            if (StringUtils.hasLength(secretQuestion) || StringUtils.hasLength(secretAnswer)) {
++            if (StringUtils.hasLength(secretQuestion) && StringUtils.hasLength(secretAnswer)) {
+             	us.changeQuestionAnswer(user, secretQuestion, secretAnswer);
+             }
+             

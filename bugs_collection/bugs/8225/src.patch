@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/partition/consumer/RemoteInputChannel.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/partition/consumer/RemoteInputChannel.java
+index 990166f0b..0f70d4480 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/partition/consumer/RemoteInputChannel.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/partition/consumer/RemoteInputChannel.java
+@@ -338,7 +338,7 @@ public class RemoteInputChannel extends InputChannel implements BufferRecycler,
+ 	}
+ 
+ 	@VisibleForTesting
+-	public boolean isWaitingForFloatingBuffers() {
++	boolean isWaitingForFloatingBuffers() {
+ 		return isWaitingForFloatingBuffers;
+ 	}
+ 

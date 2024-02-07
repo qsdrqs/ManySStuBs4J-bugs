@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/internal/ascii/RestTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/internal/ascii/RestTest.java
+index 4856c580b..d74cc3dd3 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/internal/ascii/RestTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/internal/ascii/RestTest.java
+@@ -224,7 +224,7 @@ public class RestTest extends HazelcastTestSupport {
+         wanConfig.setName("test");
+         WanReplicationConfigDTO dto = new WanReplicationConfigDTO(wanConfig);
+         String result = communicator.addWanConfig(dto.toJson().toString());
+-        assertEquals("{\"status\":\"fail\",\"message\":\"java.lang.UnsupportedOperationException: Adding new WAN config is not supported.\"}", result);
++        assertEquals("{\"status\":\"fail\",\"message\":\"Adding new WAN config is not supported.\"}", result);
+     }
+ 
+     @Test

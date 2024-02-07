@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions/model-loaders/model-loaders/src/com/badlogic/gdx/graphics/g3d/test/SkeletonModelViewer.java b/fixed/extensions/model-loaders/model-loaders/src/com/badlogic/gdx/graphics/g3d/test/SkeletonModelViewer.java
+index bc3ccf05b..93a0d10f8 100644
+--- a/buggy/extensions/model-loaders/model-loaders/src/com/badlogic/gdx/graphics/g3d/test/SkeletonModelViewer.java
++++ b/fixed/extensions/model-loaders/model-loaders/src/com/badlogic/gdx/graphics/g3d/test/SkeletonModelViewer.java
+@@ -75,7 +75,7 @@ public class SkeletonModelViewer implements ApplicationListener {
+ 		cam = new PerspectiveCamera(67, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+ 		cam.position.set(bounds.getCenter().cpy().add(len, len, len));
+ 		cam.lookAt(bounds.getCenter().x, bounds.getCenter().y, bounds.getCenter().z);
+-		cam.near = 0.1f;
++		cam.near = 1f;
+ 		cam.far = 1000;
+ 
+ 		renderer = new ImmediateModeRenderer10();

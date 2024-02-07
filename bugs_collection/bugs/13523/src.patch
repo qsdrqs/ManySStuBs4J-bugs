@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/PropertyDerivations.java b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/PropertyDerivations.java
+index 73b172655..1953482be 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/PropertyDerivations.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/PropertyDerivations.java
+@@ -187,7 +187,7 @@ class PropertyDerivations
+         @Override
+         public ActualProperties visitApply(ApplyNode node, List<ActualProperties> inputProperties)
+         {
+-            return inputProperties.get(0); // apply node input (outer query)
++            throw new IllegalArgumentException("Unexpected node: " + node.getClass().getName());
+         }
+ 
+         @Override

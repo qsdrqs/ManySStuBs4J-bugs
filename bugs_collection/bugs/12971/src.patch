@@ -1,0 +1,13 @@
+diff --git a/buggy/s3-extensions/src/main/java/io/druid/storage/s3/S3DataSegmentMover.java b/fixed/s3-extensions/src/main/java/io/druid/storage/s3/S3DataSegmentMover.java
+index 599e3dce4..96a5b8a8d 100644
+--- a/buggy/s3-extensions/src/main/java/io/druid/storage/s3/S3DataSegmentMover.java
++++ b/fixed/s3-extensions/src/main/java/io/druid/storage/s3/S3DataSegmentMover.java
+@@ -34,7 +34,7 @@ import java.util.Map;
+ 
+ public class S3DataSegmentMover implements DataSegmentMover
+ {
+-  private static final Logger log = new Logger(S3DataSegmentKiller.class);
++  private static final Logger log = new Logger(S3DataSegmentMover.class);
+ 
+   private final RestS3Service s3Client;
+   private final S3DataSegmentMoverConfig config;

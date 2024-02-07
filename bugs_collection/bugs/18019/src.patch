@@ -1,0 +1,13 @@
+diff --git a/buggy/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidApplication.java b/fixed/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidApplication.java
+index a0d93b5b1..3c472ce00 100644
+--- a/buggy/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidApplication.java
++++ b/fixed/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidApplication.java
+@@ -381,7 +381,7 @@ public class AndroidApplication extends Activity implements Application {
+ 	}
+ 
+ 	@Override
+-	public void log (String tag, String message, Exception exception) {
++	public void log (String tag, String message, Throwable exception) {
+ 		if (logLevel >= LOG_INFO) Log.i(tag, message, exception);
+ 	}
+ 

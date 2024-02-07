@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/channel/socket/http/HttpTunnelingChannelHandler.java b/fixed/src/main/java/org/jboss/netty/channel/socket/http/HttpTunnelingChannelHandler.java
+index 0c2b69023..ad189d67d 100644
+--- a/buggy/src/main/java/org/jboss/netty/channel/socket/http/HttpTunnelingChannelHandler.java
++++ b/fixed/src/main/java/org/jboss/netty/channel/socket/http/HttpTunnelingChannelHandler.java
+@@ -134,7 +134,7 @@ class HttpTunnelingChannelHandler extends SimpleChannelUpstreamHandler {
+ 
+     @Override
+     public void exceptionCaught(ChannelHandlerContext ctx, ExceptionEvent e) throws Exception {
+-        logger.warn("Unexpected exception", e.getCause());
++        logger.warn("Unexpected exception while HTTP tunneling", e.getCause());
+         invalidateHttpSession();
+         e.getChannel().close();
+     }

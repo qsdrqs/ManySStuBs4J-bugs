@@ -1,0 +1,16 @@
+diff --git a/buggy/hbase-server/src/test/java/org/apache/hadoop/hbase/replication/TestReplicationStateHBaseImpl.java b/fixed/hbase-server/src/test/java/org/apache/hadoop/hbase/replication/TestReplicationStateHBaseImpl.java
+index 25f30d8e0..ccae8a557 100644
+--- a/buggy/hbase-server/src/test/java/org/apache/hadoop/hbase/replication/TestReplicationStateHBaseImpl.java
++++ b/fixed/hbase-server/src/test/java/org/apache/hadoop/hbase/replication/TestReplicationStateHBaseImpl.java
+@@ -81,9 +81,9 @@ public class TestReplicationStateHBaseImpl {
+   public static void setUpBeforeClass() throws Exception {
+     utility = new HBaseTestingUtility();
+     conf = utility.getConfiguration();
+-    conf.setClass("hbase.region.replica.replication.ReplicationQueuesType",
++    conf.setClass("hbase.region.replica.replication.replicationQueues.class",
+       TableBasedReplicationQueuesImpl.class, ReplicationQueues.class);
+-    conf.setClass("hbase.region.replica.replication.ReplicationQueuesClientType",
++    conf.setClass("hbase.region.replica.replication.replicationQueuesClient.class",
+       TableBasedReplicationQueuesClientImpl.class, ReplicationQueuesClient.class);
+     utility.startMiniCluster();
+     zkw = HBaseTestingUtility.getZooKeeperWatcher(utility);

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/zaxxer/hikari/ConnectionProxy.java b/fixed/src/main/java/com/zaxxer/hikari/ConnectionProxy.java
+index 0d645a22a..26709c42d 100644
+--- a/buggy/src/main/java/com/zaxxer/hikari/ConnectionProxy.java
++++ b/fixed/src/main/java/com/zaxxer/hikari/ConnectionProxy.java
+@@ -54,7 +54,7 @@ public class ConnectionProxy extends HikariProxyBase<Connection> implements IHik
+     {
+         openStatements = new ArrayList<Statement>(64);
+         isClosed = new AtomicBoolean();
+-        creationTime = System.currentTimeMillis();
++        creationTime = lastAccess = System.currentTimeMillis();
+     }
+ 
+     /**

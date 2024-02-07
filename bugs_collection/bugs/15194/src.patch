@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/NameAnonymousFunctions.java b/fixed/src/com/google/javascript/jscomp/NameAnonymousFunctions.java
+index d58507a68..9f85ad0c8 100644
+--- a/buggy/src/com/google/javascript/jscomp/NameAnonymousFunctions.java
++++ b/fixed/src/com/google/javascript/jscomp/NameAnonymousFunctions.java
+@@ -53,7 +53,7 @@ class NameAnonymousFunctions implements CompilerPass {
+     AnonymousFunctionNamingCallback namingCallback =
+         new AnonymousFunctionNamingCallback(new AnonymousFunctionNamer());
+     NodeTraversal.traverse(compiler, root, namingCallback);
+-    logger.info("Named " + namedCount + " anon functions using " +
++    logger.fine("Named " + namedCount + " anon functions using " +
+         bytesUsed + " bytes");
+   }
+ 

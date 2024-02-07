@@ -1,0 +1,22 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/transaction/impl/xa/XAResourceImpl.java b/fixed/hazelcast/src/main/java/com/hazelcast/transaction/impl/xa/XAResourceImpl.java
+index aaf1c4039..1ebc58dc6 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/transaction/impl/xa/XAResourceImpl.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/transaction/impl/xa/XAResourceImpl.java
+@@ -107,7 +107,7 @@ public final class XAResourceImpl extends AbstractDistributedObject<XAService> i
+                 }
+                 break;
+             default:
+-                throw new XAException("Unknown flag!!! " + flags);
++                throw new XAException("Unknown flag! " + flags);
+         }
+     }
+ 
+@@ -301,7 +301,7 @@ public final class XAResourceImpl extends AbstractDistributedObject<XAService> i
+         long threadId = Thread.currentThread().getId();
+         TransactionContext transactionContext = threadContextMap.get(threadId);
+         if (transactionContext == null) {
+-            throw new IllegalStateException("No TransactionContext associated with current thread :" + threadId);
++            throw new IllegalStateException("No TransactionContext associated with current thread: " + threadId);
+         }
+         return transactionContext;
+     }

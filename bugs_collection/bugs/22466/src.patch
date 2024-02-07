@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-cli/src/it/java/org/springframework/boot/cli/CommandLineIT.java b/fixed/spring-boot-cli/src/it/java/org/springframework/boot/cli/CommandLineIT.java
+index 8f0b4fd0c..dbf825c75 100644
+--- a/buggy/spring-boot-cli/src/it/java/org/springframework/boot/cli/CommandLineIT.java
++++ b/fixed/spring-boot-cli/src/it/java/org/springframework/boot/cli/CommandLineIT.java
+@@ -42,7 +42,7 @@ public class CommandLineIT {
+ 			InterruptedException {
+ 		Invocation cli = this.cli.invoke("hint");
+ 		assertThat(cli.await(), equalTo(0));
+-		assertThat(cli.getErrorOutput().length(), equalTo(0));
++		assertThat("Unexpected error: \n" + cli.getErrorOutput(), cli.getErrorOutput().length(), equalTo(0));
+ 		assertThat(cli.getStandardOutputLines().size(), equalTo(10));
+ 	}
+ 

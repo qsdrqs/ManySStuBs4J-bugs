@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractTypeAwareCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractTypeAwareCheck.java
+index 7112ca330..83c073fcb 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractTypeAwareCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractTypeAwareCheck.java
+@@ -453,7 +453,7 @@ public abstract class AbstractTypeAwareCheck extends Check {
+          * @param clazz {@code Class} to associate with.
+          */
+         private void setClazz(Class<?> clazz) {
+-            this.classObj = clazz;
++            classObj = clazz;
+             loadable = clazz != null;
+         }
+ 

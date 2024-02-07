@@ -1,0 +1,13 @@
+diff --git a/buggy/webmagic-extension/src/main/java/us/codecraft/webmagic/scheduler/RedisScheduler.java b/fixed/webmagic-extension/src/main/java/us/codecraft/webmagic/scheduler/RedisScheduler.java
+index 59f4b3f43..ce1111f24 100644
+--- a/buggy/webmagic-extension/src/main/java/us/codecraft/webmagic/scheduler/RedisScheduler.java
++++ b/fixed/webmagic-extension/src/main/java/us/codecraft/webmagic/scheduler/RedisScheduler.java
+@@ -48,7 +48,7 @@ public class RedisScheduler extends DuplicateRemovedScheduler implements Monitor
+     public boolean isDuplicate(Request request, Task task) {
+         Jedis jedis = pool.getResource();
+         try {
+-            return jedis.sadd(getSetKey(task), request.getUrl()) > 0;
++            return jedis.sadd(getSetKey(task), request.getUrl()) == 0;
+         } finally {
+             pool.returnResource(jedis);
+         }

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/rhino/testing/NodeSubject.java b/fixed/src/com/google/javascript/rhino/testing/NodeSubject.java
+index 572b6b5dd..36942d6bd 100644
+--- a/buggy/src/com/google/javascript/rhino/testing/NodeSubject.java
++++ b/fixed/src/com/google/javascript/rhino/testing/NodeSubject.java
+@@ -68,7 +68,7 @@ import javax.annotation.Nullable;
+  *   assertNode(node1).hasType(Token.FUNCTION);
+  * </pre>
+  */
+-public final class NodeSubject extends Subject<NodeSubject, Node> {
++public final class NodeSubject extends Subject {
+ 
+   private final Node actual;
+   private Function<Node, String> serializer;

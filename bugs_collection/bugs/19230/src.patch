@@ -1,0 +1,13 @@
+diff --git a/buggy/community/shell/src/main/java/org/neo4j/shell/kernel/apps/Pwd.java b/fixed/community/shell/src/main/java/org/neo4j/shell/kernel/apps/Pwd.java
+index 2756768c9..15caf2108 100644
+--- a/buggy/community/shell/src/main/java/org/neo4j/shell/kernel/apps/Pwd.java
++++ b/fixed/community/shell/src/main/java/org/neo4j/shell/kernel/apps/Pwd.java
+@@ -40,7 +40,7 @@ public class Pwd extends ReadOnlyGraphDatabaseApp
+     @Override
+     public String getDescription()
+     {
+-        return "Prints path to current node or relatioship";
++        return "Prints path to current node or relationship";
+     }
+ 
+     @Override

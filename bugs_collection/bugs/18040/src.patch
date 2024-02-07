@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/math/Polygon.java b/fixed/gdx/src/com/badlogic/gdx/math/Polygon.java
+index 7e6ac6327..eaa2f6b75 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/math/Polygon.java
++++ b/fixed/gdx/src/com/badlogic/gdx/math/Polygon.java
+@@ -57,7 +57,7 @@ public class Polygon {
+ 		dirty = false;
+ 
+ 		final float[] localVertices = this.localVertices;
+-		if (worldVertices == null || worldVertices.length < localVertices.length) worldVertices = new float[localVertices.length];
++		if (worldVertices == null || worldVertices.length != localVertices.length) worldVertices = new float[localVertices.length];
+ 
+ 		final float[] worldVertices = this.worldVertices;
+ 		final float positionX = x;

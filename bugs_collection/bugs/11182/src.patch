@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/DefaultLogger.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/DefaultLogger.java
+index 745e29235..c997dfaa3 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/DefaultLogger.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/DefaultLogger.java
+@@ -160,7 +160,7 @@ public class DefaultLogger
+     /**
+      * Flushes the output streams and closes them if needed.
+      */
+-    protected void closeStreams() {
++    private void closeStreams() {
+         infoWriter.flush();
+         if (closeInfo) {
+             infoWriter.close();

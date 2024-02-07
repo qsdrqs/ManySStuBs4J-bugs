@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/tasks/InterruptSensitiveRestoreTest.java b/fixed/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/tasks/InterruptSensitiveRestoreTest.java
+index 62ab1d4fa..5da1250cc 100644
+--- a/buggy/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/tasks/InterruptSensitiveRestoreTest.java
++++ b/fixed/flink-streaming-java/src/test/java/org/apache/flink/streaming/runtime/tasks/InterruptSensitiveRestoreTest.java
+@@ -181,7 +181,7 @@ public class InterruptSensitiveRestoreTest {
+ 			StreamStateHandle state,
+ 			int mode) throws IOException {
+ 
+-		ShuffleEnvironment shuffleEnvironment = new NettyShuffleEnvironmentBuilder().build();
++		ShuffleEnvironment<?, ?> shuffleEnvironment = new NettyShuffleEnvironmentBuilder().build();
+ 
+ 		Collection<KeyedStateHandle> keyedStateFromBackend = Collections.emptyList();
+ 		Collection<KeyedStateHandle> keyedStateFromStream = Collections.emptyList();

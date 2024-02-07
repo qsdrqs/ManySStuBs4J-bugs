@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.satel/src/main/java/org/openhab/binding/satel/internal/protocol/Ethm1Module.java b/fixed/bundles/binding/org.openhab.binding.satel/src/main/java/org/openhab/binding/satel/internal/protocol/Ethm1Module.java
+index 2da411ba2..6ccf089ce 100644
+--- a/buggy/bundles/binding/org.openhab.binding.satel/src/main/java/org/openhab/binding/satel/internal/protocol/Ethm1Module.java
++++ b/fixed/bundles/binding/org.openhab.binding.satel/src/main/java/org/openhab/binding/satel/internal/protocol/Ethm1Module.java
+@@ -65,7 +65,7 @@ public class Ethm1Module extends SatelModule {
+         try {
+             Socket socket = new Socket();
+             socket.connect(new InetSocketAddress(this.host, this.port), this.getTimeout());
+-            logger.info("ETHM-1 module connected successfuly");
++            logger.info("ETHM-1 module connected successfully");
+ 
+             if (StringUtils.isBlank(this.encryptionKey)) {
+                 return new TCPCommunicationChannel(socket);

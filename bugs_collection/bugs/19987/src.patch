@@ -1,0 +1,13 @@
+diff --git a/buggy/transport-sctp/src/main/java/io/netty/channel/sctp/SctpClientPipelineSink.java b/fixed/transport-sctp/src/main/java/io/netty/channel/sctp/SctpClientPipelineSink.java
+index bd65b89e5..7005422e8 100644
+--- a/buggy/transport-sctp/src/main/java/io/netty/channel/sctp/SctpClientPipelineSink.java
++++ b/fixed/transport-sctp/src/main/java/io/netty/channel/sctp/SctpClientPipelineSink.java
+@@ -47,7 +47,7 @@ import io.netty.util.internal.QueueFactory;
+ 
+ /**
+  */
+-class SctpClientPipelineSink extends AbstractScptChannelSink {
++class SctpClientPipelineSink extends AbstractSctpChannelSink {
+ 
+     static final InternalLogger logger =
+         InternalLoggerFactory.getInstance(SctpClientPipelineSink.class);

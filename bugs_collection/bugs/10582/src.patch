@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/modifier/RedundantModifierCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/modifier/RedundantModifierCheck.java
+index 0d7f2d8c1..cc8d1b6b0 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/modifier/RedundantModifierCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/modifier/RedundantModifierCheck.java
+@@ -309,7 +309,7 @@ public class RedundantModifierCheck
+             checkForRedundantModifier(ast, TokenTypes.FINAL);
+         }
+ 
+-        if (!ast.branchContains(TokenTypes.SLIST)) {
++        if (ast.findFirstToken(TokenTypes.SLIST) == null) {
+             processAbstractMethodParameters(ast);
+         }
+     }

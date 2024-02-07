@@ -1,0 +1,13 @@
+diff --git a/buggy/indexing-hadoop/src/main/java/io/druid/indexer/HadoopIngestionSpec.java b/fixed/indexing-hadoop/src/main/java/io/druid/indexer/HadoopIngestionSpec.java
+index b9947e81f..d759ca260 100644
+--- a/buggy/indexing-hadoop/src/main/java/io/druid/indexer/HadoopIngestionSpec.java
++++ b/fixed/indexing-hadoop/src/main/java/io/druid/indexer/HadoopIngestionSpec.java
+@@ -159,7 +159,7 @@ public class HadoopIngestionSpec extends IngestionSpec<HadoopIOConfig, HadoopTun
+           version,
+           thePartitionSpec,
+           shardSpecs,
+-          rollupSpec == null ? 50000 : rollupSpec.rowFlushBoundary,
++          null,
+           leaveIntermediate,
+           cleanupOnFailure,
+           overwriteFiles,

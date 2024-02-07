@@ -1,0 +1,13 @@
+diff --git a/buggy/jdbc/src/java/org/apache/hive/jdbc/ZooKeeperHiveClientHelper.java b/fixed/jdbc/src/java/org/apache/hive/jdbc/ZooKeeperHiveClientHelper.java
+index 7195515d7..1ca77a170 100644
+--- a/buggy/jdbc/src/java/org/apache/hive/jdbc/ZooKeeperHiveClientHelper.java
++++ b/fixed/jdbc/src/java/org/apache/hive/jdbc/ZooKeeperHiveClientHelper.java
+@@ -159,7 +159,7 @@ class ZooKeeperHiveClientHelper {
+         }
+         // KERBEROS
+         // If delegation token is passed from the client side, do not set the principal
+-        if (matcher.group(2).equalsIgnoreCase("hive.server2.authentication.kerberos.principal")
++        if (matcher.group(1).equalsIgnoreCase("hive.server2.authentication.kerberos.principal")
+             && !(connParams.getSessionVars().containsKey(JdbcConnectionParams.AUTH_TYPE) && connParams
+                 .getSessionVars().get(JdbcConnectionParams.AUTH_TYPE)
+                 .equalsIgnoreCase(JdbcConnectionParams.AUTH_TOKEN))

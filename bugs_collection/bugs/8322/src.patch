@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/partition/SpilledSubpartitionView.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/partition/SpilledSubpartitionView.java
+index 748813265..fec0f2ac1 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/partition/SpilledSubpartitionView.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/partition/SpilledSubpartitionView.java
+@@ -166,7 +166,7 @@ class SpilledSubpartitionView implements ResultSubpartitionView, NotificationLis
+ 
+ 	@Override
+ 	public String toString() {
+-		return String.format("SpilledSubpartitionView(index: %d, buffers: {}) of ResultPartition %s",
++		return String.format("SpilledSubpartitionView(index: %d, buffers: %d) of ResultPartition %s",
+ 			parent.index,
+ 			numberOfSpilledBuffers,
+ 			parent.parent.getPartitionId());

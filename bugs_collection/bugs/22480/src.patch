@@ -1,0 +1,14 @@
+diff --git a/buggy/spring-boot/src/test/java/org/springframework/boot/context/embedded/AbstractEmbeddedServletContainerFactoryTests.java b/fixed/spring-boot/src/test/java/org/springframework/boot/context/embedded/AbstractEmbeddedServletContainerFactoryTests.java
+index f326ae60f..0c31c169e 100644
+--- a/buggy/spring-boot/src/test/java/org/springframework/boot/context/embedded/AbstractEmbeddedServletContainerFactoryTests.java
++++ b/fixed/spring-boot/src/test/java/org/springframework/boot/context/embedded/AbstractEmbeddedServletContainerFactoryTests.java
+@@ -377,7 +377,8 @@ public abstract class AbstractEmbeddedServletContainerFactoryTests {
+ 			throws Exception {
+ 		AbstractEmbeddedServletContainerFactory factory = getFactory();
+ 		addTestTxtFile(factory);
+-		factory.setSsl(getSsl(ClientAuth.NEED, "password", "src/test/resources/test.jks"));
++		factory.setSsl(getSsl(ClientAuth.NEED, "password", "src/test/resources/test.jks",
++				"src/test/resources/test.jks"));
+ 		this.container = factory.getEmbeddedServletContainer();
+ 		this.container.start();
+ 		KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());

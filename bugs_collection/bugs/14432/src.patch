@@ -1,0 +1,13 @@
+diff --git a/buggy/value/src/main/java/com/google/auto/value/processor/GwtSerialization.java b/fixed/value/src/main/java/com/google/auto/value/processor/GwtSerialization.java
+index 285ecf7b4..25b3bfb27 100644
+--- a/buggy/value/src/main/java/com/google/auto/value/processor/GwtSerialization.java
++++ b/fixed/value/src/main/java/com/google/auto/value/processor/GwtSerialization.java
+@@ -201,7 +201,7 @@ class GwtSerialization {
+     for (AutoValueProcessor.Property prop : props) {
+       update(crc, prop.toString() + ":" + prop.getType() + ";");
+     }
+-    return String.format("%8x", crc.getValue());
++    return String.format("%08x", crc.getValue());
+   }
+ 
+   private static void update(CRC32 crc, String s) {

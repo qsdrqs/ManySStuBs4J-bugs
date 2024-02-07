@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-code-generator/src/main/java/com/hazelcast/client/protocol/generator/CodeGenerationUtils.java b/fixed/hazelcast-code-generator/src/main/java/com/hazelcast/client/protocol/generator/CodeGenerationUtils.java
+index a8dd2425e..f83872a6e 100644
+--- a/buggy/hazelcast-code-generator/src/main/java/com/hazelcast/client/protocol/generator/CodeGenerationUtils.java
++++ b/fixed/hazelcast-code-generator/src/main/java/com/hazelcast/client/protocol/generator/CodeGenerationUtils.java
+@@ -144,7 +144,7 @@ public final class CodeGenerationUtils {
+             } else {
+                 result = commentString.substring(descriptionStartIndex);
+             }
+-            result.trim();
++            result = result.trim();
+ 
+             // replace any new line with <br>
+             result = result.replace("\n", "<br>");

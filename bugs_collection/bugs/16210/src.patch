@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/instance/Node.java b/fixed/hazelcast/src/main/java/com/hazelcast/instance/Node.java
+index e3c54a6a2..39fd2b67c 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/instance/Node.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/instance/Node.java
+@@ -622,7 +622,7 @@ public class Node {
+ 
+         return new JoinRequest(Packet.VERSION, buildInfo.getBuildNumber(), address,
+                 localMember.getUuid(), localMember.isLiteMember(), createConfigCheck(), credentials,
+-                config.getMemberAttributeConfig().getAttributes());
++                localMember.getAttributes());
+     }
+ 
+     public ConfigCheck createConfigCheck() {

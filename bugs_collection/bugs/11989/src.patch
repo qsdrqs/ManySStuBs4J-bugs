@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/APersistentMap.java b/fixed/src/jvm/clojure/lang/APersistentMap.java
+index 7df698623..b112d982e 100644
+--- a/buggy/src/jvm/clojure/lang/APersistentMap.java
++++ b/fixed/src/jvm/clojure/lang/APersistentMap.java
+@@ -205,7 +205,7 @@ public Object[] toArray(Object[] a){
+ 			{
+ 			a[i] = s.first();
+ 			}
+-		if(a.length >= count())
++		if(a.length > count())
+ 			a[count()] = null;
+ 		return a;
+ 		}

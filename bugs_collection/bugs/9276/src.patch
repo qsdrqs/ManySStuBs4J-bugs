@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HMobStore.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HMobStore.java
+index d51fc1101..569ad0661 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HMobStore.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HMobStore.java
+@@ -404,7 +404,7 @@ public class HMobStore extends HStore {
+         if (zk.lockColumnFamily(getTableName().getNameAsString(), getFamily().getNameAsString())) {
+           try {
+             LOG.info("Obtain the lock for the store[" + this
+-                + "], forcing the delete markers to be retained");
++                + "], ready to perform the major compaction");
+             // check the sweeping node to find out whether the sweeping is in progress.
+             boolean hasSweeper = zk.isSweeperZNodeExist(getTableName().getNameAsString(),
+                 getFamily().getNameAsString());

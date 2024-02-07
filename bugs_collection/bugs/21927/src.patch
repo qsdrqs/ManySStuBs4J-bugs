@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/context/properties/ConversionServiceDeducer.java b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/context/properties/ConversionServiceDeducer.java
+index 8dfbd54f8..f5b6a06c0 100644
+--- a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/context/properties/ConversionServiceDeducer.java
++++ b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/context/properties/ConversionServiceDeducer.java
+@@ -81,7 +81,7 @@ class ConversionServiceDeducer {
+ 
+ 		private <T> List<T> beans(Class<T> type, String qualifier,
+ 				ListableBeanFactory beanFactory) {
+-			return new ArrayList<T>(BeanFactoryAnnotationUtils
++			return new ArrayList<>(BeanFactoryAnnotationUtils
+ 					.qualifiedBeansOfType(beanFactory, type, qualifier).values());
+ 		}
+ 

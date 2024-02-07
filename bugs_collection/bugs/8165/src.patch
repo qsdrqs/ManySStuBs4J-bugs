@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/jobmaster/JobMaster.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/jobmaster/JobMaster.java
+index 90b8b8458..c63e5f56c 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/jobmaster/JobMaster.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/jobmaster/JobMaster.java
+@@ -1340,7 +1340,7 @@ public class JobMaster extends FencedRpcEndpoint<JobMasterId> implements JobMast
+ 				}
+ 			});
+ 		} else {
+-			log.debug("Ignoring resource manager connection to {} because its a duplicate or outdated.", resourceManagerId);
++			log.debug("Ignoring resource manager connection to {} because it's duplicated or outdated.", resourceManagerId);
+ 
+ 		}
+ 	}

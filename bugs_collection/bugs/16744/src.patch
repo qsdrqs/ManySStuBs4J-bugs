@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/util/HealthMonitor.java b/fixed/hazelcast/src/main/java/com/hazelcast/util/HealthMonitor.java
+index 6cdb40397..96c2e381a 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/util/HealthMonitor.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/util/HealthMonitor.java
+@@ -277,7 +277,7 @@ public class HealthMonitor extends Thread {
+         }
+     }
+ 
+-    private final class GcMetrics {
++    private static final class GcMetrics {
+         final long minorCount;
+         final long minorTime;
+         final long majorCount;

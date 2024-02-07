@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/cache/impl/CacheSplitBrainHandlerService.java b/fixed/hazelcast/src/main/java/com/hazelcast/cache/impl/CacheSplitBrainHandlerService.java
+index 83b4eb306..203889f0e 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/cache/impl/CacheSplitBrainHandlerService.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/cache/impl/CacheSplitBrainHandlerService.java
+@@ -142,7 +142,7 @@ class CacheSplitBrainHandlerService implements SplitBrainHandlerService {
+ 
+     private class CacheMerger implements Runnable {
+ 
+-        private static final int TIMEOUT_FACTOR = 500;
++        private static final long TIMEOUT_FACTOR = 500;
+ 
+         private final ILogger logger = nodeEngine.getLogger(CacheService.class);
+         private final Semaphore semaphore = new Semaphore(0);

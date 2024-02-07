@@ -1,0 +1,14 @@
+diff --git a/buggy/flink-connectors/flink-connector-kafka-base/src/main/java/org/apache/flink/streaming/connectors/kafka/FlinkKafkaConsumerBase.java b/fixed/flink-connectors/flink-connector-kafka-base/src/main/java/org/apache/flink/streaming/connectors/kafka/FlinkKafkaConsumerBase.java
+index a35e7104e..4a05efa8d 100644
+--- a/buggy/flink-connectors/flink-connector-kafka-base/src/main/java/org/apache/flink/streaming/connectors/kafka/FlinkKafkaConsumerBase.java
++++ b/fixed/flink-connectors/flink-connector-kafka-base/src/main/java/org/apache/flink/streaming/connectors/kafka/FlinkKafkaConsumerBase.java
+@@ -516,7 +516,8 @@ public abstract class FlinkKafkaConsumerBase<T> extends RichParallelSourceFuncti
+ 				if (LOG.isDebugEnabled()) {
+ 					LOG.debug("Using the following offsets: {}", restoredState);
+ 				}
+-			} else if (restoredState.isEmpty()) {
++			}
++			if (restoredState != null && restoredState.isEmpty()) {
+ 				restoredState = null;
+ 			}
+ 		} else {

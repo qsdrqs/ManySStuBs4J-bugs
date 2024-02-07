@@ -1,0 +1,13 @@
+diff --git a/buggy/storm-core/src/jvm/org/apache/storm/scheduler/resource/RAS_Node.java b/fixed/storm-core/src/jvm/org/apache/storm/scheduler/resource/RAS_Node.java
+index 0bb36e8a2..f3ffa4596 100644
+--- a/buggy/storm-core/src/jvm/org/apache/storm/scheduler/resource/RAS_Node.java
++++ b/fixed/storm-core/src/jvm/org/apache/storm/scheduler/resource/RAS_Node.java
+@@ -250,7 +250,7 @@ public class RAS_Node {
+     private void freeCPU(double amount) {
+         LOG.debug("freeing {} CPU on node...avail CPU: {}", amount, getHostname(), _availCPU);
+         if ((_availCPU + amount) > getTotalCpuResources()) {
+-            LOG.warn("Freeing more CPU than there exists! CPU trying to free: {} Total CPU on Node: {}", (_availMemory + amount), getTotalCpuResources());
++            LOG.warn("Freeing more CPU than there exists! CPU trying to free: {} Total CPU on Node: {}", (_availCPU + amount), getTotalCpuResources());
+             return;
+         }
+         _availCPU += amount;

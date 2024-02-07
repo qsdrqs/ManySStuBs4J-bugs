@@ -1,0 +1,17 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/DisambiguateProperties.java b/fixed/src/com/google/javascript/jscomp/DisambiguateProperties.java
+index 7d1aa6356..164c83f7a 100644
+--- a/buggy/src/com/google/javascript/jscomp/DisambiguateProperties.java
++++ b/fixed/src/com/google/javascript/jscomp/DisambiguateProperties.java
+@@ -116,10 +116,9 @@ class DisambiguateProperties implements CompilerPass {
+ 
+   /**
+    * Map of a type to all the related errors that invalidated the type
+-   * for disambiguation. It has to be Object because of the generic nature of
+-   * this pass.
++   * for disambiguation.
+    */
+-  private final Multimap<Object, JSError> invalidationMap;
++  private final Multimap<JSType, JSError> invalidationMap;
+ 
+   /**
+    * In practice any large code base will have thousands and thousands of

@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/config/annotation/web/configuration/AuthorizationServerEndpointsConfiguration.java b/fixed/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/config/annotation/web/configuration/AuthorizationServerEndpointsConfiguration.java
+index 163edd923..89ffb22bd 100644
+--- a/buggy/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/config/annotation/web/configuration/AuthorizationServerEndpointsConfiguration.java
++++ b/fixed/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/config/annotation/web/configuration/AuthorizationServerEndpointsConfiguration.java
+@@ -198,7 +198,7 @@ public class AuthorizationServerEndpointsConfiguration {
+ 		@Override
+ 		public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+ 			String[] names = BeanFactoryUtils.beanNamesForTypeIncludingAncestors(beanFactory,
+-					JwtAccessTokenConverter.class);
++					JwtAccessTokenConverter.class, false, false);
+ 			if (names.length > 0) {
+ 				BeanDefinitionBuilder builder = BeanDefinitionBuilder.rootBeanDefinition(TokenKeyEndpoint.class);
+ 				builder.addConstructorArgReference(names[0]);

@@ -1,0 +1,13 @@
+diff --git a/buggy/test/com/google/javascript/jscomp/TypeCheckTest.java b/fixed/test/com/google/javascript/jscomp/TypeCheckTest.java
+index 273cb0b0c..f1494608b 100644
+--- a/buggy/test/com/google/javascript/jscomp/TypeCheckTest.java
++++ b/fixed/test/com/google/javascript/jscomp/TypeCheckTest.java
+@@ -2928,7 +2928,7 @@ public class TypeCheckTest extends CompilerTypeTestCase {
+ 
+   public void testEnum2() throws Exception {
+     testTypes("/**@enum*/var a={b:1}",
+-        "enum key b must be a syntactic constant");
++        "enum key b must be in ALL_CAPS");
+   }
+ 
+   public void testEnum3() throws Exception {

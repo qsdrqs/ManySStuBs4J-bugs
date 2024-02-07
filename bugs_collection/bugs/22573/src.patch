@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-samples/spring-boot-sample-ws/src/test/java/sample/ws/SampleWsApplicationTests.java b/fixed/spring-boot-samples/spring-boot-sample-ws/src/test/java/sample/ws/SampleWsApplicationTests.java
+index e05a17ed9..35ce21322 100644
+--- a/buggy/spring-boot-samples/spring-boot-sample-ws/src/test/java/sample/ws/SampleWsApplicationTests.java
++++ b/fixed/spring-boot-samples/spring-boot-sample-ws/src/test/java/sample/ws/SampleWsApplicationTests.java
+@@ -38,7 +38,7 @@ import static org.junit.Assert.assertThat;
+ @RunWith(SpringJUnit4ClassRunner.class)
+ @SpringApplicationConfiguration(classes = SampleWsApplication.class)
+ @WebAppConfiguration
+-@IntegrationTest
++@IntegrationTest("server.port=0")
+ public class SampleWsApplicationTests {
+ 
+ 	@Rule

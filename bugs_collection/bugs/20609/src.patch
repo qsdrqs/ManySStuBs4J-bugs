@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/ui/org.openhab.ui/src/main/java/org/openhab/ui/internal/items/ItemUIRegistryImpl.java b/fixed/bundles/ui/org.openhab.ui/src/main/java/org/openhab/ui/internal/items/ItemUIRegistryImpl.java
+index 190cb8f2a..fd8bc4e96 100644
+--- a/buggy/bundles/ui/org.openhab.ui/src/main/java/org/openhab/ui/internal/items/ItemUIRegistryImpl.java
++++ b/fixed/bundles/ui/org.openhab.ui/src/main/java/org/openhab/ui/internal/items/ItemUIRegistryImpl.java
+@@ -225,7 +225,7 @@ public class ItemUIRegistryImpl implements ItemUIRegistry {
+ 		try {
+ 			item = getItem(itemName);
+ 		} catch (ItemNotFoundException e) {
+-			logger.error("Cannot retrieve item {} for widget {}", itemName, w.eClass().getInstanceTypeName());
++			logger.debug("Cannot retrieve item {} for widget {}", itemName, w.eClass().getInstanceTypeName());
+ 		}
+ 		return formatLabel(item, itemName, label);
+ 	}

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/internal/config/ConfigValidator.java b/fixed/hazelcast/src/main/java/com/hazelcast/internal/config/ConfigValidator.java
+index 9a1e6c6cc..d82529bf4 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/internal/config/ConfigValidator.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/internal/config/ConfigValidator.java
+@@ -122,7 +122,7 @@ public final class ConfigValidator {
+ 
+         EvictionConfig.MaxSizePolicy maxSizePolicy = nearCacheConfig.getEvictionConfig().getMaximumSizePolicy();
+         if (!SUPPORTED_ON_HEAP_NEAR_CACHE_MAXSIZE_POLICIES.contains(maxSizePolicy)) {
+-            throw new IllegalArgumentException(format("Near cache maximum size policy %s cannot be used with %s storage."
++            throw new IllegalArgumentException(format("Near Cache maximum size policy %s cannot be used with %s storage."
+                             + " Supported maximum size policies are: %s",
+                     maxSizePolicy, inMemoryFormat, SUPPORTED_ON_HEAP_NEAR_CACHE_MAXSIZE_POLICIES));
+         }

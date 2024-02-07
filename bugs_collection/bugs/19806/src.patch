@@ -1,0 +1,13 @@
+diff --git a/buggy/buffer/src/main/java/io/netty/buffer/PooledUnsafeDirectByteBuf.java b/fixed/buffer/src/main/java/io/netty/buffer/PooledUnsafeDirectByteBuf.java
+index 01b113c98..561539d37 100644
+--- a/buggy/buffer/src/main/java/io/netty/buffer/PooledUnsafeDirectByteBuf.java
++++ b/fixed/buffer/src/main/java/io/netty/buffer/PooledUnsafeDirectByteBuf.java
+@@ -71,7 +71,7 @@ final class PooledUnsafeDirectByteBuf extends PooledByteBuf<ByteBuffer> {
+ 
+     @Override
+     protected ByteBuffer newInternalNioBuffer(ByteBuffer memory) {
+-        return memory;
++        return memory.duplicate();
+     }
+ 
+     @Override

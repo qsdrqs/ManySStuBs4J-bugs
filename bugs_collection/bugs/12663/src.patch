@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/io/druid/metadata/SQLMetadataSegmentManager.java b/fixed/server/src/main/java/io/druid/metadata/SQLMetadataSegmentManager.java
+index 1a04d42c6..eca6620f1 100644
+--- a/buggy/server/src/main/java/io/druid/metadata/SQLMetadataSegmentManager.java
++++ b/fixed/server/src/main/java/io/druid/metadata/SQLMetadataSegmentManager.java
+@@ -458,7 +458,7 @@ public class SQLMetadataSegmentManager implements MetadataSegmentManager
+                             ));
+                           }
+                           catch (IOException e) {
+-                            log.makeAlert(e, "Failed to read segment from db.");
++                            log.makeAlert(e, "Failed to read segment from db.").emit();
+                             return null;
+                           }
+                         }

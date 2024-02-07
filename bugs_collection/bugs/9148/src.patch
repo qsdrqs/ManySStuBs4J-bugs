@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/test/java/org/apache/hadoop/hbase/master/MockNoopMasterServices.java b/fixed/hbase-server/src/test/java/org/apache/hadoop/hbase/master/MockNoopMasterServices.java
+index 1636ba512..aac0e212f 100644
+--- a/buggy/hbase-server/src/test/java/org/apache/hadoop/hbase/master/MockNoopMasterServices.java
++++ b/fixed/hbase-server/src/test/java/org/apache/hadoop/hbase/master/MockNoopMasterServices.java
+@@ -447,7 +447,7 @@ public class MockNoopMasterServices implements MasterServices, Server {
+ 
+   @Override
+   public String getRegionServerVersion(ServerName sn) {
+-    return null;
++    return "0.0.0";
+   }
+ 
+   @Override

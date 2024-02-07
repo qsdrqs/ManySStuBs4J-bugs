@@ -1,0 +1,13 @@
+diff --git a/buggy/RankingPlugin/src/org/gephi/ranking/plugin/transformer/RenderableSizeTransformerBuilder.java b/fixed/RankingPlugin/src/org/gephi/ranking/plugin/transformer/RenderableSizeTransformerBuilder.java
+index d65673232..f46b49f2d 100644
+--- a/buggy/RankingPlugin/src/org/gephi/ranking/plugin/transformer/RenderableSizeTransformerBuilder.java
++++ b/fixed/RankingPlugin/src/org/gephi/ranking/plugin/transformer/RenderableSizeTransformerBuilder.java
+@@ -43,7 +43,7 @@ public class RenderableSizeTransformerBuilder implements TransformerBuilder {
+ 
+     @Override
+     public boolean isTransformerForElement(String elementType) {
+-        return elementType.equals(Ranking.NODE_ELEMENT) || elementType.equals(Ranking.EDGE_ELEMENT);
++        return elementType.equals(Ranking.NODE_ELEMENT);
+     }
+ 
+     @Override

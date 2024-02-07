@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/com/metamx/druid/coordination/ZkCoordinator.java b/fixed/server/src/main/java/com/metamx/druid/coordination/ZkCoordinator.java
+index 1befc1df8..0740be81b 100644
+--- a/buggy/server/src/main/java/com/metamx/druid/coordination/ZkCoordinator.java
++++ b/fixed/server/src/main/java/com/metamx/druid/coordination/ZkCoordinator.java
+@@ -261,7 +261,7 @@ public class ZkCoordinator implements DataSegmentChangeHandler
+       announcer.unannounceSegment(segment);
+     }
+     catch (Exception e) {
+-      log.makeAlert("Failed to remove segment")
++      log.makeAlert(e, "Failed to remove segment")
+           .addData("segment", segment)
+           .emit();
+     }

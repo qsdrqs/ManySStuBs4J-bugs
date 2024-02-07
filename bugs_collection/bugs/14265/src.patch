@@ -1,0 +1,13 @@
+diff --git a/buggy/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGEXF2.java b/fixed/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGEXF2.java
+index d1cc5c77e..8cc4118d6 100644
+--- a/buggy/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGEXF2.java
++++ b/fixed/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterGEXF2.java
+@@ -74,7 +74,7 @@ public class ImporterGEXF2 implements FileImporter, LongTask {
+     private static final String EDGE_TYPE = "type";
+     private static final String EDGE_WEIGHT = "weight";
+     private static final String EDGE_START = "start";
+-    private static final String EDGE_COLOR = "viz:color";
++    private static final String EDGE_COLOR = "color";
+     private static final String EDGE_END = "end";
+     private static final String EDGE_SLICE = "slice";
+     private static final String ATTRIBUTE = "attribute";

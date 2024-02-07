@@ -1,0 +1,13 @@
+diff --git a/buggy/guava/src/com/google/common/collect/ImmutableMap.java b/fixed/guava/src/com/google/common/collect/ImmutableMap.java
+index 52f547788..8a8c7713c 100644
+--- a/buggy/guava/src/com/google/common/collect/ImmutableMap.java
++++ b/fixed/guava/src/com/google/common/collect/ImmutableMap.java
+@@ -301,7 +301,7 @@ public abstract class ImmutableMap<K, V> implements Map<K, V>, Serializable {
+   }
+ 
+   private static <K extends Enum<K>, V> ImmutableMap<K, V> copyOfEnumMap(
+-      Map<K, ? extends V> original) {
++      EnumMap<K, ? extends V> original) {
+     EnumMap<K, V> copy = new EnumMap<K, V>(original);
+     for (Map.Entry<?, ?> entry : copy.entrySet()) {
+       checkEntryNotNull(entry.getKey(), entry.getValue());

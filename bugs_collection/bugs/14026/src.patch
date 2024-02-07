@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-server/src/main/java/com/facebook/presto/server/StatementResource.java b/fixed/presto-server/src/main/java/com/facebook/presto/server/StatementResource.java
+index a652a1d16..157b49c6e 100644
+--- a/buggy/presto-server/src/main/java/com/facebook/presto/server/StatementResource.java
++++ b/fixed/presto-server/src/main/java/com/facebook/presto/server/StatementResource.java
+@@ -332,7 +332,7 @@ public class StatementResource
+                 URI uri = uriBuilderFrom(taskInfo.getSelf()).appendPath("results").appendPath(bufferId).build();
+                 locations.add(uri);
+             }
+-            if (outputStage.getState() != StageState.PLANNED && outputStage.getState() != StageState.SCHEDULED) {
++            if ((outputStage.getState() != StageState.PLANNED) && (outputStage.getState() != StageState.SCHEDULING)) {
+                 noMoreLocations.set(true);
+             }
+         }

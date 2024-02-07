@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-client/src/main/java/io/dropwizard/client/JerseyClientBuilder.java b/fixed/dropwizard-client/src/main/java/io/dropwizard/client/JerseyClientBuilder.java
+index db48199eb..a3b4502cc 100644
+--- a/buggy/dropwizard-client/src/main/java/io/dropwizard/client/JerseyClientBuilder.java
++++ b/fixed/dropwizard-client/src/main/java/io/dropwizard/client/JerseyClientBuilder.java
+@@ -198,7 +198,7 @@ public class JerseyClientBuilder {
+      * @return a fully-configured {@link Client}
+      */
+     public Client build(String name) {
+-        if ((environment == null) && (executorService == null) && (objectMapper == null)) {
++        if ((environment == null) && ((executorService == null) || (objectMapper == null))) {
+             throw new IllegalStateException("Must have either an environment or both " +
+                                                     "an executor service and an object mapper");
+         }

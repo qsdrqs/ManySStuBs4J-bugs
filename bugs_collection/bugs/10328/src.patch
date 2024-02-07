@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/zaxxer/hikari/HikariMBeanElf.java b/fixed/src/main/java/com/zaxxer/hikari/HikariMBeanElf.java
+index d16810fc3..d4181832d 100644
+--- a/buggy/src/main/java/com/zaxxer/hikari/HikariMBeanElf.java
++++ b/fixed/src/main/java/com/zaxxer/hikari/HikariMBeanElf.java
+@@ -89,7 +89,7 @@ public final class HikariMBeanElf
+             }
+             else
+             {
+-                LOGGER.error("No registered MBean for {0}.", configuration.getPoolName());
++                LOGGER.error("No registered MBean for {}.", configuration.getPoolName());
+             }
+         }
+         catch (Exception e)

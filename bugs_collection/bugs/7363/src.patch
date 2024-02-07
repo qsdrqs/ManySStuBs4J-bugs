@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-cxf/src/test/java/org/apache/camel/component/cxf/CxfConsumerResponseTest.java b/fixed/components/camel-cxf/src/test/java/org/apache/camel/component/cxf/CxfConsumerResponseTest.java
+index b2ebe9aa2..1d00e1c72 100644
+--- a/buggy/components/camel-cxf/src/test/java/org/apache/camel/component/cxf/CxfConsumerResponseTest.java
++++ b/fixed/components/camel-cxf/src/test/java/org/apache/camel/component/cxf/CxfConsumerResponseTest.java
+@@ -89,7 +89,7 @@ public class CxfConsumerResponseTest extends CamelTestSupport {
+                         // Get the parameter list
+                         List<?> parameter = in.getBody(List.class);
+                         // Put the result back
+-                        exchange.getOut().setBody((Boolean)parameter.get(0));
++                        exchange.getOut().setBody(parameter.get(0));
+                     }
+                 })
+                 .when(header(CxfConstants.OPERATION_NAME).isEqualTo(PING_OPERATION)).process(new Processor() {

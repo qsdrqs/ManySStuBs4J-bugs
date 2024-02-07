@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/main/java/org/springframework/boot/bind/PropertiesConfigurationFactory.java b/fixed/spring-boot/src/main/java/org/springframework/boot/bind/PropertiesConfigurationFactory.java
+index acf2f006c..6e328126d 100644
+--- a/buggy/spring-boot/src/main/java/org/springframework/boot/bind/PropertiesConfigurationFactory.java
++++ b/fixed/spring-boot/src/main/java/org/springframework/boot/bind/PropertiesConfigurationFactory.java
+@@ -231,7 +231,7 @@ public class PropertiesConfigurationFactory<T>
+ 		try {
+ 			if (this.logger.isTraceEnabled()) {
+ 				if (this.properties != null) {
+-					this.logger.trace(String.format("Properties:%n%s" + this.properties));
++					this.logger.trace(String.format("Properties:%n%s", this.properties));
+ 				}
+ 				else {
+ 					this.logger.trace("Property Sources: " + this.propertySources);

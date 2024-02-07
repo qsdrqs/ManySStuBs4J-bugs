@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/ling/tokensregex/BasicSequenceMatchResult.java b/fixed/src/edu/stanford/nlp/ling/tokensregex/BasicSequenceMatchResult.java
+index 5c1057fd6..0cfa98945 100644
+--- a/buggy/src/edu/stanford/nlp/ling/tokensregex/BasicSequenceMatchResult.java
++++ b/fixed/src/edu/stanford/nlp/ling/tokensregex/BasicSequenceMatchResult.java
+@@ -58,7 +58,7 @@ public class BasicSequenceMatchResult<T> implements SequenceMatchResult<T>
+       }
+     }
+     if (matchedResults != null) {
+-      res.matchedResults = new Object[res.matchedResults.length];
++      res.matchedResults = new Object[matchedResults.length];
+       System.arraycopy(res.matchedResults, 0, matchedResults, 0, matchedResults.length);
+     }
+     return res;

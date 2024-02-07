@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-mail/src/test/java/org/apache/camel/component/mail/MailRouteTest.java b/fixed/camel-mail/src/test/java/org/apache/camel/component/mail/MailRouteTest.java
+index 049a8aae1..dd24dc914 100644
+--- a/buggy/camel-mail/src/test/java/org/apache/camel/component/mail/MailRouteTest.java
++++ b/fixed/camel-mail/src/test/java/org/apache/camel/component/mail/MailRouteTest.java
+@@ -51,7 +51,7 @@ public class MailRouteTest extends ContextTestSupport {
+         assertMailboxReceivedMessages("james@localhost");
+ 
+         // lets test the receive worked
+-        resultEndpoint.assertIsSatisfied(5000);
++        resultEndpoint.assertIsSatisfied(10000);
+ 
+         assertMailboxReceivedMessages("copy@localhost");
+     }

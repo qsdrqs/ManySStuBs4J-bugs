@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.onewire/src/main/java/org/openhab/binding/onewire/internal/OneWireBinding.java b/fixed/bundles/binding/org.openhab.binding.onewire/src/main/java/org/openhab/binding/onewire/internal/OneWireBinding.java
+index 597728dfa..30f186991 100644
+--- a/buggy/bundles/binding/org.openhab.binding.onewire/src/main/java/org/openhab/binding/onewire/internal/OneWireBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.onewire/src/main/java/org/openhab/binding/onewire/internal/OneWireBinding.java
+@@ -281,7 +281,7 @@ public class OneWireBinding extends AbstractActiveBinding<OneWireBindingProvider
+ 		if (filterType == null) {
+ 			return null;
+ 		}
+-		if (!filterType.equals("tuckey")) {
++		if (!filterType.equals("tukey")) {
+ 			logger.warn("invalid filter type specified: " + filterType);
+ 			return null;
+ 		}

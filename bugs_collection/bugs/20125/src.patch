@@ -1,0 +1,13 @@
+diff --git a/buggy/lib-core-slh/src/main/java/com/nhaarman/listviewanimations/util/StickyListHeadersListViewWrapper.java b/fixed/lib-core-slh/src/main/java/com/nhaarman/listviewanimations/util/StickyListHeadersListViewWrapper.java
+index e12ad6b4f..a450885c6 100644
+--- a/buggy/lib-core-slh/src/main/java/com/nhaarman/listviewanimations/util/StickyListHeadersListViewWrapper.java
++++ b/fixed/lib-core-slh/src/main/java/com/nhaarman/listviewanimations/util/StickyListHeadersListViewWrapper.java
+@@ -41,7 +41,7 @@ public class StickyListHeadersListViewWrapper implements ListViewWrapper {
+     @Nullable
+     @Override
+     public View getChildAt(final int index) {
+-        return mListView.getChildAt(index);
++        return mListView.getListChildAt(index);
+     }
+ 
+     @Override

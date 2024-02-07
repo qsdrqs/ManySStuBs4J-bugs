@@ -1,0 +1,13 @@
+diff --git a/buggy/codec/src/main/java/io/netty/handler/codec/compression/FastLzFrameDecoder.java b/fixed/codec/src/main/java/io/netty/handler/codec/compression/FastLzFrameDecoder.java
+index e3574a51b..341f72a18 100644
+--- a/buggy/codec/src/main/java/io/netty/handler/codec/compression/FastLzFrameDecoder.java
++++ b/fixed/codec/src/main/java/io/netty/handler/codec/compression/FastLzFrameDecoder.java
+@@ -204,7 +204,7 @@ public class FastLzFrameDecoder extends ByteToMessageDecoder {
+                     currentState = State.INIT_BLOCK;
+                     success = true;
+                 } finally {
+-                    if (!success) {
++                    if (!success && uncompressed != null) {
+                         uncompressed.release();
+                     }
+                 }

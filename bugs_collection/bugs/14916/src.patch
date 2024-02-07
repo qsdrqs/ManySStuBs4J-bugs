@@ -1,0 +1,13 @@
+diff --git a/buggy/test/com/google/javascript/jscomp/NormalizeTest.java b/fixed/test/com/google/javascript/jscomp/NormalizeTest.java
+index 45329b31c..34b9088c2 100644
+--- a/buggy/test/com/google/javascript/jscomp/NormalizeTest.java
++++ b/fixed/test/com/google/javascript/jscomp/NormalizeTest.java
+@@ -187,7 +187,7 @@ public final class NormalizeTest extends CompilerTestCase {
+          "function f() { f(); if (true) {var bar = function () {}}}");
+   }
+ 
+-  private String inFunction(String code) {
++  private static String inFunction(String code) {
+     return "(function(){" + code + "})";
+   }
+ 

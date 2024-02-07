@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/socket/oio/OioDatagramChannel.java b/fixed/transport/src/main/java/io/netty/channel/socket/oio/OioDatagramChannel.java
+index 4d5c14ecc..ead6fd22a 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/socket/oio/OioDatagramChannel.java
++++ b/fixed/transport/src/main/java/io/netty/channel/socket/oio/OioDatagramChannel.java
+@@ -125,7 +125,7 @@ public class OioDatagramChannel extends AbstractOioMessageChannel
+ 
+     @Override
+     public boolean isActive() {
+-        return isOpen() && socket.isBound();
++        return isOpen();
+     }
+ 
+     @Override

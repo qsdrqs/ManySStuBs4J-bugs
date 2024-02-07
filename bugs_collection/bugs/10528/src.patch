@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/metrics/BooleanExpressionComplexityCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/metrics/BooleanExpressionComplexityCheck.java
+index b0598c9de..bbfe30670 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/metrics/BooleanExpressionComplexityCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/metrics/BooleanExpressionComplexityCheck.java
+@@ -246,8 +246,7 @@ public final class BooleanExpressionComplexityCheck extends AbstractCheck {
+             if (checking && count > max) {
+                 final DetailAST parentAST = ast.getParent();
+ 
+-                log(parentAST.getLineNo(), parentAST.getColumnNo(),
+-                    MSG_KEY, count, max);
++                log(parentAST, MSG_KEY, count, max);
+             }
+         }
+ 

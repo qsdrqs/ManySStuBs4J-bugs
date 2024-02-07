@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/execution/scheduler/SqlQueryScheduler.java b/fixed/presto-main/src/main/java/com/facebook/presto/execution/scheduler/SqlQueryScheduler.java
+index 69c1ead0a..b2cc64f26 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/execution/scheduler/SqlQueryScheduler.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/execution/scheduler/SqlQueryScheduler.java
+@@ -344,7 +344,7 @@ public class SqlQueryScheduler
+                         bucketNodeMap,
+                         splitBatchSize,
+                         getConcurrentLifespansPerNode(session),
+-                        nodeScheduler.createNodeSelector(null),
++                        nodeScheduler.createNodeSelector(connectorId),
+                         connectorPartitionHandles));
+             }
+             else {

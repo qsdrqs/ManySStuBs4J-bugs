@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/main/java/org/openmrs/util/OpenmrsUtil.java b/fixed/api/src/main/java/org/openmrs/util/OpenmrsUtil.java
+index 3ea38eb8e..8fc8b15a9 100644
+--- a/buggy/api/src/main/java/org/openmrs/util/OpenmrsUtil.java
++++ b/fixed/api/src/main/java/org/openmrs/util/OpenmrsUtil.java
+@@ -2288,7 +2288,7 @@ public class OpenmrsUtil {
+ 			propertyStream = new FileInputStream(filepath);
+ 		}
+ 		catch (FileNotFoundException e) {
+-			log.warn("Also unable to find a runtime properties file at " + new File(filepath).getAbsolutePath());
++			log.warn("Unable to find a runtime properties file at " + new File(filepath).getAbsolutePath());
+ 		}
+ 		// next look in the OpenMRS application data directory
+ 		if (propertyStream == null) {

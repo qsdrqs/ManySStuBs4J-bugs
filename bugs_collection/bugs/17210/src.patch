@@ -1,0 +1,13 @@
+diff --git a/buggy/batch/batchlet-simple/src/test/java/org/javaee7/batch/batchlet/simple/MyBatchletTest.java b/fixed/batch/batchlet-simple/src/test/java/org/javaee7/batch/batchlet/simple/MyBatchletTest.java
+index 58f927f7d..4907dbac9 100644
+--- a/buggy/batch/batchlet-simple/src/test/java/org/javaee7/batch/batchlet/simple/MyBatchletTest.java
++++ b/fixed/batch/batchlet-simple/src/test/java/org/javaee7/batch/batchlet/simple/MyBatchletTest.java
+@@ -27,7 +27,7 @@ public class MyBatchletTest {
+         WebArchive war = ShrinkWrap.create(WebArchive.class).
+                 addClass(MyBatchlet.class).
+                 addAsWebInfResource(EmptyAsset.INSTANCE, ArchivePaths.create("beans.xml")).
+-                addAsManifestResource("META-INF/batch-jobs/myJob.xml", "batch-jobs/myJob.xml");
++                addAsResource("META-INF/batch-jobs/myJob.xml");
+         System.out.println(war.toString(true));
+         return war;
+     }

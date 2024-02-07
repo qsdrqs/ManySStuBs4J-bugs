@@ -1,0 +1,13 @@
+diff --git a/buggy/tooling/maven/guice-maven-plugin/src/main/java/org/apache/camel/guice/maven/RunMojo.java b/fixed/tooling/maven/guice-maven-plugin/src/main/java/org/apache/camel/guice/maven/RunMojo.java
+index 2e3bbb4bc..a14019e68 100644
+--- a/buggy/tooling/maven/guice-maven-plugin/src/main/java/org/apache/camel/guice/maven/RunMojo.java
++++ b/fixed/tooling/maven/guice-maven-plugin/src/main/java/org/apache/camel/guice/maven/RunMojo.java
+@@ -574,7 +574,7 @@ public class RunMojo extends AbstractExecMojo {
+         this.addRelevantProjectDependenciesToClasspath(classpathURLs);
+ 
+         getLog().info("Classpath = " + classpathURLs);
+-        return new URLClassLoader((URL[])classpathURLs.toArray(new URL[classpathURLs.size()]));
++        return new URLClassLoader(classpathURLs.toArray(new URL[classpathURLs.size()]));
+     }
+ 
+     /**

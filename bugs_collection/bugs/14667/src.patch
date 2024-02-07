@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/newtypes/RawNominalType.java b/fixed/src/com/google/javascript/jscomp/newtypes/RawNominalType.java
+index 33b6c3d9a..38e79960e 100644
+--- a/buggy/src/com/google/javascript/jscomp/newtypes/RawNominalType.java
++++ b/fixed/src/com/google/javascript/jscomp/newtypes/RawNominalType.java
+@@ -623,7 +623,7 @@ public final class RawNominalType extends Namespace {
+   @Override
+   public void finalize() {
+     Preconditions.checkState(
+-        !this.isFinalized, "Raw type not finalized: %s", this.defSite);
++        !this.isFinalized, "Raw type already finalized: %s", this.defSite);
+     Preconditions.checkNotNull(
+         this.ctorFn, "Null constructor function for raw type: %s", this.defSite);
+     if (this.interfaces == null) {

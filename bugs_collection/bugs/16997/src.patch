@@ -1,0 +1,17 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/proxy/ClientMapProxy.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/proxy/ClientMapProxy.java
+index ec449b804..39f7144dc 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/proxy/ClientMapProxy.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/proxy/ClientMapProxy.java
+@@ -561,10 +561,9 @@ public final class ClientMapProxy<K, V> extends ClientProxy implements IMap<K, V
+                     void invalidate(EntryEvent<K, V> event){
+                         System.err.println("invalidate");
+                         final Data key = toData(event.getKey());
+-//                        nearCache.invalidate(key);
+-                        nearCache.put(key, event.getValue());
++                        nearCache.invalidate(key);
+                     }
+-                }, true);
++                }, false);
+             }
+         }
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/itest/src/edu/stanford/nlp/parser/nndep/DependencyParserITest.java b/fixed/itest/src/edu/stanford/nlp/parser/nndep/DependencyParserITest.java
+index 6b02600dc..6e2eeda43 100644
+--- a/buggy/itest/src/edu/stanford/nlp/parser/nndep/DependencyParserITest.java
++++ b/fixed/itest/src/edu/stanford/nlp/parser/nndep/DependencyParserITest.java
+@@ -46,7 +46,7 @@ public class DependencyParserITest extends TestCase {
+   }
+ 
+   // Lower because we're evaluating on PTB + extraDevTest, not just PTB
+-  private static final double EnglishUdLas = 84.9873;
++  private static final double EnglishUdLas = 88.72648417258083;
+ 
+   /**
+    * Test that the NN dependency parser performance doesn't change.

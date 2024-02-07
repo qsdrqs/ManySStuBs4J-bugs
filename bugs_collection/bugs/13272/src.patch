@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/plan/ExchangeNode.java b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/plan/ExchangeNode.java
+index d192e871c..550f9788a 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/plan/ExchangeNode.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/plan/ExchangeNode.java
+@@ -120,7 +120,7 @@ public class ExchangeNode
+                 "local exchanges do not support constant partition function arguments");
+ 
+         checkArgument(!scope.isRemote() || type == REPARTITION || !partitioningScheme.isReplicateNullsAndAny(), "Only REPARTITION can replicate remotely");
+-        checkArgument(scope != REMOTE_MATERIALIZED || type != REPARTITION, "Only REPARTITION can be REMOTE_MATERIALIZED: %s", type);
++        checkArgument(scope != REMOTE_MATERIALIZED || type == REPARTITION, "Only REPARTITION can be REMOTE_MATERIALIZED: %s", type);
+ 
+         orderingScheme.ifPresent(ordering -> {
+             PartitioningHandle partitioningHandle = partitioningScheme.getPartitioning().getHandle();

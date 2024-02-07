@@ -1,0 +1,13 @@
+diff --git a/buggy/meteor/meteor-meteor/src/test/java/eu/stratosphere/meteor/base/FilterTest.java b/fixed/meteor/meteor-meteor/src/test/java/eu/stratosphere/meteor/base/FilterTest.java
+index 8166ee636..208fe2eec 100644
+--- a/buggy/meteor/meteor-meteor/src/test/java/eu/stratosphere/meteor/base/FilterTest.java
++++ b/fixed/meteor/meteor-meteor/src/test/java/eu/stratosphere/meteor/base/FilterTest.java
+@@ -53,7 +53,7 @@ public class FilterTest extends MeteorTest {
+ 
+ 		// System.out.println(Sop);
+ 
+-		assertEquals(expectedPlan, actualPlan);
++		assertPlanEquals(expectedPlan, actualPlan);
+ 	}
+ 
+ }

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/cache/impl/operation/CacheRemoveBackupOperation.java b/fixed/hazelcast/src/main/java/com/hazelcast/cache/impl/operation/CacheRemoveBackupOperation.java
+index aa9d6754a..c0db5dc1a 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/cache/impl/operation/CacheRemoveBackupOperation.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/cache/impl/operation/CacheRemoveBackupOperation.java
+@@ -38,7 +38,7 @@ public class CacheRemoveBackupOperation
+     public void run()
+             throws Exception {
+         if (cache != null) {
+-            response = cache.remove(key, null);
++            response = cache.removeRecord(key);
+         } else {
+             response = Boolean.FALSE;
+         }

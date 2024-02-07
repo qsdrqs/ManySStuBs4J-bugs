@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/io/druid/server/http/CoordinatorResource.java b/fixed/server/src/main/java/io/druid/server/http/CoordinatorResource.java
+index d1eba7f95..aea616811 100644
+--- a/buggy/server/src/main/java/io/druid/server/http/CoordinatorResource.java
++++ b/fixed/server/src/main/java/io/druid/server/http/CoordinatorResource.java
+@@ -70,7 +70,7 @@ public class CoordinatorResource
+   }
+ 
+   @GET
+-  @Path("loadqueue")
++  @Path("/loadqueue")
+   @Produces("application/json")
+   public Response getLoadQueue(
+       @QueryParam("simple") String simple

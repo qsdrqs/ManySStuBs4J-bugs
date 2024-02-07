@@ -1,0 +1,18 @@
+diff --git a/buggy/spring-boot-test-autoconfigure/src/main/java/org/springframework/boot/test/autoconfigure/restdocs/RestDocsAutoConfiguration.java b/fixed/spring-boot-test-autoconfigure/src/main/java/org/springframework/boot/test/autoconfigure/restdocs/RestDocsAutoConfiguration.java
+index b1536c733..55772c140 100644
+--- a/buggy/spring-boot-test-autoconfigure/src/main/java/org/springframework/boot/test/autoconfigure/restdocs/RestDocsAutoConfiguration.java
++++ b/fixed/spring-boot-test-autoconfigure/src/main/java/org/springframework/boot/test/autoconfigure/restdocs/RestDocsAutoConfiguration.java
+@@ -33,11 +33,12 @@ import org.springframework.restdocs.mockmvc.RestDocumentationResultHandler;
+  * {@link EnableAutoConfiguration Auto-configuration} for Spring REST Docs.
+  *
+  * @author Andy Wilkinson
++ * @since 1.4.0
+  */
+ @Configuration
+ @ConditionalOnWebApplication
+ @EnableConfigurationProperties
+-class RestDocsAutoConfiguration {
++public class RestDocsAutoConfiguration {
+ 
+ 	@Bean
+ 	@ConditionalOnMissingBean(MockMvcRestDocumentationConfigurer.class)

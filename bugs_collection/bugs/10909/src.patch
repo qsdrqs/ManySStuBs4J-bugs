@@ -1,0 +1,22 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/ExplicitInitializationCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/ExplicitInitializationCheckTest.java
+index 9b4987dc5..b77a3ac08 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/ExplicitInitializationCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/ExplicitInitializationCheckTest.java
+@@ -34,7 +34,7 @@ public class ExplicitInitializationCheckTest extends BaseCheckTestSupport {
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "coding" + File.separator + filename);
++                + "coding" + File.separator + "explicitinitialization" + File.separator + filename);
+     }
+ 
+     @Test
+@@ -63,7 +63,7 @@ public class ExplicitInitializationCheckTest extends BaseCheckTestSupport {
+             "54:27: " + getCheckMessage(MSG_KEY, "barArray", "null"),
+         };
+         verify(checkConfig,
+-               getPath("InputExplicitInit.java"),
++               getPath("InputExplicitInitialization.java"),
+                expected);
+     }
+ 

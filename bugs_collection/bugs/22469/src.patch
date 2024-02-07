@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/security/SpringBootWebSecurityConfiguration.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/security/SpringBootWebSecurityConfiguration.java
+index fcd61541d..8081866b9 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/security/SpringBootWebSecurityConfiguration.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/security/SpringBootWebSecurityConfiguration.java
+@@ -87,7 +87,7 @@ import org.springframework.web.servlet.support.RequestDataValueProcessor;
+  */
+ @Configuration
+ @EnableConfigurationProperties
+-@ConditionalOnClass({ EnableWebSecurity.class })
++@ConditionalOnClass({ EnableWebSecurity.class, AuthenticationEntryPoint.class })
+ @ConditionalOnMissingBean(WebSecurityConfiguration.class)
+ @ConditionalOnWebApplication
+ public class SpringBootWebSecurityConfiguration {

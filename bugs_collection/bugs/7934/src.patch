@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jpa/src/main/java/org/apache/camel/processor/interceptor/JpaTraceEventMessage.java b/fixed/components/camel-jpa/src/main/java/org/apache/camel/processor/interceptor/JpaTraceEventMessage.java
+index 504079977..bf6b0b105 100644
+--- a/buggy/components/camel-jpa/src/main/java/org/apache/camel/processor/interceptor/JpaTraceEventMessage.java
++++ b/fixed/components/camel-jpa/src/main/java/org/apache/camel/processor/interceptor/JpaTraceEventMessage.java
+@@ -175,7 +175,7 @@ public class JpaTraceEventMessage implements TraceEventMessage {
+ 
+     @Override
+     public String toString() {
+-        return "TraceEventMessage[" + exchangeId + "] on node: " + toNode;
++        return "TraceEventMessage[" + getExchangeId() + "] on node: " + getToNode();   
+     }
+ 
+ }

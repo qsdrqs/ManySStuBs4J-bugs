@@ -1,0 +1,13 @@
+diff --git a/buggy/common/src/java/org/apache/hadoop/hive/common/metrics/metrics2/CodahaleReporter.java b/fixed/common/src/java/org/apache/hadoop/hive/common/metrics/metrics2/CodahaleReporter.java
+index ba4d8e47c..9424f2889 100644
+--- a/buggy/common/src/java/org/apache/hadoop/hive/common/metrics/metrics2/CodahaleReporter.java
++++ b/fixed/common/src/java/org/apache/hadoop/hive/common/metrics/metrics2/CodahaleReporter.java
+@@ -20,7 +20,7 @@ package org.apache.hadoop.hive.common.metrics.metrics2;
+ import com.codahale.metrics.Reporter;
+ import java.io.Closeable;
+ 
+-interface CodahaleReporter extends Closeable, Reporter {
++public interface CodahaleReporter extends Closeable, Reporter {
+ 
+   /**
+    * Start the reporter.

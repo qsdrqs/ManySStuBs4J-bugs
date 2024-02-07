@@ -1,0 +1,13 @@
+diff --git a/buggy/codec-http2/src/main/java/io/netty/handler/codec/http2/DefaultHttp2Connection.java b/fixed/codec-http2/src/main/java/io/netty/handler/codec/http2/DefaultHttp2Connection.java
+index 9b8658903..1261a599a 100644
+--- a/buggy/codec-http2/src/main/java/io/netty/handler/codec/http2/DefaultHttp2Connection.java
++++ b/fixed/codec-http2/src/main/java/io/netty/handler/codec/http2/DefaultHttp2Connection.java
+@@ -1050,7 +1050,7 @@ public class DefaultHttp2Connection implements Http2Connection {
+             }
+             if (state.localSideOpen() || state.remoteSideOpen()) {
+                 if (!canOpenStream()) {
+-                    throw connectionError(REFUSED_STREAM, "Maximum active streams violated for this endpoint.");
++                    throw streamError(streamId, REFUSED_STREAM, "Maximum active streams violated for this endpoint.");
+                 }
+             } else if (numStreams == maxStreams) {
+                 throw streamError(streamId, REFUSED_STREAM, "Maximum streams violated for this endpoint.");

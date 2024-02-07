@@ -1,0 +1,25 @@
+diff --git a/buggy/server/src/test/java/io/druid/server/shard/HashBasedNumberedShardSpecTest.java b/fixed/server/src/test/java/io/druid/server/shard/HashBasedNumberedShardSpecTest.java
+index 5f176015c..2ab82655b 100644
+--- a/buggy/server/src/test/java/io/druid/server/shard/HashBasedNumberedShardSpecTest.java
++++ b/fixed/server/src/test/java/io/druid/server/shard/HashBasedNumberedShardSpecTest.java
+@@ -196,14 +196,15 @@ public class HashBasedNumberedShardSpecTest
+   }
+ 
+   @Test
+-  public void testValidity(){
+-    for(int i=Integer.MIN_VALUE;i<=Integer.MAX_VALUE;i++){
++  public void testValidity()
++  {
++    for (int i = Integer.MIN_VALUE; i < Integer.MAX_VALUE; i++) {
+       {
+         int partitionNum = Math.abs((int) ((long) i % 2));
+-        if(partitionNum != 0 && partitionNum != 1){
+-          throw new ISE("for i "+ i+ "partitionNum "+ partitionNum);
++        if (partitionNum != 0 && partitionNum != 1) {
++          throw new ISE("for i " + i + "partitionNum " + partitionNum);
+         }
+       }
+-  }
++    }
+   }
+ }

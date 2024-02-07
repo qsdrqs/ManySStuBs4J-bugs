@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.plcbus/src/main/java/org/openhab/binding/plcbus/internal/PLCBusActivator.java b/fixed/bundles/binding/org.openhab.binding.plcbus/src/main/java/org/openhab/binding/plcbus/internal/PLCBusActivator.java
+index aac7e9f5a..262adf0f8 100644
+--- a/buggy/bundles/binding/org.openhab.binding.plcbus/src/main/java/org/openhab/binding/plcbus/internal/PLCBusActivator.java
++++ b/fixed/bundles/binding/org.openhab.binding.plcbus/src/main/java/org/openhab/binding/plcbus/internal/PLCBusActivator.java
+@@ -30,7 +30,7 @@ public class PLCBusActivator implements BundleActivator {
+      */
+     @Override
+     public void start(BundleContext bundleContext) throws Exception {
+-        logger.debug("PLCBus Binding startet");
++        logger.debug("PLCBus Binding started");
+     }
+ 
+     /*

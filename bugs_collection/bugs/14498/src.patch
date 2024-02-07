@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/ijs/JsdocUtil.java b/fixed/src/com/google/javascript/jscomp/ijs/JsdocUtil.java
+index b60ef2ef1..59ba50000 100644
+--- a/buggy/src/com/google/javascript/jscomp/ijs/JsdocUtil.java
++++ b/fixed/src/com/google/javascript/jscomp/ijs/JsdocUtil.java
+@@ -37,7 +37,7 @@ final class JsdocUtil {
+   }
+ 
+   static JSDocInfo getUnusableTypeJSDoc(JSDocInfo oldJSDoc) {
+-    return getConstJSDoc(oldJSDoc, new Node(Token.STAR));
++    return getConstJSDoc(oldJSDoc, "UnusableType");
+   }
+ 
+   static JSDocInfo getQmarkTypeJSDoc() {

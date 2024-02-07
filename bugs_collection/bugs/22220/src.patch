@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/main/java/org/springframework/boot/context/properties/ConfigurationPropertiesBindingPostProcessor.java b/fixed/spring-boot/src/main/java/org/springframework/boot/context/properties/ConfigurationPropertiesBindingPostProcessor.java
+index 0ac9ce4f2..2d22769c4 100644
+--- a/buggy/spring-boot/src/main/java/org/springframework/boot/context/properties/ConfigurationPropertiesBindingPostProcessor.java
++++ b/fixed/spring-boot/src/main/java/org/springframework/boot/context/properties/ConfigurationPropertiesBindingPostProcessor.java
+@@ -417,7 +417,7 @@ public class ConfigurationPropertiesBindingPostProcessor implements BeanPostProc
+ 			if (!super.supports(type)) {
+ 				return false;
+ 			}
+-			if (AnnotatedElementUtils.isAnnotated(type, Validated.class)) {
++			if (AnnotatedElementUtils.hasAnnotation(type, Validated.class)) {
+ 				return true;
+ 			}
+ 			if (type.getPackage().getName().startsWith("org.springframework.boot")) {

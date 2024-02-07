@@ -1,0 +1,29 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/handler/timeout/ReadTimeoutHandler.java b/fixed/src/main/java/org/jboss/netty/handler/timeout/ReadTimeoutHandler.java
+index 85ef0019c..f03eedcdb 100644
+--- a/buggy/src/main/java/org/jboss/netty/handler/timeout/ReadTimeoutHandler.java
++++ b/fixed/src/main/java/org/jboss/netty/handler/timeout/ReadTimeoutHandler.java
+@@ -90,21 +90,21 @@ public class ReadTimeoutHandler extends SimpleChannelUpstreamHandler implements
+     public void channelOpen(ChannelHandlerContext ctx, ChannelStateEvent e)
+             throws Exception {
+         initialize(ctx);
+-        super.channelOpen(ctx, e);
++        ctx.sendUpstream(e);
+     }
+ 
+     @Override
+     public void channelClosed(ChannelHandlerContext ctx, ChannelStateEvent e)
+             throws Exception {
+         destroy();
+-        super.channelOpen(ctx, e);
++        ctx.sendUpstream(e);
+     }
+ 
+     @Override
+     public void messageReceived(ChannelHandlerContext ctx, MessageEvent e)
+             throws Exception {
+         lastReadTime = System.nanoTime();
+-        super.messageReceived(ctx, e);
++        ctx.sendUpstream(e);
+     }
+ 
+     private void initialize(ChannelHandlerContext ctx) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/org/apache/hadoop/hbase/replication/TestReplication.java b/fixed/src/test/java/org/apache/hadoop/hbase/replication/TestReplication.java
+index 6ca4bd502..bd813defe 100644
+--- a/buggy/src/test/java/org/apache/hadoop/hbase/replication/TestReplication.java
++++ b/fixed/src/test/java/org/apache/hadoop/hbase/replication/TestReplication.java
+@@ -178,7 +178,7 @@ public class TestReplication {
+       Result[] res = scanner.next(NB_ROWS_IN_BIG_BATCH);
+       scanner.close();
+       if (res.length != 0) {
+-       if (lastCount < res.length) {
++       if (res.length < lastCount) {
+           i--; // Don't increment timeout if we make progress
+         }
+         lastCount = res.length;

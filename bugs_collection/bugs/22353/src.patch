@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/autoconfigure/PublicMetricsAutoConfiguration.java b/fixed/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/autoconfigure/PublicMetricsAutoConfiguration.java
+index 7b268cec2..003d372c1 100644
+--- a/buggy/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/autoconfigure/PublicMetricsAutoConfiguration.java
++++ b/fixed/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/autoconfigure/PublicMetricsAutoConfiguration.java
+@@ -142,7 +142,7 @@ public class PublicMetricsAutoConfiguration {
+ 	static class IntegrationMetricsConfiguration {
+ 
+ 		@Bean
+-		@ConditionalOnMissingBean
++		@ConditionalOnMissingBean(name = "springIntegrationPublicMetrics")
+ 		public MetricReaderPublicMetrics springIntegrationPublicMetrics(
+ 				IntegrationMBeanExporter exporter) {
+ 			return new MetricReaderPublicMetrics(

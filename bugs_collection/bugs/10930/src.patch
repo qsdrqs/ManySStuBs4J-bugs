@@ -1,0 +1,15 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/sizes/MethodCountCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/sizes/MethodCountCheckTest.java
+index a40df8789..6cac809b3 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/sizes/MethodCountCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/sizes/MethodCountCheckTest.java
+@@ -40,7 +40,9 @@ public class MethodCountCheckTest extends BaseCheckTestSupport {
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "sizes" + File.separator + filename);
++                + "sizes" + File.separator
++                + "methodcount" + File.separator
++                + filename);
+     }
+ 
+     @Test

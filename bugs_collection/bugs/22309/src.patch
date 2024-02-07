@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/data/redis/RedisAutoConfiguration.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/data/redis/RedisAutoConfiguration.java
+index ddc765a1f..73f3025f0 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/data/redis/RedisAutoConfiguration.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/data/redis/RedisAutoConfiguration.java
+@@ -125,7 +125,7 @@ public class RedisAutoConfiguration {
+ 					clusterProperties.getNodes());
+ 
+ 			if (clusterProperties.getMaxRedirects() != null) {
+-				config.setMaxRedirects(config.getMaxRedirects());
++				config.setMaxRedirects(clusterProperties.getMaxRedirects());
+ 			}
+ 			return config;
+ 		}

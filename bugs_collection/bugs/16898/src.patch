@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/util/executor/DelegatingFuture.java b/fixed/hazelcast/src/main/java/com/hazelcast/util/executor/DelegatingFuture.java
+index 632e9caf7..5e363eae2 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/util/executor/DelegatingFuture.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/util/executor/DelegatingFuture.java
+@@ -109,7 +109,7 @@ public class DelegatingFuture<V> implements Future<V> {
+     }
+ 
+     public final boolean isDone() {
+-        return done;
++        return done ? done : future.isDone();
+     }
+ 
+     protected void setError(Throwable error) {

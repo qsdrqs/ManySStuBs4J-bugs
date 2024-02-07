@@ -1,0 +1,13 @@
+diff --git a/buggy/stratosphere-tests/src/test/java/eu/stratosphere/test/exampleScalaPrograms/ConnectedComponentsITCase.java b/fixed/stratosphere-tests/src/test/java/eu/stratosphere/test/exampleScalaPrograms/ConnectedComponentsITCase.java
+index 7caa948a3..039b70d51 100644
+--- a/buggy/stratosphere-tests/src/test/java/eu/stratosphere/test/exampleScalaPrograms/ConnectedComponentsITCase.java
++++ b/fixed/stratosphere-tests/src/test/java/eu/stratosphere/test/exampleScalaPrograms/ConnectedComponentsITCase.java
+@@ -31,7 +31,7 @@ public class ConnectedComponentsITCase extends eu.stratosphere.test.iterative.Co
+         int dop = config.getInteger("ConnectedComponents#NumSubtasks", 1);
+         int maxIterations = config.getInteger("ConnectedComponents#NumIterations", 1);
+         ConnectedComponents cc = new ConnectedComponents();
+-        Plan plan = cc.getPlan(verticesPath, edgesPath, resultPath, maxIterations);
++        Plan plan = cc.getScalaPlan(verticesPath, edgesPath, resultPath, maxIterations);
+         plan.setDefaultParallelism(dop);
+         return plan;
+     }

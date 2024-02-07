@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/physics/box2d/World.java b/fixed/gdx/src/com/badlogic/gdx/physics/box2d/World.java
+index 7754a6f77..14dbbc728 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/physics/box2d/World.java
++++ b/fixed/gdx/src/com/badlogic/gdx/physics/box2d/World.java
+@@ -526,7 +526,7 @@ public class World implements Disposable {
+ 
+ 	private void endContact (long contactAddr) {
+ 		contact.addr = contactAddr;
+-		contact.GetWorldManifold();
++		contact.getWorldManifold();
+ 		if (contactListener != null) contactListener.endContact(contact);
+ 	}
+ 

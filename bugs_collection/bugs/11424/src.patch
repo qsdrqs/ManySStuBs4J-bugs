@@ -1,0 +1,22 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/base/ConfigurationBuilder.java b/fixed/src/it/java/com/google/checkstyle/test/base/ConfigurationBuilder.java
+index 3d7c4b57b..e4a9725e7 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/base/ConfigurationBuilder.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/base/ConfigurationBuilder.java
+@@ -20,7 +20,7 @@ public class ConfigurationBuilder extends BaseCheckTestSupport {
+ 
+ 	private File ROOT;
+ 
+-	private List<File> files = new ArrayList<File>();
++	private List<File> files = new ArrayList<>();
+ 
+ 	Configuration config;
+ 	
+@@ -100,7 +100,7 @@ public class ConfigurationBuilder extends BaseCheckTestSupport {
+ 
+ 	public Integer[] getLinesWithWarn(String aFileName) throws IOException {
+ 		int lineNumber = 1;
+-	    List<Integer> result = new ArrayList<Integer>();
++	    List<Integer> result = new ArrayList<>();
+ 	    try(BufferedReader br = new BufferedReader(new FileReader(aFileName))) {
+ 	        for(String line; (line = br.readLine()) != null; ) {
+ 	            if (warnPattern.matcher(line).find()) {

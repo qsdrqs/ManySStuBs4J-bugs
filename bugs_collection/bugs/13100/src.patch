@@ -1,0 +1,13 @@
+diff --git a/buggy/merger/src/main/java/com/metamx/druid/merger/coordinator/DbTaskStorage.java b/fixed/merger/src/main/java/com/metamx/druid/merger/coordinator/DbTaskStorage.java
+index 4bbf0f37a..5f39efae0 100644
+--- a/buggy/merger/src/main/java/com/metamx/druid/merger/coordinator/DbTaskStorage.java
++++ b/fixed/merger/src/main/java/com/metamx/druid/merger/coordinator/DbTaskStorage.java
+@@ -379,7 +379,7 @@ public class DbTaskStorage implements TaskStorage
+               public TaskAction apply(Map<String, Object> row)
+               {
+                 try {
+-                  return jsonMapper.readValue(row.get("payload").toString(), TaskAction.class);
++                  return jsonMapper.readValue(row.get("log_payload").toString(), TaskAction.class);
+                 } catch(Exception e) {
+                   throw Throwables.propagate(e);
+                 }

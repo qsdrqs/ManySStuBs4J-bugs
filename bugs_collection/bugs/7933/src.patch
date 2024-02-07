@@ -1,0 +1,22 @@
+diff --git a/buggy/components/camel-mail/src/main/java/org/apache/camel/component/mail/MailConverters.java b/fixed/components/camel-mail/src/main/java/org/apache/camel/component/mail/MailConverters.java
+index 7ab25009d..837d06593 100644
+--- a/buggy/components/camel-mail/src/main/java/org/apache/camel/component/mail/MailConverters.java
++++ b/fixed/components/camel-mail/src/main/java/org/apache/camel/component/mail/MailConverters.java
+@@ -86,7 +86,7 @@ public final class MailConverters {
+         if (s == null) {
+             return null;
+         }
+-        return IOConverter.toInputStream(s);
++        return IOConverter.toInputStream(s, null);
+     }
+ 
+     /**
+@@ -99,7 +99,7 @@ public final class MailConverters {
+         if (s == null) {
+             return null;
+         }
+-        return IOConverter.toInputStream(s);
++        return IOConverter.toInputStream(s, null);
+     }
+ 
+ }

@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/utils/Array.java b/fixed/gdx/src/com/badlogic/gdx/utils/Array.java
+index 3962eef9d..b8a5babf0 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/utils/Array.java
++++ b/fixed/gdx/src/com/badlogic/gdx/utils/Array.java
+@@ -92,7 +92,7 @@ public class Array<T> implements Iterable<T> {
+ 	public Array (boolean ordered, T[] array, int start, int count) {
+ 		this(ordered, count, (Class)array.getClass().getComponentType());
+ 		size = count;
+-		System.arraycopy(array, 0, items, 0, size);
++		System.arraycopy(array, start, items, 0, size);
+ 	}
+ 
+ 	public void add (T value) {

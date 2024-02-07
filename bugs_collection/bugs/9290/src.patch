@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/snapshot/ExportSnapshot.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/snapshot/ExportSnapshot.java
+index 5a5ed76ee..5215c416c 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/snapshot/ExportSnapshot.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/snapshot/ExportSnapshot.java
+@@ -674,7 +674,7 @@ public final class ExportSnapshot extends Configured implements Tool {
+     // Update the conf with the current root dir, since may be a different cluster
+     Configuration conf = new Configuration(baseConf);
+     FSUtils.setRootDir(conf, rootDir);
+-    FSUtils.setFsDefault(conf, snapshotDir);
++    FSUtils.setFsDefault(conf, FSUtils.getRootDir(conf));
+     SnapshotDescription snapshotDesc = SnapshotDescriptionUtils.readSnapshotInfo(fs, snapshotDir);
+     SnapshotReferenceUtil.verifySnapshot(conf, fs, snapshotDir, snapshotDesc);
+   }

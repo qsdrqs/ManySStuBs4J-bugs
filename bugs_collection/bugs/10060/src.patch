@@ -1,0 +1,13 @@
+diff --git a/buggy/external/storm-kafka/src/jvm/storm/kafka/PartitionManager.java b/fixed/external/storm-kafka/src/jvm/storm/kafka/PartitionManager.java
+index d868e501b..2c32a2cb7 100644
+--- a/buggy/external/storm-kafka/src/jvm/storm/kafka/PartitionManager.java
++++ b/fixed/external/storm-kafka/src/jvm/storm/kafka/PartitionManager.java
+@@ -214,7 +214,7 @@ public class PartitionManager {
+ 
+     public void commit() {
+         long lastCompletedOffset = lastCompletedOffset();
+-        if (lastCompletedOffset != lastCompletedOffset) {
++        if (_committedTo != lastCompletedOffset) {
+             LOG.debug("Writing last completed offset (" + lastCompletedOffset + ") to ZK for " + _partition + " for topology: " + _topologyInstanceId);
+             Map<Object, Object> data = (Map<Object, Object>) ImmutableMap.builder()
+                     .put("topology", ImmutableMap.of("id", _topologyInstanceId,

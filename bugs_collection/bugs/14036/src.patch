@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/split/SplitManager.java b/fixed/presto-main/src/main/java/com/facebook/presto/split/SplitManager.java
+index bf2a2e75f..fd94c2780 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/split/SplitManager.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/split/SplitManager.java
+@@ -213,7 +213,7 @@ public class SplitManager
+                     expectedType = SchemaField.Type.LONG;
+                 }
+                 else if (literal instanceof StringLiteral) {
+-                    value = ((StringLiteral) literal).getSlice();
++                    value = ((StringLiteral) literal).getValue();
+                     expectedType = SchemaField.Type.STRING;
+                 }
+                 else {

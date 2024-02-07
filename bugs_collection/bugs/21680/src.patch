@@ -1,0 +1,13 @@
+diff --git a/buggy/dex-reader/src/main/java/com/googlecode/dex2jar/reader/DexFileReader.java b/fixed/dex-reader/src/main/java/com/googlecode/dex2jar/reader/DexFileReader.java
+index f55a8be66..2c8a2e791 100644
+--- a/buggy/dex-reader/src/main/java/com/googlecode/dex2jar/reader/DexFileReader.java
++++ b/fixed/dex-reader/src/main/java/com/googlecode/dex2jar/reader/DexFileReader.java
+@@ -126,7 +126,7 @@ public class DexFileReader {
+             } catch (ClassNotFoundException e) {
+                 ze = new ZipExtractor();
+             }
+-            ze.extract(data, "classes.dex");
++            return ze.extract(data, "classes.dex");
+         }
+         throw new RuntimeException("the src file not a .dex, .odex or zip file");
+     }

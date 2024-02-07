@@ -1,0 +1,15 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsJavaDocsTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsJavaDocsTest.java
+index 773ba8e93..a8b3a4918 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsJavaDocsTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/internal/XdocsJavaDocsTest.java
+@@ -103,7 +103,9 @@ public class XdocsJavaDocsTest extends AbstractModuleTestSupport {
+ 
+                 if ("Content".equals(sectionName) || "Overview".equals(sectionName)
+                         // suppression list
+-                        || !"AbbreviationAsWordInName".equals(sectionName)) {
++                        || !"AbbreviationAsWordInName".equals(sectionName)
++                                && !"AbstractClassName".equals(sectionName)
++                ) {
+                     continue;
+                 }
+ 

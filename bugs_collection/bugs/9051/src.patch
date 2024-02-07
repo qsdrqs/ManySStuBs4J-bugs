@@ -1,0 +1,15 @@
+diff --git a/buggy/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/webapp/NodesPage.java b/fixed/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/webapp/NodesPage.java
+index 4231c4c83..a621cc104 100644
+--- a/buggy/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/webapp/NodesPage.java
++++ b/fixed/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/webapp/NodesPage.java
+@@ -52,8 +52,8 @@ class NodesPage extends RmView {
+           thead().
+           tr().
+           th(".rack", "Rack").
+-          th(".nodeid", "Node ID").
+-          th(".host", "Host").
++          th(".nodeaddress", "Node Address").
++          th(".nodehttpaddress", "Node HTTP Address").
+           th(".healthStatus", "Health-status").
+           th(".lastHealthUpdate", "Last health-update").
+           th(".healthReport", "Health-report").

@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/DefaultFileRegion.java b/fixed/transport/src/main/java/io/netty/channel/DefaultFileRegion.java
+index b3d47f870..9abb9be85 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/DefaultFileRegion.java
++++ b/fixed/transport/src/main/java/io/netty/channel/DefaultFileRegion.java
+@@ -49,7 +49,7 @@ public class DefaultFileRegion extends AbstractReferenceCounted implements FileR
+         if (position < 0) {
+             throw new IllegalArgumentException("position must be >= 0 but was " + position);
+         }
+-        if (count <= 0) {
++        if (count < 0) {
+             throw new IllegalArgumentException("count must be >= 0 but was " + count);
+         }
+         this.file = file;

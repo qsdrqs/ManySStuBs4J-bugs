@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/internal/cluster/impl/ClusterServiceImpl.java b/fixed/hazelcast/src/main/java/com/hazelcast/internal/cluster/impl/ClusterServiceImpl.java
+index 0a1a9c759..823535b09 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/internal/cluster/impl/ClusterServiceImpl.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/internal/cluster/impl/ClusterServiceImpl.java
+@@ -696,7 +696,7 @@ public class ClusterServiceImpl implements ClusterService, ConnectionListener, M
+         try {
+             if (isJoined()) {
+                 Address currentMasterAddress = getMasterAddress();
+-                if (!master.equals(currentMasterAddress)) {
++                if (!currentMasterAddress.equals(master)) {
+                     logger.warning("Cannot set master address to " + master
+                             + " because node is already joined! Current master: " + currentMasterAddress);
+                 } else {

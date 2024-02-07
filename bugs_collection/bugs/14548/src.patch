@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/CodeGenerator.java b/fixed/src/com/google/javascript/jscomp/CodeGenerator.java
+index c4de3f034..6f0b64da6 100644
+--- a/buggy/src/com/google/javascript/jscomp/CodeGenerator.java
++++ b/fixed/src/com/google/javascript/jscomp/CodeGenerator.java
+@@ -1265,7 +1265,7 @@ public class CodeGenerator {
+         cc.endStatement(true);
+         break;
+       default:
+-        throw new RuntimeException("Unknown type " + type + "\n" + n.toStringTree());
++        throw new RuntimeException("Unknown token " + type + "\n" + n.toStringTree());
+     }
+ 
+     cc.endSourceMapping(n);

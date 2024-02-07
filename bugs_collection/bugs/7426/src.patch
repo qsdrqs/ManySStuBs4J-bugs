@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/component/bean/ProxyReturnFutureTest.java b/fixed/camel-core/src/test/java/org/apache/camel/component/bean/ProxyReturnFutureTest.java
+index d726ea50c..bdd54aeb8 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/component/bean/ProxyReturnFutureTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/component/bean/ProxyReturnFutureTest.java
+@@ -71,7 +71,7 @@ public class ProxyReturnFutureTest extends ContextTestSupport {
+     }
+ 
+     // START SNIPPET: e1
+-    public static interface Echo {
++    public interface Echo {
+ 
+         // returning a Future indicate asynchronous invocation
+         Future<String> asText(int number);

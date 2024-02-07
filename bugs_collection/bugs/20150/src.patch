@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.gpio/src/main/java/org/openhab/binding/gpio/internal/GPIOGenericBindingProvider.java b/fixed/bundles/binding/org.openhab.binding.gpio/src/main/java/org/openhab/binding/gpio/internal/GPIOGenericBindingProvider.java
+index 90763e3a6..99f9fa7c1 100644
+--- a/buggy/bundles/binding/org.openhab.binding.gpio/src/main/java/org/openhab/binding/gpio/internal/GPIOGenericBindingProvider.java
++++ b/fixed/bundles/binding/org.openhab.binding.gpio/src/main/java/org/openhab/binding/gpio/internal/GPIOGenericBindingProvider.java
+@@ -108,7 +108,7 @@ public class GPIOGenericBindingProvider extends AbstractGenericBindingProvider i
+         /* Configuration string should be in the form "pin:NUMBER [debounse:NUMBER] [activelow:yes|no]" */
+         String[] properties = bindingConfig.split(" ");
+ 
+-        if (properties.length > 3) {
++        if (properties.length > 4) {
+             logger.error("Wrong number of arguments (" + properties.length + ") in configuration string '"
+                     + bindingConfig + "'");
+             throw new BindingConfigParseException("Wrong number of agruments (" + properties.length

@@ -1,0 +1,18 @@
+diff --git a/buggy/jsonschema2pojo-core/src/main/java/org/jsonschema2pojo/DefaultGenerationConfig.java b/fixed/jsonschema2pojo-core/src/main/java/org/jsonschema2pojo/DefaultGenerationConfig.java
+index 6e16ee42b..70589ef70 100644
+--- a/buggy/jsonschema2pojo-core/src/main/java/org/jsonschema2pojo/DefaultGenerationConfig.java
++++ b/fixed/jsonschema2pojo-core/src/main/java/org/jsonschema2pojo/DefaultGenerationConfig.java
+@@ -283,11 +283,11 @@ public class DefaultGenerationConfig implements GenerationConfig {
+     }
+ 
+     /**
+-     * @return <code>true</code>
++     * @return <code>false</code>
+      */
+     @Override
+     public boolean isIncludeDynamicAccessors() {
+-        return true;
++        return false;
+     }
+ 
+     @Override

@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/graphics/g3d/loader/G3dModelLoader.java b/fixed/gdx/src/com/badlogic/gdx/graphics/g3d/loader/G3dModelLoader.java
+index 42362ce9c..ad809910d 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/graphics/g3d/loader/G3dModelLoader.java
++++ b/fixed/gdx/src/com/badlogic/gdx/graphics/g3d/loader/G3dModelLoader.java
+@@ -154,7 +154,7 @@ public class G3dModelLoader extends ModelLoader<ModelLoader.ModelParameters> {
+ 			} else if (attr.equals("COLOR")) {
+ 				vertexAttributes.add(VertexAttribute.ColorUnpacked());
+ 			} else if (attr.equals("COLORPACKED")) {
+-				vertexAttributes.add(VertexAttribute.Color());
++				vertexAttributes.add(VertexAttribute.ColorPacked());
+ 			} else if (attr.equals("TANGENT")) {
+ 				vertexAttributes.add(VertexAttribute.Tangent());
+ 			} else if (attr.equals("BINORMAL")) {

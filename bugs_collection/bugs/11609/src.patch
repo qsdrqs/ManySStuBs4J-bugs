@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/filters/CSVFilter.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/filters/CSVFilter.java
+index bb3e3a80e..78bf806d0 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/filters/CSVFilter.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/filters/CSVFilter.java
+@@ -46,8 +46,7 @@ class CSVFilter implements IntFilter {
+      * @throws NumberFormatException if a component substring does not
+      * contain a parsable integer.
+      */
+-    public CSVFilter(String pattern)
+-        throws NumberFormatException {
++    public CSVFilter(String pattern) {
+         final StringTokenizer tokenizer = new StringTokenizer(pattern, ",");
+         while (tokenizer.hasMoreTokens()) {
+             final String token = tokenizer.nextToken().trim();

@@ -1,0 +1,16 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/AvoidEscapedUnicodeCharactersCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/AvoidEscapedUnicodeCharactersCheckTest.java
+index 0902c9c8c..2ed00a5e6 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/AvoidEscapedUnicodeCharactersCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/AvoidEscapedUnicodeCharactersCheckTest.java
+@@ -145,7 +145,10 @@ public class AvoidEscapedUnicodeCharactersCheckTest extends BaseCheckTestSupport
+ 
+     @Override
+     protected String getPath(String filename) throws IOException {
+-        return super.getPath("checks" + File.separator + filename);
++        return super.getPath("checks" + File.separator
++                + "misc" + File.separator
++                + "avoidescapedunicodecharacters" + File.separator
++                + filename);
+     }
+ 
+     @Test

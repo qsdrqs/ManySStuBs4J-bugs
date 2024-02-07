@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.http/src/main/java/org/openhab/binding/http/internal/HttpInBinding.java b/fixed/bundles/binding/org.openhab.binding.http/src/main/java/org/openhab/binding/http/internal/HttpInBinding.java
+index 0de191546..6e9fc149f 100644
+--- a/buggy/bundles/binding/org.openhab.binding.http/src/main/java/org/openhab/binding/http/internal/HttpInBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.http/src/main/java/org/openhab/binding/http/internal/HttpInBinding.java
+@@ -148,7 +148,7 @@ public class HttpInBinding extends AbstractActiveBinding<HttpBindingProvider> im
+      * @{inheritDoc}
+      */
+     @Override
+-    protected int getRefreshInterval() {
++    protected long getRefreshInterval() {
+     	return HttpInBinding.granularity;
+     }
+     

@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/socket/nio/NioDatagramChannel.java b/fixed/transport/src/main/java/io/netty/channel/socket/nio/NioDatagramChannel.java
+index 3cace161a..305fea735 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/socket/nio/NioDatagramChannel.java
++++ b/fixed/transport/src/main/java/io/netty/channel/socket/nio/NioDatagramChannel.java
+@@ -128,7 +128,7 @@ public final class NioDatagramChannel
+     @Override
+     public boolean isActive() {
+         DatagramChannel ch = javaChannel();
+-        return ch.isOpen() && ch.socket().isBound();
++        return ch.isOpen();
+     }
+ 
+     @Override

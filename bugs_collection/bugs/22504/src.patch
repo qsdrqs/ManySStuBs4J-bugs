@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/data/mongo/MongoRepositoriesAutoConfiguration.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/data/mongo/MongoRepositoriesAutoConfiguration.java
+index b6544810a..3538df58b 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/data/mongo/MongoRepositoriesAutoConfiguration.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/data/mongo/MongoRepositoriesAutoConfiguration.java
+@@ -56,7 +56,7 @@ import com.mongodb.Mongo;
+ @ConditionalOnClass({ Mongo.class, MongoRepository.class })
+ @ConditionalOnMissingBean({ MongoRepositoryFactoryBean.class,
+ 		MongoRepositoryConfigurationExtension.class })
+-@ConditionalOnProperty(prefix = "spring.data.mongo.repositories", name = "enabled", havingValue = "true", matchIfMissing = true)
++@ConditionalOnProperty(prefix = "spring.data.mongodb.repositories", name = "enabled", havingValue = "true", matchIfMissing = true)
+ @Import(MongoRepositoriesAutoConfigureRegistrar.class)
+ @AutoConfigureAfter(MongoAutoConfiguration.class)
+ public class MongoRepositoriesAutoConfiguration {

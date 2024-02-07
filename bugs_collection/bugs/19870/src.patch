@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/DefaultChannelPipeline.java b/fixed/transport/src/main/java/io/netty/channel/DefaultChannelPipeline.java
+index 3028e04a2..12290ab74 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/DefaultChannelPipeline.java
++++ b/fixed/transport/src/main/java/io/netty/channel/DefaultChannelPipeline.java
+@@ -1158,7 +1158,7 @@ final class DefaultChannelPipeline implements ChannelPipeline {
+         }
+     }
+ 
+-    static abstract class HeadHandler implements ChannelOutboundHandler {
++    abstract static class HeadHandler implements ChannelOutboundHandler {
+ 
+         protected final Unsafe unsafe;
+         ByteBuf byteSink;

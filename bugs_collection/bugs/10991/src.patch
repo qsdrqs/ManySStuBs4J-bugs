@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/ListToTreeSelectionModelWrapper.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/ListToTreeSelectionModelWrapper.java
+index e373174cb..cfbebbb62 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/ListToTreeSelectionModelWrapper.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/ListToTreeSelectionModelWrapper.java
+@@ -60,7 +60,7 @@ class ListToTreeSelectionModelWrapper extends DefaultTreeSelectionModel {
+      *
+      * @return the list selection model
+      */
+-    final ListSelectionModel getListSelectionModel() {
++    protected final ListSelectionModel getListSelectionModel() {
+         return listSelectionModel;
+     }
+ 

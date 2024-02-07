@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/autoconfigure/HealthIndicatorAutoConfigurationTests.java b/fixed/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/autoconfigure/HealthIndicatorAutoConfigurationTests.java
+index 7695950ab..a77ce1f87 100644
+--- a/buggy/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/autoconfigure/HealthIndicatorAutoConfigurationTests.java
++++ b/fixed/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/autoconfigure/HealthIndicatorAutoConfigurationTests.java
+@@ -122,7 +122,7 @@ public class HealthIndicatorAutoConfigurationTests {
+ 		this.context.register(HealthIndicatorAutoConfiguration.class,
+ 				ManagementServerProperties.class);
+ 		EnvironmentTestUtils.addEnvironment(this.context,
+-				"management.health.enabled:false",
++				"management.health.defaults.enabled:false",
+ 				"management.health.diskspace.enabled:true");
+ 		this.context.refresh();
+ 		Map<String, HealthIndicator> beans = this.context

@@ -1,0 +1,13 @@
+diff --git a/buggy/service/src/java/org/apache/hive/service/cli/Type.java b/fixed/service/src/java/org/apache/hive/service/cli/Type.java
+index a96d2ac37..428d2ad3a 100644
+--- a/buggy/service/src/java/org/apache/hive/service/cli/Type.java
++++ b/fixed/service/src/java/org/apache/hive/service/cli/Type.java
+@@ -149,7 +149,7 @@ public enum Type {
+         return type;
+       }
+     }
+-    throw new IllegalArgumentException("Unregonized Thrift TTypeId value: " + tType);
++    throw new IllegalArgumentException("Unrecognized Thrift TTypeId value: " + tType);
+   }
+ 
+   public static Type getType(String name) {

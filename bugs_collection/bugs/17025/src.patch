@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/impl/ConcurrentMapManager.java b/fixed/hazelcast/src/main/java/com/hazelcast/impl/ConcurrentMapManager.java
+index 40bb34287..3160244d0 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/impl/ConcurrentMapManager.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/impl/ConcurrentMapManager.java
+@@ -1784,7 +1784,7 @@ public class ConcurrentMapManager extends BaseManager {
+                     if (oldObject == null) {
+                         return Boolean.FALSE;
+                     } else {
+-                        if (expectedValue.equals(oldValue)) {
++                        if (expectedValue.equals(oldObject)) {
+                             txn.attachPutOp(name, key, toData(newValue), false);
+                             return Boolean.TRUE;
+                         } else {

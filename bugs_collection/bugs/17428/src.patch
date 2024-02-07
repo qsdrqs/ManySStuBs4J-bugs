@@ -1,0 +1,20 @@
+diff --git a/buggy/src/main/java/junit/framework/TestSuite.java b/fixed/src/main/java/junit/framework/TestSuite.java
+index e2acc9ddd..0c629daa6 100644
+--- a/buggy/src/main/java/junit/framework/TestSuite.java
++++ b/fixed/src/main/java/junit/framework/TestSuite.java
+@@ -87,7 +87,7 @@ public class TestSuite implements Test {
+         } catch (NoSuchMethodException e) {
+             // fall through
+         }
+-        return theClass.getConstructor(new Class[0]);
++        return theClass.getConstructor();
+     }
+ 
+     /**
+@@ -319,4 +319,4 @@ public class TestSuite implements Test {
+                 m.getName().startsWith("test") &&
+                 m.getReturnType().equals(Void.TYPE);
+     }
+-}
+\ No newline at end of file
++}

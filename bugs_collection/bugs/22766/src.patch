@@ -1,0 +1,15 @@
+diff --git a/buggy/core/src/main/java/dagger/internal/plugins/reflect/ReflectiveModuleAdapter.java b/fixed/core/src/main/java/dagger/internal/plugins/reflect/ReflectiveModuleAdapter.java
+index 3c54320fb..5a9502909 100644
+--- a/buggy/core/src/main/java/dagger/internal/plugins/reflect/ReflectiveModuleAdapter.java
++++ b/fixed/core/src/main/java/dagger/internal/plugins/reflect/ReflectiveModuleAdapter.java
+@@ -97,9 +97,7 @@ final class ReflectiveModuleAdapter extends ModuleAdapter<Object> {
+     } catch (InstantiationException e) {
+       throw new IllegalArgumentException("Failed to construct " + moduleClass.getName(), e);
+     } catch (IllegalAccessException e) {
+-      throw new IllegalArgumentException("Could not construct " + moduleClass.getName()
+-          + " as it lacks an accessible no-args constructor. This module must be passed"
+-          + " in as an instance, or the no-args constructor must be made public.", e);
++      throw new AssertionError();
+     }
+   }
+ 

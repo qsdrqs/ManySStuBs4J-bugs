@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/impl/BaseManager.java b/fixed/hazelcast/src/main/java/com/hazelcast/impl/BaseManager.java
+index 5025b5a52..117b68e18 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/impl/BaseManager.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/impl/BaseManager.java
+@@ -651,7 +651,7 @@ public abstract class BaseManager {
+                         reset();
+                         throw new RuntimeException();
+                     } else if (!node.active) {
+-                        throw new RuntimeException();
++                        throw new IllegalStateException("Hazelcast Instance is not active!");
+                     }
+                 } catch (InterruptedException e) {
+                     if (node.factory.restarted) {

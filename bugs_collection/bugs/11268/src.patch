@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter3filestructure/rule331nowildcard/AvoidStarImportTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter3filestructure/rule331nowildcard/AvoidStarImportTest.java
+index 3061cc9bb..efb2b50c8 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter3filestructure/rule331nowildcard/AvoidStarImportTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter3filestructure/rule331nowildcard/AvoidStarImportTest.java
+@@ -21,7 +21,7 @@ public class AvoidStarImportTest extends BaseCheckTestSupport{
+     }
+ 
+     @Test
+-    public void starImportTest() throws IOException, Exception {
++    public void starImportTest() throws Exception {
+ 
+         final String[] expected = {
+             "3: Using the '.*' form of import should be avoided - java.io.*.",

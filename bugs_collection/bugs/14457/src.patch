@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/J2clPropertyInlinerPass.java b/fixed/src/com/google/javascript/jscomp/J2clPropertyInlinerPass.java
+index 678306665..b7c875dc9 100644
+--- a/buggy/src/com/google/javascript/jscomp/J2clPropertyInlinerPass.java
++++ b/fixed/src/com/google/javascript/jscomp/J2clPropertyInlinerPass.java
+@@ -60,7 +60,7 @@ public class J2clPropertyInlinerPass implements CompilerPass {
+ 
+     new StaticFieldGetterSetterInliner(root).run();
+     // This pass may remove getters and setters.
+-    GatherGettersAndSetterProperties.update(compiler, externs, root);
++    GatherGetterAndSetterProperties.update(compiler, externs, root);
+   }
+ 
+   class StaticFieldGetterSetterInliner {

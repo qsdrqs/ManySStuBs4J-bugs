@@ -1,0 +1,13 @@
+diff --git a/buggy/sopremo/sopremo-common/src/main/java/eu/stratosphere/sopremo/OperatorFactory.java b/fixed/sopremo/sopremo-common/src/main/java/eu/stratosphere/sopremo/OperatorFactory.java
+index af60c48d9..1045c508d 100644
+--- a/buggy/sopremo/sopremo-common/src/main/java/eu/stratosphere/sopremo/OperatorFactory.java
++++ b/fixed/sopremo/sopremo-common/src/main/java/eu/stratosphere/sopremo/OperatorFactory.java
+@@ -70,7 +70,7 @@ public class OperatorFactory {
+ 		}
+ 
+ 		private String firstOrNull(final String[] names) {
+-			return names.length == 0 ? null : names[0];
++			return names == null || names.length == 0 ? null : names[0];
+ 		}
+ 	}
+ 

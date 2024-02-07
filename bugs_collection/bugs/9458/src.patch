@@ -1,0 +1,18 @@
+diff --git a/buggy/src/java/org/apache/hadoop/hbase/zookeeper/ZooKeeperWrapper.java b/fixed/src/java/org/apache/hadoop/hbase/zookeeper/ZooKeeperWrapper.java
+index 7fd959e43..1504a1998 100644
+--- a/buggy/src/java/org/apache/hadoop/hbase/zookeeper/ZooKeeperWrapper.java
++++ b/fixed/src/java/org/apache/hadoop/hbase/zookeeper/ZooKeeperWrapper.java
+@@ -348,9 +348,11 @@ public class ZooKeeperWrapper implements HConstants {
+     } catch (KeeperException.NoNodeException e) {
+       return ensureParentExists(znode) && ensureExists(znode);
+     } catch (KeeperException e) {
+-      LOG.warn("Failed to create " + znode + ":", e);
++      LOG.warn("Failed to create " + znode +
++        " -- check quorum servers, currenty=" + this.quorumServers, e);
+     } catch (InterruptedException e) {
+-      LOG.warn("Failed to create " + znode + ":", e);
++      LOG.warn("Failed to create " + znode +
++        " -- check quorum servers, currenty=" + this.quorumServers, e);
+     }
+     return false;
+   }

@@ -1,0 +1,15 @@
+diff --git a/buggy/services/src/main/java/io/druid/cli/PullDependencies.java b/fixed/services/src/main/java/io/druid/cli/PullDependencies.java
+index 55c05589f..2e94702c3 100644
+--- a/buggy/services/src/main/java/io/druid/cli/PullDependencies.java
++++ b/fixed/services/src/main/java/io/druid/cli/PullDependencies.java
+@@ -121,8 +121,8 @@ public class PullDependencies implements Runnable
+       "com.fasterxml.jackson.core",
+       "com.fasterxml.jackson.dataformat",
+       "com.fasterxml.jackson.datatype",
+-      "io.netty",
+-      "org.roaringbitmap"
++      "org.roaringbitmap",
++      "net.java.dev.jets3t"
+   );
+ 
+   private TeslaAether aether;

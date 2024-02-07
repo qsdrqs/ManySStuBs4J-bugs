@@ -1,0 +1,13 @@
+diff --git a/buggy/web/src/main/java/org/openmrs/web/controller/user/UserFormController.java b/fixed/web/src/main/java/org/openmrs/web/controller/user/UserFormController.java
+index 5c1659875..6edfb6c00 100644
+--- a/buggy/web/src/main/java/org/openmrs/web/controller/user/UserFormController.java
++++ b/fixed/web/src/main/java/org/openmrs/web/controller/user/UserFormController.java
+@@ -193,7 +193,7 @@ public class UserFormController {
+ 			}
+ 			
+ 			if (password.length() == 0 && isNewUser(user)) {
+-				errors.reject("error.password.weak");
++				errors.reject("options.login.password.null");
+ 			}
+ 			
+ 			//check password strength

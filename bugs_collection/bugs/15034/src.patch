@@ -1,0 +1,22 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/ES6ModuleLoader.java b/fixed/src/com/google/javascript/jscomp/ES6ModuleLoader.java
+index 004f191ea..3d1875972 100644
+--- a/buggy/src/com/google/javascript/jscomp/ES6ModuleLoader.java
++++ b/fixed/src/com/google/javascript/jscomp/ES6ModuleLoader.java
+@@ -107,7 +107,7 @@ abstract class ES6ModuleLoader {
+ 
+     private NaiveModuleLoader(AbstractCompiler compiler, String moduleRoot) {
+       this.moduleRoot = moduleRoot;
+-      this.moduleRootURI = new File(moduleRoot).toURI();
++      this.moduleRootURI = createUri(moduleRoot);
+ 
+       // Precompute the module name of each source file.
+       for (CompilerInput input : compiler.getInputsInOrder()) {
+@@ -118,7 +118,7 @@ abstract class ES6ModuleLoader {
+     @Override
+     String locate(String name, CompilerInput referrer) {
+       URI base = isRelativeIdentifier(name) ? createUri(referrer)
+-          : createUri(moduleRoot);
++          : moduleRootURI;
+ 
+       return convertSourceUriToModuleAddress(base.resolve(createUri(name)));
+     }

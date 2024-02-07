@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/execution/SharedBuffer.java b/fixed/presto-main/src/main/java/com/facebook/presto/execution/SharedBuffer.java
+index 414ef0934..446e929be 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/execution/SharedBuffer.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/execution/SharedBuffer.java
+@@ -343,7 +343,7 @@ public class SharedBuffer
+             }
+ 
+             // refill buffer from queued pages
+-            while (!queuedPages.isEmpty() && bufferedBytes >= maxBufferedBytes) {
++            while (!queuedPages.isEmpty() && bufferedBytes < maxBufferedBytes) {
+                 QueuedPage queuedPage = queuedPages.removeFirst();
+                 addInternal(queuedPage.getPage());
+                 queuedPage.getFuture().set(null);

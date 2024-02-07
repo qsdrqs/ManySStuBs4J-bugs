@@ -1,0 +1,19 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/VisibilityModifierCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/VisibilityModifierCheck.java
+index e5e069f5b..17ef14f66 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/VisibilityModifierCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/VisibilityModifierCheck.java
+@@ -498,12 +498,10 @@ public class VisibilityModifierCheck
+             // If imported canonical class name is not specified as allowed immutable class,
+             // but its short name collides with one of specified class - removes the short name
+             // from list to avoid names collision
+-            if (!immutableClassCanonicalNames.contains(canonicalName)
+-                     && immutableClassShortNames.contains(shortName)) {
++            if (!immutableClassCanonicalNames.contains(canonicalName)) {
+                 immutableClassShortNames.remove(shortName);
+             }
+-            if (!ignoreAnnotationCanonicalNames.contains(canonicalName)
+-                     && ignoreAnnotationShortNames.contains(shortName)) {
++            if (!ignoreAnnotationCanonicalNames.contains(canonicalName)) {
+                 ignoreAnnotationShortNames.remove(shortName);
+             }
+         }

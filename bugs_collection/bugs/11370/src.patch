@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/Main.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/Main.java
+index 153f177bb..1c00e1ad1 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/Main.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/Main.java
+@@ -94,7 +94,7 @@ public final class Main {
+         /**
+          * Contstructor
+          */
+-        public FrameShower(JFrame frame) {
++        FrameShower(JFrame frame) {
+             this.frame = frame;
+         }
+ 

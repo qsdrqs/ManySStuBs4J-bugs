@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/client/impl/protocol/task/cache/AbstractCacheMessageTask.java b/fixed/hazelcast/src/main/java/com/hazelcast/client/impl/protocol/task/cache/AbstractCacheMessageTask.java
+index 2576752fe..1ae54d8e0 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/client/impl/protocol/task/cache/AbstractCacheMessageTask.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/client/impl/protocol/task/cache/AbstractCacheMessageTask.java
+@@ -43,7 +43,7 @@ public abstract class AbstractCacheMessageTask<P>
+         ICacheService service = getService(CacheService.SERVICE_NAME);
+         final CacheConfig cacheConfig = service.getCacheConfig(name);
+         if (cacheConfig == null) {
+-            throw new CacheNotExistsException("Cache is already destroyed or not created yet, on "
++            throw new CacheNotExistsException("Cache " + name + " is already destroyed or not created yet, on "
+                     + nodeEngine.getLocalMember());
+         }
+         final InMemoryFormat inMemoryFormat = cacheConfig.getInMemoryFormat();

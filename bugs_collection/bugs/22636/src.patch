@@ -1,0 +1,16 @@
+diff --git a/buggy/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/autoconfigure/EndpointWebMvcAutoConfiguration.java b/fixed/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/autoconfigure/EndpointWebMvcAutoConfiguration.java
+index 43cb94fd4..04b3df83e 100644
+--- a/buggy/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/autoconfigure/EndpointWebMvcAutoConfiguration.java
++++ b/fixed/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/autoconfigure/EndpointWebMvcAutoConfiguration.java
+@@ -183,8 +183,9 @@ public class EndpointWebMvcAutoConfiguration implements ApplicationContextAware,
+ 				return DIFFERENT;
+ 			}
+ 			return managementServerProperties.getPort() == null
+-					|| serverProperties.getPort() == managementServerProperties.getPort() ? SAME
+-					: DIFFERENT;
++					|| serverProperties.getPort() == null
++					|| serverProperties.getPort().equals(
++							managementServerProperties.getPort()) ? SAME : DIFFERENT;
+ 		}
+ 	};
+ }

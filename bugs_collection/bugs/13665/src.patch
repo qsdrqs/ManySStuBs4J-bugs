@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/metadata/MetadataUtil.java b/fixed/presto-main/src/main/java/com/facebook/presto/metadata/MetadataUtil.java
+index ba2792c63..b422c5416 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/metadata/MetadataUtil.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/metadata/MetadataUtil.java
+@@ -75,7 +75,7 @@ public final class MetadataUtil
+         if (value == null) {
+             throw new NullPointerException(format("%s is null", name));
+         }
+-        checkArgument(value.equals(value.toLowerCase(ENGLISH)), "%s is not lowercase", name);
++        checkArgument(value.equals(value.toLowerCase(ENGLISH)), "%s is not lowercase: %s", name, value);
+         return value;
+     }
+ 

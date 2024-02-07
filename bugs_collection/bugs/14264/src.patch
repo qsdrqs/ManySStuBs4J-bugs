@@ -1,0 +1,13 @@
+diff --git a/buggy/VisualizationModule/src/org/gephi/visualization/bridge/DHNSDataBridge.java b/fixed/VisualizationModule/src/org/gephi/visualization/bridge/DHNSDataBridge.java
+index 3703b72aa..5da525edd 100644
+--- a/buggy/VisualizationModule/src/org/gephi/visualization/bridge/DHNSDataBridge.java
++++ b/fixed/VisualizationModule/src/org/gephi/visualization/bridge/DHNSDataBridge.java
+@@ -209,7 +209,7 @@ public class DHNSDataBridge implements DataBridge, VizArchitecture {
+                     arrowObj.setCacheMarker(cacheMarker);
+                 }
+             } else {
+-                if (!undirected && vizConfig.isShowArrows() && !edge.isSelfLoop()) {
++                if (!undirected && vizConfig.isShowArrows() && !edge.isSelfLoop() && edge.isDirected()) {
+                     ModelImpl arrowObj = ((Edge2dModel) obj).getArrow();
+                     arrowObj.setCacheMarker(cacheMarker);
+                 }

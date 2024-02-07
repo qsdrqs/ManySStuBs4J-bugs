@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/query/impl/SortedIndexStore.java b/fixed/hazelcast/src/main/java/com/hazelcast/query/impl/SortedIndexStore.java
+index 44ae6a766..ce0b595f5 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/query/impl/SortedIndexStore.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/query/impl/SortedIndexStore.java
+@@ -80,7 +80,7 @@ public class SortedIndexStore implements IndexStore {
+ 
+     public void newIndex(Comparable newValue, QueryableEntry record) {
+         ConcurrentMap<Data, QueryableEntry> records = mapRecords.get(newValue);
+-        final boolean isNullObject = newValue.equals(IndexImpl.NULL);
++        final boolean isNullObject = newValue instanceof IndexImpl.NullObject;
+         if (records == null && !isNullObject) {
+             records = new ConcurrentHashMap<Data, QueryableEntry>(1, 0.75f, 1);
+             mapRecords.put(newValue, records);

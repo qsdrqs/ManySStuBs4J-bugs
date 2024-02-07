@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/showcase/src/main/java/org/springside/examples/showcase/utilities/email/MimeMailService.java b/fixed/examples/showcase/src/main/java/org/springside/examples/showcase/utilities/email/MimeMailService.java
+index 23a11e1f0..93d01457f 100644
+--- a/buggy/examples/showcase/src/main/java/org/springside/examples/showcase/utilities/email/MimeMailService.java
++++ b/fixed/examples/showcase/src/main/java/org/springside/examples/showcase/utilities/email/MimeMailService.java
+@@ -48,7 +48,7 @@ public class MimeMailService {
+ 
+ 			helper.setTo("springside3.demo@gmail.com");
+ 			helper.setFrom("springside3.demo@gmail.com");
+-			helper.setSubject("User Changed");
++			helper.setSubject("用户修改通知");
+ 
+ 			String content = generateContent(userName);
+ 			helper.setText(content, true);

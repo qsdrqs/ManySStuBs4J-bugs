@@ -1,0 +1,13 @@
+diff --git a/buggy/backends/gdx-backend-robovm/src/com/badlogic/gdx/backends/iosrobovm/IOSApplication.java b/fixed/backends/gdx-backend-robovm/src/com/badlogic/gdx/backends/iosrobovm/IOSApplication.java
+index ee4032662..a61770ca6 100644
+--- a/buggy/backends/gdx-backend-robovm/src/com/badlogic/gdx/backends/iosrobovm/IOSApplication.java
++++ b/fixed/backends/gdx-backend-robovm/src/com/badlogic/gdx/backends/iosrobovm/IOSApplication.java
+@@ -428,7 +428,7 @@ public class IOSApplication implements Application {
+ 
+ 	@Override
+ 	public void exit () {
+-		NSThread.getMainThread().exit();
++		NSThread.exit();
+ 	}
+ 
+ 	@Override

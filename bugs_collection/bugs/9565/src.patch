@@ -1,0 +1,13 @@
+diff --git a/buggy/standalone-metastore/src/main/java/org/apache/hadoop/hive/metastore/ObjectStore.java b/fixed/standalone-metastore/src/main/java/org/apache/hadoop/hive/metastore/ObjectStore.java
+index de7dc2d9d..0dc8c3972 100644
+--- a/buggy/standalone-metastore/src/main/java/org/apache/hadoop/hive/metastore/ObjectStore.java
++++ b/fixed/standalone-metastore/src/main/java/org/apache/hadoop/hive/metastore/ObjectStore.java
+@@ -8369,7 +8369,7 @@ public class ObjectStore implements RawStore, Configurable {
+               " Metastore is not upgraded or corrupt");
+         } else {
+           LOG.error("Version information found in metastore differs {} " +
+-              "from expected schema version {}. Schema verififcation is disabled {}", 
++              "from expected schema version {}. Schema verification is disabled {}",
+               dbSchemaVer, hiveSchemaVer, ConfVars.SCHEMA_VERIFICATION);
+           setMetaStoreSchemaVersion(hiveSchemaVer,
+             "Set by MetaStore " + USER + "@" + HOSTNAME);

@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/io/druid/server/coordinator/LoadQueuePeon.java b/fixed/server/src/main/java/io/druid/server/coordinator/LoadQueuePeon.java
+index e2577795a..c7ee45ce4 100644
+--- a/buggy/server/src/main/java/io/druid/server/coordinator/LoadQueuePeon.java
++++ b/fixed/server/src/main/java/io/druid/server/coordinator/LoadQueuePeon.java
+@@ -208,7 +208,7 @@ public class LoadQueuePeon
+       }
+     }
+ 
+-    log.info("Asking server peon[%s] to drop segment[%s]", basePath, segment);
++    log.info("Asking server peon[%s] to drop segment[%s]", basePath, segment.getIdentifier());
+     segmentsToDrop.add(holder);
+     doNext();
+   }

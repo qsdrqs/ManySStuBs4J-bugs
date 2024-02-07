@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/connection/nio/ClientConnectionManagerImpl.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/connection/nio/ClientConnectionManagerImpl.java
+index 7209ac1d6..d7a2f3420 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/connection/nio/ClientConnectionManagerImpl.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/connection/nio/ClientConnectionManagerImpl.java
+@@ -423,7 +423,7 @@ public class ClientConnectionManagerImpl implements ClientConnectionManager {
+                 }
+                 try {
+                     initializeConnection(remoteAddress, authenticator);
+-                } catch (IOException e) {
++                } catch (Exception e) {
+                     LOGGER.finest(e);
+                 } finally {
+                     connectionsInProgress.remove(target);

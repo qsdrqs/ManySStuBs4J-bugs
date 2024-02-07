@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/filters/SuppressWarningsFilterTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/filters/SuppressWarningsFilterTest.java
+index 64a1bda7a..0fcd68157 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/filters/SuppressWarningsFilterTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/filters/SuppressWarningsFilterTest.java
+@@ -116,7 +116,7 @@ public class SuppressWarningsFilterTest
+         return checker;
+     }
+ 
+-    private String[] removeSuppressed(String[] from, String[] remove) {
++    private static String[] removeSuppressed(String[] from, String[] remove) {
+         final Collection<String> coll =
+             Lists.newArrayList(Arrays.asList(from));
+         coll.removeAll(Arrays.asList(remove));

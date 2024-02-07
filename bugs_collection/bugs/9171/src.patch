@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-client/src/main/java/org/apache/hadoop/hbase/ipc/IPCUtil.java b/fixed/hbase-client/src/main/java/org/apache/hadoop/hbase/ipc/IPCUtil.java
+index 2ee141ceb..44e98fecb 100644
+--- a/buggy/hbase-client/src/main/java/org/apache/hadoop/hbase/ipc/IPCUtil.java
++++ b/fixed/hbase-client/src/main/java/org/apache/hadoop/hbase/ipc/IPCUtil.java
+@@ -176,7 +176,7 @@ class IPCUtil {
+ 
+   static void setCancelled(Call call) {
+     call.setException(new CallCancelledException("Call id=" + call.id + ", waitTime="
+-        + (EnvironmentEdgeManager.currentTime() - call.getStartTime()) + ", rpcTimetout="
++        + (EnvironmentEdgeManager.currentTime() - call.getStartTime()) + ", rpcTimeout="
+         + call.timeout));
+   }
+ }

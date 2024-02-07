@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-rss/src/test/java/org/apache/camel/dataformat/rss/RssDataFormatTest.java b/fixed/components/camel-rss/src/test/java/org/apache/camel/dataformat/rss/RssDataFormatTest.java
+index c897a5b07..51aca4c47 100644
+--- a/buggy/components/camel-rss/src/test/java/org/apache/camel/dataformat/rss/RssDataFormatTest.java
++++ b/fixed/components/camel-rss/src/test/java/org/apache/camel/dataformat/rss/RssDataFormatTest.java
+@@ -60,7 +60,7 @@ public class RssDataFormatTest extends CamelTestSupport {
+                 // START SNIPPET: ex
+                 from("rss:file:src/test/data/rss20.xml?splitEntries=false&consumer.delay=1000").marshal().rss().to("mock:marshal");
+                 // END SNIPPET: ex
+-                from("rss:file:src/test/data/rss20.xml?splitEntries=false&consumer.delay=1000").marshal().rss().unmarshal().rss().to("mock:unmarshal");
++                from("rss:file:src/test/data/rss20.xml?splitEntries=false&consumer.delay=1500").marshal().rss().unmarshal().rss().to("mock:unmarshal");
+             }
+         };
+     }

@@ -1,0 +1,22 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/nio/tcp/nonblocking/NonBlockingIOThread.java b/fixed/hazelcast/src/main/java/com/hazelcast/nio/tcp/nonblocking/NonBlockingIOThread.java
+index 2b16b6788..201989e30 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/nio/tcp/nonblocking/NonBlockingIOThread.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/nio/tcp/nonblocking/NonBlockingIOThread.java
+@@ -138,7 +138,7 @@ public class NonBlockingIOThread extends Thread implements OperationHostileThrea
+      * @param task the task to add.
+      * @throws NullPointerException if task is null
+      */
+-    public final void addTaskAndWakeup(Runnable task) {
++    public void addTaskAndWakeup(Runnable task) {
+         taskQueue.add(task);
+         if (!selectNow) {
+             selector.wakeup();
+@@ -235,7 +235,7 @@ public class NonBlockingIOThread extends Thread implements OperationHostileThrea
+         if (target == this) {
+             task.run();
+         } else {
+-            target.addTask(task);
++            target.addTaskAndWakeup(task);
+         }
+     }
+ 

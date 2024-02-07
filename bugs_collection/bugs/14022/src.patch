@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-cli/src/main/java/com/facebook/presto/cli/Query.java b/fixed/presto-cli/src/main/java/com/facebook/presto/cli/Query.java
+index 56e10140d..0b9ec37fe 100644
+--- a/buggy/presto-cli/src/main/java/com/facebook/presto/cli/Query.java
++++ b/fixed/presto-cli/src/main/java/com/facebook/presto/cli/Query.java
+@@ -90,7 +90,7 @@ public class Query
+             waitForData();
+         }
+ 
+-        if ((!client.isFailed()) && (!client.isGone())) {
++        if ((!client.isFailed()) && (!client.isGone()) && (!client.isClosed())) {
+             QueryResults results = client.isValid() ? client.current() : client.finalResults();
+             if (results.getColumns() == null) {
+                 errorChannel.printf("Query %s has no columns\n", results.getId());

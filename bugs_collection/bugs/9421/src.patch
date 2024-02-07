@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/apache/hadoop/hbase/master/AssignmentManager.java b/fixed/src/main/java/org/apache/hadoop/hbase/master/AssignmentManager.java
+index 56e69073c..c3fd667a1 100644
+--- a/buggy/src/main/java/org/apache/hadoop/hbase/master/AssignmentManager.java
++++ b/fixed/src/main/java/org/apache/hadoop/hbase/master/AssignmentManager.java
+@@ -956,7 +956,7 @@ public class AssignmentManager extends ZooKeeperListener {
+     synchronized (this.regionPlans) {
+       existingPlan = this.regionPlans.get(encodedName);
+       if (existingPlan == null || forceNewPlan ||
+-          existingPlan.getDestination().equals(serverToExclude)) {
++          (existingPlan != null && existingPlan.getDestination().equals(serverToExclude))) {
+         newPlan = true;
+         this.regionPlans.put(encodedName, randomPlan);
+       }

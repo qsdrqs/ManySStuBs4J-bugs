@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocNodeImpl.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocNodeImpl.java
+index cbba929d3..155760e92 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocNodeImpl.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocNodeImpl.java
+@@ -94,7 +94,7 @@ public class JavadocNodeImpl implements DetailNode
+     public DetailNode[] getChildren()
+     {
+         if (children == null) {
+-            return null;
++            return new DetailNode[0];
+         }
+         else {
+             return Arrays.copyOf(children, children.length);

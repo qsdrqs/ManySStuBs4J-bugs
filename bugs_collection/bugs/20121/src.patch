@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/channel/socket/nio/NioProviderMetadata.java b/fixed/src/main/java/org/jboss/netty/channel/socket/nio/NioProviderMetadata.java
+index 076365878..bfdf54cd1 100644
+--- a/buggy/src/main/java/org/jboss/netty/channel/socket/nio/NioProviderMetadata.java
++++ b/fixed/src/main/java/org/jboss/netty/channel/socket/nio/NioProviderMetadata.java
+@@ -85,7 +85,7 @@ class NioProviderMetadata {
+ 
+         if (CONSTRAINT_LEVEL < 0 || CONSTRAINT_LEVEL > 2) {
+             throw new Error(
+-                    "Unexpected wakeup requirement level: " +
++                    "Unexpected NIO constraint level: " +
+                     CONSTRAINT_LEVEL + ", please report this error.");
+         }
+     }

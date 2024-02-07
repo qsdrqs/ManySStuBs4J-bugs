@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/ConfigurationLoader.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/ConfigurationLoader.java
+index 88a8b51c4..3f629948c 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/ConfigurationLoader.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/ConfigurationLoader.java
+@@ -505,8 +505,7 @@ public final class ConfigurationLoader {
+         @Override
+         public void endElement(String namespaceURI,
+                                String localName,
+-                               String qName)
+-            throws SAXException {
++                               String qName) {
+             if (qName.equals(MODULE)) {
+ 
+                 final Configuration recentModule =

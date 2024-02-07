@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/main/java/org/apache/hadoop/yarn/util/WindowsResourceCalculatorPlugin.java b/fixed/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/main/java/org/apache/hadoop/yarn/util/WindowsResourceCalculatorPlugin.java
+index 0e891189c..cdbf5254e 100644
+--- a/buggy/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/main/java/org/apache/hadoop/yarn/util/WindowsResourceCalculatorPlugin.java
++++ b/fixed/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/main/java/org/apache/hadoop/yarn/util/WindowsResourceCalculatorPlugin.java
+@@ -157,7 +157,7 @@ public class WindowsResourceCalculatorPlugin extends ResourceCalculatorPlugin {
+   @Override
+   public long getCpuFrequency() {
+     refreshIfNeeded();
+-    return -1;
++    return cpuFrequencyKhz;
+   }
+ 
+   /** {@inheritDoc} */

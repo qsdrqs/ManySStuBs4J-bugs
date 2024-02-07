@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/imports/CustomImportOrderCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/imports/CustomImportOrderCheckTest.java
+index 89a41fcf9..2a550da0e 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/imports/CustomImportOrderCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/imports/CustomImportOrderCheckTest.java
+@@ -539,7 +539,7 @@ public class CustomImportOrderCheckTest extends BaseCheckTestSupport {
+             };
+ 
+         createChecker(checkConfig);
+-        verify(checkConfig, getPath("imports" + File.separator
++        verify(checkConfig, getPath("checks" + File.separator + "imports" + File.separator
+             + "InputCustomImportOrder_OverlappingPatterns.java"), expected);
+     }
+ 

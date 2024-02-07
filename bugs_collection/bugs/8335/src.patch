@@ -1,0 +1,16 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/executiongraph/restart/RestartStrategyFactory.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/executiongraph/restart/RestartStrategyFactory.java
+index ae92b3ab7..870bf6328 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/executiongraph/restart/RestartStrategyFactory.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/executiongraph/restart/RestartStrategyFactory.java
+@@ -79,9 +79,9 @@ public abstract class RestartStrategyFactory implements Serializable {
+ 	 * @throws Exception which indicates that the RestartStrategy could not be instantiated.
+ 	 */
+ 	public static RestartStrategyFactory createRestartStrategyFactory(Configuration configuration) throws Exception {
+-		String restartStrategyName = configuration.getString(ConfigConstants.RESTART_STRATEGY, "none").toLowerCase();
++		String restartStrategyName = configuration.getString(ConfigConstants.RESTART_STRATEGY, "none");
+ 
+-		switch (restartStrategyName) {
++		switch (restartStrategyName.toLowerCase()) {
+ 			case "none":
+ 				// support deprecated ConfigConstants values
+ 				final int numberExecutionRetries = configuration.getInteger(ConfigConstants.EXECUTION_RETRIES_KEY,

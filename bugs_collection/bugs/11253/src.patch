@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/XMLLoggerTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/XMLLoggerTest.java
+index 78271e935..fc165a7c0 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/XMLLoggerTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/XMLLoggerTest.java
+@@ -253,7 +253,7 @@ public class XMLLoggerTest {
+         assertEquals("last line.", "</checkstyle>", lines[lines.length - 1]);
+     }
+ 
+-    private static class TestException extends Exception {
++    private static class TestException extends RuntimeException {
+ 
+         private static final long serialVersionUID = 1L;
+ 

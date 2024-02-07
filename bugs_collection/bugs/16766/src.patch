@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/map/operation/MultipleEntryOperation.java b/fixed/hazelcast/src/main/java/com/hazelcast/map/operation/MultipleEntryOperation.java
+index a03097947..46cb965a1 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/map/operation/MultipleEntryOperation.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/map/operation/MultipleEntryOperation.java
+@@ -116,7 +116,7 @@ public class MultipleEntryOperation extends AbstractMapOperation
+                            EntryEventType eventType) {
+         final String mapName = name;
+         final MapServiceContext mapServiceContext = getMapServiceContext();
+-        if (mapServiceContext.hasRegisteredListener(mapName) || eventType == NO_NEED_TO_FIRE_EVENT) {
++        if (!mapServiceContext.hasRegisteredListener(mapName) || eventType == NO_NEED_TO_FIRE_EVENT) {
+             return;
+         }
+         final Data oldValue = mapServiceContext.toData(valueBeforeProcess);

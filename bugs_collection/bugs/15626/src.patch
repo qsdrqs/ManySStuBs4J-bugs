@@ -1,0 +1,13 @@
+diff --git a/buggy/guava-gwt/test-super/com/google/common/net/super/com/google/common/net/InternetDomainNameTest.java b/fixed/guava-gwt/test-super/com/google/common/net/super/com/google/common/net/InternetDomainNameTest.java
+index 8dda0c50c..ae4ccf296 100644
+--- a/buggy/guava-gwt/test-super/com/google/common/net/super/com/google/common/net/InternetDomainNameTest.java
++++ b/fixed/guava-gwt/test-super/com/google/common/net/super/com/google/common/net/InternetDomainNameTest.java
+@@ -109,7 +109,7 @@ public final class InternetDomainNameTest extends TestCase {
+   );
+ 
+   private static final ImmutableSet<String> NO_PS = ImmutableSet.of(
+-      "www", "foo.google", "x.y.z");
++      "www", "foo.ihopethiswillneverbeapublicsuffix", "x.y.z");
+ 
+   private static final ImmutableSet<String> NON_PS = ImmutableSet.of(
+       "foo.bar.com", "foo.ca", "foo.bar.ca",

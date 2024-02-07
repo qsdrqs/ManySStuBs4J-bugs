@@ -1,0 +1,13 @@
+diff --git a/buggy/storm-core/src/jvm/backtype/storm/blobstore/KeySequenceNumber.java b/fixed/storm-core/src/jvm/backtype/storm/blobstore/KeySequenceNumber.java
+index 9307993a7..2a5382837 100644
+--- a/buggy/storm-core/src/jvm/backtype/storm/blobstore/KeySequenceNumber.java
++++ b/fixed/storm-core/src/jvm/backtype/storm/blobstore/KeySequenceNumber.java
+@@ -117,7 +117,7 @@ import java.util.List;
+  *  synchronization happens appropriately and all nimbodes have the same blob.
+  */
+ public class KeySequenceNumber {
+-    private static final Logger LOG = LoggerFactory.getLogger(Utils.class);
++    private static final Logger LOG = LoggerFactory.getLogger(KeySequenceNumber.class);
+     private final String BLOBSTORE_SUBTREE="/blobstore";
+     private final String BLOBSTORE_MAX_KEY_SEQUENCE_SUBTREE="/blobstoremaxkeysequencenumber";
+     private final String key;

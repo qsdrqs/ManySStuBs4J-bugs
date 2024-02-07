@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/internal/osgi/Activator.java b/fixed/hazelcast/src/main/java/com/hazelcast/internal/osgi/Activator.java
+index 9f0c28e05..770d99fcc 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/internal/osgi/Activator.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/internal/osgi/Activator.java
+@@ -66,7 +66,7 @@ public class Activator
+             return;
+         }
+ 
+-        Class<?> clazz = context.getBundle().loadClass("com.hazelcast.osgi.ScriptEngineActivator");
++        Class<?> clazz = context.getBundle().loadClass("com.hazelcast.internal.osgi.ScriptEngineActivator");
+         Method register = clazz.getDeclaredMethod("registerOsgiScriptEngineManager", BundleContext.class);
+         register.invoke(clazz, context);
+     }

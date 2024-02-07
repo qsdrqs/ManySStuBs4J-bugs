@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/MemStoreSizing.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/MemStoreSizing.java
+index fade62225..b13201d4a 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/MemStoreSizing.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/MemStoreSizing.java
+@@ -82,7 +82,7 @@ public class MemStoreSizing extends MemStoreSize {
+ 
+   @Override
+   public boolean equals(Object obj) {
+-    if (obj == null || !(obj instanceof MemStoreSizing)) {
++    if (obj == null || (getClass() != obj.getClass())) {
+       return false;
+     }
+     MemStoreSizing other = (MemStoreSizing) obj;

@@ -1,0 +1,19 @@
+diff --git a/buggy/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/TimestampType.java b/fixed/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/TimestampType.java
+index b2b2d642b..8092726be 100644
+--- a/buggy/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/TimestampType.java
++++ b/fixed/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/TimestampType.java
+@@ -47,11 +47,11 @@ import java.util.Set;
+ @PublicEvolving
+ public final class TimestampType extends LogicalType {
+ 
+-	private static final int MIN_PRECISION = 0;
++	public static final int MIN_PRECISION = 0;
+ 
+-	private static final int MAX_PRECISION = 9;
++	public static final int MAX_PRECISION = 9;
+ 
+-	private static final int DEFAULT_PRECISION = 6;
++	public static final int DEFAULT_PRECISION = 6;
+ 
+ 	private static final String FORMAT = "TIMESTAMP(%d)";
+ 

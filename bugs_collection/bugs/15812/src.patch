@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/instance/impl/DefaultNodeContext.java b/fixed/hazelcast/src/main/java/com/hazelcast/instance/impl/DefaultNodeContext.java
+index 1573671c2..b512c987f 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/instance/impl/DefaultNodeContext.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/instance/impl/DefaultNodeContext.java
+@@ -49,7 +49,7 @@ import static java.util.Collections.unmodifiableList;
+ public class DefaultNodeContext implements NodeContext {
+ 
+     public static final List<String> EXTENSION_PRIORITY_LIST = unmodifiableList(asList(
+-            "com.hazelcast.instance.EnterpriseNodeExtension",
++            "com.hazelcast.instance.impl.EnterpriseNodeExtension",
+             "com.hazelcast.instance.impl.DefaultNodeExtension"
+     ));
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Button.java b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Button.java
+index ed0e4256f..72c21afde 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Button.java
++++ b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Button.java
+@@ -91,7 +91,7 @@ public class Button extends Table {
+ 	public void setStyle (ButtonStyle style) {
+ 		if (style == null) throw new IllegalArgumentException("style cannot be null.");
+ 		this.style = style;
+-		setBackground(isPressed ? style.down : style.up);
++		setBackground((isPressed && style.down != null) ? style.down : style.up);
+ 		invalidateHierarchy();
+ 	}
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/client/ClientReAuthOperation.java b/fixed/hazelcast/src/main/java/com/hazelcast/client/ClientReAuthOperation.java
+index 4188e5259..4bc71c9b7 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/client/ClientReAuthOperation.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/client/ClientReAuthOperation.java
+@@ -49,7 +49,7 @@ public class ClientReAuthOperation extends AbstractOperation {
+     }
+ 
+     public boolean returnsResponse() {
+-        return true;
++        return false;
+     }
+ 
+     public Object getResponse() {

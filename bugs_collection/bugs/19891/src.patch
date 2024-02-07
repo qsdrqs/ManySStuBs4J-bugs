@@ -1,0 +1,13 @@
+diff --git a/buggy/buffer/src/main/java/io/netty/buffer/PooledDirectByteBuf.java b/fixed/buffer/src/main/java/io/netty/buffer/PooledDirectByteBuf.java
+index 132ce6f85..483da5a98 100644
+--- a/buggy/buffer/src/main/java/io/netty/buffer/PooledDirectByteBuf.java
++++ b/fixed/buffer/src/main/java/io/netty/buffer/PooledDirectByteBuf.java
+@@ -248,7 +248,7 @@ final class PooledDirectByteBuf extends PooledByteBuf<ByteBuffer> {
+         checkIndex(index, length);
+         ByteBuf copy = alloc().directBuffer(capacity(), maxCapacity());
+         copy.writeBytes(this, index, length);
+-        return copy();
++        return copy;
+     }
+ 
+     @Override

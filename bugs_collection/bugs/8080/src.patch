@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/test/java/org/apache/flink/runtime/util/JvmExitOnFatalErrorTest.java b/fixed/flink-runtime/src/test/java/org/apache/flink/runtime/util/JvmExitOnFatalErrorTest.java
+index 6f3981314..ba671fd4d 100644
+--- a/buggy/flink-runtime/src/test/java/org/apache/flink/runtime/util/JvmExitOnFatalErrorTest.java
++++ b/fixed/flink-runtime/src/test/java/org/apache/flink/runtime/util/JvmExitOnFatalErrorTest.java
+@@ -168,7 +168,7 @@ public class JvmExitOnFatalErrorTest {
+ 				final MemoryManager memoryManager = new MemoryManager(1024 * 1024, 1);
+ 				final IOManager ioManager = new IOManagerAsync();
+ 
+-				final ShuffleEnvironment shuffleEnvironment = new NettyShuffleEnvironmentBuilder().build();
++				final ShuffleEnvironment<?, ?> shuffleEnvironment = new NettyShuffleEnvironmentBuilder().build();
+ 
+ 				final TaskManagerRuntimeInfo tmInfo = TaskManagerConfiguration.fromConfiguration(taskManagerConfig);
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/api/LocalizedMessage.java b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/api/LocalizedMessage.java
+index cb43810d0..99836c92e 100644
+--- a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/api/LocalizedMessage.java
++++ b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/api/LocalizedMessage.java
+@@ -270,7 +270,7 @@ public final class LocalizedMessage
+         final LocalizedMessage lt = (LocalizedMessage) aOther;
+         if (getLineNo() == lt.getLineNo()) {
+             if (getColumnNo() == lt.getColumnNo()) {
+-                return mKey.compareTo(lt.mKey);
++                return getMessage().compareTo(lt.getMessage());
+             }
+             return (getColumnNo() < lt.getColumnNo()) ? -1 : 1;
+         }

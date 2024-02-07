@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-hadoop2-compat/src/main/java/org/apache/hadoop/metrics2/lib/MutableRangeHistogram.java b/fixed/hbase-hadoop2-compat/src/main/java/org/apache/hadoop/metrics2/lib/MutableRangeHistogram.java
+index 4c800c42e..4b73087ed 100644
+--- a/buggy/hbase-hadoop2-compat/src/main/java/org/apache/hadoop/metrics2/lib/MutableRangeHistogram.java
++++ b/fixed/hbase-hadoop2-compat/src/main/java/org/apache/hadoop/metrics2/lib/MutableRangeHistogram.java
+@@ -81,7 +81,7 @@ public abstract class MutableRangeHistogram extends MutableHistogram implements
+       priorRange = ranges[i];
+       cumNum = val;
+     }
+-    long val = histogram.getCount();
++    long val = snapshot.getCount();
+     if (val - cumNum > 0) {
+       metricsRecordBuilder.addCounter(
+           Interns.info(name + "_" + rangeType + "_" + ranges[ranges.length - 1] + "-inf", desc),

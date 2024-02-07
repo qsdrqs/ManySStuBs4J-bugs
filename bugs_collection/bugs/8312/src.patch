@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/blob/BlobUtils.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/blob/BlobUtils.java
+index 136df09ba..aeaa60258 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/blob/BlobUtils.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/blob/BlobUtils.java
+@@ -124,7 +124,7 @@ public class BlobUtils {
+ 	private static File getCacheDirectory(File storageDir) {
+ 		final File cacheDirectory = new File(storageDir, "cache");
+ 
+-		if (!cacheDirectory.exists() && !cacheDirectory.mkdirs()) {
++		if (!cacheDirectory.mkdirs() && !cacheDirectory.exists()) {
+ 			throw new RuntimeException("Could not create cache directory '" + cacheDirectory.getAbsolutePath() + "'.");
+ 		}
+ 

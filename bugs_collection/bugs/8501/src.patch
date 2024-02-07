@@ -1,0 +1,13 @@
+diff --git a/buggy/stratosphere-runtime/src/test/java/eu/stratosphere/pact/runtime/hash/ReOpenableHashTableITCase.java b/fixed/stratosphere-runtime/src/test/java/eu/stratosphere/pact/runtime/hash/ReOpenableHashTableITCase.java
+index fdbabcb6f..dbe8bc1c1 100644
+--- a/buggy/stratosphere-runtime/src/test/java/eu/stratosphere/pact/runtime/hash/ReOpenableHashTableITCase.java
++++ b/fixed/stratosphere-runtime/src/test/java/eu/stratosphere/pact/runtime/hash/ReOpenableHashTableITCase.java
+@@ -225,7 +225,7 @@ public class ReOpenableHashTableITCase {
+ 		
+ 		final JoinFunction firstMatcher = new RecordMatchRemovingJoin(expectedFirstMatchesMap);
+ 		
+-		final Collector<Record> collector = new DiscardingOutputCollector();
++		final Collector<Record> collector = new DiscardingOutputCollector<Record>();
+ 
+ 		// reset the generators
+ 		bgen.reset();

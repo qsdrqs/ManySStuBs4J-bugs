@@ -1,0 +1,38 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/XidImpl.java b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/XidImpl.java
+index d03e59ab9..e3a688b68 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/XidImpl.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/kernel/impl/transaction/XidImpl.java
+@@ -129,13 +129,13 @@ public class XidImpl implements Xid
+     @Override
+     public byte[] getGlobalTransactionId()
+     {
+-        return globalId.clone();
++        return globalId;
+     }
+ 
+     @Override
+     public byte[] getBranchQualifier()
+     {
+-        return branchId.clone();
++        return branchId;
+     }
+ 
+     @Override
+@@ -147,13 +147,13 @@ public class XidImpl implements Xid
+     @Override
+     public boolean equals( Object o )
+     {
+-        if ( !(o instanceof Xid) )
++        if ( !(o instanceof XidImpl) )
+         {
+             return false;
+         }
+-        
+-        return Arrays.equals( globalId, ((Xid) o).getGlobalTransactionId() ) &&
+-               Arrays.equals( branchId, ((Xid) o).getBranchQualifier() );
++
++        return Arrays.equals( globalId, ((XidImpl) o).globalId ) &&
++               Arrays.equals( branchId, ((XidImpl) o).branchId );
+     }
+ 
+     private volatile int hashCode = 0;

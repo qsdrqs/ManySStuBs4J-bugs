@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/junit/rules/Stopwatch.java b/fixed/src/main/java/org/junit/rules/Stopwatch.java
+index 5d34e7f11..6900a481c 100644
+--- a/buggy/src/main/java/org/junit/rules/Stopwatch.java
++++ b/fixed/src/main/java/org/junit/rules/Stopwatch.java
+@@ -76,7 +76,7 @@ import java.util.concurrent.TimeUnit;
+  * @author tibor17
+  * @since 4.12
+  */
+-public abstract class Stopwatch implements TestRule {
++public class Stopwatch implements TestRule {
+     private final Clock clock;
+     private volatile long startNanos;
+     private volatile long endNanos;

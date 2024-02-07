@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/main/java/org/springframework/boot/context/embedded/undertow/UndertowEmbeddedServletContainerFactory.java b/fixed/spring-boot/src/main/java/org/springframework/boot/context/embedded/undertow/UndertowEmbeddedServletContainerFactory.java
+index ef914ca86..812a3a69e 100644
+--- a/buggy/spring-boot/src/main/java/org/springframework/boot/context/embedded/undertow/UndertowEmbeddedServletContainerFactory.java
++++ b/fixed/spring-boot/src/main/java/org/springframework/boot/context/embedded/undertow/UndertowEmbeddedServletContainerFactory.java
+@@ -384,7 +384,7 @@ public class UndertowEmbeddedServletContainerFactory
+ 		try {
+ 			createAccessLogDirectoryIfNecessary();
+ 			AccessLogReceiver accessLogReceiver = new DefaultAccessLogReceiver(
+-					createWorker(), this.accessLogDirectory, "access_log");
++					createWorker(), this.accessLogDirectory, "access_log.");
+ 			String formatString = (this.accessLogPattern != null) ? this.accessLogPattern
+ 					: "common";
+ 			return new AccessLogHandler(handler, accessLogReceiver, formatString,

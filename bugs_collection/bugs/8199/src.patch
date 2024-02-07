@@ -1,0 +1,22 @@
+diff --git a/buggy/flink-java/src/main/java/org/apache/flink/api/java/ExecutionEnvironment.java b/fixed/flink-java/src/main/java/org/apache/flink/api/java/ExecutionEnvironment.java
+index 5a5bddbaa..8206220c7 100644
+--- a/buggy/flink-java/src/main/java/org/apache/flink/api/java/ExecutionEnvironment.java
++++ b/fixed/flink-java/src/main/java/org/apache/flink/api/java/ExecutionEnvironment.java
+@@ -703,7 +703,7 @@ public abstract class ExecutionEnvironment {
+ 		catch (Exception e) {
+ 			throw new RuntimeException("Could not create TypeInformation for type " + data[0].getClass().getName()
+ 					+ "; please specify the TypeInformation manually via "
+-					+ "ExecutionEnvironment#fromElements(Collection, TypeInformation)");
++					+ "ExecutionEnvironment#fromElements(Collection, TypeInformation)", e);
+ 		}
+ 
+ 		return fromCollection(Arrays.asList(data), typeInfo, Utils.getCallLocationName());
+@@ -736,7 +736,7 @@ public abstract class ExecutionEnvironment {
+ 		catch (Exception e) {
+ 			throw new RuntimeException("Could not create TypeInformation for type " + type.getName()
+ 					+ "; please specify the TypeInformation manually via "
+-					+ "ExecutionEnvironment#fromElements(Collection, TypeInformation)");
++					+ "ExecutionEnvironment#fromElements(Collection, TypeInformation)", e);
+ 		}
+ 
+ 		return fromCollection(Arrays.asList(data), typeInfo, Utils.getCallLocationName());

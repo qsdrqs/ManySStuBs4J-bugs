@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/DataSourceTransactionManagerAutoConfiguration.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/DataSourceTransactionManagerAutoConfiguration.java
+index 84cd72222..bec6eef8e 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/DataSourceTransactionManagerAutoConfiguration.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jdbc/DataSourceTransactionManagerAutoConfiguration.java
+@@ -65,7 +65,7 @@ public class DataSourceTransactionManagerAutoConfiguration {
+ 
+ 	@ConditionalOnMissingBean(AbstractTransactionManagementConfiguration.class)
+ 	@Configuration
+-	@EnableTransactionManagement
++	@EnableTransactionManagement(proxyTargetClass = true)
+ 	protected static class TransactionManagementConfiguration {
+ 
+ 	}

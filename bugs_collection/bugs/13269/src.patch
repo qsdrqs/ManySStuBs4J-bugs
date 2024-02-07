@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/test/java/com/facebook/presto/operator/scalar/TestDateTimeFunctionsBase.java b/fixed/presto-main/src/test/java/com/facebook/presto/operator/scalar/TestDateTimeFunctionsBase.java
+index f23552bfa..707c5183c 100644
+--- a/buggy/presto-main/src/test/java/com/facebook/presto/operator/scalar/TestDateTimeFunctionsBase.java
++++ b/fixed/presto-main/src/test/java/com/facebook/presto/operator/scalar/TestDateTimeFunctionsBase.java
+@@ -875,7 +875,7 @@ public abstract class TestDateTimeFunctionsBase
+         assertInvalidFunction("date_parse('', '%X')", "%X not supported in date format string");
+ 
+         assertInvalidFunction("date_parse('3.0123456789', '%s.%f')", "Invalid format: \"3.0123456789\" is malformed at \"9\"");
+-        assertInvalidFunction("date_parse('%Y-%M-%d', '')", "Both printing and parsing not supported");
++        assertInvalidFunction("date_parse('%Y-%m-%d', '')", "Both printing and parsing not supported");
+     }
+ 
+     @Test

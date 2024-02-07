@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/MainFrame.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/MainFrame.java
+index 4521f893c..fddb853a1 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/MainFrame.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/MainFrame.java
+@@ -107,7 +107,7 @@ public class MainFrame extends JFrame {
+ 
+         final JComboBox<ParseMode> modesCombobox = new JComboBox<>(ParseMode.values());
+         modesCombobox.setSelectedIndex(0);
+-        modesCombobox.addActionListener(e -> {
++        modesCombobox.addActionListener(event -> {
+             model.setParseMode((ParseMode) modesCombobox.getSelectedItem());
+             reloadAction.actionPerformed(null);
+         });

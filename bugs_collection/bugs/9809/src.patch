@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFAvgLong.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFAvgLong.java
+index f12fe9828..dcd7ee0ad 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFAvgLong.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFAvgLong.java
+@@ -308,7 +308,7 @@ public class VectorUDAFAvgLong extends VectorAggregateExpression {
+         long[] vector = inputVector.vector;
+         
+         if (inputVector.isRepeating) {
+-          if (inputVector.noNulls || !inputVector.isNull[0]) {
++          if (inputVector.noNulls) {
+             if (myagg.isNull) {
+               myagg.isNull = false;
+               myagg.sum = 0;

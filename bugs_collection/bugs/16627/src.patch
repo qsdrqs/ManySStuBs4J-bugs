@@ -1,0 +1,16 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/test/modularhelpers/SimpleClusterUtil.java b/fixed/hazelcast/src/test/java/com/hazelcast/test/modularhelpers/SimpleClusterUtil.java
+index 89cb7f4aa..61be69c4f 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/test/modularhelpers/SimpleClusterUtil.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/test/modularhelpers/SimpleClusterUtil.java
+@@ -62,9 +62,9 @@ public class SimpleClusterUtil {
+         return getNode(random.nextInt(cluster.size()));
+     }
+ 
+-    public void terminateRandomNode(){
++    public void shutdownRandomNode(){
+         HazelcastInstance node = getRandomNode();
+-        node.getLifecycleService().terminate();
++        node.getLifecycleService().shutdown();
+         cluster.remove(node);
+     }
+ 

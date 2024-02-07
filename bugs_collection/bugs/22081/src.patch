@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/endpoint/web/jersey/JerseyWebEndpointIntegrationTests.java b/fixed/spring-boot-project/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/endpoint/web/jersey/JerseyWebEndpointIntegrationTests.java
+index 586a85f88..b2b3fbbbf 100644
+--- a/buggy/spring-boot-project/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/endpoint/web/jersey/JerseyWebEndpointIntegrationTests.java
++++ b/fixed/spring-boot-project/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/endpoint/web/jersey/JerseyWebEndpointIntegrationTests.java
+@@ -142,7 +142,7 @@ public class JerseyWebEndpointIntegrationTests extends
+ 
+ 	private static class MockPrincipalWrapper extends HttpServletRequestWrapper {
+ 
+-		public MockPrincipalWrapper(HttpServletRequest request) {
++		MockPrincipalWrapper(HttpServletRequest request) {
+ 			super(request);
+ 		}
+ 

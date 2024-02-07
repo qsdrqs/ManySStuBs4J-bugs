@@ -1,0 +1,15 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/impl/AddressPicker.java b/fixed/hazelcast/src/main/java/com/hazelcast/impl/AddressPicker.java
+index e0a8ca3e5..09a3e5547 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/impl/AddressPicker.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/impl/AddressPicker.java
+@@ -114,7 +114,9 @@ class AddressPicker {
+     }
+ 
+     private Address createAddress(final AddressDefinition addressDef, final int port) throws UnknownHostException {
+-        return new Address(addressDef.host != null ? addressDef.host : addressDef.address, port);
++//        return new Address(addressDef.host != null ? addressDef.host : addressDef.address, port);
++        return addressDef.host != null ? new Address(addressDef.host, port)
++                : new Address(addressDef.inetAddress, port);
+     }
+ 
+     private AddressDefinition pickAddress(final NetworkConfig networkConfig) throws UnknownHostException, SocketException {

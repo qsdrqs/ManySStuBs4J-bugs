@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/examples/LongRunningTest.java b/fixed/hazelcast/src/main/java/com/hazelcast/examples/LongRunningTest.java
+index b1f60d4cf..6c78e9b76 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/examples/LongRunningTest.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/examples/LongRunningTest.java
+@@ -125,7 +125,7 @@ public class LongRunningTest {
+ 
+     int random(int from, int to) {
+         double diff = (to - from);
+-        return from += (diff * Math.random());
++        return (int)(diff * Math.random() + from);
+     }
+ 
+     class TheNode {

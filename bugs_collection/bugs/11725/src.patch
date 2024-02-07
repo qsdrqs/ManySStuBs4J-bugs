@@ -1,0 +1,15 @@
+diff --git a/buggy/src/testinputs/com/puppycrawl/tools/checkstyle/InputPublicOnly.java b/fixed/src/testinputs/com/puppycrawl/tools/checkstyle/InputPublicOnly.java
+index 8d7ebb52f..5f2002eca 100644
+--- a/buggy/src/testinputs/com/puppycrawl/tools/checkstyle/InputPublicOnly.java
++++ b/fixed/src/testinputs/com/puppycrawl/tools/checkstyle/InputPublicOnly.java
+@@ -110,8 +110,8 @@ public class InputPublicOnly // ignore - need javadoc
+     }
+ 
+     @Deprecated @Override
+-    public Class getClass()
++    public int hashCode()
+     {
+-        return super.getClass();
++        return super.hashCode();
+     }
+ }

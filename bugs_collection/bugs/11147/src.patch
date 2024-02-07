@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/TrailingCommentCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/TrailingCommentCheck.java
+index 835a2c871..d7659779d 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/TrailingCommentCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/TrailingCommentCheck.java
+@@ -179,7 +179,7 @@ public class TrailingCommentCheck extends AbstractFormatCheck {
+             }
+             if (!blankLinePattern.matcher(lineBefore).find()
+                 && !isLegalComment(comment)) {
+-                log(lineNo.intValue(), MSG_KEY);
++                log(lineNo, MSG_KEY);
+             }
+         }
+     }

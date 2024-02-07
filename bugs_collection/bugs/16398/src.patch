@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/test/java/com/hazelcast/concurrent/atomiclong/AtomicLongAdvancedTest.java b/fixed/hazelcast/src/test/java/com/hazelcast/concurrent/atomiclong/AtomicLongAdvancedTest.java
+index 0f3f332b3..cf027d38d 100644
+--- a/buggy/hazelcast/src/test/java/com/hazelcast/concurrent/atomiclong/AtomicLongAdvancedTest.java
++++ b/fixed/hazelcast/src/test/java/com/hazelcast/concurrent/atomiclong/AtomicLongAdvancedTest.java
+@@ -42,7 +42,7 @@ public class AtomicLongAdvancedTest extends HazelcastTestSupport {
+                 }
+             }.start();
+         }
+-        assertOpenEventually(countDownLatch, 50);
++        assertOpenEventually(countDownLatch, 300);
+         assertEquals(0, atomicLong.get());
+     }
+ 

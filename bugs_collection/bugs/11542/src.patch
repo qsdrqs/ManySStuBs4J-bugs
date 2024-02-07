@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/naming/AbstractAccessControlNameCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/naming/AbstractAccessControlNameCheck.java
+index bb86d7844..032717729 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/naming/AbstractAccessControlNameCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/naming/AbstractAccessControlNameCheck.java
+@@ -65,7 +65,7 @@ public abstract class AbstractAccessControlNameCheck
+      * @param format
+      *                format to check with
+      */
+-    public AbstractAccessControlNameCheck(String format) {
++    protected AbstractAccessControlNameCheck(String format) {
+         super(format);
+     }
+ 

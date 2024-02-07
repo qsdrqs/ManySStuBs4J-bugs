@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-clients/src/main/java/org/apache/flink/client/program/ContextEnvironmentFactory.java b/fixed/flink-clients/src/main/java/org/apache/flink/client/program/ContextEnvironmentFactory.java
+index 64b186304..8c1d9eb12 100644
+--- a/buggy/flink-clients/src/main/java/org/apache/flink/client/program/ContextEnvironmentFactory.java
++++ b/fixed/flink-clients/src/main/java/org/apache/flink/client/program/ContextEnvironmentFactory.java
+@@ -64,7 +64,7 @@ public class ContextEnvironmentFactory implements ExecutionEnvironmentFactory {
+ 	@Override
+ 	public ExecutionEnvironment createExecutionEnvironment() {
+ 		if (isDetached && lastEnvCreated != null) {
+-			throw new InvalidProgramException("Multiple enviornments cannot be created in detached mode");
++			throw new InvalidProgramException("Multiple environments cannot be created in detached mode");
+ 		}
+ 
+ 		lastEnvCreated = isDetached

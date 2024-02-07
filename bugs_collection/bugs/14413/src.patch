@@ -1,0 +1,13 @@
+diff --git a/buggy/factory/src/main/java/com/google/auto/factory/processor/AutoFactoryProcessor.java b/fixed/factory/src/main/java/com/google/auto/factory/processor/AutoFactoryProcessor.java
+index 2f1006aab..ad4e91184 100644
+--- a/buggy/factory/src/main/java/com/google/auto/factory/processor/AutoFactoryProcessor.java
++++ b/fixed/factory/src/main/java/com/google/auto/factory/processor/AutoFactoryProcessor.java
+@@ -70,7 +70,7 @@ public final class AutoFactoryProcessor extends AbstractProcessor {
+   @Override
+   public synchronized void init(ProcessingEnvironment processingEnv) {
+     super.init(processingEnv);
+-    Dagger_AutoFactoryProcessorComponent.builder()
++    DaggerAutoFactoryProcessorComponent.builder()
+         .processorModule(new ProcessorModule(processingEnv))
+         .build()
+         .injectProcessor(this);

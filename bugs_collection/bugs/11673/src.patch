@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/XMLLogger.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/XMLLogger.java
+index 940ec04f1..19b3e5d0e 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/XMLLogger.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/XMLLogger.java
+@@ -211,7 +211,7 @@ public class XMLLogger
+      */
+     public boolean isReference(String ent)
+     {
+-        if (!(ent.charAt(0) == '&') || !ent.endsWith(";")) {
++        if (ent.charAt(0) != '&' || !ent.endsWith(";")) {
+             return false;
+         }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/apache/ibatis/jdbc/SelectBuilder.java b/fixed/src/main/java/org/apache/ibatis/jdbc/SelectBuilder.java
+index 5269d80cf..3d3600172 100644
+--- a/buggy/src/main/java/org/apache/ibatis/jdbc/SelectBuilder.java
++++ b/fixed/src/main/java/org/apache/ibatis/jdbc/SelectBuilder.java
+@@ -87,7 +87,7 @@ public class SelectBuilder {
+       }
+       
+       selectClause(builder, "FROM", sql().from, "", "", ", ");
+-      selectClause(builder, "JOIN", sql().join, "", "", "JOIN");
++      selectClause(builder, "JOIN", sql().join, "", "", "\nJOIN ");
+       selectClause(builder, "INNER JOIN", sql().innerJoin, "", "", "\nINNER JOIN ");
+       selectClause(builder, "OUTER JOIN", sql().outerJoin, "", "", "\nOUTER JOIN ");
+       selectClause(builder, "LEFT OUTER JOIN", sql().leftOuterJoin, "", "", "\nLEFT OUTER JOIN ");

@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Window.java b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Window.java
+index c78e84c1c..f4ec715e4 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Window.java
++++ b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Window.java
+@@ -320,7 +320,7 @@ public class Window extends Table {
+ 	}
+ 
+ 	public float getPrefWidth () {
+-		return Math.max(super.getPrefWidth(), titleLabel.getPrefWidth() + getPadLeft() + getPadRight());
++		return Math.max(super.getPrefWidth(), titleTable.getPrefWidth() + getPadLeft() + getPadRight());
+ 	}
+ 
+ 	public Table getTitleTable () {

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/ParseTreeModel.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/ParseTreeModel.java
+index b26781a31..41c629fe6 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/ParseTreeModel.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/ParseTreeModel.java
+@@ -49,7 +49,7 @@ public class ParseTreeModel extends AbstractTreeTableModel {
+         return (DetailAST) factory.create(TokenTypes.EOF, "ROOT");
+     }
+ 
+-    void setParseTree(DetailAST parseTree) {
++    final void setParseTree(DetailAST parseTree) {
+         final DetailAST root = (DetailAST) getRoot();
+         root.setFirstChild(parseTree);
+         final Object[] path = {root};

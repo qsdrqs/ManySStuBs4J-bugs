@@ -1,0 +1,13 @@
+diff --git a/buggy/okhttp-testing-support/src/main/java/okhttp3/RecordingHostnameVerifier.java b/fixed/okhttp-testing-support/src/main/java/okhttp3/RecordingHostnameVerifier.java
+index 0b883ee02..7bae3ccac 100644
+--- a/buggy/okhttp-testing-support/src/main/java/okhttp3/RecordingHostnameVerifier.java
++++ b/fixed/okhttp-testing-support/src/main/java/okhttp3/RecordingHostnameVerifier.java
+@@ -24,7 +24,7 @@ public final class RecordingHostnameVerifier implements HostnameVerifier {
+   public final List<String> calls = new ArrayList<>();
+ 
+   @Override
+-  public boolean verify(String hostname, SSLSession session) {
++  public synchronized boolean verify(String hostname, SSLSession session) {
+     calls.add("verify " + hostname);
+     return true;
+   }

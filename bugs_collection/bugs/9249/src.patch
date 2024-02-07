@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-client/src/main/java/org/apache/hadoop/hbase/zookeeper/ZKUtil.java b/fixed/hbase-client/src/main/java/org/apache/hadoop/hbase/zookeeper/ZKUtil.java
+index e71886a21..6b2cadd68 100644
+--- a/buggy/hbase-client/src/main/java/org/apache/hadoop/hbase/zookeeper/ZKUtil.java
++++ b/fixed/hbase-client/src/main/java/org/apache/hadoop/hbase/zookeeper/ZKUtil.java
+@@ -660,7 +660,7 @@ public class ZKUtil {
+       return node;
+     }
+     public boolean isEmpty() {
+-      return (data.length == 0);
++      return (data == null || data.length == 0);
+     }
+   }
+ 

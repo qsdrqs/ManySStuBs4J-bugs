@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/FileDrop.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/FileDrop.java
+index 46173be4c..87c3768fc 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/FileDrop.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/FileDrop.java
+@@ -245,7 +245,7 @@ class FileDrop {
+         private final Border dragBorder;
+         private final Listener listener;
+ 
+-        public FileDropTargetListener(Component component, Border dragBorder, Listener listener) {
++        FileDropTargetListener(Component component, Border dragBorder, Listener listener) {
+             this.component = component;
+             this.dragBorder = dragBorder;
+             this.listener = listener;

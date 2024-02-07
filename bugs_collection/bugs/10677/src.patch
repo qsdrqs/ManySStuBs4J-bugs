@@ -1,0 +1,14 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/metrics/BooleanExpressionComplexityCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/metrics/BooleanExpressionComplexityCheckTest.java
+index 0aa30a0ef..aad633b80 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/metrics/BooleanExpressionComplexityCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/metrics/BooleanExpressionComplexityCheckTest.java
+@@ -39,7 +39,8 @@ public class BooleanExpressionComplexityCheckTest extends BaseCheckTestSupport {
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "metrics" + File.separator + filename);
++                + "metrics" + File.separator + "booleanexpressioncomplexity" + File.separator
++                + filename);
+     }
+ 
+     @Test

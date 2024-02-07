@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule451wheretobreack/MethodParamPadTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule451wheretobreack/MethodParamPadTest.java
+index dfd4e3cd7..388601036 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule451wheretobreack/MethodParamPadTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule451wheretobreack/MethodParamPadTest.java
+@@ -22,7 +22,7 @@ public class MethodParamPadTest extends BaseCheckTestSupport{
+     }
+ 
+     @Test
+-    public void operatorWrapTest() throws IOException, Exception {
++    public void operatorWrapTest() throws Exception {
+         
+         Class<MethodParamPadCheck> clazz = MethodParamPadCheck.class;
+         String messageKey = "line.previous";

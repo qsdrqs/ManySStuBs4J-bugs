@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/cache/impl/HazelcastServerCachingProvider.java b/fixed/hazelcast/src/main/java/com/hazelcast/cache/impl/HazelcastServerCachingProvider.java
+index 19120efef..176c4963f 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/cache/impl/HazelcastServerCachingProvider.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/cache/impl/HazelcastServerCachingProvider.java
+@@ -51,7 +51,7 @@ public final class HazelcastServerCachingProvider
+     private HazelcastInstance initHazelcast() {
+         Config config = new XmlConfigBuilder().build();
+         if (config.getInstanceName() == null) {
+-            config.setInstanceName("hz:cacheProvider");
++            config.setInstanceName("CacheProvider");
+         }
+         return HazelcastInstanceFactory.getOrCreateHazelcastInstance(config);
+     }

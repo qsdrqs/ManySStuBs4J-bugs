@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/endpoint/SecurityContext.java b/fixed/spring-boot-project/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/endpoint/SecurityContext.java
+index 08759ddd1..231a8e849 100644
+--- a/buggy/spring-boot-project/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/endpoint/SecurityContext.java
++++ b/fixed/spring-boot-project/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/endpoint/SecurityContext.java
+@@ -29,7 +29,7 @@ public interface SecurityContext {
+ 	/**
+ 	 * Empty security context.
+ 	 */
+-	public static SecurityContext NONE = new SecurityContext() {
++	static SecurityContext NONE = new SecurityContext() {
+ 
+ 		@Override
+ 		public Principal getPrincipal() {

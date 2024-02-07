@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/metrics/dropwizard/DropwizardMetricServices.java b/fixed/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/metrics/dropwizard/DropwizardMetricServices.java
+index 98a70ad8c..571841d7a 100644
+--- a/buggy/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/metrics/dropwizard/DropwizardMetricServices.java
++++ b/fixed/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/metrics/dropwizard/DropwizardMetricServices.java
+@@ -148,7 +148,7 @@ public class DropwizardMetricServices implements CounterService, GaugeService {
+ 		}
+ 		catch (IllegalArgumentException ex) {
+ 			Metric added = this.registry.getMetrics().get(name);
+-			registrar.checkExisting(metric);
++			registrar.checkExisting(added);
+ 			return (T) added;
+ 		}
+ 	}

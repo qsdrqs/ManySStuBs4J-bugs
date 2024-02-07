@@ -1,0 +1,22 @@
+diff --git a/buggy/flink-libraries/flink-table-common/src/main/java/org/apache/flink/table/descriptors/DescriptorProperties.java b/fixed/flink-libraries/flink-table-common/src/main/java/org/apache/flink/table/descriptors/DescriptorProperties.java
+index c47698147..76289128b 100644
+--- a/buggy/flink-libraries/flink-table-common/src/main/java/org/apache/flink/table/descriptors/DescriptorProperties.java
++++ b/fixed/flink-libraries/flink-table-common/src/main/java/org/apache/flink/table/descriptors/DescriptorProperties.java
+@@ -938,7 +938,7 @@ public class DescriptorProperties {
+ 		}
+ 
+ 		// validate
+-		for (int i = 0; i < maxIndex; i++) {
++		for (int i = 0; i <= maxIndex; i++) {
+ 			for (Map.Entry<String, Consumer<String>> subKey : subKeyValidation.entrySet()) {
+ 				final String fullKey = key + '.' + i + '.' + subKey.getKey();
+ 				if (properties.containsKey(fullKey)) {
+@@ -1134,7 +1134,7 @@ public class DescriptorProperties {
+ 		}
+ 
+ 		// validate array elements
+-		for (int i = 0; i < maxIndex; i++) {
++		for (int i = 0; i <= maxIndex; i++) {
+ 			final String fullKey = key + '.' + i;
+ 			if (properties.containsKey(fullKey)) {
+ 				// run validation logic

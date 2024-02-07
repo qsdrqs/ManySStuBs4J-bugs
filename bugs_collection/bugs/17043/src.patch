@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/cluster/ClusterImpl.java b/fixed/hazelcast/src/main/java/com/hazelcast/cluster/ClusterImpl.java
+index 44494d1ea..2ba7828e6 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/cluster/ClusterImpl.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/cluster/ClusterImpl.java
+@@ -1135,7 +1135,7 @@ public final class ClusterImpl implements ConnectionListener, Cluster {
+             memberImpl.didWrite();
+         }
+         if (packet.lockAddress != null) {
+-            if (node.getLocalMember().equals(packet.lockAddress)) {
++            if (thisAddress.equals(packet.lockAddress)) {
+                 packet.lockAddress = null;
+             }
+         }

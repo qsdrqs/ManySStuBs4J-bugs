@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/pipeline/WordsToSentencesAnnotator.java b/fixed/src/edu/stanford/nlp/pipeline/WordsToSentencesAnnotator.java
+index ca2bd3bd4..735e6ecc7 100644
+--- a/buggy/src/edu/stanford/nlp/pipeline/WordsToSentencesAnnotator.java
++++ b/fixed/src/edu/stanford/nlp/pipeline/WordsToSentencesAnnotator.java
+@@ -190,7 +190,7 @@ public class WordsToSentencesAnnotator implements Annotator  {
+     String text = annotation.get(CoreAnnotations.TextAnnotation.class);
+     List<CoreLabel> tokens = annotation.get(CoreAnnotations.TokensAnnotation.class);
+     if (VERBOSE) {
+-      log.info("Tokens ae: " + tokens);
++      log.info("Tokens are: " + tokens);
+     }
+ 
+     String docID = annotation.get(CoreAnnotations.DocIDAnnotation.class);

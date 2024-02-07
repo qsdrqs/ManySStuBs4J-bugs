@@ -1,0 +1,13 @@
+diff --git a/buggy/okio/src/main/java/okio/GzipSource.java b/fixed/okio/src/main/java/okio/GzipSource.java
+index 91e7c0041..1ef6cb496 100644
+--- a/buggy/okio/src/main/java/okio/GzipSource.java
++++ b/fixed/okio/src/main/java/okio/GzipSource.java
+@@ -171,7 +171,7 @@ public final class GzipSource implements Source {
+     // |     CRC32     |     ISIZE     |
+     // +---+---+---+---+---+---+---+---+
+     checkEqual("CRC", source.readIntLe(), (int) crc.getValue());
+-    checkEqual("ISIZE", source.readIntLe(), inflater.getTotalOut());
++    checkEqual("ISIZE", source.readIntLe(), (int) inflater.getBytesWritten());
+   }
+ 
+   @Override public Timeout timeout() {

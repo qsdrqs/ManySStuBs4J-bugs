@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/hankcs/hanlp/corpus/dictionary/NRDictionaryMaker.java b/fixed/src/main/java/com/hankcs/hanlp/corpus/dictionary/NRDictionaryMaker.java
+index dfaa2ecb9..53d893539 100644
+--- a/buggy/src/main/java/com/hankcs/hanlp/corpus/dictionary/NRDictionaryMaker.java
++++ b/fixed/src/main/java/com/hankcs/hanlp/corpus/dictionary/NRDictionaryMaker.java
+@@ -89,7 +89,7 @@ public class NRDictionaryMaker extends CommonDictionaryMaker
+                 }
+                 else
+                 {
+-                    if (!pre.getLabel().equals(Nature.nr.toString()))
++                    if (!pre.getLabel().equals(Nature.nr.toString()) && !pre.getValue().equals(Predefine.TAG_BIGIN))
+                     {
+                         pre.setLabel(NR.K.toString());
+                     }

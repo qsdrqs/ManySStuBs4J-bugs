@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-common/src/main/java/org/apache/hadoop/hbase/util/Bytes.java b/fixed/hbase-common/src/main/java/org/apache/hadoop/hbase/util/Bytes.java
+index 1b66341f7..b085b3ea0 100644
+--- a/buggy/hbase-common/src/main/java/org/apache/hadoop/hbase/util/Bytes.java
++++ b/fixed/hbase-common/src/main/java/org/apache/hadoop/hbase/util/Bytes.java
+@@ -1127,7 +1127,7 @@ public class Bytes implements Comparable<Bytes> {
+    * @return the short value
+    */
+   public static short toShort(byte[] bytes) {
+-    return toShortUnsafe(bytes, 0);
++    return toShort(bytes, 0, SIZEOF_SHORT);
+   }
+ 
+   /**

@@ -1,0 +1,14 @@
+diff --git a/buggy/enterprise/ha/src/main/java/org/neo4j/kernel/ha/zookeeper/AbstractZooKeeperManager.java b/fixed/enterprise/ha/src/main/java/org/neo4j/kernel/ha/zookeeper/AbstractZooKeeperManager.java
+index 612c49d8a..dd074357c 100644
+--- a/buggy/enterprise/ha/src/main/java/org/neo4j/kernel/ha/zookeeper/AbstractZooKeeperManager.java
++++ b/fixed/enterprise/ha/src/main/java/org/neo4j/kernel/ha/zookeeper/AbstractZooKeeperManager.java
+@@ -210,8 +210,7 @@ public abstract class AbstractZooKeeperManager implements Watcher
+                 {
+                     if ( inner.code() != KeeperException.Code.NONODE )
+                     {
+-                        throw new ZooKeeperException( "Unabe to get master.",
+-                            inner );
++                        throw new ZooKeeperException( "Unable to get master.", inner );
+                     }
+                 }
+             }

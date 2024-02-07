@@ -1,0 +1,13 @@
+diff --git a/buggy/demos/superjumper/superjumper/src/com/badlogicgames/superjumper/Assets.java b/fixed/demos/superjumper/superjumper/src/com/badlogicgames/superjumper/Assets.java
+index 28dcbbb91..06d662554 100644
+--- a/buggy/demos/superjumper/superjumper/src/com/badlogicgames/superjumper/Assets.java
++++ b/fixed/demos/superjumper/superjumper/src/com/badlogicgames/superjumper/Assets.java
+@@ -43,7 +43,7 @@ public class Assets {
+     public static Sound clickSound;
+     
+     public static Texture loadTexture(String file) {
+-   	 return Gdx.graphics.newTexture(Gdx.files.internal(file), TextureFilter.Nearest, TextureFilter.Nearest, TextureWrap.ClampToEdge, TextureWrap.ClampToEdge);
++    	return new Texture(Gdx.files.internal(file));
+     }
+     
+     public static void load() {

@@ -1,0 +1,14 @@
+diff --git a/buggy/common/src/main/java/io/netty/util/DomainNameMapping.java b/fixed/common/src/main/java/io/netty/util/DomainNameMapping.java
+index b15a0ae67..d1734aa71 100644
+--- a/buggy/common/src/main/java/io/netty/util/DomainNameMapping.java
++++ b/fixed/common/src/main/java/io/netty/util/DomainNameMapping.java
+@@ -68,7 +68,8 @@ public class DomainNameMapping<V> implements Mapping<String, V> {
+     DomainNameMapping(Map<String, V> map, V defaultValue) {
+         this.defaultValue = checkNotNull(defaultValue, "defaultValue");
+         this.map = map;
+-        unmodifiableMap = Collections.unmodifiableMap(map);
++        unmodifiableMap = map != null ? Collections.unmodifiableMap(map)
++                                      : null;
+     }
+ 
+     /**

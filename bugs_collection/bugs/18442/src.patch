@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/graphics/g2d/ParticleEffect.java b/fixed/gdx/src/com/badlogic/gdx/graphics/g2d/ParticleEffect.java
+index 5bd52415c..646f2c5a9 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/graphics/g2d/ParticleEffect.java
++++ b/fixed/gdx/src/com/badlogic/gdx/graphics/g2d/ParticleEffect.java
+@@ -40,7 +40,7 @@ public class ParticleEffect implements Disposable {
+ 	public ParticleEffect (ParticleEffect effect) {
+ 		emitters = new Array(true, effect.emitters.size);
+ 		for (int i = 0, n = effect.emitters.size; i < n; i++)
+-			emitters.add(new ParticleEmitter(effect.emitters.items[i]));
++			emitters.add(new ParticleEmitter(effect.emitters.get(i)));
+ 	}
+ 
+ 	public void start () {

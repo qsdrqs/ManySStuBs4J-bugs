@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/io/druid/server/AsyncQueryForwardingServlet.java b/fixed/server/src/main/java/io/druid/server/AsyncQueryForwardingServlet.java
+index bbfedf60f..d6f1c22aa 100644
+--- a/buggy/server/src/main/java/io/druid/server/AsyncQueryForwardingServlet.java
++++ b/fixed/server/src/main/java/io/druid/server/AsyncQueryForwardingServlet.java
+@@ -274,7 +274,7 @@ public class AsyncQueryForwardingServlet extends AsyncProxyServlet
+                         "query/time",
+                         requestTime,
+                         "success",
+-                        true
++                        result.isSucceeded()
+                     )
+                 )
+             )

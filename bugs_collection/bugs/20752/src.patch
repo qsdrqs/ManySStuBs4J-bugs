@@ -1,0 +1,22 @@
+diff --git a/buggy/bundles/io/org.openhab.io.transport.cul/src/main/java/org/openhab/io/transport/cul/internal/AbstractCULHandler.java b/fixed/bundles/io/org.openhab.io.transport.cul/src/main/java/org/openhab/io/transport/cul/internal/AbstractCULHandler.java
+index 6978e3e57..c70a16c91 100644
+--- a/buggy/bundles/io/org.openhab.io.transport.cul/src/main/java/org/openhab/io/transport/cul/internal/AbstractCULHandler.java
++++ b/fixed/bundles/io/org.openhab.io.transport.cul/src/main/java/org/openhab/io/transport/cul/internal/AbstractCULHandler.java
+@@ -235,7 +235,7 @@ public abstract class AbstractCULHandler implements CULHandler, CULHandlerIntern
+ 			} else if ("LOVF".equals(data)) {
+ 				log.warn("(LOVF) Limit Overflow: Last message lost. You are using more than 1% transmitting time. Reduce the number of rf messages");
+ 				return;
+-			} else if (data.matches("^.. *\\d*"))
++			} else if (data.matches("^\\d+\\s+\\d+"))
+ 			{					
+ 				processCreditReport(data);
+ 				return;
+@@ -293,7 +293,7 @@ public abstract class AbstractCULHandler implements CULHandler, CULHandlerIntern
+ 	 * @throws CULCommunicationException
+ 	 */
+ 	private  void writeMessage(String message) throws CULCommunicationException {
+-		log.debug("Sending raw message to CUL "+deviceName+":  +'"+ message+"'");
++		log.debug("Sending raw message to CUL "+deviceName+":  '"+ message+"'");
+ 		if (bw == null) {
+ 			log.error("Can't write message, BufferedWriter is NULL");
+ 		}

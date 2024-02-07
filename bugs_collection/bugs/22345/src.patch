@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-devtools/src/main/java/org/springframework/boot/devtools/log4j2/Log4J2RestartListener.java b/fixed/spring-boot-devtools/src/main/java/org/springframework/boot/devtools/log4j2/Log4J2RestartListener.java
+index f992f1c8e..0bdea4021 100644
+--- a/buggy/spring-boot-devtools/src/main/java/org/springframework/boot/devtools/log4j2/Log4J2RestartListener.java
++++ b/fixed/spring-boot-devtools/src/main/java/org/springframework/boot/devtools/log4j2/Log4J2RestartListener.java
+@@ -38,7 +38,7 @@ public class Log4J2RestartListener implements RestartListener {
+ 
+ 	@Override
+ 	public void beforeRestart() {
+-		if (ClassUtils.isPresent("org.apache.logging.log4j.LogManager",
++		if (ClassUtils.isPresent("org.apache.logging.log4j.core.impl.Log4jContextFactory",
+ 				getClass().getClassLoader())) {
+ 			prepareLog4J2ForRestart();
+ 		}

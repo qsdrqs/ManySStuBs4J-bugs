@@ -1,0 +1,13 @@
+diff --git a/buggy/processing/src/main/java/io/druid/query/aggregation/cardinality/CardinalityAggregatorFactory.java b/fixed/processing/src/main/java/io/druid/query/aggregation/cardinality/CardinalityAggregatorFactory.java
+index eacfede07..4c79b0765 100644
+--- a/buggy/processing/src/main/java/io/druid/query/aggregation/cardinality/CardinalityAggregatorFactory.java
++++ b/fixed/processing/src/main/java/io/druid/query/aggregation/cardinality/CardinalityAggregatorFactory.java
+@@ -156,7 +156,7 @@ public class CardinalityAggregatorFactory implements AggregatorFactory
+           @Override
+           public AggregatorFactory apply(String input)
+           {
+-            return new CardinalityAggregatorFactory(name, Arrays.asList(input), byRow);
++            return new CardinalityAggregatorFactory(input, Arrays.asList(input), byRow);
+           }
+         }
+     );

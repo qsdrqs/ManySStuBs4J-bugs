@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/rest/RestServerEndpoint.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/rest/RestServerEndpoint.java
+index 486fcff09..d94e3671a 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/rest/RestServerEndpoint.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/rest/RestServerEndpoint.java
+@@ -451,7 +451,7 @@ public abstract class RestServerEndpoint implements AutoCloseableAsync {
+ 	static void createUploadDir(final Path uploadDir, final Logger log, final boolean initialCreation) throws IOException {
+ 		if (!Files.exists(uploadDir)) {
+ 			if (initialCreation) {
+-				log.info("Upload directory {} does not exist. " + uploadDir);
++				log.info("Upload directory {} does not exist. ", uploadDir);
+ 			} else {
+ 				log.warn("Upload directory {} has been deleted externally. " +
+ 					"Previously uploaded files are no longer available.", uploadDir);

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/api/org/openmrs/api/db/hibernate/HibernatePersonDAO.java b/fixed/src/api/org/openmrs/api/db/hibernate/HibernatePersonDAO.java
+index bb087c27a..d34479e57 100644
+--- a/buggy/src/api/org/openmrs/api/db/hibernate/HibernatePersonDAO.java
++++ b/fixed/src/api/org/openmrs/api/db/hibernate/HibernatePersonDAO.java
+@@ -355,7 +355,7 @@ public class HibernatePersonDAO implements PersonDAO {
+ 			criteria.add(Expression.eq("foreignKey", foreignKey));
+ 		
+ 		if (searchable != null)
+-			criteria.add(Expression.eq("searchable", format));
++			criteria.add(Expression.eq("searchable", searchable));
+ 		
+ 		return criteria.list();
+ 	}

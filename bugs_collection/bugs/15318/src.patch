@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/debugging/sourcemap/SourceMapGeneratorV2.java b/fixed/src/com/google/debugging/sourcemap/SourceMapGeneratorV2.java
+index 0b875badb..19d37df27 100644
+--- a/buggy/src/com/google/debugging/sourcemap/SourceMapGeneratorV2.java
++++ b/fixed/src/com/google/debugging/sourcemap/SourceMapGeneratorV2.java
+@@ -46,7 +46,7 @@ public class SourceMapGeneratorV2 implements SourceMapGenerator {
+    */
+   private static final String BASE64_MAP =
+       "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
+-      "abcdefghijklmnopqrstuvwzyz" +
++      "abcdefghijklmnopqrstuvwxyz" +
+       "0123456789+/";
+ 
+   /**

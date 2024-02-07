@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/internal/cluster/impl/ClusterStateManager.java b/fixed/hazelcast/src/main/java/com/hazelcast/internal/cluster/impl/ClusterStateManager.java
+index 7262515a0..de7e09f60 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/internal/cluster/impl/ClusterStateManager.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/internal/cluster/impl/ClusterStateManager.java
+@@ -268,7 +268,7 @@ public class ClusterStateManager {
+         try {
+             tx.commit();
+         } catch (Throwable  e) {
+-            if (e instanceof TargetNotMemberException || e instanceof MemberLeftException) {
++            if (e instanceof TargetNotMemberException || e.getCause() instanceof MemberLeftException) {
+                 // Member left while tx is being committed after prepare successful.
+                 // We cannot rollback tx after this point. Cluster state change is done
+                 // on other members.

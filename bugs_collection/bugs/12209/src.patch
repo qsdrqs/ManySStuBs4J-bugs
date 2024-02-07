@@ -1,0 +1,13 @@
+diff --git a/buggy/nd4j/nd4j-backends/nd4j-api-parent/nd4j-api/src/main/java/org/nd4j/linalg/api/shape/Shape.java b/fixed/nd4j/nd4j-backends/nd4j-api-parent/nd4j-api/src/main/java/org/nd4j/linalg/api/shape/Shape.java
+index 442dd0f5f..bbe133dbb 100644
+--- a/buggy/nd4j/nd4j-backends/nd4j-api-parent/nd4j-api/src/main/java/org/nd4j/linalg/api/shape/Shape.java
++++ b/fixed/nd4j/nd4j-backends/nd4j-api-parent/nd4j-api/src/main/java/org/nd4j/linalg/api/shape/Shape.java
+@@ -3676,7 +3676,7 @@ public class Shape {
+     }
+ 
+     public static boolean isR(@NonNull DataType x) {
+-        return x == DataType.FLOAT || x == DataType.HALF || x == DataType.DOUBLE;
++        return x == DataType.FLOAT || x == DataType.HALF || x == DataType.DOUBLE || x == DataType.BFLOAT16;
+     }
+ 
+     private static DataType max(@NonNull DataType typeX, @NonNull DataType typeY) {

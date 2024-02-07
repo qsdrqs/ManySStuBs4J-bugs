@@ -1,0 +1,19 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/operator/BigintGroupByHash.java b/fixed/presto-main/src/main/java/com/facebook/presto/operator/BigintGroupByHash.java
+index c7a9270ca..01b25ef36 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/operator/BigintGroupByHash.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/operator/BigintGroupByHash.java
+@@ -314,12 +314,12 @@ public class BigintGroupByHash
+ 
+     private static int calculateMaxFill(int hashSize)
+     {
+-        checkArgument(hashSize > 0, "hashCapacity must greater than 0");
++        checkArgument(hashSize > 0, "hashSize must be greater than 0");
+         int maxFill = (int) Math.ceil(hashSize * FILL_RATIO);
+         if (maxFill == hashSize) {
+             maxFill--;
+         }
+-        checkArgument(hashSize > maxFill, "hashCapacity must be larger than maxFill");
++        checkArgument(hashSize > maxFill, "hashSize must be larger than maxFill");
+         return maxFill;
+     }
+ }

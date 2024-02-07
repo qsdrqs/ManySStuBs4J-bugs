@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4841indentation/IndentationTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4841indentation/IndentationTest.java
+index 2543c7ffe..365d3827c 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4841indentation/IndentationTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule4841indentation/IndentationTest.java
+@@ -17,7 +17,7 @@ public class IndentationTest extends BaseCheckTestSupport{
+     private static ConfigurationBuilder builder;
+ 
+     @BeforeClass
+-    public static void setConfigurationBuilder() throws CheckstyleException {
++    public static void setConfigurationBuilder() {
+         builder = new IndentationConfigurationBuilder(new File("src/it/"));
+     }
+ 

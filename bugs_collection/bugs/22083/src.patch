@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/endpoint/web/servlet/MvcWebEndpointIntegrationTests.java b/fixed/spring-boot-project/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/endpoint/web/servlet/MvcWebEndpointIntegrationTests.java
+index 64fcc7a04..baa710155 100644
+--- a/buggy/spring-boot-project/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/endpoint/web/servlet/MvcWebEndpointIntegrationTests.java
++++ b/fixed/spring-boot-project/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/endpoint/web/servlet/MvcWebEndpointIntegrationTests.java
+@@ -156,7 +156,7 @@ public class MvcWebEndpointIntegrationTests extends
+ 
+ 	private static class MockPrincipalWrapper extends HttpServletRequestWrapper {
+ 
+-		public MockPrincipalWrapper(HttpServletRequest request) {
++		MockPrincipalWrapper(HttpServletRequest request) {
+ 			super(request);
+ 		}
+ 

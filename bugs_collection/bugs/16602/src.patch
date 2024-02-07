@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/connection/nio/ClientConnection.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/connection/nio/ClientConnection.java
+index 68b563e3d..14521c4da 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/connection/nio/ClientConnection.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/connection/nio/ClientConnection.java
+@@ -404,7 +404,7 @@ public class ClientConnection implements Connection, Closeable {
+     }
+ 
+     public boolean isHeartBeating() {
+-        return heartBeating;
++        return live && heartBeating;
+     }
+ 
+     @Override

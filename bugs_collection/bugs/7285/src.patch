@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/model/WireTapDefinition.java b/fixed/camel-core/src/main/java/org/apache/camel/model/WireTapDefinition.java
+index eab5bc2e2..3fa3c9fc8 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/model/WireTapDefinition.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/model/WireTapDefinition.java
+@@ -43,7 +43,7 @@ import org.apache.camel.util.CamelContextHelper;
+  */
+ @XmlRootElement(name = "wireTap")
+ @XmlAccessorType(XmlAccessType.FIELD)
+-public class WireTapDefinition<Type extends ProcessorDefinition<Type>> extends NoOutputDefinition<Type> implements ExecutorServiceAwareDefinition<WireTapDefinition<Type>> {
++public class WireTapDefinition<Type extends ProcessorDefinition<Type>> extends NoOutputDefinition<WireTapDefinition<Type>> implements ExecutorServiceAwareDefinition<WireTapDefinition<Type>> {
+     @XmlAttribute
+     protected String uri;
+     @XmlAttribute

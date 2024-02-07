@@ -1,0 +1,67 @@
+diff --git a/buggy/test/com/google/javascript/jscomp/InlineVariablesTest.java b/fixed/test/com/google/javascript/jscomp/InlineVariablesTest.java
+index c6541251c..45038e6d3 100644
+--- a/buggy/test/com/google/javascript/jscomp/InlineVariablesTest.java
++++ b/fixed/test/com/google/javascript/jscomp/InlineVariablesTest.java
+@@ -811,35 +811,37 @@ public final class InlineVariablesTest extends CompilerTestCase {
+ 
+   public void testInlineCatchAlias1() {
+     test(
+-      "try {" +
+-      "} catch (e) {" +
+-      "  var y = e;" +
+-      "  g();" +
+-      "  y;y;" +
+-      "}",
+-      "try {" +
+-      "} catch (e) {" +
+-      "  g();" +
+-      "  e;e;" +
+-      "}"
+-      );
++        LINE_JOINER.join(
++            "try {",
++            "} catch (e) {",
++            "  var y = e;",
++            "  g();" ,
++            "  y;y;" ,
++            "}"),
++        LINE_JOINER.join(
++            "try {",
++            "} catch (e) {",
++            "  g();",
++            "  e;e;",
++            "}"));
+   }
+ 
+   public void testInlineCatchAlias2() {
+     test(
+-      "try {" +
+-      "} catch (e) {" +
+-      "  var y; y = e;" +
+-      "  g();" +
+-      "  y;y;" +
+-      "}",
+-      "try {" +
+-      "} catch (e) {" +
+-      "  e;" +
+-      "  g();" +
+-      "  e;e;" +
+-      "}"
+-      );
++        LINE_JOINER.join(
++            "try {",
++            "} catch (e) {",
++            "  var y; y = e;",
++            "  g();",
++            "  y;y;",
++            "}"),
++        LINE_JOINER.join(
++            "try {",
++            "} catch (e) {",
++            "  e;",
++            "  g();",
++            "  e;e;",
++            "}"));
+   }
+ 
+   public void testLocalsOnly1() {

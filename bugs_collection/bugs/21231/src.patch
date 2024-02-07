@@ -1,0 +1,22 @@
+diff --git a/buggy/api/src/main/java/org/openmrs/OrderFrequency.java b/fixed/api/src/main/java/org/openmrs/OrderFrequency.java
+index cb5da6f2b..8f5a553bf 100644
+--- a/buggy/api/src/main/java/org/openmrs/OrderFrequency.java
++++ b/fixed/api/src/main/java/org/openmrs/OrderFrequency.java
+@@ -105,7 +105,7 @@ public class OrderFrequency extends BaseOpenmrsMetadata implements Serializable
+ 	 */
+ 	@Override
+ 	public String getName() {
+-		if (getConcept() != null || getConcept().getName() != null) {
++		if (getConcept() != null && getConcept().getName() != null) {
+ 			return getConcept().getName().toString();
+ 		}
+ 		return null;
+@@ -116,7 +116,7 @@ public class OrderFrequency extends BaseOpenmrsMetadata implements Serializable
+ 	 */
+ 	@Override
+ 	public String getDescription() {
+-		if (getConcept() != null || getConcept().getDescription() != null) {
++		if (getConcept() != null && getConcept().getDescription() != null) {
+ 			return getConcept().getDescription().getDescription();
+ 		}
+ 		return null;

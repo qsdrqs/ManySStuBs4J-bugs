@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/AbstractJavadocCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/AbstractJavadocCheck.java
+index 2eae6780b..8a2b2e0af 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/AbstractJavadocCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/javadoc/AbstractJavadocCheck.java
+@@ -561,7 +561,7 @@ public abstract class AbstractJavadocCheck extends Check
+     /**
+      * Custom error listener for JavadocParser that prints user readable errors.
+      */
+-    class DescriptiveErrorListener extends BaseErrorListener
++    static class DescriptiveErrorListener extends BaseErrorListener
+     {
+         /**
+          * Parse error while token recognition.

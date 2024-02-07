@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/rmapp/attempt/RMAppAttemptImpl.java b/fixed/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/rmapp/attempt/RMAppAttemptImpl.java
+index efe07212e..e289ad55b 100644
+--- a/buggy/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/rmapp/attempt/RMAppAttemptImpl.java
++++ b/fixed/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/rmapp/attempt/RMAppAttemptImpl.java
+@@ -526,7 +526,7 @@ public class RMAppAttemptImpl implements RMAppAttempt, Recoverable {
+ 
+   private void setTrackingUrlToRMAppPage() {
+     originalTrackingUrl = pjoin(
+-        WebAppUtils.getResolvedRMWebAppURLWithoutScheme(conf),
++        WebAppUtils.getResolvedRMWebAppURLWithScheme(conf),
+         "cluster", "app", getAppAttemptId().getApplicationId());
+     proxiedTrackingUrl = originalTrackingUrl;
+   }

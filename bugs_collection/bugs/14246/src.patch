@@ -1,0 +1,22 @@
+diff --git a/buggy/DesktopDataLaboratory/src/org/gephi/desktop/datalab/DataTableTopComponent.java b/fixed/DesktopDataLaboratory/src/org/gephi/desktop/datalab/DataTableTopComponent.java
+index 12163fb14..4ce8aadc8 100644
+--- a/buggy/DesktopDataLaboratory/src/org/gephi/desktop/datalab/DataTableTopComponent.java
++++ b/fixed/DesktopDataLaboratory/src/org/gephi/desktop/datalab/DataTableTopComponent.java
+@@ -677,7 +677,7 @@ final class DataTableTopComponent extends TopComponent implements AWTEventListen
+                         button.addActionListener(new ActionListener() {
+ 
+                             public void actionPerformed(ActionEvent e) {
+-                                Lookup.getDefault().lookup(DataLaboratoryHelper.class).executeAttributeColumnsManipulator(acm, table, column);
++                                new DataLaboratoryHelper().executeAttributeColumnsManipulator(acm, table, column);
+                             }
+                         });
+                         popup.addMenuButton(button);
+@@ -871,7 +871,7 @@ final class DataTableTopComponent extends TopComponent implements AWTEventListen
+             button.addActionListener(new ActionListener() {
+ 
+                 public void actionPerformed(ActionEvent e) {
+-                    Lookup.getDefault().lookup(DataLaboratoryHelper.class).executeManipulator(m);
++                    new DataLaboratoryHelper().executeManipulator(m);
+                 }
+             });
+         } else {

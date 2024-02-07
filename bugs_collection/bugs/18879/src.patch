@@ -1,0 +1,13 @@
+diff --git a/buggy/collector/src/main/java/com/navercorp/pinpoint/collector/cluster/zookeeper/ZookeeperProfilerClusterManager.java b/fixed/collector/src/main/java/com/navercorp/pinpoint/collector/cluster/zookeeper/ZookeeperProfilerClusterManager.java
+index e9c61cb07..3c046aa0f 100644
+--- a/buggy/collector/src/main/java/com/navercorp/pinpoint/collector/cluster/zookeeper/ZookeeperProfilerClusterManager.java
++++ b/fixed/collector/src/main/java/com/navercorp/pinpoint/collector/cluster/zookeeper/ZookeeperProfilerClusterManager.java
+@@ -156,7 +156,7 @@ public class ZookeeperProfilerClusterManager implements ServerStateChangeEventHa
+     }
+ 
+     public void initZookeeperClusterData() {
+-        profileCluster.clear();
++        worker.clear();
+ 
+         synchronized (lock) {
+             List clusterPointList = profileCluster.getClusterPointList();

@@ -1,0 +1,13 @@
+diff --git a/buggy/hcatalog/streaming/src/java/org/apache/hive/hcatalog/streaming/AbstractRecordWriter.java b/fixed/hcatalog/streaming/src/java/org/apache/hive/hcatalog/streaming/AbstractRecordWriter.java
+index 2a589a118..fa7a8f0ad 100644
+--- a/buggy/hcatalog/streaming/src/java/org/apache/hive/hcatalog/streaming/AbstractRecordWriter.java
++++ b/fixed/hcatalog/streaming/src/java/org/apache/hive/hcatalog/streaming/AbstractRecordWriter.java
+@@ -61,7 +61,7 @@ abstract class AbstractRecordWriter implements RecordWriter {
+     this.conf = conf!=null ? conf
+                 : HiveEndPoint.createHiveConf(DelimitedInputWriter.class, endPoint.metaStoreUri);
+     try {
+-      msClient = new HiveMetaStoreClient(conf);
++      msClient = new HiveMetaStoreClient(this.conf);
+       this.tbl = msClient.getTable(endPoint.database, endPoint.table);
+       this.partitionPath = getPathForEndPoint(msClient, endPoint);
+       this.totalBuckets = tbl.getSd().getNumBuckets();

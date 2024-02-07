@@ -1,0 +1,22 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/instance/LifecycleServiceImpl.java b/fixed/hazelcast/src/main/java/com/hazelcast/instance/LifecycleServiceImpl.java
+index 86ad42e17..a6dafbb43 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/instance/LifecycleServiceImpl.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/instance/LifecycleServiceImpl.java
+@@ -97,7 +97,7 @@ public class LifecycleServiceImpl implements LifecycleService {
+     public void shutdown() {
+         synchronized (lifecycleLock) {
+             fireLifecycleEvent(SHUTTING_DOWN);
+-            instance.managementService.unregister();
++            instance.managementService.destroy();
+             instance.node.shutdown(false, true);
+             HazelcastInstanceFactory.remove(instance);
+             fireLifecycleEvent(SHUTDOWN);
+@@ -107,7 +107,7 @@ public class LifecycleServiceImpl implements LifecycleService {
+     public void kill() {
+         synchronized (lifecycleLock) {
+             fireLifecycleEvent(SHUTTING_DOWN);
+-            instance.managementService.unregister();
++            instance.managementService.destroy();
+             instance.node.shutdown(true, true);
+             HazelcastInstanceFactory.remove(instance);
+             fireLifecycleEvent(SHUTDOWN);

@@ -1,0 +1,13 @@
+diff --git a/buggy/backends/gdx-backend-moe/src/com/badlogic/gdx/backends/iosmoe/IOSPreferences.java b/fixed/backends/gdx-backend-moe/src/com/badlogic/gdx/backends/iosmoe/IOSPreferences.java
+index 8cc85f807..ffb0defe1 100644
+--- a/buggy/backends/gdx-backend-moe/src/com/badlogic/gdx/backends/iosmoe/IOSPreferences.java
++++ b/fixed/backends/gdx-backend-moe/src/com/badlogic/gdx/backends/iosmoe/IOSPreferences.java
+@@ -184,7 +184,7 @@ public class IOSPreferences implements Preferences {
+ 
+ 	@Override
+ 	public void flush () {
+-		NSAutoreleasePool pool = NSAutoreleasePool.alloc();
++		NSAutoreleasePool pool = NSAutoreleasePool.alloc().init();
+ 		if (!nsDictionary.writeToFileAtomically(file.getAbsolutePath(), false)) {
+ 			Gdx.app.debug("IOSPreferences", "Failed to write NSDictionary to file " + file);
+ 		}

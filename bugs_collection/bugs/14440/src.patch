@@ -1,0 +1,20 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/deps/JsFileRegexParser.java b/fixed/src/com/google/javascript/jscomp/deps/JsFileRegexParser.java
+index 1102b5944..d9f07eb63 100644
+--- a/buggy/src/com/google/javascript/jscomp/deps/JsFileRegexParser.java
++++ b/fixed/src/com/google/javascript/jscomp/deps/JsFileRegexParser.java
+@@ -249,7 +249,14 @@ public final class JsFileRegexParser extends JsFileLineParser {
+     if (provideGoogModuleConflict || provideEs6ModuleConflict || googEs6ModuleConflict) {
+       // TODO(sdh): should this be an error?
+       errorManager.report(
+-          CheckLevel.WARNING, JSError.make(ModuleLoader.MODULE_CONFLICT, file.toString()));
++          CheckLevel.WARNING,
++          JSError.make(
++              file.toString(),
++              /* lineno= */ -1,
++              /* charno= */ -1,
++              ModuleLoader.MODULE_CONFLICT,
++              file.toString()));
++
+       return false;
+     }
+ 

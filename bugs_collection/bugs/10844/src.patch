@@ -1,0 +1,15 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/InnerAssignmentCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/InnerAssignmentCheckTest.java
+index 410e8e4ce..faf746a33 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/InnerAssignmentCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/InnerAssignmentCheckTest.java
+@@ -36,7 +36,9 @@ public class InnerAssignmentCheckTest
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "coding" + File.separator + filename);
++                + "coding" + File.separator
++                + "innerassignment" + File.separator
++                + filename);
+     }
+ 
+     @Override

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/ie/NumberNormalizer.java b/fixed/src/edu/stanford/nlp/ie/NumberNormalizer.java
+index b3ebc3203..b483c0003 100644
+--- a/buggy/src/edu/stanford/nlp/ie/NumberNormalizer.java
++++ b/fixed/src/edu/stanford/nlp/ie/NumberNormalizer.java
+@@ -263,7 +263,7 @@ public class NumberNormalizer {
+ 
+     // get numeric value of each word piece
+     for (int curIndex = 0; curIndex < numWords; curIndex++) {
+-      String curPart = fields[curIndex];
++      String curPart = fields[curIndex] == null ? "" : fields[curIndex].trim();
+       Matcher m = alphaPattern.matcher(curPart);
+       if (m.find()) {
+         // Some part of the word has alpha characters

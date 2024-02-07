@@ -1,0 +1,13 @@
+diff --git a/buggy/handler/src/main/java/io/netty/handler/traffic/AbstractTrafficShapingHandler.java b/fixed/handler/src/main/java/io/netty/handler/traffic/AbstractTrafficShapingHandler.java
+index 7da4b29a9..b0c6fcfda 100644
+--- a/buggy/handler/src/main/java/io/netty/handler/traffic/AbstractTrafficShapingHandler.java
++++ b/fixed/handler/src/main/java/io/netty/handler/traffic/AbstractTrafficShapingHandler.java
+@@ -360,7 +360,7 @@ public abstract class AbstractTrafficShapingHandler extends
+             // Time is too short, so just lets continue
+             return 0;
+         }
+-        return bytes * 1000 / limit - interval;
++        return ((bytes * 1000 / limit - interval)/10)*10;
+     }
+ 
+     @Override

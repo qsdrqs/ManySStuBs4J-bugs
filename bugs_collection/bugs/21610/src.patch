@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/activeandroid/ModelInfo.java b/fixed/src/com/activeandroid/ModelInfo.java
+index a120398fb..a1aa5ad95 100644
+--- a/buggy/src/com/activeandroid/ModelInfo.java
++++ b/fixed/src/com/activeandroid/ModelInfo.java
+@@ -123,7 +123,7 @@ final class ModelInfo {
+ 		String sourcePath = context.getApplicationInfo().sourceDir;
+ 		List<String> paths = new ArrayList<String>();
+ 
+-		if (sourcePath != null && new File(sourcePath).isDirectory()) {
++		if (sourcePath != null && !(new File(sourcePath).isDirectory())) {
+ 			DexFile dexfile = new DexFile(sourcePath);
+ 			Enumeration<String> entries = dexfile.entries();
+ 

@@ -1,0 +1,14 @@
+diff --git a/buggy/components/camel-jetty/src/test/java/org/apache/camel/component/jetty/BaseJettyTest.java b/fixed/components/camel-jetty/src/test/java/org/apache/camel/component/jetty/BaseJettyTest.java
+index d619ffc3b..7b166adb0 100644
+--- a/buggy/components/camel-jetty/src/test/java/org/apache/camel/component/jetty/BaseJettyTest.java
++++ b/fixed/components/camel-jetty/src/test/java/org/apache/camel/component/jetty/BaseJettyTest.java
+@@ -29,7 +29,8 @@ import org.junit.BeforeClass;
+ public abstract class BaseJettyTest extends CamelTestSupport {
+ 
+     private static volatile int port;
+-    private static final AtomicInteger counter = new AtomicInteger(1);
++
++    private final AtomicInteger counter = new AtomicInteger(1);
+ 
+     @BeforeClass
+     public static void initPort() throws Exception {

@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Slider.java b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Slider.java
+index 99115bf53..043ce6e8a 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Slider.java
++++ b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Slider.java
+@@ -80,7 +80,7 @@ public class Slider extends Widget {
+ 
+ 		addListener(new InputListener() {
+ 			public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
+-				if (disabled) return true;
++				if (disabled) return false;
+ 				if (draggingPointer != -1) return false;
+ 				draggingPointer = pointer;
+ 				calculatePositionAndValue(x, y);

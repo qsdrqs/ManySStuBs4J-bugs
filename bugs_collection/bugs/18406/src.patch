@@ -1,0 +1,15 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/graphics/g3d/decals/Decal.java b/fixed/gdx/src/com/badlogic/gdx/graphics/g3d/decals/Decal.java
+index 8edf06914..670bbe07f 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/graphics/g3d/decals/Decal.java
++++ b/fixed/gdx/src/com/badlogic/gdx/graphics/g3d/decals/Decal.java
+@@ -476,8 +476,8 @@ public class Decal {
+ 		material.srcBlendFactor = srcBlendFactor;
+ 		material.dstBlendFactor = dstBlendFactor;
+ 	}
+-
+-	protected DecalMaterial getMaterial () {
++	
++	public DecalMaterial getMaterial () {
+ 		return material;
+ 	}
+ 	

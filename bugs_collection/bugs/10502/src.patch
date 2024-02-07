@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/AvoidInlineConditionalsCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/AvoidInlineConditionalsCheck.java
+index 30d283937..c67ca3ad5 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/AvoidInlineConditionalsCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/AvoidInlineConditionalsCheck.java
+@@ -65,7 +65,7 @@ public class AvoidInlineConditionalsCheck extends AbstractCheck {
+         // the only place a QUESTION token can occur is in inline conditionals
+         // so no need to do any further tricks here - pretty trivial Check!
+ 
+-        log(ast.getLineNo(), ast.getColumnNo(), MSG_KEY);
++        log(ast, MSG_KEY);
+     }
+ 
+ }

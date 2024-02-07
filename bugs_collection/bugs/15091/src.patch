@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/DefaultPassConfig.java b/fixed/src/com/google/javascript/jscomp/DefaultPassConfig.java
+index bea9fb31d..c818b16f1 100644
+--- a/buggy/src/com/google/javascript/jscomp/DefaultPassConfig.java
++++ b/fixed/src/com/google/javascript/jscomp/DefaultPassConfig.java
+@@ -1388,7 +1388,7 @@ public class DefaultPassConfig extends PassConfig {
+   };
+ 
+   final PassFactory lintChecks =
+-      new PassFactory("checkAccessControls", true) {
++      new PassFactory("lintChecks", true) {
+     @Override
+     protected CompilerPass create(AbstractCompiler compiler) {
+       return new CheckNullableReturn(compiler);

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTypeCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTypeCheckTest.java
+index 0cfe1414f..9fbed91af 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTypeCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTypeCheckTest.java
+@@ -45,7 +45,7 @@ public class JavadocTypeCheckTest extends AbstractModuleTestSupport {
+     public void testGetRequiredTokens() {
+         final JavadocTypeCheck javadocTypeCheck = new JavadocTypeCheck();
+         assertArrayEquals(
+-            "JavadocTypeCheck#getRequiredTockens should return empty array by default",
++            "JavadocTypeCheck#getRequiredTokens should return empty array by default",
+             CommonUtils.EMPTY_INT_ARRAY, javadocTypeCheck.getRequiredTokens());
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/spi/impl/executionservice/impl/ExecutionServiceImpl.java b/fixed/hazelcast/src/main/java/com/hazelcast/spi/impl/executionservice/impl/ExecutionServiceImpl.java
+index 19449578f..645327705 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/spi/impl/executionservice/impl/ExecutionServiceImpl.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/spi/impl/executionservice/impl/ExecutionServiceImpl.java
+@@ -180,7 +180,7 @@ public final class ExecutionServiceImpl implements InternalExecutionService {
+             throw new IllegalArgumentException("ExecutorService['" + name + "'] already exists!");
+         }
+ 
+-        metricsRegistry.scanAndRegister(executor, "internal-executor" + name + "]");
++        metricsRegistry.scanAndRegister(executor, "internal-executor[" + name + "]");
+ 
+         return executor;
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/web/src/main/java/com/navercorp/pinpoint/web/service/AlarmServiceImpl.java b/fixed/web/src/main/java/com/navercorp/pinpoint/web/service/AlarmServiceImpl.java
+index af6eac74b..4fedf3c37 100644
+--- a/buggy/web/src/main/java/com/navercorp/pinpoint/web/service/AlarmServiceImpl.java
++++ b/fixed/web/src/main/java/com/navercorp/pinpoint/web/service/AlarmServiceImpl.java
+@@ -68,7 +68,7 @@ public class AlarmServiceImpl implements AlarmService {
+         Map<String, CheckerResult> checkerResults = new HashMap<>();
+         List<CheckerResult> CheckerResultList = alarmDao.selectBeforeCheckerResultList(applicationId);
+         
+-        if (CheckerResultList.size() > 0) {
++        if (!CheckerResultList.isEmpty()) {
+             for (CheckerResult checkerResult : CheckerResultList) {
+                 checkerResults.put(checkerResult.getCheckerName(), checkerResult);
+             }

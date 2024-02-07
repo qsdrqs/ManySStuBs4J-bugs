@@ -1,0 +1,22 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/api/JavadocTagInfo.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/api/JavadocTagInfo.java
+index 93b282361..5f4f3f0db 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/api/JavadocTagInfo.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/api/JavadocTagInfo.java
+@@ -566,7 +566,7 @@ public enum JavadocTagInfo
+     public static JavadocTagInfo fromText(final String text)
+     {
+         if (text == null) {
+-            throw new NullPointerException("the text is null");
++            throw new IllegalArgumentException("the text is null");
+         }
+ 
+         final JavadocTagInfo tag = TEXT_TO_TAG.get(text);
+@@ -590,7 +590,7 @@ public enum JavadocTagInfo
+     public static JavadocTagInfo fromName(final String name)
+     {
+         if (name == null) {
+-            throw new NullPointerException("the name is null");
++            throw new IllegalArgumentException("the name is null");
+         }
+ 
+         final JavadocTagInfo tag = NAME_TO_TAG.get(name);

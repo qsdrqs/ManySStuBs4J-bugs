@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter5naming/rule528typevariablenames/MethodTypeParameterNameTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter5naming/rule528typevariablenames/MethodTypeParameterNameTest.java
+index d000116b7..ecb3ce887 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter5naming/rule528typevariablenames/MethodTypeParameterNameTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter5naming/rule528typevariablenames/MethodTypeParameterNameTest.java
+@@ -57,7 +57,7 @@ public class MethodTypeParameterNameTest extends BaseCheckTestSupport {
+             "42:14: " + getCheckMessage(checkConfig.getMessages(), MSG_KEY, "EE", format),
+         };
+ 
+-        final String filePath = builder.getFilePath("MethodTypeParameterNameInput");
++        final String filePath = builder.getFilePath("InputMethodTypeParameterName");
+ 
+         final Integer[] warnList = builder.getLinesWithWarn(filePath);
+         verify(checkConfig, filePath, expected, warnList);

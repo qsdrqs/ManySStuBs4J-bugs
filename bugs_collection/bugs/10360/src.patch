@@ -1,0 +1,15 @@
+diff --git a/buggy/googlebigtable/src/main/java/com/yahoo/ycsb/db/GoogleBigtableClient.java b/fixed/googlebigtable/src/main/java/com/yahoo/ycsb/db/GoogleBigtableClient.java
+index 86ab94eac..d0d21dda4 100644
+--- a/buggy/googlebigtable/src/main/java/com/yahoo/ycsb/db/GoogleBigtableClient.java
++++ b/fixed/googlebigtable/src/main/java/com/yahoo/ycsb/db/GoogleBigtableClient.java
+@@ -365,7 +365,9 @@ public class GoogleBigtableClient extends com.yahoo.ycsb.DB {
+       setCellBuilder.setFamilyNameBytes(ByteStringer.wrap(columnFamilyBytes));
+       setCellBuilder.setColumnQualifier(ByteStringer.wrap(entry.getKey().getBytes()));
+       setCellBuilder.setValue(ByteStringer.wrap(entry.getValue().toArray()));
+-      setCellBuilder.setTimestampMicros(System.nanoTime() / 1000);
++
++      // Bigtable uses a 1ms granularity
++      setCellBuilder.setTimestampMicros(System.currentTimeMillis() * 1000);
+     }
+     
+     try {

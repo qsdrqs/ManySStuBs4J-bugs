@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/api/DetailASTTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/api/DetailASTTest.java
+index f0b141cde..cdab379c6 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/api/DetailASTTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/api/DetailASTTest.java
+@@ -110,7 +110,7 @@ public class DetailASTTest {
+         checkDir(new File("src/test/resources/com/puppycrawl/tools/checkstyle"));
+     }
+ 
+-    private void checkDir(File dir) throws Exception {
++    private static void checkDir(File dir) throws Exception {
+         File[] files = dir.listFiles(new FileFilter() {
+                 @Override
+                 public boolean accept(File file) {

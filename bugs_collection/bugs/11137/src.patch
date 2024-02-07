@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/JTreeTable.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/JTreeTable.java
+index f608ed87f..27574c0af 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/JTreeTable.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/JTreeTable.java
+@@ -194,7 +194,7 @@ public class JTreeTable extends JTable {
+      * TreeTableCellEditor implementation. Component returned is the
+      * JTree.
+      */
+-    private class TreeTableCellEditor extends AbstractCellEditor implements
++    private class TreeTableCellEditor extends BaseCellEditor implements
+             TableCellEditor {
+         @Override
+         public Component getTableCellEditorComponent(JTable table,

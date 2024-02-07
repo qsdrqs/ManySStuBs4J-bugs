@@ -1,0 +1,21 @@
+diff --git a/buggy/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/windowing/triggers/ContinuousProcessingTimeTrigger.java b/fixed/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/windowing/triggers/ContinuousProcessingTimeTrigger.java
+index eacdf0b3e..a952c4288 100644
+--- a/buggy/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/windowing/triggers/ContinuousProcessingTimeTrigger.java
++++ b/fixed/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/windowing/triggers/ContinuousProcessingTimeTrigger.java
+@@ -58,14 +58,14 @@ public class ContinuousProcessingTimeTrigger<W extends Window> extends Trigger<O
+ 			long start = currentTime - (currentTime % interval);
+ 			fireState.update(start + interval);
+ 
+-			ctx.registerProcessingTimeTimer(nextFireTimestamp);
++			ctx.registerProcessingTimeTimer((start + interval));
+ 			return TriggerResult.CONTINUE;
+ 		}
+ 		if (currentTime > nextFireTimestamp) {
+ 			long start = currentTime - (currentTime % interval);
+ 			fireState.update(start + interval);
+ 
+-			ctx.registerProcessingTimeTimer(nextFireTimestamp);
++			ctx.registerProcessingTimeTimer((start + interval));
+ 
+ 			return TriggerResult.FIRE;
+ 		}

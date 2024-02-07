@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/queue/QueueContainer.java b/fixed/hazelcast/src/main/java/com/hazelcast/queue/QueueContainer.java
+index 7cb4aab94..87f500e80 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/queue/QueueContainer.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/queue/QueueContainer.java
+@@ -292,7 +292,7 @@ public class QueueContainer implements IdentifiedDataSerializable {
+                 throw new HazelcastException(e);
+             }
+         }
+-        if (list.isEmpty()){
++        if (!list.isEmpty()){
+             getItemQueue().addAll(list);
+             cancelEvictionIfExists();
+         }

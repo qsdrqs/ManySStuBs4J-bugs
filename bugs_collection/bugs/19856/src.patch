@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/DefaultChannelPromise.java b/fixed/transport/src/main/java/io/netty/channel/DefaultChannelPromise.java
+index fbdece047..88298e7c6 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/DefaultChannelPromise.java
++++ b/fixed/transport/src/main/java/io/netty/channel/DefaultChannelPromise.java
+@@ -378,7 +378,7 @@ public class DefaultChannelPromise extends FlushCheckpoint implements ChannelPro
+ 
+     private synchronized boolean failure0(Throwable cause) {
+         // Allow only once.
+-        if (cause != null) {
++        if (this.cause != null) {
+             return false;
+         }
+ 

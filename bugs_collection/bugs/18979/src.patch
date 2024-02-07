@@ -1,0 +1,13 @@
+diff --git a/buggy/profiler/src/test/java/com/navercorp/pinpoint/profiler/util/ProjectPathResolver.java b/fixed/profiler/src/test/java/com/navercorp/pinpoint/profiler/util/ProjectPathResolver.java
+index cfc8050d2..266f8d886 100644
+--- a/buggy/profiler/src/test/java/com/navercorp/pinpoint/profiler/util/ProjectPathResolver.java
++++ b/fixed/profiler/src/test/java/com/navercorp/pinpoint/profiler/util/ProjectPathResolver.java
+@@ -79,7 +79,7 @@ public class ProjectPathResolver {
+             throw new NullPointerException("projectPath must not be null");
+         }
+ 
+-        String pinpointAgentDir = projectPath + "/profiler/target/pinpoint-agent/";
++        String pinpointAgentDir = projectPath + "/profiler/target/pinpoint-agent";
+         logger.debug("pinpointAgentDir:{}", pinpointAgentDir);
+         return pinpointAgentDir;
+ 

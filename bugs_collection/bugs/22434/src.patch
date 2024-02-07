@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-devtools/src/main/java/org/springframework/boot/devtools/restart/Restarter.java b/fixed/spring-boot-devtools/src/main/java/org/springframework/boot/devtools/restart/Restarter.java
+index 043da7111..896f40251 100644
+--- a/buggy/spring-boot-devtools/src/main/java/org/springframework/boot/devtools/restart/Restarter.java
++++ b/fixed/spring-boot-devtools/src/main/java/org/springframework/boot/devtools/restart/Restarter.java
+@@ -195,7 +195,7 @@ public class Restarter {
+ 	 * @param enabled if restart support is enabled
+ 	 */
+ 	private void setEnabled(boolean enabled) {
+-		this.enabled = false;
++		this.enabled = enabled;
+ 	}
+ 
+ 	/**

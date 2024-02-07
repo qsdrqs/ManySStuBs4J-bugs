@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/pipeline/JSONOutputter.java b/fixed/src/edu/stanford/nlp/pipeline/JSONOutputter.java
+index b66d3ad89..6ba7b4161 100644
+--- a/buggy/src/edu/stanford/nlp/pipeline/JSONOutputter.java
++++ b/fixed/src/edu/stanford/nlp/pipeline/JSONOutputter.java
+@@ -94,7 +94,7 @@ public class JSONOutputter extends AnnotationOutputter {
+           Tree sentimentTree = sentence.get(SentimentCoreAnnotations.SentimentAnnotatedTree.class);
+           if (sentimentTree != null) {
+             int sentiment = RNNCoreAnnotations.getPredictedClass(sentimentTree);
+-            List<String> sentimentPredictions =
++            List<Double> sentimentPredictions =
+                 RNNCoreAnnotations.getPredictionsAsStringList(sentimentTree);
+             String sentimentClass = sentence.get(SentimentCoreAnnotations.SentimentClass.class);
+             l2.set("sentimentValue", Integer.toString(sentiment));

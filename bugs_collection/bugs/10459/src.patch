@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionRequireThisTest.java b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionRequireThisTest.java
+index fb434a0a9..e03a2e25f 100644
+--- a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionRequireThisTest.java
++++ b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionRequireThisTest.java
+@@ -28,7 +28,7 @@ import org.junit.Test;
+ import com.puppycrawl.tools.checkstyle.DefaultConfiguration;
+ import com.puppycrawl.tools.checkstyle.checks.coding.RequireThisCheck;
+ 
+-public class XpathRegressionRequireThisTest extends AbstractXpathTestSupport {
++public class XpathRegressionRequireThisTest extends XpathTestSupport {
+ 
+     @Test
+     public void testOne() throws Exception {

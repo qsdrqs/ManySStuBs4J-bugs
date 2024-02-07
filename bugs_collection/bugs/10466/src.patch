@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/regexp/RegexpCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/regexp/RegexpCheck.java
+index 0e4cc9a19..20e9a3d15 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/regexp/RegexpCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/regexp/RegexpCheck.java
+@@ -110,7 +110,7 @@ public class RegexpCheck extends AbstractCheck {
+     private int errorCount;
+ 
+     /** The regexp to match against. */
+-    private Pattern format = Pattern.compile("$^", Pattern.MULTILINE);
++    private Pattern format = Pattern.compile("^$", Pattern.MULTILINE);
+ 
+     /** The matcher. */
+     private Matcher matcher;

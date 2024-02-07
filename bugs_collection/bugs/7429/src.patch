@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jclouds/src/main/java/org/apache/camel/component/jclouds/JcloudsBlobStoreProducer.java b/fixed/components/camel-jclouds/src/main/java/org/apache/camel/component/jclouds/JcloudsBlobStoreProducer.java
+index cb06dafe2..80cd74915 100644
+--- a/buggy/components/camel-jclouds/src/main/java/org/apache/camel/component/jclouds/JcloudsBlobStoreProducer.java
++++ b/fixed/components/camel-jclouds/src/main/java/org/apache/camel/component/jclouds/JcloudsBlobStoreProducer.java
+@@ -48,7 +48,7 @@ public class JcloudsBlobStoreProducer extends JcloudsProducer {
+         if (blobName != null && exchange.getIn() != null && exchange.getIn().getBody() != null) {
+             Object body = exchange.getIn().getBody();
+             BlobStore blobStore = blobStoreContext.getBlobStore();
+-            Blob blob = blobStore.newBlob(blobName);
++            Blob blob = blobStore.blobBuilder(blobName).build();
+             ByteArrayOutputStream baos = new ByteArrayOutputStream();
+             ObjectOutputStream oos = null;
+             try {

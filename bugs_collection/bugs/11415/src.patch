@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/HideUtilityClassConstructorCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/HideUtilityClassConstructorCheck.java
+index a610765d4..eb3dc094e 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/HideUtilityClassConstructorCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/HideUtilityClassConstructorCheck.java
+@@ -127,7 +127,7 @@ public class HideUtilityClassConstructorCheck extends Check {
+         /** c-tor
+          * @param ast class ast
+          * */
+-        public Details(DetailAST ast) {
++        Details(DetailAST ast) {
+             this.ast = ast;
+         }
+ 

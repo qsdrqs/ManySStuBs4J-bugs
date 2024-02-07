@@ -1,0 +1,13 @@
+diff --git a/buggy/handler/src/test/java/io/netty/handler/ssl/OpenSslErrorStackAssertSSLEngine.java b/fixed/handler/src/test/java/io/netty/handler/ssl/OpenSslErrorStackAssertSSLEngine.java
+index 8d4361258..af71f7257 100644
+--- a/buggy/handler/src/test/java/io/netty/handler/ssl/OpenSslErrorStackAssertSSLEngine.java
++++ b/fixed/handler/src/test/java/io/netty/handler/ssl/OpenSslErrorStackAssertSSLEngine.java
+@@ -416,7 +416,7 @@ final class OpenSslErrorStackAssertSSLEngine extends JdkSslEngine implements Ref
+ 
+     @Override
+     public boolean release(int decrement) {
+-        return getWrappedEngine().release();
++        return getWrappedEngine().release(decrement);
+     }
+ 
+     @Override

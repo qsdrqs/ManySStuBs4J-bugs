@@ -1,0 +1,22 @@
+diff --git a/buggy/AttributesImpl/src/org/gephi/data/attributes/AttributeContollerImpl.java b/fixed/AttributesImpl/src/org/gephi/data/attributes/AttributeContollerImpl.java
+index fe994e0a7..bee36ea29 100644
+--- a/buggy/AttributesImpl/src/org/gephi/data/attributes/AttributeContollerImpl.java
++++ b/fixed/AttributesImpl/src/org/gephi/data/attributes/AttributeContollerImpl.java
+@@ -94,7 +94,7 @@ public class AttributeContollerImpl implements AttributeController {
+         }
+     }
+ 
+-    public AttributeModel getModel() {
++    public synchronized AttributeModel getModel() {
+         Workspace workspace = projectController.getCurrentWorkspace();
+         if (workspace != null) {
+             AttributeModel model = workspace.getLookup().lookup(AttributeModel.class);
+@@ -108,7 +108,7 @@ public class AttributeContollerImpl implements AttributeController {
+         return null;
+     }
+ 
+-    public AttributeModel getModel(Workspace workspace) {
++    public synchronized AttributeModel getModel(Workspace workspace) {
+         AttributeModel model = workspace.getLookup().lookup(AttributeModel.class);
+         if (model != null) {
+             return model;

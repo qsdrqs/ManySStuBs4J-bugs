@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-table/flink-table-runtime-blink/src/main/java/org/apache/flink/table/runtime/functions/SqlDateTimeUtils.java b/fixed/flink-table/flink-table-runtime-blink/src/main/java/org/apache/flink/table/runtime/functions/SqlDateTimeUtils.java
+index 26e20d642..36959d749 100644
+--- a/buggy/flink-table/flink-table-runtime-blink/src/main/java/org/apache/flink/table/runtime/functions/SqlDateTimeUtils.java
++++ b/fixed/flink-table/flink-table-runtime-blink/src/main/java/org/apache/flink/table/runtime/functions/SqlDateTimeUtils.java
+@@ -486,7 +486,7 @@ public class SqlDateTimeUtils {
+ 			return Integer.parseInt(dateStr.substring(20)) * 10;
+ 		} else if (length >= 23 && length <= 26) {
+ 			// "1999-12-31 12:34:56.123" ~ "1999-12-31 12:34:56.123456"
+-			return Integer.parseInt(dateStr.substring(20, 23)) * 10;
++			return Integer.parseInt(dateStr.substring(20, 23));
+ 		} else {
+ 			return 0;
+ 		}

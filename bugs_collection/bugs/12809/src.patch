@@ -1,0 +1,13 @@
+diff --git a/buggy/indexing-service/src/main/java/io/druid/indexing/common/task/HadoopIndexTask.java b/fixed/indexing-service/src/main/java/io/druid/indexing/common/task/HadoopIndexTask.java
+index b797d772d..2b032f477 100644
+--- a/buggy/indexing-service/src/main/java/io/druid/indexing/common/task/HadoopIndexTask.java
++++ b/fixed/indexing-service/src/main/java/io/druid/indexing/common/task/HadoopIndexTask.java
+@@ -117,7 +117,7 @@ public class HadoopIndexTask extends AbstractTask
+     Preconditions.checkArgument(this.spec.getTuningConfig().getWorkingPath() == null, "workingPath must be absent");
+     Preconditions.checkArgument(
+         this.spec.getIOConfig().getMetadataUpdateSpec() == null,
+-        "updaterJobSpec must be absent"
++        "metadataUpdateSpec must be absent"
+     );
+ 
+     if (hadoopDependencyCoordinates != null) {

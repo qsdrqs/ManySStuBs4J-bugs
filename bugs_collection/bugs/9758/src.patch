@@ -1,0 +1,14 @@
+diff --git a/buggy/beeline/src/java/org/apache/hive/beeline/HiveSchemaTool.java b/fixed/beeline/src/java/org/apache/hive/beeline/HiveSchemaTool.java
+index 8edf41321..409126ec2 100644
+--- a/buggy/beeline/src/java/org/apache/hive/beeline/HiveSchemaTool.java
++++ b/fixed/beeline/src/java/org/apache/hive/beeline/HiveSchemaTool.java
+@@ -178,7 +178,8 @@ public class HiveSchemaTool {
+         getConnectionToMetastore(false));
+     // verify that the new version is added to schema
+     if (!MetaStoreSchemaInfo.getHiveSchemaVersion().equalsIgnoreCase(newSchemaVersion)) {
+-      throw new HiveMetaException("Found unexpected schema version " + newSchemaVersion);
++      throw new HiveMetaException("Expected schema version " + MetaStoreSchemaInfo.getHiveSchemaVersion() +
++        ", found version " + newSchemaVersion);
+     }
+   }
+ 

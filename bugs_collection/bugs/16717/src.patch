@@ -1,0 +1,18 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/spi/AbstractDistributedObject.java b/fixed/hazelcast/src/main/java/com/hazelcast/spi/AbstractDistributedObject.java
+index 06641aaf3..52617825b 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/spi/AbstractDistributedObject.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/spi/AbstractDistributedObject.java
+@@ -73,11 +73,11 @@ public abstract class AbstractDistributedObject<S extends RemoteService> impleme
+ 
+     private void lifecycleCheck(final NodeEngine engine) {
+         if (engine == null || !engine.isActive()) {
+-            throw throwNotActiveException();
++            throwNotActiveException();
+         }
+     }
+ 
+-    protected RuntimeException throwNotActiveException() {
++    protected void throwNotActiveException() {
+         throw new HazelcastInstanceNotActiveException();
+     }
+ 

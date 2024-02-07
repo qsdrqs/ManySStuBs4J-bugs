@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.novelanheatpump/src/main/java/org/openhab/binding/novelanheatpump/i18n/Messages.java b/fixed/bundles/binding/org.openhab.binding.novelanheatpump/src/main/java/org/openhab/binding/novelanheatpump/i18n/Messages.java
+index ad5a51559..52a3b0cde 100644
+--- a/buggy/bundles/binding/org.openhab.binding.novelanheatpump/src/main/java/org/openhab/binding/novelanheatpump/i18n/Messages.java
++++ b/fixed/bundles/binding/org.openhab.binding.novelanheatpump/src/main/java/org/openhab/binding/novelanheatpump/i18n/Messages.java
+@@ -33,7 +33,7 @@ import org.eclipse.osgi.util.NLS;
+ 
+ public class Messages extends NLS {
+ 	
+-	private static final String BUNDLE_NAME = "org.openhab.binding.novelanheatpump.internal.messages"; //$NON-NLS-1$
++	private static final String BUNDLE_NAME = "org.openhab.binding.novelanheatpump.i18n.messages"; //$NON-NLS-1$
+ 	
+ 	public static String HeatPumpBinding_APPEAR;
+ 	public static String HeatPumpBinding_DEFROSTING;

@@ -1,0 +1,28 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.myq/src/main/java/org/openhab/binding/myq/internal/GarageDoorData.java b/fixed/bundles/binding/org.openhab.binding.myq/src/main/java/org/openhab/binding/myq/internal/GarageDoorData.java
+index 37c3e9fa6..00545c69d 100644
+--- a/buggy/bundles/binding/org.openhab.binding.myq/src/main/java/org/openhab/binding/myq/internal/GarageDoorData.java
++++ b/fixed/bundles/binding/org.openhab.binding.myq/src/main/java/org/openhab/binding/myq/internal/GarageDoorData.java
+@@ -32,9 +32,13 @@ public class GarageDoorData {
+ 	/**
+ 	 * Matching pattern for door device types, some models have spaces in them,
+ 	 * some don't
++	 *
++	 * "VGDO"
++	 * "Garage Door Opener WGDO"
++	 * "GarageDoorOpener"
+ 	 */
+ 	private static final Pattern DEVICE_TYPE_PATTERN = Pattern
+-			.compile("Garage\\s?Door\\s?Opener");
++			.compile("Garage\\s?Door\\s?Opener|VGDO");
+ 
+ 	LinkedList<GarageDoorDevice> devices = new LinkedList<GarageDoorDevice>();
+ 
+@@ -68,7 +72,7 @@ public class GarageDoorData {
+ 									int doorstate = attributes.get(j)
+ 											.get("Value").asInt();
+ 									logger.trace(
+-											"DeviceID: {} DeviceName: {} DeviceType: {} Doorstate : ",
++											"DeviceID: {} DeviceName: {} DeviceType: {} Doorstate : {}",
+ 											deviceId, deviceName, deviceType,
+ 											doorstate);
+ 

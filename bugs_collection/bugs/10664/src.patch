@@ -1,0 +1,16 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/UncommentedMainCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/UncommentedMainCheckTest.java
+index ec12d2591..bf1e3d16f 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/UncommentedMainCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/UncommentedMainCheckTest.java
+@@ -39,7 +39,10 @@ public class UncommentedMainCheckTest
+     extends BaseCheckTestSupport {
+     @Override
+     protected String getPath(String filename) throws IOException {
+-        return super.getPath("checks" + File.separator + filename);
++        return super.getPath("checks" + File.separator
++                + "misc" + File.separator
++                + "uncommentedmain" + File.separator
++                + filename);
+     }
+ 
+     @Test

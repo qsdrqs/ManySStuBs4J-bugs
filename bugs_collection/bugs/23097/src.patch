@@ -1,0 +1,13 @@
+diff --git a/buggy/test/src/edu/stanford/nlp/pipeline/StanfordCoreNLPTest.java b/fixed/test/src/edu/stanford/nlp/pipeline/StanfordCoreNLPTest.java
+index 8729ac29c..7168d7d96 100644
+--- a/buggy/test/src/edu/stanford/nlp/pipeline/StanfordCoreNLPTest.java
++++ b/fixed/test/src/edu/stanford/nlp/pipeline/StanfordCoreNLPTest.java
+@@ -15,7 +15,7 @@ public class StanfordCoreNLPTest {
+ 
+   @Test
+   public void testPrereqAnnotatorsBasic() {
+-    assertEquals("tokenize,ssplit,parse",
++    assertEquals("tokenize,ssplit,pos,parse",
+         StanfordCoreNLP.ensurePrerequisiteAnnotators(new String[]{"parse"}, new Properties()));
+     assertEquals("tokenize,ssplit,pos,depparse",
+         StanfordCoreNLP.ensurePrerequisiteAnnotators(new String[]{"depparse"}, new Properties()));

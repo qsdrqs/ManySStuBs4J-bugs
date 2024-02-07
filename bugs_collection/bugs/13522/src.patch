@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/sql/analyzer/StatementAnalyzer.java b/fixed/presto-main/src/main/java/com/facebook/presto/sql/analyzer/StatementAnalyzer.java
+index 409d22fdd..c0dd292ec 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/sql/analyzer/StatementAnalyzer.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/sql/analyzer/StatementAnalyzer.java
+@@ -966,7 +966,7 @@ class StatementAnalyzer
+                         throw new SemanticException(TYPE_MISMATCH,
+                                 node,
+                                 "column %d in %s query has incompatible types: %s, %s",
+-                                i, outputFieldTypes[i].getDisplayName(), setOperationName, descFieldType.getDisplayName());
++                                i, setOperationName, outputFieldTypes[i].getDisplayName(), descFieldType.getDisplayName());
+                     }
+                     outputFieldTypes[i] = commonSuperType.get();
+                 }

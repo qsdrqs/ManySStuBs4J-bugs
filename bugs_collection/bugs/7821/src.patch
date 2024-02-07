@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-web/src/main/java/org/apache/camel/web/util/ThrowExceptionDefinitionRenderer.java b/fixed/components/camel-web/src/main/java/org/apache/camel/web/util/ThrowExceptionDefinitionRenderer.java
+index b242ae19d..e5129a722 100644
+--- a/buggy/components/camel-web/src/main/java/org/apache/camel/web/util/ThrowExceptionDefinitionRenderer.java
++++ b/fixed/components/camel-web/src/main/java/org/apache/camel/web/util/ThrowExceptionDefinitionRenderer.java
+@@ -28,7 +28,7 @@ public final class ThrowExceptionDefinitionRenderer {
+         // Utility class, no public or protected default constructor
+     }
+ 
+-    public static void render(StringBuilder buffer, ProcessorDefinition<?> processor) {
++    public static void render(StringBuilder buffer, ProcessorDefinition processor) {
+         ThrowExceptionDefinition throwExp = (ThrowExceptionDefinition)processor;
+         buffer.append(".").append(throwExp.getShortName()).append("(");
+         String expName = throwExp.getException().getClass().getSimpleName();

@@ -1,0 +1,13 @@
+diff --git a/buggy/indexing-service/src/main/java/com/metamx/druid/indexing/common/actions/RemoteTaskActionClient.java b/fixed/indexing-service/src/main/java/com/metamx/druid/indexing/common/actions/RemoteTaskActionClient.java
+index b9694ad3f..2a686ad39 100644
+--- a/buggy/indexing-service/src/main/java/com/metamx/druid/indexing/common/actions/RemoteTaskActionClient.java
++++ b/fixed/indexing-service/src/main/java/com/metamx/druid/indexing/common/actions/RemoteTaskActionClient.java
+@@ -107,7 +107,7 @@ public class RemoteTaskActionClient implements TaskActionClient
+     final String scheme;
+     final String host;
+     final int port;
+-    final String path = "/mmx/merger/v1/action";
++    final String path = "/druid/indexer/v1/action";
+ 
+     if (instance == null) {
+       throw new ISE("Cannot find instance of indexer to talk to!");

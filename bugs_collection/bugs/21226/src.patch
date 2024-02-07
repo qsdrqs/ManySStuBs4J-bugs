@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/test/java/org/openmrs/api/ProgramWorkflowServiceTest.java b/fixed/api/src/test/java/org/openmrs/api/ProgramWorkflowServiceTest.java
+index 9c554d06f..fa8a057de 100644
+--- a/buggy/api/src/test/java/org/openmrs/api/ProgramWorkflowServiceTest.java
++++ b/fixed/api/src/test/java/org/openmrs/api/ProgramWorkflowServiceTest.java
+@@ -343,7 +343,7 @@ public class ProgramWorkflowServiceTest extends BaseContextSensitiveTest {
+ 		executeDataSet(PROGRAM_WITH_OUTCOMES_XML);
+ 		
+ 		List<Concept> possibleOutcomes = Context.getProgramWorkflowService().getPossibleOutcomes(4);
+-		assertEquals(2, possibleOutcomes.size());
++		assertEquals(4, possibleOutcomes.size());
+ 	}
+ 	
+ 	@Test

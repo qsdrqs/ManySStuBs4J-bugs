@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractTypeAwareCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractTypeAwareCheck.java
+index 8984d36d3..72ded6d80 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractTypeAwareCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractTypeAwareCheck.java
+@@ -443,7 +443,7 @@ public abstract class AbstractTypeAwareCheck extends Check
+         protected ClassInfo(final Token className)
+         {
+             if (className == null) {
+-                throw new NullPointerException(
++                throw new IllegalArgumentException(
+                     "ClassInfo's name should be non-null");
+             }
+             name = className;

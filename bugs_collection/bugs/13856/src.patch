@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-tests/src/main/java/com/facebook/presto/tests/AbstractTestDistributedQueries.java b/fixed/presto-tests/src/main/java/com/facebook/presto/tests/AbstractTestDistributedQueries.java
+index 3c4e9cef2..b1ae66b1f 100644
+--- a/buggy/presto-tests/src/main/java/com/facebook/presto/tests/AbstractTestDistributedQueries.java
++++ b/fixed/presto-tests/src/main/java/com/facebook/presto/tests/AbstractTestDistributedQueries.java
+@@ -188,7 +188,7 @@ public abstract class AbstractTestDistributedQueries
+             throws Exception
+     {
+         assertFalse(queryRunner.tableExists(getSession(), "test_drop_if_exists"));
+-        assertQueryTrue("DROP TABLE IF EXISTS test_create");
++        assertQueryTrue("DROP TABLE IF EXISTS test_drop_if_exists");
+         assertFalse(queryRunner.tableExists(getSession(), "test_drop_if_exists"));
+     }
+ 

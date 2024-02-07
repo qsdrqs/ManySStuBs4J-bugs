@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.rfxcom/src/main/java/org/openhab/binding/rfxcom/internal/messages/RFXComBaseMessage.java b/fixed/bundles/binding/org.openhab.binding.rfxcom/src/main/java/org/openhab/binding/rfxcom/internal/messages/RFXComBaseMessage.java
+index e63ae2502..dc3319687 100644
+--- a/buggy/bundles/binding/org.openhab.binding.rfxcom/src/main/java/org/openhab/binding/rfxcom/internal/messages/RFXComBaseMessage.java
++++ b/fixed/bundles/binding/org.openhab.binding.rfxcom/src/main/java/org/openhab/binding/rfxcom/internal/messages/RFXComBaseMessage.java
+@@ -96,7 +96,7 @@ public abstract class RFXComBaseMessage implements RFXComMessageInterface {
+ 
+ 		str += "Raw data = " + DatatypeConverter.printHexBinary(rawMessage);
+ 		str += "\n - Packet type = " + packetType;
+-		str += "\n - Seq number = " + seqNbr;
++		str += "\n - Seq number = " + (short)(seqNbr & 0xFF);
+ 
+ 		return str;
+ 	}

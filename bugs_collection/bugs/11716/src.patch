@@ -1,0 +1,13 @@
+diff --git a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/imports/ImportControlLoader.java b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/imports/ImportControlLoader.java
+index 16b33cb3b..c5d6f48c0 100644
+--- a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/imports/ImportControlLoader.java
++++ b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/imports/ImportControlLoader.java
+@@ -201,7 +201,7 @@ final class ImportControlLoader extends AbstractLoader
+     {
+         final String retVal = aAtts.getValue(aName);
+         if (retVal == null) {
+-            throw new SAXException("missing attibute " + aName);
++            throw new SAXException("missing attribute " + aName);
+         }
+         return retVal;
+     }

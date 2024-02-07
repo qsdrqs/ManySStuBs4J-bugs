@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/execution/resourceGroups/InternalResourceGroup.java b/fixed/presto-main/src/main/java/com/facebook/presto/execution/resourceGroups/InternalResourceGroup.java
+index f285fc751..df70212c1 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/execution/resourceGroups/InternalResourceGroup.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/execution/resourceGroups/InternalResourceGroup.java
+@@ -837,7 +837,7 @@ public class InternalResourceGroup
+                 maxRunning = Math.max(1, maxRunning);
+             }
+             return runningQueries.size() + descendantRunningQueries < maxRunning &&
+-                    cachedMemoryUsageBytes < softMemoryLimitBytes;
++                    cachedMemoryUsageBytes <= softMemoryLimitBytes;
+         }
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/sql/src/test/java/io/druid/sql/avatica/DruidAvaticaHandlerTest.java b/fixed/sql/src/test/java/io/druid/sql/avatica/DruidAvaticaHandlerTest.java
+index 47a79c350..282c51aff 100644
+--- a/buggy/sql/src/test/java/io/druid/sql/avatica/DruidAvaticaHandlerTest.java
++++ b/fixed/sql/src/test/java/io/druid/sql/avatica/DruidAvaticaHandlerTest.java
+@@ -370,7 +370,7 @@ public class DruidAvaticaHandlerTest
+     );
+   }
+ 
+-  @Test(timeout = 30000)
++  @Test(timeout = 90000)
+   public void testConcurrentQueries() throws Exception
+   {
+     final List<ListenableFuture<Integer>> futures = new ArrayList<>();

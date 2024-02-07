@@ -1,0 +1,13 @@
+diff --git a/buggy/thrift/src/main/java/com/navercorp/pinpoint/io/header/ByteArrayHeaderReader.java b/fixed/thrift/src/main/java/com/navercorp/pinpoint/io/header/ByteArrayHeaderReader.java
+index 88f6bb8cf..d522d35fd 100644
+--- a/buggy/thrift/src/main/java/com/navercorp/pinpoint/io/header/ByteArrayHeaderReader.java
++++ b/fixed/thrift/src/main/java/com/navercorp/pinpoint/io/header/ByteArrayHeaderReader.java
+@@ -78,7 +78,7 @@ public class ByteArrayHeaderReader implements HeaderReader {
+             return readHeaderEntity();
+         }
+ 
+-        throw new InvalidHeaderException(String.format("invalid Header : ", header));
++        throw new InvalidHeaderException("invalid Header : " + header);
+     }
+ 
+     private HeaderEntity readHeaderEntity() {

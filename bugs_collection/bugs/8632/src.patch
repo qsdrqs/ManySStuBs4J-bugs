@@ -1,0 +1,13 @@
+diff --git a/buggy/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/sort/AsynchronousPartialSorter.java b/fixed/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/sort/AsynchronousPartialSorter.java
+index ded99de14..138976dab 100644
+--- a/buggy/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/sort/AsynchronousPartialSorter.java
++++ b/fixed/pact/pact-runtime/src/main/java/eu/stratosphere/pact/runtime/sort/AsynchronousPartialSorter.java
+@@ -39,7 +39,7 @@ import eu.stratosphere.pact.common.util.MutableObjectIterator;
+  */
+ public class AsynchronousPartialSorter<E> extends UnilateralSortMerger<E>
+ {
+-	private static final int MAX_MEM_PER_PARTIAL_SORT = 64 * 1024 * 0124;
++	private static final int MAX_MEM_PER_PARTIAL_SORT = 512 * 1024 * 1024;
+ 	
+ 	private BufferQueueIterator bufferIterator;
+ 	

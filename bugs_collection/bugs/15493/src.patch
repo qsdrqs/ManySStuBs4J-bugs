@@ -1,0 +1,13 @@
+diff --git a/buggy/guava-tests/test/com/google/common/math/StatsTesting.java b/fixed/guava-tests/test/com/google/common/math/StatsTesting.java
+index ae26f1fba..4d4018e64 100644
+--- a/buggy/guava-tests/test/com/google/common/math/StatsTesting.java
++++ b/fixed/guava-tests/test/com/google/common/math/StatsTesting.java
+@@ -127,7 +127,7 @@ class StatsTesting {
+     }
+   }
+ 
+-  static final Iterable<ManyValues> ALL_MANY_VALUES = ManyValues.createAll();
++  static final ImmutableList<ManyValues> ALL_MANY_VALUES = ManyValues.createAll();
+ 
+   static final ImmutableList<Double> MANY_VALUES =
+       ImmutableList.of(1.1, -44.44, 33.33, 555.555, -2.2);

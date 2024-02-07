@@ -1,0 +1,13 @@
+diff --git a/buggy/llap-server/src/java/org/apache/hadoop/hive/llap/cache/LowLevelCacheImpl.java b/fixed/llap-server/src/java/org/apache/hadoop/hive/llap/cache/LowLevelCacheImpl.java
+index 4ebd9a174..09f5985e0 100644
+--- a/buggy/llap-server/src/java/org/apache/hadoop/hive/llap/cache/LowLevelCacheImpl.java
++++ b/fixed/llap-server/src/java/org/apache/hadoop/hive/llap/cache/LowLevelCacheImpl.java
+@@ -190,7 +190,7 @@ public class LowLevelCacheImpl implements LowLevelCache, EvictionListener {
+                   + oldVal.declaredLength + " vs " + buffer.declaredLength + " @" + offset);
+             }
+             // We found an old, valid block for this key in the cache.
+-s            releaseBufferInternal(buffer);
++            releaseBufferInternal(buffer);
+             buffers[i] = oldVal;
+             if (result == null) {
+               result = new long[align64(buffers.length) >>> 6];

@@ -1,0 +1,13 @@
+diff --git a/buggy/metrics-jetty8/src/main/java/com/yammer/metrics/jetty8/InstrumentedHandler.java b/fixed/metrics-jetty8/src/main/java/com/yammer/metrics/jetty8/InstrumentedHandler.java
+index 4ffdd9318..a1c4b087a 100644
+--- a/buggy/metrics-jetty8/src/main/java/com/yammer/metrics/jetty8/InstrumentedHandler.java
++++ b/fixed/metrics-jetty8/src/main/java/com/yammer/metrics/jetty8/InstrumentedHandler.java
+@@ -50,7 +50,7 @@ public class InstrumentedHandler extends HandlerWrapper {
+      * @param underlying the handler about which metrics will be collected
+      */
+     public InstrumentedHandler(MetricRegistry registry, Handler underlying) {
+-    	this(registry, underlying, underlying.getClass());
++    	this(registry, underlying, underlying.getClass().getName());
+     }
+ 
+     /**

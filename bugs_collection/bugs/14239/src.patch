@@ -1,0 +1,13 @@
+diff --git a/buggy/AttributesImpl/src/org/gephi/data/attributes/AttributeTableImpl.java b/fixed/AttributesImpl/src/org/gephi/data/attributes/AttributeTableImpl.java
+index f5483e095..b7354320f 100644
+--- a/buggy/AttributesImpl/src/org/gephi/data/attributes/AttributeTableImpl.java
++++ b/fixed/AttributesImpl/src/org/gephi/data/attributes/AttributeTableImpl.java
+@@ -200,7 +200,7 @@ public class AttributeTableImpl implements AttributeTable {
+     }
+ 
+     public synchronized boolean hasColumn(String title) {
+-        return columnsMap.containsKey(title.toLowerCase());
++        return columnsMap.containsKey(title) || columnsMap.containsKey(title.toLowerCase());
+     }
+ 
+     public synchronized int getVersion() {

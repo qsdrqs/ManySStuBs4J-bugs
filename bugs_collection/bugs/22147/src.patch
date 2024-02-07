@@ -1,0 +1,18 @@
+diff --git a/buggy/spring-boot-project/spring-boot-tools/spring-boot-gradle-plugin/src/test/java/org/springframework/boot/gradle/plugin/JavaPluginActionIntegrationTests.java b/fixed/spring-boot-project/spring-boot-tools/spring-boot-gradle-plugin/src/test/java/org/springframework/boot/gradle/plugin/JavaPluginActionIntegrationTests.java
+index c1cb759cc..753e18cbe 100644
+--- a/buggy/spring-boot-project/spring-boot-tools/spring-boot-gradle-plugin/src/test/java/org/springframework/boot/gradle/plugin/JavaPluginActionIntegrationTests.java
++++ b/fixed/spring-boot-project/spring-boot-tools/spring-boot-gradle-plugin/src/test/java/org/springframework/boot/gradle/plugin/JavaPluginActionIntegrationTests.java
+@@ -128,9 +128,10 @@ public class JavaPluginActionIntegrationTests {
+ 		assertThat(result.task(":compileJava").getOutcome())
+ 				.isEqualTo(TaskOutcome.SUCCESS);
+ 		assertThat(result.getOutput()).contains(
+-				"compileJava compiler args: [-parameters, -Aorg.springframework.boot.configurationprocessor.additionalMetadataLocations="
+-						+ this.gradleBuild.getProjectDir().getCanonicalPath()
+-						+ "/src/main/resources]");
++				"compileJava compiler args: [-parameters, -Aorg.springframework.boot."
++						+ "configurationprocessor.additionalMetadataLocations="
++						+ new File(this.gradleBuild.getProjectDir(), "src/main/resources")
++								.getCanonicalPath());
+ 	}
+ 
+ 	@Test

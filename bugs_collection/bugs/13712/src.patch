@@ -1,0 +1,18 @@
+diff --git a/buggy/presto-tests/src/main/java/com/facebook/presto/tests/AbstractTestQueries.java b/fixed/presto-tests/src/main/java/com/facebook/presto/tests/AbstractTestQueries.java
+index e6bba3185..2e7f9a72c 100644
+--- a/buggy/presto-tests/src/main/java/com/facebook/presto/tests/AbstractTestQueries.java
++++ b/fixed/presto-tests/src/main/java/com/facebook/presto/tests/AbstractTestQueries.java
+@@ -4277,10 +4277,10 @@ public abstract class AbstractTestQueries
+                 .row("orderstatus", "varchar(1)", "")
+                 .row("totalprice", "double",  "")
+                 .row("orderdate", "date", "")
+-                .row("orderpriority", "varchar(5)", "")
+-                .row("clerk", "varchar(25)", "")
++                .row("orderpriority", "varchar(15)", "")
++                .row("clerk", "varchar(15)", "")
+                 .row("shippriority", "integer", "")
+-                .row("comment", "varchar(115)", "")
++                .row("comment", "varchar(79)", "")
+                 .build();
+ 
+         // Until we migrate all connectors to parametrized varchar we check two options

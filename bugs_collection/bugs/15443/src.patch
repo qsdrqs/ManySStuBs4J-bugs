@@ -1,0 +1,22 @@
+diff --git a/buggy/guava-tests/test/com/google/common/cache/LocalLoadingCacheTest.java b/fixed/guava-tests/test/com/google/common/cache/LocalLoadingCacheTest.java
+index 701a38ae7..5dce3d5f5 100644
+--- a/buggy/guava-tests/test/com/google/common/cache/LocalLoadingCacheTest.java
++++ b/fixed/guava-tests/test/com/google/common/cache/LocalLoadingCacheTest.java
+@@ -317,7 +317,7 @@ public class LocalLoadingCacheTest extends TestCase {
+       }
+     };
+ 
+-    LoadingCache<Integer, String> recursiveCache = new CacheBuilder<Integer, String>()
++    LoadingCache<Integer, String> recursiveCache = CacheBuilder.newBuilder()
+         .weakKeys()
+         .weakValues()
+         .build(recursiveLoader);
+@@ -331,7 +331,7 @@ public class LocalLoadingCacheTest extends TestCase {
+       }
+     };
+ 
+-    recursiveCache = new CacheBuilder<Integer, String>()
++    recursiveCache = CacheBuilder.newBuilder()
+         .weakKeys()
+         .weakValues()
+         .build(recursiveLoader);

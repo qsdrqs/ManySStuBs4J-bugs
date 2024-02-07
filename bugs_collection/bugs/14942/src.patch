@@ -1,0 +1,13 @@
+diff --git a/buggy/test/com/google/javascript/rhino/jstype/JSTypeTest.java b/fixed/test/com/google/javascript/rhino/jstype/JSTypeTest.java
+index cae43877b..226eb3f1c 100644
+--- a/buggy/test/com/google/javascript/rhino/jstype/JSTypeTest.java
++++ b/fixed/test/com/google/javascript/rhino/jstype/JSTypeTest.java
+@@ -5990,7 +5990,7 @@ public class JSTypeTest extends BaseJSTypeTestCase {
+         "e", NUMBER_TYPE, null);
+     anonymous.defineDeclaredProperty(
+         "f", NUMBER_TYPE, null);
+-    assertEquals("{a: number, b: number, c: number, d: number, ...}",
++    assertEquals("{a: number, b: number, c: number, d: number, e: number, f: number}",
+         anonymous.toString());
+   }
+ 

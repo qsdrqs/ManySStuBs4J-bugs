@@ -1,0 +1,13 @@
+diff --git a/buggy/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/GwtGraphics.java b/fixed/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/GwtGraphics.java
+index a21d1c3e6..356f7029b 100644
+--- a/buggy/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/GwtGraphics.java
++++ b/fixed/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/GwtGraphics.java
+@@ -264,7 +264,7 @@ public class GwtGraphics implements Graphics {
+ 
+ 	@Override
+ 	public float getDensity () {
+-		return 96.0 / 160;
++		return 96.0f / 160;
+ 	}
+ 
+ 	@Override

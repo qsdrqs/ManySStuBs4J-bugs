@@ -1,0 +1,13 @@
+diff --git a/buggy/modules/VisualizationImpl/src/main/java/org/gephi/visualization/model/node/NodeDiskModeler.java b/fixed/modules/VisualizationImpl/src/main/java/org/gephi/visualization/model/node/NodeDiskModeler.java
+index d0d166edf..b45f75b79 100644
+--- a/buggy/modules/VisualizationImpl/src/main/java/org/gephi/visualization/model/node/NodeDiskModeler.java
++++ b/fixed/modules/VisualizationImpl/src/main/java/org/gephi/visualization/model/node/NodeDiskModeler.java
+@@ -85,7 +85,7 @@ public class NodeDiskModeler extends NodeModeler {
+             return;
+         }
+ 
+-        float distance = cameraDistance(obj) / (obj.getNode().size() / 2f);
++        float distance = cameraDistance(obj) / obj.getNode().size();
+         if (distance > 600) {
+             obj.modelType = SHAPE_DIAMOND;
+             obj.modelBorderType = -1;

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-zookeeper/src/test/java/org/apache/camel/component/zookeeper/policy/ZookeeperElectionTest.java b/fixed/components/camel-zookeeper/src/test/java/org/apache/camel/component/zookeeper/policy/ZookeeperElectionTest.java
+index fb639b081..e0818ed07 100644
+--- a/buggy/components/camel-zookeeper/src/test/java/org/apache/camel/component/zookeeper/policy/ZookeeperElectionTest.java
++++ b/fixed/components/camel-zookeeper/src/test/java/org/apache/camel/component/zookeeper/policy/ZookeeperElectionTest.java
+@@ -120,7 +120,7 @@ public class ZookeeperElectionTest extends ZooKeeperTestSupport {
+ 
+     private void assertIsMaster(ZooKeeperElection electionCandidate) throws InterruptedException {
+         // Need to wait for a while to be elected.
+-        long timeout = System.currentTimeMillis() + 5000;
++        long timeout = System.currentTimeMillis() + 10000;
+         
+         while (!electionCandidate.isMaster() && timeout > System.currentTimeMillis()) {
+             Thread.sleep(200);

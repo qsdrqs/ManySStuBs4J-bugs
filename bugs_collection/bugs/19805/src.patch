@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/RecvByteBufAllocator.java b/fixed/transport/src/main/java/io/netty/channel/RecvByteBufAllocator.java
+index 371207a9f..cbf3fb3eb 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/RecvByteBufAllocator.java
++++ b/fixed/transport/src/main/java/io/netty/channel/RecvByteBufAllocator.java
+@@ -30,7 +30,7 @@ public interface RecvByteBufAllocator {
+      */
+     Handle newHandle();
+ 
+-    public interface Handle {
++    interface Handle {
+         /**
+          * Creates a new receive buffer whose capacity is probably large enough to read all inbound data and small
+          * enough not to waste its space.

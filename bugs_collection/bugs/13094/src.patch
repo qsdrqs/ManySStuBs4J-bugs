@@ -1,0 +1,13 @@
+diff --git a/buggy/merger/src/main/java/com/metamx/druid/merger/common/task/IndexGeneratorTask.java b/fixed/merger/src/main/java/com/metamx/druid/merger/common/task/IndexGeneratorTask.java
+index 8922a0473..d5cd8421a 100644
+--- a/buggy/merger/src/main/java/com/metamx/druid/merger/common/task/IndexGeneratorTask.java
++++ b/fixed/merger/src/main/java/com/metamx/druid/merger/common/task/IndexGeneratorTask.java
+@@ -219,7 +219,7 @@ public class IndexGeneratorTask extends AbstractTask
+     return schema.getShardSpec().isInChunk(eventDimensions);
+   }
+ 
+-  @JsonProperty
++  @JsonProperty("firehose")
+   public FirehoseFactory getFirehoseFactory()
+   {
+     return firehoseFactory;

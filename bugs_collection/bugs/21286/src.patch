@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/test/java/org/openmrs/report/PepfarReportFromXmlTest.java b/fixed/api/src/test/java/org/openmrs/report/PepfarReportFromXmlTest.java
+index 66d567b40..b2dbeb664 100644
+--- a/buggy/api/src/test/java/org/openmrs/report/PepfarReportFromXmlTest.java
++++ b/fixed/api/src/test/java/org/openmrs/report/PepfarReportFromXmlTest.java
+@@ -133,7 +133,7 @@ public class PepfarReportFromXmlTest extends BaseContextSensitiveTest {
+ 		}
+ 		if (Context.getReportObjectService().getPatientSearch("EnrolledOnDate") == null) {
+ 			PatientSearch ps = PatientSearch.createFilterSearch(ProgramStatePatientFilter.class);
+-			ps.addArgument("program", hivProgram.getProgramId().toString(), Integer.class);
++			ps.addArgument("program", hivProgram.getProgramId().toString(), Program.class);
+ 			ps.addArgument("untilDate", "${date}", Date.class);
+ 			Context.getReportObjectService().saveReportObject(new PatientSearchReportObject("EnrolledOnDate", ps));
+ 		}

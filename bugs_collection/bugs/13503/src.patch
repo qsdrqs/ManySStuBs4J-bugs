@@ -1,0 +1,17 @@
+diff --git a/buggy/presto-spi/src/main/java/com/facebook/presto/spi/block/ByteArrayBlockBuilder.java b/fixed/presto-spi/src/main/java/com/facebook/presto/spi/block/ByteArrayBlockBuilder.java
+index 959ab6fc4..406dc6a90 100644
+--- a/buggy/presto-spi/src/main/java/com/facebook/presto/spi/block/ByteArrayBlockBuilder.java
++++ b/fixed/presto-spi/src/main/java/com/facebook/presto/spi/block/ByteArrayBlockBuilder.java
+@@ -125,11 +125,10 @@ public class ByteArrayBlockBuilder
+         }
+     }
+ 
+-    // Copied from ByteArrayBlock
+     @Override
+     public long getSizeInBytes()
+     {
+-        return (Byte.BYTES + Byte.BYTES) * positionCount;
++        return (Byte.BYTES + Byte.BYTES) * (long) positionCount;
+     }
+ 
+     @Override

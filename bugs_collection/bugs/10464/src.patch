@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionRequireThisTest.java b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionRequireThisTest.java
+index 46391476e..9b3a6b98e 100644
+--- a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionRequireThisTest.java
++++ b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionRequireThisTest.java
+@@ -47,7 +47,7 @@ public class XpathRegressionRequireThisTest extends AbstractXpathRegressionTest
+         };
+ 
+         final List<String> expectedXpathQueries = Collections.singletonList(
+-            "CLASS_DEF[@text='SuppressionXpathRegressionRequireThisOne']/OBJBLOCK"
++            "/CLASS_DEF[@text='SuppressionXpathRegressionRequireThisOne']/OBJBLOCK"
+                 + "/METHOD_DEF[@text='changeAge']/SLIST/EXPR/ASSIGN[@text='age']/IDENT"
+         );
+ 

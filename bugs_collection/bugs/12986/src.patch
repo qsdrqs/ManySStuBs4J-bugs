@@ -1,0 +1,13 @@
+diff --git a/buggy/services/src/main/java/io/druid/cli/CliRealtimeExample.java b/fixed/services/src/main/java/io/druid/cli/CliRealtimeExample.java
+index e4d55890d..40423e343 100644
+--- a/buggy/services/src/main/java/io/druid/cli/CliRealtimeExample.java
++++ b/fixed/services/src/main/java/io/druid/cli/CliRealtimeExample.java
+@@ -42,7 +42,7 @@ import java.util.concurrent.Executor;
+  */
+ @Command(
+     name = "realtime",
+-    description = "Runs a standalone realtime node for examples, see http://druid.io/docs/0.6.27/Realtime.html for a description"
++    description = "Runs a standalone realtime node for examples, see http://druid.io/docs/0.6.29/Realtime.html for a description"
+ )
+ public class CliRealtimeExample extends ServerRunnable
+ {

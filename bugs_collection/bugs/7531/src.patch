@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/component/direct/DirectComponent.java b/fixed/camel-core/src/main/java/org/apache/camel/component/direct/DirectComponent.java
+index 090076b3e..edf68b4e5 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/component/direct/DirectComponent.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/component/direct/DirectComponent.java
+@@ -44,7 +44,7 @@ public class DirectComponent extends DefaultComponent {
+ 
+     @Override
+     protected void doStop() throws Exception {
+-        ServiceHelper.stopService(consumers.values());
++        ServiceHelper.stopServices(consumers);
+         consumers.clear();
+         super.doStop();
+     }

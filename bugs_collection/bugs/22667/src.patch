@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/org/springframework/samples/mvc/data/StandardArgumentsControllerTests.java b/fixed/src/test/java/org/springframework/samples/mvc/data/StandardArgumentsControllerTests.java
+index 540b68d1c..eef75563a 100644
+--- a/buggy/src/test/java/org/springframework/samples/mvc/data/StandardArgumentsControllerTests.java
++++ b/fixed/src/test/java/org/springframework/samples/mvc/data/StandardArgumentsControllerTests.java
+@@ -40,7 +40,7 @@ public class StandardArgumentsControllerTests {
+ 	public void request() throws Exception {
+ 		this.mockMvc.perform(get("/data/standard/request"))
+ 				.andExpect(content().string(startsWith(
+-						"request = org.springframework.mock.web.MockHttpServletRequest@")));
++						"request = org.springframework.test.web.mock.servlet.request.Servlet3MockHttpServletRequest@")));
+ 	}
+ 
+ 	@Test

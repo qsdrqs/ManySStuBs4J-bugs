@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/logging/InternalLoggerFactory.java b/fixed/src/main/java/org/jboss/netty/logging/InternalLoggerFactory.java
+index 4a6977b4c..a65cc0e3d 100644
+--- a/buggy/src/main/java/org/jboss/netty/logging/InternalLoggerFactory.java
++++ b/fixed/src/main/java/org/jboss/netty/logging/InternalLoggerFactory.java
+@@ -44,7 +44,7 @@ public abstract class InternalLoggerFactory {
+     }
+ 
+     public static InternalLogger getInstance(Class<?> clazz) {
+-        return getInstance(clazz);
++        return getInstance(clazz.getName());
+     }
+ 
+     public static InternalLogger getInstance(String name) {

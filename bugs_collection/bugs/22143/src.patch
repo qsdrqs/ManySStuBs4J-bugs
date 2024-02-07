@@ -1,0 +1,22 @@
+diff --git a/buggy/spring-boot-project/spring-boot-actuator-autoconfigure/src/main/java/org/springframework/boot/actuate/autoconfigure/metrics/MeterBindersConfiguration.java b/fixed/spring-boot-project/spring-boot-actuator-autoconfigure/src/main/java/org/springframework/boot/actuate/autoconfigure/metrics/MeterBindersConfiguration.java
+index e81dc0789..5195d20fb 100644
+--- a/buggy/spring-boot-project/spring-boot-actuator-autoconfigure/src/main/java/org/springframework/boot/actuate/autoconfigure/metrics/MeterBindersConfiguration.java
++++ b/fixed/spring-boot-project/spring-boot-actuator-autoconfigure/src/main/java/org/springframework/boot/actuate/autoconfigure/metrics/MeterBindersConfiguration.java
+@@ -39,7 +39,7 @@ import org.springframework.context.annotation.Configuration;
+ class MeterBindersConfiguration {
+ 
+ 	@Bean
+-	@ConditionalOnProperty(value = "spring.metrics.binders.jvm.enabled", matchIfMissing = true)
++	@ConditionalOnProperty(value = "management.metrics.binders.jvm.enabled", matchIfMissing = true)
+ 	@ConditionalOnMissingBean
+ 	public JvmGcMetrics jvmGcMetrics() {
+ 		return new JvmGcMetrics();
+@@ -53,7 +53,7 @@ class MeterBindersConfiguration {
+ 	}
+ 
+ 	@Bean
+-	@ConditionalOnProperty(value = "spring.metrics.binders.jvm.enabled", matchIfMissing = true)
++	@ConditionalOnProperty(value = "management.metrics.binders.jvm.enabled", matchIfMissing = true)
+ 	@ConditionalOnMissingBean
+ 	public JvmThreadMetrics jvmThreadMetrics() {
+ 		return new JvmThreadMetrics();

@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/operator/scalar/annotations/ScalarImplementation.java b/fixed/presto-main/src/main/java/com/facebook/presto/operator/scalar/annotations/ScalarImplementation.java
+index b299fdc1c..427ea5c40 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/operator/scalar/annotations/ScalarImplementation.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/operator/scalar/annotations/ScalarImplementation.java
+@@ -356,7 +356,7 @@ public class ScalarImplementation
+                         checkArgument(typeParameters.contains(annotation), "Injected type parameters must be declared with @TypeParameter annotation on the method [%s]", method);
+                     }
+                     if (annotation instanceof LiteralParameter) {
+-                        checkArgument(literalParameters.contains(((LiteralParameter) annotation).value()), "Parameter injected by @LiteralParameter must be declared in @LiteralParameter.");
++                        checkArgument(literalParameters.contains(((LiteralParameter) annotation).value()), "Parameter injected by @LiteralParameter must be declared with @LiteralParameters on the method [%s]", method);
+                     }
+                     dependencies.add(parseDependency(annotation));
+                 }

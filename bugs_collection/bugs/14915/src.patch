@@ -1,0 +1,13 @@
+diff --git a/buggy/test/com/google/javascript/jscomp/MakeDeclaredNamesUniqueTest.java b/fixed/test/com/google/javascript/jscomp/MakeDeclaredNamesUniqueTest.java
+index a951335ad..1d47c2b77 100644
+--- a/buggy/test/com/google/javascript/jscomp/MakeDeclaredNamesUniqueTest.java
++++ b/fixed/test/com/google/javascript/jscomp/MakeDeclaredNamesUniqueTest.java
+@@ -100,7 +100,7 @@ public final class MakeDeclaredNamesUniqueTest extends Es6CompilerTestCase {
+     invert = false;
+   }
+ 
+-  private String wrapInFunction(String s) {
++  private static String wrapInFunction(String s) {
+     return "function f(){" + s + "}";
+   }
+ 

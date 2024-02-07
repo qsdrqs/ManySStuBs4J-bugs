@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/throttle/PressureAwareCompactionThroughputController.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/throttle/PressureAwareCompactionThroughputController.java
+index 63aa646fc..740152da6 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/throttle/PressureAwareCompactionThroughputController.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/throttle/PressureAwareCompactionThroughputController.java
+@@ -100,7 +100,7 @@ public class PressureAwareCompactionThroughputController extends PressureAwareTh
+               * compactionPressure;
+     }
+     if (LOG.isDebugEnabled()) {
+-      if (maxThroughputToSet != getMaxThroughput()) {
++      if (Math.abs(maxThroughputToSet - getMaxThroughput()) < .0000001) {
+         LOG.debug("CompactionPressure is " + compactionPressure + ", tune throughput to "
+             + throughputDesc(maxThroughputToSet));
+       } else if (LOG.isTraceEnabled()) {

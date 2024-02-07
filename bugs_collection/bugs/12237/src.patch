@@ -1,0 +1,22 @@
+diff --git a/buggy/dropwizard-metrics-graphite/src/test/java/io/dropwizard/metrics/graphite/GraphiteReporterFactoryTest.java b/fixed/dropwizard-metrics-graphite/src/test/java/io/dropwizard/metrics/graphite/GraphiteReporterFactoryTest.java
+index 878b90f28..74a865574 100644
+--- a/buggy/dropwizard-metrics-graphite/src/test/java/io/dropwizard/metrics/graphite/GraphiteReporterFactoryTest.java
++++ b/fixed/dropwizard-metrics-graphite/src/test/java/io/dropwizard/metrics/graphite/GraphiteReporterFactoryTest.java
+@@ -53,7 +53,7 @@ public class GraphiteReporterFactoryTest {
+ 
+         final Graphite graphite = argument.getValue();
+         assertThat(getField(graphite, "hostname")).isEqualTo("localhost");
+-        assertThat(getField(graphite, "port")).isEqualTo(8080);
++        assertThat(getField(graphite, "port")).isEqualTo(2003);
+         assertThat(getField(graphite, "address")).isNull();
+     }
+ 
+@@ -67,7 +67,7 @@ public class GraphiteReporterFactoryTest {
+ 
+         final GraphiteUDP graphite = argument.getValue();
+         assertThat(getField(graphite, "hostname")).isEqualTo("localhost");
+-        assertThat(getField(graphite, "port")).isEqualTo(8080);
++        assertThat(getField(graphite, "port")).isEqualTo(2003);
+         assertThat(getField(graphite, "address")).isNull();
+     }
+ 

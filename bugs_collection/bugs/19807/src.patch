@@ -1,0 +1,13 @@
+diff --git a/buggy/codec-http/src/main/java/io/netty/handler/codec/spdy/SpdySessionHandler.java b/fixed/codec-http/src/main/java/io/netty/handler/codec/spdy/SpdySessionHandler.java
+index fce1fb7b8..3a6ebc67e 100644
+--- a/buggy/codec-http/src/main/java/io/netty/handler/codec/spdy/SpdySessionHandler.java
++++ b/fixed/codec-http/src/main/java/io/netty/handler/codec/spdy/SpdySessionHandler.java
+@@ -516,7 +516,7 @@ public class SpdySessionHandler
+                         //    }
+                         //});
+ 
+-                        ctx.nextOutboundMessageBuffer().add(partialDataFrame);
++                        ctx.write(partialDataFrame);
+                         return;
+                     } else {
+                         // Window size is large enough to send entire data frame

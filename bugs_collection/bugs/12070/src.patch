@@ -1,0 +1,13 @@
+diff --git a/buggy/webmagic-core/src/main/java/us/codecraft/webmagic/Spider.java b/fixed/webmagic-core/src/main/java/us/codecraft/webmagic/Spider.java
+index 68b2e113e..7f075b1cc 100644
+--- a/buggy/webmagic-core/src/main/java/us/codecraft/webmagic/Spider.java
++++ b/fixed/webmagic-core/src/main/java/us/codecraft/webmagic/Spider.java
+@@ -401,7 +401,7 @@ public class Spider implements Runnable, Task {
+         Page page = downloader.download(request, this);
+         if (page == null) {
+             sleep(site.getSleepTime());
+-            throw new IllegalStateException("download error");
++            onError(request);
+         }
+         // for cycle retry
+         if (page.isNeedCycleRetry()) {

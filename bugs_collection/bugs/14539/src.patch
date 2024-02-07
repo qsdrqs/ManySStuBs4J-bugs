@@ -1,0 +1,17 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/ijs/CheckIjsWarningsGuard.java b/fixed/src/com/google/javascript/jscomp/ijs/CheckIjsWarningsGuard.java
+index ea96e9efa..16a2a6076 100644
+--- a/buggy/src/com/google/javascript/jscomp/ijs/CheckIjsWarningsGuard.java
++++ b/fixed/src/com/google/javascript/jscomp/ijs/CheckIjsWarningsGuard.java
+@@ -27,9 +27,9 @@ public class CheckIjsWarningsGuard extends WarningsGuard {
+ 
+   @Override
+   public CheckLevel level(JSError error) {
+-    if (error.sourceName.endsWith(".i.js")) {
++    if (error.sourceName != null && error.sourceName.endsWith(".i.js")) {
+       return CheckLevel.WARNING;
+     }
+     return null;
+   }
+-}
+\ No newline at end of file
++}

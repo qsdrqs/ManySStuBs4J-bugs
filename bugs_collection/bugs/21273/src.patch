@@ -1,0 +1,13 @@
+diff --git a/buggy/api/src/test/java/org/openmrs/reporting/ReportObjectServiceTest.java b/fixed/api/src/test/java/org/openmrs/reporting/ReportObjectServiceTest.java
+index 3ca31acb3..759b83677 100644
+--- a/buggy/api/src/test/java/org/openmrs/reporting/ReportObjectServiceTest.java
++++ b/fixed/api/src/test/java/org/openmrs/reporting/ReportObjectServiceTest.java
+@@ -27,7 +27,7 @@ public class ReportObjectServiceTest extends BaseContextSensitiveTest {
+ 		args.add(new SearchArgument("timeModifier", "ANY", PatientSetService.TimeModifier.class));
+ 		args.add(new SearchArgument("question", Context.getConceptService().getConceptByName("CD4 COUNT").getConceptId()
+ 		        .toString(), Concept.class));
+-		args.add(new SearchArgument("withinLastDays", "${howManyDays}", Integer.class));
++		args.add(new SearchArgument("withinLastDays", "1", Integer.class)); //one indicates the number of days
+ 		search.setArguments(args);
+ 		
+ 		// save the object to the database

@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/connector/ConnectorManager.java b/fixed/presto-main/src/main/java/com/facebook/presto/connector/ConnectorManager.java
+index cf329d497..dda1963ab 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/connector/ConnectorManager.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/connector/ConnectorManager.java
+@@ -76,7 +76,7 @@ public class ConnectorManager
+         Preconditions.checkArgument(connectorFactory != null, "No factory for connector %s", connectorName);
+ 
+         Connector connector = connectorFactory.create(connectorId, properties);
+-        connectors.put(connectorName, connector);
++        connectors.put(connectorId, connector);
+ 
+         addConnector(catalogName, connectorId, connector);
+     }

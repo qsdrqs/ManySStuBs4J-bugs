@@ -1,0 +1,14 @@
+diff --git a/buggy/benchmarks/src/main/java/io/druid/benchmark/ExpressionBenchmark.java b/fixed/benchmarks/src/main/java/io/druid/benchmark/ExpressionBenchmark.java
+index 3a2f6444e..b554268c7 100644
+--- a/buggy/benchmarks/src/main/java/io/druid/benchmark/ExpressionBenchmark.java
++++ b/fixed/benchmarks/src/main/java/io/druid/benchmark/ExpressionBenchmark.java
+@@ -166,7 +166,8 @@ public class ExpressionBenchmark
+         index.getDataInterval(),
+         VirtualColumns.EMPTY,
+         Granularities.ALL,
+-        false
++        false,
++        null
+     );
+ 
+     final List<Double> results = Sequences.toList(

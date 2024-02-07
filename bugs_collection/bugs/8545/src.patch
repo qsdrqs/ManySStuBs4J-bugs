@@ -1,0 +1,13 @@
+diff --git a/buggy/pact/pact-runtime/src/test/java/eu/stratosphere/pact/runtime/test/util/types/IntPairComparator.java b/fixed/pact/pact-runtime/src/test/java/eu/stratosphere/pact/runtime/test/util/types/IntPairComparator.java
+index 6ecbe0c02..1b20369bf 100644
+--- a/buggy/pact/pact-runtime/src/test/java/eu/stratosphere/pact/runtime/test/util/types/IntPairComparator.java
++++ b/fixed/pact/pact-runtime/src/test/java/eu/stratosphere/pact/runtime/test/util/types/IntPairComparator.java
+@@ -28,7 +28,7 @@ public class IntPairComparator extends TypeComparator<IntPair>
+ 	
+ 	@Override
+ 	public int hash(IntPair object) {
+-		return object.getKey();
++		return object.getKey() * 73;
+ 	}
+ 	
+ 	@Override

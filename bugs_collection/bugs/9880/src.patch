@@ -1,0 +1,13 @@
+diff --git a/buggy/hwi/src/java/org/apache/hadoop/hive/hwi/HWIServer.java b/fixed/hwi/src/java/org/apache/hadoop/hive/hwi/HWIServer.java
+index e857e6166..545f687bb 100644
+--- a/buggy/hwi/src/java/org/apache/hadoop/hive/hwi/HWIServer.java
++++ b/fixed/hwi/src/java/org/apache/hadoop/hive/hwi/HWIServer.java
+@@ -78,7 +78,7 @@ public class HWIServer {
+     String hivehome = System.getenv().get("HIVE_HOME");
+     File hwiWARFile = new File(hivehome, hwiWAR);
+     if (!hwiWARFile.exists()) {
+-      l4j.fatal("HWI WAR file not found at " + hwiWAR);
++      l4j.fatal("HWI WAR file not found at " + hwiWARFile.toString());
+       System.exit(1);
+     }
+ 

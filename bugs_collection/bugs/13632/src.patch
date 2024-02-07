@@ -1,0 +1,17 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/server/ResourceUtil.java b/fixed/presto-main/src/main/java/com/facebook/presto/server/ResourceUtil.java
+index 07e584183..2870b6173 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/server/ResourceUtil.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/server/ResourceUtil.java
+@@ -92,7 +92,11 @@ final class ResourceUtil
+             accessControl.checkCanSetUser(principal, user);
+         }
+         catch (AccessDeniedException e) {
+-            throw new WebApplicationException(e.getMessage(), Status.FORBIDDEN);
++            throw new WebApplicationException(
++                    e,
++                    Response.status(Status.FORBIDDEN)
++                            .entity("Access denied: " + e.getMessage())
++                            .build());
+         }
+ 
+         Identity identity = new Identity(user, Optional.ofNullable(principal));

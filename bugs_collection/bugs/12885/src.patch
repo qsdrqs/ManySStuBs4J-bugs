@@ -1,0 +1,12 @@
+diff --git a/buggy/server/src/main/java/io/druid/server/coordination/SegmentChangeRequestNoop.java b/fixed/server/src/main/java/io/druid/server/coordination/SegmentChangeRequestNoop.java
+index 454d86170..a5f254b25 100644
+--- a/buggy/server/src/main/java/io/druid/server/coordination/SegmentChangeRequestNoop.java
++++ b/fixed/server/src/main/java/io/druid/server/coordination/SegmentChangeRequestNoop.java
+@@ -32,6 +32,6 @@ public class SegmentChangeRequestNoop implements DataSegmentChangeRequest
+   @Override
+   public String asString()
+   {
+-    return "noop";
++    return "NOOP";
+   }
+ }

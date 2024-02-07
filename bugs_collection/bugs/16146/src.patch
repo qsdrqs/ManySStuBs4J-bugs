@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/map/impl/nearcache/ClientNearCacheBatchInvalidationTest.java b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/map/impl/nearcache/ClientNearCacheBatchInvalidationTest.java
+index b336214d7..1e1d2acaa 100644
+--- a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/map/impl/nearcache/ClientNearCacheBatchInvalidationTest.java
++++ b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/map/impl/nearcache/ClientNearCacheBatchInvalidationTest.java
+@@ -194,7 +194,7 @@ public class ClientNearCacheBatchInvalidationTest extends ClientTestSupport {
+         assertNearCacheSizeEventually(clientMap, 0);
+     }
+ 
+-    private ClientConfig newClientConfig(String mapName) {
++    protected ClientConfig newClientConfig(String mapName) {
+         NearCacheConfig nearCacheConfig = new NearCacheConfig();
+         nearCacheConfig.setInMemoryFormat(getNearCacheInMemoryFormat());
+         nearCacheConfig.setName(mapName);

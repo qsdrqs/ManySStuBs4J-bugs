@@ -1,0 +1,20 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/processor/UnitOfWorkProcessor.java b/fixed/camel-core/src/main/java/org/apache/camel/processor/UnitOfWorkProcessor.java
+index 08c5271e5..bcd3304a3 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/processor/UnitOfWorkProcessor.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/processor/UnitOfWorkProcessor.java
+@@ -34,7 +34,7 @@ public final class UnitOfWorkProcessor extends DelegateAsyncProcessor {
+     
+     @Override
+     public String toString() {
+-        return "UnitOfWrok(" + processor + ")";
++        return "UnitOfWork(" + processor + ")";
+     }
+     
+     public boolean process(final Exchange exchange, final AsyncCallback callback) {
+@@ -71,4 +71,4 @@ public final class UnitOfWorkProcessor extends DelegateAsyncProcessor {
+         }
+     }
+ 
+-}
+\ No newline at end of file
++}

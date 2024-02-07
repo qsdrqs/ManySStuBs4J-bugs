@@ -1,0 +1,13 @@
+diff --git a/buggy/jsonschema2pojo-integration-tests/src/test/java/com/googlecode/jsonschema2pojo/integration/util/TestableJsonschema2PojoMojo.java b/fixed/jsonschema2pojo-integration-tests/src/test/java/com/googlecode/jsonschema2pojo/integration/util/TestableJsonschema2PojoMojo.java
+index 5f7e9b6ad..f44862ec1 100644
+--- a/buggy/jsonschema2pojo-integration-tests/src/test/java/com/googlecode/jsonschema2pojo/integration/util/TestableJsonschema2PojoMojo.java
++++ b/fixed/jsonschema2pojo-integration-tests/src/test/java/com/googlecode/jsonschema2pojo/integration/util/TestableJsonschema2PojoMojo.java
+@@ -37,7 +37,7 @@ public class TestableJsonschema2PojoMojo extends Jsonschema2PojoMojo {
+         setPrivateField("targetPackage", targetPackage);
+         setPrivateField("generateBuilders", generateBuilders);
+         setPrivateField("usePrimitives", usePrimitives);
+-        setPrivateField("propertyWordDelimiters", wordDelimiters);
++        setPrivateField("propertyWordDelimiters", new String(wordDelimiters));
+         
+         return this;
+     }

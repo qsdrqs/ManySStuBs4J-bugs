@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/queue/tx/TransactionalQueueProxySupport.java b/fixed/hazelcast/src/main/java/com/hazelcast/queue/tx/TransactionalQueueProxySupport.java
+index 9b545c8a4..ede5dc4af 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/queue/tx/TransactionalQueueProxySupport.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/queue/tx/TransactionalQueueProxySupport.java
+@@ -112,7 +112,7 @@ public abstract class TransactionalQueueProxySupport extends AbstractDistributed
+ 
+     public Data peekInternal(long timeout) {
+         final QueueItem offer = offeredQueue.peek();
+-        final TxnPeekOperation operation = new TxnPeekOperation(name, timeout, offer == null ? -1L : offer.getItemId(), tx.getTxnId());
++        final TxnPeekOperation operation = new TxnPeekOperation(name, timeout, offer == null ? -1 : offer.getItemId(), tx.getTxnId());
+         try {
+             final Invocation invocation = getNodeEngine().getOperationService().createInvocationBuilder(QueueService.SERVICE_NAME, operation, partitionId).build();
+             final Future<QueueItem> f = invocation.invoke();

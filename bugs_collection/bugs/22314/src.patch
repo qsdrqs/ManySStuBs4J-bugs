@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot/src/test/java/org/springframework/boot/SpringApplicationTests.java b/fixed/spring-boot/src/test/java/org/springframework/boot/SpringApplicationTests.java
+index 196fb1c6e..47f8654bf 100644
+--- a/buggy/spring-boot/src/test/java/org/springframework/boot/SpringApplicationTests.java
++++ b/fixed/spring-boot/src/test/java/org/springframework/boot/SpringApplicationTests.java
+@@ -193,7 +193,7 @@ public class SpringApplicationTests {
+ 				"--banner.location=classpath:test-banner-with-placeholder.txt",
+ 				"--test.property=123456");
+ 		assertThat(this.output.toString())
+-				.startsWith("Running a Test!\n\n123456");
++				.startsWith(String.format("Running a Test!%n%n123456"));
+ 	}
+ 
+ 	@Test

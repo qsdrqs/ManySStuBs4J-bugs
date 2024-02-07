@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/net/NetworkTopologyWithNodeGroup.java b/fixed/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/net/NetworkTopologyWithNodeGroup.java
+index 86d290abd..cc598c098 100644
+--- a/buggy/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/net/NetworkTopologyWithNodeGroup.java
++++ b/fixed/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/net/NetworkTopologyWithNodeGroup.java
+@@ -293,7 +293,7 @@ public class NetworkTopologyWithNodeGroup extends NetworkTopology {
+         return;
+       }
+     }
+-    super.sortByDistance(reader, nodes, nodes.length, seed,
++    super.sortByDistance(reader, nodes, activeLen, seed,
+         randomizeBlockLocationsPerBlock);
+   }
+ 

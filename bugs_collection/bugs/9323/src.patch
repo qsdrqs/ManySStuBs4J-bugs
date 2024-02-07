@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/security/access/TableAuthManager.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/security/access/TableAuthManager.java
+index 9b1efdab6..9b24ed9de 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/security/access/TableAuthManager.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/security/access/TableAuthManager.java
+@@ -572,7 +572,7 @@ public class TableAuthManager {
+   }
+ 
+   public void removeNamespace(byte[] ns) {
+-    nsCache.remove(ns);
++    nsCache.remove(Bytes.toString(ns));
+   }
+ 
+   public void removeTable(TableName table) {

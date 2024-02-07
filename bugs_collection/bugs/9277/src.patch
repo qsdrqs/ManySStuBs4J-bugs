@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-hadoop2-compat/src/main/java/org/apache/hadoop/hbase/regionserver/MetricsRegionServerSourceImpl.java b/fixed/hbase-hadoop2-compat/src/main/java/org/apache/hadoop/hbase/regionserver/MetricsRegionServerSourceImpl.java
+index 4465332c5..27d5437f0 100644
+--- a/buggy/hbase-hadoop2-compat/src/main/java/org/apache/hadoop/hbase/regionserver/MetricsRegionServerSourceImpl.java
++++ b/fixed/hbase-hadoop2-compat/src/main/java/org/apache/hadoop/hbase/regionserver/MetricsRegionServerSourceImpl.java
+@@ -242,7 +242,7 @@ public class MetricsRegionServerSourceImpl
+           .addCounter(Interns.info(MOB_FILE_CACHE_ACCESS_COUNT, MOB_FILE_CACHE_ACCESS_COUNT_DESC),
+               rsWrap.getMobFileCacheAccessCount())
+           .addCounter(Interns.info(MOB_FILE_CACHE_MISS_COUNT, MOB_FILE_CACHE_MISS_COUNT_DESC),
+-              rsWrap.getMobFileCacheAccessCount())
++              rsWrap.getMobFileCacheMissCount())
+           .addCounter(
+               Interns.info(MOB_FILE_CACHE_EVICTED_COUNT, MOB_FILE_CACHE_EVICTED_COUNT_DESC),
+               rsWrap.getMobFileCacheEvictedCount())

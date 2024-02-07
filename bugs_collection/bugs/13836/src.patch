@@ -1,0 +1,22 @@
+diff --git a/buggy/presto-hive/src/main/java/com/facebook/presto/hive/HiveRecordSink.java b/fixed/presto-hive/src/main/java/com/facebook/presto/hive/HiveRecordSink.java
+index f1302b8a5..ca738b945 100644
+--- a/buggy/presto-hive/src/main/java/com/facebook/presto/hive/HiveRecordSink.java
++++ b/fixed/presto-hive/src/main/java/com/facebook/presto/hive/HiveRecordSink.java
+@@ -210,7 +210,7 @@ public class HiveRecordSink
+             recordWriter.close(false);
+         }
+         catch (IOException e) {
+-            throw Throwables.propagate(e);
++            throw new PrestoException(HIVE_WRITER_ERROR, "Error committing write to Hive", e);
+         }
+ 
+         // the committer can list the directory
+@@ -224,7 +224,7 @@ public class HiveRecordSink
+             recordWriter.close(true);
+         }
+         catch (IOException e) {
+-            throw Throwables.propagate(e);
++            throw new PrestoException(HIVE_WRITER_ERROR, "Error rolling back write to Hive", e);
+         }
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-tools/spring-boot-loader/src/main/java/org/springframework/boot/loader/JarLauncher.java b/fixed/spring-boot-tools/spring-boot-loader/src/main/java/org/springframework/boot/loader/JarLauncher.java
+index ec7b0bcdc..2776d6f8c 100644
+--- a/buggy/spring-boot-tools/spring-boot-loader/src/main/java/org/springframework/boot/loader/JarLauncher.java
++++ b/fixed/spring-boot-tools/spring-boot-loader/src/main/java/org/springframework/boot/loader/JarLauncher.java
+@@ -44,7 +44,7 @@ public class JarLauncher extends ExecutableArchiveLauncher {
+ 	@Override
+ 	protected boolean isNestedArchive(Archive.Entry entry) {
+ 		if (entry.isDirectory()) {
+-			return entry.getName().startsWith(BOOT_INF_CLASSES);
++			return entry.getName().equals(BOOT_INF_CLASSES);
+ 		}
+ 		return entry.getName().startsWith(BOOT_INF_LIB);
+ 	}

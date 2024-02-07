@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/gdx-tests-iosrobovm/src/com/badlogic/gdx/tests/IOSRobovmTests.java b/fixed/tests/gdx-tests-iosrobovm/src/com/badlogic/gdx/tests/IOSRobovmTests.java
+index c1846fcdd..dffd56d74 100644
+--- a/buggy/tests/gdx-tests-iosrobovm/src/com/badlogic/gdx/tests/IOSRobovmTests.java
++++ b/fixed/tests/gdx-tests-iosrobovm/src/com/badlogic/gdx/tests/IOSRobovmTests.java
+@@ -13,7 +13,7 @@ public class IOSRobovmTests extends IOSApplication.Delegate {
+ 	@Override
+ 	protected IOSApplication createApplication() {
+ 		IOSApplicationConfiguration config = new IOSApplicationConfiguration();
+-		return new IOSApplication(new MultitouchTest(), config);
++		return new IOSApplication(new BulletTestCollection(), config);
+ 	}
+ 
+ 	public static void main(String[] argv) {

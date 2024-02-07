@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/utils/JavadocUtils.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/utils/JavadocUtils.java
+index 61351f223..9065b08db 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/utils/JavadocUtils.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/utils/JavadocUtils.java
+@@ -236,7 +236,7 @@ public final class JavadocUtils {
+      *        block comment AST.
+      * @return content of block comment.
+      */
+-    public static String getBlockCommentContent(DetailAST blockCommentBegin) {
++    private static String getBlockCommentContent(DetailAST blockCommentBegin) {
+         final DetailAST commentContent = blockCommentBegin.getFirstChild();
+         return commentContent.getText();
+     }

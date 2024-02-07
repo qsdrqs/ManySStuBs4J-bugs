@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/testing/ScopeSubject.java b/fixed/src/com/google/javascript/jscomp/testing/ScopeSubject.java
+index 00e6a4e46..a5c71fe45 100644
+--- a/buggy/src/com/google/javascript/jscomp/testing/ScopeSubject.java
++++ b/fixed/src/com/google/javascript/jscomp/testing/ScopeSubject.java
+@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
+  *   assertScope(scope).declares("yetAnotherVar").onClosestContainerScope();
+  * </pre>
+  */
+-public final class ScopeSubject extends Subject<ScopeSubject, AbstractScope<?, ?>> {
++public final class ScopeSubject extends Subject {
+   @CheckReturnValue
+   public static ScopeSubject assertScope(AbstractScope<?, ?> scope) {
+     // NB: Eclipse's Java compiler bails on just passing ScopeSubject::new below, so wrap it in a

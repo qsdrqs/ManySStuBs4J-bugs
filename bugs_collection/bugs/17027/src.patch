@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/ClientConfigBuilder.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/ClientConfigBuilder.java
+index 3e24516b2..92713f448 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/ClientConfigBuilder.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/ClientConfigBuilder.java
+@@ -116,7 +116,7 @@ public class ClientConfigBuilder {
+         if (props.containsKey(ADDRESSES)) {
+             final String addressesProp = props.getProperty(ADDRESSES);
+             if (addressesProp != null) {
+-                final String[] addresses = addressesProp.split("[,: ]");
++                final String[] addresses = addressesProp.split("[,; ]");
+                 for (String address : addresses) {
+                     address = address.trim();
+                     if (address.length() > 0) {

@@ -1,0 +1,22 @@
+diff --git a/buggy/server/src/main/java/com/metamx/druid/index/v1/IndexGranularity.java b/fixed/server/src/main/java/com/metamx/druid/index/v1/IndexGranularity.java
+index 4628028ee..75ebd7c03 100644
+--- a/buggy/server/src/main/java/com/metamx/druid/index/v1/IndexGranularity.java
++++ b/fixed/server/src/main/java/com/metamx/druid/index/v1/IndexGranularity.java
+@@ -204,7 +204,7 @@ public enum IndexGranularity
+         @Override
+         public long increment(long timeMillis)
+         {
+-          return timeMillis - MILLIS_IN;
++          return timeMillis + MILLIS_IN;
+         }
+ 
+         @Override
+@@ -273,7 +273,7 @@ public enum IndexGranularity
+         @Override
+         public long increment(long timeMillis)
+         {
+-          return timeMillis - MILLIS_IN;
++          return timeMillis + MILLIS_IN;
+         }
+ 
+         @Override

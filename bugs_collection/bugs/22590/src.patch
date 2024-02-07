@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jms/JmsTemplateProperties.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jms/JmsTemplateProperties.java
+index 8da31178b..2fe3eceef 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jms/JmsTemplateProperties.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jms/JmsTemplateProperties.java
+@@ -21,7 +21,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
+ @ConfigurationProperties(prefix = "spring.jms")
+ public class JmsTemplateProperties {
+ 
+-	private boolean pubSubDomain = true;
++	private boolean pubSubDomain = false;
+ 
+ 	public boolean isPubSubDomain() {
+ 		return this.pubSubDomain;

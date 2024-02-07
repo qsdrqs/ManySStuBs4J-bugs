@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/util/QueueBasedObjectPool.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/util/QueueBasedObjectPool.java
+index 8e7fb80b3..504ab097d 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/util/QueueBasedObjectPool.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/util/QueueBasedObjectPool.java
+@@ -62,7 +62,7 @@ public class QueueBasedObjectPool<E> implements ObjectPool<E> {
+     }
+ 
+     public void destroy() {
+-        active = true;
++        active = false;
+         final Collection<E> c = new LinkedList<E>();
+         queue.drainTo(c);
+         for (E e : c) {

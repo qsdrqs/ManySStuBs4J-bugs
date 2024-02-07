@@ -1,0 +1,12 @@
+diff --git a/buggy/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterPajek.java b/fixed/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterPajek.java
+index 581f3ffb0..517ec25ce 100644
+--- a/buggy/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterPajek.java
++++ b/fixed/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterPajek.java
+@@ -327,6 +327,6 @@ public class ImporterPajek implements TextImporter, LongTask {
+     }
+ 
+     public boolean isMatchingImporter(FileObject fileObject) {
+-        return fileObject.hasExt("net");
++        return fileObject.hasExt("net") || fileObject.hasExt("NET");
+     }
+ }

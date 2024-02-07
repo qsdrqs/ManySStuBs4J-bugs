@@ -1,0 +1,14 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/mapreduce/KeyValueSortReducer.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/mapreduce/KeyValueSortReducer.java
+index 66f49d434..c4a473270 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/mapreduce/KeyValueSortReducer.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/mapreduce/KeyValueSortReducer.java
+@@ -51,7 +51,7 @@ public class KeyValueSortReducer extends Reducer<ImmutableBytesWritable, KeyValu
+     int index = 0;
+     for (KeyValue kv: map) {
+       context.write(row, kv);
+-      if (index > 0 && index % 100 == 0) context.setStatus("Wrote " + index);
++      if (++index % 100 == 0) context.setStatus("Wrote " + index);
+     }
+   }
+ }
+\ No newline at end of file

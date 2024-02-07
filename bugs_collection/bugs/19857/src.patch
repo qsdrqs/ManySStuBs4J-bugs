@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/DefaultChannelHandlerContext.java b/fixed/transport/src/main/java/io/netty/channel/DefaultChannelHandlerContext.java
+index d63d4df7c..0e07feddd 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/DefaultChannelHandlerContext.java
++++ b/fixed/transport/src/main/java/io/netty/channel/DefaultChannelHandlerContext.java
+@@ -1295,7 +1295,7 @@ final class DefaultChannelHandlerContext extends DefaultAttributeMap implements
+     private void invokeFlush0(ChannelPromise promise) {
+         Channel channel = channel();
+         if (!channel.isRegistered() && !channel.isActive()) {
+-            promise.setFailure(new ClosedChannelException());
++            promise.tryFailure(new ClosedChannelException());
+             return;
+         }
+ 

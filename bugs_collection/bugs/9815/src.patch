@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFStdPopLong.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFStdPopLong.java
+index 19e8d77b6..9295b1a51 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFStdPopLong.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/exec/vector/expressions/aggregates/gen/VectorUDAFStdPopLong.java
+@@ -310,7 +310,7 @@ public class VectorUDAFStdPopLong extends VectorAggregateExpression {
+       long[] vector = inputVector.vector;
+       
+       if (inputVector.isRepeating) {
+-        if (inputVector.noNulls || !inputVector.isNull[0]) {
++        if (inputVector.noNulls) {
+           iterateRepeatingNoNulls(myagg, vector[0], batchSize);
+         }
+       } 

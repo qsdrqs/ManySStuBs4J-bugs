@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/queue/QueueContainer.java b/fixed/hazelcast/src/main/java/com/hazelcast/queue/QueueContainer.java
+index 595b775fa..0d51ea142 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/queue/QueueContainer.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/queue/QueueContainer.java
+@@ -90,7 +90,7 @@ public class QueueContainer implements IdentifiedDataSerializable {
+                     getItemQueue().offer(item);
+                     maxId = Math.max(maxId, key);
+                 }
+-                idGenerator = maxId;
++                idGenerator = maxId + 1;
+             }
+         }
+     }

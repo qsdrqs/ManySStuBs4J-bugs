@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-mina2/src/main/java/org/apache/camel/component/mina2/Mina2Configuration.java b/fixed/components/camel-mina2/src/main/java/org/apache/camel/component/mina2/Mina2Configuration.java
+index 3e28e3429..245de3cdd 100644
+--- a/buggy/components/camel-mina2/src/main/java/org/apache/camel/component/mina2/Mina2Configuration.java
++++ b/fixed/components/camel-mina2/src/main/java/org/apache/camel/component/mina2/Mina2Configuration.java
+@@ -38,7 +38,7 @@ public class Mina2Configuration implements Cloneable {
+     private Mina2TextLineDelimiter textlineDelimiter;
+     private ProtocolCodecFactory codec;
+     private String encoding;
+-    private long timeout = 3000;
++    private long timeout = 30000;
+     private boolean lazySessionCreation = true;
+     private boolean transferExchange;
+     private boolean minaLogger;

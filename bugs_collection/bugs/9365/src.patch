@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/thrift/ThriftServerRunner.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/thrift/ThriftServerRunner.java
+index 5a381213a..193a4a08e 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/thrift/ThriftServerRunner.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/thrift/ThriftServerRunner.java
+@@ -247,7 +247,7 @@ public class ThriftServerRunner implements Runnable {
+       setupServer();
+       tserver.serve();
+     } catch (Exception e) {
+-      LOG.fatal("Cannot run ThriftServer");
++      LOG.fatal("Cannot run ThriftServer", e);
+       // Crash the process if the ThriftServer is not running
+       System.exit(-1);
+     }

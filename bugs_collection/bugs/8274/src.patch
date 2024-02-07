@@ -1,0 +1,22 @@
+diff --git a/buggy/flink-streaming-java/src/test/java/org/apache/flink/streaming/util/AbstractStreamOperatorTestHarness.java b/fixed/flink-streaming-java/src/test/java/org/apache/flink/streaming/util/AbstractStreamOperatorTestHarness.java
+index 793e8f6e3..3d1b6fdae 100644
+--- a/buggy/flink-streaming-java/src/test/java/org/apache/flink/streaming/util/AbstractStreamOperatorTestHarness.java
++++ b/fixed/flink-streaming-java/src/test/java/org/apache/flink/streaming/util/AbstractStreamOperatorTestHarness.java
+@@ -120,7 +120,7 @@ public class AbstractStreamOperatorTestHarness<OUT> implements AutoCloseable {
+ 	public AbstractStreamOperatorTestHarness(
+ 		StreamOperator<OUT> operator,
+ 		int maxParallelism,
+-		int numSubtasks,
++		int parallelism,
+ 		int subtaskIndex) throws Exception {
+ 
+ 		this(
+@@ -133,7 +133,7 @@ public class AbstractStreamOperatorTestHarness<OUT> implements AutoCloseable {
+ 				new Configuration(),
+ 				new ExecutionConfig(),
+ 				maxParallelism,
+-				numSubtasks,
++				parallelism,
+ 				subtaskIndex));
+ 	}
+ 

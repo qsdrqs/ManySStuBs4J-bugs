@@ -1,0 +1,13 @@
+diff --git a/buggy/transport-sctp/src/main/java/io/netty/channel/sctp/SctpMessage.java b/fixed/transport-sctp/src/main/java/io/netty/channel/sctp/SctpMessage.java
+index f809999d5..d535fc9a2 100644
+--- a/buggy/transport-sctp/src/main/java/io/netty/channel/sctp/SctpMessage.java
++++ b/fixed/transport-sctp/src/main/java/io/netty/channel/sctp/SctpMessage.java
+@@ -160,7 +160,7 @@ public final class SctpMessage extends DefaultByteBufHolder {
+         if (msgInfo == null) {
+             return new SctpMessage(protocolIdentifier, streamIdentifier, unordered, content().duplicate());
+         } else {
+-            return new SctpMessage(msgInfo, content().copy());
++            return new SctpMessage(msgInfo, content().duplicate());
+         }
+     }
+ 

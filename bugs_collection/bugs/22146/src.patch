@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/embedded/undertow/UndertowServletWebServerFactory.java b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/embedded/undertow/UndertowServletWebServerFactory.java
+index 86b6862ad..7be903e48 100644
+--- a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/embedded/undertow/UndertowServletWebServerFactory.java
++++ b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/embedded/undertow/UndertowServletWebServerFactory.java
+@@ -292,7 +292,7 @@ public class UndertowServletWebServerFactory extends AbstractServletWebServerFac
+ 		SessionManager sessionManager = manager.getDeployment().getSessionManager();
+ 		int sessionTimeout = (getSessionTimeout() == null || getSessionTimeout().isZero()
+ 				|| getSessionTimeout().isNegative() ? -1
+-						: (int) getSessionTimeout().toMinutes());
++						: (int) getSessionTimeout().getSeconds());
+ 		sessionManager.setDefaultSessionTimeout(sessionTimeout);
+ 		return manager;
+ 	}

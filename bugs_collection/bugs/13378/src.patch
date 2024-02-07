@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/test/java/com/facebook/presto/operator/aggregation/AbstractTestApproximateCountDistinct.java b/fixed/presto-main/src/test/java/com/facebook/presto/operator/aggregation/AbstractTestApproximateCountDistinct.java
+index 16c9cb33b..c513bb7ea 100644
+--- a/buggy/presto-main/src/test/java/com/facebook/presto/operator/aggregation/AbstractTestApproximateCountDistinct.java
++++ b/fixed/presto-main/src/test/java/com/facebook/presto/operator/aggregation/AbstractTestApproximateCountDistinct.java
+@@ -108,7 +108,7 @@ public abstract class AbstractTestApproximateCountDistinct
+         }
+ 
+         assertLessThan(stats.getMean(), 1.0e-2);
+-        assertLessThan(Math.abs(stats.getStandardDeviation() - maxStandardError), 1.0e-2);
++        assertLessThan(stats.getStandardDeviation(), 1.0e-2 + maxStandardError);
+     }
+ 
+     @Test(dataProvider = "provideStandardErrors")

@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/camel-example-cxf/src/main/java/org/apache/camel/example/cxf/provider/Client.java b/fixed/examples/camel-example-cxf/src/main/java/org/apache/camel/example/cxf/provider/Client.java
+index 25a501b84..f87aaa870 100644
+--- a/buggy/examples/camel-example-cxf/src/main/java/org/apache/camel/example/cxf/provider/Client.java
++++ b/fixed/examples/camel-example-cxf/src/main/java/org/apache/camel/example/cxf/provider/Client.java
+@@ -58,7 +58,7 @@ public final class Client {
+                                                                 Service.Mode.MESSAGE);
+ 
+         // Use Dispatch as BindingProvider
+-        BindingProvider bp = (BindingProvider)dispatch;
++        BindingProvider bp = dispatch;
+ 
+         MessageFactory factory = ((SOAPBinding)bp.getBinding()).getMessageFactory();
+ 

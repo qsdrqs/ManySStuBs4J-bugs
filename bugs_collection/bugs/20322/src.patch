@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.snmp/src/main/java/org/openhab/binding/snmp/internal/SnmpBinding.java b/fixed/bundles/binding/org.openhab.binding.snmp/src/main/java/org/openhab/binding/snmp/internal/SnmpBinding.java
+index f2582b07e..ffdefac1f 100644
+--- a/buggy/bundles/binding/org.openhab.binding.snmp/src/main/java/org/openhab/binding/snmp/internal/SnmpBinding.java
++++ b/fixed/bundles/binding/org.openhab.binding.snmp/src/main/java/org/openhab/binding/snmp/internal/SnmpBinding.java
+@@ -250,7 +250,7 @@ public class SnmpBinding extends AbstractActiveBinding<SnmpBindingProvider>
+                                     variable.toString());
+                         }
+                     } else {
+-                        logger.trace("PDU doesn't contain a variable with OID ‘{}‘", oid.toString());
++                        logger.trace("PDU doesn't contain a variable with OID '{}'", oid.toString());
+                     }
+                 }
+             }

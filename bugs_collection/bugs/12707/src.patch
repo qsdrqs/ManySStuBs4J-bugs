@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions-contrib/kafka-eight-simpleConsumer/src/main/java/io/druid/firehose/kafka/KafkaEightSimpleConsumerFirehoseFactory.java b/fixed/extensions-contrib/kafka-eight-simpleConsumer/src/main/java/io/druid/firehose/kafka/KafkaEightSimpleConsumerFirehoseFactory.java
+index b1b851f74..db41462b0 100644
+--- a/buggy/extensions-contrib/kafka-eight-simpleConsumer/src/main/java/io/druid/firehose/kafka/KafkaEightSimpleConsumerFirehoseFactory.java
++++ b/fixed/extensions-contrib/kafka-eight-simpleConsumer/src/main/java/io/druid/firehose/kafka/KafkaEightSimpleConsumerFirehoseFactory.java
+@@ -106,7 +106,7 @@ public class KafkaEightSimpleConsumerFirehoseFactory implements
+     );
+ 
+     this.queueBufferLength = queueBufferLength == null ? DEFAULT_QUEUE_BUFFER_LENGTH : queueBufferLength;
+-    Preconditions.checkArgument(queueBufferLength > 0, "queueBufferLength must be positive number");
++    Preconditions.checkArgument(this.queueBufferLength > 0, "queueBufferLength must be positive number");
+     log.info("queueBufferLength loaded as[%s]", this.queueBufferLength);
+ 
+     this.earliest = resetOffsetToEarliest == null ? true : resetOffsetToEarliest.booleanValue();

@@ -1,0 +1,13 @@
+diff --git a/buggy/profiler/src/main/java/com/navercorp/pinpoint/test/classloader/TransformClassLoader.java b/fixed/profiler/src/main/java/com/navercorp/pinpoint/test/classloader/TransformClassLoader.java
+index 48e16301f..9c533672b 100644
+--- a/buggy/profiler/src/main/java/com/navercorp/pinpoint/test/classloader/TransformClassLoader.java
++++ b/fixed/profiler/src/main/java/com/navercorp/pinpoint/test/classloader/TransformClassLoader.java
+@@ -150,7 +150,7 @@ public class TransformClassLoader extends ClassLoader {
+         }
+     }
+ 
+-    private Object getClassLoadingLock(String className) {
++    protected Object getClassLoadingLock(String className) {
+ 
+         final Object newLock = new Object();
+         final Object existLock = lockMap.putIfAbsent(className, newLock);

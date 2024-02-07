@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractTypeAwareCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractTypeAwareCheck.java
+index c18a45579..a4ac5cf60 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractTypeAwareCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/AbstractTypeAwareCheck.java
+@@ -268,7 +268,7 @@ public abstract class AbstractTypeAwareCheck extends Check {
+                                                     getId(),
+                                                     this.getClass(),
+                                                     null);
+-            throw new RuntimeException(msg.getMessage());
++            throw new IllegalStateException(msg.getMessage());
+         }
+ 
+         if (!suppressLoadErrors) {

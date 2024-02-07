@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/rsocket/RSocketStrategiesAutoConfiguration.java b/fixed/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/rsocket/RSocketStrategiesAutoConfiguration.java
+index 7db6ddd28..3274377fa 100644
+--- a/buggy/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/rsocket/RSocketStrategiesAutoConfiguration.java
++++ b/fixed/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/rsocket/RSocketStrategiesAutoConfiguration.java
+@@ -78,7 +78,7 @@ public class RSocketStrategiesAutoConfiguration {
+ 		@ConditionalOnBean(Jackson2ObjectMapperBuilder.class)
+ 		public RSocketStrategiesCustomizer jacksonCborRSocketStrategyCustomizer(Jackson2ObjectMapperBuilder builder) {
+ 			return (strategy) -> {
+-				ObjectMapper objectMapper = builder.factory(new CBORFactory()).build();
++				ObjectMapper objectMapper = builder.createXmlMapper(false).factory(new CBORFactory()).build();
+ 				strategy.decoder(new Jackson2CborDecoder(objectMapper, SUPPORTED_TYPES));
+ 				strategy.encoder(new Jackson2CborEncoder(objectMapper, SUPPORTED_TYPES));
+ 			};

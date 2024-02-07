@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/main/java/cucumber/runtime/FeatureBuilder.java b/fixed/core/src/main/java/cucumber/runtime/FeatureBuilder.java
+index ef801e706..82d395b20 100644
+--- a/buggy/core/src/main/java/cucumber/runtime/FeatureBuilder.java
++++ b/fixed/core/src/main/java/cucumber/runtime/FeatureBuilder.java
+@@ -82,7 +82,7 @@ public class FeatureBuilder implements Formatter {
+     }
+ 
+     @Override
+-    public void syntaxError(String state, String event, List<String> legalEvents, String uri, int line) {
++    public void syntaxError(String state, String event, List<String> legalEvents, String uri, Integer line) {
+     }
+ 
+     @Override

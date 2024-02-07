@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/io/druid/segment/loading/StorageLocation.java b/fixed/server/src/main/java/io/druid/segment/loading/StorageLocation.java
+index 12fcf1d93..b44637e3c 100644
+--- a/buggy/server/src/main/java/io/druid/segment/loading/StorageLocation.java
++++ b/fixed/server/src/main/java/io/druid/segment/loading/StorageLocation.java
+@@ -89,7 +89,7 @@ class StorageLocation
+   {
+     if (available() < segment.getSize()) {
+       log.warn(
+-          "Segment[%s:%,d] too lage for storage[%s:%,d].",
++          "Segment[%s:%,d] too large for storage[%s:%,d]. Check your druid.segmentCache.locations maxSize param",
+           segment.getIdentifier(), segment.getSize(), getPath(), available()
+       );
+       return false;

@@ -1,0 +1,34 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/metrics/JavaNCSSCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/metrics/JavaNCSSCheck.java
+index f3608e208..22eefc84e 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/metrics/JavaNCSSCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/metrics/JavaNCSSCheck.java
+@@ -166,8 +166,7 @@ public class JavaNCSSCheck extends AbstractCheck {
+ 
+             final int count = counter.getCount();
+             if (count > methodMaximum) {
+-                log(ast.getLineNo(), ast.getColumnNo(), MSG_METHOD,
+-                        count, methodMaximum);
++                log(ast, MSG_METHOD, count, methodMaximum);
+             }
+         }
+         else if (tokenType == TokenTypes.CLASS_DEF) {
+@@ -176,8 +175,7 @@ public class JavaNCSSCheck extends AbstractCheck {
+ 
+             final int count = counter.getCount();
+             if (count > classMaximum) {
+-                log(ast.getLineNo(), ast.getColumnNo(), MSG_CLASS,
+-                        count, classMaximum);
++                log(ast, MSG_CLASS, count, classMaximum);
+             }
+         }
+     }
+@@ -189,8 +187,7 @@ public class JavaNCSSCheck extends AbstractCheck {
+ 
+         final int count = counter.getCount();
+         if (count > fileMaximum) {
+-            log(rootAST.getLineNo(), rootAST.getColumnNo(), MSG_FILE,
+-                    count, fileMaximum);
++            log(rootAST, MSG_FILE, count, fileMaximum);
+         }
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/DHNSGraph/src/org/gephi/graph/dhns/node/AbstractNode.java b/fixed/DHNSGraph/src/org/gephi/graph/dhns/node/AbstractNode.java
+index 99796818c..112d2c5a5 100644
+--- a/buggy/DHNSGraph/src/org/gephi/graph/dhns/node/AbstractNode.java
++++ b/fixed/DHNSGraph/src/org/gephi/graph/dhns/node/AbstractNode.java
+@@ -50,7 +50,7 @@ public class AbstractNode implements Node, AVLItem {
+     }
+ 
+     public boolean hasAttributes() {
+-        return nodeData.getAttributes() == null;
++        return nodeData.getAttributes() != null;
+     }
+ 
+     public void setAttributes(Attributes attributes) {

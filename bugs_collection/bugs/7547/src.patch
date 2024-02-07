@@ -1,0 +1,15 @@
+diff --git a/buggy/components/camel-jdbc/src/main/java/org/apache/camel/component/jdbc/JdbcProducer.java b/fixed/components/camel-jdbc/src/main/java/org/apache/camel/component/jdbc/JdbcProducer.java
+index 7cdc6e216..f804d16ac 100644
+--- a/buggy/components/camel-jdbc/src/main/java/org/apache/camel/component/jdbc/JdbcProducer.java
++++ b/fixed/components/camel-jdbc/src/main/java/org/apache/camel/component/jdbc/JdbcProducer.java
+@@ -97,8 +97,8 @@ public class JdbcProducer extends DefaultProducer {
+             }
+         }
+ 
+-        // preserve headers
+-        exchange.getOut().setHeaders(exchange.getIn().getHeaders());
++        // populate headers
++        exchange.getOut().getHeaders().putAll(exchange.getIn().getHeaders());
+     }
+ 
+     /**

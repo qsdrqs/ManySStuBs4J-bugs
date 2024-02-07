@@ -1,0 +1,14 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/SingleLineJavadocCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/SingleLineJavadocCheckTest.java
+index b04f83554..9fdb2d609 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/SingleLineJavadocCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/SingleLineJavadocCheckTest.java
+@@ -35,7 +35,8 @@ public class SingleLineJavadocCheckTest extends BaseCheckTestSupport {
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "javadoc" + File.separator + filename);
++                + "javadoc" + File.separator
++                + "singlelinejavadoc" + File.separator + filename);
+     }
+ 
+     @Test

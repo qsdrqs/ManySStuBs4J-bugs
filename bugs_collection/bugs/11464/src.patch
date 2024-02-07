@@ -1,0 +1,26 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocPackageCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocPackageCheckTest.java
+index 330bf8fc9..1c3bc59b8 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocPackageCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocPackageCheckTest.java
+@@ -48,8 +48,8 @@ public class JavadocPackageCheckTest
+         };
+         verify(
+             createChecker(checkConfig),
+-            getSrcPath("checks/javadoc/BadCls.java"),
+-            getSrcPath("checks/javadoc/BadCls.java"),
++            getPath("checks/javadoc/BadCls.java"),
++            getPath("checks/javadoc/BadCls.java"),
+             expected);
+     }
+ 
+@@ -62,8 +62,8 @@ public class JavadocPackageCheckTest
+         };
+         verify(
+             createChecker(checkConfig),
+-            getSrcPath("checks/javadoc/BadCls.java"),
+-            getSrcPath("checks/javadoc/BadCls.java"),
++            getPath("checks/javadoc/BadCls.java"),
++            getPath("checks/javadoc/BadCls.java"),
+             expected);
+     }
+ 

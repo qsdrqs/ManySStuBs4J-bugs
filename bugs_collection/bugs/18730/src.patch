@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/apache/ibatis/parsing/PropertyParser.java b/fixed/src/main/java/org/apache/ibatis/parsing/PropertyParser.java
+index 4ae353860..ab31a596d 100644
+--- a/buggy/src/main/java/org/apache/ibatis/parsing/PropertyParser.java
++++ b/fixed/src/main/java/org/apache/ibatis/parsing/PropertyParser.java
+@@ -34,7 +34,7 @@ public class PropertyParser {
+ 
+     public String handleToken(String content) {
+       if (variables != null && variables.containsKey(content)) {
+-        return variables == null ? content : variables.getProperty(content);
++        return variables.getProperty(content);
+       } else {
+         return "${" + content + "}";
+       }

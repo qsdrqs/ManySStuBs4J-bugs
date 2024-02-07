@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/comments/CompareTreesWithComments.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/comments/CompareTreesWithComments.java
+index c2a977e87..ecc656e8b 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/comments/CompareTreesWithComments.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/comments/CompareTreesWithComments.java
+@@ -6,7 +6,7 @@ import org.junit.Assert;
+ import com.puppycrawl.tools.checkstyle.api.Check;
+ import com.puppycrawl.tools.checkstyle.api.DetailAST;
+ 
+-public class CompareTreesWithComments extends Check {
++class CompareTreesWithComments extends Check {
+     static DetailAST expectedTree;
+ 
+     @Override

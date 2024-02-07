@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/patterns/ScorePhrases.java b/fixed/src/edu/stanford/nlp/patterns/ScorePhrases.java
+index 41aa881e0..6a27cd63d 100644
+--- a/buggy/src/edu/stanford/nlp/patterns/ScorePhrases.java
++++ b/fixed/src/edu/stanford/nlp/patterns/ScorePhrases.java
+@@ -100,7 +100,7 @@ public class ScorePhrases<E extends Pattern> {
+       }
+       CandidatePhrase matchedFuzzy = null;
+       if (constVars.minLen4FuzzyForPattern > 0 && ignoreWords != null)
+-        matchedFuzzy = ConstantsAndVariables.containsFuzzy(ignoreWords, w.getPhrase(),
++        matchedFuzzy = ConstantsAndVariables.containsFuzzy(ignoreWords, w,
+             constVars.minLen4FuzzyForPattern);
+       if (matchedFuzzy == null) {
+         Redwood.log("extremePatDebug", "adding word " + w);

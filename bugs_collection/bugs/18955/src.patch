@@ -1,0 +1,13 @@
+diff --git a/buggy/profiler/src/main/java/com/navercorp/pinpoint/profiler/context/DefaultTrace.java b/fixed/profiler/src/main/java/com/navercorp/pinpoint/profiler/context/DefaultTrace.java
+index 5fd7cbe3c..023dd8557 100644
+--- a/buggy/profiler/src/main/java/com/navercorp/pinpoint/profiler/context/DefaultTrace.java
++++ b/fixed/profiler/src/main/java/com/navercorp/pinpoint/profiler/context/DefaultTrace.java
+@@ -625,7 +625,7 @@ public final class DefaultTrace implements Trace {
+ 
+     @Override
+     public TraceType getTraceType() {
+-        return TraceType.DEFAULT;
++        return this.traceType;
+     }
+     
+     public void setTraceType(TraceType traceType) {

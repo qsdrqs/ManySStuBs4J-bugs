@@ -1,0 +1,13 @@
+diff --git a/buggy/dex-translator/src/main/java/com/googlecode/dex2jar/v3/Dex2jar.java b/fixed/dex-translator/src/main/java/com/googlecode/dex2jar/v3/Dex2jar.java
+index 0ebbf67f5..b081610af 100644
+--- a/buggy/dex-translator/src/main/java/com/googlecode/dex2jar/v3/Dex2jar.java
++++ b/fixed/dex-translator/src/main/java/com/googlecode/dex2jar/v3/Dex2jar.java
+@@ -182,7 +182,7 @@ public class Dex2jar {
+         if (i > 0) {
+             check(dir.substring(0, i), zos);
+         }
+-        zos.putNextEntry(new ZipEntry(dir));
++        zos.putNextEntry(new ZipEntry(dir + "/"));
+         zos.closeEntry();
+     }
+ 

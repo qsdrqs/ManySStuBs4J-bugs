@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/rhino/jstype/FunctionType.java b/fixed/src/com/google/javascript/rhino/jstype/FunctionType.java
+index 3d07b274c..c1f1a1da6 100644
+--- a/buggy/src/com/google/javascript/rhino/jstype/FunctionType.java
++++ b/fixed/src/com/google/javascript/rhino/jstype/FunctionType.java
+@@ -1145,7 +1145,7 @@ public class FunctionType extends PrototypeObjectType implements FunctionTypeI {
+    */
+   @Override
+   public ObjectType getInstanceType() {
+-    Preconditions.checkState(hasInstanceType());
++    Preconditions.checkState(hasInstanceType(), "Expected a constructor; got %s", this);
+     return typeOfThis.toObjectType();
+   }
+ 

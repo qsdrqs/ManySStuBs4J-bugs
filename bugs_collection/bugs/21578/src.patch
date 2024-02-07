@@ -1,0 +1,13 @@
+diff --git a/buggy/src/api/org/openmrs/api/impl/PersonServiceImpl.java b/fixed/src/api/org/openmrs/api/impl/PersonServiceImpl.java
+index 1ffc8f81a..893bfb282 100644
+--- a/buggy/src/api/org/openmrs/api/impl/PersonServiceImpl.java
++++ b/fixed/src/api/org/openmrs/api/impl/PersonServiceImpl.java
+@@ -793,7 +793,7 @@ public class PersonServiceImpl implements PersonService {
+ 			}
+ 			else {
+ 				firstName = names[1];
+-				lastName = names[2];
++				lastName = names[0];
+ 			}
+ 		}
+ 		else if (name.contains(" ")) {

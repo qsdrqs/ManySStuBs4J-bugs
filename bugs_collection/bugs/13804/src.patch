@@ -1,0 +1,15 @@
+diff --git a/buggy/presto-client/src/main/java/com/facebook/presto/client/StatementClient.java b/fixed/presto-client/src/main/java/com/facebook/presto/client/StatementClient.java
+index 3f70fe39b..98872fc2f 100644
+--- a/buggy/presto-client/src/main/java/com/facebook/presto/client/StatementClient.java
++++ b/fixed/presto-client/src/main/java/com/facebook/presto/client/StatementClient.java
+@@ -276,7 +276,9 @@ public class StatementClient
+     {
+         gone.set(true);
+         if (!response.hasValue()) {
+-            return new RuntimeException(format("Error %s at %s returned an invalid response: %s", task, request.getUri(), response), response.getException());
++            return new RuntimeException(
++                    format("Error %s at %s returned an invalid response: %s [Error: %s]", task, request.getUri(), response, response.getResponseBody()),
++                    response.getException());
+         }
+         return new RuntimeException(format("Error %s at %s returned %s: %s", task, request.getUri(), response.getStatusCode(), response.getStatusMessage()));
+     }

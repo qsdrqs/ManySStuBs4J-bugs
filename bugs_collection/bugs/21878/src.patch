@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/StartupInfoLogger.java b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/StartupInfoLogger.java
+index 6c83eabc5..84aa83bc5 100644
+--- a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/StartupInfoLogger.java
++++ b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/StartupInfoLogger.java
+@@ -157,7 +157,7 @@ class StartupInfoLogger {
+ 			value = defaultValue;
+ 		}
+ 		if (StringUtils.hasLength(value)) {
+-			message.append(message.length() > 0 ? " " : "");
++			message.append((message.length() > 0) ? " " : "");
+ 			message.append(prefix);
+ 			message.append(value);
+ 		}

@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-configuration/src/test/java/io/dropwizard/configuration/ConfigurationFactoryTest.java b/fixed/dropwizard-configuration/src/test/java/io/dropwizard/configuration/ConfigurationFactoryTest.java
+index d52d828fc..51e8303bf 100644
+--- a/buggy/dropwizard-configuration/src/test/java/io/dropwizard/configuration/ConfigurationFactoryTest.java
++++ b/fixed/dropwizard-configuration/src/test/java/io/dropwizard/configuration/ConfigurationFactoryTest.java
+@@ -318,7 +318,7 @@ public class ConfigurationFactoryTest {
+                 assertThat(e.getMessage())
+                         .endsWith(String.format(
+                                 "factory-test-invalid.yml has an error:%n" +
+-                                        "  * name must match \"[\\w]+[\\s]+[\\w]+([\\s][\\w]+)?\" (was Boop)%n"));
++                                        "  * name must match \"[\\w]+[\\s]+[\\w]+([\\s][\\w]+)?\"%n"));
+             }
+         }
+     }

@@ -1,0 +1,14 @@
+diff --git a/buggy/src/jvm/clojure/lang/Compiler.java b/fixed/src/jvm/clojure/lang/Compiler.java
+index d6202e62a..fd658d8c1 100644
+--- a/buggy/src/jvm/clojure/lang/Compiler.java
++++ b/fixed/src/jvm/clojure/lang/Compiler.java
+@@ -2532,7 +2532,8 @@ static final public IPersistentMap CHAR_MAP =
+ '!', "_BANG_",
+ '@', "_CIRCA_",
+ '#', "_SHARP_",
+-'$', "_DOLLARSIGN_",
++'\'', "_SINGLEQUOTE_",
++'"', "_DOUBLEQUOTE_",
+ '%', "_PERCENT_",
+ '^', "_CARET_",
+ '&', "_AMPERSAND_",

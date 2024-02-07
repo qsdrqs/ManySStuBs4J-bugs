@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/ValueCollectionTest.java b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/ValueCollectionTest.java
+index 66087b8f2..c23030a18 100644
+--- a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/ValueCollectionTest.java
++++ b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/ValueCollectionTest.java
+@@ -133,7 +133,7 @@ public class ValueCollectionTest {
+         assertFalse(valueCollection.retainAll(new ArrayList()));
+     }
+ 
+-    @Test(expected = UnsupportedOperationException.class)
++    @Test(expected = NullPointerException.class)
+     public void testToArrayWithArgument() throws Exception {
+         EntryHolder entryHolder = mock(EntryHolder.class);
+         Set set = new HashSet();

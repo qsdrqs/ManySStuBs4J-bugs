@@ -1,0 +1,15 @@
+diff --git a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/servlet/ServletContextInitializerBeans.java b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/servlet/ServletContextInitializerBeans.java
+index c13652557..fd070da5e 100644
+--- a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/servlet/ServletContextInitializerBeans.java
++++ b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/servlet/ServletContextInitializerBeans.java
+@@ -256,8 +256,8 @@ public class ServletContextInitializerBeans
+ 			filterRegistrations.addAll(
+ 					initializers.getOrDefault(Filter.class, Collections.emptyList()));
+ 			String filtersInfo = filterRegistrations.stream()
+-					.map(FilterRegistrationBean.class::cast)
+-					.map(FilterRegistrationBean::toString)
++					.map(AbstractFilterRegistrationBean.class::cast)
++					.map(AbstractFilterRegistrationBean::toString)
+ 					.collect(Collectors.joining(", "));
+ 			ServletContextInitializerBeans.logger
+ 					.debug("Mapping filters: " + filtersInfo);

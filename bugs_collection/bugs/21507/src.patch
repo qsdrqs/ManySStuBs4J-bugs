@@ -1,0 +1,13 @@
+diff --git a/buggy/src/api/org/openmrs/api/context/Context.java b/fixed/src/api/org/openmrs/api/context/Context.java
+index f9e397418..005f2d7e5 100644
+--- a/buggy/src/api/org/openmrs/api/context/Context.java
++++ b/fixed/src/api/org/openmrs/api/context/Context.java
+@@ -965,7 +965,7 @@ public class Context {
+ 					GlobalProperty propToUpdate = propsMissingDescription.get(corePropName);
+ 					if (propToUpdate != null) {
+ 						propToUpdate.setDescription(coreProp.getDescription());
+-						Context.getAdministrationService().saveGlobalProperty(coreProp);
++						Context.getAdministrationService().saveGlobalProperty(propToUpdate);
+ 					}
+ 				}
+ 			}

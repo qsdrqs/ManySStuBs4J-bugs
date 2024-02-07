@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/Stage.java b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/Stage.java
+index 755c28afa..98ef69bef 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/scenes/scene2d/Stage.java
++++ b/fixed/gdx/src/com/badlogic/gdx/scenes/scene2d/Stage.java
+@@ -555,7 +555,7 @@ public class Stage extends InputAdapter implements Disposable {
+ 		if (ownsBatch) batch.dispose();
+ 	}
+ 
+-	static final class TouchFocus {
++	public static final class TouchFocus {
+ 		static final Pool<TouchFocus> pool = new Pool<TouchFocus>(4, 16) {
+ 			protected TouchFocus newObject () {
+ 				return new TouchFocus();

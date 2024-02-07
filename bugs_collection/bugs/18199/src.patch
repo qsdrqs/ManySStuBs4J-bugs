@@ -1,0 +1,13 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/maps/tiled/TmxMapLoader.java b/fixed/gdx/src/com/badlogic/gdx/maps/tiled/TmxMapLoader.java
+index 69594d1ca..b1f4bee0d 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/maps/tiled/TmxMapLoader.java
++++ b/fixed/gdx/src/com/badlogic/gdx/maps/tiled/TmxMapLoader.java
+@@ -525,7 +525,7 @@ public class TmxMapLoader extends SynchronousAssetLoader<TiledMap, TmxMapLoader.
+ 						vertices[i * 2 + 1] = y + Integer.parseInt(point[1]);
+ 					}
+ 					object = new PolylineMapObject(vertices);
+-				} else if ((child == element.getChildByName("ellipse"))) {
++				} else if ((child = element.getChildByName("ellipse")) != null) {
+ 					object = new EllipseMapObject(x, y, width, height);
+ 				}
+ 			}

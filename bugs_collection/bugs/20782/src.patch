@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.astro/src/main/java/org/openhab/binding/astro/internal/calc/SunCalc.java b/fixed/bundles/binding/org.openhab.binding.astro/src/main/java/org/openhab/binding/astro/internal/calc/SunCalc.java
+index aaec46f13..773afd2a9 100644
+--- a/buggy/bundles/binding/org.openhab.binding.astro/src/main/java/org/openhab/binding/astro/internal/calc/SunCalc.java
++++ b/fixed/bundles/binding/org.openhab.binding.astro/src/main/java/org/openhab/binding/astro/internal/calc/SunCalc.java
+@@ -190,7 +190,7 @@ public class SunCalc {
+ 	 * Returns the julian date from the calendar object.
+ 	 */
+ 	public static double plainDateToJulianDate(Calendar calendar) {
+-		return calendar.getTimeInMillis() / MILLISECONDS_PER_DAY - 0.5 + J1970;
++		return calendar.getTimeInMillis() / MILLISECONDS_PER_DAY + J1970;
+ 	}
+ 
+ 	/**

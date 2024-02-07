@@ -1,0 +1,13 @@
+diff --git a/buggy/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterDOT.java b/fixed/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterDOT.java
+index d5b1feef7..e25e0e993 100644
+--- a/buggy/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterDOT.java
++++ b/fixed/ImportPlugin/src/org/gephi/io/importer/plugin/file/ImporterDOT.java
+@@ -333,7 +333,7 @@ public class ImporterDOT implements TextImporter, LongTask {
+     }
+ 
+     public boolean isMatchingImporter(FileObject fileObject) {
+-        return fileObject.hasExt("dot");
++        return fileObject.hasExt("dot") || fileObject.hasExt("DOT");
+     }
+ 
+     public boolean cancel() {

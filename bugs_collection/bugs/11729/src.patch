@@ -1,0 +1,16 @@
+diff --git a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/ArrayTypeStyleCheck.java b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/ArrayTypeStyleCheck.java
+index 49058b84a..8e8aff3de 100644
+--- a/buggy/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/ArrayTypeStyleCheck.java
++++ b/fixed/src/checkstyle/com/puppycrawl/tools/checkstyle/checks/ArrayTypeStyleCheck.java
+@@ -62,10 +62,7 @@ public class ArrayTypeStyleCheck extends Check
+                 || (variableAST.getColumnNo() > aAST.getColumnNo());
+ 
+             if (isJavaStyle != mJavaStyle) {
+-                log(
+-                    aAST.getLineNo(),
+-                    aAST.getColumnNo(),
+-                    "Array brackets at illegal position.");
++                log(aAST.getLineNo(), aAST.getColumnNo(), "array.type.style");
+             }
+         }
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/operator/aggregation/AggregationCompiler.java b/fixed/presto-main/src/main/java/com/facebook/presto/operator/aggregation/AggregationCompiler.java
+index a5a5110c6..a5480c60b 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/operator/aggregation/AggregationCompiler.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/operator/aggregation/AggregationCompiler.java
+@@ -84,7 +84,7 @@ public class AggregationCompiler
+         checkNotNull(returnType, "returnType is null");
+         checkNotNull(argumentTypes, "argumentTypes is null");
+         for (InternalAggregationFunction aggregation : generateAggregationFunctions(clazz)) {
+-            if (aggregation.getFinalType() == returnType && aggregation.getParameterTypes().equals(argumentTypes)) {
++            if (aggregation.getFinalType().equals(returnType) && aggregation.getParameterTypes().equals(argumentTypes)) {
+                 return aggregation;
+             }
+         }

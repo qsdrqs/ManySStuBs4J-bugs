@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions/gdx-jnigen/src/com/badlogic/gdx/jnigen/parsing/RobustJavaMethodParser.java b/fixed/extensions/gdx-jnigen/src/com/badlogic/gdx/jnigen/parsing/RobustJavaMethodParser.java
+index 7f5e1ad1b..ab0fa956b 100644
+--- a/buggy/extensions/gdx-jnigen/src/com/badlogic/gdx/jnigen/parsing/RobustJavaMethodParser.java
++++ b/fixed/extensions/gdx-jnigen/src/com/badlogic/gdx/jnigen/parsing/RobustJavaMethodParser.java
+@@ -162,7 +162,7 @@ public class RobustJavaMethodParser implements JavaMethodParser {
+ 			if (arrayDim > 1) return ArgumentType.ObjectArray;
+ 			ArgumentType arrayType = arrayTypes.get(type);
+ 			if (arrayType == null) {
+-				throw new RuntimeException("Unknown array type " + type);
++				return ArgumentType.ObjectArray;
+ 			}
+ 			return arrayType;
+ 		}

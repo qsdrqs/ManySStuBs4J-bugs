@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/test/java/io/netty/channel/DefaultChannelIdTest.java b/fixed/transport/src/test/java/io/netty/channel/DefaultChannelIdTest.java
+index 3a2cee35c..699d3a1fe 100644
+--- a/buggy/transport/src/test/java/io/netty/channel/DefaultChannelIdTest.java
++++ b/fixed/transport/src/test/java/io/netty/channel/DefaultChannelIdTest.java
+@@ -39,7 +39,7 @@ public class DefaultChannelIdTest {
+     @Test
+     public void testLongText() {
+         String text = DefaultChannelId.newInstance().asLongText();
+-        assertTrue(text.matches("^[0-9a-f]{16}-[0-9a-f]{4}-[0-9a-f]{8}-[0-9a-f]{16}-[0-9a-f]{8}$"));
++        assertTrue(text.matches("^[0-9a-f]{16}-[0-9a-f]{8}-[0-9a-f]{8}-[0-9a-f]{16}-[0-9a-f]{8}$"));
+     }
+ 
+     @Test

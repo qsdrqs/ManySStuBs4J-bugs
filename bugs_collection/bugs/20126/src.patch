@@ -1,0 +1,13 @@
+diff --git a/buggy/lib-manipulation/src/main/java/com/nhaarman/listviewanimations/itemmanipulation/swipedismiss/undo/SwipeUndoAdapter.java b/fixed/lib-manipulation/src/main/java/com/nhaarman/listviewanimations/itemmanipulation/swipedismiss/undo/SwipeUndoAdapter.java
+index 5c11b9d1c..29dc4cbd2 100644
+--- a/buggy/lib-manipulation/src/main/java/com/nhaarman/listviewanimations/itemmanipulation/swipedismiss/undo/SwipeUndoAdapter.java
++++ b/fixed/lib-manipulation/src/main/java/com/nhaarman/listviewanimations/itemmanipulation/swipedismiss/undo/SwipeUndoAdapter.java
+@@ -33,7 +33,7 @@ public abstract class SwipeUndoAdapter extends BaseAdapterDecorator {
+     /**
+      * The {@link SwipeUndoTouchListener} that is set to the {@link android.widget.AbsListView}.
+      */
+-    @NonNull
++    @Nullable
+     private SwipeUndoTouchListener mSwipeUndoTouchListener;
+ 
+     /**

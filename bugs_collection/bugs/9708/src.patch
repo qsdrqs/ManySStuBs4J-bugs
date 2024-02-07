@@ -1,0 +1,13 @@
+diff --git a/buggy/llap-server/src/java/org/apache/hadoop/hive/llap/daemon/impl/TaskRunnerCallable.java b/fixed/llap-server/src/java/org/apache/hadoop/hive/llap/daemon/impl/TaskRunnerCallable.java
+index 157f9d38e..5c95086cb 100644
+--- a/buggy/llap-server/src/java/org/apache/hadoop/hive/llap/daemon/impl/TaskRunnerCallable.java
++++ b/fixed/llap-server/src/java/org/apache/hadoop/hive/llap/daemon/impl/TaskRunnerCallable.java
+@@ -217,7 +217,7 @@ public class TaskRunnerCallable extends CallableWithNdc<TaskRunner2Result> {
+               serviceConsumerMetadata, envMap, startedInputsMap, taskReporter, executor,
+               objectRegistry,
+               pid,
+-              executionContext, memoryAvailable);
++              executionContext, memoryAvailable, false);
+         }
+       }
+       if (taskRunner == null) {

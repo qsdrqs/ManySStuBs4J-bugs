@@ -1,0 +1,15 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/SystemSessionProperties.java b/fixed/presto-main/src/main/java/com/facebook/presto/SystemSessionProperties.java
+index 52368f9ac..24bc432a2 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/SystemSessionProperties.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/SystemSessionProperties.java
+@@ -186,8 +186,8 @@ public final class SystemSessionProperties
+                 booleanProperty(
+                         DYNAMIC_SCHEDULE_FOR_GROUPED_EXECUTION,
+                         "Experimental: Use dynamic schedule for grouped execution when possible",
+-                        false,
+-                        featuresConfig.isDynamicScheduleForGroupedExecutionEnabled()),
++                        featuresConfig.isDynamicScheduleForGroupedExecutionEnabled(),
++                        false),
+                 booleanProperty(
+                         PREFER_STREAMING_OPERATORS,
+                         "Prefer source table layouts that produce streaming operators",

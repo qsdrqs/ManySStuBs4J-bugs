@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/filters/SuppressWithNearbyCommentFilterTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/filters/SuppressWithNearbyCommentFilterTest.java
+index b3ba9a62b..59436f2ad 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/filters/SuppressWithNearbyCommentFilterTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/filters/SuppressWithNearbyCommentFilterTest.java
+@@ -227,7 +227,7 @@ public class SuppressWithNearbyCommentFilterTest
+         return checker;
+     }
+ 
+-    private String[] removeSuppressed(String[] from, String[] remove) {
++    private static String[] removeSuppressed(String[] from, String[] remove) {
+         final Collection<String> coll =
+             Lists.newArrayList(Arrays.asList(from));
+         coll.removeAll(Arrays.asList(remove));

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/Es6RewriteModules.java b/fixed/src/com/google/javascript/jscomp/Es6RewriteModules.java
+index 34d5c36b7..3e37241b9 100644
+--- a/buggy/src/com/google/javascript/jscomp/Es6RewriteModules.java
++++ b/fixed/src/com/google/javascript/jscomp/Es6RewriteModules.java
+@@ -165,7 +165,7 @@ public final class Es6RewriteModules extends AbstractPostOrderCallback
+     }
+     compiler.setFeatureSet(compiler.getFeatureSet().without(MODULES));
+     // This pass may add getters properties on module objects.
+-    GatherGettersAndSetterProperties.update(compiler, externs, root);
++    GatherGetterAndSetterProperties.update(compiler, externs, root);
+   }
+ 
+   @Override

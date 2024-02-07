@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/test/java/org/apache/hadoop/hbase/ipc/TestAsyncIPC.java b/fixed/hbase-server/src/test/java/org/apache/hadoop/hbase/ipc/TestAsyncIPC.java
+index 768871c46..69a79ad84 100644
+--- a/buggy/hbase-server/src/test/java/org/apache/hadoop/hbase/ipc/TestAsyncIPC.java
++++ b/fixed/hbase-server/src/test/java/org/apache/hadoop/hbase/ipc/TestAsyncIPC.java
+@@ -120,7 +120,7 @@ public class TestAsyncIPC extends AbstractTestIPC {
+ 
+       @Override
+       Codec getCodec() {
+-        return super.getCodec();
++        return null;
+       }
+ 
+     };

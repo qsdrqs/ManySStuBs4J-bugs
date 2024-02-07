@@ -1,0 +1,14 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/NodeTraversal.java b/fixed/src/com/google/javascript/jscomp/NodeTraversal.java
+index e4e1d67c9..74016c085 100644
+--- a/buggy/src/com/google/javascript/jscomp/NodeTraversal.java
++++ b/fixed/src/com/google/javascript/jscomp/NodeTraversal.java
+@@ -985,8 +985,7 @@ public class NodeTraversal {
+         return instantiateScopes(i);
+       }
+     }
+-    // Note: this cast is required to make j2cl output work.
+-    return (AbstractScope<?, ?>) scopes.peek().getClosestHoistScope();
++    return scopes.peek().getClosestHoistScope();
+   }
+ 
+   private static boolean isHoistScopeRootNode(Node n) {

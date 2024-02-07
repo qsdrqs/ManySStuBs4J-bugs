@@ -1,0 +1,13 @@
+diff --git a/buggy/packaging/neo4j-desktop/src/main/java/org/neo4j/desktop/config/Environment.java b/fixed/packaging/neo4j-desktop/src/main/java/org/neo4j/desktop/config/Environment.java
+index dbd33849c..37998d933 100644
+--- a/buggy/packaging/neo4j-desktop/src/main/java/org/neo4j/desktop/config/Environment.java
++++ b/fixed/packaging/neo4j-desktop/src/main/java/org/neo4j/desktop/config/Environment.java
+@@ -90,7 +90,7 @@ public class Environment
+                 e.printStackTrace( System.out );
+             }
+         }
+-        else if ( OperatingSystemFamily.WINDOWS.isDetected() )
++        if ( OperatingSystemFamily.WINDOWS.isDetected() )
+         {
+             getRuntime().exec( new String[]{"rundll32", "url.dll,FileProtocolHandler", file.getAbsolutePath()} );
+             return;

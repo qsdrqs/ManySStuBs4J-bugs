@@ -1,0 +1,13 @@
+diff --git a/buggy/processing/src/main/java/io/druid/segment/ColumnSelectorBitmapIndexSelector.java b/fixed/processing/src/main/java/io/druid/segment/ColumnSelectorBitmapIndexSelector.java
+index 0c4b081b7..4dbb65a7e 100644
+--- a/buggy/processing/src/main/java/io/druid/segment/ColumnSelectorBitmapIndexSelector.java
++++ b/fixed/processing/src/main/java/io/druid/segment/ColumnSelectorBitmapIndexSelector.java
+@@ -121,7 +121,7 @@ public class ColumnSelectorBitmapIndexSelector implements BitmapIndexSelector
+     }
+ 
+     if (!column.getCapabilities().hasBitmapIndexes()) {
+-      bitmapFactory.makeEmptyImmutableBitmap();
++      return bitmapFactory.makeEmptyImmutableBitmap();
+     }
+ 
+     return column.getBitmapIndex().getBitmap(value);

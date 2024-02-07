@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/apache/ibatis/binding/MapperProxy.java b/fixed/src/main/java/org/apache/ibatis/binding/MapperProxy.java
+index 860af48f7..9204898fa 100644
+--- a/buggy/src/main/java/org/apache/ibatis/binding/MapperProxy.java
++++ b/fixed/src/main/java/org/apache/ibatis/binding/MapperProxy.java
+@@ -30,7 +30,7 @@ public class MapperProxy implements InvocationHandler, Serializable {
+   private final Class<?>[] interfaces;
+   private final Map<Method, MapperMethod> methodCache;
+ 
+-  protected MapperProxy(SqlSession sqlSession, Class<?>[] interfaces, Map<Method, MapperMethod> methodCache) {
++  private MapperProxy(SqlSession sqlSession, Class<?>[] interfaces, Map<Method, MapperMethod> methodCache) {
+     this.sqlSession = sqlSession;
+     this.interfaces = interfaces;
+     this.methodCache = methodCache;

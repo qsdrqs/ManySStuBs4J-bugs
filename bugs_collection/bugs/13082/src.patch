@@ -1,0 +1,13 @@
+diff --git a/buggy/merger/src/main/java/com/metamx/druid/merger/coordinator/ForkingTaskRunner.java b/fixed/merger/src/main/java/com/metamx/druid/merger/coordinator/ForkingTaskRunner.java
+index b6ebdf427..0f6c8697e 100644
+--- a/buggy/merger/src/main/java/com/metamx/druid/merger/coordinator/ForkingTaskRunner.java
++++ b/fixed/merger/src/main/java/com/metamx/druid/merger/coordinator/ForkingTaskRunner.java
+@@ -159,7 +159,7 @@ public class ForkingTaskRunner implements TaskRunner, TaskLogProvider
+                                     String.format(
+                                         "-D%s=%s",
+                                         propName.substring(CHILD_PROPERTY_PREFIX.length()),
+-                                        System.getProperty(propName)
++                                        props.getProperty(propName)
+                                     )
+                                 );
+                               }

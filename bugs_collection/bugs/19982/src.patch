@@ -1,0 +1,13 @@
+diff --git a/buggy/handler/src/main/java/io/netty/handler/ssl/SslHandler.java b/fixed/handler/src/main/java/io/netty/handler/ssl/SslHandler.java
+index 0b3745691..fa519556c 100644
+--- a/buggy/handler/src/main/java/io/netty/handler/ssl/SslHandler.java
++++ b/fixed/handler/src/main/java/io/netty/handler/ssl/SslHandler.java
+@@ -972,7 +972,7 @@ public class SslHandler extends FrameDecoder
+             outAppBuf.flip();
+ 
+             if (outAppBuf.hasRemaining()) {
+-                ChannelBuffer frame = ChannelBuffers.buffer(outAppBuf.remaining());
++                ChannelBuffer frame = ctx.getChannel().getConfig().getBufferFactory().getBuffer(outAppBuf.remaining());
+                 frame.writeBytes(outAppBuf.array(), 0, frame.capacity());
+                 return frame;
+             } else {

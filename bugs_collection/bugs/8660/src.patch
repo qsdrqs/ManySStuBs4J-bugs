@@ -1,0 +1,28 @@
+diff --git a/buggy/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/multicast/MulticastManager.java b/fixed/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/multicast/MulticastManager.java
+index 53a6b863f..5e43044ea 100644
+--- a/buggy/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/multicast/MulticastManager.java
++++ b/fixed/nephele/nephele-server/src/main/java/eu/stratosphere/nephele/multicast/MulticastManager.java
+@@ -356,20 +356,18 @@ public class MulticastManager implements ChannelLookupProtocol {
+ 				} else {
+ 
+ 					if (targetVertex.getExecutionState() != ExecutionState.RUNNING
+-						&& targetVertex.getExecutionState() != ExecutionState.FINISHING
+-						&& targetVertex.getExecutionState() != ExecutionState.READY
+-						&& targetVertex.getExecutionState() != ExecutionState.STARTING) {
++						&& targetVertex.getExecutionState() != ExecutionState.FINISHING) {
+ 						return false;
+ 					}
+ 				}
+ 			}
+ 		}
+ 
+-		if(verticesToDeploy != null) {
++		if (verticesToDeploy != null) {
+ 			this.scheduler.deployAssignedVertices(verticesToDeploy);
+ 			return false;
+ 		}
+-		
++
+ 		return true;
+ 	}
+ 

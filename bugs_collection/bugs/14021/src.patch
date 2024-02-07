@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-server/src/test/java/com/facebook/presto/server/TestDistributedQueries.java b/fixed/presto-server/src/test/java/com/facebook/presto/server/TestDistributedQueries.java
+index c1961d10f..bced5abaa 100644
+--- a/buggy/presto-server/src/test/java/com/facebook/presto/server/TestDistributedQueries.java
++++ b/fixed/presto-server/src/test/java/com/facebook/presto/server/TestDistributedQueries.java
+@@ -152,7 +152,7 @@ public class TestDistributedQueries
+             @Override
+             public String apply(MaterializedTuple input)
+             {
+-                assertEquals(input.getFieldCount(), 3);
++                assertEquals(input.getFieldCount(), 4);
+                 return (String) input.getField(0);
+             }
+         }));

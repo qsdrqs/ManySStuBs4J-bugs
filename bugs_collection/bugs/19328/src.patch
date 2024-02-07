@@ -1,0 +1,13 @@
+diff --git a/buggy/community/server/src/main/java/org/neo4j/server/guard/GuardingRequestFilter.java b/fixed/community/server/src/main/java/org/neo4j/server/guard/GuardingRequestFilter.java
+index 2a037a2ee..d8458d85f 100644
+--- a/buggy/community/server/src/main/java/org/neo4j/server/guard/GuardingRequestFilter.java
++++ b/fixed/community/server/src/main/java/org/neo4j/server/guard/GuardingRequestFilter.java
+@@ -55,7 +55,7 @@ public class GuardingRequestFilter implements Filter
+         @Override
+         public void run()
+         {
+-            LOG.warn( "request canceld" );
++            LOG.warn( "request canceled" );
+             LOG.error( "TODO: restarting the server is not proper implemented, request was not canceled" );
+             // TODO current.interrupt(); + restart server
+         }

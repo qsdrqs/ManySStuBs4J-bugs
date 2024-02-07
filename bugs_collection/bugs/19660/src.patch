@@ -1,0 +1,13 @@
+diff --git a/buggy/resolver-dns/src/test/java/io/netty/resolver/dns/DnsNameResolverTest.java b/fixed/resolver-dns/src/test/java/io/netty/resolver/dns/DnsNameResolverTest.java
+index 87389699d..9218a0ce6 100644
+--- a/buggy/resolver-dns/src/test/java/io/netty/resolver/dns/DnsNameResolverTest.java
++++ b/fixed/resolver-dns/src/test/java/io/netty/resolver/dns/DnsNameResolverTest.java
+@@ -499,7 +499,7 @@ public class DnsNameResolverTest {
+         try {
+             InetAddress address = resolver.resolve("10.0.0.1").syncUninterruptibly().getNow();
+ 
+-            assertEquals("10.0.0.1", address.getHostName());
++            assertEquals("10.0.0.1", address.getHostAddress());
+         } finally {
+             resolver.close();
+         }

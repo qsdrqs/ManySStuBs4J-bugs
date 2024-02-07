@@ -1,0 +1,13 @@
+diff --git a/buggy/handler/src/main/java/io/netty/handler/ssl/PemReader.java b/fixed/handler/src/main/java/io/netty/handler/ssl/PemReader.java
+index feabe369a..016d215c2 100644
+--- a/buggy/handler/src/main/java/io/netty/handler/ssl/PemReader.java
++++ b/fixed/handler/src/main/java/io/netty/handler/ssl/PemReader.java
+@@ -111,7 +111,7 @@ final class PemReader {
+                 safeClose(in);
+             }
+         } catch (FileNotFoundException e) {
+-            throw new KeyException("could not fine key file: " + file);
++            throw new KeyException("could not find key file: " + file);
+         }
+     }
+ 

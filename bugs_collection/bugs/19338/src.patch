@@ -1,0 +1,31 @@
+diff --git a/buggy/enterprise/ha/src/main/java/org/neo4j/kernel/HighlyAvailableGraphDatabase.java b/fixed/enterprise/ha/src/main/java/org/neo4j/kernel/HighlyAvailableGraphDatabase.java
+index d0177ac76..3db72f92a 100644
+--- a/buggy/enterprise/ha/src/main/java/org/neo4j/kernel/HighlyAvailableGraphDatabase.java
++++ b/fixed/enterprise/ha/src/main/java/org/neo4j/kernel/HighlyAvailableGraphDatabase.java
+@@ -120,7 +120,7 @@ public class HighlyAvailableGraphDatabase extends WrappedGraphDatabase
+             @Override
+             protected ReadableRelationshipIndex actual()
+             {
+-                return HighlyAvailableGraphDatabase.this.index().forRelationships( indexName );
++                return HighlyAvailableGraphDatabase.this.graphdb.index().forRelationships( indexName );
+             }
+         };
+     }
+@@ -133,7 +133,7 @@ public class HighlyAvailableGraphDatabase extends WrappedGraphDatabase
+             @Override
+             protected ReadableIndex<Node> actual()
+             {
+-                return HighlyAvailableGraphDatabase.this.index().getNodeAutoIndexer().getAutoIndex();
++                return HighlyAvailableGraphDatabase.this.graphdb.index().getNodeAutoIndexer().getAutoIndex();
+             }
+         };
+     }
+@@ -147,7 +147,7 @@ public class HighlyAvailableGraphDatabase extends WrappedGraphDatabase
+             @Override
+             protected ReadableRelationshipIndex actual()
+             {
+-                return HighlyAvailableGraphDatabase.this.index().getRelationshipAutoIndexer().getAutoIndex();
++                return HighlyAvailableGraphDatabase.this.graphdb.index().getRelationshipAutoIndexer().getAutoIndex();
+             }
+         };
+     }

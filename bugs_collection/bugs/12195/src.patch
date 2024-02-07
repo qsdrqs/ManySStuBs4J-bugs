@@ -1,0 +1,21 @@
+diff --git a/buggy/clojure/src/test/java/cucumber/runtime/clojure/ClojureSnippet.java b/fixed/clojure/src/test/java/cucumber/runtime/clojure/ClojureSnippet.java
+index cda5789f2..62256e1d9 100644
+--- a/buggy/clojure/src/test/java/cucumber/runtime/clojure/ClojureSnippet.java
++++ b/fixed/clojure/src/test/java/cucumber/runtime/clojure/ClojureSnippet.java
+@@ -25,7 +25,7 @@ public class ClojureSnippet implements Snippet {
+ 
+     @Override
+     public String arguments(List<Class<?>> argumentTypes) {
+-        return untypedArguments(argumentTypes);
++        return untypedArguments(argumentTypes).replaceAll(",", "");
+     }
+ 
+     @Override
+@@ -40,6 +40,6 @@ public class ClojureSnippet implements Snippet {
+ 
+     @Override
+     public String escapePattern(String pattern) {
+-        return pattern;
++        return pattern.replaceAll("\"", "\\\\\"");
+     }
+ }

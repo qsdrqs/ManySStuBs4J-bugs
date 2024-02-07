@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-web/src/main/java/org/apache/camel/web/resources/RouteResource.java b/fixed/components/camel-web/src/main/java/org/apache/camel/web/resources/RouteResource.java
+index 94ae2d2ea..a91a13726 100644
+--- a/buggy/components/camel-web/src/main/java/org/apache/camel/web/resources/RouteResource.java
++++ b/fixed/components/camel-web/src/main/java/org/apache/camel/web/resources/RouteResource.java
+@@ -158,7 +158,7 @@ public class RouteResource extends CamelChildResourceSupport {
+         DefaultCamelContext defaultCamelContext = (DefaultCamelContext)getCamelContext();
+         // stop and remove the original route
+         defaultCamelContext.stopRoute(id);
+-        defaultCamelContext.removeRouteDefinition(id);
++        defaultCamelContext.removeRoute(id);
+ 
+         // add the routes in a route builder
+         defaultCamelContext.addRoutes(builder);

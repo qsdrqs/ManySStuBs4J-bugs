@@ -1,0 +1,22 @@
+diff --git a/buggy/presto-main/src/test/java/com/facebook/presto/execution/TestNodeScheduler.java b/fixed/presto-main/src/test/java/com/facebook/presto/execution/TestNodeScheduler.java
+index f8f23ea09..dba72c6af 100644
+--- a/buggy/presto-main/src/test/java/com/facebook/presto/execution/TestNodeScheduler.java
++++ b/fixed/presto-main/src/test/java/com/facebook/presto/execution/TestNodeScheduler.java
+@@ -293,7 +293,7 @@ public class TestNodeScheduler
+         assertEquals(nodeTaskMap.getPartitionedSplitsOnNode(chosenNode), 0);
+     }
+ 
+-    private class TestSplitLocal
++    private static class TestSplitLocal
+             implements ConnectorSplit
+     {
+         @Override
+@@ -315,7 +315,7 @@ public class TestNodeScheduler
+         }
+     }
+ 
+-    private class TestSplitRemote
++    private static class TestSplitRemote
+             implements ConnectorSplit
+     {
+         @Override

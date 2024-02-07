@@ -1,0 +1,13 @@
+diff --git a/buggy/itest/src/edu/stanford/nlp/pipeline/KBPAnnotatorChineseBenchmarkSlowITest.java b/fixed/itest/src/edu/stanford/nlp/pipeline/KBPAnnotatorChineseBenchmarkSlowITest.java
+index 0d3bce1ca..3446bb36a 100644
+--- a/buggy/itest/src/edu/stanford/nlp/pipeline/KBPAnnotatorChineseBenchmarkSlowITest.java
++++ b/fixed/itest/src/edu/stanford/nlp/pipeline/KBPAnnotatorChineseBenchmarkSlowITest.java
+@@ -18,7 +18,7 @@ public class KBPAnnotatorChineseBenchmarkSlowITest  extends KBPAnnotatorBenchmar
+     // set up the pipeline
+     Properties props = StringUtils.argsToProperties("-props", "StanfordCoreNLP-chinese.properties");
+     props.put("annotators",
+-            "tokenize,ssplit,pos,lemma,ner,regexner,parse,mention,entitymentions,coref,kbp");
++            "tokenize,ssplit,pos,lemma,ner,parse,coref,kbp");
+     pipeline = new StanfordCoreNLP(props);
+   }
+ 

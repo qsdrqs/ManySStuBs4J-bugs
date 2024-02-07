@@ -1,0 +1,12 @@
+diff --git a/buggy/examples/camel-example-spring/src/test/java/org/apache/camel/example/spring/IntegrationTest.java b/fixed/examples/camel-example-spring/src/test/java/org/apache/camel/example/spring/IntegrationTest.java
+index daf8ef46a..6bd768f4c 100644
+--- a/buggy/examples/camel-example-spring/src/test/java/org/apache/camel/example/spring/IntegrationTest.java
++++ b/fixed/examples/camel-example-spring/src/test/java/org/apache/camel/example/spring/IntegrationTest.java
+@@ -27,6 +27,6 @@ public class IntegrationTest extends TestCase {
+ 
+     public void testCamelRulesDeployCorrectlyInSpring() throws Exception {
+         // lets boot up the Spring application context for 2 seconds to check it works OK
+-        Main.main("-duration", "2s", "-file", "target/site/cameldoc/routes.dot");
++        Main.main("-duration", "2s", "-o", "target/site/cameldoc");
+     }
+ }

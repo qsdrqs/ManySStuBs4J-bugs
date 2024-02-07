@@ -1,0 +1,16 @@
+diff --git a/buggy/library/src/main/java/com/squareup/otto/Bus.java b/fixed/library/src/main/java/com/squareup/otto/Bus.java
+index 3821f47ed..f86e37488 100644
+--- a/buggy/library/src/main/java/com/squareup/otto/Bus.java
++++ b/fixed/library/src/main/java/com/squareup/otto/Bus.java
+@@ -453,9 +453,9 @@ public class Bus {
+   private static void throwRuntimeException(String msg, InvocationTargetException e) {
+     Throwable cause = e.getCause();
+     if (cause != null) {
+-      throw new RuntimeException(msg, cause);
++      throw new RuntimeException(msg + ": " + cause.getMessage(), cause);
+     } else {
+-      throw new RuntimeException(msg);
++      throw new RuntimeException(msg + ": " + e.getMessage(), e);
+     }
+   }
+ 

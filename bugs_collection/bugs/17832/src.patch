@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions/gdx-tools/src/com/badlogic/gdx/tools/texturepacker/TexturePacker.java b/fixed/extensions/gdx-tools/src/com/badlogic/gdx/tools/texturepacker/TexturePacker.java
+index ac3ceaa18..ffa64ac8c 100644
+--- a/buggy/extensions/gdx-tools/src/com/badlogic/gdx/tools/texturepacker/TexturePacker.java
++++ b/fixed/extensions/gdx-tools/src/com/badlogic/gdx/tools/texturepacker/TexturePacker.java
+@@ -615,7 +615,7 @@ public class TexturePacker {
+ 			});
+ 			processor.process(new File(input), new File(output));
+ 		} catch (Exception ex) {
+-			throw new RuntimeException("Error packing files.", ex);
++			throw new RuntimeException("Error packing images.", ex);
+ 		}
+ 	}
+ 

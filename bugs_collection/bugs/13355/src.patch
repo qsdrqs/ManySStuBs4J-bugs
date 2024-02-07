@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/memory/MemoryPool.java b/fixed/presto-main/src/main/java/com/facebook/presto/memory/MemoryPool.java
+index 0f46fc8ca..20520fad2 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/memory/MemoryPool.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/memory/MemoryPool.java
+@@ -322,7 +322,7 @@ public class MemoryPool
+     {
+         public static <V> NonCancellableMemoryFuture<V> create()
+         {
+-            return new NonCancellableMemoryFuture<V>();
++            return new NonCancellableMemoryFuture<>();
+         }
+ 
+         @Override

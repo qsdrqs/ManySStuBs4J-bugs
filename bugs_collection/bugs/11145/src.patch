@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/AbstractTypeAwareCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/AbstractTypeAwareCheckTest.java
+index 930cff34f..3a23dad7f 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/AbstractTypeAwareCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/AbstractTypeAwareCheckTest.java
+@@ -81,7 +81,7 @@ public class AbstractTypeAwareCheckTest extends BaseCheckTestSupport {
+         }
+         catch (InvocationTargetException ex) {
+             assertTrue(ex.getCause() instanceof IllegalArgumentException);
+-            assertEquals(ex.getCause().getMessage(), "ClassInfo's name should be non-null");
++            assertEquals("ClassInfo's name should be non-null", ex.getCause().getMessage());
+         }
+ 
+         Constructor<?> tokenConstructor = tokenType.getDeclaredConstructor(String.class, int.class,

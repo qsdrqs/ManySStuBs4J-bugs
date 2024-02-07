@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter5naming/rule521packagenames/PackageNameTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter5naming/rule521packagenames/PackageNameTest.java
+index da574aef2..14f85e66e 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter5naming/rule521packagenames/PackageNameTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter5naming/rule521packagenames/PackageNameTest.java
+@@ -36,7 +36,7 @@ public class PackageNameTest extends BaseCheckTestSupport {
+     private static Configuration checkConfig;
+     private static String format;
+ 
+-    protected String getPath(String packageName, String fileName) throws IOException {
++    private String getPath(String packageName, String fileName) throws IOException {
+         return getPath("chapter5naming" + File.separator + "rule521" + packageName
+                 + File.separator + fileName);
+     }

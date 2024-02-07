@@ -1,0 +1,13 @@
+diff --git a/buggy/indexing-service/src/main/java/io/druid/indexing/overlord/setup/FillCapacityWorkerSelectStrategy.java b/fixed/indexing-service/src/main/java/io/druid/indexing/overlord/setup/FillCapacityWorkerSelectStrategy.java
+index a72da1007..7458030d9 100644
+--- a/buggy/indexing-service/src/main/java/io/druid/indexing/overlord/setup/FillCapacityWorkerSelectStrategy.java
++++ b/fixed/indexing-service/src/main/java/io/druid/indexing/overlord/setup/FillCapacityWorkerSelectStrategy.java
+@@ -47,7 +47,7 @@ public class FillCapacityWorkerSelectStrategy implements WorkerSelectStrategy
+     this.config = config;
+   }
+ 
+-  public Optional<ZkWorker> findWorkerForTask(
++  public Optional<ImmutableZkWorker> findWorkerForTask(
+       final ImmutableMap<String, ImmutableZkWorker> zkWorkers,
+       final Task task
+   )

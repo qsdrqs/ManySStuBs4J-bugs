@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/org/apache/hadoop/hbase/regionserver/SplitTransaction.java b/fixed/src/main/java/org/apache/hadoop/hbase/regionserver/SplitTransaction.java
+index 145c5b780..1bcde8cc8 100644
+--- a/buggy/src/main/java/org/apache/hadoop/hbase/regionserver/SplitTransaction.java
++++ b/fixed/src/main/java/org/apache/hadoop/hbase/regionserver/SplitTransaction.java
+@@ -181,7 +181,8 @@ class SplitTransaction {
+       final RegionServerServices services)
+   throws IOException {
+     LOG.info("Starting split of region " + this.parent);
+-    if (server.isStopped() || services.isStopping()) {
++    if ((server != null && server.isStopped()) ||
++        (services != null && services.isStopping())) {
+       throw new IOException("Server is stopped or stopping");
+     }
+     assert !this.parent.lock.writeLock().isHeldByCurrentThread() : "Unsafe to hold write lock while performing RPCs";

@@ -1,0 +1,22 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.onewire/src/main/java/org/openhab/binding/onewire/internal/connection/OneWireConnection.java b/fixed/bundles/binding/org.openhab.binding.onewire/src/main/java/org/openhab/binding/onewire/internal/connection/OneWireConnection.java
+index ae911a6af..89b5776a0 100644
+--- a/buggy/bundles/binding/org.openhab.binding.onewire/src/main/java/org/openhab/binding/onewire/internal/connection/OneWireConnection.java
++++ b/fixed/bundles/binding/org.openhab.binding.onewire/src/main/java/org/openhab/binding/onewire/internal/connection/OneWireConnection.java
+@@ -318,7 +318,7 @@ public class OneWireConnection {
+                     reconnect();
+                 }
+             } catch (IOException ioe) {
+-                logger.error("couldn't establish network connection while read attempt {} '{}'" + " ip:port={}:{}",
++                logger.error("couldn't establish network connection while read attempt {} '{}' ip:port={}:{}",
+                         lvAttempt, lvDevicePropertyPath, cvIp, cvPort, ioe);
+                 reconnect();
+             } catch (NumberFormatException lvNumberFormatException) {
+@@ -355,7 +355,7 @@ public class OneWireConnection {
+                         lvAttempt, oe);
+                 reconnect();
+             } catch (IOException ioe) {
+-                logger.error("Couldn't establish network connection while write attempt {} to '{}'" + " ip:port={}:{}",
++                logger.error("Couldn't establish network connection while write attempt {} to '{}' ip:port={}:{}",
+                         lvAttempt, pvDevicePropertyPath, cvIp, cvPort, ioe);
+                 reconnect();
+             } finally {

@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java
+index 88a15e950..106a9d30c 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java
+@@ -4936,7 +4936,7 @@ public class HRegion implements HeapSize { // , Writable{
+       ClassSize.ARRAY +
+       40 * ClassSize.REFERENCE + 2 * Bytes.SIZEOF_INT +
+       (11 * Bytes.SIZEOF_LONG) +
+-      4 * Bytes.SIZEOF_BOOLEAN);
++      5 * Bytes.SIZEOF_BOOLEAN);
+ 
+   // woefully out of date - currently missing:
+   // 1 x HashMap - coprocessorServiceHandlers

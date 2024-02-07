@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/PackageNamesLoaderTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/PackageNamesLoaderTest.java
+index 7ced289fd..305b88c70 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/PackageNamesLoaderTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/PackageNamesLoaderTest.java
+@@ -179,7 +179,7 @@ public class PackageNamesLoaderTest {
+         }
+     }
+ 
+-    public static URL getMockUrl(final URLConnection connection) throws IOException {
++    private static URL getMockUrl(final URLConnection connection) throws IOException {
+         final URLStreamHandler handler = new URLStreamHandler() {
+             @Override
+             protected URLConnection openConnection(final URL url) {

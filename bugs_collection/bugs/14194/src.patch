@@ -1,0 +1,22 @@
+diff --git a/buggy/FiltersPlugin/src/org/gephi/filters/plugin/graph/MutualDegreeRangeBuilder.java b/fixed/FiltersPlugin/src/org/gephi/filters/plugin/graph/MutualDegreeRangeBuilder.java
+index 4737e2f9b..4cd161ea7 100644
+--- a/buggy/FiltersPlugin/src/org/gephi/filters/plugin/graph/MutualDegreeRangeBuilder.java
++++ b/fixed/FiltersPlugin/src/org/gephi/filters/plugin/graph/MutualDegreeRangeBuilder.java
+@@ -105,7 +105,7 @@ public class MutualDegreeRangeBuilder implements FilterBuilder {
+ 
+         private Range range;
+         //States
+-        private List<Integer> values;
++        private List<Integer> values = new ArrayList<Integer>();
+ 
+         public String getName() {
+             return NbBundle.getMessage(MutualDegreeRangeFilter.class, "MutualDegreeRangeBuilder.name");
+@@ -171,7 +171,7 @@ public class MutualDegreeRangeBuilder implements FilterBuilder {
+         }
+ 
+         public void setRange(Range range) {
+-            if (range.getMinimum() == null && range.getMaximum() == null) {
++            if (range.getMinimum() == null && range.getMaximum() == null && this.range != null) {
+                 //Opening project
+                 this.range = new Range(range.getLowerBound(), range.getUpperBound(), this.range.getMinimum(), this.range.getMaximum());
+             } else {

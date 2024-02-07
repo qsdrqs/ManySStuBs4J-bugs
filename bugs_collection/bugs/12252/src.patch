@@ -1,0 +1,13 @@
+diff --git a/buggy/dropwizard-jersey/src/main/java/io/dropwizard/jersey/DropwizardResourceConfig.java b/fixed/dropwizard-jersey/src/main/java/io/dropwizard/jersey/DropwizardResourceConfig.java
+index a01c9efcf..a9431894d 100644
+--- a/buggy/dropwizard-jersey/src/main/java/io/dropwizard/jersey/DropwizardResourceConfig.java
++++ b/fixed/dropwizard-jersey/src/main/java/io/dropwizard/jersey/DropwizardResourceConfig.java
+@@ -189,7 +189,7 @@ public class DropwizardResourceConfig extends ResourceConfig {
+             }
+         }
+ 
+-        private String normalizePath(String basePath, String path) {
++        private static String normalizePath(String basePath, String path) {
+             if (path == null) {
+                 return basePath;
+             }

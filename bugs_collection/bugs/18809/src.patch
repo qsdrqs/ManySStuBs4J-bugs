@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/apache/ibatis/jdbc/SqlBuilder.java b/fixed/src/main/java/org/apache/ibatis/jdbc/SqlBuilder.java
+index be3f6d159..4e2191df5 100644
+--- a/buggy/src/main/java/org/apache/ibatis/jdbc/SqlBuilder.java
++++ b/fixed/src/main/java/org/apache/ibatis/jdbc/SqlBuilder.java
+@@ -172,7 +172,7 @@ public class SqlBuilder {
+       }
+ 
+       sqlClause(builder, "FROM", tables, "", "", ", ");
+-      sqlClause(builder, "JOIN", join, "", "", "JOIN");
++      sqlClause(builder, "JOIN", join, "", "", "\nJOIN ");
+       sqlClause(builder, "INNER JOIN", innerJoin, "", "", "\nINNER JOIN ");
+       sqlClause(builder, "OUTER JOIN", outerJoin, "", "", "\nOUTER JOIN ");
+       sqlClause(builder, "LEFT OUTER JOIN", leftOuterJoin, "", "", "\nLEFT OUTER JOIN ");

@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/PlanPrinter.java b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/PlanPrinter.java
+index 154c8d7d0..e8b226c4a 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/PlanPrinter.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/PlanPrinter.java
+@@ -255,7 +255,7 @@ public class PlanPrinter
+             print(indent, "- TableScan[%s, original constraint=%s] => [%s]", node.getTable(), node.getOriginalConstraint(), formatOutputs(node.getOutputSymbols()));
+             for (Map.Entry<Symbol, ColumnHandle> entry : node.getAssignments().entrySet()) {
+                 boolean isOutputSymbol = node.getOutputSymbols().contains(entry.getKey());
+-                boolean isInOriginalConstraint = DependencyExtractor.extractUnique(node.getOriginalConstraint()).contains(entry.getKey());
++                boolean isInOriginalConstraint = node.getOriginalConstraint() == null ? false : DependencyExtractor.extractUnique(node.getOriginalConstraint()).contains(entry.getKey());
+                 boolean isInDomainSummary = !partitionsDomainSummary.isNone() && partitionsDomainSummary.getDomains().keySet().contains(entry.getValue());
+ 
+                 if (isOutputSymbol || isInOriginalConstraint || isInDomainSummary) {

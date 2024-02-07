@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/AddExchanges.java b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/AddExchanges.java
+index f683b8961..6c3f5d90b 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/AddExchanges.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/sql/planner/optimizations/AddExchanges.java
+@@ -860,7 +860,7 @@ public class AddExchanges
+         @Override
+         public PlanWithProperties visitUnnest(UnnestNode node, PreferredProperties preferredProperties)
+         {
+-            PreferredProperties translatedPreferred = preferredProperties.translate(variable -> node.getReplicateVariables().contains(new Symbol(variable.getName())) ? Optional.of(variable) : Optional.empty());
++            PreferredProperties translatedPreferred = preferredProperties.translate(variable -> node.getReplicateVariables().contains(variable) ? Optional.of(variable) : Optional.empty());
+ 
+             return rebaseAndDeriveProperties(node, planChild(node, translatedPreferred));
+         }

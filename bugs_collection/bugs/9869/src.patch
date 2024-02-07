@@ -1,0 +1,25 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/io/orc/OrcUnion.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/io/orc/OrcUnion.java
+index 23fbe4cdc..e170f4a6a 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/io/orc/OrcUnion.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/io/orc/OrcUnion.java
+@@ -116,17 +116,17 @@ final class OrcUnion implements UnionObject {
+ 
+     @Override
+     public String getTypeName() {
+-      StringBuilder builder = new StringBuilder("union{");
++      StringBuilder builder = new StringBuilder("uniontype<");
+       boolean first = true;
+       for(ObjectInspector child: children) {
+         if (first) {
+           first = false;
+         } else {
+-          builder.append(", ");
++          builder.append(",");
+         }
+         builder.append(child.getTypeName());
+       }
+-      builder.append("}");
++      builder.append(">");
+       return builder.toString();
+     }
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/main/java/cucumber/runtime/table/TableDiffer.java b/fixed/core/src/main/java/cucumber/runtime/table/TableDiffer.java
+index 046eea7e6..52f97394e 100644
+--- a/buggy/core/src/main/java/cucumber/runtime/table/TableDiffer.java
++++ b/fixed/core/src/main/java/cucumber/runtime/table/TableDiffer.java
+@@ -25,7 +25,7 @@ public class TableDiffer {
+     }
+ 
+     private void checkColumns(DataTable a, DataTable b) {
+-        if (a.topCells().size() != b.topCells().size() && b.topCells().size() != 0) {
++        if (a.topCells().size() != b.topCells().size() && !b.topCells().isEmpty()) {
+             throw new IllegalArgumentException("Tables must have equal number of columns:\n" + a + "\n" + b);
+         }
+     }

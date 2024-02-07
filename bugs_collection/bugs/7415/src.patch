@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/builder/xml/XsltBuilder.java b/fixed/camel-core/src/main/java/org/apache/camel/builder/xml/XsltBuilder.java
+index 026fd113d..38097e5f6 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/builder/xml/XsltBuilder.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/builder/xml/XsltBuilder.java
+@@ -65,7 +65,7 @@ import static org.apache.camel.util.ObjectHelper.notNull;
+  * @version 
+  */
+ public class XsltBuilder implements Processor {
+-    private final static Logger LOG = LoggerFactory.getLogger(XsltBuilder.class);
++    private static final Logger LOG = LoggerFactory.getLogger(XsltBuilder.class);
+     private Map<String, Object> parameters = new HashMap<String, Object>();
+     private XmlConverter converter = new XmlConverter();
+     private Templates template;

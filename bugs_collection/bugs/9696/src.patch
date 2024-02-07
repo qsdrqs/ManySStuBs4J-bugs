@@ -1,0 +1,21 @@
+diff --git a/buggy/llap-common/src/java/org/apache/hadoop/hive/llap/security/LlapTokenIdentifier.java b/fixed/llap-common/src/java/org/apache/hadoop/hive/llap/security/LlapTokenIdentifier.java
+index f0bb495f1..c4bee75cf 100644
+--- a/buggy/llap-common/src/java/org/apache/hadoop/hive/llap/security/LlapTokenIdentifier.java
++++ b/fixed/llap-common/src/java/org/apache/hadoop/hive/llap/security/LlapTokenIdentifier.java
+@@ -59,12 +59,14 @@ public class LlapTokenIdentifier extends AbstractDelegationTokenIdentifier {
+ 
+   @Override
+   public int hashCode() {
+-    return -1;
++    // Nothing else right now.
++    return super.hashCode();
+   }
+ 
+   @Override
+   public boolean equals(Object other) {
+-    return (other != null) && other.getClass().isAssignableFrom(this.getClass());
++    // Nothing else right now.
++    return super.equals(other);
+   }
+ 
+   @Override

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/MultipleStringLiteralsCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/MultipleStringLiteralsCheck.java
+index ea72bb3c2..f5e341f25 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/MultipleStringLiteralsCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/MultipleStringLiteralsCheck.java
+@@ -202,7 +202,7 @@ public class MultipleStringLiteralsCheck extends Check {
+          * @param line int
+          * @param col int
+          */
+-        public StringInfo(int line, int col) {
++        StringInfo(int line, int col) {
+             this.line = line;
+             this.col = col;
+         }

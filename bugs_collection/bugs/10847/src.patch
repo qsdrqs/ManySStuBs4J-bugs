@@ -1,0 +1,15 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/MultipleStringLiteralsCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/MultipleStringLiteralsCheckTest.java
+index a7d08b3f6..3f2565fa7 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/MultipleStringLiteralsCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/MultipleStringLiteralsCheckTest.java
+@@ -34,7 +34,9 @@ public class MultipleStringLiteralsCheckTest extends BaseCheckTestSupport {
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "coding" + File.separator + filename);
++                + "coding" + File.separator
++                + "multiplestringliterals" + File.separator
++                + filename);
+     }
+ 
+     @Test

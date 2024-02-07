@@ -1,0 +1,13 @@
+diff --git a/buggy/beeline/src/java/org/apache/hive/beeline/BeeLine.java b/fixed/beeline/src/java/org/apache/hive/beeline/BeeLine.java
+index 348218645..0ee1e4fb0 100644
+--- a/buggy/beeline/src/java/org/apache/hive/beeline/BeeLine.java
++++ b/fixed/beeline/src/java/org/apache/hive/beeline/BeeLine.java
+@@ -567,7 +567,7 @@ public class BeeLine {
+       } else if (args[i].equals("-f")) {
+         getOpts().setScriptFile(args[i++ + 1]);
+       } else {
+-        files.add(args[i]);
++        return error(loc("unrecognized-argument", args[i]));
+       }
+     }
+ 

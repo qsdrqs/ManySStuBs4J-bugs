@@ -1,0 +1,17 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/pool/FixedChannelPool.java b/fixed/transport/src/main/java/io/netty/channel/pool/FixedChannelPool.java
+index 3b3c11195..1c0ebcc53 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/pool/FixedChannelPool.java
++++ b/fixed/transport/src/main/java/io/netty/channel/pool/FixedChannelPool.java
+@@ -43,10 +43,10 @@ public class FixedChannelPool extends SimpleChannelPool {
+             new TimeoutException("Acquire operation took longer then configured maximum time"),
+             FixedChannelPool.class, "<init>(...)");
+     static final IllegalStateException POOL_CLOSED_ON_RELEASE_EXCEPTION = ThrowableUtil.unknownStackTrace(
+-            new IllegalStateException("FixedChannelPooled was closed"),
++            new IllegalStateException("FixedChannelPool was closed"),
+             FixedChannelPool.class, "release(...)");
+     static final IllegalStateException POOL_CLOSED_ON_ACQUIRE_EXCEPTION = ThrowableUtil.unknownStackTrace(
+-            new IllegalStateException("FixedChannelPooled was closed"),
++            new IllegalStateException("FixedChannelPool was closed"),
+             FixedChannelPool.class, "acquire0(...)");
+     public enum AcquireTimeoutAction {
+         /**

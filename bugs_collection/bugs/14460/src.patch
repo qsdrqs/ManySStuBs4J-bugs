@@ -1,0 +1,13 @@
+diff --git a/buggy/src/com/google/javascript/jscomp/StripCode.java b/fixed/src/com/google/javascript/jscomp/StripCode.java
+index 7dc99ecad..9d15e954b 100644
+--- a/buggy/src/com/google/javascript/jscomp/StripCode.java
++++ b/fixed/src/com/google/javascript/jscomp/StripCode.java
+@@ -96,7 +96,7 @@ class StripCode implements CompilerPass {
+ 
+     NodeTraversal.traverse(compiler, root, new Strip());
+     // This pass may remove definitions of getter or setter properties
+-    GatherGettersAndSetterProperties.update(compiler, externs, root);
++    GatherGetterAndSetterProperties.update(compiler, externs, root);
+   }
+ 
+   // -------------------------------------------------------------------------

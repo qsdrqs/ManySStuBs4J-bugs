@@ -1,0 +1,13 @@
+diff --git a/buggy/src/samples/AmazonKinesisFirehose/AmazonKinesisFirehoseToS3Sample.java b/fixed/src/samples/AmazonKinesisFirehose/AmazonKinesisFirehoseToS3Sample.java
+index 73457a0f4..135d3c5a7 100644
+--- a/buggy/src/samples/AmazonKinesisFirehose/AmazonKinesisFirehoseToS3Sample.java
++++ b/fixed/src/samples/AmazonKinesisFirehose/AmazonKinesisFirehoseToS3Sample.java
+@@ -92,7 +92,7 @@ public class AmazonKinesisFirehoseToS3Sample extends AbstractAmazonKinesisFireho
+         // Validate AccountId parameter is set
+         if (StringUtils.isNullOrEmpty(accountId)) {
+             throw new IllegalArgumentException("AccountId is empty. Please enter the accountId in "
+-                    + "firehosetos3sample.properties file");
++                    + CONFIG_FILE + " file");
+         }
+     }
+ 

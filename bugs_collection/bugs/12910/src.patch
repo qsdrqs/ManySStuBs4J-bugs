@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/io/druid/server/coordinator/CoordinatorDynamicConfig.java b/fixed/server/src/main/java/io/druid/server/coordinator/CoordinatorDynamicConfig.java
+index 395646ad0..ea0c15f2c 100644
+--- a/buggy/server/src/main/java/io/druid/server/coordinator/CoordinatorDynamicConfig.java
++++ b/fixed/server/src/main/java/io/druid/server/coordinator/CoordinatorDynamicConfig.java
+@@ -55,7 +55,7 @@ public class CoordinatorDynamicConfig
+     this.emitBalancingStats = emitBalancingStats;
+     this.balancerComputeThreads = Math.min(
+         Math.max(balancerComputeThreads, 1),
+-        Runtime.getRuntime().availableProcessors() - 1
++        Math.max(Runtime.getRuntime().availableProcessors() - 1, 1)
+     );
+   }
+ 

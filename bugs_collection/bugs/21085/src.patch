@@ -1,0 +1,12 @@
+diff --git a/buggy/api/src/test/java/org/openmrs/util/FormatTest.java b/fixed/api/src/test/java/org/openmrs/util/FormatTest.java
+index e611d9ac2..da80f019e 100644
+--- a/buggy/api/src/test/java/org/openmrs/util/FormatTest.java
++++ b/fixed/api/src/test/java/org/openmrs/util/FormatTest.java
+@@ -86,6 +86,6 @@ public class FormatTest {
+      */
+     @Test
+     public void format_shouldNotFailWhenNoneOfTheParametersAreNull() {
+-        Assert.assertEquals("4/10/16", Format.format(new Date(1460323539000L), Locale.US, Format.FORMAT_TYPE.DATE));
++        Assert.assertNotEquals("", Format.format(new Date(1460323539000L), Locale.US, Format.FORMAT_TYPE.DATE));
+     }
+ }

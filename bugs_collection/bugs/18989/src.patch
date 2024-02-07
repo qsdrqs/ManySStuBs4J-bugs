@@ -1,0 +1,13 @@
+diff --git a/buggy/testweb/src/main/java/com/nhn/pinpoint/testweb/repository/MsSqlServerDaoIbatis.java b/fixed/testweb/src/main/java/com/nhn/pinpoint/testweb/repository/MsSqlServerDaoIbatis.java
+index 586472d01..6a22fc4a5 100644
+--- a/buggy/testweb/src/main/java/com/nhn/pinpoint/testweb/repository/MsSqlServerDaoIbatis.java
++++ b/fixed/testweb/src/main/java/com/nhn/pinpoint/testweb/repository/MsSqlServerDaoIbatis.java
+@@ -17,7 +17,7 @@ import java.sql.Statement;
+ public class MsSqlServerDaoIbatis implements MsSqlServerDao {
+ 
+     @Autowired
+-    @Qualifier("mysqlSqlMapClientTemplate")
++    @Qualifier("msSqlServerSqlMapClientTemplate")
+     private SqlMapClientTemplate sqlMapClientTemplate;
+ 
+     @Autowired

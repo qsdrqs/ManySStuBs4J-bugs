@@ -1,0 +1,24 @@
+diff --git a/buggy/presto-product-tests/src/main/java/com/facebook/presto/tests/hive/TestHiveStorageFormats.java b/fixed/presto-product-tests/src/main/java/com/facebook/presto/tests/hive/TestHiveStorageFormats.java
+index 731a1d5e6..7d3e86100 100644
+--- a/buggy/presto-product-tests/src/main/java/com/facebook/presto/tests/hive/TestHiveStorageFormats.java
++++ b/fixed/presto-product-tests/src/main/java/com/facebook/presto/tests/hive/TestHiveStorageFormats.java
+@@ -117,8 +117,7 @@ public class TestHiveStorageFormats
+         String createTableAsSelect = format(
+                 "CREATE TABLE %s WITH (format='%s') AS " +
+                         "SELECT " +
+-                        "orderkey, partkey, suppkey, linenumber, quantity, extendedprice, discount, tax, " +
+-                        "linestatus, shipinstruct, shipmode, comment, returnflag " +
++                        "partkey, suppkey, extendedprice " +
+                         "FROM tpch.%s.lineitem",
+                 tableName,
+                 storageFormat.getName(),
+@@ -192,8 +191,7 @@ public class TestHiveStorageFormats
+         String createTableAsSelect = format(
+                 "CREATE TABLE %s WITH (format='%s', partitioned_by = ARRAY['returnflag']) AS " +
+                         "SELECT " +
+-                        "orderkey, partkey, suppkey, linenumber, quantity, extendedprice, discount, tax, " +
+-                        "linestatus, shipinstruct, shipmode, comment, returnflag " +
++                        "tax, discount, returnflag " +
+                         "FROM tpch.%s.lineitem",
+                 tableName,
+                 storageFormat.getName(),

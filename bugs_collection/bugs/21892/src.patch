@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/scheduling/ScheduledTasksEndpointTests.java b/fixed/spring-boot-project/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/scheduling/ScheduledTasksEndpointTests.java
+index 5ae83833a..81d86ebd5 100644
+--- a/buggy/spring-boot-project/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/scheduling/ScheduledTasksEndpointTests.java
++++ b/fixed/spring-boot-project/spring-boot-actuator/src/test/java/org/springframework/boot/actuate/scheduling/ScheduledTasksEndpointTests.java
+@@ -144,7 +144,7 @@ public class ScheduledTasksEndpointTests {
+ 
+ 	@Configuration
+ 	@EnableScheduling
+-	private static class BaseConfiguration {
++	static class BaseConfiguration {
+ 
+ 		@Bean
+ 		public ScheduledTasksEndpoint endpoint(

@@ -1,0 +1,13 @@
+diff --git a/buggy/processing/src/main/java/io/druid/query/lookup/LookupConfig.java b/fixed/processing/src/main/java/io/druid/query/lookup/LookupConfig.java
+index 18cab141d..810afa9d3 100644
+--- a/buggy/processing/src/main/java/io/druid/query/lookup/LookupConfig.java
++++ b/fixed/processing/src/main/java/io/druid/query/lookup/LookupConfig.java
+@@ -37,7 +37,7 @@ public class LookupConfig
+ 
+   @Min(1)
+   @JsonProperty("numLookupLoadingThreads")
+-  private int numLookupLoadingThreads = Runtime.getRuntime().availableProcessors() / 2;
++  private int numLookupLoadingThreads = Math.max(1, Runtime.getRuntime().availableProcessors() / 2);
+ 
+   @Min(1)
+   @JsonProperty("coordinatorFetchRetries")

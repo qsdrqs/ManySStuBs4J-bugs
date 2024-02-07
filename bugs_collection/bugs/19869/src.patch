@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/ChannelInboundMessageHandlerAdapter.java b/fixed/transport/src/main/java/io/netty/channel/ChannelInboundMessageHandlerAdapter.java
+index a5d3ab02d..c1a6b3c9c 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/ChannelInboundMessageHandlerAdapter.java
++++ b/fixed/transport/src/main/java/io/netty/channel/ChannelInboundMessageHandlerAdapter.java
+@@ -82,7 +82,7 @@ public abstract class ChannelInboundMessageHandlerAdapter<I>
+                 try {
+                     if (!isSupported(msg)) {
+                         if (out == null) {
+-                            out = ctx.nextOutboundMessageBuffer();
++                            out = ctx.nextInboundMessageBuffer();
+                         }
+                         out.add(msg);
+                         unsupportedFound = true;

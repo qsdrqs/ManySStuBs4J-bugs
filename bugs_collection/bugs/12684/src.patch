@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/test/java/io/druid/server/initialization/JettyQosTest.java b/fixed/server/src/test/java/io/druid/server/initialization/JettyQosTest.java
+index 1b37f48cc..a7d39dd13 100644
+--- a/buggy/server/src/test/java/io/druid/server/initialization/JettyQosTest.java
++++ b/fixed/server/src/test/java/io/druid/server/initialization/JettyQosTest.java
+@@ -98,7 +98,7 @@ public class JettyQosTest extends BaseJettyTest
+     );
+   }
+ 
+-  @Test(timeout = 60_000L)
++  @Test(timeout = 120_000L)
+   public void testQoS() throws Exception
+   {
+     final int fastThreads = 20;

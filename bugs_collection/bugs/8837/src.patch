@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-tools/hadoop-gridmix/src/main/java/org/apache/hadoop/mapred/gridmix/Gridmix.java b/fixed/hadoop-tools/hadoop-gridmix/src/main/java/org/apache/hadoop/mapred/gridmix/Gridmix.java
+index dc52e997f..27008dc3e 100644
+--- a/buggy/hadoop-tools/hadoop-gridmix/src/main/java/org/apache/hadoop/mapred/gridmix/Gridmix.java
++++ b/fixed/hadoop-tools/hadoop-gridmix/src/main/java/org/apache/hadoop/mapred/gridmix/Gridmix.java
+@@ -685,7 +685,7 @@ public class Gridmix extends Configured implements Tool {
+           } catch (IOException e) {
+             LOG.warn("Failure killing " + job.getJobName(), e);
+           } catch (Exception e) {
+-            LOG.error("Unexcpected exception", e);
++            LOG.error("Unexpected exception", e);
+           }
+         }
+         LOG.info("Done.");

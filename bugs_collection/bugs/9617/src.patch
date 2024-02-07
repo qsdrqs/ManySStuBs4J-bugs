@@ -1,0 +1,14 @@
+diff --git a/buggy/storage-api/src/java/org/apache/hadoop/hive/serde2/io/HiveDecimalWritable.java b/fixed/storage-api/src/java/org/apache/hadoop/hive/serde2/io/HiveDecimalWritable.java
+index 94d61b49d..73b541fd2 100644
+--- a/buggy/storage-api/src/java/org/apache/hadoop/hive/serde2/io/HiveDecimalWritable.java
++++ b/fixed/storage-api/src/java/org/apache/hadoop/hive/serde2/io/HiveDecimalWritable.java
+@@ -950,7 +950,8 @@ public final class HiveDecimalWritable extends FastHiveDecimal
+   @HiveDecimalWritableVersionV1
+   public byte[] getInternalStorage() {
+     if (!isSet()) {
+-      throw new RuntimeException("no value set");
++      // don't break old callers that are trying to reuse storages
++      return new byte[0];
+     }
+ 
+     if (internalScratchLongs == null) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/EmptyStatementCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/EmptyStatementCheckTest.java
+index 851870af0..1fee99c92 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/EmptyStatementCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/coding/EmptyStatementCheckTest.java
+@@ -35,7 +35,7 @@ public class EmptyStatementCheckTest
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "coding" + File.separator + filename);
++                + "coding" + File.separator + "emptystatement" + File.separator + filename);
+     }
+ 
+     @Test

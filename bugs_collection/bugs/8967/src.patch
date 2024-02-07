@@ -1,0 +1,13 @@
+diff --git a/buggy/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-hs/src/test/java/org/apache/hadoop/mapreduce/v2/hs/webapp/TestHsWebServices.java b/fixed/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-hs/src/test/java/org/apache/hadoop/mapreduce/v2/hs/webapp/TestHsWebServices.java
+index 45a464edb..66b36632c 100644
+--- a/buggy/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-hs/src/test/java/org/apache/hadoop/mapreduce/v2/hs/webapp/TestHsWebServices.java
++++ b/fixed/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-hs/src/test/java/org/apache/hadoop/mapreduce/v2/hs/webapp/TestHsWebServices.java
+@@ -348,7 +348,7 @@ public class TestHsWebServices extends JerseyTest {
+       String hadoopBuildVersion, String hadoopVersion, long startedon) {
+     WebServicesTestUtils.checkStringMatch("hadoopVersionBuiltOn",
+         VersionInfo.getDate(), hadoopVersionBuiltOn);
+-    WebServicesTestUtils.checkStringMatch("hadoopBuildVersion",
++    WebServicesTestUtils.checkStringEqual("hadoopBuildVersion",
+         VersionInfo.getBuildVersion(), hadoopBuildVersion);
+     WebServicesTestUtils.checkStringMatch("hadoopVersion",
+         VersionInfo.getVersion(), hadoopVersion);

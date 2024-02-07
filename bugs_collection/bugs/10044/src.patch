@@ -1,0 +1,13 @@
+diff --git a/buggy/storm-core/src/jvm/backtype/storm/security/auth/authorizer/SimpleACLAuthorizer.java b/fixed/storm-core/src/jvm/backtype/storm/security/auth/authorizer/SimpleACLAuthorizer.java
+index e8425bf18..1a3433ed6 100644
+--- a/buggy/storm-core/src/jvm/backtype/storm/security/auth/authorizer/SimpleACLAuthorizer.java
++++ b/fixed/storm-core/src/jvm/backtype/storm/security/auth/authorizer/SimpleACLAuthorizer.java
+@@ -110,7 +110,7 @@ public class SimpleACLAuthorizer implements IAuthorizer {
+             }
+ 
+             Set<String> topoGroups = new HashSet<String>();
+-            if (topology_conf.containsKey(Config.TOPOLOGY_GROUPS)) {
++            if (topology_conf.containsKey(Config.TOPOLOGY_GROUPS) && topology_conf.get(Config.TOPOLOGY_GROUPS) != null) {
+                 topoGroups.addAll((Collection<String>)topology_conf.get(Config.TOPOLOGY_GROUPS));
+             }
+ 

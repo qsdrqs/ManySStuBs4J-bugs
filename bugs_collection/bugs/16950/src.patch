@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientClusterServiceImpl.java b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientClusterServiceImpl.java
+index e1e253f77..20ca110bb 100644
+--- a/buggy/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientClusterServiceImpl.java
++++ b/fixed/hazelcast-client/src/main/java/com/hazelcast/client/spi/impl/ClientClusterServiceImpl.java
+@@ -560,7 +560,7 @@ public final class ClientClusterServiceImpl implements ClientClusterService {
+ 
+     private Collection<InetSocketAddress> getConfigAddresses() {
+         final List<InetSocketAddress> socketAddresses = new LinkedList<InetSocketAddress>();
+-        for (String address : getClientConfig().getAddressList()) {
++        for (String address : getClientConfig().getAddresses()) {
+             socketAddresses.addAll(AddressHelper.getSocketAddresses(address));
+         }
+         Collections.shuffle(socketAddresses);

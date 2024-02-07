@@ -1,0 +1,13 @@
+diff --git a/buggy/handler/src/main/java/io/netty/handler/queue/BlockingReadHandler.java b/fixed/handler/src/main/java/io/netty/handler/queue/BlockingReadHandler.java
+index 88cdf0bfc..9167de743 100644
+--- a/buggy/handler/src/main/java/io/netty/handler/queue/BlockingReadHandler.java
++++ b/fixed/handler/src/main/java/io/netty/handler/queue/BlockingReadHandler.java
+@@ -100,7 +100,7 @@ public class BlockingReadHandler<E> extends ChannelInboundHandlerAdapter<Object>
+     public ChannelBufferHolder<Object> newInboundBuffer(
+             ChannelInboundHandlerContext<Object> ctx) throws Exception {
+         this.ctx = ctx;
+-        return ChannelBufferHolders.catchAllBuffer();
++        return ChannelBufferHolders.messageBuffer(queue);
+     }
+ 
+     /**

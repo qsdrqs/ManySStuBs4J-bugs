@@ -1,0 +1,13 @@
+diff --git a/buggy/backends/gdx-openal/src/com/badlogic/gdx/backends/openal/JavaSoundAudioDevice.java b/fixed/backends/gdx-openal/src/com/badlogic/gdx/backends/openal/JavaSoundAudioDevice.java
+index 30c57f046..ab3c9579d 100644
+--- a/buggy/backends/gdx-openal/src/com/badlogic/gdx/backends/openal/JavaSoundAudioDevice.java
++++ b/fixed/backends/gdx-openal/src/com/badlogic/gdx/backends/openal/JavaSoundAudioDevice.java
+@@ -35,7 +35,7 @@ public class JavaSoundAudioDevice implements AudioDevice {
+ 		try {
+ 			AudioFormat format = new AudioFormat(samplingRate, 16, isMono ? 1 : 2, true, false);
+ 			line = AudioSystem.getSourceDataLine(format);
+-			line.open(format, Math.min(1024, samplingRate / 10) * 2);
++			line.open(format, Math.min(2048, samplingRate / 5) * 2);
+ 			line.start();
+ 		} catch (Exception ex) {
+ 			throw new GdxRuntimeException("Error creating JavaSoundAudioDevice.", ex);

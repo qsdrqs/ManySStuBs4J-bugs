@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-tools/spring-boot-loader/src/test/java/org/springframework/boot/loader/data/RandomAccessDataFileTests.java b/fixed/spring-boot-tools/spring-boot-loader/src/test/java/org/springframework/boot/loader/data/RandomAccessDataFileTests.java
+index b95498ef9..2caf95cf4 100644
+--- a/buggy/spring-boot-tools/spring-boot-loader/src/test/java/org/springframework/boot/loader/data/RandomAccessDataFileTests.java
++++ b/fixed/spring-boot-tools/spring-boot-loader/src/test/java/org/springframework/boot/loader/data/RandomAccessDataFileTests.java
+@@ -333,7 +333,7 @@ public class RandomAccessDataFileTests {
+ 			public RandomAccessFile answer(InvocationOnMock invocation) throws Throwable {
+ 				RandomAccessFile originalFile = (RandomAccessFile) invocation
+ 						.callRealMethod();
+-				if (Mockito.isSpy(originalFile)) {
++				if (Mockito.mockingDetails(originalFile).isSpy()) {
+ 					return originalFile;
+ 				}
+ 				RandomAccessFile spiedFile = spy(originalFile);

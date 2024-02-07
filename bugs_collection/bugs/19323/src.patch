@@ -1,0 +1,13 @@
+diff --git a/buggy/community/udc/src/test/java/org/neo4j/ext/udc/impl/UdcExtensionImplTest.java b/fixed/community/udc/src/test/java/org/neo4j/ext/udc/impl/UdcExtensionImplTest.java
+index 4d84c7575..2dd6b6455 100644
+--- a/buggy/community/udc/src/test/java/org/neo4j/ext/udc/impl/UdcExtensionImplTest.java
++++ b/fixed/community/udc/src/test/java/org/neo4j/ext/udc/impl/UdcExtensionImplTest.java
+@@ -244,7 +244,7 @@ public class UdcExtensionImplTest
+         GraphDatabaseService graphdb = createTempDatabase( config );
+         assertGotSuccessWithRetry( IS_GREATER_THAN_ZERO );
+         String version = handler.getQueryMap().get(VERSION);
+-        assertTrue(version.matches("\\d.\\d(M0\\d|-SNAPSHOT)?"));
++        assertTrue(version.matches("\\d.\\d(\\.M0\\d|-SNAPSHOT)?"));
+ 
+         destroy(graphdb);
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-samples/spring-boot-sample-secure-oauth2/src/test/java/sample/secure/oauth2/SampleSecureOAuth2ApplicationTests.java b/fixed/spring-boot-samples/spring-boot-sample-secure-oauth2/src/test/java/sample/secure/oauth2/SampleSecureOAuth2ApplicationTests.java
+index bef449a0a..f9726c62a 100644
+--- a/buggy/spring-boot-samples/spring-boot-sample-secure-oauth2/src/test/java/sample/secure/oauth2/SampleSecureOAuth2ApplicationTests.java
++++ b/fixed/spring-boot-samples/spring-boot-sample-secure-oauth2/src/test/java/sample/secure/oauth2/SampleSecureOAuth2ApplicationTests.java
+@@ -108,7 +108,7 @@ public class SampleSecureOAuth2ApplicationTests {
+ 				.perform(get("/flights/1").accept(MediaTypes.HAL_JSON)
+ 						.header("Authorization", "Bearer " + accessToken))
+ 				.andExpect(
+-						header().string("Content-Type", MediaTypes.HAL_JSON.toString()))
++						header().string("Content-Type", MediaTypes.HAL_JSON.toString() + ";charset=UTF-8"))
+ 				.andExpect(status().isOk()).andDo(print()).andReturn();
+ 
+ 		Flight flight = this.objectMapper.readValue(

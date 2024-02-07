@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-clients/src/test/java/org/apache/flink/client/CliFrontendInfoTest.java b/fixed/flink-clients/src/test/java/org/apache/flink/client/CliFrontendInfoTest.java
+index c1df5416c..5cc90ebfc 100644
+--- a/buggy/flink-clients/src/test/java/org/apache/flink/client/CliFrontendInfoTest.java
++++ b/fixed/flink-clients/src/test/java/org/apache/flink/client/CliFrontendInfoTest.java
+@@ -61,7 +61,7 @@ public class CliFrontendInfoTest {
+ 		replaceStdOut();
+ 		try {
+ 
+-			String[] parameters = new String[] { CliFrontendTestUtils.getTestJarPath() };
++			String[] parameters = new String[] { CliFrontendTestUtils.getTestJarPath(), "-f", "true"};
+ 			CliFrontend testFrontend = new CliFrontend(CliFrontendTestUtils.getConfigDir());
+ 			int retCode = testFrontend.info(parameters);
+ 			assertTrue(retCode == 0);

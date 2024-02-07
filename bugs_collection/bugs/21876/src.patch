@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/embedded/undertow/UndertowWebServer.java b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/embedded/undertow/UndertowWebServer.java
+index c915cc4dd..196112a71 100644
+--- a/buggy/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/embedded/undertow/UndertowWebServer.java
++++ b/fixed/spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/embedded/undertow/UndertowWebServer.java
+@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
+  */
+ public class UndertowWebServer implements WebServer {
+ 
+-	private static final Log logger = LogFactory.getLog(UndertowServletWebServer.class);
++	private static final Log logger = LogFactory.getLog(UndertowWebServer.class);
+ 
+ 	private final Object monitor = new Object();
+ 

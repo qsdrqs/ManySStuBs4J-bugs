@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/HazelcastClientTopicTest.java b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/HazelcastClientTopicTest.java
+index 40c5c36ce..e200a19a9 100644
+--- a/buggy/hazelcast-client/src/test/java/com/hazelcast/client/HazelcastClientTopicTest.java
++++ b/fixed/hazelcast-client/src/test/java/com/hazelcast/client/HazelcastClientTopicTest.java
+@@ -58,7 +58,7 @@ public class HazelcastClientTopicTest {
+             }
+         });
+         topic.publish(message);
+-        assertTrue(latch.await(10, TimeUnit.MILLISECONDS));
++        assertTrue(latch.await(10000, TimeUnit.MILLISECONDS));
+     }
+ 
+     @Test

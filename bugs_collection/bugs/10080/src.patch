@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/storm/kafka/DynamicPartitionConnections.java b/fixed/src/jvm/storm/kafka/DynamicPartitionConnections.java
+index 12a121b0d..9e48cf4d7 100644
+--- a/buggy/src/jvm/storm/kafka/DynamicPartitionConnections.java
++++ b/fixed/src/jvm/storm/kafka/DynamicPartitionConnections.java
+@@ -47,7 +47,7 @@ public class DynamicPartitionConnections {
+     }
+     
+     public void unregister(GlobalPartitionId id) {
+-        return unregister(id.host, id.partition);
++        unregister(id.host, id.partition);
+     }
+     
+     public void clear() {

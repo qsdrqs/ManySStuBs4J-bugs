@@ -1,0 +1,15 @@
+diff --git a/buggy/community/kernel/src/main/java/org/neo4j/kernel/IndexManagerImpl.java b/fixed/community/kernel/src/main/java/org/neo4j/kernel/IndexManagerImpl.java
+index dc85b9013..234937a85 100644
+--- a/buggy/community/kernel/src/main/java/org/neo4j/kernel/IndexManagerImpl.java
++++ b/fixed/community/kernel/src/main/java/org/neo4j/kernel/IndexManagerImpl.java
+@@ -78,7 +78,9 @@ class IndexManagerImpl implements IndexManager
+             {
+                 return result;
+             }
+-            throw new IllegalArgumentException( "No index provider '" + provider + "' found" );
++            throw new IllegalArgumentException( "No index provider '" + provider +
++                    "' found. Maybe the intended provider (or one more of its dependencies) " +
++                    "aren't on the classpath or it failed to load." );
+         }
+     }
+ 

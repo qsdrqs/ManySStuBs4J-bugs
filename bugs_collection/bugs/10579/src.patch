@@ -1,0 +1,14 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/FinalLocalVariableCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/FinalLocalVariableCheck.java
+index 7c96b218a..bb17e957e 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/FinalLocalVariableCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/FinalLocalVariableCheck.java
+@@ -203,7 +203,8 @@ public class FinalLocalVariableCheck extends AbstractCheck {
+                 break;
+             case TokenTypes.PARAMETER_DEF:
+                 if (!isInLambda(ast)
+-                        && !ast.branchContains(TokenTypes.FINAL)
++                        && ast.findFirstToken(TokenTypes.MODIFIERS)
++                            .findFirstToken(TokenTypes.FINAL) == null
+                         && !isInAbstractOrNativeMethod(ast)
+                         && !ScopeUtils.isInInterfaceBlock(ast)
+                         && !isMultipleTypeCatch(ast)) {

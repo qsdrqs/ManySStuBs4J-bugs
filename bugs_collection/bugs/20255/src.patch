@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.knx/src/main/java/org/openhab/binding/knx/internal/bus/KNXBindingDatapointReaderTask.java b/fixed/bundles/binding/org.openhab.binding.knx/src/main/java/org/openhab/binding/knx/internal/bus/KNXBindingDatapointReaderTask.java
+index a09e3f5ad..0a5f797bc 100644
+--- a/buggy/bundles/binding/org.openhab.binding.knx/src/main/java/org/openhab/binding/knx/internal/bus/KNXBindingDatapointReaderTask.java
++++ b/fixed/bundles/binding/org.openhab.binding.knx/src/main/java/org/openhab/binding/knx/internal/bus/KNXBindingDatapointReaderTask.java
+@@ -63,7 +63,7 @@ public class KNXBindingDatapointReaderTask extends Thread implements KNXConnecti
+ 
+                 if (dp != null) {
+                     if (mKNXConnected) {
+-                        sLogger.debug("Autorefresh: Trying to read form KNX bus: {}", dp);
++                        sLogger.debug("Autorefresh: Trying to read from KNX bus: {}", dp);
+                         readFromKNXBus(dp);
+ 
+                         long readingPause = KNXConnection.getReadingPause();

@@ -1,0 +1,18 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/graphics/glutils/ShapeRenderer.java b/fixed/gdx/src/com/badlogic/gdx/graphics/glutils/ShapeRenderer.java
+index 811e0c7b1..a2621828a 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/graphics/glutils/ShapeRenderer.java
++++ b/fixed/gdx/src/com/badlogic/gdx/graphics/glutils/ShapeRenderer.java
+@@ -745,11 +745,11 @@ public class ShapeRenderer implements Disposable {
+ 			renderer.vertex(x + width, y + height, z + depth);
+ 
+ 			renderer.color(colorBits);
+-			renderer.vertex(x, y + height, z + depth);
++			renderer.vertex(x + width, y + height, z + depth);
+ 			renderer.color(colorBits);
+ 			renderer.vertex(x, y, z + depth);
+ 			renderer.color(colorBits);
+-			renderer.vertex(x + width, y + height, z + depth);
++			renderer.vertex(x, y + height, z + depth);
+ 
+ 			// Left
+ 			renderer.color(colorBits);

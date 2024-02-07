@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/endpoint/mvc/ManagementErrorEndpoint.java b/fixed/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/endpoint/mvc/ManagementErrorEndpoint.java
+index e795bd1f7..4030d7818 100644
+--- a/buggy/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/endpoint/mvc/ManagementErrorEndpoint.java
++++ b/fixed/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/endpoint/mvc/ManagementErrorEndpoint.java
+@@ -43,7 +43,7 @@ public class ManagementErrorEndpoint {
+ 		this.errorAttributes = errorAttributes;
+ 	}
+ 
+-	@RequestMapping("${server.path:/error}")
++	@RequestMapping("${server.error.path:${error.path:/error}}")
+ 	@ResponseBody
+ 	public Map<String, Object> invoke() {
+ 		return this.errorAttributes.getErrorAttributes(

@@ -1,0 +1,17 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocPackageCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocPackageCheckTest.java
+index ea5ba11b2..d8a51a911 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocPackageCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocPackageCheckTest.java
+@@ -156,11 +156,9 @@ public class JavadocPackageCheckTest
+     /**
+      * Using direct call to check here because there is no other way
+      * to reproduce exception with invalid canonical path.
+-     *
+-     * @throws Exception if error occurs
+      */
+     @Test
+-    public void testCheckstyleExceptionIfFailedToGetCanonicalPathToFile() throws Exception {
++    public void testCheckstyleExceptionIfFailedToGetCanonicalPathToFile() {
+         final JavadocPackageCheck check = new JavadocPackageCheck();
+         final File fileWithInvalidPath = new File("\u0000\u0000\u0000");
+         final FileText mockFileText = new FileText(fileWithInvalidPath, Collections.emptyList());

@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/test/java/com/facebook/presto/execution/MockRemoteTaskFactory.java b/fixed/presto-main/src/test/java/com/facebook/presto/execution/MockRemoteTaskFactory.java
+index 2a475e63f..0e1dd8d57 100644
+--- a/buggy/presto-main/src/test/java/com/facebook/presto/execution/MockRemoteTaskFactory.java
++++ b/fixed/presto-main/src/test/java/com/facebook/presto/execution/MockRemoteTaskFactory.java
+@@ -351,7 +351,7 @@ public class MockRemoteTaskFactory
+         }
+ 
+         @Override
+-        public int getQueuedPartitionedSplitCount()
++        public synchronized int getQueuedPartitionedSplitCount()
+         {
+             if (taskStateMachine.getState().isDone()) {
+                 return 0;

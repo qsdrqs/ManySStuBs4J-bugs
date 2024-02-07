@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/processor/aggregate/UseLatestAggregationStrategy.java b/fixed/camel-core/src/main/java/org/apache/camel/processor/aggregate/UseLatestAggregationStrategy.java
+index e91586ad9..2dd1cd492 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/processor/aggregate/UseLatestAggregationStrategy.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/processor/aggregate/UseLatestAggregationStrategy.java
+@@ -36,7 +36,7 @@ public class UseLatestAggregationStrategy implements AggregationStrategy {
+         if (oldExchange == null) {
+             return newExchange.getException();
+         } else {
+-            return newExchange.getException() != null
++            return (newExchange != null && newExchange.getException() != null)
+                 ? newExchange.getException()
+                 : oldExchange.getException();
+         }

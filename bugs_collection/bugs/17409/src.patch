@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/junit/Assert.java b/fixed/src/main/java/org/junit/Assert.java
+index af242b45f..91799f01f 100644
+--- a/buggy/src/main/java/org/junit/Assert.java
++++ b/fixed/src/main/java/org/junit/Assert.java
+@@ -997,7 +997,7 @@ public class Assert {
+                 return retVal;
+             } else {
+                 String mismatchMessage = format("unexpected exception type thrown;",
+-                        expectedThrowable.getSimpleName(), actualThrown.getClass().getSimpleName());
++                        expectedThrowable.getName(), actualThrown.getClass().getName());
+ 
+                 // The AssertionError(String, Throwable) ctor is only available on JDK7.
+                 AssertionError assertionError = new AssertionError(mismatchMessage);

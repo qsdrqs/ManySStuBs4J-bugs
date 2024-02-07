@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/metrics/JavaNCSSCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/metrics/JavaNCSSCheckTest.java
+index 90caf22f3..5b7c2f0de 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/metrics/JavaNCSSCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/metrics/JavaNCSSCheckTest.java
+@@ -44,7 +44,7 @@ public class JavaNCSSCheckTest extends BaseCheckTestSupport {
+     @Override
+     protected String getPath(String filename) throws IOException {
+         return super.getPath("checks" + File.separator
+-                + "metrics" + File.separator + filename);
++                + "metrics" + File.separator + "javancss" + File.separator + filename);
+     }
+ 
+     @Test

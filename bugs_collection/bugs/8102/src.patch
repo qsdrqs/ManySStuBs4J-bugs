@@ -1,0 +1,19 @@
+diff --git a/buggy/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/CharType.java b/fixed/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/CharType.java
+index 116837077..fe870ce18 100644
+--- a/buggy/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/CharType.java
++++ b/fixed/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/CharType.java
+@@ -38,11 +38,11 @@ import java.util.Set;
+ @PublicEvolving
+ public final class CharType extends LogicalType {
+ 
+-	private static final int MIN_LENGTH = 1;
++	public static final int MIN_LENGTH = 1;
+ 
+-	private static final int MAX_LENGTH = 255;
++	public static final int MAX_LENGTH = 255;
+ 
+-	private static final int DEFAULT_LENGTH = 1;
++	public static final int DEFAULT_LENGTH = 1;
+ 
+ 	private static final String FORMAT = "CHAR(%d)";
+ 

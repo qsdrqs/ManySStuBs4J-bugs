@@ -1,0 +1,13 @@
+diff --git a/buggy/buffer/src/test/java/io/netty/buffer/AbstractByteBufTest.java b/fixed/buffer/src/test/java/io/netty/buffer/AbstractByteBufTest.java
+index b6ab641be..e2fe39166 100644
+--- a/buggy/buffer/src/test/java/io/netty/buffer/AbstractByteBufTest.java
++++ b/fixed/buffer/src/test/java/io/netty/buffer/AbstractByteBufTest.java
+@@ -1348,7 +1348,7 @@ public abstract class AbstractByteBufTest {
+         for (int i = 0; i < buffer.capacity(); i ++) {
+             buffer.writeByte((byte) i);
+         }
+-        ByteBuf copy = copiedBuffer(buffer);
++        ByteBuf copy = freeLater(copiedBuffer(buffer));
+ 
+         // Discard the first (CAPACITY / 2 - 1) bytes.
+         buffer.setIndex(CAPACITY / 2 - 1, CAPACITY - 1);

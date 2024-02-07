@@ -1,0 +1,16 @@
+diff --git a/buggy/bundles/binding/org.openhab.binding.rfxcom/src/main/java/org/openhab/binding/rfxcom/internal/messages/RFXComLighting5Message.java b/fixed/bundles/binding/org.openhab.binding.rfxcom/src/main/java/org/openhab/binding/rfxcom/internal/messages/RFXComLighting5Message.java
+index e5b6c76f2..e6ab7a97a 100644
+--- a/buggy/bundles/binding/org.openhab.binding.rfxcom/src/main/java/org/openhab/binding/rfxcom/internal/messages/RFXComLighting5Message.java
++++ b/fixed/bundles/binding/org.openhab.binding.rfxcom/src/main/java/org/openhab/binding/rfxcom/internal/messages/RFXComLighting5Message.java
+@@ -60,8 +60,9 @@ public class RFXComLighting5Message extends RFXComBaseMessage {
+ 		EMW100(1),
+ 		BBSB_NEW(2),
+ 		MDREMOTE(3),
+-		CONRAD_RSL2(4);
+-
++		CONRAD_RSL2(4),
++		LIVOLO(5);
++		
+ 		private final int subType;
+ 
+ 		SubType(int subType) {

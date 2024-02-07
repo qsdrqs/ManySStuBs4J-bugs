@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/partition/SpilledSubpartitionView.java b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/partition/SpilledSubpartitionView.java
+index 378b0867d..2a6a71f05 100644
+--- a/buggy/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/partition/SpilledSubpartitionView.java
++++ b/fixed/flink-runtime/src/main/java/org/apache/flink/runtime/io/network/partition/SpilledSubpartitionView.java
+@@ -148,7 +148,7 @@ class SpilledSubpartitionView implements ResultSubpartitionView, NotificationLis
+ 		}
+ 
+ 		int newBacklog = parent.decreaseBuffersInBacklog(current);
+-		return new BufferAndBacklog(current, newBacklog > 0, newBacklog, nextBufferIsEvent);
++		return new BufferAndBacklog(current, newBacklog > 0 || nextBufferIsEvent, newBacklog, nextBufferIsEvent);
+ 	}
+ 
+ 	@Nullable

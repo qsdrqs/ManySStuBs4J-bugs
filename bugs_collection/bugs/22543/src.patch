@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/cloud/CloudAutoConfiguration.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/cloud/CloudAutoConfiguration.java
+index 7a78f6f4d..4081c4f6f 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/cloud/CloudAutoConfiguration.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/cloud/CloudAutoConfiguration.java
+@@ -48,7 +48,7 @@ import org.springframework.core.annotation.Order;
+ @Configuration
+ @Profile("cloud")
+ @Order(CloudAutoConfiguration.ORDER)
+-@ConditionalOnClass(Cloud.class)
++@ConditionalOnClass(CloudScanConfiguration.class)
+ @ConditionalOnMissingBean(Cloud.class)
+ @ConditionalOnProperty(prefix = "spring.cloud", name = "enabled", havingValue = "true", matchIfMissing = true)
+ @Import(CloudScanConfiguration.class)

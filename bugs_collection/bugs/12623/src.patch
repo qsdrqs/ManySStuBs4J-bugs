@@ -1,0 +1,13 @@
+diff --git a/buggy/services/src/main/java/org/apache/druid/cli/CliRouter.java b/fixed/services/src/main/java/org/apache/druid/cli/CliRouter.java
+index e81b0e83a..c6f5a9bf3 100644
+--- a/buggy/services/src/main/java/org/apache/druid/cli/CliRouter.java
++++ b/fixed/services/src/main/java/org/apache/druid/cli/CliRouter.java
+@@ -59,7 +59,7 @@ import java.util.List;
+  */
+ @Command(
+     name = "router",
+-    description = "Experimental! Understands tiers and routes things to different brokers, see http://druid.io/docs/latest/development/router.html for a description"
++    description = "Experimental! Understands tiers and routes things to different brokers, see https://druid.apache.org/docs/latest/development/router.html for a description"
+ )
+ public class CliRouter extends ServerRunnable
+ {

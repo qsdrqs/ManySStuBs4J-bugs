@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/pipeline/EntityMentionsAnnotator.java b/fixed/src/edu/stanford/nlp/pipeline/EntityMentionsAnnotator.java
+index ced9ab5d6..c67b64546 100644
+--- a/buggy/src/edu/stanford/nlp/pipeline/EntityMentionsAnnotator.java
++++ b/fixed/src/edu/stanford/nlp/pipeline/EntityMentionsAnnotator.java
+@@ -233,7 +233,7 @@ public class EntityMentionsAnnotator implements Annotator {
+       Map<String,Double> labelProbsForToken =
+           token.get(CoreAnnotations.NamedEntityTagProbsAnnotation.class);
+       for (String label : labelProbsForToken.keySet()) {
+-        if (labelProbsForToken.get(label) < entityLabelProbVals.get(label))
++        if (entityLabelProbVals.containsKey(label) && labelProbsForToken.get(label) < entityLabelProbVals.get(label))
+           entityLabelProbVals.put(label, labelProbsForToken.get(label));
+       }
+     }

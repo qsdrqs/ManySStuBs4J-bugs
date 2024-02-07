@@ -1,0 +1,14 @@
+diff --git a/buggy/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/graph/StreamGraphHasherV2.java b/fixed/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/graph/StreamGraphHasherV2.java
+index d7c51bcbd..a87f49fc7 100644
+--- a/buggy/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/graph/StreamGraphHasherV2.java
++++ b/fixed/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/graph/StreamGraphHasherV2.java
+@@ -177,7 +177,8 @@ public class StreamGraphHasherV2 implements StreamGraphHasher {
+ 
+ 			for (byte[] previousHash : hashes.values()) {
+ 				if (Arrays.equals(previousHash, hash)) {
+-					throw new IllegalArgumentException("Hash collision on user-specified ID. " +
++					throw new IllegalArgumentException("Hash collision on user-specified ID " +
++							"\"" + userSpecifiedHash + "\". " +
+ 							"Most likely cause is a non-unique ID. Please check that all IDs " +
+ 							"specified via `uid(String)` are unique.");
+ 				}

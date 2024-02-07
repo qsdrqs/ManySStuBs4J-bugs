@@ -1,0 +1,13 @@
+diff --git a/buggy/core/src/main/java/cucumber/runtime/RuntimeGlue.java b/fixed/core/src/main/java/cucumber/runtime/RuntimeGlue.java
+index 503982648..88910b7dd 100644
+--- a/buggy/core/src/main/java/cucumber/runtime/RuntimeGlue.java
++++ b/fixed/core/src/main/java/cucumber/runtime/RuntimeGlue.java
+@@ -61,7 +61,7 @@ public class RuntimeGlue implements Glue {
+     public StepDefinitionMatch stepDefinitionMatch(String featurePath, Step step, I18n i18n) {
+         List<StepDefinitionMatch> matches = stepDefinitionMatches(featurePath, step);
+         try {
+-            if (matches.size() == 0) {
++            if (matches.isEmpty()) {
+                 tracker.addUndefinedStep(step, i18n);
+                 return null;
+             }

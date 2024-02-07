@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/com/metamx/druid/master/rules/PeriodLoadRule.java b/fixed/server/src/main/java/com/metamx/druid/master/rules/PeriodLoadRule.java
+index 84128e4a7..60d27eb01 100644
+--- a/buggy/server/src/main/java/com/metamx/druid/master/rules/PeriodLoadRule.java
++++ b/fixed/server/src/main/java/com/metamx/druid/master/rules/PeriodLoadRule.java
+@@ -83,7 +83,7 @@ public class PeriodLoadRule extends LoadRule
+   @Override
+   public boolean appliesTo(DataSegment segment)
+   {
+-    final Interval currInterval = new Interval(new DateTime().minus(period), period);
++    final Interval currInterval = new Interval(period, new DateTime());
+     return currInterval.overlaps(segment.getInterval());
+   }
+ }

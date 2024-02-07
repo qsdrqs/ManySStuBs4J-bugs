@@ -1,0 +1,13 @@
+diff --git a/buggy/ql/src/java/org/apache/hadoop/hive/ql/parse/SemanticAnalyzer.java b/fixed/ql/src/java/org/apache/hadoop/hive/ql/parse/SemanticAnalyzer.java
+index c5f39d3f7..dda28b0e6 100644
+--- a/buggy/ql/src/java/org/apache/hadoop/hive/ql/parse/SemanticAnalyzer.java
++++ b/fixed/ql/src/java/org/apache/hadoop/hive/ql/parse/SemanticAnalyzer.java
+@@ -862,7 +862,7 @@ public class SemanticAnalyzer extends BaseSemanticAnalyzer {
+         return expr.getText();
+ 
+       case HiveParser.StringLiteral:
+-        return PlanUtils.stripQuotes(expr.getText());
++        return BaseSemanticAnalyzer.unescapeSQLString(expr.getText());
+ 
+       case HiveParser.KW_FALSE:
+         // UDFToBoolean casts any non-empty string to true, so set this to false

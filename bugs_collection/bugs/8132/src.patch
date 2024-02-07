@@ -1,0 +1,19 @@
+diff --git a/buggy/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/YearMonthIntervalType.java b/fixed/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/YearMonthIntervalType.java
+index cfe79529d..c28f920f5 100644
+--- a/buggy/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/YearMonthIntervalType.java
++++ b/fixed/flink-table/flink-table-common/src/main/java/org/apache/flink/table/types/logical/YearMonthIntervalType.java
+@@ -47,11 +47,11 @@ import java.util.Set;
+ @PublicEvolving
+ public final class YearMonthIntervalType extends LogicalType {
+ 
+-	private static final int MIN_PRECISION = 1;
++	public static final int MIN_PRECISION = 1;
+ 
+-	private static final int MAX_PRECISION = 4;
++	public static final int MAX_PRECISION = 4;
+ 
+-	private static final int DEFAULT_PRECISION = 2;
++	public static final int DEFAULT_PRECISION = 2;
+ 
+ 	private static final String YEAR_FORMAT = "INTERVAL YEAR(%d)";
+ 

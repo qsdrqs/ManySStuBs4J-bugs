@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/map/impl/record/ObjectRecordWithStats.java b/fixed/hazelcast/src/main/java/com/hazelcast/map/impl/record/ObjectRecordWithStats.java
+index f59e158ba..1df5a3ec1 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/map/impl/record/ObjectRecordWithStats.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/map/impl/record/ObjectRecordWithStats.java
+@@ -18,7 +18,7 @@ package com.hazelcast.map.impl.record;
+ 
+ class ObjectRecordWithStats extends AbstractRecordWithStats<Object> {
+ 
+-    private Object value;
++    private volatile Object value;
+ 
+     public ObjectRecordWithStats() {
+         super();

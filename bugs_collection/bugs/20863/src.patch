@@ -1,0 +1,13 @@
+diff --git a/buggy/bundles/core/org.openhab.core.persistence/src/main/java/org/openhab/core/persistence/extensions/PersistenceExtensions.java b/fixed/bundles/core/org.openhab.core.persistence/src/main/java/org/openhab/core/persistence/extensions/PersistenceExtensions.java
+index 7503c440f..7c6676920 100644
+--- a/buggy/bundles/core/org.openhab.core.persistence/src/main/java/org/openhab/core/persistence/extensions/PersistenceExtensions.java
++++ b/fixed/bundles/core/org.openhab.core.persistence/src/main/java/org/openhab/core/persistence/extensions/PersistenceExtensions.java
+@@ -180,7 +180,7 @@ public class PersistenceExtensions implements ManagedService {
+ 	static public Boolean changedSince(Item item, AbstractInstant timestamp, String serviceName) {
+ 		Iterable<HistoricItem> result = getAllStatesSince(item, timestamp, serviceName);
+ 		Iterator<HistoricItem> it = result.iterator();
+-		State state = null;
++		State state = historicState(item, timestamp);
+ 		while(it.hasNext()) {
+ 			HistoricItem hItem = it.next();
+ 			if(state!=null && !hItem.getState().equals(state)) {

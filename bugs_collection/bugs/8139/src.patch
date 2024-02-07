@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-end-to-end-tests/flink-datastream-allround-test/src/main/java/org/apache/flink/streaming/tests/DataStreamAllroundTestJobFactory.java b/fixed/flink-end-to-end-tests/flink-datastream-allround-test/src/main/java/org/apache/flink/streaming/tests/DataStreamAllroundTestJobFactory.java
+index a897bf289..913d0304a 100644
+--- a/buggy/flink-end-to-end-tests/flink-datastream-allround-test/src/main/java/org/apache/flink/streaming/tests/DataStreamAllroundTestJobFactory.java
++++ b/fixed/flink-end-to-end-tests/flink-datastream-allround-test/src/main/java/org/apache/flink/streaming/tests/DataStreamAllroundTestJobFactory.java
+@@ -303,7 +303,7 @@ public class DataStreamAllroundTestJobFactory {
+ 					restartStrategy = RestartStrategies.noRestart();
+ 					break;
+ 				default:
+-					throw new IllegalArgumentException("Unkown restart strategy: " + restartStrategyConfig);
++					throw new IllegalArgumentException("Unknown restart strategy: " + restartStrategyConfig);
+ 			}
+ 			env.setRestartStrategy(restartStrategy);
+ 		}

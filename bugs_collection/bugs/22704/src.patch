@@ -1,0 +1,14 @@
+diff --git a/buggy/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/provider/expression/OAuth2ExpressionParser.java b/fixed/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/provider/expression/OAuth2ExpressionParser.java
+index 571d8c013..861411969 100644
+--- a/buggy/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/provider/expression/OAuth2ExpressionParser.java
++++ b/fixed/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/provider/expression/OAuth2ExpressionParser.java
+@@ -35,7 +35,8 @@ import org.springframework.util.Assert;
+  * @author Rob Winch
+  * 
+  */
+-final class OAuth2ExpressionParser implements ExpressionParser {
++public class OAuth2ExpressionParser implements ExpressionParser {
++
+ 	private final ExpressionParser delegate;
+ 
+ 	public OAuth2ExpressionParser(ExpressionParser delegate) {

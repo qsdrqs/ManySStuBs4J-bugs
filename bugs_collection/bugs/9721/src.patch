@@ -1,0 +1,13 @@
+diff --git a/buggy/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/MetadataListStructObjectInspector.java b/fixed/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/MetadataListStructObjectInspector.java
+index e68325f85..5a2beb91a 100644
+--- a/buggy/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/MetadataListStructObjectInspector.java
++++ b/fixed/serde/src/java/org/apache/hadoop/hive/serde2/objectinspector/MetadataListStructObjectInspector.java
+@@ -49,7 +49,7 @@ public class MetadataListStructObjectInspector extends
+       List<String> columnNames) {
+     ArrayList<List<String>> key = new ArrayList<List<String>>(1);
+     key.add(columnNames);
+-    MetadataListStructObjectInspector result = cached.get(columnNames);
++    MetadataListStructObjectInspector result = cached.get(key);
+     if (result == null) {
+       result = new MetadataListStructObjectInspector(columnNames);
+       MetadataListStructObjectInspector prev = cached.putIfAbsent(key, result);

@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/execution/ImportTableExecution.java b/fixed/presto-main/src/main/java/com/facebook/presto/execution/ImportTableExecution.java
+index b3e2826f4..1b9767ebc 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/execution/ImportTableExecution.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/execution/ImportTableExecution.java
+@@ -79,7 +79,7 @@ public class ImportTableExecution
+                 new StageInfo(queryId,
+                         queryId + "-0",
+                         StageState.FINISHED,
+-                        URI.create("fake://"),
++                        URI.create("fake://fake"),
+                         null,
+                         TUPLE_INFOS,
+                         ImmutableList.<TaskInfo>of(),

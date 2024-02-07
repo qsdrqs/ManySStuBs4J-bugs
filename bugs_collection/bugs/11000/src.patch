@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/MainFrame.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/MainFrame.java
+index fc8e67e0e..a3115d119 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/gui/MainFrame.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/gui/MainFrame.java
+@@ -52,7 +52,7 @@ public class MainFrame extends JFrame {
+ 
+     private static final long serialVersionUID = 7970053543351871890L;
+     /** Checkstyle frame model. */
+-    private final transient CheckstyleFrameModel model = new CheckstyleFrameModel();
++    private final transient MainFrameModel model = new MainFrameModel();
+     /** Reload action. */
+     private final ReloadAction reloadAction = new ReloadAction();
+     /** Parse tree model. */

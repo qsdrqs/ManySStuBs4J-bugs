@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionOneStatementPerLineTest.java b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionOneStatementPerLineTest.java
+index d23976745..501dbc16d 100644
+--- a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionOneStatementPerLineTest.java
++++ b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionOneStatementPerLineTest.java
+@@ -28,7 +28,7 @@ import org.junit.Test;
+ import com.puppycrawl.tools.checkstyle.DefaultConfiguration;
+ import com.puppycrawl.tools.checkstyle.checks.coding.OneStatementPerLineCheck;
+ 
+-public class XpathRegressionOneStatementPerLineTest extends AbstractXpathTestSupport {
++public class XpathRegressionOneStatementPerLineTest extends XpathTestSupport {
+ 
+     @Test
+     public void testOne() throws Exception {

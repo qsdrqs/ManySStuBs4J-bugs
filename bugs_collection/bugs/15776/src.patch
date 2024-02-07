@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions/servlet/src/com/google/inject/servlet/FilterDefinition.java b/fixed/extensions/servlet/src/com/google/inject/servlet/FilterDefinition.java
+index 61e211519..d86b109d1 100644
+--- a/buggy/extensions/servlet/src/com/google/inject/servlet/FilterDefinition.java
++++ b/fixed/extensions/servlet/src/com/google/inject/servlet/FilterDefinition.java
+@@ -67,7 +67,7 @@ class FilterDefinition implements ProviderWithExtensionVisitor<FilterDefinition>
+     return this;
+   }
+   
+-  public <V, B> V acceptExtensionVisitor(BindingTargetVisitor<B, V> visitor,
++  public <B, V> V acceptExtensionVisitor(BindingTargetVisitor<B, V> visitor,
+       ProviderInstanceBinding<? extends B> binding) {
+     if(visitor instanceof ServletModuleTargetVisitor) {
+       if(filterInstance != null) {

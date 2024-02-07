@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-spring/src/test/java/org/apache/camel/spring/processor/aggregator/SpringAggregateDiscardOnTimeoutTest.java b/fixed/components/camel-spring/src/test/java/org/apache/camel/spring/processor/aggregator/SpringAggregateDiscardOnTimeoutTest.java
+index 92f152e1d..4d78df733 100644
+--- a/buggy/components/camel-spring/src/test/java/org/apache/camel/spring/processor/aggregator/SpringAggregateDiscardOnTimeoutTest.java
++++ b/fixed/components/camel-spring/src/test/java/org/apache/camel/spring/processor/aggregator/SpringAggregateDiscardOnTimeoutTest.java
+@@ -27,7 +27,7 @@ import static org.apache.camel.spring.processor.SpringTestHelper.createSpringCam
+ public class SpringAggregateDiscardOnTimeoutTest extends AggregateDiscardOnTimeoutTest {
+ 
+     protected CamelContext createCamelContext() throws Exception {
+-        return createSpringCamelContext(this, "org/apache/camel/spring/processor/aggregator/SpringAggregateSimpleTimeoutTest.xml");
++        return createSpringCamelContext(this, "org/apache/camel/spring/processor/aggregator/SpringAggregateDiscardOnTimeoutTest.xml");
+     }
+ 
+ }

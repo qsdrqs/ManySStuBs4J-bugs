@@ -1,0 +1,14 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/MainTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/MainTest.java
+index 4ec37c827..907872abc 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/MainTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/MainTest.java
+@@ -292,7 +292,8 @@ public class MainTest {
+         exit.checkAssertionAfterwards(() -> {
+             assertEquals("Unexpected output log", "", systemOut.getLog());
+             assertEquals("Unexpected system error log",
+-                    "Invalid value for option '-f': expected one of [xml, plain] but was 'xmlp'"
++                    "Invalid value for option '-f': expected one of [XML, PLAIN]"
++                        + " (case-insensitive) but was 'xmlp'"
+                     + EOL + SHORT_USAGE, systemErr.getLog());
+         });
+         Main.main("-c", "/google_checks.xml", "-f", "xmlp",

@@ -1,0 +1,19 @@
+diff --git a/buggy/presto-main/src/main/java/com/facebook/presto/sql/relational/FunctionResolution.java b/fixed/presto-main/src/main/java/com/facebook/presto/sql/relational/FunctionResolution.java
+index aa82c31c4..68da27316 100644
+--- a/buggy/presto-main/src/main/java/com/facebook/presto/sql/relational/FunctionResolution.java
++++ b/fixed/presto-main/src/main/java/com/facebook/presto/sql/relational/FunctionResolution.java
+@@ -230,12 +230,12 @@ public final class FunctionResolution
+ 
+     public FunctionHandle tryFunction(Type returnType)
+     {
+-        return functionManager.lookupFunction("TRY", fromTypes(returnType));
++        return functionManager.lookupFunction("$internal$try", fromTypes(returnType));
+     }
+ 
+     public boolean isTryFunction(FunctionHandle functionHandle)
+     {
+-        return functionManager.getFunctionMetadata(functionHandle).getName().equals("TRY");
++        return functionManager.getFunctionMetadata(functionHandle).getName().equals("$internal$try");
+     }
+ 
+     @Override

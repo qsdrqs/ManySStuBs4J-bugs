@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionHiddenFieldTest.java b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionHiddenFieldTest.java
+index dc8869667..9a26db1ad 100644
+--- a/buggy/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionHiddenFieldTest.java
++++ b/fixed/src/it/java/org/checkstyle/suppressionxpathfilter/XpathRegressionHiddenFieldTest.java
+@@ -28,7 +28,7 @@ import org.junit.Test;
+ import com.puppycrawl.tools.checkstyle.DefaultConfiguration;
+ import com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck;
+ 
+-public class XpathRegressionHiddenFieldTest extends AbstractXpathTestSupport {
++public class XpathRegressionHiddenFieldTest extends XpathTestSupport {
+ 
+     @Test
+     public void testOne() throws Exception {

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jms/src/test/java/org/apache/camel/component/jms/temp/JmsReconnectTest.java b/fixed/components/camel-jms/src/test/java/org/apache/camel/component/jms/temp/JmsReconnectTest.java
+index 50946d134..000731a4a 100644
+--- a/buggy/components/camel-jms/src/test/java/org/apache/camel/component/jms/temp/JmsReconnectTest.java
++++ b/fixed/components/camel-jms/src/test/java/org/apache/camel/component/jms/temp/JmsReconnectTest.java
+@@ -39,7 +39,7 @@ public class JmsReconnectTest {
+         String echo(String st);
+     }
+ 
+-    private final static class EchoServiceImpl implements MyService {
++    private static final class EchoServiceImpl implements MyService {
+ 
+         public String echo(String st) {
+             return st;

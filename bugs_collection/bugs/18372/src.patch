@@ -1,0 +1,13 @@
+diff --git a/buggy/extensions/jnigen/src/com/badlogic/gdx/jnigen/AntScriptGenerator.java b/fixed/extensions/jnigen/src/com/badlogic/gdx/jnigen/AntScriptGenerator.java
+index cfe4a762f..143bf9211 100644
+--- a/buggy/extensions/jnigen/src/com/badlogic/gdx/jnigen/AntScriptGenerator.java
++++ b/fixed/extensions/jnigen/src/com/badlogic/gdx/jnigen/AntScriptGenerator.java
+@@ -160,7 +160,7 @@ public class AntScriptGenerator {
+ 			String buildFileName = "build-" + target.os.toString().toLowerCase() + (target.is64Bit?"64":"32") + ".xml";
+ 			if(target.buildFileName != null) buildFileName = target.buildFileName;
+ 			config.jniDir.child(buildFileName).writeString(buildFile, false);
+-			System.out.println("Wrote target '" + target.os + "-" + (target.is64Bit?"64":"") + " build script '" + config.jniDir.child("build.xml") + "'");
++			System.out.println("Wrote target '" + target.os + (target.is64Bit?"64":"") + "' build script '" + config.jniDir.child(buildFileName) + "'");
+ 			
+ 			if(!target.excludeFromMasterBuildFile) {
+ 				buildFiles.add(buildFileName);

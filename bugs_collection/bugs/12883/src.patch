@@ -1,0 +1,13 @@
+diff --git a/buggy/server/src/main/java/io/druid/server/coordination/SegmentChangeRequestDrop.java b/fixed/server/src/main/java/io/druid/server/coordination/SegmentChangeRequestDrop.java
+index a64a51e7d..5da8ff900 100644
+--- a/buggy/server/src/main/java/io/druid/server/coordination/SegmentChangeRequestDrop.java
++++ b/fixed/server/src/main/java/io/druid/server/coordination/SegmentChangeRequestDrop.java
+@@ -54,7 +54,7 @@ public class SegmentChangeRequestDrop implements DataSegmentChangeRequest
+   @Override
+   public String asString()
+   {
+-    return String.format("load %s", segment.getIdentifier());
++    return String.format("DROP: %s", segment.getIdentifier());
+   }
+ 
+   @Override

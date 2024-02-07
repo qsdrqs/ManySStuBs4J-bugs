@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTagContinuationIndentationCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTagContinuationIndentationCheckTest.java
+index 054cd8004..464d46645 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTagContinuationIndentationCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTagContinuationIndentationCheckTest.java
+@@ -45,7 +45,7 @@ public class JavadocTagContinuationIndentationCheckTest
+         final DefaultConfiguration checkConfig =
+                 createCheckConfig(JavadocTagContinuationIndentationCheck.class);
+         final String[] expected = ArrayUtils.EMPTY_STRING_ARRAY;
+-        verify(checkConfig, getPath("javadoc/GuavaFP.java"), expected);
++        verify(checkConfig, getPath("javadoc/InputGuavaFalsePositive.java"), expected);
+     }
+ 
+     @Test

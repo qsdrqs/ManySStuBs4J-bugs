@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-spi/src/main/java/com/facebook/presto/spi/memory/MemoryPoolInfo.java b/fixed/presto-spi/src/main/java/com/facebook/presto/spi/memory/MemoryPoolInfo.java
+index da4e2e214..346d003bd 100644
+--- a/buggy/presto-spi/src/main/java/com/facebook/presto/spi/memory/MemoryPoolInfo.java
++++ b/fixed/presto-spi/src/main/java/com/facebook/presto/spi/memory/MemoryPoolInfo.java
+@@ -43,7 +43,7 @@ public final class MemoryPoolInfo
+         this.reservedBytes = reservedBytes;
+         this.reservedRevocableBytes = reservedRevocableBytes;
+         this.queryMemoryReservations = unmodifiableMap(new HashMap<>(queryMemoryReservations));
+-        this.queryMemoryRevocableReservations = unmodifiableMap(new HashMap<>(queryMemoryReservations));
++        this.queryMemoryRevocableReservations = unmodifiableMap(new HashMap<>(queryMemoryRevocableReservations));
+     }
+ 
+     @JsonProperty

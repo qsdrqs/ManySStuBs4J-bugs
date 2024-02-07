@@ -1,0 +1,13 @@
+diff --git a/buggy/transport/src/main/java/io/netty/channel/socket/nio/NioSocketChannel.java b/fixed/transport/src/main/java/io/netty/channel/socket/nio/NioSocketChannel.java
+index caf04bf6f..a4442d577 100644
+--- a/buggy/transport/src/main/java/io/netty/channel/socket/nio/NioSocketChannel.java
++++ b/fixed/transport/src/main/java/io/netty/channel/socket/nio/NioSocketChannel.java
+@@ -332,7 +332,7 @@ public class NioSocketChannel extends AbstractNioByteChannel implements io.netty
+     private final class NioSocketChannelUnsafe extends NioByteUnsafe {
+         @Override
+         protected Executor closeExecutor() {
+-            if (config().getSoLinger() > 0) {
++            if (javaChannel().isOpen() && config().getSoLinger() > 0) {
+                 return GlobalEventExecutor.INSTANCE;
+             }
+             return null;

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/edu/stanford/nlp/ie/util/OntonotesXMLtoColumn.java b/fixed/src/edu/stanford/nlp/ie/util/OntonotesXMLtoColumn.java
+index 9a34e2fd8..6c61b1f3b 100644
+--- a/buggy/src/edu/stanford/nlp/ie/util/OntonotesXMLtoColumn.java
++++ b/fixed/src/edu/stanford/nlp/ie/util/OntonotesXMLtoColumn.java
+@@ -32,7 +32,7 @@ import org.xml.sax.helpers.DefaultHandler;
+  */
+ public class OntonotesXMLtoColumn {
+ 
+-  private static final boolean VERBOSE = true;
++  private static final boolean VERBOSE = false;
+ 
+   final SAXParser parser;
+ 

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/junit/rules/Verifier.java b/fixed/src/main/java/org/junit/rules/Verifier.java
+index 8bc5032bb..25b3ccdeb 100644
+--- a/buggy/src/main/java/org/junit/rules/Verifier.java
++++ b/fixed/src/main/java/org/junit/rules/Verifier.java
+@@ -25,7 +25,7 @@ import org.junit.runners.model.Statement;
+  *     }
+  * </pre>
+  */
+-public class Verifier implements TestRule {
++public abstract class Verifier implements TestRule {
+ 	public Statement apply(final Statement base, Description description) {
+ 		return new Statement() {
+ 			@Override

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/RT.java b/fixed/src/jvm/clojure/lang/RT.java
+index cb7237316..3053b574d 100644
+--- a/buggy/src/jvm/clojure/lang/RT.java
++++ b/fixed/src/jvm/clojure/lang/RT.java
+@@ -441,7 +441,7 @@ static public Object get(Object coll, Object key){
+ 	else if(key instanceof Number && (coll instanceof String || coll.getClass().isArray()))
+ 		{
+ 		int n = ((Number) key).intValue();
+-		if(n < count(coll))
++		if(n >= 0 && n < count(coll))
+ 			return nth(coll, n);
+ 		return null;
+ 		}

@@ -1,0 +1,13 @@
+diff --git a/buggy/flink-java/src/main/java/org/apache/flink/api/java/Utils.java b/fixed/flink-java/src/main/java/org/apache/flink/api/java/Utils.java
+index 44e176c47..0184e58dc 100644
+--- a/buggy/flink-java/src/main/java/org/apache/flink/api/java/Utils.java
++++ b/fixed/flink-java/src/main/java/org/apache/flink/api/java/Utils.java
+@@ -53,7 +53,7 @@ public final class Utils {
+ 	public static String getCallLocationName(int depth) {
+ 		StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
+ 
+-		if (stackTrace.length < depth) {
++		if (stackTrace.length <= depth) {
+ 			return "<unknown>";
+ 		}
+ 

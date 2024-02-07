@@ -1,0 +1,13 @@
+diff --git a/buggy/hazelcast/src/main/java/com/hazelcast/spi/impl/operationservice/impl/Invocation.java b/fixed/hazelcast/src/main/java/com/hazelcast/spi/impl/operationservice/impl/Invocation.java
+index 1d8650210..3d382949d 100644
+--- a/buggy/hazelcast/src/main/java/com/hazelcast/spi/impl/operationservice/impl/Invocation.java
++++ b/fixed/hazelcast/src/main/java/com/hazelcast/spi/impl/operationservice/impl/Invocation.java
+@@ -579,7 +579,7 @@ public abstract class Invocation implements OperationResponseHandler, Runnable {
+         }
+ 
+         return "Invocation{"
+-                + ", op=" + op
++                + "op=" + op
+                 + ", tryCount=" + tryCount
+                 + ", tryPauseMillis=" + tryPauseMillis
+                 + ", invokeCount=" + invokeCount

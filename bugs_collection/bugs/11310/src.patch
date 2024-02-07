@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule44cloumunlimit/LineLengthTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule44cloumunlimit/LineLengthTest.java
+index 103ee19c9..f4918dc5e 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter4formatting/rule44cloumunlimit/LineLengthTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter4formatting/rule44cloumunlimit/LineLengthTest.java
+@@ -22,7 +22,7 @@ public class LineLengthTest extends BaseCheckTestSupport{
+     }
+ 
+     @Test
+-    public void lineLengthTest() throws IOException, Exception {
++    public void lineLengthTest() throws Exception {
+         
+         final String[] expected = {
+              "5: " + getCheckMessage(LineLengthCheck.class, "maxLineLen", 100, 112),

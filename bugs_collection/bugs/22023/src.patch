@@ -1,0 +1,14 @@
+diff --git a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/web/JspTemplateAvailabilityProvider.java b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/web/JspTemplateAvailabilityProvider.java
+index 2d5166094..e2088b955 100644
+--- a/buggy/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/web/JspTemplateAvailabilityProvider.java
++++ b/fixed/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/web/JspTemplateAvailabilityProvider.java
+@@ -38,7 +38,8 @@ public class JspTemplateAvailabilityProvider implements TemplateAvailabilityProv
+ 			ClassLoader classLoader, ResourceLoader resourceLoader) {
+ 		if (ClassUtils.isPresent("org.apache.jasper.compiler.JspConfig", classLoader)) {
+ 			String resourceName = getResourceName(view, environment);
+-			return resourceLoader.getResource(resourceName).exists();
++			return resourceLoader.getResource(resourceName).exists() ||
++					resourceLoader.getResource("file:./src/main/webapp" + resourceName).exists();
+ 		}
+ 		return false;
+ 	}

@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/test/java/org/apache/hadoop/hbase/regionserver/TestHRegion.java b/fixed/hbase-server/src/test/java/org/apache/hadoop/hbase/regionserver/TestHRegion.java
+index 9e130ebbc..6856aadf5 100644
+--- a/buggy/hbase-server/src/test/java/org/apache/hadoop/hbase/regionserver/TestHRegion.java
++++ b/fixed/hbase-server/src/test/java/org/apache/hadoop/hbase/regionserver/TestHRegion.java
+@@ -244,7 +244,7 @@ public class TestHRegion {
+     dir = TEST_UTIL.getDataTestDir("TestHRegion").toString();
+     method = name.getMethodName();
+     tableName = TableName.valueOf(method);
+-    CONF.set(CompactingMemStore.IN_MEMORY_FLUSH_THRESHOLD_FACTOR_KEY, String.valueOf(0.02));
++    CONF.set(CompactingMemStore.IN_MEMORY_FLUSH_THRESHOLD_FACTOR_KEY, String.valueOf(0.09));
+   }
+ 
+   @After

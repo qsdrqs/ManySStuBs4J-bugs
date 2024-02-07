@@ -1,0 +1,22 @@
+diff --git a/buggy/web/src/main/java/org/openmrs/web/OpenmrsJspServlet.java b/fixed/web/src/main/java/org/openmrs/web/OpenmrsJspServlet.java
+index a4df15d87..0a4c878e9 100644
+--- a/buggy/web/src/main/java/org/openmrs/web/OpenmrsJspServlet.java
++++ b/fixed/web/src/main/java/org/openmrs/web/OpenmrsJspServlet.java
+@@ -51,7 +51,7 @@ public class OpenmrsJspServlet extends JspServlet {
+ 		try {
+ 			this.destroy();
+ 		}
+-		catch (Throwable ex) {
++		catch (Exception ex) {
+ 			log.error(ex);
+ 		}
+ 	}
+@@ -64,7 +64,7 @@ public class OpenmrsJspServlet extends JspServlet {
+ 			field.setAccessible(true);
+ 			init((ServletConfig) field.get(this));
+ 		}
+-		catch (Throwable ex) {
++		catch (Exception ex) {
+ 			log.error(ex);
+ 		}
+ 	}

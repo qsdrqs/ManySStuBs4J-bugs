@@ -1,0 +1,18 @@
+diff --git a/buggy/test/com/google/javascript/jscomp/LazyParsedDependencyInfoTest.java b/fixed/test/com/google/javascript/jscomp/LazyParsedDependencyInfoTest.java
+index 5197cda0e..228fe3294 100644
+--- a/buggy/test/com/google/javascript/jscomp/LazyParsedDependencyInfoTest.java
++++ b/fixed/test/com/google/javascript/jscomp/LazyParsedDependencyInfoTest.java
+@@ -150,6 +150,12 @@ public final class LazyParsedDependencyInfoTest {
+     assertThat(compiler.getErrorManager().getWarnings()).isEmpty();
+     assertThat(info.getLoadFlags()).containsExactly("module", "es6", "lang", "es6");
+     assertThat(compiler.getErrorManager().getWarnings())
+-        .containsExactly(JSError.make(ModuleLoader.MODULE_CONFLICT, "my/js.js"));
++        .containsExactly(
++            JSError.make(
++                "my/js.js",
++                /* lineno= */ -1,
++                /* charno= */ -1,
++                ModuleLoader.MODULE_CONFLICT,
++                "my/js.js"));
+   }
+ }

@@ -1,0 +1,13 @@
+diff --git a/buggy/spring-boot-tools/spring-boot-gradle-plugin/src/main/groovy/org/springframework/boot/gradle/task/ProjectLibraries.java b/fixed/spring-boot-tools/spring-boot-gradle-plugin/src/main/groovy/org/springframework/boot/gradle/task/ProjectLibraries.java
+index 794df8765..6e013e33d 100644
+--- a/buggy/spring-boot-tools/spring-boot-gradle-plugin/src/main/groovy/org/springframework/boot/gradle/task/ProjectLibraries.java
++++ b/fixed/spring-boot-tools/spring-boot-gradle-plugin/src/main/groovy/org/springframework/boot/gradle/task/ProjectLibraries.java
+@@ -49,7 +49,7 @@ class ProjectLibraries implements Libraries {
+ 				this.providedConfigurationName);
+ 		if (provided != null) {
+ 			compile = compile.minus(provided);
+-			runtime = compile.minus(provided);
++			runtime = runtime.minus(provided);
+ 		}
+ 
+ 		libraries(LibraryScope.COMPILE, compile, callback);

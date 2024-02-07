@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/MutableExceptionCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/MutableExceptionCheck.java
+index a62643b37..4d1ea496a 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/MutableExceptionCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/design/MutableExceptionCheck.java
+@@ -59,7 +59,7 @@ public final class MutableExceptionCheck extends AbstractFormatCheck {
+     /** Creates new instance of the check. */
+     public MutableExceptionCheck() {
+         super(DEFAULT_FORMAT);
+-        setExtendedClassNameFormat(DEFAULT_FORMAT);
++        extendedClassNameFormat = DEFAULT_FORMAT;
+     }
+ 
+     /**

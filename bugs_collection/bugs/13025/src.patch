@@ -1,0 +1,13 @@
+diff --git a/buggy/indexing-service/src/main/java/io/druid/indexing/overlord/scaling/SimpleResourceManagementStrategy.java b/fixed/indexing-service/src/main/java/io/druid/indexing/overlord/scaling/SimpleResourceManagementStrategy.java
+index 25afe9fee..50d612bd9 100644
+--- a/buggy/indexing-service/src/main/java/io/druid/indexing/overlord/scaling/SimpleResourceManagementStrategy.java
++++ b/fixed/indexing-service/src/main/java/io/druid/indexing/overlord/scaling/SimpleResourceManagementStrategy.java
+@@ -200,7 +200,7 @@ public class SimpleResourceManagementStrategy implements ResourceManagementStrat
+                     {
+                       return input.getRunningTasks().isEmpty()
+                              && System.currentTimeMillis() - input.getLastCompletedTaskTime().getMillis()
+-                                >= config.getWorkerIdleTimeout().getMillis();
++                                >= config.getWorkerIdleTimeout().toStandardDuration().getMillis();
+                     }
+                   }
+               )

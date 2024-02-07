@@ -1,0 +1,18 @@
+diff --git a/buggy/value/src/test/java/com/google/auto/value/processor/AutoOneOfCompilationTest.java b/fixed/value/src/test/java/com/google/auto/value/processor/AutoOneOfCompilationTest.java
+index 2893fb4aa..95c95a00e 100644
+--- a/buggy/value/src/test/java/com/google/auto/value/processor/AutoOneOfCompilationTest.java
++++ b/fixed/value/src/test/java/com/google/auto/value/processor/AutoOneOfCompilationTest.java
+@@ -178,8 +178,11 @@ public class AutoOneOfCompilationTest {
+             "      return exception.hashCode();",
+             "    }",
+             "  }");
+-    Compilation compilation
+-        = javac().withProcessors(new AutoOneOfProcessor()).compile(javaFileObject);
++    Compilation compilation =
++        javac()
++            .withProcessors(new AutoOneOfProcessor())
++            .withOptions("-Xlint:-processing", "-implicit:none")
++            .compile(javaFileObject);
+     assertThat(compilation)
+         .succeededWithoutWarnings();
+     assertThat(compilation)

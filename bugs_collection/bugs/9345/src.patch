@@ -1,0 +1,13 @@
+diff --git a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/replication/regionserver/ReplicationSourceManager.java b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/replication/regionserver/ReplicationSourceManager.java
+index b596f735b..14be80078 100644
+--- a/buggy/hbase-server/src/main/java/org/apache/hadoop/hbase/replication/regionserver/ReplicationSourceManager.java
++++ b/fixed/hbase-server/src/main/java/org/apache/hadoop/hbase/replication/regionserver/ReplicationSourceManager.java
+@@ -157,7 +157,7 @@ public class ReplicationSourceManager {
+     }
+     synchronized (this.hlogsById) {
+       SortedSet<String> hlogs = this.hlogsById.get(id);
+-      if (!queueRecovered && hlogs.first() != key) {
++      if (!queueRecovered && !hlogs.first().equals(key)) {
+         SortedSet<String> hlogSet = hlogs.headSet(key);
+         for (String hlog : hlogSet) {
+           this.zkHelper.removeLogFromList(hlog, id);

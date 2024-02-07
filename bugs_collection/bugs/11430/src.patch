@@ -1,0 +1,13 @@
+diff --git a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/indentation/CommentsIndentationCheckTest.java b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/indentation/CommentsIndentationCheckTest.java
+index 22421ffae..cb2c11852 100644
+--- a/buggy/src/test/java/com/puppycrawl/tools/checkstyle/checks/indentation/CommentsIndentationCheckTest.java
++++ b/fixed/src/test/java/com/puppycrawl/tools/checkstyle/checks/indentation/CommentsIndentationCheckTest.java
+@@ -90,7 +90,7 @@ public class CommentsIndentationCheckTest extends BaseCheckTestSupport {
+         }
+         catch (IllegalArgumentException e) {
+             final String msg = e.getMessage();
+-            Assert.assertEquals(msg, "Unexpected token type: methodStub");
++            Assert.assertEquals("Unexpected token type: methodStub", msg);
+         }
+     }
+ }

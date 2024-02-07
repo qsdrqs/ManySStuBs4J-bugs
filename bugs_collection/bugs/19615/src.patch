@@ -1,0 +1,14 @@
+diff --git a/buggy/buffer/src/test/java/io/netty/buffer/BigEndianUnsafeNoCleanerDirectByteBufTest.java b/fixed/buffer/src/test/java/io/netty/buffer/BigEndianUnsafeNoCleanerDirectByteBufTest.java
+index dc0ff6aa1..0406c47cd 100644
+--- a/buggy/buffer/src/test/java/io/netty/buffer/BigEndianUnsafeNoCleanerDirectByteBufTest.java
++++ b/fixed/buffer/src/test/java/io/netty/buffer/BigEndianUnsafeNoCleanerDirectByteBufTest.java
+@@ -24,7 +24,8 @@ public class BigEndianUnsafeNoCleanerDirectByteBufTest extends BigEndianDirectBy
+ 
+     @Before
+     public void checkHasUnsafe() {
+-        Assume.assumeTrue("sun.misc.Unsafe not found, skip tests", PlatformDependent.hasUnsafe());
++        Assume.assumeTrue("java.nio.DirectByteBuffer.<init>(long, int) not found, skip tests",
++                PlatformDependent.useDirectBufferNoCleaner());
+     }
+ 
+     @Override

@@ -1,0 +1,22 @@
+diff --git a/buggy/src/jvm/backtype/storm/task/ShellBolt.java b/fixed/src/jvm/backtype/storm/task/ShellBolt.java
+index 72dfd6688..041f98786 100644
+--- a/buggy/src/jvm/backtype/storm/task/ShellBolt.java
++++ b/fixed/src/jvm/backtype/storm/task/ShellBolt.java
+@@ -92,7 +92,7 @@ public class ShellBolt implements IBolt {
+             sendToSubprocess(JSONValue.toJSONString(stormConf));
+             sendToSubprocess(context.toJSONString());
+         } catch (IOException e) {
+-            throw new RuntimeException(e);
++            throw new RuntimeException("Error when launching multilang subprocess", e);
+         }
+     }
+ 
+@@ -173,7 +173,7 @@ public class ShellBolt implements IBolt {
+               }
+             }
+         } catch(IOException e) {
+-            throw new RuntimeException(e);
++            throw new RuntimeException("Error during multilang processing", e);
+         }
+     }
+ 

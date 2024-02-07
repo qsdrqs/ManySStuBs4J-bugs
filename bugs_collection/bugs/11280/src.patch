@@ -1,0 +1,13 @@
+diff --git a/buggy/src/it/java/com/google/checkstyle/test/chapter3filestructure/rule3421overloadsplit/OverloadMethodsDeclarationOrderTest.java b/fixed/src/it/java/com/google/checkstyle/test/chapter3filestructure/rule3421overloadsplit/OverloadMethodsDeclarationOrderTest.java
+index 245123b68..bf9a6b19f 100644
+--- a/buggy/src/it/java/com/google/checkstyle/test/chapter3filestructure/rule3421overloadsplit/OverloadMethodsDeclarationOrderTest.java
++++ b/fixed/src/it/java/com/google/checkstyle/test/chapter3filestructure/rule3421overloadsplit/OverloadMethodsDeclarationOrderTest.java
+@@ -22,7 +22,7 @@ public class OverloadMethodsDeclarationOrderTest extends BaseCheckTestSupport{
+     }
+ 
+     @Test
+-    public void overloadMethodsTest() throws IOException, Exception {
++    public void overloadMethodsTest() throws Exception {
+         
+         Class<OverloadMethodsDeclarationOrderCheck> clazz = OverloadMethodsDeclarationOrderCheck.class;
+         String messageKey = "overload.methods.declaration";

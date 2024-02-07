@@ -1,0 +1,13 @@
+diff --git a/buggy/value/src/test/java/com/google/auto/value/extension/memoized/MemoizedMethodSubject.java b/fixed/value/src/test/java/com/google/auto/value/extension/memoized/MemoizedMethodSubject.java
+index d4a589718..c6888f8f0 100644
+--- a/buggy/value/src/test/java/com/google/auto/value/extension/memoized/MemoizedMethodSubject.java
++++ b/fixed/value/src/test/java/com/google/auto/value/extension/memoized/MemoizedMethodSubject.java
+@@ -27,7 +27,7 @@ import com.google.common.truth.Subject;
+ import com.google.testing.compile.JavaFileObjects;
+ import javax.tools.JavaFileObject;
+ 
+-final class MemoizedMethodSubject extends Subject<MemoizedMethodSubject, String> {
++final class MemoizedMethodSubject extends Subject {
+   private final String actual;
+ 
+   MemoizedMethodSubject(FailureMetadata failureMetadata, String actual) {

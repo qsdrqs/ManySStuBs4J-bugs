@@ -1,0 +1,13 @@
+diff --git a/buggy/presto-hive/src/main/java/com/facebook/presto/hive/orc/HdfsOrcDataSource.java b/fixed/presto-hive/src/main/java/com/facebook/presto/hive/orc/HdfsOrcDataSource.java
+index 444fd3cec..e523b03a8 100644
+--- a/buggy/presto-hive/src/main/java/com/facebook/presto/hive/orc/HdfsOrcDataSource.java
++++ b/fixed/presto-hive/src/main/java/com/facebook/presto/hive/orc/HdfsOrcDataSource.java
+@@ -54,7 +54,7 @@ public class HdfsOrcDataSource
+             throw e;
+         }
+         catch (Exception e) {
+-            String message = format("HDFS error reading from %s at position %s", this, position);
++            String message = format("Error reading from %s at position %s", this, position);
+             if (e.getClass().getSimpleName().equals("BlockMissingException")) {
+                 throw new PrestoException(HIVE_MISSING_DATA, message, e);
+             }

@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/org/jboss/netty/channel/socket/nio/NioServerSocketPipelineSink.java b/fixed/src/main/java/org/jboss/netty/channel/socket/nio/NioServerSocketPipelineSink.java
+index 890d62427..c5a3dbd3b 100644
+--- a/buggy/src/main/java/org/jboss/netty/channel/socket/nio/NioServerSocketPipelineSink.java
++++ b/fixed/src/main/java/org/jboss/netty/channel/socket/nio/NioServerSocketPipelineSink.java
+@@ -201,7 +201,7 @@ class NioServerSocketPipelineSink extends AbstractChannelSink {
+         public void run() {
+             for (;;) {
+                 try {
+-                    SocketChannel acceptedSocket = channel.socket.accept();
++                    SocketChannel acceptedSocket = channel.socket.socket().accept().getChannel();
+                     try {
+                         ChannelPipeline pipeline =
+                             channel.getConfig().getPipelineFactory().getPipeline();

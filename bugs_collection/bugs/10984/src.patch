@@ -1,0 +1,13 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/regexp/MatchSuppressor.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/regexp/MatchSuppressor.java
+index 8e3ce44fc..a6faedda7 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/regexp/MatchSuppressor.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/regexp/MatchSuppressor.java
+@@ -23,7 +23,7 @@ package com.puppycrawl.tools.checkstyle.checks.regexp;
+  * Represents a suppressor for matches.
+  * @author oliver
+  */
+-interface MatchSuppressor {
++public interface MatchSuppressor {
+     /**
+      * Checks if the specified selection should be suppressed.
+      * @param startLineNo the starting line number

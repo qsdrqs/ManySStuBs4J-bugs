@@ -1,0 +1,12 @@
+diff --git a/buggy/gdx/src/com/badlogic/gdx/graphics/OrthographicCamera.java b/fixed/gdx/src/com/badlogic/gdx/graphics/OrthographicCamera.java
+index 8d3857515..d4a7f2594 100644
+--- a/buggy/gdx/src/com/badlogic/gdx/graphics/OrthographicCamera.java
++++ b/fixed/gdx/src/com/badlogic/gdx/graphics/OrthographicCamera.java
+@@ -57,6 +57,6 @@ public class OrthographicCamera extends Camera {
+ 		Matrix4.mul(combined.val, view.val);
+ 		invProjectionView.set(combined);	
+ 		Matrix4.inv(invProjectionView.val);
+-		frustum.update(combined);
++		frustum.update(invProjectionView);
+ 	}
+ }

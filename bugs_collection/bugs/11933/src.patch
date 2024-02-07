@@ -1,0 +1,13 @@
+diff --git a/buggy/src/jvm/clojure/lang/Numbers.java b/fixed/src/jvm/clojure/lang/Numbers.java
+index b89ee0e9c..6912e62a1 100644
+--- a/buggy/src/jvm/clojure/lang/Numbers.java
++++ b/fixed/src/jvm/clojure/lang/Numbers.java
+@@ -1493,7 +1493,7 @@ static public long clearBit(long x, Object y){
+     return clearBit(x,bitOpsCast(y));
+ }
+ static public long clearBit(long x, long n){
+-    return x & (1L << n);
++    return x & ~(1L << n);
+ }
+ 
+ static public long setBit(Object x, Object y){

@@ -1,0 +1,13 @@
+diff --git a/buggy/android/guava/src/com/google/common/hash/BloomFilterStrategies.java b/fixed/android/guava/src/com/google/common/hash/BloomFilterStrategies.java
+index bae0f31d5..db0f25853 100644
+--- a/buggy/android/guava/src/com/google/common/hash/BloomFilterStrategies.java
++++ b/fixed/android/guava/src/com/google/common/hash/BloomFilterStrategies.java
+@@ -191,7 +191,7 @@ enum BloomFilterStrategies implements BloomFilter.Strategy {
+     }
+ 
+     boolean get(long bitIndex) {
+-      return (data.get((int) (bitIndex >>> 6)) & (1L << bitIndex)) != 0;
++      return (data.get((int) (bitIndex >>> LONG_ADDRESSABLE_BITS)) & (1L << bitIndex)) != 0;
+     }
+ 
+     /**

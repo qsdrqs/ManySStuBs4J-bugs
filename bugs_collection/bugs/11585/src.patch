@@ -1,0 +1,17 @@
+diff --git a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/modifier/RedundantModifierCheck.java b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/modifier/RedundantModifierCheck.java
+index 4dc01da56..0adef8033 100644
+--- a/buggy/src/main/java/com/puppycrawl/tools/checkstyle/checks/modifier/RedundantModifierCheck.java
++++ b/fixed/src/main/java/com/puppycrawl/tools/checkstyle/checks/modifier/RedundantModifierCheck.java
+@@ -76,10 +76,10 @@ public class RedundantModifierCheck
+ 
+     @Override
+     public void visitToken(DetailAST ast) {
+-        if (TokenTypes.INTERFACE_DEF == ast.getType()) {
++        if (ast.getType() == TokenTypes.INTERFACE_DEF) {
+             checkInterfaceModifiers(ast);
+         }
+-        else if (TokenTypes.CTOR_DEF == ast.getType()
++        else if (ast.getType() == TokenTypes.CTOR_DEF
+                 && isEnumMember(ast)) {
+             checkEnumConstructorModifiers(ast);
+         }

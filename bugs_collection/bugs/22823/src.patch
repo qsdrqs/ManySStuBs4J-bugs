@@ -1,0 +1,13 @@
+diff --git a/buggy/okhttp-tests/src/test/java/okhttp3/CacheTest.java b/fixed/okhttp-tests/src/test/java/okhttp3/CacheTest.java
+index 153771712..9e096772a 100644
+--- a/buggy/okhttp-tests/src/test/java/okhttp3/CacheTest.java
++++ b/fixed/okhttp-tests/src/test/java/okhttp3/CacheTest.java
+@@ -1378,7 +1378,7 @@ public final class CacheTest {
+     Date lastModifiedDate = new Date(System.currentTimeMillis() + TimeUnit.HOURS.toMillis(-1));
+     Date servedDate = new Date(System.currentTimeMillis() + TimeUnit.HOURS.toMillis(-2));
+     DateFormat dateFormat = new SimpleDateFormat("EEE dd-MMM-yyyy HH:mm:ss z", Locale.US);
+-    dateFormat.setTimeZone(TimeZone.getTimeZone("EDT"));
++    dateFormat.setTimeZone(TimeZone.getTimeZone("America/New_York"));
+     String lastModifiedString = dateFormat.format(lastModifiedDate);
+     String servedString = dateFormat.format(servedDate);
+ 

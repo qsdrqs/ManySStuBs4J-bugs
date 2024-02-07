@@ -1,0 +1,13 @@
+diff --git a/buggy/storm-core/src/jvm/backtype/storm/windowing/TimeTriggerPolicy.java b/fixed/storm-core/src/jvm/backtype/storm/windowing/TimeTriggerPolicy.java
+index a32cb4d84..e1d23fdfd 100644
+--- a/buggy/storm-core/src/jvm/backtype/storm/windowing/TimeTriggerPolicy.java
++++ b/fixed/storm-core/src/jvm/backtype/storm/windowing/TimeTriggerPolicy.java
+@@ -43,7 +43,7 @@ public class TimeTriggerPolicy<T> implements TriggerPolicy<T> {
+         this(millis, handler, null);
+     }
+ 
+-    public TimeTriggerPolicy(long millis, TriggerHandler handler, EvictionPolicy evictionPolicy) {
++    public TimeTriggerPolicy(long millis, TriggerHandler handler, EvictionPolicy<T> evictionPolicy) {
+         this.duration = millis;
+         this.handler = handler;
+         this.executor = Executors.newSingleThreadScheduledExecutor();

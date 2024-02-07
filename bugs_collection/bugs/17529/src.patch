@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/gdx-tests/src/com/badlogic/gdx/tests/Box2DTest.java b/fixed/tests/gdx-tests/src/com/badlogic/gdx/tests/Box2DTest.java
+index 1f97913c1..6fe443bdd 100644
+--- a/buggy/tests/gdx-tests/src/com/badlogic/gdx/tests/Box2DTest.java
++++ b/fixed/tests/gdx-tests/src/com/badlogic/gdx/tests/Box2DTest.java
+@@ -163,7 +163,7 @@ public class Box2DTest extends GdxTest implements InputProcessor {
+ 
+ 		createBoxes();
+ 
+-		Array<Fixture> fixtures = new Array<>();
++		Array<Fixture> fixtures = new Array<Fixture>();
+ 		world.getFixtures(fixtures);
+ 
+ 		// You can savely ignore the rest of this method :)

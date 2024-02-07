@@ -1,0 +1,13 @@
+diff --git a/buggy/src/java/org/apache/hadoop/hbase/io/Cell.java b/fixed/src/java/org/apache/hadoop/hbase/io/Cell.java
+index f680d7e1a..89838ec40 100644
+--- a/buggy/src/java/org/apache/hadoop/hbase/io/Cell.java
++++ b/fixed/src/java/org/apache/hadoop/hbase/io/Cell.java
+@@ -166,7 +166,7 @@ public class Cell implements Writable, Iterable<Cell> {
+     }
+     
+     public boolean hasNext() {
+-      return currentValue + 1 < values.length;
++      return currentValue < values.length;
+     }
+     
+     public Cell next() {
