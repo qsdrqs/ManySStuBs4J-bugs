@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EhcacheEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EhcacheEndpointBuilderFactory.java
+index ed290648..77ef3c24 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EhcacheEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EhcacheEndpointBuilderFactory.java
+@@ -421,7 +421,7 @@ public interface EhcacheEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Ehcache component.
+      */
+-    public static interface EhcacheEndpointProducerBuilder
++    public interface EhcacheEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedEhcacheEndpointProducerBuilder advanced() {
+@@ -727,7 +727,7 @@ public interface EhcacheEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Ehcache component.
+      */
+-    public static interface EhcacheEndpointBuilder
++    public interface EhcacheEndpointBuilder
+             extends
+                 EhcacheEndpointConsumerBuilder, EhcacheEndpointProducerBuilder {
+         default AdvancedEhcacheEndpointBuilder advanced() {
+@@ -819,7 +819,7 @@ public interface EhcacheEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Ehcache component.
+      */
+-    public static interface AdvancedEhcacheEndpointBuilder
++    public interface AdvancedEhcacheEndpointBuilder
+             extends
+                 AdvancedEhcacheEndpointConsumerBuilder, AdvancedEhcacheEndpointProducerBuilder {
+         default EhcacheEndpointBuilder basic() {

@@ -1,0 +1,13 @@
+diff --git a/buggy/tooling/camel-route-parser/src/main/java/org/apache/camel/parser/helper/CamelJavaTreeParserHelper.java b/fixed/tooling/camel-route-parser/src/main/java/org/apache/camel/parser/helper/CamelJavaTreeParserHelper.java
+index bce6f446..3d2ff1b1 100644
+--- a/buggy/tooling/camel-route-parser/src/main/java/org/apache/camel/parser/helper/CamelJavaTreeParserHelper.java
++++ b/fixed/tooling/camel-route-parser/src/main/java/org/apache/camel/parser/helper/CamelJavaTreeParserHelper.java
+@@ -95,7 +95,7 @@ public final class CamelJavaTreeParserHelper {
+ 
+         List<CamelNodeDetails> answer = new ArrayList<>();
+ 
+-        if (route.getOutputs().isEmpty()) {
++        if (route.getOutputs() == null || route.getOutputs().isEmpty()) {
+             // okay no routes found
+             return answer;
+         }

@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EventEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EventEndpointBuilderFactory.java
+index 78a88957..02d2961b 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EventEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EventEndpointBuilderFactory.java
+@@ -191,7 +191,7 @@ public interface EventEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Spring Event component.
+      */
+-    public static interface EventEndpointProducerBuilder
++    public interface EventEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedEventEndpointProducerBuilder advanced() {
+@@ -302,7 +302,7 @@ public interface EventEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Spring Event component.
+      */
+-    public static interface EventEndpointBuilder
++    public interface EventEndpointBuilder
+             extends
+                 EventEndpointConsumerBuilder, EventEndpointProducerBuilder {
+         default AdvancedEventEndpointBuilder advanced() {
+@@ -322,7 +322,7 @@ public interface EventEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Spring Event component.
+      */
+-    public static interface AdvancedEventEndpointBuilder
++    public interface AdvancedEventEndpointBuilder
+             extends
+                 AdvancedEventEndpointConsumerBuilder, AdvancedEventEndpointProducerBuilder {
+         default EventEndpointBuilder basic() {

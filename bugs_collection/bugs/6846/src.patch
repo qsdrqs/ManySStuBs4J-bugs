@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/processor/MulticastParallelMiddleTimeoutTest.java b/fixed/camel-core/src/test/java/org/apache/camel/processor/MulticastParallelMiddleTimeoutTest.java
+index 6ca567be..f63d193e 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/processor/MulticastParallelMiddleTimeoutTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/processor/MulticastParallelMiddleTimeoutTest.java
+@@ -61,7 +61,7 @@ public class MulticastParallelMiddleTimeoutTest extends ContextTestSupport {
+ 
+                 from("direct:a").setBody(constant("A"));
+ 
+-                from("direct:b").delay(3000).setBody(constant("B"));
++                from("direct:b").delay(4000).setBody(constant("B"));
+ 
+                 from("direct:c").delay(500).setBody(constant("C"));
+             }

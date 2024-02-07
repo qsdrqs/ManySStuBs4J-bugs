@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-websocket/src/test/java/org/apache/camel/component/websocket/WebscoketEndpointConfigurationTest.java b/fixed/components/camel-websocket/src/test/java/org/apache/camel/component/websocket/WebscoketEndpointConfigurationTest.java
+index 029529d7..27e01ba2 100644
+--- a/buggy/components/camel-websocket/src/test/java/org/apache/camel/component/websocket/WebscoketEndpointConfigurationTest.java
++++ b/fixed/components/camel-websocket/src/test/java/org/apache/camel/component/websocket/WebscoketEndpointConfigurationTest.java
+@@ -44,7 +44,7 @@ public class WebscoketEndpointConfigurationTest extends CamelTestSupport {
+         WebsocketEndpoint websocketEndpoint = (WebsocketEndpoint)context.getEndpoint(uri);
+         WebsocketComponent component = websocketEndpoint.getComponent();
+         component.setMinThreads(1);
+-        component.setMaxThreads(11);
++        component.setMaxThreads(20);
+         Consumer consumer = websocketEndpoint.createConsumer(processor);
+         component.connect((WebsocketProducerConsumer) consumer);
+         

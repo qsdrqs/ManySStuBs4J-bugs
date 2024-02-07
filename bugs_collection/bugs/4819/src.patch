@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/Olingo2EndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/Olingo2EndpointBuilderFactory.java
+index 3449489a..0223eadb 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/Olingo2EndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/Olingo2EndpointBuilderFactory.java
+@@ -1084,7 +1084,7 @@ public interface Olingo2EndpointBuilderFactory {
+      * <code>org.apache.camel.component.olingo2.internal.Olingo2ApiName</code>
+      * enum.
+      */
+-    public static enum Olingo2ApiName {
++    static enum Olingo2ApiName {
+         DEFAULT;
+     }
+     /**

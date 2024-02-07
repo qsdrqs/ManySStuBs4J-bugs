@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-hbase/src/test/java/org/apache/camel/component/hbase/HBaseProducerTest.java b/fixed/components/camel-hbase/src/test/java/org/apache/camel/component/hbase/HBaseProducerTest.java
+index bb5041e8..2efd3b73 100644
+--- a/buggy/components/camel-hbase/src/test/java/org/apache/camel/component/hbase/HBaseProducerTest.java
++++ b/fixed/components/camel-hbase/src/test/java/org/apache/camel/component/hbase/HBaseProducerTest.java
+@@ -100,7 +100,7 @@ public class HBaseProducerTest extends CamelHBaseTestSupport {
+                 }
+             });
+ 
+-            assertEquals(body[0][0][0], resp.getOut().getHeader(HbaseAttribute.HBASE_VALUE.asHeader()));
++            assertEquals(body[0][0][1], resp.getOut().getHeader(HbaseAttribute.HBASE_VALUE.asHeader()));
+             assertEquals(body[0][1][2], resp.getOut().getHeader(HbaseAttribute.HBASE_VALUE.asHeader(2)));
+         }
+     }

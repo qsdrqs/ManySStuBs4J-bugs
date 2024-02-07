@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-aws-kinesis/src/main/java/org/apache/camel/component/aws/kinesis/RecordStringConverter.java b/fixed/components/camel-aws-kinesis/src/main/java/org/apache/camel/component/aws/kinesis/RecordStringConverter.java
+index df2f0165..7b41ac55 100644
+--- a/buggy/components/camel-aws-kinesis/src/main/java/org/apache/camel/component/aws/kinesis/RecordStringConverter.java
++++ b/fixed/components/camel-aws-kinesis/src/main/java/org/apache/camel/component/aws/kinesis/RecordStringConverter.java
+@@ -23,7 +23,7 @@ import com.amazonaws.services.kinesis.model.Record;
+ import org.apache.camel.Converter;
+ 
+ // Allow to ignore this type converter if the kinesis JARs are not present on the classpath
+-@Converter(ignoreOnLoadError = true)
++@Converter(loader = true, ignoreOnLoadError = true)
+ public final class RecordStringConverter {
+ 
+     private RecordStringConverter() {

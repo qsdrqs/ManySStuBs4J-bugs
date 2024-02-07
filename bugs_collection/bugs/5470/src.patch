@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SchematronEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SchematronEndpointBuilderFactory.java
+index 81c2298d..8ea6aa09 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SchematronEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SchematronEndpointBuilderFactory.java
+@@ -33,7 +33,7 @@ public interface SchematronEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Schematron component.
+      */
+-    public static interface SchematronEndpointBuilder
++    public interface SchematronEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedSchematronEndpointBuilder advanced() {
+@@ -91,7 +91,7 @@ public interface SchematronEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Schematron component.
+      */
+-    public static interface AdvancedSchematronEndpointBuilder
++    public interface AdvancedSchematronEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default SchematronEndpointBuilder basic() {

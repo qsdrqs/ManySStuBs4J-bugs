@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JettyHttpEndpointBuilder9Factory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JettyHttpEndpointBuilder9Factory.java
+index d8403ccd..20e1122c 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JettyHttpEndpointBuilder9Factory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JettyHttpEndpointBuilder9Factory.java
+@@ -36,7 +36,7 @@ public interface JettyHttpEndpointBuilder9Factory {
+     /**
+      * Builder for endpoint for the Jetty component.
+      */
+-    public static interface JettyHttpEndpointBuilder9
++    public interface JettyHttpEndpointBuilder9
+             extends
+                 EndpointConsumerBuilder {
+         default AdvancedJettyHttpEndpointBuilder9 advanced() {
+@@ -241,7 +241,7 @@ public interface JettyHttpEndpointBuilder9Factory {
+     /**
+      * Advanced builder for endpoint for the Jetty component.
+      */
+-    public static interface AdvancedJettyHttpEndpointBuilder9
++    public interface AdvancedJettyHttpEndpointBuilder9
+             extends
+                 EndpointConsumerBuilder {
+         default JettyHttpEndpointBuilder9 basic() {

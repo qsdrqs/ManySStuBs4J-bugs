@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-google-bigquery/src/main/java/org/apache/camel/component/google/bigquery/GoogleBigQueryEndpoint.java b/fixed/components/camel-google-bigquery/src/main/java/org/apache/camel/component/google/bigquery/GoogleBigQueryEndpoint.java
+index 2121446a..19cd7f85 100644
+--- a/buggy/components/camel-google-bigquery/src/main/java/org/apache/camel/component/google/bigquery/GoogleBigQueryEndpoint.java
++++ b/fixed/components/camel-google-bigquery/src/main/java/org/apache/camel/component/google/bigquery/GoogleBigQueryEndpoint.java
+@@ -40,7 +40,7 @@ import org.apache.camel.spi.UriParam;
+  * Another consideration is that exceptions are not handled within the class. They are expected to bubble up and be handled
+  * by Camel.
+  */
+-@UriEndpoint(firstVersion = "2.20.0", scheme = "bigquery", title = "BigQuery", syntax = "bigquery:projectId:datasetId[:tableName]", label = "messaging")
++@UriEndpoint(firstVersion = "2.20.0", scheme = "bigquery", title = "BigQuery", syntax = "bigquery:projectId:datasetId:tableName", label = "messaging", producerOnly = true)
+ public class GoogleBigQueryEndpoint extends DefaultEndpoint {
+     @UriParam
+     protected final GoogleBigQueryConfiguration configuration;

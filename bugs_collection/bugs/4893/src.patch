@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AsteriskEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AsteriskEndpointBuilderFactory.java
+index e5d403ac..6590041c 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AsteriskEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AsteriskEndpointBuilderFactory.java
+@@ -218,7 +218,7 @@ public interface AsteriskEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Asterisk component.
+      */
+-    public static interface AsteriskEndpointProducerBuilder
++    public interface AsteriskEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedAsteriskEndpointProducerBuilder advanced() {
+@@ -378,7 +378,7 @@ public interface AsteriskEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Asterisk component.
+      */
+-    public static interface AsteriskEndpointBuilder
++    public interface AsteriskEndpointBuilder
+             extends
+                 AsteriskEndpointConsumerBuilder, AsteriskEndpointProducerBuilder {
+         default AdvancedAsteriskEndpointBuilder advanced() {
+@@ -425,7 +425,7 @@ public interface AsteriskEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Asterisk component.
+      */
+-    public static interface AdvancedAsteriskEndpointBuilder
++    public interface AdvancedAsteriskEndpointBuilder
+             extends
+                 AdvancedAsteriskEndpointConsumerBuilder, AdvancedAsteriskEndpointProducerBuilder {
+         default AsteriskEndpointBuilder basic() {

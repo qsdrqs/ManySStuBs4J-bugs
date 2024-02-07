@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/camel-example-twitter-websocket/src/main/java/org/apache/camel/example/websocket/CamelTwitterWebSocketMain.java b/fixed/examples/camel-example-twitter-websocket/src/main/java/org/apache/camel/example/websocket/CamelTwitterWebSocketMain.java
+index 50b2e330..232f58a9 100644
+--- a/buggy/examples/camel-example-twitter-websocket/src/main/java/org/apache/camel/example/websocket/CamelTwitterWebSocketMain.java
++++ b/fixed/examples/camel-example-twitter-websocket/src/main/java/org/apache/camel/example/websocket/CamelTwitterWebSocketMain.java
+@@ -60,7 +60,7 @@ public final class CamelTwitterWebSocketMain {
+ 
+         // poll for gaga, every 5nd second
+         route.setSearchTerm("gaga");
+-        route.setDelay(5);
++        route.setDelay(5000);
+ 
+         // web socket on port 9090
+         route.setPort(9090);

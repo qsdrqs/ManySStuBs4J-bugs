@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ScpEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ScpEndpointBuilderFactory.java
+index 11e2667f..7b462e81 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ScpEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ScpEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface ScpEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the SCP component.
+      */
+-    public static interface ScpEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface ScpEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedScpEndpointBuilder advanced() {
+             return (AdvancedScpEndpointBuilder) this;
+         }
+@@ -283,7 +281,7 @@ public interface ScpEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the SCP component.
+      */
+-    public static interface AdvancedScpEndpointBuilder
++    public interface AdvancedScpEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default ScpEndpointBuilder basic() {

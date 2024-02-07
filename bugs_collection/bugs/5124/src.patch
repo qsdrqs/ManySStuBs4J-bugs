@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleSheetsStreamEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleSheetsStreamEndpointBuilderFactory.java
+index 6c69a519..f4a4869b 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleSheetsStreamEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleSheetsStreamEndpointBuilderFactory.java
+@@ -34,7 +34,7 @@ public interface GoogleSheetsStreamEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Google Sheets Stream component.
+      */
+-    public static interface GoogleSheetsStreamEndpointBuilder
++    public interface GoogleSheetsStreamEndpointBuilder
+             extends
+                 EndpointConsumerBuilder {
+         default AdvancedGoogleSheetsStreamEndpointBuilder advanced() {
+@@ -240,7 +240,7 @@ public interface GoogleSheetsStreamEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Google Sheets Stream component.
+      */
+-    public static interface AdvancedGoogleSheetsStreamEndpointBuilder
++    public interface AdvancedGoogleSheetsStreamEndpointBuilder
+             extends
+                 EndpointConsumerBuilder {
+         default GoogleSheetsStreamEndpointBuilder basic() {

@@ -1,0 +1,13 @@
+diff --git a/buggy/catalog/camel-catalog-provider-karaf/src/test/java/org/apache/camel/catalog/karaf/KarafRuntimeProviderTest.java b/fixed/catalog/camel-catalog-provider-karaf/src/test/java/org/apache/camel/catalog/karaf/KarafRuntimeProviderTest.java
+index 87184816..2f24904a 100644
+--- a/buggy/catalog/camel-catalog-provider-karaf/src/test/java/org/apache/camel/catalog/karaf/KarafRuntimeProviderTest.java
++++ b/fixed/catalog/camel-catalog-provider-karaf/src/test/java/org/apache/camel/catalog/karaf/KarafRuntimeProviderTest.java
+@@ -74,7 +74,7 @@ public class KarafRuntimeProviderTest {
+         assertFalse(names.isEmpty());
+ 
+         assertTrue(names.contains("bindy-csv"));
+-        assertTrue(names.contains("zip"));
++        assertTrue(names.contains("zipdeflater"));
+         assertTrue(names.contains("zipfile"));
+     }
+ 

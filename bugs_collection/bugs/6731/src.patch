@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/impl/DefaultCamelContext.java b/fixed/camel-core/src/main/java/org/apache/camel/impl/DefaultCamelContext.java
+index d0adc96c..24f0640c 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/impl/DefaultCamelContext.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/impl/DefaultCamelContext.java
+@@ -2498,7 +2498,7 @@ public class DefaultCamelContext extends ServiceSupport implements ModelCamelCon
+         RestConfiguration config = restConfigurations.get(component);
+         if (config == null && defaultIfNotExist) {
+             config = getRestConfiguration();
+-            if (config != null && config.getComponent() != null && !component.equals(component)) {
++            if (config != null && config.getComponent() != null && !config.getComponent().equals(component)) {
+                 config = new RestConfiguration();
+                 restConfigurations.put(component, config);
+             }

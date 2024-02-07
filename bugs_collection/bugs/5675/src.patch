@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-core/src/main/java/org/apache/camel/reifier/dataformat/TidyMarkupDataFormatReifier.java b/fixed/core/camel-core/src/main/java/org/apache/camel/reifier/dataformat/TidyMarkupDataFormatReifier.java
+index c805e957..a6a67ead 100644
+--- a/buggy/core/camel-core/src/main/java/org/apache/camel/reifier/dataformat/TidyMarkupDataFormatReifier.java
++++ b/fixed/core/camel-core/src/main/java/org/apache/camel/reifier/dataformat/TidyMarkupDataFormatReifier.java
+@@ -38,7 +38,7 @@ public class TidyMarkupDataFormatReifier extends DataFormatReifier<TidyMarkupDat
+             }
+         }
+ 
+-        return super.createDataFormat(camelContext);
++        return super.doCreateDataFormat(camelContext);
+     }
+ 
+     @Override

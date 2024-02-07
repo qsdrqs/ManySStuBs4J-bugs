@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-mina2/src/main/java/org/apache/camel/component/mina2/Mina2Converter.java b/fixed/components/camel-mina2/src/main/java/org/apache/camel/component/mina2/Mina2Converter.java
+index 951d408c..017f1443 100644
+--- a/buggy/components/camel-mina2/src/main/java/org/apache/camel/component/mina2/Mina2Converter.java
++++ b/fixed/components/camel-mina2/src/main/java/org/apache/camel/component/mina2/Mina2Converter.java
+@@ -28,7 +28,7 @@ import org.apache.mina.core.buffer.IoBuffer;
+ /**
+  * A set of converter methods for working with MINA2 types
+  */
+-@Converter
++@Converter(loader = true)
+ public final class Mina2Converter {
+ 
+     private Mina2Converter() {

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-influxdb/src/main/java/org/apache/camel/component/influxdb/InfluxDbEndpoint.java b/fixed/components/camel-influxdb/src/main/java/org/apache/camel/component/influxdb/InfluxDbEndpoint.java
+index c449ef38..a1405b12 100644
+--- a/buggy/components/camel-influxdb/src/main/java/org/apache/camel/component/influxdb/InfluxDbEndpoint.java
++++ b/fixed/components/camel-influxdb/src/main/java/org/apache/camel/component/influxdb/InfluxDbEndpoint.java
+@@ -57,7 +57,7 @@ public class InfluxDbEndpoint extends DefaultEndpoint {
+ 
+         this.influxDB = dbConn;
+ 
+-        LOG.debug("Prepairing influxdb enpoint with uri {}", uri);
++        LOG.debug("Preparing influxdb enpoint with uri {}", uri);
+         LOG.debug("Creating influx db producer connectionBean:{}, databaseName:{}, retentionPolicy:{}", connectionBean, databaseName, retentionPolicy);
+     }
+ 

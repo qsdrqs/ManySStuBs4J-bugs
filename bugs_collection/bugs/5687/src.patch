@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-service/src/main/java/org/apache/camel/component/service/ServiceEndpoint.java b/fixed/components/camel-service/src/main/java/org/apache/camel/component/service/ServiceEndpoint.java
+index d9ee53c1..f3d54b9e 100644
+--- a/buggy/components/camel-service/src/main/java/org/apache/camel/component/service/ServiceEndpoint.java
++++ b/fixed/components/camel-service/src/main/java/org/apache/camel/component/service/ServiceEndpoint.java
+@@ -43,7 +43,7 @@ import org.apache.camel.support.DefaultEndpoint;
+ @UriEndpoint(
+     firstVersion = "2.22.0",
+     scheme = "service",
+-    syntax = "service:serviceName:delegateUri",
++    syntax = "service:delegateUri",
+     consumerOnly = true,
+     title = "Service",
+     lenientProperties = true,

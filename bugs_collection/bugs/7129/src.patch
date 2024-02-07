@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-quartz/src/main/java/org/apache/camel/component/quartz/QuartzComponent.java b/fixed/components/camel-quartz/src/main/java/org/apache/camel/component/quartz/QuartzComponent.java
+index 22bf0736..6c33d1a9 100644
+--- a/buggy/components/camel-quartz/src/main/java/org/apache/camel/component/quartz/QuartzComponent.java
++++ b/fixed/components/camel-quartz/src/main/java/org/apache/camel/component/quartz/QuartzComponent.java
+@@ -447,7 +447,7 @@ public class QuartzComponent extends DefaultComponent implements StartupListener
+     protected Properties loadProperties() throws SchedulerException {
+         Properties answer = getProperties();
+         if (answer == null && getPropertiesFile() != null) {
+-            LOG.info("Loading Quartz properties file from classpath: {}", getPropertiesFile());
++            LOG.info("Loading Quartz properties file from: {}", getPropertiesFile());
+             InputStream is = null;
+             try {
+                 is = ResourceHelper.resolveMandatoryResourceAsInputStream(getCamelContext().getClassResolver(), getPropertiesFile());

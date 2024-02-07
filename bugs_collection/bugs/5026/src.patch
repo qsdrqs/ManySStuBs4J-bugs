@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DnsEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DnsEndpointBuilderFactory.java
+index 52091827..30ff9fd2 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DnsEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DnsEndpointBuilderFactory.java
+@@ -33,9 +33,7 @@ public interface DnsEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the DNS component.
+      */
+-    public static interface DnsEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface DnsEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedDnsEndpointBuilder advanced() {
+             return (AdvancedDnsEndpointBuilder) this;
+         }
+@@ -64,7 +62,7 @@ public interface DnsEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the DNS component.
+      */
+-    public static interface AdvancedDnsEndpointBuilder
++    public interface AdvancedDnsEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default DnsEndpointBuilder basic() {

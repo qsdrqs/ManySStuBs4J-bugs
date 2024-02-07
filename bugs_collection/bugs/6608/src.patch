@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-salesforce/camel-salesforce-maven-plugin/src/main/java/org/apache/camel/maven/CamelSalesforceMojo.java b/fixed/components/camel-salesforce/camel-salesforce-maven-plugin/src/main/java/org/apache/camel/maven/CamelSalesforceMojo.java
+index bdd04aa5..350a815b 100644
+--- a/buggy/components/camel-salesforce/camel-salesforce-maven-plugin/src/main/java/org/apache/camel/maven/CamelSalesforceMojo.java
++++ b/fixed/components/camel-salesforce/camel-salesforce-maven-plugin/src/main/java/org/apache/camel/maven/CamelSalesforceMojo.java
+@@ -144,7 +144,7 @@ public class CamelSalesforceMojo extends AbstractMojo {
+     /**
+      * Addresses to NOT Proxy.
+      */
+-    @Parameter(property = "camelSalesforce.httpProxyIncludedAddresses")
++    @Parameter(property = "camelSalesforce.httpProxyExcludedAddresses")
+     protected Set<String> httpProxyExcludedAddresses;
+ 
+     /**

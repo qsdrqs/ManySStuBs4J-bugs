@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-milo/src/main/java/org/apache/camel/component/milo/client/MiloClientComponent.java b/fixed/components/camel-milo/src/main/java/org/apache/camel/component/milo/client/MiloClientComponent.java
+index 55b6f8a9..cdb31542 100644
+--- a/buggy/components/camel-milo/src/main/java/org/apache/camel/component/milo/client/MiloClientComponent.java
++++ b/fixed/components/camel-milo/src/main/java/org/apache/camel/component/milo/client/MiloClientComponent.java
+@@ -25,7 +25,7 @@ import org.apache.camel.Endpoint;
+ import org.apache.camel.spi.annotations.Component;
+ import org.apache.camel.support.DefaultComponent;
+ 
+-@Component("mila-client")
++@Component("milo-client")
+ public class MiloClientComponent extends DefaultComponent {
+ 
+     private final Map<String, MiloClientConnection> cache = new HashMap<>();

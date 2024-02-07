@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-git/src/main/java/org/apache/camel/component/git/producer/GitProducer.java b/fixed/components/camel-git/src/main/java/org/apache/camel/component/git/producer/GitProducer.java
+index 73affbfa..31d1bd4d 100644
+--- a/buggy/components/camel-git/src/main/java/org/apache/camel/component/git/producer/GitProducer.java
++++ b/fixed/components/camel-git/src/main/java/org/apache/camel/component/git/producer/GitProducer.java
+@@ -142,7 +142,7 @@ public class GitProducer extends DefaultProducer {
+             break;
+                 
+         default:
+-            throw new IllegalArgumentException("Local path must specified to execute " + operation);
++            throw new IllegalArgumentException("Unsupported operation " + operation);
+         }
+     }
+ 

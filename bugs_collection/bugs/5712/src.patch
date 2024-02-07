@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jbpm/src/main/java/org/apache/camel/component/jbpm/workitem/InOnlyCamelWorkItemHandler.java b/fixed/components/camel-jbpm/src/main/java/org/apache/camel/component/jbpm/workitem/InOnlyCamelWorkItemHandler.java
+index e732a63e..86ef3fb3 100644
+--- a/buggy/components/camel-jbpm/src/main/java/org/apache/camel/component/jbpm/workitem/InOnlyCamelWorkItemHandler.java
++++ b/fixed/components/camel-jbpm/src/main/java/org/apache/camel/component/jbpm/workitem/InOnlyCamelWorkItemHandler.java
+@@ -54,7 +54,7 @@ import org.kie.api.runtime.process.WorkItemManager;
+         name = "InOnlyCamelConnector",
+         displayName = "InOnlyCamelConnector",
+         category = "Camel",
+-        defaultHandler = "mvel: new org.apache.camel.component.jbpm.workitem.InOnlyCamelWorkitemHandler()",
++        defaultHandler = "mvel: new org.apache.camel.component.jbpm.workitem.InOnlyCamelWorkItemHandler()",
+         documentation = "${artifactId}/index.html",
+         parameters = {
+                 @WidParameter(name = JBPMConstants.CAMEL_ENDPOINT_ID_WI_PARAM)

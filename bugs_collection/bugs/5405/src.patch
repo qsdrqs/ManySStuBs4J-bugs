@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PahoEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PahoEndpointBuilderFactory.java
+index 15ec53fe..91ff3b3b 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PahoEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PahoEndpointBuilderFactory.java
+@@ -357,7 +357,7 @@ public interface PahoEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Paho component.
+      */
+-    public static interface PahoEndpointProducerBuilder
++    public interface PahoEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedPahoEndpointProducerBuilder advanced() {
+@@ -633,7 +633,7 @@ public interface PahoEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Paho component.
+      */
+-    public static interface PahoEndpointBuilder
++    public interface PahoEndpointBuilder
+             extends
+                 PahoEndpointConsumerBuilder, PahoEndpointProducerBuilder {
+         default AdvancedPahoEndpointBuilder advanced() {
+@@ -817,7 +817,7 @@ public interface PahoEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Paho component.
+      */
+-    public static interface AdvancedPahoEndpointBuilder
++    public interface AdvancedPahoEndpointBuilder
+             extends
+                 AdvancedPahoEndpointConsumerBuilder, AdvancedPahoEndpointProducerBuilder {
+         default PahoEndpointBuilder basic() {

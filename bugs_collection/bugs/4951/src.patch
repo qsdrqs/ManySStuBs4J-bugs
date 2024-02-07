@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CaffeineLoadCacheEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CaffeineLoadCacheEndpointBuilderFactory.java
+index ebdf7a8f..7ae35c4f 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CaffeineLoadCacheEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CaffeineLoadCacheEndpointBuilderFactory.java
+@@ -260,7 +260,7 @@ public interface CaffeineLoadCacheEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Caffeine LoadCache component.
+      */
+-    public static interface CaffeineLoadCacheEndpointProducerBuilder
++    public interface CaffeineLoadCacheEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedCaffeineLoadCacheEndpointProducerBuilder advanced() {
+@@ -683,7 +683,7 @@ public interface CaffeineLoadCacheEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Caffeine LoadCache component.
+      */
+-    public static interface CaffeineLoadCacheEndpointBuilder
++    public interface CaffeineLoadCacheEndpointBuilder
+             extends
+                 CaffeineLoadCacheEndpointConsumerBuilder, CaffeineLoadCacheEndpointProducerBuilder {
+         default AdvancedCaffeineLoadCacheEndpointBuilder advanced() {
+@@ -725,7 +725,7 @@ public interface CaffeineLoadCacheEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Caffeine LoadCache component.
+      */
+-    public static interface AdvancedCaffeineLoadCacheEndpointBuilder
++    public interface AdvancedCaffeineLoadCacheEndpointBuilder
+             extends
+                 AdvancedCaffeineLoadCacheEndpointConsumerBuilder, AdvancedCaffeineLoadCacheEndpointProducerBuilder {
+         default CaffeineLoadCacheEndpointBuilder basic() {

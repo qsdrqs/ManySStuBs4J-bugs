@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-kafka/src/test/java/org/apache/camel/component/kafka/KafkaProducerTest.java b/fixed/components/camel-kafka/src/test/java/org/apache/camel/component/kafka/KafkaProducerTest.java
+index 7c52629b..68798f38 100644
+--- a/buggy/components/camel-kafka/src/test/java/org/apache/camel/component/kafka/KafkaProducerTest.java
++++ b/fixed/components/camel-kafka/src/test/java/org/apache/camel/component/kafka/KafkaProducerTest.java
+@@ -57,7 +57,7 @@ public class KafkaProducerTest {
+         Future future = Mockito.mock(Future.class);
+         Mockito.when(future.get()).thenReturn(rm);
+         org.apache.kafka.clients.producer.KafkaProducer kp = Mockito.mock(org.apache.kafka.clients.producer.KafkaProducer.class);
+-        Mockito.when(kp.send(Mockito.any())).thenReturn(future);
++        Mockito.when(kp.send(Mockito.any(ProducerRecord.class))).thenReturn(future);
+ 
+         producer.setKafkaProducer(kp);
+     }

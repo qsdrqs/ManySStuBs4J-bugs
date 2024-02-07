@@ -1,0 +1,13 @@
+diff --git a/buggy/platforms/camel-catalog/src/test/java/org/apache/camel/catalog/CamelCatalogTest.java b/fixed/platforms/camel-catalog/src/test/java/org/apache/camel/catalog/CamelCatalogTest.java
+index fc84b56a..333ce068 100644
+--- a/buggy/platforms/camel-catalog/src/test/java/org/apache/camel/catalog/CamelCatalogTest.java
++++ b/fixed/platforms/camel-catalog/src/test/java/org/apache/camel/catalog/CamelCatalogTest.java
+@@ -553,7 +553,7 @@ public class CamelCatalogTest {
+     @Test
+     public void validateActiveMQProperties() throws Exception {
+         // add activemq as known component
+-        catalog.addComponent("activemq", "org.apache.activemq.camel.component.ActiveMQComponent");
++        catalog.addComponent("activemq", "org.apache.camel.component.activemq.ActiveMQComponent");
+ 
+         // activemq
+         EndpointValidationResult result = catalog.validateEndpointProperties("activemq:temp-queue:cheese?jmsMessageType=Bytes");

@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JdbcEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JdbcEndpointBuilderFactory.java
+index 4c4e4fd6..3403f74b 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JdbcEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JdbcEndpointBuilderFactory.java
+@@ -35,9 +35,7 @@ public interface JdbcEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the JDBC component.
+      */
+-    public static interface JdbcEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface JdbcEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedJdbcEndpointBuilder advanced() {
+             return (AdvancedJdbcEndpointBuilder) this;
+         }
+@@ -280,7 +278,7 @@ public interface JdbcEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the JDBC component.
+      */
+-    public static interface AdvancedJdbcEndpointBuilder
++    public interface AdvancedJdbcEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default JdbcEndpointBuilder basic() {

@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GridFsEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GridFsEndpointBuilderFactory.java
+index 9d3bbe16..00e7f037 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GridFsEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GridFsEndpointBuilderFactory.java
+@@ -398,7 +398,7 @@ public interface GridFsEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the MongoDB GridFS component.
+      */
+-    public static interface GridFsEndpointProducerBuilder
++    public interface GridFsEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedGridFsEndpointProducerBuilder advanced() {
+@@ -619,7 +619,7 @@ public interface GridFsEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the MongoDB GridFS component.
+      */
+-    public static interface GridFsEndpointBuilder
++    public interface GridFsEndpointBuilder
+             extends
+                 GridFsEndpointConsumerBuilder, GridFsEndpointProducerBuilder {
+         default AdvancedGridFsEndpointBuilder advanced() {
+@@ -735,7 +735,7 @@ public interface GridFsEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the MongoDB GridFS component.
+      */
+-    public static interface AdvancedGridFsEndpointBuilder
++    public interface AdvancedGridFsEndpointBuilder
+             extends
+                 AdvancedGridFsEndpointConsumerBuilder, AdvancedGridFsEndpointProducerBuilder {
+         default GridFsEndpointBuilder basic() {

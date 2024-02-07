@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-cxf/src/test/java/org/apache/camel/component/cxf/jaxrs/CxfRsComponentConfigurationAndDocumentationTest.java b/fixed/components/camel-cxf/src/test/java/org/apache/camel/component/cxf/jaxrs/CxfRsComponentConfigurationAndDocumentationTest.java
+index 080623d3..e3705115 100644
+--- a/buggy/components/camel-cxf/src/test/java/org/apache/camel/component/cxf/jaxrs/CxfRsComponentConfigurationAndDocumentationTest.java
++++ b/fixed/components/camel-cxf/src/test/java/org/apache/camel/component/cxf/jaxrs/CxfRsComponentConfigurationAndDocumentationTest.java
+@@ -42,7 +42,7 @@ public class CxfRsComponentConfigurationAndDocumentationTest extends CamelTestSu
+         String json = compConf.createParameterJsonSchema();
+         assertNotNull(json);
+ 
+-        assertTrue(json.contains("\"address\": { \"kind\": \"parameter\", \"type\": \"string\""));
++        assertTrue(json.contains("\"address\": { \"kind\": \"path\", \"type\": \"string\""));
+         assertTrue(json.contains("\"maxClientCacheSize\": { \"kind\": \"parameter\", \"type\": \"integer\""));
+     }
+ 

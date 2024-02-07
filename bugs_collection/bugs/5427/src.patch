@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/QueueServiceEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/QueueServiceEndpointBuilderFactory.java
+index 718e2606..51b398f8 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/QueueServiceEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/QueueServiceEndpointBuilderFactory.java
+@@ -240,7 +240,7 @@ public interface QueueServiceEndpointBuilderFactory {
+      * Builder for endpoint producers for the Azure Storage Queue Service
+      * component.
+      */
+-    public static interface QueueServiceEndpointProducerBuilder
++    public interface QueueServiceEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedQueueServiceEndpointProducerBuilder advanced() {
+@@ -468,7 +468,7 @@ public interface QueueServiceEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Azure Storage Queue Service component.
+      */
+-    public static interface QueueServiceEndpointBuilder
++    public interface QueueServiceEndpointBuilder
+             extends
+                 QueueServiceEndpointConsumerBuilder, QueueServiceEndpointProducerBuilder {
+         default AdvancedQueueServiceEndpointBuilder advanced() {
+@@ -532,7 +532,7 @@ public interface QueueServiceEndpointBuilderFactory {
+      * Advanced builder for endpoint for the Azure Storage Queue Service
+      * component.
+      */
+-    public static interface AdvancedQueueServiceEndpointBuilder
++    public interface AdvancedQueueServiceEndpointBuilder
+             extends
+                 AdvancedQueueServiceEndpointConsumerBuilder, AdvancedQueueServiceEndpointProducerBuilder {
+         default QueueServiceEndpointBuilder basic() {

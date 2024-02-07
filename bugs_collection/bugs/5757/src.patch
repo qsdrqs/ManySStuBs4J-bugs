@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-elasticsearch-rest/src/main/java/org/apache/camel/component/elasticsearch/converter/ElasticsearchActionRequestConverter.java b/fixed/components/camel-elasticsearch-rest/src/main/java/org/apache/camel/component/elasticsearch/converter/ElasticsearchActionRequestConverter.java
+index 6572c960..3bbbf8a8 100644
+--- a/buggy/components/camel-elasticsearch-rest/src/main/java/org/apache/camel/component/elasticsearch/converter/ElasticsearchActionRequestConverter.java
++++ b/fixed/components/camel-elasticsearch-rest/src/main/java/org/apache/camel/component/elasticsearch/converter/ElasticsearchActionRequestConverter.java
+@@ -40,7 +40,7 @@ import org.elasticsearch.search.builder.SearchSourceBuilder;
+ import org.slf4j.Logger;
+ import org.slf4j.LoggerFactory;
+ 
+-@Converter
++@Converter(loader = true)
+ public final class ElasticsearchActionRequestConverter {
+     private static final Logger LOG = LoggerFactory.getLogger(ElasticsearchActionRequestConverter.class);
+ 

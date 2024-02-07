@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IgniteIdGenEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IgniteIdGenEndpointBuilderFactory.java
+index 04ab66e3..19deabf6 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IgniteIdGenEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IgniteIdGenEndpointBuilderFactory.java
+@@ -34,7 +34,7 @@ public interface IgniteIdGenEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Ignite ID Generator component.
+      */
+-    public static interface IgniteIdGenEndpointBuilder
++    public interface IgniteIdGenEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedIgniteIdGenEndpointBuilder advanced() {
+@@ -98,7 +98,7 @@ public interface IgniteIdGenEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Ignite ID Generator component.
+      */
+-    public static interface AdvancedIgniteIdGenEndpointBuilder
++    public interface AdvancedIgniteIdGenEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default IgniteIdGenEndpointBuilder basic() {

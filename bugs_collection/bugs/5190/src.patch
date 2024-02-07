@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IgniteComputeEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IgniteComputeEndpointBuilderFactory.java
+index a32d2f47..6c5f492e 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IgniteComputeEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IgniteComputeEndpointBuilderFactory.java
+@@ -36,7 +36,7 @@ public interface IgniteComputeEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Ignite Compute component.
+      */
+-    public static interface IgniteComputeEndpointBuilder
++    public interface IgniteComputeEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedIgniteComputeEndpointBuilder advanced() {
+@@ -100,7 +100,7 @@ public interface IgniteComputeEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Ignite Compute component.
+      */
+-    public static interface AdvancedIgniteComputeEndpointBuilder
++    public interface AdvancedIgniteComputeEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default IgniteComputeEndpointBuilder basic() {

@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MQEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MQEndpointBuilderFactory.java
+index 2ccd7563..c80da186 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MQEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MQEndpointBuilderFactory.java
+@@ -33,7 +33,7 @@ public interface MQEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the AWS MQ component.
+      */
+-    public static interface MQEndpointBuilder extends EndpointProducerBuilder {
++    public interface MQEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedMQEndpointBuilder advanced() {
+             return (AdvancedMQEndpointBuilder) this;
+         }
+@@ -60,7 +60,7 @@ public interface MQEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the AWS MQ component.
+      */
+-    public static interface AdvancedMQEndpointBuilder
++    public interface AdvancedMQEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default MQEndpointBuilder basic() {

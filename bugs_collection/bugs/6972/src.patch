@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/impl/WebSpherePackageScanClassResolver.java b/fixed/camel-core/src/main/java/org/apache/camel/impl/WebSpherePackageScanClassResolver.java
+index 7578efb3..c4d48ede 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/impl/WebSpherePackageScanClassResolver.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/impl/WebSpherePackageScanClassResolver.java
+@@ -43,7 +43,7 @@ public class WebSpherePackageScanClassResolver extends DefaultPackageScanClassRe
+      * @return  <tt>true</tt> if IBM classloader, <tt>false</tt> otherwise.
+      */
+     public static boolean isWebSphereClassLoader(ClassLoader loader) {
+-        return loader != null ? loader.getClass().getName().startsWith("com.ibm") : false;
++        return loader != null ? loader.getClass().getName().startsWith("com.ibm.") : false;
+     }
+ 
+     /**

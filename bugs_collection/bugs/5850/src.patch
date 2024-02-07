@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/camel-itest-spring-boot/src/test/java/org/apache/camel/itest/springboot/util/LocationUtils.java b/fixed/tests/camel-itest-spring-boot/src/test/java/org/apache/camel/itest/springboot/util/LocationUtils.java
+index 0d564df7..dbd7e34d 100644
+--- a/buggy/tests/camel-itest-spring-boot/src/test/java/org/apache/camel/itest/springboot/util/LocationUtils.java
++++ b/fixed/tests/camel-itest-spring-boot/src/test/java/org/apache/camel/itest/springboot/util/LocationUtils.java
+@@ -32,7 +32,7 @@ public final class LocationUtils {
+         try {
+             File root = new File(".").getCanonicalFile();
+             while (root != null) {
+-                File[] names = root.listFiles(pathname -> pathname.getName().equals("camel-core"));
++                File[] names = root.listFiles(pathname -> pathname.getName().equals("core"));
+                 if (names != null && names.length == 1) {
+                     break;
+                 }

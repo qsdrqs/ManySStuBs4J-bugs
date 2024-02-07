@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-activemq/src/main/java/org/apache/camel/component/activemq/converter/ActiveMQConverter.java b/fixed/components/camel-activemq/src/main/java/org/apache/camel/component/activemq/converter/ActiveMQConverter.java
+index 81f89a2f..433ec3ae 100644
+--- a/buggy/components/camel-activemq/src/main/java/org/apache/camel/component/activemq/converter/ActiveMQConverter.java
++++ b/fixed/components/camel-activemq/src/main/java/org/apache/camel/component/activemq/converter/ActiveMQConverter.java
+@@ -22,7 +22,7 @@ import org.apache.camel.Converter;
+ /**
+  * 
+  */
+-@Converter
++@Converter(loader = true)
+ public class ActiveMQConverter {
+     /**
+      * Converts a URL in ActiveMQ syntax to a destination such as to support

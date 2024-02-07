@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ServiceNowEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ServiceNowEndpointBuilderFactory.java
+index d9efd2b6..478c881c 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ServiceNowEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ServiceNowEndpointBuilderFactory.java
+@@ -35,7 +35,7 @@ public interface ServiceNowEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the ServiceNow component.
+      */
+-    public static interface ServiceNowEndpointBuilder
++    public interface ServiceNowEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedServiceNowEndpointBuilder advanced() {
+@@ -652,7 +652,7 @@ public interface ServiceNowEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the ServiceNow component.
+      */
+-    public static interface AdvancedServiceNowEndpointBuilder
++    public interface AdvancedServiceNowEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default ServiceNowEndpointBuilder basic() {

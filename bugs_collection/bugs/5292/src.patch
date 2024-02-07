@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesPersistentVolumesClaimsEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesPersistentVolumesClaimsEndpointBuilderFactory.java
+index 8f5d014d..ebe4738c 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesPersistentVolumesClaimsEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesPersistentVolumesClaimsEndpointBuilderFactory.java
+@@ -35,7 +35,7 @@ public interface KubernetesPersistentVolumesClaimsEndpointBuilderFactory {
+      * Builder for endpoint for the Kubernetes Persistent Volume Claim
+      * component.
+      */
+-    public static interface KubernetesPersistentVolumesClaimsEndpointBuilder
++    public interface KubernetesPersistentVolumesClaimsEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedKubernetesPersistentVolumesClaimsEndpointBuilder advanced() {
+@@ -250,7 +250,7 @@ public interface KubernetesPersistentVolumesClaimsEndpointBuilderFactory {
+      * Advanced builder for endpoint for the Kubernetes Persistent Volume Claim
+      * component.
+      */
+-    public static interface AdvancedKubernetesPersistentVolumesClaimsEndpointBuilder
++    public interface AdvancedKubernetesPersistentVolumesClaimsEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default KubernetesPersistentVolumesClaimsEndpointBuilder basic() {

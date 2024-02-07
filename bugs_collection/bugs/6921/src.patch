@@ -1,0 +1,16 @@
+diff --git a/buggy/components/camel-solr/src/main/java/org/apache/camel/component/solr/SolrEndpoint.java b/fixed/components/camel-solr/src/main/java/org/apache/camel/component/solr/SolrEndpoint.java
+index 696a2df9..d63883b2 100644
+--- a/buggy/components/camel-solr/src/main/java/org/apache/camel/component/solr/SolrEndpoint.java
++++ b/fixed/components/camel-solr/src/main/java/org/apache/camel/component/solr/SolrEndpoint.java
+@@ -55,9 +55,9 @@ public class SolrEndpoint extends DefaultEndpoint {
+     private Integer defaultMaxConnectionsPerHost;
+     @UriParam
+     private Integer maxTotalConnections;
+-    @UriParam(defaultValue = "false")
++    @UriParam
+     private Boolean followRedirects;
+-    @UriParam(defaultValue = "false")
++    @UriParam
+     private Boolean allowCompression;
+     @UriParam
+     private String zkHost;

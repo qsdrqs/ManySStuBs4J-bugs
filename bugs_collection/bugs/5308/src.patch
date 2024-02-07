@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesServicesEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesServicesEndpointBuilderFactory.java
+index 02244a73..2e622f62 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesServicesEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesServicesEndpointBuilderFactory.java
+@@ -469,7 +469,7 @@ public interface KubernetesServicesEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Kubernetes Services component.
+      */
+-    public static interface KubernetesServicesEndpointProducerBuilder
++    public interface KubernetesServicesEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedKubernetesServicesEndpointProducerBuilder advanced() {
+@@ -808,7 +808,7 @@ public interface KubernetesServicesEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Kubernetes Services component.
+      */
+-    public static interface KubernetesServicesEndpointBuilder
++    public interface KubernetesServicesEndpointBuilder
+             extends
+                 KubernetesServicesEndpointConsumerBuilder, KubernetesServicesEndpointProducerBuilder {
+         default AdvancedKubernetesServicesEndpointBuilder advanced() {
+@@ -1011,7 +1011,7 @@ public interface KubernetesServicesEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Kubernetes Services component.
+      */
+-    public static interface AdvancedKubernetesServicesEndpointBuilder
++    public interface AdvancedKubernetesServicesEndpointBuilder
+             extends
+                 AdvancedKubernetesServicesEndpointConsumerBuilder, AdvancedKubernetesServicesEndpointProducerBuilder {
+         default KubernetesServicesEndpointBuilder basic() {

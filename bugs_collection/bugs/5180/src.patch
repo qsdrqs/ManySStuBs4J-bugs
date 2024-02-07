@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IAMEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IAMEndpointBuilderFactory.java
+index c56c021b..41a117fc 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IAMEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IAMEndpointBuilderFactory.java
+@@ -33,9 +33,7 @@ public interface IAMEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the AWS IAM component.
+      */
+-    public static interface IAMEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface IAMEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedIAMEndpointBuilder advanced() {
+             return (AdvancedIAMEndpointBuilder) this;
+         }
+@@ -62,7 +60,7 @@ public interface IAMEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the AWS IAM component.
+      */
+-    public static interface AdvancedIAMEndpointBuilder
++    public interface AdvancedIAMEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default IAMEndpointBuilder basic() {

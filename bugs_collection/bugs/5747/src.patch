@@ -1,0 +1,20 @@
+diff --git a/buggy/components/camel-mongodb3/src/main/java/org/apache/camel/component/mongodb3/converters/MongoDbFallbackConverter.java b/fixed/components/camel-mongodb3/src/main/java/org/apache/camel/component/mongodb3/converters/MongoDbFallbackConverter.java
+index 83b1b480..01d1dcc4 100644
+--- a/buggy/components/camel-mongodb3/src/main/java/org/apache/camel/component/mongodb3/converters/MongoDbFallbackConverter.java
++++ b/fixed/components/camel-mongodb3/src/main/java/org/apache/camel/component/mongodb3/converters/MongoDbFallbackConverter.java
+@@ -31,7 +31,7 @@ import org.apache.camel.InvalidPayloadException;
+ import org.apache.camel.spi.TypeConverterRegistry;
+ import org.bson.Document;
+ 
+-@Converter
++@Converter(loader = true)
+ public final class MongoDbFallbackConverter {
+ 
+     // Jackson's ObjectMapper is thread-safe, so no need to create a pool nor synchronize access to it
+@@ -99,4 +99,4 @@ public final class MongoDbFallbackConverter {
+             }
+         }
+     }
+-}
+\ No newline at end of file
++}

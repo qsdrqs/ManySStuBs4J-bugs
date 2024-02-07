@@ -1,0 +1,20 @@
+diff --git a/buggy/components/camel-http4/src/main/java/org/apache/camel/component/http4/HttpEntityConverter.java b/fixed/components/camel-http4/src/main/java/org/apache/camel/component/http4/HttpEntityConverter.java
+index 8796a043..21f1749b 100644
+--- a/buggy/components/camel-http4/src/main/java/org/apache/camel/component/http4/HttpEntityConverter.java
++++ b/fixed/components/camel-http4/src/main/java/org/apache/camel/component/http4/HttpEntityConverter.java
+@@ -32,7 +32,7 @@ import org.apache.http.entity.InputStreamEntity;
+ /**
+  * Some converter methods to make it easier to convert the body to RequestEntity types.
+  */
+-@Converter
++@Converter(loader = true)
+ public final class HttpEntityConverter {
+ 
+     private HttpEntityConverter() {
+@@ -97,4 +97,4 @@ public final class HttpEntityConverter {
+         }
+         return entity;
+     }
+-}
+\ No newline at end of file
++}

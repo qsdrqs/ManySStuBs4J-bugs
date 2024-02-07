@@ -1,0 +1,12 @@
+diff --git a/buggy/core/camel-api/src/main/java/org/apache/camel/spi/BeanProcessorFactory.java b/fixed/core/camel-api/src/main/java/org/apache/camel/spi/BeanProcessorFactory.java
+index 9ba62374..aa6e7f04 100644
+--- a/buggy/core/camel-api/src/main/java/org/apache/camel/spi/BeanProcessorFactory.java
++++ b/fixed/core/camel-api/src/main/java/org/apache/camel/spi/BeanProcessorFactory.java
+@@ -54,6 +54,6 @@ public interface BeanProcessorFactory {
+      * @return the created processor
+      * @throws Exception is thrown if error creating the processor
+      */
+-    public Processor createBeanProcessor(CamelContext camelContext, Object bean, String beanType, Class<?> beanClass, String ref,
++    Processor createBeanProcessor(CamelContext camelContext, Object bean, String beanType, Class<?> beanClass, String ref,
+                                          String method, boolean cacheBean) throws Exception;
+ }

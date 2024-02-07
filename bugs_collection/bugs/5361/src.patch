@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MsvEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MsvEndpointBuilderFactory.java
+index afa2eed3..83ddd492 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MsvEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MsvEndpointBuilderFactory.java
+@@ -33,9 +33,7 @@ public interface MsvEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the MSV component.
+      */
+-    public static interface MsvEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface MsvEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedMsvEndpointBuilder advanced() {
+             return (AdvancedMsvEndpointBuilder) this;
+         }
+@@ -100,7 +98,7 @@ public interface MsvEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the MSV component.
+      */
+-    public static interface AdvancedMsvEndpointBuilder
++    public interface AdvancedMsvEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default MsvEndpointBuilder basic() {

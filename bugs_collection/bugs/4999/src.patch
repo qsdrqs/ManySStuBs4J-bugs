@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DataFormatEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DataFormatEndpointBuilderFactory.java
+index 7e21af2e..b4ac52c3 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DataFormatEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DataFormatEndpointBuilderFactory.java
+@@ -34,7 +34,7 @@ public interface DataFormatEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Data Format component.
+      */
+-    public static interface DataFormatEndpointBuilder
++    public interface DataFormatEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedDataFormatEndpointBuilder advanced() {
+@@ -63,7 +63,7 @@ public interface DataFormatEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Data Format component.
+      */
+-    public static interface AdvancedDataFormatEndpointBuilder
++    public interface AdvancedDataFormatEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default DataFormatEndpointBuilder basic() {

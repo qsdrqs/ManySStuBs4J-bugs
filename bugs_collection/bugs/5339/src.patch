@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MetricsEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MetricsEndpointBuilderFactory.java
+index b6aae275..03d9a175 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MetricsEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MetricsEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface MetricsEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Metrics component.
+      */
+-    public static interface MetricsEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface MetricsEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedMetricsEndpointBuilder advanced() {
+             return (AdvancedMetricsEndpointBuilder) this;
+         }
+@@ -186,7 +184,7 @@ public interface MetricsEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Metrics component.
+      */
+-    public static interface AdvancedMetricsEndpointBuilder
++    public interface AdvancedMetricsEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default MetricsEndpointBuilder basic() {

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-kubernetes/src/test/java/org/apache/camel/component/kubernetes/producer/KubernetesNodesProducerTest.java b/fixed/components/camel-kubernetes/src/test/java/org/apache/camel/component/kubernetes/producer/KubernetesNodesProducerTest.java
+index 4bfbce59..f895179f 100644
+--- a/buggy/components/camel-kubernetes/src/test/java/org/apache/camel/component/kubernetes/producer/KubernetesNodesProducerTest.java
++++ b/fixed/components/camel-kubernetes/src/test/java/org/apache/camel/component/kubernetes/producer/KubernetesNodesProducerTest.java
+@@ -64,7 +64,7 @@ public class KubernetesNodesProducerTest extends KubernetesTestSupport {
+         
+         Node node = result.get(0);
+         
+-        assertTrue(node.getStatus().getCapacity().get("pods").getAmount().equals("40"));
++        assertTrue(node.getStatus().getCapacity().get("pods").getAmount().equals("110"));
+     }
+ 
+     @Override

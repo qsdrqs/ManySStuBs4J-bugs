@@ -1,0 +1,13 @@
+diff --git a/buggy/tooling/apt/src/main/java/org/apache/camel/tools/apt/EndpointAnnotationProcessor.java b/fixed/tooling/apt/src/main/java/org/apache/camel/tools/apt/EndpointAnnotationProcessor.java
+index 386eca73..a8ba2560 100644
+--- a/buggy/tooling/apt/src/main/java/org/apache/camel/tools/apt/EndpointAnnotationProcessor.java
++++ b/fixed/tooling/apt/src/main/java/org/apache/camel/tools/apt/EndpointAnnotationProcessor.java
+@@ -291,7 +291,7 @@ public class EndpointAnnotationProcessor extends AbstractProcessor {
+             File file = null;
+             if (uri != null) {
+                 try {
+-                    file = new File(uri);
++                    file = new File(uri.getPath());
+                 } catch (Exception e) {
+                     warning("Could not convert output directory resource URI to a file " + e);
+                 }

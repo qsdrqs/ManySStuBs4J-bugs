@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-javaspace/src/main/java/org/apache/camel/component/javaspace/JavaSpaceEndpoint.java b/fixed/components/camel-javaspace/src/main/java/org/apache/camel/component/javaspace/JavaSpaceEndpoint.java
+index f09ab9b5..4b9e6fff 100644
+--- a/buggy/components/camel-javaspace/src/main/java/org/apache/camel/component/javaspace/JavaSpaceEndpoint.java
++++ b/fixed/components/camel-javaspace/src/main/java/org/apache/camel/component/javaspace/JavaSpaceEndpoint.java
+@@ -42,7 +42,7 @@ public class JavaSpaceEndpoint extends DefaultEndpoint {
+     private int concurrentConsumers = 1;
+     @UriParam
+     private String spaceName;
+-    @UriParam(defaultValue = "false")
++    @UriParam
+     private boolean transactional;
+     @UriParam
+     private long transactionTimeout = Long.MAX_VALUE;

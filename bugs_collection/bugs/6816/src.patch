@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-beanstalk/src/test/java/org/apache/camel/component/beanstalk/UriConfigurationTest.java b/fixed/components/camel-beanstalk/src/test/java/org/apache/camel/component/beanstalk/UriConfigurationTest.java
+index 10dfc9db..998c112c 100644
+--- a/buggy/components/camel-beanstalk/src/test/java/org/apache/camel/component/beanstalk/UriConfigurationTest.java
++++ b/fixed/components/camel-beanstalk/src/test/java/org/apache/camel/component/beanstalk/UriConfigurationTest.java
+@@ -38,7 +38,7 @@ public class UriConfigurationTest extends Assert {
+         String json = compConf.createParameterJsonSchema();
+         assertNotNull(json);
+ 
+-        assertTrue(json.contains("\"awaitJob\": { \"kind\": \"parameter\", \"type\": \"boolean\""));
++        assertTrue(json.contains("\"awaitJob\": { \"kind\": \"parameter\", \"label\": \"consumer\", \"type\": \"boolean\""));
+         assertTrue(json.contains("\"command\": { \"kind\": \"parameter\", \"type\": \"string\""));
+         assertTrue(json.contains("\"jobTimeToRun\": { \"kind\": \"parameter\", \"type\": \"integer\""));
+     }

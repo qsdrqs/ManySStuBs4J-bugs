@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/OpenshiftBuildConfigsEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/OpenshiftBuildConfigsEndpointBuilderFactory.java
+index 68fc8004..d9a52c41 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/OpenshiftBuildConfigsEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/OpenshiftBuildConfigsEndpointBuilderFactory.java
+@@ -34,7 +34,7 @@ public interface OpenshiftBuildConfigsEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Openshift Build Config component.
+      */
+-    public static interface OpenshiftBuildConfigsEndpointBuilder
++    public interface OpenshiftBuildConfigsEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedOpenshiftBuildConfigsEndpointBuilder advanced() {
+@@ -243,7 +243,7 @@ public interface OpenshiftBuildConfigsEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Openshift Build Config component.
+      */
+-    public static interface AdvancedOpenshiftBuildConfigsEndpointBuilder
++    public interface AdvancedOpenshiftBuildConfigsEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default OpenshiftBuildConfigsEndpointBuilder basic() {

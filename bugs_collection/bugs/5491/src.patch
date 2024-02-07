@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SftpEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SftpEndpointBuilderFactory.java
+index 38cccf2b..c3aea180 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SftpEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SftpEndpointBuilderFactory.java
+@@ -2514,7 +2514,7 @@ public interface SftpEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the SFTP component.
+      */
+-    public static interface SftpEndpointProducerBuilder
++    public interface SftpEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedSftpEndpointProducerBuilder advanced() {
+@@ -3731,7 +3731,7 @@ public interface SftpEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the SFTP component.
+      */
+-    public static interface SftpEndpointBuilder
++    public interface SftpEndpointBuilder
+             extends
+                 SftpEndpointConsumerBuilder, SftpEndpointProducerBuilder {
+         default AdvancedSftpEndpointBuilder advanced() {
+@@ -4119,7 +4119,7 @@ public interface SftpEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the SFTP component.
+      */
+-    public static interface AdvancedSftpEndpointBuilder
++    public interface AdvancedSftpEndpointBuilder
+             extends
+                 AdvancedSftpEndpointConsumerBuilder, AdvancedSftpEndpointProducerBuilder {
+         default SftpEndpointBuilder basic() {

@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/Mina2EndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/Mina2EndpointBuilderFactory.java
+index fd7e6a4e..b5502605 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/Mina2EndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/Mina2EndpointBuilderFactory.java
+@@ -1732,7 +1732,7 @@ public interface Mina2EndpointBuilderFactory {
+      * <code>org.apache.camel.component.mina2.Mina2TextLineDelimiter</code>
+      * enum.
+      */
+-    public static enum Mina2TextLineDelimiter {
++    static enum Mina2TextLineDelimiter {
+         DEFAULT, AUTO, UNIX, WINDOWS, MAC;
+     }
+     /**

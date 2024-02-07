@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XmppEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XmppEndpointBuilderFactory.java
+index a5e93712..59db82f5 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XmppEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XmppEndpointBuilderFactory.java
+@@ -472,7 +472,7 @@ public interface XmppEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the XMPP component.
+      */
+-    public static interface XmppEndpointProducerBuilder
++    public interface XmppEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedXmppEndpointProducerBuilder advanced() {
+@@ -815,7 +815,7 @@ public interface XmppEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the XMPP component.
+      */
+-    public static interface XmppEndpointBuilder
++    public interface XmppEndpointBuilder
+             extends
+                 XmppEndpointConsumerBuilder, XmppEndpointProducerBuilder {
+         default AdvancedXmppEndpointBuilder advanced() {
+@@ -1010,7 +1010,7 @@ public interface XmppEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the XMPP component.
+      */
+-    public static interface AdvancedXmppEndpointBuilder
++    public interface AdvancedXmppEndpointBuilder
+             extends
+                 AdvancedXmppEndpointConsumerBuilder, AdvancedXmppEndpointProducerBuilder {
+         default XmppEndpointBuilder basic() {

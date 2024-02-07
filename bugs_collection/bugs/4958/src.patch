@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ChatScriptEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ChatScriptEndpointBuilderFactory.java
+index 15d1965b..f04a3cf0 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ChatScriptEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ChatScriptEndpointBuilderFactory.java
+@@ -33,7 +33,7 @@ public interface ChatScriptEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the ChatScript component.
+      */
+-    public static interface ChatScriptEndpointBuilder
++    public interface ChatScriptEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedChatScriptEndpointBuilder advanced() {
+@@ -108,7 +108,7 @@ public interface ChatScriptEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the ChatScript component.
+      */
+-    public static interface AdvancedChatScriptEndpointBuilder
++    public interface AdvancedChatScriptEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default ChatScriptEndpointBuilder basic() {

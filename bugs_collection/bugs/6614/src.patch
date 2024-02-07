@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-ironmq/src/main/java/org/apache/camel/component/ironmq/IronMQEndpoint.java b/fixed/components/camel-ironmq/src/main/java/org/apache/camel/component/ironmq/IronMQEndpoint.java
+index 5742a986..f29dcbfb 100644
+--- a/buggy/components/camel-ironmq/src/main/java/org/apache/camel/component/ironmq/IronMQEndpoint.java
++++ b/fixed/components/camel-ironmq/src/main/java/org/apache/camel/component/ironmq/IronMQEndpoint.java
+@@ -38,7 +38,7 @@ import org.slf4j.LoggerFactory;
+ /**
+  * Represents a IronMQ endpoint.
+  */
+-@UriEndpoint(scheme = "ironmq", syntax = "ironmq:queue", title = "ironmq", consumerClass = IronMQConsumer.class, label = "cloud,messaging")
++@UriEndpoint(scheme = "ironmq", syntax = "ironmq:queueName", title = "ironmq", consumerClass = IronMQConsumer.class, label = "cloud,messaging")
+ public class IronMQEndpoint extends ScheduledPollEndpoint {
+     private static final Logger LOG = LoggerFactory.getLogger(IronMQEndpoint.class);
+ 

@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CryptoCmsEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CryptoCmsEndpointBuilderFactory.java
+index 8ba99f22..1fe77f08 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CryptoCmsEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CryptoCmsEndpointBuilderFactory.java
+@@ -37,9 +37,7 @@ public interface CryptoCmsEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Crypto CMS component.
+      */
+-    public static interface CryptoCmsEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface CryptoCmsEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedCryptoCmsEndpointBuilder advanced() {
+             return (AdvancedCryptoCmsEndpointBuilder) this;
+         }
+@@ -426,7 +424,7 @@ public interface CryptoCmsEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Crypto CMS component.
+      */
+-    public static interface AdvancedCryptoCmsEndpointBuilder
++    public interface AdvancedCryptoCmsEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default CryptoCmsEndpointBuilder basic() {

@@ -1,0 +1,20 @@
+diff --git a/buggy/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/FtpsEndpoint.java b/fixed/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/FtpsEndpoint.java
+index 17f0accf..144be586 100644
+--- a/buggy/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/FtpsEndpoint.java
++++ b/fixed/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/FtpsEndpoint.java
+@@ -178,7 +178,7 @@ public class FtpsEndpoint extends FtpEndpoint<FTPFile> {
+             // and we want to keep data timeout so we can log it later
+             timeout = localParameters.remove("dataTimeout");
+             if (timeout != null) {
+-                dataTimeout = getCamelContext().getTypeConverter().convertTo(int.class, dataTimeout);
++                dataTimeout = getCamelContext().getTypeConverter().convertTo(int.class, timeout);
+             }
+             setProperties(client, localParameters);
+         }
+@@ -252,4 +252,4 @@ public class FtpsEndpoint extends FtpEndpoint<FTPFile> {
+         this.sslContextParameters = sslContextParameters;
+     }
+ 
+-}
+\ No newline at end of file
++}

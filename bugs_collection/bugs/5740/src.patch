@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jackson/src/main/java/org/apache/camel/component/jackson/converter/JacksonTypeConverters.java b/fixed/components/camel-jackson/src/main/java/org/apache/camel/component/jackson/converter/JacksonTypeConverters.java
+index fdb3ce8a..7a2d5d29 100644
+--- a/buggy/components/camel-jackson/src/main/java/org/apache/camel/component/jackson/converter/JacksonTypeConverters.java
++++ b/fixed/components/camel-jackson/src/main/java/org/apache/camel/component/jackson/converter/JacksonTypeConverters.java
+@@ -43,7 +43,7 @@ import org.apache.camel.spi.TypeConverterRegistry;
+  * default the converter only attempts to convert to primitive types such as String and numbers. To convert to any kind, then
+  * enable this by setting {@link JacksonConstants#TYPE_CONVERTER_TO_POJO} to <tt>true</tt> on {@link CamelContext#getGlobalOptions()}.
+  */
+-@Converter
++@Converter(loader = true)
+ public final class JacksonTypeConverters {
+ 
+     private final ObjectMapper defaultMapper;

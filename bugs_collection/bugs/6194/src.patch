@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-telegram/src/main/java/org/apache/camel/component/telegram/model/IncomingDocument.java b/fixed/components/camel-telegram/src/main/java/org/apache/camel/component/telegram/model/IncomingDocument.java
+index 86c67433..e90dd6b5 100644
+--- a/buggy/components/camel-telegram/src/main/java/org/apache/camel/component/telegram/model/IncomingDocument.java
++++ b/fixed/components/camel-telegram/src/main/java/org/apache/camel/component/telegram/model/IncomingDocument.java
+@@ -85,7 +85,7 @@ public class IncomingDocument {
+ 
+     @Override
+     public String toString() {
+-        final StringBuilder sb = new StringBuilder("IncomingAudio{");
++        final StringBuilder sb = new StringBuilder("IncomingDocument{");
+         sb.append("fileId='").append(fileId).append('\'');
+         sb.append(", thumbSize='").append(thumb).append('\'');
+         sb.append(", fileName='").append(fileName).append('\'');

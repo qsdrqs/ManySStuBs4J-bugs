@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-aws-kinesis/src/test/java/org/apache/camel/component/aws/firehose/KinesisFirehoseEndpointTest.java b/fixed/components/camel-aws-kinesis/src/test/java/org/apache/camel/component/aws/firehose/KinesisFirehoseEndpointTest.java
+index fdc50257..5b99d11c 100644
+--- a/buggy/components/camel-aws-kinesis/src/test/java/org/apache/camel/component/aws/firehose/KinesisFirehoseEndpointTest.java
++++ b/fixed/components/camel-aws-kinesis/src/test/java/org/apache/camel/component/aws/firehose/KinesisFirehoseEndpointTest.java
+@@ -41,7 +41,7 @@ public class KinesisFirehoseEndpointTest {
+     @Before
+     public void setup() throws Exception {
+         SimpleRegistry registry = new SimpleRegistry();
+-        registry.put("firehoseClient", amazonKinesisFirehoseClient);
++        registry.bind("firehoseClient", amazonKinesisFirehoseClient);
+         camelContext = new DefaultCamelContext(registry);
+     }
+ 

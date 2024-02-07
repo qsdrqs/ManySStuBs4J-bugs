@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-netty4/src/main/java/org/apache/camel/component/netty4/SingleUDPNettyServerBootstrapFactory.java b/fixed/components/camel-netty4/src/main/java/org/apache/camel/component/netty4/SingleUDPNettyServerBootstrapFactory.java
+index a5450024..13d2166f 100644
+--- a/buggy/components/camel-netty4/src/main/java/org/apache/camel/component/netty4/SingleUDPNettyServerBootstrapFactory.java
++++ b/fixed/components/camel-netty4/src/main/java/org/apache/camel/component/netty4/SingleUDPNettyServerBootstrapFactory.java
+@@ -161,7 +161,7 @@ public class SingleUDPNettyServerBootstrapFactory extends ServiceSupport impleme
+         SubnetUtils multicastSubnet = new SubnetUtils(MULTICAST_SUBNET);
+ 
+         if (multicastSubnet.getInfo().isInRange(configuration.getHost())) {
+-            ChannelFuture channelFuture = bootstrap.bind(hostAddress);
++            ChannelFuture channelFuture = bootstrap.bind(configuration.getPort());
+             channelFuture.awaitUninterruptibly();
+             channel = channelFuture.channel();
+             DatagramChannel datagramChannel = (DatagramChannel) channel;

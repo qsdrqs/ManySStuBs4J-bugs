@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JoltEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JoltEndpointBuilderFactory.java
+index 7a1f89e5..3d5ef749 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JoltEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JoltEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface JoltEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the JOLT component.
+      */
+-    public static interface JoltEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface JoltEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedJoltEndpointBuilder advanced() {
+             return (AdvancedJoltEndpointBuilder) this;
+         }
+@@ -143,7 +141,7 @@ public interface JoltEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the JOLT component.
+      */
+-    public static interface AdvancedJoltEndpointBuilder
++    public interface AdvancedJoltEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default JoltEndpointBuilder basic() {

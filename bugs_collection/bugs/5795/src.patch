@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-ldif/src/test/java/org/apache/camel/component/ldif/LdifRouteTest.java b/fixed/components/camel-ldif/src/test/java/org/apache/camel/component/ldif/LdifRouteTest.java
+index 8b3a29f0..240bcd68 100644
+--- a/buggy/components/camel-ldif/src/test/java/org/apache/camel/component/ldif/LdifRouteTest.java
++++ b/fixed/components/camel-ldif/src/test/java/org/apache/camel/component/ldif/LdifRouteTest.java
+@@ -74,7 +74,7 @@ public class LdifRouteTest extends AbstractLdapTestUnit {
+         ldapContext = getWiredContext(ldapServer);
+ 
+         SimpleRegistry reg = new SimpleRegistry();
+-        reg.put(LDAP_CONN_NAME, getWiredConnection(ldapServer));
++        reg.bind(LDAP_CONN_NAME, getWiredConnection(ldapServer));
+         camel = new DefaultCamelContext(reg);
+         template = camel.createProducerTemplate();
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-cxf/src/main/java/org/apache/camel/component/cxf/springboot/CxfComponentAutoConfiguration.java b/fixed/components/camel-cxf/src/main/java/org/apache/camel/component/cxf/springboot/CxfComponentAutoConfiguration.java
+index 7c241231..21f5c1e4 100644
+--- a/buggy/components/camel-cxf/src/main/java/org/apache/camel/component/cxf/springboot/CxfComponentAutoConfiguration.java
++++ b/fixed/components/camel-cxf/src/main/java/org/apache/camel/component/cxf/springboot/CxfComponentAutoConfiguration.java
+@@ -34,7 +34,7 @@ import org.springframework.context.annotation.Configuration;
+ @EnableConfigurationProperties(CxfComponentConfiguration.class)
+ public class CxfComponentAutoConfiguration {
+ 
+-    @Bean
++    @Bean(name = "cxf-component")
+     @ConditionalOnClass(CamelContext.class)
+     @ConditionalOnMissingBean(CxfComponent.class)
+     public CxfComponent configureCxfComponent(CamelContext camelContext,

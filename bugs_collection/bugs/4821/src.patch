@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PahoEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PahoEndpointBuilderFactory.java
+index 91ff3b3b..92881362 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PahoEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PahoEndpointBuilderFactory.java
+@@ -871,7 +871,7 @@ public interface PahoEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.paho.PahoPersistence</code> enum.
+      */
+-    public static enum PahoPersistence {
++    static enum PahoPersistence {
+         FILE, MEMORY;
+     }
+     /**

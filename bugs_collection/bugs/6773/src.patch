@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-kafka/src/main/java/org/apache/camel/component/kafka/KafkaEndpoint.java b/fixed/components/camel-kafka/src/main/java/org/apache/camel/component/kafka/KafkaEndpoint.java
+index bbf70625..7cbd524b 100644
+--- a/buggy/components/camel-kafka/src/main/java/org/apache/camel/component/kafka/KafkaEndpoint.java
++++ b/fixed/components/camel-kafka/src/main/java/org/apache/camel/component/kafka/KafkaEndpoint.java
+@@ -37,7 +37,7 @@ public class KafkaEndpoint extends DefaultEndpoint implements MultipleConsumersS
+     @UriParam
+     private KafkaConfiguration configuration = new KafkaConfiguration();
+     
+-    @UriParam(defaultValue = "false")
++    @UriParam(description = "If the option is true, then KafkaProducer will ignore the KafkaConstants.TOPIC header setting of the inbound message.", defaultValue = "false")
+     private boolean bridgeEndpoint;
+ 
+     public KafkaEndpoint() {

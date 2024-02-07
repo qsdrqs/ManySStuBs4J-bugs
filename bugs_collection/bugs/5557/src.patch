@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/StubEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/StubEndpointBuilderFactory.java
+index d737f62d..80979509 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/StubEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/StubEndpointBuilderFactory.java
+@@ -360,7 +360,7 @@ public interface StubEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Stub component.
+      */
+-    public static interface StubEndpointProducerBuilder
++    public interface StubEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedStubEndpointProducerBuilder advanced() {
+@@ -670,7 +670,7 @@ public interface StubEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Stub component.
+      */
+-    public static interface StubEndpointBuilder
++    public interface StubEndpointBuilder
+             extends
+                 StubEndpointConsumerBuilder, StubEndpointProducerBuilder {
+         default AdvancedStubEndpointBuilder advanced() {
+@@ -712,7 +712,7 @@ public interface StubEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Stub component.
+      */
+-    public static interface AdvancedStubEndpointBuilder
++    public interface AdvancedStubEndpointBuilder
+             extends
+                 AdvancedStubEndpointConsumerBuilder, AdvancedStubEndpointProducerBuilder {
+         default StubEndpointBuilder basic() {

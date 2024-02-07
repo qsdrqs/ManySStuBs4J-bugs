@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-spring-boot/src/main/java/org/apache/camel/spring/boot/ha/ClusteredRouteControllerAutoConfiguration.java b/fixed/components/camel-spring-boot/src/main/java/org/apache/camel/spring/boot/ha/ClusteredRouteControllerAutoConfiguration.java
+index 3be20a3a..19a39594 100644
+--- a/buggy/components/camel-spring-boot/src/main/java/org/apache/camel/spring/boot/ha/ClusteredRouteControllerAutoConfiguration.java
++++ b/fixed/components/camel-spring-boot/src/main/java/org/apache/camel/spring/boot/ha/ClusteredRouteControllerAutoConfiguration.java
+@@ -67,7 +67,7 @@ public class ClusteredRouteControllerAutoConfiguration {
+         controller.setFilters(filters);
+         controller.addFilter(new ClusteredRouteFilters.IsAutoStartup());
+ 
+-        if (ObjectHelper.isEmpty(configuration.getClusterService())) {
++        if (ObjectHelper.isNotEmpty(configuration.getClusterService())) {
+             controller.setClusterService(configuration.getClusterService());
+         }
+ 

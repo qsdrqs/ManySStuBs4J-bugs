@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-xstream/src/test/java/org/apache/camel/dataformat/xstream/XStreamConfigurationTest.java b/fixed/components/camel-xstream/src/test/java/org/apache/camel/dataformat/xstream/XStreamConfigurationTest.java
+index 5fc88581..c56ec8f3 100644
+--- a/buggy/components/camel-xstream/src/test/java/org/apache/camel/dataformat/xstream/XStreamConfigurationTest.java
++++ b/fixed/components/camel-xstream/src/test/java/org/apache/camel/dataformat/xstream/XStreamConfigurationTest.java
+@@ -104,7 +104,7 @@ public class XStreamConfigurationTest extends CamelTestSupport {
+         order.setAmount(1);
+         order.setPrice(99.95);
+         
+-        String ordereString = "{\"purchase-order\":{\"@name\":\"Tiger\",\"@price\":\"99.95\",\"@amount\":\"1.0\"}}";
++        String ordereString = "{\"purchase-order\":{\"@name\":\"Tiger\",\"@price\":99.95,\"@amount\":1}}";
+         mock.expectedBodiesReceived(new Object[] {ordereString, order});
+ 
+         template.sendBody("direct:marshal-json", order);

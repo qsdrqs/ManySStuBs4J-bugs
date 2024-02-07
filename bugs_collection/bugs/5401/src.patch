@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/OptaPlannerEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/OptaPlannerEndpointBuilderFactory.java
+index 68cbac6a..11101c16 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/OptaPlannerEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/OptaPlannerEndpointBuilderFactory.java
+@@ -200,7 +200,7 @@ public interface OptaPlannerEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the OptaPlanner component.
+      */
+-    public static interface OptaPlannerEndpointProducerBuilder
++    public interface OptaPlannerEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedOptaPlannerEndpointProducerBuilder advanced() {
+@@ -358,7 +358,7 @@ public interface OptaPlannerEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the OptaPlanner component.
+      */
+-    public static interface OptaPlannerEndpointBuilder
++    public interface OptaPlannerEndpointBuilder
+             extends
+                 OptaPlannerEndpointConsumerBuilder, OptaPlannerEndpointProducerBuilder {
+         default AdvancedOptaPlannerEndpointBuilder advanced() {
+@@ -387,7 +387,7 @@ public interface OptaPlannerEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the OptaPlanner component.
+      */
+-    public static interface AdvancedOptaPlannerEndpointBuilder
++    public interface AdvancedOptaPlannerEndpointBuilder
+             extends
+                 AdvancedOptaPlannerEndpointConsumerBuilder, AdvancedOptaPlannerEndpointProducerBuilder {
+         default OptaPlannerEndpointBuilder basic() {

@@ -1,0 +1,19 @@
+diff --git a/buggy/components/camel-spring/src/test/java/org/apache/camel/spring/config/ConsumerTemplateMaximumCacheSizeTest.java b/fixed/components/camel-spring/src/test/java/org/apache/camel/spring/config/ConsumerTemplateMaximumCacheSizeTest.java
+index b9d9ab70..6cd93ee8 100644
+--- a/buggy/components/camel-spring/src/test/java/org/apache/camel/spring/config/ConsumerTemplateMaximumCacheSizeTest.java
++++ b/fixed/components/camel-spring/src/test/java/org/apache/camel/spring/config/ConsumerTemplateMaximumCacheSizeTest.java
+@@ -53,11 +53,11 @@ public class ConsumerTemplateMaximumCacheSizeTest extends SpringRunWithTestSuppo
+         template.cleanUp();
+ 
+         // eviction may still run a bit
+-        assertTrue("Size should be around 50", (template.getCurrentCacheSize() <= 51));
++        assertTrue("Size should be around 50", template.getCurrentCacheSize() <= 51);
+         template.stop();
+ 
+         // should be 0
+         assertEquals("Size should be 0", 0, template.getCurrentCacheSize());
+     }
+ 
+-}
+\ No newline at end of file
++}

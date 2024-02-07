@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-hl7/src/main/java/org/apache/camel/component/hl7/HL721Converter.java b/fixed/components/camel-hl7/src/main/java/org/apache/camel/component/hl7/HL721Converter.java
+index 27578a63..5adb24de 100644
+--- a/buggy/components/camel-hl7/src/main/java/org/apache/camel/component/hl7/HL721Converter.java
++++ b/fixed/components/camel-hl7/src/main/java/org/apache/camel/component/hl7/HL721Converter.java
+@@ -78,7 +78,7 @@ import org.apache.camel.converter.IOConverter;
+ /**
+  * HL7 converters.
+  */
+-@Converter
++@Converter(ignoreOnLoadError = true)
+ public final class HL721Converter {
+ 
+     private static final HapiContext DEFAULT_CONTEXT;

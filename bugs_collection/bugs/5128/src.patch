@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GrapeEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GrapeEndpointBuilderFactory.java
+index 9f54ebec..dbfb06b2 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GrapeEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GrapeEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface GrapeEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Grape component.
+      */
+-    public static interface GrapeEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface GrapeEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedGrapeEndpointBuilder advanced() {
+             return (AdvancedGrapeEndpointBuilder) this;
+         }
+@@ -56,7 +54,7 @@ public interface GrapeEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Grape component.
+      */
+-    public static interface AdvancedGrapeEndpointBuilder
++    public interface AdvancedGrapeEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default GrapeEndpointBuilder basic() {

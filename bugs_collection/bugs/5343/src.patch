@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MiloClientEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MiloClientEndpointBuilderFactory.java
+index 53e0dda1..e1517835 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MiloClientEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MiloClientEndpointBuilderFactory.java
+@@ -544,7 +544,7 @@ public interface MiloClientEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the OPC UA Client component.
+      */
+-    public static interface MiloClientEndpointProducerBuilder
++    public interface MiloClientEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedMiloClientEndpointProducerBuilder advanced() {
+@@ -1005,7 +1005,7 @@ public interface MiloClientEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the OPC UA Client component.
+      */
+-    public static interface MiloClientEndpointBuilder
++    public interface MiloClientEndpointBuilder
+             extends
+                 MiloClientEndpointConsumerBuilder, MiloClientEndpointProducerBuilder {
+         default AdvancedMiloClientEndpointBuilder advanced() {
+@@ -1364,7 +1364,7 @@ public interface MiloClientEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the OPC UA Client component.
+      */
+-    public static interface AdvancedMiloClientEndpointBuilder
++    public interface AdvancedMiloClientEndpointBuilder
+             extends
+                 AdvancedMiloClientEndpointConsumerBuilder, AdvancedMiloClientEndpointProducerBuilder {
+         default MiloClientEndpointBuilder basic() {

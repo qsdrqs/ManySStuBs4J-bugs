@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/sftp/SftpProducerMoveExistingTest.java b/fixed/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/sftp/SftpProducerMoveExistingTest.java
+index 3e36e2fc..b76b99bb 100644
+--- a/buggy/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/sftp/SftpProducerMoveExistingTest.java
++++ b/fixed/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/sftp/SftpProducerMoveExistingTest.java
+@@ -112,7 +112,7 @@ public class SftpProducerMoveExistingTest extends SftpServerTestSupport {
+             fail("Should have thrown an exception");
+         } catch (CamelExecutionException e) {
+             GenericFileOperationFailedException cause = assertIsInstanceOf(GenericFileOperationFailedException.class, e.getCause());
+-            assertTrue(cause.getMessage().startsWith("Cannot moved existing file"));
++            assertTrue(cause.getMessage().startsWith("Cannot move existing file"));
+         }
+ 
+         // we could not write the new file so the previous context should be there

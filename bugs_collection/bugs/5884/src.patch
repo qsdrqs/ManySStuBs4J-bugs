@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/processor/aggregate/AggregateProcessor.java b/fixed/camel-core/src/main/java/org/apache/camel/processor/aggregate/AggregateProcessor.java
+index d4fd9de0..2bc5fca3 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/processor/aggregate/AggregateProcessor.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/processor/aggregate/AggregateProcessor.java
+@@ -770,7 +770,7 @@ public class AggregateProcessor extends AsyncProcessorSupport implements Navigat
+ 
+         // send this exchange
+         // the call to schedule last if needed to ensure in-order processing of the aggregates
+-        executorService.submit(() -> ReactiveHelper.scheduleLast(() -> processor.process(exchange, done -> {
++        executorService.submit(() -> ReactiveHelper.scheduleSync(() -> processor.process(exchange, done -> {
+             // log exception if there was a problem
+             if (exchange.getException() != null) {
+                 // if there was an exception then let the exception handler handle it

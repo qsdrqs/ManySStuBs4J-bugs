@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ServletEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ServletEndpointBuilderFactory.java
+index 2ccbd111..ec23f718 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ServletEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ServletEndpointBuilderFactory.java
+@@ -35,9 +35,7 @@ public interface ServletEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Servlet component.
+      */
+-    public static interface ServletEndpointBuilder
+-            extends
+-                EndpointConsumerBuilder {
++    public interface ServletEndpointBuilder extends EndpointConsumerBuilder {
+         default AdvancedServletEndpointBuilder advanced() {
+             return (AdvancedServletEndpointBuilder) this;
+         }
+@@ -176,7 +174,7 @@ public interface ServletEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Servlet component.
+      */
+-    public static interface AdvancedServletEndpointBuilder
++    public interface AdvancedServletEndpointBuilder
+             extends
+                 EndpointConsumerBuilder {
+         default ServletEndpointBuilder basic() {

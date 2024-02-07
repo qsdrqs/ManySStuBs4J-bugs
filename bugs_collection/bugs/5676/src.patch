@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-core/src/main/java/org/apache/camel/reifier/dataformat/JacksonXMLDataFormatReifier.java b/fixed/core/camel-core/src/main/java/org/apache/camel/reifier/dataformat/JacksonXMLDataFormatReifier.java
+index 29a7e977..cf2ace36 100644
+--- a/buggy/core/camel-core/src/main/java/org/apache/camel/reifier/dataformat/JacksonXMLDataFormatReifier.java
++++ b/fixed/core/camel-core/src/main/java/org/apache/camel/reifier/dataformat/JacksonXMLDataFormatReifier.java
+@@ -45,7 +45,7 @@ public class JacksonXMLDataFormatReifier extends DataFormatReifier<JacksonXMLDat
+             }
+         }
+ 
+-        return super.createDataFormat(camelContext);
++        return super.doCreateDataFormat(camelContext);
+     }
+ 
+     @Override

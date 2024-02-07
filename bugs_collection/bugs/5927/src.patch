@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/component/timer/TimerConsumer.java b/fixed/camel-core/src/main/java/org/apache/camel/component/timer/TimerConsumer.java
+index 8908cfa0..1dc6e88b 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/component/timer/TimerConsumer.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/component/timer/TimerConsumer.java
+@@ -67,7 +67,7 @@ public class TimerConsumer extends DefaultConsumer implements StartupListener, S
+                 public void run() {
+                     if (!isTaskRunAllowed()) {
+                         // do not run timer task as it was not allowed
+-                        LOG.debug("Run now allowed for timer: {}", endpoint);
++                        LOG.debug("Run not allowed for timer: {}", endpoint);
+                         return;
+                     }
+ 

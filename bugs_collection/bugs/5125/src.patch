@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoraEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoraEndpointBuilderFactory.java
+index 5c1833e1..e230b6dc 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoraEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoraEndpointBuilderFactory.java
+@@ -460,7 +460,7 @@ public interface GoraEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Gora component.
+      */
+-    public static interface GoraEndpointProducerBuilder
++    public interface GoraEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedGoraEndpointProducerBuilder advanced() {
+@@ -640,7 +640,7 @@ public interface GoraEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Gora component.
+      */
+-    public static interface GoraEndpointBuilder
++    public interface GoraEndpointBuilder
+             extends
+                 GoraEndpointConsumerBuilder, GoraEndpointProducerBuilder {
+         default AdvancedGoraEndpointBuilder advanced() {
+@@ -687,7 +687,7 @@ public interface GoraEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Gora component.
+      */
+-    public static interface AdvancedGoraEndpointBuilder
++    public interface AdvancedGoraEndpointBuilder
+             extends
+                 AdvancedGoraEndpointConsumerBuilder, AdvancedGoraEndpointProducerBuilder {
+         default GoraEndpointBuilder basic() {

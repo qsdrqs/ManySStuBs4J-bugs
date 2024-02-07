@@ -1,0 +1,15 @@
+diff --git a/buggy/tests/camel-itest-spring-boot/src/test/java/org/apache/camel/itest/springboot/CamelJbpmTest.java b/fixed/tests/camel-itest-spring-boot/src/test/java/org/apache/camel/itest/springboot/CamelJbpmTest.java
+index 615e0784..8c032076 100644
+--- a/buggy/tests/camel-itest-spring-boot/src/test/java/org/apache/camel/itest/springboot/CamelJbpmTest.java
++++ b/fixed/tests/camel-itest-spring-boot/src/test/java/org/apache/camel/itest/springboot/CamelJbpmTest.java
+@@ -35,8 +35,8 @@ public class CamelJbpmTest extends AbstractSpringBootTestSupport {
+     public static ITestConfig createTestConfig() {
+         return new ITestConfigBuilder()
+                 .module(inferModuleName(CamelJbpmTest.class))
+-                .dependency("org.drools:drools-core:7.20.0.Final")
+-                .dependency("org.drools:drools-compiler:7.20.0.Final")
++                .dependency("org.drools:drools-core:7.21.0.Final")
++                .dependency("org.drools:drools-compiler:7.21.0.Final")
+                 .unitTestExpectedNumber(0)
+                 .build();
+     }

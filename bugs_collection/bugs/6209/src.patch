@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-ahc-ws/src/main/java/org/apache/camel/component/ahc/ws/WsEndpoint.java b/fixed/components/camel-ahc-ws/src/main/java/org/apache/camel/component/ahc/ws/WsEndpoint.java
+index 25f6950f..0d891e45 100644
+--- a/buggy/components/camel-ahc-ws/src/main/java/org/apache/camel/component/ahc/ws/WsEndpoint.java
++++ b/fixed/components/camel-ahc-ws/src/main/java/org/apache/camel/component/ahc/ws/WsEndpoint.java
+@@ -112,7 +112,7 @@ public class WsEndpoint extends AhcEndpoint {
+             config = new DefaultAsyncHttpClientConfig.Builder().build();
+             client = new DefaultAsyncHttpClient(config);
+         } else {
+-            client = new DefaultAsyncHttpClient();
++            client = new DefaultAsyncHttpClient(config);
+         }
+         return client;
+     }

@@ -1,0 +1,16 @@
+diff --git a/buggy/components/camel-hdfs2/src/main/java/org/apache/camel/component/hdfs2/HdfsConfiguration.java b/fixed/components/camel-hdfs2/src/main/java/org/apache/camel/component/hdfs2/HdfsConfiguration.java
+index 58d602e2..7dd5e550 100644
+--- a/buggy/components/camel-hdfs2/src/main/java/org/apache/camel/component/hdfs2/HdfsConfiguration.java
++++ b/fixed/components/camel-hdfs2/src/main/java/org/apache/camel/component/hdfs2/HdfsConfiguration.java
+@@ -41,9 +41,9 @@ public class HdfsConfiguration {
+     private String path;
+     @UriParam(defaultValue = "true")
+     private boolean overwrite = true;
+-    @UriParam(defaultValue = "false")
++    @UriParam
+     private boolean append;
+-    @UriParam(defaultValue = "false")
++    @UriParam
+     private boolean wantAppend;
+     @UriParam(defaultValue = "" + HdfsConstants.DEFAULT_BUFFERSIZE)
+     private int bufferSize = HdfsConstants.DEFAULT_BUFFERSIZE;

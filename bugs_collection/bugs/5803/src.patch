@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-guava-eventbus/src/test/java/org/apache/camel/component/guava/eventbus/GuavaEventBusConsumerConfigurationTest.java b/fixed/components/camel-guava-eventbus/src/test/java/org/apache/camel/component/guava/eventbus/GuavaEventBusConsumerConfigurationTest.java
+index ffb22436..d98b0069 100644
+--- a/buggy/components/camel-guava-eventbus/src/test/java/org/apache/camel/component/guava/eventbus/GuavaEventBusConsumerConfigurationTest.java
++++ b/fixed/components/camel-guava-eventbus/src/test/java/org/apache/camel/component/guava/eventbus/GuavaEventBusConsumerConfigurationTest.java
+@@ -36,7 +36,7 @@ public class GuavaEventBusConsumerConfigurationTest extends CamelTestSupport {
+     public void invalidConfiguration() throws Exception {
+         // Given
+         SimpleRegistry registry = new SimpleRegistry();
+-        registry.put("eventBus", new EventBus());
++        registry.bind("eventBus", new EventBus());
+         CamelContext context = new DefaultCamelContext(registry);
+         context.addRoutes(new RouteBuilder() {
+             @Override

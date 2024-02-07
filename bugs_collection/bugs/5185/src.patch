@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IPFSEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IPFSEndpointBuilderFactory.java
+index 4d54f70f..e55f38ec 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IPFSEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IPFSEndpointBuilderFactory.java
+@@ -35,9 +35,7 @@ public interface IPFSEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the IPFS component.
+      */
+-    public static interface IPFSEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface IPFSEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedIPFSEndpointBuilder advanced() {
+             return (AdvancedIPFSEndpointBuilder) this;
+         }
+@@ -74,7 +72,7 @@ public interface IPFSEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the IPFS component.
+      */
+-    public static interface AdvancedIPFSEndpointBuilder
++    public interface AdvancedIPFSEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default IPFSEndpointBuilder basic() {

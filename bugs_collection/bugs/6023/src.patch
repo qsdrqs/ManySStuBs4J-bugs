@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-atomix/src/main/java/org/apache/camel/component/atomix/client/map/AtomixMapEndpoint.java b/fixed/components/camel-atomix/src/main/java/org/apache/camel/component/atomix/client/map/AtomixMapEndpoint.java
+index fd566cbf..7d8f198b 100644
+--- a/buggy/components/camel-atomix/src/main/java/org/apache/camel/component/atomix/client/map/AtomixMapEndpoint.java
++++ b/fixed/components/camel-atomix/src/main/java/org/apache/camel/component/atomix/client/map/AtomixMapEndpoint.java
+@@ -31,7 +31,7 @@ import org.apache.camel.spi.UriParam;
+     firstVersion = "2.20.0",
+     scheme = "atomix-map",
+     title = "Atomix Map",
+-    syntax = "atomix-map:mapName",
++    syntax = "atomix-map:resourceName",
+     consumerClass = AtomixMapConsumer.class,
+     label = "clustering")
+ class AtomixMapEndpoint extends AbstractAtomixClientEndpoint<AtomixMapComponent, AtomixMapConfiguration> {

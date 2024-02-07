@@ -1,0 +1,15 @@
+diff --git a/buggy/components/camel-aws-sqs/src/test/java/org/apache/camel/component/aws/sqs/integration/SqsProducerBatchSendFifoIntegrationTest.java b/fixed/components/camel-aws-sqs/src/test/java/org/apache/camel/component/aws/sqs/integration/SqsProducerBatchSendFifoIntegrationTest.java
+index 6a11745e..9f244fa0 100644
+--- a/buggy/components/camel-aws-sqs/src/test/java/org/apache/camel/component/aws/sqs/integration/SqsProducerBatchSendFifoIntegrationTest.java
++++ b/fixed/components/camel-aws-sqs/src/test/java/org/apache/camel/component/aws/sqs/integration/SqsProducerBatchSendFifoIntegrationTest.java
+@@ -60,7 +60,9 @@ public class SqsProducerBatchSendFifoIntegrationTest extends CamelTestSupport {
+     }
+ 
+     protected RouteBuilder createRouteBuilder() throws Exception {
+-        final String sqsEndpointUri = String.format("aws-sqs://camel-1.fifo?accessKey=RAW(xxx)&secretKey=RAW(xxx)&region=EU_WEST_1&messageGroupIdStrategy=useExchangeId&messageDeduplicationIdStrategy=useContentBasedDeduplication");
++        final String sqsEndpointUri = 
++              String.format("aws-sqs://camel-1.fifo?accessKey=RAW(xxx)&secretKey=RAW(xxx)&region=EU_WEST_1&messageGroupIdStrategy=useExchangeId" 
++                  + "&messageDeduplicationIdStrategy=useContentBasedDeduplication");
+ 
+         return new RouteBuilder() {
+             @Override

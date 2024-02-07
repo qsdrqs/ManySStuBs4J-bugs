@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-snmp/src/main/java/org/apache/camel/component/snmp/SnmpConverters.java b/fixed/components/camel-snmp/src/main/java/org/apache/camel/component/snmp/SnmpConverters.java
+index 93e13c05..88a6ee4b 100644
+--- a/buggy/components/camel-snmp/src/main/java/org/apache/camel/component/snmp/SnmpConverters.java
++++ b/fixed/components/camel-snmp/src/main/java/org/apache/camel/component/snmp/SnmpConverters.java
+@@ -26,7 +26,7 @@ import org.snmp4j.PDUv1;
+ import org.snmp4j.smi.OID;
+ import org.snmp4j.smi.VariableBinding;
+ 
+-@Converter
++@Converter(loader = true)
+ public final class SnmpConverters {
+     public static final String SNMP_TAG = "snmp";
+     public static final String ENTRY_TAG = "entry";

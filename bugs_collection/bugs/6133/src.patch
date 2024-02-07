@@ -1,0 +1,22 @@
+diff --git a/buggy/components/camel-mail/src/test/java/org/apache/camel/component/mail/InvalidConfigurationTest.java b/fixed/components/camel-mail/src/test/java/org/apache/camel/component/mail/InvalidConfigurationTest.java
+index 2f20a4ee..19014333 100644
+--- a/buggy/components/camel-mail/src/test/java/org/apache/camel/component/mail/InvalidConfigurationTest.java
++++ b/fixed/components/camel-mail/src/test/java/org/apache/camel/component/mail/InvalidConfigurationTest.java
+@@ -32,7 +32,7 @@ public class InvalidConfigurationTest extends CamelTestSupport {
+         PollingConsumer consumer = endpoint.createPollingConsumer();
+         try {
+             consumer.start();
+-            fail("Should have thrown NoSuchProviderException as stmp protocol cannot be used for consuming mails");
++            fail("Should have thrown NoSuchProviderException as smtp protocol cannot be used for consuming mails");
+         } catch (IllegalArgumentException e) {
+             // expected
+         }
+@@ -44,7 +44,7 @@ public class InvalidConfigurationTest extends CamelTestSupport {
+         PollingConsumer consumer = endpoint.createPollingConsumer();
+         try {
+             consumer.start();
+-            fail("Should have thrown NoSuchProviderException as stmp protocol cannot be used for consuming mails");
++            fail("Should have thrown NoSuchProviderException as smtp protocol cannot be used for consuming mails");
+         } catch (IllegalArgumentException e) {
+             // expected
+         }

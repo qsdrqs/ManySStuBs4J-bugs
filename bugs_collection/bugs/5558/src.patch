@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SwiftEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SwiftEndpointBuilderFactory.java
+index 6b93575e..f3805c86 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SwiftEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SwiftEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface SwiftEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the OpenStack Swift component.
+      */
+-    public static interface SwiftEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface SwiftEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedSwiftEndpointBuilder advanced() {
+             return (AdvancedSwiftEndpointBuilder) this;
+         }
+@@ -137,7 +135,7 @@ public interface SwiftEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the OpenStack Swift component.
+      */
+-    public static interface AdvancedSwiftEndpointBuilder
++    public interface AdvancedSwiftEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default SwiftEndpointBuilder basic() {

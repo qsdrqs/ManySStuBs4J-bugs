@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DdbStreamEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DdbStreamEndpointBuilderFactory.java
+index 16e80ec9..8e8670b3 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DdbStreamEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DdbStreamEndpointBuilderFactory.java
+@@ -33,9 +33,7 @@ public interface DdbStreamEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the AWS DynamoDB Streams component.
+      */
+-    public static interface DdbStreamEndpointBuilder
+-            extends
+-                EndpointConsumerBuilder {
++    public interface DdbStreamEndpointBuilder extends EndpointConsumerBuilder {
+         default AdvancedDdbStreamEndpointBuilder advanced() {
+             return (AdvancedDdbStreamEndpointBuilder) this;
+         }
+@@ -99,7 +97,7 @@ public interface DdbStreamEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the AWS DynamoDB Streams component.
+      */
+-    public static interface AdvancedDdbStreamEndpointBuilder
++    public interface AdvancedDdbStreamEndpointBuilder
+             extends
+                 EndpointConsumerBuilder {
+         default DdbStreamEndpointBuilder basic() {

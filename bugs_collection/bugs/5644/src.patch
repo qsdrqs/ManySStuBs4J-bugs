@@ -1,0 +1,22 @@
+diff --git a/buggy/components/camel-consul/src/test/java/org/apache/camel/component/consul/cloud/ConsulServiceCallWithRegistrationTest.java b/fixed/components/camel-consul/src/test/java/org/apache/camel/component/consul/cloud/ConsulServiceCallWithRegistrationTest.java
+index cbc33619..e7f6a800 100644
+--- a/buggy/components/camel-consul/src/test/java/org/apache/camel/component/consul/cloud/ConsulServiceCallWithRegistrationTest.java
++++ b/fixed/components/camel-consul/src/test/java/org/apache/camel/component/consul/cloud/ConsulServiceCallWithRegistrationTest.java
+@@ -71,7 +71,7 @@ public class ConsulServiceCallWithRegistrationTest extends ConsulTestSupport {
+                 from("direct:start")
+                     .serviceCall()
+                         .name(serviceName)
+-                        .component("jetty")
++                        .component("undertow")
+                         .defaultLoadBalancer()
+                         .consulServiceDiscovery()
+                             .url(consulUrl())
+@@ -107,7 +107,7 @@ public class ConsulServiceCallWithRegistrationTest extends ConsulTestSupport {
+                 from("direct:start")
+                     .serviceCall()
+                         .name(serviceName + "/bad/path")
+-                        .component("jetty")
++                        .component("http")
+                         .defaultLoadBalancer()
+                         .consulServiceDiscovery()
+                             .url(consulUrl())

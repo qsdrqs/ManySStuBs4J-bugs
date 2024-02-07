@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SplunkEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SplunkEndpointBuilderFactory.java
+index a4ca7fe3..20729ec1 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SplunkEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SplunkEndpointBuilderFactory.java
+@@ -765,7 +765,7 @@ public interface SplunkEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Splunk component.
+      */
+-    public static interface SplunkEndpointProducerBuilder
++    public interface SplunkEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedSplunkEndpointProducerBuilder advanced() {
+@@ -1086,7 +1086,7 @@ public interface SplunkEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Splunk component.
+      */
+-    public static interface SplunkEndpointBuilder
++    public interface SplunkEndpointBuilder
+             extends
+                 SplunkEndpointConsumerBuilder, SplunkEndpointProducerBuilder {
+         default AdvancedSplunkEndpointBuilder advanced() {
+@@ -1240,7 +1240,7 @@ public interface SplunkEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Splunk component.
+      */
+-    public static interface AdvancedSplunkEndpointBuilder
++    public interface AdvancedSplunkEndpointBuilder
+             extends
+                 AdvancedSplunkEndpointConsumerBuilder, AdvancedSplunkEndpointProducerBuilder {
+         default SplunkEndpointBuilder basic() {

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jpa/src/test/java/org/apache/camel/processor/jpa/JpaProducerConcurrentTest.java b/fixed/components/camel-jpa/src/test/java/org/apache/camel/processor/jpa/JpaProducerConcurrentTest.java
+index b6c16e02..52b31d35 100644
+--- a/buggy/components/camel-jpa/src/test/java/org/apache/camel/processor/jpa/JpaProducerConcurrentTest.java
++++ b/fixed/components/camel-jpa/src/test/java/org/apache/camel/processor/jpa/JpaProducerConcurrentTest.java
+@@ -71,7 +71,7 @@ public class JpaProducerConcurrentTest extends AbstractJpaTest {
+         for (Future<SendEmail> future : responses.values()) {
+             SendEmail sendMail = future.get();
+             assertNotNull(sendMail);
+-            log.info("Got the managed entity {}", sendMail);
++            log.info("Got the managed entity {} with the id {}", sendMail, sendMail.getId());
+         }
+ 
+         // assert in the database

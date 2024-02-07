@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SpringLdapEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SpringLdapEndpointBuilderFactory.java
+index 64b86cfc..693e9e96 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SpringLdapEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SpringLdapEndpointBuilderFactory.java
+@@ -34,7 +34,7 @@ public interface SpringLdapEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Spring LDAP component.
+      */
+-    public static interface SpringLdapEndpointBuilder
++    public interface SpringLdapEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedSpringLdapEndpointBuilder advanced() {
+@@ -85,7 +85,7 @@ public interface SpringLdapEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Spring LDAP component.
+      */
+-    public static interface AdvancedSpringLdapEndpointBuilder
++    public interface AdvancedSpringLdapEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default SpringLdapEndpointBuilder basic() {

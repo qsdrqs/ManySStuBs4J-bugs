@@ -1,0 +1,14 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/component/direct/DirectComponentConfigurationAndDocumentationTest.java b/fixed/camel-core/src/test/java/org/apache/camel/component/direct/DirectComponentConfigurationAndDocumentationTest.java
+index 2e8be166..93bede27 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/component/direct/DirectComponentConfigurationAndDocumentationTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/component/direct/DirectComponentConfigurationAndDocumentationTest.java
+@@ -61,7 +61,8 @@ public class DirectComponentConfigurationAndDocumentationTest extends ContextTes
+ 
+         // should include javadoc
+         assertTrue("Should include javadoc", json.contains("\"timeout\": { \"type\": \"integer\", \"javaType\": \"long\","
+-                + " \"description\": \"The timeout value to use if block is enabled. Is by default 30000.\" },"));
++                + " \"defaultValue\": \"30000\","
++                + " \"description\": \"The timeout value to use if block is enabled. Is by default 30000.\""));
+     }
+ 
+ }

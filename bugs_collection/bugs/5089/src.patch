@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GangliaEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GangliaEndpointBuilderFactory.java
+index 8af064a7..2c1b8259 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GangliaEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GangliaEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface GangliaEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Ganglia component.
+      */
+-    public static interface GangliaEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface GangliaEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedGangliaEndpointBuilder advanced() {
+             return (AdvancedGangliaEndpointBuilder) this;
+         }
+@@ -261,7 +259,7 @@ public interface GangliaEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Ganglia component.
+      */
+-    public static interface AdvancedGangliaEndpointBuilder
++    public interface AdvancedGangliaEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default GangliaEndpointBuilder basic() {

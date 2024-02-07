@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-netty-http/src/test/java/org/apache/camel/component/netty/http/NettyRecipientListHttpBaseTest.java b/fixed/components/camel-netty-http/src/test/java/org/apache/camel/component/netty/http/NettyRecipientListHttpBaseTest.java
+index be8bedb0..0960bbb8 100644
+--- a/buggy/components/camel-netty-http/src/test/java/org/apache/camel/component/netty/http/NettyRecipientListHttpBaseTest.java
++++ b/fixed/components/camel-netty-http/src/test/java/org/apache/camel/component/netty/http/NettyRecipientListHttpBaseTest.java
+@@ -45,7 +45,7 @@ public class NettyRecipientListHttpBaseTest extends BaseNettyTest {
+                     .transform(body().prepend("Bye "));
+ 
+                 from("direct:start")
+-                    .recipientList().constant("netty-http:http://0.0.0.0:{{port}}");
++                    .recipientList().constant("netty-http:http://localhost:{{port}}");
+             }
+         };
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/tooling/maven/camel-maven-plugin/src/main/java/org/apache/camel/maven/RunMojo.java b/fixed/tooling/maven/camel-maven-plugin/src/main/java/org/apache/camel/maven/RunMojo.java
+index c375e450..79ca2e0e 100644
+--- a/buggy/tooling/maven/camel-maven-plugin/src/main/java/org/apache/camel/maven/RunMojo.java
++++ b/fixed/tooling/maven/camel-maven-plugin/src/main/java/org/apache/camel/maven/RunMojo.java
+@@ -1025,7 +1025,7 @@ public class RunMojo extends AbstractExecMojo {
+      * @return an artifact which refers to the actual executable tool (not a POM)
+      * @throws MojoExecutionException
+      */
+-    private Artifact findExecutableArtifact() throws MojoExecutionException {
++    protected Artifact findExecutableArtifact() throws MojoExecutionException {
+         // ILimitedArtifactIdentifier execToolAssembly =
+         // this.getExecutableToolAssembly();
+ 

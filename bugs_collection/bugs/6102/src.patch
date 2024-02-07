@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/impl/converter/BaseTypeConverterRegistry.java b/fixed/camel-core/src/main/java/org/apache/camel/impl/converter/BaseTypeConverterRegistry.java
+index 5e0ccf07..6e4a1b15 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/impl/converter/BaseTypeConverterRegistry.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/impl/converter/BaseTypeConverterRegistry.java
+@@ -272,7 +272,7 @@ public abstract class BaseTypeConverterRegistry extends ServiceSupport implement
+         }
+ 
+         // special for NaN numbers, which we can only convert for floating numbers
+-        if (value.equals(Float.NaN) || value.equals(Double.NaN) ) {
++        if (value instanceof Number && (value.equals(Float.NaN) || value.equals(Double.NaN))) {
+             // no type conversion was needed
+             if (statistics.isStatisticsEnabled()) {
+                 noopCounter.increment();

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-xmpp/src/main/java/org/apache/camel/component/xmpp/XmppEndpoint.java b/fixed/components/camel-xmpp/src/main/java/org/apache/camel/component/xmpp/XmppEndpoint.java
+index bbb070a8..9cbbf47d 100644
+--- a/buggy/components/camel-xmpp/src/main/java/org/apache/camel/component/xmpp/XmppEndpoint.java
++++ b/fixed/components/camel-xmpp/src/main/java/org/apache/camel/component/xmpp/XmppEndpoint.java
+@@ -74,7 +74,7 @@ public class XmppEndpoint extends DefaultEndpoint implements HeaderFilterStrateg
+     private String resource = "Camel";
+     @UriParam(defaultValue = "true")
+     private boolean login = true;
+-    @UriParam(defaultValue = "false")
++    @UriParam
+     private boolean createAccount;
+     @UriParam
+     private String room;

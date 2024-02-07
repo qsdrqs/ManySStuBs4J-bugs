@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleDriveEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleDriveEndpointBuilderFactory.java
+index d207111a..a4ffd868 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleDriveEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleDriveEndpointBuilderFactory.java
+@@ -324,7 +324,7 @@ public interface GoogleDriveEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Google Drive component.
+      */
+-    public static interface GoogleDriveEndpointProducerBuilder
++    public interface GoogleDriveEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedGoogleDriveEndpointProducerBuilder advanced() {
+@@ -566,7 +566,7 @@ public interface GoogleDriveEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Google Drive component.
+      */
+-    public static interface GoogleDriveEndpointBuilder
++    public interface GoogleDriveEndpointBuilder
+             extends
+                 GoogleDriveEndpointConsumerBuilder, GoogleDriveEndpointProducerBuilder {
+         default AdvancedGoogleDriveEndpointBuilder advanced() {
+@@ -711,7 +711,7 @@ public interface GoogleDriveEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Google Drive component.
+      */
+-    public static interface AdvancedGoogleDriveEndpointBuilder
++    public interface AdvancedGoogleDriveEndpointBuilder
+             extends
+                 AdvancedGoogleDriveEndpointConsumerBuilder, AdvancedGoogleDriveEndpointProducerBuilder {
+         default GoogleDriveEndpointBuilder basic() {

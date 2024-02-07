@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PaxLoggingEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PaxLoggingEndpointBuilderFactory.java
+index 3ae374c2..2e9c1d7b 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PaxLoggingEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PaxLoggingEndpointBuilderFactory.java
+@@ -34,7 +34,7 @@ public interface PaxLoggingEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the OSGi PAX Logging component.
+      */
+-    public static interface PaxLoggingEndpointBuilder
++    public interface PaxLoggingEndpointBuilder
+             extends
+                 EndpointConsumerBuilder {
+         default AdvancedPaxLoggingEndpointBuilder advanced() {
+@@ -55,7 +55,7 @@ public interface PaxLoggingEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the OSGi PAX Logging component.
+      */
+-    public static interface AdvancedPaxLoggingEndpointBuilder
++    public interface AdvancedPaxLoggingEndpointBuilder
+             extends
+                 EndpointConsumerBuilder {
+         default PaxLoggingEndpointBuilder basic() {

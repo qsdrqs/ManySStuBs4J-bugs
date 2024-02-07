@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/util/ObjectHelper.java b/fixed/camel-core/src/main/java/org/apache/camel/util/ObjectHelper.java
+index 55bcf8c2..a4680084 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/util/ObjectHelper.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/util/ObjectHelper.java
+@@ -1491,7 +1491,7 @@ public final class ObjectHelper {
+      * @return the Iterable
+      */
+     public static Iterable<Throwable> createExceptionIterable(Throwable exception) {
+-        List<Throwable> throwables = new ArrayList<>();
++        List<Throwable> throwables = new ArrayList<Throwable>();
+ 
+         Throwable current = exception;
+         // spool to the bottom of the caused by tree

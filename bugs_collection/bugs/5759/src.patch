@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-hl7/src/main/java/org/apache/camel/component/hl7/HL7GenericMessageConverter.java b/fixed/components/camel-hl7/src/main/java/org/apache/camel/component/hl7/HL7GenericMessageConverter.java
+index 98becb92..392bce43 100644
+--- a/buggy/components/camel-hl7/src/main/java/org/apache/camel/component/hl7/HL7GenericMessageConverter.java
++++ b/fixed/components/camel-hl7/src/main/java/org/apache/camel/component/hl7/HL7GenericMessageConverter.java
+@@ -36,7 +36,7 @@ import org.apache.camel.converter.IOConverter;
+ /**
+  * HL7 converters.
+  */
+-@Converter
++@Converter(loader = true)
+ public final class HL7GenericMessageConverter {
+ 
+     private static final HapiContext GENERIC_MESSAGE_CONTEXT;

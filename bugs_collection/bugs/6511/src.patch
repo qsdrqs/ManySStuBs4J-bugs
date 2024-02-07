@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-chronicle/src/main/java/org/apache/camel/component/chronicle/engine/ChronicleEngineProducer.java b/fixed/components/camel-chronicle/src/main/java/org/apache/camel/component/chronicle/engine/ChronicleEngineProducer.java
+index 9d417999..c8513d40 100644
+--- a/buggy/components/camel-chronicle/src/main/java/org/apache/camel/component/chronicle/engine/ChronicleEngineProducer.java
++++ b/fixed/components/camel-chronicle/src/main/java/org/apache/camel/component/chronicle/engine/ChronicleEngineProducer.java
+@@ -147,7 +147,7 @@ public class ChronicleEngineProducer extends HeaderSelectorProducer {
+                     message.getHeader(ChronicleEngineConstants.DEFAULT_VALUE))
+             );
+         } else {
+-            QueueView.Excerpt<Object, Object> excerpt = queueView.get().get(index.longValue());
++            QueueView.Excerpt<Object, Object> excerpt = queueView.get().getExcerpt(index.longValue());
+ 
+             message.setHeader(ChronicleEngineConstants.PATH, excerpt.topic());
+             message.setBody(excerpt.message());

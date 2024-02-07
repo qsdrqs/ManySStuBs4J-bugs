@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JiraEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JiraEndpointBuilderFactory.java
+index 89d2368f..a2791ee9 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JiraEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JiraEndpointBuilderFactory.java
+@@ -327,7 +327,7 @@ public interface JiraEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Jira component.
+      */
+-    public static interface JiraEndpointProducerBuilder
++    public interface JiraEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedJiraEndpointProducerBuilder advanced() {
+@@ -542,7 +542,7 @@ public interface JiraEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Jira component.
+      */
+-    public static interface JiraEndpointBuilder
++    public interface JiraEndpointBuilder
+             extends
+                 JiraEndpointConsumerBuilder, JiraEndpointProducerBuilder {
+         default AdvancedJiraEndpointBuilder advanced() {
+@@ -665,7 +665,7 @@ public interface JiraEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Jira component.
+      */
+-    public static interface AdvancedJiraEndpointBuilder
++    public interface AdvancedJiraEndpointBuilder
+             extends
+                 AdvancedJiraEndpointConsumerBuilder, AdvancedJiraEndpointProducerBuilder {
+         default JiraEndpointBuilder basic() {

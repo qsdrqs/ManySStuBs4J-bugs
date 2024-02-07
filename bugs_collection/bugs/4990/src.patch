@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CwEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CwEndpointBuilderFactory.java
+index 1af5de6e..e335cbed 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CwEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CwEndpointBuilderFactory.java
+@@ -34,7 +34,7 @@ public interface CwEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the AWS CloudWatch component.
+      */
+-    public static interface CwEndpointBuilder extends EndpointProducerBuilder {
++    public interface CwEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedCwEndpointBuilder advanced() {
+             return (AdvancedCwEndpointBuilder) this;
+         }
+@@ -181,7 +181,7 @@ public interface CwEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the AWS CloudWatch component.
+      */
+-    public static interface AdvancedCwEndpointBuilder
++    public interface AdvancedCwEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default CwEndpointBuilder basic() {

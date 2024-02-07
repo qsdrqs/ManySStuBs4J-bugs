@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-hbase/src/test/java/org/apache/camel/component/hbase/CamelHBaseTestSupport.java b/fixed/components/camel-hbase/src/test/java/org/apache/camel/component/hbase/CamelHBaseTestSupport.java
+index ac533f9d..937ef225 100644
+--- a/buggy/components/camel-hbase/src/test/java/org/apache/camel/component/hbase/CamelHBaseTestSupport.java
++++ b/fixed/components/camel-hbase/src/test/java/org/apache/camel/component/hbase/CamelHBaseTestSupport.java
+@@ -73,7 +73,7 @@ public abstract class CamelHBaseTestSupport extends CamelTestSupport {
+         try {
+             hbaseUtil.startMiniCluster(numServers);
+         } catch (Exception e) {
+-            LOG.error("couldn't start HBase cluster.", e);
++            LOG.warn("couldn't start HBase cluster. Test is not started, but passed!", e);
+             systemReady = false;
+         }
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-aws-ddb/src/main/java/org/apache/camel/component/aws/ddbstream/StringSequenceNumberConverter.java b/fixed/components/camel-aws-ddb/src/main/java/org/apache/camel/component/aws/ddbstream/StringSequenceNumberConverter.java
+index d6e55c8c..68d58ef9 100644
+--- a/buggy/components/camel-aws-ddb/src/main/java/org/apache/camel/component/aws/ddbstream/StringSequenceNumberConverter.java
++++ b/fixed/components/camel-aws-ddb/src/main/java/org/apache/camel/component/aws/ddbstream/StringSequenceNumberConverter.java
+@@ -19,7 +19,7 @@ package org.apache.camel.component.aws.ddbstream;
+ import org.apache.camel.Converter;
+ 
+ // Allow to ignore this type converter if the ddbstream JARs are not present on the classpath
+-@Converter(ignoreOnLoadError = true)
++@Converter(loader = true, ignoreOnLoadError = true)
+ public final class StringSequenceNumberConverter {
+ 
+     private StringSequenceNumberConverter() {

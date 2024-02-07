@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-ical/src/main/java/org/apache/camel/component/ical/ICalConverter.java b/fixed/components/camel-ical/src/main/java/org/apache/camel/component/ical/ICalConverter.java
+index 4965faf8..a3f0dc2f 100644
+--- a/buggy/components/camel-ical/src/main/java/org/apache/camel/component/ical/ICalConverter.java
++++ b/fixed/components/camel-ical/src/main/java/org/apache/camel/component/ical/ICalConverter.java
+@@ -30,7 +30,7 @@ import org.apache.camel.support.ExchangeHelper;
+ /**
+  * ICal related converter.
+  */
+-@Converter
++@Converter(loader = true)
+ public final class ICalConverter {
+     private ICalConverter() {
+         // Helper class

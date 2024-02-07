@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/QuartzEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/QuartzEndpointBuilderFactory.java
+index 8ed0e1fc..33ea8489 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/QuartzEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/QuartzEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface QuartzEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Quartz2 component.
+      */
+-    public static interface QuartzEndpointBuilder
+-            extends
+-                EndpointConsumerBuilder {
++    public interface QuartzEndpointBuilder extends EndpointConsumerBuilder {
+         default AdvancedQuartzEndpointBuilder advanced() {
+             return (AdvancedQuartzEndpointBuilder) this;
+         }
+@@ -268,7 +266,7 @@ public interface QuartzEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Quartz2 component.
+      */
+-    public static interface AdvancedQuartzEndpointBuilder
++    public interface AdvancedQuartzEndpointBuilder
+             extends
+                 EndpointConsumerBuilder {
+         default QuartzEndpointBuilder basic() {

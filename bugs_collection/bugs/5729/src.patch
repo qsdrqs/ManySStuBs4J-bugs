@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-atom/src/main/java/org/apache/camel/component/atom/AtomConverter.java b/fixed/components/camel-atom/src/main/java/org/apache/camel/component/atom/AtomConverter.java
+index e3e7b745..da629a50 100644
+--- a/buggy/components/camel-atom/src/main/java/org/apache/camel/component/atom/AtomConverter.java
++++ b/fixed/components/camel-atom/src/main/java/org/apache/camel/component/atom/AtomConverter.java
+@@ -26,7 +26,7 @@ import org.apache.camel.Converter;
+ /**
+  * Date converters.
+  */
+-@Converter
++@Converter(loader = true)
+ public final class AtomConverter {
+ 
+     public static final String DATE_PATTERN_NO_TIMEZONE = "yyyy-MM-dd'T'HH:mm:ss";

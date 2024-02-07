@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MvelEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MvelEndpointBuilderFactory.java
+index 36880e00..92939747 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MvelEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MvelEndpointBuilderFactory.java
+@@ -33,9 +33,7 @@ public interface MvelEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the MVEL component.
+      */
+-    public static interface MvelEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface MvelEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedMvelEndpointBuilder advanced() {
+             return (AdvancedMvelEndpointBuilder) this;
+         }
+@@ -85,7 +83,7 @@ public interface MvelEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the MVEL component.
+      */
+-    public static interface AdvancedMvelEndpointBuilder
++    public interface AdvancedMvelEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default MvelEndpointBuilder basic() {

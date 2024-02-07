@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jcr/src/main/java/org/apache/camel/component/jcr/JcrConverter.java b/fixed/components/camel-jcr/src/main/java/org/apache/camel/component/jcr/JcrConverter.java
+index b6f4dcb3..846fbb80 100644
+--- a/buggy/components/camel-jcr/src/main/java/org/apache/camel/component/jcr/JcrConverter.java
++++ b/fixed/components/camel-jcr/src/main/java/org/apache/camel/component/jcr/JcrConverter.java
+@@ -31,7 +31,7 @@ import org.apache.jackrabbit.value.StringValue;
+ /**
+  * A helper class to transform Object into JCR {@link Value} implementations 
+  */
+-@Converter
++@Converter(loader = true)
+ public final class JcrConverter {
+ 
+     private JcrConverter() {

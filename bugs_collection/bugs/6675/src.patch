@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-test-blueprint/src/main/java/org/apache/camel/test/blueprint/CamelBlueprintTestSupport.java b/fixed/components/camel-test-blueprint/src/main/java/org/apache/camel/test/blueprint/CamelBlueprintTestSupport.java
+index 82a98f45..35c05c44 100644
+--- a/buggy/components/camel-test-blueprint/src/main/java/org/apache/camel/test/blueprint/CamelBlueprintTestSupport.java
++++ b/fixed/components/camel-test-blueprint/src/main/java/org/apache/camel/test/blueprint/CamelBlueprintTestSupport.java
+@@ -236,7 +236,7 @@ public abstract class CamelBlueprintTestSupport extends CamelTestSupport {
+         // for BlueprintEvent.CREATED
+ 
+         // start context when we are ready
+-        log.debug("Staring CamelContext: {}", context.getName());
++        log.debug("Starting CamelContext: {}", context.getName());
+         context.start();
+     }
+ 

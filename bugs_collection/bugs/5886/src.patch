@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/processor/MulticastProcessor.java b/fixed/camel-core/src/main/java/org/apache/camel/processor/MulticastProcessor.java
+index ccb6e238..5a2e9b64 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/processor/MulticastProcessor.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/processor/MulticastProcessor.java
+@@ -240,7 +240,7 @@ public class MulticastProcessor extends AsyncProcessorSupport implements Navigat
+         if (isParallelProcessing()) {
+             executorService.submit(() -> ReactiveHelper.schedule(runnable));
+         } else {
+-            ReactiveHelper.scheduleLast(runnable, "Multicast next step");
++            ReactiveHelper.schedule(runnable, "Multicast next step");
+         }
+     }
+ 

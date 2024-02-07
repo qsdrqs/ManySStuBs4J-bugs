@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-asterisk/src/main/java/org/apache/camel/component/asterisk/AsteriskEndpoint.java b/fixed/components/camel-asterisk/src/main/java/org/apache/camel/component/asterisk/AsteriskEndpoint.java
+index b75dc5df..629a24db 100644
+--- a/buggy/components/camel-asterisk/src/main/java/org/apache/camel/component/asterisk/AsteriskEndpoint.java
++++ b/fixed/components/camel-asterisk/src/main/java/org/apache/camel/component/asterisk/AsteriskEndpoint.java
+@@ -95,7 +95,7 @@ public class AsteriskEndpoint extends DefaultEndpoint {
+     }
+ 
+     public boolean isSingleton() {
+-        return true;
++        return false;
+     }
+ 
+     public void addListener(ManagerEventListener listener) throws CamelAsteriskException {

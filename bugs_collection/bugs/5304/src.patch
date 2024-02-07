@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesSecretsEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesSecretsEndpointBuilderFactory.java
+index e3c48c50..4a2a42dc 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesSecretsEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesSecretsEndpointBuilderFactory.java
+@@ -34,7 +34,7 @@ public interface KubernetesSecretsEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Kubernetes Secrets component.
+      */
+-    public static interface KubernetesSecretsEndpointBuilder
++    public interface KubernetesSecretsEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedKubernetesSecretsEndpointBuilder advanced() {
+@@ -237,7 +237,7 @@ public interface KubernetesSecretsEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Kubernetes Secrets component.
+      */
+-    public static interface AdvancedKubernetesSecretsEndpointBuilder
++    public interface AdvancedKubernetesSecretsEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default KubernetesSecretsEndpointBuilder basic() {

@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/processor/SetPropertyProcessor.java b/fixed/camel-core/src/main/java/org/apache/camel/processor/SetPropertyProcessor.java
+index 1276108e..70d1a604 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/processor/SetPropertyProcessor.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/processor/SetPropertyProcessor.java
+@@ -54,7 +54,7 @@ public class SetPropertyProcessor extends ServiceSupport implements AsyncProcess
+             }
+ 
+             exchange.setProperty(propertyName, newProperty);
+-        } catch (Exception e) {
++        } catch (Throwable e) {
+             exchange.setException(e);
+         }
+ 

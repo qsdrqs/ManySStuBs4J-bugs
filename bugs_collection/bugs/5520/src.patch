@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SparkEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SparkEndpointBuilderFactory.java
+index f639c96a..29369539 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SparkEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SparkEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface SparkEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Spark Rest component.
+      */
+-    public static interface SparkEndpointBuilder
+-            extends
+-                EndpointConsumerBuilder {
++    public interface SparkEndpointBuilder extends EndpointConsumerBuilder {
+         default AdvancedSparkEndpointBuilder advanced() {
+             return (AdvancedSparkEndpointBuilder) this;
+         }
+@@ -191,7 +189,7 @@ public interface SparkEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Spark Rest component.
+      */
+-    public static interface AdvancedSparkEndpointBuilder
++    public interface AdvancedSparkEndpointBuilder
+             extends
+                 EndpointConsumerBuilder {
+         default SparkEndpointBuilder basic() {

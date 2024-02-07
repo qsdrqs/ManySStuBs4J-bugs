@@ -1,0 +1,20 @@
+diff --git a/buggy/components/camel-aws-kinesis/src/test/java/org/apache/camel/component/aws/kinesis/KinesisEndpointTest.java b/fixed/components/camel-aws-kinesis/src/test/java/org/apache/camel/component/aws/kinesis/KinesisEndpointTest.java
+index 1e1e3a86..c140753c 100644
+--- a/buggy/components/camel-aws-kinesis/src/test/java/org/apache/camel/component/aws/kinesis/KinesisEndpointTest.java
++++ b/fixed/components/camel-aws-kinesis/src/test/java/org/apache/camel/component/aws/kinesis/KinesisEndpointTest.java
+@@ -41,7 +41,7 @@ public class KinesisEndpointTest {
+     @Before
+     public void setup() throws Exception {
+         SimpleRegistry registry = new SimpleRegistry();
+-        registry.put("kinesisClient", amazonKinesisClient);
++        registry.bind("kinesisClient", amazonKinesisClient);
+         camelContext = new DefaultCamelContext(registry);
+     }
+ 
+@@ -106,4 +106,4 @@ public class KinesisEndpointTest {
+         assertThat(endpoint.getConfiguration().getShardId(), is("abc"));
+         assertThat(endpoint.getConfiguration().getSequenceNumber(), is("123"));
+     }
+-}
+\ No newline at end of file
++}

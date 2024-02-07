@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TwilioEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TwilioEndpointBuilderFactory.java
+index 4915a358..6b95ef92 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TwilioEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TwilioEndpointBuilderFactory.java
+@@ -223,7 +223,7 @@ public interface TwilioEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Twilio component.
+      */
+-    public static interface TwilioEndpointProducerBuilder
++    public interface TwilioEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedTwilioEndpointProducerBuilder advanced() {
+@@ -365,7 +365,7 @@ public interface TwilioEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Twilio component.
+      */
+-    public static interface TwilioEndpointBuilder
++    public interface TwilioEndpointBuilder
+             extends
+                 TwilioEndpointConsumerBuilder, TwilioEndpointProducerBuilder {
+         default AdvancedTwilioEndpointBuilder advanced() {
+@@ -416,7 +416,7 @@ public interface TwilioEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Twilio component.
+      */
+-    public static interface AdvancedTwilioEndpointBuilder
++    public interface AdvancedTwilioEndpointBuilder
+             extends
+                 AdvancedTwilioEndpointConsumerBuilder, AdvancedTwilioEndpointProducerBuilder {
+         default TwilioEndpointBuilder basic() {

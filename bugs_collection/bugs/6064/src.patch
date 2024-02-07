@@ -1,0 +1,13 @@
+diff --git a/buggy/connectors/examples/salesforce-upsert-contact-connector/src/main/java/org/foo/salesforce/contact/springboot/SalesforceUpsertContactConnectorAutoConfiguration.java b/fixed/connectors/examples/salesforce-upsert-contact-connector/src/main/java/org/foo/salesforce/contact/springboot/SalesforceUpsertContactConnectorAutoConfiguration.java
+index d153b073..e5427a52 100644
+--- a/buggy/connectors/examples/salesforce-upsert-contact-connector/src/main/java/org/foo/salesforce/contact/springboot/SalesforceUpsertContactConnectorAutoConfiguration.java
++++ b/fixed/connectors/examples/salesforce-upsert-contact-connector/src/main/java/org/foo/salesforce/contact/springboot/SalesforceUpsertContactConnectorAutoConfiguration.java
+@@ -67,7 +67,7 @@ public class SalesforceUpsertContactConnectorAutoConfiguration {
+     @Lazy
+     @Bean(name = "salesforce-upsert-contact-component")
+     @ConditionalOnClass(CamelContext.class)
+-    @ConditionalOnMissingBean(name = "salesforce-upsert-contact-component")
++    @ConditionalOnMissingBean
+     public SalesforceUpsertContactComponent configureSalesforceUpsertContactComponent()
+             throws Exception {
+         SalesforceUpsertContactComponent connector = new SalesforceUpsertContactComponent();

@@ -1,0 +1,14 @@
+diff --git a/buggy/tests/camel-itest-karaf/src/test/java/org/apache/camel/itest/karaf/CamelCxfTest.java b/fixed/tests/camel-itest-karaf/src/test/java/org/apache/camel/itest/karaf/CamelCxfTest.java
+index 36aaaa75..6c55b9f3 100644
+--- a/buggy/tests/camel-itest-karaf/src/test/java/org/apache/camel/itest/karaf/CamelCxfTest.java
++++ b/fixed/tests/camel-itest-karaf/src/test/java/org/apache/camel/itest/karaf/CamelCxfTest.java
+@@ -36,7 +36,7 @@ public class CamelCxfTest extends AbstractFeatureTest {
+ 
+     @Configuration
+     public static Option[] configure() {
+-        return configure(COMPONENT);
++        return configure(COMPONENT, "cxf-jaxb");
+     }
+ 
+ }
+\ No newline at end of file

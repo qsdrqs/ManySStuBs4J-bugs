@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ConsulEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ConsulEndpointBuilderFactory.java
+index 15d627f2..f745dcb6 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ConsulEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ConsulEndpointBuilderFactory.java
+@@ -193,7 +193,7 @@ public interface ConsulEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Consul component.
+      */
+-    public static interface ConsulEndpointProducerBuilder
++    public interface ConsulEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedConsulEndpointProducerBuilder advanced() {
+@@ -304,7 +304,7 @@ public interface ConsulEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Consul component.
+      */
+-    public static interface ConsulEndpointBuilder
++    public interface ConsulEndpointBuilder
+             extends
+                 ConsulEndpointConsumerBuilder, ConsulEndpointProducerBuilder {
+         default AdvancedConsulEndpointBuilder advanced() {
+@@ -324,7 +324,7 @@ public interface ConsulEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Consul component.
+      */
+-    public static interface AdvancedConsulEndpointBuilder
++    public interface AdvancedConsulEndpointBuilder
+             extends
+                 AdvancedConsulEndpointConsumerBuilder, AdvancedConsulEndpointProducerBuilder {
+         default ConsulEndpointBuilder basic() {

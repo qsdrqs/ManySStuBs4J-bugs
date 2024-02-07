@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/BraintreeEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/BraintreeEndpointBuilderFactory.java
+index c9d5f333..ecb33c51 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/BraintreeEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/BraintreeEndpointBuilderFactory.java
+@@ -341,7 +341,7 @@ public interface BraintreeEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Braintree component.
+      */
+-    public static interface BraintreeEndpointProducerBuilder
++    public interface BraintreeEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedBraintreeEndpointProducerBuilder advanced() {
+@@ -600,7 +600,7 @@ public interface BraintreeEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Braintree component.
+      */
+-    public static interface BraintreeEndpointBuilder
++    public interface BraintreeEndpointBuilder
+             extends
+                 BraintreeEndpointConsumerBuilder, BraintreeEndpointProducerBuilder {
+         default AdvancedBraintreeEndpointBuilder advanced() {
+@@ -713,7 +713,7 @@ public interface BraintreeEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Braintree component.
+      */
+-    public static interface AdvancedBraintreeEndpointBuilder
++    public interface AdvancedBraintreeEndpointBuilder
+             extends
+                 AdvancedBraintreeEndpointConsumerBuilder, AdvancedBraintreeEndpointProducerBuilder {
+         default BraintreeEndpointBuilder basic() {

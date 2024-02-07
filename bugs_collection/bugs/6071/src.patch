@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-elsql/src/main/java/org/apache/camel/component/elsql/ElsqlProducer.java b/fixed/components/camel-elsql/src/main/java/org/apache/camel/component/elsql/ElsqlProducer.java
+index 45758442..58feb1d1 100644
+--- a/buggy/components/camel-elsql/src/main/java/org/apache/camel/component/elsql/ElsqlProducer.java
++++ b/fixed/components/camel-elsql/src/main/java/org/apache/camel/component/elsql/ElsqlProducer.java
+@@ -169,7 +169,7 @@ public class ElsqlProducer extends DefaultProducer {
+                         } else {
+                              // if we are here, there isResultSet is false. This can happen only if we are doing an update operation or there is no result.
+                              // we can simply add the updateCount in this case.
+-                            exchange.getOut().setHeader(SqlConstants.SQL_UPDATE_COUNT, ps.getUpdateCount());
++                            exchange.getIn().setHeader(SqlConstants.SQL_UPDATE_COUNT, ps.getUpdateCount());
+                         }
+                     }
+                     } finally {

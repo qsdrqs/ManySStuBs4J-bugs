@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastSedaEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastSedaEndpointBuilderFactory.java
+index 59ad2065..84e48430 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastSedaEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastSedaEndpointBuilderFactory.java
+@@ -444,7 +444,7 @@ public interface HazelcastSedaEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Hazelcast SEDA component.
+      */
+-    public static interface HazelcastSedaEndpointProducerBuilder
++    public interface HazelcastSedaEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedHazelcastSedaEndpointProducerBuilder advanced() {
+@@ -748,7 +748,7 @@ public interface HazelcastSedaEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Hazelcast SEDA component.
+      */
+-    public static interface HazelcastSedaEndpointBuilder
++    public interface HazelcastSedaEndpointBuilder
+             extends
+                 HazelcastSedaEndpointConsumerBuilder, HazelcastSedaEndpointProducerBuilder {
+         default AdvancedHazelcastSedaEndpointBuilder advanced() {
+@@ -956,7 +956,7 @@ public interface HazelcastSedaEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Hazelcast SEDA component.
+      */
+-    public static interface AdvancedHazelcastSedaEndpointBuilder
++    public interface AdvancedHazelcastSedaEndpointBuilder
+             extends
+                 AdvancedHazelcastSedaEndpointConsumerBuilder, AdvancedHazelcastSedaEndpointProducerBuilder {
+         default HazelcastSedaEndpointBuilder basic() {

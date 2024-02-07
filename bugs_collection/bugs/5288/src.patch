@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesNodesEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesNodesEndpointBuilderFactory.java
+index e3d5266c..15021b05 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesNodesEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesNodesEndpointBuilderFactory.java
+@@ -464,7 +464,7 @@ public interface KubernetesNodesEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Kubernetes Nodes component.
+      */
+-    public static interface KubernetesNodesEndpointProducerBuilder
++    public interface KubernetesNodesEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedKubernetesNodesEndpointProducerBuilder advanced() {
+@@ -800,7 +800,7 @@ public interface KubernetesNodesEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Kubernetes Nodes component.
+      */
+-    public static interface KubernetesNodesEndpointBuilder
++    public interface KubernetesNodesEndpointBuilder
+             extends
+                 KubernetesNodesEndpointConsumerBuilder, KubernetesNodesEndpointProducerBuilder {
+         default AdvancedKubernetesNodesEndpointBuilder advanced() {
+@@ -1002,7 +1002,7 @@ public interface KubernetesNodesEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Kubernetes Nodes component.
+      */
+-    public static interface AdvancedKubernetesNodesEndpointBuilder
++    public interface AdvancedKubernetesNodesEndpointBuilder
+             extends
+                 AdvancedKubernetesNodesEndpointConsumerBuilder, AdvancedKubernetesNodesEndpointProducerBuilder {
+         default KubernetesNodesEndpointBuilder basic() {

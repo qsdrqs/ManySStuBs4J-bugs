@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-cmis/src/main/java/org/apache/camel/component/cmis/CMISSessionFacade.java b/fixed/components/camel-cmis/src/main/java/org/apache/camel/component/cmis/CMISSessionFacade.java
+index 230479e7..1f4bed4e 100644
+--- a/buggy/components/camel-cmis/src/main/java/org/apache/camel/component/cmis/CMISSessionFacade.java
++++ b/fixed/components/camel-cmis/src/main/java/org/apache/camel/component/cmis/CMISSessionFacade.java
+@@ -51,7 +51,7 @@ public class CMISSessionFacade {
+     private int pageSize = 100;
+     @UriParam
+     private int readCount;
+-    @UriParam(defaultValue = "false")
++    @UriParam
+     private boolean readContent;
+     @UriParam
+     private String username;

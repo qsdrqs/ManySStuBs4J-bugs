@@ -1,0 +1,20 @@
+diff --git a/buggy/components/camel-smpp/src/main/java/org/apache/camel/component/smpp/SmppConfiguration.java b/fixed/components/camel-smpp/src/main/java/org/apache/camel/component/smpp/SmppConfiguration.java
+index 3f29c25d..903916ef 100644
+--- a/buggy/components/camel-smpp/src/main/java/org/apache/camel/component/smpp/SmppConfiguration.java
++++ b/fixed/components/camel-smpp/src/main/java/org/apache/camel/component/smpp/SmppConfiguration.java
+@@ -89,13 +89,13 @@ public class SmppConfiguration implements Cloneable {
+     private byte typeOfNumber = TypeOfNumber.UNKNOWN.value();
+     @UriParam
+     private byte numberingPlanIndicator = NumberingPlanIndicator.UNKNOWN.value();
+-    @UriParam(defaultValue = "false")
++    @UriParam
+     private boolean usingSSL;
+     @UriParam(defaultValue = "5000")
+     private long initialReconnectDelay = 5000;
+     @UriParam(defaultValue = "5000")
+     private long reconnectDelay = 5000;
+-    @UriParam(defaultValue = "false")
++    @UriParam
+     private boolean lazySessionCreation;
+     @UriParam
+     private String httpProxyHost;

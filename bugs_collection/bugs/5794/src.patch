@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-rabbitmq/src/test/java/org/apache/camel/component/rabbitmq/RabbitMQComponentTest.java b/fixed/components/camel-rabbitmq/src/test/java/org/apache/camel/component/rabbitmq/RabbitMQComponentTest.java
+index 04630804..8407769b 100644
+--- a/buggy/components/camel-rabbitmq/src/test/java/org/apache/camel/component/rabbitmq/RabbitMQComponentTest.java
++++ b/fixed/components/camel-rabbitmq/src/test/java/org/apache/camel/component/rabbitmq/RabbitMQComponentTest.java
+@@ -106,7 +106,7 @@ public class RabbitMQComponentTest {
+     public void testConnectionFactoryRef() throws Exception {
+         SimpleRegistry registry = new SimpleRegistry();
+         ConnectionFactory connectionFactoryMock = Mockito.mock(ConnectionFactory.class);
+-        registry.put("connectionFactoryMock", connectionFactoryMock);
++        registry.bind("connectionFactoryMock", connectionFactoryMock);
+ 
+         CamelContext defaultContext = new DefaultCamelContext(registry);
+ 

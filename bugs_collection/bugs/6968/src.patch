@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/component/timer/TimerEndpoint.java b/fixed/camel-core/src/main/java/org/apache/camel/component/timer/TimerEndpoint.java
+index 2f38c2c2..f46b22bb 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/component/timer/TimerEndpoint.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/component/timer/TimerEndpoint.java
+@@ -54,7 +54,7 @@ public class TimerEndpoint extends DefaultEndpoint implements MultipleConsumersS
+     private boolean daemon = true;
+     @UriParam
+     private Timer timer;
+-    @UriParam(defaultValue = "false")
++    @UriParam(defaultValue = "0")
+     private long repeatCount;
+ 
+     public TimerEndpoint() {

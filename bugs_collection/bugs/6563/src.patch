@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-spring-batch/src/main/java/org/apache/camel/component/spring/batch/SpringBatchEndpoint.java b/fixed/components/camel-spring-batch/src/main/java/org/apache/camel/component/spring/batch/SpringBatchEndpoint.java
+index 6b9821b5..9581ff96 100644
+--- a/buggy/components/camel-spring-batch/src/main/java/org/apache/camel/component/spring/batch/SpringBatchEndpoint.java
++++ b/fixed/components/camel-spring-batch/src/main/java/org/apache/camel/component/spring/batch/SpringBatchEndpoint.java
+@@ -89,7 +89,7 @@ public class SpringBatchEndpoint extends DefaultEndpoint {
+         if (jobLauncher == null) {
+             jobLauncher = resolveJobLauncher();
+         }
+-        if (job == null && jobName != null && jobFromHeader == false) {
++        if (job == null && jobName != null && !jobFromHeader) {
+             job = CamelContextHelper.mandatoryLookup(getCamelContext(), jobName, Job.class);
+         }
+     }

@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/camel-example-cdi-kubernetes/src/main/java/org/apache/camel/example/cdi/kubernetes/Application.java b/fixed/examples/camel-example-cdi-kubernetes/src/main/java/org/apache/camel/example/cdi/kubernetes/Application.java
+index 25f32123..16cd57ad 100644
+--- a/buggy/examples/camel-example-cdi-kubernetes/src/main/java/org/apache/camel/example/cdi/kubernetes/Application.java
++++ b/fixed/examples/camel-example-cdi-kubernetes/src/main/java/org/apache/camel/example/cdi/kubernetes/Application.java
+@@ -43,7 +43,7 @@ class Application {
+         @Override
+         public void configure() {
+ 
+-            from("timer:stream?repeatCount=1")
++            from("timer:stream?repeatCount=3")
+                 .to("kubernetes://{{kubernetes-master-url}}?oauthToken={{kubernetes-oauth-token}}&category=pods&operation=listPods")
+                 .process(new Processor() {
+ 					

@@ -1,0 +1,15 @@
+diff --git a/buggy/components/camel-jackson/src/test/java/org/apache/camel/component/jackson/JacksonMarshalTest.java b/fixed/components/camel-jackson/src/test/java/org/apache/camel/component/jackson/JacksonMarshalTest.java
+index bd5de843..bb7d0f50 100644
+--- a/buggy/components/camel-jackson/src/test/java/org/apache/camel/component/jackson/JacksonMarshalTest.java
++++ b/fixed/components/camel-jackson/src/test/java/org/apache/camel/component/jackson/JacksonMarshalTest.java
+@@ -57,9 +57,7 @@ public class JacksonMarshalTest extends CamelTestSupport {
+ 
+         Object marshalled = template.requestBody("direct:pretty", in);
+         String marshalledAsString = context.getTypeConverter().convertTo(String.class, marshalled);
+-        String expected = "{\n"
+-                         + "  \"name\" : \"Camel\""
+-                         + "\n}";
++        String expected = String.format("{%s  \"name\" : \"Camel\"%s}", System.lineSeparator(), System.lineSeparator());
+         assertEquals(expected, marshalledAsString);
+ 
+         template.sendBody("direct:backPretty", marshalled);

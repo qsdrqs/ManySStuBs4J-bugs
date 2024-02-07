@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesReplicationControllersEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesReplicationControllersEndpointBuilderFactory.java
+index 8bb15aa8..79d7512f 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesReplicationControllersEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesReplicationControllersEndpointBuilderFactory.java
+@@ -473,7 +473,7 @@ public interface KubernetesReplicationControllersEndpointBuilderFactory {
+      * Builder for endpoint producers for the Kubernetes Replication Controller
+      * component.
+      */
+-    public static interface KubernetesReplicationControllersEndpointProducerBuilder
++    public interface KubernetesReplicationControllersEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedKubernetesReplicationControllersEndpointProducerBuilder advanced() {
+@@ -812,7 +812,7 @@ public interface KubernetesReplicationControllersEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Kubernetes Replication Controller component.
+      */
+-    public static interface KubernetesReplicationControllersEndpointBuilder
++    public interface KubernetesReplicationControllersEndpointBuilder
+             extends
+                 KubernetesReplicationControllersEndpointConsumerBuilder, KubernetesReplicationControllersEndpointProducerBuilder {
+         default AdvancedKubernetesReplicationControllersEndpointBuilder advanced() {
+@@ -1027,7 +1027,7 @@ public interface KubernetesReplicationControllersEndpointBuilderFactory {
+      * Advanced builder for endpoint for the Kubernetes Replication Controller
+      * component.
+      */
+-    public static interface AdvancedKubernetesReplicationControllersEndpointBuilder
++    public interface AdvancedKubernetesReplicationControllersEndpointBuilder
+             extends
+                 AdvancedKubernetesReplicationControllersEndpointConsumerBuilder, AdvancedKubernetesReplicationControllersEndpointProducerBuilder {
+         default KubernetesReplicationControllersEndpointBuilder basic() {

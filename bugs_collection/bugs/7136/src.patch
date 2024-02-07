@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-sjms/src/main/java/org/apache/camel/component/sjms/producer/InOnlyProducer.java b/fixed/components/camel-sjms/src/main/java/org/apache/camel/component/sjms/producer/InOnlyProducer.java
+index df689b2a..acb6cca5 100644
+--- a/buggy/components/camel-sjms/src/main/java/org/apache/camel/component/sjms/producer/InOnlyProducer.java
++++ b/fixed/components/camel-sjms/src/main/java/org/apache/camel/component/sjms/producer/InOnlyProducer.java
+@@ -129,7 +129,7 @@ public class InOnlyProducer extends SjmsProducer {
+                 }
+             }
+         } catch (Exception e) {
+-            exchange.setException(new Exception("Unable to complet sending the message: " + e.getLocalizedMessage()));
++            exchange.setException(new Exception("Unable to complete sending the message: " + e.getLocalizedMessage()));
+         } finally {
+             getProducers().returnObject(producer);
+             callback.done(isSynchronous());

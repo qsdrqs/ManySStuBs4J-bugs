@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EC2EndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EC2EndpointBuilderFactory.java
+index 412f3e3b..b91d9454 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EC2EndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EC2EndpointBuilderFactory.java
+@@ -33,9 +33,7 @@ public interface EC2EndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the AWS EC2 component.
+      */
+-    public static interface EC2EndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface EC2EndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedEC2EndpointBuilder advanced() {
+             return (AdvancedEC2EndpointBuilder) this;
+         }
+@@ -62,7 +60,7 @@ public interface EC2EndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the AWS EC2 component.
+      */
+-    public static interface AdvancedEC2EndpointBuilder
++    public interface AdvancedEC2EndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default EC2EndpointBuilder basic() {

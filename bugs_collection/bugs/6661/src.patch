@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-cdi/src/main/java/org/apache/camel/cdi/CdiSpiHelper.java b/fixed/components/camel-cdi/src/main/java/org/apache/camel/cdi/CdiSpiHelper.java
+index 18290b31..17fa9339 100644
+--- a/buggy/components/camel-cdi/src/main/java/org/apache/camel/cdi/CdiSpiHelper.java
++++ b/fixed/components/camel-cdi/src/main/java/org/apache/camel/cdi/CdiSpiHelper.java
+@@ -147,7 +147,7 @@ final class CdiSpiHelper {
+     /**
+      * Generates a unique signature of a collection of types.
+      */
+-    private static String createTypeCollectionId(Collection<? extends Type> types) {
++    private static String createTypeCollectionId(Collection<Type> types) {
+         return types.stream()
+             .sorted(comparing(CdiSpiHelper::createTypeId))
+             .map(CdiSpiHelper::createTypeId)

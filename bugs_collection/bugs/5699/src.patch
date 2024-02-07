@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-base/src/main/java/org/apache/camel/impl/health/DefaultHealthCheckService.java b/fixed/core/camel-base/src/main/java/org/apache/camel/impl/health/DefaultHealthCheckService.java
+index ac0983ec..bbf6b58c 100644
+--- a/buggy/core/camel-base/src/main/java/org/apache/camel/impl/health/DefaultHealthCheckService.java
++++ b/fixed/core/camel-base/src/main/java/org/apache/camel/impl/health/DefaultHealthCheckService.java
+@@ -182,7 +182,7 @@ public final class DefaultHealthCheckService extends ServiceSupport implements H
+         if (ObjectHelper.isNotEmpty(registry) && ObjectHelper.isEmpty(future)) {
+             // Start the health check task only if the health check registry
+             // has been registered.
+-            LOGGER.debug("Schedule health-checks to be executed every %d (%s)", checkInterval, checkIntervalUnit.name());
++            LOGGER.debug("Schedule health-checks to be executed every {} ({})", checkInterval, checkIntervalUnit.name());
+             future = executorService.scheduleAtFixedRate(
+                 () -> {
+                     if (!isRunAllowed()) {

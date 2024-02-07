@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-docker/src/main/java/org/apache/camel/component/docker/producer/AsyncDockerProducer.java b/fixed/components/camel-docker/src/main/java/org/apache/camel/component/docker/producer/AsyncDockerProducer.java
+index 42987429..00aeb962 100644
+--- a/buggy/components/camel-docker/src/main/java/org/apache/camel/component/docker/producer/AsyncDockerProducer.java
++++ b/fixed/components/camel-docker/src/main/java/org/apache/camel/component/docker/producer/AsyncDockerProducer.java
+@@ -487,7 +487,7 @@ public class AsyncDockerProducer extends DefaultAsyncProducer {
+      */
+     private ExecStartCmd executeExecStartRequest(DockerClient client, Message message) {
+ 
+-        LOGGER.debug("Executing Docker Exec Create Request");
++        LOGGER.debug("Executing Docker Exec Start Request");
+ 
+         String execId = DockerHelper.getProperty(DockerConstants.DOCKER_EXEC_ID, configuration, message, String.class);
+ 

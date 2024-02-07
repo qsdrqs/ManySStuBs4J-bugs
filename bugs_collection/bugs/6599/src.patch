@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-kafka/src/main/java/org/apache/camel/component/kafka/KafkaConstants.java b/fixed/components/camel-kafka/src/main/java/org/apache/camel/component/kafka/KafkaConstants.java
+index 1ae07591..2bd4c4d6 100644
+--- a/buggy/components/camel-kafka/src/main/java/org/apache/camel/component/kafka/KafkaConstants.java
++++ b/fixed/components/camel-kafka/src/main/java/org/apache/camel/component/kafka/KafkaConstants.java
+@@ -30,7 +30,7 @@ public final class KafkaConstants {
+     public static final String KAFKA_DEFAULT_DESERIALIZER  = "org.apache.kafka.common.serialization.StringDeserializer";
+     public static final String KAFKA_DEFAULT_PARTITIONER = "org.apache.kafka.clients.producer.internals.DefaultPartitioner";
+     public static final String PARTITIONER_RANGE_ASSIGNOR = "org.apache.kafka.clients.consumer.RangeAssignor";
+-    public static final String KAFKA_RECORDMETA = "kafka.RECORDMETA";
++    public static final String KAFKA_RECORDMETA = "org.apache.kafka.clients.producer.RecordMetadata";
+ 
+     private KafkaConstants() {
+         // Utility class

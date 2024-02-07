@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-netty4/src/test/java/org/apache/camel/component/netty4/NettyConsumerClientModeReconnectTest.java b/fixed/components/camel-netty4/src/test/java/org/apache/camel/component/netty4/NettyConsumerClientModeReconnectTest.java
+index 6db97808..c09ca6da 100644
+--- a/buggy/components/camel-netty4/src/test/java/org/apache/camel/component/netty4/NettyConsumerClientModeReconnectTest.java
++++ b/fixed/components/camel-netty4/src/test/java/org/apache/camel/component/netty4/NettyConsumerClientModeReconnectTest.java
+@@ -100,7 +100,7 @@ public class NettyConsumerClientModeReconnectTest extends BaseNettyTest {
+         private EventLoopGroup bossGroup;
+         private EventLoopGroup workerGroup;
+ 
+-        public MyServer(int port) {
++        MyServer(int port) {
+             this.port = port;
+         }
+ 

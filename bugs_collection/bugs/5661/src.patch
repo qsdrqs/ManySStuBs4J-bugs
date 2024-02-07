@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-test-blueprint/src/test/java/org/apache/camel/test/blueprint/BlueprintPropertiesTest.java b/fixed/components/camel-test-blueprint/src/test/java/org/apache/camel/test/blueprint/BlueprintPropertiesTest.java
+index fb931e3e..aef19d3b 100644
+--- a/buggy/components/camel-test-blueprint/src/test/java/org/apache/camel/test/blueprint/BlueprintPropertiesTest.java
++++ b/fixed/components/camel-test-blueprint/src/test/java/org/apache/camel/test/blueprint/BlueprintPropertiesTest.java
+@@ -34,7 +34,7 @@ public class BlueprintPropertiesTest extends CamelBlueprintTestSupport {
+ 
+     @Test
+     public void testProperties() throws Exception {
+-        Bundle camelCore = getBundleBySymbolicName("org.apache.camel.camel-core");
++        Bundle camelCore = getBundleBySymbolicName("org.apache.camel.camel-blueprint");
+         Bundle test = getBundleBySymbolicName(getClass().getSimpleName());
+ 
+         camelCore.stop();

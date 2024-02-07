@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TimerEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TimerEndpointBuilderFactory.java
+index 5b7069d8..87e0f82e 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TimerEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TimerEndpointBuilderFactory.java
+@@ -36,9 +36,7 @@ public interface TimerEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Timer component.
+      */
+-    public static interface TimerEndpointBuilder
+-            extends
+-                EndpointConsumerBuilder {
++    public interface TimerEndpointBuilder extends EndpointConsumerBuilder {
+         default AdvancedTimerEndpointBuilder advanced() {
+             return (AdvancedTimerEndpointBuilder) this;
+         }
+@@ -148,7 +146,7 @@ public interface TimerEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Timer component.
+      */
+-    public static interface AdvancedTimerEndpointBuilder
++    public interface AdvancedTimerEndpointBuilder
+             extends
+                 EndpointConsumerBuilder {
+         default TimerEndpointBuilder basic() {

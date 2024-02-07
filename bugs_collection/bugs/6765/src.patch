@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/builder/ExpressionBuilder.java b/fixed/camel-core/src/main/java/org/apache/camel/builder/ExpressionBuilder.java
+index 6d722fb3..85c3ec80 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/builder/ExpressionBuilder.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/builder/ExpressionBuilder.java
+@@ -1878,7 +1878,7 @@ public final class ExpressionBuilder {
+         return new ExpressionAdapter() {
+             public Object evaluate(Exchange exchange) {
+                 Random random = new Random();
+-                int randomNum = random.nextInt((max - min)) + min;
++                int randomNum = random.nextInt(max - min) + min;
+                 return randomNum;
+             }
+ 

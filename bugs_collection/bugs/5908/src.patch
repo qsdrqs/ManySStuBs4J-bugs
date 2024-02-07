@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/FtpOperations.java b/fixed/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/FtpOperations.java
+index b3ca32ad..196dfc25 100644
+--- a/buggy/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/FtpOperations.java
++++ b/fixed/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/FtpOperations.java
+@@ -760,7 +760,7 @@ public class FtpOperations implements RemoteFileOperations<FTPFile> {
+                     throw new GenericFileOperationFailedException(client.getReplyCode(), client.getReplyString(), "Cannot delete file: " + to, e);
+                 }
+             } else {
+-                throw new GenericFileOperationFailedException("Cannot moved existing file from: " + name + " to: " + to + " as there already exists a file: " + to);
++                throw new GenericFileOperationFailedException("Cannot move existing file from: " + name + " to: " + to + " as there already exists a file: " + to);
+             }
+         }
+ 

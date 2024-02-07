@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-core/src/main/java/org/apache/camel/component/bean/BeanInfo.java b/fixed/core/camel-core/src/main/java/org/apache/camel/component/bean/BeanInfo.java
+index b3a693c0..25937a5e 100644
+--- a/buggy/core/camel-core/src/main/java/org/apache/camel/component/bean/BeanInfo.java
++++ b/fixed/core/camel-core/src/main/java/org/apache/camel/component/bean/BeanInfo.java
+@@ -469,7 +469,7 @@ public class BeanInfo {
+                     // will ignore the expression for parameter evaluation
+                 }
+             }
+-            LOG.trace("Parameter #{} has parameter info: ", i, parameterInfo);
++            LOG.trace("Parameter #{} has parameter info: {}", i, parameterInfo);
+         }
+ 
+         // now let's add the method to the repository

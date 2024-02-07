@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ThriftEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ThriftEndpointBuilderFactory.java
+index 2569467b..d2d39216 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ThriftEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ThriftEndpointBuilderFactory.java
+@@ -804,7 +804,7 @@ public interface ThriftEndpointBuilderFactory {
+      * <code>org.apache.camel.component.thrift.ThriftCompressionType</code>
+      * enum.
+      */
+-    public static enum ThriftCompressionType {
++    static enum ThriftCompressionType {
+         NONE, ZLIB;
+     }
+ 
+@@ -813,7 +813,7 @@ public interface ThriftEndpointBuilderFactory {
+      * <code>org.apache.camel.component.thrift.ThriftExchangeProtocol</code>
+      * enum.
+      */
+-    public static enum ThriftExchangeProtocol {
++    static enum ThriftExchangeProtocol {
+         BINARY, JSON, SJSON, COMPACT;
+     }
+ 
+@@ -822,7 +822,7 @@ public interface ThriftEndpointBuilderFactory {
+      * <code>org.apache.camel.component.thrift.ThriftNegotiationType</code>
+      * enum.
+      */
+-    public static enum ThriftNegotiationType {
++    static enum ThriftNegotiationType {
+         PLAINTEXT, SSL, SASL;
+     }
+     /**

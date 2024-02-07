@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SesEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SesEndpointBuilderFactory.java
+index fd2ea95d..9f4b45d9 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SesEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SesEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface SesEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the AWS Simple Email Service component.
+      */
+-    public static interface SesEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface SesEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedSesEndpointBuilder advanced() {
+             return (AdvancedSesEndpointBuilder) this;
+         }
+@@ -194,7 +192,7 @@ public interface SesEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the AWS Simple Email Service component.
+      */
+-    public static interface AdvancedSesEndpointBuilder
++    public interface AdvancedSesEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default SesEndpointBuilder basic() {

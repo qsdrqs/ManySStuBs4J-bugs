@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/camel-example-grpc-kubernetes/hello-camel-grpc-client-kubernetes/src/main/java/org/apache/camel/example/springboot/grpc/CamelGrpcRoute.java b/fixed/examples/camel-example-grpc-kubernetes/hello-camel-grpc-client-kubernetes/src/main/java/org/apache/camel/example/springboot/grpc/CamelGrpcRoute.java
+index 864a880c..19a55ec7 100644
+--- a/buggy/examples/camel-example-grpc-kubernetes/hello-camel-grpc-client-kubernetes/src/main/java/org/apache/camel/example/springboot/grpc/CamelGrpcRoute.java
++++ b/fixed/examples/camel-example-grpc-kubernetes/hello-camel-grpc-client-kubernetes/src/main/java/org/apache/camel/example/springboot/grpc/CamelGrpcRoute.java
+@@ -39,7 +39,7 @@ public class CamelGrpcRoute extends RouteBuilder {
+                 exchange.getIn().setBody(request, CamelHelloRequest.class);
+ 
+             }
+-        }).to("grpc://grpc-server:80/org.apache.camel.examples.CamelHello?method=sayHelloToCamel&synchronous=true").log("Received ${body}");
++        }).to("grpc://grpc-server:8080/org.apache.camel.examples.CamelHello?method=sayHelloToCamel&synchronous=true").log("Received ${body}");
+     }
+ 
+ }

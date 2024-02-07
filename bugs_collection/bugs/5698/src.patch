@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-base/src/main/java/org/apache/camel/converter/jaxp/XmlConverter.java b/fixed/core/camel-base/src/main/java/org/apache/camel/converter/jaxp/XmlConverter.java
+index 2278ac01..ef2baef4 100644
+--- a/buggy/core/camel-base/src/main/java/org/apache/camel/converter/jaxp/XmlConverter.java
++++ b/fixed/core/camel-base/src/main/java/org/apache/camel/converter/jaxp/XmlConverter.java
+@@ -512,7 +512,7 @@ public class XmlConverter {
+                 xmlReader = xmlReaderPool.createXMLReader();
+             }
+         } catch (Exception ex) {
+-            LOG.warn("Cannot create the SAXParser XMLReader, due to {}", ex);
++            LOG.warn("Cannot create the SAXParser XMLReader, due to {}", ex.getMessage(), ex);
+         }
+         return new SAXSource(xmlReader, inputSource);
+     }

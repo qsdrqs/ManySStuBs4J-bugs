@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-support/src/main/java/org/apache/camel/support/CamelContextHelper.java b/fixed/core/camel-support/src/main/java/org/apache/camel/support/CamelContextHelper.java
+index def3fbba..1e868f46 100644
+--- a/buggy/core/camel-support/src/main/java/org/apache/camel/support/CamelContextHelper.java
++++ b/fixed/core/camel-support/src/main/java/org/apache/camel/support/CamelContextHelper.java
+@@ -485,7 +485,7 @@ public final class CamelContextHelper {
+      */
+     public static SortedMap<String, Properties> findComponents(CamelContext camelContext) throws LoadPropertiesException {
+         ClassResolver resolver = camelContext.getClassResolver();
+-        LOG.debug("Finding all components using class resolver: {} -> {}", resolver);
++        LOG.debug("Finding all components using class resolver: {}", resolver);
+         Enumeration<URL> iter = resolver.loadAllResourcesAsURL(COMPONENT_DESCRIPTOR);
+         return findComponents(camelContext, iter);
+     }

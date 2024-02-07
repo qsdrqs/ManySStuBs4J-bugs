@@ -1,0 +1,13 @@
+diff --git a/buggy/catalog/camel-catalog-provider-springboot/src/test/java/org/apache/camel/catalog/springboot/SpringBootRuntimeProviderTest.java b/fixed/catalog/camel-catalog-provider-springboot/src/test/java/org/apache/camel/catalog/springboot/SpringBootRuntimeProviderTest.java
+index 7a39e426..a588360f 100644
+--- a/buggy/catalog/camel-catalog-provider-springboot/src/test/java/org/apache/camel/catalog/springboot/SpringBootRuntimeProviderTest.java
++++ b/fixed/catalog/camel-catalog-provider-springboot/src/test/java/org/apache/camel/catalog/springboot/SpringBootRuntimeProviderTest.java
+@@ -76,7 +76,7 @@ public class SpringBootRuntimeProviderTest {
+         assertFalse(names.isEmpty());
+ 
+         assertTrue(names.contains("bindy-csv"));
+-        assertTrue(names.contains("zip"));
++        assertTrue(names.contains("zipdeflater"));
+         assertTrue(names.contains("zipfile"));
+     }
+ 

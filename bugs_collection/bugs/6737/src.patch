@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-base64/src/test/java/org/apache/camel/dataformat/base64/SpringBase64DataFormatDefaultsTest.java b/fixed/components/camel-base64/src/test/java/org/apache/camel/dataformat/base64/SpringBase64DataFormatDefaultsTest.java
+index 04a6a476..d1ba4ac5 100644
+--- a/buggy/components/camel-base64/src/test/java/org/apache/camel/dataformat/base64/SpringBase64DataFormatDefaultsTest.java
++++ b/fixed/components/camel-base64/src/test/java/org/apache/camel/dataformat/base64/SpringBase64DataFormatDefaultsTest.java
+@@ -50,7 +50,7 @@ public class SpringBase64DataFormatDefaultsTest extends SpringBase64DataFormatTe
+     @Override
+     protected AbstractApplicationContext createApplicationContext() {
+         return new ClassPathXmlApplicationContext(
+-                "org/apache/camel/dataFormat/base64/SpringBase64DataFormatDefaultsTest.xml");
++                "org/apache/camel/dataformat/base64/SpringBase64DataFormatDefaultsTest.xml");
+     }
+ 
+     @Test

@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ServerEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ServerEndpointBuilderFactory.java
+index e100da9b..e166b29f 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ServerEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ServerEndpointBuilderFactory.java
+@@ -522,7 +522,7 @@ public interface ServerEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the IEC 60870 Server component.
+      */
+-    public static interface ServerEndpointProducerBuilder
++    public interface ServerEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedServerEndpointProducerBuilder advanced() {
+@@ -961,7 +961,7 @@ public interface ServerEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the IEC 60870 Server component.
+      */
+-    public static interface ServerEndpointBuilder
++    public interface ServerEndpointBuilder
+             extends
+                 ServerEndpointConsumerBuilder, ServerEndpointProducerBuilder {
+         default AdvancedServerEndpointBuilder advanced() {
+@@ -1297,7 +1297,7 @@ public interface ServerEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the IEC 60870 Server component.
+      */
+-    public static interface AdvancedServerEndpointBuilder
++    public interface AdvancedServerEndpointBuilder
+             extends
+                 AdvancedServerEndpointConsumerBuilder, AdvancedServerEndpointProducerBuilder {
+         default ServerEndpointBuilder basic() {

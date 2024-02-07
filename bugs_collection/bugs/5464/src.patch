@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SagaEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SagaEndpointBuilderFactory.java
+index e25571ef..c539c6e3 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SagaEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SagaEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface SagaEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Saga component.
+      */
+-    public static interface SagaEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface SagaEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedSagaEndpointBuilder advanced() {
+             return (AdvancedSagaEndpointBuilder) this;
+         }
+@@ -65,7 +63,7 @@ public interface SagaEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Saga component.
+      */
+-    public static interface AdvancedSagaEndpointBuilder
++    public interface AdvancedSagaEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default SagaEndpointBuilder basic() {

@@ -1,0 +1,15 @@
+diff --git a/buggy/components/camel-rabbitmq/src/test/java/org/apache/camel/component/rabbitmq/RabbitMQEndpointTest.java b/fixed/components/camel-rabbitmq/src/test/java/org/apache/camel/component/rabbitmq/RabbitMQEndpointTest.java
+index 11b3675c..86a7bcc5 100644
+--- a/buggy/components/camel-rabbitmq/src/test/java/org/apache/camel/component/rabbitmq/RabbitMQEndpointTest.java
++++ b/fixed/components/camel-rabbitmq/src/test/java/org/apache/camel/component/rabbitmq/RabbitMQEndpointTest.java
+@@ -132,8 +132,8 @@ public class RabbitMQEndpointTest extends CamelTestSupport {
+     }
+ 
+     private ConnectionFactory createConnectionFactory(String uri) {
+-        RabbitMQEndpoint endpoint = context.getEndpoint(uri, RabbitMQEndpoint.class); 
+-        return endpoint.getConnectionFactory();
++        RabbitMQEndpoint endpoint = context.getEndpoint(uri, RabbitMQEndpoint.class);
++        return endpoint.getOrCreateConnectionFactory();
+     }
+ 
+     @Test

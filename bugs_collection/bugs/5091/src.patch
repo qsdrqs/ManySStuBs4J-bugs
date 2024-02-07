@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GeoCoderEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GeoCoderEndpointBuilderFactory.java
+index 793c3c7b..2350056a 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GeoCoderEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GeoCoderEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface GeoCoderEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Geocoder component.
+      */
+-    public static interface GeoCoderEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface GeoCoderEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedGeoCoderEndpointBuilder advanced() {
+             return (AdvancedGeoCoderEndpointBuilder) this;
+         }
+@@ -194,7 +192,7 @@ public interface GeoCoderEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Geocoder component.
+      */
+-    public static interface AdvancedGeoCoderEndpointBuilder
++    public interface AdvancedGeoCoderEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default GeoCoderEndpointBuilder basic() {

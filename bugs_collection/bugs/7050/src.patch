@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-olingo2/camel-olingo2-api/src/main/java/org/apache/camel/component/olingo2/api/impl/Olingo2AppImpl.java b/fixed/components/camel-olingo2/camel-olingo2-api/src/main/java/org/apache/camel/component/olingo2/api/impl/Olingo2AppImpl.java
+index 125f7cf5..0b3705ee 100644
+--- a/buggy/components/camel-olingo2/camel-olingo2-api/src/main/java/org/apache/camel/component/olingo2/api/impl/Olingo2AppImpl.java
++++ b/fixed/components/camel-olingo2/camel-olingo2-api/src/main/java/org/apache/camel/component/olingo2/api/impl/Olingo2AppImpl.java
+@@ -348,7 +348,7 @@ public final class Olingo2AppImpl implements Olingo2App {
+ 
+         case URI1:
+         case URI6B:
+-            if (uriInfo.getCustomQueryOptions().containsKey("!deltaToken")) {
++            if (uriInfo.getCustomQueryOptions().containsKey("!deltatoken")) {
+                 // ODataDeltaFeed
+                 response = (T) EntityProvider.readDeltaFeed(
+                     getContentType(),

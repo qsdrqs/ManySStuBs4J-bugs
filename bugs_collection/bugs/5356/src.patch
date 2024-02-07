@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MockEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MockEndpointBuilderFactory.java
+index e45c84a5..c08e41d9 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MockEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MockEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface MockEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Mock component.
+      */
+-    public static interface MockEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface MockEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedMockEndpointBuilder advanced() {
+             return (AdvancedMockEndpointBuilder) this;
+         }
+@@ -54,7 +52,7 @@ public interface MockEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Mock component.
+      */
+-    public static interface AdvancedMockEndpointBuilder
++    public interface AdvancedMockEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default MockEndpointBuilder basic() {

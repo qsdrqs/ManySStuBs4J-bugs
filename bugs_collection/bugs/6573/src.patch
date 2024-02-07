@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-core-osgi/src/test/java/org/apache/camel/core/osgi/OsgiDataFormatResolverTest.java b/fixed/components/camel-core-osgi/src/test/java/org/apache/camel/core/osgi/OsgiDataFormatResolverTest.java
+index 3803a7f7..2f41b0d4 100644
+--- a/buggy/components/camel-core-osgi/src/test/java/org/apache/camel/core/osgi/OsgiDataFormatResolverTest.java
++++ b/fixed/components/camel-core-osgi/src/test/java/org/apache/camel/core/osgi/OsgiDataFormatResolverTest.java
+@@ -61,7 +61,7 @@ public class OsgiDataFormatResolverTest extends CamelOsgiTestSupport {
+ 
+         private boolean fallback;
+ 
+-        public SampleDataFormat(boolean fallback) {
++        SampleDataFormat(boolean fallback) {
+             this.fallback = fallback;
+         }
+ 

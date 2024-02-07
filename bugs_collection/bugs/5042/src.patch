@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EKSEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EKSEndpointBuilderFactory.java
+index 28f15de2..2367b92e 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EKSEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EKSEndpointBuilderFactory.java
+@@ -33,9 +33,7 @@ public interface EKSEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the AWS EKS component.
+      */
+-    public static interface EKSEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface EKSEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedEKSEndpointBuilder advanced() {
+             return (AdvancedEKSEndpointBuilder) this;
+         }
+@@ -62,7 +60,7 @@ public interface EKSEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the AWS EKS component.
+      */
+-    public static interface AdvancedEKSEndpointBuilder
++    public interface AdvancedEKSEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default EKSEndpointBuilder basic() {

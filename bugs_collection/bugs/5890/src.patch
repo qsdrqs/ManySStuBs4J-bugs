@@ -1,0 +1,13 @@
+diff --git a/buggy/tooling/camel-route-parser/src/main/java/org/apache/camel/parser/helper/CamelJavaRestDslParserHelper.java b/fixed/tooling/camel-route-parser/src/main/java/org/apache/camel/parser/helper/CamelJavaRestDslParserHelper.java
+index 8c3018f9..08558e69 100644
+--- a/buggy/tooling/camel-route-parser/src/main/java/org/apache/camel/parser/helper/CamelJavaRestDslParserHelper.java
++++ b/fixed/tooling/camel-route-parser/src/main/java/org/apache/camel/parser/helper/CamelJavaRestDslParserHelper.java
+@@ -358,7 +358,7 @@ public final class CamelJavaRestDslParserHelper {
+             verb.setDescription(extractValueFromFirstArgument(clazz, block, mi));
+         } else  if ("bindingMode".equals(name)) {
+             verb.setBindingMode(extractValueFromFirstArgument(clazz, block, mi));
+-        } else  if ("skipBindingOnErrorcode".equals(name)) {
++        } else  if ("skipBindingOnErrorCode".equals(name)) {
+             verb.setSkipBindingOnErrorCode(extractValueFromFirstArgument(clazz, block, mi));
+         } else  if ("clientRequestValidation".equals(name)) {
+             verb.setClientRequestValidation(extractValueFromFirstArgument(clazz, block, mi));

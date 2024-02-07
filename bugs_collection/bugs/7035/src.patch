@@ -1,0 +1,13 @@
+diff --git a/buggy/tooling/apt/src/main/java/org/apache/camel/tools/apt/IOHelper.java b/fixed/tooling/apt/src/main/java/org/apache/camel/tools/apt/IOHelper.java
+index e6c764ad..d4c1717e 100644
+--- a/buggy/tooling/apt/src/main/java/org/apache/camel/tools/apt/IOHelper.java
++++ b/fixed/tooling/apt/src/main/java/org/apache/camel/tools/apt/IOHelper.java
+@@ -22,7 +22,7 @@ import java.io.IOException;
+ import java.io.InputStream;
+ import java.io.InputStreamReader;
+ 
+-class IOHelper {
++final class IOHelper {
+ 
+     private IOHelper() {
+     }

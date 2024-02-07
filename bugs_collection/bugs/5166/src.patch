@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastSetEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastSetEndpointBuilderFactory.java
+index 9d60dd80..0be69c15 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastSetEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastSetEndpointBuilderFactory.java
+@@ -443,7 +443,7 @@ public interface HazelcastSetEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Hazelcast Set component.
+      */
+-    public static interface HazelcastSetEndpointProducerBuilder
++    public interface HazelcastSetEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedHazelcastSetEndpointProducerBuilder advanced() {
+@@ -746,7 +746,7 @@ public interface HazelcastSetEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Hazelcast Set component.
+      */
+-    public static interface HazelcastSetEndpointBuilder
++    public interface HazelcastSetEndpointBuilder
+             extends
+                 HazelcastSetEndpointConsumerBuilder, HazelcastSetEndpointProducerBuilder {
+         default AdvancedHazelcastSetEndpointBuilder advanced() {
+@@ -954,7 +954,7 @@ public interface HazelcastSetEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Hazelcast Set component.
+      */
+-    public static interface AdvancedHazelcastSetEndpointBuilder
++    public interface AdvancedHazelcastSetEndpointBuilder
+             extends
+                 AdvancedHazelcastSetEndpointConsumerBuilder, AdvancedHazelcastSetEndpointProducerBuilder {
+         default HazelcastSetEndpointBuilder basic() {

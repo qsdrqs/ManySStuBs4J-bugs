@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/processor/ConvertBodyProcessor.java b/fixed/camel-core/src/main/java/org/apache/camel/processor/ConvertBodyProcessor.java
+index 125e0e6d..d42eae46 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/processor/ConvertBodyProcessor.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/processor/ConvertBodyProcessor.java
+@@ -89,7 +89,7 @@ public class ConvertBodyProcessor extends ServiceSupport implements AsyncProcess
+         Object value;
+         try {
+             value = old.getMandatoryBody(type);
+-        } catch (Exception e) {
++        } catch (Throwable e) {
+             exchange.setException(e);
+             callback.done(true);
+             return true;

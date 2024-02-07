@@ -1,0 +1,20 @@
+diff --git a/buggy/components/camel-http4/src/main/java/org/apache/camel/component/http4/HttpMethodsConverter.java b/fixed/components/camel-http4/src/main/java/org/apache/camel/component/http4/HttpMethodsConverter.java
+index b2c54a4b..a79bf373 100644
+--- a/buggy/components/camel-http4/src/main/java/org/apache/camel/component/http4/HttpMethodsConverter.java
++++ b/fixed/components/camel-http4/src/main/java/org/apache/camel/component/http4/HttpMethodsConverter.java
+@@ -24,7 +24,7 @@ import org.apache.camel.Exchange;
+ /**
+  * To convert between camel-http4 and camel-http-common for the http methods enums
+  */
+-@Converter
++@Converter(loader = true)
+ public final class HttpMethodsConverter {
+ 
+     private HttpMethodsConverter() {
+@@ -37,4 +37,4 @@ public final class HttpMethodsConverter {
+         return HttpMethods.valueOf(name);
+     }
+ 
+-}
+\ No newline at end of file
++}

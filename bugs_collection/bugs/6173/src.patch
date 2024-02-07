@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/impl/cloud/CachingServiceDiscovery.java b/fixed/camel-core/src/main/java/org/apache/camel/impl/cloud/CachingServiceDiscovery.java
+index dc99f880..1e4a595a 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/impl/cloud/CachingServiceDiscovery.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/impl/cloud/CachingServiceDiscovery.java
+@@ -74,7 +74,7 @@ public final class CachingServiceDiscovery implements ServiceDiscovery {
+ 
+     @Override
+     public List<ServiceDefinition> getServices(String name) {
+-        return delegate.getServices(name);
++        return cache.get(name);
+     }
+ 
+     // **********************

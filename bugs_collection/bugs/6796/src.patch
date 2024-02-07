@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-aws/src/main/java/org/apache/camel/component/aws/sqs/SqsProducer.java b/fixed/components/camel-aws/src/main/java/org/apache/camel/component/aws/sqs/SqsProducer.java
+index 874e021b..69b1eb3a 100644
+--- a/buggy/components/camel-aws/src/main/java/org/apache/camel/component/aws/sqs/SqsProducer.java
++++ b/fixed/components/camel-aws/src/main/java/org/apache/camel/component/aws/sqs/SqsProducer.java
+@@ -125,7 +125,7 @@ public class SqsProducer extends DefaultProducer {
+                     result.put(entry.getKey(), mav);
+                 } else {
+                     // cannot translate the message header to message attribute value
+-                    LOG.warn("Cannot put the message header key={0}, value={1} into Sqs MessageAttribute", entry.getKey(), entry.getValue());
++                    LOG.warn("Cannot put the message header key={}, value={} into Sqs MessageAttribute", entry.getKey(), entry.getValue());
+                 }
+             }
+         }

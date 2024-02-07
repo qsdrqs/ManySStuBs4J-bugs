@@ -1,0 +1,15 @@
+diff --git a/buggy/components/camel-servlet/src/test/java/org/apache/camel/component/servlet/ServletComponentConfigurationAndDocumentationTest.java b/fixed/components/camel-servlet/src/test/java/org/apache/camel/component/servlet/ServletComponentConfigurationAndDocumentationTest.java
+index caa005e3..22c25f2c 100644
+--- a/buggy/components/camel-servlet/src/test/java/org/apache/camel/component/servlet/ServletComponentConfigurationAndDocumentationTest.java
++++ b/fixed/components/camel-servlet/src/test/java/org/apache/camel/component/servlet/ServletComponentConfigurationAndDocumentationTest.java
+@@ -42,8 +42,8 @@ public class ServletComponentConfigurationAndDocumentationTest extends CamelTest
+         ComponentConfiguration compConf = comp.createComponentConfiguration();
+         String json = compConf.createParameterJsonSchema();
+         assertNotNull(json);
+-
+-        assertTrue(json.contains("\"servletName\": { \"kind\": \"parameter\", \"type\": \"string\""));
++        
++        assertTrue(json.contains("\"servletName\": { \"kind\": \"property\", \"type\": \"string\""));
+         assertTrue(json.contains("\"matchOnUriPrefix\": { \"kind\": \"parameter\", \"type\": \"boolean\""));
+     }
+ 

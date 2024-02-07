@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/language/tokenizer/XMLTokenizeLanguage.java b/fixed/camel-core/src/main/java/org/apache/camel/language/tokenizer/XMLTokenizeLanguage.java
+index b42357ff..e9f6191e 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/language/tokenizer/XMLTokenizeLanguage.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/language/tokenizer/XMLTokenizeLanguage.java
+@@ -71,7 +71,7 @@ public class XMLTokenizeLanguage extends LanguageSupport {
+      * Creates a tokenize expression.
+      */
+     public Expression createExpression() {
+-        ObjectHelper.notNull(path, "token");
++        ObjectHelper.notNull(path, "path");
+ 
+         Expression answer = ExpressionBuilder.tokenizeXMLAwareExpression(path, mode);
+         return answer;

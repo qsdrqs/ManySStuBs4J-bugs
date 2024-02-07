@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/FtpBadLoginConnectionLeakTest.java b/fixed/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/FtpBadLoginConnectionLeakTest.java
+index 8cbd4348..b62ecaf6 100644
+--- a/buggy/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/FtpBadLoginConnectionLeakTest.java
++++ b/fixed/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/FtpBadLoginConnectionLeakTest.java
+@@ -34,7 +34,7 @@ public class FtpBadLoginConnectionLeakTest extends FtpServerTestSupport {
+     /**
+      * Mapping of socket hashcode to two element tab ([connect() called, close() called])
+      */
+-    private Map<Integer, boolean[]> socketAudits = new HashMap<>();
++    private Map<Integer, boolean[]> socketAudits = new HashMap<Integer, boolean[]>();
+ 
+     private String getFtpUrl() {
+         return "ftp://dummy@localhost:" + getPort() + "/badlogin?password=cantremeber" 

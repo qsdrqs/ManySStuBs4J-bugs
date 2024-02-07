@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jetty9/src/test/java/org/apache/camel/component/jetty/jettyproducer/JettyHttpProducerAsyncTimeoutTest.java b/fixed/components/camel-jetty9/src/test/java/org/apache/camel/component/jetty/jettyproducer/JettyHttpProducerAsyncTimeoutTest.java
+index b84bc7a2..3632443c 100644
+--- a/buggy/components/camel-jetty9/src/test/java/org/apache/camel/component/jetty/jettyproducer/JettyHttpProducerAsyncTimeoutTest.java
++++ b/fixed/components/camel-jetty9/src/test/java/org/apache/camel/component/jetty/jettyproducer/JettyHttpProducerAsyncTimeoutTest.java
+@@ -26,7 +26,7 @@ import org.junit.Test;
+  */
+ public class JettyHttpProducerAsyncTimeoutTest extends BaseJettyTest {
+ 
+-    private String url = "jetty://http://0.0.0.0:" + getPort() + "/timeout?httpClient.timeout=2000";
++    private String url = "jetty://http://127.0.0.1:" + getPort() + "/timeout?httpClient.timeout=2000";
+ 
+     @Test
+     public void testTimeout() throws Exception {

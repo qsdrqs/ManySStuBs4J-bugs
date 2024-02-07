@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jacksonxml/src/main/java/org/apache/camel/component/jacksonxml/converter/JacksonXMLTypeConverters.java b/fixed/components/camel-jacksonxml/src/main/java/org/apache/camel/component/jacksonxml/converter/JacksonXMLTypeConverters.java
+index fd5035bb..c211d2d0 100644
+--- a/buggy/components/camel-jacksonxml/src/main/java/org/apache/camel/component/jacksonxml/converter/JacksonXMLTypeConverters.java
++++ b/fixed/components/camel-jacksonxml/src/main/java/org/apache/camel/component/jacksonxml/converter/JacksonXMLTypeConverters.java
+@@ -28,7 +28,7 @@ import org.apache.camel.component.jacksonxml.JacksonXMLConstants;
+ import org.apache.camel.spi.Registry;
+ import org.apache.camel.spi.TypeConverterRegistry;
+ 
+-@Converter
++@Converter(loader = true)
+ public final class JacksonXMLTypeConverters {
+ 
+     private final XmlMapper defaultMapper = new XmlMapper();

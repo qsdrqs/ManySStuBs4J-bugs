@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XsltEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XsltEndpointBuilderFactory.java
+index 63e98325..097c182f 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XsltEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XsltEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface XsltEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the XSLT component.
+      */
+-    public static interface XsltEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface XsltEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedXsltEndpointBuilder advanced() {
+             return (AdvancedXsltEndpointBuilder) this;
+         }
+@@ -222,7 +220,7 @@ public interface XsltEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the XSLT component.
+      */
+-    public static interface AdvancedXsltEndpointBuilder
++    public interface AdvancedXsltEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default XsltEndpointBuilder basic() {

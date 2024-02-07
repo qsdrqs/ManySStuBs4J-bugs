@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AtomEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AtomEndpointBuilderFactory.java
+index eb26aaf6..bcdffebb 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AtomEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AtomEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface AtomEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Atom component.
+      */
+-    public static interface AtomEndpointBuilder
+-            extends
+-                EndpointConsumerBuilder {
++    public interface AtomEndpointBuilder extends EndpointConsumerBuilder {
+         default AdvancedAtomEndpointBuilder advanced() {
+             return (AdvancedAtomEndpointBuilder) this;
+         }
+@@ -192,7 +190,7 @@ public interface AtomEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Atom component.
+      */
+-    public static interface AdvancedAtomEndpointBuilder
++    public interface AdvancedAtomEndpointBuilder
+             extends
+                 EndpointConsumerBuilder {
+         default AtomEndpointBuilder basic() {

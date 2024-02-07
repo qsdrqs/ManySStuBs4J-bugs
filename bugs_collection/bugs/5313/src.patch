@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/LanguageEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/LanguageEndpointBuilderFactory.java
+index 0f90643f..ff1b22f8 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/LanguageEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/LanguageEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface LanguageEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Language component.
+      */
+-    public static interface LanguageEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface LanguageEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedLanguageEndpointBuilder advanced() {
+             return (AdvancedLanguageEndpointBuilder) this;
+         }
+@@ -153,7 +151,7 @@ public interface LanguageEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Language component.
+      */
+-    public static interface AdvancedLanguageEndpointBuilder
++    public interface AdvancedLanguageEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default LanguageEndpointBuilder basic() {

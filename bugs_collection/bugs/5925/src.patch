@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-swagger-java/src/test/java/org/apache/camel/swagger/RestSwaggerArrayEnumTest.java b/fixed/components/camel-swagger-java/src/test/java/org/apache/camel/swagger/RestSwaggerArrayEnumTest.java
+index e3276a03..66722159 100644
+--- a/buggy/components/camel-swagger-java/src/test/java/org/apache/camel/swagger/RestSwaggerArrayEnumTest.java
++++ b/fixed/components/camel-swagger-java/src/test/java/org/apache/camel/swagger/RestSwaggerArrayEnumTest.java
+@@ -36,7 +36,7 @@ import static org.assertj.core.api.Assertions.assertThat;
+ public class RestSwaggerArrayEnumTest {
+ 
+     @Test
+-    public void shouldGenerateEnumValuesForArraysAndNonArrays() {
++    public void shouldGenerateEnumValuesForArraysAndNonArrays() throws Exception {
+         final RestSwaggerReader reader = new RestSwaggerReader();
+ 
+         final RestDefinition restDefinition = new RestDefinition();

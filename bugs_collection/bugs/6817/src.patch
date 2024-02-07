@@ -1,0 +1,20 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/impl/DefaultCamelContext.java b/fixed/camel-core/src/main/java/org/apache/camel/impl/DefaultCamelContext.java
+index bbc33776..bc5ca4f2 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/impl/DefaultCamelContext.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/impl/DefaultCamelContext.java
+@@ -814,13 +814,13 @@ public class DefaultCamelContext extends ServiceSupport implements ModelCamelCon
+     }
+ 
+     void removeRouteCollection(Collection<Route> routes) {
+-        synchronized (routes) {
++        synchronized (this.routes) {
+             this.routes.removeAll(routes);
+         }
+     }
+ 
+     void addRouteCollection(Collection<Route> routes) throws Exception {
+-        synchronized (routes) {
++        synchronized (this.routes) {
+             this.routes.addAll(routes);
+         }
+     }

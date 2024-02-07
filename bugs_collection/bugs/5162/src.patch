@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastRingbufferEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastRingbufferEndpointBuilderFactory.java
+index 4ee402b7..02f087df 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastRingbufferEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastRingbufferEndpointBuilderFactory.java
+@@ -34,7 +34,7 @@ public interface HazelcastRingbufferEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Hazelcast Ringbuffer component.
+      */
+-    public static interface HazelcastRingbufferEndpointBuilder
++    public interface HazelcastRingbufferEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedHazelcastRingbufferEndpointBuilder advanced() {
+@@ -244,7 +244,7 @@ public interface HazelcastRingbufferEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Hazelcast Ringbuffer component.
+      */
+-    public static interface AdvancedHazelcastRingbufferEndpointBuilder
++    public interface AdvancedHazelcastRingbufferEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default HazelcastRingbufferEndpointBuilder basic() {

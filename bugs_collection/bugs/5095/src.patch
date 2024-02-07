@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GitHubEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GitHubEndpointBuilderFactory.java
+index ac996365..b7a406a7 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GitHubEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GitHubEndpointBuilderFactory.java
+@@ -256,7 +256,7 @@ public interface GitHubEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the GitHub component.
+      */
+-    public static interface GitHubEndpointProducerBuilder
++    public interface GitHubEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedGitHubEndpointProducerBuilder advanced() {
+@@ -450,7 +450,7 @@ public interface GitHubEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the GitHub component.
+      */
+-    public static interface GitHubEndpointBuilder
++    public interface GitHubEndpointBuilder
+             extends
+                 GitHubEndpointConsumerBuilder, GitHubEndpointProducerBuilder {
+         default AdvancedGitHubEndpointBuilder advanced() {
+@@ -526,7 +526,7 @@ public interface GitHubEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the GitHub component.
+      */
+-    public static interface AdvancedGitHubEndpointBuilder
++    public interface AdvancedGitHubEndpointBuilder
+             extends
+                 AdvancedGitHubEndpointConsumerBuilder, AdvancedGitHubEndpointProducerBuilder {
+         default GitHubEndpointBuilder basic() {

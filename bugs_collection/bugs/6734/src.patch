@@ -1,0 +1,21 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/CamelContext.java b/fixed/camel-core/src/main/java/org/apache/camel/CamelContext.java
+index 501f6da7..cb21071a 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/CamelContext.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/CamelContext.java
+@@ -1384,14 +1384,14 @@ public interface CamelContext extends SuspendableService, RuntimeConfiguration {
+      *
+      * @return the factory
+      */
+-    public MessageHistoryFactory getMessageHistoryFactory();
++    MessageHistoryFactory getMessageHistoryFactory();
+ 
+     /**
+      * Sets a custom {@link org.apache.camel.spi.MessageHistoryFactory}
+      *
+      * @param messageHistoryFactory the custom factory
+      */
+-    public void setMessageHistoryFactory(MessageHistoryFactory messageHistoryFactory);
++    void setMessageHistoryFactory(MessageHistoryFactory messageHistoryFactory);
+ 
+     /**
+      * Gets the current {@link Debugger}

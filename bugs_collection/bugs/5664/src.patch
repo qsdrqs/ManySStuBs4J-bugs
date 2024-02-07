@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-api/src/main/java/org/apache/camel/CamelUnitOfWorkException.java b/fixed/core/camel-api/src/main/java/org/apache/camel/CamelUnitOfWorkException.java
+index 9d335eb2..a6f58b3c 100644
+--- a/buggy/core/camel-api/src/main/java/org/apache/camel/CamelUnitOfWorkException.java
++++ b/fixed/core/camel-api/src/main/java/org/apache/camel/CamelUnitOfWorkException.java
+@@ -27,7 +27,7 @@ import java.util.List;
+  */
+ public class CamelUnitOfWorkException extends CamelExchangeException {
+ 
+-    private transient final List<Exception> causes;
++    private final transient List<Exception> causes;
+ 
+     public CamelUnitOfWorkException(Exchange exchange, List<Exception> causes) {
+         // just provide the first exception as cause, as it will be logged in the stacktraces

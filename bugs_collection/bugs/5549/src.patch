@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/StompEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/StompEndpointBuilderFactory.java
+index b64c51c0..ebefb67e 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/StompEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/StompEndpointBuilderFactory.java
+@@ -275,7 +275,7 @@ public interface StompEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Stomp component.
+      */
+-    public static interface StompEndpointProducerBuilder
++    public interface StompEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedStompEndpointProducerBuilder advanced() {
+@@ -468,7 +468,7 @@ public interface StompEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Stomp component.
+      */
+-    public static interface StompEndpointBuilder
++    public interface StompEndpointBuilder
+             extends
+                 StompEndpointConsumerBuilder, StompEndpointProducerBuilder {
+         default AdvancedStompEndpointBuilder advanced() {
+@@ -546,7 +546,7 @@ public interface StompEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Stomp component.
+      */
+-    public static interface AdvancedStompEndpointBuilder
++    public interface AdvancedStompEndpointBuilder
+             extends
+                 AdvancedStompEndpointConsumerBuilder, AdvancedStompEndpointProducerBuilder {
+         default StompEndpointBuilder basic() {

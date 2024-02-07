@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-aws/src/main/java/org/apache/camel/component/aws/ddb/DdbConfiguration.java b/fixed/components/camel-aws/src/main/java/org/apache/camel/component/aws/ddb/DdbConfiguration.java
+index 691a104f..ff9f063e 100644
+--- a/buggy/components/camel-aws/src/main/java/org/apache/camel/component/aws/ddb/DdbConfiguration.java
++++ b/fixed/components/camel-aws/src/main/java/org/apache/camel/component/aws/ddb/DdbConfiguration.java
+@@ -35,7 +35,7 @@ public class DdbConfiguration {
+     private AmazonDynamoDB amazonDDBClient;
+     @UriParam
+     private String amazonDdbEndpoint;
+-    @UriParam(defaultValue = "false")
++    @UriParam
+     private Boolean consistentRead;
+     @UriParam(defaultValue = "PutItem")
+     private DdbOperations operation = DdbOperations.PutItem;

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-gae/src/main/java/org/apache/camel/component/gae/task/GTaskEndpoint.java b/fixed/components/camel-gae/src/main/java/org/apache/camel/component/gae/task/GTaskEndpoint.java
+index f32678dd..f28d5bab 100644
+--- a/buggy/components/camel-gae/src/main/java/org/apache/camel/component/gae/task/GTaskEndpoint.java
++++ b/fixed/components/camel-gae/src/main/java/org/apache/camel/component/gae/task/GTaskEndpoint.java
+@@ -43,7 +43,7 @@ import org.apache.commons.httpclient.params.HttpClientParams;
+ /**
+  * Represents a <a href="http://camel.apache.org/gtask.html">Google App Engine Task Queueing endpoint</a>.
+  */
+-@UriEndpoint(scheme = "gtask")
++@UriEndpoint(scheme = "gtask", label = "cloud")
+ public class GTaskEndpoint extends ServletEndpoint implements OutboundBindingSupport<GTaskEndpoint, TaskOptions, Void> {
+ 
+     private OutboundBinding<GTaskEndpoint, TaskOptions, Void> outboundBinding;

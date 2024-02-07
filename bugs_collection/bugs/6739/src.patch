@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-base64/src/test/java/org/apache/camel/dataformat/base64/SpringBase64DataFormatLineLengthTest.java b/fixed/components/camel-base64/src/test/java/org/apache/camel/dataformat/base64/SpringBase64DataFormatLineLengthTest.java
+index 62ff0079..78d172c2 100644
+--- a/buggy/components/camel-base64/src/test/java/org/apache/camel/dataformat/base64/SpringBase64DataFormatLineLengthTest.java
++++ b/fixed/components/camel-base64/src/test/java/org/apache/camel/dataformat/base64/SpringBase64DataFormatLineLengthTest.java
+@@ -60,7 +60,7 @@ public class SpringBase64DataFormatLineLengthTest extends SpringBase64DataFormat
+     @Override
+     protected AbstractApplicationContext createApplicationContext() {
+         return new ClassPathXmlApplicationContext(
+-                "org/apache/camel/dataFormat/base64/SpringBase64DataFormatLineLengthTest.xml");
++                "org/apache/camel/dataformat/base64/SpringBase64DataFormatLineLengthTest.xml");
+     }
+ 
+ }

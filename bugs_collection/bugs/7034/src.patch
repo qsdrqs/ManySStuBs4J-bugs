@@ -1,0 +1,15 @@
+diff --git a/buggy/components/camel-optaplanner/src/test/java/org/apache/camel/component/optaplanner/OptaPlannerComponentConfigurationAndDocumentationTest.java b/fixed/components/camel-optaplanner/src/test/java/org/apache/camel/component/optaplanner/OptaPlannerComponentConfigurationAndDocumentationTest.java
+index 94295332..0b383751 100644
+--- a/buggy/components/camel-optaplanner/src/test/java/org/apache/camel/component/optaplanner/OptaPlannerComponentConfigurationAndDocumentationTest.java
++++ b/fixed/components/camel-optaplanner/src/test/java/org/apache/camel/component/optaplanner/OptaPlannerComponentConfigurationAndDocumentationTest.java
+@@ -41,8 +41,8 @@ public class OptaPlannerComponentConfigurationAndDocumentationTest extends Camel
+         ComponentConfiguration componentConfiguration = component.createComponentConfiguration();
+         String json = componentConfiguration.createParameterJsonSchema();
+         assertNotNull(json);
+-
+-        assertTrue(json.contains("\"resourceUri\": { \"kind\": \"parameter\", \"type\": \"string\""));
++        
++        assertTrue(json.contains("\"resourceUri\": { \"kind\": \"path\", \"type\": \"string\""));
+         assertTrue(json.contains("\"synchronous\": { \"kind\": \"parameter\", \"type\": \"boolean\""));
+     }
+ 

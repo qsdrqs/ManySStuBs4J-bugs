@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/camel-example-cdi-kubernetes/src/main/java/org/apache/camel/example/cdi/kubernetes/Application.java b/fixed/examples/camel-example-cdi-kubernetes/src/main/java/org/apache/camel/example/cdi/kubernetes/Application.java
+index b427fee9..a7737caf 100644
+--- a/buggy/examples/camel-example-cdi-kubernetes/src/main/java/org/apache/camel/example/cdi/kubernetes/Application.java
++++ b/fixed/examples/camel-example-cdi-kubernetes/src/main/java/org/apache/camel/example/cdi/kubernetes/Application.java
+@@ -68,7 +68,7 @@ public class Application {
+                             pod.getStatus().getPhase(),
+                             pod.getStatus().getContainerStatuses().stream()
+                                 .mapToInt(ContainerStatus::getRestartCount).sum(),
+-                            formatDuration(Duration.between(ZonedDateTime.parse(pod.getStatus().getStartTime()), ZonedDateTime.now()))))
++                            formatDuration(Duration.between(ZonedDateTime.parse(pod.getStatus().getStartTime().getTime()), ZonedDateTime.now()))))
+                         .forEach(System.out::println);
+                 });
+         }

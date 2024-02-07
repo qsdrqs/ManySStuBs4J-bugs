@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-consul/src/test/java/org/apache/camel/component/consul/cloud/ConsulDefaultServiceCallRouteTest.java b/fixed/components/camel-consul/src/test/java/org/apache/camel/component/consul/cloud/ConsulDefaultServiceCallRouteTest.java
+index 7532ccba..61cb3b67 100644
+--- a/buggy/components/camel-consul/src/test/java/org/apache/camel/component/consul/cloud/ConsulDefaultServiceCallRouteTest.java
++++ b/fixed/components/camel-consul/src/test/java/org/apache/camel/component/consul/cloud/ConsulDefaultServiceCallRouteTest.java
+@@ -97,7 +97,7 @@ public class ConsulDefaultServiceCallRouteTest extends ConsulTestSupport {
+                 from("direct:start")
+                     .serviceCall()
+                         .name(SERVICE_NAME)
+-                        .component("jetty")
++                        .component("http")
+                         .defaultLoadBalancer()
+                         .consulServiceDiscovery()
+                             .url(consulUrl())

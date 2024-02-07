@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/component/file/FileOperations.java b/fixed/camel-core/src/main/java/org/apache/camel/component/file/FileOperations.java
+index c20b54ef..7a892270 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/component/file/FileOperations.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/component/file/FileOperations.java
+@@ -395,7 +395,7 @@ public class FileOperations implements GenericFileOperations<File> {
+                     throw new GenericFileOperationFailedException("Cannot delete file: " + to);
+                 }
+             } else {
+-                throw new GenericFileOperationFailedException("Cannot moved existing file from: " + fileName + " to: " + to + " as there already exists a file: " + to);
++                throw new GenericFileOperationFailedException("Cannot move existing file from: " + fileName + " to: " + to + " as there already exists a file: " + to);
+             }
+         }
+ 

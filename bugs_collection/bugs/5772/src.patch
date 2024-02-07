@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-twitter/src/main/java/org/apache/camel/component/twitter/util/TwitterConverter.java b/fixed/components/camel-twitter/src/main/java/org/apache/camel/component/twitter/util/TwitterConverter.java
+index a78fe370..773f1201 100644
+--- a/buggy/components/camel-twitter/src/main/java/org/apache/camel/component/twitter/util/TwitterConverter.java
++++ b/fixed/components/camel-twitter/src/main/java/org/apache/camel/component/twitter/util/TwitterConverter.java
+@@ -28,7 +28,7 @@ import twitter4j.UserList;
+ /**
+  * Utility for converting between Twitter4J and camel-twitter data layers.
+  */
+-@Converter
++@Converter(loader = true)
+ public final class TwitterConverter {
+ 
+     private TwitterConverter() {

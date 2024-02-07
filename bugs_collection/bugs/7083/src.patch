@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jdbc/src/main/java/org/apache/camel/component/jdbc/ResultSetIterator.java b/fixed/components/camel-jdbc/src/main/java/org/apache/camel/component/jdbc/ResultSetIterator.java
+index 19845f7c..0c81a22d 100644
+--- a/buggy/components/camel-jdbc/src/main/java/org/apache/camel/component/jdbc/ResultSetIterator.java
++++ b/fixed/components/camel-jdbc/src/main/java/org/apache/camel/component/jdbc/ResultSetIterator.java
+@@ -155,7 +155,7 @@ public class ResultSetIterator implements Iterator<Map<String, Object>> {
+         }
+     }
+ 
+-    private static interface Column {
++    private interface Column {
+ 
+         String getName();
+ 

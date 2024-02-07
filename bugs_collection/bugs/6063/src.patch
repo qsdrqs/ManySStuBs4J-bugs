@@ -1,0 +1,13 @@
+diff --git a/buggy/connectors/examples/petstore-connector/src/main/java/org/foo/connector/springboot/PetStoreConnectorAutoConfiguration.java b/fixed/connectors/examples/petstore-connector/src/main/java/org/foo/connector/springboot/PetStoreConnectorAutoConfiguration.java
+index 1874b75f..bc39ddc8 100644
+--- a/buggy/connectors/examples/petstore-connector/src/main/java/org/foo/connector/springboot/PetStoreConnectorAutoConfiguration.java
++++ b/fixed/connectors/examples/petstore-connector/src/main/java/org/foo/connector/springboot/PetStoreConnectorAutoConfiguration.java
+@@ -67,7 +67,7 @@ public class PetStoreConnectorAutoConfiguration {
+     @Lazy
+     @Bean(name = "petstore-component")
+     @ConditionalOnClass(CamelContext.class)
+-    @ConditionalOnMissingBean(name = "petstore-component")
++    @ConditionalOnMissingBean
+     public PetStoreComponent configurePetStoreComponent() throws Exception {
+         PetStoreComponent connector = new PetStoreComponent();
+         connector.setCamelContext(camelContext);

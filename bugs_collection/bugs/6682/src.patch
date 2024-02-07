@@ -1,0 +1,14 @@
+diff --git a/buggy/components/camel-xmlrpc/src/main/java/org/apache/camel/component/xmlrpc/XmlRpcEndpoint.java b/fixed/components/camel-xmlrpc/src/main/java/org/apache/camel/component/xmlrpc/XmlRpcEndpoint.java
+index 343bf439..fc05c615 100644
+--- a/buggy/components/camel-xmlrpc/src/main/java/org/apache/camel/component/xmlrpc/XmlRpcEndpoint.java
++++ b/fixed/components/camel-xmlrpc/src/main/java/org/apache/camel/component/xmlrpc/XmlRpcEndpoint.java
+@@ -150,7 +150,8 @@ public class XmlRpcEndpoint extends DefaultEndpoint {
+         }
+ 
+         Map<String, Object> params = new HashMap<String, Object>();
+-        IntrospectionSupport.getProperties(configuration, params, null);
++        // do not include null values
++        IntrospectionSupport.getProperties(configuration, params, null, false);
+         setProperties(clientConfig, params);
+     }
+ }

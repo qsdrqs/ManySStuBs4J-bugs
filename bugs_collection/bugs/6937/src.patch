@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-salesforce/camel-salesforce-component/src/main/java/org/apache/camel/component/salesforce/internal/streaming/SubscriptionHelper.java b/fixed/components/camel-salesforce/camel-salesforce-component/src/main/java/org/apache/camel/component/salesforce/internal/streaming/SubscriptionHelper.java
+index 7aaa0868..b0ed0d67 100644
+--- a/buggy/components/camel-salesforce/camel-salesforce-component/src/main/java/org/apache/camel/component/salesforce/internal/streaming/SubscriptionHelper.java
++++ b/fixed/components/camel-salesforce/camel-salesforce-component/src/main/java/org/apache/camel/component/salesforce/internal/streaming/SubscriptionHelper.java
+@@ -213,7 +213,7 @@ public class SubscriptionHelper extends ServiceSupport {
+                 }
+ 
+                 // add current security token obtained from session
+-                exchange.addRequestHeader(HttpHeaders.AUTHORIZATION,
++                exchange.setRequestHeader(HttpHeaders.AUTHORIZATION,
+                         "OAuth " + accessToken);
+             }
+         };

@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JsonValidatorEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JsonValidatorEndpointBuilderFactory.java
+index c6fbccfa..e0341287 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JsonValidatorEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JsonValidatorEndpointBuilderFactory.java
+@@ -33,7 +33,7 @@ public interface JsonValidatorEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the JSON Schema Validator component.
+      */
+-    public static interface JsonValidatorEndpointBuilder
++    public interface JsonValidatorEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedJsonValidatorEndpointBuilder advanced() {
+@@ -125,7 +125,7 @@ public interface JsonValidatorEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the JSON Schema Validator component.
+      */
+-    public static interface AdvancedJsonValidatorEndpointBuilder
++    public interface AdvancedJsonValidatorEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default JsonValidatorEndpointBuilder basic() {

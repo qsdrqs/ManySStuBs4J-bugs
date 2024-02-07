@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/camel-example-cdi-osgi/src/main/java/org/apache/camel/example/cdi/osgi/Consumer.java b/fixed/examples/camel-example-cdi-osgi/src/main/java/org/apache/camel/example/cdi/osgi/Consumer.java
+index e3afae8d..b524f450 100644
+--- a/buggy/examples/camel-example-cdi-osgi/src/main/java/org/apache/camel/example/cdi/osgi/Consumer.java
++++ b/fixed/examples/camel-example-cdi-osgi/src/main/java/org/apache/camel/example/cdi/osgi/Consumer.java
+@@ -20,7 +20,7 @@ import org.apache.camel.builder.RouteBuilder;
+ import org.apache.camel.cdi.ContextName;
+ 
+ @ContextName("osgi-example")
+-class Consumer extends RouteBuilder {
++public class Consumer extends RouteBuilder {
+ 
+     @Override
+     public void configure() {

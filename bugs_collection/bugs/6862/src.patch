@@ -1,0 +1,16 @@
+diff --git a/buggy/components/camel-avro/src/main/java/org/apache/camel/component/avro/AvroConfiguration.java b/fixed/components/camel-avro/src/main/java/org/apache/camel/component/avro/AvroConfiguration.java
+index 3398c9b5..de9642fb 100644
+--- a/buggy/components/camel-avro/src/main/java/org/apache/camel/component/avro/AvroConfiguration.java
++++ b/fixed/components/camel-avro/src/main/java/org/apache/camel/component/avro/AvroConfiguration.java
+@@ -48,9 +48,9 @@ public class AvroConfiguration implements Cloneable {
+     private String protocolClassName;
+     @UriParam
+     private String uriAuthority;
+-    @UriParam(defaultValue = "false")
++    @UriParam
+     private boolean reflectionProtocol;
+-    @UriParam(defaultValue = "false")
++    @UriParam
+     private boolean singleParameter;
+ 
+     public AvroConfiguration copy() {

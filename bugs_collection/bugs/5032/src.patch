@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DrillEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DrillEndpointBuilderFactory.java
+index 1a69939f..b17828e2 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DrillEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DrillEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface DrillEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Drill component.
+      */
+-    public static interface DrillEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface DrillEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedDrillEndpointBuilder advanced() {
+             return (AdvancedDrillEndpointBuilder) this;
+         }
+@@ -117,7 +115,7 @@ public interface DrillEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Drill component.
+      */
+-    public static interface AdvancedDrillEndpointBuilder
++    public interface AdvancedDrillEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default DrillEndpointBuilder basic() {

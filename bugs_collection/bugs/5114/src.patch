@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleMailEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleMailEndpointBuilderFactory.java
+index 25e88eb6..57527c78 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleMailEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleMailEndpointBuilderFactory.java
+@@ -272,7 +272,7 @@ public interface GoogleMailEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Google Mail component.
+      */
+-    public static interface GoogleMailEndpointProducerBuilder
++    public interface GoogleMailEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedGoogleMailEndpointProducerBuilder advanced() {
+@@ -464,7 +464,7 @@ public interface GoogleMailEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Google Mail component.
+      */
+-    public static interface GoogleMailEndpointBuilder
++    public interface GoogleMailEndpointBuilder
+             extends
+                 GoogleMailEndpointConsumerBuilder, GoogleMailEndpointProducerBuilder {
+         default AdvancedGoogleMailEndpointBuilder advanced() {
+@@ -561,7 +561,7 @@ public interface GoogleMailEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Google Mail component.
+      */
+-    public static interface AdvancedGoogleMailEndpointBuilder
++    public interface AdvancedGoogleMailEndpointBuilder
+             extends
+                 AdvancedGoogleMailEndpointConsumerBuilder, AdvancedGoogleMailEndpointProducerBuilder {
+         default GoogleMailEndpointBuilder basic() {

@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SnmpEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SnmpEndpointBuilderFactory.java
+index 90048fcf..b4f01647 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SnmpEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SnmpEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface SnmpEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the SNMP component.
+      */
+-    public static interface SnmpEndpointBuilder
+-            extends
+-                EndpointConsumerBuilder {
++    public interface SnmpEndpointBuilder extends EndpointConsumerBuilder {
+         default AdvancedSnmpEndpointBuilder advanced() {
+             return (AdvancedSnmpEndpointBuilder) this;
+         }
+@@ -308,7 +306,7 @@ public interface SnmpEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the SNMP component.
+      */
+-    public static interface AdvancedSnmpEndpointBuilder
++    public interface AdvancedSnmpEndpointBuilder
+             extends
+                 EndpointConsumerBuilder {
+         default SnmpEndpointBuilder basic() {

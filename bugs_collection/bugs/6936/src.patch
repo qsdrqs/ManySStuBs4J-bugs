@@ -1,0 +1,15 @@
+diff --git a/buggy/components/camel-salesforce/camel-salesforce-component/src/main/java/org/apache/camel/component/salesforce/internal/client/SalesforceSecurityListener.java b/fixed/components/camel-salesforce/camel-salesforce-component/src/main/java/org/apache/camel/component/salesforce/internal/client/SalesforceSecurityListener.java
+index 552401c7..27d838af 100644
+--- a/buggy/components/camel-salesforce/camel-salesforce-component/src/main/java/org/apache/camel/component/salesforce/internal/client/SalesforceSecurityListener.java
++++ b/fixed/components/camel-salesforce/camel-salesforce-component/src/main/java/org/apache/camel/component/salesforce/internal/client/SalesforceSecurityListener.java
+@@ -103,8 +103,8 @@ public class SalesforceSecurityListener extends HttpEventListenerWrapper {
+                     client.setInstanceUrl(session.getInstanceUrl());
+                     client.setAccessToken(exchange);
+                 } else {
+-                    exchange.addRequestHeader(HttpHeaders.AUTHORIZATION,
+-                            "OAuth " + currentToken);
++                    exchange.setRequestHeader(HttpHeaders.AUTHORIZATION,
++                        "OAuth " + currentToken);
+                 }
+ 
+                 // TODO handle a change in Salesforce instanceUrl, right now we retry with the same destination

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-mail/src/main/java/org/apache/camel/component/mail/DefaultJavaMailSender.java b/fixed/components/camel-mail/src/main/java/org/apache/camel/component/mail/DefaultJavaMailSender.java
+index f9bf4047..9198ef1f 100644
+--- a/buggy/components/camel-mail/src/main/java/org/apache/camel/component/mail/DefaultJavaMailSender.java
++++ b/fixed/components/camel-mail/src/main/java/org/apache/camel/component/mail/DefaultJavaMailSender.java
+@@ -120,7 +120,7 @@ public class DefaultJavaMailSender implements JavaMailSender {
+                 // preserve explicitly specified message id, as it may be lost on save
+                 mimeMessage.setHeader("Message-ID", messageId);
+             }
+-            LOG.debug("Sending MimMessage: {} using host: {}", mimeMessage, host);
++            LOG.debug("Sending MimeMessage: {} using host: {}", mimeMessage, host);
+             transport.sendMessage(mimeMessage, mimeMessage.getAllRecipients());
+         } finally {
+             try {

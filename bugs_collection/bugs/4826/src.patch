@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ReactiveStreamsEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ReactiveStreamsEndpointBuilderFactory.java
+index 2402375a..fc25632e 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ReactiveStreamsEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ReactiveStreamsEndpointBuilderFactory.java
+@@ -527,7 +527,7 @@ public interface ReactiveStreamsEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.reactive.streams.ReactiveStreamsBackpressureStrategy</code> enum.
+      */
+-    public static enum ReactiveStreamsBackpressureStrategy {
++    static enum ReactiveStreamsBackpressureStrategy {
+         BUFFER, OLDEST, LATEST;
+     }
+     /**

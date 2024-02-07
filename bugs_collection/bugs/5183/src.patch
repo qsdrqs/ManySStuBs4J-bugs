@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IOTAEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IOTAEndpointBuilderFactory.java
+index 18dd416c..846d0011 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IOTAEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IOTAEndpointBuilderFactory.java
+@@ -283,7 +283,7 @@ public interface IOTAEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the IOTA component.
+      */
+-    public static interface IOTAEndpointProducerBuilder
++    public interface IOTAEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedIOTAEndpointProducerBuilder advanced() {
+@@ -486,7 +486,7 @@ public interface IOTAEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the IOTA component.
+      */
+-    public static interface IOTAEndpointBuilder
++    public interface IOTAEndpointBuilder
+             extends
+                 IOTAEndpointConsumerBuilder, IOTAEndpointProducerBuilder {
+         default AdvancedIOTAEndpointBuilder advanced() {
+@@ -597,7 +597,7 @@ public interface IOTAEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the IOTA component.
+      */
+-    public static interface AdvancedIOTAEndpointBuilder
++    public interface AdvancedIOTAEndpointBuilder
+             extends
+                 AdvancedIOTAEndpointConsumerBuilder, AdvancedIOTAEndpointProducerBuilder {
+         default IOTAEndpointBuilder basic() {

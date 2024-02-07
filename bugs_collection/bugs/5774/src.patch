@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-dns/src/main/java/org/apache/camel/component/dns/types/DnsRecordConverter.java b/fixed/components/camel-dns/src/main/java/org/apache/camel/component/dns/types/DnsRecordConverter.java
+index afc0d7c1..75ad4100 100644
+--- a/buggy/components/camel-dns/src/main/java/org/apache/camel/component/dns/types/DnsRecordConverter.java
++++ b/fixed/components/camel-dns/src/main/java/org/apache/camel/component/dns/types/DnsRecordConverter.java
+@@ -32,7 +32,7 @@ import org.xbill.DNS.Type;
+ /**
+  * More converters for all the DNS objects used by the DNS component.
+  */
+-@Converter
++@Converter(loader = true)
+ public final class DnsRecordConverter {
+ 
+     private DnsRecordConverter() {

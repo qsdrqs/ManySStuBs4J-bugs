@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-spark-rest/src/main/java/org/apache/camel/component/sparkrest/SparkConverter.java b/fixed/components/camel-spark-rest/src/main/java/org/apache/camel/component/sparkrest/SparkConverter.java
+index fb95f0d6..8c49e943 100644
+--- a/buggy/components/camel-spark-rest/src/main/java/org/apache/camel/component/sparkrest/SparkConverter.java
++++ b/fixed/components/camel-spark-rest/src/main/java/org/apache/camel/component/sparkrest/SparkConverter.java
+@@ -23,7 +23,7 @@ import org.apache.camel.spi.TypeConverterRegistry;
+ import spark.Request;
+ import spark.Response;
+ 
+-@Converter
++@Converter(loader = true)
+ public final class SparkConverter {
+ 
+     private SparkConverter() {

@@ -1,0 +1,15 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/component/file/FilerConsumerShouldSkipDoneFileSuffixTest.java b/fixed/camel-core/src/test/java/org/apache/camel/component/file/FilerConsumerShouldSkipDoneFileSuffixTest.java
+index e6ab1d36..258b98af 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/component/file/FilerConsumerShouldSkipDoneFileSuffixTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/component/file/FilerConsumerShouldSkipDoneFileSuffixTest.java
+@@ -67,7 +67,9 @@ public class FilerConsumerShouldSkipDoneFileSuffixTest extends ContextTestSuppor
+         return new RouteBuilder() {
+             @Override
+             public void configure() throws Exception {
+-                from("file:target/done?doneFileName=${file:name}.ready&initialDelay=0&delay=10").to("mock:result");
++                from("file:target/done?doneFileName=${file:name}.ready&initialDelay=0")
++                    .convertBodyTo(String.class)
++                    .to("mock:result");
+             }
+         };
+     }

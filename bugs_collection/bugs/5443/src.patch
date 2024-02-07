@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/RefEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/RefEndpointBuilderFactory.java
+index d79cbe9d..56c5c862 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/RefEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/RefEndpointBuilderFactory.java
+@@ -192,7 +192,7 @@ public interface RefEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Ref component.
+      */
+-    public static interface RefEndpointProducerBuilder
++    public interface RefEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedRefEndpointProducerBuilder advanced() {
+@@ -303,7 +303,7 @@ public interface RefEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Ref component.
+      */
+-    public static interface RefEndpointBuilder
++    public interface RefEndpointBuilder
+             extends
+                 RefEndpointConsumerBuilder, RefEndpointProducerBuilder {
+         default AdvancedRefEndpointBuilder advanced() {
+@@ -323,7 +323,7 @@ public interface RefEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Ref component.
+      */
+-    public static interface AdvancedRefEndpointBuilder
++    public interface AdvancedRefEndpointBuilder
+             extends
+                 AdvancedRefEndpointConsumerBuilder, AdvancedRefEndpointProducerBuilder {
+         default RefEndpointBuilder basic() {

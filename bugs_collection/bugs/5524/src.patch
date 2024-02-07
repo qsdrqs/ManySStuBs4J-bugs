@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SpringBatchEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SpringBatchEndpointBuilderFactory.java
+index 5380c032..0f7fc5a6 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SpringBatchEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SpringBatchEndpointBuilderFactory.java
+@@ -34,7 +34,7 @@ public interface SpringBatchEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Spring Batch component.
+      */
+-    public static interface SpringBatchEndpointBuilder
++    public interface SpringBatchEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedSpringBatchEndpointBuilder advanced() {
+@@ -116,7 +116,7 @@ public interface SpringBatchEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Spring Batch component.
+      */
+-    public static interface AdvancedSpringBatchEndpointBuilder
++    public interface AdvancedSpringBatchEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default SpringBatchEndpointBuilder basic() {

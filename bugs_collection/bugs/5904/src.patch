@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/camel-itest-spring-boot/src/test/java/org/apache/camel/itest/springboot/CamelSalesforceTest.java b/fixed/tests/camel-itest-spring-boot/src/test/java/org/apache/camel/itest/springboot/CamelSalesforceTest.java
+index b291afc1..278b87df 100644
+--- a/buggy/tests/camel-itest-spring-boot/src/test/java/org/apache/camel/itest/springboot/CamelSalesforceTest.java
++++ b/fixed/tests/camel-itest-spring-boot/src/test/java/org/apache/camel/itest/springboot/CamelSalesforceTest.java
+@@ -39,7 +39,7 @@ public class CamelSalesforceTest extends AbstractSpringBootTestSupport {
+                 .basePath("../../components/camel-salesforce/camel-salesforce-component")
+                 .unitTestExclusionPattern(".*(\\.integration\\..*|IntegrationTest.*|MSPTest$)")
+                 .autostart(false) // needs configuration
+-                .dependency("org.codehaus.groovy:groovy-all:" + DependencyResolver.resolveParentProperty("${groovy-version}"))
++                .dependency("org.codehaus.groovy:groovy:" + DependencyResolver.resolveParentProperty("${groovy-version}"))
+                 .build();
+     }
+ 

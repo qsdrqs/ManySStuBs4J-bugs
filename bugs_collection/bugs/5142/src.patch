@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastAtomicnumberEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastAtomicnumberEndpointBuilderFactory.java
+index 4cced52c..5b0aee90 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastAtomicnumberEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastAtomicnumberEndpointBuilderFactory.java
+@@ -34,7 +34,7 @@ public interface HazelcastAtomicnumberEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Hazelcast Atomic Number component.
+      */
+-    public static interface HazelcastAtomicnumberEndpointBuilder
++    public interface HazelcastAtomicnumberEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedHazelcastAtomicnumberEndpointBuilder advanced() {
+@@ -247,7 +247,7 @@ public interface HazelcastAtomicnumberEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Hazelcast Atomic Number component.
+      */
+-    public static interface AdvancedHazelcastAtomicnumberEndpointBuilder
++    public interface AdvancedHazelcastAtomicnumberEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default HazelcastAtomicnumberEndpointBuilder basic() {

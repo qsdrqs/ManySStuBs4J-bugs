@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SnmpEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SnmpEndpointBuilderFactory.java
+index b4f01647..68229f2d 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SnmpEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SnmpEndpointBuilderFactory.java
+@@ -360,7 +360,7 @@ public interface SnmpEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.snmp.SnmpActionType</code> enum.
+      */
+-    public static enum SnmpActionType {
++    static enum SnmpActionType {
+         TRAP, POLL, GET_NEXT;
+     }
+     /**

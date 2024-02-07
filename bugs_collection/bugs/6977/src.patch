@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/model/config/StreamResequencerConfig.java b/fixed/camel-core/src/main/java/org/apache/camel/model/config/StreamResequencerConfig.java
+index 7ae8f6c7..7c6854a5 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/model/config/StreamResequencerConfig.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/model/config/StreamResequencerConfig.java
+@@ -30,7 +30,7 @@ import org.apache.camel.processor.resequencer.ExpressionResultComparator;
+  *
+  * @version 
+  */
+-@XmlRootElement
++@XmlRootElement(name = "stream-config")
+ @XmlAccessorType(XmlAccessType.FIELD)
+ public class StreamResequencerConfig extends ResequencerConfig {
+     @XmlAttribute

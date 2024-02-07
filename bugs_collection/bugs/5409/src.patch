@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PdfEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PdfEndpointBuilderFactory.java
+index e79a4a3d..f67ab213 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PdfEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PdfEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface PdfEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the PDF component.
+      */
+-    public static interface PdfEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface PdfEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedPdfEndpointBuilder advanced() {
+             return (AdvancedPdfEndpointBuilder) this;
+         }
+@@ -231,7 +229,7 @@ public interface PdfEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the PDF component.
+      */
+-    public static interface AdvancedPdfEndpointBuilder
++    public interface AdvancedPdfEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default PdfEndpointBuilder basic() {

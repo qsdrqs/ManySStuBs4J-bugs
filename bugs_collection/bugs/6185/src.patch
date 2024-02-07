@@ -1,0 +1,22 @@
+diff --git a/buggy/connectors/camel-connector/src/main/java/org/apache/camel/component/connector/DefaultConnectorComponent.java b/fixed/connectors/camel-connector/src/main/java/org/apache/camel/component/connector/DefaultConnectorComponent.java
+index d0ef3c92..e980b2e5 100644
+--- a/buggy/connectors/camel-connector/src/main/java/org/apache/camel/component/connector/DefaultConnectorComponent.java
++++ b/fixed/connectors/camel-connector/src/main/java/org/apache/camel/component/connector/DefaultConnectorComponent.java
+@@ -179,7 +179,7 @@ public abstract class DefaultConnectorComponent extends DefaultComponent {
+         boolean found = false;
+         for (String line : lines) {
+             line = line.trim();
+-            if (line.startsWith("\"componentValues\":")) {
++            if (line.startsWith("\"componentValues\"")) {
+                 found = true;
+             } else if (line.startsWith("}")) {
+                 found = false;
+@@ -206,7 +206,7 @@ public abstract class DefaultConnectorComponent extends DefaultComponent {
+         boolean found = false;
+         for (String line : lines) {
+             line = line.trim();
+-            if (line.startsWith("\"endpointValues\":")) {
++            if (line.startsWith("\"endpointValues\"")) {
+                 found = true;
+             } else if (line.startsWith("}")) {
+                 found = false;

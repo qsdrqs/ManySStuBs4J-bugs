@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SdbEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SdbEndpointBuilderFactory.java
+index 03de0781..3e868bec 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SdbEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SdbEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface SdbEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the AWS SimpleDB component.
+      */
+-    public static interface SdbEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface SdbEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedSdbEndpointBuilder advanced() {
+             return (AdvancedSdbEndpointBuilder) this;
+         }
+@@ -190,7 +188,7 @@ public interface SdbEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the AWS SimpleDB component.
+      */
+-    public static interface AdvancedSdbEndpointBuilder
++    public interface AdvancedSdbEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default SdbEndpointBuilder basic() {

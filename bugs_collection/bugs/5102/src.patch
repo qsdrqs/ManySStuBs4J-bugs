@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleBigQuerySQLEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleBigQuerySQLEndpointBuilderFactory.java
+index 73c92f51..918392cb 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleBigQuerySQLEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GoogleBigQuerySQLEndpointBuilderFactory.java
+@@ -33,7 +33,7 @@ public interface GoogleBigQuerySQLEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Google BigQuery Standard SQL component.
+      */
+-    public static interface GoogleBigQuerySQLEndpointBuilder
++    public interface GoogleBigQuerySQLEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedGoogleBigQuerySQLEndpointBuilder advanced() {
+@@ -87,7 +87,7 @@ public interface GoogleBigQuerySQLEndpointBuilderFactory {
+      * Advanced builder for endpoint for the Google BigQuery Standard SQL
+      * component.
+      */
+-    public static interface AdvancedGoogleBigQuerySQLEndpointBuilder
++    public interface AdvancedGoogleBigQuerySQLEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default GoogleBigQuerySQLEndpointBuilder basic() {

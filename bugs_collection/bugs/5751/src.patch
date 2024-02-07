@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-salesforce/camel-salesforce-component/src/main/java/org/apache/camel/component/salesforce/api/SalesforceReportResultsToListConverter.java b/fixed/components/camel-salesforce/camel-salesforce-component/src/main/java/org/apache/camel/component/salesforce/api/SalesforceReportResultsToListConverter.java
+index b454f42a..dde0c954 100644
+--- a/buggy/components/camel-salesforce/camel-salesforce-component/src/main/java/org/apache/camel/component/salesforce/api/SalesforceReportResultsToListConverter.java
++++ b/fixed/components/camel-salesforce/camel-salesforce-component/src/main/java/org/apache/camel/component/salesforce/api/SalesforceReportResultsToListConverter.java
+@@ -40,7 +40,7 @@ import org.apache.camel.component.salesforce.api.dto.analytics.reports.SummaryVa
+ /**
+  * Salesforce report results to <code>List&lt;List&lt;String&gt;&gt;</code>converter.
+  */
+-@Converter
++@Converter(loader = true)
+ public final class SalesforceReportResultsToListConverter {
+ 
+     public static final String INCLUDE_DETAILS = "CamelSalesforceIncludeDetails";

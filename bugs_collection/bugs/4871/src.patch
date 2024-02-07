@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XChangeEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XChangeEndpointBuilderFactory.java
+index 24b2cd37..bdcae8cf 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XChangeEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XChangeEndpointBuilderFactory.java
+@@ -186,7 +186,7 @@ public interface XChangeEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.xchange.XChangeConfiguration$XChangeMethod</code> enum.
+      */
+-    public static enum XChangeMethod {
++    static enum XChangeMethod {
+         balances, fundingHistory, wallets, currencies, currencyMetaData, currencyPairs, currencyPairMetaData, ticker;
+     }
+ 
+@@ -194,7 +194,7 @@ public interface XChangeEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.xchange.XChangeConfiguration$XChangeService</code> enum.
+      */
+-    public static enum XChangeService {
++    static enum XChangeService {
+         marketdata, metadata, account;
+     }
+     /**

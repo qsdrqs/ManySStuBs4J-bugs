@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-opentracing/src/main/java/org/apache/camel/opentracing/decorators/RestSpanDecorator.java b/fixed/components/camel-opentracing/src/main/java/org/apache/camel/opentracing/decorators/RestSpanDecorator.java
+index 1842abca..cadc8568 100644
+--- a/buggy/components/camel-opentracing/src/main/java/org/apache/camel/opentracing/decorators/RestSpanDecorator.java
++++ b/fixed/components/camel-opentracing/src/main/java/org/apache/camel/opentracing/decorators/RestSpanDecorator.java
+@@ -78,7 +78,7 @@ public class RestSpanDecorator extends AbstractHttpSpanDecorator {
+                 try {
+                     path = URLDecoder.decode(path, "UTF-8");
+                 } catch (UnsupportedEncodingException e) {
+-                    LOG.error("Failed to decode URL path '" + path + "'", e);
++                    LOG.debug("Failed to decode URL path '" + path + "', ignoring exception", e);
+                 }
+             }
+         }

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-mail/src/main/java/org/apache/camel/component/mail/MailConverters.java b/fixed/components/camel-mail/src/main/java/org/apache/camel/component/mail/MailConverters.java
+index ad8964a6..65360ec2 100644
+--- a/buggy/components/camel-mail/src/main/java/org/apache/camel/component/mail/MailConverters.java
++++ b/fixed/components/camel-mail/src/main/java/org/apache/camel/component/mail/MailConverters.java
+@@ -45,7 +45,7 @@ import org.apache.camel.support.ExchangeHelper;
+ /**
+  * JavaMail specific converters.
+  */
+-@Converter
++@Converter(loader = true)
+ public final class MailConverters {
+ 
+     private static final String NOW_DATE_FORMAT = "yyyy-MM-dd HH:mm:SS";

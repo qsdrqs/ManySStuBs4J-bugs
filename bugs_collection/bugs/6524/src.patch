@@ -1,0 +1,22 @@
+diff --git a/buggy/tests/camel-itest-performance/src/main/java/org/apache/camel/tests/component/EchoTestComponent.java b/fixed/tests/camel-itest-performance/src/main/java/org/apache/camel/tests/component/EchoTestComponent.java
+index 9c294a65..a05a7be9 100644
+--- a/buggy/tests/camel-itest-performance/src/main/java/org/apache/camel/tests/component/EchoTestComponent.java
++++ b/fixed/tests/camel-itest-performance/src/main/java/org/apache/camel/tests/component/EchoTestComponent.java
+@@ -40,7 +40,7 @@ public class EchoTestComponent extends DefaultComponent {
+     }
+ 
+     private final class EchoEndpoint extends DefaultEndpoint {
+-        public EchoEndpoint(String uri, Component component) {
++        protected EchoEndpoint(String uri, Component component) {
+             super(uri, component);
+         }
+         
+@@ -62,7 +62,7 @@ public class EchoTestComponent extends DefaultComponent {
+     }
+ 
+     private final class EchoProducer extends DefaultProducer implements AsyncProcessor {
+-        public EchoProducer(Endpoint endpoint) {
++        protected EchoProducer(Endpoint endpoint) {
+             super(endpoint);
+         }
+ 

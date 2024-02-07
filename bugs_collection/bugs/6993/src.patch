@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/impl/DefaultExchange.java b/fixed/camel-core/src/main/java/org/apache/camel/impl/DefaultExchange.java
+index 340537bd..30458386 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/impl/DefaultExchange.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/impl/DefaultExchange.java
+@@ -394,7 +394,7 @@ public final class DefaultExchange implements Exchange {
+ 
+     public void setUnitOfWork(UnitOfWork unitOfWork) {
+         this.unitOfWork = unitOfWork;
+-        if (onCompletions != null) {
++        if (unitOfWork != null && onCompletions != null) {
+             // now an unit of work has been assigned so add the on completions
+             // we might have registered already
+             for (Synchronization onCompletion : onCompletions) {

@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/blueprint/BlueprintTracerTest.java b/fixed/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/blueprint/BlueprintTracerTest.java
+index 3640b3bb..25b7282d 100644
+--- a/buggy/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/blueprint/BlueprintTracerTest.java
++++ b/fixed/tests/camel-itest-osgi/src/test/java/org/apache/camel/itest/osgi/blueprint/BlueprintTracerTest.java
+@@ -57,7 +57,7 @@ public class BlueprintTracerTest extends OSGiBlueprintTestSupport {
+         result.assertIsSatisfied();
+ 
+         DefaultTraceEventMessage em = tracer.getReceivedExchanges().get(0).getIn().getBody(DefaultTraceEventMessage.class);
+-        assertEquals("Hello Camel", em.getBody());
++        assertEquals("Hello World", em.getBody());
+ 
+         assertEquals("String", em.getBodyType());
+         assertEquals(null, em.getCausedByException());

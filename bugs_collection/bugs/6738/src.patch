@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-base64/src/test/java/org/apache/camel/dataformat/base64/SpringBase64DataFormatLineEndingsTest.java b/fixed/components/camel-base64/src/test/java/org/apache/camel/dataformat/base64/SpringBase64DataFormatLineEndingsTest.java
+index b68af84c..185d6e87 100644
+--- a/buggy/components/camel-base64/src/test/java/org/apache/camel/dataformat/base64/SpringBase64DataFormatLineEndingsTest.java
++++ b/fixed/components/camel-base64/src/test/java/org/apache/camel/dataformat/base64/SpringBase64DataFormatLineEndingsTest.java
+@@ -48,7 +48,7 @@ public class SpringBase64DataFormatLineEndingsTest extends SpringBase64DataForma
+     @Override
+     protected AbstractApplicationContext createApplicationContext() {
+         return new ClassPathXmlApplicationContext(
+-                "org/apache/camel/dataFormat/base64/SpringBase64DataFormatLineEndingsTest.xml");
++                "org/apache/camel/dataformat/base64/SpringBase64DataFormatLineEndingsTest.xml");
+     }
+ 
+     @Test

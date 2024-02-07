@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-file/src/main/java/org/apache/camel/component/file/GenericFileConverter.java b/fixed/components/camel-file/src/main/java/org/apache/camel/component/file/GenericFileConverter.java
+index ccc460d1..5d27cf04 100644
+--- a/buggy/components/camel-file/src/main/java/org/apache/camel/component/file/GenericFileConverter.java
++++ b/fixed/components/camel-file/src/main/java/org/apache/camel/component/file/GenericFileConverter.java
+@@ -45,7 +45,7 @@ import org.slf4j.LoggerFactory;
+ /**
+  * A set of converter methods for working with generic file types
+  */
+-@Converter
++@Converter(loader = true)
+ public final class GenericFileConverter {
+ 
+     static Supplier<Charset> defaultCharset = Charset::defaultCharset;

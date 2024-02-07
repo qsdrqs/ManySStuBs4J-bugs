@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-swagger-java/src/test/java/org/apache/camel/swagger/producer/RestSwaggerGetTest.java b/fixed/components/camel-swagger-java/src/test/java/org/apache/camel/swagger/producer/RestSwaggerGetTest.java
+index a91c8d8f..c6117995 100644
+--- a/buggy/components/camel-swagger-java/src/test/java/org/apache/camel/swagger/producer/RestSwaggerGetTest.java
++++ b/fixed/components/camel-swagger-java/src/test/java/org/apache/camel/swagger/producer/RestSwaggerGetTest.java
+@@ -45,7 +45,7 @@ public class RestSwaggerGetTest extends CamelTestSupport {
+         return new RouteBuilder() {
+             @Override
+             public void configure() throws Exception {
+-                restConfiguration().producerComponent("dummy");
++                restConfiguration().host("camelhost").producerComponent("dummy");
+ 
+                 from("direct:start")
+                     .to("rest:get:hello/hi/{name}?apiDoc=hello-api.json")

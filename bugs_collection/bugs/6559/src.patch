@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-spring/src/main/java/org/apache/camel/component/event/springboot/EventComponentAutoConfiguration.java b/fixed/components/camel-spring/src/main/java/org/apache/camel/component/event/springboot/EventComponentAutoConfiguration.java
+index b0561e14..38e90005 100644
+--- a/buggy/components/camel-spring/src/main/java/org/apache/camel/component/event/springboot/EventComponentAutoConfiguration.java
++++ b/fixed/components/camel-spring/src/main/java/org/apache/camel/component/event/springboot/EventComponentAutoConfiguration.java
+@@ -34,7 +34,7 @@ import org.springframework.context.annotation.Configuration;
+ @EnableConfigurationProperties(EventComponentConfiguration.class)
+ public class EventComponentAutoConfiguration {
+ 
+-    @Bean
++    @Bean(name = "spring-event-component")
+     @ConditionalOnClass(CamelContext.class)
+     @ConditionalOnMissingBean(EventComponent.class)
+     public EventComponent configureEventComponent(CamelContext camelContext,

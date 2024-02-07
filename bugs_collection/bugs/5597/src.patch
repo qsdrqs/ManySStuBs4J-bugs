@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/WeatherEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/WeatherEndpointBuilderFactory.java
+index f1c4ac3e..2bcdc763 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/WeatherEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/WeatherEndpointBuilderFactory.java
+@@ -909,7 +909,7 @@ public interface WeatherEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Weather component.
+      */
+-    public static interface WeatherEndpointProducerBuilder
++    public interface WeatherEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedWeatherEndpointProducerBuilder advanced() {
+@@ -1383,7 +1383,7 @@ public interface WeatherEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Weather component.
+      */
+-    public static interface WeatherEndpointBuilder
++    public interface WeatherEndpointBuilder
+             extends
+                 WeatherEndpointConsumerBuilder, WeatherEndpointProducerBuilder {
+         default AdvancedWeatherEndpointBuilder advanced() {
+@@ -1739,7 +1739,7 @@ public interface WeatherEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Weather component.
+      */
+-    public static interface AdvancedWeatherEndpointBuilder
++    public interface AdvancedWeatherEndpointBuilder
+             extends
+                 AdvancedWeatherEndpointConsumerBuilder, AdvancedWeatherEndpointProducerBuilder {
+         default WeatherEndpointBuilder basic() {

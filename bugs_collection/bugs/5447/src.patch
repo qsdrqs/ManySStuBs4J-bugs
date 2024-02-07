@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/RestEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/RestEndpointBuilderFactory.java
+index 936c517a..049a0226 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/RestEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/RestEndpointBuilderFactory.java
+@@ -281,7 +281,7 @@ public interface RestEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the REST component.
+      */
+-    public static interface RestEndpointProducerBuilder
++    public interface RestEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedRestEndpointProducerBuilder advanced() {
+@@ -531,7 +531,7 @@ public interface RestEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the REST component.
+      */
+-    public static interface RestEndpointBuilder
++    public interface RestEndpointBuilder
+             extends
+                 RestEndpointConsumerBuilder, RestEndpointProducerBuilder {
+         default AdvancedRestEndpointBuilder advanced() {
+@@ -616,7 +616,7 @@ public interface RestEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the REST component.
+      */
+-    public static interface AdvancedRestEndpointBuilder
++    public interface AdvancedRestEndpointBuilder
+             extends
+                 AdvancedRestEndpointConsumerBuilder, AdvancedRestEndpointProducerBuilder {
+         default RestEndpointBuilder basic() {

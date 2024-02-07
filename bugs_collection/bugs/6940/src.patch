@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-solr/src/test/java/org/apache/camel/component/solr/SolrComponentTestSupport.java b/fixed/components/camel-solr/src/test/java/org/apache/camel/component/solr/SolrComponentTestSupport.java
+index b0b43551..d2daa2b9 100644
+--- a/buggy/components/camel-solr/src/test/java/org/apache/camel/component/solr/SolrComponentTestSupport.java
++++ b/fixed/components/camel-solr/src/test/java/org/apache/camel/component/solr/SolrComponentTestSupport.java
+@@ -49,7 +49,7 @@ public abstract class SolrComponentTestSupport extends SolrTestSupport {
+         solrInsertTestEntry(TEST_ID);
+     }
+     
+-    protected static Collection secureOrNot() {
++    protected static Collection<Object[]> secureOrNot() {
+         return Arrays.asList(new Object[][] {{true}, {false}});
+     }
+ 

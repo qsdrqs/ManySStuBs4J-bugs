@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KeystoneEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KeystoneEndpointBuilderFactory.java
+index 801ac727..75f6e3ac 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KeystoneEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KeystoneEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface KeystoneEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the OpenStack Keystone component.
+      */
+-    public static interface KeystoneEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface KeystoneEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedKeystoneEndpointBuilder advanced() {
+             return (AdvancedKeystoneEndpointBuilder) this;
+         }
+@@ -128,7 +126,7 @@ public interface KeystoneEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the OpenStack Keystone component.
+      */
+-    public static interface AdvancedKeystoneEndpointBuilder
++    public interface AdvancedKeystoneEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default KeystoneEndpointBuilder basic() {

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-spring-boot/src/main/java/org/apache/camel/spring/boot/RoutesCollector.java b/fixed/components/camel-spring-boot/src/main/java/org/apache/camel/spring/boot/RoutesCollector.java
+index 3f951a57..d378e316 100644
+--- a/buggy/components/camel-spring-boot/src/main/java/org/apache/camel/spring/boot/RoutesCollector.java
++++ b/fixed/components/camel-spring-boot/src/main/java/org/apache/camel/spring/boot/RoutesCollector.java
+@@ -84,7 +84,7 @@ public class RoutesCollector implements ApplicationListener<ContextRefreshedEven
+         CamelContext camelContext = applicationContext.getBean(CamelContext.class);
+ 
+         // only add and start Camel if its stopped (initial state)
+-        if (event.getApplicationContext() == this.applicationContext)
++        if (event.getApplicationContext() == this.applicationContext
+                 && camelContext.getStatus().isStopped()) {
+             LOG.debug("Post-processing CamelContext bean: {}", camelContext.getName());
+ 

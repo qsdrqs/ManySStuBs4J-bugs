@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jetty-common/src/main/java/org/apache/camel/component/jetty/CamelMultipartFilter.java b/fixed/components/camel-jetty-common/src/main/java/org/apache/camel/component/jetty/CamelMultipartFilter.java
+index 9a0c6eaa..8f0ba6bb 100644
+--- a/buggy/components/camel-jetty-common/src/main/java/org/apache/camel/component/jetty/CamelMultipartFilter.java
++++ b/fixed/components/camel-jetty-common/src/main/java/org/apache/camel/component/jetty/CamelMultipartFilter.java
+@@ -22,7 +22,7 @@ import javax.servlet.Filter;
+  * Please use the CamelFilterWrapper instead of using this classs
+  */
+ @Deprecated 
+-class CamelMultipartFilter extends CamelFilterWrapper {
++public class CamelMultipartFilter extends CamelFilterWrapper {
+     
+     public CamelMultipartFilter(Filter wrapped) {
+         super(wrapped);

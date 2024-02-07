@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-netty-http/src/test/java/org/apache/camel/component/netty/http/NettyHttpProducerQueryParamTest.java b/fixed/components/camel-netty-http/src/test/java/org/apache/camel/component/netty/http/NettyHttpProducerQueryParamTest.java
+index f7f2fbbb..c792b4d4 100644
+--- a/buggy/components/camel-netty-http/src/test/java/org/apache/camel/component/netty/http/NettyHttpProducerQueryParamTest.java
++++ b/fixed/components/camel-netty-http/src/test/java/org/apache/camel/component/netty/http/NettyHttpProducerQueryParamTest.java
+@@ -25,7 +25,7 @@ import org.junit.Test;
+ 
+ public class NettyHttpProducerQueryParamTest extends BaseNettyTest {
+ 
+-    private String url = "netty-http:http://0.0.0.0:" + getPort() + "/cheese?urlDecodeHeaders=true";
++    private String url = "netty-http:http://localhost:" + getPort() + "/cheese?urlDecodeHeaders=true";
+ 
+     @Test
+     public void testQueryParameters() throws Exception {

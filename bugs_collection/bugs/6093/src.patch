@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/FtpConsumerFileSplitTest.java b/fixed/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/FtpConsumerFileSplitTest.java
+index 350c519b..5064671c 100644
+--- a/buggy/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/FtpConsumerFileSplitTest.java
++++ b/fixed/components/camel-ftp/src/test/java/org/apache/camel/component/file/remote/FtpConsumerFileSplitTest.java
+@@ -47,7 +47,7 @@ public class FtpConsumerFileSplitTest extends FtpServerTestSupport {
+             public void configure() throws Exception {
+                 from(getFtpUrl())
+                     .to("log:file")
+-                    .split(body().tokenize("\n"))
++                    .split(body().tokenize(System.getProperty("line.separator")))
+                         .to("log:line")
+                         .to("mock:result");
+             }

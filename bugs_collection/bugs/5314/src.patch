@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/LdapEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/LdapEndpointBuilderFactory.java
+index b7ab72ea..71efbb70 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/LdapEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/LdapEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface LdapEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the LDAP component.
+      */
+-    public static interface LdapEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface LdapEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedLdapEndpointBuilder advanced() {
+             return (AdvancedLdapEndpointBuilder) this;
+         }
+@@ -118,7 +116,7 @@ public interface LdapEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the LDAP component.
+      */
+-    public static interface AdvancedLdapEndpointBuilder
++    public interface AdvancedLdapEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default LdapEndpointBuilder basic() {

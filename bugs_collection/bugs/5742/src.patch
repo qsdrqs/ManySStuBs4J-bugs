@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jclouds/src/main/java/org/apache/camel/component/jclouds/JcloudsPayloadConverter.java b/fixed/components/camel-jclouds/src/main/java/org/apache/camel/component/jclouds/JcloudsPayloadConverter.java
+index ea0363aa..401c45e2 100644
+--- a/buggy/components/camel-jclouds/src/main/java/org/apache/camel/component/jclouds/JcloudsPayloadConverter.java
++++ b/fixed/components/camel-jclouds/src/main/java/org/apache/camel/component/jclouds/JcloudsPayloadConverter.java
+@@ -40,7 +40,7 @@ import org.jclouds.io.Payload;
+ import org.jclouds.io.payloads.ByteSourcePayload;
+ import org.jclouds.io.payloads.InputStreamPayload;
+ 
+-@Converter
++@Converter(loader = true)
+ public final class JcloudsPayloadConverter {
+ 
+     private JcloudsPayloadConverter() {

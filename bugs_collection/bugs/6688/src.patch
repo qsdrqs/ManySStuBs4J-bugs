@@ -1,0 +1,16 @@
+diff --git a/buggy/examples/camel-example-cdi-test/src/main/java/org/apache/camel/example/cdi/test/Application.java b/fixed/examples/camel-example-cdi-test/src/main/java/org/apache/camel/example/cdi/test/Application.java
+index 8494ac56..a99f3cf5 100644
+--- a/buggy/examples/camel-example-cdi-test/src/main/java/org/apache/camel/example/cdi/test/Application.java
++++ b/fixed/examples/camel-example-cdi-test/src/main/java/org/apache/camel/example/cdi/test/Application.java
+@@ -26,7 +26,10 @@ import org.apache.camel.cdi.Uri;
+ import org.apache.camel.management.event.CamelContextStartedEvent;
+ import org.apache.camel.management.event.CamelContextStoppingEvent;
+ 
+-class Application {
++/**
++ * Our CDI Camel application
++ */
++public class Application {
+ 
+     @ContextName("camel-test-cdi")
+     static class Hello extends RouteBuilder {

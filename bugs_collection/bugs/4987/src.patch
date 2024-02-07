@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CouchbaseEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CouchbaseEndpointBuilderFactory.java
+index 82f0b8e8..be81bae9 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CouchbaseEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/CouchbaseEndpointBuilderFactory.java
+@@ -882,7 +882,7 @@ public interface CouchbaseEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Couchbase component.
+      */
+-    public static interface CouchbaseEndpointProducerBuilder
++    public interface CouchbaseEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedCouchbaseEndpointProducerBuilder advanced() {
+@@ -1353,7 +1353,7 @@ public interface CouchbaseEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Couchbase component.
+      */
+-    public static interface CouchbaseEndpointBuilder
++    public interface CouchbaseEndpointBuilder
+             extends
+                 CouchbaseEndpointConsumerBuilder, CouchbaseEndpointProducerBuilder {
+         default AdvancedCouchbaseEndpointBuilder advanced() {
+@@ -1436,7 +1436,7 @@ public interface CouchbaseEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Couchbase component.
+      */
+-    public static interface AdvancedCouchbaseEndpointBuilder
++    public interface AdvancedCouchbaseEndpointBuilder
+             extends
+                 AdvancedCouchbaseEndpointConsumerBuilder, AdvancedCouchbaseEndpointProducerBuilder {
+         default CouchbaseEndpointBuilder basic() {

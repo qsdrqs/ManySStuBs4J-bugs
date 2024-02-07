@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/LogEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/LogEndpointBuilderFactory.java
+index 697989be..973474b1 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/LogEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/LogEndpointBuilderFactory.java
+@@ -33,9 +33,7 @@ public interface LogEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Log component.
+      */
+-    public static interface LogEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface LogEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedLogEndpointBuilder advanced() {
+             return (AdvancedLogEndpointBuilder) this;
+         }
+@@ -530,7 +528,7 @@ public interface LogEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Log component.
+      */
+-    public static interface AdvancedLogEndpointBuilder
++    public interface AdvancedLogEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default LogEndpointBuilder basic() {

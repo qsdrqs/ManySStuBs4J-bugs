@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SedaEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SedaEndpointBuilderFactory.java
+index a28e6ac6..34b43adf 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SedaEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SedaEndpointBuilderFactory.java
+@@ -360,7 +360,7 @@ public interface SedaEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the SEDA component.
+      */
+-    public static interface SedaEndpointProducerBuilder
++    public interface SedaEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedSedaEndpointProducerBuilder advanced() {
+@@ -670,7 +670,7 @@ public interface SedaEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the SEDA component.
+      */
+-    public static interface SedaEndpointBuilder
++    public interface SedaEndpointBuilder
+             extends
+                 SedaEndpointConsumerBuilder, SedaEndpointProducerBuilder {
+         default AdvancedSedaEndpointBuilder advanced() {
+@@ -712,7 +712,7 @@ public interface SedaEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the SEDA component.
+      */
+-    public static interface AdvancedSedaEndpointBuilder
++    public interface AdvancedSedaEndpointBuilder
+             extends
+                 AdvancedSedaEndpointConsumerBuilder, AdvancedSedaEndpointProducerBuilder {
+         default SedaEndpointBuilder basic() {

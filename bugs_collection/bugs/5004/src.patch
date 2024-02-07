@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DataSetTestEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DataSetTestEndpointBuilderFactory.java
+index 98fcf5fe..b9266708 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DataSetTestEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DataSetTestEndpointBuilderFactory.java
+@@ -34,7 +34,7 @@ public interface DataSetTestEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the DataSet Test component.
+      */
+-    public static interface DataSetTestEndpointBuilder
++    public interface DataSetTestEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedDataSetTestEndpointBuilder advanced() {
+@@ -128,7 +128,7 @@ public interface DataSetTestEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the DataSet Test component.
+      */
+-    public static interface AdvancedDataSetTestEndpointBuilder
++    public interface AdvancedDataSetTestEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default DataSetTestEndpointBuilder basic() {

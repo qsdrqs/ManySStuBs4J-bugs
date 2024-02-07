@@ -1,0 +1,12 @@
+diff --git a/buggy/components/camel-jmx/src/test/java/org/apache/camel/component/jmx/JMXHandbackTest.java b/fixed/components/camel-jmx/src/test/java/org/apache/camel/component/jmx/JMXHandbackTest.java
+index 842b5ff8..885358ac 100644
+--- a/buggy/components/camel-jmx/src/test/java/org/apache/camel/component/jmx/JMXHandbackTest.java
++++ b/fixed/components/camel-jmx/src/test/java/org/apache/camel/component/jmx/JMXHandbackTest.java
+@@ -59,6 +59,6 @@ public class JMXHandbackTest extends SimpleBeanFixture {
+     @Override
+     protected void initRegistry() {
+         super.initRegistry();
+-        getRegistry().put("hb", hb);
++        getRegistry().bind("hb", hb);
+     }
+ }

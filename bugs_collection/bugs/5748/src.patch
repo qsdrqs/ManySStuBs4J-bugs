@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-netty4-http/src/main/java/org/apache/camel/component/netty4/http/NettyHttpConverter.java b/fixed/components/camel-netty4-http/src/main/java/org/apache/camel/component/netty4/http/NettyHttpConverter.java
+index 69302ec1..66bdd680 100644
+--- a/buggy/components/camel-netty4-http/src/main/java/org/apache/camel/component/netty4/http/NettyHttpConverter.java
++++ b/fixed/components/camel-netty4-http/src/main/java/org/apache/camel/component/netty4/http/NettyHttpConverter.java
+@@ -30,7 +30,7 @@ import org.apache.camel.component.netty4.NettyConverter;
+ import org.apache.camel.spi.TypeConverterRegistry;
+ 
+ 
+-@Converter
++@Converter(loader = true)
+ public final class NettyHttpConverter {
+ 
+     private NettyHttpConverter() {

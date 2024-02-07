@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JcloudsEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JcloudsEndpointBuilderFactory.java
+index 1c555993..c93cd0a5 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JcloudsEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JcloudsEndpointBuilderFactory.java
+@@ -230,7 +230,7 @@ public interface JcloudsEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the JClouds component.
+      */
+-    public static interface JcloudsEndpointProducerBuilder
++    public interface JcloudsEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedJcloudsEndpointProducerBuilder advanced() {
+@@ -457,7 +457,7 @@ public interface JcloudsEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the JClouds component.
+      */
+-    public static interface JcloudsEndpointBuilder
++    public interface JcloudsEndpointBuilder
+             extends
+                 JcloudsEndpointConsumerBuilder, JcloudsEndpointProducerBuilder {
+         default AdvancedJcloudsEndpointBuilder advanced() {
+@@ -507,7 +507,7 @@ public interface JcloudsEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the JClouds component.
+      */
+-    public static interface AdvancedJcloudsEndpointBuilder
++    public interface AdvancedJcloudsEndpointBuilder
+             extends
+                 AdvancedJcloudsEndpointConsumerBuilder, AdvancedJcloudsEndpointProducerBuilder {
+         default JcloudsEndpointBuilder basic() {

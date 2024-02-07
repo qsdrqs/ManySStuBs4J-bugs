@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JooqEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JooqEndpointBuilderFactory.java
+index ea720e5b..c31f1593 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JooqEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JooqEndpointBuilderFactory.java
+@@ -572,7 +572,7 @@ public interface JooqEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the JOOQ component.
+      */
+-    public static interface JooqEndpointProducerBuilder
++    public interface JooqEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedJooqEndpointProducerBuilder advanced() {
+@@ -723,7 +723,7 @@ public interface JooqEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the JOOQ component.
+      */
+-    public static interface JooqEndpointBuilder
++    public interface JooqEndpointBuilder
+             extends
+                 JooqEndpointConsumerBuilder, JooqEndpointProducerBuilder {
+         default AdvancedJooqEndpointBuilder advanced() {
+@@ -754,7 +754,7 @@ public interface JooqEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the JOOQ component.
+      */
+-    public static interface AdvancedJooqEndpointBuilder
++    public interface AdvancedJooqEndpointBuilder
+             extends
+                 AdvancedJooqEndpointConsumerBuilder, AdvancedJooqEndpointProducerBuilder {
+         default JooqEndpointBuilder basic() {

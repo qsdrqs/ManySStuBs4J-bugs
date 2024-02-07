@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-aws-eks/src/main/java/org/apache/camel/component/aws/eks/EKSProducer.java b/fixed/components/camel-aws-eks/src/main/java/org/apache/camel/component/aws/eks/EKSProducer.java
+index 5eec0b78..5f6bcbc4 100644
+--- a/buggy/components/camel-aws-eks/src/main/java/org/apache/camel/component/aws/eks/EKSProducer.java
++++ b/fixed/components/camel-aws-eks/src/main/java/org/apache/camel/component/aws/eks/EKSProducer.java
+@@ -81,7 +81,7 @@ public class EKSProducer extends DefaultProducer {
+     @Override
+     public String toString() {
+         if (eksProducerToString == null) {
+-            eksProducerToString = "KMSProducer[" + URISupport.sanitizeUri(getEndpoint().getEndpointUri()) + "]";
++            eksProducerToString = "EKSProducer[" + URISupport.sanitizeUri(getEndpoint().getEndpointUri()) + "]";
+         }
+         return eksProducerToString;
+     }

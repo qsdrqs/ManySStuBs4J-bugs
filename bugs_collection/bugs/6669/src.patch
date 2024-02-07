@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-google-drive/src/main/java/org/apache/camel/component/google/drive/GoogleDriveEndpoint.java b/fixed/components/camel-google-drive/src/main/java/org/apache/camel/component/google/drive/GoogleDriveEndpoint.java
+index c18b0e5f..ede52d55 100644
+--- a/buggy/components/camel-google-drive/src/main/java/org/apache/camel/component/google/drive/GoogleDriveEndpoint.java
++++ b/fixed/components/camel-google-drive/src/main/java/org/apache/camel/component/google/drive/GoogleDriveEndpoint.java
+@@ -35,7 +35,7 @@ import org.apache.camel.util.component.ApiMethodPropertiesHelper;
+ /**
+  * The google-drive component provides access to Google Drive file storage service.
+  */
+-@UriEndpoint(scheme = "google-drive", title = "Google Drive", syntax = "google:drive:apiName/methodName",
++@UriEndpoint(scheme = "google-drive", title = "Google Drive", syntax = "google-drive:apiName/methodName",
+ consumerClass = GoogleDriveConsumer.class, consumerPrefix = "consumer", label = "api,cloud,file")
+ public class GoogleDriveEndpoint extends AbstractApiEndpoint<GoogleDriveApiName, GoogleDriveConfiguration> {
+     private Object apiProxy;

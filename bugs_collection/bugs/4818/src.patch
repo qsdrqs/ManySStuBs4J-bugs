@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/NettyEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/NettyEndpointBuilderFactory.java
+index c64c56ce..0be5a3da 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/NettyEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/NettyEndpointBuilderFactory.java
+@@ -3617,7 +3617,7 @@ public interface NettyEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.netty4.TextLineDelimiter</code> enum.
+      */
+-    public static enum TextLineDelimiter {
++    static enum TextLineDelimiter {
+         LINE, NULL;
+     }
+     /**

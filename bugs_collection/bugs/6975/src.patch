@@ -1,0 +1,15 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/model/ResequenceDefinition.java b/fixed/camel-core/src/main/java/org/apache/camel/model/ResequenceDefinition.java
+index 6dd36e3d..493367bf 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/model/ResequenceDefinition.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/model/ResequenceDefinition.java
+@@ -50,8 +50,8 @@ import org.apache.camel.util.ObjectHelper;
+ @XmlAccessorType(XmlAccessType.FIELD)
+ public class ResequenceDefinition extends ProcessorDefinition<ResequenceDefinition> {
+     @XmlElements({
+-    @XmlElement(required = false, name = "batch-config", type = BatchResequencerConfig.class),
+-    @XmlElement(required = false, name = "stream-config", type = StreamResequencerConfig.class)}
++    @XmlElement(type = BatchResequencerConfig.class),
++    @XmlElement(type = StreamResequencerConfig.class)}
+     )
+     private ResequencerConfig resequencerConfig;
+     @XmlTransient

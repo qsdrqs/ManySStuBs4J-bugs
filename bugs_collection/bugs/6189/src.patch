@@ -1,0 +1,17 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/management/ManagedCBRTest.java b/fixed/camel-core/src/test/java/org/apache/camel/management/ManagedCBRTest.java
+index 4003894f..9c6c966f 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/management/ManagedCBRTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/management/ManagedCBRTest.java
+@@ -68,10 +68,10 @@ public class ManagedCBRTest extends ManagementTestSupport {
+                 from("direct:start").routeId("route")
+                     .to("mock:a").id("task-a")
+                     .choice().id("choice")
+-                        .when(simple("${body} contains Camel")).id("when")
++                        .when(simple("${body} contains 'Camel'")).id("when")
+                             .to("mock:b").id("task-b")
+                             .to("mock:c").id("task-c")
+-                        .when(simple("${body} contains Donkey")).id("when2")
++                        .when(simple("${body} contains 'Donkey'")).id("when2")
+                             .to("mock:d").id("task-d")
+                         .otherwise().id("otherwise")
+                             .to("mock:e").id("task-e")

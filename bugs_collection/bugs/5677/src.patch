@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-util/src/main/java/org/apache/camel/util/ObjectHelper.java b/fixed/core/camel-util/src/main/java/org/apache/camel/util/ObjectHelper.java
+index 74a9aa2c..d357fe29 100644
+--- a/buggy/core/camel-util/src/main/java/org/apache/camel/util/ObjectHelper.java
++++ b/fixed/core/camel-util/src/main/java/org/apache/camel/util/ObjectHelper.java
+@@ -499,7 +499,7 @@ public final class ObjectHelper {
+      */
+     public static InputStream loadResourceAsStream(String name, ClassLoader loader) {
+         try {
+-            URL res = loadResourceAsURL(name);
++            URL res = loadResourceAsURL(name, loader);
+             return res != null ? res.openStream() : null;
+         } catch (IOException e) {
+             return null;

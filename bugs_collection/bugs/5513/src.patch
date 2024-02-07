@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SnsEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SnsEndpointBuilderFactory.java
+index 292d40e1..d464ca62 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SnsEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SnsEndpointBuilderFactory.java
+@@ -35,9 +35,7 @@ public interface SnsEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the AWS Simple Notification System component.
+      */
+-    public static interface SnsEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface SnsEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedSnsEndpointBuilder advanced() {
+             return (AdvancedSnsEndpointBuilder) this;
+         }
+@@ -278,7 +276,7 @@ public interface SnsEndpointBuilderFactory {
+      * Advanced builder for endpoint for the AWS Simple Notification System
+      * component.
+      */
+-    public static interface AdvancedSnsEndpointBuilder
++    public interface AdvancedSnsEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default SnsEndpointBuilder basic() {

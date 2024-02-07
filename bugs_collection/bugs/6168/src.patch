@@ -1,0 +1,20 @@
+diff --git a/buggy/tooling/maven/guice-maven-plugin/src/main/java/org/apache/camel/guice/maven/RunMojo.java b/fixed/tooling/maven/guice-maven-plugin/src/main/java/org/apache/camel/guice/maven/RunMojo.java
+index 0e9a3a37..f092d055 100644
+--- a/buggy/tooling/maven/guice-maven-plugin/src/main/java/org/apache/camel/guice/maven/RunMojo.java
++++ b/fixed/tooling/maven/guice-maven-plugin/src/main/java/org/apache/camel/guice/maven/RunMojo.java
+@@ -733,7 +733,7 @@ public class RunMojo extends AbstractExecMojo {
+      * @return an artifact which refers to the actual executable tool (not a POM)
+      * @throws org.apache.maven.plugin.MojoExecutionException
+      */
+-    private Artifact findExecutableArtifact() throws MojoExecutionException {
++    protected Artifact findExecutableArtifact() throws MojoExecutionException {
+         // ILimitedArtifactIdentifier execToolAssembly =
+         // this.getExecutableToolAssembly();
+ 
+@@ -810,4 +810,4 @@ public class RunMojo extends AbstractExecMojo {
+         }
+     }
+ 
+-}
+\ No newline at end of file
++}

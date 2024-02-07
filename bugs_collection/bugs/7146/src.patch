@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jetty/src/main/java/org/apache/camel/component/jetty/JettyContentExchange.java b/fixed/components/camel-jetty/src/main/java/org/apache/camel/component/jetty/JettyContentExchange.java
+index 48639f8d..c9ef129e 100644
+--- a/buggy/components/camel-jetty/src/main/java/org/apache/camel/component/jetty/JettyContentExchange.java
++++ b/fixed/components/camel-jetty/src/main/java/org/apache/camel/component/jetty/JettyContentExchange.java
+@@ -199,7 +199,7 @@ public class JettyContentExchange extends ContentExchange {
+             } else {
+                 // some kind of other error
+                 if (exchange.getException() != null) {
+-                    exchange.setException(new CamelExchangeException("JettyClient failed with state " + exchangeState, exchange));
++                    exchange.setException(new CamelExchangeException("JettyClient failed with state " + exchangeState, exchange, exchange.getException()));
+                 }
+             }
+         } finally {

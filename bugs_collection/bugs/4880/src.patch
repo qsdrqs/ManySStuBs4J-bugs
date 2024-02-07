@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AS2EndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AS2EndpointBuilderFactory.java
+index a23d6d46..30c35b69 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AS2EndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/AS2EndpointBuilderFactory.java
+@@ -626,7 +626,7 @@ public interface AS2EndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the AS2 component.
+      */
+-    public static interface AS2EndpointProducerBuilder
++    public interface AS2EndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedAS2EndpointProducerBuilder advanced() {
+@@ -1169,7 +1169,7 @@ public interface AS2EndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the AS2 component.
+      */
+-    public static interface AS2EndpointBuilder
++    public interface AS2EndpointBuilder
+             extends
+                 AS2EndpointConsumerBuilder, AS2EndpointProducerBuilder {
+         default AdvancedAS2EndpointBuilder advanced() {
+@@ -1614,7 +1614,7 @@ public interface AS2EndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the AS2 component.
+      */
+-    public static interface AdvancedAS2EndpointBuilder
++    public interface AdvancedAS2EndpointBuilder
+             extends
+                 AdvancedAS2EndpointConsumerBuilder, AdvancedAS2EndpointProducerBuilder {
+         default AS2EndpointBuilder basic() {

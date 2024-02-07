@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/camel-example-kafka/src/main/java/org/apache/camel/example/kafka/MessageConsumerClient.java b/fixed/examples/camel-example-kafka/src/main/java/org/apache/camel/example/kafka/MessageConsumerClient.java
+index 7513ba93..5dc42b45 100644
+--- a/buggy/examples/camel-example-kafka/src/main/java/org/apache/camel/example/kafka/MessageConsumerClient.java
++++ b/fixed/examples/camel-example-kafka/src/main/java/org/apache/camel/example/kafka/MessageConsumerClient.java
+@@ -48,7 +48,7 @@ public final class MessageConsumerClient {
+                 from("kafka:{{consumer.topic}}?brokers={{kafka.host}}:{{kafka.port}}"
+                         + "&maxPollRecords={{consumer.maxPollRecords}}"
+                         + "&consumersCount={{consumer.consumersCount}}"
+-                        + "&seekToBeginning={{consumer.seekToBeginning}}"
++                        + "&seekTo={{consumer.seekTo}}"
+                         + "&groupId={{consumer.group}}")
+                         .routeId("FromKafka")
+                     .log("${body}");

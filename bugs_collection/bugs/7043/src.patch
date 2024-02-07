@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jetty/src/main/java/org/apache/camel/component/jetty/JettyHttpComponent.java b/fixed/components/camel-jetty/src/main/java/org/apache/camel/component/jetty/JettyHttpComponent.java
+index 0c51eb6d..d006577f 100644
+--- a/buggy/components/camel-jetty/src/main/java/org/apache/camel/component/jetty/JettyHttpComponent.java
++++ b/fixed/components/camel-jetty/src/main/java/org/apache/camel/component/jetty/JettyHttpComponent.java
+@@ -995,7 +995,7 @@ public class JettyHttpComponent extends HttpComponent implements RestConsumerFac
+ 
+         String url = "jetty:%s://%s:%s/%s?httpMethodRestrict=%s";
+         if (!query.isEmpty()) {
+-            url = url + "?" + query;
++            url = url + "&" + query;
+         }
+ 
+         // must use upper case for restrict

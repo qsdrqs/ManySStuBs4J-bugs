@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-core-xml/src/main/java/org/apache/camel/core/xml/AbstractCamelContextFactoryBean.java b/fixed/components/camel-core-xml/src/main/java/org/apache/camel/core/xml/AbstractCamelContextFactoryBean.java
+index 8d0cb46f..23f1e296 100644
+--- a/buggy/components/camel-core-xml/src/main/java/org/apache/camel/core/xml/AbstractCamelContextFactoryBean.java
++++ b/fixed/components/camel-core-xml/src/main/java/org/apache/camel/core/xml/AbstractCamelContextFactoryBean.java
+@@ -368,7 +368,7 @@ public abstract class AbstractCamelContextFactoryBean<T extends ModelCamelContex
+         }
+         // Route controller
+         RouteController routeController = getBeanForType(RouteController.class);
+-        if (clusterService != null) {
++        if (routeController != null) {
+             LOG.info("Using RouteController: " + routeController);
+             getContext().setRouteController(routeController);
+         }

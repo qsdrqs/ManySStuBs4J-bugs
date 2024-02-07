@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-quartz2/src/test/java/org/apache/camel/component/quartz2/QuartzStartDelayedOptionTest.java b/fixed/components/camel-quartz2/src/test/java/org/apache/camel/component/quartz2/QuartzStartDelayedOptionTest.java
+index c85971ea..0e97b84c 100644
+--- a/buggy/components/camel-quartz2/src/test/java/org/apache/camel/component/quartz2/QuartzStartDelayedOptionTest.java
++++ b/fixed/components/camel-quartz2/src/test/java/org/apache/camel/component/quartz2/QuartzStartDelayedOptionTest.java
+@@ -25,7 +25,7 @@ public class QuartzStartDelayedOptionTest extends BaseQuartzTest {
+     @Test
+     public void testStartDelayed() throws Exception {
+         MockEndpoint mock = getMockEndpoint("mock:result");
+-        mock.setMinimumResultWaitTime(1900);
++        mock.setMinimumResultWaitTime(1500);
+         mock.setResultWaitTime(3000);
+         mock.expectedMessageCount(2);
+ 

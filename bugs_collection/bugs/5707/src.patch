@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-salesforce/camel-salesforce-component/src/main/java/org/apache/camel/component/salesforce/internal/client/SalesforceHttpRequest.java b/fixed/components/camel-salesforce/camel-salesforce-component/src/main/java/org/apache/camel/component/salesforce/internal/client/SalesforceHttpRequest.java
+index 2728525f..4802a695 100644
+--- a/buggy/components/camel-salesforce/camel-salesforce-component/src/main/java/org/apache/camel/component/salesforce/internal/client/SalesforceHttpRequest.java
++++ b/fixed/components/camel-salesforce/camel-salesforce-component/src/main/java/org/apache/camel/component/salesforce/internal/client/SalesforceHttpRequest.java
+@@ -32,7 +32,7 @@ public class SalesforceHttpRequest extends HttpRequest {
+     }
+ 
+     @Override
+-    protected HttpConversation getConversation() {
++	public HttpConversation getConversation() {
+         return super.getConversation();
+     }
+ }

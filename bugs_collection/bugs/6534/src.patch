@@ -1,0 +1,13 @@
+diff --git a/buggy/tests/camel-itest-spring-boot/src/test/java/org/apache/camel/itest/springboot/CamelServletTest.java b/fixed/tests/camel-itest-spring-boot/src/test/java/org/apache/camel/itest/springboot/CamelServletTest.java
+index 0b8f3a58..29b3a1a1 100644
+--- a/buggy/tests/camel-itest-spring-boot/src/test/java/org/apache/camel/itest/springboot/CamelServletTest.java
++++ b/fixed/tests/camel-itest-spring-boot/src/test/java/org/apache/camel/itest/springboot/CamelServletTest.java
+@@ -37,7 +37,7 @@ public class CamelServletTest extends AbstractSpringBootTestSupport {
+                 .module(inferModuleName(CamelServletTest.class))
+ //                .dependency(DependencyResolver.withVersion("org.springframework.boot:spring-boot-starter-web"))
+ //                .dependency(DependencyResolver.withVersion("org.springframework:spring-webmvc"))
+-                .unitTestExclusionPattern(".*ExposedServletEndpointURIToJMXTest")
++                .unitTestExclusionPattern(".*(\\.integration\\..*|IntegrationTest$|ExposedServletEndpointURIToJMXTest$.*Arquillian.*)")
+                 .build();
+     }
+ 

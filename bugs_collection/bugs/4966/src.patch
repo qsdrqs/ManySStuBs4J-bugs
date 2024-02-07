@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ClientEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ClientEndpointBuilderFactory.java
+index b2414a32..489edcc5 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ClientEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ClientEndpointBuilderFactory.java
+@@ -502,7 +502,7 @@ public interface ClientEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the IEC 60870 Client component.
+      */
+-    public static interface ClientEndpointProducerBuilder
++    public interface ClientEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedClientEndpointProducerBuilder advanced() {
+@@ -921,7 +921,7 @@ public interface ClientEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the IEC 60870 Client component.
+      */
+-    public static interface ClientEndpointBuilder
++    public interface ClientEndpointBuilder
+             extends
+                 ClientEndpointConsumerBuilder, ClientEndpointProducerBuilder {
+         default AdvancedClientEndpointBuilder advanced() {
+@@ -1239,7 +1239,7 @@ public interface ClientEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the IEC 60870 Client component.
+      */
+-    public static interface AdvancedClientEndpointBuilder
++    public interface AdvancedClientEndpointBuilder
+             extends
+                 AdvancedClientEndpointConsumerBuilder, AdvancedClientEndpointProducerBuilder {
+         default ClientEndpointBuilder basic() {

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-cxf/src/main/java/org/apache/camel/component/cxf/converter/CxfPayloadConverter.java b/fixed/components/camel-cxf/src/main/java/org/apache/camel/component/cxf/converter/CxfPayloadConverter.java
+index dff05c69..ea26664f 100644
+--- a/buggy/components/camel-cxf/src/main/java/org/apache/camel/component/cxf/converter/CxfPayloadConverter.java
++++ b/fixed/components/camel-cxf/src/main/java/org/apache/camel/component/cxf/converter/CxfPayloadConverter.java
+@@ -47,7 +47,7 @@ import org.apache.cxf.staxutils.StaxUtils;
+ 
+ import static org.apache.camel.TypeConverter.MISS_VALUE;
+ 
+-@Converter
++@Converter(loader = true)
+ public final class CxfPayloadConverter {
+ 
+     private CxfPayloadConverter() {

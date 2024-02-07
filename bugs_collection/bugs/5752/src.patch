@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-saxon/src/main/java/org/apache/camel/converter/saxon/SaxonConverter.java b/fixed/components/camel-saxon/src/main/java/org/apache/camel/converter/saxon/SaxonConverter.java
+index 27df7fbc..defc7c4f 100644
+--- a/buggy/components/camel-saxon/src/main/java/org/apache/camel/converter/saxon/SaxonConverter.java
++++ b/fixed/components/camel-saxon/src/main/java/org/apache/camel/converter/saxon/SaxonConverter.java
+@@ -38,7 +38,7 @@ import org.apache.camel.FallbackConverter;
+ import org.apache.camel.TypeConverter;
+ import org.apache.camel.spi.TypeConverterRegistry;
+ 
+-@Converter
++@Converter(loader = true)
+ public final class SaxonConverter {
+ 
+     private SaxonConverter() {

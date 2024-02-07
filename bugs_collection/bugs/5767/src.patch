@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-spring-ws/src/main/java/org/apache/camel/component/spring/ws/converter/StringSourceConverter.java b/fixed/components/camel-spring-ws/src/main/java/org/apache/camel/component/spring/ws/converter/StringSourceConverter.java
+index d70443de..96b58611 100644
+--- a/buggy/components/camel-spring-ws/src/main/java/org/apache/camel/component/spring/ws/converter/StringSourceConverter.java
++++ b/fixed/components/camel-spring-ws/src/main/java/org/apache/camel/component/spring/ws/converter/StringSourceConverter.java
+@@ -32,7 +32,7 @@ import org.apache.camel.StringSource;
+  * since it's the most simple one. It has just one constructor that accepts a
+  * String as input.
+  */
+-@Converter
++@Converter(loader = true)
+ public final class StringSourceConverter {
+ 
+     private StringSourceConverter() {

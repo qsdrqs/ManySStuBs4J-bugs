@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/processor/ExchangeIdempotentConsumerTest.java b/fixed/camel-core/src/test/java/org/apache/camel/processor/ExchangeIdempotentConsumerTest.java
+index 294656b4..11f3430c 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/processor/ExchangeIdempotentConsumerTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/processor/ExchangeIdempotentConsumerTest.java
+@@ -96,7 +96,7 @@ public class ExchangeIdempotentConsumerTest extends ContextTestSupport {
+         resultEndpoint = getMockEndpoint("mock:result");
+     }
+ 
+-    private class MyIdempotentRepo implements ExchangeIdempotentRepository<String> {
++    private final class MyIdempotentRepo implements ExchangeIdempotentRepository<String> {
+ 
+         private IdempotentRepository<String> delegate;
+         private Set<String> exchanges = new LinkedHashSet<String>();

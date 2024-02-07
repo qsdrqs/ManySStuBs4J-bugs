@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-twilio/src/main/java/org/apache/camel/component/twilio/TwilioConverter.java b/fixed/components/camel-twilio/src/main/java/org/apache/camel/component/twilio/TwilioConverter.java
+index db2660fb..7cbc18b0 100644
+--- a/buggy/components/camel-twilio/src/main/java/org/apache/camel/component/twilio/TwilioConverter.java
++++ b/fixed/components/camel-twilio/src/main/java/org/apache/camel/component/twilio/TwilioConverter.java
+@@ -20,7 +20,7 @@ import com.twilio.type.PhoneNumber;
+ import com.twilio.type.Sip;
+ import org.apache.camel.Converter;
+ 
+-@Converter
++@Converter(loader = true)
+ public final class TwilioConverter {
+ 
+     private TwilioConverter() {

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jmx/src/test/java/org/apache/camel/component/jmx/JMXNotificationFilterTest.java b/fixed/components/camel-jmx/src/test/java/org/apache/camel/component/jmx/JMXNotificationFilterTest.java
+index 0b2d1c5f..796656fe 100644
+--- a/buggy/components/camel-jmx/src/test/java/org/apache/camel/component/jmx/JMXNotificationFilterTest.java
++++ b/fixed/components/camel-jmx/src/test/java/org/apache/camel/component/jmx/JMXNotificationFilterTest.java
+@@ -74,7 +74,7 @@ public class JMXNotificationFilterTest extends SimpleBeanFixture {
+         super.initRegistry();
+ 
+         // initialize the registry with our filter
+-        getRegistry().put("myFilter", new NotificationFilter() {
++        getRegistry().bind("myFilter", new NotificationFilter() {
+ 
+             private static final long serialVersionUID = 1L;
+ 

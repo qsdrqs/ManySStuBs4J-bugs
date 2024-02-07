@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-flatpack/src/main/java/org/apache/camel/component/flatpack/FlatpackEndpoint.java b/fixed/components/camel-flatpack/src/main/java/org/apache/camel/component/flatpack/FlatpackEndpoint.java
+index 080c5b47..fb393a3e 100644
+--- a/buggy/components/camel-flatpack/src/main/java/org/apache/camel/component/flatpack/FlatpackEndpoint.java
++++ b/fixed/components/camel-flatpack/src/main/java/org/apache/camel/component/flatpack/FlatpackEndpoint.java
+@@ -52,7 +52,7 @@ public class FlatpackEndpoint extends DefaultPollingEndpoint {
+     private LoadBalancer loadBalancer = new RoundRobinLoadBalancer();
+     private ParserFactory parserFactory = DefaultParserFactory.getInstance();
+ 
+-    @UriPath @Metadata(required = "true")
++    @UriPath @Metadata(required = "false", defaultValue = "delim")
+     private FlatpackType type;
+     @UriPath @Metadata(required = "true")
+     private String resourceUri;

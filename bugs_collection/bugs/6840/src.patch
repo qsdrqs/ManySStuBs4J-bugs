@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jetty9/src/test/java/org/apache/camel/component/jetty/jettyproducer/JettyHttpProducerQueryParamTest.java b/fixed/components/camel-jetty9/src/test/java/org/apache/camel/component/jetty/jettyproducer/JettyHttpProducerQueryParamTest.java
+index b9a4db77..166eb461 100644
+--- a/buggy/components/camel-jetty9/src/test/java/org/apache/camel/component/jetty/jettyproducer/JettyHttpProducerQueryParamTest.java
++++ b/fixed/components/camel-jetty9/src/test/java/org/apache/camel/component/jetty/jettyproducer/JettyHttpProducerQueryParamTest.java
+@@ -29,7 +29,7 @@ import org.junit.Test;
+  */
+ public class JettyHttpProducerQueryParamTest extends BaseJettyTest {
+ 
+-    private String url = "jetty://http://0.0.0.0:" + getPort() + "/cheese";
++    private String url = "jetty://http://127.0.0.1:" + getPort() + "/cheese";
+ 
+     @Test
+     public void testQueryParameters() throws Exception {

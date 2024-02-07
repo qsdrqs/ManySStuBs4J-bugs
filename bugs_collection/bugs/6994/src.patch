@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/impl/DefaultCamelContext.java b/fixed/camel-core/src/main/java/org/apache/camel/impl/DefaultCamelContext.java
+index 0cd26f6c..a12f0884 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/impl/DefaultCamelContext.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/impl/DefaultCamelContext.java
+@@ -1659,7 +1659,7 @@ public class DefaultCamelContext extends ServiceSupport implements ModelCamelCon
+ 
+     public synchronized RouteDefinition getRouteDefinition(String id) {
+         for (RouteDefinition route : routeDefinitions) {
+-            if (route.getId() != null && route.getId().equals(id)) {
++            if (route.idOrCreate(nodeIdFactory).equals(id)) {
+                 return route;
+             }
+         }

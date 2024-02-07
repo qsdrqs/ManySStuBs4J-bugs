@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/model/config/BatchResequencerConfig.java b/fixed/camel-core/src/main/java/org/apache/camel/model/config/BatchResequencerConfig.java
+index 20db69dd..f5f06f86 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/model/config/BatchResequencerConfig.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/model/config/BatchResequencerConfig.java
+@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlRootElement;
+  * Defines the configuration parameters for the batch-processing
+  * {@link org.apache.camel.processor.Resequencer}. Usage example:
+  */
+-@XmlRootElement
++@XmlRootElement(name = "batch-config")
+ @XmlAccessorType(XmlAccessType.FIELD)
+ public class BatchResequencerConfig extends ResequencerConfig {
+     @XmlAttribute

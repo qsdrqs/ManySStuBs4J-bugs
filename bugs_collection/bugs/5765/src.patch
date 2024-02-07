@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-reactive-streams/src/main/java/org/apache/camel/component/reactive/streams/ReactiveStreamsConverter.java b/fixed/components/camel-reactive-streams/src/main/java/org/apache/camel/component/reactive/streams/ReactiveStreamsConverter.java
+index 1fd61ae7..08cb29b6 100644
+--- a/buggy/components/camel-reactive-streams/src/main/java/org/apache/camel/component/reactive/streams/ReactiveStreamsConverter.java
++++ b/fixed/components/camel-reactive-streams/src/main/java/org/apache/camel/component/reactive/streams/ReactiveStreamsConverter.java
+@@ -26,7 +26,7 @@ import org.apache.camel.spi.TypeConverterRegistry;
+ import org.reactivestreams.Publisher;
+ 
+ 
+-@Converter
++@Converter(loader = true)
+ public final class ReactiveStreamsConverter implements CamelContextAware {
+ 
+     private CamelContext camelContext;

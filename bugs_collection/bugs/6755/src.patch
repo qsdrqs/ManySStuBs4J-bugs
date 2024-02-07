@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-rmi/src/test/java/org/apache/camel/component/rmi/RmiRouteTest.java b/fixed/components/camel-rmi/src/test/java/org/apache/camel/component/rmi/RmiRouteTest.java
+index da67a8ff..07c99221 100644
+--- a/buggy/components/camel-rmi/src/test/java/org/apache/camel/component/rmi/RmiRouteTest.java
++++ b/fixed/components/camel-rmi/src/test/java/org/apache/camel/component/rmi/RmiRouteTest.java
+@@ -57,7 +57,7 @@ public class RmiRouteTest extends RmiRouteTestSupport {
+ 
+         // START SNIPPET: invoke
+         Endpoint endpoint = camelContext.getEndpoint("direct:hello");
+-        ISay proxy = ProxyHelper.createProxy(endpoint, ISay.class);
++        ISay proxy = ProxyHelper.createProxy(endpoint, false, ISay.class);
+         String rc = proxy.say();
+         assertEquals("Good Bye!", rc);
+         // END SNIPPET: invoke

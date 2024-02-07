@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GlanceEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GlanceEndpointBuilderFactory.java
+index 48831ca6..0ec86b7d 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GlanceEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/GlanceEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface GlanceEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the OpenStack Glance component.
+      */
+-    public static interface GlanceEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface GlanceEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedGlanceEndpointBuilder advanced() {
+             return (AdvancedGlanceEndpointBuilder) this;
+         }
+@@ -128,7 +126,7 @@ public interface GlanceEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the OpenStack Glance component.
+      */
+-    public static interface AdvancedGlanceEndpointBuilder
++    public interface AdvancedGlanceEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default GlanceEndpointBuilder basic() {

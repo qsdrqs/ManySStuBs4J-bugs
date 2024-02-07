@@ -1,0 +1,13 @@
+diff --git a/buggy/connectors/examples/beverage-component/src/test/java/org/beverage/BeverageTest.java b/fixed/connectors/examples/beverage-component/src/test/java/org/beverage/BeverageTest.java
+index 3d6f5c05..37256df1 100644
+--- a/buggy/connectors/examples/beverage-component/src/test/java/org/beverage/BeverageTest.java
++++ b/fixed/connectors/examples/beverage-component/src/test/java/org/beverage/BeverageTest.java
+@@ -25,7 +25,7 @@ public class BeverageTest extends CamelTestSupport {
+ 
+     @Test
+     public void testBeverage() throws Exception {
+-        getMockEndpoint("mock:result").expectedBodiesReceived("Total 2 of wine ordered");
++        getMockEndpoint("mock:result").expectedBodiesReceived("total 2 of wine ordered");
+ 
+         template.sendBody("direct:bar", "Hello World");
+ 

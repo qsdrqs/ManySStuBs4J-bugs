@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-websocket/src/test/java/org/apache/camel/component/websocket/WebsocketConsumerRouteTest.java b/fixed/components/camel-websocket/src/test/java/org/apache/camel/component/websocket/WebsocketConsumerRouteTest.java
+index ea1874a2..20b2f408 100644
+--- a/buggy/components/camel-websocket/src/test/java/org/apache/camel/component/websocket/WebsocketConsumerRouteTest.java
++++ b/fixed/components/camel-websocket/src/test/java/org/apache/camel/component/websocket/WebsocketConsumerRouteTest.java
+@@ -109,7 +109,7 @@ public class WebsocketConsumerRouteTest extends CamelTestSupport {
+             public void configure() {
+                 WebsocketComponent websocketComponent = (WebsocketComponent) context.getComponent("websocket");
+                 websocketComponent.setPort(port);
+-                websocketComponent.setMaxThreads(11);
++                websocketComponent.setMaxThreads(20);
+                 websocketComponent.setMinThreads(1);
+ 
+                 from("websocket://echo")

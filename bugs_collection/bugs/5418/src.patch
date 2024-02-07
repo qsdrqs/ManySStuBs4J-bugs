@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PropertiesEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PropertiesEndpointBuilderFactory.java
+index 93e75d34..9b1031c8 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PropertiesEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/PropertiesEndpointBuilderFactory.java
+@@ -240,7 +240,7 @@ public interface PropertiesEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Properties component.
+      */
+-    public static interface PropertiesEndpointProducerBuilder
++    public interface PropertiesEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedPropertiesEndpointProducerBuilder advanced() {
+@@ -398,7 +398,7 @@ public interface PropertiesEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Properties component.
+      */
+-    public static interface PropertiesEndpointBuilder
++    public interface PropertiesEndpointBuilder
+             extends
+                 PropertiesEndpointConsumerBuilder, PropertiesEndpointProducerBuilder {
+         default AdvancedPropertiesEndpointBuilder advanced() {
+@@ -464,7 +464,7 @@ public interface PropertiesEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Properties component.
+      */
+-    public static interface AdvancedPropertiesEndpointBuilder
++    public interface AdvancedPropertiesEndpointBuilder
+             extends
+                 AdvancedPropertiesEndpointConsumerBuilder, AdvancedPropertiesEndpointProducerBuilder {
+         default PropertiesEndpointBuilder basic() {

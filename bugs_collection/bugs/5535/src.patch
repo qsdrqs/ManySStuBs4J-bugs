@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SqlEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SqlEndpointBuilderFactory.java
+index 095faed0..9fa5ae79 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SqlEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SqlEndpointBuilderFactory.java
+@@ -1002,7 +1002,7 @@ public interface SqlEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the SQL component.
+      */
+-    public static interface SqlEndpointProducerBuilder
++    public interface SqlEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedSqlEndpointProducerBuilder advanced() {
+@@ -1450,7 +1450,7 @@ public interface SqlEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the SQL component.
+      */
+-    public static interface SqlEndpointBuilder
++    public interface SqlEndpointBuilder
+             extends
+                 SqlEndpointConsumerBuilder, SqlEndpointProducerBuilder {
+         default AdvancedSqlEndpointBuilder advanced() {
+@@ -1606,7 +1606,7 @@ public interface SqlEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the SQL component.
+      */
+-    public static interface AdvancedSqlEndpointBuilder
++    public interface AdvancedSqlEndpointBuilder
+             extends
+                 AdvancedSqlEndpointConsumerBuilder, AdvancedSqlEndpointProducerBuilder {
+         default SqlEndpointBuilder basic() {

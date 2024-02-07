@@ -1,0 +1,16 @@
+diff --git a/buggy/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/FtpsConfiguration.java b/fixed/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/FtpsConfiguration.java
+index a4ecce92..d5e135f4 100644
+--- a/buggy/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/FtpsConfiguration.java
++++ b/fixed/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/FtpsConfiguration.java
+@@ -31,9 +31,9 @@ public class FtpsConfiguration extends FtpConfiguration {
+ 
+     @UriParam(defaultValue = "TLS")
+     private String securityProtocol = "TLS";
+-    @UriParam(defaultValue = "false")
++    @UriParam
+     private boolean isImplicit;
+-    @UriParam(defaultValue = "false")
++    @UriParam
+     private boolean disableSecureDataChannelDefaults;
+     @UriParam
+     private String execProt;

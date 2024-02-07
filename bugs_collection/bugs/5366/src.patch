@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MyBatisBeanEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MyBatisBeanEndpointBuilderFactory.java
+index b202b2fe..bf04e09c 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MyBatisBeanEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/MyBatisBeanEndpointBuilderFactory.java
+@@ -34,7 +34,7 @@ public interface MyBatisBeanEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the MyBatis Bean component.
+      */
+-    public static interface MyBatisBeanEndpointBuilder
++    public interface MyBatisBeanEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedMyBatisBeanEndpointBuilder advanced() {
+@@ -64,7 +64,7 @@ public interface MyBatisBeanEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the MyBatis Bean component.
+      */
+-    public static interface AdvancedMyBatisBeanEndpointBuilder
++    public interface AdvancedMyBatisBeanEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default MyBatisBeanEndpointBuilder basic() {

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-core-osgi/src/test/java/org/apache/camel/core/osgi/OsgiComponentResolverTest.java b/fixed/components/camel-core-osgi/src/test/java/org/apache/camel/core/osgi/OsgiComponentResolverTest.java
+index c9a4d141..85c667ff 100644
+--- a/buggy/components/camel-core-osgi/src/test/java/org/apache/camel/core/osgi/OsgiComponentResolverTest.java
++++ b/fixed/components/camel-core-osgi/src/test/java/org/apache/camel/core/osgi/OsgiComponentResolverTest.java
+@@ -69,7 +69,7 @@ public class OsgiComponentResolverTest extends CamelOsgiTestSupport {
+ 
+         private boolean fallback;
+ 
+-        public SampleComponent(boolean fallback) {
++        SampleComponent(boolean fallback) {
+             this.fallback = fallback;
+         }
+ 

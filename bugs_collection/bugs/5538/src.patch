@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SqlStoredEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SqlStoredEndpointBuilderFactory.java
+index ad79f17f..1cf513e0 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SqlStoredEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SqlStoredEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface SqlStoredEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the SQL Stored Procedure component.
+      */
+-    public static interface SqlStoredEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface SqlStoredEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedSqlStoredEndpointBuilder advanced() {
+             return (AdvancedSqlStoredEndpointBuilder) this;
+         }
+@@ -167,7 +165,7 @@ public interface SqlStoredEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the SQL Stored Procedure component.
+      */
+-    public static interface AdvancedSqlStoredEndpointBuilder
++    public interface AdvancedSqlStoredEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default SqlStoredEndpointBuilder basic() {

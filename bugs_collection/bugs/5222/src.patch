@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JGroupsEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JGroupsEndpointBuilderFactory.java
+index a47d03cd..bfd3f188 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JGroupsEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/JGroupsEndpointBuilderFactory.java
+@@ -227,7 +227,7 @@ public interface JGroupsEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the JGroups component.
+      */
+-    public static interface JGroupsEndpointProducerBuilder
++    public interface JGroupsEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedJGroupsEndpointProducerBuilder advanced() {
+@@ -349,7 +349,7 @@ public interface JGroupsEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the JGroups component.
+      */
+-    public static interface JGroupsEndpointBuilder
++    public interface JGroupsEndpointBuilder
+             extends
+                 JGroupsEndpointConsumerBuilder, JGroupsEndpointProducerBuilder {
+         default AdvancedJGroupsEndpointBuilder advanced() {
+@@ -380,7 +380,7 @@ public interface JGroupsEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the JGroups component.
+      */
+-    public static interface AdvancedJGroupsEndpointBuilder
++    public interface AdvancedJGroupsEndpointBuilder
+             extends
+                 AdvancedJGroupsEndpointConsumerBuilder, AdvancedJGroupsEndpointProducerBuilder {
+         default JGroupsEndpointBuilder basic() {

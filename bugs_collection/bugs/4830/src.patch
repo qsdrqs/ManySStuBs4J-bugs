@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SagaEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SagaEndpointBuilderFactory.java
+index c539c6e3..eca3f5c7 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SagaEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SagaEndpointBuilderFactory.java
+@@ -117,7 +117,7 @@ public interface SagaEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.saga.SagaEndpoint$SagaEndpointAction</code> enum.
+      */
+-    public static enum SagaEndpointAction {
++    static enum SagaEndpointAction {
+         COMPLETE, COMPENSATE;
+     }
+     /**

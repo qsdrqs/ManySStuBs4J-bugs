@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-box/src/main/java/org/apache/camel/component/box/BoxConfiguration.java b/fixed/components/camel-box/src/main/java/org/apache/camel/component/box/BoxConfiguration.java
+index db2df83e..e2d3cb08 100644
+--- a/buggy/components/camel-box/src/main/java/org/apache/camel/component/box/BoxConfiguration.java
++++ b/fixed/components/camel-box/src/main/java/org/apache/camel/component/box/BoxConfiguration.java
+@@ -59,7 +59,7 @@ public class BoxConfiguration {
+     @UriParam
+     private OAuthRefreshListener refreshListener;
+ 
+-    @UriParam(defaultValue = "false")
++    @UriParam
+     private boolean revokeOnShutdown;
+ 
+     @UriParam

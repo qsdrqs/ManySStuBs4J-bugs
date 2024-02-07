@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/processor/async/AsyncEndpointRoutingSlipBeanNonBlockingTest.java b/fixed/camel-core/src/test/java/org/apache/camel/processor/async/AsyncEndpointRoutingSlipBeanNonBlockingTest.java
+index 4cfac28d..57ca2f4d 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/processor/async/AsyncEndpointRoutingSlipBeanNonBlockingTest.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/processor/async/AsyncEndpointRoutingSlipBeanNonBlockingTest.java
+@@ -96,7 +96,7 @@ public class AsyncEndpointRoutingSlipBeanNonBlockingTest extends ContextTestSupp
+         private final Endpoint startEndpoint;
+         private final SendProcessor asyncSender;
+ 
+-        public ExchangeSubmitter(Endpoint startEndpoint, SendProcessor asyncSender) {
++        ExchangeSubmitter(Endpoint startEndpoint, SendProcessor asyncSender) {
+             this.startEndpoint = startEndpoint;
+             this.asyncSender = asyncSender;
+         }

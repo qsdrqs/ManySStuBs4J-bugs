@@ -1,0 +1,13 @@
+diff --git a/buggy/catalog/camel-report-maven-plugin/src/main/java/org/apache/camel/maven/ValidateMojo.java b/fixed/catalog/camel-report-maven-plugin/src/main/java/org/apache/camel/maven/ValidateMojo.java
+index c3fb6c7c..39e644df 100644
+--- a/buggy/catalog/camel-report-maven-plugin/src/main/java/org/apache/camel/maven/ValidateMojo.java
++++ b/fixed/catalog/camel-report-maven-plugin/src/main/java/org/apache/camel/maven/ValidateMojo.java
+@@ -606,7 +606,7 @@ public class ValidateMojo extends AbstractExecMojo {
+                 result = catalog.validateLanguagePredicate(null, "simple", detail.getSimple());
+             } else {
+                 getLog().debug("Validating simple expression: " + detail.getSimple());
+-                result = catalog.validateLanguagePredicate(null, "simple", detail.getSimple());
++                result = catalog.validateLanguageExpression(null, "simple", detail.getSimple());
+             }
+             if (!result.isSuccess()) {
+                 simpleErrors++;

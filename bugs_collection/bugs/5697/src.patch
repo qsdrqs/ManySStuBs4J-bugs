@@ -1,0 +1,14 @@
+diff --git a/buggy/components/camel-spring/src/test/java/org/apache/camel/spring/config/ConsumerTemplateMaximumCacheSizeTest.java b/fixed/components/camel-spring/src/test/java/org/apache/camel/spring/config/ConsumerTemplateMaximumCacheSizeTest.java
+index b4ad7003..b9d9ab70 100644
+--- a/buggy/components/camel-spring/src/test/java/org/apache/camel/spring/config/ConsumerTemplateMaximumCacheSizeTest.java
++++ b/fixed/components/camel-spring/src/test/java/org/apache/camel/spring/config/ConsumerTemplateMaximumCacheSizeTest.java
+@@ -52,7 +52,8 @@ public class ConsumerTemplateMaximumCacheSizeTest extends SpringRunWithTestSuppo
+         // the eviction is async so force cleanup
+         template.cleanUp();
+ 
+-        assertEquals("Size should be 50", 50, template.getCurrentCacheSize());
++        // eviction may still run a bit
++        assertTrue("Size should be around 50", (template.getCurrentCacheSize() <= 51));
+         template.stop();
+ 
+         // should be 0

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-influxdb/src/main/java/org/apache/camel/component/influxdb/converters/CamelInfluxDbConverters.java b/fixed/components/camel-influxdb/src/main/java/org/apache/camel/component/influxdb/converters/CamelInfluxDbConverters.java
+index 6544c983..a2736ecc 100644
+--- a/buggy/components/camel-influxdb/src/main/java/org/apache/camel/component/influxdb/converters/CamelInfluxDbConverters.java
++++ b/fixed/components/camel-influxdb/src/main/java/org/apache/camel/component/influxdb/converters/CamelInfluxDbConverters.java
+@@ -23,7 +23,7 @@ import org.apache.camel.component.influxdb.CamelInfluxDbException;
+ import org.apache.camel.component.influxdb.InfluxDbConstants;
+ import org.influxdb.dto.Point;
+ 
+-@Converter
++@Converter(loader = true)
+ public final class CamelInfluxDbConverters {
+ 
+     private CamelInfluxDbConverters() {

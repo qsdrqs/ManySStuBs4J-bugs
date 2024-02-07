@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-yammer/src/main/java/org/apache/camel/component/yammer/ScribeApiRequestor.java b/fixed/components/camel-yammer/src/main/java/org/apache/camel/component/yammer/ScribeApiRequestor.java
+index 7bdf6059..027cf9da 100644
+--- a/buggy/components/camel-yammer/src/main/java/org/apache/camel/component/yammer/ScribeApiRequestor.java
++++ b/fixed/components/camel-yammer/src/main/java/org/apache/camel/component/yammer/ScribeApiRequestor.java
+@@ -47,7 +47,7 @@ public class ScribeApiRequestor implements ApiRequestor {
+         request.addHeader("Authorization",  sb.toString());
+ 
+         if (LOG.isDebugEnabled()) {
+-            LOG.debug("Yammer request url: %s", request.getCompleteUrl());
++            LOG.debug("Yammer request url: {}", request.getCompleteUrl());
+         }
+         
+         Response response = request.send();

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-bindy/src/main/java/org/apache/camel/dataformat/bindy/fixed/BindyFixedLengthDataFormat.java b/fixed/components/camel-bindy/src/main/java/org/apache/camel/dataformat/bindy/fixed/BindyFixedLengthDataFormat.java
+index afb0c963..180b9824 100644
+--- a/buggy/components/camel-bindy/src/main/java/org/apache/camel/dataformat/bindy/fixed/BindyFixedLengthDataFormat.java
++++ b/fixed/components/camel-bindy/src/main/java/org/apache/camel/dataformat/bindy/fixed/BindyFixedLengthDataFormat.java
+@@ -103,7 +103,7 @@ public class BindyFixedLengthDataFormat extends BindyAbstractDataFormat {
+         
+         // add the footer if it is in the exchange header
+         Map<String, Object> footerRow = (Map<String, Object>) exchange.getIn().getHeader(CAMEL_BINDY_FIXED_LENGTH_FOOTER);
+-        if (headerRow != null) {
++        if (footerRow != null) {
+             models.add(models.size(), footerRow);
+         }
+ 

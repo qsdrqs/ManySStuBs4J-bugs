@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-aws/src/main/java/org/apache/camel/component/aws/firehose/KinesisFirehoseComponent.java b/fixed/components/camel-aws/src/main/java/org/apache/camel/component/aws/firehose/KinesisFirehoseComponent.java
+index 9fec2337..065fc9fe 100644
+--- a/buggy/components/camel-aws/src/main/java/org/apache/camel/component/aws/firehose/KinesisFirehoseComponent.java
++++ b/fixed/components/camel-aws/src/main/java/org/apache/camel/component/aws/firehose/KinesisFirehoseComponent.java
+@@ -60,7 +60,7 @@ public class KinesisFirehoseComponent extends DefaultComponent {
+             setRegion(region);
+         }
+         if (configuration.getAmazonKinesisFirehoseClient() == null && (configuration.getAccessKey() == null || configuration.getSecretKey() == null)) {
+-            throw new IllegalArgumentException("AmazonKinesisClient or accessKey and secretKey must be specified");
++            throw new IllegalArgumentException("AmazonKinesisFirehoseClient or accessKey and secretKey must be specified");
+         }
+         KinesisFirehoseEndpoint endpoint = new KinesisFirehoseEndpoint(uri, configuration, this);
+         return endpoint;

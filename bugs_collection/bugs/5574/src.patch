@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TwitterDirectMessageEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TwitterDirectMessageEndpointBuilderFactory.java
+index 40ad04e2..fa02ba01 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TwitterDirectMessageEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TwitterDirectMessageEndpointBuilderFactory.java
+@@ -936,7 +936,7 @@ public interface TwitterDirectMessageEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Twitter Direct Message component.
+      */
+-    public static interface TwitterDirectMessageEndpointProducerBuilder
++    public interface TwitterDirectMessageEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedTwitterDirectMessageEndpointProducerBuilder advanced() {
+@@ -1149,7 +1149,7 @@ public interface TwitterDirectMessageEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Twitter Direct Message component.
+      */
+-    public static interface TwitterDirectMessageEndpointBuilder
++    public interface TwitterDirectMessageEndpointBuilder
+             extends
+                 TwitterDirectMessageEndpointConsumerBuilder, TwitterDirectMessageEndpointProducerBuilder {
+         default AdvancedTwitterDirectMessageEndpointBuilder advanced() {
+@@ -1270,7 +1270,7 @@ public interface TwitterDirectMessageEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Twitter Direct Message component.
+      */
+-    public static interface AdvancedTwitterDirectMessageEndpointBuilder
++    public interface AdvancedTwitterDirectMessageEndpointBuilder
+             extends
+                 AdvancedTwitterDirectMessageEndpointConsumerBuilder, AdvancedTwitterDirectMessageEndpointProducerBuilder {
+         default TwitterDirectMessageEndpointBuilder basic() {

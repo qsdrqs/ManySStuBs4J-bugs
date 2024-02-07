@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-as2/camel-as2-component/src/main/java/org/apache/camel/component/as2/converter/ContentTypeConverter.java b/fixed/components/camel-as2/camel-as2-component/src/main/java/org/apache/camel/component/as2/converter/ContentTypeConverter.java
+index cb2e948a..9bd623bf 100644
+--- a/buggy/components/camel-as2/camel-as2-component/src/main/java/org/apache/camel/component/as2/converter/ContentTypeConverter.java
++++ b/fixed/components/camel-as2/camel-as2-component/src/main/java/org/apache/camel/component/as2/converter/ContentTypeConverter.java
+@@ -23,7 +23,7 @@ import org.apache.http.entity.ContentType;
+ /**
+  * Content type related converters.
+  */
+-@Converter
++@Converter(loader = true)
+ public enum ContentTypeConverter {
+     INSTANCE;
+     

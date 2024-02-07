@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-asterisk/src/test/java/org/apache/camel/component/asterisk/AsteriskProducerTest.java b/fixed/components/camel-asterisk/src/test/java/org/apache/camel/component/asterisk/AsteriskProducerTest.java
+index 63f54712..243c220b 100644
+--- a/buggy/components/camel-asterisk/src/test/java/org/apache/camel/component/asterisk/AsteriskProducerTest.java
++++ b/fixed/components/camel-asterisk/src/test/java/org/apache/camel/component/asterisk/AsteriskProducerTest.java
+@@ -24,7 +24,7 @@ import org.apache.camel.test.junit4.CamelTestSupport;
+ import org.junit.Ignore;
+ import org.junit.Test;
+ 
+-@Ignore("CAMEL-10321: Set host, port and oids to test asterisk producer.")
++@Ignore("CAMEL-10321: Set host, username and password test asterisk producer.")
+ public class AsteriskProducerTest extends CamelTestSupport {
+ 
+     private String hostname = "192.168.0.254";

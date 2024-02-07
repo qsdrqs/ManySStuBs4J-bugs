@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KinesisFirehoseEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KinesisFirehoseEndpointBuilderFactory.java
+index d15d166c..e4b964b4 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KinesisFirehoseEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KinesisFirehoseEndpointBuilderFactory.java
+@@ -34,7 +34,7 @@ public interface KinesisFirehoseEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the AWS Kinesis Firehose component.
+      */
+-    public static interface KinesisFirehoseEndpointBuilder
++    public interface KinesisFirehoseEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedKinesisFirehoseEndpointBuilder advanced() {
+@@ -133,7 +133,7 @@ public interface KinesisFirehoseEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the AWS Kinesis Firehose component.
+      */
+-    public static interface AdvancedKinesisFirehoseEndpointBuilder
++    public interface AdvancedKinesisFirehoseEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default KinesisFirehoseEndpointBuilder basic() {

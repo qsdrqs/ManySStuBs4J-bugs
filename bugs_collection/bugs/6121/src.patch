@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/camel-example-twitter-salesforce/src/main/java/org/apache/camel/example/mention/TwitterSalesforceRoute.java b/fixed/examples/camel-example-twitter-salesforce/src/main/java/org/apache/camel/example/mention/TwitterSalesforceRoute.java
+index 6027f15e..5a3a600d 100644
+--- a/buggy/examples/camel-example-twitter-salesforce/src/main/java/org/apache/camel/example/mention/TwitterSalesforceRoute.java
++++ b/fixed/examples/camel-example-twitter-salesforce/src/main/java/org/apache/camel/example/mention/TwitterSalesforceRoute.java
+@@ -27,7 +27,7 @@ public class TwitterSalesforceRoute extends RouteBuilder {
+     @Override
+     public void configure() throws Exception {
+         from("twitter-timeline:mentions")
+-            .log("Mention ${body}")
++            .log("Tweet id ${body.id} mention: ${body}")
+             .process(exchange -> {
+                 Status status = exchange.getIn().getBody(Status.class);
+                 User user = status.getUser();

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-dozer/src/main/java/org/apache/camel/component/dozer/DozerProducer.java b/fixed/components/camel-dozer/src/main/java/org/apache/camel/component/dozer/DozerProducer.java
+index b316197a..7050225d 100644
+--- a/buggy/components/camel-dozer/src/main/java/org/apache/camel/component/dozer/DozerProducer.java
++++ b/fixed/components/camel-dozer/src/main/java/org/apache/camel/component/dozer/DozerProducer.java
+@@ -59,7 +59,7 @@ public class DozerProducer extends DefaultProducer {
+         }
+         
+         // Load the target model class
+-        Class<?> targetModel = endpoint.getCamelContext().getClassResolver().resolveClass(
++        Class<?> targetModel = endpoint.getCamelContext().getClassResolver().resolveMandatoryClass(
+                 endpoint.getConfiguration().getTargetModel());
+         
+         // If an unmarshaller was used, the unmarshalled message is the OUT message.

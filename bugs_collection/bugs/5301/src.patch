@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesResourcesQuotaEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesResourcesQuotaEndpointBuilderFactory.java
+index 53ba1660..6c8093dd 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesResourcesQuotaEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/KubernetesResourcesQuotaEndpointBuilderFactory.java
+@@ -34,7 +34,7 @@ public interface KubernetesResourcesQuotaEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Kubernetes Resources Quota component.
+      */
+-    public static interface KubernetesResourcesQuotaEndpointBuilder
++    public interface KubernetesResourcesQuotaEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedKubernetesResourcesQuotaEndpointBuilder advanced() {
+@@ -246,7 +246,7 @@ public interface KubernetesResourcesQuotaEndpointBuilderFactory {
+      * Advanced builder for endpoint for the Kubernetes Resources Quota
+      * component.
+      */
+-    public static interface AdvancedKubernetesResourcesQuotaEndpointBuilder
++    public interface AdvancedKubernetesResourcesQuotaEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default KubernetesResourcesQuotaEndpointBuilder basic() {

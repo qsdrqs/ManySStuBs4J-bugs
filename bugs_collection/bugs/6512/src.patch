@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-servicenow/src/main/java/org/apache/camel/component/servicenow/ServiceNowRelease.java b/fixed/components/camel-servicenow/src/main/java/org/apache/camel/component/servicenow/ServiceNowRelease.java
+index 84f475af..d546215f 100644
+--- a/buggy/components/camel-servicenow/src/main/java/org/apache/camel/component/servicenow/ServiceNowRelease.java
++++ b/fixed/components/camel-servicenow/src/main/java/org/apache/camel/component/servicenow/ServiceNowRelease.java
+@@ -32,7 +32,7 @@ public enum ServiceNowRelease implements ServiceNowProducerSupplier {
+             return null;
+         }
+     },
+-    HELSINKY {
++    HELSINKI {
+         @Override
+         public ServiceNowProducer get(ServiceNowEndpoint endpoint) throws Exception {
+             return new HelsinkiServiceNowProducer(endpoint);

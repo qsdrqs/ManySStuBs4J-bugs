@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/processor/interceptor/BacklogTracer.java b/fixed/camel-core/src/main/java/org/apache/camel/processor/interceptor/BacklogTracer.java
+index 3c857557..cd825e5b 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/processor/interceptor/BacklogTracer.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/processor/interceptor/BacklogTracer.java
+@@ -268,7 +268,7 @@ public class BacklogTracer extends ServiceSupport implements InterceptStrategy {
+         List<BacklogTracerEventMessage> answer = new ArrayList<BacklogTracerEventMessage>();
+         if (nodeId != null) {
+             for (DefaultBacklogTracerEventMessage message : queue) {
+-                if (nodeId.equals(message.getToNode())) {
++                if (nodeId.equals(message.getToNode()) || nodeId.equals(message.getRouteId())) {
+                     answer.add(message);
+                 }
+             }

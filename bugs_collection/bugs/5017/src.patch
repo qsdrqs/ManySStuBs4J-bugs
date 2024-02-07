@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DirectVmEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DirectVmEndpointBuilderFactory.java
+index 56ff44de..55f33f86 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DirectVmEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/DirectVmEndpointBuilderFactory.java
+@@ -215,7 +215,7 @@ public interface DirectVmEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Direct VM component.
+      */
+-    public static interface DirectVmEndpointProducerBuilder
++    public interface DirectVmEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedDirectVmEndpointProducerBuilder advanced() {
+@@ -436,7 +436,7 @@ public interface DirectVmEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Direct VM component.
+      */
+-    public static interface DirectVmEndpointBuilder
++    public interface DirectVmEndpointBuilder
+             extends
+                 DirectVmEndpointConsumerBuilder, DirectVmEndpointProducerBuilder {
+         default AdvancedDirectVmEndpointBuilder advanced() {
+@@ -456,7 +456,7 @@ public interface DirectVmEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Direct VM component.
+      */
+-    public static interface AdvancedDirectVmEndpointBuilder
++    public interface AdvancedDirectVmEndpointBuilder
+             extends
+                 AdvancedDirectVmEndpointConsumerBuilder, AdvancedDirectVmEndpointProducerBuilder {
+         default DirectVmEndpointBuilder basic() {

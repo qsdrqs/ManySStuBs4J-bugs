@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-rabbitmq/src/main/java/org/apache/camel/component/rabbitmq/RabbitMQProducer.java b/fixed/components/camel-rabbitmq/src/main/java/org/apache/camel/component/rabbitmq/RabbitMQProducer.java
+index 96bd516e..66525440 100644
+--- a/buggy/components/camel-rabbitmq/src/main/java/org/apache/camel/component/rabbitmq/RabbitMQProducer.java
++++ b/fixed/components/camel-rabbitmq/src/main/java/org/apache/camel/component/rabbitmq/RabbitMQProducer.java
+@@ -52,7 +52,7 @@ public class RabbitMQProducer extends DefaultProducer {
+     /**
+      * Channel callback (similar to Spring JDBC ConnectionCallback)
+      */
+-    private static interface ChannelCallback<T> {
++    private interface ChannelCallback<T> {
+         T doWithChannel(Channel channel) throws Exception;
+     }
+ 

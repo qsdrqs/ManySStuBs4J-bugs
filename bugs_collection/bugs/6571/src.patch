@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-blueprint/src/test/java/org/apache/camel/blueprint/BlueprintComponentResolverTest.java b/fixed/components/camel-blueprint/src/test/java/org/apache/camel/blueprint/BlueprintComponentResolverTest.java
+index 5d30fc40..de4ccc0f 100644
+--- a/buggy/components/camel-blueprint/src/test/java/org/apache/camel/blueprint/BlueprintComponentResolverTest.java
++++ b/fixed/components/camel-blueprint/src/test/java/org/apache/camel/blueprint/BlueprintComponentResolverTest.java
+@@ -60,7 +60,7 @@ public class BlueprintComponentResolverTest extends TestSupport {
+ 
+         private boolean fallback;
+ 
+-        public SampleComponent(boolean fallback) {
++        SampleComponent(boolean fallback) {
+             this.fallback = fallback;
+         }
+ 

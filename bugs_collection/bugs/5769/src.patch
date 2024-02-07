@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-syslog/src/main/java/org/apache/camel/component/syslog/SyslogConverter.java b/fixed/components/camel-syslog/src/main/java/org/apache/camel/component/syslog/SyslogConverter.java
+index 9cba73b9..fa1cdf37 100644
+--- a/buggy/components/camel-syslog/src/main/java/org/apache/camel/component/syslog/SyslogConverter.java
++++ b/fixed/components/camel-syslog/src/main/java/org/apache/camel/component/syslog/SyslogConverter.java
+@@ -30,7 +30,7 @@ import org.apache.camel.Converter;
+ import org.slf4j.Logger;
+ import org.slf4j.LoggerFactory;
+ 
+-@Converter
++@Converter(loader = true)
+ public final class SyslogConverter {
+ 
+     private static final Logger LOG = LoggerFactory.getLogger(SyslogConverter.class);

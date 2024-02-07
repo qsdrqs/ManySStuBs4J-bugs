@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IgniteEventsEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IgniteEventsEndpointBuilderFactory.java
+index 19ec3adb..6047f2aa 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IgniteEventsEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/IgniteEventsEndpointBuilderFactory.java
+@@ -34,7 +34,7 @@ public interface IgniteEventsEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Ignite Events component.
+      */
+-    public static interface IgniteEventsEndpointBuilder
++    public interface IgniteEventsEndpointBuilder
+             extends
+                 EndpointConsumerBuilder {
+         default AdvancedIgniteEventsEndpointBuilder advanced() {
+@@ -98,7 +98,7 @@ public interface IgniteEventsEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Ignite Events component.
+      */
+-    public static interface AdvancedIgniteEventsEndpointBuilder
++    public interface AdvancedIgniteEventsEndpointBuilder
+             extends
+                 EndpointConsumerBuilder {
+         default IgniteEventsEndpointBuilder basic() {

@@ -1,0 +1,17 @@
+diff --git a/buggy/components/camel-as2/camel-as2-component/src/main/java/org/apache/camel/component/as2/AS2Configuration.java b/fixed/components/camel-as2/camel-as2-component/src/main/java/org/apache/camel/component/as2/AS2Configuration.java
+index 7fdaf379..1ba8f604 100644
+--- a/buggy/components/camel-as2/camel-as2-component/src/main/java/org/apache/camel/component/as2/AS2Configuration.java
++++ b/fixed/components/camel-as2/camel-as2-component/src/main/java/org/apache/camel/component/as2/AS2Configuration.java
+@@ -38,10 +38,10 @@ import org.apache.http.entity.ContentType;
+ public class AS2Configuration {
+ 
+     @UriPath
+-    @Metadata(required = true)
++    @Metadata(required = true, enums = "client,server")
+     private AS2ApiName apiName;
+ 
+-    @UriParam
++    @UriPath
+     @Metadata(required = true)
+     private String methodName;
+ 

@@ -1,0 +1,15 @@
+diff --git a/buggy/components/camel-netty4/src/test/java/org/apache/camel/component/netty4/NettyComponentConfigurationAndDocumentationTest.java b/fixed/components/camel-netty4/src/test/java/org/apache/camel/component/netty4/NettyComponentConfigurationAndDocumentationTest.java
+index c48ddeb6..035c25bf 100644
+--- a/buggy/components/camel-netty4/src/test/java/org/apache/camel/component/netty4/NettyComponentConfigurationAndDocumentationTest.java
++++ b/fixed/components/camel-netty4/src/test/java/org/apache/camel/component/netty4/NettyComponentConfigurationAndDocumentationTest.java
+@@ -42,8 +42,8 @@ public class NettyComponentConfigurationAndDocumentationTest extends CamelTestSu
+         ComponentConfiguration compConf = comp.createComponentConfiguration();
+         String json = compConf.createParameterJsonSchema();
+         assertNotNull(json);
+-
+-        assertTrue(json.contains("\"host\": { \"kind\": \"path\", \"type\": \"string\""));
++        
++        assertTrue(json.contains("\"host\": { \"kind\": \"path\", \"required\": \"true\", \"type\": \"string\""));
+         assertTrue(json.contains("\"producerPoolMinEvictableIdle\": { \"kind\": \"parameter\", \"type\": \"integer\""));
+         assertTrue(json.contains("\"allowDefaultCodec\": { \"kind\": \"parameter\", \"type\": \"boolean\""));
+     }

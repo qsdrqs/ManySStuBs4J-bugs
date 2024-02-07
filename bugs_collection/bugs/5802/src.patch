@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jmx/src/test/java/org/apache/camel/component/jmx/JMXObjectPropertiesTest.java b/fixed/components/camel-jmx/src/test/java/org/apache/camel/component/jmx/JMXObjectPropertiesTest.java
+index 2851fd24..4eb9597e 100644
+--- a/buggy/components/camel-jmx/src/test/java/org/apache/camel/component/jmx/JMXObjectPropertiesTest.java
++++ b/fixed/components/camel-jmx/src/test/java/org/apache/camel/component/jmx/JMXObjectPropertiesTest.java
+@@ -43,7 +43,7 @@ public class JMXObjectPropertiesTest extends SimpleBeanFixture {
+     protected void initRegistry() {
+         Map<String, String> ht = new Hashtable<>();
+         ht.put("name", "simpleBean");
+-        getRegistry().put("myTable", ht);
++        getRegistry().bind("myTable", ht);
+     }
+ 
+ }

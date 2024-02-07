@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-aws/src/test/java/org/apache/camel/component/aws/s3/S3ComponentFileTest.java b/fixed/components/camel-aws/src/test/java/org/apache/camel/component/aws/s3/S3ComponentFileTest.java
+index 445abca6..b32f3c9f 100644
+--- a/buggy/components/camel-aws/src/test/java/org/apache/camel/component/aws/s3/S3ComponentFileTest.java
++++ b/fixed/components/camel-aws/src/test/java/org/apache/camel/component/aws/s3/S3ComponentFileTest.java
+@@ -88,7 +88,7 @@ public class S3ComponentFileTest extends CamelTestSupport {
+ 
+         assertMockEndpointsSatisfied();
+ 
+-        assertResultExchange(result.getExchanges().get(0), false);
++        assertResultExchange(result.getExchanges().get(0), true);
+ 
+         PutObjectRequest putObjectRequest = client.putObjectRequests.get(0);
+         assertEquals(getCamelBucket(), putObjectRequest.getBucketName());

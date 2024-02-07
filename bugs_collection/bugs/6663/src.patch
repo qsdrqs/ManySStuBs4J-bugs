@@ -1,0 +1,22 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/spi/CamelContextTracker.java b/fixed/camel-core/src/main/java/org/apache/camel/spi/CamelContextTracker.java
+index 0ca540c9..87e3dd75 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/spi/CamelContextTracker.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/spi/CamelContextTracker.java
+@@ -37,7 +37,7 @@ public class CamelContextTracker implements Closeable {
+     public CamelContextTracker() {
+         filter = new Filter() {
+             public boolean accept(CamelContext camelContext) {
+-                return camelContext.getClass().getName().contains("Proxy") == false;
++                return !camelContext.getClass().getName().contains("Proxy");
+             }
+         };
+     }
+@@ -50,7 +50,7 @@ public class CamelContextTracker implements Closeable {
+      * Called to determine whether this tracker should accept the given context.
+      */
+     public boolean accept(CamelContext camelContext) {
+-        return filter != null ? filter.accept(camelContext) : true;
++        return filter == null || filter.accept(camelContext);
+     }
+ 
+     /**

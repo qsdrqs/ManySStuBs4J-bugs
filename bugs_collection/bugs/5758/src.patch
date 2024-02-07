@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-flatpack/src/main/java/org/apache/camel/component/flatpack/FlatpackConverter.java b/fixed/components/camel-flatpack/src/main/java/org/apache/camel/component/flatpack/FlatpackConverter.java
+index f51ab3cf..efc5db7d 100644
+--- a/buggy/components/camel-flatpack/src/main/java/org/apache/camel/component/flatpack/FlatpackConverter.java
++++ b/fixed/components/camel-flatpack/src/main/java/org/apache/camel/component/flatpack/FlatpackConverter.java
+@@ -31,7 +31,7 @@ import org.w3c.dom.Element;
+ import net.sf.flatpack.DataSet;
+ import org.apache.camel.Converter;
+ 
+-@Converter
++@Converter(loader = true)
+ public final class FlatpackConverter {
+ 
+     private FlatpackConverter() {

@@ -1,0 +1,22 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/impl/converter/MyConverters.java b/fixed/camel-core/src/test/java/org/apache/camel/impl/converter/MyConverters.java
+index 726e7bcc..7c2ff1c5 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/impl/converter/MyConverters.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/impl/converter/MyConverters.java
+@@ -22,7 +22,7 @@ import org.apache.camel.TypeConverters;
+ public class MyConverters implements TypeConverters {
+ 
+     @Converter
+-    public static Country toCountry(String iso) {
++    public Country toCountry(String iso) {
+         Country answer = new Country();
+         answer.setIso("en");
+         answer.setName("England");
+@@ -30,7 +30,7 @@ public class MyConverters implements TypeConverters {
+     }
+ 
+     @Converter
+-    public static String toIso(Country country) {
++    public String toIso(Country country) {
+         return country.getIso();
+     }
+ }

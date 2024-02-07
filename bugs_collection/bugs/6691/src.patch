@@ -1,0 +1,13 @@
+diff --git a/buggy/tooling/maven/camel-maven-plugin/src/main/java/org/apache/camel/maven/RunMojo.java b/fixed/tooling/maven/camel-maven-plugin/src/main/java/org/apache/camel/maven/RunMojo.java
+index 48d78395..0b0100c3 100644
+--- a/buggy/tooling/maven/camel-maven-plugin/src/main/java/org/apache/camel/maven/RunMojo.java
++++ b/fixed/tooling/maven/camel-maven-plugin/src/main/java/org/apache/camel/maven/RunMojo.java
+@@ -524,7 +524,7 @@ public class RunMojo extends AbstractExecMojo {
+     class IsolatedThreadGroup extends ThreadGroup {
+         Throwable uncaughtException; // synchronize access to this
+ 
+-        public IsolatedThreadGroup(String name) {
++        IsolatedThreadGroup(String name) {
+             super(name);
+         }
+ 

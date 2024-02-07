@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ECSEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ECSEndpointBuilderFactory.java
+index 71cf11fe..01fd4132 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ECSEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ECSEndpointBuilderFactory.java
+@@ -33,9 +33,7 @@ public interface ECSEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the AWS ECS component.
+      */
+-    public static interface ECSEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface ECSEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedECSEndpointBuilder advanced() {
+             return (AdvancedECSEndpointBuilder) this;
+         }
+@@ -62,7 +60,7 @@ public interface ECSEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the AWS ECS component.
+      */
+-    public static interface AdvancedECSEndpointBuilder
++    public interface AdvancedECSEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default ECSEndpointBuilder basic() {

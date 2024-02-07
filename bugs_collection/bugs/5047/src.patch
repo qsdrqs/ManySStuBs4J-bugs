@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EjbEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EjbEndpointBuilderFactory.java
+index b0184316..aa7ae562 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EjbEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/EjbEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface EjbEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the EJB component.
+      */
+-    public static interface EjbEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface EjbEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedEjbEndpointBuilder advanced() {
+             return (AdvancedEjbEndpointBuilder) this;
+         }
+@@ -107,7 +105,7 @@ public interface EjbEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the EJB component.
+      */
+-    public static interface AdvancedEjbEndpointBuilder
++    public interface AdvancedEjbEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default EjbEndpointBuilder basic() {

@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/NetWeaverEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/NetWeaverEndpointBuilderFactory.java
+index 3266e00b..e7789de5 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/NetWeaverEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/NetWeaverEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface NetWeaverEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the SAP NetWeaver component.
+      */
+-    public static interface NetWeaverEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface NetWeaverEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedNetWeaverEndpointBuilder advanced() {
+             return (AdvancedNetWeaverEndpointBuilder) this;
+         }
+@@ -130,7 +128,7 @@ public interface NetWeaverEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the SAP NetWeaver component.
+      */
+-    public static interface AdvancedNetWeaverEndpointBuilder
++    public interface AdvancedNetWeaverEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default NetWeaverEndpointBuilder basic() {

@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/test/java/org/apache/camel/ContextTestSupport.java b/fixed/camel-core/src/test/java/org/apache/camel/ContextTestSupport.java
+index df36f85a..4f42334b 100644
+--- a/buggy/camel-core/src/test/java/org/apache/camel/ContextTestSupport.java
++++ b/fixed/camel-core/src/test/java/org/apache/camel/ContextTestSupport.java
+@@ -147,7 +147,7 @@ public abstract class ContextTestSupport extends TestSupport {
+      * This should only be enabled for tests that uses custom type converters.
+      */
+     protected boolean isLoadTypeConverters() {
+-        return false;
++        return true;
+     }
+ 
+     protected void stopCamelContext() throws Exception {

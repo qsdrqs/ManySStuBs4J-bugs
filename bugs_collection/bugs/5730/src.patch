@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-atomix/src/main/java/org/apache/camel/component/atomix/AtomixTypeConverter.java b/fixed/components/camel-atomix/src/main/java/org/apache/camel/component/atomix/AtomixTypeConverter.java
+index 3f2c9c1b..8ee4ada6 100644
+--- a/buggy/components/camel-atomix/src/main/java/org/apache/camel/component/atomix/AtomixTypeConverter.java
++++ b/fixed/components/camel-atomix/src/main/java/org/apache/camel/component/atomix/AtomixTypeConverter.java
+@@ -19,7 +19,7 @@ package org.apache.camel.component.atomix;
+ import io.atomix.catalyst.transport.Address;
+ import org.apache.camel.Converter;
+ 
+-@Converter
++@Converter(loader = true)
+ public final class AtomixTypeConverter {
+ 
+     private AtomixTypeConverter() {

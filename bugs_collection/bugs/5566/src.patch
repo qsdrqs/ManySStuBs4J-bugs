@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TikaEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TikaEndpointBuilderFactory.java
+index ac4c8679..d4ae4dc1 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TikaEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/TikaEndpointBuilderFactory.java
+@@ -34,9 +34,7 @@ public interface TikaEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Tika component.
+      */
+-    public static interface TikaEndpointBuilder
+-            extends
+-                EndpointProducerBuilder {
++    public interface TikaEndpointBuilder extends EndpointProducerBuilder {
+         default AdvancedTikaEndpointBuilder advanced() {
+             return (AdvancedTikaEndpointBuilder) this;
+         }
+@@ -134,7 +132,7 @@ public interface TikaEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Tika component.
+      */
+-    public static interface AdvancedTikaEndpointBuilder
++    public interface AdvancedTikaEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default TikaEndpointBuilder basic() {

@@ -1,0 +1,22 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XmlSignatureEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XmlSignatureEndpointBuilderFactory.java
+index 65b9eac5..58d25f36 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XmlSignatureEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XmlSignatureEndpointBuilderFactory.java
+@@ -35,7 +35,7 @@ public interface XmlSignatureEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the XML Security component.
+      */
+-    public static interface XmlSignatureEndpointBuilder
++    public interface XmlSignatureEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedXmlSignatureEndpointBuilder advanced() {
+@@ -840,7 +840,7 @@ public interface XmlSignatureEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the XML Security component.
+      */
+-    public static interface AdvancedXmlSignatureEndpointBuilder
++    public interface AdvancedXmlSignatureEndpointBuilder
+             extends
+                 EndpointProducerBuilder {
+         default XmlSignatureEndpointBuilder basic() {

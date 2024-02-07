@@ -1,0 +1,13 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SdbEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SdbEndpointBuilderFactory.java
+index 3e868bec..ffedad01 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SdbEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SdbEndpointBuilderFactory.java
+@@ -242,7 +242,7 @@ public interface SdbEndpointBuilderFactory {
+      * Proxy enum for
+      * <code>org.apache.camel.component.aws.sdb.SdbOperations</code> enum.
+      */
+-    public static enum SdbOperations {
++    static enum SdbOperations {
+         BatchDeleteAttributes, BatchPutAttributes, DeleteAttributes, DeleteDomain, DomainMetadata, GetAttributes, ListDomains, PutAttributes, Select;
+     }
+     /**

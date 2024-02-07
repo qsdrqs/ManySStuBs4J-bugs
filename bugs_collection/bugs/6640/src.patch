@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-netty4/src/test/java/org/apache/camel/component/netty4/NettyRedeliveryTest.java b/fixed/components/camel-netty4/src/test/java/org/apache/camel/component/netty4/NettyRedeliveryTest.java
+index ab394da5..7e45577b 100644
+--- a/buggy/components/camel-netty4/src/test/java/org/apache/camel/component/netty4/NettyRedeliveryTest.java
++++ b/fixed/components/camel-netty4/src/test/java/org/apache/camel/component/netty4/NettyRedeliveryTest.java
+@@ -196,7 +196,7 @@ public class NettyRedeliveryTest extends CamelTestSupport {
+     private class ClosingClientRunnable implements Runnable {
+         private final Socket socket;
+ 
+-        public ClosingClientRunnable(Socket socket) {
++        ClosingClientRunnable(Socket socket) {
+             this.socket = socket;
+         }
+ 

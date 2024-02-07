@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-as2/camel-as2-api/src/test/java/org/apache/camel/component/as2/api/AS2MessageTest.java b/fixed/components/camel-as2/camel-as2-api/src/test/java/org/apache/camel/component/as2/api/AS2MessageTest.java
+index 48f6a4bb..8ec8a54b 100644
+--- a/buggy/components/camel-as2/camel-as2-api/src/test/java/org/apache/camel/component/as2/api/AS2MessageTest.java
++++ b/fixed/components/camel-as2/camel-as2-api/src/test/java/org/apache/camel/component/as2/api/AS2MessageTest.java
+@@ -197,7 +197,7 @@ public class AS2MessageTest {
+         certList.add(signingCert);
+         certList.add(issueCert);
+ 
+-        testServer = new AS2ServerConnection(AS2_VERSION, "MyServer-HTTP/1.1", SERVER_FQDN, 8080,
++        testServer = new AS2ServerConnection(AS2_VERSION, "MyServer-HTTP/1.1", SERVER_FQDN, TARGET_PORT,
+                 certList.toArray(new Certificate[0]), signingKP.getPrivate());
+         testServer.listen("*", new HttpRequestHandler() {
+             @Override

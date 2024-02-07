@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/processor/interceptor/Tracer.java b/fixed/camel-core/src/main/java/org/apache/camel/processor/interceptor/Tracer.java
+index 432a5727..36d784e7 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/processor/interceptor/Tracer.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/processor/interceptor/Tracer.java
+@@ -324,7 +324,7 @@ public class Tracer implements InterceptStrategy, Service {
+      * Remove the given tracehandler
+      */
+     public void removeTraceHandler(TraceEventHandler traceHandler) {
+-        this.traceHandlers.add(traceHandler);
++        this.traceHandlers.remove(traceHandler);
+     }
+ 
+     public String getJpaTraceEventMessageClassName() {

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-restlet/src/main/java/org/apache/camel/component/restlet/converter/RestletConverter.java b/fixed/components/camel-restlet/src/main/java/org/apache/camel/component/restlet/converter/RestletConverter.java
+index 3b13dd48..4e26d81f 100644
+--- a/buggy/components/camel-restlet/src/main/java/org/apache/camel/component/restlet/converter/RestletConverter.java
++++ b/fixed/components/camel-restlet/src/main/java/org/apache/camel/component/restlet/converter/RestletConverter.java
+@@ -23,7 +23,7 @@ import org.apache.camel.Converter;
+ import org.restlet.data.MediaType;
+ import org.restlet.data.Method;
+ 
+-@Converter
++@Converter(loader = true)
+ public final class RestletConverter {
+ 
+     private RestletConverter() {

@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-swagger-java/src/main/java/org/apache/camel/swagger/RestSwaggerReader.java b/fixed/components/camel-swagger-java/src/main/java/org/apache/camel/swagger/RestSwaggerReader.java
+index eada214f..58cf1c12 100644
+--- a/buggy/components/camel-swagger-java/src/main/java/org/apache/camel/swagger/RestSwaggerReader.java
++++ b/fixed/components/camel-swagger-java/src/main/java/org/apache/camel/swagger/RestSwaggerReader.java
+@@ -523,7 +523,7 @@ public class RestSwaggerReader {
+             if (swagger.getDefinitions() != null && swagger.getDefinitions().get(entry.getKey()) != null) {
+                 Model oldModel = swagger.getDefinitions().get(entry.getKey());
+                 if (oldModel.getVendorExtensions() != null && !oldModel.getVendorExtensions().isEmpty()) {
+-                    oldExt = oldModel.getVendorExtensions().get("x-className") == null;
++                    oldExt = oldModel.getVendorExtensions().get("x-className") != null;
+                 }
+             }
+ 

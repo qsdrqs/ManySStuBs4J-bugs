@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XQueryEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XQueryEndpointBuilderFactory.java
+index f941b2ba..d1979ced 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XQueryEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/XQueryEndpointBuilderFactory.java
+@@ -791,7 +791,7 @@ public interface XQueryEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the XQuery component.
+      */
+-    public static interface XQueryEndpointProducerBuilder
++    public interface XQueryEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedXQueryEndpointProducerBuilder advanced() {
+@@ -1148,7 +1148,7 @@ public interface XQueryEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the XQuery component.
+      */
+-    public static interface XQueryEndpointBuilder
++    public interface XQueryEndpointBuilder
+             extends
+                 XQueryEndpointConsumerBuilder, XQueryEndpointProducerBuilder {
+         default AdvancedXQueryEndpointBuilder advanced() {
+@@ -1280,7 +1280,7 @@ public interface XQueryEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the XQuery component.
+      */
+-    public static interface AdvancedXQueryEndpointBuilder
++    public interface AdvancedXQueryEndpointBuilder
+             extends
+                 AdvancedXQueryEndpointConsumerBuilder, AdvancedXQueryEndpointProducerBuilder {
+         default XQueryEndpointBuilder basic() {

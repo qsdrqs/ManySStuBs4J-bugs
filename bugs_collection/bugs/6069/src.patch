@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/component/validator/ValidatorComponent.java b/fixed/camel-core/src/main/java/org/apache/camel/component/validator/ValidatorComponent.java
+index fdc5cde2..2a609bcb 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/component/validator/ValidatorComponent.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/component/validator/ValidatorComponent.java
+@@ -29,7 +29,7 @@ import org.apache.camel.spi.Metadata;
+  */
+ public class ValidatorComponent extends UriEndpointComponent {
+ 
+-    @Metadata(label = "advanced")
++    @Metadata(label = "advanced", description = "To use a custom LSResourceResolver which depends on a dynamic endpoint resource URI")
+     private ValidatorResourceResolverFactory resourceResolverFactory;
+     
+     public ValidatorComponent() {

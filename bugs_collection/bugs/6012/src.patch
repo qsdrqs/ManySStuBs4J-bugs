@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-stream/src/test/java/org/apache/camel/component/stream/StreamHeaderTest.java b/fixed/components/camel-stream/src/test/java/org/apache/camel/component/stream/StreamHeaderTest.java
+index 90c95e3f..32335384 100644
+--- a/buggy/components/camel-stream/src/test/java/org/apache/camel/component/stream/StreamHeaderTest.java
++++ b/fixed/components/camel-stream/src/test/java/org/apache/camel/component/stream/StreamHeaderTest.java
+@@ -36,7 +36,7 @@ public class StreamHeaderTest extends CamelTestSupport {
+     public void testStringContent() {
+         template.sendBody("direct:in", "Hello");
+         // StreamProducer appends \n in text mode
+-        assertEquals("Hello\n", sb.toString());
++        assertEquals("Hello" + LS, sb.toString());
+     }
+ 
+     @Test

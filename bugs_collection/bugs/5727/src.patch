@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-activemq/src/main/java/org/apache/camel/component/activemq/converter/ActiveMQMessageConverter.java b/fixed/components/camel-activemq/src/main/java/org/apache/camel/component/activemq/converter/ActiveMQMessageConverter.java
+index 8f148235..0a562688 100644
+--- a/buggy/components/camel-activemq/src/main/java/org/apache/camel/component/activemq/converter/ActiveMQMessageConverter.java
++++ b/fixed/components/camel-activemq/src/main/java/org/apache/camel/component/activemq/converter/ActiveMQMessageConverter.java
+@@ -33,7 +33,7 @@ import org.apache.camel.component.jms.JmsBinding;
+ /**
+  * 
+  */
+-@Converter
++@Converter(loader = true)
+ public class ActiveMQMessageConverter {
+     private JmsBinding binding = new JmsBinding();
+ 

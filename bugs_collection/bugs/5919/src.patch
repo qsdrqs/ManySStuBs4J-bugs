@@ -1,0 +1,31 @@
+diff --git a/buggy/components/camel-braintree/src/test/java/org/apache/camel/component/braintree/TransactionGatewayIntegrationTest.java b/fixed/components/camel-braintree/src/test/java/org/apache/camel/component/braintree/TransactionGatewayIntegrationTest.java
+index 5c7ee038..4756b872 100644
+--- a/buggy/components/camel-braintree/src/test/java/org/apache/camel/component/braintree/TransactionGatewayIntegrationTest.java
++++ b/fixed/components/camel-braintree/src/test/java/org/apache/camel/component/braintree/TransactionGatewayIntegrationTest.java
+@@ -192,7 +192,7 @@ public class TransactionGatewayIntegrationTest extends AbstractBraintreeTestSupp
+             Result.class);
+ 
+         assertNotNull("Submit For Settlement result", result);
+-        LOG.debug("Transaction submitted for settlement - id={}" + result.getTarget().getId());
++        LOG.debug("Transaction submitted for settlement - id={}", result.getTarget().getId());
+     }
+ 
+     @Test
+@@ -225,7 +225,7 @@ public class TransactionGatewayIntegrationTest extends AbstractBraintreeTestSupp
+             Result.class);
+ 
+         assertNotNull("Submit For Settlement result", result);
+-        LOG.debug("Transaction submitted for settlement - id={}" + result.getTarget().getId());
++        LOG.debug("Transaction submitted for settlement - id={}", result.getTarget().getId());
+     }
+ 
+     @Test
+@@ -259,7 +259,7 @@ public class TransactionGatewayIntegrationTest extends AbstractBraintreeTestSupp
+             Result.class);
+ 
+         assertNotNull("Submit For Settlement result", result);
+-        LOG.debug("Transaction submitted for settlement - id={}" + result.getTarget().getId());
++        LOG.debug("Transaction submitted for settlement - id={}", result.getTarget().getId());
+     }
+ 
+     @Test

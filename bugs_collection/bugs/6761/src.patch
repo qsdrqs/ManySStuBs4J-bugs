@@ -1,0 +1,13 @@
+diff --git a/buggy/camel-core/src/main/java/org/apache/camel/builder/DataFormatClause.java b/fixed/camel-core/src/main/java/org/apache/camel/builder/DataFormatClause.java
+index be35d9ff..a82a6c93 100644
+--- a/buggy/camel-core/src/main/java/org/apache/camel/builder/DataFormatClause.java
++++ b/fixed/camel-core/src/main/java/org/apache/camel/builder/DataFormatClause.java
+@@ -144,7 +144,7 @@ public class DataFormatClause<T extends ProcessorDefinition<?>> {
+         dataFormat.setMapping(mapping);
+         dataFormat.setStreamName(streamName);
+         dataFormat.setEncoding(encoding);
+-        dataFormat.setIgnoreInvalidRecords(ignoreInvalidRecords);
++        dataFormat.setIgnoreUnidentifiedRecords(ignoreUnidentifiedRecords);
+         dataFormat.setIgnoreUnexpectedRecords(ignoreUnexpectedRecords);
+         dataFormat.setIgnoreInvalidRecords(ignoreInvalidRecords);
+         return dataFormat(dataFormat);

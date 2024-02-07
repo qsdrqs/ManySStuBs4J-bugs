@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastReplicatedmapEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastReplicatedmapEndpointBuilderFactory.java
+index 0a9a826b..02defcf0 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastReplicatedmapEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/HazelcastReplicatedmapEndpointBuilderFactory.java
+@@ -454,7 +454,7 @@ public interface HazelcastReplicatedmapEndpointBuilderFactory {
+      * Builder for endpoint producers for the Hazelcast Replicated Map
+      * component.
+      */
+-    public static interface HazelcastReplicatedmapEndpointProducerBuilder
++    public interface HazelcastReplicatedmapEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedHazelcastReplicatedmapEndpointProducerBuilder advanced() {
+@@ -763,7 +763,7 @@ public interface HazelcastReplicatedmapEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Hazelcast Replicated Map component.
+      */
+-    public static interface HazelcastReplicatedmapEndpointBuilder
++    public interface HazelcastReplicatedmapEndpointBuilder
+             extends
+                 HazelcastReplicatedmapEndpointConsumerBuilder, HazelcastReplicatedmapEndpointProducerBuilder {
+         default AdvancedHazelcastReplicatedmapEndpointBuilder advanced() {
+@@ -977,7 +977,7 @@ public interface HazelcastReplicatedmapEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Hazelcast Replicated Map component.
+      */
+-    public static interface AdvancedHazelcastReplicatedmapEndpointBuilder
++    public interface AdvancedHazelcastReplicatedmapEndpointBuilder
+             extends
+                 AdvancedHazelcastReplicatedmapEndpointConsumerBuilder, AdvancedHazelcastReplicatedmapEndpointProducerBuilder {
+         default HazelcastReplicatedmapEndpointBuilder basic() {

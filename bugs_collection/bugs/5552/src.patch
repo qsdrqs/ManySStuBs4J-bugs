@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/StreamEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/StreamEndpointBuilderFactory.java
+index 511a59f6..179b77a4 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/StreamEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/StreamEndpointBuilderFactory.java
+@@ -484,7 +484,7 @@ public interface StreamEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Stream component.
+      */
+-    public static interface StreamEndpointProducerBuilder
++    public interface StreamEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedStreamEndpointProducerBuilder advanced() {
+@@ -775,7 +775,7 @@ public interface StreamEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Stream component.
+      */
+-    public static interface StreamEndpointBuilder
++    public interface StreamEndpointBuilder
+             extends
+                 StreamEndpointConsumerBuilder, StreamEndpointProducerBuilder {
+         default AdvancedStreamEndpointBuilder advanced() {
+@@ -827,7 +827,7 @@ public interface StreamEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Stream component.
+      */
+-    public static interface AdvancedStreamEndpointBuilder
++    public interface AdvancedStreamEndpointBuilder
+             extends
+                 AdvancedStreamEndpointConsumerBuilder, AdvancedStreamEndpointProducerBuilder {
+         default StreamEndpointBuilder basic() {

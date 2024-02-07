@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-http4/src/test/java/org/apache/camel/component/http4/HttpsSslContextParametersGetTest.java b/fixed/components/camel-http4/src/test/java/org/apache/camel/component/http4/HttpsSslContextParametersGetTest.java
+index abd3aaab..d9b9bcfd 100644
+--- a/buggy/components/camel-http4/src/test/java/org/apache/camel/component/http4/HttpsSslContextParametersGetTest.java
++++ b/fixed/components/camel-http4/src/test/java/org/apache/camel/component/http4/HttpsSslContextParametersGetTest.java
+@@ -68,7 +68,7 @@ public class HttpsSslContextParametersGetTest extends HttpsGetTest {
+     public void httpsGet() throws Exception {
+ 
+         Exchange exchange = template.request("https4://127.0.0.1:" + localServer.getLocalPort() 
+-            + "/mail/?x509HostnameVerifier=x509HostnameVerifier&sslContextParametersRef=sslContextParameters", new Processor() {
++            + "/mail/?x509HostnameVerifier=x509HostnameVerifier&sslContextParameters=sslContextParameters", new Processor() {
+                 public void process(Exchange exchange) throws Exception {
+                 }
+             });

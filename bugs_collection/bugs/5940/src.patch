@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/RemoteFileConsumer.java b/fixed/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/RemoteFileConsumer.java
+index b1ae6d74..4f3b0fe9 100644
+--- a/buggy/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/RemoteFileConsumer.java
++++ b/fixed/components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/RemoteFileConsumer.java
+@@ -113,7 +113,7 @@ public abstract class RemoteFileConsumer<T> extends GenericFileConsumer<T> {
+             exchange.addOnCompletion(new SynchronizationAdapter() {
+                 @Override
+                 public void onDone(Exchange exchange) {
+-                    log.trace("postPollCheck disconnect from: {}", getEndpoint());
++                    log.trace("processExchange disconnect from: {}", getEndpoint());
+                     disconnect();
+                 }
+ 

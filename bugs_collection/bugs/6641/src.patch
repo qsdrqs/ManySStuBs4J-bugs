@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-websocket/src/main/java/org/apache/camel/component/websocket/WebsocketComponent.java b/fixed/components/camel-websocket/src/main/java/org/apache/camel/component/websocket/WebsocketComponent.java
+index b786319b..90e0d8df 100644
+--- a/buggy/components/camel-websocket/src/main/java/org/apache/camel/component/websocket/WebsocketComponent.java
++++ b/fixed/components/camel-websocket/src/main/java/org/apache/camel/component/websocket/WebsocketComponent.java
+@@ -353,7 +353,7 @@ public class WebsocketComponent extends UriEndpointComponent {
+                 qtp.setMaxThreads(maxThreads.intValue());
+             }
+             // let the thread names indicate they are from the server
+-            qtp.setName("CamelJettyWebSocketServer(" + "test" + ")");
++            qtp.setName("CamelJettyWebSocketServer");
+             try {
+                 qtp.start();
+             } catch (Exception e) {

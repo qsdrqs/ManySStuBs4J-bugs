@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/NatsEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/NatsEndpointBuilderFactory.java
+index 60d7d5a2..d15fa1e4 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/NatsEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/NatsEndpointBuilderFactory.java
+@@ -555,7 +555,7 @@ public interface NatsEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the Nats component.
+      */
+-    public static interface NatsEndpointProducerBuilder
++    public interface NatsEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedNatsEndpointProducerBuilder advanced() {
+@@ -1002,7 +1002,7 @@ public interface NatsEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Nats component.
+      */
+-    public static interface NatsEndpointBuilder
++    public interface NatsEndpointBuilder
+             extends
+                 NatsEndpointConsumerBuilder, NatsEndpointProducerBuilder {
+         default AdvancedNatsEndpointBuilder advanced() {
+@@ -1342,7 +1342,7 @@ public interface NatsEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Nats component.
+      */
+-    public static interface AdvancedNatsEndpointBuilder
++    public interface AdvancedNatsEndpointBuilder
+             extends
+                 AdvancedNatsEndpointConsumerBuilder, AdvancedNatsEndpointProducerBuilder {
+         default NatsEndpointBuilder basic() {

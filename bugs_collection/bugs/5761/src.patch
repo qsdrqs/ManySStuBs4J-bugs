@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jetty-common/src/main/java/org/apache/camel/component/jetty/JettyConverter.java b/fixed/components/camel-jetty-common/src/main/java/org/apache/camel/component/jetty/JettyConverter.java
+index e382ab86..c8a1e051 100644
+--- a/buggy/components/camel-jetty-common/src/main/java/org/apache/camel/component/jetty/JettyConverter.java
++++ b/fixed/components/camel-jetty-common/src/main/java/org/apache/camel/component/jetty/JettyConverter.java
+@@ -25,7 +25,7 @@ import org.eclipse.jetty.server.Response;
+ 
+ import static org.apache.camel.TypeConverter.MISS_VALUE;
+ 
+-@Converter
++@Converter(loader = true)
+ public final class JettyConverter {
+ 
+     private JettyConverter() {

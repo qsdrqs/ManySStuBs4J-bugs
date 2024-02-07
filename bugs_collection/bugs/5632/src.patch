@@ -1,0 +1,31 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ZooKeeperEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ZooKeeperEndpointBuilderFactory.java
+index 5a6cd525..723657fc 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ZooKeeperEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/ZooKeeperEndpointBuilderFactory.java
+@@ -319,7 +319,7 @@ public interface ZooKeeperEndpointBuilderFactory {
+     /**
+      * Builder for endpoint producers for the ZooKeeper component.
+      */
+-    public static interface ZooKeeperEndpointProducerBuilder
++    public interface ZooKeeperEndpointProducerBuilder
+             extends
+                 EndpointProducerBuilder {
+         default AdvancedZooKeeperEndpointProducerBuilder advanced() {
+@@ -527,7 +527,7 @@ public interface ZooKeeperEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the ZooKeeper component.
+      */
+-    public static interface ZooKeeperEndpointBuilder
++    public interface ZooKeeperEndpointBuilder
+             extends
+                 ZooKeeperEndpointConsumerBuilder, ZooKeeperEndpointProducerBuilder {
+         default AdvancedZooKeeperEndpointBuilder advanced() {
+@@ -613,7 +613,7 @@ public interface ZooKeeperEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the ZooKeeper component.
+      */
+-    public static interface AdvancedZooKeeperEndpointBuilder
++    public interface AdvancedZooKeeperEndpointBuilder
+             extends
+                 AdvancedZooKeeperEndpointConsumerBuilder, AdvancedZooKeeperEndpointProducerBuilder {
+         default ZooKeeperEndpointBuilder basic() {

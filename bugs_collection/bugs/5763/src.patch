@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-netty4/src/main/java/org/apache/camel/component/netty4/NettyConverter.java b/fixed/components/camel-netty4/src/main/java/org/apache/camel/component/netty4/NettyConverter.java
+index 2cf33945..62d33ed6 100644
+--- a/buggy/components/camel-netty4/src/main/java/org/apache/camel/component/netty4/NettyConverter.java
++++ b/fixed/components/camel-netty4/src/main/java/org/apache/camel/component/netty4/NettyConverter.java
+@@ -38,7 +38,7 @@ import org.apache.camel.Exchange;
+ /**
+  * A set of converter methods for working with Netty types
+  */
+-@Converter
++@Converter(loader = true)
+ public final class NettyConverter {
+ 
+     private NettyConverter() {

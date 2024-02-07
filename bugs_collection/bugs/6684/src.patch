@@ -1,0 +1,13 @@
+diff --git a/buggy/examples/camel-example-cdi-osgi/src/main/java/org/apache/camel/example/cdi/osgi/Config.java b/fixed/examples/camel-example-cdi-osgi/src/main/java/org/apache/camel/example/cdi/osgi/Config.java
+index d4803265..ed57006a 100644
+--- a/buggy/examples/camel-example-cdi-osgi/src/main/java/org/apache/camel/example/cdi/osgi/Config.java
++++ b/fixed/examples/camel-example-cdi-osgi/src/main/java/org/apache/camel/example/cdi/osgi/Config.java
+@@ -22,7 +22,7 @@ import javax.inject.Named;
+ 
+ import org.apache.camel.component.properties.PropertiesComponent;
+ 
+-class Config {
++public class Config {
+ 
+     @Produces
+     @ApplicationScoped

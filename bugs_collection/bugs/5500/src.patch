@@ -1,0 +1,24 @@
+diff --git a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SjmsBatchEndpointBuilderFactory.java b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SjmsBatchEndpointBuilderFactory.java
+index de5d7d5f..f4f1b502 100644
+--- a/buggy/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SjmsBatchEndpointBuilderFactory.java
++++ b/fixed/core/camel-endpointdsl/src/main/java/org/apache/camel/builder/endpoint/dsl/SjmsBatchEndpointBuilderFactory.java
+@@ -38,9 +38,7 @@ public interface SjmsBatchEndpointBuilderFactory {
+     /**
+      * Builder for endpoint for the Simple JMS Batch component.
+      */
+-    public static interface SjmsBatchEndpointBuilder
+-            extends
+-                EndpointConsumerBuilder {
++    public interface SjmsBatchEndpointBuilder extends EndpointConsumerBuilder {
+         default AdvancedSjmsBatchEndpointBuilder advanced() {
+             return (AdvancedSjmsBatchEndpointBuilder) this;
+         }
+@@ -347,7 +345,7 @@ public interface SjmsBatchEndpointBuilderFactory {
+     /**
+      * Advanced builder for endpoint for the Simple JMS Batch component.
+      */
+-    public static interface AdvancedSjmsBatchEndpointBuilder
++    public interface AdvancedSjmsBatchEndpointBuilder
+             extends
+                 EndpointConsumerBuilder {
+         default SjmsBatchEndpointBuilder basic() {

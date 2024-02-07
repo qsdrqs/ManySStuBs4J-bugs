@@ -1,0 +1,13 @@
+diff --git a/buggy/components/camel-jdbc/src/main/java/org/apache/camel/component/jdbc/DefaultBeanRowMapper.java b/fixed/components/camel-jdbc/src/main/java/org/apache/camel/component/jdbc/DefaultBeanRowMapper.java
+index 04165731..393bcb48 100644
+--- a/buggy/components/camel-jdbc/src/main/java/org/apache/camel/component/jdbc/DefaultBeanRowMapper.java
++++ b/fixed/components/camel-jdbc/src/main/java/org/apache/camel/component/jdbc/DefaultBeanRowMapper.java
+@@ -39,7 +39,7 @@ public class DefaultBeanRowMapper implements BeanRowMapper {
+                 continue;
+             }
+             if (toUpper) {
+-                char upper = Character.toLowerCase(ch);
++                char upper = Character.toUpperCase(ch);
+                 sb.append(upper);
+                 // reset flag
+                 toUpper = false;
